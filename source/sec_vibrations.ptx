@@ -1,0 +1,331 @@
+<section xml:id="sec_vibrations">
+  <title>Vibrations in Mechanical Systems</title>
+  <introduction>
+    <p>
+      Consider a spring that resists compression as well as extension,
+      that is suspended vertically from a fixed support,
+      and a body of mass <m>m</m> that is attached at the lower end of the spring.
+      We make the assumption that the mass <m>m</m> is much larger than the mass of the spring so that we can neglect the mass of the spring.
+      If there is no motion then the system is in static equilibrium,
+      as illustrated in <xref ref="fig_ch-11-17">Figure</xref>.
+      If the mass is pulled down further and released,
+      then it will undergo an oscillatory motion.
+    </p>
+    <figure xml:id="fig_ch-11-17">
+      <caption>The spring mass system</caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-17.pdf"/>
+    </figure>
+    <p>
+      Suppose there is no friction to slow down the motion of the mass,
+      then we say that the system is <em>undamped.</em>
+      We will determine the motion of this mechanical system by considering the forces acting on the mass during the motion.
+      This will lead to a differential equation relating the displacement as a function of time.
+      The most obvious force is that of
+      <em>gravitational attraction</em>
+      acting on the mass <m>m</m> and is given by
+      <me>
+        F_1=mg
+      </me>,
+      where <m>g</m> is the acceleration of gravity.
+      The next force to be considered is the <em>spring force</em>
+      acting on the mass and is directed upward if the spring is stretched and downward if it is compressed.
+      It obeys Hooke's law
+      <me>
+        F_2=ks
+      </me>,
+      where <m>s</m> is the amount the spring is stretched when <m>s>0</m> and is the amount it is compressed when <m>s\lt 0</m>.
+    </p>
+    <p>
+      When the system is in static equilibrium and the spring is stretched by the amount <m>s_0</m>,
+      the resultant of the spring force and the gravitational force is zero,
+      which is expressed by the equation
+      <me>
+        mg-ks_0=0
+      </me>.
+    </p>
+    <p>
+      Let <m>s=U(t)</m> denote the displacement from static equilibrium with the positive <m>s</m> direction pointed downward as indicated in Figure 10.17(b).The spring force can be written as
+      <me>
+        F_2=-k[s_0+U(t) ] =-ks_0-kU(t)
+      </me>,
+      and the resultant force <m>F_{R}</m> is
+      <men xml:id="FRone">
+        F_{R}=F_1+F_2=mg-ks_0-kU(t) =-kU(t)
+      </men>.
+    </p>
+    <p>
+      The differential equation for motion is obtained by using Newton's second law,
+      which states that the resultant of the forces acting on the mass at any instant satisfies
+      <men xml:id="FRtwo">
+        F_{R}=ma
+      </men>.
+    </p>
+    <p>
+      The distance from equilibrium at time <m>t</m> is measured by <m>U(t)</m>,
+      so the acceleration <m>a</m> is given by <m>a=U^{\prime \prime}(t)</m>.
+      Equations <xref ref="FRone"/> and <xref ref="FRtwo"/> then give
+      <me>
+        F_R = -kU(t) = mU^{\prime \prime}(t)
+      </me>.
+    </p>
+    <p>
+      Therefore, the undamped mechanical system is governed by the linear differential equation
+      <me>
+        mU^{\prime \prime}(t) + kU(t) = 0
+      </me>.
+    </p>
+    <p>
+      The general solution to undamped system is known to be
+      <me>
+        U(t) = A\cos \omega t+B\sin \omega t,  \text{ where }   \omega = \sqrt{\frac{k}{m}}
+      </me>.
+    </p>
+  </introduction>
+  <subsection xml:id="subsec_damped-system">
+    <title>Damped System</title>
+    <p>
+      If we consider frictional forces that slow down the motion of the mass,
+      then we say that the system is damped.
+      This is visualized by connecting a dashpot to the mass,
+      as indicated in <xref ref="fig_ch-11-18">Figure</xref>.
+      For small velocities it is assumed that the frictional force <m>F_3</m> is proportional to the velocity, that is,
+      <me>
+        F_3=-cU'(t)
+      </me>.
+    </p>
+    <figure xml:id="fig_ch-11-18">
+      <caption>The spring mass dashpot system</caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-18.pdf"/>
+    </figure>
+    <p>
+      The damping constant <m>c</m> must be positive, for if <m>U'(t)>0</m>,
+      then the mass is moving downward and hence <m>F_3</m> must point upward,
+      which requires that <m>F_3</m> is negative.
+      The result of the three forces acting on the mass is given by
+      <me>
+        F_1+F_2+F_3 = -kU(t)-cU'(t) = mU^{\prime \prime}(t) = F_R
+      </me>,
+      so the damped mechanical system is governed by the differential equation
+      <me>
+        mU^{\prime \prime}(t) + cU\,'(t) + kU(t) = 0
+      </me>.
+    </p>
+  </subsection>
+  <subsection xml:id="subsec_forced-vibrations">
+    <title>Forced Vibrations</title>
+    <p>
+      The vibration discussed earlier are called <em>free</em>
+      vibrations because all the forces that affect the motion of the system are internal to the system.
+      We extend our analysis to cover the case in which an external force <m>F_4=F(t)</m> acts on the mass
+      (see <xref ref="fig_ch-11-19">Figure</xref>).
+      Such a force might occur from vibrations of the support to which the top of the spring is attached,
+      or from the effect of a magnetic field on a mass made of iron.
+      As before, we sum the forces <m>F_1</m>, <m>F_2</m>, <m>F_3</m>,
+      and <m>F_4</m> and set this equal to the resultant force <m>F_{R}</m> and obtain
+      <me>
+        F_1+F_2+F_3+F_4=F_{R} = -KU(t) -cU'(t) + F(t) = mU^{\prime \prime}(t)
+      </me>.
+    </p>
+    <figure xml:id="fig_ch-11-19">
+      <caption>The dashpot system with an external force</caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-19.pdf"/>
+    </figure>
+    <p>
+      Thus, the <em>forced motion</em>
+      of the mechanical system satisfies the nonhomogenous linear differential equation
+      <men xml:id="forcedDE">
+        mU^{\prime \prime}(t) + cU'(t) + kU(t) = F(t)
+      </men>.
+    </p>
+    <p>
+      The function <m>F(t)</m> is called the
+      <em>input</em> or <em>driving force</em>
+      and the solution <m>U(t)</m> is called the
+      <em>output</em> or <em>response</em>.
+      Of particular interest are periodic inputs <m>F(t)</m> that can be represented by Fourier series.
+    </p>
+    <p>
+      For damped mechanical systems that are driven by a periodic input <m>F(t)</m>,
+      the general solution involves a <em>transient part</em>
+      that vanishes as <m>t \to +\infty</m>,
+      and a <em>steady state part</em> that is periodic.
+      The transient part of the solution <m>U_h(t)</m> is found by solving the homogeneous differential equation
+      <me>
+        mU_h^{\prime \prime}(t) +cU_h'(t) + kU_h(t) = 0
+      </me>.
+    </p>
+    <p>
+      This homogeneous equation has the characteristic equation <m>m\lambda^2+c\lambda+k=0</m>,
+      and it's roots are <m>\lambda =\frac{-c\pm \sqrt{c^2-4mk}}{2m}</m>.
+      The coefficients <m>m</m>, <m>c</m>,
+      and <m>k</m> are all positive,
+      and there are three cases to consider.
+    </p>
+    <case>
+      <p>
+        If <m>c^2-4mk>0</m>, the roots are real and distinct,
+        and since <m>\sqrt{c^2-4mk}\lt c</m>,
+        it follows that the roots <m>\lambda_1</m> and
+        <m>\lambda_2</m> are negative real numbers.
+        Thus, for this case, we have
+        <me>
+          \lim_{t \to +\infty}U_h(t) = \lim_{t \to +\infty}(A_1e^{\lambda_1t}+A_2e^{\lambda_2t}) = 0
+        </me>.
+      </p>
+    </case>
+    <case>
+      <p>
+        If <m>c^2-4mk=0</m>,the roots are real and equal,
+        then <m>\lambda_1=\lambda_2=\lambda</m>,
+        where <m>\lambda</m> is a negative real number.
+        Again, for this case we find that
+        <me>
+          \lim_{t \to +\infty}U_h(t) =\lim_{t \to +\infty}(A_1e^{\lambda t}+A_2e^{\lambda t}) = 0
+        </me>.
+      </p>
+    </case>
+    <case>
+      <p>
+        If <m>c^2-4mk\lt 0</m>, the roots are complex,
+        then <m>\lambda =-\alpha \pm \beta i</m> , where <m>\alpha</m> and <m>\beta</m> are positive real numbers,
+        and it follows that
+        <me>
+          \lim_{t \to +\infty}U_h(t) =\lim_{t \to +\infty}(A_1e^{-\alpha t}\cos \beta t+A_2e^{-\alpha t}\sin \beta t) = 0
+        </me>.
+      </p>
+    </case>
+    <p>
+      In all three cases,
+      we see that the homogeneous solution <m>U_h(t)</m> decays to <m>0</m> as <m>t \to +\infty</m>.
+      The steady state solution <m>U_p(t)</m> can be obtained by representing <m>U_p(t)</m> by its Fourier series and substituting <m>U_p^{^{\prime \prime}}(t)</m>,
+      <m>U_p'(t)</m> , and <m>U_p(t)</m> into the nonhomogeneous differential equation and solving the resulting system for the Fourier coefficients of <m>U_p(t)</m>.
+      The general solution to Equation <xref ref="forcedDE"/> is then given by
+      <me>
+        U(t) = U_h(t) + U_p(t)
+      </me>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find the general solution to <m>U^{\prime \prime}(t) + 2U'(t) + U(t) = F(t)</m>,
+          where <m>F(t)</m> is given by the Fourier series <m>F(t)=\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}\cos [(2n-1) t]</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First we solve <m>U_h^{\prime \prime}(t) + 2U_h'(t) + U_h(t) = 0</m> for the transient solution.
+          The characteristic equation is <m>\lambda^2+2\lambda +1=0</m>,
+          which has a double root <m>\lambda =-1</m>.
+          Hence
+          <me>
+            U_h(t) = A_1e^{-t} + A_2te^{-t}
+          </me>.
+        </p>
+        <p>
+          The steady state solution is obtained by assuming that <m>U_p(t)</m> has the Fourier series representation
+          <me>
+            U_p(t) =\frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt+\sum\limits_{n=1}^{\infty}b_n\sin nt
+          </me>,
+          and that <m>U_h'(t)</m> and
+          <m>U_h^{\prime \prime}(t)</m> can be obtained by termwise differentiation:
+          <md>
+            <mrow>2U_p'(t) \amp = 2\sum_{n=1}^{\infty}nb_n\cos nt-2\sum\limits_{n=1}^{\infty}na_n\sin nt,  \text{ and }</mrow>
+            <mrow>U_p^{\prime \prime}(t) \amp = -\sum_{n=1}^{\infty}n^2a_n\cos nt-\sum\limits_{n=1}^{\infty}n^2b_n\sin nt</mrow>
+          </md>.
+        </p>
+        <p>
+          Substituting these expansions into the differential equation results in
+          <md>
+            <mrow>F(t) \amp = \frac{a_0}{2} + \sum_{n=1}^{\infty}\big[(1-n^2) a_n+2nb_n\big] \cos nt</mrow>
+            <mrow>\amp +\sum\limits_{n=1}^{\infty}\big[-2na_n+(1-n^2) b_n\big] \sin nt</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Equating the coefficients with the given series for <m>F(t)</m>,
+      we find that <m>\frac{a_0}{2}=0</m>, and that
+      <md>
+        <mrow>(1-n^2) a_n+2nb_n \amp = \begin{cases} \frac{1}{n^2} \amp  \text{ when }   n  \text{ is odd } ,</mrow>
+        <mrow>0 \amp  \text{ when }  n  \text{ is even, } \end{cases}</mrow>
+        <mrow>-2na_n+(1-n^2) b_n \amp =0  \text{ for all }   n</mrow>
+      </md>.
+    </p>
+    <p>
+      Solving this linear system for <m>a_n</m> and <m>b_n</m>,
+      we find that
+      <md>
+        <mrow>a_n \amp = \begin{cases} \frac{1-n^2}{n^2(1+n^2)^2} \amp  \text{ for }   n  \text{ odd } ,</mrow>
+        <mrow>\;\; 0 \amp  \text{ for }   n  \text{ even } , \end{cases}</mrow>
+        <mrow>b_n \amp = \begin{cases} \frac{2n}{n^2(1+n^2)^2} \amp  \text{ for }   n  \text{ odd } ,</mrow>
+        <mrow>\;\; 0 \amp  \text{ for }   n  \text{ even } . \end{cases}</mrow>
+      </md>
+    </p>
+    <p>
+      The general solution is given by
+      <md>
+        <mrow>U(t) = A_1e^{-t}+A_2te^{-t} \amp + \sum_{n=1}^{\infty}\frac{1-(2n-1)^2}{(2n-1)^2[1+(2n-1)^2]^2}\cos [(2n-1) t]</mrow>
+        <mrow>\amp + \sum\limits_{n=1}^{\infty}\frac{2(2n-1) }{(2n-1)^2[1+(2n-1)^2]^2}\sin [(2n-1) t]</mrow>
+      </md>.
+    </p>
+    <exercises>
+      <title>Exercises for <xref ref="sec_vibrations">Section</xref></title>
+      <p>
+        For the exercises,
+        use the results of <xref ref="sec_fourier-series">Section</xref>.
+      </p>
+      <p>
+        \item In each case,
+        find the general solution to <m>U^{\prime \prime}(t) + 3U'(t) = F(t)</m>.
+        <ol>
+          <li>
+            <p>
+              <m>F(t)=\frac{t}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>F(t) =\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{2n-1}\cos [(2n-1) t]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>F(t) = \begin{cases}\pi -t, \amp \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ t, \amp \text{ for } -\frac{\pi}{2} \lt t \lt \frac{\pi}{2},\\ -\pi -t, \amp \text{ for } -\pi \lt t \lt -\frac{\pi}{2}. \end{cases}</m>
+              (see <xref ref="fig_ch-11-20">Figure</xref>)
+              <em>Hint:</em> <m>F(t) =\frac{4}{\pi}\sum\limits_{j=1}^{\infty}\frac{(-1) ^j}{(2j-1)^2}\sin [(2j-1) t]</m>.
+              <figure xml:id="fig_ch-11-20">
+                <caption>The graph of <m>U(t)</m> for Exercise 1</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-20.pdf"/>
+              </figure>
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        \item Find the general solution to <m>2U^{\prime \prime}(t) + 2U'(t) + U(t) =F (t)</m>, where
+        <ol>
+          <li>
+            <p>
+              <m>F(t)=\frac{t}{2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>F(t) =\sum\limits_{n=1}^{\infty}\frac{1}{2n-1}\sin[(2n-1) t]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>F(t) = \frac{\pi}{8}+\frac{2}{\pi}\sum\limits_{j=1}^{\infty} \frac{1}{(2j-1)^2}\cos [(2j-1) t]</m> <m>+ \frac{4}{\pi}\sum\limits_{j=1}^{\infty}\frac{1}{2^2(2j-1)^2}\cos [2(2j-1) t]</m>,
+              where <m>a_{4n}=0</m> for all <m>n</m>. (See <xref ref="fig_ch-11-21">Figure</xref>)
+              <figure xml:id="fig_ch-11-21">
+                <caption>The graph of <m>F(t)</m> for Exercise 2 part c</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-21.pdf"/>
+              </figure>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercises>
+  </subsection>
+</section>

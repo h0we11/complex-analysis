@@ -1,0 +1,579 @@
+<section xml:id="sec_laplace-inversion">
+  <title>Inverting the Laplace Transform</title>
+  <p>
+    So far, most of the applications involving the Laplace transform involve a transform
+    (or part of a transform)
+    that is expressed by
+    <men xml:id="quotientPQ">
+      Y(s) = \frac{P(s) }{Q(s)}
+    </men>.
+    where <m>P</m> and <m>Q</m> are polynomials that have no common factors.
+    The inverse of <m>Y(s)</m> is found by using its partial fraction representation and referring to Table 10.2.
+    We now show how the theory of complex variables can be used to systematically find the partial fraction representation.
+    The first result is an extension of Lemma 8.1 to <m>n</m> linear factors.
+    The proof is left for the reader.
+  </p>
+  <theorem xml:id="thm_nonrepeated-factors">
+    <title>Nonrepeated Linear Factors</title>
+    <statement>
+      <p>
+        Let <m>P(s)</m> be a polynomial of degree at most <m>n-1</m>.
+        If <m>Q(s)</m> has degree <m>n</m>,
+        and has distinct complex roots <m>a_1,a_2,\ldots,a_n</m>,
+        then Equation <xref ref="quotientPQ"/> has the representation
+        <men xml:id="nonrepfact">
+          Y(s) = \frac{P(s) }{(s-a_1)(s-a_2) \cdots (s-a_n)} = \sum_{k=1}^n\frac{\mathrm{Res}[Y,a_k]}{s-a_k}
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <theorem xml:id="thm_repeated-linear-factor">
+    <title>A Repeated Linear Factor</title>
+    <statement>
+      <p>
+        If <m>P(s)</m> and <m>Q(s)</m> are polynomials of degree <m>\mu</m> and <m>v</m>,
+        respectively, and <m>\mu \lt v + n</m> and <m>Q(a) \neq 0</m>,
+        then Equation <xref ref="quotientPQ"/> has the representation
+        <men xml:id="repeatfact">
+          Y(s) = \frac{P(s)}{(s-a)^nQ(s)} = \sum_{k=1}^n\frac{A_k}{(s-a)^k} +R (s)
+        </men>,
+        where <m>R</m> is the sum of all partial fractions that do not involve factors of the form <m>(s-a)^j</m>.
+        Furthermore,
+        the coefficients <m>A_k</m> can be computed with the formula
+        <men xml:id="coeffPQ">
+          A_k = \frac{1}{(n-k)}\lim_{s \to a}\left[\frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right)\right] \text{ for }   k=1,2,\ldots,n
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We employ the method of residues.
+      First, multiplying both sides of Equation <xref ref="repeatfact"/> by <m>(s-a)^n</m> gives
+      <me>
+        \frac{P(s) }{Q(s) }=\sum\limits_{j=1}^nA_j(s-a)^{n-j}+R(s)(s-a)^n
+      </me>.
+    </p>
+    <p>
+      We can differentiate both sides of this equation <m>n-k</m> times to obtain
+      <me>
+        \frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right) = \sum_{j=1}^kA_j\frac{(n-j)!}{(k-j)!}(s-a)^{k-j} + \frac{d^{n-k}}{ds^{n-k}}[R(s)(s-a)^n]
+      </me>.
+    </p>
+    <p>
+      In this equation, take the limit as <m>s \to a</m>.
+      It is left as an exercise for the reader to fill in the steps to obtain
+      <me>
+        \lim_{s \to a}\frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right) = (n-k)! A_k
+      </me>.
+      which establishes Equation <xref ref="coeffPQ"/>.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Let <m>Y(s) =\frac{s^3-4s+1}{s(s-1) ^3}</m>.
+        Find <m>\mathcal{L}^{-1}(Y(s))</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        From Equations <xref ref="nonrepfact"/> and <xref ref="repeatfact"/> we can write
+        <me>
+          \frac{s^3-4s-1}{s(s-1) ^3} = \frac{A_3}{(s-1)^3} + \frac{A_2}{(s-1)^2}+\frac{A_1}{s-1}+\frac{B_1}{s}
+        </me>.
+      </p>
+      <p>
+        The coefficient <m>B_1</m> is found by the calculation
+        <me>
+          B_1 = \mathrm{Res}[Y,0] = \lim_{s \to 0}\frac{s^3-4s+1}{(s-1)^3} = -1
+        </me>.
+      </p>
+      <p>
+        The coefficients <m>A_1, \, A_2</m>,
+        and <m>A_3</m> are found by using <xref ref="thm_repeated-linear-factor">Theorem</xref>.
+        In this case <m>a=1</m> and <m>\frac{P(s)}{Q(s)} = \frac{s^3-4s+1}{s}</m>,
+        so we get
+        <md>
+          <mrow>A_3 \amp = \lim_{s \to 1}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\frac{s^3-4s+1}{s} = -2.</mrow>
+          <mrow>A_2 \amp = \frac{1}{1!}\lim_{s \to 1}\frac{d}{ds}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}(2s-\frac{1}{s^2}) = 1.</mrow>
+          <mrow>A_1 \amp = \frac{1}{2}\lim_{s \to 1}\frac{d^2}{ds^2}\left(\frac{P(s)}{Q(s)}\right) = \frac{1}{2}\lim_{s \to 1}(2+\frac{2}{s^3}) = 2</mrow>
+        </md>.
+      </p>
+      <p>
+        Hence, the partial fraction representation is
+        <me>
+          Y(s) = \frac{-2}{(s-1)^3}+\frac{1}{(s-1)^2} + \frac{2}{s-1} - \frac{1}{s}
+        </me>,
+        and the inverse is
+        <me>
+          y(t) =-t^2e^{t}+te^{t}+2e^{t}-1
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <theorem xml:id="thm_irreducible-quad-factors">
+    <title>Irreducible Quadratic Factors</title>
+    <statement>
+      <p>
+        Let <m>P</m> and <m>Q</m> be polynomials with real coefficients such that the degree of <m>P</m> is at most <m>1</m> larger than the degree of <m>Q</m>.
+        If <m>T</m> does not have a factor of the form <m>(s-a)^2+b^2</m>, then
+        <me>
+          Y(s) = \frac{P(s)}{Q(s)} = \frac{P(s)}{[(s-a)^2+b^2]T(s} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2} + R(s), \text{ where }
+        </me>
+        <men xml:id="AandB">
+          A+iB=\frac{P(a+ib)}{Q'(a+ib)}
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Since <m>P, \, Q</m>,
+      and <m>Q'</m> have real coefficients, it follows that
+      <me>
+        P(a-ib) = \overline{P(a+ib)}  \text{ and }   Q'(a-ib) = \overline{Q'(a+ib)}
+      </me>.
+    </p>
+    <p>
+      The polynomial <m>Q</m> has simple zeros at <m>s=a\pm ib</m>,
+      this implies that <m>Q'(a\pm ib) \neq 0</m>.
+      Therefore, we obtain
+      <men xml:id="residueY">
+        \mathrm{Res}[Y,a\pm ib] = \lim_{s \to a\pm ib}\left(\frac{s-(a\pm ib)}{Q(s)-Q(a\pm ib)}P(s)\right) = \frac{P(a\pm ib)}{Q'(a\pm ib)}
+      </men>,
+      from which it is easy to see that
+      <men xml:id="residueYconj">
+        \mathrm{Res}[Y,a-ib] = \overline{\mathrm{Res}[Y,a-ib]}
+      </men>.
+    </p>
+    <p>
+      If we set <m>A+iB=</m> <m>\mathrm{Res}[Y,a+ib]</m> and use <xref ref="thm_nonrepeated-factors">Theorem</xref>
+      and <xref ref="AandB">equations</xref>,
+      <xref ref="residueY"></xref>,
+      and <xref ref="residueYconj"></xref>, then we find that
+      <me>
+        Y(s) = \frac{A+iB}{s-a-ib}+\frac{A-iB}{s-a+ib}+R(s)
+      </me>.
+    </p>
+    <p>
+      The first two terms on the right side of this equation are now combined to obtain
+      <me>
+        \frac{(A+iB)(s-a+ib)+(A-iB)(s-a-ib)}{(s-a)^2+b^2} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2}
+      </me>,
+      which completes the proof of the theorem.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Let <m>Y(s) = \frac{5s}{(s^2+4) (s^2+9)}</m>.
+        Find <m>\mathcal{L}^{-1}(Y(s))</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Here we have <m>P(s)=5s</m> and <m>Q(s)=s^4+13s^2+36</m>,
+        and the roots of <m>Q(s)</m> occur at <m>0 \pm 2i</m> and <m>0 \pm 3i</m>.
+        Computing the residues gives
+        <md>
+          <mrow>\mathrm{Res}[Y,2i] \amp = \frac{P(2i) }{Q'(2i) } = \frac{5(2i) }{4(2i) ^3-26(2i)} = \frac{1}{2},  \text{ and }</mrow>
+          <mrow>\mathrm{Res}[Y,3i] \amp = \frac{P(3i) }{Q'(3i)} = \frac{5(3i) }{4(3i) ^3-26(3i)} = -\frac{1}{2}</mrow>
+        </md>.
+      </p>
+      <p>
+        We find that <m>A_1+iB_1=\frac{1}{2}+0i</m> and <m>A_2+iB_2=-\frac{1}{2}+0i</m>,
+        which correspond to <m>a_1+ib_1=0+2i</m> and <m>a_2+ib_2=0+3i</m>,
+        respectively.
+        Thus we obtain
+        <me>
+          Y(s) = \frac{2(\frac{1}{2})(s-0) - (2)(0)(2)}{s^2+4} + \frac{2(-\frac{1}{2})(s-0)-(2)(0)(3)}{s^2+9}=\frac{s}{s^2+4}-\frac{s}{s^2+9}
+        </me>,
+        and the desired solution is
+        <me>
+          \mathcal{L}^{-1}\big(Y(s)\big) = \mathcal{L}^{-1}\left(\frac{s}{s^2+4}\right) - \mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right) = \cos 2t-\cos 3t
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Find <m>\mathcal{L}^{-1}\big(Y(s)\big)</m> if <m>Y(s) = \frac{s^3+3s^2-s+1}{s(s+1)^2(s^2+1)}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The partial fraction expression for <m>Y(s)</m> has the form
+        <me>
+          Y(s) = \frac{D}{s}+\frac{C_1}{s+1}+\frac{C_2}{(s+1)^2} + \frac{2A(s-0) - 2B(1)}{(s-0)^2+1^2}
+        </me>.
+      </p>
+      <p>
+        Since the linear factor <m>s</m> is nonrepeated, we have
+        <me>
+          D = \mathrm{Res}[Y(s),0] = \lim_{s \to 0} \frac{s^3+3s^2-s+1}{(s+1)^2(s^2+1)} = 1
+        </me>.
+      </p>
+      <p>
+        Since the factor <m>s+1</m> is repeated, we have
+        <md>
+          <mrow>C_1 \amp = \mathrm{Res}[Y(s),-1]</mrow>
+          <mrow>\amp = \lim_{s\to -1}\frac{d}{ds}\left(\frac{s^3+3s^2-s+1}{s(s^2+1)}\right)</mrow>
+          <mrow>\amp = \lim_{s \to -1}\frac{-3s^4+4s^3-1}{s^2(s+1)^2}</mrow>
+          <mrow>\amp = -2;</mrow>
+          <mrow>C_2 \amp =\mathrm{Res}[(s+1) Y(s) ,-1]</mrow>
+          <mrow>\amp =\lim\limits_{s \to -1}\frac{s^3+3s^2-s+1}{s(s^2+1)}</mrow>
+          <mrow>\amp =-2</mrow>
+        </md>.
+      </p>
+      <p>
+        The term <m>s^2+1</m> is an irreducible quadratic,
+        with roots <m>\pm i</m>, so that
+        <me>
+          A+iB = \mathrm{Res}[Y,i] =\lim\limits_{s \to i}\frac{s^3+3s^2-s+1}{s(s+1)^2(s+i)} = \frac{1-i}{2}
+        </me>,
+        and we obtain <m>A=\frac{1}{2}</m> and <m>B=-\frac{1}{2}</m>.
+        Therefore,
+        <md>
+          <mrow>Y(s) \amp = \frac{1}{s}+\frac{-2}{s+1}+\frac{-2}{(s+1)^2} + \frac{2\frac{1}{2}(s-0)-2(-\frac{1}{2})(1)}{(s-0)^2+1^2}</mrow>
+          <mrow>\amp = \frac{1}{s} - \frac{2}{s+1} - \frac{2}{(s+1)^2} + \frac{s+1}{s^2+1}</mrow>
+        </md>.
+      </p>
+      <p>
+        Now we use Table 10.2 to get
+        <me>
+          y(t) = 1-2e^{-t}-2te^{-t} + \cos t + \sin t
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Use Laplace transforms to solve the system
+        <md>
+          <mrow>y\,'(t) \amp = y(t) - x(t),  \text{ with }   y(0) = 1.</mrow>
+          <mrow>x'(t) \amp = 5y(t) -3x(t)  \text{ with }    x(0) =2</mrow>
+        </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>Y(s)</m> and <m>X(s)</m> denote the Laplace transforms of <m>y(t)</m> and <m>x(t)</m>,
+        respectively.
+        If we take the transforms of the two differential equations and get
+        <md>
+          <mrow>sY(s) -1 \amp = Y(s) -X(s),</mrow>
+          <mrow>sX(s) -2 \amp = 5Y(s) -3X(s)</mrow>
+        </md>,
+        which can be written as
+        <md>
+          <mrow>(s-1) Y(s) +X(s) \amp = 1.</mrow>
+          <mrow>5Y(s) -(s+3) X(s) \amp = -2</mrow>
+        </md>.
+      </p>
+      <p>
+        Cramer's rule can be used to solve for <m>Y(s)</m> and <m>X(s)</m>:
+        <md>
+          <mrow>Y(s) \amp = \frac{ \begin{vmatrix} 1 \amp  1</mrow>
+          <mrow>-2 \amp  -s-3 \end{vmatrix} } { \begin{vmatrix} s-1 \amp  1</mrow>
+          <mrow>5 \amp  -s-3 \end{vmatrix} } = \frac{-s-3+2}{(s-1) (-s-3) -5} = \frac{s+1}{(s+1)^2+1}</mrow>
+          <mrow>X(s) \amp = \frac{ \begin{vmatrix} s-1 \amp  1</mrow>
+          <mrow>5 \amp  -2 \end{vmatrix} } { \begin{vmatrix} s-1 \amp  1</mrow>
+          <mrow>5 \amp  -s-3 \end{vmatrix} } = \frac{-2s+2-5}{(s-1)(-s-3)-5} = \frac{2(s+1) +1}{(s+1)^2+1}</mrow>
+        </md>.
+      </p>
+      <p>
+        The desired solution is obtained by computing the inverse transforms:
+        <md>
+          <mrow>y(t) \amp = e^{-t}\cos t,</mrow>
+          <mrow>x(t) \amp = e^{-t}(2\cos t+\sin t) </mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    According to <xref ref="LaplaceInverse">equation</xref>
+    of <xref ref="sec_laplace-transform">Section</xref>,
+    the inverse Laplace transform is given by the integral formula
+    <me>
+      f(t) = \mathcal{L}^{-1}\big(F(s)\big) = \frac{1}{2\pi i}\int_{\sigma_0-i\infty}^{\sigma_0+i\infty}F(s)e^{st}\,ds
+    </me>,
+    where <m>\sigma_0</m> is any suitably chosen large positive constant.
+    This improper integral is a contour integral taken along the vertical line
+    <m>s=\sigma_0+i\tau</m> in the complex <m>s=\sigma +i\tau</m> plane.
+    We shall show how the residue theory in <xref ref="ch_residue"/> is used to evaluate it.
+    Cases where the integrand has either infinitely many poles or has branch points is left for the reader to research in advanced texts.
+    We state the following more elementary result.
+  </p>
+  <theorem xml:id="thm_inverse-laplace">
+    <title>Inverse Laplace Transform</title>
+    <statement>
+      <p>
+        Let <m>F(s) =\frac{P(s)}{Q(s)}</m>,
+        where <m>P(s)</m> and <m>Q(s)</m> are polynomials of degree <m>m</m> and <m>n</m>,
+        respectively, and <m>n>m</m>.
+        The inverse Laplace transformation <m>F(s)</m>,
+        denoted by <m>f(t)</m>, is given by
+        <men xml:id="invlapform">
+          f(t) = \mathcal{L}^{-1}\big(F(s)\big) = \sum \mathrm{Res}[F(s)e^{st},s_k]
+        </men>,
+        where the sum is taken over all of the residues of the complex function
+        <m>F(s) e^{st}</m> at its poles <m>s_k</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Let <m>\sigma_0</m> be chosen so that all the poles of
+      <m>F(s) e^{st}</m> lie to the left of the vertical line <m>s=\sigma_0+i\tau</m>.
+      Let <m>\Gamma_{R}</m> denote the contour consisting of the vertical line segment between the points
+      <m>\sigma_0\pm iR</m> and the left semicircle <m>C_{R}:s=\sigma_0+\mathrm{Re}^{i\theta }</m>,
+      where <m>\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}</m>,
+      as shown in <xref ref="fig_ch-11-27">Figure</xref>.
+      A slight modification of the proof of Jordan's lemma shows that
+      <me>
+        \lim_{R \to +\infty}\int_{C_{R}}\frac{P(s) }{Q(s)}e^{st}\,ds = 0
+      </me>.
+    </p>
+    <p>
+      The residue theorem and above limit imply that
+      <me>
+        \mathcal{L}^{-1}\big(F(s)\big) = \lim_{R \to +\infty}\frac{1}{2\pi i}\int_{\Gamma_{R}}\frac{P(s)}{Q(s)} e^{st}\,ds = \sum \mathrm{Res}[F(s)e^{st}, s_k]
+      </me>.
+    </p>
+  </proof>
+  <figure xml:id="fig_ch-11-27">
+    <caption>The contour <m>\Gamma_R</m>.</caption>
+    <image width="73%" source="figs/ch-11/ch-11-fig-27.pdf"/>
+  </figure>
+  <theorem>
+    <title>Heaviside Expansion Theorem</title>
+    <statement>
+      <p>
+        Let <m>P(s)</m> and <m>Q(s)</m> be polynomials of degree <m>m</m> and <m>n</m>,
+        respectively, where <m>n>m</m>.
+        If <m>Q(s)</m> has <m>n</m> distinct simple zeros at the points <m>s_1,s_2,\ldots,s_n</m>,
+        then <m>\frac{P(s)}{Q(s)}</m> is the Laplace transform of the function <m>f(t)</m> given by
+        <men xml:id="expansionform">
+          f(t) = \mathcal{L}^{-1}\left(\frac{P(s)}{Q(s)}\right) = \sum_{k=1}^n\frac{P(s_k) }{Q'(s_k)}e^{s_kt}
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      If <m>P(s)</m> and <m>Q(s)</m> are polynomials and <m>s_k</m> is a simple zero of <m>Q(s)</m>, then
+      <me>
+        \mathrm{Res}[F(s) e^{st},s_k] = \lim_{s \to s_k}\frac{s-s_k}{Q(s) - Q(s_k)}P(s)e^{st} = \frac{P(s_k) }{Q'(s_k)}e^{s_kt}
+      </me>.
+    </p>
+    <p>
+      This outcome allows us to write the residues in <xref ref="invlapform"></xref>
+      in the more convenient form given in <xref ref="expansionform"></xref>.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Find the inverse Laplace transform of the function
+        <me>
+          F(s) = \frac{4s+3}{s^3+2s^2+s+2}
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Here we have <m>P(s)=4s+3</m> and <m>Q(s)=(s+2)(s^2+1)</m>,
+        so that <m>Q</m> has simple zeros located at the points <m>s_1=-2, \, s_2=i</m>,
+        and <m>s_3=-i</m>.
+        Using <m>Q'(s) = 3s^2+4s+1</m>,
+        calculation reveals that <m>\frac{P(-2) }{Q'(-2) }=\frac{-8+3}{12-8+1}=-1</m> and <m>\frac{P(\pm i)}{Q'(\pm i)} = \frac{\pm 4i+3}{-2\pm 4i}=\frac{1}{2}\mp i</m>.
+        Applying <xref ref="expansionform">formula</xref>,
+        we see that <m>f(t)</m> is given by
+        <md>
+          <mrow>f(t) \amp = \frac{P(-2)}{Q'(-2)}e^{-2t} + \frac{P(i)}{Q'(i)}e^{it} + \frac{P(-i)}{Q'(-i)}e^{-it}</mrow>
+          <mrow>\amp = -e^{-2t}+(\frac{1}{2}-i) e^{it}+(\frac{1}{2}+i)e^{-it}</mrow>
+          <mrow>\amp = -e^{-2t}+\frac{e^{it}+e^{-it}}{2}+2\frac{e^{it}-e^{-it}}{2i}</mrow>
+          <mrow>\amp = -e^{-2t}+\cos t+2\sin t</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_laplace-inversion">Section</xref></title>
+    <exercise>
+      <p>
+        Use partial fractions to find the inverse Laplace transform of
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>Y(s) = \frac{2s+1}{s(s-1) }</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Y(s) = \frac{2s^3-s^2+4s-6}{s^4}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Y(s) = \frac{4s^2-6s-12}{s(s+2)(s-2)}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Y(s) = \frac{s^3-5s^2+6s-6}{(s-2)^4}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Y(s) = \frac{2s^2+s+3}{(s+2)(s-1)^2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Y(s) = \frac{4-s}{s^2+4s+5}</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise>
+      <p>
+        Use a contour integral to find the inverse Laplace transform of
+        <ol>
+          <li>
+            <p>
+              <m>Y(s) = \frac{1}{s^2+4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>Y(s) = \frac{s+3}{(s-2)(s^2+1)}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the heaviside expansion theorem to find the inverse Laplace transform of
+        <ol>
+          <li>
+            <p>
+              <m>Y(s) =\frac{s^3+s^2-s+3}{s^{5}-s}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>Y(s) =\frac{s^3+2s^2-s+2}{s^{5}-s}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>Y(s) =\frac{s^3+3s^2-s+1}{s^{5}-s}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>Y(s) =\frac{s^3+s^2+s+3}{s^{5}-s}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Find the inverse Laplace transform of <m>Y(s) = \frac{s^3+2s^2+4s+2}{(s^2+1)(s^2+4)}</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Solve the following initial value problems.
+        <ol>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) +y(t) =3\sin 2t</m>,
+              with <m>y(0) =0</m>, and <m>y'(0) = 3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) + 2y\,'(t) + 5y(t) = 4e^{-t}</m>,
+              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) + 2y\,'(t) + 2y(t) = 2</m>,
+              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) +4y(t) = 5e^{-t}</m>,
+              with <m>y(0) =2</m> and <m>y'(0) = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) + 2y\,'(t) +y(t) = t</m>,
+              with <m>y(0) = -1</m> and <m>y'(0) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y^{\prime \prime}(t) + 3y\,'(t) + 2y(t) = 2t + 5</m>,
+              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Solve the following systems of differential equations.
+        <ol>
+          <li>
+            <p>
+              <m>x'(t) = 10y(t) - 5x(t), \, y\,'(t) = y(t) - x(t)</m>,
+              with <m>x(0) = 3</m> and <m>y(0) = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x'(t) = 2y(t) - 3x(t), \, y\,'(t) = 2y(t) - 2x(t)</m>,
+              with <m>x(0) = 1</m> and <m>y(0) = -1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x'(t) = 2x(t) +3y(t), \, y\,'(t) = 2x(t) + y(t)</m>,
+              with <m>x(0) = 2</m> and <m>y(0) = 3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x'(t) = 4y(t) - 3x(t), \, y\,'(t) = y(t) -x(t)</m>,
+              with <m>x(0) = -1</m> and <m>y(0) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x'(t) = 4y(t) - 3x(t) + 5, \, y\,'(t) =y (t) - x(t) + 1</m>,
+              with <m>x(0) =0</m> and <m>y(0) = 2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x'(t) = 8y(t) - 3x(t) + 2, \, y\,'(t) = y(t) - x(t) - 1</m>,
+              with <m>x(0) = 4</m> and <m>y(0) = 2</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+  </exercises>
+</section>

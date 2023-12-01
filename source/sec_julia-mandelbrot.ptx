@@ -1,0 +1,735 @@
+<section xml:id="sec_julia-mandelbrot">
+  <title>Julia and Mandelbrot Sets</title>
+  <p>
+    An impetus for studying complex analysis is the comparison of properties of real numbers and functions with their complex counterparts.
+    In this section we take a look at Newton's method for finding solutions to the equation <m>f(z)=0</m>.
+    Then, by examining the more general topic of iteration,
+    we will plunge into a breathtaking world of color and imagination.
+    The mathematics surrounding this topic has generated a great deal of popular attention in the past few years.
+  </p>
+  <p>
+    Recall from calculus that Newton's method proceeds by starting with a function <m>f(x)</m> and an initial
+    <q>guess</q>
+    of <m>x_0</m> as a solution to <m>f(x)=0</m>.
+    We then generate a new guess <m>x_1</m> by the computation <m>x_1=x_0-\frac{f(x_0)}{f\,'(x_0)}</m>.
+    Using <m>x_1</m> in place of <m>x_0</m>, this process is repeated,
+    giving <m>x_2=x_1-\frac{{f\,(x_1)}}{{f\,'(x_1)}}</m>.
+    We thus obtain a sequence of points <m>\{x_k\}</m>,
+    where <m>x_{k+1}=x_k-\frac{{f(x_k)}}{{\ f\,'(x_k)}}</m>.
+    The points <m>\{x_k\}_{k=0}^{\infty}</m> are called the
+    <term>iterates</term> of <m>x_0</m>.
+    For functions defined on the real numbers,
+    this method gives remarkably good results,
+    and the sequence <m>\{x_k\}</m> often converges to a solution of <m>f(x) =0</m> rather quickly.
+    In the late 1800s, the British mathematician Arthur Cayley investigated the question of whether Newton's method can be applied to complex functions.
+    He wrote a paper giving an analysis for how this method works for quadratic polynomials and indicated his intention to publish a subsequent paper for cubic polynomials.
+    Unfortunately, Cayley died before producing this paper.
+    As you will see,
+    the extension of Newton's method to the complex domain and the more general question of iteration are quite complicated.
+  </p>
+  <example xml:id="Newton_s_Method_Ex">
+    <statement>
+      <p>
+        Trace the next five iterates of Newton's method for an initial guess of
+        <m>z_0=\frac{1}{4}+\frac{1}{4}i</m> as a solution to the equation <m>f(z) =0</m>,
+        where <m>f(z) =z^2+1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        For any guess <m>z</m> for a solution, Newton's method gives as the next guess the number <m>z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}</m>.
+        Table 4.1 gives the riterates,
+        rounded to five decimal places.
+      </p>
+      <p>
+        <xref ref="fig_ch-04-02">Figure</xref>
+        shows the relative positions of these points on the <m>z</m> plane.
+        Note that the points <m>z_4</m> and <m>z_5</m> are so close together that they appear to coincide,
+        and that the value for <m>z_5</m> agrees to five decimal places with the actual solution <m>z=i</m>.
+      </p>
+    </solution>
+  </example>
+  <table>
+    <title>The iterates of { {<m>z_0=\frac{1}{4}+\frac{1}{4}i</m>}}
+    for Newton's method applied to { {<m>f(z) =z^2+1</m>}}</title>
+    <md>
+      <mrow>\amp \amp
+      <tabular>
+        <row>
+          <cell>\(k\)</cell>
+          <cell>\(z_k\)</cell>
+          <cell>\(f(z_k)\)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{0}\)</cell>
+          <cell>\(\hspace{7.5pt}0.25000+0.25000i\)</cell>
+          <cell>\(1.00000+0.12500i\)</cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{1}\)</cell>
+          <cell>\(-0.87500+1.12500i\)</cell>
+          <cell>\(0.50000-1.96875i\)</cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{2}\)</cell>
+          <cell>\(-0.22212+0.83942i\)</cell>
+          <cell>\(0.34470-0.37290i\)</cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{3}\)</cell>
+          <cell>\(\hspace{7.5pt}0.03624+0.97638i\)</cell>
+          <cell>\(0.04799+0.07077i\)</cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{4}\)</cell>
+          <cell>\(-0.00086+0.99958i\)</cell>
+          <cell>\(0.00084-0.00172i\)</cell>
+        </row>
+        <row>
+          <cell>\(\mathbf{5}\)</cell>
+          <cell>\(\hspace{7.5pt}0.00000+1.00000i\)</cell>
+          <cell>\(0.00000+0.00000i\)</cell>
+        </row>
+      </tabular></mrow>
+    </md>
+  </table>
+  <figure xml:id="fig_ch-04-02">
+    <caption>The iterates of { {<m>z_0=\frac{1}{4}+\frac{1}{4}i</m>}} for Newton's method applied to <m>f(z) =z^2+1</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-fig-02.pdf"/>
+  </figure>
+  <p>
+    The complex version of Newton's method also appears to work quite well.
+    Recall, however, that with functions defined on the reals,
+    not every initial guess produces a sequence that converges to a solution.
+    Example 4.8 shows that the same is true in the complex case.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that Newton's method fails for the function
+        <m>f(z)=z^2+1</m> if the initial guess is a real number.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        From <xref ref="Newton_s_Method_Ex">Example</xref> we know that,
+        for any guess <m>z</m> as a solution of <m>z^2+1=0</m>,
+        the next guess at a solution is <m>N(z) =z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}</m>.
+        We let <m>z_0</m> be any real number and <m>\{z_k\}</m> be the sequence of iterations produced by the initial seed <m>z_0</m>.
+        If for any <m>k</m>, <m>z_k=0</m>,
+        the procedure terminates, as <m>z_{k+1}</m> will be undefined.
+        If all the terms of the sequence <m>\{z_k\}</m> are defined,
+        an easy induction argument shows that all the terms of the sequence are real.
+        Because the solutions of <m>z^2+1=0</m> are <m>\pm i</m>,
+        the sequence <m>\{z_k\}</m> cannot possibly converge to either solution.
+        In the exercises we ask you to explore in detail what happens when <m>z_0</m> is in the upper or lower half-plane.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The case for cubic polynomials is more complicated than that for quadratics.
+    Fortunately,
+    we can get an idea of what's going on by doing some experimentation with computer graphics.
+    We begin with the cubic polynomial <m>f(z) =z^3+1</m>.
+    (Recall that the roots of this polynomial are at <m>-1, \, \frac{1}{2}+\frac{\sqrt{3}}{2}i</m>,
+    and <m>\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.)
+    We associate a color with each root
+    (blue, red, and green, respectively).
+    We form a rectangular region <m>R</m>,
+    which contains the three roots of <m>f(z)</m>,
+    and partition this region into equal rectangles <m>R_{ij}</m>.
+    We then choose a point <m>z_{ij}</m> at the center of each rectangle and for each of these points we apply the following algorithm.
+    <ol>
+      <li>
+        <p>
+          With <m>N(z) =z-\frac{f(z)} {f\,'(z)}</m>, compute <m>N(z_{ij})</m>.
+          Continue computing successive iterates of this initial point until we either are within a certain preassigned tolerance (say,
+          <m>\varepsilon</m>) of one of the roots of <m>f(z)=0</m>,
+          or until the number of iterations has exceeded a preassigned maximum.
+        </p>
+      </li>
+      <li>
+        <p>
+          If Step 1 leaves us within
+          <m>\varepsilon</m> of one of the roots of <m>f(z)</m>,
+          we color the entire rectangle <m>R_{ij}</m> with the color associated with that root.
+          Otherwise, we assume that the initial point <m>z_{ij}</m> does not converge to any root,
+          and we color the entire rectangle yellow.
+        </p>
+      </li>
+    </ol>
+  </p>
+  <p>
+    Note that this algorithm doesn't prove anything.
+    In Step 2, there is no a priori reason to justify the assumption mentioned,
+    nor is there any necessity for an initial point <m>z_{ij}</m> to have its sequence of iterates converging to one of the roots of <m>f(z) =0</m> just because a particular iteration is within <m>\varepsilon</m> of that root.
+    Finally, the fact that one point in a rectangle behaves in a certain way does not imply that all the points in that rectangle behave in a like manner.
+    Nevertheless,
+    we can use this algorithm as a basis for mathematical explorations.
+    Indeed, computer experiments such as the one described have contributed to a lot of exciting mathematics during the past 30 years.
+    <xref ref="fig_ch-04-cp-1">Figure</xref>
+    shows the results for the cubic polynomial <m>f(z)=z^3+1</m>.
+  </p>
+  <p>
+    The points in the blue, red, and green regions are those
+    <q>initial guesses</q>
+    that will converge to the roots <m>-1</m>,
+    <m>\frac{1}{2} +\frac{\sqrt{3}}{2}i</m>,
+    and <m>\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>, respectively.
+    (The roots themselves are located in the middle of the three largest colored regions.)
+    The complexity of this picture becomes apparent when you observe that,
+    wherever two colors appear to meet,
+    the third color emerges between them.
+    But then, a closer inspection of the area where this third color meets one of the other colors reveals again a different color between them.
+    This process continues with an infinite complexity.
+  </p>
+  <p>
+    There appear to be no yellow regions with any area in color plate 1, indicating that at least most initial guesses <m>z_0</m> at a solution to <m>z^3+1=0</m> will produce a sequence <m>\{z_k\}</m> that converges to one of the three roots.
+    <xref ref="fig_ch-04-cp-2">Figure</xref>
+    demonstrates that this outcome does not always occur.
+    It shows the results of applying the preceding algorithm to the polynomial <m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m>.
+  </p>
+  <figure xml:id="fig_ch-04-cp-1">
+    <caption><m>f(z)=z^3+1</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-1.pdf"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-2">
+    <caption><m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-2.pdf"/>
+    \caption{Newton's method applied to two different cubics}
+  </figure>
+  <p>
+    The yellow area shown is often referred to as the <em>rabbit</em>.
+    It consists of a main body and two ears,
+    and is an example of a <em>fractal image</em>.
+    Mathematicians use the term <term>fractal</term>
+    to indicate an object that is self-similar and infinitely replicating.
+    <xref ref="fig_ch-04-cp-3">Figure</xref>
+    illustrates this phenomenon by zooming in on a portion of <xref ref="fig_ch-04-cp-2">Figure</xref>.
+    You can see that each of the ears consists of a main body and two ears,
+    and so on.
+  </p>
+  <figure xml:id="fig_ch-04-cp-3">
+    <caption>A zoom of the rabbit</caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-3.pdf"/>
+  </figure>
+  <p>
+    In 1918, the French mathematicians Gaston Julia and Pierre Fatou noticed this fractal phenomenon when exploring iterations of functions not necessarily connected with Newton's method.
+    Beginning with a function <m>f(z)</m> and a point <m>z_0</m>,
+    they computed the iterates
+    <me>
+      z_1=f(z_0), \, z_2=f(z_1), \, \ldots, \, z_{k+1}=f(z_k), \ldots
+    </me>
+    and investigated properties of the sequence <m>\{z_k\}</m>.
+    Their findings did not receive a great deal of attention,
+    largely because computer graphics were not available at that time.
+    With the recent proliferation of computers,
+    it is not surprising that these investigations were revived in the 1980s.
+    Detailed studies of Newton's method and the more general topic of iteration were undertaken by a host of mathematicians including Curry, Devaney, Douady, Garnett, Hubbard, Mandelbrot, Milnor,
+    and Sullivan.
+    We now turn our attention to some of their results by focusing on the iterations produced by quadratics of the form <m>f_{c}(z) =z^2+c</m>.
+    You will be surprised at the startling pictures that graphical iterates of such a simple function produce.
+  </p>
+  <example>
+    <statement>
+      <p>
+        For <m>f_{c}(z) =z^2+c</m>,
+        analyze all possible iterations when <m>c=0</m>, that is,
+        for the function <m>f_0</m> defined by <m>f_0(z) =z^2+0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We leave as an exercise the claim that,
+        if <m>|z_0|\lt 1</m>, the sequence will converge to 0;
+        if <m>|z_0|>1</m>, the sequence will be unbounded;
+        and if <m>|z_0|=1</m>,
+        the sequence will either oscillate around the unit circle or converge to 1.
+      </p>
+    </solution>
+  </example>
+  <p>
+    For the function <m>f_{c}</m>,
+    defined by <m>f_{c}(z) =z^2+c</m>,
+    and an initial seed <m>z_0</m>,
+    the set of iterates given by
+    <m>z_1=f_{c}( z_0)</m>, <m>z_2=f_{c}(z_1)</m>,
+    <ellipsis/> is also called the <term>orbit</term>
+    of <m>z_0</m> generated by <m>f_{c}</m>.
+    We let <m>K_{c}</m> denote the set of points with a bounded orbit for <m>f_{c}</m>.
+    Example 4.9 shows that <m>K_0</m> is the closed unit disk <m>\overline{D}_1(0)</m>.
+    The boundary of <m>K_{c}</m> is known as the <em>Julia set</em>
+    for the function <m>f_{c}</m>.
+    Thus the Julia set for <m>f_0</m> is the unit circle <m>C_1(0)</m>.
+    It turns out that <m>K_{c}</m> is a nice simple set only when <m>c=0</m> or <m>c=-2</m>;
+    otherwise, <m>K_{c}</m> is fractal.
+    <xref ref="fig_ch-04-cp-4">Figure</xref> shows <m>K_{-1.25}</m>.
+    The variation in colors indicate the length of time it takes for points to become
+    <q>sufficiently unbounded</q>
+    according to the following algorithm,
+    which uses the same notation as our algorithm for iterations via Newton's method.
+    It has reminded some of St.<nbsp/>Mark's square in Venice when flooding occurs.
+    <ol>
+      <li>
+        <p>
+          Compute <m>f_{c}(z_{ij})</m>.
+          Continue computing successive iterates of this initial point until the absolute value of one of the iterations exceeds a certain bound (say,
+          <m>L</m>),
+          or until the number of iterations has exceeded a preassigned maximum.
+        </p>
+      </li>
+      <li>
+        <p>
+          If Step 1 leaves us with an iteration whose absolute value exceeds <m>L</m> , we color the entire rectangle <m>R_{ij}</m> with a color indicating the number of iterations needed before this value was attained
+          (the more iterations required, the darker the color).
+          Otherwise, we assume that the orbit of the initial point <m>z_{ij}</m> do not diverge to infinity,
+          and we color the entire rectangle black.
+        </p>
+      </li>
+    </ol>
+  </p>
+  <p>
+    Note, again, that this algorithm doesn't prove anything.
+    It merely guides the direction of our efforts to do rigorous mathematics.
+  </p>
+  <p>
+    <xref ref="fig_ch-04-cp-5">Figure</xref>
+    shows the Julia set for the function <m>f_{c}</m>,
+    where <m>c=-0.11-0.67i</m>.
+    The boundary of this set is different from the boundaries of the other sets we have seen,
+    in that it is disconnected.
+    Julia and Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_{c}</m> is connected or disconnected.
+    We state their result, but omit the proof,
+    as it is beyond the scope of this text.
+  </p>
+  <figure xml:id="fig_ch-04-cp-4">
+    <caption><m>f_{-1.25}(z)</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-4.pdf"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-5">
+    <caption><m>f_{-0.11-0.67i}(z)</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-5.pdf"/>
+    \caption{Results of iterating <m>f_c(z)</m> for two different values of <m>c</m>}
+  </figure>
+  <theorem xml:id="Kc_Connected">
+    <statement>
+      <p>
+        The boundary of <m>K_{c}</m> is connected if and only if <m>0\in K_{c}</m>.
+        In other words,
+        the Julia set for <m>f_{c}</m> is connected if and only if the orbit of 0 is bounded.
+      </p>
+    </statement>
+  </theorem>
+  <example xml:id="Julia_Connected_Ex">
+    <statement>
+      <p>
+        Show that the Julia set for <m>f_{i}</m> is connected.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We apply <xref ref="Kc_Connected">Theorem</xref>
+        and compute the orbit of 0 for <m>f_{i}(z)=z^2+i</m>.
+        We have <m>f_{i}(0) =i</m>, <m>f_{i}(i) =-1+i</m>,
+        <m>f_{i}(-1+i) =-i</m>, and <m>f_{i}( -i) =-1+i</m>.
+        Thus the orbit of 0 are the sequence <m>\{ 0,-1+i,-i,-1+i,-i,-1+i,-i,\ldots \}</m>,
+        which is clearly a bounded sequence.
+        Thus, by <xref ref="Kc_Connected">Theorem</xref>,
+        the Julia set for <m>f_{i}</m> is connected.
+      </p>
+    </solution>
+  </example>
+  <p>
+    In 1980, the Polish-born mathematician Benoit Mandelbrot used computer graphics to study the set
+    <md>
+      <mrow>M \amp = \{c:\text{ the Julia set for }  f_{c} \text{ is connected } \}</mrow>
+      <mrow>\amp = \{c:\text{ the orbit of } 0 \text{ determined by }  f_{c} \text{ is bounded } \}</mrow>
+    </md>.
+  </p>
+  <p>
+    The set <m>M</m> is known as the
+    <em>Mandelbrot set</em>.
+    <xref ref="fig_ch-04-cp-6">Figure</xref> shows its intricate nature.
+  </p>
+  <figure xml:id="fig_ch-04-cp-6">
+    <caption>The Mandelbrot set</caption>
+    <image width="65%" source="figs/ch-04/ch-04-cp-6.pdf"/>
+  </figure>
+  <p>
+    Technically,
+    the Mandelbrot set is not fractal because it is not self-similar
+    (although it may look that way).
+    However, it is infinitely complex.
+    <xref ref="fig_ch-04-cp-7">Figure</xref>
+    shows a zoom over the upper portion of the set shown in <xref ref="fig_ch-04-cp-6">Figure</xref>.
+    Likewise, <xref ref="fig_ch-04-cp-8">Figure</xref>
+    zooms in on the upper portion of <xref ref="fig_ch-04-cp-7">Figure</xref>.
+    In color plate 8 you can see the emergence of another structure very similar to the Mandelbrot set that we began with.
+    Although it isn't an exact replica,
+    if you zoomed in on this set at almost any spot,
+    you would eventually see yet another
+    <q>Mandelbrot clone</q>
+    and so on ad infinitum!
+    In the remainder of thissection we look at some of the properties of this amazing set.
+  </p>
+  <figure xml:id="fig_ch-04-cp-7">
+    <caption>A zoom of <xref ref="fig_ch-04-cp-6">Figure</xref></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-7.pdf"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-8">
+    <caption>A zoom of <xref ref="fig_ch-04-cp-7">Figure</xref></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-8.pdf"/>
+    \caption{Zooming in on the Mandelbrot set}
+  </figure>
+  <example xml:id="Disk__25_in_M">
+    <statement>
+      <p>
+        Show that <m>\{c:|c| \le \frac{1}{4}\} \subseteq M</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>\{a_n\} _{n=0}^{\infty}</m> be the orbit of 0 generated by <m>f_{c}(z) =z^2+c</m>,
+        where <m>|c|\le \frac{1}{4}</m>.
+        Then
+        <md>
+          <mrow>a_0 \amp = 0,</mrow>
+          <mrow>a_1 \amp = f_{c}(a_0) =a_0^2+c=c,</mrow>
+          <mrow>a_2 \amp = f_{c}(a_1) =a_1^2+c, \text{ and in general, }</mrow>
+          <mrow>a_{n+1} \amp = f_{c}(a_n) =a_n^2+c</mrow>
+        </md>.
+      </p>
+      <p>
+        We show that <m>\{a_n\}</m> is bounded, and, in particular,
+        we show that <m>|a_n|\le \frac{1}{2}</m> for all <m>n</m> by mathematical induction.
+        Clearly <m>|a_n|\le \frac{1}{2}</m> if <m>n=0</m> or 1.
+        We assume that <m>|a_n|\le \frac{1}{2}</m> for some value of <m>n\ge 1</m>
+        (our goal is to show <m>| a_{n+1}|\le \frac{1}{2}</m>).
+        Now,
+        <md>
+          <mrow>|a_{n+1}|  \amp = |a_n^2+c|</mrow>
+          <mrow>\amp \le |a_n^2|+|c|  (\text{ by the triangle inequality } )</mrow>
+          <mrow>\amp \le \frac{1}{4}+\frac{1}{4}=\frac{1}{2}  \text{ ( by our induction assumption and the fact that } |c| \le \frac{1}{4}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    In the exercises, we ask you to show that,
+    if <m>|c|>2</m>, then <m>c\notin M</m>.
+    Thus the Mandelbrot set depicted in color plate 6 contains the disk
+    <m>\overline{D}_{\frac{1}{4}}(0)</m> and is contained in the disk <m>\overline{D}_2(0)</m>.
+  </p>
+  <p>
+    We can use other methods to determine which points belong to <m>M</m>.
+    To do so, we need some additional vocabulary.
+  </p>
+  <definition xml:id="Fixed_point_Def">
+    <title>Fixed Point</title>
+    <statement>
+      <p>
+        The point <m>z_0</m><nbsp/>is a <term>fixed point</term>
+        for the function <m>f</m><nbsp/>if <m>f(z_0)=z_0</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="Attracting_point_Def">
+    <title>Attracting Point</title>
+    <statement>
+      <p>
+        The point <m>z_0</m><nbsp/>is an
+        <term>attracting point</term>
+        for the function <m>f</m> if <m>|f\,'(z_0)|\lt 1</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Theorem 4.9 explains the significance of these terms.
+  </p>
+  <theorem xml:id="Attracting_Points_Draw">
+    <statement>
+      <p>
+        Suppose that <m>z_0</m><nbsp/>is an attracting fixed point for the function <m>f</m>.
+        Then there is a disk <m>D_{r}(z_0)</m> about <m>z_0</m> such that the iterates of all the points in
+        <m>D_{r}^{\ast }(z_0)</m> are drawn toward <m>z_0</m> in the sense that,
+        if <m>z\in D_{r}^{\ast}(z_0)</m>,
+        then <m>|f(z) -z_0|\lt |z-z_0|</m>.
+        In fact, if <m>z_k</m> is the <m>k</m>th iterate of <m>z\in D_{r}^{\ast}(z_0)</m>,
+        then <m>\lim\limits_{k \to \infty}z_k = z_0</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Because <m>z_0</m> is an attracting point for <m>f</m>,
+      we know that <m>|f\,'(z_0)|\lt 1</m>.
+      And because <m>f</m> is differentiable at <m>z_0</m>,
+      we know that for any <m>\varepsilon>0</m> there exists some <m>r>0</m> such that if <m>z\in D_{r}^{\ast}(z_0)</m>,
+      then <m>|\frac{f(z) -f(z_0)}{z-z_0}-f\,'(z_0) |\lt \varepsilon</m>.
+      If we set <m>\varepsilon=1-|\,f\,'(z_0) |</m>,
+      then we have for all <m>z</m> in <m>D_{r}^{\ast}(z_0)</m> that
+      <me>
+        \left|\frac{f(z)-f(z_0)}{z-z_0}\right| - |f\,'(z_0)| \le \left|\frac{f( z) -f(z_0)}{z-z_0}-f\,'(z_0)\right| \lt  1-|f\,'(z_0)|
+      </me>,
+      which gives <m>\big|\frac{f(z) -f(z_0)}{z-z_0}\big|\lt 1</m>.
+      Thus <m>|f(z) -f(z_0)| \lt  |z-z_0|</m>.
+      Because <m>z_0</m> is a fixed point for <m>f</m>,
+      this last inequality implies that <m>|f(z) -z_0| \lt  | z-z_0|</m>,
+      which is the first part of our theorem.
+    </p>
+    <p>
+      The proof that <m>\lim_{k \to \infty}z_k = z_0</m> is left as an exercise.
+    </p>
+  </proof>
+  <p>
+    In 1905, Fatou showed that,
+    if the function <m>f_{c}</m> defined by
+    <m>f_{c}( z) =z^2+c</m> has attracting fixed points,
+    then the orbit of 0 determined by <m>f_{c}</m> must converge to one of them.
+    Because a convergent sequence is bounded,
+    this condition implies that <m>c</m> must belong to <m>M</m>.
+    In the exercises we ask you to show that the main cardioid-shaped body of <m>M</m> in color plate 6 is composed of those points <m>c</m> for which <m>f_{c}</m> has attracting fixed points.
+    You will find Theorem 4.10 to be a useful characterization of those points.
+  </p>
+  <theorem xml:id="Attracting_Thm">
+    <statement>
+      <p>
+        The function <m>f_{c}</m> defined by
+        <m>f_{c}(z) = z^2+c</m> has attracting fixed points iff
+        <m>|1+\sqrt{1-4c}|\lt 1</m> or <m>|1-\sqrt{1-4c}| \lt 1</m>,
+        where the square root designates the principal square root function.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      The point <m>z_0</m> is a fixed point for <m>f_{c}</m> iff <m>f_{c}(z_0)=z_0</m>.
+      In other words, iff <m>z_0^2-z_0+c = 0</m>.
+      By <xref ref="Quadratic_Formula">Theorem</xref>,
+      the solutions to this equation are
+      <me>
+        z_0 = \frac{1+\sqrt{1-4c}}{2}  \text{ or }   z_0 = \frac{1-\sqrt{1-4c}}{2}
+      </me>,
+      where again the square root designates the principal square root function.
+      Now, <m>z_0</m> is an attracting point iff <m>|f\,_{c}'(z_0)| = |2z_0| \lt  1</m>.
+      Combining this result with the solutions for <m>z_0</m> gives our desired result.
+    </p>
+  </proof>
+  <definition xml:id="n-cycle_Def">
+    <title>$n$-cycle</title>
+    <statement>
+      <p>
+        An <m>n</m>-cycle for a function <m>f</m><nbsp/>is a set
+        <me>
+          \{z_0, \, z_1,\ldots ,z_{n-1}\}
+        </me>
+        of <m>n</m> complex numbers such that <m>z_k=f(z_{k-1})</m>,
+        for <m>1\le k\le n-1</m> and <m>f(z_{n-1}) = z_0</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="Attracting_Def">
+    <title>Attracting</title>
+    <statement>
+      <p>
+        An n-cycle <m>\{z_0, \, z_1, \ldots, \, z_{n-1}\}</m><nbsp/>for a function <m>f</m> is said to be <term>attracting</term>
+        if <m>|g_n^{\,\prime}(z_0)| \lt 1</m>,
+        where <m>g_n</m><nbsp/>is the composition of <m>f</m> with itself <m>n</m> times.
+        For example, if <m>n=2</m>,
+        then <m>g_2(z) = \big(f\circ f\big)(z) = f\big(f(z)\big)</m>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        <xref ref="Julia_Connected_Ex">Example</xref>
+        shows that <m>\{-1+i,\,-i\}</m> is a 2-cycle for the function <m>f_{i}</m>.
+        It is not an attracting 2-cycle because
+        <m>g_2(z) =z^{4}+2iz^2+i-1</m> and <m>g_2^{\,\prime}(z) =4z^3+4iz</m>.
+        Hence <m>|g_2^{\,\prime }(-1+i)| = |4+4i|</m>,
+        so <m>|g_2^{\,\prime}(-1+i)| > 1</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    In the exercises, we ask you to show that,
+    if <m>\{z_0, \, z_1,\ldots ,z_{n-1}\}</m> is an attracting <m>n</m>-cycle for a function <m>f</m>,
+    then not only does <m>z_0</m> satisfy <m>|g_n^{\,\prime }(z_0) |\lt 1</m>,
+    but also that <m>|g_n^{\,\prime }(z_k) |\lt 1</m>,
+    for <m>k=1, \, 2, \ldots, \, n-1</m>.
+  </p>
+  <p>
+    One can prove that the large disk to the left of the cardioid in color plate 6 consists of those points <m>c</m> for which <m>f_{c}(z)</m> has a 2-cycle.
+    The large disks above and below the main cardioid disk are the points <m>c</m> for which <m>f_{c}(z)</m> has a 3-cycle.
+  </p>
+  <p>
+    Continuing with this scheme,
+    we see that the idea of <m>n</m>-cycles explains the appearance of the
+    <q>buds</q>
+    that you see on color plate 6.
+    It does not, however,
+    begin to do justice to the enormous complexity of the entire set.
+    Even color plates 7 and 8 are mere glimpses into its awesome beauty.
+    In the exercises,
+    we suggest several references for projects that you could pursue for a more detailed study of topics relating to those covered in this section.
+  </p>
+  <exercises>
+    <title>Exercises for <xref ref="sec_julia-mandelbrot">Section</xref></title>
+    <exercise>
+      <p>
+        Consider the function <m>f(z) =z^2+1</m>, where
+        <men xml:id="x4_2_1">
+          N(z) = z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}=\frac{1}{2}\left(z-\frac{1}{z}\right)
+        </men>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Show that, if <m>\mathrm{Im}(z_0) >0</m>,
+            the sequence <m>\{z_k\}</m> formed by successive iterations of <m>z_0</m> via <m>N(z)</m> lies entirely within the upper half-plane.
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that a similar result holds if <m>\mathrm{Im}(z_0) \lt 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use induction to show that,
+            if all the terms of the sequence <m>\{ z_k\}</m> are defined,
+            then the sequence <m>\{z_k\}</m> is real,
+            provided <m>z_0</m> is real.
+          </p>
+        </li>
+        <li>
+          <p>
+            Discuss whether <m>\{z_k\}</m> converges to <m>i</m> if
+            <m>\mathrm{Im}(z_0) >0</m> and to <m>-i</m> if <m>\mathrm{Im}(z_0) \lt 0</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x4_2_2">
+      <p>
+        Formulate and solve problems analogous to those in Exercise 1 for the function <m>f(z) =z^2-1</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_3">
+      <p>
+        Prove that Newton's method always works for polynomials having degree 1 (functions of the form
+        <m>f(z) =az+b</m>, where <m>a\ne 0</m>).
+        How many iterations are necessary before Newton's method produces the solution <m>z = -\frac{b}{a}</m> to <m>f(z) =0</m>?
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_4">
+      <p>
+        Consider the function <m>f_0(z)=z^2</m> and an initial point <m>z_0</m>.
+        Let <m>\{z_k\}</m> be the sequence of iterates of <m>z_0</m> generated by <m>f_0</m>.
+        That is, <m>z_1 = f_0(z_0), \, z_2 = f_0(z_1)</m>, and so on.
+        <ol>
+          <li>
+            <p>
+              Show that, if <m>|z_0|\lt 1</m>,
+              the sequence <m>\{z_k\}</m> converges to 0.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that, if <m>|z_0|>1</m>,
+              the sequence <m>\{z_k\}</m> is unbounded.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that, if <m>|z_0|=1</m>,
+              the sequence <m>\{z_k\}</m> either converges to 1 or oscillates around the unit circle.
+              Give a simple criterion that you can apply to <m>z_0</m> that will reveal which of these two paths <m>\{z_k\}</m> takes.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_5">
+      <p>
+        Show that the Julia set for <m>f_{-2}(z)</m> is connected.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_6">
+      <p>
+        Determine the precise structure of the set <m>K_{-2}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_7">
+      <p>
+        Prove that if <m>z=c</m> is in the Mandelbrot set,
+        then its conjugate <m>\overline{c}</m> is also in the Mandelbrot set.
+        Thus, the Mandelbrot set is symmetric about the <m>x</m> axis.
+        <em>Hint</em>: Use mathematical induction.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_8">
+      <p>
+        Show that, if <m>c</m> is any real number greater than <m>\frac{1}{4}</m>,
+        then <m>c</m> is not in the Mandelbrot set.
+        <em>Note</em>: Combining this condition with <xref ref="Disk__25_in_M">Example</xref>
+        shows that the cusp in the cardioid section of the Mandelbrot set occurs precisely at <m>c=\frac{1}{4}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_9">
+      <p>
+        Find a value for <m>c</m> that is in the Mandelbrot set such that its negative,
+        <m>-c</m>, is not in the Mandelbrot set.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_10">
+      <p>
+        Show that the points <m>c</m> that solve the inequalities of <xref ref="Attracting_Thm">Theorem</xref> form a cardioid.
+        This cardioid is the main body of the Mandelbrot set shown in color plate 6.
+        <em>Hint</em>: It may be helpful to write the inequalities of <xref ref="Attracting_Thm">Theorem</xref> as
+        <me>
+          \left|\frac{1}{2}+\sqrt{\frac{1}{4}-c}\right| \lt  \frac{1}{2}  \text{ or } \left|\frac{1}{2}-\sqrt{\frac{1}{4}-c}\right| \lt  \frac{1}{2}
+        </me>.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_11">
+      <p>
+        Use <xref ref="Attracting_Thm">Theorem</xref>
+        and the paragraph immediately before it to show that the point
+        <m>-\frac{1}{4}\sqrt{3}i</m> belongs to the Mandelbrot set.
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_12">
+      <p>
+        Suppose that <m>\{z_0, \, z_1\}</m> is a 2-cycle for <m>f</m>.
+        <ol>
+          <li>
+            <p>
+              Show that, if <m>z_0</m> is attracting for <m>g_2(z)</m>,
+              then so is the point <m>z_1</m>.
+              <em>Hint</em>: Differentiate
+              <m>g_2(z)=f(f(z))</m>, using the chain rule,
+              and show that <m>g_2^{\,\prime}(z_0) =g_2^{\,\prime}(z_1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Generalize part (a) to <m>n</m>-cycles.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x4_2_13">
+      <p>
+        Prove that <m>\lim_{k \to \infty}z_k=z_0</m> in <xref ref="Attracting_Points_Draw">Theorem</xref>.
+      </p>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,280 @@
+<section xml:id="sec_trig-integrals">
+  <title>Trigonometric Integrals</title>
+  <p>
+    As indicated at the beginning of this chapter,
+    we can evaluate certain definite <em>real</em>
+    integrals with the aid of the residue theorem.<nbsp/>One way to do this is by interpreting the definite integral as the parametric form of an integral of an analytic function along a simple closed contour.
+    Suppose that we want to evaluate an integral of the form
+    <men xml:id="IntFcostsint">
+      \int_0^{2\pi}F(\cos \theta ,\sin \theta)\,d\theta
+    </men>.
+    where <m>F(u,v)</m> is a function of the two real variables <m>u</m> and <m>v</m>.
+    Consider the unit circle <m>C_1(0)</m> with parametrization
+    <me>
+      C_1^{+}(0) :z=\cos \theta +i\sin \theta =e^{i\theta},  \text{ for }   0 \le \theta \le 2\pi
+    </me>,
+    which gives the symbolic differentials
+    <md>
+      <mrow>dz \amp = (-\sin \theta +i\cos \theta) d\theta =ie^{i\theta}\,d\theta,  \text{ and }</mrow>
+      <mrow xml:id="dtheta_sub" number="yes">d\theta \amp = \frac{dz}{ie^{i\theta}}=\frac{dz}{iz}</mrow>
+    </md>.
+  </p>
+  <p>
+    Combining <m>z=\cos \theta +i\sin \theta</m> with <m>\frac{1}{z}=\cos \theta -i\sin \theta</m>,
+    we obtain
+    <men xml:id="trig_subs">
+      \cos \theta =\frac{1}{2}\left(z+\frac{1}{z}\right),  \text{ and } \sin \theta =\frac{1}{2i}\left(z-\frac{1}{z}\right)
+    </men>.
+  </p>
+  <p>
+    Using the substitutions for <m>\cos \theta</m>, <m>\sin \theta</m>,
+    and <m>d\theta</m> in <xref ref="IntFcostsint">Expression</xref>
+    transforms the definite integral into the contour integral
+    <me>
+      \int_0^{2\pi }F(\cos \theta, \sin \theta)\,d\theta = \int\limits_{C_1^{+}(0)}f(z)\,dz
+    </me>.
+    where the new integrand is <m>f(z) = \frac{F(\frac{1}{2}(z+\frac{1}{z}), \frac{1}{2i}(z-\frac{1}{z}))}{iz}</m>.
+  </p>
+  <p>
+    Suppose that <m>f</m> is analytic inside and on the unit circle <m>C_1(0)</m>,
+    except at the points <m>z_1, \, z_2, \, \ldots , \, z_n</m> that lie interior to <m>C_1(0)</m>.
+    Then the residue theorem gives
+    <men xml:id="Int_Result">
+      \int_0^{2\pi }F(\cos \theta ,\sin \theta)\,d\theta = 2\pi i\sum_{k=1}^n\mathrm{Res}[f,z_k]
+    </men>.
+  </p>
+  <p>
+    The situation is illustrated in <xref ref="fig_ch-08-02">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-08-02">
+    <caption>Changing variables: a definite integral on <m>[0,2\pi]</m> to a contour integral around <m>C</m></caption>
+    <image width="73%" source="figs/ch-08/ch-08-fig-02.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\int_0^{2\pi }\frac{1}{1+3\cos^2\theta}\,d\theta</m> by using complex analysis.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using <xref ref="dtheta_sub">Substitutions</xref>
+        and <xref ref="trig_subs"></xref>,
+        we transform the integral to
+        <me>
+          \int\limits_{C_1^{+}(0)}\frac{1}{1+3(\frac{z+z^{-1}}{2})^2} \frac{dz}{iz} = \int\limits_{C_1^{+}(0)}\frac{-i4z}{3z^4+10z^2+3}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
+        </me>.
+        where <m>f(z) =\frac{-i4z}{3z^4+10z^2+3}</m>.
+        The singularities of <m>f</m> are poles located at the points where <m>3(z^2) ^2+10(z^2) +3=0</m>.
+        Using the quadratic formula,
+        we see that the singular points satisfy the relation <m>z^2=\frac{-10\pm \sqrt{100-36}}{6 }=\frac{-5\pm 4}{3}</m>.
+        Hence the only singularities that lie inside the unit circle are simple poles corresponding to the solutions of <m>z^2=-\frac{1}{3}</m>,
+        which are the two points <m>z_1=\frac{i}{\sqrt{3}}</m> and <m>z_2=-\frac{i}{\sqrt{3}}</m>.
+        We use <xref ref="Residues_at_Poles">Theorem</xref>
+        and L'H&#xf4;pital's rule to get the residues at <m>z_k</m>,
+        for <m>k=1, \, 2</m>:
+        <md>
+          <mrow>\mathrm{Res}[f,z_k]  \amp = \lim_{z \to z_k}\frac{-i4z(z-z_k)}{3z^4+10z^2+3}</mrow>
+          <mrow>\amp = \lim_{z \to z_k}\frac{-i4(2z-z_k)}{12z^3+20z}</mrow>
+          <mrow>\amp = \frac{-i4z_k}{12z_k^3+20z_k}</mrow>
+          <mrow>\amp = \frac{-i}{3z_k^2+5}</mrow>
+        </md>.
+      </p>
+      <p>
+        Since <m>z_k=\frac{\pm i}{\sqrt{3}}</m> and <m>z_k^2=-\frac{1}{3}</m>,
+        the residues for each <m>z_k</m> are given by <m>\mathrm{Res}[f,z_k] =-\frac{i}{3(-\frac{1}{3})+5} = -\frac{i}{4}</m>.
+        Now use Equation <xref ref="Int_Result"/> to compute the value of the integral:
+        <me>
+          \int_0^{2\pi }\frac{d\theta}{1+3\cos^2\theta} = 2\pi i\left(\frac{-i}{4}+\frac{-i}{4}\right)= \pi
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\int_0^{2\pi }\frac{1}{1+3\cos^2t}\,dt</m> by using a computer algebra system.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can obtain the antiderivative of
+        <m>\frac{1}{1+3\cos^2t}</m> by using software such as Mathematica or MAPLE. It is <m>\int \frac{1}{1+3\cos^2t}\,dt = \frac{-\mathrm{Arctan}(2\cot t)}{2} = g(t)</m>.
+        Since <m>\cot 0</m> and <m>\cot 2\pi</m> are not defined,
+        the computations for both <m>g(0)</m> and <m>g(2\pi)</m> are indeterminate.
+        The graph <m>s=g(t)</m> shown in <xref ref="fig_ch-08-03">Figure</xref>
+        reveals another problem: The integrand
+        <m>\frac{1}{1+3\cos^2t}</m> is a continuous function for all <m>t</m>,
+        but the function <m>g</m> has a discontinuity at <m>\pi</m>.
+        This condition appears to be a violation of the fundamental theorem of calculus,
+        which asserts that the integral of a continuous function must be differentiable and hence continuous.
+        The problem is that <m>g(t)</m> is not an antiderivative of <m>\frac{1}{1+3\cos^2t}</m> for <em>all</em>
+        <m>t</m> in the interval <m>[0,2\pi ]</m>.
+        Oddly, it is the antiderivative at all points
+        <em>except</em> <m>0</m>,
+        <m>\pi</m>, and <m>2\pi</m>,
+        which you can verify by computing <m>g\,'(t)</m> and showing that it equals
+        <m>\frac{1}{1+3\cos^2t}</m> whenever <m>g(t)</m> is defined.
+      </p>
+      <figure xml:id="fig_ch-08-03">
+        <caption>Graph of <m>g(t) = \int \frac{1}{1+3\cos^2t}\  dt = \frac{-\mathrm{Arctan}(2\cot t)}{2}</m></caption>
+        <image width="73%" source="figs/ch-08/ch-08-fig-03.pdf"/>
+      </figure>
+      <p>
+        The integration algorithm used by computer algebra systems here
+        (the Risch-Norman algorithm)
+        gives the antiderivative <m>g(t) = \frac{-\mathrm{Arctan}(2\cot t)}{2}</m>,
+        and we must take great care in using this information.
+      </p>
+      <p>
+        We get the proper value of the integral by using <m>g(t)</m> on the open subintervals <m>(0,\pi )</m> and
+        <m>(\pi ,2\pi )</m> where it is continuous,
+        and taking appropriate limits:
+        <md>
+          <mrow>{3} \int_0^{2\pi }\frac{dt}{1+3\cos^2t} \amp = \left[\int_0^{\pi} \frac{dt}{1+3\cos^2t}\right] \amp \amp  + \left[\int_{\pi }^{2\pi }\frac{dt}{1+3\cos^2t}\right]</mrow>
+          <mrow>\amp = \left[\lim_{{t \to \pi^{-},}{\,s \to 0^{+}}}\int_{s}^{t}\frac{dt}{1+3\cos^2t}\right] \amp \amp  + \left[\lim_{{t \to 2\pi^{-},}{\,s \to \pi^{+}}}\int_{s}^{t}\frac{dt}{1+3\cos^2t}\right]</mrow>
+          <mrow>\amp = \left[\lim_{t \to \pi^{-}}g(t) -\lim_{s \to 0^{+}}g(s)\right] \amp \amp  + \left[\lim_{t \to 2\pi^{-}}g(t) -\lim_{s \to \pi^{+}}g(s)\right]</mrow>
+          <mrow>\amp = \left[\frac{\pi }{4}-\frac{-\pi }{4}\right] \amp \amp  + \left[\frac{\pi }{4}-\frac{-\pi }{4}\right]</mrow>
+          <mrow>\amp = \pi</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\int_0^{2\pi }\frac{\cos 2\theta}{5-4\cos \theta}\,d\theta</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        For values of <m>z</m> that lie on the unit circle <m>C_1(0)</m>, we have
+        <me>
+          z^2 = \cos 2\theta +i\sin 2\theta,  \text{ and }   z^{-2}=\cos 2\theta -i\sin 2\theta
+        </me>.
+      </p>
+      <p>
+        We solve for <m>\cos 2\theta</m> and
+        <m>\sin 2\theta</m> to obtain the substitutions
+        <me>
+          \cos 2\theta = \frac{1}{2}(z^2+z^{-2}),  \text{ and }   \sin 2\theta = \frac{1}{2i}(z^2-z^{-2})
+        </me>.
+      </p>
+      <p>
+        Using the identity for <m>\cos 2\theta</m> along with <xref ref="dtheta_sub">Substitutions</xref>
+        and <xref ref="trig_subs"></xref>,
+        we rewrite the integral as
+        <me>
+          \int_{C_1^{+}(0)}\frac{\frac{1}{2}(z^2+z^{-2})}{5-4(\frac{z+z^{-1}}{2})}\ \frac{dz}{iz} = \int_{C_1^{+}(0)}\frac{i(z^4+1)}{2z^2(z-2) (2z-1)}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
+        </me>,
+        where <m>f(z) =\frac{i(z^4+1)}{2z^2(z-2) (2z-1)}</m>.
+        The singularities of <m>f</m> lying inside <m>C</m> are poles located at the points <m>0</m> and <m>\frac{1}{2}</m>.
+        We use <xref ref="Residues_at_Poles">Theorem</xref> to get the residues:
+        <md>
+          <mrow>\mathrm{Res}[f,0] \amp = \lim\limits_{z \to 0}\frac{d}{dz}z^2f(z)=\lim\limits_{z \to 0}\frac{d}{dz}i\frac{(z^4+1)}{2(2z^2-5z+2)}</mrow>
+          <mrow>\amp = \lim\limits_{z \to 0}i\frac{4z^3(2z^2-5z+2) - (4z-5)(z^4+1)}{2(2z^2-5z+2)^2}</mrow>
+          <mrow>\amp = \frac{5i}{8}</mrow>
+        </md>,
+        and
+        <me>
+          \mathrm{Res}[f,\frac{1}{2}] =\lim_{z \to \frac{1}{2}}(z-\frac{1}{2})f(z) = \lim_{z \to \frac{1}{2}}\frac{i(z^4+1)}{4z^2(z-2)} = -\frac{ 17i}{24}
+        </me>.
+      </p>
+      <p>
+        Therefore we conclude that
+        <me>
+          \int_0^{2\pi}\frac{\cos 2\theta d\theta}{5-4\cos \theta} = 2\pi i\left(\frac{5i}{8}-\frac{17i}{24}\right) = \frac{\pi }{6}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    <em>Exercises for <xref ref="sec_trig-integrals">Section</xref></em>
+    Use residues to evaluate the following integrals:
+    <ol>
+      <li xml:id="x8_2_1">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{3\cos \theta +5}d\theta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{4\sin \theta +5}d\theta</m>.\label {8.2.2}
+        </p>
+      </li>
+      <li xml:id="x8_2_3">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{15\sin^2\theta +1}d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_4">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{5\cos^2\theta +4}d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_5">
+        <p>
+          <m>\int_0^{2\pi }\frac{\sin^2\theta}{5+4\cos \theta}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_6">
+        <p>
+          <m>\int_0^{2\pi }\frac{\sin^2\theta}{5-3\cos \theta}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_7">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{(5+3\cos \theta)^2}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_8">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{(5+4\cos \theta)^2}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_9">
+        <p>
+          <m>\int_0^{2\pi }\frac{\cos 2\theta}{5+3\cos \theta}d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_10">
+        <p>
+          <m>\int_0^{2\pi }\frac{\cos 2\theta}{13-12\cos \theta}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_11">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{(1+3\cos^2\theta)^2}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_12">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{(1+8\cos^2\theta)^2}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_13">
+        <p>
+          <m>\int_0^{2\pi }\frac{\cos^23\theta}{5-4\cos 2\theta}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_14">
+        <p>
+          <m>\int_0^{2\pi }\frac{\cos^23\theta}{5-3\cos 2\theta}\,d\theta</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_15">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{a\cos \theta +b\sin \theta +d}\,d\theta</m>,
+          where <m>a, \, b</m>, and <m>d</m> are real,
+          and <m>a^2+b^2\lt d^2</m>.
+        </p>
+      </li>
+      <li xml:id="x8_2_16">
+        <p>
+          <m>\int_0^{2\pi }\frac{1}{a\cos^2\theta +b\sin^2\theta+d}\,d\theta</m>,where <m>a, \, b</m>,
+          and <m>d</m> are real, <m>a>d</m>, and <m>b>d</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+</section>

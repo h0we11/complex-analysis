@@ -1,0 +1,573 @@
+<section xml:id="sec_morera-liouville">
+  <title>The Theorems of Morera and Liouville and Extensions</title>
+  <p>
+    In this section we investigate some of the qualitative properties of analytic and harmonic functions.
+    Our first result shows that the existence of an antiderivative for a continuous function is equivalent to the statement that the integral of <m>f</m> is independent of the path of integration.
+    This result is stated in a form that will serve as a converse of the Cauchy-Goursat theorem.
+  </p>
+  <theorem xml:id="Morera_s_Thm">
+    <title>Morera's theorem</title>
+    <statement>
+      <p>
+        Let <m>f</m> be a continuous function in a simply connected domain <m>D</m>.
+        If <m>\int_Cf(z)\,dz=0</m> for every closed contour <m>C</m> in <m>D</m>,
+        then <m>f</m> is analytic in <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We select a point <m>z_0</m> in <m>D</m> and define <m>F(z)</m> by
+      <me>
+        F(z) = \int_{z_0}^{z}f(\xi)\,d\xi
+      </me>,
+      where the notation indicates the integral is taken on <em>any</em>
+      contour that begins at <m>z_0</m> and ends at <m>z</m>.
+      The function <m>F(z)</m> is well defined because,
+      if <m>C_1</m> and <m>C_2</m> are two contours in <m>D</m><mdash/>both with initial point <m>z_0</m> and terminal point <m>z</m>,
+      then <m>C=C_1-C_2</m> is a closed contour in <m>D</m>,
+      and by hypothesis,
+      <me>
+        0 = \int_C f(\xi)\,d\xi =\int_{C_1}f(\xi)\,d\xi - \int_{C_2} f(\xi)\,d\xi
+      </me>.
+    </p>
+    <p>
+      Since <m>f</m> is continuous,
+      we know that for any <m>\varepsilon>0</m> there exists <m>\delta>0</m> such that
+      <m>|f(\xi)-f(z)|\lt \varepsilon</m> whenever <m>|\xi -z| \lt \delta</m>.
+      Now we can use the identical steps to those in the proof of <xref ref="Antideriv_Thm">Theorem</xref>
+      to show that <m>F\,'(z) = f(z)</m>.
+      Hence <m>F(z)</m> is analytic on <m>D</m>,
+      and <xref ref="All_derivs">Corollary</xref>
+      implies that <m>F\,'(z)</m> and <m>F\,^{\prime \prime }( z)</m> are also analytic.
+      Therefore <m>f\,'(z) = F\,^{\prime \prime }(z)</m> exists for all <m>z</m> in <m>D</m>,
+      proving that <m>f(z)</m> is analytic in <m>D</m>.
+    </p>
+  </proof>
+  <p>
+    Cauchy's integral formula shows how the value <m>f(z_0)</m> can be represented by a certain contour integral.
+    If we choose the contour of integration <m>C</m> to be a circle with center <m>z_0</m>,
+    then we can show that the value <m>f(z_0)</m> is the integral average of the values of <m>f(z)</m> at points <m>z</m> on the circle <m>C</m>.
+  </p>
+  <theorem xml:id="Gauss_s_MVT">
+    <title>Gauss's mean value theorem</title>
+    <statement>
+      <p>
+        If <m>f</m> is analytic in a simply connected domain <m>D</m> that contains the circle <m>C_R(z_0)=\{z:|z-z_0|=R\}</m>, then
+        <me>
+          f(z_0) = \frac{1}{2\pi }\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We parametrize the circle <m>C_R(z_0)</m> by
+      <me>
+        C_R(z_0) : z(\theta ) = z_0+Re^{i\theta},  \text{ and }   dz = iRe^{i\theta}\,d\theta,  \text{ for }  \quad0 \le \theta  \le 2\pi
+      </me>,
+      and use this parametrization along with Cauchy's integral formula to obtain
+      <me>
+        f(z_0) = \frac{1}{2\pi i}\int_0^{2\pi }\frac{f(z_0+Re^{i\theta})iRe^{i\theta}\,d\theta}{Re^{i\theta}} = \frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
+      </me>.
+    </p>
+  </proof>
+  <p>
+    We now prove an important result concerning the modulus of an analytic function.
+  </p>
+  <theorem xml:id="Max_Mod_Thm">
+    <title>Maximum modulus principle</title>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>.
+        Then <m>|f(z)|</m> does not attain a maximum value at any point <m>z_0</m> in <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      (By contraposition): Assume the contrary and suppose that there exists a point <m>z_0</m> in <m>D</m> such that
+      <men xml:id="Max_Mod_asmptn">
+        |f(z)| \le |f(z_0)|
+      </men>
+      holds for all <m>z</m> in <m>D</m>.
+      If <m>C_R(z_0)</m> is any circle contained in <m>D</m>,
+      <xref ref="Gauss_s_MVT">Theorems</xref>
+      and <xref ref="ML_Inequality_Thm"></xref> imply that
+      <men xml:id="Max_Mod_1">
+        |f(z_0)| = \left|\frac{1}{2\pi} \int_0^{2\pi}f(z_0+re^{i\theta})\,d\theta\right| \le \frac{1}{2\pi}\int_0^{2\pi}|f(z_0+re^{i\theta})|\,d\theta
+      </men>,
+      for <m>0 \le r \le R</m>.
+      We now treat <m>|f(z)| = |f(z_0+re^{i\theta})|</m> as a real-valued function of the real variable <m>\theta</m> and use Inequality <xref ref="Max_Mod_asmptn"/> to get
+      <men xml:id="Max_Mod_2">
+        \frac{1}{2\pi}\int_0^{2\pi} |f(z_0+re^{i\theta})|\,d\theta  \le \frac{1}{2\pi }\int_0^{2\pi}|f(z_0)|\,d\theta = |f(z_0)|
+      </men>,
+      for <m>0 \le r \le R</m>.
+      Combining Inequalities <xref ref="Max_Mod_1"/> and <xref ref="Max_Mod_2"/> gives
+      <me>
+        |f(z_0)| = \frac{1}{2\pi} \int_0^{2\pi}\big|f(z_0+re^{i\theta})\big|\,d\theta
+      </me>,
+      which we rewrite as
+      <men xml:id="Max_Mod_3">
+        \int_0^{2\pi }\Big(\big|f(z_0)\big| - \big|f(z_0+re^{i\theta})\big|\Big)\,d\theta =0, \text{ for }   0 \le r \le R
+      </men>.
+    </p>
+    <p>
+      A theorem from calculus states that if the integral of a nonnegative continuous function taken over an interval is zero,
+      then that function must be identically zero.
+      Since Inequality <xref ref="Max_Mod_asmptn"/> implies that the integrand in Equation <xref ref="Max_Mod_3"/> is a nonnegative real-valued function,
+      we conclude that it is identically zero; that is,
+      <men xml:id="Max_Mod_4">
+        \big|f(z_0)\big| = \big|f(z_0+re^{i\theta})\big|,  \text{ for }   0 \le r \le R  \text{ and } 0 \le \theta  \le 2\pi
+      </men>.
+    </p>
+    <p>
+      If the modulus of an analytic function is constant in a closed disk,
+      then the function is constant in that closed disk by <xref ref="Abs_Const_implies_Const">Theorem</xref>.
+      Therefore we conclude from <xref ref="Max_Mod_4">Identity</xref> that
+      <men xml:id="Max_Mod_5">
+        f(z)=f(z_0),  \text{ for all } z \text{ in the closed disk }  \overline{D}_R(z_0)
+      </men>,
+      where <m>\overline{D}_R(z_0) = \{z:|z-z_0| \le R\}</m>.
+      Now we let <m>\zeta</m> denote an arbitrary point in <m>D, \, C</m> be a contour in the original domain <m>D</m> that joins <m>z_0</m> to <m>\zeta</m>,
+      and 2<m>d</m> denote the minimum distance from <m>C</m> to the boundary of <m>D</m>.
+      We can find consecutive points <m>z_0,\,z_1,\,z_2, \ldots, \,z_n=\zeta</m> along <m>C</m>,
+      with <m>|z_{k+1}-z_k| \le d</m>,
+      such that the disks <m>D_k=\{z:|z-z_k| \le d\}</m>,
+      for <m>k=0,\,1,\ldots ,\,n</m>,
+      are contained in <m>D</m> and cover <m>C</m> as illustrated in <xref ref="fig_ch-06-34">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-34">
+      <caption>The
+      <q>chain of disks</q>
+      <m>D_0,\ D_1,\ldots ,\ D_n</m> that cover <m>C</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-34.pdf"/>
+    </figure>
+    <p>
+      Each disk <m>D_k</m> contains the center <m>z_{k+1}</m> of the next disk <m>D_{k+1}</m>,
+      so it follows that <m>z_1</m> lies in <m>D_0</m> and,
+      from Equation <xref ref="Max_Mod_5"/> <m>|f(z)|</m> also reaches its maximum value at <m>z_1</m>.
+      An identical argument to the one given above will show that
+      <men xml:id="Max_Mod_6">
+        f(z)=f(z_1)=f(z_0,  \text{ for all }  z \in D_1
+      </men>.
+    </p>
+    <p>
+      We proceed inductively to get
+      <me>
+        f(z) = f(z_{k+1}) = f(z_k),  \text{ for all }  z \in D_{k+1}, \; 0 \le k\lt n-1
+      </me>,
+      from which it follows that <m>f(\zeta )=f(z_0)</m>.
+      Therefore <m>f</m> is constant in <m>D</m>,
+      which contradicts the assumption of our theorem.
+      With this contraposition, the proof is complete.
+    </p>
+  </proof>
+  <p>
+    We sometimes state the maximum modulus principle in the following form.
+  </p>
+  <theorem xml:id="Max_Mod_Principle">
+    <title>Maximum modulus principle</title>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic and nonconstant in the bounded domain <m>D</m>.
+        If <m>f</m> is continuous on the closed region <m>R</m> that consists of <m>D</m> and all its boundary points <m>B</m>,
+        then <m>|f(z)|</m> assumes its maximum value,
+        and does so only at point(s )<m>z_0</m> on the boundary <m>B</m>.
+      </p>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Let <m>f(z)=az+b</m>.
+        If we set our domain <m>D</m> to be <m>D_1(0)</m>,
+        then <m>f</m> is continuous on the closed region <m>\overline{D}_1(0) = \{z:|z| \le 1\}</m>.
+        Prove that
+        <me>
+          \max_{|z| \le 1}|f(z)| = |a| + |b|
+        </me>,
+        and that this value is assumed by <m>f</m> at a point
+        <m>z_0 = e^{i\theta _0}</m> on the boundary of <m>D_1(0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        From the triangle inequality and the fact that
+        <m>|z| \le 1</m> in <m>\overline{D}_1(0)</m>, it follows that
+        <men xml:id="Max_Mod_Ex">
+          |f(z)| = |az+b| \le |az|+|b| \le |a|+|b|
+        </men>.
+      </p>
+      <p>
+        If we choose <m>z_0=e^{i\theta _0}</m>,
+        where <m>\theta _0\in \arg b-\arg a</m>, then
+        <md>
+          <mrow>\arg (az_0) \amp = \arg a+\arg z_0</mrow>
+          <mrow>\amp = \arg a+(\arg b-\arg a)</mrow>
+          <mrow>\amp = \arg b</mrow>
+        </md>,
+        so the vectors <m>az_0</m> and <m>b</m> lie on the same ray through the origin.
+        This is the requirement for the Inequality <xref ref="Max_Mod_Ex"/> to be an equality
+        (see <xref ref="x1_3_19">Exercise</xref>,
+        <xref ref="sec_geometry-1">Section</xref>).
+        Hence <m>|az_0+b| = |az_0|+|b| = |a|+|b|</m>,
+        and the result is established.
+      </p>
+    </solution>
+  </example>
+  <theorem xml:id="Cauchy_Ineqs">
+    <title>Cauchy's inequalities</title>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic in the simply connected domain <m>D</m> that contains the circle <m>C_R(z_0)=\{z:|z-z_0|=R\}</m>.
+        If <m>|f(z)| \le M</m> holds for all points <m>z\in C_R(z_0)</m>, then
+        <me>
+          \big|f^{(n)}(z_0)\big| \le \frac{n!M}{R^n},  \text{ for }   n=1,\,2,\ldots
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Let <m>C_R(z_0)</m> have the parametrization
+      <me>
+        C_R(z_0) : z(\theta) = z_0+Re^{i\theta}  \text{ and }   dz = iRe^{i\theta}\,d\theta,  \text{ for }   0 \le \theta  \le 2\pi
+      </me>.
+    </p>
+    <p>
+      We use Cauchy's integral formula and write
+      <me>
+        f^{(n)}(z_0) = \frac{n!}{2\pi i}\int_{C_R(z_0)}\frac{f(z)\,dz}{(z-z_0)^{n+1}}= \frac{n!}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta}) iRe^{i\theta}}{R^{n+1}e^{i(n+1)\theta}}\,d\theta
+      </me>.
+    </p>
+    <p>
+      Combining this result with the <em>ML</em> inequality
+      (<xref ref="ML_Inequality_Thm">Theorem</xref>),
+      we obtain
+      <md>
+        <mrow>\left| f\,^{(n)}(z_0) \right| \amp = \left|\frac{n!}{2\pi i} \int_0^{2\pi}\frac{f(z_0+Re^{i\theta}) iRe^{i\theta}\,d\theta }{R^{n+1}e^{i(n+1)\theta}}\right|</mrow>
+        <mrow>\amp \le \frac{n!}{2\pi}\int_0^{2\pi }|f(z_0+Re^{i\theta})| \left|\frac{iRe^{i\theta}}{R^{n+1}e^{i(n+1)\theta}}\right|\,d\theta</mrow>
+        <mrow>\amp \le \frac{n!}{2\pi}\int_0^{2\pi}M\frac{1}{R^n}\,d\theta</mrow>
+        <mrow>\amp = \frac{n!}{2\pi R^n}M2\pi</mrow>
+        <mrow>\amp = \frac{n!M}{R^n}</mrow>
+      </md>.
+    </p>
+  </proof>
+  <p>
+    Theorem 6.18 shows that a nonconstant entire function cannot be a bounded function.
+  </p>
+  <theorem xml:id="Liouville_s_Thm">
+    <title>Liouville's theorem</title>
+    <statement>
+      <p>
+        If <m>f</m> is an entire function and is bounded for all values of <m>z</m> in the complex plane,
+        then <m>f</m> is constant.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Suppose that <m>|f(z)| \le M</m> holds for all values of <m>z</m>.
+      We let <m>z_0</m> denote an arbitrary point.
+      Then we can use the circle
+      <m>C_R(z_0)=\{z:|z-z_0| =R\}</m> and Cauchy's inequality with <m>n=1</m> to get
+      <me>
+        \big|f\,'(z_0)\big| \le \frac{M}{R}
+      </me>.
+    </p>
+    <p>
+      Because <m>R</m> can be arbitrarily large we must have <m>f\,'(z_0)=0</m>.
+      But <m>z_0</m> was arbitrary,
+      so <m>f\,'(z)=0</m> for all <m>z</m>.
+      If the derivative of an analytic function is zero for all <m>z</m>,
+      then by <xref ref="Df_0_implies_f_const">Theorem</xref>
+      the function must be constant.
+      Therefore <m>f</m> is constant.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>f(z)=\sin z</m> is
+        <em>not</em> a bounded function.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We established this characteristic with a somewhat tedious argument in Section 5.4.
+        All we need do now is observe that <m>f</m> is not constant,
+        and hence it is not bounded.
+      </p>
+    </solution>
+  </example>
+  <p>
+    We can use Liouville's theorem to establish an important theorem of elementary algebra.
+  </p>
+  <theorem xml:id="FTOA">
+    <title>The fundamental theorem of algebra</title>
+    <statement>
+      <p>
+        If <m>P</m> is a polynomial of degree <m>n \ge 1</m>,
+        then <m>P</m> has at least one zero.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      (By contraposition): We will show that if <m>P(z) \ne 0</m> for all <m>z</m>,
+      then the degree of <m>P</m> must be zero.
+      Suppose that <m>P(z) \ne 0</m> for all <m>z</m>.
+      This supposition implies that the function
+      <m>f(z) = \frac{1}{P(z)}</m> is an entire function.
+      Our strategy for the rest of the proof is as follows: We will show that <m>f</m> is bounded.
+      Then Liouville's theorem will imply that <m>f</m> is constant,
+      and since <m>f=\frac{1}{P}</m>,
+      this conclusion will imply that the polynomial <m>P</m> is constant,
+      which will mean that its degree must be zero.
+    </p>
+    <p>
+      First we write <m>P(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots +a_1z+a_0</m> and consider the equation
+      <men xml:id="FTOA_EQ_1">
+        |f(z)| = \frac{1}{|P(z)|} = \frac{1}{|z|^n}\frac{1}{\left|a_n+\frac{a_{n-1}}{z} + \frac{a_{n-2}}{z^2}+\cdots +\frac{a_1}{z^{n-1}}+\frac{a_0}{z^n}\right|}
+      </men>.
+    </p>
+    <p>
+      For <m>k=1,\ldots n</m>,
+      <m>\frac{|a_{n-k}|}{|z^k|} \to 0</m> as <m>|z| \to \infty</m>, so
+      <me>
+        a_n+\frac{a_{n-1}}{z}+\frac{a_{n-2}}{z^2}+\cdots +\frac{a_0}{z^n} \to a_n,  \text{ as }   |z| \to \infty
+      </me>.
+    </p>
+    <p>
+      Combining this result with Equation <xref ref="FTOA_EQ_1"/> gives
+      <me>
+        |f(z)| \to 0,  \text{ as }   |z| \to \infty
+      </me>.
+    </p>
+    <p>
+      In particular, we can find a value of <m>R</m> such that
+      <men xml:id="FTOA_EQ_2">
+        |f(z)| \le 1  \text{ for all }   |z| \ge R
+      </men>.
+    </p>
+    <p>
+      If <m>f(z)=u(x,y) +iv(x,y)</m>, we have
+      <me>
+        |f(z)| = \Big([u(x, y)]^2+[v(x,y)]^2\Big)^\frac{1}{2}
+      </me>.
+      which is a continuous function of the two real variables <m>x</m> and <m>y</m>.
+      A result from calculus regarding real functions says that a continuous function on a closed and bounded set is bounded.
+      Hence <m>|f(z)|</m> is a bounded function on the closed disk <m>\overline{D}_R(0)</m>.
+      Thus there exists a positive real number <m>K</m> such that
+      <me>
+        |f(z)| \le K,  \text{ for all }   |z| \le R
+      </me>.
+    </p>
+    <p>
+      Combining this with Inequality <xref ref="FTOA_EQ_2"/> gives
+      <me>
+        |f(z)| \le M  \text{ for all }  z
+      </me>,
+      where <m>M=\max \{K,1\}</m>.
+      By Liouville's theorem, <m>f</m> is constant,
+      so that the degree of <m>f</m> is zero.
+      This observation completes the argument.
+    </p>
+  </proof>
+  <corollary>
+    <statement>
+      <p>
+        Let <m>P</m><nbsp/>be a polynomial of degree <m>n \ge 1</m>.
+        Then <m>P</m> can be expressed as the product of linear factors.
+        That is,
+        <me>
+          P(z)=A(z-z_1) (z-z_2) \cdots (z-z_n)
+        </me>
+        where <m>z_1,\,z_2, \ldots, \,z_n</m><nbsp/>are the zeros of <m>P</m>,
+        counted according to multiplicity,
+        and <m>A</m> is a constant.
+      </p>
+    </statement>
+  </corollary>
+  <exercises>
+    <title>Exercises for <xref ref="sec_morera-liouville">Section</xref></title>
+    <exercise xml:id="x6_6_1">
+      <p>
+        Factor each polynomial as a product of linear factors.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>P(z)=z^4+4</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(z)=z^2+(1+i)z+5i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(z)=z^4-4z^3+6z^2-4z+5</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>.
+            <em>Hint</em>: Show that <m>P(i)=0</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x6_6_2">
+      <p>
+        Let <m>f(z)=az^n+b</m>,
+        where the region is the disk <m>R=\{z:|z| \le 1\}</m>.
+        Show that <m>\max\limits_{|z| \le 1}|f(z)| = |a|+|b|</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_3">
+      <p>
+        Show that <m>\cos z</m> is <em>not</em> a bounded function.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>f(z)=z^2</m>.
+        Evaluate the following,
+        where <m>R</m> represents the rectangular region defined by the set
+        <men xml:id="x6_6_4">
+          R=\{z=x+iy:2 \le x \le 3  \text{ and }   1 \le y \le 3\}
+        </men>.
+        <ol>
+          <li>
+            <p>
+              <m>\max\limits_{z\in R} |f(z)|</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\min\limits_{z\in R} |f(z)|</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\max\limits_{z\in R}\mathrm{Re}[f(z)]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\min\limits_{z\in R}\mathrm{Im}[f(z)]</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_5">
+      <p>
+        Let <m>f</m> be analytic in the disk <m>D_5(0)</m> and suppose that
+        <m>|f(z)| \le 10</m> for <m>z\in C_3(1)</m>.
+        <ol>
+          <li>
+            <p>
+              Find a bound for <m>|f^{\,(4)}(1)|</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find a bound for <m>|f^{\,(4)}(0)|</m>.
+              <em>Hint</em>:
+              <m>\overline{D}_2(0) \subseteq \overline{D}_3(1)</m>.
+              Use <xref ref="Max_Mod_Principle">Theorems</xref>
+              and <xref ref="Cauchy_Ineqs"></xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_6">
+      <p>
+        Let <m>f</m> be an entire function such that <m>|f(z)| \le M|z|</m> for all <m>z</m>.
+        <ol>
+          <li>
+            <p>
+              Show that, for <m>n \ge 2</m>,
+              <m>f\,^{(n)}(z)=0</m> for all <m>z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use part (a) to show that <m>f(z)=az+b</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_7">
+      <p>
+        Establish the following <em>minimum modulus principle</em>.
+        <ol>
+          <li>
+            <p>
+              Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>,
+              and continuous on the closed region <m>R</m> that consists of <m>D</m> and all its boundary points <m>B</m>.
+              Show that, if <m>f(z) \ne 0</m> throughout <m>R</m>,
+              then <m>|f(z)|</m> assumes its <em>minimum</em> value,
+              but does so only at points(s) <m>z_0</m> on the boundary <m>B</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that the requirement <m>f(z) \ne 0</m> in part a is necessary by finding a function for which the requirement fails,
+              and whose minimum is attained at some place other than the boundary.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_8">
+      <p>
+        Let <m>u(x,y)</m> be harmonic for all <m>(x,y)</m>.
+        Show that
+        <me>
+          u(x_0,y_0) = \frac{1}{2\pi }\int_0^{2\pi}u\big(x_0+R\cos \theta, \; y_0+R\sin \theta\big)\,d\theta
+        </me>,
+        where <m>R>0</m>.
+        <em>Hint</em>: Let <m>f(z)=u(x,y) +iv(x,y)</m>,
+        where <m>v</m> is a harmonic conjugate of <m>u</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_9">
+      <p>
+        Establish the following maximum principle for harmonic functions: Let <m>u(x,y)</m> be harmonic and nonconstant in the simply connected domain <m>D</m>.
+        Then <m>u</m> does not have a maximum value at any point <m>(x_0, \, y_0)</m> in <m>D</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_10">
+      <p>
+        Let <m>f</m> be an entire function with the property that <m>|f(z)| \ge 1</m> for all <m>z</m>.
+        Show that <m>f</m> is constant.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_11">
+      <p>
+        Let <m>f</m> be nonconstant and analytic in the closed disk <m>\overline{D}_1(0)</m>.
+        Suppose that <m>|f(z)|</m> is constant for <m>z \in C_1(0)</m>,
+        i.e., that there is some number <m>K</m> such that
+        <m>|f(z)| = K</m> for all <m>z \in C_1(0)</m>.
+        Show that <m>f</m> has a zero in <m>\overline{D}_1(0)</m>,
+        <em>i.e.</em>,
+        that there exists some <m>z_0 \in \overline{D}_1(0)</m> such that <m>f(z_0)=0</m>.
+        <em>Hint</em>: use both the minimum modulus principle
+        (see <xref ref="x6_6_7">Exercise</xref>)
+        and maximum modulus principle .
+      </p>
+    </exercise>
+    <exercise xml:id="x6_6_12">
+      <p>
+        Why is it important to study the fundamental theorem of algebra in a complex analysis course?
+      </p>
+    </exercise>
+  </exercises>
+</section>

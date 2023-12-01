@@ -1,0 +1,598 @@
+<section xml:id="sec_complex-log">
+  <title>The Complex Logarithm</title>
+  <p>
+    In Section 5.1, we showed that,
+    if <m>w</m> is a nonzero complex number,
+    then the equation <m>w=\exp z</m> has infinitely many solutions.
+    Because the function <m>\exp(z)</m> is a many-to-one function,
+    its inverse
+    (the logarithm)
+    is necessarily multivalued.
+  </p>
+  <definition>
+    <title>Multivalued logarithm</title>
+    <statement>
+      <p>
+        For <m>z \ne 0</m>,
+        we define the multivalued function <m>\log</m> as the inverse of the exponential function; that is,
+        <men xml:id="log_def_1">
+          \log(z)=w  \text{ iff }   z=\exp(w)
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    If we go through the same steps as we did in Equations <xref ref="Inverse_of_Exp"/> and <xref ref="Inverse_of_Exp_again"></xref>,
+    we find that, for any complex number <m>z \ne 0</m>,
+    the solutions <m>w</m> to Equation <xref ref="log_def_1"/> take the form
+    <men xml:id="log_def_2">
+      w=\ln |z| +i\theta,  \text{ for }   z \ne 0
+    </men>.
+    where <m>\theta \in \arg(z)</m> and <m>\ln|z|</m> denotes the natural logarithm of the positive number <m>|z|</m>.
+    Because <m>\arg(z)</m> is the set <m>\mathrm{arg}(z)=\{\mathrm{Arg}(z) +2n\pi :n \text{ is an integer } \}</m>,
+    we can express the set of values comprising <m>\log (z)</m> as
+    <md>
+      <mrow xml:id="log_def_3" number="yes">\log(z) \amp = \{\ln |z| +i(\mathrm{ Arg}(z) +2n\pi ):n\text{ is an integer } \}</mrow>
+      <mrow xml:id="log_def_4" number="yes">\amp = \ln |z| +i\arg(z)</mrow>
+    </md>,
+    where it is understood that <xref ref="log_def_4">Identity</xref>
+    refers to the same set of numbers given in <xref ref="log_def_3">Identity</xref>.
+  </p>
+  <p>
+    Recall that \mathrm{Arg} is defined so that for <m>z \ne 0</m>,
+    <m>-\pi \lt \mathrm{ Arg}(z) \le \pi</m>.
+    We call any one of the values given in <xref ref="log_def_3">Identities</xref>
+    <xref ref="log_def_4">or</xref> a logarithm of <m>z</m>.
+    Note that the different values of <m>\log(z)</m> all have the same real part and that their imaginary parts differ by the amount <m>2n\pi</m>,
+    where <m>n</m> is an integer.
+    When <m>n=0</m>, we have a special situation.
+  </p>
+  <definition>
+    <title>Principal value of the logarithm</title>
+    <statement>
+      <p>
+        For <m>z \ne 0</m>, we define Log,
+        the principal value of the logarithm, by
+        <men xml:id="Log_z_def">
+          \mathrm{Log}(z) =\ln |z| +i\mathrm{Arg}(z)
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The domain for the function \mathrm{Log} is the set of all nonzero complex numbers in the <m>z</m> plane,
+    and its range is the horizontal strip
+    <m>\{ w:-\pi \lt \mathrm{Im}( w) \le \pi \}</m> in the <m>w</m> plane.
+    We stress again that \mathrm{Log} is a single-valued function and corresponds to setting <m>n=0</m> in Equation <xref ref="log_def_3"/>.
+    As we demonstrated in <xref ref="ch_complex-functions"/>,
+    the function \mathrm{Arg} is discontinuous at each point along the negative <m>x</m> axis;
+    hence so is the function \mathrm{Log}. In fact,
+    because any branch of the multivalued function <m>\arg</m> is discontinuous along some ray,
+    a corresponding branch of the logarithm will have a discontinuity along that same ray.
+  </p>
+  <example xml:id="ex_log_1_i_">
+    <statement>
+      <p>
+        Find the values of <m>\log(1+i)</m> and <m>\log(i)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By standard computations, we have
+        <md>
+          <mrow>\log(1+i)  \amp = \{\ln |1+i| +i(\mathrm{Arg}( 1+i) +2n\pi ) :n\text{ is an integer } \}</mrow>
+          <mrow>\amp = \{\ln \sqrt{2}+i( \frac{\pi }{4}+2n\pi ) :n\text{ is an integer } \},  \text{ and }</mrow>
+          <mrow>\log(i)    \amp = \{\ln |i| +i(\mathrm{ Arg}( i) +2n\pi ) :n\text{ is an integer } \}</mrow>
+          <mrow>\amp = \{i( \frac{\pi }{2}+2n\pi) :n\text{ is an integer } \}</mrow>
+        </md>.
+      </p>
+      <p>
+        The principal values are
+        <md>
+          <mrow>\mathrm{Log}( 1+i) \amp = {\mathrm{ln}\sqrt{2}+i\frac{\pi }{4}}=\frac{\ln 2}{2}+i\frac{\pi }{4}.  \text{ and }</mrow>
+          <mrow>\mathrm{Log}( i) \amp = i\frac{\pi }{2}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    We now investigate some of the properties of <m>\log</m> and <m>\mathrm{Log}</m>.
+    From Equations <xref ref="log_def_1"/>,
+    <xref ref="log_def_3"/>, and <xref ref="Log_z_def"/>, it follows that
+    <md>
+      <mrow xml:id="expLogz" number="yes">\exp(\mathrm{Log}\ z) \amp = z  \text{ for all }   z \ne 0,  \text{ and }</mrow>
+      <mrow xml:id="Logexpz" number="yes">\mathrm{Log}( \exp z) \amp = z,  \text{ provided }   -\pi \lt \mathrm{Im} (z)  \le \pi </mrow>
+    </md>,
+    and that the mapping <m>w=\mathrm{Log}(z)</m> is one-to-one from domain
+    <m>D=\{z:|z| >0 \}</m> in the <m>z</m> plane onto the horizontal strip
+    <m>\{w:-\pi \lt \mathrm{Im}( w) \le \pi \}</m> in the <m>w</m> plane.
+  </p>
+  <p>
+    The following example illustrates that,
+    even though \textrm{Log} is not continuous along the negative real axis,
+    it is still defined there.
+  </p>
+  <example>
+    <statement>
+      <p>
+        <xref ref="Log_z_def">Identity</xref> reveals that
+        <md>
+          <mrow>\mathrm{Log}( -e) \amp = \ln |-e| +i\mathrm{Arg}( -e) =1+i\pi,  \text{ and }</mrow>
+          <mrow>\mathrm{Log}( -1) \amp = \ln |-1| +i\mathrm{Arg}( -1) =i\pi</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    When <m>z=x+i0</m>, where <m>x</m> is a positive real number,
+    the principal value of the complex logarithm of <m>z</m> is
+    <me>
+      \mathrm{Log}( x+i0) = \ln x + i\mathrm{Arg}(x) = \ln x+i0 = \ln x
+    </me>.
+    where <m>x>0</m>.
+    Hence \textrm{Log} is an extension of the real function <m>\ln</m> to the complex case.
+    Are there other similarities?
+    Let's use complex function theory to find the derivative of \textrm{Log} . When we use polar coordinates for
+    <m>z=re^{i\theta } \ne 0</m>, Equation <xref ref="Log_z_def"/> becomes
+    <md>
+      <mrow>\mathrm{Log}(z) \amp = \ln r+i\mathrm{Arg}(z)</mrow>
+      <mrow>\amp = \ln r+i\theta,  \text{ for }   r>0  \text{ and }   -\pi \lt \theta  \le \pi</mrow>
+      <mrow>\amp = U( r,\theta ) +iV( r,\theta )</mrow>
+    </md>,
+    where <m>U(r,\theta ) =\ln r</m> and <m>V(r,\theta)=\theta</m>.
+    Because <m>\mathrm{Arg}(z)</m> is discontinuous only at points in its domain that lie on the negative real axis,
+    <m>U</m> and <m>V</m> have continuous partials for any point <m>( r,\,\theta )</m> in their domain,
+    provided <m>re^{i\theta }</m> is not on the negative real axis, that is,
+    provided <m>-\pi \lt \theta \lt \pi</m>.
+    (Note the strict inequality for <m>\theta</m> here.)
+    In addition,
+    the polar form of the Cauchy-Riemann equations holds in this region
+    (see Equation <xref ref="Polar_C-R"/> of <xref ref="sec_cauchy-riemann">Section</xref>),
+    since
+    <me>
+      U_{r}(r,\theta) =\frac{1}{r}V_{\theta }(r,\theta) = \frac{1}{r}  \text{ and }   V_{r}(r,\theta) = \frac{-1}{r}U_{\theta}(r,\theta) = 0
+    </me>.
+  </p>
+  <p>
+    Using <xref ref="Sufficient_Conditions_Polar">Theorem</xref>
+    of <xref ref="sec_cauchy-riemann">Section</xref>, we see that
+    <me>
+      \frac{d}{dz}\mathrm{Log}(z) = e^{-i\theta }(U_{r}+iV_{r}) = e^{-i\theta }\left(\frac{1}{r}+0i\right) =\frac{1}{re^{i\theta }}=\frac{1}{z}
+    </me>.
+    provided <m>r>0</m> and <m>-\pi \lt \theta \lt \pi</m>.
+    Thus the principal branch of the complex logarithm has the derivative we would expect.
+    Other properties of the logarithm carry over,
+    but only in specified regions of the complex plane.
+  </p>
+  <example xml:id="Logzw_neq_Logz_Logw">
+    <statement>
+      <p>
+        Show that the identity <m>\mathrm{Log}(z_1z_2)=\mathrm{Log}(z_1)+\mathrm{Log}(z_2)</m> is not always valid.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>z_1=-\sqrt{3}+i</m> and <m>z_2=-1+i\sqrt{3}</m>.
+        Then
+        <md>
+          <mrow>\mathrm{Log}(z_1z_2)          \amp = \mathrm{Log}( -4i)</mrow>
+          <mrow>\amp = \ln 4+i\left( -\frac{\pi }{2}\right),  \text{ but }</mrow>
+          <mrow>\mathrm{Log}(z_1) +\mathrm{Log}(z_2)  \amp = \ln 2+i \frac{5\pi }{6}+\ln 2+i\frac{2\pi }{3}</mrow>
+          <mrow>\amp = \ln 4+i\frac{3\pi }{2}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Our next result explains why
+    <m>\mathrm{Log}(z_1z_2) =\mathrm{Log}(z_1) +\mathrm{Log}(z_2)</m> didn't hold for the particular numbers we chose.
+  </p>
+  <theorem xml:id="thm_logz1z2_identity">
+    <statement>
+      <p>
+        The identity <m>\mathrm{Log}(z_1z_2) = \mathrm{Log}(z_1) + \mathrm{Log}(z_2)</m> holds true iff <m>-\pi \lt \mathrm{Arg}(z_1) + \mathrm{Arg}(z_2) \le \pi</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Suppose first that <m>-\pi \lt \mathrm{Arg}(z_1) +\mathrm{Arg} (z_2)  \le \pi</m>.
+      By definition,
+      <m>\mathrm{Log}( z_1z_2) =\ln|z_1z_2| +i\mathrm{Arg}(z_1z_2) = \ln|z_1| +\ln |z_2| +i\mathrm{Arg}(z_1z_2)</m>.
+      Because <m>-\pi \lt  \mathrm{Arg}(z_1) + \mathrm{Arg}(z_2) \le \pi</m>,
+      it follows that <m>\mathrm{Arg}(z_1z_2) =\mathrm{Arg}(z_1) + \mathrm{Arg}(z_2)</m> (explain!), and so
+      <me>
+        \mathrm{Log}( z_1z_2) = \ln|z_1| +\ln|z_2| +i \mathrm{Arg}(z_1) +i\mathrm{Arg}(z_2) = \mathrm{ Log}(z_1) +\mathrm{Log}(z_2)
+      </me>.
+    </p>
+    <p>
+      The
+      <q>only if</q>
+      part is left as an exercise.
+    </p>
+  </proof>
+  <p>
+    As <xref ref="Logzw_neq_Logz_Logw">Example</xref>
+    and <xref ref="thm_logz1z2_identity">Theorem</xref> illustrate,
+    properties of the complex logarithm don't carry over when arguments of products combine in such a way that they drop down to <m>-\pi</m> or rise above <m>\pi</m>.
+    This is because of the restrictions placed on the domain of the function \mathrm{Arg}. From the set of numbers associated with the
+    <em>multivalued</em> logarithm, however,
+    we can formulate properties that look exactly the same as those corresponding with the real logarithm.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>z_1</m> and <m>z_2</m> be nonzero complex numbers.
+        The multivalued function <m>\log</m> obeys the familiar properties of logarithms:
+        <md>
+          <mrow xml:id="logzw_logz_logw" number="yes">\log(z_1z_2) \amp = \log(z_1) + \log (z_2),</mrow>
+          <mrow xml:id="logz_w_logz-logw" number="yes">\log\left(\frac{z_1}{z_2}\right) \amp = \log(z_1) -\log(z_2),  \text{ and }</mrow>
+          <mrow xml:id="log1_z_-logz" number="yes">\log\left(\frac{1}{z}\right) \amp = -\log(z)</mrow>
+        </md>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      <xref ref="logzw_logz_logw">Identity</xref>
+      is easy to establish: Using <xref ref="argProduct">Identity</xref>
+      in <xref ref="sec_geometry-2">Section</xref>
+      concerning the argument of a product
+      (and keeping in mind we are dealing with sets of numbers),
+      we write
+      <md>
+        <mrow>\log(z_1z_2) \amp = \ln|z_1 z_2| +i\arg(z_1z_2)</mrow>
+        <mrow>\amp = \ln|z_1| +\ln|z_2| +i\arg(z_1) +i\arg(z_2)</mrow>
+        <mrow>\amp = \big[\ln|z_1| +i\arg(z_1)\big] + \big[\ln|z_2| +i\arg(z_2)\big] =\log(z_1) +\log(z_2)</mrow>
+      </md>.
+    </p>
+    <p>
+      <xref ref="logz_w_logz-logw">Identities</xref>
+      and <xref ref="log1_z_-logz"></xref> are left as exercises.
+    </p>
+  </proof>
+  <p>
+    We can construct many different branches of the multivalued logarithm function that are continuous and differentiable except at points along any preassigned ray <m>\{re^{i\alpha}:r>0\}</m>.
+    If we let <m>\alpha</m> denote a real fixed number and choose the value of
+    <m>\theta \in \arg ( z)</m> that lies in the range <m>\alpha \lt \theta  \le \alpha +2\pi</m>,
+    then the function <m>\log_{\alpha}</m> defined by
+    <men xml:id="log_a">
+      \log_{\alpha}(z) = \ln r+i\theta
+    </men>,
+    where <m>z=re^{i\theta } \ne 0</m>,
+    and <m>\alpha \lt \theta  \le \alpha +2\pi</m>,
+    is a single-valued branch of the logarithm function.
+    The branch cut for <m>\log_{\alpha}</m> is the ray <m>\{re^{i\alpha}:r \ge 0\}</m>,
+    and each point along this ray is a point of discontinuity of <m>\log_{\alpha}</m>.
+    Because <m>\exp[\log_{\alpha}(z)] =z</m>,
+    we conclude that the mapping
+    <m>w=\log_{\alpha}(z)</m> is a one-to-one mapping of the domain <m>|z|>0</m> onto the horizontal strip <m>\{w:\alpha \lt \mathrm{Im}( w) \le \alpha +2\pi \}</m>.
+    If <m>\alpha \lt c\lt d\lt \alpha +2\pi</m>,
+    then the function <m>w=\log_{\alpha}(z)</m> maps the set
+    <m>D=\{re^{i\theta }:a\lt r\lt b, \; c\lt \theta \lt d\}</m> one-to-one and onto the rectangle <m>R=\{ u+iv:\ln a \lt  u \lt  \ln b, \; c \lt  v \lt d \}</m>.
+    <xref ref="fig_ch-05-04">Figure</xref>
+    shows the mapping <m>w=\log_{\alpha}(z)</m>,
+    its branch cut <m>\{re^{i\alpha}:r>0\}</m>,
+    the set <m>D</m>, and its image <m>R</m>.
+  </p>
+  <figure xml:id="fig_ch-05-04">
+    <caption>The branch <m>w=\log_\alpha(z)</m> of the logarithm</caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-04.pdf"/>
+  </figure>
+  <p>
+    We can easily compute the derivative of any branch of the multivalued logarithm.
+    For a particular branch <m>w=\log_{\alpha}(z)</m> for <m>z=re^{i\theta } \ne 0</m>,
+    and <m>\alpha \lt \theta \lt \alpha +2\pi</m>
+    (note the strict inequality for <m>\theta</m>),
+    we start with <m>z=\mathrm{exp}( \omega)</m> in Equations <xref ref="log_def_1"/> and differentiate both sides to get
+    <md>
+      <mrow>1=\frac{d}{dz}z \amp = \frac{d}{dz}\exp\big(\log_{\alpha}(z)\big)</mrow>
+      <mrow>\amp = \exp\big(\log_{\alpha}(z)\big) \frac{d}{dz}\log_{\alpha}(z)</mrow>
+      <mrow>\amp = z\frac{d}{dz}\log_{\alpha}(z)</mrow>
+    </md>.
+  </p>
+  <p>
+    Solving for <m>\frac{d}{dz}\log_{\alpha}(z)</m> gives
+    <me>
+      \frac{d}{dz}\log_{\alpha}(z)=\frac{1}{z},  \text{ for }  z=re^{i\theta } \ne 0, \text{ and }   \alpha \lt \theta\lt \alpha +2\pi
+    </me>.
+  </p>
+  <p>
+    The Riemann surface for the multivalued function
+    <m>w=\log(z)</m> is similar to the one for the square root function.
+    However, it requires infinitely many copies of the <m>z</m> plane cut along the negative <m>x</m> axis,
+    which we label <m>S_{k}</m> for <m>k=\ldots, \, -n, \ldots, -2, \, -1, \, 0, \, 1, \, 2, \ldots,
+    n,\ldots</m>.
+    We stack these cut planes directly on each other so that the corresponding points have the same position,
+    and join the sheet <m>S_{k}</m> to <m>S_{k+1}</m> as follows: For each integer <m>k</m>,
+    the edge of the sheet <m>S_{k}</m> in the upper half-plane is joined to the edge of the sheet <m>S_{k+1}</m> in the lower half-plane.
+    The Riemann surface for the domain of <m>\log</m> looks like a spiral staircase that extends upward on the sheets
+    <m>S_1, \ ,S_2, \, \ldots</m> and downward on the sheets <m>S_{-1},\,S_{-2},\ldots</m>,
+    as shown in <xref ref="fig_ch-05-05">Figure</xref>.
+    We use polar coordinates for <m>z</m> on each sheet.
+    Thus, for <m>S_k</m> we have
+    <md>
+      <mrow>z \amp = r( \cos \theta +i\sin \theta),  \text{ where }</mrow>
+      <mrow>r \amp = |z|,  \text{ and }   2\pi k-\pi \lt \theta \le \pi +2\pi k</mrow>
+    </md>.
+  </p>
+  <p>
+    Again, for <m>S_{k}</m>,<nbsp/>the correct branch of <m>\log(z)</m> on each sheet is
+    <md>
+      <mrow>\log(z) \amp = \ln r+i\theta \text{ , where }</mrow>
+      <mrow>r    \amp = |z|,  \text{ and }   2\pi k-\pi \lt \theta  \le \pi +2\pi k</mrow>
+    </md>.
+  </p>
+  <figure xml:id="fig_ch-05-05">
+    <caption>The Riemann surface for mapping <m>w=\log(z)</m></caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-05.pdf"/>
+  </figure>
+  <exercises>
+    <title>Exercises for <xref ref="sec_complex-log">Section</xref></title>
+    <exercise>
+      <p>
+        Find all values for
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\mathrm{Log}(ie^2 )</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathrm{Log}(\sqrt{3}-i)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathrm{Log}(i\sqrt{2}-\sqrt{2})</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathrm{Log}[(1+i)^4]</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\log(-3)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\log 8</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\log(4i)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\log(-\sqrt{3}-i)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x5_2_2">
+      <p>
+        Use the properties of <m>\arg(z)</m> in Section 1.4 to establish
+        <ol>
+          <li>
+            <p>
+              Equation <xref ref="logz_w_logz-logw"/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Equation <xref ref="log1_z_-logz"/>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_3">
+      <p>
+        Find all the values of <m>z</m> for which each equation holds.
+        <ol>
+          <li>
+            <p>
+              <m>\mathrm{Log}(z) =1-i\frac{\pi }{4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathrm{Log}(z-1) =i\frac{\pi }{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\exp(z)=-ie</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\exp(z+1)=i</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_4">
+      <p>
+        Refer to <xref ref="thm_logz1z2_identity">Theorem</xref>.
+        <ol>
+          <li>
+            <p>
+              Explain why <m>-\pi \lt \mathrm{Arg}(z_1) +\mathrm{Arg}(z_2) \le \pi</m> implies that <m>\mathrm{Arg}(z_1z_2) = \mathrm{Arg}(z_1) +\mathrm{Arg}(z_2)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Prove the
+              <q>only if</q>
+              part.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Refer to Equation <xref ref="log_a"/> and pick an appropriate value for <m>\alpha</m> so that the branch of the logarithm <m>\mathrm{log}_\alpha(z)</m> will <em>not</em>
+        be analytic at <m>z=z_0</m>, where
+        <ol>
+          <li>
+            <p>
+              <m>z_0 = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z_0 = -1+i\sqrt{3}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z_0 = i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z_0 = -i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z_0 = -1-i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z_0 = \sqrt{3}-i</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_6">
+      <p>
+        Show that <m>f(z) =\frac{\mathrm{Log}(z+5)}{z^2+3z+2}</m> is analytic everywhere except at the points <m>-1</m>,
+        <m>-2</m>,
+        and on the ray <m>\{(x,y) : x \le -5, \; y = 0\}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_7">
+      <p>
+        Show that the following are harmonic functions in the right half-plane <m>\{z:\mathrm{Re}z>0\}</m>.
+        <ol>
+          <li>
+            <p>
+              <m>u(x,y) =\ln(x^2 + y^2)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>v(x,y)=\mathrm{Arc}\tan(\frac{y}{x})</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_8">
+      <p>
+        Show that <m>z^n = \exp[n\log_{\alpha}(z)]</m>,
+        where <m>n</m> is an integer and
+        <m>\log_{\alpha}</m> is any branch of the logarithm.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_9">
+      <p>
+        Construct a branch of <m>f(z) =\log(z+4)</m> that is analytic at the point <m>z=-5</m> and takes on the value <m>7\pi i</m> there.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_10">
+      <p>
+        For what values of <m>z</m> is it true that
+        <ol>
+          <li>
+            <p>
+              <m>\mathrm{Log}(\frac{z_1}{z_2}) =\mathrm{Log}(z_1) - \mathrm{Log}(z_2)</m>?
+              Why?
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{d}{dz}\mathrm{Log}(z)=\frac{1}{z}</m>?
+              Why?
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathrm{Log}( \frac{1}{z})=-\mathrm{Log}(z)</m>?
+              Why?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_11">
+      <p>
+        Construct branches of <m>f(z) =\log(z+2)</m> that are analytic at all points in the plane except at points on the following rays.
+        <ol>
+          <li>
+            <p>
+              <m>\{(x,y) :x \ge -2,\,y=0\} </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\{(x,y) :x=-2,\,y \ge 0\} </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\{(x,y) :x=-2,\,y \le 0\} </m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Show that the mapping <m>w=\mathrm{Log}(z)</m> maps\label {5.2.12}
+        <ol>
+          <li>
+            <p>
+              the ray <m>\{z=re^{i\theta }:r>0,\,\theta =\frac{\pi }{3}\}</m>one-to-one and onto the horizontal line <m>\{(u,v) :v=\frac{\pi }{3}\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the semicircle <m>\{z=2e^{i\theta }:-\frac{\pi }{2} \le \theta \le \frac{\pi }{2}\}</m> one-to-one and onto the vertical line segment <m>\{(\ln 2, \, v) : -\frac{\pi }{2} \le v \le \frac{\pi }{2} \}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_13">
+      <p>
+        Find specific values of <m>z_1</m> and <m>z_2</m> so that <m>\mathrm{Log}(\frac{z_1}{z_2}) \ne \mathrm{Log}(z_1) - \mathrm{Log}(z_2)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_14">
+      <p>
+        Show why the solutions to Equation <xref ref="log_def_1"/> are given by those in Equation <xref ref="log_def_2"/>.
+        <em>Hint</em>: Mimic the process used in obtaining <xref ref="Inverse_of_Exp">Identities</xref>
+        and <xref ref="Inverse_of_Exp_again"></xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_2_15">
+      <p>
+        Explain why no branch of the logarithm is defined when <m>z=0</m>.
+      </p>
+    </exercise>
+  </exercises>
+</section>

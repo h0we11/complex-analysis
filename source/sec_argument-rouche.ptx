@@ -1,0 +1,565 @@
+<section xml:id="sec_argument-rouche">
+  <title>The Argument Principle &amp; Rouch&#xe9;'s Theorem</title>
+  <p>
+    We now derive two results based on Cauchy's residue theorem.
+    They have important practical applications and pertain only to functions all of whose isolated singularities are poles.
+  </p>
+  <definition>
+    <title>Meromorphic function</title>
+    <statement>
+      <p>
+        A function <m>f</m> is said to be <term>meromorphic</term>
+        in a domain <m>D</m> provided the only singularities of <m>f</m> are isolated poles and removable singularities.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    We make three important observations relating to this definition.
+    <ul>
+      <li>
+        <p>
+          Analytic functions are a special case of meromorphic functions.
+        </p>
+      </li>
+      <li>
+        <p>
+          Rational functions <m>f(z) =\frac{{P(z)}}{{Q(z)}}</m>,
+          where <m>P(z)</m> and <m>Q(z)</m> are polynomials,
+          are meromorphic in the entire complex plane.
+        </p>
+      </li>
+      <li>
+        <p>
+          By definition,
+          meromorphic functions have no essential singularities.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    Suppose that <m>f</m> is analytic at each point on a simple closed contour <m>C</m> and <m>f</m> is meromorphic in the domain that is the interior of <m>C</m>.
+    We assert without proof that <xref ref="Isolated_Zeros_Thm">Theorem</xref>
+    can be extended to meromorphic functions so that <m>f</m> has at most a finite number of zeros that lie inside <m>C</m>.
+    Since the function <m>g(z)=\frac{1}{f(z)}</m> is also meromorphic,
+    it can have only a finite number of zeros inside <m>C</m>,
+    and so <m>f</m> can have at most a finite number of poles that lie inside <m>C</m>.
+  </p>
+  <p>
+    The following theorem, known as the argument principle,
+    is useful in determining the number of zeros and poles that a function has.
+  </p>
+  <theorem xml:id="Argument_Thm">
+    <title>argument principle</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is meromorphic in the simply connected domain <m>D</m> and that <m>C</m><nbsp/>is a simple closed positively oriented contour in <m>D</m><nbsp/>such that <m>f</m> has no zeros or poles for <m>z\in C</m>.
+        Then
+        <men xml:id="Zeros_minus_Poles">
+          \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f-P_f
+        </men>,
+        where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m> and <m>P_f</m> is the number of poles of <m>f</m> that lie inside <m>C</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Let <m>a_1, \, a_2, \, \ldots, \, a_{Z_f}</m> be the zeros of <m>f</m> inside <m>C</m> counted according to multiplicity and let
+      <m>b_1, \, b_2, \, \ldots, \, b_{P_f}</m> be the poles of <m>f</m> inside <m>C</m> counted according to multiplicity.
+      Then <m>f(z)</m> has the representation
+      <me>
+        f(z) = \frac{(z-a_1) (z-a_2) \cdots (z-a_{Z_f})}{(z-b_1)(z-b_2) \cdots (z-b_{P_f})}g(z)
+      </me>,
+      where <m>g</m> is analytic and nonzero on <m>C</m> and inside <m>C</m>.
+      A standard calculation shows that
+      <md>
+        <mrow>\frac{f\,'(z)}{f(z)} \amp = \frac{1}{(z-a_1)} + \frac{1}{(z-a_2)} + \cdots + \frac{1}{(z-a_{Z_f})}</mrow>
+        <mrow xml:id="f__f_rep" number="yes">\amp - \frac{1}{(z-b_1)} - \frac{1}{(z-b_2)} - \cdots - \frac{1}{(z-b_{P_f})} + \frac{g\,'(z)}{g(z)}</mrow>
+      </md>.
+    </p>
+    <p>
+      <xref ref="x2Pi_or_zero">Corollary</xref> then gives
+      <md>
+        <mrow>\int_{C}\frac{dz}{(z-a_{j})} \amp = 2\pi i,  \text{ for }   j=1,2,\ldots ,Z_f,  \text{ and }</mrow>
+        <mrow>\int_{C}\frac{dz}{(z-b_k)} \amp = 2\pi i,  \text{ for }   k=1,2,\ldots ,P_f</mrow>
+      </md>.
+    </p>
+    <p>
+      The function <m>\frac{g\,'(z)}{g(z)}</m> is analytic inside and on <m>C</m>,
+      so the Cauchy-Goursat theorem gives <m>\int_{C}\frac{g\,'(z)}{g(z)}\,dz=0</m>.
+      These facts lead to the conclusion of our theorem if we integrate both sides of Equation <xref ref="f__f_rep"/> over <m>C</m>.
+    </p>
+  </proof>
+  <corollary xml:id="Int_f__f___N_Z_">
+    <statement>
+      <p>
+        Suppose that <m>f</m> is analytic in the simply connected domain <m>D</m>.
+        Let <m>C</m> be a simple closed positively oriented contour in <m>D</m> such that for <m>z\in C</m>,
+        <m>f(z) \ne 0</m>.
+        Then
+        <me>
+          \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f
+        </me>,
+        where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m>.
+      </p>
+    </statement>
+  </corollary>
+  <remark>
+    <p>
+      Certain feedback control systems in engineering must be stable.
+      A test for stability involves the function <m>G(z) =1+F(z)</m>,
+      where <m>F</m> is a rational function.
+      If <m>G</m> does not have any zeros in the region <m>\{z:\mathrm{Re}(z) \ge 0\}</m>,
+      then the system is stable.
+      We determine the number of zeros of <m>G</m> by writing <m>F(z) =\frac{P(z)}{Q(z)}</m>,
+      where <m>P</m> and <m>Q</m> are polynomials with no common zero.
+      Then <m>G(z) =\frac{ Q(z) +P(z)}{Q(z)}</m>,
+      and we can check for the zeros of
+      <m>Q(z) +P(z)</m> by using <xref ref="Argument_Thm">Theorem</xref>.
+      We select a value <m>R</m> so that <m>G(z) \ne 0</m> for
+      <m>\{z:|z| >R\}</m> and then integrate along the contour consisting of the right half of the circle <m>C_R(0)</m> and the line segment between <m>iR</m> and <m>-iR</m>.
+      This method is known as the <em>Nyquist stability criterion</em>.
+    </p>
+  </remark>
+  <p>
+    Why do we label <xref ref="Argument_Thm">Theorem</xref>
+    as the <em>argument principle</em>?
+    The answer lies with a fascinating application known as the
+    <em> winding number</em>.
+    Recall that a branch of the logarithm function,
+    <m>\log_{\alpha}</m>, is defined by
+    <me>
+      \log_{\alpha}z=\ln |z| +i\arg_{\alpha}z=\ln r+i\phi
+    </me>,
+    where <m>z=re^{i\phi }\ne 0</m> and <m>\alpha \lt \phi \le \alpha +2\pi</m>.
+    Loosely speaking, suppose that for some branch of the logarithm,
+    the composite function <m>\log_{\alpha}(f(z) )</m> were analytic in a simply connected domain <m>D</m> containing the contour <m>C</m>.
+    This would imply that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+    <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z\in D</m>.
+    <xref ref="DInt_Thm">Theorems</xref>
+    and <xref ref="Argument_Thm"></xref> would then tell us that,
+    as <m>z</m> winds around the curve <m>C</m>,
+    the quantity <m>\log_{\alpha}(f(z) )=\ln |f(z)| +i\arg_{\alpha}f(z)</m> would change by <m>2\pi i(Z_f-P_f)</m>.
+    Since <m>2\pi i(Z_f-P_f)</m> is purely imaginary,
+    this result tells us that <m>\arg_{a}f(z)</m> would change by <m>2\pi (Z_f-P_f)</m> radians.
+    In other words, as <m>z</m> winds around <m>C</m>,
+    the integral <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}\,dz</m> would count how many times the curve <m>f(C)</m> winds around the origin.
+  </p>
+  <p>
+    Unfortunately, we can't always claim that
+    <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+    <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z \in D</m>.
+    If it were, the Cauchy-Goursat theorem would imply that <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}dz=0</m>.
+    Nevertheless, the heuristics that we gave<mdash/>indicating that
+    <m>\frac{1}{2\pi i} \int_{C}\frac{f\,'(z)}{f(z)}dz</m> counts how many times the curve <m>f(C)</m> winds around the origin<mdash/>still hold true,
+    as we now demonstrate.
+  </p>
+  <p>
+    Suppose that <m>C:z(t)=x(t)+iy(t)</m> for
+    <m>a \le t \le b</m> is a simple closed contour and that we let
+    <m>a=t_0\lt t_1\lt \cdots\lt t_n=b</m> be a partition of the interval <m>[a,b]</m>.
+    For <m>k=0,1,\ldots,n</m>,
+    we let <m>z_k=z(t_k)</m> denote the corresponding points on <m>C</m>,
+    where <m>z_0=z_n</m>.
+    If <m>z^{\ast}</m> lies inside <m>C</m>,
+    then the curve <m>C:z(t)</m> winds around
+    <m>z^{\ast}</m> once as <m>t</m> goes from <m>a</m> to <m>b</m>,
+    as shown in <xref ref="fig_ch-08-10">Figure</xref>.
+  </p>
+  <p>
+    Now suppose that a function <m>f</m> is analytic at each point on <m>C</m> and meromorphic inside <m>C</m>.
+    Then <m>f(C)</m> is a closed curve in the <m>w</m> plane that passes through the points <m>w_k=f(z_k)</m>,
+    for <m>k=0,1,\ldots ,n</m>, where <m>w_0=w_n</m>.
+    We can choose subintervals
+    <m>[t_{k-1},t_k]</m> small enough so that,
+    on the portion of <m>f( C)</m> between <m>w_{k-1}</m> and <m>w_k</m>,
+    we can define a continuous branch of the logarithm
+    <me>
+      \log_{\alpha_k}w=\ln |w| +i\arg_{\alpha_k}w = \ln \rho +i\phi
+    </me>,
+    where <m>w=\rho e^{i\phi }</m> and <m>\alpha_k\lt \phi \lt \alpha_k+2\pi</m>,
+    as shown in <xref ref="fig_ch-08-11">Figure</xref>.
+    Then
+    <me>
+      \log_{\alpha_k}f(z_k) -\log_{\alpha_k}f(z_{k-1}) = \ln \rho _k-\ln \rho _{k-1}+i\Delta \phi _k
+    </me>,
+    where <m>\Delta \phi _k=\phi _k-\phi _{k-1}</m> measures in radians the amount that the portion of the curve <m>f(C)</m> between <m>w_k</m> and <m>w_{k-1}</m> winds around the origin.
+    With small enough subintervals <m>[ t_{k-1},t_k]</m>,
+    the angles <m>\alpha_{k-1}</m> and <m>\alpha_k</m> might be different,
+    but the values <m>\arg_{\alpha_{k-1}}w_{k-1}</m> and <m>\arg _{\alpha_k}w_{k-1}</m> will be the same,
+    so that <m>\log_{\alpha_{k-1}}w_{k-1}=\log_{\alpha_k}w_{k-1}</m>.
+  </p>
+  <figure xml:id="fig_ch-08-11">
+    <caption>The points <m>z_k</m> on the contour <m>C</m> that winds around <m>z^*</m></caption>
+    <image width="73%" source="figs/ch-08/ch-08-fig-11.pdf"/>
+  </figure>
+  <p>
+    We can now show why <m>\int_{C}\frac{f\,'(z)}{f(z)}\,dz</m> counts the number of times that <m>f(C)</m> winds around the origin.
+    We parametrize <m>C:z(t)</m>, for <m>a\le t\le b</m>,
+    and choose the appropriate branches of <m>\log_{\alpha_k}w</m>,giving
+    <md>
+      <mrow>\int_{C}\frac{f\,'(z)}{f(z)}\,dz \amp = \sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{f\,'\big(z(t)\big)}{f\big(z(t)\big)}z\,'(t)\,dt</mrow>
+      <mrow>\amp = \sum_{k=1}^n \left(\log_{\alpha_k}\Big[f\big(z(t_k)\big)\Big] - \log_{\alpha_k}\Big[f\big(z(t_{k-1})\big)\Big]\right)</mrow>
+      <mrow>\amp  =\sum\limits_{k=1}^n(\log_{\alpha_k}w_k-\log_{\alpha _k}w_{k-1})</mrow>
+    </md>.
+    which we rewrite as
+    <men xml:id="Winding_Number_Eq">
+      \int_{C}\frac{f\,'(z)}{f(z)}\,dz = \sum_{k=1}^n[\ln \rho _k-\ln \rho _{k-1}] + i\sum_{k=1}^n\Delta \phi _k
+    </men>.
+  </p>
+  <p>
+    When we use the fact that <m>\rho _0=\rho _n</m>,
+    the first summation in Equation <xref ref="Winding_Number_Eq"/> vanishes.
+    The summation of the quantities
+    <m>\Delta \phi _k</m> expresses the accumulated radian measure of <m>f( C)</m> around the origin.
+    Therefore, when we divide both sides of Equation <xref ref="Winding_Number_Eq"/> by <m>2\pi i</m>,
+    its right side becomes<nbsp/>an integer
+    (by <xref ref="Argument_Thm">Theorem</xref>)
+    that must count the number of times <m>f(C)</m> winds around the origin.
+  </p>
+  <example xml:id="Winding_Ex">
+    <statement>
+      <p>
+        The image of the circle <m>C_2(0)</m> under <m>f(z)=z^2+z</m> is the curve
+        <m>\{(x,y) =(4\cos 2t+2\cos t,4\sin 2t+2\sin t) :0\lt t\lt 2\pi \}</m> shown in <xref ref="fig_ch-08-12">Figure</xref>.
+        Note that the image curve <m>f\big(C_2(0)\big)</m> winds twice around the origin.
+        We check this by computing <m>\frac{1}{2\pi i}\int_{C_2^{+}(0)}\frac{f\,'(z)}{f(z)}\,dz = \frac{1}{2\pi i}\int_{C_2^{+}(0)}\frac{ 2z+1}{z^2+z}dz</m>.
+        The residues of the integrand are at <m>0</m> and <m>-1</m>.
+        Thus
+        <md>
+          <mrow>\frac{1}{2\pi i}\int_{C_2^{+}(0)}\frac{2z+1}{z^2+z}dz \amp = \mathrm{Res}\left[\frac{2z+1}{z^2+z},0\right] +\mathrm{Res}\left[\frac{2z+1}{z^2+z},-1\right]</mrow>
+          <mrow>\amp = 1+1</mrow>
+          <mrow>\amp = 2</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Finally, we note that if <m>g(z) =f(z) -a</m>,
+    then <m>g\,'(z) =f(z)</m>,
+    and thus we can generalize what we've just said to compute how many times the curve <m>f(C)</m> winds around the point <m>a</m>.
+    <xref ref="Winding_Number_Thm">Theorem</xref> summarizes our discussion.
+  </p>
+  <theorem xml:id="Winding_Number_Thm">
+    <title>winding numbers</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is meromorphic in the simply connected domain <m>D</m>.
+        If <m>C</m> is a simple closed positively oriented contour in <m>D</m>\ such that for <m>z\in C</m>,
+        <m>f( z)  \ne 0</m><nbsp/>and <m>f( z)  \ne\infty</m>, then
+        <me>
+          W\big(f(C) ,a\big) = \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)-a}\,dz
+        </me>,
+        known as the <term>winding number of</term>
+        {<m>\bm f(C)</m>} <term>about</term> <m>\bm a</m>,
+        counts the number of times the curve <m>f(C)</m> winds around the point <m>a</m>.
+        If <m>a=0</m>,
+        the integral counts the number of times the curve <m>f(C)</m> winds around the origin.
+      </p>
+    </statement>
+  </theorem>
+  <figure xml:id="fig_ch-08-12">
+    <caption>The image curve <m>f\big(C_2(0)\big)</m> under <m>f(z) =z^2+z</m></caption>
+    <image width="73%" source="figs/ch-08/ch-08-fig-12.pdf"/>
+  </figure>
+  <remark>
+    <p>
+      Letting <m>f(z) =z</m> in <xref ref="Winding_Number_Thm">Theorem</xref> gives
+      <me>
+        W(C,a) =\frac{1}{2\pi i}\int_{C}\frac{1}{z-a}\,dz= \begin{cases}1, \amp   \text{ if }  a \text{ is inside }  C,  \text{ or }  \\ 0, \amp   \text{ if }  a \text{ is outside } C, \end{cases}
+      </me>
+      which counts the number of times the curve <m>C</m> winds around the point <m>a</m>.
+      If <m>C</m> is not a simple closed curve,
+      but crosses itself perhaps several times, we can show
+      (but omit the proof)
+      that <m>W(C,a)</m> still gives the number of times the curve <m>C</m> winds around the point <m>a</m>.
+      Thus <em>winding number</em> is indeed an appropriate term.
+    </p>
+  </remark>
+  <p>
+    We close this section with a result that will help us gain information about the location of the zeros and poles of meromorphic functions.
+  </p>
+  <theorem xml:id="Rouche_s_Thm">
+    <title>Rouch&#xe9;'s theorem</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are meromorphic functions defined in the simply connected domain <m>D</m>,
+        that <m>C</m><nbsp/>is a simply closed contour in <m>D</m>,
+        and that <m>f</m> and <m>g</m> have no zeros or poles for <m>z\in C</m>.
+        If the strict inequality <m>|f(z)+g(z)| \lt |f(z)| + |g(z)|</m> holds for all <m>z \in C</m>,
+        then <m>Z_f-P_f=Z_g-P_g</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Because <m>g</m> has no zeros or poles on <m>C</m>,
+      we may legitimately divide both sides of the inequality
+      <m>|f(z)+g(z)| \lt  |f(z)| + |g(z)|</m> by <m>|g(z)|</m> to get
+      <men xml:id="Rouche_criterion">
+        \left|\frac{f(z)}{g(z)}+1\right| \lt  \left|\frac{f(z)}{g(z)}\right| + 1,  \text{ for all }   z \in C
+      </men>.
+    </p>
+    <p>
+      For <m>z \in C, \; \frac{f(z)}{g(z)}</m> cannot possibly be zero or any positive real number,
+      as that would contradict <xref ref="Rouche_criterion">Inequality</xref>.
+      This means that <m>C^{\ast}</m>,
+      the image of the curve <m>C</m> under the mapping <m>\frac{f}{g}</m>,
+      does not contain the interval <m>[0,\infty)</m>,
+      and so the function defined by
+      <me>
+        w(z) = \log_0\left(\frac{f(z)}{g(z)}\right) = \ln\left|\frac{f(z)}{g(z)}\right| + i\arg_0(\frac{f(z)}{g(z)}) = \ln r+i\phi
+      </me>,
+      where <m>\frac{f(z)}{g(z)}=re^{i\phi }\ne 0</m> and <m>0\lt \phi \le 2\pi</m>,
+      is analytic in a simply connected domain
+      <m>D^{\ast}</m> that contains <m>C^{\ast}</m>.
+      We calculate
+      <me>
+        w\,'(z) =\frac{f\,'(z)}{f(z)} - \frac{g\,'(z)}{g(z)}
+      </me>,
+      so <m>w(z) =\log_0(\frac{f(z)}{g(z)})</m> is an antiderivative of <m>\frac{f\,'(z)}{f(z)}-\frac{g\,'(z)}{g(z)}</m>,
+      for all <m>z \in D^{\ast}</m>.
+      Since <m>C^{\ast}</m> is a closed curve in <m>D^{\ast}</m>,
+      <xref ref="DInt_Thm">Theorem</xref>
+      gives <m>\int_{C^{\ast}}(\frac{ f\,'(z)}{f(z)}-\frac{g\,'( z)}{g(z)})\,dz=0</m>.
+      According to <xref ref="Argument_Thm">Theorem</xref> then,
+      <me>
+        \int_{C^{\ast}}\frac{f\,'(z)}{f(z)}\,dz - \int_{C^{\ast}}\frac{g\,'(z)}{g(z)}\,dz=(Z_f-P_f)-(Z_g-P_g) =0
+      </me>,
+      which completes the proof.
+    </p>
+  </proof>
+  <corollary xml:id="Rouche_s_Cor">
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic functions defined in the simply connected domain <m>D</m>,
+        that <m>C</m><nbsp/>is a simple closed contour in <m>D</m>,
+        and that <m>f</m> and <m>g</m> have no zeros for <m>z \in C</m>.
+        If the strict inequality <m>|f(z)+g(z)| \lt |f(z)|+|g(z)|</m> holds for all <m>z \in C</m>,
+        then <m>Z_f = Z_g</m>.
+      </p>
+    </statement>
+  </corollary>
+  <remark>
+    <p>
+      <xref ref="Rouche_s_Thm">Theorem</xref>
+      is usually stated with the requirement that <m>f</m> and <m>g</m> satisfy the condition <m>|f(z)+g(z)|\lt |g(z)|</m>,
+      for <m>z \in C</m>.
+      The improved theorem that we gave was discovered by Irving Glicksberg (see the
+      <em>American Mathematical Monthly</em>, 83 (1976), pp. 186-187).
+      The weaker version is adequate for most purposes, however,
+      as the following examples illustrate.
+    </p>
+  </remark>
+  <example>
+    <statement>
+      <p>
+        Show that all four zeros of the polynomial
+        <m>g(z)=z^4-7z-1</m> lie in the disk <m>D_2(0) =\{z:|z|\lt 2\}</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>f(z) =-z^4</m>.
+        Then <m>f(z) +g(z)=-7z-1</m>,
+        and at points on the circle<nbsp/><m>C_2(0) =\{z:|z| =2\}</m> we have the relation
+        <me>
+          |f(z)+g(z)| \le |-7z| + |-1| = 7(2) + 1 \lt  16 = |f(z)|
+        </me>.
+      </p>
+      <p>
+        Of course, if <m>|f(z)+g(z)|\lt |f(z)|</m>,
+        then as we indicated in Remark 8.5 we certainly have <m>|f(z)+g(z)|\lt |f(z)|+|g(z)|</m>,
+        so that the conditions for applying <xref ref="Rouche_s_Cor">Corollary</xref>
+        are satisfied on the circle <m>C_2(0)</m>.
+        The function <m>f</m> has a zero of order <m>4</m> at the origin,
+        so <m>g</m> must have four zeros inside <m>D_2(0)</m>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that the polynomial <m>g(z) =z^4-7z-1</m> has one zero in the disk <m>D_1(0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>f(z) =7z+1</m>, then <m>f(z)+g(z)=z^4</m>.
+        At points on the circle <m>C_1(0) =\{z:|z| =1\}</m> we have the relation
+        <me>
+          |f(z)+g(z)| = |z^4| = 1 \lt 6 = |7| - |1| \le |7z-1| = |f(z)|
+        </me>.
+      </p>
+      <p>
+        The function <m>f</m> has one zero at the point
+        <m>-\frac{1}{7}</m> in the disk <m>D_1(0)</m>,
+        and the hypotheses of <xref ref="Rouche_s_Cor">Corollary</xref>
+        hold on the circle <m>C_1(0)</m>.
+        Therefore <m>g</m> has one zero inside <m>D_1(0)</m>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_argument-rouche">Section</xref></title>
+    <exercise xml:id="x8_7_1">
+      <p>
+        Let <m>f(z) =z^5-z</m>.
+        Find the number of times the image <m>f(C)</m> winds around the origin if
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>C=C_{\frac{1}{2}}(0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>C</m> is the rectangle with vertices <m>\pm \frac{1}{2}\pm 3i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>C=C_2(0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>C=C_{1.25}(i)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x8_7_2">
+      <p>
+        Show that four of the five roots of the equation
+        <m>z^5+15z+1=0</m> belong to the annulus <m>A(\frac{3}{2},2,0) =\{z:\frac{3}{2} \lt |z| \lt 2\}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_3">
+      <p>
+        Let <m>g(z) =z^5+4z-15</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there are no zeros in <m>D_1(0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are five zeros in <m>D_2(0)</m>.
+              <em>Hint</em>: Consider <m>f(z) =-z^5</m>.
+              <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
+              <me>
+                (z-1.546)(z^2-1.340z+2.857)(z^2+2.885z+3.397)
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_4">
+      <p>
+        Let <m>g(z) =z^3+9z+27</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there are no zeros in <m>D_2(0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are three zeros in <m>D_4(0)</m>.
+              <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
+              <me>
+                (z+2.047) (z^2-2.047z+13.19)
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_5">
+      <p>
+        Let <m>g(z) =z^5+6z^2+2z+1</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there are two zeros in <m>D_1(0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are five zeros in <m>D_2(0)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_6">
+      <p>
+        Let <m>g(z) =z^{6}-5z^4+10</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there are no zeros in <m>|z|\lt 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are four zeros in <m>|z|\lt 2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are six zeros in <m>|z|\lt 3</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_7">
+      <p>
+        Let <m>g(z) =3z^3-2iz^2+iz-7</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there are no zeros in <m>|z|\lt 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that there are three zeros in <m>|z|\lt 2</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_8">
+      <p>
+        Use Rouch&#xe9;'s theorem to prove the fundamental theorem of algebra.
+        <em>Hint</em>: For the polynomial
+        <m>g(z)=a_0+a_1z+\cdots+a_{n-1}z^{n-1}+a_nz^n</m>, let <m>f(z)=-a_nz^n</m>.
+        Show that, for points <m>z</m> on the circle <m>C_R(0)</m>,
+        <me>
+          |\frac{f(z) +g(z)}{f(z)}| \lt  \frac{|a_0| +|a_1| +\cdots +|a_{n-1}| }{|a_n| R}
+        </me>,
+        and conclude that the right side of this inequality is less than 1 when <m>R</m> is large.
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_10">
+      <p>
+        Suppose that <m>h(z)</m> is analytic and nonzero and
+        <m>|h(z)|\lt 1</m> for <m>z \in D_1(0)</m>.
+        Prove that the function <m>g(z) = h(z) - z^n</m> has <m>n</m> zeros inside the unit circle <m>C_1(0)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x8_7_11">
+      <p>
+        Suppose that <m>f(z)</m> is analytic inside and on the simple closed contour <m>C</m>.
+        If <m>f(z)</m> is a one-to-one function at points <m>z</m> on <m>C</m>,
+        then prove that <m>f(z)</m> is one-to-one inside <m>C</m>.
+        <em>Hint</em>: Consider the image of <m>C</m>.
+      </p>
+    </exercise>
+  </exercises>
+</section>

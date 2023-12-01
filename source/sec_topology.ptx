@@ -1,0 +1,619 @@
+<section xml:id="sec_topology">
+  <title>The Topology of Complex Numbers</title>
+  <p>
+    In this section we investigate some basic ideas concerning sets of points in the plane.
+    The first concept is that of a curve.
+    Intuitively,
+    we think of a curve as a piece of string placed on a flat surface in some type of meandering pattern.
+    More formally, we define a <term>curve</term>
+    to be the range of a continuous complex-valued function <m>z(t)</m> defined on the interval <m>[a, b]</m>.
+    That is, a curve <m>C</m> is the range of a function given by
+    <m>z(t) = \big(x(t),
+    y(t)\big) = x(t) +iy(t)</m>, for <m>a \le t \le b</m>,
+    where both <m>x(t)</m> and <m>y(t)</m> are continuous real-valued functions.
+    If both <m>x(t)</m> and <m>y(t)</m> are differentiable,
+    we say that the curve is <term>smooth</term>.
+    A curve for which <m>x(t)</m> and <m>y(t)</m> are differentiable except for a finite number of points is called
+    <em>piecewise smooth</em>.
+    We specify a curve <m>C</m> as
+    <men xml:id="Curve">
+      C:z(t) =x(t) +iy(t) =\big(x(t), y(t)\big)  \text{ for }   a \le t \le b
+    </men>,
+    and say that <m>z(t)</m> is a <term>parametrization</term> for the curve <m>C</m>.
+    Note that, with this parametrization,
+    we are specifying a direction for the curve <m>C</m>,
+    saying that <m>C</m> is a curve that goes from the
+    <term>initial point</term>
+    <m>z(a) =(x(a),
+    y(a)) = x(a)+iy(a)</m> to the <term>terminal point</term> <m>z(b) = \big(x(b),
+    y(b)\big) = x(b)+iy(b)</m>.
+    If we had another function whose range was the same set of points as <m>z(t)</m> but whose initial and final points were reversed,
+    we would indicate the curve that this function defines by <m>-C</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find parameterizations for <m>C</m> and <m>-C</m>,
+        where <m>C</m> is the straight line segment beginning at
+        <m>z_0=(x_0, y_0)</m> and ending at <m>z_1=(x_1, y_1)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Refer to <xref ref="fig_ch-01-25">Figure</xref>.
+        The vector form of a line shows that the direction of <m>C</m> is <m>z_1-z_0</m>.
+        As <m>z_0</m> is a point on <m>C</m>, its vector equation is
+        <md>
+          <mrow xml:id="Curvez0z1" number="yes">C \amp  :z(t) = z_0+(z_1-z_0) t  \text{ for }   0 \le t \le 1,  \text{ or }</mrow>
+          <mrow>C \amp  :z(t) =[x_0+(x_1-x_0)t] +i[y_0+(y_1-y_0)t],  \text{ for }   0 \le t \le 1</mrow>
+        </md>.
+      </p>
+      <figure xml:id="fig_ch-01-25">
+        <caption>The straight-line segment <m>C</m> joining <m>z_0</m> to <m>z_1</m></caption>
+        <image width="73%" source="figs/ch-01/ch-01-fig-25.pdf"/>
+      </figure>
+      <p>
+        Using the same technique we see that one parametrization for <m>-C</m> is
+        <men xml:id="eq_-c">
+          -C:\gamma(t) = z_1+(z_0-z_1)t  \text{ for }   0 \le t \le 1
+        </men>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Comparing Equations <xref ref="Curvez0z1"/> and <xref ref="eq_-c"/> illustrates a general principle: If <m>C</m> is a curve parametrized by <m>z(t)</m> for <m>0 \le t \le 1</m>,
+    then one parametrization for <m>-C</m> will be
+    <m>\gamma(t) = z(1-t)</m>, for <m>0 \le t \le 1</m>.
+  </p>
+  <p>
+    A curve <m>C</m> having the property that <m>z(a) =z(b)</m> is said to be a
+    <term>closed curve</term>.
+    The line <xref ref="Curvez0z1">segment</xref> is not a closed curve.
+    The range of <m>z(t)=x(t)+iy(t)</m>,
+    where <m>x(t) =\sin 2t\cos t</m>,
+    and <m>y(t) =\sin 2t\sin t</m> for
+    <m>0 \le t \le 2\pi</m> is a closed curve because <m>z(0)=(0, 0)=z(2\pi)</m>.
+    The range of <m>z(t)</m> is the four-leaved rose shown in <xref ref="fig_ch-01-26">Figure</xref>.
+    Note that, as <m>t</m> goes from 0 to <m>\pi /2</m>, the point is on leaf 1;
+    from <m>\pi /2</m> to <m>\pi</m>, it is on leaf 2;
+    between <m>\pi</m> and <m>3\pi /2</m>, it is on leaf 3;
+    and finally,
+    for <m>t</m> between <m>3\pi /2</m> and <m>2\pi</m>, it is on leaf 4.
+  </p>
+  <p>
+    Note further that, at <m>(0,0)</m>,
+    the curve has crossed over itself (at points other than those corresponding with <m>t=0</m> and <m>t=2\pi</m>);
+    we want to be able to distinguish when a curve does not cross over itself in this way.
+    The curve <m>C</m> is called <term>simple</term>
+    if it does not cross over itself,
+    except possibly at its initial and terminal points.
+    In other words, the curve <m>C:z(t)</m>, for <m>a \le t \le b</m>,
+    is simple provided that <m>z(t_1) \ne z(t_2)</m> whenever <m>t_1 \ne t_2</m>,
+    except possibly when <m>t_1=a</m> and <m>t_2=b</m>.
+  </p>
+  <figure xml:id="fig_ch-01-26">
+    <caption>The four-leaved rose: <m>x(t) =\sin2t\cos t</m>, <m>y(t)=\sin2t\sin t</m> for <m>0 \le t \le 2\pi</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-26.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Show that the circle <m>C</m> with center
+        <m>z_0=x_0+iy_0</m> and radius <m>r_0</m> can be parametrized to form a simple closed curve.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Note that <m>C:z(t) =(x_0+r_0\cos t) +i(y_0+r_0\sin t) = z_0+r_0e^{it}</m>,
+        for <m>0 \le t \ le 2\pi</m>,
+        gives the required parametrization.
+      </p>
+    </solution>
+  </example>
+  <p>
+    <xref ref="fig_ch-01-27">Figure</xref> shows that,
+    as <m>t</m> varies from 0 to <m>2\pi</m>,
+    the circle is traversed counterclockwise.
+    If you were traveling around the circle in this manner,
+    its interior would be on your left.
+    When a simple closed curve is parametrized in this fashion,
+    we say that the curve has a <term>positive orientation</term>.
+    We will have more to say about this idea shortly.
+  </p>
+  <figure xml:id="fig_ch-01-27">
+    <caption>The simple closed curve <m>z(t)=z_0 + r_0e^{it}</m>, for <m>0 \le t \le 2\pi</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-27.pdf"/>
+  </figure>
+  <p>
+    We need to develop some vocabulary that will help describe sets of points in the plane.
+    One fundamental idea is that of an
+    <m>\varepsilon</m>-<term>neighborhood</term> of the point <m>z_0</m>.
+    It is the open disk of radius
+    <m>\varepsilon>0</m> about <m>z_0</m> shown in <xref ref="fig_ch-01-28">Figure</xref>.
+    Formally, it is the set of all points satisfying the inequality
+    <m>\{z: |z-z_0| \lt \varepsilon\}</m> and is denoted by <m>D_{\varepsilon}(z_0)</m>.
+    That is,
+    <men xml:id="OpenDisk">
+      D_{\varepsilon}(z_0) = \{z: |z-z_0| \lt \varepsilon \}
+    </men>.
+  </p>
+  <figure xml:id="fig_ch-01-28">
+    <caption>An <m>\varepsilon</m>-neighborhood of the point <m>z_0</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-28.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        The solution sets of the inequalities <m>|z| \lt 1, \; |z-i| \lt 2</m>,
+        and <m>|z+1+2i|\lt 3</m> are neighborhoods of the points <m>0, \, i</m>,
+        and <m>-1-2i</m>, with radii 1, 2, and 3, respectively.
+        They can also be expressed as
+        <m>D_1(0), \, D_2(i)</m>, and <m>D_3(-1-2i)</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    We also define <m>\overline{D}_\varepsilon(z_0)</m>,
+    the <term>closed disk of radius</term>
+    <m>\varepsilon</m> centered at <m>z_0</m>,
+    and <m>D_\varepsilon^\ast(z_0)</m>,
+    the <term>punctured disk of radius</term>
+    <m>\varepsilon</m> <term>centered at</term> <m>z_0</m> as
+    <md>
+      <mrow xml:id="ClosedDisk" number="yes">\overline{D}_\varepsilon(z_0)  \amp = \{z:|z-z_0| \le \varepsilon \}  \text{ and }</mrow>
+      <mrow xml:id="PuncturedDisk" number="yes">D_\varepsilon^\ast(z_0)      \amp = \{z:0\lt |z-z_0| \lt  \varepsilon \}</mrow>
+    </md>.
+  </p>
+  <p>
+    The point <m>z_0</m> is said to be an
+    <term>interior point</term>
+    of the set <m>S</m> provided that there exists an
+    <m>\varepsilon</m>-neighborhood of <m>z_0</m> that contains only points of <m>S</m>;
+    <m>z_0</m> is called an <term>exterior point</term>
+    of the set <m>S</m> if there exists an
+    <m>\varepsilon</m>-neighborhood of <m>z_0</m> that contains no points of <m>S</m>.
+    If <m>z_0</m> is neither an interior point nor an exterior point of <m>S</m>,
+    then it is called a <term>boundary point</term>
+    of <m>S</m> and has the property that each
+    <m>\varepsilon</m>-neighborhood of <m>z_0</m> contains both points in <m>S</m> and points not in <m>S</m>.
+    <xref ref="fig_ch-01-29">Figure</xref> illustrates this situation.
+  </p>
+  <figure xml:id="fig_ch-01-29">
+    <caption>The interior, exterior, and boundary of a set</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-29.pdf"/>
+  </figure>
+  <p>
+    The boundary of <m>D_R(z_0)</m> is the circle depicted in Figure 1.23.
+    We denote this circle <m>C_R(z_0)</m> and refer to it as the
+    <term>circle of radius R centered at</term> <m>z_0</m>.
+    Thus
+    <men xml:id="CRZ0Def">
+      C_R(z_0) = \{z:|z-z_0| =R \}
+    </men>.
+  </p>
+  <p>
+    We use the notation <m>C_R^+(z_0)</m> to indicate that the parametrization we chose for this simple closed curve resulted in a positive orientation;
+    <m>C_R^-(z_0)</m> denotes the same circle,
+    but with a negative orientation.
+    (In both cases, <em>counterclockwise</em>
+    denotes the positive direction.)
+    Using notation that we have already introduced,
+    we get <m>C_R^-(z_0) =-C_R^+(z_0)</m>.
+  </p>
+  <example xml:id="TopologyEx">
+    <statement>
+      <p>
+        Let <m>S=D_1(0) = \{z:|z|\lt 1 \}</m>.
+        Find the interior, exterior, and boundary of <m>S</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We show that every point of <m>S</m> is an interior point of <m>S</m>.
+        Let <m>z_0</m> be a point of <m>S</m>.
+        Then <m>|z_0|\lt 1</m>, and we can choose <m>\varepsilon=1-|z_0|>0</m>.
+        We claim that <m>D_\varepsilon(z_0) \subseteq S</m>.
+        If <m>z \in D_\varepsilon(z_0)</m>, then
+        <me>
+          |z| =|z-z_0 + z_0| \le |z-z_0| +|z_0| \lt \varepsilon+|z_0| =1-|z_0| +|z_0| =1
+        </me>.
+      </p>
+      <p>
+        Hence the <m>\varepsilon</m>-neighborhood of <m>z_0</m> is contained in <m>S</m>,
+        which shows that <m>z_0</m> is an interior point of <m>S</m>.
+        It follows that the interior of <m>S</m> is the set <m>S</m> itself.
+      </p>
+      <p>
+        Similarly, it can be shown that the exterior of <m>S</m> is <m>\{z:|z| >1 \}</m>,
+        and the boundary of <m>S</m> is the unit circle <m>C_1(0) =\{z: |z| =1 \}</m>.
+        These claims follow from that fact that,
+        if <m>z_0=e^{i\theta_0}</m> is any point on the circle,
+        then any <m>\varepsilon</m>-neighborhood of <m>z_0</m> will contain two points:
+        <m>(1-\varepsilon/2) e^{i\theta_0}</m>,
+        which belongs to <m>S</m>;
+        and <m>(1+\varepsilon/2)e^{i\theta_0}</m>,
+        which does not belong to <m>S</m>.
+        We leave the details of demonstrating this claim as an exercise.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The point <m>z_0</m> is called an
+    <term>accumulation point</term> of the set <m>S</m> if,
+    for each <m>\varepsilon</m>,
+    the punctured disk <m>D_\varepsilon^\ast(z_0)</m> contains at least one point of <m>S</m>.
+    We ask you to show in the exercises that the set of accumulation points of <m>D_1(0)</m> is <m>\overline{D}_1(0)</m>,
+    and that there is only one accumulation point of <m>S=\{\frac{i}{n}:n=1, \, 2,\ldots \}</m>,
+    namely, the point <m>0</m>.
+    We also ask you to prove that a set is closed if and only if it contains all of its accumulation points.
+  </p>
+  <p>
+    A set <m>S</m> is called an <term>open set</term>
+    if every point of <m>S</m> is an interior point of <m>S</m>.
+    Thus, Example <xref ref="TopologyEx"/> shows that <m>D_1(0)</m> is open.
+    A set <m>S</m> is called a <term>closed set</term>
+    if it contains all its boundary points.
+    A set <m>S</m> is said to be a <term>connected set</term>
+    if every pair of points <m>z_1</m> and <m>z_2</m> contained in <m>S</m> can be joined by a curve that lies entirely in <m>S</m>.
+    Roughly speaking, a connected set consists of a
+    <q>single piece.</q>
+    The unit disk <m>D_1(0)=\{z:|z|\lt 1\}</m> is a connected open set.
+    We ask you to verify in the exercises that,
+    if <m>z_1</m> and <m>z_2</m> lie in <m>D_1(0)</m>,
+    then the straight-line segment joining them lies entirely in <m>D_1(0)</m>.
+    The annulus <m>A=\{z:1\lt |z|\lt 2\}</m> is a connected open set because any two points in <m>A</m> can be joined by a curve <m>C</m> that lies entirely in <m>A</m>,
+    as shown in <xref ref="fig_ch-01-30">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-01-30">
+    <caption>The annulus <m>A=\{z:1|z|\lt 2\}</m> is a connected set</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-30.pdf"/>
+  </figure>
+  <p>
+    The set <m>B=\{z:|z+2|\lt 1 \text{ or } |z-2|\lt 1\}</m> consists of two disjoint disks.
+    We leave it as an exercise for you to show that the set is not connected,
+    as shown in <xref ref="fig_ch-01-31">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-01-31">
+    <caption>The set <m>B=\{z:|z+2|\lt 1   or    |z-2|\lt 1\}</m> is not a connected set</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-31.pdf"/>
+  </figure>
+  <p>
+    We call a connected open set a <term>domain</term>.
+    In the exercises we ask you to show that the open unit disk
+    <m>D_1(0)=\{z:|z|\lt 1\}</m> is a domain and that the closed unit disk <m>\overline{D}_1(0)=\{z:|z| \le 1\}</m> is not a domain.
+    The term <em>domain</em> is a noun and is a type of set.
+    In <xref ref="ch_complex-functions"/> we note that it also refers to the set of points on which a function is defined.
+    In the latter context, it does not necessarily mean a connected open set.
+  </p>
+  <example xml:id="ConnectedEx">
+    <statement>
+      <p>
+        Show that the right half-plane <m>H=\{z: \mathrm{Re}(z) >0 \}</m> is a domain.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First we show that <m>H</m> is connected.
+        Let <m>z_0</m> and <m>z_1</m> be any two points in <m>H</m>.
+        We claim the obvious:
+        the straight-line segment <m>C</m> given by Equation <xref ref="Curvez0z1"/> lies entirely within <m>H</m>.
+        To prove this claim, we let <m>z(t^\ast)=z_0+(z_1-z_0)t^\ast</m>,
+        for some <m>t^\ast \in [0, 1]</m>,
+        be an arbitrary point on <m>C</m>.
+        We must show that <m>\mathrm{Re}\big(z(t^\ast)\big)>0</m>.
+        Now,
+        <md>
+          <mrow>\mathrm{Re}\big(z(t^\ast)\big)  \amp = \mathrm{Re}\big(z_0+(z_1-z_0)t^\ast\big)</mrow>
+          <mrow>\amp = \mathrm{Re}\big(z_0(1-t^\ast)\big)+\mathrm{Re}(z_1t^\ast)</mrow>
+          <mrow xml:id="Rezt" number="yes">\amp = (1-t^\ast)\mathrm{Re}(z_0)+t^\ast\mathrm{Re}(z_1)</mrow>
+        </md>.
+      </p>
+      <p>
+        If <m>t=0</m>,
+        the last expression becomes <m>\mathrm{Re}(z_0)</m>,
+        which is greater than zero because <m>z_0 \in H</m>.
+        Likewise, if <m>t=1</m>,
+        then the right side of Equation <xref ref="Rezt"/> reduces to
+        <m>\mathrm{Re}(z_1)</m>, which also is positive.
+        Finally, if <m>0\lt t^\ast\lt 1</m>,
+        then each term in Equation <xref ref="Rezt"/> is positive,
+        so in this case we also have <m>\mathrm{Re}\big(z(t^\ast)\big)>0</m>.
+      </p>
+      <p>
+        To show that <m>H</m> is open,
+        we suppose without loss of generality that <m>\mathrm{Re}(z_0) \le \mathrm{Re}(z_1)</m>.
+        We claim that <m>D_\varepsilon(z_0) \subseteq H</m>,
+        where <m>\varepsilon=\mathrm{Re}(z_0)</m>.
+        We leave the proof of this claim as an exercise.
+      </p>
+    </solution>
+  </example>
+  <p>
+    A domain, together with some, none,
+    or all its boundary points, is called a <term>region</term>.
+    For example,
+    the horizontal strip <m>\{z:1\lt \mathrm{Im}(z) \le 2\}</m> is a region.
+    A set formed by taking the union of a domain and its boundary is called a
+    <term>closed region</term>;
+    thus <m>\{z:1 \le \mathrm{Im}(z) \le 2\}</m> is a closed region.
+    A set is said to be a <term>bounded set</term>
+    if it can be completely contained in some closed disk, that is,
+    if there exists an <m>R>0</m> such that for each <m>z</m> in <m>S</m> we have <m>|z| \le R</m>.
+    The rectangle given by <m>\{z:|x| \le 4 \text{ and } |y| \le 3\}</m> is bounded because it is contained inside the disk <m>\overline{D}_5(0)</m>.
+    A set that cannot be enclosed by any closed disk is called an
+    <term>unbounded set</term>.
+  </p>
+  <p>
+    We mentioned earlier that a simple closed curve is positively oriented if its interior is on the left when the curve is traversed.
+    How do we know, though,
+    that any given simple closed curve will have an interior and exterior?
+    Theorem 1.6 guarantees that this is indeed the case.
+    It is due in part to the work of the French mathematician Camille Jordan (1838<ndash/>1922).
+  </p>
+  <theorem>
+    <title>The Jordan curve theorem</title>
+    <statement>
+      <p>
+        The complement of any simple closed curve \mathit{C} can be partitioned into two mutually exclusive domains,
+        <m>I</m> and <m>E</m>,
+        in such a way that <m>I</m> is bounded, <m>E</m> is unbounded,
+        and <m>C</m> is the boundary for both <m>I</m> and <m>E</m>.
+        In addition,
+        <m>I \cup E \cup C</m> is the entire complex plane.
+        The domain <m>I</m> is called the
+        <term>interior</term> of <m>C</m>,
+        and the domain <m>E</m> is called the
+        <term>exterior</term> of <m>C</m>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    The Jordan curve theorem is a classic example of a result in mathematics that seems obvious but is very hard to demonstrate,
+    and its proof is beyond the scope of this book.
+    Jordan's original argument, in fact, was inadequate,
+    and not until 1905 was a correct version finally given by the American topologist Oswald Veblen.
+    The difficulty lies in describing the interior and exterior of a simple closed curve analytically,
+    and in showing that they are connected sets.
+    For example, in which domain
+    (interior or exterior)
+    do the two points depicted in <xref ref="fig_ch-01-32">Figure</xref> lie?
+    If they are in the same domain,
+    how, specifically, can they be connected with a curve?
+    If you appreciated the subtleties involved in showing that the right half-plane of <xref ref="ConnectedEx">Example</xref> is connected,
+    you can begin to appreciate the obstacles that Veblen had to navigate.
+  </p>
+  <p>
+    Although an introductory treatment of complex analysis can be given without using this theorem,
+    we think it is important for the well-informed student at least to be aware of it.
+  </p>
+  <figure xml:id="fig_ch-01-32">
+    <caption>Are <m>z_1</m> and <m>z_2</m> in the interior or exterior of this simple closed curve?</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-32.pdf"/>
+  </figure>
+  <exercises>
+    <title>Exercises for <xref ref="sec_topology">Section</xref></title>
+    <exercise xml:id="x1_6_1">
+      <p>
+        Find a parametrization of the line that
+      </p>
+      <ol>
+        <li xml:id="x1_6_1a">
+          <p>
+            joins the origin to the point <m>1+i</m>.
+          </p>
+        </li>
+        <li xml:id="x1_6_1b">
+          <p>
+            joins the point 1 to the point <m>1+i</m>.
+          </p>
+        </li>
+        <li xml:id="x1_6_1c">
+          <p>
+            joins the point <m>i</m> to the point <m>1+i</m>.
+          </p>
+        </li>
+        <li xml:id="x1_6_1d">
+          <p>
+            joins the point 2 to the point <m>1+i</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise>
+      <p>
+        Sketch the curve <m>z(t) =t^2+2t+i(t+1) \label {1.6.2}</m>
+        <ol>
+          <li xml:id="x1_6_2a">
+            <p>
+              for <m>-1\le t\le0</m>.
+            </p>
+          </li>
+          <li xml:id="x1_6_2b">
+            <p>
+              for <m>1\le t\le2</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <em>Hint:</em> Use <m>x=t^2+2t</m>, <m>y=t+1</m> and eliminate the parameter <m>t</m>.
+    </exercise>
+    <exercise xml:id="x1_6_3">
+      <p>
+        Find a parametrization of the curve that is a portion of the parabola <m>y=x^2</m> that
+        <ol>
+          <li xml:id="x1_6_3a">
+            <p>
+              joins the origin to the point <m>2+4i</m>.
+            </p>
+          </li>
+          <li xml:id="x1_6_3b">
+            <p>
+              joins the point <m>-1+i</m> to the origin.
+            </p>
+          </li>
+          <li xml:id="x1_6_3c">
+            <p>
+              joins the point <m>1+i</m> to the origin.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        This exercise completes Example <xref ref="ConnectedEx"/>: Suppose that <m>\mathrm{Re}(z_0)>0</m>.
+        Show that <m>\mathrm{Re}(z)>0</m> for all <m>z\in D_\varepsilon(z_0)</m>,
+        where <m>\varepsilon=\mathrm{Re}(z_0)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_5">
+      <p>
+        Find a parametrization of the curve that is a portion of the circle <m>|z|=1</m> that joins the point <m>-i</m> to <m>i</m> if
+        <ol>
+          <li xml:id="x1_6_5a">
+            <p>
+              the curve is the right semicircle.
+            </p>
+          </li>
+          <li xml:id="x1_6_5b">
+            <p>
+              the curve is the left semicircle.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_6">
+      <p>
+        Show that <m>D_1(0)</m> is a domain and that <m>\overline{D}_1(0) =\{z:|z| \le 1\}</m> is not a domain.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_7">
+      <p>
+        Find a parametrization of the curve that is a portion of the circle <m>C_1(0)</m> that joins the point 1 to <m>i</m> if
+        <ol>
+          <li xml:id="x1_6_7a">
+            <p>
+              the parametrization is counterclockwise along the quarter circle.
+            </p>
+          </li>
+          <li xml:id="x1_6_7b">
+            <p>
+              the parametrization is clockwise.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_8">
+      <p>
+        Fill in the details to complete Example <xref ref="TopologyEx"/>.
+        That is, show that
+        <ol>
+          <li>
+            <p>
+              the set <m>\{z:|z|>1\}</m> is the exterior of the set <m>S</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the set <m>C_1(0)</m> is the boundary of the set <m>S</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_9">
+      <p>
+        Consider the following sets. (i)<m>\{z:\mathrm{Re}(z)>1\}</m>. (ii)<m>\{z:-1\lt \mathrm{Im}(z) \le 2\}</m>. (iii)<m>\{z:|z-2-i| \le 2\}</m>. (iv)<m>\ z:|z+3i|>1\}</m>. (v)<m>\{re^{i\theta}:0\lt r\lt 1 \text{ and } -\pi/2\lt \theta\lt \pi/2\}</m>. (vi)<m>\{re^{i\theta}:r>1 \text{ and } \pi/4\lt \theta\lt \pi/3\}</m>. (vii)<m>\{z:|z|\lt 1 \text{ or } |z-4|\lt 1\}</m>.
+        <ol>
+          <li xml:id="x1_6_9a">
+            <p>
+              Sketch each set.
+            </p>
+          </li>
+          <li xml:id="x1_6_9b">
+            <p>
+              State, with reasons,
+              which of the following terms apply to the above sets:
+              open; connected; domain; region;
+              closed region; bounded.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Show that <m>D_1(0)</m> is connected.
+        <em>Hint</em>: Show that if <m>z_1</m> and <m>z_2</m> lie in <m>D_1(0)</m>,
+        then the straight-line segment joining them lies entirely in <m>D_1(0)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_11">
+      <p>
+        Let <m>S=\{z_1, z_2, \ldots, z_n\}</m> be a finite set of points.
+        Show that <m>S</m> is a bounded set.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Prove that the boundary of
+        <m>D_\varepsilon(z_0)</m> is the circle <m>C_\varepsilon(z_0)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_13">
+      <p>
+        Let <m>S</m> be the open set consisting of all points <m>z</m> such that
+        <m>|z+2|\lt 1</m> or <m>|z-2|\lt 1</m>.
+        Show that <m>S</m> is not connected.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_14">
+      <p>
+        Prove <m>0</m> is the only accumulation point of <m>\{\frac{i}{n}:n=1, 2, \ldots\}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_15">
+      <p>
+        Regarding the relation between closed sets and accumulation points,
+        <ol>
+          <li xml:id="x1_6_15a">
+            <p>
+              Prove that if a set is closed,
+              then it contains all its accumulations points.
+            </p>
+          </li>
+          <li xml:id="x1_6_15b">
+            <p>
+              Prove that if a set contains all its accumulation points,
+              then it is closed.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_16">
+      <p>
+        Prove that <m>\overline{D}_1(0)</m> is the set of accumulation points of
+        <ol>
+          <li>
+            <p>
+              The set <m>D_1(0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The set <m>D_1^\ast(0)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_6_17">
+      <p>
+        Memorize and be prepared to illustrate all the terms in bold in this section.
+      </p>
+    </exercise>
+  </exercises>
+</section>

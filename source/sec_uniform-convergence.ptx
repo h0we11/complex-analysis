@@ -1,0 +1,450 @@
+<section xml:id="sec_uniform-convergence">
+  <title>Uniform Convergence</title>
+  <p>
+    Complex functions are the key to unlocking many of the mysteries encountered when power series are first introduced in a calculus course.
+    We begin by discussing an important property associated with power series<ndash/>uniform convergence.
+  </p>
+  <p>
+    Recall that, for a function <m>f</m> defined on a set <m>T</m>,
+    the sequence o f functions <m>\{S_n\}</m> converges to <m>f</m> at the point <m>z_0 \in T</m>,
+    provided <m>\lim\limits_{n \to \infty}S_n(z_0)=f(z_0)</m>.
+    Thus, for the particular point <m>z_0</m>,
+    we know that for each <m>\varepsilon>0</m>,
+    there exists a positive integer <m>N_{\varepsilon,z_0}</m>
+    (depending on both <m>\varepsilon</m> and <m>z_0</m>)
+    such that
+    <men xml:id="Convergence_Criterion">
+      \text{ if }   n \ge N_{\varepsilon,z_0},  \text{ then }   |S_n(z_0) -f(z_0)|\lt \varepsilon
+    </men>.
+  </p>
+  <p>
+    If <m>S_n(z)</m> is the <m>n</m>th partial sum of the series <m>\sum\limits_{k=0}^{\infty}c_k(z-\alpha)^k</m>,
+    <xref ref="Convergence_Criterion">Statement</xref> becomes
+    <me>
+      If  n \ge N_{\varepsilon,z_0},  \text{ then }   \left|\sum_{k=0}^{n-1}c_k(z_0-\alpha)^k-f(z_0)\right| \lt  \varepsilon
+    </me>.
+  </p>
+  <p>
+    For a given value of <m>\varepsilon</m>,
+    the integer <m>N_{\varepsilon,z_0}</m> needed to satisfy <xref ref="Convergence_Criterion">Statement</xref>
+    often depends on our choice of <m>z_0</m>.
+    This is not the case if the sequence <m>\{S_n\}</m> converges uniformly.
+    For a uniformly convergent sequence,
+    it is possible to find an integer <m>N_{\varepsilon}</m>
+    (depending <em>only</em> on <m>\varepsilon</m>)
+    that guarantees <xref ref="Convergence_Criterion">Statement</xref>
+    no matter what value for <m>z_0 \in T</m> we pick.
+    In other words, if <m>n</m> is large enough,
+    the function <m>S_n</m> is <em>uniformly close</em>
+    to the function <m>f</m> for all <m>z \in T</m>.
+    Formally, we have the following definition.
+  </p>
+  <definition>
+    <title>Uniform convergence</title>
+    <statement>
+      <p>
+        The sequence <m>\{S_n(z)\}</m> <term>converges uniformly</term>
+        to <m>f(z)</m><nbsp/>on the set <m>T</m> if for every <m>\varepsilon>0</m>,
+        there exists a positive integer <m>N_{\varepsilon}</m>
+        (depending only on <m>\varepsilon</m>)
+        such that
+        <men xml:id="Unif_conv_def">
+          \text{ if }   n \ge N_{\varepsilon},  \text{ then }   |S_n(z) -f(z)| \lt \varepsilon,  \text{ for all }   z \in T
+        </men>.
+      </p>
+      <p>
+        If <m>S_n(z)</m> is the <m>n</m>th partial sum of the series <m>\sum\limits_{k=0}^{\infty}c_k(z-\alpha)^k</m>,
+        we say that the series <m>\sum\limits_{k=0}^{\infty}c_k(z-\alpha)^k</m>
+        <term>converges uniformly</term>
+        to <m>f(z)</m> on the set <m>T</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="Unif_Conv_Ex">
+    <statement>
+      <p>
+        The sequence <m>\{S_n(z)\}=\{e^z+\frac{{1}}{n}\}</m> converges uniformly to the function
+        <m>f(z) =e^z</m> on the entire complex plane because for any <m>\varepsilon>0</m>,
+        <xref ref="Unif_conv_def">Statement</xref>
+        is satisfied for all <m>z</m> for <m>n \ge N_{\varepsilon}</m>,
+        where <m>N_{\varepsilon}</m> is any integer greater than <m>\frac{{1}}{{\varepsilon}}</m>.
+        We leave the details of showing this result as an exercise.
+      </p>
+    </statement>
+  </example>
+  <p>
+    A good example of a sequence of functions that does not converge uniformly is the sequence of partial sums forming the geometric series.
+    Recall that the geometric series has <m>S_n(z) =\sum\limits_{k=0}^{n-1}z^k</m> converging to
+    <m>f(z) =\frac{1}{1-z}</m> for <m>z \in D_1(0)</m>.
+    Because the real numbers are a subset of the complex numbers,
+    we can show that <xref ref="Unif_conv_def">Statement</xref>
+    is not satisfied by demonstrating that it does not hold when we restrict our attention to the real numbers.
+    In that context,
+    <m>D_1(0)</m> becomes the open interval <m>(-1,1)</m>,
+    and the inequality <m>|S_n( z) -f(z)|\lt \varepsilon</m> becomes <m>| S_n(x) -f(x)|\lt \varepsilon</m>,
+    which for real variables is equivalent to the inequality <m>f(x)-\varepsilon\lt S_n(x)\lt f(x)+\varepsilon</m>.
+    If <xref ref="Unif_conv_def">Statement</xref> were to be satisfied,
+    then given <m>\varepsilon >0, \, S_n(x)</m> would be within an
+    <m>\varepsilon</m>-bandwidth of <m>f(x)</m> <em>for all</em>
+    <m>x</m> in the interval <m>(-1,1)</m> provided <m>n</m> were large enough.
+    <xref ref="fig_ch-07-01">Figure</xref>
+    illustrates that there is an <m>\varepsilon</m> such that,
+    no matter how large <m>n</m> is,
+    we can find <m>x_0 \in (-1,1)</m> with the property that
+    <m>S_n(x_0)</m> lies outside this bandwidth.
+    In other words, <xref ref="fig_ch-07-01">Figure</xref>
+    illustrates the negation of <xref ref="Unif_conv_def">Statement</xref>,
+    which in technical terms we state as:
+    <md>
+      <mrow>\amp  \text{ There exists } \varepsilon>0\text{ such that, for all positive integers } N,</mrow>
+      <mrow>\amp  \text{ there is some } n \ge N\text{ and some } z_0 \in T</mrow>
+      <mrow xml:id="Unif_conv_negation" number="yes">\amp  \text{ such that } |S_n(z_0) -f(z_0)| \ge \varepsilon</mrow>
+    </md>.
+  </p>
+  <figure xml:id="fig_ch-07-01">
+    <caption>The geometric series does not converge uniformly on <m>(-1,1)</m></caption>
+    <image width="73%" source="figs/ch-07/ch-07-fig-01.pdf"/>
+  </figure>
+  <p>
+    In the exercises,
+    we ask you to use <xref ref="Unif_conv_negation">Statement</xref>
+    to show that the partial sums of the geometric series do not converge uniformly to
+    <m>f(z) =\frac{1}{1-z}</m> for <m>z \in D_1(0)</m>.
+  </p>
+  <p>
+    A useful procedure known as the Weierstrass <m>M</m>-test can help determine whether an infinite series is uniformly convergent.
+  </p>
+  <theorem>
+    <title>Weierstrass $M$-test</title>
+    <statement>
+      <p>
+        Suppose that the infinite series
+        <m>\sum\limits_{k=0}^{\infty}u_k(z)</m> has the property that for each <m>k</m>,
+        <m>|u_k(z)| \le M_k\emph{\ for all }z \in T</m>.
+        If <m>\sum\limits_{k=0}^{\infty}M_k</m> converges,
+        then <m>\sum\limits_{k=0}^{\infty}u_k(z)</m> converges uniformly on <m>T</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Let <m>S_n(z) =\sum\limits_{k=0}^{n-1}u_k(z)</m> be the <m>n</m>th partial sum of the series.
+      Note that, If <m>n > M</m>, then
+      <me>
+        \big|S_n( z) -S_{m}(z)\big| = \big|u_{m}(z)+u_{m+1}(z) +\cdots +u_{n-1}(z)\big| \le \sum_{k=m}^{n-1}M_k
+      </me>.
+    </p>
+    <p>
+      Because the series <m>\sum\limits_{k=0}^{\infty}M_k</m> converges,
+      we can make the last expression as small as we want to by choosing a large enough <m>m</m>.
+      Thus, for <m>\varepsilon>0</m>,
+      there is a positive integer
+      <m>N_{\varepsilon}</m> such that if <m>n</m>,
+      <m>m>N_{\varepsilon}</m>, then <m>|S_n(z)-S_{m}(z)|\lt \varepsilon</m>.
+      But this means that for all
+      <m>z \in T, \, \{S_n( z)\:</m> is a Cauchy sequence.
+      According to Theorem 4.2, this sequence must converge to a number,
+      which we might as well designate by <m>f(z)</m>.
+      That is, <m>f(z)=\lim\limits_{n \to \infty}S_n(z) =\sum\limits_{k=0}^{\infty}u_k( z)</m>.
+      This observation gives us a function to which the series <m>\sum\limits_{k=0}^{\infty}u_k(z)</m> converges.
+      However, we still must show that the convergence is uniform.
+      Let <m>\varepsilon>0</m> be given.
+      Again, since <m>\sum\limits_{k=0}^{\infty}M_k</m> converges,
+      there exists <m>N_{\varepsilon}</m> such that if <m>n \ge N_{\varepsilon}</m>,
+      then <m>\sum\limits_{k=n}^{\infty}M_k\lt \varepsilon</m>.
+      Thus, if <m>n \ge N_{\varepsilon}</m> and <m>z \in T</m>, then
+      <md>
+        <mrow>\big|f(z) -S_n(z)\big|  \amp = \left|\sum\limits_{k=0}^{\infty}u_k(z) - \sum\limits_{k=0}^{n-1}u_k(z)\right|</mrow>
+        <mrow>\amp  =\left|\sum\limits_{k=n}^{\infty}u_k(z)\right|</mrow>
+        <mrow>\amp  \le \sum\limits_{k=n}^{\infty}M_k</mrow>
+        <mrow>\amp  \lt \varepsilon</mrow>
+      </md>,
+      which completes the argument.
+    </p>
+  </proof>
+  <p>
+    <xref ref="Unif_Conv_of_Series">Theorem</xref><nbsp/>gives an interesting application of the Weierstrass <m>M</m>-test.
+  </p>
+  <theorem xml:id="Unif_Conv_of_Series">
+    <statement>
+      <p>
+        Suppose that the power series
+        <m>\sum\limits_{k=0}^{\infty}c_k(z-\alpha)^k</m><nbsp/>has radius of convergence <m>\rho>0</m>.
+        Then for each <m>r</m>, <m>0\lt r\lt \rho</m>,
+        the series converges uniformly on the closed disk <m>\overline{D}_r(\alpha) =\{z:|z-\alpha| \le r\}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Given <m>r</m>, with <m>0\lt r\lt \rho</m>,
+      choose <m>z_0 \in D_{\rho}(\alpha)</m> such that <m>|z_0-\alpha| =r</m>.
+      The proof of <xref ref="Regions_of_Convergence">Theorem</xref>
+      part (<em>ii</em>) reveals that
+      <m>\sum\limits_{k=0}^{\infty}c_k(z-\alpha)^k</m> converges absolutely for <m>z \in D_{\rho }(\alpha)</m>,
+      from which it follows that <m>\sum\limits_{k=0}^{\infty}|c_k(z_0-\alpha)^k| = \sum \limits_{k=0}^{\infty}|c_k| r^k</m> converges.
+      Moreover, for all <m>z \in\overline{D}_r(\alpha)</m>,
+      <me>
+        |c_k(z-\alpha)^k| =|c_k| |z-\alpha|^k \le |c_k|r^k
+      </me>.
+    </p>
+    <p>
+      The conclusion follows from the Weierstrass <m>M</m>-test with <m>M_k=|c_k|r^k</m>.
+    </p>
+  </proof>
+  <p>
+    An immediate consequence of Theorem 7.2 is Corollary 7.1.
+  </p>
+  <corollary xml:id="Geom_Series_Conv_Unif">
+    <statement>
+      <p>
+        For each <m>r, \, 0\lt r\lt 1</m>,
+        the geometric series converges uniformly on the closed disk <m>\overline{D}_r(0)</m>.
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    The following theorem gives important properties of uniformly convergent sequences.
+  </p>
+  <theorem xml:id="Unif_Conv_Properties">
+    <statement>
+      <p>
+        Suppose that <m>\{S_k\}</m> is a sequence of continuous functions defined on a set <m>T</m> containing the contour <m>C</m>.
+        If <m>\{S_k\}</m> converges uniformly to <m>f</m> on the set <m>T</m>, then
+        <ol>
+          <li>
+            <title>i</title>
+            <p>
+              <m>f</m> is continuous on <m>T</m>, and
+            </p>
+          </li>
+          <li>
+            <title>ii</title>
+            <p>
+              <m>\lim\limits_{k \to \infty} \int_CS_k(z)\,dz = \int_{C}\lim\limits_{k \to \infty}S_k(z)\,dz= \int_{C}f(z)\,dz</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Given <m>z_0 \in T</m>,
+      we must prove <m>\lim\limits_{z \to z_0}f(z) = f(z_0)</m>.
+      Let <m>\varepsilon>0</m> be given.
+      Since <m>\{S_k\}</m> converges uniformly to <m>f</m> on <m>T</m>,
+      there exists a positive integer <m>N_{\varepsilon}</m> such that for all
+      <m>z \in T, \, |f(z)-S_k(z)|\lt \frac{\varepsilon}{3}</m> whenever <m>k \ge N_{\varepsilon}</m>.
+      And, as <m>S_{N_{\varepsilon}}</m> is continuous at <m>z_0</m>,
+      there exists <m>\delta >0</m> such that if <m>|z-z_0| \lt \delta</m>,
+      then <m>|S_{N_{\varepsilon}}(z)-S_{N_{\varepsilon}}(z_0)|\lt \frac{\varepsilon}{3}</m>.
+      Hence, if <m>|z-z_0|\lt \delta</m>, we have
+      <md>
+        <mrow>|f(z) -f(z_0)| \amp = \big|f(z) -S_{N_{\varepsilon}}(z)+S_{N_{\varepsilon }}(z) - S_{N_{\varepsilon}}(z_0)+S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
+        <mrow>\amp  \le \big|f(z) -S_{N_{\varepsilon}}(z)\big| + \big|S_{N_{\varepsilon}}(z)-S_{N_{\varepsilon}}(z_0)\big| + \big|S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
+        <mrow>\amp  \lt \frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}</mrow>
+        <mrow>\amp  =\varepsilon</mrow>
+      </md>,
+      which completes part
+      (<em>i</em>).
+    </p>
+    <p>
+      To prove part (<em>ii</em>),
+      let <m>\varepsilon>0</m> be given and let <m>L</m> be the length of the contour <m>C</m>.
+      Because <m>\{S_k\}</m> converges uniformly to <m>f</m> on <m>T</m>,
+      there exists a positive integer <m>N_{\varepsilon}</m> such that,
+      if <m>k \ge N_{\varepsilon}</m>,
+      then <m>|S_k(z) -f(z)| \lt  \frac{\varepsilon}{L}</m> for all <m>z \in T</m>.
+      Because <m>C</m> is contained in <m>T</m>,
+      <m>\max\limits_{z \in C} \big|S_k(z) -f(z)\big| \lt  \frac{\varepsilon}{L}</m> if <m>k \ge N_{\varepsilon}</m>,
+      and we can use the ML inequality
+      (<xref ref="ML_Inequality_Thm">Theorem</xref>)
+      to get
+      <md>
+        <mrow>\left|\int_CS_k(z)\,dz- \int_{C}f(z)\,dz\right| \amp = \left|\int_C[S_k(z)-f(z)]\,dz\right|</mrow>
+        <mrow>\amp \le \max_{z \in C}\big|S_k(z) -f(z)\big| L</mrow>
+        <mrow>\amp \lt  \left(\frac{\varepsilon}{L}\right) L</mrow>
+        <mrow>\amp = \varepsilon</mrow>
+      </md>.
+    </p>
+  </proof>
+  <corollary xml:id="Sum_Integral_Swap">
+    <statement>
+      <p>
+        If the series <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n</m> converges uniformly to <m>f(z)</m> on the set <m>T</m> and <m>C</m> is a contour contained in <m>T</m>, then
+        <me>
+          \sum_{n=0}^{\infty}\int_Cc_n(z-\alpha)^n\,dz = \int_{C}\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n\,dz = \int_{C}f(z)\,dz
+        </me>.
+      </p>
+    </statement>
+  </corollary>
+  <example xml:id="Swap_Application">
+    <statement>
+      <p>
+        Show that <m>\mathrm{Log}(1-z)=\sum\limits_{n=1}^{\infty}\frac{1}{n}z^n</m>,
+        for all <m>z \in D_1(0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        For <m>z_0 \in D_1(0)</m>,
+        we choose <m>r</m> and <m>R</m> so that <m>0 \le |z_0| \lt  r \lt R \lt  1</m>,
+        thus ensuring that <m>z_0 \in \overline{D}_r(0)</m> and that <m>\overline{D}_r(0) \subset D_{R}(0)</m>.
+        By <xref ref="Geom_Series_Conv_Unif">Corollary</xref>,
+        the geometric series <m>\sum\limits_{n=0}^{\infty}z^n</m> converges uniformly to
+        <m>\frac{1}{1-z}</m> on <m>\overline{D}_r(0)</m>.
+        If <m>C</m> is any contour contained in <m>\overline{D}_r(0)</m>,
+        <xref ref="Sum_Integral_Swap">Corollary</xref> gives
+        <men xml:id="x-Log_1-z_">
+          \int_C\frac{1}{1-z}\,dz = \sum_{n=0}^{\infty} \int_{C}z^n\,dz
+        </men>.
+      </p>
+      <p>
+        Clearly, the function <m>f(z) =\frac{1}{1-z}</m> is analytic in the simply connected domain <m>D_{R}(0)</m>,
+        and <m>F(z) = -</m>Log <m>(1-z)</m> is an antiderivative of <m>f(z)</m> for all <m>z \in D_{R}(0)</m>,
+        where Log is the principal branch of the logarithm.
+        Likewise, <m>g(z)=z^n</m> is analytic in the simply connected domain <m>D_{R}(0)</m>,
+        and <m>G(z)=\frac{1}{n+1 }z^{n+1}</m> is an antiderivative of <m>g(z)</m> for all <m>z \in D_{R}(0)</m>.
+        Hence, if <m>C</m> is the straight-line segment joining <m>0</m> to <m>z_0</m>,
+        we can apply <xref ref="DInt_Thm">Theorem</xref>
+        to Equation <xref ref="x-Log_1-z_"/> to get
+        <me>
+          -\mathrm{Log}(1-z)\bigg|_{z=0}^{z=z_0}= \left.\sum\limits_{n=0}^{\infty} \left(\frac{1}{n+1}z^{n+1}\right)\right|_{z=0}^{z=z_0}
+        </me>,
+        which becomes
+        <me>
+          -\mathrm{Log}(1-z_0) =\sum\limits_{n=0}^{\infty}\frac{1}{n+1}z_0^{n+1}=\sum\limits_{n=1}^{\infty}\frac{1}{n}z_0^n
+        </me>.
+      </p>
+      <p>
+        The point <m>z_0 \in D_1(0)</m> was arbitrary,
+        so the solution is complete.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_uniform-convergence">Section</xref></title>
+    <exercise xml:id="x7_1_1">
+      <p>
+        This exercise relates to Figure 7.1.
+      </p>
+      <ol>
+        <li>
+          <p>
+            For <m>x</m> near <m>-1</m>,
+            is the graph of <m>S_n(x)</m> above or below <m>f(x)</m>?
+            Explain.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is the index <m>n</m> in <m>S_n(x)</m> odd or even?
+            Explain.
+          </p>
+        </li>
+        <li>
+          <p>
+            Assuming that the graph is accurate to scale,
+            what is the value of <m>n</m> in <m>S_n(x)</m>?
+            Explain.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x7_1_2">
+      <p>
+        Complete the details to verify the claim of Example.
+        <xref ref="Unif_Conv_Ex"></xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_3">
+      <p>
+        Prove that the following series converge uniformly on the sets indicated.
+        <ol>
+          <li>
+            <p>
+              <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2}z^k</m> on <m>\overline{D}_1(0) = \{z:|z| \le 1\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sum\limits_{k=0}^{\infty}\frac{1}{(z^2-1)^k}</m> on <m>\{z:|z| \ge 2\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sum\limits_{k=0}^{\infty}\frac{z^k}{z^{2k}+1}</m> on
+              <m>\overline{D}_r(0)</m>, where <m>0\lt r\lt 1</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_4">
+      <p>
+        Show that <m>S_n(z)=\sum\limits_{k=0}^{n-1}z^k=\frac{1-z^n}{1-z}</m> does not converge uniformly to <m>f(z)=\frac{1}{1-z}</m> on the set
+        <m>T=D_1(0)</m> by appealing to <xref ref="Unif_conv_negation">Statement</xref>.
+        <em>Hint</em>: Given <m>\varepsilon>0</m> and a positive integer <m>n</m>,
+        let <m>z_n=\varepsilon^{\frac{1}{n}}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_5">
+      <p>
+        Why can't we use the arguments of <xref ref="Unif_Conv_of_Series">Theorem</xref>
+        to prove that the geometric series converges uniformly on
+        <em>all</em> of <m>D_1(0)</m>?
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_6">
+      <p>
+        By starting with the series for the complex cosine given in <xref ref="sec_trig-hyperbolics">Section</xref>,
+        choose an appropriate contour and use the method in <xref ref="Swap_Application">Example</xref>
+        to obtain the series for the complex sine.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_7">
+      <p>
+        Suppose that the sequences of functions <m>\{f_n\}</m> and <m>\{g_n\}</m> converge uniformly on the set <m>T</m>.
+        <ol>
+          <li>
+            <p>
+              Show that the sequence <m>\{f_n+g_n\}</m> converges uniformly on <m>T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show by example that it is not necessarily the case that
+              <m>\{f_n\,g_n\}</m> converges uniformly on <m>T</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_8">
+      <p>
+        On what portion of <m>D_1(0)</m> does the sequence <m>\{nz^n\}_{n=1}^{\infty}</m> converge,
+        and on what portion does it converge uniformly?
+      </p>
+    </exercise>
+    <exercise xml:id="x7_1_9">
+      <p>
+        Consider the function <m>\zeta (z)=\sum\limits_{n=1}^{\infty}n^{-z}</m>,
+        where <m>n^{-z}=\exp(-z \ln n)</m>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>\zeta (z)</m> converges uniformly on <m>A=\{z:\mathrm{Re}(z) \ge 2\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>D</m> be a closed disk contained in <m>\{z:\mathrm{Re}(z)>1\}</m>.
+              Show that <m>\zeta(z)</m> converges uniformly on <m>D</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+  </exercises>
+</section>

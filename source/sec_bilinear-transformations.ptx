@@ -1,0 +1,537 @@
+<section xml:id="sec_bilinear-transformations">
+  <title>Bilinear Transformations</title>
+  <introduction>
+    <p>
+      Another important class of elementary mappings was studied by Augustus Ferdinand M&#xf6;bius (1790<ndash/>1868).
+      These mappings are conveniently expressed as the quotient of two linear expressions.
+      They arise naturally in mapping problems involving the function <m>\mathrm{Arctan}(z)</m>.
+      In this section,
+      we show how they are used to map a disk one-to-one and onto a half-plane.
+    </p>
+    <p>
+      If we let <m>a,  \, b, \, c</m>,
+      and <m>d</m> denote four complex constants with the restriction that <m>ad\ne  bc</m>,
+      then the function
+      <men xml:id="bilineardef">
+        w=S(z)=\frac{az+b}{cz+d}
+      </men>
+      is called a <term>bilinear transformation</term>,
+      a <em>M&#xf6;bius transformation</em>,
+      or a <term>linear fractional transformation</term>.
+      If the expression for <m>S</m> in Equation <xref ref="bilineardef"/> is multiplied by the quantity <m>cz+d</m>,
+      then the resulting expression has the bilinear form <m>cwz-az+dw-b=0</m>.
+      We collect terms involving <m>z</m> and write <m>z(cw-a)=-dw+b</m>.
+      Then, for values of <m>w\ne \frac{a}{c}</m>,
+      the inverse transformation is given by
+      <men xml:id="bilinearinv">
+        z=S^{-1}(w) =\frac{-dw+b}{cw-a}
+      </men>.
+    </p>
+    <p>
+      We can extend <m>S</m> and <m>S^{-1}</m> to mappings in the extended complex plane.
+      The value <m>S(\infty)</m> should equal the limit of <m>S(z)</m> as <m>z \to \infty</m>.
+      Therefore we define
+      <me>
+        S(\infty) = \lim_{z \to \infty} S(z) = \lim_{z \to \infty} \frac{a+\frac{b}{z}}{c+\frac{d}{z}}=\frac{a}{c}
+      </me>,
+      and the inverse is <m>S^{-1}(\frac{a}{c})=\infty</m>.
+      Similarly, the value <m>S^{-1}(\infty)</m> is obtained by
+      <me>
+        S^{-1}(\infty) = \lim_{w \to \infty}\ S^{-1}(w) = \lim_{w \to \infty} \frac{-d+\frac{b}{w}}{c-\frac{a}{w}}=\frac{-d}{c}
+      </me>,
+      and the inverse is <m>S(\frac{-d}{c})=\infty</m>.
+      With these extensions we conclude that the transformation <m>w=S(z)</m> is a one-to-one mapping of the extended complex <m>z</m> plane onto the extended complex <m>w</m> plane.
+    </p>
+    <p>
+      We now show that a bilinear transformation carries the class of circles and lines onto itself.
+      If <m>S</m> is an arbitrary bilinear transformation given by Equation <xref ref="bilineardef"/> and <m>c=0</m>,
+      then <m>S</m> reduces to a linear transformation,
+      which carries lines onto lines and circles onto circles.
+      If <m>c\ne 0</m>, then we can write <m>S</m> in the form
+      <men xml:id="bilinearexpand">
+        S(z) = \frac{a(cz+d)+bc-ad}{c(cz+d)} = \frac{a}{c}+\left(\frac{bc-ad}{c}\right)\!\left(\frac{1}{cz+d}\right)
+      </men>.
+    </p>
+    <p>
+      The condition <m>ad \ne bc</m> precludes the possibility that <m>S</m> reduces to a constant.
+      Equation <xref ref="bilinearexpand"/> indicates that <m>S</m> can be considered as a composition of functions.
+      It is a linear mapping <m>\xi =cz+d</m>,
+      followed by the reciprocal transformation <m>Z=\frac{1}{\xi }</m>,
+      followed by <m>w=\frac{a}{c}+\frac{bc-ad}{c}Z</m>.
+      In <xref ref="ch_complex-functions"/> we showed that each function in this composition maps the class of circles and lines onto itself;
+      it follows that the bilinear transformation <m>S</m> has this property.
+      A half-plane can be considered to be a family of parallel lines and a disk as a family of circles.
+      Therefore we conclude that a bilinear transformation maps the class of half-planes and disks onto itself.
+      Example 9.3 illustrates this idea.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Show that <m>w=S(z)=\frac{i(1-z)}{1+z}</m> maps the unit disk
+          <m>\left\vert z\right\vert \lt 1</m> one-to-one and onto the upper half-plane <m>\mathrm{Im}(w) >0</m>.
+        </p>
+        <solution>
+          <p>
+            We first consider the unit circle <m>C:|z|=1</m>,
+            which forms the boundary of the disk and find its image in the <m>w</m> plane.
+            If we write <m>S(z)=\frac{-iz+i}{z+1}</m>,
+            then we see that <m>a=-i, \, b=i \, c=1</m>, and <m>d=1</m>.
+            Using Equation <xref ref="bilinearinv"/>, we find that the inverse is given by
+            <men xml:id="bilinearinv2">
+              z=S^{-1}(w)=\frac{-dw+b}{cw-a}=\frac{-w+i}{w+i}
+            </men>.
+          </p>
+        </solution>
+        <p>
+          If <m>|z|=1</m>,
+          then Equation <xref ref="bilinearinv2"/> implies that the images of points on the unit circle satisfy the equation
+          <men xml:id="ptsoncircle">
+            |w+i| = |-w+i|
+          </men>.
+        </p>
+        <p>
+          Squaring both sides of Equation <xref ref="ptsoncircle"/>,
+          we obtain <m>u^2+(1+v) ^2=u^2+(1-v) ^2</m>,
+          which can be simplified to yield <m>v=0</m>,
+          which is the equation of the <m>u</m>-axis in the <m>w</m> plane.
+        </p>
+        <p>
+          The circle <m>C</m> divides the <m>z</m> plane into two portions,
+          and its image is the <m>u</m>-axis,
+          which divides the <m>w</m> plane into two portions.
+          The image of the point <m>z=0</m> is <m>w=S(0) =i</m>,
+          so we expect that the interior of the circle <m>C</m> is mapped onto the portion of the <m>w</m> plane that lies above the <m>u</m>-axis.
+          To show that this outcome is true,
+          we let <m>|z| \lt 1</m> . Then Equation <xref ref="bilinearinv2"/> implies that the image values must satisfy the inequality <m>|-w+i| \lt  |w+i|</m>,
+          which we write as
+          <me>
+            d_1 = |w-i| \lt  |w-(-i)| = d_2
+          </me>.
+        </p>
+        <p>
+          If we interpret <m>d_1</m> as the distance from <m>w</m> to <m>i</m> and <m>d_2</m> as the distance from <m>w</m> to <m>-i</m>,
+          then a geometric argument shows that the image point <m>w</m> must lie in the upper half-plane <m>\mathrm{Im}(w)>0</m>,
+          as shown in <xref ref="fig_ch-09-05">Figure</xref>.
+          As <m>S</m> is one-to-one and onto in the extended complex plane,
+          it follows that <m>S</m> maps the disk onto the half-plane.
+        </p>
+      </statement>
+    </example>
+    <figure xml:id="fig_ch-09-05">
+      <caption>The image of <m>|z| \lt 1</m> under <m>w=\frac{i(1-z)}{1+z}</m></caption>
+      <image width="73%" source="figs/ch-09/ch-09-fig-05.pdf"/>
+    </figure>
+    <p>
+      The general formula for a bilinear transformation (Equation <xref ref="bilineardef"/>) appears to involve four independent coefficients:
+      <m>a, \, b, \, c</m>, and <m>d</m>.
+      But as <m>S(z) \ne  K</m>, either <m>a \ne 0</m> or <m>c \ne 0</m>,
+      we can express the transformation with three unknown coefficients and write either
+      <me>
+        S(z) = \frac{z+\frac{b}{a}}{\frac{cz}{a}+\frac{d}{a}},  \text{ or }   S(z) = \frac{\frac{az}{c}+\frac{b}{c}}{z+\frac{d}{c}}
+      </me>,
+      respectively.
+      Doing so permits us to determine a unique a bilinear transformation if three distinct image values <m>S(z_1)=w_1, \, S(z_2)=w_2</m>,
+      and <m>S(z_3)=w_3</m> are specified.
+      To determine such a mapping,
+      we can conveniently use an implicit formula involving <m>z</m> and <m>w</m>.
+    </p>
+    <theorem>
+      <title>The implicit formula</title>
+      <statement>
+        <p>
+          There exists a unique bilinear transformation that maps three distinct points,
+          <m>z_1</m>, <m>z_2</m>, and <m>z_3</m>,
+          onto three distinct points,
+          <m>w_1</m>, <m>w_2</m>, and <m>w_3</m>, respectively.
+          An implicit formula for the mapping is given by
+          <men xml:id="impform">
+            \frac{z-z_1}{z-z_3}\frac{z_2-z_3}{z_2-z_1} = \frac{w-w_1}{w-w_3}\frac{w_2-w_3}{w_2-w_1}
+          </men>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        We algebraically manipulate Equation <xref ref="impform"/> and solve for <m>w</m> in terms of <m>z</m>.
+        The result is an expression for <m>w</m> that has the form of <xref ref="bilineardef">Equation</xref>,
+        where the coefficients <m>a</m>, <m>b</m>, <m>c</m>,
+        and <m>d</m> involve various combinations of the values <m>z_1, \, z_2, \, z_3, \, w_1, \, w_2</m>,
+        and <m>w_3</m>.
+        The details are left as an exercise.
+      </p>
+      <p>
+        If we set <m>z=z_1</m> and <m>w=w_1</m> in Equation <xref ref="impform"/>, then both sides of the equation are zero,
+        showing that <m>w_1</m> is the image of <m>z_1</m>.
+        If we set <m>z=z_2</m> and <m>w=w_2</m> in Equation <xref ref="impform"/>,
+        then both sides of the equation take on the value <m>1</m>.
+        Hence <m>w_2</m> is the image of <m>z_2</m>.
+        Taking reciprocals,
+        we write Equation <xref ref="impform"/> in the form
+        <men xml:id="impformrc">
+          \frac{z-z_3}{z-z_1}\frac{z_2-z_1}{z_2-z_3}=\frac{w-w_3}{w-w_1}\frac{w_2-w_1}{w_2-w_3}
+        </men>.
+      </p>
+      <p>
+        If we set <m>z=z_3</m> and <m>w=w_3</m> in Equation <xref ref="impformrc"/>, then both sides of the equation are zero.
+        Therefore <m>w_3</m> is the image of <m>z_3</m>,
+        and we have shown that the transformation has the required properties.
+      </p>
+    </proof>
+    <example>
+      <statement>
+        <p>
+          Construct the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=-i</m>,
+          <m>z_2=1</m>,
+          and <m>z_3=i</m> onto the points <m>w_1=-1</m>, <m>w_2=0</m>,
+          and <m>w_3=1</m>, respectively.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the implicit formula (Equation <xref ref="impform"/>) and write
+          <me>
+            \frac{z+i}{z-i}\frac{1-i}{1+i} = \frac{w+1}{w-1}\frac{0-1}{0+1} = \frac{w+1}{-w+1}
+          </me>.
+        </p>
+        <p>
+          Expanding this equation, we obtain
+          <md>
+            <mrow>(1+i) zw+(1-i)w \amp +(1+i)z +(1-i)</mrow>
+            <mrow>\amp = (-1+i) zw+(-1-i)w + (1-i)z+(1+i) </mrow>
+          </md>.
+        </p>
+        <p>
+          Then, collecting terms involving <m>w</m> and <m>zw</m> on the left results in
+          <me>
+            2w+2zw=2i-2iz
+          </me>,
+          from which we obtain <m>w(1+z) =i(1-z)</m>.
+          Therefore the desired bilinear transformation is
+          <me>
+            w=S(z) =\frac{i(1-z)}{1+z}
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=-2, \, z_2 = -1-i</m>,
+          and <m>z_3=0</m> onto <m>w_1=-1, \, w_2=0</m>,
+          and <m>w_3=1</m>, respectively.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Again, we use the implicit formula and write
+          <me>
+            \frac{z-(-2)}{z-0}\frac{-1-i-0}{-1-i-(-2)} = \frac{w-(-1)}{w-1}\frac{0-1}{0-(-1)}
+          </me>.
+        </p>
+        <p>
+          Using the fact that <m>\frac{-1-i}{1-i}=\frac{1}{i}</m>,
+          we rewrite this equation as
+          <me>
+            \frac{z+2}{iz}=\frac{1+w}{1-w}
+          </me>.
+        </p>
+        <p>
+          We now expand the equation and obtain <m>z+2-zw-2w=iz+izw</m>,
+          which can be solved for <m>w</m> in terms of <m>z</m>,
+          giving the desired solution
+          <me>
+            w=S(z) =\frac{(1-i) z+2}{(1+i) z+2}
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      We let <m>D</m> be a region in the <m>z</m> plane that is bounded by either a circle or a straight line <m>C</m>.
+      We further let <m>z_1</m>, <m>z_2</m>,
+      and <m>z_3</m> be three distinct points that lie on <m>C</m> and have the property that an observer moving along <m>C</m> from <m>z_1</m> to <m>z_3</m> through <m>z_2</m> finds the region <m>D</m> to be on the left.
+      If <m>C</m> is a circle and <m>D</m> is the interior of <m>C</m>,
+      then we say that <m>C</m> is positively oriented.
+      Conversely, the ordered triple
+      <m>(z_1,z_2,z_3)</m> uniquely determines a region that lies to the left of <m>C</m>.
+    </p>
+    <p>
+      We let <m>G</m> be a region in the <m>w</m> plane that is bounded by either a circle of a straight line <m>K</m>.
+      We further let <m>w_1</m>, <m>w_2</m>,
+      and <m>w_3</m> be three distinct points that lie on <m>K</m> such that an observer moving along <m>K</m> from <m>w_1</m> to <m>w_3</m> through <m>w_2</m> finds the region <m>G</m> to be on the left.
+      Because a bilinear transformation is a conformal mapping that maps the class of circles and straight lines onto itself,
+      we can use the implicit formula to construct a bilinear transformation <m>w=S(z)</m> that is a one-to-one mapping of <m>D</m> onto <m>G</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Show that the mapping
+          <me>
+            w=S(z) =\frac{(1-i) z+2}{(1+i) z+2}
+          </me>
+          maps the disk <m>D:\left\vert z+1\right\vert \lt 1</m> onto the upper half-plane <m>\mathrm{Im}(w)>0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For convenience, we choose the ordered triple <m>z_1=-2</m>,
+          <m>z_2=-1-i</m>, and <m>z_3=0</m>,
+          which gives the circle <m>C : |z+1|=1</m> a positive orientation and the disk <m>D</m> a left orientation.
+          From Example 9.5, the corresponding image points are
+          <me>
+            w_1=S(z_1) =-1,  w_2 = S(z_2) = 0,  \text{ and }   w_3 = S(z_3) = 1
+          </me>.
+        </p>
+        <p>
+          Because the ordered triple of points <m>w_1</m>,
+          <m>w_2</m>, and <m>w_3</m> lie on the <m>u</m>-axis,
+          it follows that the image of circle <m>C</m> is the <m>u</m>-axis.
+          The points <m>w_1</m>, <m>w_2</m>,
+          and <m>w_3</m> give the upper half-plane <m>G:</m> <m>\mathrm{ Im}(w) >0</m> a left orientation.
+          Therefore <m>w=S(z)</m> maps the disk <m>D</m> onto the upper half-plane <m>G</m>.
+          To check our work,
+          we choose a point <m>z_0</m> that lies in <m>D</m> and find the half-plane in which its image,
+          <m>w_0</m>, lies.
+          The choice <m>z_0=-1</m> yields <m>w_0=S(-1) =i</m>.
+          Hence the upper half-plane is the correct image.
+          This situation is illustrated in <xref ref="fig_ch-09-06">Figure</xref>.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="fig_ch-09-06">
+      <caption>The bilinear mapping <m>w = S(z) =(1-i)z+2](1+i)z+2]</m></caption>
+      <image width="73%" source="figs/ch-09/ch-09-fig-06.pdf"/>
+    </figure>
+    <corollary>
+      <statement>
+        <p>
+          (The implicit formula with a point at infinity) In <xref ref="impform">Equation</xref>,
+          the point at infinity can be introduced as one of the prescribed points in either the <m>z</m> plane or the <m>w</m> plane.
+        </p>
+      </statement>
+    </corollary>
+    <p>
+      <em>Proof:</em>
+    </p>
+    <p>
+      <em>Case 1</em> If <m>z_3=\infty</m>,
+      then we can write <m>\frac{z_2-z_3}{z-z_3}=\frac{z_2-\infty }{z-\infty}=1</m> and substitute this expression into <xref ref="impform">Equation</xref> to obtain
+      <me>
+        \frac{z-z_1}{z_2-z_1}=\frac{w-w_1}{w-w_3}\frac{w_2-w_3}{w_2-w_1}
+      </me>.
+    </p>
+    <p>
+      <em>Case 2</em> If <m>w_3 = \infty</m>,
+      then we can write <m>\frac{w_2-w_3}{w-w_3} = \frac{ w_2-\infty }{w-\infty } = 1</m> and substitute this expression into <xref ref="impform">Equation</xref> to obtain
+      <men xml:id="impforminf">
+        \frac{z-z_1}{z-z_3}\frac{z_2-z_3}{z_2-z_1} = \frac{w-w_1}{ w_2-w_1}
+      </men>.
+    </p>
+    <p>
+      Equation <xref ref="impforminf"/> is sometimes used to map the crescent-shaped region that lies between the tangent circles onto an infinite strip.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find the bilinear transformation that maps the crescent-shaped region that lies inside the disk
+          <m>|z-2|\lt 2</m> and outside the circle <m>|z-1|=1</m> onto a horizontal strip.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For convenience we choose <m>z_1=4</m>, <m>z_2=2+2i</m>,
+          and <m>z_3=0</m> and the image values <m>w_1=0</m>, <m>w_2=1</m>,
+          and <m>w_3=\infty</m>, respectively.
+          The ordered triple <m>z_1</m>, <m>z_2</m>,
+          and <m>z_3</m> gives the circle
+          <m>|z-2| =2</m> a positive orientation and the disk
+          <m>| z-2| \lt 2</m> has a left orientation.
+          The image points <m>w_1</m>, <m>w_2</m>,
+          and <m>w_3</m> all lie on the extended <m>u</m>-axis,
+          and they determine a left orientation for the upper half-plane <m>\mathrm{Im}(w) >0</m>.
+          Therefore we can use the second implicit formula (Equation <xref ref="impforminf"/>) to write
+          <me>
+            \frac{z-4}{z-0}\frac{2+2i-0}{2+2i-4}=\frac{w-0}{1-0}
+          </me>,
+          which determines a mapping of the disk
+          <m>|z-2| \lt 2</m> onto the upper half-plane <m>\mathrm{Im}(w) >0</m>.
+          We simplify the preceding equation to obtain the desired solution:
+          <me>
+            w = S(z) = \frac{-iz+4i}{z}
+          </me>.
+        </p>
+        <p>
+          A straightforward calculation shows that the points <m>z_4=1-i, \, z_5=2</m>,
+          and <m>z_6=1+i</m> are mapped onto the points
+          <me>
+            w_4 = S(1-i) = -2+i,  w_5 = S(2) =,  \text{ and }   w_6 = S(1+i) = 2+i
+          </me>,
+          respectively.
+          The points <m>w_4, \, w_5</m>,
+          and <m>w_6</m> lie on the horizontal line
+          <m>\mathrm{Im}(w) =1</m> in the upper half-plane.
+          Therefore the crescent-shaped region is mapped onto the horizontal strip <m>0 \lt  \mathrm{Im}(w) \lt  1</m>,
+          as shown in <xref ref="fig_ch-09-07">Figure</xref>.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="fig_ch-09-07">
+      <caption>The mapping <m>w=S(z) =\frac{-iz+4i}{z}</m></caption>
+      <image width="73%" source="figs/ch-09/ch-09-fig-07.pdf"/>
+    </figure>
+  </introduction>
+  <subsection xml:id="subsec_lines-of-flow">
+    <title>Lines of Flux</title>
+    <p>
+      In electronics,
+      images of certain lines represent lines of electric flux,
+      which comprise the trajectory of an electron placed in an electrical field.
+      Consider the bilinear transformation
+      <me>
+        w = S(z) = \frac{z}{z-a}  \text{ and }   z = S^{-1}(w) = \frac{aw}{w-1}
+      </me>.
+    </p>
+    <p>
+      The half rays <m>\{\mathrm{Arg}(w)=c\}</m>,
+      where <m>c</m> is a constant,
+      that meet at the origin <m>w=0</m> represent the lines of electric flux produced by a source located at <m>w=0</m>
+      (and a sink at <m>w=\infty</m>).
+      The preimage of this family of lines is a family of circles that pass through the points <m>z=0</m> and <m>z=a</m>.
+      We visualize these circles as the lines of electric flux from one point charge to another.
+      The limiting case as <m>a\to 0</m> is called a dipole.
+      The graphs for <m>a=1, \, a=0.5</m>,
+      and <m>a=0.1</m> are shown in <xref ref="fig_ch-09-08">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-09-08">
+      <caption>Images of <m>\mathrm{Arg}(w) = c</m> under the mapping <m>z = \frac{aw}{w-1}</m></caption>
+      <image width="73%" source="figs/ch-09/ch-09-fig-08.pdf"/>
+    </figure>
+    <exercises>
+      <title>Exercises for Section 9.2</title>
+      <exercise>
+        <p>
+          If <m>w=S(z) =\frac{(1-i) z+2}{(1+i) z+2}</m>, find <m>S^{-1}(w)</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          If <m>w=S(z) =\frac{i+z}{i-z}</m>, find <m>S^{-1}(w)</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the image of the right half-plane
+          <m>\mathrm{Re}(z) >0</m> under <m>w=\frac{i(1-z)}{1+z}</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Show that the bilinear transformation
+          <m>w=\frac{i(1-z)}{1+z }</m> maps the portion of the disk
+          <m>|z|\lt 1</m> that lies in the upper half-plane
+          <m>\mathrm{Im}(z)>0</m> onto the first quadrant <m>u>0, \, v>0</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the image of the upper half-plane
+          <m>\mathrm{Im}(z) >0</m> under the transformation
+          <me>
+            w=\frac{(1-i) z+2}{(1+i) z+2}
+          </me>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=i</m>,
+          and <m>z_3=-i</m> onto <m>w_1=-1, \,w_2=1</m>,
+          and <m>w_3=0</m>, respectively.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=-i, \, z_2=0</m>,
+          and <m>z_3=i</m> onto <m>w_1=-1, \, w_2=i</m>,
+          and <m>w_3=1</m>, respectively.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=1</m>,
+          and <m>z_3=2</m> onto <m>w_1=0, \, w_2=1</m>,
+          and <m>w_3=\infty</m>, respectively.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=1, \, z_2=i</m>,
+          and <m>z_3=-1</m> onto <m>w_1=0, \, w_2=1</m>,
+          and <m>w_3=\infty</m>, respectively.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Show that the transformation <m>w=\frac{i+z}{i-z}</m> maps the unit disk
+          <m>|z|\lt 1</m> onto the right half-plane <m>\mathrm{Re}(w)>0</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the image of the lower half-plane
+          <m>\mathrm{Im}(z)\lt 0</m> under <m>w = \frac{i+z}{i-z}</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          If <m>S_1(z) =\frac{z-2}{z+1}</m> and <m>S_2(z) = \frac{z}{z+3}</m>,
+          find <m>S_1\big(S_2(z)\big)</m> and <m>S_2\big(S_1(z)\big)</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the image of the quadrant <m>x>0</m>,
+          <m>y>0</m> under <m>w=\frac{z-1}{z+1}</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Show that Equation <xref ref="impform"/> can be written in the form of Equation <xref ref="bilineardef"/>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the image of the horizontal strip
+          <m>0\lt y\lt 2</m> under <m>w=\frac{z}{z-i}</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Show that the bilinear transformation
+          <m>w=S(z) =\frac{az+b}{cz+d}</m> is conformal at all points <m>z \ne \frac{-d}{c}</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          A <em>fixed point</em> of a mapping <m>w=f(z)</m> is a point <m>z_0</m> such that <m>f(z_0) =z_0</m>.
+          Show that a bilinear transformation can have at most two fixed points.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Find the fixed points of
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>w=\frac{z-1}{z+1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>w=\frac{4z+3}{2z-1}</m>.
+            </p>
+          </li>
+        </ol>
+      </exercise>
+    </exercises>
+  </subsection>
+</section>

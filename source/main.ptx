@@ -1,22 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- we first include a file which contains the docinfo element: -->
-  <xi:include href="./docinfo.ptx" />
-
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
-
-    <!-- Include frontmatter -->
-    <xi:include href="./frontmatter.ptx" />
-
-    <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
-
-
-    <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
-
+<?xml version="1.0" encoding="UTF-8" ?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+<macros>
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+\renewcommand{\contentsname}{\vspace{-1.2in} \begin{center} \LARGE Table of Contents \end{center} \vspace{-0.5in}}
+\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{3}
+\renewcommand{\arraystretch}{1.0}
+</macros>
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+</latex-image-preamble>
+  </docinfo>
+  <book>
+    <title>Title Goes Here</title>
+    <frontmatter>
+      <titlepage>
+      </titlepage>
+    </frontmatter>
+    <xi:include href="./preface.ptx"/>
+    <xi:include href="./ch_Complex_Numbers.ptx"/>
+    <xi:include href="./ch_complex-functions.ptx"/>
+    <xi:include href="./ch_A___H_Functions.ptx"/>
+    <xi:include href="./ch_seq-series-fractals.ptx"/>
+    <xi:include href="./ch_elementary-fcns.ptx"/>
+    <xi:include href="./ch_complex-integration.ptx"/>
+    <xi:include href="./ch_taylor-laurent.ptx"/>
+    <xi:include href="./ch_residue.ptx"/>
+    <xi:include href="./ch_conformal-mapping.ptx"/>
+    <xi:include href="./ch_harmonic-apps.ptx"/>
+    <xi:include href="./ch_fs-laplace.ptx"/>
+    <backmatter>
+      <xi:include href="./bibliography.ptx"/>
+    </backmatter>
   </book>
 </pretext>

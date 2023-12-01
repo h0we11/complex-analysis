@@ -1,0 +1,565 @@
+<section xml:id="sec_harmonic-functions">
+  <title>Harmonic Functions</title>
+  <p>
+    Let <m>\phi (x,y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m> defined on a domain <m>D</m>.
+    (Recall that a domain is a connected open set.)
+    The partial differential equation
+    <men xml:id="Laplace_s_Equation">
+      \phi _{xx}(x,y) +\phi _{yy}(x,y) = 0
+    </men>
+    is known as <em>Laplace's equation</em>
+    (sometimes referred to as the <term>potential equation</term>).
+    If <m>\phi, \, \phi _x, \, \phi_y, \, \phi _{xx}, \, \phi _{xy}, \, \phi _{yx}</m>,
+    and <m>\phi _{yy}</m> are all continuous,
+    and if <m>\phi (x,y)</m> satisfies Laplace's equation,
+    then <m>\phi(x,y)</m> is <term>harmonic</term> on <m>D</m>.
+    Harmonic functions are important in applied mathematics,
+    engineering, and mathematical physics.
+    They are used to solve problems involving steady state temperatures,
+    two-dimensional electrostatics, and ideal fluid flow.
+    In <xref ref="ch_fs-laplace"/> we describe how complex analysis techniques can be used to solve some problems involving harmonic functions.
+    We begin with an important theorem relating analytic and harmonic functions.
+  </p>
+  <theorem xml:id="Harmonic_Theorem">
+    <statement>
+      <p>
+        <em>Let</em><m>f(z) = u(x,y) +iv(x,y)</m> be an analytic function on a domain <m>D</m>.
+        Then both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
+        In other words,
+        the real and imaginary parts of an analytic function are harmonic.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      In Corollary 6.3 we will show that,
+      if <m>f(z)</m> is analytic,
+      then all partial derivatives of <m>u</m> and <m>v</m> are continuous.
+      Using that result here, we see that,
+      as <m>f</m> is analytic,
+      <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations
+      <me>
+        u_x = v_y  \text{ and }   u_y = -v_x
+      </me>.
+    </p>
+    <p>
+      Taking the partial derivative with respect to <m>x</m> of each side of these equations gives
+      <me>
+        u_{xx} = v_{yx}  \text{ and }   u_{yx} = -v_{xx}
+      </me>.
+    </p>
+    <p>
+      Similarly, taking the partial derivative of each side with respect to <m>y</m> yields
+      <me>
+        u_{xy}=v_{yy}  \text{ and }   u_{yy} = -v_{xy}
+      </me>.
+    </p>
+    <p>
+      The partial derivatives <m>u_{xy}</m>,
+      <m>u_{yx}</m>, <m>v_{xy}</m>,
+      and <m>v_{yx}</m> are all continuous,
+      so we use a theorem from the calculus of real functions that states that the mixed partial derivatives are equal; that is,
+      <me>
+        u_{xy}=u_{yx}  \text{ and }   v_{xy}=v_{yx}
+      </me>.
+    </p>
+    <p>
+      Combining all these results finally gives <m>u_{xx}+u_{yy}=v_{yx}-v_{xy}=0</m>,
+      and <m>v_{xx}+v_{yy}=-u_{yx}+u_{xy}=0</m>.
+      Therefore both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
+    </p>
+  </proof>
+  <p>
+    If we have a function <m>u(x,y)</m> that is harmonic on the domain <m>D</m> and if we can find another harmonic function <m>v(x,y)</m> such that the partial derivatives for <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations throughout <m>D</m>,
+    then we say that <m>v(x,y)</m> is a
+    <term>harmonic conjugate</term> of <m>u(x,y)</m>.
+    It then follows that the function
+    <m>f(z) =u(x,y) + iv(x,y)</m> is analytic on <m>D</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        If <m>u(x,y) =x^2-y^2</m>, then <m>u_{xx}(x ,y) + u_{yy}(x,y) = 2-2 = 0</m>;
+        hence <m>u</m> is a harmonic function for all <m>z</m>.
+        We find that <m>v(x,y) = 2xy</m> is also a harmonic function and that
+        <me>
+          u_x=v_y=2x  \text{ and }   u_y=-v_x=-2y
+        </me>.
+      </p>
+      <p>
+        Therefore <m>v</m> is a harmonic conjugate of <m>u</m>,
+        and the function <m>f</m> given by
+        <me>
+          f(z) =x^2-y^2+i2xy=z^2
+        </me>
+        is an analytic function.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Theorem <xref ref="Harmonic_Theorem"/> makes the construction of harmonic functions from known analytic functions an easy task.
+  </p>
+  <example>
+    <statement>
+      <p>
+        The function <m>f(z)=z^3=x^3-3xy^2+i( 3x^2y-y^3)</m> is analytic for all values of <m>z</m>.
+        Hence it follows that
+        <me>
+          u(x,y) = \mathrm{Re}\left[ f(z) \right] =x^3-3xy^2
+        </me>
+        is harmonic for all <m>z</m>, and that
+        <me>
+          v(x,y) = \mathrm{Im}\left[ f(z) \right] =3x^2y-y^3
+        </me>
+        is a harmonic conjugate of <m>u(x,y)</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    <xref ref="fig_ch-03-02">Figures</xref>
+    and <xref ref="fig_ch-03-03"></xref>
+    show the graphs of these two functions.
+    The partial derivatives are <m>u_x(x,y)=3x^2-3y^2, \, u_y(x,y)=-6xy, \, v_x(x,y)=6xy</m>,
+    and <m>v_y( x,y)=3x^2-3y^2</m>.
+    They satisfy the Cauchy-Riemann equations because they are the real and imaginary parts of an analytic function.
+    At the point <m>(x,y) =(2,-1)</m>,
+    we have <m>u_x( 2,-1)=v_y(2,-1) =9</m>,
+    and these partial derivatives appear along the edges of the surfaces for <m>u</m> and <m>v</m> where <m>x=2</m> and <m>y=-1</m>.
+    Similarly, <m>u_y(2,-1) =12</m> and
+    <m>v_x(2,-1) =-12</m> also appear along the edges of the surfaces for <m>u</m> and <m>v</m> where <m>x=2</m> and <m>y=-1</m>.
+  </p>
+  <figure xml:id="fig_ch-03-02">
+    <caption><m>u(x,y) =x^3-3xy^2</m></caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-02.pdf"/>
+  </figure>
+  <figure xml:id="fig_ch-03-03">
+    <caption><m>v(x,y)=3x^2y-y^3</m></caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-03.pdf"/>
+  </figure>
+  <p>
+    We can use complex analysis to show easily that certain combinations of harmonic functions are harmonic.
+    For example, if <m>v</m> is a harmonic conjugate of <m>u</m>,
+    then their product <m>\phi(x,y)=u(x,y)v(x,y)</m> is a harmonic function.
+    This condition can be verified directly by computing the partial derivatives and showing that Equation <xref ref="Laplace_s_Equation"/> holds,
+    but the details are tedious.
+    If we use complex variable techniques instead,
+    we can start with the fact that
+    <m>f(z)=u(x,y) + iv(x,y)</m> is an analytic function.
+    Then we observe that the square of <m>f</m> is also an analytic function:
+    <me>
+      [f(z)]^2 = [u(x,y)]^2-[v(x,y)]^2 + i2u(x,y) v(x,y)
+    </me>.
+  </p>
+  <p>
+    We then know immediately that the imaginary part, <m>2u(x,y) v(x,y)</m>,
+    is a harmonic function by <xref ref="Harmonic_Theorem">Theorem</xref>.
+    A constant multiple of a harmonic function is harmonic,
+    so it follows that <m>\phi</m> is harmonic.
+    We leave as an exercise to show that,
+    if <m>u_1</m> and <m>u_2</m> are two harmonic functions that are not related in the preceding fashion,
+    then their product need not be harmonic.
+  </p>
+  <theorem xml:id="Conjugate_Construction">
+    <title>Construction of a harmonic conjugate</title>
+    <statement>
+      <p>
+        Let <m>u(x,y)</m> be harmonic in an
+        <m>\varepsilon</m>-neighborhood of the point <m>(x_0,y_0)</m>.
+        Then there exists a conjugate harmonic function <m>v(x,y)</m> defined in this neighborhood such that
+        <m>f(z)=u(x,y)+iv(x,y)</m> is an analytic function.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      A conjugate harmonic function <m>v</m> will satisfy the Cauchy-Riemann equations <m>u_x=v_y</m> and <m>u_y=-v_x</m>.
+      Assuming that such a function exists,
+      we determine what it would have to look like by using a two-step process.
+      First, we integrate <m>v_y</m>
+      (which should equal <m>u_x</m>)
+      with respect to <m>y</m> and get
+      <men xml:id="v___int_ux_">
+        v(x,y) = \int u_x(x,y)\,dy + C(x)
+      </men>.
+      where <m>C(x)</m> is a function of <m>x</m> alone that is yet to be determined.
+      Second, we compute <m>C'(x)</m> by differentiating both sides of this equation with respect to <m>x</m> and replacing <m>v_x</m> with <m>-u_y</m> on the left side,
+      which gives
+      <me>
+        -u_y(x,y) = \frac{d}{dx}\int u_x(x,y)\,dy+C'(x)
+      </me>.
+    </p>
+    <p>
+      It can be shown
+      (we omit the details)
+      that because <m>u</m> is harmonic,
+      all terms except those involving <m>x</m> in the last equation will cancel,
+      revealing a formula for <m>C'(x)</m> involving <m>x</m> alone.
+      Elementary integration of the single-variable function <m>C'(x)</m> can then be used to discover <m>C(x)</m>.
+      We finally observe that the function <m>v</m> so created indeed has the properties we seek.
+    </p>
+  </proof>
+  <p>
+    Technically we should always specify the domain of function when defining it.
+    When no such specification is given,
+    it is assumed that the domain is the entire complex plane,
+    or the largest set for which the expression defining the function makes sense.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that <m>u(x,y) =xy^3-x^3y</m> is a harmonic function and find a conjugate harmonic function <m>v(x,y)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We follow the construction process of <xref ref="Conjugate_Construction">Theorem</xref>.
+        The first partial derivatives are
+        <men xml:id="Example_ux_Eq">
+          u_x(x,y) =y^3-3x^2y  \text{ and }   u_y(x,y) =3xy^2-x^3
+        </men>.
+      </p>
+      <p>
+        To verify that <m>u</m> is harmonic,
+        we compute the second partial derivatives and note that <m>u_{xx}(x,y)+u_{yy}(x,y)=-6xy+6xy=0</m>,
+        so <m>u</m> satisfies Laplace's Equation <xref ref="Laplace_s_Equation"/>.
+        To construct <m>v</m>,
+        we start with Equation <xref ref="v___int_ux_"/> and the first of Equations <xref ref="Example_ux_Eq"/> to get
+        <me>
+          v(x,y) = \int (y^3-3x^2y)\,dy+C(x) = \frac{1}{4}y^{4}-\frac{3}{2}x^2y^2+C(x)
+        </me>.
+      </p>
+      <p>
+        Differentiating the left and right sides of this equation with respect to <m>x</m> and using
+        <m>-u_y(x,y)=v_x(x,y)</m> and Equations <xref ref="Example_ux_Eq"/> on the left side yields
+        <me>
+          -3xy^2+x^3=0-3xy^2+C'(x)
+        </me>.
+        which implies that
+        <me>
+          C'(x) =x^3
+        </me>.
+      </p>
+      <p>
+        Finally, if we integrate this equation we get
+        <me>
+          v(x,y) = \frac{1}{4}x^{4}-\frac{3}{2}x^2y^2+\frac{1}{4}y^4+C
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Harmonic functions arise as solutions to many physical problems.
+    Applications include two-dimensional models of heat flow,
+    electrostatics, and fluid flow.
+    We now give an example of the latter.
+  </p>
+  <p>
+    We assume that an incompressible and frictionless fluid flows over the complex plane and that all cross sections in planes parallel to the complex plane are the same.
+    Situations such as this occur when fluid is flowing in a deep channel.
+    The velocity vector at the point <m>(x, y)</m> is
+    <men xml:id="Flow">
+      \mathbf{V}(x,y) =p(x,y) +iq(x,y)
+    </men>,
+    which we illustrate in <xref ref="fig_ch-03-04">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-03-04">
+    <caption>The vector field <m>\mathbf{V}(x,y)=p(x,y)+iq(x,y)</m>, which can be considered as a fluid flow</caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-04.pdf"/>
+  </figure>
+  <p>
+    The assumption that the flow is irrotational and has no sources or sinks implies that both the curl and divergence vanish;
+    that is, <m>q_x-p_y=0</m> and <m>p_x+q_y=0</m>.
+    Hence <m>p</m> and <m>q</m> obey the equations
+    <men xml:id="pqCR_clone">
+      p_x(x,y) =-q_y(x,y)  \text{ and }   p_y(x,y) =q_x(x,y)
+    </men>.
+  </p>
+  <p>
+    Equations <xref ref="pqCR_clone"/> are similar to the Cauchy-Riemann equations and permit us to define a special complex function:
+    <men xml:id="rotational_f">
+      f(z) =u(x,y) +iv(x,y) =p(x,y) - iq(x,y)
+    </men>.
+  </p>
+  <p>
+    Here we have <m>u_x=p_x, \, u_y=p_y, \, v_x=-q_x</m>, and <m>v_y=-q_y</m>.
+    We can use Equations <xref ref="pqCR_clone"/> to verify that the Cauchy-Riemann equations hold for <m>f</m>:
+    <md>
+      <mrow>u_x(x,y) \amp  =p_x(x,y) =-q_y(x,y) = v_y(x,y)  \text{ and }</mrow>
+      <mrow>u_y(x,y) \amp  =p_y(x,y) =q_x(x,y) = -v_x(x,y)</mrow>
+    </md>.
+  </p>
+  <p>
+    Assuming that the functions <m>p</m> and <m>q</m> have continuous partials,
+    <xref ref="Sufficient_Conditions">Theorem</xref>
+    guarantees that function <m>f</m> defined in Equation <xref ref="rotational_f"/> is analytic and that the fluid flow of Equation <xref ref="Flow"/> is the conjugate of an analytic function; that is,
+    <me>
+      \mathbf{V}(x,y) = \overline{f(z)}
+    </me>.
+  </p>
+  <p>
+    In Chapter 6 we prove that every analytic function <m>f</m> has an analytic antiderivative <m>F</m>;
+    assuming this to be the case, we can write
+    <men xml:id="Fprime_f">
+      F(z) = \phi (x,y) + i\psi(x,y)
+    </men>.
+    where <m>F\,'(z) = f(z)</m>.
+  </p>
+  <p>
+    <xref ref="Harmonic_Theorem">Theorem</xref>
+    implies that <m>\phi (x,y)</m> is a harmonic function.
+    Using the vector interpretation of a complex number,
+    the gradient of <m>\phi</m> can be written as
+    <me>
+      \text{ grad } \phi (x,y) = \phi _x(x,y) +i\phi_y(x,y)
+    </me>.
+  </p>
+  <p>
+    The Cauchy-Riemann equations applied to <m>F(z)</m> give <m>\phi_y(x,y) =-\psi_x(x,y)</m>.
+    Making this substitution in the preceding equation yields
+    <me>
+      \text{ grad } \phi(x,y) = \phi_x(x,y) - i\psi_x(x,y) = \overline{\phi_x(x,y) +i\psi _x(x,y)}
+    </me>.
+  </p>
+  <p>
+    Equation <xref ref="C-R_EQ_x"/> says that <m>\phi_x(x,y) +i\psi_x(x,y) =F\,'(z)</m>,
+    which by the preceding equation and Equation <xref ref="Fprime_f"/> implies that
+    <me>
+      \text{ grad } \phi(x,y) = \overline{F\,'(z)} = \overline{f(z)}
+    </me>.
+  </p>
+  <p>
+    Finally, from Equation <xref ref="Flow"/> <m>\phi</m> is the scalar potential function for the fluid flow, so
+    <me>
+      \mathbf{V}(x,y) = \text{ grad } \phi(x,y)
+    </me>.
+  </p>
+  <p>
+    The curves given by <m>\{(x,y) :\phi(x,y) = \text{ constant } \}</m> are called
+    <em>equipotentials</em>.
+    The curves <m>\{(x,y) : \psi(x,y) = \text{ constant } \}</m> are called <em>streamlines</em>
+    and describe the path of fluid flow.
+    In Chapter 10 we show that the family of equipotentials is orthogonal to the family of streamlines,
+    as depicted in <xref ref="fig_ch-03-05">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-03-05">
+    <caption>The families of orthogonal curves <m>\{(x,y):\phi (x,y)=  constant  \}</m> and <m>\{(x,y):\psi (x,y)=  constant  \}</m>
+    for the function <m>F(z)=\phi (x,y)+i\psi (x,y)</m></caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-05.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Show that the harmonic function
+        <m>\phi(x,y)=x^2-y^2</m> is the scalar potential function for the fluid flow expression <m>\mathbf{V}(x,y) = 2x-i2y</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can write the fluid flow expression as
+        <me>
+          \mathbf{V}(x,y) = \overline{f(z)}= \overline{2x+i2y}=\overline{2z}
+        </me>.
+      </p>
+      <p>
+        An antiderivative of <m>f(z) =2z</m> is <m>F(z)=z^2</m>,
+        and the real part of <m>F(z)</m> is the desired harmonic function:
+        <me>
+          \phi (x,y) = \mathrm{Re}\left[ F(z) \right] = \mathrm{Im}\left[ x^2-y^2+i2xy\right] =x^2-y^2
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Note that the hyperbolas <m>\phi(x,y) =x^2-y^2=C</m> are the equipotential curves and that the hyperbolas
+    <m>\psi(x,y) =2xy=C</m> are the streamline curves;
+    these curves are orthogonal,
+    as shown in <xref ref="fig_ch-03-06">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-03-06">
+    <caption>The equipotential curves <m>x^2-y^2=C</m> and streamline curves <m>2xy=C</m> for the function <m>F(z)=z^2</m></caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-06.pdf"/>
+  </figure>
+  <exercises>
+    <title>Exercises for <xref ref="sec_harmonic-functions">Section</xref></title>
+    <exercise xml:id="x3_3_1">
+      <p>
+        Determine where the following functions are harmonic .
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>u(x,y) =e^{x}\cos y</m> and <m>v(x,y) =e^{x}\sin y</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>u(x,y) = \ln (x^2+y^2)</m> for <m>( x,y) \ne (0,0)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x3_3_2">
+      <p>
+        Does an analytic function <m>f(z)=u(x,y)+iv(x,y)</m> exist for which <m>v(x,y)=x^3+y^3</m>?
+        Why or why not?
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_3">
+      <p>
+        Let <m>a, \, b</m>, and <m>c</m> be real constants.
+        Determine a relation among the coefficients that will guarantee that the function <m>\phi(x,y)=ax^2+bxy+cy^2</m> is harmonic.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_4">
+      <p>
+        Let <m>v(x,y) =</m> arctan<m>(y/x)</m> for <m>x \ne 0</m>.
+        Compute the partial derivatives of <m>v</m> and verify that <m>v</m> satisfies Laplace's equation.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_5">
+      <p>
+        Find an analytic function <m>f(z)=u(x,y)+iv(x,y)</m> for the following expressions.
+        <ol>
+          <li>
+            <p>
+              <m>u(x,y) =y^3-3x^2y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>u(x,y) = \sin y\sinh x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>v(x,y) =e^{y}\sin x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>v(x,y) = \sin x\cosh y</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_6">
+      <p>
+        Let <m>u_1(x,y)=x^2-y^2</m> and <m>u_2=x^3-3xy^2</m>.
+        Show that <m>u_1</m> and <m>u_2</m> are harmonic functions but that their product
+        <m>u_1(x,y) u_2(x,y)</m> is not a harmonic function.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_7">
+      <p>
+        Let <m>u(x,y)</m> be harmonic on a region <m>D</m> that is symmetric about the line <m>y=0</m>.
+        Show that <m>U(x,y)=u(x,-y)</m> is harmonic on <m>D</m>.
+        <em>Hint</em>: Use the chain rule for differentiation of real functions and note that <m>u(x,-y)</m> is really the function <m>u\big(g(x,y)\big)</m>,
+        where <m>g(x,y)=(x,-y)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_8">
+      <p>
+        Let <m>v</m> be a harmonic conjugate of <m>u</m>.
+        Show that <m>-u</m> is a harmonic conjugate of <m>v</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_9">
+      <p>
+        Let <m>v</m> be a harmonic conjugate of <m>u</m>.
+        Show that <m>h=u^2-v^2</m> is a harmonic function.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_10">
+      <p>
+        Suppose that <m>v</m> is a harmonic conjugate of <m>u</m> and that <m>u</m> is a harmonic conjugate of <m>v</m>.
+        Show that <m>u</m> and <m>v</m> must be constant functions.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_11">
+      <p>
+        Let <m>f(z)=f(re^{i\theta})=u(r,\theta)+iv(r,\theta)</m> be analytic on a domain <m>D</m> that does not contain the origin.
+        Use the polar form of the Cauchy-Riemann equations <m>u_\theta = -rv_r</m>,
+        and <m>v_\theta = ru_r</m>.
+        Differentiate them first with respect to <m>\theta</m> and then with respect to <m>r</m>.
+        Use the results to establish the polar form of Laplace's equation:
+        <me>
+          r^2u_{rr}(r,\theta ) +ru_{r}(r,\theta ) +u_{\theta \theta}(r,\theta)=0
+        </me>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_12">
+      <p>
+        Use the polar form of Laplace's equation given in <xref ref="x3_3_11">Exercise</xref>
+        to show that the following functions are harmonic.
+        <ol>
+          <li>
+            <p>
+              <m>u(r,\theta ) =(r+\frac{1}{r}) \cos \theta</m> and <m>v(r,\theta )=(r-\frac{1}{r}) \sin \theta</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>u(r,\theta ) =r^{n}\cos n\theta</m> and <m>v(r,\theta) =r^{n}\sin n\theta</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_13">
+      <p>
+        The function <m>F(z) = \frac{1}{z}</m> is used to determine a field known as a dipole.
+        <ol>
+          <li>
+            <p>
+              Express <m>F(z)</m> in the form <m>F(z) = \phi (x,y) + i\psi(x ,y)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Sketch the equipotentials <m>\phi =1,\frac{1}{2},\frac{1}{4}</m> and streamlines <m>\psi=1, \, \frac{1}{2},\frac{1}{4}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_14">
+      <p>
+        Assume that <m>F(z) = \phi(x,y) + i\psi( x,y)</m> is analytic on the domain <m>D</m> and that <m>F\,'(z) \ne 0</m> on <m>D</m>.
+        Consider the families of level curves
+        <m>\{\phi(x,y) = \text{ constant } \}</m> and <m>\{\psi( x,y) = \text{ constant } \}</m>,
+        which are the equipotentials and streamlines for the fluid flow
+        <em>V</em><m>(x,y) = \overline{F\,'(z)}</m>.
+        Prove that the two families of curves are orthogonal.
+        <em>Hint:</em> Suppose that
+        <m>(x_0,y_0)</m> is a point common to the two curves
+        <m>\phi (x,y) =c_1</m> and <m>\psi (x,y) =c_2</m>.
+        Use the gradients of <m>\phi</m> and <m>\psi</m> to show that the normals to the curves are perpendicular.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_15">
+      <p>
+        We introduce the logarithmic function in <xref ref="ch_elementary-fcns"/>.
+        For now, let <m>F(z)= \mathrm{Log}\,z= \ln |z|+i\mathrm{Arg}\,z</m>.
+        Here we have <m>\phi(x,y) = \ln |z|</m> and <m>\psi (x,y) = \mathrm{Arg}\,z</m>.
+        Sketch the equipotentials <m>\phi =0 , \, \ln 2, \, \ln 3, \, \ln 4</m> and streamlines
+        <m>\psi = \frac{k\pi}{8}</m> for <m>k=0,1,\ldots,7</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        <xref ref="Conjugate_Construction">Theorem</xref>
+        claims that it is possible to prove that <m>C\,'(x)</m> is a function of <m>x</m> alone.
+        Prove this assertion.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_3_16">
+      <p>
+        Discuss and compare the statements
+        <q><m>u(x,y)</m> is harmonic</q>
+        and
+        <q><m>u(x,y)</m> is the imaginary part of an analytic function.</q>
+      </p>
+    </exercise>
+  </exercises>
+</section>

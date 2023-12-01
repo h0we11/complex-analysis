@@ -1,0 +1,441 @@
+<section xml:id="sec_complex-exponents">
+  <title>Complex Exponents</title>
+  <p>
+    In <xref ref="sec_algebra-2">Section</xref>
+    we indicated that it is possible to make sense out of expressions such as
+    <m>\sqrt{1+i}</m> or <m>i^{i}</m> without appealing to a number system beyond the framework of complex numbers.
+    We now show how this is done by taking note of some rudimentary properties of the complex exponential and logarithm,
+    and then using our imagination.
+  </p>
+  <p>
+    We begin by generalizing <xref ref="expLogz">Identity</xref>.
+    Equations <xref ref="log_def_3"/> and <xref ref="Log_z_def"></xref>
+    show that <m>\log(z)</m> can be expressed as the set <m>\log(z) =\{\mathrm{Log}(z) +i2n\pi : n \text{ is an integer } \}</m>.
+    We can easily show
+    (left as an exercise)
+    that, for <m>z \ne 0</m>, <m>\exp[\log_{\alpha}(z)]=z</m>,
+    where <m>\log_{\alpha}</m> is <em>any</em>
+    branch of the function <m>\log</m>.
+    But this means that, for any <m>\zeta \in \log(z)</m>,
+    the identity <m>\exp \zeta =z</m> holds true.
+    Because <m>\exp[\log(z)]</m> denotes the set <m>\{\exp \zeta : \zeta \in \log(z) \}</m>,
+    we see that <m>\exp[\log(z)]=z</m>, for <m>z \ne 0</m>.
+  </p>
+  <p>
+    Next, note that <xref ref="logzw_logz_logw">Identity</xref>
+    gives <m>\log (z^n)=n\log(z)</m>,
+    where <m>n</m> is any natural number,
+    so that <m>\exp[\log(z^n)] = \exp[n\log(z)] = z^n</m>,
+    for <m>z \ne 0</m>.
+    With these preliminaries out of the way,
+    we can now come up with a definition of a complex number raised to a complex power.
+  </p>
+  <definition>
+    <title>Complex exponent</title>
+    <statement>
+      <p>
+        Let <m>c</m> be a complex number.
+        We define <m>z^{c}</m> as
+        <men xml:id="z_c">
+          z^c = \exp\big[c\log(z)\big]
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The right side of Equation <xref ref="z_c"/> is a set.
+    This definition makes sense because,
+    if both <m>z</m> and <m>c</m> are real numbers with <m>z>0</m>, Equation <xref ref="z_c"/> gives the familiar (real) definition for <m>z^{c}</m>,
+    as the following example illustrates.
+  </p>
+  <example xml:id="x4__1_2_">
+    <statement>
+      <p>
+        Use Equation <xref ref="z_c"/> to evaluate <m>4^{\frac{1}{2}}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Calculating <m>4^{\frac{1}{2}}=\exp[\frac{1}{2}\log(4)]</m> gives
+        <men xml:id="eq_sqrt_4_">
+          \frac{1}{2}\log(4) =\{\ln 2+in\pi :n \text{ is an integer }  \}
+        </men>.
+      </p>
+      <p>
+        Thus <m>4^{\frac{1}{2}}</m> is the set <m>\{\exp(\ln 2+in\pi) :n \text{ is an integer } \}</m>.
+        The distinct values occur when <m>n=0, \, 1</m>.
+        Plugging these values into Equation <xref ref="eq_sqrt_4_"/> gives
+        <m>\exp(\ln 2)=2</m> and <m>\exp(\ln 2+i\pi )=\exp(\ln 2) \exp(i\pi )=-2</m>.
+        In other words, <m>4^{\frac{1}{2}} = \{-2,\,2\}</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The expression <m>4^{\frac{1}{2}}</m> is different from <m>\sqrt{4}</m>,
+    as the former represents the set
+    <m>\{-2,\,2\}</m> and the latter gives only one value,
+    <m>\sqrt{4}=2</m>.
+  </p>
+  <p>
+    Because <m>\log</m> is multivalued,
+    the function <m>z^{c}</m> will,
+    in general, be multivalued.
+    If we want to focus on a single value for <m>z^{c}</m>,
+    we can do so via the function defined for <m>z \ne 0</m> by
+    <men xml:id="Principal_z_c">
+      f(z) =\exp[c\mathrm{Log}(z)]
+    </men>,
+    which is called the principal branch of the multivalued function <m>z^c</m>.
+    Note that the principal branch of <m>z^c</m> is obtained from Equation <xref ref="z_c"/> by replacing <m>\log(z)</m> with the principal branch of the logarithm.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find the principal values of <m>\sqrt{1+i}</m> and <m>i^{i}</m>.
+      </p>
+      <solution>
+        <p>
+          From <xref ref="ex_log_1_i_">Example</xref>
+          <md>
+            <mrow>\mathrm{Log}( 1+i) \amp = \frac{\ln 2}{2}+i\frac{\pi }{4}=\ln 2^{\frac{1}{2}}+i\frac{\pi }{4},  \text{ and }</mrow>
+            <mrow>\mathrm{Log}( i)   \amp = i\frac{\pi}{2}</mrow>
+          </md>.
+        </p>
+        <p>
+          <xref ref="Principal_z_c">Identity</xref>
+          yields the principal values of <m>\sqrt{1+i}</m> and <m>i^{i}</m>:
+          <md>
+            <mrow>\sqrt{1+i} \amp = ( 1+i)^{\frac{1}{2}}</mrow>
+            <mrow>\amp = \exp \left[\frac{1}{2}\mathrm{Log}( 1+i) \right]</mrow>
+            <mrow>\amp = \exp \left[\frac{1}{2}(\ln 2^{\frac{1}{2}}+i\frac{\pi}{4})\right]</mrow>
+            <mrow>\amp = \exp\left(\ln 2^{\frac{1}{4}}+i\frac{\pi }{8}\right)</mrow>
+            <mrow>\amp = 2^{\frac{1}{4}}\left(\cos \frac{\pi }{8}+i\sin \frac{\pi }{8}\right)</mrow>
+            <mrow>\amp \approx 1.09684+0.45509i,  \text{ and }</mrow>
+            <mrow>i^{i} \amp = \exp[i\mathrm{Log}(i)]</mrow>
+            <mrow>\amp = \exp\left[i\left(i\frac{\pi}{2}\right)\right]</mrow>
+            <mrow>\amp = \exp\left(-\frac{\pi }{2}\right)</mrow>
+            <mrow>\amp \approx 0.20788</mrow>
+          </md>.
+        </p>
+      </solution>
+      <p>
+        Note that the result of raising a complex number to a complex power may be a real number in a nontrivial way.
+      </p>
+    </statement>
+  </example>
+  <p>
+    We now consider the possibilities that arise when we apply Equation <xref ref="z_c"/>.
+  </p>
+  <p>
+    <em>Case(i)</em> Suppose that <m>c=k</m>,
+    where <m>k</m> is an integer.
+    Then, if <m>z=re^{i\theta} \ne 0</m>,
+    <me>
+      k\log(z) =\{k\ln(r) +ik( \theta +2n\pi :n \text{ is an integer } \}
+    </me>.
+  </p>
+  <p>
+    Recalling that the complex exponential function has period <m>2\pi i</m>, we have
+    <md>
+      <mrow>z^{k} \amp = \exp\big[k\log(z)\big]</mrow>
+      <mrow>\amp = \exp\big[k\ln(r) +ik(\theta +2n\pi)\big]</mrow>
+      <mrow>\amp = \exp\big[\ln(r^k) +ik\theta +i2kn\pi \big]</mrow>
+      <mrow>\amp = \exp\big[\ln(r^k)\big] \exp(ik\theta) \exp(i2kn\pi)</mrow>
+      <mrow>\amp = r^k\exp(ik\theta ) = r^k(\cos k\theta +i\sin k\theta)</mrow>
+    </md>,
+    which is the single-valued <m>k</m>th power of <m>z</m> that we discussed in <xref ref="sec_algebra-2">Section</xref>.
+  </p>
+  <p>
+    <em>Case(ii):</em> If <m>c=\frac{1}{k}</m>,
+    where <m>k</m> is an integer,
+    and <m>z=re^{i\theta } \ne 0</m>, then
+    <me>
+      \frac{1}{k} \log z = \{\frac{1}{k}\ln r+\frac{i( \theta +2n\pi)}{k} : n\text{ is an integer } \}
+    </me>.
+  </p>
+  <p>
+    Hence, Equation <xref ref="z_c"/> becomes
+    <md>
+      <mrow xml:id="z__1_k_" number="yes">z^{\frac{1}{k}} \amp = \exp \left[\frac{1}{k}\log(z)\right]</mrow>
+      <mrow>\amp = \exp \left[ \frac{1}{k}\ln(r) +i\frac{\theta +2n\pi }{k} \right]</mrow>
+      <mrow>\amp = r^{\frac{1}{k}}\exp\left(i\frac{\theta +2n\pi}{k}\right)</mrow>
+      <mrow>\amp = r^{\frac{1}{k}}\left[ \cos(\frac{\theta +2n\pi }{k}) +i\sin(\frac{\theta +2n\pi }{k}) \right]</mrow>
+    </md>.
+  </p>
+  <p>
+    When we again use the periodicity of the complex exponential function, Equation <xref ref="z__1_k_"/> gives <m>k</m> distance values corresponding to
+    <me>
+      n=0,\,1,\ldots ,\,k-1
+    </me>.
+  </p>
+  <p>
+    Therefore, as <xref ref="x4__1_2_">Example</xref> illustrated,
+    the fractional power <m>z^{\frac{1}{k}}</m> is the multivalued <m>k</m>th root function.
+  </p>
+  <p>
+    <em>Case(iii):</em> If <m>j</m> and <m>k</m> are positive integers that have no common factors and <m>c=\frac{j}{k}</m>,
+    then Equation <xref ref="z_c"/> becomes
+    <me>
+      z^{\frac{j}{k}} = r^{\frac{j}{k}}\exp\left[i\frac{( \theta +2n\pi) j}{k}\right] =r^{\frac{j}{k}}\left[\cos\left(\frac{(\theta +2n\pi) j}{k}\right) + i\sin\left(\frac{(\theta +2n\pi}{k}\right) \right]
+    </me>.
+  </p>
+  <p>
+    Again, there are <m>k</m> distance values that correspond with <m>n=0,\,1,\ldots , \, k-1</m>.
+  </p>
+  <p>
+    <em>Case(iv):</em> If <m>c</m> is not a rational number,
+    then there are infinitely many values for <m>z^{c}</m>,
+    provided <m>z \ne 0</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        The values of <m>2^{\frac{1}{9}+\frac{i}{50}}</m>are
+        <md>
+          <mrow>2^{\frac{1}{9}+\frac{i}{50}} \amp = \exp \left[\left(\frac{1}{9}+\frac{i}{50}\right)(\ln 2+i2n\pi ) \right]</mrow>
+          <mrow>\amp = \exp \left[ \frac{\ln 2}{9}-\frac{n\pi }{25}+i\left(\frac{\ln 2}{50}+ \frac{2n\pi }{9}\right)\right]</mrow>
+          <mrow>\amp = 2^{\frac{1}{9}}e^{-\frac{n\pi }{25}}\left[\cos\left(\frac{\ln 2}{50}+ \frac{2n\pi }{9}\right) +i\sin\left(\frac{\ln 2}{50}+\frac{2n\pi }{9}\right)\right]</mrow>
+        </md>,
+        where <m>n</m> is an integer.
+        The principal value of <m>2^{\frac{1}{9}+\frac{i}{50}}</m> is
+        <me>
+          2^{\frac{1}{9}+\frac{i}{50}}=2^{\frac{1}{9}}\left[\cos\left(\frac{\ln 2}{50}\right) + i\sin\left(\frac{\ln 2}{50}\right) \right] \approx 1.079956+0.014972i
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    <xref ref="fig_ch-05-06">Figure</xref>
+    shows the terms for this multivalued expression corresponding to
+    <me>
+      n=-9,\,-8,\ldots ,-1,\,0,\,1,\ldots ,\,8,\,9
+    </me>.
+  </p>
+  <p>
+    They exhibit a spiral pattern that is often present in complex powers.
+  </p>
+  <figure xml:id="fig_ch-05-06">
+    <caption>Some of the values of <m>2^{\frac{1}{9}+\frac{i}{50}}</m></caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-06.pdf"/>
+  </figure>
+  <p>
+    Some of the rules for exponents carry over from the real case.
+    In the exercises we ask you to show that if <m>c</m> and <m>d</m> are complex numbers and <m>z \ne 0</m>, then
+    <md>
+      <mrow xml:id="z__-c__1_z_c" number="yes">z^{-c} \amp = \frac{1}{z^{c}},</mrow>
+      <mrow xml:id="z_cz_d_z__c_d_" number="yes">z^{c}z^{d} \amp = z^{c+d},</mrow>
+      <mrow xml:id="z_c_z_d_z__c-d_" number="yes">\frac{z^{c}}{z^{d}} \amp = z^{c-d},</mrow>
+      <mrow xml:id="x_z_c__n_z__cn_" number="yes">(z^{c})^n \amp = z^{cn}</mrow>
+    </md>,
+    where <m>n</m> is an integer.
+  </p>
+  <p>
+    The following example shows that <xref ref="x_z_c__n_z__cn_">Identity</xref>
+    does not hold if <m>n</m> is replaced with an arbitrary complex value.
+  </p>
+  <example>
+    <statement>
+      <md>
+        <mrow>(i^2)^{i} \amp = \exp \left[ i\log(-1) \right] =e^{-( 1+2n) \pi },  \text{ where }  n \text{ is an integer, and }</mrow>
+        <mrow>( i)^{2i} \amp = \exp(2i\log i) =e^{-( 1+4n) \pi },  \text{ where }  n \text{ is an integer. }</mrow>
+      </md>
+      <p>
+        Since these sets of solutions are not equal,
+        <xref ref="x_z_c__n_z__cn_">Identity</xref> does not always hold.
+      </p>
+    </statement>
+  </example>
+  <p>
+    We can compute the derivative of the principal branch of <m>z^{c}</m>,
+    which is the function <m>f(z) =\exp[c\mathrm{Log}(z)]</m>.
+    By the chain rule,
+    <men xml:id="Deriv_z_c">
+      f\,'(z) =\frac{c}{z}\exp\big[c\mathrm{Log}(z)\big]
+    </men>.
+  </p>
+  <p>
+    If we restrict <m>z^{c}</m> to the principal branch,
+    <m>z^{c}=\exp\big[c\mathrm{Log}(z)\big]</m>,
+    then Equation <xref ref="Deriv_z_c"/> can be written in the familiar form that you learned in calculus.
+    That is, for <m>z \ne 0</m> and <m>z</m> not a negative real number,
+    <me>
+      \frac{d}{dz}z^{c}=\frac{c}{z}z^{c}=cz^{c-1}
+    </me>.
+  </p>
+  <p>
+    We can use <xref ref="z_c">Identity</xref>
+    to define the exponential function with base <m>b</m>,
+    where <m>b \ne 0</m> is a complex number:
+    <me>
+      b^z=\exp\big[z\log(b)\big]
+    </me>.
+  </p>
+  <p>
+    If we specify a branch of the logarithm,
+    then <m>b^z</m> will be single-valued and we can use the rules of differentiation to show that the resulting branch of <m>b^z</m> is an analytic function.
+    The derivative of <m>b^z</m> is then given by the familiar rule
+    <men xml:id="Deriv_of_b_z">
+      \frac{d}{dz}b^z=b^z\log_{\alpha}(b)
+    </men>,
+    where <m>\log_{\alpha}</m> is any branch of the logarithm whose branch cut does not include the point <m>b</m>.
+  </p>
+  <exercises>
+    <title>Exercises for <xref ref="sec_complex-exponents">Section</xref></title>
+    <exercise xml:id="x5_3_1">
+      <p>
+        Find the principal value of
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>4^{i}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>( 1+i)^{\pi i}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>( -1)^{\frac{1}{\pi }}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>( 1+i\sqrt{3})^{\frac{i}{2}}</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x5_3_2">
+      <p>
+        Find <em>all</em> values of
+        <ol>
+          <li>
+            <p>
+              <m>i^{i}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-1)^{\sqrt{2}}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>i^{\frac{2}{\pi }}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(1+i)^{2-i}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-1)^{\frac{3}{4}}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>i^{\frac{2}{3}}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_3">
+      <p>
+        Show that, if <m>z \ne 0</m>,
+        then <m>z^{0}</m> has a unique value.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_4">
+      <p>
+        For <m>z=re^{i\theta } \ne 0</m>,
+        show that the principal branch of
+        <ol>
+          <li>
+            <p>
+              <m>z^{i}</m> is given by the equation
+              <me>
+                z^{i}=e^{-\theta }\big[(\ln r) +i\sin(\ln r)\big]
+              </me>,
+              where <m>r>0</m> and <m>-\pi \lt \theta  \le \pi </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z^{\alpha}</m> (<m>\alpha</m> a real number) is given by the equation
+              <me>
+                z^{\alpha}=r^{\alpha}\cos \alpha \theta +ir^{\alpha}\sin \alpha \theta
+              </me>,
+              where <m>r>0</m> and <m>-\pi \lt \theta  \le \pi</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_5">
+      <p>
+        Let <m>z_n=( 1+i)^n</m> for
+        <m>n=1,\,2,\ldots</m> Show that the sequence <m>\{z_n\}</m> is a solution to the difference equation <m>z_n=2z_{n-1}-2z_{n-2}</m> for <m>n \ge 3</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_6">
+      <p>
+        Verify
+        <ol>
+          <li>
+            <p>
+              <xref ref="z__-c__1_z_c">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="z_cz_d_z__c_d_">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="z_c_z_d_z__c-d_">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="x_z_c__n_z__cn_">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Deriv_of_b_z">Identity</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_7">
+      <p>
+        Does <m>1</m> raised to any power always equal <m>1</m>?
+        Why or why not?
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_8">
+      <p>
+        Construct an example that shows that the principal value of
+        <m>(z_1z_2)^{\frac{1}{3}}</m> need not equal the product of the principal values of
+        <m>z_1^{\frac{1}{3}}</m> and <m>z_2^{\frac{1}{3}}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_3_9">
+      <p>
+        If <m>c</m> is a complex number,
+        the expression <m>i^c</m> may be multivalued.
+        Suppose all the values of <m>|i^c|</m> are identical.
+        What are these values, and what can be said about the number <m>c</m>?
+        Justify your assertions.
+      </p>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,249 @@
+<section xml:id="sec_dirichlet">
+  <title>The Dirichlet Problem for the Unit Disk</title>
+  <p>
+    The Dirichlet problem for the unit disk
+    <m>D:|z|\lt 1</m> is to find a real-valued function <m>u(x,y)</m> that is harmonic in the unit disk <m>D</m> and that takes on the boundary values
+    <men xml:id="BDDvalues">
+      u(\cos \theta ,\sin \theta ) = U(\theta),  \text{ for }   -\pi \lt \theta  \le \pi
+    </men>
+    at points <m>z=(\cos \theta, \sin \theta)</m> on the unit circle,
+    as shown in <xref ref="fig_ch-11-12">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-11-12">
+    <caption>The Dirichlet problem for the unit disk <m>|z| \lt  1</m>.</caption>
+    <image width="73%" source="figs/ch-11/ch-11-fig-12.pdf"/>
+  </figure>
+  <theorem xml:id="thm_dirichlet-solution">
+    <title>Dirichet Solution</title>
+    <statement>
+      <p>
+        If <m>U(t)</m> has period <m>2\pi</m>,
+        and has the Fourier series representation
+        <me>
+          U(t) =\frac{a_0}{2}+\sum\limits_{j=1}^{\infty}(a_j\cos jt+b_j\sin jt)
+        </me>,
+        then the solution <m>u</m> to the Dirichlet problem in <m>D</m> is
+        <men xml:id="DirichletSol">
+          u(r\cos \theta, r\sin \theta) = \frac{a_0}{2} + \sum_{j=1}^{\infty}(a_jr^j\cos j\theta +b_jr^j\sin j\theta)
+        </men>,
+        where <m>x+iy=re^{i\theta}</m> denotes a complex number in the closed disk <m>|z| \le 1</m>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    We will prove this theorem shortly,
+    but note meanwhile that it is easy to see that the series representation in Equation <xref ref="DirichletSol"/> for <m>u</m> takes on the prescribed boundary values in Equation <xref ref="BDDvalues"/> at points on the unit circle <m>\left| z\right| =1</m>.
+    Since each term <m>r^j\cos j\theta</m> and
+    <m>r^j\sin j\theta</m> in <xref ref="DirichletSol">series</xref> is harmonic,
+    it is reasonable to conclude that the infinite series representing <m>u</m> will also be harmonic.
+  </p>
+  <p>
+    Before proving <xref ref="thm_dirichlet-solution">Theorem</xref>
+    we establish a result that gives an integral representation for a function <m>u(x,y)</m> that is harmonic in a domain containing the closed unit disk.
+    The result is the analog to Poisson's integral formula for the upper half plane.
+  </p>
+  <theorem xml:id="thm_poisson-integral-formula">
+    <title>Poisson Integral Formula for the Unit Disk</title>
+    <statement>
+      <p>
+        Let <m>u(x,y)</m> be a function that is harmonic in a simply connected domain that contains the closed unit disk <m>|z| \le 1</m>.
+        If <m>u(x,y)</m> takes on the boundary values
+        <me>
+          u(\cos \theta, \sin \theta) = U(\theta)  \text{ for }   -\pi \lt \theta  \le \pi
+        </me>,
+        then <m>u</m> has the integral representation
+        <men xml:id="PoissonDiskForm">
+          u(r\cos \theta ,r\sin \theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{(1-r^2)U(t)}{1+r^2-2r\cos (t-\theta )}\,dt
+        </men>
+        that is valid for <m>|z|\lt 1</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Since <m>u(x,y)</m> is harmonic in the simply connected domain,
+      there exists a conjugate harmonic function <m>v(x,y)</m> such that <m>f(z)=u(x,y)+iv(x,y)</m> is analytic.
+      Let <m>C</m> denote the contour consisting of the unit circle;
+      then Cauchy's integral formula
+      <men xml:id="Cauchy1">
+        f(z) = \frac{1}{2\pi i}\int\nolimits_c\frac{f(\xi)}{\xi -z}\,d\xi
+      </men>
+      expresses the value of <m>f(z)</m> at any point <m>z</m> inside <m>C</m> in terms of the values of <m>f(\xi)</m> at points <m>\xi</m> that lie on the circle <m>C</m>.
+      If we set <m>z^{\ast } = (\overline{z})^{-1}</m> then
+      <m>z^{\ast}</m> lies outside the unit circle <m>C</m> and the Cauchy-Goursat theorem gives
+      <men xml:id="Cauchy2">
+        0 = \frac{1}{2\pi i}\int_c\frac{f(\xi )}{\xi -z^{\ast }}\,d\xi
+      </men>.
+    </p>
+    <p>
+      If we subtract Equation <xref ref="Cauchy2"/> from Equation <xref ref="Cauchy1"/>, then use the parameterization <m>\xi =e^{it}</m>,
+      <m>d\xi =ie^{it}\,dt</m> and the substitutions <m>z=re^{i\theta }</m>,
+      <m>z^{\ast }=\frac{1}{r}e^{i\theta }</m>, we get
+      <me>
+        f(z) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\left(\frac{e^{it}}{e^{it}-re^{i\theta }} - \frac{e^{it}}{e^{it}-\frac{1}{r}e^{i\theta }}\right)f(e^{it})\,dt
+      </me>.
+    </p>
+    <p>
+      The expression inside the parentheses on the right side of this equation can be written as
+      <md>
+        <mrow>\frac{e^{it}}{e^{it}-re^{i\theta }}-\frac{e^{it}}{e^{it}-\frac{1}{r} e^{i\theta }} \amp = \frac{1}{1-re^{i(\theta -t)}} + \frac{re^{i(t-\theta )}}{1-re^{i(t-\theta)}}</mrow>
+        <mrow xml:id="expression" number="yes">\amp = \frac{1-r^2}{1+r^2-2r\cos (t-\theta )}</mrow>
+      </md>,
+      and it follows that
+      <me>
+        f(z) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{(1-r^2)f(e^{it})}{1+r^2-2r\cos (t-\theta)}\,dt
+      </me>.
+    </p>
+    <p>
+      Since <m>u(x,y)</m> is the real part of <m>f(z)</m> and <m>U(t)</m> is the real part of <m>f(e^{it})</m>,
+      we can equate the real parts in the latter equation to obtain Equation <xref ref="PoissonDiskForm"/>,
+      which complete the proof <xref ref="thm_poisson-integral-formula">Theorem</xref>.
+    </p>
+  </proof>
+  <p>
+    We now turn our attention to the proof <xref ref="thm_dirichlet-solution">Theorem</xref>.
+  </p>
+  <proof>
+    <p>
+      The real-valued function
+      <me>
+        P(r,t-\theta ) = \frac{1-r^2}{1+r^2-2r\cos (t-\theta)}
+      </me>
+      is known as the <em>Poisson kernel.</em>
+      Expanding the left side of Equation <xref ref="expression"/> in a geometric series gives
+      <md>
+        <mrow>P(r,t-\theta) \amp = \frac{1}{1-re^{i(\theta -t) }} + \frac{re^{i(t-\theta )}}{1-re^{i(t-\theta)}}</mrow>
+        <mrow>\amp = \sum_{n=0}^{\infty}r^ne^{in(\theta -t) }+\sum\limits_{n=1}^{\infty}r^ne^{in(t-\theta)}</mrow>
+        <mrow>\amp = 1+\sum\limits_{n=1}^{\infty}r^n[e^{in(\theta -t)}+e^{in(t-\theta)}] =1+2\sum\limits_{n=1}^{\infty}r^n\cos[n(\theta -t)]</mrow>
+        <mrow>\amp = 1+2\sum\limits_{n=1}^{\infty}r^n(\cos n\theta \cos nt+\sin n\theta \sin nt)</mrow>
+        <mrow>\amp = 1+2\sum\limits_{n=1}^{\infty}r^n\cos n\theta \cos nt+2\sum\limits_{n=1}^{\infty}r^n\sin n\theta \sin nt</mrow>
+      </md>.
+    </p>
+    <p>
+      We now use the above result in Equation <xref ref="PoissonDiskForm"/> to obtain
+      <md>
+        <mrow>u(r\cos \theta, r\sin \theta) \amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}P(r, t-\theta )U(t)\,dt</mrow>
+        <mrow>\amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}U(t)\,dt +\frac{1}{\pi} \int_{-\pi}^{\pi}\sum_{n=1}^{\infty}r^n\cos n\theta \cos nt \, U(t) \,dt</mrow>
+        <mrow>\amp  \qquad \qquad \qquad + \frac{1}{\pi}\int_{-\pi}^{\pi}\sum\limits_{n=1}^{\infty}r^n\sin n\theta \cos nt\,U(t)\,dt</mrow>
+        <mrow>\amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}U(t)\,dt +\sum\limits_{n=1}^{\infty}\frac{r^n}{\pi}\cos n\theta \int_{-\pi }^{\pi}\cos nt\,U(t)\,dt</mrow>
+        <mrow>\amp  \qquad \qquad \qquad + \sum\limits_{n=1}^{\infty}\frac{r^n}{\pi}\sin n\theta \int_{-\pi }^{\pi}\sin nt\,U(t)\,dt</mrow>
+        <mrow>\amp = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_nr^n\cos n\theta +\sum\limits_{n=1}^{\infty}b_nr^n\sin n\theta </mrow>
+      </md>.
+      where <m>\{a_n\}</m> and <m>\{b_n\}</m> are the Fourier series coefficients for <m>U(t)</m>.
+      This observation establishes the representation for
+      <m>u(r\cos \theta ,r\sin \theta )</m> in Equation <xref ref="DirichletSol"/> of <xref ref="thm_dirichlet-solution">Theorem</xref>.
+    </p>
+  </proof>
+  <example xml:id="ex_harmonic-boundary-values">
+    <statement>
+      <p>
+        Find the function <m>u(x,y)</m> that is harmonic in the unit disk
+        <m>|z|\lt 1</m> and takes on the boundary values
+        <me>
+          u(\cos \theta, \sin \theta ) = U(\theta) = \frac{\theta}{2},  \text{ for }   -\pi \lt \theta \lt \pi
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using <xref ref="ex_10_1">Example</xref>,
+        we begin with the Fourier series for <m>U(\theta)</m>:
+        <me>
+          U(t) = \sum_{n=1}^{\infty}\frac{(-1) ^{n+1}}{n}\sin nt
+        </me>.
+      </p>
+      <p>
+        Using <xref ref="DirichletSol">formula</xref>
+        for the solution of the Dirichlet problem, we obtain
+        <me>
+          u(r\cos \theta ,r\sin \theta ) =\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}r^n\sin n\theta
+        </me>.
+      </p>
+      <p>
+        Note that that the above series representation for
+        <m>u(r\cos \theta,
+        r\sin \theta)</m> takes on the prescribed boundary values at points where <m>U(\theta)</m> is continuous.
+        The boundary function <m>U(\theta)</m> is discontinuous at <m>z=-1</m>,
+        which corresponds to <m>\theta =\pm \pi</m>;
+        and <m>U(\theta )</m> was not prescribed at these points.
+        Graphs of the approximations <m>U_7(t)</m> and <m>u_7(x,y)=u_7(r\cos \theta ,r\sin \theta)</m>,
+        which involve the first seven terms in equations are shown in <xref ref="fig_ch-11-13">Figure</xref>.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-11-13">
+    <caption>Functions <m>U_7(t)</m> and <m>u_7(r\cos \theta, r\sin \theta)</m> for <xref ref="ex_harmonic-boundary-values">Example</xref></caption>
+    <image width="73%" source="figs/ch-11/ch-11-fig-13.pdf"/>
+  </figure>
+  <exercises>
+    <title>Exercises for <xref ref="sec_dirichlet">Section</xref></title>
+    <p>
+      For problems 1<ndash/>6,
+      find the solution to the given Dirichlet problem in the unit disk <m>D</m> by using the Fourier series representations for the boundary functions that were derived in the examples and exercises of <xref ref="sec_fourier-series">Section</xref>.
+      <ol>
+        <li>
+          <p>
+            <m>U(\theta) = \begin{cases}\;\;\, 1 \amp \text{ for } 0\lt \theta\lt \pi, \\ -1 \amp \text{ for } -\pi \lt \theta \lt 0. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta) = \begin{cases}\frac{\pi}{2}-\theta \amp \text{ for } 0 \le \theta \lt \pi, \\ \frac{\pi}{2}+\theta \amp \text{ for } -\pi \lt \theta \lt 0. \end{cases}</m> <nbsp/><nbsp/> (See <xref ref="fig_ch-11-14">Figure</xref>)
+            <figure xml:id="fig_ch-11-14">
+              <caption>Approximations for <m>U_5(\theta)</m> and <m>u_5(r\cos \theta ,r\sin \theta)</m> in Exercise 2</caption>
+              <image width="73%" source="figs/ch-11/ch-11-fig-14.pdf"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta) = \begin{cases}-1 \amp \text{ for } \frac{\pi}{2}\lt \theta \lt \pi, \\ \;\;\, 1 \amp \text{ for } -\frac{\pi}{2}\lt \theta\lt \frac{\pi}{2},\\ -1 \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta) = \begin{cases}\pi -\theta \amp \text{ for } \frac{\pi}{2} \le \theta \le \pi, \\ \;\;\;\; \theta \amp \text{ for } -\frac{\pi}{2} \le \theta \lt \frac{\pi}{2}, \\ -\pi -\theta \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta ) = \begin{cases}\pi -\theta \amp \text{ for } \frac{\pi}{2} \le \theta \le \pi, \\ \;\;\; \frac{\pi}{2} \amp \text{ for } -\frac{\pi}{2} \le \theta \lt \frac{\pi}{2}, \\ \pi +\theta \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m> <nbsp/><nbsp/> (See <xref ref="fig_ch-11-15">Figure</xref>)
+            <figure xml:id="fig_ch-11-15">
+              <caption>Approximations for <m>U_5(\theta )</m> and <m>u_5(r\cos \theta ,r\sin \theta )</m> in Exercise 5</caption>
+              <image width="73%" source="figs/ch-11/ch-11-fig-15.pdf"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta) = \begin{cases}\;\;\, 1 \amp \text{ for } \frac{\pi}{2}\lt \theta\lt \pi, \\ \;\;\, 0 \amp \text{ for } -\frac{\pi}{2}\lt \theta\lt \frac{\pi}{2}, \\ -1 \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m> <nbsp/><nbsp/> (See <xref ref="fig_ch-11-16">Figure</xref>)
+            <figure xml:id="fig_ch-11-16">
+              <caption>Approximations for <m>U_7(\theta)</m> and <m>u_7(r\cos \theta, r\sin \theta)</m> in Exercise 6</caption>
+              <image width="73%" source="figs/ch-11/ch-11-fig-16.pdf"/>
+            </figure>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta ) = \begin{cases}\;\,\, 0 \amp \text{ for } \frac{\pi}{2} \le \theta \le \pi,\\ \frac{\pi -\theta }{2} \amp \text{ for } 0 \le \theta \lt \frac{\pi}{2},\\ \frac{\pi +\theta }{2} \amp \text{ for } -\frac{\pi}{2} \le \theta \lt 0, \\ \;\,\, 0 \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(\theta ) = \begin{cases}\;\;\, 0 \amp \text{ for } \frac{\pi}{2}\lt \theta \lt \pi,\\ -1 \amp \text{ for } 0\lt \theta \lt \frac{\pi}{2},\\ \;\;\, 1 \amp \text{ for } -\frac{\pi}{2}\lt \theta \lt 0,\\ \;\;\, 0 \amp \text{ for } -\pi \lt \theta \lt -\frac{\pi}{2}. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Write a report on the Dirichlet problem and include some applications.
+          </p>
+        </li>
+        <li>
+          <p>
+            Look up the article on the Poisson integral formula and discuss what you found.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </exercises>
+</section>

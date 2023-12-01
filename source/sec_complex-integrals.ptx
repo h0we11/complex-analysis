@@ -1,0 +1,310 @@
+<section xml:id="sec_complex-integrals">
+  <title>Complex Integrals</title>
+  <p>
+    We introduce the integral of a complex function by defining the integral of a complex-valued function of a <em>real</em> variable.
+  </p>
+  <definition>
+    <title>Integral of $f(t)$</title>
+    <statement>
+      <p>
+        Let <m>f(t)=u(t)+iv(t)</m>,
+        where <m>u</m> and <m>v</m> are real-valued functions of the real variable <m>t</m> for <m>a \le t \le b</m>.
+        Then
+        <men xml:id="Integral_Def_1">
+          \int_a^b f(t)\,dt=\int_a^b u(t)\, dt+i\int_a^b v(t)\, dt
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    We generally evaluate integrals of this type by finding the antiderivatives of <m>u</m> and <m>v</m> and evaluating the definite integrals on the right side of Equation <xref ref="Integral_Def_1"/>.
+    That is, if <m>U\,'(t)=u(t)</m>,
+    and <m>V\,'(t)=v(t) </m>, for <m>a \le t \le b</m>, we have
+    <men xml:id="Integral_Def_2">
+      \int_a^b f(t)\,dt = \big[U(t) +iV(t)\big] \Big|_{t=a}^{t=b}=U(b)-U(a) +i\big[V(b) -V(a)\big]
+    </men>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that
+        <me>
+          \int_0^1(t-i)^3\,dt=\frac{-5}{4}
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We write the integrand in terms of its real and imaginary parts,
+        <em>i.e.</em>, <m>f(t)=(t-i) ^3=t^3-3t+i(-3t^2+1)</m>.
+        Here, <m>u(t)=t^3-3t</m> and <m>v(t)=-3t^2+1</m>.
+        The integrals of <m>u</m> and <m>v</m> are
+        <me>
+          \int_0^1(t^3-3t)\,dt=\frac{-5}{4}  \text{ and }   \int_0^1(-3t^2+1) \,dt=0
+        </me>.
+      </p>
+      <p>
+        Hence, by <xref ref="Integral_Def_1">Definition</xref>,
+        <me>
+          \int_0^1(t-i)^3\,dt = \int_0^1u(t)\,dt+i\int_0^1v(t)\,dt = \frac{-5}{4}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example xml:id="Int_ex">
+    <statement>
+      <p>
+        Show that
+        <me>
+          \int_0^{\frac{\pi }{2}}\exp(t+it)\,dt = \frac{1}{2} (e^{\frac{\pi }{2}}-1) + \frac{i}{2}(e^{\frac{\pi }{2}}+1)
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We use the method suggested by <xref ref="Integral_Def_1">Definitions</xref>
+        and <xref ref="Integral_Def_2"></xref>.
+        <md>
+          <mrow>\int_0^{\frac{\pi }{2}}\exp (t+it)\,dt \amp = \int_0^{\frac{\pi }{2}}e^te^{it}dt</mrow>
+          <mrow>\amp = \int_0^{\frac{\pi }{2}}e^t(\cos t+i\sin t \,dt</mrow>
+          <mrow>\amp = \int_0^{\frac{\pi }{2}}e^t\cos t \, dt + i\int_0^{\frac{\pi }{2}}e^t\sin t \,dt</mrow>
+        </md>.
+      </p>
+      <p>
+        We can evaluate each of the integrals via integration by parts.
+        For example,
+        <md>
+          <mrow>\int_0^{\frac{\pi }{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\cos t)\,dt}} \amp = (\underset{u}{\underbrace{e^t}} \; \underset{v}{\underbrace{\sin t}}) \Big|_{t=0}^{t=\frac{\pi }{2}} -\int_0^{\frac{\pi }{2}}\underset{v}{\underbrace{\sin t}} \; \underset{du}{\underbrace{e^tdt}}</mrow>
+          <mrow>\amp = (e^{\frac{\pi }{2}}\sin \frac{\pi }{2}-e^0\sin 0) -\int_0^{\frac{\pi }{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\sin t \,dt}}</mrow>
+          <mrow>\amp = e^{\frac{\pi }{2}}-\int_0^{\frac{\pi }{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\sin t \,dt}}</mrow>
+          <mrow>\amp = e^{\frac{\pi }{2}} - (\underset{u}{\underbrace{e^t}} \; [\underset{v}{\underbrace{-\cos t}}] ) \Big|_{t=0}^{t=\frac{\pi }{2}} +\int_0^{\frac{\pi }{2}}\underset{v}{\underbrace{-\cos t}} \; \underset{du}{\underbrace{e^tdt}}</mrow>
+          <mrow>\amp = e^{\frac{\pi }{2}}-1-\int_0^{\frac{\pi }{2}}e^t\cos t \,dt</mrow>
+        </md>.
+      </p>
+      <p>
+        Adding <m>\int_0^{\frac{\pi }{2}}e^t\cos t)\,dt</m> to both sides of this equation and then dividing by 2 gives <m>\int_0^{\frac{\pi}{2}}e^t\cos t)\,dt=\frac{1}{2}(e^{\frac{\pi }{2}}-1)</m>.
+        Likewise, <m>i\int_0^{\frac{\pi }{2}}e^t\sin t)\,dt=\frac{i}{2}(e^{\frac{\pi}{2}}+1)</m>.
+        Therefore,
+        <me>
+          \int_0^{\frac{\pi }{2}}\exp (t+it)\,dt=\frac{1}{2}(e^{\frac{\pi }{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Complex integrals have properties that are similar to those of real integrals.
+    We now trace through several commonalities.
+    Let <m>f(t)=u(t)+iv(t)</m> and
+    <m>g(t)=p(t)+iq(t)</m> be continuous on <m>a \le t \le b</m>.
+    <ul>
+      <li>
+        <p>
+          Using <xref ref="Integral_Def_1">Definition</xref>,
+          we can easily show that the integral of their sum is the sum of their integrals, that is
+          <men xml:id="Int_Prop_1">
+            \int_a^b[f(t)+g(t)]\,dt = \int_a^bf(t)\,dt + \int_a^b g(t)\,dt
+          </men>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If we divide the interval <m>a \le t \le b</m> into <m>a \le t \le c</m> and
+          <m>c \le t \le b</m> and integrate <m>f(t)</m> over these subintervals by using <xref ref="Integral_Def_1">Definition</xref>,
+          then we get
+          <men xml:id="Int_Prop_2">
+            \int_a^bf(t)\,dt=\int_{a}^{c}f(t)\,dt+\int_{c}^{b}f(t)\,dt
+          </men>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Similarly, if <m>c+id</m> denotes a complex constant, then
+          <men xml:id="Int_Prop_3">
+            \int_a^b(c+id) f(t)\,dt=(c+id) \int_a^bf(t)\,dt
+          </men>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If the limits of integration are reversed, then
+          <men xml:id="Int_Prop_4">
+            \int_a^bf(t)\,dt=-\int_{b}^{a}f(t)\,dt
+          </men>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The integral of the product <m>fg</m> becomes
+          <md>
+            <mrow>\int_a^bf(t) g(t)\,dt \amp = \int_a^b \big[u(t) p(t) -v(t) q(t)\big] \, dt</mrow>
+            <mrow xml:id="Int_Prop_5" number="yes">\amp + i\int_a^b \big[u(t)q(t) + v(t)p(t)\big] \, dt</mrow>
+          </md>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <example>
+    <statement>
+      <p>
+        Let us verify <xref ref="Int_Prop_3">Property</xref>.
+        We start by writing
+        <me>
+          (c+id) f(t)= (c+id)\big(u(t) + iv(t)\big)= cu(t) -dv(t) +i \big[cv(t) +du(t)\big]
+        </me>.
+      </p>
+      <p>
+        Using <xref ref="Integral_Def_1">Definition</xref>,
+        we write the left side of <xref ref="Int_Prop_3">Equation</xref> as
+        <me>
+          c\int_a^bu(t)\,dt-d\int_a^bv(t)\,dt + ic\int_a^bv(t) \, dt + id\int_a^bu(t)\,dt
+        </me>.
+        which is equivalent to
+        <me>
+          (c+id) \left[ \int_a^bu(t)\,dt + i\int_a^bv(t)\,dt\right]
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    It is worthwhile to point out the similarity between Equation <xref ref="Integral_Def_2"/> and its counterpart in calculus.
+    Suppose that <m>U</m> and <m>V</m> are differentiable on
+    <m>a\lt t\lt b</m> and <m>F(t)=U(t)+iV(t)</m>.
+    Since <m>F\,'(t)=U\,'(t) +iV\,'(t) =u(t) +iv(t)=f(t)</m>, Equation <xref ref="Integral_Def_2"/> takes on the familiar form
+    <men xml:id="Integral_Def_4">
+      \int_a^bf(t)\,dt =  F(t) \Big|_{t=a}^{t=b}=F(b) -F(a)
+    </men>.
+    where <m>F\,'(t)=f(t)</m>.
+    We can view Equation <xref ref="Integral_Def_4"/> as an extension of the fundamental theorem of calculus.
+    In Section 6.5 we show how to generalize this extension to analytic functions of a complex variable.
+    For now, we simply note an important case of Equation <xref ref="Integral_Def_4"/>:
+    <men xml:id="Int_Prop_6">
+      \int_a^bf\,'(t)\,dt=f(b)-f(a)
+    </men>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Use Equation <xref ref="Integral_Def_4"/> to show that
+        <me>
+          \int_0^{\frac{\pi }{2}}\exp(t+it)\,dt=\frac{1}{2} (e^{\frac{\pi }{2}}-1) + \frac{i}{2}(e^{\frac{\pi }{2}}+1)
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We seek a function <m>F</m> with the property that <m>F\,'(t)= \exp(t+it)</m>.
+        We note that <m>F(t)=\frac{1}{1+i} e^{t(1+i)}</m> satisfies this requirement, so
+        <md>
+          <mrow>\int_0^{\frac{\pi }{2}}\exp (t+it)\,dt \amp = \frac{ 1}{1+i}e^{t(1+i)}\Big|_{t=0}^{t=\frac{\pi }{2}}=\frac{1}{ 1+i}(ie^{\frac{\pi }{2}}-1)</mrow>
+          <mrow>\amp = \frac{1}{2}(1-i) (ie^{\frac{\pi }{2}}-1)</mrow>
+          <mrow>\amp  \frac{1}{2}(e^{\frac{\pi }{2}}-1) +\frac{i}{2}(e^{\frac{ \pi }{2}}+1)</mrow>
+        </md>,
+        which is the same result we obtained in <xref ref="Int_ex">Example</xref>,
+        but with a lot less work!
+      </p>
+    </solution>
+  </example>
+  <remark xml:id="advantage">
+    <p>
+      Example 6.4 illustrates the potential computational advantage we have when we lift our sights to the complex domain.
+      Using ordinary Calculus techniques to evaluate <m>\int_0^{\frac{\pi }{2}}e^t\cos t)\,dt</m>,
+      for example,
+      would require a lengthy integration by parts procedure.
+      When we recognize this expression as the real part of <m>\int_0^{\frac{\pi }{2}}\exp (t+it)\,dt</m>,
+      however, the solution comes quickly.
+      This is just one of the many reasons why good physicists and engineers,
+      in addition to mathematicians,
+      benefit from a thorough working knowledge of complex analysis.
+    </p>
+  </remark>
+  <exercises>
+    <title>Exercises for <xref ref="sec_complex-integrals">Section</xref></title>
+    <exercise xml:id="x6_1_1">
+      <p>
+        Use Equations <xref ref="Integral_Def_1"/> and <xref ref="Integral_Def_2"/> to find
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\int_0^1(3t-i) ^2dt</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int_0^1(t+2i) ^3dt</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int_0^{\frac{\pi }{2}}\cosh (it)\,dt</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int_0^2\frac{t}{t+i}dt</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\int_0^{\frac{\pi }{4}}t\exp (it)\,dt</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x6_1_2">
+      <p>
+        Let <m>m</m> and <m>n</m> be integers.
+        Show that
+        <me>
+          \int_0^{2\pi }e^{imt}e^{-int}\,dt = \begin{cases}\; 0, \amp  \text{ when } \; m \ne n;\\ 2\pi, \amp  \text{ when } \; m = n. \end{cases}
+        </me>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_1_3">
+      <p>
+        Show that <m>\int_0^{\infty }e^{-zt}dt=\frac{1}{z}</m> provided <m>\mathrm{Re}(z) >0</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_1_4">
+      <p>
+        Establish the following identities .
+        <ol>
+          <li>
+            <p>
+              <xref ref="Int_Prop_1">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Int_Prop_2">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Int_Prop_4">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Int_Prop_5">Identity</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>f(t)=u(t) +iv(t)</m>, where <m>u</m> and <m>v</m> are differentiable.
+        Show that
+        <men xml:id="x6_1_5">
+          \int_a^bf(t) f\,'(t)\,dt=\frac{1}{2}[f(b)]^2-\frac{1}{2}\left[ f(a) \right] ^2
+        </men>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use integration by parts to verify that <m>i\int_0^{\frac{\pi }{2}}e^t\sin t)\,dt=\frac{i}{2}(e^{\frac{\pi }{2}}+1)</m>.\label {6.1.6}
+      </p>
+    </exercise>
+  </exercises>
+</section>

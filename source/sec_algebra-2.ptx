@@ -1,0 +1,562 @@
+<section xml:id="sec_algebra-2">
+  <title>The Algebra of Complex Numbers, Part II</title>
+  <p>
+    The real numbers are deficient in the sense that not all algebraic operations on them produce real numbers.
+    Thus, for <m>\sqrt{-1}</m> to make sense,
+    we must consider the domain of complex numbers.
+    Do complex numbers have this same deficiency?
+    That is, if we are to make sense of expressions such as <m>\sqrt{1+i}</m>,
+    must we appeal to yet another new number system?
+    The answer to this question is <em>no.</em> In other words,
+    any reasonable algebraic operation performed on complex numbers gives complex numbers.
+    Later we show how to evaluate intriguing expressions such as <m>i^{i}</m>.
+    For now we only look at integral powers and roots of complex numbers.
+  </p>
+  <p>
+    The important players in this regard are the exponential and polar forms of a non-zero complex number <m>z=re^{i\theta}=r(\cos\theta+i\sin\theta)</m>.
+    By the laws of exponents (which, you recall,
+    we have promised to prove in <xref ref="ch_elementary-fcns"/>) we have
+    <md>
+      <mrow xml:id="z_n" number="yes">z^n    \amp = (re^{i\theta})^n = r^{n}e^{in\theta} = r^n[\cos(n\theta) +i\sin(n\theta)] \text{ and }</mrow>
+      <mrow>z^{-n}  \amp = (re^{i\theta})^{-n}=r^{-n}e^{-in\theta}=r^{-n}[\cos(-n\theta) +i\sin(-n\theta)]</mrow>
+    </md>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that <m>(-\sqrt{3}-i)^{3}=-8i</m> in two ways.
+      </p>
+      <solution>
+        <p>
+          (Method 1): The binomial formula
+          (<xref ref="x1_2_14">Exercise</xref>
+          of <xref ref="sec_algebra-1">Section</xref>)
+          gives
+          <me>
+            (-\sqrt{3}-i)^{3}=(-\sqrt{3})^3+3(-\sqrt{3})^2(-i)+3(-\sqrt{3})(-i)^2+(-i)^3=-8i
+          </me>.
+        </p>
+      </solution>
+      <p>
+        (Method 2): Using Identity <xref ref="z_n"/> and <xref ref="ExponentialEx">Example</xref> yields
+        <md>
+          <mrow>(-\sqrt{3}-i)^{3}\amp  =(2e^{i({-5\pi /6}) })^{3}=(2^{3}e^{i({-15\pi /6})}) =8(\cos \frac{-15\pi}{6}+i\sin \frac{-15\pi}{6})</mrow>
+          <mrow>\amp  =-8i</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Which method would you use if you were asked to compute <m>(-\sqrt{3} -i)^{30}</m>?
+  </p>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>(-\sqrt{3}-i)^{30}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <m>(-\sqrt{3}-i)^{30}=(2e^{i({-5\pi /6})})^{30} = 2^{30}e^{-i25\pi} = -2^{30}</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    An interesting application of the laws of exponents comes from putting the equation <m>(e^{i\theta})^{n}=e^{in\theta}</m> in its polar form.
+    Doing so gives
+    <men xml:id="De_Moivre_s_formula">
+      (\cos \theta +i\sin \theta)^n = (\cos n\theta +i\sin n\theta)
+    </men>,
+    which is known as De Moivre's formula,
+    in honor of the French mathematician Abraham De Moivre (1667<ndash/>1754).
+  </p>
+  <example xml:id="De_Moivre_s_Ex">
+    <statement>
+      <p>
+        Use De Moivre's formula (Equation <xref ref="De_Moivre_s_formula"/>) to show that
+      </p>
+      <p>
+        <m>\cos 5\theta =\cos^5\theta-10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If we let <m>n=5</m> and use the binomial formula the left side of Equation <xref ref="De_Moivre_s_formula"/> becomes {
+        <me>
+          \cos ^{5}\theta +i5\cos ^{4}\theta \sin \theta -10\cos ^{3}\theta \sin ^2\theta -10i\cos ^2\theta \sin ^{3}\theta +5\cos \theta \sin ^{4}\theta +i\sin ^{5}\theta
+        </me>.
+      </p>
+      <p>
+        }The real part of this expression is <m>\cos ^{5}\theta -10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</m>.
+        Equating this to the real part of
+        <m>\cos 5\theta +i\sin 5\theta</m> on the right side of Equation <xref ref="De_Moivre_s_formula"/> establishes the desired result.
+      </p>
+    </solution>
+  </example>
+  <p>
+    A key aid in determining roots of complex numbers is a corollary to the fundamental theorem of algebra.
+    We prove this theorem in Chapter 6.
+    Our proofs must be independent of the conclusions we derive here because we are going to make use of the corollary now.
+  </p>
+  <theorem xml:id="NRoots">
+    <title>Corollary to the fundamental theorem of algebra</title>
+    <statement>
+      <p>
+        <em>If</em> <m>P(z)</m> is a polynomial of degree <m>n, \, (n>0)</m>,
+        <em>with complex coefficients,
+        then the equation</em> <m>P(z) = 0</m> <em>has precisely</em>
+        <m>n</m> <em>(not necessarily distinct) solutions.</em>
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Refer to Chapter 6.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Let <m>P(z) = z^3+(2-2i)z^2 + (-1-4i)z-2</m>.
+        This polynomial of degree 3 can be written as <m>P(z) =(z-i)^2(z+2)</m>.
+        Hence the equation <m>P(z) =0</m> has solutions <m>z_1=i</m>,
+        <m>z_2=i</m>, and <m>z_3=-2</m>.
+        Thus, in accordance with <xref ref="NRoots">Theorem</xref>,
+        we have three solutions,
+        with <m>z_1</m> and <m>z_2</m> being repeated roots.
+      </p>
+    </statement>
+  </example>
+  <p>
+    <xref ref="NRoots">Theorem</xref> implies that,
+    if we can find \mathit{n} <em>distinct</em>
+    solutions to the equation <m>z^{n}=c</m> (or <m>z^n-c=0)</m>,
+    we will have found <em>all</em> the solutions.
+    We begin our search for these solutions by looking at the simpler equation <m>z^{n}=1</m>.
+    Solving this equation will enable us to handle the more general one quite easily.
+  </p>
+  <p>
+    To solve <m>z^{n}=1</m> we first note that,
+    from Identities <xref ref="argFacts"/> and <xref ref="argzexp"/>,
+    we can deduce an important condition that determines when two nonzero complex numbers are equal.
+    If we let <m>z_1 = r_1e^{i\theta_1}</m> and <m>z_2 = r_2e^{i\theta_2}</m>, then
+    <men xml:id="ExpEquality">
+      z_1 = z_2 \; \big(\textit{{i.e.},} r_1e^{i\theta_1} = r_2e^{i\theta_2}\big) \text{ iff }  r_1 = r_2 \text{ and } \theta_1 = \theta_2+2\pi k
+    </men>,
+    where <m>k</m> is an integer.
+    That is, two complex numbers are equal iff their moduli agree and an argument of one equals an argument of the other to within an integral multiple of <m>2\pi</m>.
+  </p>
+  <p>
+    We now find all solutions to <m>z^n=1</m> in two stages,
+    with each stage corresponding to one direction in the iff part of Relation <xref ref="ExpEquality"/> . First,
+    we show that <em>if</em> we have a solution to <m>z^{n}=1</m>,
+    then the solution must have a certain form.
+    Second, we show that any quantity with that form is indeed a solution.
+  </p>
+  <p>
+    For the first stage, suppose that
+    <m>z=re^{i\theta}</m> is a solution to <m>z^n=1</m>.
+    Putting the latter equation in exponential form gives <m>r^ne^{in\theta}=1\cdot e^{i\cdot 0}</m>,
+    so Relation <xref ref="ExpEquality"/> implies that <m>r^n=1</m> and <m>n\theta =0+2\pi k</m>.
+    In other words,
+    <men xml:id="Root_Relation">
+      r=1 \text{ and }   \theta = \frac{2\pi k}{n}
+    </men>,
+    where <m>k</m> is an integer.
+  </p>
+  <p>
+    So, <em>if</em> <m>z=re^{i\theta}</m> is a solution to <m>z^{n}=1</m>,
+    then Relation <xref ref="Root_Relation"/> must be true.
+    This observation completes the first stage of our solution strategy.
+    For the second stage, we note that <em>if</em> <m>r=1</m>,
+    and <m>\theta =\frac{2\pi k}{n}</m>,
+    then <m>z=re^{i\theta}=e^{i\frac{2\pi k}{n}}</m> is indeed a solution to <m>z^n=1</m> because <m>z^n=(e^{i\frac{2\pi k}{n}})^n=e^{i2\pi k}=1</m>.
+    For example, if <m>n=7</m> and <m>k=3</m>,
+    then <m>z=e^{i\frac{6\pi}{7}}</m> is a solution to <m>z^7=1</m> because <m>(e^{i\frac{6\pi}{7}})^7=e^{i6\pi}=1</m>.
+  </p>
+  <p>
+    Furthermore,
+    it is easy to verify that we get <em>n distinct</em>
+    solutions to <m>z^{n}=1</m> (and,
+    therefore, <em>all</em> solutions,
+    by <xref ref="NRoots">Theorem</xref>) by setting <m>k=0,\,1,\,2,\ldots ,n-1</m>.
+    The solutions for <m>k=n,\,n+1,\ldots</m> merely repeat those for <m>k=0,\,1,\ldots</m>,
+    because the arguments so generated agree to within an integral multiple of <m>2\pi</m>.
+    The <m>n</m> solutions can be expressed as
+    <men xml:id="Roots_of_Unity">
+      z_k=e^{i\frac{2k\pi}{n}}=\cos \frac{2\pi k}{n}+i\sin \frac{2\pi k}{n}, \text{ for }   k=0,\,1,\,2,\ldots, n-1
+    </men>.
+  </p>
+  <p>
+    They are called the <m>\bm{n}</m><term>th roots of unity</term>.
+  </p>
+  <p>
+    When <m>k=0</m> in Equation <xref ref="Roots_of_Unity"/>,
+    we get <m>z_0=e^{i\frac{{2\pi \cdot 0}}{n}}=e^0=1</m>,
+    which is a rather trivial result.
+    The first interesting root of unity occurs when <m>k=1</m>,
+    giving <m>z_1=e^{i\frac{2\pi}{n}}</m>.
+    This particular value shows up so often that mathematicians have given it a special symbol.
+  </p>
+  <definition xml:id="Primitive_nth_Root">
+    <statement>
+      <p>
+        Primitive <m>n</m>th root For any natural number <m>n</m>,
+        the value <m>\omega _{n}</m> given by
+        <me>
+          \omega_n=e^{i\frac{{2\pi}}{n}}=\cos \frac{2\pi}{n}+i\sin \frac{2\pi}{n}
+        </me>
+        is called the <term>primitive</term>
+        <m>\bm{n}</m><term>th root of unity</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    By De Moivre's formula (Equation <xref ref="De_Moivre_s_formula"/>),
+    the <m>n{\text{ th } }</m> roots of unity can be expressed as
+    <men xml:id="PrimitivePowers">
+      1, \, \omega_n, \, \omega_n^2,\ldots,\omega_n^{n-1}
+    </men>.
+  </p>
+  <p>
+    Geometrically,
+    the <m>n</m>th roots of unity are equally spaced points that lie on the unit circle
+    <m>C_1(0) =\{z: |z|=1\}</m> and form the vertices of a regular polygon with <m>n</m> sides,
+    which as we mentioned in <xref ref="sec_origin">Section</xref>
+    is a fact discovered by Leonard Euler.
+  </p>
+  <example>
+    <statement>
+      <p>
+        The solutions to the equation <m>z^8=1</m> are given by the eight values <m>z_k=e^{i\frac{2\pi k}{8}}=\cos \frac{2\pi k}{8}+i\sin \frac{2\pi k}{8}</m>,
+        for <m>k=0,\,1,\,2,\ldots,7</m>.
+        In Cartesian form,
+        these solutions are <m>\pm 1, \,\pm i, \, \pm \frac{2+i\sqrt{2}}{2}</m>,
+        and <m>\pm \frac{2-i\sqrt{2}}{2}</m>.
+        The primitive 8th root of unity is <m>\omega_{8}=e^{i\frac{2\pi}{8}}=e^{i\frac{\pi}{4}}=\cos\frac{\pi}{4}+i\sin \frac{\pi}{4}=\frac{\sqrt{2}}{2}+i \frac{\sqrt{2}}{2}</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    From Expressions <xref ref="PrimitivePowers"/> it is clear that
+    <m>\omega_{8}=z_1</m> of Equation <xref ref="Roots_of_Unity"/>,
+    as <xref ref="fig_ch-01-22">Figure</xref> illustrates.
+  </p>
+  <figure xml:id="fig_ch-01-22">
+    <caption>The eight eighth roots of unity</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-22.pdf"/>
+  </figure>
+  <p>
+    The procedure for solving <m>z^n=1</m> is easy to generalize in solving <m>z^n=c</m> for any nonzero complex number <m>c</m>.
+    If <m>c=\rho e^{i\phi} = \rho(\cos \phi +i\sin \phi)</m> and <m>z=re^{i\theta}</m>,
+    then <m>z^n=c</m> iff <m>r^ne^{in\theta}=\rho e^{i\phi}</m>.
+    But this last equation is satisfied iff
+    <md>
+      <mrow>r^n    \amp = \rho  \text{ and }</mrow>
+      <mrow>n\theta \amp = \phi +2k\pi \text{ , where }  k \text{ is an integer. }</mrow>
+    </md>
+  </p>
+  <p>
+    As before, we get <m>n</m> distinct solutions given by
+    <md>
+      <mrow xml:id="Roots_of_c" number="yes">z_k  \amp  = \rho^{\frac{1}{n}}e^{i\frac{{\phi +2\pi k}}{n}} = \rho^{\frac{1}{n}}\left(\cos \frac{\phi +2\pi k}{n}+i\sin \frac{\phi +2\pi k}{n}\right),</mrow>
+      <mrow>\text{ for }  k \amp = 0,\,1,\,2,\ldots ,n-1</mrow>
+    </md>.
+  </p>
+  <p>
+    Each solution in Equation <xref ref="Roots_of_c"/> can be considered an <m>n</m>th root of <m>c</m>.
+    Geometrically,
+    the <m>n</m>th roots of <m>c</m> are equally spaced points that lie on the circle
+    <m>C_{\rho^{\frac{1}{n}}}(0) =\{z:|z| =\rho^{\frac{1}{n}}\}</m> and form the vertices of a regular polygon with <m>n</m> sides.
+    <xref ref="fig_ch-01-23">Figure</xref>
+    illustrates the case for <m>n=5</m>.
+  </p>
+  <figure xml:id="fig_ch-01-23">
+    <caption>The five solutions to the equation <m>z^{5}=c</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-23.pdf"/>
+  </figure>
+  <p>
+    It is interesting to note that if <m>\zeta</m> is any particular solution to the equation <m>z^{n}=c</m>,
+    then <em>all</em> solutions can be generated by multiplying <m>\zeta</m> by the various
+    <em>n</em>th roots of unity.
+    That is, the solution set is
+    <men xml:id="zw">
+      \zeta, \, \zeta\omega_n, \, \zeta\omega_n^2, \ldots, \zeta\omega_n^{n-1}
+    </men>.
+  </p>
+  <p>
+    The reason for this is that,
+    if <m>\zeta^n=c</m>, then for any <m>j=0,\,1,\,2,\ldots ,n-1</m>,
+    <m>(\zeta\omega_{n}^j)^n=\zeta^n(\omega_n^j)^n=\zeta^n(\omega_n^n)^j=\zeta^n(1)=c</m>,
+    and that multiplying a number by
+    <m>\omega_n=e^{i\frac{2\pi}{n}}</m> increases an argument of that number by <m>\frac{2\pi}{n}</m>,
+    so that Expressions <xref ref="zw"/> contains
+    <em>n distinct</em> values.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find all cube roots of <m>8i=8(\cos \frac{\pi}{2}+i\sin \frac{\pi}{2})</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Formula <xref ref="Roots_of_c"/> gives
+        <me>
+          z_k=2\left(\cos\frac{\frac{\pi}{2}+2\pi k}{3}+i\sin \frac{\frac{\pi}{2} +2\pi k}{3}\right)  \text{ for }   k=0,\,1,\,2
+        </me>.
+      </p>
+      <p>
+        The Cartesian forms of the solutions are
+        <m>z_0=\sqrt{3}+i</m>, <m>z_1=-\sqrt{3} +i</m>,
+        and <m>z_2=-2i</m>, as shown in <xref ref="fig_ch-01-24">Figure</xref>
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-01-24">
+    <caption>The point <m>z=8i</m> and its three cube roots, <m>z_0</m>, <m>z_1</m>, and <m>z_2</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-24.pdf"/>
+  </figure>
+  <p>
+    Is the quadratic formula valid in the complex domain?
+    The answer is <em>yes</em>, provided we are careful with our terms.
+  </p>
+  <theorem xml:id="Quadratic_Formula">
+    <title>Quadratic formula</title>
+    <statement>
+      <p>
+        If <m>az^2+bz+c=0</m>,
+        then the solution set for <m>z</m> is <m>\Big\{\frac{-b+(b^2-4ac)^{\frac{1}{2}}}{2a}\Big\}</m>,
+        where by <m>(b^2-4ac)^{\frac{1}{2}}</m> we mean all distinct square roots of the number inside the parenthesis.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      The proof is left as an exercise.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Find all solutions to the equation <m>z^2+(1+i)z+5i=0</m>.
+      </p>
+      <solution>
+        <p>
+          The quadratic formula gives
+          <me>
+            z=\frac{-(1+i)+[(1+i)^2-4(1)(5i)]^{\frac{1}{2}}}{2(1)}=\frac{-(1+i)+(-18i)^{\frac{1}{2}}}{2}
+          </me>.
+        </p>
+      </solution>
+      <p>
+        As <m>-18i=18e^{i(-\frac{{\pi}}{2})}</m>, Equations <xref ref="Roots_of_c"/> give
+        <m>(-18i)^{\frac{1}{2}}=18^{\frac{1}{2}}e^{{i}\frac{{(-\frac{\pi}{2}+2k\pi )}}{2}}</m>,
+        for <m>k=0</m> and 1.
+        In Cartesian form,
+        this expression reduces to <m>3-3i</m> and <m>-3+3i</m>.
+        Thus, our solution set is <m>\{\frac{-(1+i)+(3-3i)}{2},\,\frac{-(1+i)+(-3+3i)}{2}\}</m>,
+        or <m>\{1-2i,\,-2+i\}</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    In <xref ref="x1_2_5">Exercise</xref>
+    of <xref ref="sec_algebra-1">Section</xref>
+    we asked you to show that a polynomial with nonreal coefficients must have some roots that do not occur in complex conjugate pairs.
+    This last example gives an illustration of such a phenomenon.
+  </p>
+  <exercises>
+    <title>Exercises for <xref ref="sec_algebra-2">Section</xref></title>
+    <exercise xml:id="x1_5_1">
+      <p>
+        Calculate the following.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>(1-i\sqrt{3})^3(\sqrt{3}+i)^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{(1+i)^3}{(1-i)^5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(\sqrt{3}+i)^6</m>
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise>
+      <p>
+        Show that <m>(\sqrt{3}+i)^{4}=-8+i8\sqrt{3}</m>
+        <ol>
+          <li xml:id="x1_5_2a">
+            <p>
+              by squaring twice .
+            </p>
+          </li>
+          <li xml:id="x1_5_2b">
+            <p>
+              by using De Moivre's formula,
+              given in Equation <xref ref="De_Moivre_s_formula"/>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the method of <xref ref="De_Moivre_s_Ex">Example</xref>
+        to establish trigonometric identities for
+        <m>\cos3\theta</m> and <m>\sin3\theta</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_4">
+      <p>
+        Let <m>z</m> be any nonzero complex number and let <m>n</m> be an integer.
+        Show that <m>z^n+(\overline{z})^n</m> is a real number.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Find all the roots in both polar and Cartesian form for each expression.
+        <ol>
+          <li>
+            <p>
+              <m>(-2+2i)^{1/3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-1)^{1/5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-64)^{1/4}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(8)^{1/6}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(16i)^{1/4}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Prove <xref ref="Quadratic_Formula">Theorem</xref>, the quadratic formula.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_7">
+      <p>
+        Find all the roots of the equation
+        <m>z^4-4z^3+6z^2-4z+5=0</m> given that <m>z_1=i</m> is a root.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_8">
+      <p>
+        Solve the equation <m>(z+1)^{3}=z^3</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_9">
+      <p>
+        Find the three solutions to <m>z^{\frac{3}{2}}=4\sqrt{2}+i4\sqrt{2}</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>m</m> and <m>n</m> be positive integers that have no common factor.
+        Show that there are <m>n</m> distinct solutions to <m>w^n=z^m</m>, given by
+        <men xml:id="x1_5_10">
+          w_k=r^\frac{m}{n}\left(\cos \frac{m(\theta +2\pi k)}{n}+i\sin \frac{m(\theta +2\pi k)}{n}\right) \; \text{ for }  \; k=0, 1, \ldots, n-1
+        </men>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_11">
+      <p>
+        Suppose that <m>z \ne1</m>.
+        <ol>
+          <li xml:id="x1_5_11a">
+            <p>
+              Show that <m>1+z+z^2+\cdots + z^n=\frac{1-z^{n+1}}{1-z}</m>.
+            </p>
+          </li>
+          <li xml:id="x1_5_11b">
+            <p>
+              Use part (a) and De Moivre's formula to derive
+              <em>Lagrange's identity</em>,
+              which shows that, for <m>0 \lt  \theta \lt  2\pi</m>,
+              <me>
+                1+\cos \theta +\cos 2\theta +\cdots +\cos n\theta =\frac{1}{2}+\frac{\sin \left[ (n+\frac{1}{2}) \theta \right]}{2\sin \frac{\theta}{2}}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        If <m>1=z_0, \, z_1, \ldots,
+        z_{n-1}</m> are the <em>n</em>th roots of unity, prove that
+        <men xml:id="x1_5_12">
+          (z-z_1) (z-z_2) \cdots (z-z_{n-1}) =1+z+z^2+\cdots +z^{n-1}
+        </men>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>z_k \ne 1</m> be an <m>n</m>th root of unity.
+        Prove that
+        <men xml:id="x1_5_13">
+          1+z_k+z_k^2+\cdots + z_k^{n-1} = 0
+        </men>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_14">
+      <p>
+        Equation <xref ref="De_Moivre_s_formula"/>, De Moivre's formula,
+        can be established without recourse to properties of the exponential function.
+        Note that this identity is trivially true for <m>n=1</m>.
+        <ol>
+          <li>
+            <p>
+              Use basic trigonometric identities to show the identity is valid for <m>n=2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use induction to verify the identity for all positive integers.
+            </p>
+          </li>
+          <li>
+            <p>
+              How would you verify this identity for all negative integers?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_5_15">
+      <p>
+        Find all four roots of <m>z^4+4=0</m>,
+        and use them to demonstrate that <m>z^4+4</m> can be factored into two quadratics with real coefficients.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Verify that Relation <xref ref="ExpEquality"/> is valid.
+      </p>
+    </exercise>
+  </exercises>
+</section>

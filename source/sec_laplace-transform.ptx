@@ -1,0 +1,579 @@
+<section xml:id="sec_laplace-transform">
+  <title>The Laplace Transform</title>
+  <subsection xml:id="subsec_fourier-to-laplace">
+    <title>From Fourier Transforms to Laplace Transforms</title>
+    <p>
+      We have seen that certain real-valued functions <m>f(t)</m> have a Fourier transform and that the integral
+      <me>
+        g(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t},dt
+      </me>
+      defines the complex function
+      <m>g(\omega)</m> of the real variable <m>\omega</m>.
+      If we multiply the integrand
+      <m>f(t) e^{-i\omega t}</m> by <m>e^{-\sigma t}</m>,
+      we create a complex function
+      <m>G(\sigma +i\omega)</m> of the complex variable <m>\sigma +i\omega</m>:
+      <me>
+        G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}dt=\int\nolimits_{-\infty}^{\infty }f(t) e^{-(\sigma +i\omega) t}dt
+      </me>.
+    </p>
+    <p>
+      The function <m>G(\sigma +i\omega)</m> is called the
+      <term>two-sided Laplace transform</term> of <m>f(t)</m>,
+      and it exists when the Fourier transform of the function <m>f(t) e^{-\sigma t}</m> exists.
+      From the Fourier transform theory,
+      we can state that a sufficient condition for <m>G(\sigma +iw)</m> to exist is that
+      <me>
+        \int_{-\infty}^{\infty}|f(t)|e^{-\sigma t}\,dt \lt  \infty
+      </me>
+      exists.
+      For a given function <m>f(t)</m>,
+      this integral is finite for values of <m>\sigma</m> that lie in some interval <m>a\lt \sigma b</m>.
+    </p>
+    <p>
+      The two-sided Laplace transform uses the lower limit of integration,
+      that is, <m>t=-\infty</m>,
+      and hence requires a knowledge of the past history of the function <m>f(t)</m>,
+      <em>i.e.</em>, <m>t\lt 0</m>.
+      For most physical applications,
+      one is interested in the behavior of a system only for <m>t \ge 0</m>.
+      Mathematically speaking,
+      the initial conditions <m>f(0), \, f\,'(0), \, f\,^{\prime \prime}(0), \ldots </m>,
+      are a consequence of the past history of the system and are often all that is necessary to know.
+      For this reason,
+      it is useful to define the one-sided Laplace transform of <m>f(t)</m>,
+      which is commonly referred to simply as the
+      <em>Laplace transform</em> of <m>f(t)</m>,
+      which is also defined as an integral:
+      <men xml:id="LaplaceDef">
+        \mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt,  \text{ where }   s=\sigma +i\omega
+      </men>.
+    </p>
+    <p>
+      If the defining <xref ref="LaplaceDef">integral</xref>
+      for the Laplace transform exists for <m>s_0=\sigma_0+i\omega</m>,
+      then values of <m>\sigma</m> with
+      <m>\sigma > \sigma_0</m> imply that <m>e^{-\sigma t} \lt  e^{-\sigma_0t}</m>, and thus
+      <me>
+        \int_0^{\infty}\left| \,f(t) \right| e^{-\sigma t}\,dt \lt  \int_0^{\infty}\left| \,f(t) \right| e^{-\sigma_0 t}\,dt\lt \infty
+      </me>,
+      and it follows that <m>F(s)</m> exists for <m>s=\sigma +i\omega</m>.
+      Therefore, the Laplace transform
+      <m>\mathcal{L}(f(t))</m> is defined for all points <m>s</m> in the right half-plane <m>\mathrm{Re}(s) > \sigma_0</m>.
+    </p>
+    <p>
+      Another way to view the relationship between the Fourier transform and the Laplace transform is to consider the function <m>U(t)</m> given by
+      <me>
+        U(t) = \begin{cases}f(t) \amp  \text{ for }   t \ge 0,\\ \;\; 0 \amp  \text{ for }   t \lt  0. \end{cases}
+      </me>
+    </p>
+    <p>
+      Then the Fourier transform theory shows us that
+      <me>
+        U(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}U(t)e^{-i\omega t}\,dt\right]e^{i\omega t}\,d\omega
+      </me>,
+      and since the integrand <m>U(t)</m> is zero for <m>t\lt 0</m>,
+      this equation can be written as
+      <me>
+        f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_0^{\infty}f(t) e^{-i\omega t}\,dt\right]e^{i\omega t}\,d\omega
+      </me>.
+    </p>
+    <p>
+      Use the change of variable
+      <m>s=\sigma +i\omega</m> and <m>d\omega=\frac{ds}{i}</m>,
+      where <m>\sigma>\sigma_0</m> is held fixed,
+      then the new limits of integration are from
+      <m>s=\sigma -i\omega</m> to <m>s=\sigma +i\omega</m>.
+      The resulting equation is
+      <me>
+        f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}f(t) e^{-st}\,dt\right]e^{st}\,ds
+      </me>.
+    </p>
+    <p>
+      Therefore, the Laplace transform is
+      <me>
+        \mathcal{L}(f(t)) = F(s) = \int_0^{\infty}f(t) e^{-st}\,dt,  \text{ where }   s=\sigma +i\omega
+      </me>,
+      and the inverse Laplace transform is
+      <men xml:id="LaplaceInverse">
+        \mathcal{L}^{-1}(F(s)) = f(t) = \frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}F(s) e^{st}\,ds
+      </men>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Properties of the Laplace Transform</title>
+    <p>
+      Although a function <m>f(t)</m> may be defined for all values of <m>t</m>,
+      its Laplace transform is not influenced by values of <m>f(t)</m>,
+      where <m>t\lt 0</m>.
+      The Laplace transform of <m>f(t)</m> is actually defined for the function <m>U(t)</m> given by
+      <me>
+        U(t) = \begin{cases}f(t) \amp  \text{ for }   t \ge 0,\\ \;\;0 \amp  \text{ for }   t \lt  0. \end{cases}
+      </me>
+    </p>
+    <p>
+      A sufficient condition for the existence of the Laplace transform is that <m>|f(t)|</m> does not grow too rapidly as <m>t \to +\infty</m>.
+      We say that the function <m>f</m> is of
+      <term>exponential order</term>
+      if there exists real constants <m>M>0</m> and <m>K</m>,
+      such that
+      <me>
+        |f(t)| \le Me^{Kt}  \text{ holds for all }   t \ge 0
+      </me>.
+    </p>
+    <p>
+      All functions in this chapter are assumed to be of exponential order.
+      The next theorem shows that their Laplace transform
+      <m>F(\sigma +i\tau)</m> exists for values of <m>s</m> in a domain that includes the right half-plane <m>\mathrm{Re}(s) > K</m>.
+    </p>
+    <theorem>
+      <title>Existence of the Laplace Transform</title>
+      <statement>
+        <p>
+          If <m>f</m> is of exponential order,
+          then its Laplace transform <m>L\big(f(t)\big)=F(s)</m> is given by
+          <me>
+            F(s)=\int_0^{\infty}f(t)e^{-st}\,dt,  \text{ where }   s=\sigma+i\omega
+          </me>.
+        </p>
+        <p>
+          The defining integral for <m>F</m> exists at points
+          <m>s=\sigma+i\tau</m> in the right half plane <m>\sigma >K</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Using <m>s=\sigma +i\tau</m> we see that <m>F(s)</m> can be expressed as
+        <me>
+          F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e^{-\sigma t}\sin \tau t\,dt
+        </me>.
+      </p>
+      <p>
+        Then for values of <m>\sigma >K</m>, we have
+        <md>
+          <mrow>\int_0^{\infty}|f(t)| e^{-\sigma t}|\cos \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le \frac{M}{\sigma -K},  \text{ and }</mrow>
+          <mrow>\int_0^{\infty}|f(t)| e^{-\sigma t}|\sin \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le \frac{M}{\sigma -K}</mrow>
+        </md>,
+        which imply that the integrals defining the real and imaginary parts of <m>F</m> exist for values of <m>\mathrm{Re}(s) >K</m>.
+      </p>
+    </proof>
+    <p>
+      <em>Note</em>: The domain of definition of the defining integral for the Laplace transform
+      <m>\mathcal{L}\big(f(t)\big)</m> seems to be restricted to a half plane.
+      However, the resulting formula <m>F(s)</m> might have a domain much larger than this half plane.
+      Later we will show that <m>F(s)</m> is an analytic function of the complex variable <m>s</m> . For most applications involving Laplace transforms that we will study,
+      the Laplace transforms are rational functions that have the form <m>\frac{P(s)}{Q(s)}</m>,
+      where <m>P</m> and <m>Q</m> are polynomials,
+      and some other important ones will have the form <m>\frac{e^{as}P(s)}{Q(s)}</m>.
+    </p>
+    <theorem>
+      <title>Linearity of the Laplace Transform</title>
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> have Laplace transforms <m>F</m> and <m>G</m>,
+          respectively.
+          If <m>a</m> and <m>b</m> are constants, then
+          <me>
+            \mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s)
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Let <m>K</m> be chosen so that both <m>F</m> and <m>G</m> are defined for <m>\mathrm{Re}(s)>K</m>, then
+        <md>
+          <mrow>\mathcal{L}\big(af(t)+bg(t)\big) \amp = \int_0^{\infty}[af(t)+bg(t)]e^{-st}\,dt</mrow>
+          <mrow>\amp = a\int_0^{\infty}f(t) e^{-st}dt+b\int_0^{\infty}g(t)e^{-st}\,dt</mrow>
+          <mrow>\amp = aF(s) + bG(s)</mrow>
+        </md>.
+      </p>
+    </proof>
+    <theorem>
+      <title>Uniqueness of the Laplace Transform</title>
+      <statement>
+        <p>
+          Let <m>f</m>and <m>g</m> have Laplace transforms <m>F</m> and <m>G</m>,
+          respectively.
+          If <m>F(s) \equiv G(s)</m>, then <m>f(t) \equiv g(t)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        If <m>\sigma</m> is sufficiently large,
+        then the integral representation, Equation <xref ref="LaplaceInverse"/>,
+        for the inverse Laplace transform can be used to obtain
+        <md>
+          <mrow>f(t) \amp = \mathcal{L}^{-1}(F(s)) = \frac{1}{2\pi i}\int_{\sigma -i\infty}^{\sigma +i\infty}F(s) e^{st}\,ds = \frac{1}{2\pi i}\int_{s-i\infty}^{s+i\infty}G(s) e^{st}\,ds</mrow>
+          <mrow>\amp = \mathcal{L}^{-1}(G(s)) = g(t) </mrow>
+        </md>.
+      </p>
+    </proof>
+    <example>
+      <statement>
+        <p>
+          Show that the Laplace transform of the step function given by
+          <me>
+            f(t) = \begin{cases}1 \amp  \text{ for }   0 \le t\lt c,\\ 0 \amp  \text{ for }   c\lt t \end{cases}
+          </me>
+          is <m>\mathcal{L}(\,f(t)) =\frac{1-e^{-cs}}{s}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using the integral definition for <m>\mathcal{L}(\,f(t))</m>,
+          we obtain
+          <md>
+            <mrow>\mathcal{L}(\,f(t)) \amp = \int_0^{\infty}f(t) e^{-st}\,dt</mrow>
+            <mrow>\amp = \int_0^{c}e^{-st}dt+\int_c^{\infty}e^{-st}(0)\,dt</mrow>
+            <mrow>\amp = \left.\frac{-e^{-st}}{s}\right|_{t=0}^{t=c}</mrow>
+            <mrow>\amp = \frac{1-e^{-cs}}{s}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="ex_10_8">
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(e^{at}) =\frac{1}{s-a}</m>,
+          where <m>a</m> is a real constant.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We will actually show that the integral defining
+          <m>\mathcal{L}( e^{at})</m> is equal to the formula
+          <m>F(s) =\frac{1}{s-a}</m> for values of <m>s</m> with <m>\mathrm{Re}(s) >a</m>,
+          and the extension to other values of <m>s</m> is inferred by our knowledge about the domain of a rational function.
+          Using straightforward integration techniques we find that
+          <md>
+            <mrow>\mathcal{L}(e^{at}) \amp = \int\nolimits_0^{\infty}e^{at}e^{-st}\,dt</mrow>
+            <mrow>\amp = \lim_{R \to +\infty}\int_0^{R}e^{(a-s)t}\,dt</mrow>
+            <mrow>\amp = \lim_{R \to +\infty}\frac{e^{(a-s) R}}{a-s}+\frac{1}{s-a}</mrow>
+          </md>.
+        </p>
+        <p>
+          Let <m>s=\sigma +i\tau</m> be held fixed,
+          or where <m>\sigma >a</m>.
+          Then since <m>a-\sigma</m> is a negative real number we have
+          <m>\lim\limits_{R \to +\infty}e^{(a-s) R}=0</m> and this result can be used in the latter equation to obtain the desired conclusion.
+        </p>
+      </solution>
+    </example>
+    <p>
+      The property of linearity can be used to find new Laplace transforms from known ones.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(\sinh at) =\frac{a}{s^2-a^2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>\sinh at = \frac{1}{2}e^{at}-\frac{1}{2}e^{-at}</m>,
+          we obtain
+          <me>
+            \mathcal{L}(\sinh at) = \frac{1}{2}\mathcal{L}(e^{at}) - \frac{1}{2}\mathcal{L}(e^{-at}) = \frac{1}{2}\frac{1}{s-a} - \frac{1}{2}\frac{1}{s+a}=\frac{a}{s^2-a^2}
+          </me>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      The technique of integration by parts is also helpful in finding new Laplace transforms.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(t) = \frac{1}{s^2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using integration by parts we obtain
+          <md>
+            <mrow>\mathcal{L}(t) \amp = \lim_{R \to +\infty}\int_0^{R}te^{-st}\,dt</mrow>
+            <mrow>\amp = \lim_{R \to +\infty}\left.\left(\frac{-t}{s}e^{-st}-\frac{1}{s^2}e^{-st}\right)\right|_{t=0}^{t=R}</mrow>
+            <mrow>\amp = \lim_{R \to +\infty}\left(\frac{-R}{s}e^{-sR}-\frac{1}{s^2}e^{-sR}\right) + 0 + \frac{1}{s^2}</mrow>
+          </md>.
+        </p>
+        <p>
+          For values of <m>s</m> in the right half plane <m>\mathrm{Re}(s) >0</m>,
+          an argument similar to that in <xref ref="ex_10_8">Example</xref>
+          shows that the last limit approaches zero.
+          This observation establishes the result.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(\cos bt) =\frac{s}{s^2+b^2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A direct approach using the definition is tedious.
+          Let us assume that the complex constants <m>\pm ib</m> are permitted and hence following the Laplace transforms exist:
+          <me>
+            \mathcal{L}(e^{ibt}) = \frac{1}{s-ib},  \text{ and }   \mathcal{L}(e^{-ibt}) =\frac{1}{s-ib}
+          </me>.
+        </p>
+        <p>
+          Using the linearity of the Laplace transform we obtain
+          <md>
+            <mrow>\mathcal{L}(\cos bt) \amp = \frac{1}{2}\mathcal{L}(e^{ibt}) + \frac{1}{2}\mathcal{L}(e^{-ibt})</mrow>
+            <mrow>\amp = \frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib}</mrow>
+            <mrow>\amp = \frac{s}{s^2+b^2}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Inverting the Laplace transform is usually accomplished with the aid of a table of known Laplace transforms and the technique of partial fraction expansion.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}^{-1}(\frac{3s+6}{s^2+9})</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using linearity and lines 6 and 7 of Table 10.2, we obtain
+          <md>
+            <mrow>\mathcal{L}^{-1}(\frac{3s+6}{s^2+9}) \amp = 3\mathcal{L}^{-1}(\frac{s}{s^2+9}) +2\mathcal{L}^{-1}(\frac{3}{s^2+9})</mrow>
+            <mrow>\amp = 3\cos 3t+2\sin 3t</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Table 10.2 gives the Laplace transforms of some well-known functions,
+      and Table 10.3 highlights some important properties of Laplace transforms.
+    </p>
+    <p>
+      TABLE 10.2: Table of Laplace Transforms
+    </p>
+    <tabular>
+      <row>
+        <cell><m>f(t)</m></cell>
+        <cell><m>F(s) =\int_0^{\infty}f(t)e^{-st}\,dt</m></cell>
+      </row>
+      <row>
+        <cell><m>1</m></cell>
+        <cell><m>\frac{1}{s}</m></cell>
+      </row>
+      <row>
+        <cell><m>t^n</m></cell>
+        <cell><m>\frac{n!}{s^{n+1}}</m></cell>
+      </row>
+      <row>
+        <cell><m>U_c(t)</m> unit step</cell>
+        <cell><m>\frac{e^{-cs}}{s}</m></cell>
+      </row>
+      <row>
+        <cell><m>e^{at}</m></cell>
+        <cell><m>\frac{1}{s-a}</m></cell>
+      </row>
+      <row>
+        <cell><m>t^ne^{at}</m></cell>
+        <cell><m>\frac{n!}{(s-a) ^{n+1}}</m></cell>
+      </row>
+      <row>
+        <cell><m>\cos bt</m></cell>
+        <cell><m>\frac{s}{s^2+b^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>\sin bt</m></cell>
+        <cell><m>\frac{b}{s^2+b^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>e^{at}\cos bt</m></cell>
+        <cell><m>\frac{s-a}{(s-a)^2+b^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>e^{at}\sin bt</m></cell>
+        <cell><m>\frac{b}{(s-a)^2+b^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>t\cos bt</m></cell>
+        <cell><m>\frac{s^2-b^2}{(s^2+b^2)^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>t\sin bt</m></cell>
+        <cell><m>\frac{2bs}{(s^2+b^2)^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>\cosh at</m></cell>
+        <cell><m>\frac{s}{s^2-a^2}</m></cell>
+      </row>
+      <row>
+        <cell><m>\sinh at</m></cell>
+        <cell><m>\frac{a}{s^2-a^2}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Table 10.3: Properties of the Laplace Transform
+    </p>
+    <tabular>
+      <row>
+        <cell>Definition</cell>
+        <cell><m>\mathcal{L}(\,f(t)) =F(
+          s)</m></cell>
+      </row>
+      <row>
+        <cell>First derivative</cell>
+        <cell><m>\mathcal{L}(\,f\,'(t)) = sF(s) - f(0)</m></cell>
+      </row>
+      <row>
+        <cell>Second derivative</cell>
+        <cell><m>\mathcal{L}(\,f\,^{\prime \prime}(t)) = s^2F(s) - sf(0) - f\,'(0)</m></cell>
+      </row>
+      <row>
+        <cell>Integral</cell>
+        <cell><m>\mathcal{L}(\int_0^{t}f(\tau)\,d\tau) = \frac{F(s)}{s}</m></cell>
+      </row>
+      <row>
+        <cell>Multiplication by <m>t</m></cell>
+        <cell><m>\mathcal{L}(tf(t)) = -F'(s)</m></cell>
+      </row>
+      <row>
+        <cell>Division by <m>t</m></cell>
+        <cell><m>\mathcal{L}(\frac{f(t) }{t}) = \int\nolimits_s^{\infty}F(\sigma)\,d\sigma</m></cell>
+      </row>
+      <row>
+        <cell><m>s</m> axis Shifting</cell>
+        <cell><m>\mathcal{L}(e^{at}f(t))=F(s-a)</m></cell>
+      </row>
+      <row>
+        <cell><m>t</m> axis Shifting</cell>
+        <cell><m>\mathcal{L}(U_a(t)f(t-a)) = e^{-as}F(s)</m> <nbsp/><nbsp/> for <nbsp/><nbsp/> <m>a>0</m></cell>
+      </row>
+      <row>
+        <cell>Convolution</cell>
+        <cell><m>\mathcal{L}\big(h(t)\big) = F(s) G(s)</m>,</cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><nbsp/><nbsp/> where <nbsp/><nbsp/> <m>h(t) =\int_0^{t}f(t-\tau ) g(\tau)\,d\tau</m></cell>
+      </row>
+    </tabular>
+    <exercises>
+      <title>Exercises for <xref ref="sec_laplace-transform">Section</xref></title>
+      <exercise>
+        <p>
+          Show that <m>\mathcal{L}(1) =\frac{1}{s}</m> by using the integral definition for the Laplace transform.
+          Assume that <m>\mathrm{Re}(s)>0</m>.
+        </p>
+      </exercise>
+      <exercise>
+        <p>
+          Show that <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> by using the integral definition for the Laplace transform.
+          Assume that <m>\mathrm{Re}(s) >0</m>.
+          Find <m>\mathcal{L}\big(f(t)\big)</m> for each of the following.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}1 \amp \text{ for } 1\lt t\lt 2, \\ 0 \amp \text{ otherwise } . \end{cases}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}t \amp \text{ for } 0 \le t\lt c, \\ 0 \amp \text{ otherwise. } \end{cases}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}e^{at} \amp \text{ for } 0 \le t\lt 1, \\ \; 0 \amp \text{ otherwise. } \end{cases}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}\sin t \amp \text{ for } 0 \le t \le \pi , \\ \;\; 0 \amp \text{ otherwise. } \end{cases}</m>
+            </p>
+          </li>
+        </ol>
+      </exercise>
+      <exercise>
+        <p>
+          Use the linearity of Laplace transform and Table 10.2 to find:
+          <ol>
+            <li>
+              <p>
+                <m>\mathcal{L}(3t^2-4t+5)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathcal{L}(2\cos 4t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathcal{L}(e^{2t-3})</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathcal{L}(6e^{-t}+3\sin 5t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathcal{L}((t+1) ^4)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mathcal{L}(\cosh 2t)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        Use the linearity of the inverse Laplace transform and Table 10.3 to find:
+        <ol>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{1}{s^2+25})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{6s}{s^2-4})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathcal{L}^{-1}(\frac{2s+1}{s(s+1) })</m>.
+            </p>
+          </li>
+        </ol>
+      </exercise>
+      <exercise>
+        <p>
+          Write a report on how complex analysis is used in the study of Laplace transforms.
+          Include ideas and examples that are not mentioned in the text.
+        </p>
+      </exercise>
+    </exercises>
+  </subsection>
+</section>

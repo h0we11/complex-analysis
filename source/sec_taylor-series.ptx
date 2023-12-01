@@ -1,0 +1,809 @@
+<section xml:id="sec_taylor-series">
+  <title>Taylor Series Representations</title>
+  <p>
+    In <xref ref="sec_power-series">Section</xref>
+    we showed that functions defined by power series have derivatives of all orders
+    (<xref ref="Power_Series_Thm">Theorem</xref>).
+    In <xref ref="sec_integral-representations">Section</xref>
+    we demonstrated that analytic functions also have derivatives of all orders
+    (<xref ref="All_derivs">Corollary</xref>).
+    It seems natural, therefore,
+    that there would be some connection between analytic functions and power series.
+    As you might guess,
+    the connection exists via the Taylor and Maclaurin series of analytic functions.
+  </p>
+  <definition>
+    <title>Taylor series</title>
+    <statement>
+      <p>
+        If <m>f(z)</m><nbsp/>is analytic at <m>z=\alpha</m>, then the series
+        <md>
+          <mrow>\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k \amp =f(\alpha)+f\,'(\alpha)(z-\alpha) +\frac{f\,^{(2)}(\alpha)}{2!}(z-\alpha)^2</mrow>
+          <mrow>\amp + \frac{f\,^{(3)}(\alpha)}{3!}(z-\alpha)^3+\cdots</mrow>
+        </md>
+        is called the <em>Taylor series for </em><m>\bm f</m><em><nbsp/>centered at </em><m>\alpha</m> . When the center is <m>\alpha =0</m>,
+        the series is called the <em>Maclaurin series for </em> <m>\bm f</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    To investigate when these series converge we need the following lemma.
+  </p>
+  <lemma xml:id="x1__z-z0__expansion">
+    <statement>
+      <p>
+        If <m>z, \, z_0</m>, and <m>\alpha</m><nbsp/>are complex numbers with
+        <m>z \ne z_0</m> and <m>z \ne \alpha</m>, then
+        <md>
+          <mrow>\frac{1}{z-z_0} \amp = \frac{1}{z-\alpha }+\frac{z_0-\alpha }{(z-\alpha)^2}+\frac{(z_0-\alpha)^2}{(z-\alpha)^3} + \cdots</mrow>
+          <mrow>\amp \cdots + \frac{(z_0-\alpha)^n}{(z-\alpha)^{n+1}}+\frac{1}{z-z_0}\frac{(z_0-\alpha)^{n+1}}{(z-\alpha)^{n+1}}</mrow>
+        </md>,
+        where <m>n</m><nbsp/>is a positive integer.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      <m>\dfrac{1}{z-z_0}=\dfrac{1}{(z-\alpha)-(z_0-\alpha)} = \dfrac{1}{z-\alpha }\left(\dfrac{1}{1-\frac{z_0-\alpha}{z-\alpha}}\right)</m>.
+      The result now follows from Corollary 4.3 if in it we replace <m>z</m> with <m>\left(\frac{z_0-\alpha}{z-\alpha}\right)</m>.
+      We leave verification of the details as an exercise.
+    </p>
+  </proof>
+  <p>
+    We are now ready for the main result of this section.
+  </p>
+  <theorem xml:id="Taylor_s_Theorem">
+    <title>Taylor's theorem</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is analytic in a domain <m>G</m> and that
+        <m>D_{R}(\alpha)</m><nbsp/>is any disk contained in <m>G</m>.
+        Then the Taylor series for <m>f</m><nbsp/>converges to <m>f(z)</m><nbsp/>for all <m>z</m><nbsp/>in <m>D_{R}(\alpha)</m>; that is,
+        <men xml:id="Taylor_Representation_of_f">
+          f(z)=\sum_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k\,  \text{ for all }   z \in D_{R}(\alpha)
+        </men>.
+      </p>
+      <p>
+        Furthermore, for any <m>r</m>, <m>0\lt r\lt R</m>,
+        the convergence is uniform on the closed subdisk <m>\overline{D}_r(\alpha) =\{z:|z-\alpha| \le r\}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      If we can establish Equation <xref ref="Taylor_Representation_of_f"/>,
+      the uniform convergence on <m>\overline{D}_r(\alpha)</m> for
+      <m>0\lt r\lt R</m> will follow immediately from <xref ref="Unif_Conv_of_Series">Theorem</xref>
+      by equating the <m>c_k</m> of that theorem with <m>\frac{f\,^{(k)}(\alpha)}{k!}</m>.
+    </p>
+    <p>
+      Let <m>z_0 \in D_{R}(\alpha)</m> and let <m>r</m> designate the distance between <m>z_0</m> and <m>\alpha</m> so that <m>|z_0-\alpha | =r</m>.
+      Note that <m>0\le r\lt R</m> because <m>z_0</m> belongs to the <em>open</em>
+      disk <m>D_{R}(\alpha)</m>.
+      We choose <m>\rho</m> such that <m>0\le r\lt \rho \lt R</m>,
+      and let <m>C=C_{\rho }^{+}(\alpha)</m> be the positively oriented circle centered at <m>\alpha</m> with radius <m>\rho</m> as shown in <xref ref="fig_ch-07-02">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-07-02">
+      <caption>The constructions for Taylor's theorem</caption>
+      <image width="73%" source="figs/ch-07/ch-07-fig-02.pdf"/>
+    </figure>
+    <p>
+      With <m>C</m> contained in <m>G</m>,
+      we can use the Cauchy integral formula to get
+      <me>
+        f(z_0) =\frac{1}{2\pi i} \int_C\frac{1}{z-z_0}f(z)\,dz
+      </me>.
+    </p>
+    <p>
+      Replacing <m>\frac{1}{z-z_0}</m> in the integrand by its equivalent expression in <xref ref="x1__z-z0__expansion">Lemma</xref> gives
+      <md>
+        <mrow>f(z_0) \amp = \frac{1}{2\pi i} \int_C\left[\frac{1}{z-\alpha} + \frac{z_0-\alpha}{(z-\alpha)^2} + \cdots + \frac{(z_0-\alpha)^n}{(z-\alpha)^{n+1}} \right.</mrow>
+        <mrow>\amp  \qquad \qquad \qquad +\left. \,\frac{1}{z-z_0}\frac{(z_0-\alpha)^{n+1}}{(z-\alpha)^{n+1}}\right] \,f(z)\,dz</mrow>
+        <mrow>\amp  =\frac{1}{2\pi i} \int_C\frac{f(z)\,dz}{z-\alpha }+\frac{z_0-\alpha }{2\pi i} \int_C\frac{f(z)\,dz}{(z-\alpha)^2}+\cdots</mrow>
+        <mrow>\amp  \qquad \qquad \qquad+ \frac{(z_0-\alpha)^n}{2\pi i} \int_C\frac{f(z)\,dz}{(z-\alpha)^{n+1}}</mrow>
+        <mrow xml:id="f_z0__expansion" number="yes">\amp  \qquad \qquad \qquad+ \frac{(z_0-\alpha)^{n+1}}{2\pi i} \int_C \frac{f(z)\,dz}{(z-z_0) (z-\alpha)^{n+1}}</mrow>
+      </md>,
+      where <m>n</m> is a positive integer.
+      We can put the last term in Equation <xref ref="Unif_conv_negation"/> in the form
+      <men xml:id="En_z0_">
+        E_n(z_0) = \frac{1}{2\pi i} \int_C\frac{(z_0-\alpha)^{n+1}f(z)\,dz}{(z-z_0)(z-\alpha)^{n+1}}
+      </men>.
+    </p>
+    <p>
+      Recall also by the Cauchy integral formulas that
+      <me>
+        \frac{2\pi i}{k!}f\,^{(k)}(\alpha) = \int_C\frac{f(z)\,dz}{(z-\alpha)^{k+1}}, \text{ for }   k=0,\,1,\,2,\ldots
+      </me>.
+    </p>
+    <p>
+      Using these last two identities reduces Equation <xref ref="f_z0__expansion"/> to
+      <me>
+        f(z_0) = \sum_{k=0}^n\frac{f\,^{(k)}(\alpha)}{k!}(z_0-\alpha)^k+E_n(z_0)
+      </me>.
+    </p>
+    <p>
+      The summation on the right-hand side of this last expression is the first <m>n+1</m> terms of the Taylor series.
+      Verification of Equation <xref ref="Taylor_Representation_of_f"/> relies on our ability to show that we can make the remainder term,
+      <m>E_n(z_0)</m>,
+      as small as we please by making <m>n</m> sufficiently large.
+      We will use the ML inequality
+      (<xref ref="ML_Inequality_Thm">Theorem</xref>)
+      to get a bound for <m>|E_n(z_0)|</m>.
+      According to the constructions shown in Figure 7.2, we have
+      <men xml:id="z0-alpha">
+        |z_0-a| = r  \text{ and }   |z-\alpha| =\rho
+      </men>.
+    </p>
+    <p>
+      By <xref ref="ReverseTriangleIneq">Property</xref>
+      of <xref ref="sec_geometry-1">Section</xref>, we also have
+      <md>
+        <mrow>|z-z_0| \amp = |(z-\alpha)-(z_0-\alpha)|</mrow>
+        <mrow>\amp \ge |z-\alpha| - |z_0-\alpha|</mrow>
+        <mrow xml:id="z-z0" number="yes">\amp = \rho -r</mrow>
+      </md>.
+    </p>
+    <p>
+      If we set <m>M=\max\limits_{z \in C}|f(z)|</m>, Equations <xref ref="z0-alpha"/> and <xref ref="z-z0"/> allow us to conclude that,
+      for all <m>z \in C</m>,
+      <md>
+        <mrow>\left|\frac{(z_0-\alpha)^{n+1}f(z)}{(z-z_0)(z-\alpha)^{n+1}}\right| \amp = \left|\frac{(z_0-\alpha)^{n+1}}{(z-\alpha)^{n+1}}\right| \left|\frac{f(z)}{(z-z_0)}\right|</mrow>
+        <mrow xml:id="En_bound" number="yes">\amp  \le \left(\frac{r}{\rho}\right)^{\!n+1}\left(\frac{1}{\rho -r}\right)M</mrow>
+      </md>.
+    </p>
+    <p>
+      The length of the circle <m>C</m> is <m>2\pi \rho</m>,
+      so the ML inequality in conjunction with Equations <xref ref="En_z0_"/> and <xref ref="En_bound"/> gives
+      <men xml:id="Final_En_z0_">
+        |E_n(z_0)| \le \frac{1}{2\pi}(\frac{r}{\rho})^{n+1}(\frac{1}{\rho -r}) M(2\pi \rho)
+      </men>.
+    </p>
+    <p>
+      Because <m>0 \le r \lt \rho \lt R</m>,
+      the fraction <m>\frac{r}{\rho}</m> is less than 1, so <m>(\frac{r}{\rho })^{n+1}</m>
+      (and hence the right side of Equation <xref ref="Final_En_z0_"/>)
+      goes to zero as <m>n</m> goes to infinity.
+      Thus, for any <m>\varepsilon>0</m>,
+      we can find an integer <m>N_{\varepsilon}</m> such that
+      <m>|E_n(z_0)| \lt \varepsilon</m> for <m>n \ge N_{\varepsilon}</m>,
+      and this fact completes the proof.
+    </p>
+  </proof>
+  <p>
+    A singular point of a function is a point at which the function fails to be analytic.
+    You will see in <xref ref="sec_singularities">Section</xref>
+    that singular points of a function can be classified according to how badly the function behaves at those points.
+    Loosely speaking, a <em>nonremovable</em>
+    singular point of a function has the property that it is impossible to redefine the value of the function at that point so as to make it analytic there.
+    For example,
+    the function <m>f(z) =\frac{1}{1-z}</m> has a nonremovable singularity at <m>z=1</m>.
+    We give a formal definition of this concept in <xref ref="sec_singularities">Section</xref>,
+    but with this language we can nuance Taylor's theorem a bit.
+  </p>
+  <corollary xml:id="Nuanced_Taylor">
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is analytic in the domain <m>G</m><nbsp/>that contains the point <m>\alpha</m>.
+        Let <m>z_0</m><nbsp/>be a nonremovable singular point of minimum distance to the point <m>\alpha</m>.
+        If <m>|z_0-\alpha| =R</m>, then
+        <ol>
+          <li>
+            <title>i</title>
+            <p>
+              the Taylor series <m>\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k</m> converges to <m>f(z)</m><nbsp/>on all of <m>D_{R}(\alpha)</m>, and
+            </p>
+          </li>
+          <li>
+            <title>ii</title>
+            <p>
+              if <m>|z_1-\alpha| =S>R</m>,
+              the Taylor series <m>\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z_1-\alpha)^k</m> does not converge to <m>f(z_1)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Taylor's theorem gives us part (<em>i</em>) immediately.
+      To establish part (<em>ii</em>),
+      we note that if <m>|z_0-\alpha|=R</m>,
+      then <m>z_0 \in D_{S}(\alpha)</m> whenever <m>S>R</m>.
+      If for some <m>z_1</m>, with <m>|z_1-\alpha| =S>R</m>,
+      the Taylor series converged to <m>f(z_1)</m>,
+      then according to <xref ref="Power_Series_Thm">Theorem</xref>,
+      the radius of convergence of the series
+      <m>\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k</m> would be at least equal to <m>S</m>.
+      We could then make <m>f</m> differentiable at <m>z_0</m> by redefining <m>f(z_0)</m> to equal the value of the series at <m>z_0</m>,
+      thus contradicting the fact that <m>z_0</m> is a nonremovable singular point.
+    </p>
+  </proof>
+  <example xml:id="x1__1-z__2_ex">
+    <statement>
+      <p>
+        Show that <m>\frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}(n+1)z^n</m> is valid for <m>z \in D_1(0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        In <xref ref="ex_4_24">Example</xref>
+        we established this identity with the use of <xref ref="Power_Series_Thm">Theorem</xref>.
+        We now do so via <xref ref="Taylor_s_Theorem">Theorem</xref>.
+        If <m>f(z) =\frac{1}{(1-z)^2}</m>,
+        then a standard induction argument
+        (which we leave as an exercise)
+        will show that <m>f\,^{(n)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}</m> for <m>z \in D_1(0)</m>.
+        Thus <m>f\,^{( n)}(0)=(n+1) !</m>,
+        and Taylor's theorem gives
+        <me>
+          f(z) = \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}\frac{f\,^{(n)}(0)}{n!}z^n = \sum\limits_{n=0}^{\infty}\frac{(n+1)!}{n!}z^n=\sum\limits_{n=0}^{\infty}(n+1)z^n
+        </me>,
+        and since <m>f</m> is analytic in <m>D_1(0)</m>,
+        this series expansion is valid for all <m>z \in D_1(0)</m>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that, for <m>z \in D_1(0)</m>,
+        <men xml:id="Two_Series">
+          \frac{1}{1-z^2} = \sum\limits_{n=0}^{\infty}z^{2n}  \text{ and }   \frac{1}{1+z^2}=\sum\limits_{n=0}^{\infty}(-1)^nz^{2n}
+        </men>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        For <m>z \in D_1(0)</m>,
+        <men xml:id="x1__1-z__Ex">
+          \frac{1}{1-z} = \sum\limits_{n=0}^{\infty}z^n
+        </men>.
+      </p>
+      <p>
+        If we let <m>z^2</m> take the role of <m>z</m> in Equation <xref ref="x1__1-z__Ex"/>,
+        we get that <m>\frac{1}{1-z^2}= \sum\limits_{n=0}^{\infty}(z^2)^n=\sum\limits_{n=0}^{\infty}z^{2n}</m> for <m>z^2 \in D_1(0)</m>.
+        But <m>z^2 \in D_1(0)</m> iff <m>z \in D_1(0)</m>.
+        Letting <m>-z^2</m> take the role of <m>z</m> in Equation <xref ref="x1__1-z__Ex"/> gives the second part of Equations <xref ref="Two_Series"/>.
+      </p>
+    </solution>
+  </example>
+  <remark>
+    <p>
+      <xref ref="Nuanced_Taylor">Corollary</xref><nbsp/>clears up what often seems to be a mystery when series are first introduced in calculus.
+      The calculus analog of Equations <xref ref="Two_Series"/> is
+      <men xml:id="Two_real_series">
+        \frac{1}{1-x^2} = \sum\limits_{n=0}^{\infty}x^{2n}  \text{ and } \frac{1}{1+x^2} = \sum\limits_{n=0}^{\infty}(-1)^nx^{2n} \text{ ,\qquad for } x \in (-1,1)
+      </men>.
+    </p>
+    <p>
+      For many students,
+      it makes sense that the first series in Equations <xref ref="Two_real_series"/> converges only on the interval <m>(-1,1)</m> because
+      <m>\frac{1}{1-x^2}</m> is undefined at the points <m>x=\pm 1</m>.
+      It seems unclear as to why this should also be the case for the series representing <m>\frac{1}{1+x^2}</m>,
+      since the real-valued function
+      <m>f(x) =\frac{1 }{1+x^2}</m> is defined everywhere.
+      The explanation, of course, comes from the complex domain.
+      The complex function <m>f(z) =\frac{1}{1+z^2}</m> is
+      <em>not</em> defined everywhere.
+      In fact, the singularities of <m>f</m> are at the points <m>\pm i</m>,
+      and the distance between them and the point <m>\alpha =0</m> equals 1.
+      According to <xref ref="Nuanced_Taylor">Corollary</xref>,
+      therefore, Equations <xref ref="Two_Series"/> are valid only for <m>z \in D_1(0)</m>,
+      and thus Equations <xref ref="Two_real_series"/> are valid only for <m>x \in ( -1,1)</m>.
+    </p>
+  </remark>
+  <p>
+    Alas, there is a potential fly in this ointment:
+    <xref ref="Nuanced_Taylor">Corollary</xref> applies to Taylor series.
+    To form the Taylor series of a function,
+    we must compute its derivatives.
+    We didn't get the series in Equations <xref ref="Two_Series"/> by computing derivatives,
+    so how do we know that they are indeed the Taylor series centered at <m>\alpha=0</m>?
+    Perhaps the Taylor series would give completely different expressions from those given by Equations <xref ref="Two_Series"/>.
+    Fortunately, Theorem 7.5 removes this possibility.
+  </p>
+  <theorem xml:id="Uniqueness">
+    <title>Uniqueness of power series</title>
+    <statement>
+      <p>
+        Suppose that in some disk <m>D_r(\alpha)</m> we have
+        <me>
+          f(z) = \sum_{n=0}^{\infty}a_n(z-\alpha)^n=\sum\limits_{n=0}^{\infty}b_n(z-\alpha)^n
+        </me>.
+      </p>
+      <p>
+        Then <m>a_n=b_n</m>, for <m>n=0,\,1,\,2,\,\ldots </m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      By <xref ref="Power_Series_Thm">Theorem</xref> part (<em>ii</em>),
+      <m>a_n= \frac{f^{(n)}(\alpha)}{n!}=b_n</m>,
+      for <m>n=0,\,1,\,2,\ldots </m>.
+    </p>
+  </proof>
+  <p>
+    Thus, any power series representation of <m>f(z)</m> is automatically the Taylor series.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find the Maclaurin series of <m>f(z) =\sin^3 z</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Computing derivatives for <m>f(z)</m> would be an onerous task.
+        Fortunately, we can make use of the trigonometric identity
+        <me>
+          \sin^3 z = \frac{3}{4}\sin z - \frac{1}{4}\sin 3z
+        </me>.
+      </p>
+      <p>
+        Recall that the series for <m>\sin z</m>
+        (valid for all <m>z</m>)
+        is <m>\sin z= \sum\limits_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}</m>.
+        Using the identity for <m>\sin ^3z</m>, we obtain
+        <md>
+          <mrow>\sin ^3z \amp = \frac{3}{4}\sum_{n=0}^{\infty}(-1)^n \frac{z^{2n+1}}{(2n+1) !}-\frac{1}{4}\sum_{n=0}^{\infty}(-1)^n\frac{(3z)^{2n+1}}{(2n+1)!}</mrow>
+          <mrow>\amp = \frac{3}{4}\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1) !}-\frac{3}{4}\sum_{n=0}^{\infty}(-1)^n\frac{9^nz^{2n+1}}{(2n+1) !}</mrow>
+          <mrow>\amp = \sum_{n=0}^{\infty}(-1)^n\frac{3(1-9^n)}{4(2n+1) !}z^{2n+1}</mrow>
+        </md>.
+      </p>
+      <p>
+        By the uniqueness of power series,
+        this last expression is the Maclaurin series for <m>\sin ^3z</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    In the preceding argument we used some obvious results of power series representations that we haven't yet formally stated.
+    The requisite results are part of <xref ref="Series_Manip">Theorem</xref>.
+  </p>
+  <theorem xml:id="Series_Manip">
+    <statement>
+      <p>
+        Let <m>f</m><nbsp/>and <m>g</m><nbsp/>have the power series representations
+        <md>
+          <mrow>f(z) \amp = \sum_{n=0}^{\infty}a_n(z-\alpha)^n,  \text{ for }   z \in D_{r_1}(\alpha);</mrow>
+          <mrow>g(z) \amp = \sum_{n=0}^{\infty}b_n(z-\alpha)^n\text,  \text{ for }   z \in D_{r_2}(\alpha)</mrow>
+        </md>.
+      </p>
+      <p>
+        If <m>r=\min \{r_1,r_2\}</m> and <m>\beta</m> is any complex constant, then
+        <md>
+          <mrow xml:id="bf_z_" number="yes">\beta f(z) \amp = \sum_{n=0}^{\infty}\beta a_n(z-\alpha)^n,  \text{ for }   z \in D_{r_1}(\alpha),</mrow>
+          <mrow xml:id="f_z__g_z_" number="yes">f(z) +g(z) \amp = \sum_{n=0}^{\infty}(a_n+b_n) (z-\alpha)^n,  \text{ for }   z \in D_r(\alpha),  \text{ and }</mrow>
+          <mrow xml:id="f_z_g_z_" number="yes">f(z) g(z) \amp = \sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n,  \text{ for }   z \in D_r(\alpha)</mrow>
+        </md>,
+        where
+        <men xml:id="x718">
+          c_n = \sum_{k=0}^na_kb_{n-k}
+        </men>.
+      </p>
+      <p>
+        <xref ref="f_z_g_z_">Identity</xref>
+        is known as the <em>Cauchy product</em>
+        of the series for <m>f</m> and <m>g</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We leave the details of establishing Equations <xref ref="bf_z_"/> and <xref ref="f_z__g_z_"/> for you to do as an exercise.
+      To establish Equation <xref ref="f_z_g_z_"/>,
+      we note that the function <m>h(z) =f(z)g(z)</m> is analytic in <m>D_r(\alpha)</m>.
+      Thus, for <m>z \in D_r(\alpha)</m>,
+      <md>
+        <mrow>h\,'(z) \amp = f(z) g\,'(z) +f\,'(z) g(z) ;</mrow>
+        <mrow>h\,^{\prime \prime }(z) \amp = f\,^{\prime \prime }(z)g(z) +2f\,'(z) g\,'(z)+f(z) g\,^{\prime \prime }(z)</mrow>
+      </md>.
+    </p>
+    <p>
+      By mathematical induction,
+      we can generalize the preceding pattern to the <m>n</m> th derivative,
+      giving Leibniz's formula for the derivative of a product of functions:
+      <men xml:id="h_n_z_">
+        h\,^{(n)}(z) = \sum_{k=0}^n\frac{n!}{k!(n-k) !}f\,^{(k)}(z) g\,^{(n-k)}(z)
+      </men>.
+    </p>
+    <p>
+      (We will ask you to show this result in an exercise.) By <xref ref="Power_Series_Thm">Theorem</xref> we know that
+      <me>
+        \frac{f\,^{(k)}(\alpha)}{k!}=a_k,  \text{ and }   \frac{g\,^{(n-k)}(\alpha)}{(n-k)!}=b_{n-k}
+      </me>,
+      so Equation <xref ref="h_n_z_"/> becomes
+      <men xml:id="h_n_a__n_">
+        \frac{h^{\,(n)}(\alpha)}{n!} = \sum_{k=0}^n \frac{f\,^{(k)}(\alpha)}{k!}\frac{g\,^{(n-k)}(\alpha)}{(n-k) !} = \sum_{k=0}^na_kb_{n-k}
+      </men>.
+    </p>
+    <p>
+      Now, according to Taylor's theorem,
+      <me>
+        h(z) = \sum_{k=0}^{\infty}\frac{h^{(n)}(\alpha)}{n!}(z-\alpha)^n
+      </me>.
+    </p>
+    <p>
+      Substituting Equation <xref ref="h_n_a__n_"/> into this equation gives Equation <xref ref="f_z_g_z_"/> because of the uniqueness of power series.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Use the Cauchy product of series to show that
+        <me>
+          \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}(n+1)z^n,  \text{ for }   z \in D_1(0)
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We let <m>f(z) = g(z) = \frac{1}{1-z}=\sum\limits_{n=0}^{\infty}z^n</m>,
+        for <m>z \in D_1(0)</m>.
+        In terms of <xref ref="Series_Manip">Theorem</xref>, we have <m>a_n=b_n=1</m>,
+        for all <m>n</m>, and thus Equation <xref ref="f_z_g_z_"/> gives
+        <me>
+          \frac{1}{(1-z)^2}=h(z) = f(z) g(z) = \sum_{n=0}^{\infty}\left(\sum_{k=0}^na_kb_{n-k}\right)\!z^n = \sum_{n=0}^{\infty}(n+1)z^n
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_taylor-series">Section</xref></title>
+    <exercise xml:id="x7_2_1">
+      <p>
+        By computing derivatives,
+        find the Maclaurin series for each function and state where it is valid.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\sinh z</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cosh z</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            \textrm{Log} <m>(1+z)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x7_2_2">
+      <p>
+        Using methods other than computing derivatives,
+        find the Maclaurin series for
+        <ol>
+          <li>
+            <p>
+              <m>\cos ^3z</m>.
+              <em>Hint</em>: Use the trigonometric identity
+              <me>
+                4\cos^3 z=\cos 3z+3\cos z
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Arc<m>\tan z</m>.
+              <em>Hint</em>: Choose an appropriate contour and integrate second series in Equations <xref ref="Two_Series"/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) =(z^2+1) \sin z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) =e^z\cos z</m>.
+              <em>Hint</em>:<nbsp/><m>\cos z=\frac{1}{2}(e^{iz}+e^{-iz})</m>, so
+              <me>
+                f(z) =\frac{1}{2}e^{(1+i)z}+\frac{1}{2}e^{(1-i)z}
+              </me>.
+              Now use the Maclaurin series for <m>e^z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_3">
+      <p>
+        Find the Taylor series centered at <m>a=1</m> and state where it converges for
+        <ol>
+          <li>
+            <p>
+              <m>f(z) =\frac{1-z}{z-2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) =\frac{1-z}{z-3}</m>.
+              <em>Hint</em>:
+              <m>{\frac{1-z}{z-3}} = (\frac{1}{2})\left({\frac{z-1}{1-\frac{{z-1}}{2}}}\right) = (\frac{1}{2})(z-1)\left({\frac{1}{1-\frac{{z-1}}{2}}}\right)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_4">
+      <p>
+        Let <m>f(z) =\frac{\sin z}{z}</m> and set <m>f(0) =1</m>.
+        <ol>
+          <li>
+            <p>
+              Explain why <m>f</m> is analytic at <m>z=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the Maclaurin series for <m>f(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the Maclaurin series for <m>g(z) = \int\limits_C f(\zeta)\,d\zeta</m>,
+              where <m>C</m> is the straight-line segment from 0 to <m>z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_5">
+      <p>
+        Show that <m>f(z)=\frac{1}{1-z}</m> has its Taylor series representation about the point <m>\alpha =i</m> given by
+        <me>
+          f(z) = \sum_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}},  \text{ for all }   z \in D_{\sqrt{2}}(i)
+        </me>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_6">
+      <p>
+        Let <m>f(z) =(1+z)^{\beta }=\exp[\beta\mathrm{Log}(1+z)]</m> be the principal branch of <m>(1+z)^{\beta }</m>,
+        where <m>\beta</m> is a fixed complex number.
+        Establish the validity for
+        <m>z \in D_1(0)</m> of the binomial expansion
+        <md>
+          <mrow>(1+z)^{\beta } \amp = 1+\beta z+\frac{\beta(\beta -1)}{2!}z^2+\frac{\beta(\beta -1)(\beta -2)}{3!}z^3 + \cdots</mrow>
+          <mrow>\amp = 1+\sum_{n=1}^{\infty}\frac{\beta(\beta -1)(\beta -2) \cdots (\beta -n+1)}{n!}z^n</mrow>
+        </md>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_7">
+      <p>
+        Find <m>f\,^{(3)}(0)</m> for
+        <ol>
+          <li>
+            <p>
+              <m>f(z) =\sum\limits_{n=0}^{\infty}(3+(-1)^n)^nz^n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(z) =\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n}z^n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(z) =\sum\limits_{n=0}^{\infty}\frac{z^n}{(\sqrt{3}+i)^n}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_8">
+      <p>
+        Suppose that <m>f(z) = \sum\limits_{n=0}^{\infty}c_nz^n</m> is an entire function.
+        <ol>
+          <li>
+            <p>
+              Find a series representation for <m>\overline{f(\overline{z})}</m>,
+              using powers of <m>\overline{z}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\overline{f(\overline{z})}</m> is an entire function.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does <m>\overline{f(\overline{z})} = f(z)</m>?
+              Why or why not?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_9">
+      <p>
+        Let <m>f(z) =\sum\limits_{n=0}^{\infty}c_nz^n=1+z+2z^2+3z^3+5z^4+8z^5+13z^6+\cdots</m>,
+        where the coefficients <m>c_n</m> are the Fibonacci numbers defined by <m>c_0=1</m>,
+        <m>c_1=1</m>,
+        and <m>c_n=c_{n-1}+c_{n-2}</m>, for <m>n \ge 2</m>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>f(z) =\frac{1}{1-z-z^2}</m>,
+              for all <m>z \in D_{R}(0)</m> for some number <m>R</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the value of <m>R</m> in part (a) for which the series representation is valid.
+              <em>Hint</em>: Find the singularities of <m>f(z)</m> and use <xref ref="Nuanced_Taylor">Corollary</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_10">
+      <p>
+        Complete the details in the verification of <xref ref="x1__z-z0__expansion">Lemma</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_11">
+      <p>
+        We used <xref ref="x1__z-z0__expansion">Lemma</xref>
+        in establishing <xref ref="f_z0__expansion">Identity</xref>.
+        However, <xref ref="x1__z-z0__expansion">Lemma</xref> is valid provided
+        <m>z \ne z_0</m> and <m>z \ne\alpha</m>.
+        Explain why these conditions are indeed the case in <xref ref="f_z0__expansion">Identity</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_12">
+      <p>
+        Prove by mathematical induction that
+        <m>f\,\,^{(n)}(z) =\frac{(n+1) !}{(1-z)^{n+2}}</m> in <xref ref="x1__1-z__2_ex">Example</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_13">
+      <p>
+        Establish the validity of <xref ref="bf_z_">Identities</xref>
+        and <xref ref="f_z__g_z_"></xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_14">
+      <p>
+        Use the Maclaurin series and the Cauchy product in <xref ref="f_z_g_z_">Identity</xref>
+        to verify that <m>\sin2z = 2\cos z\sin z</m> up to terms involving <m>z^5</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_15">
+      <p>
+        Compute the Taylor series for the principal logarithm
+        <m>f(z) = \mathrm{Log} \, z</m> expanded about the point <m>z_0=-1+i</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_16">
+      <p>
+        The Fresnel integrals <m>C(z)</m> and <m>S(z)</m> are defined by
+        <me>
+          C(z) = \int_0^z\cos(\xi^2)\,d\xi  \text{ and }   S(z) = \int_0^z\sin(\xi^2)\,d\xi
+        </me>.
+        Define <m>F(z)</m> by <m>F(z) = C(z)+iS(z)</m> and complete the following:
+        <ol>
+          <li>
+            <p>
+              Verify the identity <m>F(z) = \int_0^z\exp (i\xi^2)\,d\xi</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Integrate the power series for
+              <m>\exp (i\xi ^2)</m> and obtain the power series for <m>F(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the partial sum involving terms up to <m>z^{9}</m> to find approximations to <m>C(1.0)</m> and <m>S(1.0)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_17">
+      <p>
+        Let <m>f</m> be defined in a domain that contains the origin.
+        The function <m>f</m> is said to be even if <m>f(-z) =f(z)</m>,
+        and it is called odd if <m>f(-z) = -f(z)</m>.
+        <ol>
+          <li>
+            <p>
+              Show that the derivative of an odd function is an even function.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that the derivative of an even function is an odd function.
+              <em>Hint</em>: Use limits.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(z)</m> is even,
+              show that all the coefficients of the odd powers of <m>z</m> in the Maclaurin series are zero.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(z)</m> is odd,
+              show that all the coefficients of the even powers of <m>z</m> in the Maclaurin series are zero.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_18">
+      <p>
+        Verify <xref ref="x718">Identity</xref>
+        by using mathematical induction.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_19">
+      <p>
+        Consider the function
+        <me>
+          f(z) = \begin{cases}\frac{1}{1-z}, \amp  \text{ when }  z \ne \frac{1}{2}; \\ \;\; 0, \amp  \text{ when }  z = \frac{1}{2}. \end{cases}
+        </me>
+        <ol>
+          <li>
+            <p>
+              Use <xref ref="Taylor_s_Theorem">Theorem</xref>, Taylor's theorem,
+              to show that the Maclaurin series for <m>f(z)</m> equals <m>\sum\limits_{n=0}^{\infty}z^n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Obviously, the radius of convergence of this series equals 1
+              (ratio test).
+              However, the distance between 0 and the nearest singularity of <m>f</m> equals <m>\frac{1}{2}</m>.
+              Explain why this condition does not contradict <xref ref="Nuanced_Taylor">Corollary</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_2_20">
+      <p>
+        Consider the real-valued function <m>f</m> defined on the real numbers as
+        <me>
+          f(x) = \begin{cases}e^{-\frac{1}{x^2}}, \amp  \text{ when } x \ne 0; \\ \;\; 0, \amp  \text{ when } x=0. \end{cases}
+        </me>
+        <ol>
+          <li>
+            <p>
+              Show that, for all <m>n>0</m>, <m>f^{(n)}(0) = 0</m>,
+              where <m>f^{(n)}</m> is the <m>n</m>th derivative of <m>f</m>.
+              <em>Hint</em>: Use the limit definition for the derivative to establish the case for <m>n=1</m> and then use mathematical induction to complete your argument.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why the function <m>f</m> gives an example of a function that,
+              although differentiable everywhere on the real line,
+              is not expressible as a Taylor series about 0.
+              <em>Hint</em>: Evaluate the Taylor series representation for <m>f(x)</m> when <m>x \ne 0</m>,
+              and show that the series does not equal <m>f(x)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why a similar argument could not be made for the complex-valued function <m>g</m> defined on the complex numbers as
+              <me>
+                g(z) = \begin{cases}e^{-\frac{1}{z^2}}, \amp  \text{ when } z \ne 0; \\ \;\; 0, \amp  \text{ when } z=0. \end{cases}
+              </me>
+              <em>Hint</em>: Show that <m>g(z)</m> is not even continuous at <m>z=0</m> by taking limits along the real and imaginary axes.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+  </exercises>
+</section>

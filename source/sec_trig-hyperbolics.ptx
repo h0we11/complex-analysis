@@ -1,0 +1,901 @@
+<section xml:id="sec_trig-hyperbolics">
+  <title>Trigonometric and Hyperbolic Functions</title>
+  <p>
+    Based on the success we had in using power series to define the complex exponential,
+    we have reason to believe that this approach will also be fruitful for other elementary functions.
+    The power series expansions for the real-valued sine and cosine functions are
+    <me>
+      \sin x=\sum\limits_{n=0}^{\infty }(-1)^n\frac{x^{2n+1}}{( 2n+1)!}  \text{ and }   \cos x = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
+    </me>.
+    so it is natural to make the following definitions.
+  </p>
+  <definition xml:id="sinz_and_cosz">
+    <title>$\mathbf{\sin }<nbsp/>z<nbsp/> and <nbsp/>\cos <nbsp/>z$</title>
+    <statement>
+      <me>
+        \sin z=\sum_{n=0}^{\infty }(-1)^n\frac{z^{2n+1}}{( 2n+1) !}  \text{ and }
+        \cos z = \sum\limits_{n=0}^{\infty }( -1)^n\frac{z^{2n}}{( 2n) !}
+      </me>.
+    </statement>
+  </definition>
+  <p>
+    With these definitions in place,
+    we can now easily create the other complex trigonometric functions,
+    provided the denominators in the following expressions are not zero.
+  </p>
+  <definition xml:id="other_trig">
+    <title>Other Trigonometric functions</title>
+    <statement>
+      <me>
+        \tan z=\frac{\sin z}{\cos z}, \;\; \cot z=\frac{\cos z}{\sin z}, \;\; \sec z=\frac{1}{\cos z},
+        \text{ and }   \csc z=\frac{1}{\sin z}
+      </me>.
+    </statement>
+  </definition>
+  <p>
+    The series for the complex sine and cosine agree with the real sine and cosine when <m>z</m> is real,
+    so the remaining complex trigonometric functions likewise agree with their real counterparts.
+    What additional properties are common?
+    For starters, we have
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        <m>\sin z</m> and <m>\cos z</m> are entire functions,
+        with <m>\frac{d}{dz}\sin z=\cos z</m> and <m>\frac{d}{dz}\cos z=-\sin z</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      The ratio test shows that the radius of convergence for both functions is infinity,
+      so they are entire by <xref ref="Power_Series_Thm">Theorem</xref>,
+      part (i).
+      Part (iii) of that theorem gives
+      <md>
+        <mrow>\frac{d}{dz}\sin z \amp = \frac{d}{dz}\left[ \sum\limits_{n=0}^{\infty }(-1)^n\frac{z^{2n+1}}{( 2n+1) !}\right]</mrow>
+        <mrow>\amp = \sum\limits_{n=0}^{\infty }( -1)^n\frac{( 2n+1) z^{2n}}{( 2n+1) !} \qquad { {\text{ (Why does the index }  n \text{ stay at 0 here?) } }}</mrow>
+        <mrow>\amp = \sum\limits_{n=0}^{\infty }( -1)^n\frac{z^{2n}}{( 2n) !}</mrow>
+        <mrow>\amp = \cos z</mrow>
+      </md>.
+    </p>
+    <p>
+      We leave the proof that <m>\frac{d}{dz}\cos z=-\sin z</m> as an exercise.
+    </p>
+  </proof>
+  <p>
+    We now list several additional properties,
+    providing proofs for some and leaving others as exercises.
+    <ul>
+      <li>
+        <p>
+          For all complex numbers <m>z</m>,
+          <md>
+            <mrow>\sin(-z)      \amp = -\sin z,</mrow>
+            <mrow>\cos(-z)      \amp = \cos z\text{ ,  and }</mrow>
+            <mrow>\sin^2 z+\cos^2z  \amp = 1</mrow>
+          </md>.
+          The verification that <m>\sin(-z) =-\sin z</m> and
+          <m>\cos ( -z) =\cos z</m> comes from substituting <m>-z</m> for <m>z</m> in <xref ref="sinz_and_cosz">Definition</xref>.
+          We leave verification of the identity <m>\sin^2 z+\cos^2 z=1</m> as an exercise
+          (with hints).
+        </p>
+      </li>
+      <li>
+        <p>
+          For all complex numbers <m>z</m> for which the expressions are defined,
+          <md>
+            <mrow>\frac{d}{dz}\tan z \amp = \sec^2 z,</mrow>
+            <mrow>\frac{d}{dz}\cot z \amp = -\csc^2 z,</mrow>
+            <mrow>\frac{d}{dz}\sec z \amp = \sec z\tan z,  \text{ and }</mrow>
+            <mrow>\frac{d}{dz}\csc z \amp = -\csc z\cot z</mrow>
+          </md>.
+          The proof that <m>\frac{d}{dz}\tan z=\sec^2 z</m> uses the identity <m>\sin^2 z + \cos^2z=1</m>:
+          <md>
+            <mrow>\frac{d}{dz}\tan z \amp = \frac{d}{dz}( \frac{\sin z}{\cos z}) =\frac{\cos z\frac{d}{dz}\sin z-\sin z\frac{d}{dz}\cos z}{\cos^2 z}</mrow>
+            <mrow>\amp = \frac{\cos^2 z+\sin^2z}{\cos^2z}=\frac{1}{\cos^2z}</mrow>
+            <mrow>\amp = \sec^2 z</mrow>
+          </md>.
+          We leave the proofs of the other derivative formulas as exercises.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    To establish additional properties,
+    expressing <m>\cos z</m> and <m>\sin z</m> in the Cartesian form <m>u+iv</m> will be useful.
+    (Additionally,
+    the applications in Chapters 10 and 11 will use these formulas.)
+    We begin by observing that the argument given to prove part (iii) in <xref ref="thm_exp_properties">Theorem</xref>
+    easily generalizes to the complex case with the aid of <xref ref="sinz_and_cosz">Definition</xref>.
+    That is,
+    <men xml:id="e_iz_identity">
+      e^{iz}=\cos z+i\sin z
+    </men>,
+    for all <m>z</m>, whether <m>z</m> is real or complex.
+    Hence
+    <men xml:id="e__-iz__identity">
+      e^{-iz}=\cos(-z) +i\sin(-z) =\cos z-i\sin z
+    </men>.
+  </p>
+  <p>
+    Subtracting Equation <xref ref="e__-iz__identity"/> from Equation <xref ref="e_iz_identity"/> and solving for <m>\sin z</m> gives
+    <md>
+      <mrow xml:id="sinz_identity_1" number="yes">\sin z \amp = \frac{1}{2i}( e^{iz}-e^{-iz})</mrow>
+      <mrow>\amp = \frac{1}{2i}\left(e^{i( x+iy) }-e^{-i( x+iy)}\right)</mrow>
+      <mrow>\amp = \frac{1}{2i}\left(e^{-y+ix}-e^{y-ix}\right)</mrow>
+      <mrow>\amp = \frac{1}{2i}\left[ e^{-y}( \cos x+i\sin x) -e^{y}(\cos x-i\sin x) \right]</mrow>
+      <mrow>\amp = \sin x\left(\frac{e^{y}+e^{-y}}{2}\right) +i\cos x\left(\frac{e^{y}-e^{-y}}{2}\right)</mrow>
+      <mrow xml:id="sinz_identity_2" number="yes">\amp = \sin x\cosh y+i\cos x\sinh y</mrow>
+    </md>,
+    where <m>\cosh y=\frac{{e^{y}+e^{-y}}}{2}</m> and <m>\sinh y=\frac{{e^{y}-e^{-y}}}{2 }</m>,
+    respectively,
+    are the hyperbolic cosine and hyperbolic sine functions that you studied in calculus.
+  </p>
+  <p>
+    Similarly,
+    <md>
+      <mrow xml:id="cosz_identity_1" number="yes">\cos z \amp = \frac{1}{2}( e^{iz}+e^{-iz})</mrow>
+      <mrow>\amp = \frac{1}{2}\left(e^{i(x+iy)}+e^{-i(x+iy)}\right)</mrow>
+      <mrow>\amp = \frac{1}{2}\left(e^{-y+ix}+e^{y-ix}\right)</mrow>
+      <mrow>\amp = \frac{1}{2}\left[e^{-y}(\cos x+i\sin x) +e^{y}(\cos x-i\sin x) \right]</mrow>
+      <mrow>\amp = \cos x\left(\frac{e^{y}+e^{-y}}{2}\right) -i\sin x\left(\frac{ e^{y}-e^{-y}}{2}\right)</mrow>
+      <mrow xml:id="cosz_identity_2" number="yes">\amp = \cos x\cosh y-i\sin x\sinh y</mrow>
+    </md>.
+  </p>
+  <p>
+    Equipped with <xref ref="sinz_identity_1">Identities</xref><ndash/> <xref ref="cosz_identity_2"></xref>,
+    we can now establish many other properties of the trigonometric functions.
+    We begin with some periodic results.
+    <ul>
+      <li>
+        <p>
+          For all complex numbers <m>z=x+iy</m>,
+          <md>
+            <mrow>\sin(z+2\pi) \amp = \sin z,</mrow>
+            <mrow>\cos(z+2\pi) \amp = \cos z.</mrow>
+            <mrow>\sin(z+\pi) \amp = -\sin z,</mrow>
+            <mrow>\cos(z+\pi) \amp = -\cos z,</mrow>
+            <mrow>\tan(z+\pi) \amp = \tan z,  \text{ and }</mrow>
+            <mrow>\cot(z+\pi) \amp = \cot z</mrow>
+          </md>.
+          Clearly, <m>\sin(z+2\pi ) =\sin[(x+2\pi) +iy]</m>.
+          By <xref ref="sinz_identity_2">Identity</xref> this expression is
+          <md>
+            <mrow>\sin(x+2\pi)\cosh y+i\cos(x+2\pi)\sinh y \amp = \sin x\cosh y+i\cos x\sinh y</mrow>
+            <mrow>\amp = \sin z</mrow>
+          </md>.
+          Again, the proofs for the other periodic results are left as exercises.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>z_1</m> and <m>z_2</m> are any complex numbers, then
+          <md>
+            <mrow>\sin(z_1+z_2)            \amp = \sin z_1\cos z_2+\cos z_1\sin z_2  \text{ and }</mrow>
+            <mrow>\cos(z_1+z_2)            \amp = \cos z_1\cos z_2-\sin z_1\sin z_2  \text{ so }</mrow>
+            <mrow>\sin 2z                \amp = 2\sin z\cos z.</mrow>
+            <mrow>\cos 2z                \amp = \cos^2 z-\sin^2z\text{ , and }</mrow>
+            <mrow>\sin\left(\frac{\pi }{2}+z\right)  \amp = \sin\left(\frac{\pi }{2}-z\right) = \cos z</mrow>
+          </md>.
+          We demonstrate that <m>\cos(z_1+z_2) =\cos z_1\cos z_2-\sin z_1\sin z_2</m> by making use of <xref ref="sinz_identity_1">Identities</xref><ndash/> <xref ref="cosz_identity_2"></xref>:
+          <md>
+            <mrow>\cos z_1\cos z_2 \amp = \frac{1}{4}\left[ e^{i(z_1+z_2) }+e^{i(z_1-z_2) }+e^{i(z_2-z_1) }+e^{-i(z_1+z_2) }\right],  \text{ and }</mrow>
+            <mrow>-\sin z_1\sin z_2 \amp = \frac{1}{4}\left[ e^{i(z_1+z_2)}-e^{i(z_1-z_2) }-e^{i(z_2-z_1)}+e^{-i(z_1+z_2) }\right]</mrow>
+          </md>.
+          Adding these expressions gives
+          <me>
+            \cos z_1\cos z_2-\sin z_1\sin z_2=\frac{1}{2}\left[e^{i( z_1+z_2)}+e^{-i(z_1+z_2)}\right] =\cos ( z_1+z_2)
+          </me>,
+          which is what we wanted.
+          A solution to the equation <m>f(z) =0</m> is called a <em>zero</em>
+          of the given function <m>f</m>.
+          As we now show,
+          the zeros of the sine and cosine function are exactly where you might expect them to be.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have <m>\sin z=0</m> iff <m>z=n\pi</m>,
+          where <m>n</m> is any integer,
+          and <m>\cos z=0</m> iff <m>z=( n+\frac{1}{2}) \pi</m>,
+          where <m>n</m> is any integer.
+          We show the result for <m>\cos z</m> and leave the result for <m>\sin z</m> as an exercise.
+          When we use <xref ref="cosz_identity_2">Identity</xref>,
+          <m>\cos z=0</m> iff
+          <me>
+            0=\cos x\cosh y-i\sin x\sinh y
+          </me>.
+          Equating the real and imaginary parts of this equation gives
+          <me>
+            0=\cos x\cosh y,  \text{ and }   0 = \sin x\sinh y
+          </me>.
+          The real-valued function <m>\cosh y</m> is never zero,
+          so the equation <m>0=\cos x\cosh y</m> implies that <m>0=\cos x</m>,
+          from which we obtain <m>x=( n+\frac{1}{ 2}) \pi</m> for any integer <m>n</m>.
+          Using the values for <m>z=x+iy=(n+ \frac{1}{2}) \pi +iy</m> in the equation <m>0=\sin x\sinh y</m> yields
+          <me>
+            0=\sin \left[(n+\frac{1}{2}) \pi \right] \sinh y=( -1)^n\sinh y
+          </me>,
+          which implies that <m>y=0</m>,
+          so the only zeros for <m>\cos z</m> are the values
+          <m>z=( n+\frac{1}{2}) \pi</m> for any integer <m>n</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    What does the mapping <m>w=\sin z</m> look like?
+    We can get a graph of the mapping
+    <m>w=\sin z=\sin(x+iy) =\sin x\cosh y+i\cos x\sinh y</m> by using parametric methods.
+    Let's consider the vertical line segments in the <m>z</m> plane obtained by successfully setting
+    <m>x=\frac{-\pi }{2}+\frac{k\pi }{12}</m> for <m>k=0,\,1,\ldots ,12</m>,
+    and for each <m>x</m> value and letting <m>y</m> vary continuously,
+    <m>-3 \le y \le 3</m>.
+    In the exercises we ask you to show that the images of these vertical segments are hyperbolas in the <m>uv</m> plane,
+    as <xref ref="fig_ch-05-07">Figure</xref> illustrates.
+    In Chapter 10, we give a more detailed analysis of the mapping <m>w=\sin z</m>.
+  </p>
+  <figure xml:id="fig_ch-05-07">
+    <caption>Vertical segments mapped onto hyperbolas by <m>w=\sin(z)</m></caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-07.pdf"/>
+  </figure>
+  <p>
+    <xref ref="fig_ch-05-07">Figure</xref>
+    suggests one big difference between the real and complex sine functions.
+    The real sine has the property that
+    <m>|\sin x| \le 1</m> for all real <m>x</m>.
+    In <xref ref="fig_ch-05-07">Figure</xref>, however,
+    the modulus of the complex sine appears to be unbounded,
+    which is indeed the case.
+    Using <xref ref="sinz_identity_2">Identity</xref> gives
+    <md>
+      <mrow>|\sin z|^2  \amp = |\sin z\cosh y+i\cos x\sinh y|^2</mrow>
+      <mrow>\amp = \sin^2 x\cosh^2y+\cos^2x\sinh^2y</mrow>
+      <mrow>\amp = \sin^2 x( \cosh^2y-\sinh^2y) +\sinh^2y(\cos ^2 x+\sin^2x)</mrow>
+    </md>.
+  </p>
+  <p>
+    The identities <m>\cosh^2 y-\sinh^2y=1</m> and <m>\cos^2x+\sin^2x=1</m> then yield
+    <men xml:id="mod_sinz__2">
+      |\sin z|^2 =\sin^2x+\sinh^2y
+    </men>.
+  </p>
+  <p>
+    A similar derivation produces
+    <men xml:id="mod_cosz__2">
+      |\cos z|^2 =\cos^2x+\sinh^2y
+    </men>.
+  </p>
+  <p>
+    If we set <m>z=x_{0}+iy</m> in <xref ref="mod_sinz__2">Identity</xref>
+    and let <m>y \to \infty</m>, we get
+    <me>
+      \lim_{y \to \infty }|\sin(x_{0}+iy)|^2 =\sin^2x_{0}+\lim_{y \to \infty }\sinh^2 y=\infty
+    </me>.
+  </p>
+  <p>
+    As advertised,
+    we have shown that <m>\sin z</m> is not a bounded function;
+    it is also evident from <xref ref="mod_cosz__2">Identity</xref>
+    that <m>\cos z</m> is unbounded.
+  </p>
+  <p>
+    The periodic character of the trigonometric functions makes apparent that any point in their ranges is actually the image of infinitely many points.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find the values of <m>z</m> for which <m>\cos z=\cosh 2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Starting with <xref ref="cosz_identity_2">Identity</xref>, we write
+        <me>
+          \cos z=\cos x\cosh y-i\sin x\sinh y=\cosh 2
+        </me>.
+      </p>
+      <p>
+        If we equate real and imaginary parts, then we get
+        <me>
+          \cos x\cosh y=\cosh 2\text{ and } \sin x\sinh y=0
+        </me>.
+      </p>
+      <p>
+        The equation <m>\sin x\sinh y=0</m> implies either that <m>x=\pi n</m>,
+        where <m>n</m> is an integer, or that <m>y=0</m>.
+        Using <m>y=0</m> in the equation
+        <m>\cos x\cosh y=\cosh 2</m> leads to the impossible situation <m>\cos x=\frac{\cosh 2}{\cosh 0}=\cosh 2>1</m>.
+        Therefore <m>x=\pi n</m>, where <m>n</m> is an integer.
+        Since <m>\cosh y \ge 1</m> for all values of <m>y</m>,
+        the term <m>\cos x</m> in the equation
+        <m>\cos x\cosh y=\cosh 2</m> must also be positive.
+        For this reason we eliminate the odd values of <m>n</m> and get <m>x=2\pi k</m>,
+        where <m>k</m> is an integer.
+      </p>
+      <p>
+        Finally, we solve the equation
+        <m>\cos 2\pi k\cosh y=\cosh y=\cosh 2</m> and use the fact that <m>\cosh y</m> is an even function to conclude that <m>y=\pm 2</m>.
+        Therefore the solutions to the equation
+        <m>\cos z=\cosh 2</m> are <m>z=2\pi k \pm 2i</m>,
+        where <m>k</m> is an integer.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The hyperbolic functions also have practical use in putting the tangent function into<nbsp/>the Cartesian form <m>u+iv</m>.
+    Using Definition 5.6, and Equations <xref ref="sinz_identity_2"/> and <xref ref="cosz_identity_2"></xref>, we have
+    <me>
+      \tan z=\tan(x+iy) =\frac{\sin(x+iy) }{\cos(x+iy)}=\frac{\sin x\cosh y+i\cos x\sinh y}{\cos x\cosh y-i\sin x\sinh y}
+    </me>.
+  </p>
+  <p>
+    If we multiply each term on the right by the conjugate of the denominator,
+    the simplified result is
+    <men xml:id="tanz_prelim">
+      \tan z=\frac{\cos x\sin x+i\cosh y\sinh y}{\cos^2 x\cosh^2y+\sin^2 x\sinh^2y}
+    </men>.
+  </p>
+  <p>
+    We leave it as an exercise to show that the identities <m>\cosh^2 y-\sinh^2 y=1</m> and
+    <m>\sinh 2y=2\cosh y\sinh y</m> can be used in simplifying Equation <xref ref="tanz_prelim"/> to get
+    <men xml:id="tanz_Cartesian">
+      \tan z=\frac{\sin 2x}{\cos 2x+\cosh 2y}+i\frac{\sinh 2y}{\cos 2x+\cosh 2y}
+    </men>.
+  </p>
+  <p>
+    As with <m>\sin z</m>,
+    we obtain a graph of the mapping <m>w=\tan z</m> parametrically.
+    Consider the vertical line segments in the <m>z</m> plane obtained by successively setting <m>x=\frac{-\pi }{4}+\frac{k\pi }{16}</m> for
+    <m>k=0,\,1,\ldots ,8</m> and for each <m>z</m> value letting <m>y</m> vary continuously,
+    <m>-3 \le y \le 3</m>.
+    In the exercises we ask you to show that the images of these vertical segments are circular arcs in the <m>uv</m> plane,
+    as <xref ref="fig_ch-05-08">Figure</xref> shows.
+    In <xref ref="sec_conformal-trig">Section</xref>
+    we give a more detailed investigation of the mapping <m>w=\tan z</m>.
+  </p>
+  <figure xml:id="fig_ch-05-08">
+    <caption>Vertical segments mapped onto circular arcs by <m>w=\tan z</m></caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-08.pdf"/>
+  </figure>
+  <p>
+    How should we define the complex hyperbolic functions?
+    We begin with
+  </p>
+  <definition>
+    <title>$\mathbf{\cosh} z$ and $\sinh z$</title>
+    <statement>
+      <me>
+        \cosh z=\frac{1}{2}(e^z+e^{-z})  \text{ and }   \sinh z= \frac{1}{2}(e^z-e^{-z})
+      </me>.
+    </statement>
+  </definition>
+  <p>
+    With these definitions in place,
+    we can now easily create the other complex hyperbolic trigonometric functions,
+    provided the denominators in the following expressions are not zero.
+  </p>
+  <definition>
+    <title>Complex hyperbolic functions</title>
+    <statement>
+      <me>
+        \tanh z =\frac{\sinh z}{\cosh z}, \; \coth z=\frac{\cosh z}{\sinh z}, \; \mathrm{sech}\,z=\frac{1}{\cosh z}
+        \text{ and }   \mathrm{csch}\,z=\frac{1}{\sinh z}
+      </me>.
+    </statement>
+  </definition>
+  <p>
+    As the series for the complex hyperbolic sine and cosine agree with the real<nbsp/>hyperbolic sine and cosine when <m>z</m> is real,
+    the remaining complex hyperbolic trigonometric functions likewise agree with their real counterparts.
+    Many other properties are also shared.
+    We state several results without proof,
+    as they follow from the definitions we gave using standard operations,
+    such as the quotient rule for derivatives.
+    We ask you to establish some of these identities in the exercises.
+  </p>
+  <p>
+    The derivatives of the hyperbolic functions follow the same rules as in calculus:
+    <md>
+      <mrow>\frac{d}{dz}\cosh z \amp = \sinh z  \text{ and }   \frac{d}{dz}\sinh z=\cosh z.</mrow>
+      <mrow>\frac{d}{dz}\tanh z \amp = \mathrm{sech}^2 z  \text{ and }   \frac{d}{dz} \coth z=-\mathrm{csch}^2 z.</mrow>
+      <mrow>\frac{d}{dz}\mathrm{sech}\,z \amp = -\mathrm{sech}\,z\tanh z  \text{ and }   \frac{d}{dz}\mathrm{csch}\,z=-\mathrm{csch}\,z\coth z</mrow>
+    </md>.
+  </p>
+  <p>
+    The hyperbolic cosine and hyperbolic sine can be expressed as
+    <md>
+      <mrow>\cosh z \amp = \cosh x\cos y+i\sinh x\sin y,  \text{ and }</mrow>
+      <mrow>\sinh z \amp = \sinh x\cos y+i\cosh x\sin y</mrow>
+    </md>.
+  </p>
+  <p>
+    The complex trigonometric and hyperbolic functions are all defined in terms of the exponential function,
+    so we can easily show them to be related by
+    <md>
+      <mrow>{3} \amp  \cosh(iz) = \cos z \amp \amp   \text{ and }   \amp \amp  \sinh(iz) = i\sin z;</mrow>
+      <mrow>\amp  \cos(iz) = \cosh z \amp \amp   \text{ and }   \amp \amp  \sin (iz) = i\sinh z</mrow>
+    </md>.
+  </p>
+  <p>
+    Some of the important identities involving the hyperbolic functions are
+    <md>
+      <mrow>\cosh^2 z-\sinh^2z \amp = 1.</mrow>
+      <mrow>\sinh(z_1+z_2) \amp = \sinh z_1\cosh z_2+\cosh z_1\sinh z_{2},</mrow>
+      <mrow>\cosh(z_1+z_2) \amp = \cosh z_1\cosh z_2+\sinh z_1\sinh z_2,</mrow>
+      <mrow>\cosh(z+2\pi i) \amp = \cosh z,</mrow>
+      <mrow>\sinh(z+2\pi i) \amp = \sinh z,</mrow>
+      <mrow>\cosh(-z) \amp = \cosh z,  \text{ and }</mrow>
+      <mrow>\sinh(-z) \amp = -\sinh z</mrow>
+    </md>.
+  </p>
+  <p>
+    We conclude this section with an example from electronics.
+    In electric circuits, the voltage drop,
+    <m>E_{R}</m>, across a resistance <m>R</m> obeys Ohm's law,
+    <me>
+      E_{R}=IR
+    </me>,
+    where <m>I</m> is the current flowing through the resistor.
+    Additionally, the current and voltage drop across an inductor,
+    <m>L</m>, obey the equation
+    <me>
+      E_{L}=L\frac{dI}{dt}
+    </me>.
+  </p>
+  <p>
+    The current and voltage across a capacitor, <m>C</m>, are related by
+    <me>
+      E_{C}=\frac{1}{C}\int_{t_{0}}^{t}I( \tau ) d\tau
+    </me>.
+  </p>
+  <p>
+    The voltages <m>E_{L}, \, E_{R}</m>,
+    and <m>E_{C}</m> and the impressed voltage <m>E(t)</m> illustrated in <xref ref="fig_ch-05-09">Figure</xref> satisfy the equation
+    <men xml:id="E_t_">
+      E_{L}+E_{R}+E_{C}=E(t)
+    </men>.
+  </p>
+  <figure xml:id="fig_ch-05-09">
+    <caption>An <m>LRC</m> circuit</caption>
+    <image width="73%" source="figs/ch-05/ch-05-fig-09.pdf"/>
+  </figure>
+  <p>
+    Suppose that the current <m>I( t)</m> in the circuit is given by
+    <me>
+      I(t) = I_{0}\sin \omega t
+    </me>.
+  </p>
+  <p>
+    Using this in the equations for <m>E_{R}</m> and <m>E_{L}</m> gives
+    <md>
+      <mrow xml:id="E_R" number="yes">E_{R} \amp = RI_{0}\sin \omega t,  \text{ and }</mrow>
+      <mrow xml:id="E_L" number="yes">E_{L} \amp = \omega LI_{0}\cos \omega t</mrow>
+    </md>.
+  </p>
+  <p>
+    We then set <m>t_{0}=\pi /2</m> in the equation for <m>E_{C}</m> to obtain
+    <men xml:id="E_C">
+      E_{C} = \frac{1}{C}\int\limits_{\pi /2}^{t}I( \tau ) d\tau = \frac{1}{C}\int\limits_{\pi /2}^{t}I_{0}\sin \omega td\tau = -\frac{1}{\omega C}I_{0}\cos \omega t
+    </men>.
+  </p>
+  <p>
+    We rewrite the equation <m>I( t) =I_{0}\sin \omega t</m> as a
+    <q>complex current,</q>
+    <me>
+      I^{\ast}=I_{0}e^{i\omega t}
+    </me>
+    with the understanding that the actual physical current <m>I</m> is the imaginary part of <m>I^{\ast}</m>.
+    Similarly, we rewrite Equations <xref ref="E_R"/><ndash/><xref ref="E_C"/> as
+    <md>
+      <mrow>{3} \amp  E_{R}^{\ast} \amp \amp = RI_{0}e^{i\omega t} \amp \amp = RI^{\ast}.</mrow>
+      <mrow>\amp  E_{L}^{\ast} \amp \amp = i\omega LI_{0}e^{i\omega t} \amp \amp = i\omega LI^{\ast},  \text{ and }</mrow>
+      <mrow>\amp  E_{C}^{\ast} \amp \amp = \frac{1}{i\omega C}I_{0}e^{i\omega t} \amp \amp = \frac{1}{i\omega C} I^{\ast}</mrow>
+    </md>.
+  </p>
+  <p>
+    Substituting these terms leads to an extension of Equation <xref ref="E_t_"/>,
+    <men xml:id="E_">
+      E^{\ast}=E_{R}^{\ast}+E_{L}^{\ast}+E_{C}^{\ast}=\left[R+i\left(\omega L-\frac{1}{\omega C}\right)\right]I^{\ast}
+    </men>.
+  </p>
+  <p>
+    The complex quantity <m>Z</m> defined by
+    <me>
+      Z=R+i\left(\omega L-\frac{1}{\omega C}\right)
+    </me>
+    is called the <em>complex impedance</em>.
+    Substituting this expression into Equation <xref ref="E_"/> gives
+    <me>
+      E^{\ast}=ZI^{\ast}
+    </me>.
+    which is the complex extension of Ohm's law.
+  </p>
+  <exercises>
+    <title>Exercises for <xref ref="sec_trig-hyperbolics">Section</xref></title>
+    <exercise xml:id="x5_4_1">
+      <p>
+        Establish that <m>\frac{d}{dz}\cos z=-\sin z</m> for all <m>z</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Demonstrate that, for all <m>z</m>,
+        <m>\sin^2 z+\cos^2z=1</m>, as follows.
+      </p>
+      <ol>
+        <li xml:id="x5_4_2a">
+          <p>
+            Define the function <m>g(z) =\sin^2 z+\cos^2z</m>.
+            Explain why <m>g</m> is entire.
+          </p>
+        </li>
+        <li xml:id="x5_4_2b">
+          <p>
+            Show that <m>g</m> is constant.
+            <em>Hint</em>: Look at <m>g\,'(z)</m>.
+          </p>
+        </li>
+        <li xml:id="x5_4_2c">
+          <p>
+            Use part (b) to establish that,
+            for all <m>z</m>, <m>\sin^2 z+\cos^2z=1</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x5_4_3">
+      <p>
+        Show that Equation <xref ref="tanz_prelim"/> simplifies to Equation <xref ref="tanz_Cartesian"/>.
+        <em>Hint</em>: Use the facts that
+        <m>\cosh^2 y-\sinh^2y=1</m> and <m>\sinh 2y=2\cosh y\sinh y</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_4">
+      <p>
+        Explain why the diagrams in Figures 5.8 and 5.9 came out they way they did.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_5">
+      <p>
+        Show that, for all <m>z</m> ,
+        <ol>
+          <li>
+            <p>
+              <m>\sin(\pi -z) =\sin z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\frac{\pi }{2}-z) =\cos z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sinh(z+i\pi ) =-\sinh z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tanh(z+i\pi ) =\tanh z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(iz) =i\sinh z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh(iz) =\cos z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_6">
+      <p>
+        Express the following quantities in <m>u+iv</m> form.
+        <ol>
+          <li>
+            <p>
+              <m>\cos(1+i)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\frac{\pi +4i}{4})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin 2i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(-2+i)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\frac{\pi +2i}{4})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\frac{\pi +i}{2})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sinh(1+i\pi )</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh \frac{i\pi}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh(\frac{4-i\pi }{4})</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_7">
+      <p>
+        Find the derivatives of the following and state where they are defined.
+        <ol>
+          <li>
+            <p>
+              <m>\sin(\frac{1}{z})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\tan z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sec z^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\csc^2 z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\sinh z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh z^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\tan z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_8">
+      <p>
+        Show that
+        <ol>
+          <li>
+            <p>
+              <m>\sin \overline{z}=\overline{\sin z}</m> holds for all <m>z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin \overline{z}</m> is nowhere analytic.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh \overline{z}=\overline{\cosh z}</m> holds for all <m>z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh \overline{z}</m> is nowhere analytic.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_9">
+      <p>
+        Show that
+        <ol>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 0}\frac{\cos z-1}{z}=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{y \to +\infty }\tan(x_{0}+iy) =i</m>,
+              where <m>x_{0}</m> is any fixed real number.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_10">
+      <p>
+        Find all values of <m>z</m> for which each equation holds.
+        <ol>
+          <li>
+            <p>
+              <m>\sin z=\cosh 4</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos z=2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin z=i\sinh 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sinh z=\frac{i}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh z=1</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_11">
+      <p>
+        Show that the zeros of <m>\sin z</m> are at <m>z=n\pi</m> where <m>n</m> is an integer.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use Equation <xref ref="mod_sinz__2"/> to show that, for <m>z=x+iy</m>,
+        <men xml:id="x5_4_12">
+          |\sinh y|  \le |\sin z|  \le \cosh y
+        </men>.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_13">
+      <p>
+        Use <xref ref="mod_sinz__2">Identities</xref>
+        and <xref ref="mod_cosz__2"></xref>
+        to help establish the inequality
+        <me>
+          |\cos z|^2 + |\sin z|^2 \ge 1
+        </me>,
+        and show that equality holds iff <m>z</m> is a real number.
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_14">
+      <p>
+        Show that the mapping <m>w=\sin z</m>
+        <ol>
+          <li>
+            <p>
+              maps the <m>y</m> axis one-to-one and onto the <m>v</m> axis;
+            </p>
+          </li>
+          <li>
+            <p>
+              maps the ray<m>\{(x,y) : x=\frac{\pi }{2},\,y>0\}</m> one-to-one and onto the ray <m>\{(u,v) :u>1,\,v=0\}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_15">
+      <p>
+        Given an elegant argument that explains why the following functions are harmonic.
+        <ol>
+          <li>
+            <p>
+              <m>h(x,y) = \sin x\cosh y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(x,y) = \cos x\sinh y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(x,y) = \sinh x\cos y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(x,y) = \cosh x\sin y</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_16">
+      <p>
+        Establish the following identities.
+        <ol>
+          <li>
+            <p>
+              <m>e^{iz}=\cos z+i\sin z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos z=\cos x\cosh y-i\sin x\sinh y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(z_1+z_2) =\sin z_1\cos z_2+\cos z_1\sin z_2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>|\cos z|^2 =\cos^2x+\sinh^2y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh z=\cosh x\cos y+i\sinh x\sin y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh^2 z-\sinh^2z=1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cosh(z_1+z_2) =\cosh z_1\cosh z_2+\sinh z_1\sinh z_2</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_17">
+      <p>
+        Find the complex impedance <m>Z</m> if
+        <ol>
+          <li>
+            <p>
+              <m>R=10, \, L=10, \, C=0.05</m>, and <m>\omega =2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>R=15, \, L=10, \, C=0.05</m>, and <m>\omega =4</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x5_4_18">
+      <p>
+        Explain how <m>\sin z</m> and the function <m>\sin x</m> that you studied in calculus are different.
+        How are they similar?
+      </p>
+    </exercise>
+  </exercises>
+</section>

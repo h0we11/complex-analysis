@@ -1,0 +1,547 @@
+<section xml:id="sec_diff-analytic">
+  <title>Differentiable and Analytic Functions</title>
+  <p>
+    Using our imagination,
+    we take our lead from elementary calculus and define the derivative of <m>f</m> at <m>z_0</m>,
+    written <m>f\,'(z_0)</m>, by
+    <men xml:id="Deriv_Def_1">
+      f\,'(z_0) = \lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}
+    </men>,
+    provided the limit exists.
+    If it does, we say that the function <m>f</m> is
+    <term>differentiable at</term><m>z_0</m>.
+    If we write <m>\Delta z=z-z_0</m>,
+    then we can express Equation <xref ref="Deriv_Def_1"/> in the form
+    <men xml:id="Deriv_Def_2">
+      f\,'(z_0) = \lim\limits_{\Delta z \to 0}\frac{f(z_0+\Delta z) -f(z_0)}{\Delta z}
+    </men>.
+  </p>
+  <p>
+    If we let <m>w=f(z)</m> and <m>\Delta w=f(z)-f(z_0)</m>,
+    then we can use the Leibniz notation <m>\frac{dw}{dz}</m> for the derivative:
+    <men xml:id="Deriv_Def_3">
+      f\,'(z_0) = \frac{dw}{dz}= \lim\limits_{\Delta z \to 0}\frac{\Delta w}{\Delta z}
+    </men>.
+  </p>
+  <example xml:id="DerivEx">
+    <statement>
+      <p>
+        If <m>f(z)=z^3</m>, show that <m>f\,'(z) =3z^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using Equation <xref ref="Deriv_Def_1"/>, we have
+        <md>
+          <mrow>f\,'(z_0) \amp  = \lim_{z \to z_0}\frac{z^3-z_0^3}{z-z_0}</mrow>
+          <mrow>\amp = \lim_{z \to z_0}\frac{(z-z_0) (z^2+z_0z+z_0^2)}{z-z_0}</mrow>
+          <mrow>\amp = \lim_{z \to z_0}(z^2+z_0z+z_0^2)</mrow>
+          <mrow>\amp = 3z_0^2</mrow>
+        </md>.
+      </p>
+      <p>
+        We can drop the subscript on <m>z_0</m> to obtain
+        <m>f\,'(z) =3z^2</m> as a general formula.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Pay careful attention to the complex value
+    <m>\Delta z</m> in Equation <xref ref="Deriv_Def_3"/>;
+    the value of the limit must be independent of the manner in which <m>\Delta z \to 0</m>.
+    If we can find two curves that end at <m>z_0</m> along which
+    <m>\frac{\Delta w}{\Delta z}</m> approaches distinct values,
+    then <m>\frac{ \Delta w}{\Delta z}</m> does <em>not</em>
+    have a limit as <m>\Delta z \to 0</m> and <m>f</m> does <em>not</em>
+    have a derivative at <m>z_0</m>.
+    The same observation applies to the limits in Equations <xref ref="Deriv_Def_2"/> and <xref ref="Deriv_Def_1"/>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>w=f(z) = \overline{z}=x-iy</m> is nowhere differentiable.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We choose two approaches to the point
+        <m>z_0=x_0+iy_0</m> and compute limits of the difference quotients.
+        First, we approach <m>z_0=x_0+iy_0</m> along a line parallel to the <m>x</m>-axis by forcing <m>z</m> to be of the form <m>z=x+iy_0</m>.
+        <md>
+          <mrow>\lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)} \frac{f(x+iy_0) - f(x_0+iy_0)}{(x+iy_0)-(x_0+iy_0)}</mrow>
+          <mrow>\amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)}\frac{(x-iy_0) -(x_0-iy_0)}{(x-x_0) +i(y_0-y_0)}</mrow>
+          <mrow>\amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)}\frac{x-x_0}{x-x_0}</mrow>
+          <mrow>\amp = 1</mrow>
+        </md>.
+      </p>
+      <p>
+        Next, we approach <m>z_0</m> along a line parallel to the <m>y</m> axis by forcing <m>z</m> to be of the form <m>z=x_0+iy</m>.
+        <md>
+          <mrow>\lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{f(x_0+iy) -f(x_0+iy_0)}{(x_0+iy) -(x_0+iy_0)}</mrow>
+          <mrow>\amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{(x_0-iy) -(x_0-iy_0)}{(x_0-x_0) +i(y-y_0)}</mrow>
+          <mrow>\amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{-i(y-y_0)}{i(y-y_0)}</mrow>
+          <mrow>\amp = -1</mrow>
+        </md>.
+      </p>
+      <p>
+        The limits along the two paths are different,
+        so there is no possible value for the right side of Equation <xref ref="Deriv_Def_1"/>.
+        Therefore <m>f( z) = \overline{z}</m> is not differentiable at the point <m>z_0</m>,
+        and since <m>z_0</m> was arbitrary,
+        <m>f(z)</m> is nowhere differentiable.
+      </p>
+    </solution>
+  </example>
+  <remark>
+    <p>
+      In <xref ref="sec_limits-continuity">Section</xref>
+      we showed that <m>f(z) = \overline{z}</m> is continuous for all <m>z</m>.
+      Thus, we have a simple example of a function that is continuous everywhere but differentiable nowhere.
+      Such functions are hard to construct in real variables.
+      In some sense,
+      the complex case has made pathological constructions simpler!
+    </p>
+  </remark>
+  <p>
+    We seldom are interested in studying functions that aren't differentiable,
+    or are differentiable at only a single point.
+    Complex functions that have a derivative at all points in a neighborhood of <m>z_0</m> deserve further study.
+    In <xref ref="ch_taylor-laurent"/> we demonstrate that,
+    if the complex function <m>f</m> can be represented by a Taylor series at <m>z_0</m>,
+    then it must be differentiable in some neighborhood of <m>z_0</m>.
+    Functions that are differentiable in neighborhoods of points are pillars of the complex analysis edifice;
+    we give them a special name, as indicated in the following definition.
+  </p>
+  <definition xml:id="Analytic_Def">
+    <title>Analytic</title>
+    <statement>
+      <p>
+        The complex function <m>f</m> is
+        <term>analytic at the point</term><m>z_0</m> provided there is some <m>\varepsilon>0</m> such that
+        <m>f\,'( z)</m> exists for all <m>z\in D_{\varepsilon}(z_0)</m>.
+        In other words,
+        <m>f</m> must be differentiable not only at <m>z_0</m>,
+        but also at all points in some
+        <m>\varepsilon</m>-neighborhood of <m>z_0</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    If <m>f</m> is analytic at each point in the region <m>R</m>,
+    then we say that <m>f</m> is <term>analytic on</term><m>R</m>.
+    Again, we have a special term if <m>f</m> is analytic on the whole complex plane.
+  </p>
+  <definition xml:id="Entire_Def">
+    <title>Entire</title>
+    <statement>
+      <p>
+        If <m>f</m> is analytic on the whole complex plane then <m>f</m> is said to be <term>entire</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Points of non analyticity for a function are called
+    <term>singular points</term>.
+    They are important for certain applications in physics and engineering.
+  </p>
+  <p>
+    Our definition of the derivative for complex functions is formally the same as for real functions and is the natural extension from real variables to complex variables.
+    The basic differentiation formulas are identical to those for real functions,
+    and we obtain the same rules for differentiating powers, sums,
+    products, quotients, and compositions of functions.
+    We can easily establish the proof of the differentiation formulas by using the limit theorems.
+  </p>
+  <p>
+    Suppose that <m>f</m> and <m>g</m> are differentiable.
+    From Equation <xref ref="Deriv_Def_1"/> and the technique exhibited in the solution to <xref ref="DerivEx">Example</xref>,
+    we can establish the following rules,
+    which are virtually identical to those for real-valued functions.
+    <md>
+      <mrow xml:id="Deriv_Eq_4" number="yes">\frac{d}{dz}C \amp = 0,  \text{ where }   C  \text{ is a constant, and }</mrow>
+      <mrow xml:id="Deriv_Eq_5" number="yes">\frac{d}{dz}z^{n} \amp = nz^{n-1},  \text{ where }   n  \text{ is a positive integer } .</mrow>
+      <mrow xml:id="Deriv_Eq_6" number="yes">\frac{d}{dz}[Cf(z)] \amp = Cf\,'(z)</mrow>
+      <mrow xml:id="Deriv_Eq_7" number="yes">\frac{d}{dz}[f(z)+g(z)] \amp = f\,'(z) + g\,'(z)</mrow>
+      <mrow xml:id="Deriv_Eq_8" number="yes">\frac{d}{dz} [f(z) g(z)] \amp = f(z) g\,'(z) + g(z) f\,'(z)</mrow>
+      <mrow xml:id="Deriv_Eq_9" number="yes">\frac{d}{dz}\frac{f(z)}{g(z)} \amp = \frac{g(z) f\,'(z) -f(z) g\,'(z)}{[g(z)]^2}  \text{ if } g(z) \ne 0,  \text{ and }</mrow>
+      <mrow xml:id="Deriv_Eq_10" number="yes">\frac{d}{dz}\,f\big(g(z)\big) \amp = f\,'\big(g(z)\big) g\,'(z)</mrow>
+    </md>.
+  </p>
+  <p>
+    Important particular cases of Equations <xref ref="Deriv_Eq_9"/> and <xref ref="Deriv_Eq_10"/>, respectively, are
+    <md>
+      <mrow xml:id="Deriv_Eq_11" number="yes">\frac{d}{dz}\frac{1}{z^{n}} \amp = \frac{-n}{z^{n+1}}\text{ ,\qquad for } z \ne 0,  n  \text{ a positive integer, and }</mrow>
+      <mrow xml:id="Deriv_Eq_12" number="yes">\frac{d}{dz}\left[ f(z) \right]^{n} \amp  =n\left[ f(z) \right]^{n-1}f\,'(z),  n  \text{ a positive integer. }</mrow>
+    </md>
+  </p>
+  <example>
+    <statement>
+      <p>
+        If we use Equation <xref ref="Deriv_Eq_12"/> with
+        <m>f(z)=z^2+i2z+3</m> and <m>f\,'(z) =2z+2i</m>, then we get
+        <me>
+          \frac{d}{dz}(z^2+i2z+3)^{4}=8(z^2+i2z+3)^3(z+i)
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    The proofs of the rules given in Equations <xref ref="Deriv_Eq_4"/> through <xref ref="Deriv_Eq_10"/> depend on the validity of extending theorems for real functions to their complex companions.
+    Equation <xref ref="Deriv_Eq_8"/>, for example, relies on Theorem 3.1.
+  </p>
+  <theorem xml:id="Diffl_Implies_Cont">
+    <statement>
+      <p>
+        If <m>f</m> is differentiable at <m>z_0</m>,
+        then <m>f</m> is continuous at <m>z_0</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      From Equation <xref ref="Deriv_Def_1"/>, we obtain
+      <me>
+        \lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}=f\,'(z_0)
+      </me>.
+    </p>
+    <p>
+      Using the multiplicative property of limits given by <xref ref="limproduct">Formula</xref>, we get
+      <md>
+        <mrow>\lim\limits_{z \to z_0} [f(z) -f(z_0)] \amp = \lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}(z-z_0)</mrow>
+        <mrow>\amp = \lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}\lim\limits_{z \to z_0}(z-z_0)</mrow>
+        <mrow>\amp = f\,'(z_0) \cdot 0=0</mrow>
+      </md>.
+    </p>
+    <p>
+      This result implies that <m>\lim\limits_{z \to z_0}f(z) =f(z_0)</m>,
+      which is equivalent to showing that <m>f</m> is continuous at <m>z_0</m>.
+    </p>
+  </proof>
+  <p>
+    We can establish Equation <xref ref="Deriv_Eq_8"/> from <xref ref="Diffl_Implies_Cont">Theorem</xref>.
+    Letting <m>h(z)=f(z)g(z)</m> and using Definition 3.1, we write
+    <me>
+      h'(z_0) = \lim\limits_{z \to z_0}\frac{h(z) -h(z_0)}{z-z_0} = \lim_{z \to z_0}\frac{f(z) g(z)-f(z_0)g(z_0)}{z-z_0}
+    </me>.
+  </p>
+  <p>
+    If we subtract and add the term
+    <m>f(z_0) g(z)</m> in the numerator, we get
+    <md>
+      <mrow>h'(z_0) \amp = \lim_{z \to z_0}\frac{f(z) g(z) - f(z_0) g(z) + f(z_0) g(z) - f(z_0)g(z_0)}{z-z_0}</mrow>
+      <mrow>\amp = \lim_{z \to z_0}\frac{f(z)g(z) - f(z_0)g(z)}{z-z_0} + \lim_{z \to z_0}\frac{f(z_0)g(z) - f(z_0)g(z_0)}{z-z_0}</mrow>
+      <mrow>\amp = \lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}\lim_{z \to z_0}g(z) + f(z_0) \lim\limits_{z \to z_0}\frac{g(z) -g(z_0)}{z-z_0}</mrow>
+    </md>.
+  </p>
+  <p>
+    Using the definition of the derivative given by Equation <xref ref="Deriv_Def_1"/> and the continuity of <m>g</m>,
+    we obtain <m>h'(z_0) =f\,'(z_0) g(z_0) +f(z_0) g\,'(z_0)</m>,
+    which is what we wanted to establish.
+    We leave the proofs of the other rules as exercises.
+  </p>
+  <p>
+    The rule for differentiating polynomials carries over to the complex case as well.
+    If we let <m>P(z)</m> be a polynomial of degree <m>n</m>, so
+    <me>
+      P(z)=a_0 + a_1z + a_2z^2 + \cdots + a_nz^n
+    </me>.
+    then mathematical induction,
+    along with Equations <xref ref="Deriv_Eq_5"/> and <xref ref="Deriv_Eq_7"/>, gives
+    <me>
+      P\,'(z) =a_1 + 2a_2z + 3a_3z^2 + \cdots + na_nz^{n-1}
+    </me>.
+  </p>
+  <p>
+    Again, we leave the proof of this result as an exercise.
+  </p>
+  <p>
+    We can use the differentiation rules as aids in determining when functions are analytic.
+    For example, Equation <xref ref="Deriv_Eq_9"/> tells us that if <m>P(z)</m> and <m>Q(z)</m> are polynomials,
+    then their quotient <m>\frac{P(z)}{Q(z)}</m> is analytic at all points where <m>Q(z) \ne 0</m>.
+    This condition implies that the function
+    <m>f(z) = \frac{1}{z}</m> is analytic for all <m>z\ne 0</m>.
+    The square root function is more complicated.
+    If <m>f(z)=z^{\frac{1}{2}} = |z|^{\frac{1}{2}}e^{i\frac{\mathrm{Arg}(z)}{2}}</m>,
+    then <m>f</m> is analytic at all points except <m>z=0</m> (because
+    <m>\mathrm{Arg}(0)</m> is undefined) and at points that lie along the negative <m>x</m> axis.
+    The argument function, and therefore the function <m>f</m> itself,
+    are not continuous at points that lie along the negative <m>x</m> axis.
+  </p>
+  <p>
+    We close this section with a complex extension of a famous theorem,
+    the proof of which will be given in <xref ref="ch_taylor-laurent"/>.
+  </p>
+  <theorem xml:id="LH_s_rule">
+    <title>L'H&#xf4;pital's rule</title>
+    <statement>
+      <p>
+        Assume that <m>f</m> and <m>g</m> are analytic at <m>z_0</m>.
+        If <m>f(z_0) =0</m>, <m>g(z_0) =0</m>,
+        and <m>g\,'(z_0) \ne 0</m>, then
+        <me>
+          \lim_{z \to z_0}\frac{f(z)}{g(z)} = \lim_{z \to z_0}\frac{f\,'(z)}{g\,'(z)}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      See Corollary 7.11.
+    </p>
+  </proof>
+  <exercises>
+    <title>Exercises for <xref ref="sec_diff-analytic">Section</xref></title>
+    <exercise xml:id="x3_1_1">
+      <p>
+        Find the derivatives of the following functions.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>g(z) =(z^2-iz+9)^{5}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(z) = \frac{2z+1}{z+2}</m> for <m>z \ne -2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(z) = (z^2+(1-3i)z+1)(z^4+3z^2+5i)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x3_1_2">
+      <p>
+        Show that the following functions are differentiable nowhere.
+        <ol>
+          <li>
+            <p>
+              <m>f(z) = \mathrm{Re}(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) = \mathrm{Im}(z)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_3">
+      <p>
+        If <m>f</m> and <m>g</m> are entire functions,
+        which of the following are necessarily entire?
+        <ol>
+          <li>
+            <p>
+              <m>[f(z)]^3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z)g(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(z)}{g(z)}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(\frac{1}{z})</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z-1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\big(g(z)\big)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_4">
+      <p>
+        Use Equation <xref ref="Deriv_Def_1"/> to verify <xref ref="Deriv_Eq_5">rule</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_5">
+      <p>
+        Let <m>P(z) =a_0+a_1z+\cdots +a_{n}z^{n}</m> be a polynomial of degree <m>n \ge 1</m>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>P\,'(z) = a_1 + 2a_2z + \cdots + na_nz^{n-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that, for <m>k=0,1, \ldots,
+              n, \; a_{k}= \frac{P^{(k) }(0)}{k!}</m>,
+              where <m>P^{(k)}</m> denotes the
+              <m>k^{\text{ th } }</m> derivative of <m>P</m>. (By convention,
+              <m>P^{(0)}(z) = P(z)</m>.)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_6">
+      <p>
+        Let <m>P</m> be a polynomial of degree 2, given by
+        <me>
+          P(z) = (z-z_1)(z-z_2)
+        </me>.
+        where <m>z_1\ne  z_2</m>.
+        Show that
+        <me>
+          \frac{P\,'(z)}{P(z)} = \frac{1}{z-z_1} + \frac{1}{z-z_2}
+        </me>.
+        <em>Note</em>: The quotient <m>\frac{P\,'(z)}{P(z)}</m> is known as the
+        <em>logarithmic derivative</em> of <m>P</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_7">
+      <p>
+        Use L'H&#xf4;pital's rule to find the following limits.
+        <ol>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to i}\frac{z^{4}-1}{z-i}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 1+i}\frac{z^2-iz-1-i}{z^2-2z+2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to -i}\frac{z^{6}+1}{z^2+1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 1+i}\frac{z^{4}+4}{z^2-2z+2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 1+i\sqrt{3}}\frac{z^{6}-64}{z^3+8}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to -1+i\sqrt{3}}\frac{z^{9}-512}{z^3-8}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_8">
+      <p>
+        Use Equation <xref ref="Deriv_Def_1"/> to show that <m>\frac{d}{dz}\frac{1}{z}= \frac{-1}{z^2}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_9">
+      <p>
+        Show that <m>\frac{d}{dz}z^{-n}=-nz^{-n-1}</m>,
+        where <m>n</m> is a positive integer.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_10">
+      <p>
+        Verify the identity.
+        <me>
+          \frac{d}{dz} f(z)g(z)h(z) = f\,'(z)g(z)h(z) + f(z)g\,'(z)h(z) + f(z)g(z)h'(z)
+        </me>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_11">
+      <p>
+        Show that the function <m>f(z) =|z|^2</m> is differentiable only at the point <m>z_0=0</m>.
+        <em>Hint</em>: To show that <m>f</m> is <em>not</em>
+        differentiable at <m>z_0 \ne 0</m>,
+        choose horizontal and vertical lines through the point <m>z_0</m> and show that
+        <m>\frac{\Delta w}{ \Delta z}</m> approaches two distinct values as
+        <m>\Delta z \to 0</m> along those two lines.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Verify
+        <ol>
+          <li>
+            <p>
+              <xref ref="Deriv_Eq_4">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Deriv_Eq_7">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Deriv_Eq_9">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Deriv_Eq_10">Identity</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Deriv_Eq_12">Identity</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_13">
+      <p>
+        Consider the differentiable function
+        <m>f(z)=z^3</m> and the two points <m>z_1=1</m> and <m>z_2=i</m>.
+        Show that there does not exist a point <m>c</m> on the line <m>y=1-x</m> between 1 and <m>i</m> such that <m>\frac{f(z_2)-f(z_1)}{z_2-z_1} = f\,'(c)</m>.
+        This result shows that the mean value theorem for derivatives does not extend to complex functions.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_14">
+      <p>
+        Let <m>f(z)=z^{\frac{1}{n}}</m> denote the multivalued
+        <q><m>n</m>th root function,</q>
+        where <m>n</m> is a positive integer.
+        Use the chain rule to show that,
+        if <m>g( z)</m> is any branch of the <m>n</m>th root function, then
+        <me>
+          g\,'(z) = \frac{1}{n}\frac{g(z)}{z}
+        </me>
+        in some suitably chosen domain
+        (which you should specify).
+      </p>
+    </exercise>
+    <exercise xml:id="x3_1_15">
+      <p>
+        Explain why the composition of two entire functions is an entire function.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>f</m> be differentiable at <m>z_0</m>.
+        Show that there exists a function <m>\eta(z)</m> such that
+        <me>
+          f(z) =f(z_0) +f\,'(z_0) (z-z_0) + \eta(z)(z-z_0)
+        </me>,
+        where <m>\eta (z)  \to 0\text{ as } z \to z_0</m>.
+      </p>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,434 @@
+<section xml:id="sec_taylor-laurent-apps">
+  <title>Applications of Taylor and Laurent Series</title>
+  <p>
+    In this section we show how you can use Taylor and Laurent series to derive important properties of analytic functions.
+    We begin by showing that the zeros of an analytic function must be isolated unless the function is identically zero.
+    A point <m>\alpha</m> of a set <m>T</m> is called <em>isolated</em>
+    if there exists a disk <m>D_{R}(\alpha)</m> about <m>\alpha</m> that does not contain any other points of <m>T</m>.
+  </p>
+  <theorem xml:id="Isolated_Zeros_Thm">
+    <statement>
+      <p>
+        Suppose that <m>f</m> is analytic in a domain <m>D</m> containing <m>\alpha</m> and that <m>f(\alpha) =0</m>.
+        If <m>f</m> is not identically zero in <m>D</m>,
+        then there exists a punctured disk
+        <m>D_{R}^{\ast}(\alpha)</m> in which <m>f</m> has no zeros.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      By Taylor's theorem, there exists some disk
+      <m>D_{R}(\alpha)</m> about <m>\alpha</m> such that
+      <me>
+        f(z) = \sum_{n=0}^{\infty}\frac{f\,^{(n)}(\alpha)}{n!}(z-\alpha)^n  \text{ for all }   z \in D_{R}(\alpha)
+      </me>.
+    </p>
+    <p>
+      If all the Taylor coefficients
+      <m>\frac{f\,^{(n)}(\alpha)}{n!}</m> of <m>f</m> were zero,
+      then <m>f</m> would be identically zero on <m>D_{R}(\alpha)</m>.
+      A proof similar to the proof of the maximum modulus principle
+      (<xref ref="Max_Mod_Thm">Theorem</xref>)
+      would then show that <m>f</m> is identically zero in <m>D</m>,
+      contradicting our assumption about <m>f</m>.
+    </p>
+    <p>
+      Thus, not all the Taylor coefficients of <m>f</m> are zero,
+      and we may select the smallest integer <m>k</m> such that <m>\frac{f\,^{(k)}(\alpha)}{k!} \ne 0</m>.
+      According to the results in Section 7.4, <m>f</m> has a zero of order <m>k</m> at <m>\alpha</m> and can be written in the form
+      <me>
+        f(z) = (z-\alpha)^kg(z)
+      </me>,
+      where <m>g</m> is analytic at <m>\alpha</m> and <m>g(\alpha) \ne 0</m>.
+      Since <m>g</m> is a continuous function,
+      there exists a disk <m>D_r(\alpha)</m> throughout which <m>g</m> is nonzero.
+      Therefore <m>f(z) \ne 0</m> in the punctured disk <m>D_r^{\ast }(\alpha)</m>.
+    </p>
+  </proof>
+  <p>
+    The proofs of the following corollaries are given as exercises.
+  </p>
+  <corollary xml:id="Limit_Zero_Cor">
+    <statement>
+      <p>
+        Suppose that <m>f</m> is analytic in the domain <m>D</m> and that <m>\alpha \in D</m>.
+        If there exists a sequence of points
+        <m>\{z_n\} \in D</m> such that <m>z_n \to \alpha</m>,
+        and <m>f(z_n) =0</m>, then <m>f(z)=0</m> for all <m>z \in D</m>.
+      </p>
+    </statement>
+  </corollary>
+  <corollary xml:id="f_g_Cor">
+    <statement>
+      <p>
+        Suppose that <m>f</m> and <m>g</m> are analytic in the domain <m>D</m>,
+        where <m>\alpha \in D</m>.
+        If there exists a sequence
+        <m>\{z_n\} \in D</m> such that <m>z_n \to \alpha</m>,
+        and <m>f(z_n)=g(z_n)</m> for all <m>n</m>,
+        then <m>f(z)=g(z)</m> for all <m>z \in D</m>.
+      </p>
+    </statement>
+  </corollary>
+  <p>
+    <xref ref="Isolated_Zeros_Thm">Theorem</xref>
+    also allows us to give a simple argument for one version of L'H&#xf4;pital's rule.
+  </p>
+  <corollary>
+    <statement>
+      <p>
+        (L'H&#xf4;pital's rule) Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic at <m>\alpha</m>.
+        If <m>f(\alpha)=0</m> and <m>g(\alpha)=0</m>,
+        but <m>g\,'(\alpha) \ne 0</m>, then
+        <me>
+          \lim_{z \to \alpha }\frac{f(z)}{g(z)} = \frac{f\,'(\alpha)}{g'(\alpha)}
+        </me>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Because <m>g\,'(\alpha)  \ne0</m>,
+      <m>g</m> is not identically zero and,
+      by <xref ref="Isolated_Zeros_Thm">Theorem</xref>,
+      there is a punctured disk <m>D_r^{\ast}(\alpha)</m> in which <m>g(z) \ne 0</m>.
+      Thus the quotient <m>\frac{f(z)}{g(z)}=\frac{f( z) -f(\alpha)}{g(z) -g(\alpha)}</m> is defined for all <m>z \in D_r^{\ast}(\alpha)</m>,
+      and we can write
+      <me>
+        \lim_{z \to\alpha}\frac{f(z)}{g(z)} = \lim_{z \to\alpha}\frac{f(z) -f(\alpha)}{g(z) - g(\alpha)} = \lim_{z \to\alpha}\frac{[f(z) - f(\alpha)] / (z-\alpha)}{[g(z) - g(\alpha)] /(z-\alpha)} = \frac{f\,'(\alpha)}{g'(\alpha)}
+      </me>.
+    </p>
+  </proof>
+  <p>
+    We can use the following Theorem to get Taylor series for quotients of analytic functions.
+    Its proof involves ideas from <xref ref="sec_taylor-series">Section</xref>,
+    and we leave it as an exercise.
+  </p>
+  <theorem xml:id="Pr_Series_Division">
+    <title>Division of power series</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic at <m>\alpha</m> with the power series representations
+        <me>
+          f(z) = \sum_{n=0}^{\infty}a_n(z-\alpha)^n  \text{ and }   g(z) = \sum_{n=0}^{\infty}b_n(z-\alpha)^n,  \text{ for all }   z \in D_{R}(\alpha)
+        </me>.
+      </p>
+      <p>
+        If <m>g(\alpha) \ne 0</m>,
+        then the quotient <m>\frac{f}{g}</m> has the power series representation
+        <me>
+          \frac{f(z)}{g(z)} = \sum_{n=0}^{\infty }c_n(z-\alpha)^n
+        </me>,
+        where the coefficients satisfy the equation
+        <me>
+          a_n = b_0c_n + \cdots + b_{n-1}c_1 + b_nc_0
+        </me>.
+      </p>
+      <p>
+        In other words, we can obtain the series for the quotient
+        <m>\frac{f(z)}{g(z)}</m> by the familiar process of dividing the series for <m>f(z)</m> by the series for <m>g(z)</m>,
+        using the standard long division algorithm.
+      </p>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Find the first few terms of the Maclaurin series for the function <m>f(z) =\sec z</m>,
+        if <m>|z| \lt \frac{\pi}{2}</m>,
+        and compute <m>f\,^{(4)}(0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using long division, we see that
+        <me>
+          \sec z = \frac{1}{\cos z} = \frac{1}{1-\frac{z^2}{2!}+\frac{z^{4}}{4!}-\frac{z^{6}}{6!}+\cdots } = 1+\frac{1}{2}z^2+\frac{5}{24}z^{4}+\cdots
+        </me>.
+      </p>
+      <p>
+        Using Taylor's theorem, we see that if <m>f(z) =\sec z</m>,
+        then <m>\frac{f\,^{(4)}(0)}{4!}=\frac{5}{24}</m>,
+        so that <m>f\,^{(4)}(0) = 5</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    We close this section with some results concerning the behavior of complex functions at points near the different types of isolated singularities.
+    The following is due to the German mathematician G.<nbsp/>F.<nbsp/>Bernhard Riemann (1826<ndash/>1866).
+  </p>
+  <theorem xml:id="Bd__Analytic_Thm">
+    <title>Riemann</title>
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^{\ast}(\alpha)</m>.
+        If <m>f</m> is bounded in <m>D_r^{\ast}(\alpha)</m>,
+        then either <m>f</m> is analytic at <m>\alpha</m> or <m>f</m> has a removable singularity at <m>\alpha</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Consider the function <m>g</m>, defined as
+      <men xml:id="g_z_def">
+        g(z) = \begin{cases} (z-\alpha)^2f(z) , \amp  \text{ when } z \ne \alpha ; \\ \qquad 0, \amp  \text{ when } z=\alpha. \end{cases}
+      </men>
+    </p>
+    <p>
+      Clearly, <m>g</m> is analytic in at least <m>D_r^{\ast}(\alpha)</m>.
+      Straightforward calculation yields
+      <me>
+        g\,'(\alpha) = \lim_{z \to\alpha}\frac{g(z) -g(\alpha)}{z-\alpha}=\lim_{z \to\alpha }(z-\alpha)f(z) = 0
+      </me>.
+    </p>
+    <p>
+      The last equation follows because <m>f</m> is bounded.
+      Thus <m>g</m> is also analytic at <m>\alpha</m>,
+      with <m>g(\alpha) = g\,'(\alpha) = 0</m>.
+    </p>
+    <p>
+      By Taylor's theorem, <m>g</m> has the representation
+      <men xml:id="g_z__Pwr_Series_Rep">
+        g(z) = \sum_{n=2}^{\infty}\frac{g^{(n)}(\alpha)}{n!}(z-\alpha)^n,  \text{ for all }   z \in D_r(\alpha)
+      </men>.
+    </p>
+    <p>
+      We divide both sides of Equation <xref ref="g_z__Pwr_Series_Rep"/> by
+      <m>(z-\alpha)^2</m> and use Equation <xref ref="g_z_def"/> to obtain the following power series representation for <m>f</m>:
+      <me>
+        f(z) = \sum_{n=2}^{\infty}\frac{g^{(n)}(\alpha)}{n!}(z-\alpha)^{n-2} = \sum \limits_{n=0}^{\infty}\frac{g^{(n+2)}(\alpha)}{(n+2)!}(z-\alpha)^n
+      </me>.
+    </p>
+    <p>
+      By <xref ref="Power_Series_Thm">Theorem</xref>,
+      <m>f</m> is analytic at <m>\alpha</m> if we define <m>f(\alpha)=\frac{g^{(2)}(\alpha)}{2!}</m>.
+      This observation completes the proof.
+    </p>
+  </proof>
+  <p>
+    The proof of the following Corollary is given as an exercise.
+  </p>
+  <corollary xml:id="Cor_7_10">
+    <statement>
+      <p>
+        If <m>f</m> is analytic in <m>D_r^{\ast}(\alpha)</m>,
+        then <m>f</m> can be defined to be analytic at <m>\alpha</m> iff
+        <m>\lim\limits_{z \to \alpha }f(z)</m> exists and is finite.
+      </p>
+    </statement>
+  </corollary>
+  <theorem xml:id="Thm_7_17">
+    <statement>
+      <p>
+        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^{\ast}(\alpha)</m>.
+        The function <m>f</m> has a pole of order <m>k</m> at <m>\alpha</m>,
+        iff <m>\lim\limits_{z \to\alpha}|f(z)| = \infty</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Suppose, first,
+      that <m>f</m> has a pole of order <m>k</m> at <m>\alpha</m>.
+      Using <xref ref="order_k_pole_thm">Theorem</xref>,
+      we can say that <m>f(z) = \frac{h(z)}{(z-\alpha)^k}</m>,
+      where <m>h</m> is analytic at <m>\alpha</m>,
+      and <m>h(\alpha) \ne 0</m>.
+      Because <m>\lim\limits_{z \to a}|h(z)| =|h(\alpha)| \ne 0</m> and <m>\lim\limits_{z \to a}|(z-\alpha)|=0</m>,
+      we conclude that <m>\lim\limits_{z \to a}|f(z)| = \lim\limits_{z \to a}|h(z)| \lim\limits_{z \to a}\frac{1}{|(z-\alpha)^k| } = \infty</m>.
+    </p>
+    <p>
+      Conversely, suppose that <m>\lim\limits_{z \to \alpha }|f(z)| = \infty</m>.
+      By the definition of a limit,
+      there must be some <m>\delta >0</m> such that
+      <m>|f(z)| > 1</m> if <m>z \in D_{\delta }^{\ast }(\alpha)</m>.
+      Thus the function <m>g(z) = \frac{1}{f(z)}</m> is analytic and bounded (because
+      <m>|g(z)| =|\frac{1}{f(z)}| \le 1</m>) in <m>D_{\delta }^{\ast }(\alpha)</m>.
+      By <xref ref="Bd__Analytic_Thm">Theorem</xref>,
+      we may define <m>g</m> at <m>\alpha</m> so that <m>g</m> is analytic in all of <m>D_{\delta }(\alpha)</m>.
+      In fact, <m>|g(\alpha)| = \lim\limits_{z \to a}\frac{1}{|f(z)|}=0</m>,
+      so <m>\alpha</m> is a zero of <m>g</m>.
+      We claim that <m>\alpha</m> must be of finite order;
+      otherwise, we would have <m>g\,^{(n)}(\alpha)=0</m>, for all <m>n</m>,
+      and hence <m>g(z) = \sum\limits_{n=0}^{\infty}\frac{g\,^{(n)}(\alpha}{n!}(z-\alpha)^n=0</m>,
+      for all <m>z \in D_{\delta}(\alpha)</m>.
+      As <m>g(z) = \frac{1}{f(z)}</m> is analytic in <m>D_{\delta }^{\ast }(\alpha)</m>,
+      this result is impossible,
+      so we can let <m>k</m> be the order of the zero of <m>g</m> at <m>\alpha</m>.
+      By <xref ref="zero-pole_symmetry">Corollary</xref>,
+      <m>f</m> has a pole of order <m>k</m>.
+    </p>
+  </proof>
+  <theorem xml:id="Essential_Sing_Thm">
+    <statement>
+      <p>
+        The function <m>f</m><nbsp/>has an essential singularity at <m>\alpha</m><nbsp/>iff
+        <m>\lim\limits_{z \to\alpha}|f(z) |</m><nbsp/>does not exist.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      From <xref ref="Cor_7_10">Corollary</xref>
+      and <xref ref="Thm_7_17">Theorem</xref>,
+      the conclusion of <xref ref="Essential_Sing_Thm">Theorem</xref> is the only option possible.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>g</m> defined by
+        <me>
+          g(z) = \begin{cases}e^{-\left(\frac{1}{z^2}\right)}, \amp  \ \ \text{ when } z \ne 0\text{ , and }  \\ 0, \amp   \text{ when }   z=0, \end{cases}
+        </me>
+        is not continuous at <m>z=0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        In Exercise 20, <xref ref="sec_taylor-series">Section</xref>,
+        we asked you to show this relation by computing limits along the real and imaginary axes.
+        Note, however,
+        that the Laurent series for <m>g(z)</m> in the annulus <m>D_r^{\ast }(0)</m> is
+        <me>
+          g(z) = 1+\sum\limits_{n=1}^{\infty}(-1)^n\frac{1}{z^{2n}}
+        </me>,
+        so that <m>0</m> is an essential singularity for <m>g</m>.
+        According to <xref ref="Essential_Sing_Thm">Theorem</xref>,
+        <m>\lim\limits_{z \to 0}|g(z)|</m> doesn't exist,
+        so <m>g</m> is not continuous at <m>0</m>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_taylor-laurent-apps">Section</xref></title>
+    <exercise>
+      <p>
+        Determine whether there exists a function <m>f</m> that is analytic at <m>0</m> such that for <m>n=1,\,2,\,3,\ldots\,</m>,
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>f(\frac{1}{2n}) = 0</m> and <m>f(\frac{1}{2n-1}) = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(\frac{1}{n}) =f(\frac{-1}{n}) =\frac{1}{n^2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(\frac{1}{n}) =f(\frac{-1}{n}) =\frac{1}{n^3}</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x7_5_2">
+      <p>
+        Prove the following corollaries and theorem.
+        <ol>
+          <li>
+            <p>
+              <xref ref="Limit_Zero_Cor">Corollary</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="f_g_Cor">Corollary</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Pr_Series_Division">Theorem</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="Cor_7_10">Corollary</xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_5_3">
+      <p>
+        Consider the function <m>f(z) =z\sin (\frac{1}{z})</m>.
+        <ol>
+          <li>
+            <p>
+              Show that there is a sequence <m>\{z_n\}</m> of points converging to <m>0</m> such that
+              <m>f(z_n) =0</m> for <m>n=1,\,2,\,3,\ldots</m> <nbsp/>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does this result contradict <xref ref="Limit_Zero_Cor">Corollary</xref>?
+              Why or why not?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_5_4">
+      <p>
+        Let <m>f(z) =\tan z</m>.
+        <ol>
+          <li xml:id="x7_5_4a">
+            <p>
+              Use <xref ref="Pr_Series_Division">Theorem</xref>
+              to find the first few terms of the Maclaurin series for <m>f(z)</m>,
+              if <m>|z| \lt \frac{\pi}{2}</m>.
+            </p>
+          </li>
+          <li xml:id="x7_5_4b">
+            <p>
+              What are the values of <m>f\,^{(6)}(0)</m> and <m>f\,^{(7)}(0)</m>?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x7_5_5">
+      <p>
+        Show that the real function <m>f</m> defined by
+        <me>
+          f(x) = \begin{cases}x\sin (\frac{1}{x}) , \amp  \text{ when } x \ne 0\text{ , and }  \\ 0, \amp  \text{ when }   x=0, \end{cases}
+        </me>
+        is continuous at <m>x=0</m> but that the corresponding function <m>g(z)</m> defined by
+        <me>
+          g(z) = \begin{cases}z\sin (\frac{1}{z}) , \amp  \text{ when }   z \ne 0,  \text{ and }  \\ 0, \amp  \text{ when }   z=0, \end{cases}
+        </me>
+        is <em>not</em> continuous at <m>z=0</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x7_5_6">
+      <p>
+        Use L'H&#xf4;pital's rule to find the following limits.
+        <ol>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 1+i}\frac{z-1-i}{z^{4}+4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to i}\frac{z^2-2iz-1}{z^{4}+2z^2+1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to i}\frac{1+z^{6}}{1+z^2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z \to 0}\frac{\sin z+\sinh z-2z}{z^{5}}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+  </exercises>
+</section>
