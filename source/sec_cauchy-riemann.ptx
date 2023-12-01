@@ -1,0 +1,925 @@
+<section xml:id="sec_cauchy-riemann">
+  <title>The Cauchy-Riemann Equations</title>
+  <p>
+    In Section 3.1 we showed that computing the derivative of complex functions written in a form such as
+    <m>f(z)=z^2</m> is a rather simple task.
+    But life isn't always so easy.
+    Many times we encounter complex functions written in the form of <m>f(z) = f(x, y) = u(x, y) +iv(x, y)</m>.
+    For example, suppose we had
+    <men xml:id="f_z__z_3">
+      f(z) = f(x, y) = u(x, y) +iv(x, y) = (x^3-3xy^2) +i(3x^2y-y^3)
+    </men>.
+  </p>
+  <p>
+    Is there some criterion that we can use to determine whether <m>f</m> is differentiable,
+    and if so,
+    to find the value of <m>f\,'(z)</m>?
+  </p>
+  <p>
+    The answer to this question is <em>yes</em>,
+    thanks to the independent discovery of two important equations by the French mathematician Augustin-Louis Cauchy<fn>
+    A.L.<nbsp/>Cauchy (1789<ndash/>1857) played a prominent role in the development of complex analysis,
+    and his name appears often throughout this text.
+    The last name is <em>not</em> pronounced as
+    <q>kaushee.</q>
+    The first syllable has a long
+    <q>o</q>
+    sound, like the word kosher, but with the second syllable having a long
+    <q>e</q>
+    instead of
+    <q>er</q>
+    at the end.
+    Thus, we pronounce Cauchy as
+    <q>k&#333;sh\={e}.</q>
+    </fn> and the German mathematician Georg Friedrich Bernhard Riemann.
+  </p>
+  <p>
+    First, let's reconsider the derivative of <m>f(z)=z^2</m>.
+    As we have stated,
+    the limit given in Equation <xref ref="Deriv_Def_1"/> must <em>not</em>
+    depend on how <m>z</m> approaches <m>z_0</m>.
+    We investigate two such approaches:
+    a horizontal approach and a vertical approach to <m>z_0</m>.
+    Recall from our graphical analysis of <m>w=z^2</m> that the image of a square is a
+    <q>curvilinear quadrilateral.</q>
+    For convenience, we let the square have vertices <m>z_0=2+i</m>,
+    <m>z_1=2.01+i</m>, <m>z_2=2+1.01i</m>,
+    and <m>z_{3}=2.01+1.01i</m>.
+    Then the image points are <m>w_0=3+4i</m>,
+    <m>w_1=3.0401+4.02i</m>, <m>w_2=2.9799+4.04i</m>,
+    and <m>w_{3}=3.02+4.0602i</m>,
+    as shown in <xref ref="fig_ch-03-01">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-03-01">
+    <caption>The image of a small square with vertex {<m>z_0=2+i</m>}, using <m>w=z^2</m></caption>
+    <image width="73%" source="figs/ch-03/ch-03-fig-01.pdf"/>
+  </figure>
+  <p>
+    We know that <m>f</m> is differentiable,
+    so the limit of the difference quotient
+    <m>\frac{f(z) -f(z_0)}{z-\,z_0}</m> exists no matter how we approach <m>z_0=2+i</m>.
+    Thus we can <em>approximate</em>
+    <m>f\,'(2+i)</m> by using horizontal or vertical increments in <m>z</m>:
+    <me>
+      f\,'(2+i) \approx \frac{f(2.01+i) -f(2+i)}{(2.01+i) -(2+i)}= \frac{0.0401+0.02i}{0.01}=4.01+2i
+    </me>
+    and
+    <me>
+      f\,'(2+i) \approx \frac{f(2+1.01i) - f(2+i)}{(2+1.01i) - (2+i)} = \frac{-0.0201+0.04i}{0.01i}=4+2.01i
+    </me>.
+  </p>
+  <p>
+    These computations lead to the idea of taking limits along the horizontal and vertical directions.
+    When we do so, we get
+    <me>
+      f\,'(2+i) = \lim\limits_{h \to 0}\frac{f(2+h+i) -f(2+i)}{h}= \lim\limits_{h \to 0}\frac{4h+h^2+i2h}{h}=4+2i
+    </me>
+    and
+    <me>
+      f\,'(2+i) = \lim\limits_{h \to 0}\frac{f(2+i+ih) -f(2+i)}{ih}= \lim\limits_{h \to 0}\frac{-2h-h^2+i4h}{ih}=4+2i
+    </me>.
+  </p>
+  <p>
+    We now generalize this idea by taking limits of an arbitrary differentiable complex function and obtain an important result.
+  </p>
+  <theorem xml:id="CR_EQ_Thm">
+    <title>Cauchy-Riemann equations</title>
+    <statement>
+      <p>
+        Suppose that
+        <me>
+          f(z) = f(x+iy) = u(x,y) +iv(x,y)
+        </me>
+        is differentiable at the point <m>z_0=x_0+iy_0</m>.
+        Then the partial derivatives of <m>u</m> and <m>v</m> exist at the point <m>(x_0,y_0)</m>, and
+        <md>
+          <mrow xml:id="C-R_EQ_x" number="yes">f\,'(z_0) \amp = u_x(x_0,y_0) + iv_x(x_0,y_0)  \text{ and also }</mrow>
+          <mrow xml:id="C-R_EQ_y" number="yes">f\,'(z_0) \amp = v_y(x_0,y_0) - iu_y(x_0,y_0)</mrow>
+        </md>.
+      </p>
+      <p>
+        Equating the real and imaginary parts of Equations <xref ref="C-R_EQ_x"/> and <xref ref="C-R_EQ_y"/> gives
+        <men xml:id="C-R_EQs">
+          u_x(x_0,y_0) = v_y(x_0,y_0)  \text{ and }   u_y(x_0,y_0) = -v_x(x_0,y_0)
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Because <m>f</m> is differentiable,
+      we know that <m>\lim\limits_{z \to z_0}(\frac{f(z) -f(z_0)}{z-z_0})</m> exists regardless of the path we take as <m>z \to z_0</m>.
+      We will choose horizontal and vertical lines that pass through the point
+      <m>z_0=(x_0,y_0)</m> and compute the limiting values of <m>\frac{f(z) -f(z_0)}{(z-z_0)}</m> along these lines.
+      Equating the two resulting limits will yield Equations <xref ref="C-R_EQs"/>.
+      For the horizontal approach to <m>z_0</m>,
+      we set <m>z=x+iy_0</m> and obtain
+      <md>
+        <mrow>f\,'(z_0)   \amp = \lim_{(x,y_0) \to (x_0,y_0)}\frac{f(x+iy_0) -f(x_0+iy_0)}{x+iy_0-(x_0+iy_0)}</mrow>
+        <mrow>\amp = \lim_{x \to x_0}\frac{u(x,y_0) -u(x_0,y_0) +i[v(x,y_0) -v(x_0,y_0)]}{x-x_0}</mrow>
+        <mrow>\amp = \lim_{x \to x_0}\frac{u(x,y_0) -u( x_0,y_0)}{x-x_0}+i\lim_{x \to x_0}\frac{v(x,y_0) -v(x_0,y_0)}{x-x_0}</mrow>
+      </md>.
+    </p>
+    <p>
+      The last two limits are the partial derivatives of <m>u</m> and <m>v</m> with respect to <m>x</m>, so
+      <me>
+        f\,'(z_0) = u_x(x_0,y_0) + iv_x(x_0,y_0)
+      </me>.
+      giving us Equation <xref ref="C-R_EQ_x"/>.
+    </p>
+    <p>
+      Along the vertical approach to <m>z_0</m>,
+      we have <m>z=x_0+iy</m>, so
+      <md>
+        <mrow>f\,'(z_0)  \amp = \lim_{(x_0,y) \to (x_0,y_0)}\frac{f(x_0+iy) - f(x_0+iy_0)}{x_0+iy-(x_0+iy_0)}</mrow>
+        <mrow>\amp = \lim_{y \to y_0}\frac{u(x_0,y) -u(x_0,y_0) + i[v(x_0,y) -v(x_0,y_0)]}{i(y-y_0)}</mrow>
+        <mrow>\amp = \lim_{y \to y_0}\frac{v(x_0,y) -v(x_0,y_0)}{y-y_0} - i\lim_{y \to y_0}\frac{u(x_0,y) -u(x_0,y_0)}{y-y_0}</mrow>
+      </md>.
+    </p>
+    <p>
+      The last two limits are the partial derivatives of <m>u</m> and <m>v</m> with respect to <m>y</m>, so
+      <me>
+        f\,'(z_0) =v_y(x_0,y_0) -iu_y(x_0,y_0)
+      </me>.
+      giving us Equation <xref ref="C-R_EQ_y"/>.
+    </p>
+    <p>
+      Since <m>f</m> is differentiable at <m>z_0</m>,
+      the limits given by Equations <xref ref="C-R_EQ_x"/> and <xref ref="C-R_EQ_y"/> must be equal.
+      If we equate the real and imaginary parts in those equations,
+      the result is Equations <xref ref="C-R_EQs"/>, and the proof is complete.
+    </p>
+  </proof>
+  <p>
+    Note some of the important implications of this theorem.
+    <ul>
+      <li>
+        <p>
+          If <m>f</m> is differentiable at <m>z_0</m>,
+          then the Cauchy-Riemann Equations <xref ref="C-R_EQs"/> will be satisfied at <m>z_0</m>,
+          and we can use either Equation <xref ref="C-R_EQ_x"/> <xref ref="C-R_EQ_y">or</xref> to evaluate <m>f\,'(z_0)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Taking the contrapositive,
+          if Equations <xref ref="C-R_EQs"/> are
+          <em>not</em> satisfied at <m>z_0</m>,
+          then we know automatically that <m>f</m> <em>is not</em>
+          differentiable at <m>z_0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If Equations <xref ref="C-R_EQs"/> <em>are</em>
+          satisfied at <m>z_0</m>, however,
+          we cannot <em>necessarily</em> conclude that <m>f</m> is differentiable at <m>z_0</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    We now illustrate each of these points.
+  </p>
+  <example>
+    <statement>
+      <p>
+        We know that <m>f(z)=z^2</m> is differentiable and that <m>f\,'(z) =2z</m>.
+        We also have
+        <me>
+          f(z)=z^2=(x+iy)^2=(x^2-y^2) + i(2xy) =u(x,y) +iv(x,y)
+        </me>.
+      </p>
+      <p>
+        It is easy to verify that Equations <xref ref="C-R_EQs"/> are indeed satisfied:
+        <me>
+          u_x(x,y) =2x=v_y(x,y)  \text{ and }   u_y(x,y) =-2y=-v_x(x,y)
+        </me>.
+      </p>
+      <p>
+        Using Equations <xref ref="C-R_EQ_x"/><nbsp/>and <xref ref="C-R_EQ_y"/>, respectively,
+        to compute <m>f\,'(z)</m> gives
+        <md>
+          <mrow>f\,'(z) \amp = u_x(x,y) +iv_x(x,y) =2x+i2y=2z,  \text{ and }</mrow>
+          <mrow>f\,'(z) \amp = v_y(x,y) -iu_y(x,y) =2x-i(-2y)=2x+i2y=2z</mrow>
+        </md>,
+        as expected.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that <m>f(z) = \overline{z}</m> is nowhere differentiable.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We have <m>f(z) =f(x+iy) =x-iy=u(x,y) + iv(x,y)</m>,<nbsp/>where
+        <m>u(x,y) =x</m> and <m>v(x,y) =-y</m>.
+        Thus, for any point <m>(x,y)</m>,
+        <m>u_x(x,y) = 1</m> and <m>v_y(x,y) = -1</m>.
+        The Cauchy-Riemann equations are not satisfied at any point <m>z=(x,y)</m>,
+        so we conclude that <m>f</m> is nowhere differentiable.
+      </p>
+    </solution>
+  </example>
+  <example xml:id="CR_but_not_diff">
+    <statement>
+      <p>
+        Show that the function defined by
+        <me>
+          f(x)= \begin{cases}\frac{(\overline{z})^2}{z}=\frac{x^3-3xy^2}{x^2+y^2}+i \frac{y^3-3x^2y}{x^2+y^2}  \text{ when }  z\ne  0  \text{ and } \\ 0  \text{ when }   z=0 \end{cases}
+        </me>
+        is <em>not</em> differentiable at the point <m>z_0=0</m> even though the Cauchy-Riemann equations are satisfied at <m>(0,0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We must use limits to calculate the partial derivatives at <m>(0,0)</m>.
+        <me>
+          u_x(0,0) = \lim_{x \to 0}\frac{u(x,0)-u(0,0)}{x-0} = \lim_{x \to 0}\frac{\frac{x^3-0}{x^2+0}}{x}=1
+        </me>.
+      </p>
+      <p>
+        Similarly, we can show that
+        <me>
+          u_y(0,0) =0\text{,} v_x(0,0) = 0  \text{ and }   v_y(0,0) =1
+        </me>.
+      </p>
+      <p>
+        Hence the Cauchy-Riemann equations hold at the point <m>(0,0)</m>.
+      </p>
+      <p>
+        We now show that <m>f</m> is <em>not</em>
+        differentiable at <m>z_0=0</m>.
+        Letting <m>z</m> approach <m>0</m> along the <m>x</m> axis gives
+        <me>
+          \lim_{(x,0)  \to (0,0)}\frac{f(x+0i) -f(0)}{x+0i-0} = \lim_{x \to 0}\frac{\frac{x^2}{x}-0}{x-0}= \lim\limits_{x \to 0}\frac{x-0}{x-0}=1
+        </me>.
+      </p>
+      <p>
+        But if we let <m>z</m> approach <m>0</m> along the line <m>y=x</m> given by the parametric equations <m>x=t</m> and <m>y=t</m>, then
+        <me>
+          \lim_{(t,t)  \to (0,0)}\frac{f(t+it) -f(0)}{t+it-0} = \lim_{t \to 0}\frac{\frac{-2t^3}{2t^2}+i(\frac{-2t^3}{2t^2})}{t+it} = \lim\limits_{t \to 0}\frac{-t-it}{t+it}=-1
+        </me>.
+      </p>
+      <p>
+        The two limits are distinct, so <m>f</m> is not differentiable at the origin.
+      </p>
+    </solution>
+  </example>
+  <p>
+    <xref ref="CR_but_not_diff">Example</xref>
+    reiterates that the mere satisfaction of the Cauchy-Riemann equations is not sufficient to guarantee the differentiability of a function.
+    The following theorem, however,
+    gives conditions that guarantee the differentiability of <m>f</m> at <m>z_0</m>,
+    so that which we can use Equation <xref ref="C-R_EQ_x"/> or <xref ref="C-R_EQ_y"/> to compute <m>f\,'(z_0)</m>.
+    They are referred to as the <em>Cauchy-Riemann conditions</em> for differentiability.
+  </p>
+  <theorem xml:id="Sufficient_Conditions">
+    <title>Cauchy-Riemann conditions for differentiability</title>
+    <statement>
+      <p>
+        Let <m>f(z) =u(x,y) +iv(x,y)</m> be a continuous function that is defined in some neighborhood of the point <m>z_0=x_0+iy_0</m>.If all the partial derivatives <m>u_x, \, u_y, \, v_x</m> and <m>v_y</m> are continuous at the point
+        <m>(x_0,y_0)</m> and if the Cauchy-Riemann equations
+        <m>u_x(x_0,y_0) =v_y(x_0,y_0)</m> and <m>u_y(x_0,y_0) = -v_x(x_0,y_0)</m> hold at
+        <m>(x_0,y_0)</m> then <m>f</m> is differentiable at <m>z_0</m>,
+        and the derivative <m>f\,'(z_0)</m> can be computed with either <xref ref="C-R_EQ_x">equation</xref>
+        <xref ref="C-R_EQ_y">or</xref>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Let <m>\Delta z = \Delta x+i\Delta y</m> and <m>\Delta w= \Delta u+i\Delta v</m>,
+      and let <m>\Delta z</m> be small enough so that <m>z</m> lies in the
+      <m>\varepsilon</m>-neighborhood of <m>z_0</m> in which the hypotheses hold.
+      We need to show that <m>\frac{\Delta w}{\Delta z}</m> approaches the limit given in Equation <xref ref="C-R_EQ_y"/> as <m>\Delta z</m> approaches zero.
+      We write the difference, <m>\Delta u</m>, as
+      <me>
+        \Delta u=u(x_0+\Delta x,y_0+\Delta y) -u( x_0,y_0)
+      </me>.
+    </p>
+    <p>
+      If we subtract and add the term <m>u(x_0,y_0+\Delta y)</m>,
+      then we get
+      <md>
+        <mrow>\Delta u  \amp = [u(x_0+\Delta x,y_0+\Delta y) - u(x_0,y_0+\Delta y)]</mrow>
+        <mrow xml:id="Delta_u" number="yes">\amp + [u(x_0,y_0+\Delta y) -u(x_0,y_0)]</mrow>
+      </md>.
+    </p>
+    <p>
+      The partial derivatives <m>u_x</m> and <m>u_y</m> exist,
+      so the mean value theorem for real functions of two variables implies that a value
+      <m>x^{\ast}</m> exists between <m>x_0</m> and
+      <m>x_0+\Delta x</m> such that we can write the first term in brackets on the right side of Equation <xref ref="Delta_u"/> as
+      <me>
+        u(x_0+\Delta x, y_0+\Delta y) - u(x_0,y_0 + \Delta y) = u_x(x^{\ast}, y_0+\Delta y) \Delta x
+      </me>.
+    </p>
+    <p>
+      Furthermore,
+      as <m>u_x</m> and <m>u_y</m> are continuous at <m>(x_0, y_0)</m>,
+      there exists a quantity <m>\varepsilon_1</m> such that
+      <me>
+        u_x(x^{\ast},y_0+\Delta y) =u_x(x_0,y_0) + \varepsilon_1
+      </me>.
+      where <m>\varepsilon_1 \to 0</m> as
+      <m>x^{\ast} \to x_0</m> and <m>\Delta y \to 0</m>.
+      Because <m>\Delta x \to 0</m> forces
+      <m>x^{\ast} \to x_0</m>, we can use the equation
+      <men xml:id="Delta_u_a">
+        u(x_0+\Delta x,y_0+\Delta y) -u(x_0,y_0+\Delta y) = [u_x(x_0,y_0) + \varepsilon_1] \Delta x
+      </men>.
+      where <m>\varepsilon_1 \to 0</m> as
+      <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m>.
+      Similarly, there exists a quantity
+      <m>\varepsilon_2</m> such that the second term in brackets on the right side of Equation <xref ref="Delta_u"/> satisfies the equation
+      <men xml:id="Delta_u_b">
+        u(x_0,y_0+\Delta y) - u(x_0,y_0) = [u_y(x_0,y_0) + \varepsilon_2] \Delta y
+      </men>.
+      where <m>\varepsilon_2 \to 0</m> as
+      <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m>.
+      Combining Equations <xref ref="Delta_u_a"/> and <xref ref="Delta_u_b"/> gives
+      <me>
+        \Delta u=(u_x+\varepsilon_1) \Delta x+(u_y+\varepsilon_2) \Delta y
+      </me>.
+      where partial derivatives <m>u_x</m> and <m>u_y</m> are evaluated at the point <m>(x_0,y_0)</m> and
+      <m>\varepsilon_1</m> and <m>\varepsilon_2</m> tend to zero as
+      <m>\Delta x</m> and <m>\Delta y</m> both tend to zero.
+      Similarly, the change <m>\Delta v</m> is related to the changes
+      <m>\Delta x</m> and <m>\Delta y</m> by the equation
+      <me>
+        \Delta v=(v_x+\varepsilon_{3}) \Delta x+(v_y+\varepsilon_4) \Delta y
+      </me>,
+      where the partial derivatives <m>v_x</m> and <m>v_y</m> are evaluated at the point <m>(x_0,y_0)</m> and
+      <m>\varepsilon_3</m> and <m>\varepsilon_4</m> tend to zero as
+      <m>\Delta x</m> and <m>\Delta y</m> both tend to zero.
+      Combining these last two equations gives
+      <men xml:id="Delta_w">
+        \Delta w=u_x\Delta x+u_y\Delta y+i(v_x\Delta x+v_y\Delta y) + \varepsilon_1\Delta x + \varepsilon_2\Delta y+i(\varepsilon_3\Delta x+\varepsilon_4\Delta y)
+      </men>.
+    </p>
+    <p>
+      We can use the Cauchy-Riemann equations in Equation <xref ref="Delta_w"/> to obtain
+      <me>
+        \Delta w=u_x\Delta x-v_x\Delta y+i(v_x\Delta x+u_x\Delta y) + \varepsilon_1\Delta x + \varepsilon_2\Delta y+i(\varepsilon_3\Delta x+\varepsilon_4\Delta y)
+      </me>.
+    </p>
+    <p>
+      Now we rearrange the terms and get
+      <me>
+        \Delta w=u_x\left[ \Delta x+i\Delta y\right] +iv_x[\Delta x+i\Delta y] + \varepsilon_1\Delta x+\varepsilon_2\Delta y+i(\varepsilon_3\Delta x+\varepsilon_4\Delta y)
+      </me>.
+    </p>
+    <p>
+      Since <m>\Delta z= \Delta x+i\Delta y</m>,
+      we can divide both sides of this equation by
+      <m>\Delta z</m> and take the limit as <m>\Delta z \to 0</m>:
+      <men xml:id="dw_dz">
+        \lim\limits_{\Delta z \to 0}\frac{\Delta w}{\Delta z} = u_x+iv_x+\lim\limits_{\Delta z \to 0}\left[\frac{\varepsilon_1\Delta x}{\Delta z} + \frac{\varepsilon_2\Delta y}{\Delta z} + i\frac{\varepsilon_{3}\Delta x}{\Delta z}+i\frac{\varepsilon_4\Delta y}{\Delta z}\right]
+      </men>.
+    </p>
+    <p>
+      Because <m>\varepsilon_1</m> tends to zero as <m>\Delta x</m> and
+      <m>\Delta y</m> both tend to zero, we have
+      <me>
+        \lim_{\Delta z \to 0}|\frac{\varepsilon_1\Delta x}{\Delta z}|= \lim\limits_{\Delta z \to 0}|\varepsilon_1||\frac{\Delta x}{\Delta z}| \le  \lim_{\Delta z \to 0}|\varepsilon_1|=0
+      </me>.
+    </p>
+    <p>
+      Similarly, the limits of the other quantities in Equation <xref ref="dw_dz"/> involving <m>\varepsilon_2</m>,
+      <m>\varepsilon_{3}</m>, <m>\varepsilon_4</m> are zero.
+      Therefore the limit in Equation <xref ref="dw_dz"/> becomes
+      <me>
+        \lim_{\Delta z \to 0}\frac{\Delta w}{\Delta z}=f\,'(z_0) =u_x(x_0,y_0) +iv_x(x_0,y_0)
+      </me>.
+      and the proof of the theorem is complete.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        At the beginning of this section (Equation <xref ref="f_z__z_3"/>) we defined the function <m>f(z)=u(x,y)+iv(x,y) = x^3-3xy^2+i(3x^2y-y^3)</m>.
+        Show that this function is differentiable for all <m>z</m>,
+        and find its derivative.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We compute <m>u_x(x,y) =v_y(x,y) =3x^2-3y^2</m> and <m>u_y(x,y) =-6xy=-v_x(x,y)</m>,
+        so the Cauchy-Riemann Equations <xref ref="C-R_EQs"/> are satisfied.
+        Moreover, <m>u, \, v, \, u_x, \, u_y, \, v_x</m>,
+        and <m>v_y</m> are continuous everywhere.
+        By <xref ref="Sufficient_Conditions">Theorem</xref>,
+        <m>f</m> is differentiable everywhere, and,
+        from Equation <xref ref="C-R_EQ_x"/>,
+        <me>
+          f\,'(z) = u_x(x,y) +iv_x(x,y) = (3x^2-3y^2) +i6xy = 3(x^2-y^2+i2xy) =3z^2
+        </me>.
+      </p>
+      <p>
+        Alternatively, from Equation <xref ref="C-R_EQ_y"/>,
+        <me>
+          f\,'(z) =v_y(x,y) - iu_y(x,y) =(3x^2-3y^2) - i(-6xy) = 3(x^2-y^2+i2xy) = 3z^2
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    This result isn't surprising because
+    <m>(x+iy)^3 = x^3-3xy^2+i(3x^2y-y^3)</m> and so the function <m>f</m> is really our old friend <m>f(z)=z^3</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>f(z) =e^{-y}\cos x+ie^{-y}\sin x</m> is differentiable for all <m>z</m> and find its derivative.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We first write <m>u(x,y) =e^{-y}\cos x</m> and
+        <m>v(x,y) = e^{-y}\sin x</m> and then compute the partial derivatives.
+        <md>
+          <mrow>u_x(x,y)  \amp = v_y(x,y) =-e^{-y}\sin x\  \text{ and }</mrow>
+          <mrow>v_x(x,y)  \amp =- u_y(x,y) =e^{-y}\cos x</mrow>
+        </md>.
+      </p>
+      <p>
+        We note that <m>u, \, v, \, u_x, \, u_v, \, v_x</m>,
+        and <m>v_y</m> are continuous functions and that the Cauchy-Riemann equations hold for all values of <m>(x,y)</m>.
+        Hence, using Equation <xref ref="C-R_EQ_x"/>, we write
+        <me>
+          f\,'(z) =f\,'(x,y) =u_x(x,y) +iv_x(x,y) =-e^{-y}\sin x+ie^{-y}\cos x
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The Cauchy-Riemann conditions are particularly useful in determining the set of points for which a function <m>f</m> is differentiable.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>f(z) =x^3+3xy^2+i(y^3+3x^2y)</m> is differentiable on the <m>x</m> and <m>y</m> axes,
+        but analytic nowhere.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Recall (<xref ref="Analytic_Def">Definition</xref>) that when we say a function is analytic at a point <m>z_0</m> we mean that the function is differentiable not only at <m>z_0</m>,
+        but also at every point in some
+        <m>\varepsilon</m>-neighborhood of <m>z_0</m>.
+        With this in mind,
+        we proceed to determine where the Cauchy-Riemann equations are satisfied.
+        We write <m>u(x,y) =x^3+3xy^2</m> and
+        <m>v(x,y) =y^3+3x^2y</m> and compute the partial derivatives:
+        <md>
+          <mrow>u_x(x,y)  \amp =   3x^2+3y^2, \; v_y(x,y) = 3x^2+3y^2,  \text{ and }</mrow>
+          <mrow>u_y(x,y)  \amp =  6xy, \; v_x(x,y) = 6xy</mrow>
+        </md>.
+      </p>
+      <p>
+        Here <m>u, \, v, \, u_x, \, u_y</m>,
+        and <m>v</m> are continuous,
+        and <m>u_x( x,y) =v_y(x,y)</m> holds for all <m>(x,y)</m>.
+        But <m>u_y(x,y) =-v_x(x,y)</m> iff <m>6xy=-6xy</m>,
+        which is equivalent to <m>12xy=0</m>.
+        The Cauchy-Riemann equations hold only when <m>x=0</m> or <m>y=0</m>,
+        and according to <xref ref="Sufficient_Conditions">Theorem</xref>,
+        <m>f</m> is differentiable only at points that lie on the coordinate axes.
+        But this means that <m>f</m> is nowhere analytic because any
+        <m>\varepsilon</m>-neighborhood about a point on either axis contains points that are not on those axes.
+      </p>
+    </solution>
+  </example>
+  <p>
+    When polar coordinates <m>(r, \theta)</m> are used to locate points in the plane,
+    we use <xref ref="f_z_Polar">Expression</xref>
+    for a complex function for convenience ; that is,
+    <md>
+      <mrow>f(z)      \amp = u(x,y) +iv(x,y)</mrow>
+      <mrow>f(re^{i\theta}) \amp = u(re^{i\theta}) +iv(re^{i\theta})</mrow>
+      <mrow>\amp = U(r, \theta) +iV(r, \theta)</mrow>
+    </md>.
+    where <m>U</m> and <m>V</m> are real functions of the real variables <m>r</m> and <m>\theta</m>.
+    The polar form of the Cauchy-Riemann equations and a formula for finding <m>f\,'(z)</m> in terms of the partial derivatives of <m>U(r,\theta )</m> and
+    <m>V(r,\theta )</m> are given in <xref ref="Sufficient_Conditions_Polar">Theorem</xref>,
+    which we ask you to prove in <xref ref="x3_2_10">Exercise</xref>.
+    This theorem makes use of the validity of the Cauchy-Riemann equations for the functions <m>u</m> and <m>v</m>,
+    so the relation between them and the functions <m>U</m> and <m>V</m><mdash/>namely,
+    <m>u(x,y) =u(re^{i\theta}) =U(r,\theta )</m> and <m>v( x,y) =v(re^{i\theta}) =V(r,\theta )</m><mdash/>is important.
+  </p>
+  <theorem xml:id="Sufficient_Conditions_Polar">
+    <title>Polar form</title>
+    <statement>
+      <p>
+        Let <m>f(z) = f(re^{i\theta}) =U(r,\theta) +iV(r,\theta)</m> be a continuous function that is defined in some neighborhood of the point <m>z_0=r_0e^{i\theta_0}</m>.
+        If all the partial derivatives <m>U_{r}, \, U_{\theta}, \, V_{r}</m> and
+        <m>V_{\theta}</m> are continuous at the point
+        <m>(r_0,\theta_0)</m> and if the polar form of the Cauchy-Riemann equations,
+        <men xml:id="Polar_C-R">
+          U_r(r_0,\theta_0) = \frac{1}{r_0}V_\theta(r_0,\theta_0)  \text{ and } V_r(r_0,\theta_0) = \frac{-1}{r_0}U_\theta(r_0,\theta_0)
+        </men>,
+        holds, then <m>f</m> is differentiable at <m>z_0</m>and we can compute the derivative
+        <m>f\,'(z_0)</m> by using either of the following formulas:
+        <md>
+          <mrow xml:id="Polar_C-R_r" number="yes">f\,'(z_0) \amp = f\,'(re^{i\theta_0}) = e^{-i\theta_0}[U_r(r_0,\theta_0) +iV_r(r_0, \theta_0)],  or</mrow>
+          <mrow xml:id="Polar_C-R_theta" number="yes">f\,'(z_0) \amp = f\,'(re^{i\theta_0}) = \frac{1}{r_0}e^{-i\theta_0}[V_\theta(r_0,\theta_0) -iU_\theta(r_0, \theta_0)]</mrow>
+        </md>.
+      </p>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Show that, if <m>f</m> is given by
+        <me>
+          f(re^{i\theta}) =f(z)=z^{\frac{1}{2}}=r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin \frac{\theta}{2}
+        </me>.
+        where the domain is restricted to be <m>\{re^{i\theta} : r>0 \text{ and }  -\pi \lt \theta \lt \pi\}</m>,
+        then the derivative is given by
+        <me>
+          f\,'(z) = \frac{1}{2z^{\frac{1}{2}}}= \frac{1}{2}r^{-\frac{1}{2}}\cos \frac{\theta}{2} - i\frac{1}{2}r^{-\frac{1}{2}}\sin \frac{\theta}{2}
+        </me>,
+        for every point in the domain.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Write
+        <me>
+          U(r,\theta) =r^{\frac{1}{2}}\cos \frac{\theta}{2}  \text{ and }   V(r,\theta ) = r^{\frac{1}{2}}\sin \frac{\theta}{2}
+        </me>.
+      </p>
+      <p>
+        Then
+        <md>
+          <mrow>U_{r}(r,\theta ) \amp = \frac{1}{r}V_{\theta}(r,\theta) = \frac{1}{2}r^{-\frac{1}{2}}\cos \frac{\theta}{2},  \text{ and }</mrow>
+          <mrow>V_{r}(r,\theta ) \amp = \frac{-1}{r}U_{\theta}(r,\theta) = \frac{1}{2}r^{-\frac{1}{2}}\sin \frac{\theta}{2}</mrow>
+        </md>.
+      </p>
+      <p>
+        Since <m>U, \, V, \, U_r, \, U_\theta, \, V_r</m>,
+        and <m>V_\theta</m> are continuous at every point in the domain
+        (note the strict inequality in <m>-\pi \lt \theta \lt \pi</m>),
+        we use <xref ref="Sufficient_Conditions_Polar">Theorem</xref>
+        and Equation <xref ref="Polar_C-R_r"/> to get
+        <md>
+          <mrow>f\,'(z) \amp = e^{-i\theta}\left(\frac{1}{2}r^{-\frac{1}{2}}\cos \frac{\theta}{2}+i\frac{1}{2}r^{-\frac{1}{2}}\sin \frac{\theta}{2}\right)</mrow>
+          <mrow>\amp = e^{-i\theta}\left(\frac{1}{2}r^{-\frac{1}{2}}e^{i\frac{\theta}{2}}\right) = \frac{1}{2}r^{-\frac{1}{2}}e^{-i\frac{\theta}{2}}= \frac{1}{2z^{\frac{1}{2}}}</mrow>
+        </md>.
+      </p>
+      <p>
+        Note that <m>f(z)</m> is discontinuous on the negative real axis and is undefined at the origin.
+        Using the terminology of Section 2.4, the negative real axis is a branch cut,
+        and the origin is a branch point for this function.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Two important consequences of the Cauchy-Riemann equations close this section.
+  </p>
+  <theorem xml:id="Abs_Const_implies_Const">
+    <statement>
+      <p>
+        Let <m>f=u+iv</m> be an analytic function on the domain <m>D</m>.
+        Suppose for all <m>z\in D</m> that <m>|f(z)|=K</m>,
+        where <m>K</m> is a constant.
+        Then <m>f</m> is constant on <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      The equation <m>|f(z)|=K</m> implies that,
+      for all <m>z=(x,y) \in D</m>,
+      <men xml:id="u_2_v_2_k_2">
+        u(x,y)^2 + v(x,y)^2 = K^2
+      </men>.
+    </p>
+    <p>
+      If <m>K=0</m>, then it must be that <m>u(x,y)^2=0</m> and
+      <m>v(x,y)^2=0</m> for all <m>(x,y)\in D</m>,
+      so <m>f</m> is identically zero on <m>D</m>.
+      If <m>K \ne  0</m>,
+      then we take the partial derivative of both sides of Equation <xref ref="u_2_v_2_k_2"/> with respect to both <m>x</m> and <m>y</m>,
+      resulting in
+      <me>
+        2uu_x+2vv_x=0  \text{ and }   2uu_y+2vv_y=0
+      </me>.
+      where for brevity we write <m>u</m> in place of <m>u(x,y)</m>,
+      and so on.
+      We can now use the Cauchy-Riemann equations to rewrite this system as
+      <me>
+        uu_x-vu_y=0  \text{ and }   vu_x+uu_y=0
+      </me>.
+    </p>
+    <p>
+      Treating <m>u</m> and <m>v</m> as coefficients,
+      we have two equations with two unknowns,
+      <m>u_x</m> and <m>u_y</m>.
+      Solving for <m>u_x</m> and <m>u_y</m> gives
+      <me>
+        u_x= \frac{0}{u^2+v^2}=0  \text{ and }   u_y= \frac{0}{u^2+v^2}=0
+      </me>.
+    </p>
+    <p>
+      Note that it is important here for <m>K \ne 0</m> in Equation <xref ref="u_2_v_2_k_2"/>.
+    </p>
+    <p>
+      A theorem from the calculus of real functions states that,
+      if for all <m>(x,y) \in D</m> we have both
+      <m>u_x(x,y) = 0</m> and <m>u_y(x,y) = 0</m>,
+      then for all <m>(x,y) \in D, \, u(x,y)=c_1</m>,
+      where <m>c_1</m> is a constant.
+      Using a similar argument,
+      we find that <m>v(x,y)=c_2</m>,
+      for all <m>(x,y) \in D</m>,
+      and therefore <m>f(z)=f(x,y) = c_1+ic_2</m>,
+      for all <m>(x,y) \in D</m>.
+      In other words, <m>f</m> is constant on <m>D</m>.
+    </p>
+  </proof>
+  <theorem xml:id="Df_0_implies_f_const">
+    <statement>
+      <p>
+        Let <m>f</m> be an analytic function in the domain <m>D</m>.
+        If <m>f\,'(z) =0</m> for all <m>z</m> in <m>D</m>,
+        then <m>f</m> is constant in <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      By the Cauchy-Riemann equations,
+      <m>f\,'(z) =u_x(z)+iv_x(z) = v_y(z) -iu_y(z)</m> for all <m>z\in D</m>.
+      By hypothesis <m>f\,'(z) =0</m> for all <m>z \in D</m>,
+      so for all <m>z \in D</m> the functions <m>u_x, \, u_y, \, v_x</m>,
+      and <m>v_y</m> are identically zero.
+      As with the conclusion to the proof of <xref ref="Abs_Const_implies_Const">Theorem</xref>,
+      this situation means both <m>u</m> and <m>v</m> are constant functions,
+      from whence the result follows.
+    </p>
+  </proof>
+  <exercises>
+    <title>Exercises for <xref ref="sec_cauchy-riemann">Section</xref></title>
+    <exercise xml:id="x3_2_1">
+      <p>
+        Use the Cauchy Riemann conditions to determine where the following functions are differentiable,
+        and evaluate the derivatives at those points where they exist.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>f(z)=iz+4i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = f(x,y) = \frac{y+ix}{x^2+y^2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = -2(xy+x) + i(x^2-2y-y^2)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = x^3-3x^2-3xy^2+3y^2 + i(3x^2y-6xy-y^3)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = x^3 + i(1-y)^3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = z^2+z</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = x^2+y^2 + i2xy</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = |z-(2+i)|^2</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x3_2_2">
+      <p>
+        Let <m>f</m> be a differentiable function.
+        Verify the identity <m>|f\,'(z)|^2 = u_x^2+v_x^2=u_y^2+v_y^2</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_3">
+      <p>
+        Find the constants <m>a</m> and <m>b</m> such that
+        <m>f(z) =(2x-y) + i(ax+by)</m> is differentiable for all <m>z</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_4">
+      <p>
+        Let <m>f</m> be differentiable at <m>z_0=r_0e^{i\theta_0}</m>.
+        Let <m>z</m> approach <m>z_0</m> along the ray <m>r>0</m>,
+        <m>\theta = \theta_0</m> and use Equation <xref ref="Deriv_Def_1"/> to show that Equation <xref ref="C-R_EQ_x"/> holds.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_5">
+      <p>
+        Let <m>f(z) =e^{x}\cos y+ie^{x}\sin y</m>.
+        Show that both <m>f(z)</m> and <m>f\,'(z)</m> are differentiable for all <m>z</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_6">
+      <p>
+        A vector field <m>\mathbf{F}(z) =U(x,y) +iV(x,y)</m> is said to be <em>irrotational</em>
+        if <m>U_y( x,y)=V_x(x,y)</m>.
+        It is said to be <em>solenoidal</em>
+        if <m>U_x(x,y)=-V_y(x,y)</m>.
+        If <m>f(z)</m> is an analytic function,
+        show that <m>\mathbf{F}(z)=f(z)</m> is both irrotational and solenoidal.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_7">
+      <p>
+        Use any method to show that the following functions are nowhere differentiable.
+        <ol>
+          <li>
+            <p>
+              <m>h(z) =e^y\cos x+ie^y\sin x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(z)=z+\overline{z}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_8">
+      <p>
+        Use <xref ref="Sufficient_Conditions_Polar">Theorem</xref> with regard to the following.
+        <ol>
+          <li>
+            <p>
+              Let <m>f(z) =f(re^{i\theta}) = \ln r+i\theta</m>,
+              where <m>r>0</m> and <m>-\pi \lt \theta \lt \pi</m>.
+              Show that <m>f</m> is analytic in the domain indicated and that <m>f\,'(z) = \frac{1}{z}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>f(z) =(\ln r)^2-\theta^2+i2\theta \ln r</m> where,
+              <m>r>0</m> and <m>-\pi \lt \theta \le \pi</m>.
+              Show that <m>f</m> is analytic for
+              <m>r>0, \, -\pi \lt \theta \lt \pi</m>, and find <m>f\,'(z)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_9">
+      <p>
+        Show that the following functions are entire
+        (see <xref ref="Entire_Def">Definition</xref>).
+        <ol>
+          <li>
+            <p>
+              <m>f(z) = \cosh x\sin y-i\sinh x\cos y.p</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(z) = \cosh x\cos y+i\sinh x\sin y</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_10">
+      <p>
+        To prove <xref ref="Sufficient_Conditions_Polar">Theorem</xref>,
+        the polar form of the Cauchy-Riemann equations,
+        <ol>
+          <li>
+            <p>
+              Let <m>f(z) =f(x,y) =f(re^{i\theta}) =u(re^{i\theta}) +iv(re^{i\theta}) = U(r,\theta )+iV(r,\theta )</m>.
+              Use the transformation <m>x=r\cos \theta</m> and <m>y=r\sin \theta</m> (<em>i.e.</em>,
+              <m>(x, y) =re^{i\theta}</m>) and the chain rules
+              <me>
+                U_r = u_x\frac{\partial x}{\partial r}+u_y\frac{\partial y}{\partial r}  \text{ and } U_\theta = u_x\frac{\partial x}{\partial \theta} + u_y\frac{\partial y}{\partial \theta} \text{ (similarly for }  V)
+              </me>.
+              to prove that
+              <md>
+                <mrow>U_{r} \amp = u_x\cos \theta +u_y\sin \theta   \text{ and }   U_{\theta}=-u_xr\sin \theta +u_yr\cos \theta  \text{ and }</mrow>
+                <mrow>V_{r} \amp = v_x\cos \theta +v_y\sin \theta  \text{ and }   V_{\theta} = -v_xr\sin \theta +v_yr\cos \theta</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the original Cauchy-Riemann equations for <m>u</m> and <m>v</m> and the results of part (a) to prove that
+              <m>rU_{r}=V_{\theta}</m> and <m>rV_{r}=-U_{\theta}</m>,
+              thus verifying Equation <xref ref="Polar_C-R"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              Use part (a) and Equations <xref ref="C-R_EQ_x"/> and <xref ref="C-R_EQ_y"/> to show that the right sides of Equations <xref ref="Polar_C-R_r"/> and <xref ref="Polar_C-R_theta"/> simplify to <m>f\,'(z_0)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_11">
+      <p>
+        Determine where<nbsp/>the following functions are differentiable and where they are analytic.
+        Explain!
+        <ol>
+          <li>
+            <p>
+              <m>f(z) =x^3+3xy^2+i(y^3+3x^2y)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) =8x-x^3-xy^2+i(x^2y+y^3-8y)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) =x^2-y^2+i2|xy|</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_12">
+      <p>
+        Let <m>f</m> and <m>g</m> be analytic functions in the domain <m>D</m>.
+        If <m>f\,'(z) = g\,'(z)</m> for all <m>z</m> in <m>D</m>,
+        then show that <m>f(z) =g(z) +C</m>,
+        where <m>C</m> is a complex constant.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_13">
+      <p>
+        Explain how the limit definition for the derivative in complex analysis and the limit definition for the derivative in calculus are different.
+        How are they similar?
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_14">
+      <p>
+        Let <m>f</m> be an analytic function in the domain <m>D</m>.
+        Show that if <m>\mathrm{Re}[f(z)]=0</m> at all points in <m>D</m>,
+        then <m>f</m> is constant in <m>D</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_15">
+      <p>
+        Let <m>f</m> be a nonconstant analytic function in the domain <m>D</m>.
+        Show that the function <m>g(z) = \overline{f(z)}</m> is
+        <em>not</em> analytic in <m>D</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x3_2_16">
+      <p>
+        Recall that, for <m>z=x+iy</m>,
+        <m>x= \frac{z+\overline{z}}{2}</m> and <m>y= \frac{z-\overline{z}}{2i}</m>.
+        <ol>
+          <li>
+            <p>
+              Temporarily, think of <m>z</m> and
+              <m>\overline{z}</m> as dummy symbols for real variables.
+              With this perspective,
+              <m>x</m> and <m>y</m> can be viewed as functions of <m>z</m> and <m>\overline{z}</m>.
+              Use the chain rule for a function <m>h</m> of two variables to show that
+              <me>
+                \frac{\partial h}{\partial\overline{z}} = \frac{\partial h}{\partial x}\frac{\partial x}{\partial \overline{z}} + \frac{\partial h}{\partial y}\frac{\partial y}{\partial \overline{z}} = \frac{1}{2}\left(\frac{\partial h}{\partial x} + i\frac{\partial h}{\partial y}\right)
+              </me>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Now define the operator <m>\frac{\partial}{\partial \overline{z}} = \frac{ 1}{2}(\frac{\partial}{\partial x} +i\frac{\partial}{\partial y})</m> that is suggested by the previous equation.
+              With this construct,
+              show that if <m>f=u+iv</m> is differentiable at <m>z=(x ,y)</m>, then,
+              at the point <m>(x ,y), \, \frac{\partial f}{\partial \overline{z}} = \frac{1}{2}\left[ u_x-v_y+i(y_x+u_y) \right] = 0</m>.
+              Equating real and imaginary parts thus gives the complex form of the Cauchy-Riemann equations:
+              <m>\frac{\partial f}{\partial \overline{z}} = 0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+  </exercises>
+</section>

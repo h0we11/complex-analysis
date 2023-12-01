@@ -1,0 +1,388 @@
+<section xml:id="sec_reciprocal-transformation">
+  <title>The Reciprocal Transformation <m>w=\frac{1}{z}</m></title>
+  <p>
+    The mapping <m>w=f(z)=\frac{1}{z}</m> is called the
+    <em>reciprocal transformation</em>.
+    It maps the <m>z</m> plane one-to-one and onto the <m>w</m> plane except for the point <m>z=0</m>,
+    which has no image.
+    The point <m>w=0</m> has no preimage or inverse image.
+    Using exponential notation <m>w=\rho e^{i\phi}</m>,
+    if <m>z=re^{i\theta} \ne 0</m>, we have
+    <men xml:id="PolarCircleEq">
+      w=\rho e^{i\phi}=\frac{1}{z}=\frac{1}{r}e^{-i\theta}
+    </men>.
+  </p>
+  <p>
+    The geometric description of the reciprocal transformation is now evident.
+    It is an inversion
+    (that is, the modulus of <m>\frac{1}{z}</m> is the reciprocal of the modulus of <m>z</m>)
+    followed by a reflection through the <m>x</m> axis.
+    The ray <m>r>0, \, \theta =\alpha</m>,
+    is mapped one-to-one and onto the ray <m>\rho >0, \, \phi = -\alpha</m>.
+    Points that lie inside the unit circle
+    <m>C_1(0) =\{z:|z|=1\}</m> are mapped onto points that lie outside the unit circle and vice versa,
+    as <xref ref="fig_ch-02-21">Figure</xref> illustrates.
+  </p>
+  <figure xml:id="fig_ch-02-21">
+    <caption>The reciprocal transformation <m>w=\frac{1}{z}</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-21.pdf"/>
+  </figure>
+  <p>
+    We can extend the system of complex numbers by joining to it an
+    <q>ideal</q>
+    point denoted by <m>\infty</m> and called the point at infinity.
+    This new set is called the extended complex plane.
+    You will see shortly that the point <m>\infty</m> has the property,
+    loosely speaking, that <m>z\to \infty</m> iff <m>|z| \to \infty</m>.
+  </p>
+  <p>
+    An <m>\varepsilon</m>-neighborhood of the point at infinity is the set <m>\{z:|z|>\frac{1}{\varepsilon}\}</m>.
+    The usual way to visualize the point at infinity is by using what we call the stereographic projection,
+    which is attributed to Riemann.
+    Let <m>\Omega</m> be a sphere of diameter 1 that is centered at the point
+    <m>(0,\,0,\,\frac{1 }{2})</m> in three-dimensional space where coordinates are specified by the triple of real numbers <m>(x, y, \xi)</m>.
+    Here the complex number <m>z=x+iy</m> is associated with the point <m>z=(x, y, 0)</m>.
+  </p>
+  <p>
+    The point <m>\mathbb{N} =(0, 0, 1)</m> on <m>\Omega</m> is called the north pole of <m>\Omega</m>.
+    If we let <m>z</m> be a complex number and consider the line segment <m>L</m> in three-dimensional space that joins <m>z</m> to the north pole <m>\mathbb{N} =(0,0,1)</m>,
+    then <m>L</m> intersects <m>\Omega</m> in exactly one point <m>L</m>.
+    The correspondence <m>z\longleftrightarrow\mathbb{Z}</m> is called the stereographic projection of the complex <m>z</m> plane onto the Riemann sphere <m>\Omega</m>.
+    A point <m>z=x+iy</m> of unit modulus will correspond with <m>\mathbb{Z} =(\frac{x}{2},\frac{y}{2},\frac{1}{2})</m>.
+    If <m>z</m> has modulus greater than 1, then <m>L</m> will lie in the upper hemisphere where for points
+    <m>\mathbb{Z} =(x, y, \xi)</m> we have <m>\xi > \frac{1}{2}</m>.
+    If <m>z</m> has modulus less than 1, then <m>L</m> will lie in the lower hemisphere where for points
+    <m>\mathbb{Z} =(x, y,\,\xi )</m> we have <m>\xi \lt \frac{1}{2}</m>.
+    The complex number <m>z=0=0+0i</m> corresponds with the south pole,
+    <m>S=(0, 0, 0)</m>.
+    Now you can see that indeed
+    <m>z\to \infty</m> iff <m>|z|\to \infty</m> iff <m>L\to N</m>.
+    Hence <m>N</m> corresponds with the
+    <q>ideal</q>
+    point at infinity.
+    The situation is shown in <xref ref="fig_ch-02-22">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-02-22">
+    <caption>The Riemann sphere</caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-22.pdf"/>
+  </figure>
+  <p>
+    Let's reconsider the mapping
+    <m>w=\frac{1}{z}</m> by assigning the images
+    <m>w=\infty</m> and <m>w=0</m> to the points <m>z=0</m> and <m>z=\infty</m>,
+    respectively.
+    We now write the reciprocal transformation as
+    <men xml:id="ExtendedRecip">
+      w=f(z) = \begin{cases} \frac{1}{z}  \text{ when }   z \ne 0  \text{ and }   z \ne \infty; \\ 0  \text{ when }   z=\infty; \\ \infty   \text{ when }   z=0. \end{cases}
+    </men>
+  </p>
+  <p>
+    Note that the transformation <m>w=f(z)</m> is a one-to-one mapping of the extended complex <m>z</m> plane onto the extended complex <m>w</m> plane.
+    Further, <m>f</m> is a continuous mapping from the extended <m>z</m> plane onto the extended <m>w</m> plane.
+    We leave the details to you.
+  </p>
+  <example xml:id="CircleEx">
+    <statement>
+      <p>
+        Show that the image of the half-plane <m>A=\{z:\mathrm{Re}(z) \geq \frac{1}{2}\}</m> under the mapping
+        <m>w= \frac{1}{z}</m> is the closed disk <m>\overline{D}_1(1) =\{w:|w-1|\le 1\}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Proceeding as we did in Example 2.6, we get the inverse mapping of
+        <m>u+iv=w=f(z) =\frac{1}{z}</m> as <m>z=f^{-1}(w) =\frac{1}{w }</m>.
+        Then
+        <md>
+          <mrow>u+iv=w\in B\amp  \Longleftrightarrow f^{-1}(w) =z=x+iy\in A</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{1}{u+iv}=x+iy\in A</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{u}{u^2+v^2}+i\frac{-v}{u^2+v^2}=x+iy\in A</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{u}{u^2+v^2}=x\geq \frac{1}{2}\ \ \text{ and } \frac{-v}{u^2+v^2}=y</mrow>
+          <mrow xml:id="circle1" number="yes">\amp  \Longleftrightarrow \frac{u}{u^2+v^2}\geq \frac{1}{2}</mrow>
+          <mrow xml:id="circle2" number="yes">\amp  \Longrightarrow u^2-2u+1+v^2\le 1</mrow>
+          <mrow>\amp  \Longleftrightarrow (u-1)^2+(v-0)^2\le 1</mrow>
+        </md>,
+        which describes the disk <m>\overline{D}_1(0)</m>.
+        As the reciprocal transformation is one-to-one,
+        preimages of the points in the disk
+        <m>\overline{D}_1(0)</m> will lie in the right half-plane <m>\mathrm{Re}(z) \geq \frac{1}{2}</m>.
+        <xref ref="fig_ch-02-23">Figure</xref> illustrates this result.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-02-23">
+    <caption>The image of <m>\mathrm{Re}(z) \ge \frac{1}{2}</m> under the mapping <m>w=\frac{1}{z}</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-23.pdf"/>
+  </figure>
+  <remark>
+    <p>
+      Alas, there is a fly in the ointment here.
+      As our notation indicates, Equations <xref ref="circle1"/> and <xref ref="circle2"/> are not equivalent.
+      The former implies the latter, but not conversely.
+      That is, Equation <xref ref="circle2"/> makes sense when <m>(u,\,v) =(0,\,0)</m>,
+      whereas Equation <xref ref="circle1"/> does not.
+      Yet Figure 2.23 seems to indicate that <m>f</m> maps
+      <m>\mathrm{Re}(z) \geq \frac{1}{2}</m> onto the entire disk <m>\overline{D}_1(0)</m>,
+      including the point <m>(0,\,0)</m> . Actually, it does not,
+      because <m>(0,\,0)</m> has no preimage in the complex plane.
+      The way out of this dilemma is to use the complex point at infinity.
+      It is that quantity that gets mapped to the point <m>(u,\,v) =(0,\,0)</m>,
+      for as we have already indicated in Equation <xref ref="ExtendedRecip"/>,
+      the preimage of <m>0</m> under the mapping
+      <m>\frac{1}{z}</m> is indeed <m>\infty</m>.
+    </p>
+  </remark>
+  <example xml:id="moon">
+    <statement>
+      <p>
+        For the transformation <m>\frac{1}{z}</m>,
+        find the image of the portion of the half plane
+        <m>\mathrm{Re}(z) \geq \frac{1}{2}</m> that is inside the closed disk <m>\overline{D}_1(\frac{1}{2}) =\{z:|z-\frac{1}{2}|\le 1\}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using the result of <xref ref="CircleEx">Example</xref>,
+        we need only find the image of the disk
+        <m>\overline{D}_1(\frac{1}{2})</m> and intersect it with the closed disk <m>\overline{D}_1(1)</m>.
+        To begin, we note that
+        <me>
+          \overline{D}_1(\frac{1}{2}) = \left\{(x, y) : x^2+y^2-x\le \frac{3}{4}\right\}
+        </me>.
+      </p>
+      <p>
+        Because <m>z=f^{-1}(w) =\frac{1}{w}</m>, we have, as before,
+        <md>
+          <mrow>u+iv=w\in f\left(\overline{D}_1\left(\frac{1}{2}\right)\right) \amp \Longleftrightarrow f^{-1}(w) \in \overline{D}_1\left(\frac{1}{2}\right)</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{1}{w}\in \overline{D}_1\left(\frac{1}{2}\right)</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{u}{u^2+v^2}+i\frac{-v}{u^2+v^2}\in \overline{D}_1\left(\frac{1}{2}\right)</mrow>
+          <mrow>\amp  \Longleftrightarrow \left(\frac{u}{u^2+v^2}\right)^{\!2} + \left(\frac{-v}{u^2+v^2}\right)^{\!2}-\frac{u}{u^2+v^2} \le \frac{3}{4}</mrow>
+          <mrow>\amp  \Longleftrightarrow \frac{1}{u^2+v^2}-\frac{u}{u^2+v^2}\le \frac{3}{4}</mrow>
+          <mrow>\amp  \Longleftrightarrow \left(u+\frac{2}{3}\right)^{\!2} + v^2 \ge  \left(\frac{4}{3}\right)^{\!2}</mrow>
+        </md>,
+        which is an inequality that determines the set of points in the <m>w</m> plane that lie on and outside the circle <m>C_{\frac{4}{3}}(-\frac{2}{3}) =\{w:|w+\frac{2}{3}|=\frac{4}{3}\}</m>.
+        Note that we do not have to deal with the point at infinity this time,
+        as the last inequality is not satisfied when <m>(u,v) =(0, 0)</m>.
+      </p>
+      <p>
+        When we intersect this set with <m>\overline{D}_1(1)</m>,
+        we get the crescent-shaped region shown in <xref ref="fig_ch-02-24">Figure</xref>.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-02-24">
+    <caption>The mapping <m>w=\frac{1}{z}</m> discussed in <xref ref="moon">Example</xref></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-24.pdf"/>
+  </figure>
+  <p>
+    To study images of
+    <q>generalized circles,</q>
+    we consider the equation
+    <me>
+      (x^2+y^2) + Bx + Cy + D = 0
+    </me>
+    where <m>A</m>, <m>B</m>, <m>C</m>,
+    and <m>D</m> are real numbers.
+    This equation represents either a circle or a line,
+    depending on whether <m>A \ne 0</m> or <m>A=0</m>, respectively.
+    Transforming the equation to polar coordinates gives
+    <me>
+      Ar^2+r(B\cos \theta +C\sin \theta) + D = 0
+    </me>.
+  </p>
+  <p>
+    Using the polar coordinate form of the reciprocal transformation given in Equation <xref ref="PolarCircleEq"/>,
+    we can express the image of the curve in the preceding equation<nbsp/>as
+    <me>
+      A+\rho (B\cos \phi -C\sin \phi ) +D\rho ^2=0
+    </me>,
+    which represents either a circle or a line,
+    depending on whether <m>D \ne 0</m> or <m>D=0</m>, respectively.
+    Thus, the reciprocal transformation
+    <m>w=\frac{1}{z}</m> carries the class of lines and circles onto itself.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find the images of the vertical lines <m>x=a</m> and the horizontal lines <m>y=b</m> under the mapping <m>w=\frac{1}{z}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Considering the point at infinity,
+        the image of the line <m>x=0</m> is the line <m>u=0</m>;
+        that is, the <m>y</m>-axis is mapped onto the <m>v</m>-axis.
+        Similarly, the <m>x</m>-axis is mapped onto the <m>u</m>-axis.
+        The inverse mapping is <m>z=\frac{1}{w}=\frac{u}{u^2+v^2}+i\frac{-v}{u^2+v^2}</m>,
+        so if <m>a \ne 0</m>,
+        the vertical line <m>x=a</m> is mapped onto the set of <m>(u,v)</m> points satisfying <m>\frac{u}{u^2+v^2}=a</m>.
+        For <m>(u, v)  \ne (0, 0)</m>,
+        this outcome is equivalent to
+        <me>
+          u^2-\frac{1}{a}u+\frac{1}{4a^2}+v^2 = \left(u-\frac{1}{2a}\right)^{\!2} +v^2 = \left(\frac{1}{2a}\right)^{\!2}
+        </me>.
+        which is the equation of a circle in the <m>w</m> plane with center
+        <m>w_0 = \frac{1}{2a}</m> and radius <m>|\frac{1}{2a}|</m>.
+        The point at infinity is mapped to <m>(u,v) =(0,0)</m>.
+        Similarly, <m>y=b</m> is mapped onto the circle
+        <me>
+          u^2+v^2+\frac{1}{b}v+\frac{1}{4b^2} = u^2 + \left(v+\frac{1}{2b}\right)^{\!2} = \left(\frac{1}{2b}\right)^{\!2}
+        </me>.
+        which has center <m>w_0=-\frac{i}{2b}</m> and radius <m>|\frac{1}{2b}|</m>.
+        <xref ref="fig_ch-02-25">Figure</xref>
+        illustrates the images of several lines.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-02-25">
+    <caption>The images of horizontal and vertical lines under the reciprocal transformation</caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-25.pdf"/>
+  </figure>
+  <p>
+    <em>Exercises for <xref ref="sec_reciprocal-transformation">Section</xref></em>
+    For Exercises 1<ndash/>8,
+    find the image of the given circle or line under the reciprocal transformation <m>w=1/z</m>.
+  </p>
+  <ol>
+    <li>
+      <p>
+        The horizontal line <m>\mathrm{Im}(z) =\frac{1}{5}</m>.\label {2.5.1}
+      </p>
+    </li>
+    <li xml:id="x2_5_2">
+      <p>
+        The circle <m>C_{\frac{1}{2}}(-\frac{i}{2}) =\{z:|z+\frac{i}{2}|=\frac{1}{2}\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_3">
+      <p>
+        The vertical line <m>\mathrm{Re}(z)=-3</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_4">
+      <p>
+        The circle <m>C_1(-2) =\{z:|z+2|=1\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_5">
+      <p>
+        The line <m>2x+2y=1</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_6">
+      <p>
+        The circle <m>C_1(\frac{i}{2}) =\{z:|z-\frac{i}{2}|=1\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_7">
+      <p>
+        The circle <m>C_1(\frac{3}{2}) =\{z:|z-\frac{3}{2}|=1\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_8">
+      <p>
+        The circle <m>C_2(-1+i) =\{z:|z+1-i|=2\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_9">
+      <p>
+        Limits involving <m>\infty</m>.
+        The function <m>f(z)</m> is said to have the limit <m>L</m> as <m>z</m> approaches <m>\infty</m>,
+        and we write <m>\lim\limits_{z\to \infty} f(z)=L</m> iff for every
+        <m>\varepsilon>0</m> there exists an <m>R>0</m> such that <m>f(z) \in D_{\varepsilon}(L)</m> (<em>i.e.</em>,
+        <m>|f(z) -L|\lt \varepsilon</m>) whenever <m>|z|>R</m>.
+        Likewise, <m>\lim\limits_{z\to z_0}\,f(z)=\infty</m> iff for every <m>R>0</m> there exists <m>\delta >0</m> such that
+        <m>|f(z)|>R</m> whenever <m>z\in D_{\delta}^{\ast}(z_0)</m>
+        (<em>i.e.</em>, <m>0\lt |z-z_0|\lt \delta</m>).
+        Use this definition to
+      </p>
+      <ol>
+        <li>
+          <p>
+            show that <m>\lim\limits_{z\to \infty}\,\frac{1}{z}=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            show that <m>\lim\limits_{z\to 0}\,\frac{1}{z}=\infty</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+    <li xml:id="x2_5_10">
+      <p>
+        Show that the reciprocal transformation
+        <m>w=\frac{1}{z}</m> maps the vertical strip
+        <m>0\lt x\lt \frac{1}{2}</m> onto the region in the right half-plane
+        <m>\mathrm{Re}(w)>0</m> that lies outside the disk <m>D_1(1) =\{w:|w-1|\lt 1\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_11">
+      <p>
+        Find the image of the disk
+        <m>D_{\frac{4}{3}}\left(-\frac{2i}{3}\right) =\{z:|z+\frac{2i}{3}|\lt \frac{4}{3}\}</m> under <m>f(z)=\frac{1}{z}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_12">
+      <p>
+        Show that the reciprocal transformation maps the disk
+        <m>|z-1|\lt 2</m> onto the region that lies exterior to the circle <m>\{w:|w+\frac{1}{3}|=\frac{2}{3}\}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_13">
+      <p>
+        Find the image of the half-plane
+        <m>y>\frac{1}{2}-x</m> under the mapping <m>w=\frac{1}{z}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_14">
+      <p>
+        Show that the half-plane <m>y\lt x-\frac{1}{2}</m> is mapped onto the disk
+        <m>|w-1-i|\lt \sqrt{2}</m> by the reciprocal transformation.
+      </p>
+    </li>
+    <li xml:id="x2_5_15">
+      <p>
+        Find the image of the quadrant <m>x>1</m>,
+        <m>y>1</m> under the mapping <m>w=\frac{1}{z}</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_16">
+      <p>
+        Show that the transformation <m>w=\frac{2}{z}</m> maps the disk
+        <m>|z-i|\lt 1</m> onto the lower half-plane <m>\mathrm{Im}(w)\lt -1</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_17">
+      <p>
+        Show that the transformation <m>w=\frac{2-z}{z}=-1+\frac{2}{z}</m> maps the disk
+        <m>|z-1|\lt 1</m> onto the right half-plane <m>\mathrm{Re}(w)>0</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_18">
+      <p>
+        Show that the parabola <m>2x=1-y^2</m> is mapped onto the cardioid
+        <m>\rho=1+\cos \phi</m> by the reciprocal transformation.
+      </p>
+    </li>
+    <li xml:id="x2_5_19">
+      <p>
+        Use the definition in <xref ref="x2_5_9">Exercise</xref>
+        to prove that <m>\lim\limits_{z\to \infty}\frac{z+1}{z-1}=1</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_20">
+      <p>
+        Show that <m>z=x+iy</m>, when mapped onto the Riemann sphere,
+        has coordinates <m>\displaystyle \left(\frac{x}{x^2+y^2+1}, \, \frac{y}{x^2+y^2+1}, \, \frac{x^2+y^2}{x^2+y^2+1}\right)</m>.
+      </p>
+    </li>
+    <li xml:id="x2_5_21">
+      <p>
+        Explain how the quantities <m>+\infty</m>,
+        <m>-\infty</m>, and <m>\infty</m> differ.
+        How are they similar?
+      </p>
+    </li>
+  </ol>
+</section>

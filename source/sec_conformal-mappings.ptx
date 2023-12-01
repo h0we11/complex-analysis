@@ -1,0 +1,416 @@
+<section xml:id="sec_conformal-mappings">
+  <title>Basic Properties of Conformal Mappings</title>
+  <p>
+    Let <m>f</m> be an analytic function in the domain <m>D</m> and let <m>z_0</m> be a point in <m>D</m>.
+    If <m>f\,'(z_0) \ne 0</m>, then we can express <m>f</m> in the form
+    <men xml:id="expandf">
+      f(z) = f(z_0) +f\,'(z_0)(z-z_0) +\eta(z) (z-z_0)
+    </men>,
+    where <m>\eta(z) \to 0</m> as <m>z \to z_0</m>.
+    If <m>z</m> is near <m>z_0</m>,
+    then the transformation <m>w=f(z)</m> has the
+    <term>linear approximation</term>
+    <me>
+      S(z) =A+B(z-z_0)=Bz+A-Bz_0
+    </me>,
+    where <m>A=f(z_0)</m> and <m>B=f\,'(z_0)</m>.
+    Because <m>\eta(z) \to 0</m> when <m>z \to z_0</m>,
+    for points near <m>z_0</m> the transformation <m>w=f(z)</m> has an effect much like the linear mapping <m>w=S(z)</m>.
+    The effect of the linear mapping <m>S</m> is a rotation of the plane through the angle <m>\alpha =\mathrm{Arg}f\,'(z_0)</m>,
+    followed by a magnification by the factor <m>|f\,'(z_0)|</m>,
+    followed by a rigid translation by the vector <m>A-Bz_0</m>.
+    Consequently,
+    the mapping <m>w=S(z)</m> preserves the angles at the point <m>z_0</m>.
+    We now show that the mapping <m>w=f(z)</m> also preserves angles at <m>z_0</m>.
+  </p>
+  <p>
+    Let <m>C:z(t) =x(t) +iy(t)</m>,
+    <m>-1 \le t \le 1</m> denote a smooth curve that passes through the point <m>z(0)=z_0</m>.
+    A vector <m>\mathbf{T}</m> tangent to <m>C</m> at the point <m>z_0</m> is given by
+    <me>
+      \mathbf{T}=z'(0)
+    </me>,
+    where the complex number <m>z'(0)</m> is expressed as a vector.
+  </p>
+  <p>
+    The angle of inclination of
+    <m>\mathbf{T}</m> with respect to the positive <m>x</m>-axis is
+    <me>
+      \beta=\mathrm{Arg}\, z'(0)
+    </me>.
+  </p>
+  <p>
+    The image of <m>C</m> under the mapping <m>w=f(z)</m> is the curve <m>K</m> given by the formula <m>K:w(t)=u\big(x(t),
+    y(t)\big) +iv\big(x(t),y(t)\big)</m>.
+    We can use the chain rule to show that a vector
+    <m>\mathbf{T}^{\ast}</m> tangent to <m>K</m> at the point <m>w_0=f(z_0)</m> is given by
+    <me>
+      \mathbf{T}^{\ast}=w'(0) =f\,'(z_0)z'(0)
+    </me>.
+  </p>
+  <p>
+    The angle of inclination of
+    <m>\mathbf{T}^{\ast}</m> with respect to the positive <m>u</m>-axis is
+    <men xml:id="incangle">
+      \gamma=\mathrm{Arg}\;f\,'(z_0) +\mathrm{Arg} z'(0) = \alpha+\beta
+    </men>,
+    where <m>\alpha=\mathrm{Arg}\;f\,'(z_0)</m>.
+    Therefore the effect of the transformation <m>w=f(z)</m> is to rotate the angle of inclination of the tangent vector
+    <m>\mathbf{T}</m> at <m>z_0</m> through the angle
+    <m>\alpha=\mathrm{Arg}\;f\,'(z_0)</m> to obtain the angle of inclination of the tangent vector <m>\mathbf{T}^{\ast}</m>at <m>w_0</m>.
+    This situation is illustrated in <xref ref="fig_ch-09-01">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-09-01">
+    <caption>Tangents at the points <m>z_0</m> and <m>w_0</m>, where <m>f\ '(z_0) \ne 0</m></caption>
+    <image width="73%" source="figs/ch-09/ch-09-fig-01.pdf"/>
+  </figure>
+  <p>
+    A mapping <m>w=f(z)</m> is said to be angle preserving,
+    or <em>conformal</em> at <m>z_0</m>,
+    if it preserves angles between oriented curves in magnitude as well as in orientation.
+    Theorem 9.1 shows where a mapping by an analytic function is conformal.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>f</m> be an analytic function in the domain <m>D</m>,
+        and let <m>z_0</m> be a point in <m>D</m>.
+        If <m>f\,'(z_0) \ne 0</m>, then <m>f</m> is conformal at <m>z_0</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We let <m>C_1</m> and <m>C_2</m> be two smooth curves passing through <m>z_0</m> with tangents given by
+      <m>\mathbf{T}_1</m> and <m>\mathbf{T}_2</m>, respectively.
+      We let <m>\beta_1</m> and <m>\beta_2</m> denote the angles of inclination of
+      <m>\mathbf{T}_1</m> and <m>\mathbf{T}_2</m>, respectively.
+    </p>
+    <p>
+      The image curves <m>K_1</m> and <m>K_2</m> that pass through the point
+      <m>w_0=f(z_0)</m> have tangents denoted
+      <m>\mathbf{T}_1^{\ast}</m> and <m>\mathbf{T}_2^{\ast}</m>,
+      respectively.
+      From Equation <xref ref="incangle"/>,
+      the angles of inclination <m>\gamma_1</m> and
+      <m>\gamma_2</m> of <m>\mathbf{T}_1^{\ast}</m> and
+      <m>\mathbf{T}_2^{\ast}</m> are related to <m>\beta_1</m> and <m>\beta_2</m> by the equations
+      <men xml:id="angleab">
+        \gamma_1=\alpha+\beta_1, \text{ and }   \gamma_2 = \alpha+\beta _2
+      </men>,
+      where <m>\alpha=\operatorname*{Arg}f\,'(z_0)</m>.
+      From Equations <xref ref="angleab"/> we conclude that
+      <me>
+        \gamma_2-\gamma_1=\beta_2-\beta_1
+      </me>.
+    </p>
+  </proof>
+  <p>
+    The analytic mapping <m>w=f(z)</m> is conformal at the point <m>z_0</m>,
+    where <m>f\,'(z_0) \ne 0</m> because the angle
+    <m>\gamma_2-\gamma_1</m> from <m>K_1</m> to <m>K_2</m> is the same in magnitude and orientation as the angle
+    <m>\beta_2-\beta_1</m> from <m>C_1</m> to <m>C_2</m>.
+    This situation is shown in <xref ref="fig_ch-09-02">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-09-02">
+    <caption>Angle preservation when <m>f\ '(z_0) \ne 0</m></caption>
+    <image width="73%" source="figs/ch-09/ch-09-fig-02.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Show that the mapping <m>w=f(z) =\cos z</m> is conformal at the points <m>z_1=i</m>,
+        <m>z_2=1</m>, and <m>z_3=\pi+i</m>,
+        and determine the angle of rotation given by <m>\alpha=\mathrm{Arg}f\,'(z)</m> at the given points.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Because <m>f\,'(z) =-\sin z</m>,
+        we conclude that the mapping
+        <m>w=\cos z</m> is conformal at all points except <m>z=n\pi</m>,
+        where <m>n</m> is an integer.
+        Calculation reveals that
+        <md>
+          <mrow>f\,'(i) \amp =-\sin(i) =-i\sinh1,</mrow>
+          <mrow>f\,'(1) \amp = -\sin1,  \text{ and }</mrow>
+          <mrow>f\,'(\pi+i) \amp =-\sin (\pi + i) = i\sinh 1</mrow>
+        </md>.
+      </p>
+      <p>
+        Therefore the angles of rotation are given, respectively, by
+        <md>
+          <mrow>\alpha_1 \amp = \mathrm{Arg}f\,'(i) = \frac{-\pi }{2},</mrow>
+          <mrow>\alpha_2 \amp  =\mathrm{Arg}f\,'(1) =\pi \text{ , and }</mrow>
+          <mrow>\alpha_3 \amp  =\mathrm{Arg}f\,'(\pi+i) =\frac {\pi}{2}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Let <m>f</m> be a nonconstant analytic function.
+    If <m>f\,'(z_0)=0</m>, then <m>z_0</m> is called a
+    <em>critical point</em> of <m>f</m>,
+    and the mapping <m>w=f(z)</m> is not conformal at <m>z_0</m>.
+    Theorem 9.2 shows what happens at a critical point.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic at <m>z_0</m>.
+        If <m>f\,'(z_0) = 0,\ldots,f^{( k-1)}(z_0)=0</m> and <m>f^{(k)}(z_0) \ne 0</m>,
+        then the mapping <m>w=f(z)</m> magnifies angles at the vertex <m>z_0</m> by a factor <m>k</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Since <m>f</m> is analytic at <m>z_0</m>,
+      it has a Taylor series expansion.
+      Because <m>a_{n}=\displaystyle\frac{f^{( n)  }(z_0)  }{n!}=0</m>,
+      for <m>n=1,\ 2,...,\ k-1</m>,<nbsp/>the series representation for <m>f</m> is
+      <men xml:id="notconfatz">
+        f(z) = f(z_0) + a_k(z-z_0)^{k} + a_{k+1}(z-z_0)^{k+1} + \cdots
+      </men>.
+    </p>
+    <p>
+      From Equation <xref ref="notconfatz"/> we conclude that
+      <men xml:id="notconf2">
+        f(z) - f(z_0) = (z-z_0)^kg(z)
+      </men>,
+      where <m>g</m> is analytic at <m>z_0</m> and g<m>(z_0) = a_k \ne 0</m>.
+      Consequently, if <m>w=f(z)</m> and <m>w_0=f(z_0)</m>,
+      then using Equation<xref ref="notconf2"/> we obtain
+      <men xml:id="notconf3">
+        \arg(w-w_0) =\mathrm{Arg}[f(z)-f(z_0)] = k\mathrm{Arg}(z-z_0) + \mathrm{Arg}[g(z)]
+      </men>.
+    </p>
+    <p>
+      If <m>C</m> is a smooth curve that passes through <m>z_0</m> and <m>z\to z_0</m> along <m>C</m>,
+      then <m>w\to w_0</m> along the image curve <m>K</m>.
+      The angle of inclination of the tangents
+      <m>\mathbf{T}</m> to <m>C</m> and <m>\mathbf{T}^{\ast}</m> to <m>K</m>,
+      respectively, are then given by the following limits:
+      <men xml:id="notconf4">
+        \beta = \lim_{z\to z_0} \mathrm{Arg}(z-z_0)  \text{ and } \gamma = \lim\_{w\to w_0}\ \mathrm{Arg}( w-w_0)
+      </men>.
+    </p>
+    <p>
+      From Equations <xref ref="notconf3"/> and <xref ref="notconf4"/> it follows that
+      <men xml:id="notconf5">
+        \gamma = \lim_{z\to z_0} (k\mathrm{Arg}(z-z_0) + \mathrm{Arg}[g(z)]) = k\beta+\delta
+      </men>,
+      where <m>\delta = \mathrm{Arg}[g(z_0)] = \mathrm{Arg}(a_k)</m>.
+    </p>
+    <p>
+      If <m>C_1</m> and <m>C_2</m> are two smooth curves that pass through <m>z_0</m>,
+      and <m>K_1</m> and <m>K_2</m> are their images,
+      then from Equation <xref ref="notconf5"/> it follows that
+      <me>
+        \Delta\gamma = \gamma_2 - \gamma_1 = k(\beta_2-\beta_1) = k\Delta\beta
+      </me>.
+    </p>
+    <p>
+      That is, the angle <m>\Delta\gamma</m> from <m>K_1</m> to <m>K_2</m> is <m>k</m> times as large as the angle
+      <m>\Delta\beta</m> from <m>C_1</m> to <m>C_2</m>.
+      Therefore angles at the vertex <m>z_0</m> are magnified by the factor <m>k</m>.
+      This situation is shown in <xref ref="fig_ch-09-03">Figure</xref>.
+    </p>
+  </proof>
+  <figure xml:id="fig_ch-09-03">
+    <caption>The analytic mapping <m>w=f(z)</m> at point <m>z_0</m> expands angles by a factor of <m>k</m> when <m>f\ '(z_0)
+    =0,\ldots,f^{(k-1)}(z_0)=0</m>, and <m>f^{(k)}(z_0) \ne 0</m></caption>
+    <image width="73%" source="figs/ch-09/ch-09-fig-03.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Show that the mapping <m>w=f(z)=z^2</m> maps the unit square
+        <m>S=\{x+iy: 0\lt x\lt 1, \; 0\lt y\lt 1\}</m> onto the region in the upper half-plane <m>\mathrm{Im}(w)>0</m>,
+        which lies under the parabolas
+        <me>
+          u=1-\frac{1}{4}v^2,  \text{ and }   u=-1+\frac{1}{4}v^2
+        </me>,
+        as shown in <xref ref="fig_ch-09-04">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-09-04">
+        <caption>The mapping <m>w=z^2</m></caption>
+        <image width="73%" source="figs/ch-09/ch-09-fig-04.pdf"/>
+      </figure>
+    </statement>
+    <solution>
+      <p>
+        The derivative is <m>f\,'(z)=2z</m>,
+        and we conclude that the mapping <m>w=z^2</m> is conformal for all <m>z \ne 0</m>.
+        Note that the right angles at the vertices <m>z_1=1</m>,
+        <m>z_2=1+i</m>,
+        and <m>z_3=i</m> are mapped onto right angles at the vertices <m>w_1=1, \, w_2=2i</m>,
+        and <m>w_3=-1</m>, respectively.
+        At the point <m>z_0=0</m>,
+        we have <m>f\,'(0) =0</m> and <m>f\,^{\prime\prime}(0) \ne 0</m>.
+        Hence angles at the vertex <m>z_0=0</m> are magnified by the factor <m>k=2</m>.
+        In particular,
+        the right angle at <m>z_0=0</m> is mapped onto the straight angle at <m>w_0=0</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Another property of a conformal mapping <m>w=f(z)</m> is obtained by considering the modulus of
+    <m>f\,'(z_0)</m> . If <m>z_1</m> is near <m>z_0</m>,
+    we can use Equation <xref ref="expandf"/> and neglect the term <m>\eta(z_1)(z_1-z_0)</m>.
+    We then have the approximation
+    <men xml:id="confmod">
+      w_1-w_0 = f(z_1)-f(z_0) \approx f\,'(z_0)(z_1-z_0)
+    </men>.
+  </p>
+  <p>
+    From Equation <xref ref="confmod"/>,
+    the distance <m>|w_1-w_0|</m> between the images of the points <m>z_1</m> and <m>z_0</m> is given approximately by <m>|f\,'(z_0)| \, |z_1-z_0|</m>.
+    Therefore we say that the transformation <m>w=f(z)</m> changes small distances near <m>z_0</m> by the
+    <em>scale factor</em> <m>|f\,'(z_0)|</m>.
+    For example, the scale factor of the transformation
+    <m>w=f(z) =z^2</m> near the point <m>z_0=1+i</m> is <m>|f\,'(1+i)| = |2(1+i)| = 2\sqrt{2}</m>.
+  </p>
+  <p>
+    We also need to say a few things about the inverse transformation <m>z=g(w)</m> of a conformal mapping <m>w=f(z)</m> near a point <m>z_0</m> , where <m>f\,'(z_0) \ne 0</m>.
+    A complete justification of the following assertions relies on theorems studied in advanced calculus.<fn>
+    See, for instance, R. Creighton Buck,
+    <em>Advanced Calculus</em>, 3rd ed.  (New York, McGraw-Hill),
+    pp. 358<mdash/>361, 1978.
+    </fn> We express the mapping <m>w=f(z)</m> in the coordinate form
+    <men xml:id="confsys">
+      u = u(x,y),  \text{ and }   v=v(x,y)
+    </men>.
+  </p>
+  <p>
+    The mapping in Equations <xref ref="confsys"/> represents a transformation from the <m>xy</m> plane into the <m>uv</m> plane,
+    and the <em>Jacobian determinant,</em>
+    <m>J(x,y)</m>, is defined by
+    <men xml:id="jacobian">
+      J(x,y) = \begin{vmatrix} u_x(x,y) \amp  u_y(x,y)\\ v_x(x,y) \amp  v_y(x,y). \end{vmatrix}
+    </men>
+  </p>
+  <p>
+    The transformation in Equations <xref ref="confsys"/> has a local inverse,
+    provided <m>J(x,y) \ne 0</m>.
+    Expanding Equation <xref ref="jacobian"/> and using the Cauchy-Riemann equations,
+    we obtain
+    <md>
+      <mrow>J(x_0,y_0) \amp = u_x(x_0,y_0) v_y( x_0,y_0) -v_x(x_0,y_0) u_y(x_0,y_0)</mrow>
+      <mrow xml:id="jacobian2" number="yes">\amp = u_x^2(x_0,y_0) +v_x^2(x_0,y_0)</mrow>
+      <mrow>\amp = |f\,'(z_0)|^2 \ne 0</mrow>
+    </md>.
+  </p>
+  <p>
+    Consequently, Equations <xref ref="jacobian"/> and <xref ref="jacobian2"/> imply that a local inverse <m>z=g(w)</m> exists in a neighborhood of the point <m>w_0</m>.
+    The derivative of <m>g</m> at <m>w_0</m> is given by the familiar expression
+    <md>
+      <mrow>g'(w_0) \amp = \lim_{w\to w_0} \frac{g(w)-g(w_0)}{w-w_0}</mrow>
+      <mrow>\amp = \lim_{z\to z_0}\ \frac{z-z_0}{f(z)-f(z_0)}</mrow>
+      <mrow>\amp = \frac{1}{f\,'(z_0)}=\frac{1}{f\,'\big(g(w_0)\big)}</mrow>
+    </md>.
+  </p>
+  <p>
+    <em>Exercises for Section 9.1</em>
+    \begin{enumerate} \item State where the following mappings are conformal.
+  </p>
+  <p>
+    <m>w=\exp z</m>.
+  </p>
+  <p>
+    <m>w=\sin z</m>.
+  </p>
+  <p>
+    <m>w=z^2+2z</m>.
+  </p>
+  <p>
+    <m>w=\exp(z^2+1)</m>.
+  </p>
+  <p>
+    <m>w=\displaystyle\frac{1}{z}</m>.
+  </p>
+  <p>
+    <m>w=\displaystyle\frac{z+1}{z-1}</m>. \item For Exercises 2-5, find the angle of rotation <m>\alpha = \mathrm{Arg}\big(f\,'(z)\big)</m> and the scale factor
+    <m>|f\,'(z)|</m> of the mapping <m>w=f(z)</m> at the indicated points.
+    <ol>
+      <li>
+        <p>
+          <m>w=\displaystyle\frac{1}{z}</m> at the points <m>1</m>,
+          <m>1+i</m>,
+          and <m>i</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w=\ln r+i\theta</m>, where
+          <m>\frac{-\pi}{2}\lt \theta\lt \frac{3\pi}{2}</m> at the points <m>1</m>,
+          <m>1+i</m>, <m>i</m>, and <m>-1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w=r^{1/2}\cos\frac{\theta}{2}+ir^{1/2}\sin\frac{\theta}{2}</m>,
+          where <m>-\pi\lt \theta\lt \pi</m>,
+          at the points <m>i</m>, <m>1</m>,
+          <m>-i</m>, and <m>3+4i</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w=\sin z</m> at the points <m>\frac{\pi}{2}+i, \, 0</m>,
+          and <m>\frac{-\pi}{2}+i</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the mapping <m>w=z^2</m>.
+          If <m>a\ne 0</m> and <m>b\ne 0</m>,
+          show that the lines <m>x=a</m> and <m>y=b</m> are mapped onto orthogonal parabolas.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the mapping <m>w=z^\frac{1}{2}</m>,
+          where <m>z^\frac{1}{2}</m> denotes the principal branch of the square root function.
+          If <m>a>0</m> and <m>b>0</m>,
+          show that the lines <m>x=a</m> and <m>y=b</m> are mapped onto orthogonal curves.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the mapping <m>w=\exp z</m>.
+          Show that the lines <m>x=a</m> and <m>y=b</m> are mapped onto orthogonal curves.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>w=\sin z</m> show that the line segment <m>\frac {-\pi}{2}\lt x\lt \frac{\pi}{2}, \; y=0</m>,
+          and the vertical line <m>x=a</m>,
+          where <m>|a| \lt \frac{\pi}{2}</m>,
+          are mapped onto orthogonal curves.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the mapping <m>w=\mathrm{Log} \, z</m>,
+          where <m>\mathrm{Log} \, z</m> denotes the principal branch of the logarithm function.
+          Show that the positive <m>x</m>-axis and the vertical line <m>x=1</m> are mapped onto orthogonal curves.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f</m> is analytic at <m>z_0</m> and <m>f\,'(z_0) \ne 0</m>,
+          show that the function <m>g(z) =\overline{f(z) }</m> preserves the magnitude,
+          but reverses the sense, of angles at <m>z_0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>w=f(z)</m> is a mapping,
+          where <m>f(z)</m> is not analytic,
+          then what behavior would you expect regarding the angles between curves?
+        </p>
+      </li>
+    </ol>
+  </p>
+</section>

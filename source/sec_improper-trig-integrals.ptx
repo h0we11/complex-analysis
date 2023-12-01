@@ -1,0 +1,288 @@
+<section xml:id="sec_improper-trig-integrals">
+  <title>Improper Integrals Involving Trigonometric Functions</title>
+  <p>
+    Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>,
+    respectively, where <m>n\ge m+1</m>.
+    We can show
+    (but omit the proof)
+    that if <m>Q(x) \ne 0</m> for all real <m>x</m>, then
+    <me>
+      \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx  \text{ and }   \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
+    </me>
+    are convergent improper integrals.
+    You may encounter integrals of this type in the study of Fourier transforms and Fourier integrals.
+    We now show how to evaluate them.
+  </p>
+  <p>
+    Particularly important is our use of the identities
+    <me>
+      \cos(\alpha x) =\mathrm{Re}[\exp(i\alpha x)]  \text{ and }   \sin (\alpha x) =\mathrm{Im}[\exp (i\alpha x)]
+    </me>,
+    where <m>\alpha</m> is a positive real number.
+    The crucial step in the proof of the following Theorem wouldn't hold if we were to use <m>\cos(\alpha z)</m> and
+    <m>\sin (\alpha z)</m> instead of <m>\exp (i\alpha z)</m>,
+    as you will see when you get to <xref ref="Jordan_s_Lemma">Lemma</xref>.
+  </p>
+  <theorem xml:id="PV_P_Q_sin__cos_thm">
+    <statement>
+      <p>
+        Let <m>P</m><nbsp/>and <m>Q</m><nbsp/>be polynomials with real coefficients of degree <m>m</m><nbsp/>and <m>n</m>,
+        respectively,
+        where <m>n \ge m+1</m> and
+        <m>Q(x) \ne 0</m>, for all real <m>x</m>.
+        If <m>\alpha>0</m> and
+        <men xml:id="exp_iaz_P_z__Q_z_">
+          f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}
+        </men>.
+        then
+        <md>
+          <mrow xml:id="PV__P_Q_cos_ax_" number="yes">\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx \amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_{j}]),  \text{ and }</mrow>
+          <mrow xml:id="PV__P_Q_sin_ax_" number="yes">\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx \amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_{j}])</mrow>
+        </md>,
+        where <m>z_1, \, z_2, \, \ldots, \, z_{k-1}, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane,
+        and <m>\mathrm{Re}(\mathrm{Res}[f,z_{j}])</m> and
+        <m>\mathrm{Im}(\mathrm{Res}[f,z_{j}])</m> are the real and imaginary parts of <m>\mathrm{Res}[f,z_{j}]</m>,
+        respectively.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    The proof of <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>
+    is similar to the proof of <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>.
+    Before turning to the proof,
+    we illustrate how to use <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>
+  </p>
+  <example>
+    <statement>
+      <p>
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{x\sin x\,dx}{x^2+4}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The function <m>f</m> in Equation <xref ref="exp_iaz_P_z__Q_z_"/> is <m>f(z) = \frac{\exp (iz) z}{z^2+4}</m>,
+        which has a simple pole at the point <m>2i</m> in the upper half-plane.
+        Calculating the residue yields
+        <me>
+          \mathrm{Res}[f,2i] =\lim\limits_{z \to 2i}\frac{\exp(iz)z}{z+2i} = \frac{2ie^{-2}}{4i}=\frac{1}{2e^2}
+        </me>.
+      </p>
+      <p>
+        Using Equation <xref ref="PV__P_Q_sin_ax_"/> gives
+        <me>
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{x\sin x\,dx}{x^2+4} = 2\pi \mathrm{Re}(\mathrm{Res}[f,2i] ) = \frac{\pi }{e^2}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^4+4}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The function <m>f</m> in Equation <xref ref="exp_iaz_P_z__Q_z_"/> is <m>f(z) = \frac{\exp (iz)}{z^4+4}</m>,
+        which has simple poles at the points <m>z_1=1+i</m> and
+        <m>z_2=-1+i</m> in the upper half-plane.
+        We get the residues with the aid of L'H&#xf4;pital's rule:
+        <md>
+          <mrow>\mathrm{Res}[f, \, 1+i]  \amp = \lim_{z \to 1+i}\frac{(z-1-i) \exp (iz)}{z^4+4}</mrow>
+          <mrow>\amp = \lim_{z \to 1+i}\frac{[1+i(z-1-i)]\exp (iz)}{4z^3}</mrow>
+          <mrow>\amp = \frac{\exp (-1+i)}{4(1+i)^3}</mrow>
+          <mrow>\amp = \frac{\sin 1-\cos 1-i(\cos 1+\sin 1)}{16e}</mrow>
+        </md>.
+      </p>
+      <p>
+        Similarly,
+        <me>
+          \mathrm{Res}[f, \, -1+i] = \frac{\cos 1 -\sin 1 -i(\cos 1+\sin 1)}{16e}
+        </me>.
+      </p>
+      <p>
+        Using Equation <xref ref="PV__P_Q_cos_ax_"/>, we get
+        <md>
+          <mrow>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^4+4} \amp = -2\pi [\mathrm{Im}(\mathrm{Res}[f,1+i] ) + \mathrm{Im}(\mathrm{Res}[f,-1+i])]</mrow>
+          <mrow>\amp = \frac{\pi (\cos 1+\sin 1)}{4e}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    We are almost ready to give the proof of <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>,
+    but first we need one preliminary result.
+  </p>
+  <lemma xml:id="Jordan_s_Lemma">
+    <title>Jordan's lemma</title>
+    <statement>
+      <p>
+        Suppose that <m>P</m><nbsp/>and <m>Q</m><nbsp/>are polynomials of degree <m>m</m> and <m>n</m>,
+        respectively, where <m>n \ge m+1</m>.
+        If <m>C_R</m> is the upper semicircle <m>z=Re^{i\theta}</m>,
+        for <m>0\le \theta \le \pi</m>, then
+        <me>
+          \lim_{R \to \infty}\int_{c_{R}}\frac{\exp(iz)P(z)}{Q(z)}\,dz=0
+        </me>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      From <m>n \ge m+1</m>, it follows that
+      <m>|\frac{P(z)}{Q(z)}| \to 0</m> as <m>|z| \to \infty</m>.
+      Therefore, for any <m>\varepsilon>0</m>,
+      there exists <m>R_{\varepsilon }>0</m> such that
+      <men xml:id="P_Q___e_Pi">
+        |\frac{P(z)}{Q(z)}| \lt  \frac{\varepsilon }{\pi}
+      </men>
+      whenever <m>|z| \ge R_{\varepsilon }</m>.
+      Using the ML inequality
+      (<xref ref="ML_Inequality_Thm">Theorem</xref>)
+      together with <xref ref="P_Q___e_Pi">Inequality</xref>, we get
+      <men xml:id="Lemma_Integral">
+        |\int_{C_R}\frac{\exp(iz)P(z)}{Q(z)}\,dz| \le \int_{C_R}\frac{\varepsilon }{\pi }|e^{iz}|\,|dz|
+      </men>.
+      provided <m>R\ge R_{\varepsilon }</m>.
+      The parametrization of <m>C_R</m> leads to the equation
+      <men xml:id="Lemma_Subs">
+        |dz| = R\,d\theta,  \text{ and }   |e^{iz}|=e^{-y}=e^{-R\sin \theta}
+      </men>.
+    </p>
+    <p>
+      Using the trigonometric identity
+      <m>\sin (\pi -\theta) = \sin \theta</m> and Equations <xref ref="Lemma_Subs"/>,
+      we express the integral on the right side of <xref ref="Lemma_Integral">Inequality</xref> as
+      <men xml:id="Lemma_Integral_2">
+        \int_{C_R}\frac{\varepsilon }{\pi }|e^{iz}|\,|dz| = \frac{\varepsilon }{\pi }\int_0^{\pi}e^{-R\sin \theta}R\,d\theta = \frac{2\varepsilon }{\pi}\int_0^{\pi /2}e^{-R\sin \theta}R\,d\theta
+      </men>.
+    </p>
+    <p>
+      On the interval <m>0\le \theta \le \pi /2</m> we can use the inequality
+      <me>
+        0\le \frac{2\theta}{\pi }\le \sin \theta
+      </me>.
+    </p>
+    <p>
+      We combine this inequality with <xref ref="Lemma_Integral">Inequality</xref>
+      and <xref ref="Lemma_Integral_2">Equation</xref> to conclude that,
+      for <m>R \ge R_{\varepsilon}</m>,
+      <md>
+        <mrow>|\int_{C_R}\frac{\exp(iz)P(z)\,dz}{Q(z)}| \amp \le \frac{2\varepsilon }{\pi} \int_0^{\pi /2}e^{-2R\theta /\pi }R\,d\theta</mrow>
+        <mrow>\amp = \left. -\varepsilon e^{-2R\theta /\pi}\right|_{\theta=0}^{\theta = \pi /2}</mrow>
+        <mrow>\amp = \varepsilon (1-e^{-R})</mrow>
+        <mrow>\amp \lt  \varepsilon</mrow>
+      </md>.
+    </p>
+    <p>
+      Because <m>\varepsilon >0</m> is arbitrary,
+      proof of Jordan's lemma is complete.
+    </p>
+  </proof>
+  <p>
+    We now turn to the proof of our main Theorem.
+  </p>
+  <proof>
+    <p>
+      Let <m>C</m> be the contour that consists of the segment
+      <m>-R \le x \le R</m> of the real axis together with the upper semicircle <m>C_R</m><nbsp/>parametrized by <m>z=Re^{i\theta}</m>,
+      for <m>0 \le \theta \le \pi</m>.
+      Using properties of integrals, we have
+      <me>
+        \int_{-R}^{R}\frac{\exp(i\alpha x)P(x)\,dx}{Q(x)} = \int_{C}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)} - \int_{C_R}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)}
+      </me>.
+    </p>
+    <p>
+      If <m>R</m> is sufficiently large,
+      all the poles <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> will lie inside <m>C</m>,
+      and we can use the residue theorem to obtain
+      <men xml:id="Eq_8_12">
+        \int_{-R}^{R} \frac{\exp (i\alpha x)P(x)\,dx}{Q(x)} = 2 \pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}] - \int_{C_R}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)}
+      </men>.
+    </p>
+    <p>
+      Since <m>\alpha</m> is a positive real number,
+      the change of variables <m>\zeta=\alpha z</m> shows that the conclusion of Jordan's lemma holds for the integrand <m>\frac{\exp(i\alpha z)P(z)}{Q(z)}</m>.
+      Hence we let <m>R \to \infty</m> in Equation <xref ref="Eq_8_12"/> to obtain
+      <md>
+        <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{[\cos(\alpha x)+i\sin(\alpha x)]P(x)\,dx}{Q(x)} \amp = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}]</mrow>
+        <mrow>\amp = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_{j}])</mrow>
+        <mrow>\amp + 2\pi i\sum\limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_{j}])</mrow>
+      </md>.
+    </p>
+    <p>
+      Equating the real and imaginary parts of this equation gives us Equations <xref ref="PV__P_Q_cos_ax_"/> and <xref ref="PV__P_Q_sin_ax_"/>, which completes the proof.
+    </p>
+  </proof>
+  <p>
+    <em>Exercises for <xref ref="sec_improper-trig-integrals">Section</xref></em>
+    Use residues to find the Cauchy principal value of the following:
+    <ol>
+      <li xml:id="x8_4_1">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2+9}\,dx, \text{ and } \int_{-\infty}^{\infty}\frac{\sin x}{x^2+9}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_2">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x\cos x}{x^2+9}\,dx, \text{ and } \int_{-\infty}^{\infty}\frac{x\sin x}{x^2+9}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_3">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x\sin x}{(x^2+4)^2}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_4">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+4)^2}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_5">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+4)(x^2+9)}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_6">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+1)(x^2+4)}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_7">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2-2x+5}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_8">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2-4x+5}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_9">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x\sin x}{x^4+4}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_10">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^3\sin x}{x^4+4}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_11">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos 2x}{x^2+2x+2}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_12">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^3\sin 2x}{x^4+4}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_4_13">
+        <p>
+          Why do you need to use the exponential function when evaluating improper integrals involving the sine and cosine functions?
+        </p>
+      </li>
+    </ol>
+  </p>
+</section>

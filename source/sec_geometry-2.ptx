@@ -1,0 +1,691 @@
+<section xml:id="sec_geometry-2">
+  <title>The Geometry of Complex Numbers, Part II</title>
+  <p>
+    In <xref ref="sec_geometry-1">Section</xref>
+    we saw that a complex number <m>z=x+iy</m> could be viewed as a vector in the <m>xy</m> plane with its tail at the origin and its head at the point <m>(x, y)</m>.
+    A <term>vector</term> can be uniquely specified by giving its magnitude (<em>i.e.</em>,
+    its length) and direction
+    (<em>i.e.</em>,
+    the angle it makes with the positive <m>x</m> axis).
+    In this section,
+    we focus on these two geometric aspects of complex numbers.
+  </p>
+  <p>
+    Let <m>r</m> be the modulus of <m>z</m> (<em>i.e.</em>,
+    <m>r=|z|</m>) and let <m>\theta</m> be the angle that the line from the origin to the complex number <m>z</m> makes with the positive <m>x</m> axis. (Note: The number <m>\theta</m> is undefined if <m>z=0)</m>.
+    Then, as <xref ref="fig_ch-01-15">Figure</xref>(a) shows,
+    <men xml:id="Polar_form">
+      z=(r\cos\theta,\ r\sin\theta)=r(\cos\theta+i\sin\theta)
+    </men>.
+  </p>
+  <figure xml:id="fig_ch-01-15">
+    <caption>Polar representation of complex numbers</caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-15.pdf"/>
+  </figure>
+  <definition>
+    <statement>
+      <p>
+        Polar Representation
+      </p>
+      <p>
+        Identity <xref ref="Polar_form"/> is known as a
+        <term>polar representation</term> of <m>z</m>,
+        and the values <m>r</m> and <m>\theta</m> are called
+        <term>polar coordinates</term> of <m>z</m>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        If <m>z=1+i</m>, then <m>r=\sqrt{2}</m> and
+        <m>z=(\sqrt{2}\cos\frac{\pi}{4}, \sqrt{2}\sin\frac{\pi}{4})=\sqrt{2}(\cos\frac{\pi}{4}+i\sin\frac{\pi}{4})</m> is a polar representation of <m>z</m>.
+        The polar coordinates in this case are <m>r= \sqrt{2}</m>,
+        and <m>\theta=\frac{\pi}{4}</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    As <xref ref="fig_ch-01-15">Figure</xref>(b) shows,
+    <m>\theta</m> can be <em>any</em>
+    value for which the identities
+    <m>\cos \theta =\frac{x}{r}</m> and <m>\sin \theta =\frac{y}{r}</m> hold.
+    For <m>z \ne 0</m>,
+    the collection of all values of <m>\theta</m> for which
+    <m>z=r(\cos \theta +i\sin \theta )</m> is denoted <m>\arg z</m>.
+    Formally, we have the following definitions.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        : <m>\arg z</m>
+      </p>
+      <p>
+        If <m>z \ne 0</m>,
+        <men xml:id="arg_z">
+          \arg z = \{\theta :z =r (\cos \theta +i\sin \theta ) \}
+        </men>.
+      </p>
+      <p>
+        If <m>\theta \in \arg \,z</m>,
+        we say that <m>\theta</m> is <term>an argument</term> of <m>z</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Note that we write <m>\theta \in \arg \,z</m> as opposed to <m>\theta =\arg z</m>.
+    We do so because <m>\arg z</m> is a set,
+    and the designation <m>\theta \in \arg z</m> indicates that <m>\theta</m> belongs to that set.
+    Note also that,
+    if <m>\theta_1 \in \arg z</m> and <m>\theta_2 \in \arg z</m>,
+    then there exists some integer <m>n</m> such that
+    <men xml:id="argFacts">
+      \theta_1 = \theta_2 +2n\pi
+    </men>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Because <m>1+i=\sqrt{2}(\cos \frac{\pi}{4}+i\sin \frac{\pi}{4})</m>, we have
+        <me>
+          \arg (1+i) = \left\{\frac{\pi}{4}+2n\pi : n \text{ is an integer }  \right\} = \left\{\cdots, -\frac{7\pi}{4}, \frac{\pi}{4}, \frac{9\pi}{4}, \frac{17\pi}{4},\cdots \right\}
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Mathematicians have agreed to single out a special choice of <m>\theta \in \arg z</m>.
+    It is that value of <m>\theta</m> for which <m>-\pi \lt \theta \le \pi</m>,
+    as the following definition indicates.
+  </p>
+  <definition>
+    <title>$\mathrm{Arg} <nbsp/> z$</title>
+    <statement>
+      <p>
+        Let <m>z \ne 0</m> be a complex number.
+        Then
+        <men xml:id="Arg_z">
+          \mathrm{Arg} \, z= \theta  \text{ provided }   z=r(\cos \theta +i\sin \theta )  \text{ and }   -\pi \lt \theta \le \pi
+        </men>.
+      </p>
+      <p>
+        If <m>\theta =\mathrm{Arg}\,z</m>,
+        we call <m>\theta</m> <term>the argument</term> of <m>z</m>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        <m>Arg(1+i) =\frac{\pi}{4}</m>.
+      </p>
+    </statement>
+  </example>
+  <remark>
+    <p>
+      Clearly, if <m>z=x+iy=r(\cos \theta +i\sin \theta )</m>,
+      where <m>x \ne 0</m>, then
+      <me>
+        \arg \, z \subset \arctan \frac{y}{x}
+      </me>,
+      where <m>\arctan \frac{y}{x} = \{\theta : \tan \theta = \frac{y}{x}\}</m>.
+      Note that, as with <m>\arg, \, \arctan</m> is a set
+      (as opposed to \mathrm{Arctan}, which is a number).
+      We specifically identify <m>\arg \, z</m> as a <em>proper subset</em>
+      of <m>\arctan \frac{y}{x}</m> because
+      <m>\tan \theta</m> has period <m>\pi</m>,
+      whereas <m>\cos \theta</m> and
+      <m>\sin \theta</m> have period <m>2\pi</m>.
+      In selecting the proper values for <m>\arg \, z</m>,
+      we must be careful in specifying the choices of
+      <m>\arctan \frac{y}{x}</m> so that the point <m>z</m> associated with <m>r</m> and <m>\theta</m> lies in the appropriate quadrant.
+    </p>
+  </remark>
+  <example xml:id="PolarEx">
+    <statement>
+      <p>
+        If <m>z=-\sqrt{3}-i = r(\cos \theta +i\sin \theta)</m>,
+        then <m>r=|z| = |-\sqrt{3} -i| =2</m> and <m>\theta \in \arctan \frac{y}{x}=\arctan \frac{-1}{-\sqrt{3}} = \{\frac{\pi}{6}+n\pi : n\text{ is an integer } \}</m>.
+        It would be a mistake to use
+        <m>\frac{\pi}{6}</m> as an acceptable value for <m>\theta</m>,
+        as the point <m>z</m> associated with <m>r=2</m> and
+        <m>\theta =\frac{\pi}{6}</m> is in the first quadrant,
+        whereas <m>-\sqrt{3}-i</m> is in the third quadrant.
+        A correct choice for <m>\theta</m> is <m>\theta =\frac{\pi}{6}-\pi =\frac{-5\pi}{6}</m> because
+        <md>
+          <mrow>-\sqrt{3}-i \amp = 2\cos\left(\frac{-5\pi}{6}\right) + i2\sin\left(\frac{-5\pi}{6}\right)</mrow>
+          <mrow>\amp = 2\cos \left(\frac{-5\pi}{6}+2n\pi\right) +i2\sin\left(\frac{-5\pi}{6}+2n \pi\right)</mrow>
+        </md>,
+        where <m>n</m> is any integer.
+        Notice also, that
+        <md>
+          <mrow>\mathrm{Arg}(-\sqrt{3}-i) \amp  =\frac{-5\pi}{6}\text{ , and }</mrow>
+          <mrow>\mathrm{arg}(-\sqrt{3}-i) \amp  = \left\{\frac{-5\pi}{6}+2n\pi :n \text{ is an integer } \right\}</mrow>
+        </md>,
+        which illustrates that <m>\arg (-\sqrt{3}-i)</m> is indeed a <em>proper</em>
+        subset of <m>\arctan \frac{-1}{-\sqrt{3}}</m>.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        If <m>z=x+iy=0+4i</m>, it would be a mistake to attempt to find
+        <m>\mathrm{Arg}\,z</m> by looking at <m>\arctan \frac{y}{x}</m>,
+        as <m>x=0</m>,
+        so <m>\frac{y}{x}</m> is undefined.
+        If <m>z \ne 0</m> is on the <m>y</m> axis, then
+        <md>
+          <mrow>\mathrm{Arg}\,z \amp = \frac{\pi}{2},  \text{ if }   \mathrm{Im}\,{z}>0 \text{ and }</mrow>
+          <mrow>\mathrm{Arg}\,z \amp = -\frac{\pi}{2},  \text{ if }   \mathrm{Im}\,z \lt 0</mrow>
+        </md>.
+      </p>
+      <p>
+        In this case,
+        <m>\mathrm{Arg}(4i)=\frac{\pi}{2}</m> and <m>\arg(4i)=\{\frac{\pi}{2} +2n\pi:n \text{ is an integer } \}</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    As you will see in <xref ref="ch_complex-functions"/>,
+    <m>\mathrm{Arg}\,z</m> is a discontinuous function of <m>z</m> because it
+    <q>jumps</q>
+    by an amount of <m>2\pi</m> as <m>z</m> crosses the negative real axis.
+  </p>
+  <p>
+    In <xref ref="ch_elementary-fcns"/> we define <m>e^z</m> for any complex number <m>z</m>.
+    You will see that this complex exponential has all the properties of real exponentials that you studied in earlier mathematics courses.
+    That is, <m>e^{z_1}e^{z_2}=e^{z_1+z_2}</m>, and so on.
+    You will also see, amazingly,
+    that if <m>z=x+iy</m>, then
+    <men xml:id="e_zDef">
+      e^{z}=e^{x+iy}=e^x(\cos\,y+i\sin\,y)
+    </men>.
+  </p>
+  <p>
+    We will establish this result rigorously in <xref ref="ch_elementary-fcns"/>,
+    but there is a plausible explanation we can give now.
+    If <m>e^{z}</m> has the normal properties of an exponential,
+    it must be that <m>e^{x+iy}=e^{x}e^{iy}</m>.
+    Now, recall from Calculus the values of three infinite series:
+    <me>
+      e^{x}=\sum\limits_{k=0}^\infty \frac{1}{k!}x^k, \; \cos x=\sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}, \text{ and } \sin x=\sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}x^{2n+1}
+    </me>.
+  </p>
+  <p>
+    Substituting <m>iy</m> for <m>x</m> in the infinite series for <m>e^{x}</m> gives
+    <me>
+      e^{iy}=\sum\limits_{k=0}^\infty \frac{1}{k!}(iy)^k = \sum\limits_{k=0}^\infty \frac{1}{k!}i^ky^k
+    </me>.
+  </p>
+  <p>
+    At this point our argument loses rigor because we have not talked about infinte series of complex numbers,
+    let alone whether such series converge.
+    Nevertheless,
+    if we merely take the last series as a formal expression and split it into two series according to whether the index <m>k</m> is even (<m>k=2n</m>) or odd (<m>k=2n+1</m>), we get
+    <md>
+      <mrow>{3} e^{iy}  \amp = \sum\limits_{k \text{ is even } }\frac{1}{k!}i^{k}y^{k} \amp \amp + \sum\limits_{k \text{ is odd } }\frac{1}{k!}i^{k}y^{k} \amp</mrow>
+      <mrow>\amp = \sum\limits_{n=0}^\infty \frac{1}{(2n)!} i^{2n}y^{2n} \amp \amp + \sum\limits_{n=0}^\infty \frac{1}{(2n+1)!}i^{2n+1}y^{2n+1} \amp</mrow>
+      <mrow>\amp = \sum\limits_{n=0}^\infty \frac{1}{(2n)!}(i^2)^ny^{2n} \amp \amp + \sum\limits_{n=0}^\infty \frac{1}{(2n+1)!}(i^2)^niy^{2n+1} \amp</mrow>
+      <mrow>\amp = \sum\limits_{n=0}^\infty \frac{1}{(2n)!}(-1)^ny^{2n} \amp \amp + i\sum\limits_{n=0}^\infty \frac{1}{(2n+1)!}(-1)^ny^{2n+1} \amp</mrow>
+      <mrow>\amp = \cos y \amp \amp + i \sin y</mrow>
+    </md>.
+  </p>
+  <p>
+    Thus, it seems the only possible value for <m>e^{z}</m> is that given by Equation <xref ref="e_zDef"/>.
+    We will use this result freely from now on, and, as stated,
+    supply a rigorous proof in <xref ref="ch_elementary-fcns"/>.
+  </p>
+  <p>
+    If we set <m>x=0</m> and let <m>\theta</m> take the role of <m>y</m> in Equation <xref ref="e_zDef"/>,
+    we get a famous result known as
+    <em>Euler's formula</em>:
+    <men xml:id="Euler_s_Formula">
+      e^{i\theta}=(\cos\theta+i\sin\theta)=(\cos\theta, \sin\theta )
+    </men>.
+  </p>
+  <p>
+    If <m>\theta</m> is a real number,
+    <m>e^{i\theta}</m> will be located somewhere on the circle with radius 1 centered at the origin.
+    This assertion is easy to verify because
+    <men xml:id="AbsE_it">
+      |e^{i\theta}| =\sqrt{\cos^2\theta+\sin^2\theta}=1
+    </men>.
+  </p>
+  <p>
+    <xref ref="fig_ch-01-16">Figure</xref>
+    illustrates the location of
+    <m>e^{i\theta}</m> for various values of <m>\theta</m>.
+  </p>
+  <figure xml:id="fig_ch-01-16">
+    <caption>The location of <m>e^{i\theta}</m> for various values of <m>\theta</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-16.pdf"/>
+  </figure>
+  <p>
+    Note that, when <m>\theta =\pi</m>,
+    we get <m>e^{i\pi}=(\cos \pi, \sin \pi) =(-1, 0) = -1</m>, so
+    <men xml:id="Euler_s_Identity">
+      e^{i\pi} + 1 = 0
+    </men>.
+  </p>
+  <p>
+    Euler was the first to discover this relationship;
+    it is referred to as <em>Euler's identity</em>.
+    It has been labeled by many mathematicians as the most amazing relation in analysis<mdash/>and with good reason.
+    Symbols with a rich history are miraculously woven together<mdash/>the constant <m>\pi</m> used by Hippocrates as early as 400 <sc>b.c.</sc>;
+    <m>e</m>,
+    the base of the natural logarithms;
+    the basic concepts of addition (<m>+</m>) and equality (<m>=</m>);
+    the foundational whole numbers 0 and 1;
+    and <m>i</m>, the number that is the central focus of this book.
+  </p>
+  <p>
+    Euler's formula <xref ref="Euler_s_Formula"/> is of tremendous use in establishing important algebraic and geometric properties of complex numbers.
+    You will see shortly that it enables you to multiply complex numbers with great ease.
+    It also allows you to express a polar form of the complex number <m>z</m> in a more compact way.
+    Recall that, if <m>r=\left| z\right|</m> and
+    <m>\theta\in</m> <m>\arg</m> <m>z</m>,
+    then <m>z=r(\cos\theta+i\sin\theta)</m>.
+    Using Euler's formula we can now write <m>z</m> in its exponential form:
+    <men xml:id="Exponential_Form">
+      z=re^{i\theta}
+    </men>.
+  </p>
+  <example xml:id="ExponentialEx">
+    <statement>
+      <p>
+        With reference to <xref ref="PolarEx">Example</xref>,
+        with <m>z=-\sqrt{3}-i</m>, we have <m>z=2e^{i(-5\pi/6)}</m>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Together with the rules for exponentiation that we will verify in <xref ref="ch_elementary-fcns"/>, Equation <xref ref="Exponential_Form"/> has interesting applications.
+    If <m>z_1 = r_1e^{i\theta_1}</m> and <m>z_2 = r_2e^{i\theta_2}</m>, then
+    <md>
+      <mrow>z_1z_2  \amp = r_1e^{i\theta_1}r_2e^{i\theta_2} = r_1r_2e^{i(\theta_1+\theta_2)}</mrow>
+      <mrow xml:id="PolarMult" number="yes">\amp  =r_1r_2 [\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)]</mrow>
+    </md>.
+  </p>
+  <p>
+    <xref ref="fig_ch-01-17">Figure</xref>
+    illustrates the geometric significance of this equation.
+  </p>
+  <figure xml:id="fig_ch-01-17">
+    <caption>The product of two complex numbers <m>z_3=z_1z_2</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-17.pdf"/>
+  </figure>
+  <p>
+    We have already shown that the modulus of the product is the product of the moduli;
+    that is, <m>|z_1z_2| = |z_1| |z_2|</m>.
+    Identity <xref ref="PolarMult"/> establishes that an argument of <m>z_1z_2</m> is an argument of <m>z_1</m> plus an argument of <m>z_2</m>.
+    It also answers the question posed at the end of Section 1.3 regarding why the product <m>z_1z_2</m> was in a different quadrant than either <m>z_1</m> or <m>z_2</m>.
+    It further offers an interesting explanation as to why the product of two negative real numbers is a positive real number.
+    The negative numbers,
+    each of which has an angular displacement of <m>\pi</m> radians,
+    combine to produce a product that is rotated to a point with an argument of <m>\pi+\pi=2\pi</m> radians,
+    coinciding with the positive real axis.
+  </p>
+  <p>
+    Using exponential form, if <m>z \ne 0</m>,
+    we can write <m>\arg z</m> a bit more compactly as
+    <men xml:id="argzexp">
+      \arg z= \{\theta : z=re^{i\theta}\}
+    </men>.
+  </p>
+  <p>
+    Doing so enables us to see a nice relationship between the sets
+    <m>\arg(z_1z_2), \, \arg z_1</m>, and <m>\arg z_2</m>:
+  </p>
+  <theorem xml:id="thm_arg-sum">
+    <statement>
+      <p>
+        If <m>z_1=r_1e^{i\theta_1} \ne 0</m> and <m>z_2 = r_2e^{i\theta_2} \ne 0</m>,
+        then as sets,
+        <men xml:id="argProduct">
+          \arg (z_1z_2) = \arg z_1 + \arg z_2
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Before proceeding with the proof of this theorem,
+    we recall two important facts about sets.
+    First, to establish the equality of two sets,
+    we must show that each is a subset of the other.
+    Second, the sum of two sets is the sum of all combinations of elements from the first and second sets,
+    respectively.<nbsp/>In this case,
+    <m>\arg z_1 + \arg z_2 = \{\theta_1+\theta_2:\theta_1 \in \arg z_1 \text{ and } \theta_2 \in \arg z_2\}</m>.
+  </p>
+  <proof>
+    <p>
+      Let <m>\theta \in \arg (z_1z_2)</m>.
+      Because <m>z_1z_2=r_1r_2e^{i(\theta_1+\theta_2)}</m>,
+      it follows from Formula <xref ref="argzexp"/> that <m>\theta_1 + \theta_2\in \arg (z_1z_2)</m>.
+      By Equation <xref ref="argFacts"/> there is some integer <m>n</m> such that <m>\theta = \theta_1+\theta_2+2n\pi</m>.
+      Further, as <m>z_1=r_1e^{i\theta_1}, \, \theta_1 \in \arg z_1</m>.
+      Likewise, <m>z_2 = r_2e^{i\theta_2}</m> gives <m>\theta_2 \in \arg z_2</m>.
+      But if <m>\theta_2 \in \arg z_2</m>,
+      then <m>\theta_2 +2n\pi \in \arg z_2</m>.
+      This result shows that <m>\theta =\theta_1+(\theta _2+2n\pi) \in \arg z_1 + \arg z_2</m>.
+      Thus, <m>\arg (z_1z_2) \subseteq \arg z_1 + \arg \,z_2</m>.
+      The proof that <m>\arg z_1 + \arg z_2 \subseteq \arg (z_1z_2)</m> is left as an exercise.
+    </p>
+  </proof>
+  <p>
+    Using Equality <xref ref="Exponential_Form"/> gives <m>z^{-1}=\frac{1}{z}=\frac{1}{re^{i\theta}}=\frac{1}{r}e^{-i\theta}</m>.
+    In other words,
+    <me>
+      z^{-1}=\frac{1}{r}[\cos(-\theta) + i\sin (-\theta)] = \frac{1}{r}e^{-i\theta}
+    </me>.
+  </p>
+  <p>
+    Recalling that <m>\cos(-\theta) =\cos(\theta)</m> and <m>\sin(-\theta) =-\sin(\theta)</m>,
+    we also have
+    <md>
+      <mrow>{2} \overline{z} \amp = r(\cos\theta-i\sin\theta) = r\left[ \cos(-\theta) + i\sin(-\theta) \right] \amp = re^{-i\theta}, \text{ and }  \amp</mrow>
+      <mrow>\frac{z_1}{z_2} \amp = \frac{r_1}{r_2}[\cos(\theta_1-\theta_2) +i\sin(\theta_1-\theta_2)] \amp = \frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}. \amp</mrow>
+    </md>
+  </p>
+  <p>
+    If <m>z</m> is in the first quadrant,
+    the positions of the numbers <m>z</m>, <m>\overline{z}</m>,
+    and <m>z^{-1}</m> are as shown in <xref ref="fig_ch-01-18">Figure</xref> when <m>|z|\lt 1</m>.
+    <xref ref="fig_ch-01-19">Figure</xref>
+    depicts the situation when <m>|z|>1</m>.
+  </p>
+  <figure xml:id="fig_ch-01-18">
+    <caption>Relative positions of <m>z, \  \overline{z}</m>, and <m>z^{-1}</m>, when <m>|z| \lt  1</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-18.pdf"/>
+  </figure>
+  <figure xml:id="fig_ch-01-19">
+    <caption>Relative positions of <m>z, \  \overline{z}</m>, and <m>z^{-1}</m>, when <m>|z| > 1</m></caption>
+    <image width="73%" source="figs/ch-01/ch-01-fig-19.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        If <m>z=1+i</m>,
+        then <m>r=|z| =\sqrt{2}</m> and <m>\theta =\mathrm{Arg}\,z = \frac{\pi}{4}</m>.
+        Therefore <m>z^{-1}=\frac{1}{\sqrt{2}} [\cos (\frac{-\pi}{4}) + i\sin (\frac{-\pi}{4})] = \frac{1}{\sqrt{2}}\left[ \frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}\right]</m> and has modulus <m>\frac{1}{\sqrt{2}}=\frac{\sqrt{2}}{2}</m>.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        If <m>z_1=8i</m> and <m>z_2=1+i\sqrt{3}</m>,
+        then representative polar forms for these numbers are
+        <m>z_1=8(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2})</m> and <m>z_2=2(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3})</m>.
+        Hence
+        <me>
+          \frac{z_1}{z_2} = \frac{8}{2}\left[\cos\left(\frac{\pi}{2}-\frac{\pi}{3}\right) + i\sin\left(\frac{\pi}{2} - \frac{\pi}{3}\right)\right] = 4\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right) = 2\sqrt{3}+2i
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_geometry-2">Section</xref></title>
+    <exercise xml:id="x1_4_1">
+      <p>
+        Find <m>\mathrm{Arg}\,z</m> for the following values of <m>z</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>1-i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\sqrt{3}+i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-1-i\sqrt{3})^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(1-i)^3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{2}{1+i\sqrt{3}}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{2}{i-1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{1+i\sqrt{3}}{(1+i)^2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(1+i\sqrt{3})(1+i)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x1_4_2">
+      <p>
+        Use exponential notation to show that
+        <ol>
+          <li>
+            <p>
+              <m>(\sqrt{3}-i) (1+i\sqrt{3}) =2\sqrt{3}+2i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(1+i)^3=-2+2i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>2i(\sqrt{3}+i)(1+i\sqrt{3}) =-8</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{8}{1+i}=4-4i</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_3">
+      <p>
+        Represent the following complex numbers in polar form.
+        <ol>
+          <li>
+            <p>
+              <m>-4</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>6-6i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>-7i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>-2\sqrt{3}-2i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{1}{(1-i)^2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{6}{i+\sqrt{3}}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>3+4i</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(5+5i)^3</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_4">
+      <p>
+        Show that <m>\arg z_1 + \arg z_2 \subseteq \arg z_1z_2</m>,
+        thus completing the proof of <xref ref="thm_arg-sum">Theorem</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_5">
+      <p>
+        Express the following in <m>a+ib</m> form.
+        <ol>
+          <li>
+            <p>
+              <m>e^{i\pi /2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>4e^{-i\pi /2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>8e^{i7\pi /3}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>-2e^{i5\pi /6}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>2ie^{-i3\pi /4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>6e^{i2\pi /3}e^{i\pi}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>e^2e^{i\pi}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>e^{i\pi /4}e^{-i\pi}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_6">
+      <p>
+        Show that <m>\arg z_1 = \arg z_2</m> iff <m>z_2 = cz_1</m>,
+        where <m>c</m> is a positive real constant.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_7">
+      <p>
+        Let <m>z_1 = -1+i\sqrt{3}</m> and <m>z_2 = -\sqrt{3}+i</m>.
+        Show that the equation <m>\mathrm{Arg}(z_1z_2) = \mathrm{Arg} \, z_1 + \mathrm{Arg} \, z_2</m> <em>does not</em>
+        hold for the specific choice of <m>z_1</m> and <m>z_2</m>.
+        Why not?
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_8">
+      <p>
+        Show that the equation <m>\mathrm{Arg}(z_1z_2) = \mathrm{Arg} \, z_1\ + \mathrm{Arg} \, z_2</m> is true provided that
+        <m>-\pi/2 \lt \mathrm{Arg} \, z_1 \le \pi/2</m> and <m>-\pi/2 \lt \mathrm{Arg} \, z_2 \le \pi/2</m>.
+        Describe the set of points that meets this criterion.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_9">
+      <p>
+        Describe the set of complex numbers for which <m>\mathrm{Arg}(1/z) \ne - \mathrm{Arg}(z)</m>.
+        Prove your assertion.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_10">
+      <p>
+        Establish the identity <m>\arg (z_1/z_2) = \arg z_1 - \arg z_2</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_11">
+      <p>
+        Show that <m>\arg (1/z) = -\arg z</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_12">
+      <p>
+        Show that <m>\arg (z_1\overline{z_2})= \arg z_1 - \arg z_2</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_13">
+      <p>
+        Show that, if <m>z \ne 0</m>, then
+        <ol>
+          <li>
+            <p>
+              <m>\mathrm{{Arg}(z\overline{z})=0}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\mathrm{{Arg}(z+\overline{z})=0}</m> when <m>\mathrm{Re}(z)>0</m>.\label {1.4.13b}
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_14">
+      <p>
+        Let <m>z_1, \, z_2</m>,
+        and <m>z_3</m> form the vertices of a triangle as indicated in <xref ref="fig_ch-01-20">Figure</xref>.
+        Show that <m>\alpha \in \arg(\frac{z_2-z_1}{z_3-z_1}) = \arg(z_2-z_1) - \arg(z_3-z_1)</m> is an expression for the angle at the vertex <m>z_1</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x1_4_15">
+      <p>
+        Let <m>z \ne z_0</m>.
+        Show that the polar representation <m>z-z_0=\rho(\cos \phi +i</m>
+        <m>\sin \phi )</m> can be used to denote the displacement vector from <m>z_0</m> to <m>z</m>,
+        as indicated in <xref ref="fig_ch-01-21">Figure</xref>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Show that <m>\mathrm{Arg}\,\overline{(z-w)} = -\mathrm{Arg} \,(z-w)</m> iff <m>z-w</m> is not a negative real number.
+        <figure xml:id="fig_ch-01-20">
+          <caption>For Exercise 14</caption>
+          <image width="73%" source="figs/ch-01/ch-01-fig-20.pdf"/>
+        </figure>
+        <figure xml:id="fig_ch-01-21">
+          <caption>For Exercise 15</caption>
+          <image width="73%" source="figs/ch-01/ch-01-fig-21.pdf"/>
+        </figure>
+      </p>
+    </exercise>
+  </exercises>
+</section>

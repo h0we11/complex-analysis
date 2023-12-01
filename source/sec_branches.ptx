@@ -1,0 +1,354 @@
+<section xml:id="sec_branches">
+  <title>Branches of Functions</title>
+  <introduction>
+    <p>
+      In <xref ref="sec_z_n_and_z__1_n_">Section</xref>
+      we defined the principal square root function and investigated some of its properties.
+      We left unanswered some questions concerning the choices of square roots.
+      We now look at these questions because they are similar to situations involving other elementary functions.
+    </p>
+    <p>
+      In our definition of a function in <xref ref="sec_functions-mappings">Section</xref>,
+      we specified that each value of the independent variable in the domain is mapped onto one and
+      <em>only one</em> value in the range.
+      As a result,
+      we often talk about a single-valued function, which emphasizes the
+      <q>only one</q>
+      part of the definition and allows us to distinguish such functions from multiple-valued functions,
+      which we now introduce.
+    </p>
+    <p>
+      Let <m>w=f(z)</m> denote a function whose domain is the set <m>D</m> and whose range is the set <m>R</m>.
+      If <m>w</m> is a value in the range,
+      then there is an associated inverse relation <m>z=g(w)</m> that assigns to each value <m>w</m> the value
+      (or values)
+      of <m>z</m> in <m>D</m> for which the equation <m>f(z)=w</m> holds.
+      But unless <m>f</m> takes on the value <m>w</m> at most once in <m>D</m> , then the inverse relation <m>g</m> is necessarily many valued,
+      and we say that <m>g</m> is a multivalued function.
+      For example, the inverse of the function
+      <m>w=f(z)=z^2</m> is the square root function <m>z=g(w)=w^{\frac{1}{2}}</m>.
+      For each value <m>z</m> other than <m>z=0</m>, then,
+      the two points <m>z</m> and <m>-z</m> are mapped onto the same point <m>w=f(z)</m>;
+      hence <m>g</m> is, in general, a two-valued function.
+    </p>
+    <p>
+      The study of limits, continuity,
+      and derivatives loses all meaning if an arbitrary or ambiguous assignment of function values is made.
+      For this reason we did not allow multivalued functions to be considered when we defined these concepts.
+      When working with inverse functions,
+      you have to specify carefully one of the many possible inverse values when constructing an inverse function,
+      as when you determine implicit functions in calculus.
+      If the values of a function <m>f</m> are determined by an equation that they satisfy rather than by an explicit formula,
+      then we say that the function is defined implicitly or that <m>f</m> is an implicit function.
+      In the theory of complex variables we present a similar concept.
+    </p>
+    <p>
+      We now let <m>w=f(z)</m> be a multiple-valued function.
+      A branch of <m>f</m> is any single-valued function <m>f_0</m> that is continuous in some domain
+      (except, perhaps,<nbsp/>on the boundary).
+      At each point <m>z</m> in the domain,
+      it assigns one of the values of <m>f(z)</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          We consider some branches of the two-valued square root function <m>f(z) =z^{\frac{1}{2}}</m> <m>(z \ne 0)</m>.
+          Define the principal square root function as
+          <men xml:id="Br1">
+            f_1(z) = |z|^{\frac{1}{2}}e^{i\frac{\mathrm{Arg}(z)}{2}} = r^{\frac{1}{2}}e^{i\frac{\theta}{2}}=r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin \frac{\theta}{2}
+          </men>,
+          where <m>r=|z|</m> and <m>\theta =\mathrm{Arg}(z)</m> so that <m>-\pi \lt \theta \le \pi</m>.
+          The function <m>f_1</m> is a branch of <m>f</m>.
+          Using the same notation,
+          we can find other branches of the square root function.
+          For example, if we let
+          <md>
+            <mrow>f_2(z) = |z|^{\frac{1}{2}}e^{i\frac{\mathrm{Arg}(z) +2\pi}{2}} \amp =r^{\frac{1}{2}}e^{i\frac{\theta +2\pi}{2}}</mrow>
+            <mrow xml:id="Br2" number="yes">\amp = r^{\frac{1}{2}}\cos \left(\frac{\theta +2\pi}{2}\right) +ir^{\frac{1}{2}}\sin \left(\frac{\theta +2\pi}{2}\right)</mrow>
+          </md>,
+          then
+          <me>
+            f_2(z) =r^{\frac{1}{2}}e^{i\frac{\theta +2\pi}{2}} = r^{\frac{1}{2}}e^{i\frac{\theta}{2}}e^{i\pi}=-r^{\frac{1}{2}}e^{i\frac{\theta}{2}}=-f_1(z)
+          </me>,
+          so <m>f_1</m> and <m>f_2</m> can be thought of as
+          <q>plus</q>
+          and
+          <q>minus</q>
+          square root functions.
+          The negative real axis is called a branch cut for the functions <m>f_1</m> and <m>f_2</m>.
+          Each point on the branch cut is a point of discontinuity for both functions <m>f_1</m> and <m>f_2</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Show that the function <m>f_1</m> is discontinuous along the negative real axis.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>z_0=r_0e^{i\pi}</m> denote a negative real number.
+          We compute the limit as <m>z</m> approaches <m>z_0</m> through the upper half-plane
+          <m>\{z: \mathrm{Im}(z) >0\}</m> and the<nbsp/>limit<nbsp/>as <m>z</m> approaches <m>z_0</m> through the lower half-plane <m>\{z:\mathrm{Im}(z) \lt 0\}</m>.
+          In polar coordinates these limits are given by
+          <md>
+            <mrow>\lim\limits_{(r,\theta ) \to (r_0, \pi)}f_1(re^{i\theta}) \amp = \lim\limits_{(r,\theta ) \to (r_0,\pi )}r^{\frac{1}{2}} \left(\cos \frac{\theta}{2}+i\sin \frac{\theta}{2}\right) = ir_0^{\frac{1}{2}},  \text{ and }</mrow>
+            <mrow>\lim\limits_{(r,\theta ) \to (r_0,-\pi )}f_1(re^{i\theta}) \amp  = \lim\limits_{(r,\theta ) \to (r_0,-\pi )}\text{} r^{\frac{1}{2}}\left(\cos \frac{\theta}{2}+i\sin \frac{\theta}{2}\right) = -ir_0^{\frac{1}{2}}</mrow>
+          </md>.
+        </p>
+        <p>
+          The two limits are distinct,
+          so the function <m>f_1</m> is discontinuous at <m>z_0</m>.
+        </p>
+      </solution>
+    </example>
+    <remark>
+      <p>
+        Likewise, <m>f_2</m> is discontinuous at <m>z_0</m>.
+        The mappings <m>w=f_1(z)</m>, <m>w=f_2(z)</m>,
+        and the branch cut are illustrated in <xref ref="fig_ch-02-18">Figure</xref>.
+      </p>
+    </remark>
+    <figure xml:id="fig_ch-02-18">
+      <caption>The branches <m>f_1</m> and <m>f_2</m> of <m>f(z) = z^{\frac{1}{2}}</m></caption>
+      <image width="73%" source="figs/ch-02/ch-02-fig-18.pdf"/>
+    </figure>
+    <p>
+      We can construct other branches of the square root function by specifying that an argument of <m>z</m> given by
+      <m>\theta =\arg z</m> is to lie in the interval <m>\alpha \lt  \theta \le \alpha +2\pi</m>.
+      The corresponding branch is
+      <men xml:id="Bralpha">
+        f_\alpha(z) = r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin \frac{\theta}{2}, \text{ where }   z=re^{i\theta} \ne 0  \text{ and }   \alpha \lt \theta \le \alpha +2\pi
+      </men>.
+    </p>
+    <p>
+      The branch cut for <m>f_{\alpha}</m> is the ray <m>r \ge 0</m>,
+      <m>\theta =\alpha</m>, which includes the origin.
+      The point <m>z=0</m>,
+      common to all branch cuts for the multivalued square root function,
+      is called a branch point.
+      The mapping <m>w=f_\alpha(z)</m> and its branch cut are illustrated in <xref ref="fig_ch-02-19">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-02-19">
+      <caption>The branch <m>f_\alpha</m> of <m>f(z) = z^\frac{1}{2}</m></caption>
+      <image width="73%" source="figs/ch-02/ch-02-fig-19.pdf"/>
+    </figure>
+  </introduction>
+  <subsection xml:id="subsec_riemann-surface-1">
+    <title>The Riemann Surface for <m>\bm{w=z^{\frac{1}{2}}}</m></title>
+    <p>
+      A Riemann surface is a construct useful for visualizing a multivalued function.
+      It was introduced by G.<nbsp/>F.<nbsp/>B. Riemann (1826<ndash/>1866) in 1851.
+      The idea is ingenious<mdash/>a geometric construction that permits surfaces to be the domain or range of a multivalued function.
+      Riemann surfaces depend on the function being investigated.
+      We now give a nontechnical formulation of the Riemann surface for the multivalued square root function.
+    </p>
+    <p>
+      Consider <m>w=f(z) =z^{\frac{1}{2}}</m>,
+      which has two values for any <m>z \ne 0</m>.
+      Each function <m>f_1</m> and <m>f_2</m> in <xref ref="fig_ch-02-18">Figure</xref>
+      is single-valued on the domain formed by cutting the <m>z</m> plane along the negative <m>x</m> axis.
+      Let <m>D_1</m> and <m>D_2</m> be the domains of <m>f_1</m> and <m>f_2</m>,
+      respectively.
+      The range set for <m>f_1</m> is the set <m>H_1</m> consisting of the right half-plane,
+      and the positive <m>v</m> axis;
+      the range set for <m>f_2</m> is the set <m>H_2</m> consisting of the left half-plane and the negative <m>v</m> axis.
+      The sets <m>H_1</m> and <m>H_2</m> are
+      <q>glued together</q>
+      along the positive <m>v</m> axis and the negative <m>v</m> axis to form the <m>w</m> plane with the origin deleted.
+    </p>
+    <p>
+      We stack <m>D_1</m> directly above <m>D_2</m>.
+      The edge of <m>D_1</m> in the upper half-plane is joined to the edge of <m>D_2</m> in the lower half-plane,
+      and the edge of <m>D_1</m> in the lower half-plane is joined to the edge of <m>D_2</m> in the upper half-plane.
+      When these domains are glued together in this manner, they form <m>R</m>,
+      which is a Riemann surface domain for the mapping <m>w=f(z)=z^{\frac{1}{2}}</m>.
+      The portions of <m>D_1</m>, <m>D_2</m>,
+      and <m>R</m> that lie in <m>\{z:|z|\lt 1\}</m> are shown in <xref ref="fig_ch-02-20">Figure</xref>.
+    </p>
+    <p>
+      Formation of the Riemann surface for
+      <m>w=z^{\frac{1}{2}}</m>: (a) a portion of <m>D_1</m> and its image under
+      <m>w=z^{\frac{1}{2}}</m>; (b) a portion of <m>D_2</m> and its image under
+      <m>w=z^{\frac{1}{2}}</m>; (c) a portion of <m>R</m> and its image under <m>w=z^{\frac{1}{2}}</m>.
+    </p>
+    <p>
+      The beauty of this structure is that it makes this
+      <q>full square root function</q>
+      continuous for all <m>z \ne 0</m>.
+      Normally, the principal square root function would be discontinuous along the negative real axis,
+      as points near <m>-1</m> but above that<nbsp/>axis would get mapped to points close to <m>i</m>,
+      and points near <m>-1</m> but below the axis<nbsp/>would get mapped to points close to <m>-i</m>.
+      As <xref ref="fig_ch-02-20">Figure</xref>(c) indicates,
+      however, between the point <m>A</m> and the point <m>B</m>,
+      the domain switches from the edge of <m>D_1</m> in the upper half-plane to the edge of <m>D_2</m> in the lower half-plane.
+      The corresponding mapped points <m>A\,'</m> and <m>B\,'</m> are exactly where they should be.
+      The surface works in such a way that going directly between the edges of <m>D_1</m> in the upper and lower half-planes is impossible
+      (likewise for <m>D_2</m>).
+      Going counter-clockwise,
+      the only way to get from the point <m>A</m> to the point <m>C</m>,
+      for example,
+      is to follow the path indicated by the arrows in <xref ref="fig_ch-02-20">Figure</xref>(c).
+    </p>
+    <figure xml:id="fig_ch-02-20">
+      <caption>Formation of the Riemann surface for <m>w=z^\frac{1}{2}</m>: (a) a portion of <m>D_1</m> and its image under <m>w=z^\frac{1}{2}</m>; (b) a
+      portion of <m>D_2</m> and its image under <m>w=z^\frac{1}{2}</m>; (c) a portion of <m>R</m> and its image under <m>w=z^\frac{1}{2}</m></caption>
+      <image width="73%" source="figs/ch-02/ch-02-fig-20.pdf"/>
+    </figure>
+    <exercises>
+      <title>Exercises for <xref ref="sec_branches">Section</xref></title>
+      <exercise xml:id="x2_4_1">
+        <p>
+          Let <m>f_1(z)</m> and <m>f_2(z)</m> be the two branches of the square root function given by Equations <xref ref="Br1"/> and <xref ref="Br2"/>, respectively.
+          Use the polar coordinate formulas in <xref ref="sec_z_n_and_z__1_n_">Section</xref> to find the image of
+        </p>
+        <ol>
+          <li>
+            <p>
+              quadrant II, <m>x\lt 0</m> and <m>y>0</m>,
+              under the mapping <m>w=f_1(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              quadrant II, <m>x\lt 0</m> and <m>y>0</m>,
+              under the mapping <m>w=f_2(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the right half-plane Re<m>(z) >0</m> under the mapping <m>w=f_1(z)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the right half-plane Re<m>(z) >0</m> under the mapping <m>w=f_2(z)</m>.
+            </p>
+          </li>
+        </ol>
+      </exercise>
+      <exercise xml:id="x2_4_2">
+        <p>
+          Let <m>\alpha =0</m> in Equation <xref ref="Bralpha"/>.
+          Find the range of the function <m>w=f_{\alpha}(z)</m>.
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_3">
+        <p>
+          Let <m>\alpha =2\pi</m> in Equation <xref ref="Bralpha"/>.
+          Find the range of the function <m>w=f_{\alpha}(z)</m>.
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_4">
+        <p>
+          Find a branch of the square root that is continuous along the negative <m>x</m> axis.
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_5">
+        <p>
+          Let <m>f_1(z) =|z|^{\frac{1}{3}}e^{i \frac{\mathrm{Arg}(z)}{3}} = r^{\frac{1}{3}}\cos \frac{\theta}{3} +ir^{\frac{1}{3}}\sin \frac{\theta}{3}</m>,
+          where <m>|z| =r \ne 0</m>, and <m>\theta =\mathrm{Arg}(z)</m>.
+          <m>f_1</m> denotes the principal cube root function.
+          <ol>
+            <li>
+              <p>
+                Show that <m>f_1</m> is a branch of the multivalued cube root <m>f(z)=z^{\frac{1}{3}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the range of <m>f_1</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Where is <m>f_1</m> continuous?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_6">
+        <p>
+          Let <m>f_2(z) =r^{\frac{1}{3}}\cos (\frac{\theta +2\pi}{3}) +ir^{\frac{1}{3}}\sin (\frac{\theta +2\pi}{3})</m>,
+          where <m>r>0</m> and <m>-\pi \lt \theta \le \pi</m>.
+          <ol>
+            <li>
+              <p>
+                Show that <m>f_2</m> is a branch of the multivalued cube root <m>f(z) =z^{\frac{1}{3}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the range of <m>f_2</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Where is <m>f_2</m> continuous?
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the branch point associated with <m>f</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_7">
+        <p>
+          Find a branch of the multivalued cube root function that is different from those in Exercises 5 and 6.
+          State the domain and range of the branch you find.
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_8">
+        <p>
+          Let <m>f(z) =z^{\frac{1}{n}}</m> denote the multivalued <m>n</m>th root,
+          where <m>n</m>.
+          <ol>
+            <li>
+              <p>
+                Show that <m>f</m> is, in general,
+                an <m>n</m>-valued function.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write the principal <m>n</m>th root function.
+              </p>
+            </li>
+            <li>
+              <p>
+                Produce a different branch of the multivalued <m>n</m>th root function.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_9">
+        <p>
+          Describe a Riemann surface for the domain of definition of
+          <ol>
+            <li>
+              <p>
+                <m>w=f(z) =z^{\frac{1}{3}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>w=f(z) =z^{\frac{1}{4}}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </exercise>
+      <exercise xml:id="x2_4_10">
+        <p>
+          Discuss how Riemann surfaces should be used for both the domain and range to help describe the multivalued function <m>w=f(z)=z^{\frac{2}{3}}</m>.
+        </p>
+      </exercise>
+    </exercises>
+  </subsection>
+</section>

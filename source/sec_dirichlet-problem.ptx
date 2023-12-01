@@ -1,0 +1,565 @@
+<section xml:id="sec_dirichlet-problem">
+  <title>Invariance of Laplace's Equation &amp; the Dirichlet Problem</title>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>\Phi(u,v)</m> be harmonic in a domain <m>G</m> in the <m>w</m> plane.
+        Then <m>\Phi</m> satisfies Laplace's equation
+        <men xml:id="DPeq1">
+          \Phi_{uu}(u,v) + \Phi_{vv}(u,v) = 0
+        </men>
+        at each point <m>w=u+iv</m> in <m>G</m>.
+        If <m>w=f(z)=u(x,y)+iv(x,y)</m> is a conformal mapping from a domain <m>D</m> in the <m>z</m> plane onto <m>G</m>,
+        then the composition
+        <men xml:id="DPeq2">
+          \phi(x,y)=\Phi\big(u(x,y), \, v(x,y)\big)
+        </men>
+        is harmonic in <m>D</m>, and <m>\phi</m> satisfies Laplace's equation
+        <men xml:id="DPeq3">
+          \phi_{xx}(x,y) +\phi_{yy}(x,y) =0
+        </men>
+        at each point <m>z=x+iy</m> in <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      <xref ref="DPeq1">Equations</xref> and <xref ref="DPeq3"></xref>
+      are Laplace's equations for the harmonic functions <m>\Phi</m> and <m>\phi</m>,
+      respectively
+      (see Section 3.3).
+      A direct proof that the function <m>\phi</m> in <xref ref="DPeq2">Equation</xref>
+      is harmonic would involve a tedious calculation of the partial derivatives
+      <m>\phi_{xx}</m> and <m>\phi_{yy}</m>.
+      An easier proof involves the use of a complex variable technique.
+      We assume that there is a harmonic conjugate <m>\Psi(u,v)</m> so that the function
+      <me>
+        g(w) = \Phi(u,v) +i\,\Psi(u,v)
+      </me>
+      is analytic in a neighborhood of the point <m>w_0=f(z_0)</m>.
+      Then the composition <m>h(z) =g\big(f(z)\big)</m> is analytic in a neighborhood of <m>z_0</m> and can be written
+      <me>
+        h(z) = \Phi\big(u(x,y) ,v(x,y)\big) +i\Psi\big(u(x,y) ,v(x,y)\big)
+      </me>.
+    </p>
+    <p>
+      Recall (Theorem 3.8) that the real part of the analytic function <m>h(z)</m> is harmonic,
+      so <m>\Phi\big(u(x,y), \, v(x,y)\big)</m> is harmonic in a neighborhood of <m>z_0</m>.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\phi(x,y) = \mathrm{Arctan}(\frac{2x}{x^2+y^2-1})</m> is harmonic in the disk <m>|z|\lt 1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The results of Exercise 7(b),
+        of Section 9.2, show that the function
+        <me>
+          f(z) = \frac{i+z}{i-z} = \frac{1-x^2-y^2}{x^2+(y-1)^2} - \frac{i2x}{x^2+(y-1)^2}
+        </me>
+        is a conformal mapping of the disk
+        <m>|z|\lt 1</m> onto the right half-plane Re<m>(w)>0</m>.
+        The results from Exercise 7(b), Section 5.2, show that the function
+        <me>
+          \Phi(u,v) = \mathrm{Arctan}(\frac{v}{u})=\mathrm{Arg}(u+iv)
+        </me>
+        is harmonic in the right half-plane Re<m>(w)>0</m>.
+        Taking the real and imaginary parts of <m>f(z)</m>, we write
+        <me>
+          u(x,y) = \frac{1-x^2-y^2}{x^2+(y-1)^2}  \text{ and }   v(x,y) = \frac{-2x}{x^2+(y-1)^2}
+        </me>.
+      </p>
+      <p>
+        Substituting these equations into the formula for
+        <m>\Phi(u,v)</m> and using <xref ref="DPeq2">Equation</xref>
+        reveals that <m>\phi(x,y) = \mathrm{Arctan}(\frac{v(x,y) }{u(x,y)}) = \mathrm{Arctan}(\frac{2x}{x^2+y^2-1})</m> is harmonic for <m>|z|\lt 1</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Let <m>D</m> be a domain whose boundary is made up of piecewise smooth contours joined end to end.
+    The <em>Dirichlet problem</em> is to find a function <m>\phi</m> that is harmonic in <m>D</m> such that <m>\phi</m> takes on prescribed values at points on the boundary.
+    Let's first look at this problem in the upper half-plane.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the function
+        <men xml:id="formula1">
+          \Phi(u,v) =\frac{1}{\pi}\mathrm{Arctan}\left(\frac{v}{u-u_0}\right) = \frac{1}{\pi}\mathrm{Arg}(w-u_0)
+        </men>
+        is harmonic in the upper half-plane
+        <m>\mathrm{Im}(w)>0</m> and takes on the boundary values
+        <md>
+          <mrow>\Phi(u,0) \amp = 0  \text{ for }   u > u_0,  \text{ and }</mrow>
+          <mrow>\Phi(u,0) \amp = 1  \text{ for }   u \lt  u_0</mrow>
+        </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The function
+        <me>
+          g(w) = \frac{1}{\pi}\mathrm{Log}(w-u_0) =\frac{1}{\pi}\ln|w-u_0| + \frac{i}{\pi}\mathrm{Arg}(w-u_0)
+        </me>
+        is analytic in the upper half-plane <m>\mathrm{Im}(w) >0</m>,
+        and its imaginary part is the harmonic function <m>\frac{1}{\pi}\mathrm{Arg}(w-u_0)</m>.
+      </p>
+    </solution>
+  </example>
+  <remark>
+    <p>
+      Let <m>t</m> be a real number.
+      The convention <m>\mathrm{Arctan}(\pm \infty) = \frac{\pi}{2}</m> allows the function
+      <m>\mathrm{Arctan}(t)</m> to denote the branch of the inverse tangent that lies in the range <m>0\lt</m> <m>\mathrm{Arctan}\,t\lt \pi</m>.
+      With that understanding we can write the solution given in <xref ref="formula1">Equation</xref>
+      as <m>\Phi(u,v) =\frac{1}{\pi}\mathrm{Arctan}(\frac{v}{u-u_0})</m>.
+    </p>
+  </remark>
+  <theorem>
+    <title>$N$-value Dirichlet problem for the upper half-plane</title>
+    <statement>
+      <p>
+        Let <m>u_1 \lt u_2 \lt  \cdots \lt  u_{N-1}</m> denote <m>N-1</m> real constants.
+        The function
+        <md>
+          <mrow xml:id="DPfun" number="yes">\Phi(u,v)  \amp = a_{N-1}+\frac{1}{\pi}\sum\limits_{k=1}^{N-1}(a_{k-1}-a_k) \mathrm{Arg}(w-u_k)</mrow>
+          <mrow>\amp = a_{N-1}+\frac{1}{\pi}\sum\limits_{k=1}^{N-1}(a_{k-1}-a_k)\mathrm{Arctan}\left(\frac{v}{u-u_k}\right)</mrow>
+        </md>
+        is harmonic in the upper half-plane
+        <m>\mathrm{Im}(w)>0</m> and takes on the boundary values
+        <md>
+          <mrow>\Phi(u,0) \amp = a_0,  \text{ for }   u\lt u_1;</mrow>
+          <mrow>\Phi(u,0) \amp = a_k,  \text{ for }   u_k \lt u \lt  u_{k+1},  \text{ for }   k=1,\,2,\ldots,N-2;</mrow>
+          <mrow>\Phi(u,0) \amp = a_{N-1},  \text{ for }   u > u_{N-1}</mrow>
+        </md>.
+      </p>
+      <p>
+        <em>The situation is illustrated in <xref ref="fig_ch-10-004">Figure</xref>.</em>
+      </p>
+    </statement>
+  </theorem>
+  <figure xml:id="fig_ch-10-004">
+    <caption>The boundary conditions for the harmonic function <m>\Phi(u,v)</m></caption>
+    <image width="73%" source="figs/ch-10/ch-10-fig-004.pdf"/>
+  </figure>
+  <proof>
+    <p>
+      Each term in the sum in <xref ref="DPfun">Equation</xref> is harmonic,
+      so it follows that <m>\Phi</m> is harmonic for <m>\mathrm{Im}(w)>0</m>.
+      To show that <m>\Phi</m> has the prescribed boundary conditions,
+      we fix <m>j</m> and let <m>u_j \lt  u \lt u_{j+1}</m>.
+      Using Example 11.5, we get
+      <md>
+        <mrow>\frac{1}{\pi}\mathrm{Arg}(u-u_k) \amp = 0,  \text{ if }   k \le j,  \text{ and }</mrow>
+        <mrow>\frac{1}{\pi}\mathrm{Arg}(u-u_k) \amp = 1,  \text{ if }   k > j</mrow>
+      </md>.
+    </p>
+    <p>
+      Substituting these equations into <xref ref="DPfun">Equation</xref> gives
+      <md>
+        <mrow>\Phi(u,0)  \amp = a_{N-1}+\sum\limits_{k=1}^j(a_{k-1}-a_k) (0) + \sum_{k=j+1}^{N-1}(a_{k-1}-a_k)(1)</mrow>
+        <mrow>\amp = a_{N-1}+(a_{N-2}-a_{N-1}) + \cdots + (a_{j+1}-a_{j+2}) + (a_j-a_{j+1})</mrow>
+        <mrow>\amp = a_j,  \text{ for }   u_j \lt  u \lt u_{j+1}</mrow>
+      </md>.
+    </p>
+    <p>
+      You can verify that the boundary conditions are correct for <m>u\lt u_1</m> and
+      <m>u>u_{N-1}</m> to complete the proof.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane Im<m>(z) >0</m> and takes on the boundary values indicated in <xref ref="fig_ch-10-005">Figure</xref>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        This is a four-value Dirichlet problem in the upper half-plane defined by <m>\mathrm{Im}(z)>0</m>.
+        For the <m>z</m> plane,
+        the solution in <xref ref="DPfun">Equation</xref> becomes
+        <me>
+          \phi(x,y) = a_3 + \frac{1}{\pi}\sum_{k=1}^3(a_{k-1}-a_k)\mathrm{Arg}(z-x_k)
+        </me>.
+      </p>
+      <p>
+        Here we have <m>a_0=4</m>, <m>a_1=1</m>, <m>a_2=3</m>,
+        and <m>a_3=2</m> and <m>x_1=-1</m>,
+        <m>x_2=0</m>, and <m>x_3=1</m>,
+        which we substitute into equation for <m>\phi</m> to obtain
+        <md>
+          <mrow>\phi(x,y) \amp = 2 + \frac{4-1}{\pi}\mathrm{Arg}(z+1) + \frac{1-3}{\pi}\mathrm{Arg}(z-0) + \frac{3-2}{\pi} \mathrm{Arg}(z-1)</mrow>
+          <mrow>\amp = 2 + \frac{3}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)-\frac{2}{\pi}\mathrm{Arctan}\left(\frac{y}{x}\right) + \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
+        </md>.
+      </p>
+      <figure xml:id="fig_ch-10-005">
+        <caption>The boundary values for the Dirichlet problem</caption>
+        <image width="73%" source="figs/ch-10/ch-10-fig-005.pdf"/>
+      </figure>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
+        <m>\mathrm{Re}(z)>0</m> and takes on the boundary values
+        <md>
+          <mrow>\phi(x,0) \amp = 1,  \text{ for }   |x| \lt  1;</mrow>
+          <mrow>\phi(x,0) \amp = 0,  \text{ for }   |x| > 1</mrow>
+        </md>.
+      </p>
+      <solution>
+        <p>
+          This three-value Dirichlet problem has <m>a_0=0, \, a_1=1, \, a_2=0, \, x_1=-1, \text{ and }  x_2=1</m>.
+          Applying <xref ref="DPfun">Equation</xref> yields
+          <md>
+            <mrow>\phi(x,y)  \amp = 0 + \frac{0-1}{\pi}\mathrm{Arg}(z+1) + \frac{1-0}{\pi}\mathrm{Arg}(z-1)</mrow>
+            <mrow>\amp = \frac{-1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) + \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
+          </md>.
+        </p>
+      </solution>
+      <p>
+        A three-dimensional graph of
+        <m>u=\phi(x,y)</m> is shown in <xref ref="fig_ch-10-006">Figure</xref>.
+      </p>
+    </statement>
+  </example>
+  <figure xml:id="fig_ch-10-006">
+    <caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=1</m> for <m>|x|\lt 1</m>, and <m>\phi(x,0)=0</m> for <m>|x|>1</m></caption>
+    <image width="73%" source="figs/ch-10/ch-10-fig-006.pdf"/>
+  </figure>
+  <p>
+    We now state the <m>N</m>-value Dirichlet problem for a simply connected domain.
+    We let <m>D</m> be a simply connected domain bounded by the simple closed contour <m>C</m> and let
+    <m>z_1,\,z_2,\,.\,.\,.\,,\,z_N</m> denote <m>N</m> points that lie along <m>C</m> in this specified order as <m>C</m> is traversed in the positive direction
+    (counterclockwise).
+    Then we let <m>C_k</m> denote the portion of <m>C</m> that lies strictly between <m>z_k</m> and <m>z_{k+1}</m>,
+    for <m>k=1, \, 2, \ldots, N-1</m>,
+    and let <m>C_N</m> denote the portion that lies strictly between <m>z_N</m> and <m>z_1</m>.
+    Finally, we let <m>a_1, \, a_2, \ldots,
+    a_N</m> be real constants.
+    We want to find a function
+    <m>\phi(x,y)</m> that is harmonic in <m>D</m> and continuous on
+    <m>D\cup C_1\cup C_2\cup \cdots \cup C_N</m> that takes on the boundary values
+    <md>
+      <mrow xml:id="Bddvals" number="yes">\phi(x,y)  \amp = a_1,  \text{ for }   z=x+iy  \text{ on }   C_1;</mrow>
+      <mrow>\phi(x,y)  \amp = a_2,  \text{ for }   z=x+iy  \text{ on }   C_2;</mrow>
+      <mrow>\amp \vdots</mrow>
+      <mrow>\phi(x,y)  \amp = a_N,  \text{ for }   z=x+iy  \text{ on }   C_N</mrow>
+    </md>.
+  </p>
+  <p>
+    The situation is illustrated in <xref ref="fig_ch-10-007">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-10-007">
+    <caption>The boundary values for <m>\phi(x,y)</m> for the Dirichlet problem in the simply connected domain <m>D</m></caption>
+    <image width="73%" source="figs/ch-10/ch-10-fig-007.pdf"/>
+  </figure>
+  <p>
+    One method for finding <m>\phi</m> is to find a conformal mapping
+    <men xml:id="conmapz">
+      w = f(z) = u(x,y) + iv(x,y)
+    </men>
+    of <m>D</m> onto the upper half-plane <m>\mathrm{Im}(w)>0</m>,
+    such that the <m>N</m> points
+    <m>z_1, \, z_2, \ldots,z_N</m> are mapped onto the points <m>u_k=f(z_k)</m>,
+    for <m>k=1, \, 2, \ldots,N-1</m>,
+    and <m>z_N</m> is mapped onto
+    <m>u_N=+\infty</m> along the <m>u</m> axis in the <m>w</m> plane.
+  </p>
+  <p>
+    When we use Theorem 11.1, the mapping in <xref ref="conmapz">Equation</xref>
+    gives rise to a new <m>N</m>-value Dirichlet problem in the upper half-plane
+    <m>\mathrm{Im} (w) >0</m> for which the solution is given by Theorem 11.2.
+    If we set <m>a_0=a_N</m>,
+    then the solution to the Dirichlet problem in <m>D</m> with the boundary values from <xref ref="Bddvals">Equation</xref> is
+    <md>
+      <mrow>\phi(x,y)  \amp = a_{N-1} + \frac{1}{\pi}\sum_{k=1}^{N-1}(a_{k-1}-a_k)\mathrm{Arg}[f(z)-u_k]</mrow>
+      <mrow>\amp = a_{N-1} + \frac{1}{\pi}\sum\limits_{k=1}^{N-1}(a_{k-1}-a_k)\mathrm{Arctan}\left(\frac{v(x,y)}{u(x,y)-u_k}\right)</mrow>
+    </md>.
+  </p>
+  <p>
+    This method relies on our ability to construct a conformal mapping from <m>D</m> onto the upper half-plane <m>\mathrm{Im}(w) >0</m>.
+    Theorem 10.4 guarantees the existence of such a conformal mapping.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Find a function <m>\phi(x,y)</m> that is harmonic in the unit disk
+        <m>|z|\lt 1</m> and takes on the boundary values
+        <md>
+          <mrow xml:id="Bddvals1" number="yes">\phi(x,y) \amp = 0,  \text{ for }   x+iy=e^{i\theta},  0 \lt  \theta \lt  \pi;</mrow>
+          <mrow>\phi(x,y) \amp = 1,  \text{ for }   x+iy=e^{i\theta},  \pi \lt \theta \lt  2\pi</mrow>
+        </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Example 10.3 showed that the function
+        <men xml:id="conmap1">
+          u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
+        </men>
+        is a one-to-one conformal mapping of the unit disk
+        <m>|z|\lt 1</m> onto the upper half-plane <m>\mathrm{Im}(w)>0</m>.
+        <xref ref="conmap1">Equation</xref>
+        reveals that the points <m>z=x+iy</m> lying on the upper semicircle
+        <m>y>0, \, 1-x^2-y^2=0</m> are mapped onto the positive <m>u</m> axis.
+        Similarly, the lower semicircle is mapped onto the negative <m>u</m> axis,
+        as shown in <xref ref="fig_ch-10-008">Figure</xref>.
+        The mapping given by <xref ref="conmap1">Equation</xref>
+        gives rise to a new Dirichlet problem of finding a harmonic function
+        <m>\Phi(u,v)</m> that has the boundary values
+        <me>
+          \Phi(u,0) = 0,  \text{ for }   u>0,  \text{ and }   \Phi(u,0) =1,  \text{ for }   u \lt  0
+        </me>,
+        as shown in Figure 11.8.
+        Using the result of Example 11.5 and the functions <m>u</m> and <m>v</m> from <xref ref="conmap1">Equation</xref>,
+        we get the solution to <xref ref="Bddvals1">Equation</xref>:
+        <me>
+          \phi(x,y) = \frac{1}{\pi}\mathrm{Arctan}\left(\frac{v(x,y)}{u(x,y)}\right) = \frac{1}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right)
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-10-008">
+    <caption>The Dirichlet problems for <m>|z|\lt 1</m> and <m>\mathrm{Im}(w) >0</m></caption>
+    <image width="73%" source="figs/ch-10/ch-10-fig-008.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Find a function <m>\phi(x,y)</m> that is harmonic in the upper half-disk
+        <m>H:y>0,\,|z|\lt 1</m> and takes on the boundary values
+        <md>
+          <mrow>\phi(x,y) \amp = 0,  \text{ for }   x + iy = e^{i\theta},  0\lt \theta \lt \pi;</mrow>
+          <mrow>\phi(x,0) \amp = 1,  \text{ for }   -1 \lt x \lt  1</mrow>
+        </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        When we use the result of Exercise 4, Section 9.2, the function in <xref ref="conmap1">Equation</xref>
+        maps the upper half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.
+        The conformal mapping given in <xref ref="conmap1">Equation</xref>
+        maps the points <m>z=x+iy</m> that lie on the segment
+        <m>y=0, \,-1 \lt x \lt 1</m> onto the positive <m>v</m> axis.
+      </p>
+      <p>
+        <xref ref="conmap1">Equation</xref>
+        gives rise to a new Dirichlet problem of finding a harmonic function
+        <m>\Phi(u,v)</m> in <m>Q</m> that has the boundary values
+        <me>
+          \Phi(u,0) = 0,  \text{ for }   u > 0,  \text{ and }   \Phi(0,v)=1,  \text{ for }   v>0
+        </me>,
+        as shown in <xref ref="fig_ch-10-009">Figure</xref>.
+        In this case,
+        the method in Example 11.2 can be used to show that <m>\Phi(u,v)</m> is given by
+        <me>
+          \Phi(u,0) = 0 + \frac{1-0}{\pi /2}\mathrm{Arg}(w) = \frac{2 }{\pi}\mathrm{Arg}(w) = \frac{2}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
+        </me>.
+      </p>
+      <figure xml:id="fig_ch-10-009">
+        <caption>The Dirichlet problems for the domains <m>H</m> and <m>Q</m></caption>
+        <image width="73%" source="figs/ch-10/ch-10-fig-009.pdf"/>
+      </figure>
+      <p>
+        Using the functions <m>u</m> and <m>v</m> in <xref ref="conmap1">Equation</xref> in the preceding equation,
+        we find the solution of the Dirichlet problem in <m>H</m>:
+        <me>
+          \phi(x,y) = \frac{2}{\pi}\mathrm{Arctan}\left(\frac{v(x,y)}{u(x,y)}\right) = \frac{2}{\pi}\mathrm{Arctan}\left(a\frac{1-x^2-y^2}{2y}\right)
+        </me>.
+      </p>
+      <p>
+        A three-dimensional graph <m>u=\phi(x,y)</m> in cylindrical coordinates is shown in <xref ref="fig_ch-10-010">Figure</xref>.
+      </p>
+    </solution>
+  </example>
+  <figure xml:id="fig_ch-10-010">
+    <caption>The graph <m>u=\frac{2}{\pi}\mathrm{Arctan}(\frac{1-x^2-y^2}{2y})=\frac{2}{\pi}\mathrm{Arctan}(\frac{1-r^2}{2 r\sin
+    \theta})</m></caption>
+    <image width="73%" source="figs/ch-10/ch-10-fig-010.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Find a function <m>\phi(x,y)</m> that is harmonic in the quarter disk
+        <m>G:x>0,\,|z|\lt 1</m> and takes on the boundary values
+        <md>
+          <mrow>\phi(x,y) \amp = 0,  \text{ for }   x+iy = z = e^{i\theta},  0 \lt  \theta \lt  \frac{\pi}{2};</mrow>
+          <mrow>\phi(x,0) \amp = 1,  \text{ for }   0 \le x \lt  1;</mrow>
+          <mrow>\phi(0,y) \amp = 1,  \text{ for }   0 \le y \lt 1</mrow>
+        </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The function
+        <men xml:id="conmap2">
+          u+iv = z^2 = x^2-y^2+i2xy
+        </men>
+        maps the quarter-disk onto the upper half-disk <m>H:v>0, \, |w| \lt  1</m>.
+        The new Dirichlet problem in <m>H</m> is shown in <xref ref="fig_ch-10-011">Figure</xref>.
+        From the result of Example 11.9 the solution <m>\Phi(u,v)</m> in <m>H</m> is
+        <men xml:id="DPfun1">
+          \Phi(u,v) =\frac{2}{\pi}\mathrm{Arctan}\left(\frac{1-u^2-v^2}{2v}\right)
+        </men>.
+      </p>
+      <figure xml:id="fig_ch-10-011">
+        <caption>The Dirichlet problems for the domains <m>G</m> and <m>H</m></caption>
+        <image width="73%" source="figs/ch-10/ch-10-fig-011.pdf"/>
+      </figure>
+      <p>
+        Using <xref ref="conmap2">Equation</xref>,
+        we can show that <m>u^2+v^2=(x^2+y^2)^2</m> and <m>2v=4xy</m>,
+        which we use in <xref ref="DPfun1">Equation</xref>
+        to construct the solution <m>\phi</m> in <m>G</m>:
+        <me>
+          \phi(x,y) = \frac{2}{\pi}\mathrm{Arctan}\left(\frac{1-(x^2+y^2)^2}{4xy}\right)
+        </me>.
+      </p>
+      <p>
+        A three-dimensional graph <m>u=\phi(x,y)</m> in cylindrical coordinates is shown in <xref ref="fig_ch-10-012">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-10-012">
+        <caption>The graph <m>u = \frac{2}{\pi}\mathrm{Arctan}\left(\frac{1-(x^2+y^2)^2}{4xy}\right) =
+        \frac{2}{\pi}\mathrm{Arctan}\left(\frac{1-r^4}{4r^2\cos \theta \sin \theta}\right)</m></caption>
+        <image width="73%" source="figs/ch-10/ch-10-fig-012.pdf"/>
+      </figure>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for Section 11.2</title>
+    <p>
+      For each exercise, find a solution
+      <m>\phi(x,y)</m> of the Dirichlet problem in the domain indicated that takes on the prescribed boundary values.
+      <ol>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the horizontal strip
+            <m>1\lt \mathrm{Im}(z)\lt 2</m> and has the boundary values
+            <me>
+              \phi(x,1) = 6  \text{ for all }   x,  \text{ and }   \phi(x,2) = -3  \text{ for all }   x
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the sector
+            <m>0 \lt  \mathrm{Arg}(z) \lt  \frac{\pi}{3}</m> and has the boundary values
+            <me>
+              \phi(x,y) = 2  \text{ for }   \mathrm{Arg}(z) = \frac{\pi}{3},  \text{ and }   \phi(x,0) = 1  \text{ for }   x>0
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the annulus
+            <m>1\lt |z|\lt 2</m> and has the boundary values
+            <me>
+              \phi(x,y) = 5  \text{ when }   |z|=1,  \text{ and }   \phi(x,y) =8  \text{ when }   |z|=2
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> and has the boundary values
+            <me>
+              \phi(x,0)=0  \text{ for }   -1\lt x\lt 1,  \text{ and }   \phi(x,0)=1  \text{ for }   |x|>1
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,0) \amp = 3  \text{ for }   x\lt -3,  \text{ and }   \phi(x,0) =7  \text{ for }   -3\lt x\lt -1\text{;}</mrow>
+              <mrow>\phi(x,0) \amp = 1  \text{ for }   -1\lt x\lt 2,  \text{ and }   \phi(x,0)=4  \text{ for }   x>2</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the first quadrant
+            <m>x>0,\,y>0</m> and has the boundary values
+            <md>
+              <mrow>\phi(0,y) \amp = 0  \text{ for }   y>1,  \text{ and }   \phi(0,y)=1  \text{ for }   0\lt y\lt 1;</mrow>
+              <mrow>\phi(x,0) \amp = 1  \text{ for }   0 \le x\lt 1,  \text{ and }   \phi(x,0)=0  \text{ for }   x>1</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the unit disk
+            <m>|z|\lt 1</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 0  \text{ for }   x+iy=z=e^{i\theta},  0\lt \theta \lt \pi;</mrow>
+              <mrow>\phi(x,y) \amp = 5  \text{ for }   x+iy=z=e^{i\theta},  \pi \lt \theta \lt 2\pi</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the unit disk
+            <m>|z|\lt 1</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 8  \text{ for }   x+iy=z=e^{i\theta}, 0\lt \theta \lt \pi;</mrow>
+              <mrow>\phi(x,y) \amp = 4  \text{ for }   x+iy=z=e^{i\theta}, \pi \lt \theta \lt 2\pi</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-disk
+            <m>y>0,\,|z|\lt 1</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 5  \text{ for }   x+iy=z=e^{i\theta},  0\lt \theta \lt \pi;</mrow>
+              <mrow>\phi(x,0) \amp = -5  \text{ for }   -1\lt x\lt 1</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the portion of the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> that lies outside the circle <m>|z|=1</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 1  \text{ for }   x+iy=z=e^{i\theta},  0\lt \theta \lt \pi;</mrow>
+              <mrow>\phi(x,0) \amp = 0  \text{ for }   |x| >1</mrow>
+            </md>.
+            <em>Hint</em>: Use the mapping
+            <m>w=-\frac{1}{z}</m> and the result of Example 11.9.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the quarter-disk
+            <me>
+              x>0,\,y>0,\,|z|\lt 1
+            </me>
+            and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 3,  \text{ for }   x+iy=z=e^{i\theta},  0\lt \theta \lt \frac{\pi}{2};</mrow>
+              <mrow>\phi(x,0) \amp = -3  \text{ for }   0\le x\lt 1;</mrow>
+              <mrow>\phi(0,y) \amp = -3  \text{ for }   0\lt y\lt 1</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the function <m>\phi(x,y)</m> that is harmonic in the unit disk
+            <m>|z|\lt 1</m> and has the boundary values
+            <md>
+              <mrow>\phi(x,y) \amp = 1  \text{ for }   x+iy=z=e^{i\theta},  \frac{-\pi}{2}\lt \theta \lt \frac{\pi}{2};</mrow>
+              <mrow>\phi(x,y) \amp = 0  \text{ for }   x+iy=z=e^{i\theta},  \frac{\pi}{2}\lt \theta \lt \frac{3\pi}{2}</mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </exercises>
+</section>

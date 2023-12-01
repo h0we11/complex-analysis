@@ -1,0 +1,486 @@
+<section xml:id="sec_fourier-series">
+  <title>Fourier Series</title>
+  <introduction>
+    <p>
+      In this chapter we show how Fourier series, the Fourier transform,
+      and the Laplace transform are related to the study of complex analysis.
+      We develop the Fourier series representation of a real-valued function <m>U(t)</m> of the real variable <m>t</m>.
+      Complex Fourier series and Fourier transforms are then discussed.
+      Finally, we develop the Laplace transform and the complex variable technique for finding its inverse.
+      This chapter focuses on applying these ideas to solving problems involving real-valued functions,
+      so many of the theorems throughout are stated without proof.
+    </p>
+    <p>
+      Let <m>U(t)</m> be a real-valued function that is periodic with period <m>2\pi</m>, that is,
+      <me>
+        U(t+2\pi)=U(t)  \text{ for all } t
+      </me>.
+    </p>
+    <p>
+      One such function is <m>s= U(t) = \sin(t-\frac{\pi}{2}) + 0.7\cos(2t-\pi -\frac{1}{4}) +1.7</m>,
+      and its graph is obtained by repeating the portion of the graph in any interval of length <m>2\pi</m>,
+      as shown in <xref ref="fig_ch-11-01">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-11-01">
+      <caption>A function <m>U</m> with period <m>2\pi</m></caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-01.pdf"/>
+    </figure>
+    <p>
+      Familiar examples of real functions that have period <m>2\pi</m> are <m>\sin nt</m> and <m>\cos nt</m>,
+      where <m>n</m> is an integer.
+      This raises the question whether any periodic function can be represented by a sum of terms involving
+      <m>a_n\cos nt</m> and <m>b_n\sin nt</m>,
+      where <m>a_n</m> and <m>b_n</m> are real constants.
+      As we shall soon see, the answer to this question is often yes.
+    </p>
+    <definition>
+      <title>Piecewise Continuous</title>
+      <statement>
+        <p>
+          The function <m>U</m> is piecewise continuous on the closed interval <m>[a,b]</m> if there exists values <m>t_0,t_1,\ldots,t_n</m> with
+          <m>a = t_0\lt t_1\lt \cdots\lt t_n=b</m> such that <m>U</m> is continuous in each of the open intervals
+          <m>t_{k-1}\lt t\lt t_k( k=1,2,...n)</m> and has left- and right-hand limits at the values <m>t_k</m> for <m>k=0,1,\ldots, n</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We use the symbols <m>U(a^-)</m> and <m>U(a^+)</m> for the left- and right-hand limits,
+      respectively,
+      of a function <m>U(t)</m> as <m>t</m> approaches the point <m>a</m>.
+      The graph of a piecewise continuous function is illustrated in <xref ref="fig_ch-11-02">Figure</xref>.
+      <me>
+        U(t) =\left\{
+        <tabular>
+          <row>
+            <cell>\(\frac{2}{3}(t-\frac{1}{2})^2+\frac{1}{4}\)</cell>
+            <cell>\(\text{ when }  1 \le t\lt 2,\)</cell>
+          </row>
+          <row>
+            <cell>\(\frac{5}{2}-(t-2)^2\)</cell>
+            <cell>\(\text{ when }  2\lt t\lt 3,\)</cell>
+          </row>
+          <row>
+            <cell>\(1+\frac{t-3}{4}\)</cell>
+            <cell>\(\text{ when }  3\lt t\lt 4,\)</cell>
+          </row>
+          <row>
+            <cell>\(\frac{6}{5}-(t-5) ^3\)</cell>
+            <cell>\(\text{ when }  4\lt t \le 6\).</cell>
+          </row>
+        </tabular>
+        \right.
+      </me>
+    </p>
+    <figure xml:id="fig_ch-11-02">
+      <caption>A piecewise continuous function <m>U</m> over the interval <m>[1,6]</m></caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-02.pdf"/>
+    </figure>
+    <p>
+      The left- and right-hand limits at <m>t_0=2</m>,
+      <m>t_1=3</m>, and <m>t_2=4</m> are easy to determine:
+      <me>
+        <tabular>
+          <row>
+            <cell>At \(t=2\), \ \  \(U(2^-) = \frac{7}{4}\) \ \  and \ \  \(U(2^+) = \frac{5}{2}\).</cell>
+          </row>
+          <row>
+            <cell>At \(t=3\), \ \  \(U(3^-) = \frac{3}{2}\) \ \  and \ \  \(U(3^+) = 1\).</cell>
+          </row>
+          <row>
+            <cell>At \(t=4\), \ \  \(U(4^-) = \frac{5}{4}\) \ \  and \ \  \(U(4^+) = \frac{11}{5}\).</cell>
+          </row>
+        </tabular>
+      </me>
+    </p>
+    <definition>
+      <title>Fourier Series</title>
+      <statement>
+        <p>
+          If <m>U(t)</m> is periodic with period <m>2\pi</m> and is piecewise continuous on
+          <m>[-\pi ,\pi]</m> then the Fourier series <m>S(t)</m> for <m>U(t)</m> is
+          <men xml:id="FourierSdef">
+            S(t) = \frac{a_0}{2} + \sum_{j=1}^{\infty}(a_j\cos jt + b_j\sin jt)
+          </men>,
+          where the coefficients <m>a_j</m> and <m>b_j</m> are given by the so-called Euler's formulas:
+          <men xml:id="FourierCoeffA">
+            a_j = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos jt\,dt  \text{ for }   j=0,1, \ldots
+          </men>
+          and
+          <men xml:id="FourierCoeffB">
+            b_j = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t) \sin jt\,dt  \text{ for }   j=1,2, \ldots
+          </men>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The factor <m>\frac{1}{2}</m> in the constant term
+      <m>\frac{a_0}{2}</m> on the right side of Equation <xref ref="FourierSdef"/> has been introduced for convenience so that <m>a_0</m> could be obtained from the general formula in Equation <xref ref="FourierCoeffA"/> by setting <m>j=0</m>.
+      The reasons for this will be explained shortly.
+      The next result discusses convergence of the Fourier series.
+    </p>
+    <theorem xml:id="thm_fourier-expansion">
+      <title>Fourier Expansion</title>
+      <statement>
+        <p>
+          Assume that <m>S(t)</m> is the Fourier series for <m>U(t)</m>.
+          If <m>U'(t)</m> is piecewise continuous on <m>[-\pi ,\pi]</m>,
+          then <m>S(t)</m> is convergent for all
+          <m>t \in [-\pi,\pi ]</m> where <m>U(t)</m> is continuous.
+          If <m>t=a</m> is a point of discontinuity of <m>U</m>, then
+          <me>
+            S(a) = \frac{U(a^-) +U(a^+) }{2}
+          </me>,
+          where <m>U(a^-)</m> and <m>U(a^+)</m> denote the left- and right-hand limits,
+          respectively.
+          With this understanding, we have the Fourier expansion:
+          <men xml:id="FourierExpansion">
+            U(t) = \frac{a_0}{2}+\sum\limits_{j=1}^{\infty}(a_j\cos jt+b_j\sin jt)
+          </men>.
+        </p>
+      </statement>
+    </theorem>
+    <example xml:id="ex_10_1">
+      <statement>
+        <p>
+          Show that the function <m>U(t) =\frac{t}{2}</m> for <m>t\,\epsilon (-\pi ,\pi)</m>,
+          extended periodically by the equation <m>U(t+2\pi)=U( t)</m>,
+          has the Fourier series expansion
+          <me>
+            U(t) = \sum_{j=1}^{\infty}\frac{(-1) ^{j+1}}{j}\sin jt
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using Euler's <xref ref="FourierCoeffA">formulas</xref>
+          and integration by parts, we obtain
+          <me>
+            a_j=\frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\cos jt\,dt = \frac{t\sin jt }{2\pi j} + \frac{\cos jt}{2\pi j^2}|_{-\pi}^{\pi} = 0  \text{ for }   j=1,2,\ldots
+          </me>,
+          and then using <xref ref="FourierCoeffB">Formula</xref> we get
+          <md>
+            <mrow>b_j \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\sin jt\,dt = \frac{ -t\cos jt}{2\pi j}+\frac{\sin jt}{2\pi j^2}\bigg|_{-\pi}^{\pi}</mrow>
+            <mrow>\amp =\frac{-\cos j\pi}{j}=\frac{(-1) ^{j+1}}{j}  \text{ for }   j=1,2,\ldots \, </mrow>
+          </md>.
+        </p>
+        <p>
+          The coefficient <m>a_0</m> is computed by the calculation
+          <me>
+            a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\,dt = \frac{t^2}{4\pi}\bigg|_{-\pi}^{\pi}=0
+          </me>.
+        </p>
+        <p>
+          Substituting the coefficients <m>a_j</m> and <m>b_j</m> in Equation <xref ref="FourierSdef"/> produces the required solution.
+          The graphs of <m>U(t)</m> and the first three partial sums <m>S_1(t) = \sin t, \, S_2(t) = \sin t-\frac{1}{2}\sin 2t</m>,
+          and <m>S_3(t) = \sin t-\frac{1}{2}\sin 2t + \frac{1}{3}\sin 3t</m> are shown in <xref ref="fig_ch-11-03">Figure</xref>.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="fig_ch-11-03">
+      <caption><m>U(t) =\frac{t}{2}</m>, and approximations <m>S_1(t), \  S_2(t)</m>, and <m>S_3(t)</m></caption>
+      <image width="73%" source="figs/ch-11/ch-11-fig-03.pdf"/>
+    </figure>
+    <p>
+      We now state some general properties of Fourier series that are useful for calculating the coefficients.
+      The proofs are left for the reader.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          If <m>U(t)</m> and <m>V(t)</m> have Fourier series representations,
+          then their sum <m>W(t)=U(t)+V(t)</m> has a Fourier series representation,
+          and the Fourier coefficients of <m>W</m> are obtained by adding the corresponding coefficients of <m>U</m> and <m>V</m>.
+        </p>
+      </statement>
+    </theorem>
+    <theorem xml:id="thm_fourier-cosine">
+      <title>Fourier Cosine Series</title>
+      <statement>
+        <p>
+          Assume that <m>U(x)</m> is an even function.
+          If <m>U(t)</m> has period <m>2\pi</m>,
+          and <m>U(t)</m> and <m>U'(t)</m> are piecewise continuous,
+          then the Fourier series for <m>U(t)</m> involves only the cosine terms,<em>i.e.</em>,
+          <m>b_j=0</m>  for all <m>j</m>:
+          <me>
+            U(t) = \frac{a_0}{2}+\sum\limits_{j=1}^{\infty}a_j\cos jt
+          </me>,
+          where
+          <me>
+            a_j = \frac{2}{\pi}\int_0^{\pi}U(t)\cos jt\,dt,  \text{ for }   j=0,1,\ldots \,
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <theorem>
+      <title>Fourier Sine Series</title>
+      <statement>
+        <p>
+          Assume that <m>U(t)</m> is an odd function.
+          If <m>U(t)</m> has period <m>2\pi</m> and if <m>U(t)</m> and <m>U'(x)</m> are piecewise continuous,
+          then the Fourier series for <m>U(t)</m> involves only sine terms,
+          <em>i.e.</em>, <m>a_j=0</m> for all <m>j</m>:
+          <me>
+            U(t) = \sum_{j=1}^{\infty}b_j \sin jt
+          </me>,
+          where
+          <me>
+            b_j = \frac{2}{\pi}\int_0^{\pi}U(t) \sin jt\,dt  \text{ for }   j=1,2, \ldots \,
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <theorem>
+      <title>Termwise Integration</title>
+      <statement>
+        <p>
+          If <m>U(t)</m> has a Fourier series representation given in <xref ref="FourierExpansion">Equation</xref>,
+          then the integral of <m>U(t)</m> has a Fourier series representation which can be obtained by termwise integration of the Fourier Series of <m>U(t)</m>, that is,
+          <me>
+            \int_0^{t}U(\tau) = \sum_{j=1}^{\infty}(\frac{a_j+a_0(-1)^{j+1}}{j}\sin jt-\frac{b_j}{j}\cos jt)
+          </me>,
+          where we have used the expansion
+          <m>a_0\frac{t}{2} = \sum\limits_{j=1}^{\infty}\frac{a_0(-1) ^{j+1}}{j}\sin jt</m> from <xref ref="ex_10_1">Example</xref>.
+        </p>
+      </statement>
+    </theorem>
+    <theorem>
+      <title>Termwise Differentiation</title>
+      <statement>
+        <p>
+          If <m>U'(t)</m><em>has a Fourier series representation,
+          and <m>U(t)</m> is given by Equation <xref ref="FourierExpansion"/>, then</em>
+          <me>
+            U'(t) =\sum\limits_{j=1}^{\infty}(jb_j\cos jt-ja_j\sin jt)
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          Show that the function <m>U(t) = |t|</m> for <m>t \in (-\pi ,\pi)</m>,
+          extended periodically the equation <m>U(t+2\pi) =U(t)</m>,
+          has the Fourier series representation
+          <me>
+            U(t) = |t| = \frac{\pi}{2}-\frac{4}{\pi}\sum_{j=1}^{\infty}\frac{1}{(2j-1)^2}\cos[(2j-1)t]
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The function <m>U(t)</m> is an even function,
+          hence we can use <xref ref="thm_fourier-cosine">Theorem</xref>
+          to conclude that <m>b_n=0</m> for all <m>n</m>, and
+          <md>
+            <mrow>a_j \amp = \frac{2}{\pi}\int_0^{\pi}t\cos jt\,dt=\frac{2t\sin jt}{\pi j}+ \frac{2\cos jt}{\pi j^2}|_0^{\pi}</mrow>
+            <mrow>\amp = \frac{2\cos j\pi -2}{\pi j^2}=\frac{2(-1) ^j-2}{\pi j^2}  \text{ for }   j=1,2, \ldots \,</mrow>
+          </md>.
+        </p>
+        <p>
+          The coefficient <m>a_0</m> is computed by the calculation:
+          <me>
+            a_0=\frac{2}{\pi}\int_0^{\pi}t\,dt=\frac{t^2}{\pi}|_0^{\pi}=\pi
+          </me>.
+        </p>
+        <p>
+          Using the <m>a_j</m> and <xref ref="thm_fourier-cosine">Theorem</xref>
+          produces the required solution.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="subsec_euler-formula">
+    <title>Proof of Euler's Formulas</title>
+    <p>
+      The following intuitive proof will justify the Euler formulas given in Equations <xref ref="FourierCoeffA"/> and <xref ref="FourierCoeffB"/> To determine <m>a_0</m> we integrate both <m>U(t)</m> and the Fourier series representation in Equation <xref ref="FourierSdef"/> from <m>-\pi</m> to <m>\pi</m>,
+      which results in
+      <me>
+        \int_{-\pi}^{\pi}U(t)\,dt = \int_{-\pi}^{\pi}\left[\frac{ a_0}{2} + \sum_{j=1}^{\infty}(a_j\cos jt+b_j\sin jt)\right]dt
+      </me>.
+    </p>
+    <p>
+      Next, we perform integration term by term, and we obtain
+      <me>
+        \int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + \sum_{j=1}^{\infty}a_j\int_{-\pi}^{\pi}\cos jt\,dt + \sum\limits_{j=1}^{\infty}b_j\int_{-\pi}^{\pi}\sin jt\,dt
+      </me>.
+    </p>
+    <p>
+      The value of the first integral on the right side of this equation is <m>2\pi</m> and all the other integrals are zero.
+      Hence we obtain the desired formula for <m>a_0</m>:
+      <me>
+        a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\,dt
+      </me>.
+    </p>
+    <p>
+      To determine <m>a_m</m>,
+      we let <m>m>1</m> denote a fixed integer and multiply both <m>U(t)</m> and the Fourier series representation in Equation <xref ref="FourierSdef"/> by the term <m>\cos mt</m>,
+      and then we integrate and obtain
+      <md>
+        <mrow xml:id="CoeffA" number="yes">\int_{-\pi}^{\pi}U(t)\cos mt\,dt \amp = \frac{a_0}{2}\int_{-\pi}^{\pi}\cos mt\,dt</mrow>
+        <mrow>\amp + \sum_{j=1}^{\infty}a_j\int_{-\pi}^{\pi}\cos mt\cos jt\,dt + \sum_{j=1}^{\infty}b_j\int_{-\pi}^{\pi}\cos mt\sin jt\,dt</mrow>
+      </md>.
+    </p>
+    <p>
+      The value of the first term on the right side of Equation <xref ref="CoeffA"/> is easily seen to be zero:
+      <men xml:id="CoeffA0">
+        \frac{a_0}{2}\int_{-\pi}^{\pi}\cos mt\,dt = \frac{a_0\sin mt}{2m}|_{-\pi}^{\pi} = 0
+      </men>.
+    </p>
+    <p>
+      The value of the term involving
+      <m>\cos mt\cos jt</m> is found by using the trigonometric identity:
+      <me>
+        \cos mt\cos jt = \frac{1}{2} \Big(\cos [(m+j) t] +\cos [(m-j) t]\Big)
+      </me>.
+    </p>
+    <p>
+      Calculation reveals that if <m>m \ne j</m>
+      (and <m>m>0</m>),
+      then
+      <md>
+        <mrow>a_j\int_{-\pi}^{\pi}\cos mt\cos jt\,dt \amp = \frac{a_m}{2} \left[ \int_{-\pi}^{\pi}\cos[(m+j)t]\,dt\right.</mrow>
+        <mrow xml:id="CoeffA1" number="yes">\amp + \left.\int_{-\pi}^{\pi}\cos [(m-j) t] dt\right]</mrow>
+        <mrow>\amp = 0</mrow>
+      </md>.
+    </p>
+    <p>
+      When <m>m=j</m>, the value of the integral becomes:
+      <men xml:id="CoeffA2">
+        a_m\int_{-\pi}^{\pi}\cos^2mt\,dt = \pi a_m
+      </men>.
+    </p>
+    <p>
+      The value of the term on the right side of Equation <xref ref="CoeffA"/> involving the integrand
+      <m>\cos mt\sin jt</m> is found by using the trigonometric identity
+      <me>
+        \cos mt\sin jt=\frac{1}{2}\Big(\sin \big[(m+j)t\big] + \sin\big[(m-j)t\big]\Big)
+      </me>,
+      and for all values of <m>m</m> and <m>n</m>, we obtain
+      <md>
+        <mrow>b_j\int_{-\pi}^{\pi}\cos mt\sin jt\,dt \amp = \frac{b_m}{2}\left[\int_{-\pi}^{\pi}\sin [(m+j) t]\,dt\right.</mrow>
+        <mrow xml:id="CoeffA3" number="yes">\amp + \left. \int_{-\pi}^{\pi}\sin[(m-j)t]\,dt\right]</mrow>
+        <mrow>\amp = 0</mrow>
+      </md>.
+    </p>
+    <p>
+      Therefore, we can use the results of Equations <xref ref="CoeffA0"/><ndash/><xref ref="CoeffA3"/> in Equation <xref ref="CoeffA"/> to obtain
+      <me>
+        \int_{-\pi}^{\pi}U(t)\cos mt\,dt=\pi a_m  \text{ for }   m=0,1,2, \ldots
+      </me>,
+      and Equation <xref ref="FourierCoeffA"/> is established.
+      We leave it as an exercise to establish Euler's <xref ref="FourierCoeffB">formula</xref>
+      for the coefficients <m>\left\{ b_n\right\}</m>.
+      A complete discussion of the details of the proof of <xref ref="thm_fourier-expansion">Theorem</xref>
+      can be found in some advanced texts.
+      See for instance, John W.<nbsp/>Dettman, Chapter<nbsp/>8 in
+      <em>Applied Complex Variables,</em>
+      The Macmillan Company, New York, 1965.
+    </p>
+    <exercises>
+      <title>Exercises for <xref ref="sec_fourier-series">Section</xref></title>
+      <p>
+        For Exercises 1<ndash/>2 and 6<ndash/>11,
+        find the Fourier series representation.
+        <ol>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}1 \;\;\, \text{ for } 0\lt t\lt \pi, \\ -1 \text{ for } -\pi \lt t\lt 0. \end{cases}</m> See <xref ref="fig_ch-11-04">Figure</xref>.
+              <figure xml:id="fig_ch-11-04">
+                <caption>The graph of <m>U(t)</m> for Exercise 1</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-04.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V(t) = \begin{cases}\frac{\pi}{2}-t \text{ for } 0 \le t \le \pi . \\ \frac{\pi}{2}+t \text{ for } -\pi \lt t\lt 0. \end{cases}</m> See <xref ref="fig_ch-11-05">Figure</xref>.
+              <figure xml:id="fig_ch-11-05">
+                <caption>The graph of <m>V(t)</m> for Exercise 2</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-05.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              For Exercises 1 and 2, verify that
+              <m>U(t) =-V'(t)</m> by termwise differentiation of the Fourier series representation for <m>V(t)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For Exercise 1, set <m>t=\frac{\pi}{2}</m> and conclude that <m>\frac{\pi}{4}=\sum\limits_{j=1}^{\infty}\frac{(-1)^{j-1}}{2j-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For Exercise 2, set <m>t=0</m> and conclude that <m>\frac{\pi^2}{8} = \sum\limits_{j=1}^{\infty}\frac{1}{(2j-1)^2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}-1 \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ 1 \;\;\, \text{ for } \frac{-\pi}{2}\lt t \lt \frac{\pi}{2}, \\ -1 \text{ for } -\pi \lt t \lt \frac{-\pi}{2}. \end{cases}</m> See <xref ref="fig_ch-11-06">Figure</xref>.
+              <figure xml:id="fig_ch-11-06">
+                <caption>The graph of <m>U(t)</m> for Exercise 6</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-06.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}\pi -t \text{ for } \frac{\pi}{2}\lt t\lt \pi, \\ t \text{ for } \frac{-\pi}{2}\lt t\lt \frac{\pi}{2}, \\ -\pi -t \text{ for } -\pi \lt t \lt \frac{-\pi}{2}. \end{cases}</m> See <xref ref="fig_ch-11-07">Figure</xref>.
+              <figure xml:id="fig_ch-11-07">
+                <caption>The graph of <m>U(t)</m> for Exercise 7</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-07.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t)</m>,
+              as defined in <xref ref="fig_ch-11-08">Figure</xref>.
+              <figure xml:id="fig_ch-11-08">
+                <caption>The graph of <m>U(t)</m> for Exercise 8</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-08.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t) = \begin{cases}1 \;\;\, \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ 0 \;\;\, \text{ for } \frac{-\pi}{2}\lt t\lt \frac{\pi}{2}, \\ -1 \text{ for } -\pi \lt t \lt \frac{-\pi}{2}. \end{cases}</m> See <xref ref="fig_ch-11-09">Figure</xref>.
+              <figure xml:id="fig_ch-11-09">
+                <caption>The graph of <m>U(t)</m> for Exercise 9</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-09.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t)</m>,
+              as defined in <xref ref="fig_ch-11-10">Figure</xref>.
+              <figure xml:id="fig_ch-11-10">
+                <caption>The graph of <m>U(t)</m> for Exercise 10</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-10.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t)</m>,
+              as defined in <xref ref="fig_ch-11-11">Figure</xref>.
+              <figure xml:id="fig_ch-11-11">
+                <caption>The graph of <m>U(t)</m> for Exercise 11</caption>
+                <image width="73%" source="figs/ch-11/ch-11-fig-11.pdf"/>
+              </figure>
+            </p>
+          </li>
+          <li>
+            <p>
+              Establish Euler's formula <xref ref="FourierCoeffB"/> for the coefficients <m>\{b_n\}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercises>
+  </subsection>
+</section>

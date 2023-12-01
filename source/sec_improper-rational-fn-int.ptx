@@ -1,0 +1,292 @@
+<section xml:id="sec_improper-rational-fn-int">
+  <title>Improper Integrals of Rational Functions</title>
+  <p>
+    An important application of the theory of residues is the evaluation of certain types of improper integrals.
+    We let <m>f</m> be a continuous function of the real variable <m>x</m> on the interval <m>0 \le x \lt  \infty</m>.
+    Recall from calculus that the improper integral <m>f</m> over <m>[0,\infty)</m> is defined by
+    <me>
+      \int_0^{\infty}f(x)\,dx=\lim\limits_{b \to \infty} \int_0^{b}f(x)\,dx
+    </me>,
+    provided the limit exists.
+    If <m>f</m> is defined for all real <m>x</m>,
+    then the integral of <m>f</m> over <m>(-\infty ,\infty)</m> is defined by
+    <men xml:id="Improper_1">
+      \int_{-\infty}^{\infty}f(x)\,dx = \lim_{a \to -\infty}\int_{a}^{0}f(x)\,dx + \lim_{b \to \infty}\int_0^{b}f(x)\,dx
+    </men>,
+    provided both limits exist.
+    If the integral in Equation <xref ref="Improper_1"/> exists,
+    we can obtain its value by taking a single limit:
+    <men xml:id="Improper_2">
+      \int_{-\infty}^{\infty}f(x)\,dx = \lim_{R \to \infty}\int_{-R}^{R}f(x)\,dx
+    </men>.
+  </p>
+  <p>
+    The following example shows that, for some functions,
+    the limit on the right side of Equation <xref ref="Improper_2"/> exists,
+    but the limit on the right side of <xref ref="Improper_1">Equation</xref> doesn't exist.
+  </p>
+  <example xml:id="PV_0_Ex">
+    <statement>
+      <p>
+        <m>\lim\limits_{R \to \infty}\int_{-R}^{R}x\,dx = \lim\limits_{R \to \infty}[\frac{R^2}{2}-\frac{(-R)^2}{2}] = 0</m>,
+        but Equation <xref ref="Improper_1"/> tells us that the improper integral of
+        <m>f(x) = x</m> over <m>(-\infty ,\infty)</m> doesn't exist.
+        Therefore we can use Equation <xref ref="Improper_2"/> to extend the notion of the value of an improper integral,
+        as <xref ref="def_CPV">Definition</xref> indicates.
+      </p>
+    </statement>
+  </example>
+  <definition xml:id="def_CPV">
+    <title>Cauchy principal value</title>
+    <statement>
+      <p>
+        Let <m>f(x)</m> be a continuous real-valued function for all <m>x</m>.
+        The <em>Cauchy principal value</em><em><nbsp/></em>(P.V.) of the integral <m>\int_{-\infty}^{\infty}f(x)\,dx</m> is defined by
+        <me>
+          \text{ P.V. }  \int_{-\infty}^{\infty}f(x)\,dx = \lim\limits_{R \to \infty}\int_{-R}^{R}f(x)\,dx
+        </me>,
+        provided the limit exists.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    <xref ref="PV_0_Ex">Example</xref>
+    showed that P.V. <m>\int_{-\infty}^{\infty}x\,dx=0</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        The Cauchy principal value of <m>\int_{-\infty}^{\infty}\frac{1}{x^2+1}\,dx</m> is
+        <md>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{1}{x^2+1}dx \amp = \lim\limits_{R \to \infty}\int_{-R}^{R}\frac{1}{x^2+1}dx</mrow>
+          <mrow>\amp = \lim\limits_{R \to \infty}\big[\mathrm{Arctan}(R)-\mathrm{Arctan}(-R)\big]</mrow>
+          <mrow>\amp = \frac{\pi }{2}-\left(\frac{-\pi}{2}\right)</mrow>
+          <mrow>\amp = \pi</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    If <m>f(x) =\frac{P(x)}{Q(x)}</m>,
+    where <m>P</m> and <m>Q</m> are polynomials,
+    then <m>f</m> is called a <term>rational function</term>.
+    In calculus you probably learned techniques for integrating certain types of rational functions.
+    We now show how to use the residue theorem to obtain the Cauchy principal value of the integral of <m>f</m> over <m>(-\infty,\infty)</m>.
+  </p>
+  <theorem xml:id="Ratl_Fcn_Int_Thm">
+    <statement>
+      <p>
+        Let <m>f(z) =\frac{P(z)}{ Q(z)}</m>,
+        where <m>P</m><nbsp/>and <m>Q</m><nbsp/>are polynomials of degree <m>m</m><nbsp/>and <m>n</m>,
+        respectively.
+        If <m>Q(x) \ne 0</m><nbsp/>for all real <m>x</m><nbsp/>and <m>n\ge m+2</m>, then
+        <me>
+          \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_{j}\right]
+        </me>,
+        where <m>z_1</m>, <m>z_2</m>,
+        <m>\ldots</m>, <m>z_{k-1}</m>,
+        <m>z_k</m><nbsp/>are the poles of <m>{P}{Q}</m> that lie in the upper half-plane.
+        The situation is illustrated in <xref ref="fig_ch-08-04">Figure</xref>.
+      </p>
+    </statement>
+  </theorem>
+  <figure xml:id="fig_ch-08-04">
+    <caption>The poles <m>z_1, \  z_2, \ \ldots, \  z_{k-1}, \  z_k</m> of <m>\frac{P}Q</m> that lie in the upper half-plane</caption>
+    <image width="73%" source="figs/ch-08/ch-08-fig-04.pdf"/>
+  </figure>
+  <proof>
+    <p>
+      There are a finite number of poles of <m>{P}/{Q}</m> that lie in the upper half-plane,
+      so we can find a real number <m>R</m> such that the poles all lie inside the contour <m>C</m>,
+      which consists of the segment
+      <m>-R \le x \le R</m> of the <m>x</m>-axis together with the upper semicircle <m>C_R</m> of radius <m>R</m> shown in Figure 8.4.
+      By properties of integrals,
+      <me>
+        \int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = \int_{C}\frac{P(z)}{Q(z)}\,dz - \int_{C_R}\frac{P(z)}{Q(z)}\,dz
+      </me>.
+    </p>
+    <p>
+      Using the residue theorem, we rewrite this equation as
+      <men xml:id="RF1">
+        \int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_{j}\right] -\int_{C_R}\frac{P(z)}{Q(z)}\,dz
+      </men>.
+    </p>
+    <p>
+      Our proof will be complete if we can show that
+      <m>\int_{C_R}\frac{P(z)}{Q(z)}\,dz</m> tends to zero as <m>R \to \infty</m>.
+      Suppose that
+      <md>
+        <mrow>P(z) \amp = a_{m}z^{m}+a_{m-1}z^{m-1} + \cdots +a_1z + a_0,  \text{ and }</mrow>
+        <mrow>Q(z) \amp = b_nz^n+b_{n-1}z^{n-1} + \cdots + b_1z + b_0</mrow>
+      </md>.
+    </p>
+    <p>
+      Then
+      <me>
+        \frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}
+      </me>,
+      so
+      <md>
+        <mrow>\lim_{|z| \to \infty}\frac{zP(z)}{Q(z)} \amp = \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}</mrow>
+        <mrow>\amp = \lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}</mrow>
+        <mrow>\amp \times \lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}</mrow>
+      </md>.
+    </p>
+    <p>
+      Since <m>n \ge m+2</m>,
+      this limit reduces to <m>0(\frac{a_{m}}{b_n}) =0</m>.
+      Therefore, for any <m>\varepsilon >0</m>,
+      we may choose <m>R</m> large enough so that
+      <m>|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon }{\pi }</m> whenever <m>z</m> lies on <m>C_R</m>.
+      But this means that
+      <men xml:id="x_P_Q__bound">
+        \left|\frac{P(z)}{Q(z)}\right| \lt \frac{ \varepsilon }{\pi |z|} = \frac{\varepsilon}{\pi R}
+      </men>
+      whenever <m>z</m> lies on <m>C_R</m>.
+      Using the ML inequality
+      (<xref ref="ML_Inequality_Thm">Theorem</xref>)
+      and the result of Inequality <xref ref="x_P_Q__bound"/>, we get
+      <me>
+        \left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon }{\pi R}\,|dz| = \frac{\varepsilon }{\pi R}\pi R=\varepsilon
+      </me>.
+    </p>
+    <p>
+      Since <m>\varepsilon >0</m> was arbitrary, we conclude that
+      <men xml:id="RF2">
+        \lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0
+      </men>.
+    </p>
+    <p>
+      If we let <m>R \to \infty</m> and combine Equations <xref ref="RF1"/> and <xref ref="RF2"/>, we arrive at the desired conclusion.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We write the integrand as <m>f(z) =\frac{1}{(z+i) (z-i) (z+2i) (z-2i)}</m>.
+        We see that <m>f</m> has simple poles at the points <m>i</m> and <m>2i</m> in the upper half-plane.
+        Computing the residues, we obtain
+        <me>
+          \mathrm{Res}[f,i] = \frac{-i}{6},  \text{ and }   \mathrm{Res}[f,2i] = \frac{i}{12}
+        </me>.
+      </p>
+      <p>
+        Using <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>, we conclude that
+        <me>
+          \int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)} = 2\pi i(\frac{-i}{6}+\frac{i}{12}) = \frac{\pi }{6}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+4)^3}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The integrand <m>f(z) =\frac{1}{(z^2+4)^3}</m> has a pole of order <m>3</m> at the point <m>2i</m>,
+        which is the only singularity of <m>f</m> in the upper half-plane.
+        Computing the residue, we get
+        <md>
+          <mrow>\mathrm{Res}[f,2i] \amp = \frac{1}{2}\lim\limits_{z \to 2i}\frac{d^2}{dz^2}\frac{1}{(z+2i)^3}</mrow>
+          <mrow>\amp = \frac{1}{2}\lim_{z \to 2i}\frac{d}{dz}\frac{-3}{(z+2i)^4}</mrow>
+          <mrow>\amp = \frac{1}{2}\lim\limits_{z \to 2i}\frac{12}{(z+2i)^5}</mrow>
+          <mrow>\amp = \frac{-3i}{512}</mrow>
+        </md>.
+      </p>
+      <p>
+        Therefore <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+4)^3} = 2\pi i(\frac{-3i}{512}) = \frac{3\pi }{256}</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    <em>Exercises for <xref ref="sec_improper-rational-fn-int">Section</xref></em>
+    Use residues to evaluate the following integrals:
+    <ol>
+      <li xml:id="x8_3_1">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+16)^2}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_2">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{dx}{x^2+16}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_3">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x\,dx}{(x^2+9)^2}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_4">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x+3}{(x^2+9) ^2}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_5">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{2x^2+3}{(x^2+9)^2}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_6">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{dx}{x^4+4}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_7">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{x^4+4}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_8">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+4)^3}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_9">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)^2(x^2+4)}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_10">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x+2}{(x^2+4)(x^2+9)}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_11">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{3x^2+2}{(x^2+4)(x^2+9)}\,dx</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_12">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{dx}{x^{6}+1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_13">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^4\,dx}{x^{6}+1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_14">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+a^2) (x^2+b^2)}</m>,
+          where <m>a>0</m> and <m>b>0</m>.
+        </p>
+      </li>
+      <li xml:id="x8_3_15">
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+a^2)^3}</m>,
+          where <m>a>0</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+</section>

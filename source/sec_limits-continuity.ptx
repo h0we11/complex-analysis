@@ -1,0 +1,774 @@
+<section xml:id="sec_limits-continuity">
+  <title>Limits and Continuity</title>
+  <p>
+    Let <m>u=u(x, y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m>.
+    Recall that <m>u</m> has the limit <m>u_0</m> as <m>(x, y)</m> approaches
+    <m>(x_0, y_0)</m> provided the value of <m>u(x,y)</m> can be made to get as close as we want to the value <m>u_0</m> by taking <m>(x, y)</m> to be sufficiently close to <m>(x_0, y_0)</m>.
+    When this happens we write
+    <me>
+      \lim_{(x,y) \to (x_0,y_0)} u(x, y) = u_0
+    </me>.
+  </p>
+  <p>
+    In more technical language,
+    <m>u</m> has the limit <m>u_0</m> as <m>(x, y)</m> approaches <m>(x_0, y_0)</m> iff
+    <m>|u(x, y) -u_0|</m> can be made arbitrarily small by making both <m>|x-x_0|</m> and <m>|y-y_0|</m> small.
+    This condition is like the definition of a limit for functions of one variable.
+    The point <m>(x, y)</m> is in the <m>xy</m> plane,
+    and the distance between <m>(x, y)</m> and
+    <m>(x_0 y_0)</m> is <m>\sqrt{(x-x_0)^2+(y-y_0)^2}</m>.
+    With this perspective we can now give a precise definition of a limit.
+  </p>
+  <definition>
+    <title>Limit of $u(x, y)$</title>
+    <statement>
+      <p>
+        The expression <m>\lim\limits_{(x,y) \to (x_0,y_0)}u(x, y)=u_0</m> means that for each number <m>\varepsilon > 0</m>,
+        there is a corresponding number <m>\delta > 0</m> such that
+        <men xml:id="lim">
+          |u(x, y) - u_0| \lt  \varepsilon  \text{ whenever }   0\lt \sqrt{(x-x_0)^2+(y-y_0)^2} \lt \delta
+        </men>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        Show, if <m>u(x, y) =\frac{2x^{3}}{(x^2+y^2)}</m>,
+        then <m>\lim\limits_{(x,y) \to (0,0)}</m> <m>u(x, y) = 0</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If <m>x=r\cos \theta</m> and <m>y=r\sin \theta</m>, then
+        <me>
+          u(x, y) = \frac{2r^{3}\cos ^{3}\theta}{r^2\cos ^2\theta +r^2\sin ^2\theta} = 2r\cos^{3}\theta
+        </me>.
+      </p>
+      <p>
+        Because <m>\sqrt{(x-0)^2+(y-0)^2}=r</m> and because <m>|\cos ^{3}\theta |\lt 1</m>,
+        <me>
+          |u(x, y) -0|=2r|\cos ^{3}\theta |\lt \varepsilon \ \ \text{ whenever } 0\lt \sqrt{x^2+y^2}=r\lt  \frac{\varepsilon}{2}
+        </me>.
+      </p>
+      <p>
+        Hence, for any <m>\varepsilon >0</m>, Inequality <xref ref="lim"/> is satisfied for <m>\delta =\frac{\varepsilon}{2}</m>;
+        that is, <m>u(x, y)</m> has the limit <m>u_0=0</m> as <m>(x, y)</m> approaches <m>(0, 0)</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    The value <m>u_0</m> of the limit must not depend on how <m>(x, y)</m> approaches <m>(x_0, y_0)</m>,
+    so <m>u(x, y)</m> must approach the value <m>u_0</m> when <m>(x, y)</m> approaches
+    <m>(x_0,\,y_0)</m> along any curve that ends at the point <m>(x_0,\,y_0)</m>.
+    Conversely, if we can find two curves <m>C_1</m> and <m>C_2</m> that end at
+    <m>(x_0, y_0)</m> along which <m>u(x, y)</m> approaches two distinct values <m>u_1</m> and <m>u_2</m>,
+    then <m>u(x, y)</m> does not have a limit as <m>(x, y)</m> approaches <m>(x_0, y_0)</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the function <m>u(x, y) =\frac{xy}{x^2+y^2}</m> does not have a limit as <m>(x, y)</m> approaches <m>(0, 0)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If we let <m>(x, y)</m> approach <m>(0, 0)</m> along the <m>x</m> axis, then
+        <me>
+          \lim\limits_{(x,0) \to (0,0)} u(x, 0) = \lim\limits_{(x,0) \to (0,0)}\frac{(x)(0)}{x^2+0^2} = 0
+        </me>.
+      </p>
+      <p>
+        But if we let <m>(x, y)</m> approach <m>(0,\,0)</m> along the line <m>y=x</m>, then
+        <me>
+          \lim\limits_{(x,x) \to (0,0)}u(x, x) = \lim\limits_{(x,x) \to (0, 0)}\frac{(x)(x)}{x^2+x^2}=\frac{1}{2}
+        </me>.
+      </p>
+      <p>
+        Because the value of the limit differs depending on how <m>(x, y)</m> approaches <m>(0, 0)</m>,
+        we conclude that <m>u(x, y)</m> does not have a limit as<nbsp/><m>(x, y)</m> approaches <m>(0, 0)</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in some neighborhood of <m>z_0</m>,
+    except perhaps at the point <m>z_0</m>.
+    We say that <m>f</m> has the limit <m>w_0</m> as <m>z</m> approaches <m>z_0</m>,
+    provided the value <m>f(z)</m> can be made as close as we want to the value <m>w_0</m> by taking <m>z</m> to be sufficiently close to <m>z_0</m>.
+    When this happens we write
+    <me>
+      \lim\limits_{z \to z_0}f(z) =w_0
+    </me>.
+  </p>
+  <p>
+    The distance between the points <m>z</m> and <m>z_0</m> can be expressed by <m>|z-z_0|</m>,
+    so we can give a precise definition similar to the one for a function of two variables.
+  </p>
+  <definition xml:id="LimitDef">
+    <title>Limit of $f(z)$</title>
+    <statement>
+      <p>
+        The expression <m>\lim\limits_{z \to z_0}f(z) = w_0</m> means that for each real number <m>\varepsilon > 0</m>,
+        there exists a real number <m>\delta >0</m> such that
+        <me>
+          |f(z) -w_0|\lt \varepsilon  \text{ whenever }   0\lt  |z-z_0| \lt \delta
+        </me>.
+      </p>
+      <p>
+        Using the notation of <xref ref="OpenDisk"/> and <xref ref="PuncturedDisk"/>, we can express the last relationship as
+        <me>
+          f(z) \in D_{\varepsilon}(w_0)  \text{ whenever }   z \in D_{\delta}^{\ast}(z_0)
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The formulation of limits in terms of open disks provides a good context for looking at this definition.
+    It says that for each disk of radius
+    <m>\varepsilon</m> about the point <m>w_0</m> (represented by
+    <m>D_{\varepsilon}(w_0)</m>) there is a punctured disk of radius <m>\delta</m> about the point <m>z_0</m> (represented by
+    <m>D_{\delta}^{\ast}(z_0)</m>) such that the image of each point in the punctured <m>\delta</m> disk lies in the <m>\varepsilon</m> disk.
+    The image of the <m>\delta</m> disk does not have to fill up the entire <m>\varepsilon</m> disk;
+    but if <m>z</m> approaches <m>z_0</m> along a curve that ends at <m>z_0</m>,
+    then <m>w=f(z)</m> approaches <m>w_0</m>.
+    The situation is illustrated in <xref ref="fig_ch-02-17">Figure</xref>.
+  </p>
+  <figure xml:id="fig_ch-02-17">
+    <caption>The limit <m>f(z) \to w_0</m> as <m>z\to z_0</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-17.pdf"/>
+  </figure>
+  <example xml:id="conj">
+    <statement>
+      <p>
+        Show that if <m>f(z) = \overline{z}</m>,
+        then <m>\lim\limits_{z\to z_0} f(z) = \overline{z_0}</m>,
+        where <m>z_0</m> is any complex number.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        As <m>f</m> merely reflects points about the <m>y</m> axis,
+        we suspect that any <m>\varepsilon</m> disk about the point
+        <m>\overline{z_0}</m> would contain the image of the punctured <m>\delta</m> disk about <m>z_0</m> if <m>\delta =\varepsilon</m>.
+        To confirm this conjecture,
+        we let <m>\varepsilon</m> be any positive number and set <m>\delta =\varepsilon</m>.
+        Then we suppose that <m>z\in D_{\delta}^{\ast}(z_0) =D_{\varepsilon}^{\ast}(z_0)</m>,
+        which means that <m>0\lt |z-z_0|\lt \varepsilon</m>.
+        The modulus of a conjugate is the same as the modulus of the number itself,
+        so the last inequality implies that <m>0\lt |\overline{z-z_0}| \lt \varepsilon</m>.
+        This inequality is the same as <m>0\lt |\overline{z}-\overline{ z_0}|\lt \varepsilon</m>.
+        Since <m>f(z) =\overline{z}</m> and <m>w_0=\overline{z_0}</m>,
+        this last inequality becomes <m>0\lt |f(z) - w_0|\lt \varepsilon</m>,
+        or <m>f(z)\in D_{\varepsilon}(\overline{z_0})</m>,
+        which is what we needed to show.
+      </p>
+    </solution>
+  </example>
+  <p>
+    If we consider <m>w=f(z)</m> as a mapping from the <m>z</m> plane into the <m>w</m> plane and think about the previous geometric interpretation of a limit,
+    then we are led to conclude that the limit of a function <m>f</m> should be determined by the limits of its real and imaginary parts,
+    <m>u</m> and <m>v</m>.
+    This conclusion also gives us a tool for computing limits.
+  </p>
+  <theorem xml:id="ReC_Limit_Thm">
+    <statement>
+      <p>
+        Let <m>f(z) = u(x, y) +iv(x, y)</m> be a complex function that is defined in some neighborhood of <m>z_0</m>,
+        except perhaps at <m>z_0=x_0+iy_0</m>.
+        Then
+        <men xml:id="complex_limit">
+          \lim\limits_{z\to z_0}\,f(z) =w_0=u_0+iv_0
+        </men>
+        iff
+        <men xml:id="real_limit">
+          \lim\limits_{(x,y) \to (x_0,y_0)} u(x, y)=u_0  \text{ and }   \lim\limits_{(x,y) \to (x_0,y_0)} v(x, y)=v_0
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We first assume that <xref ref="complex_limit">Statement</xref>
+      is true and show that <xref ref="real_limit">Statement</xref> is true.
+      According to the definition of limit,
+      for each <m>\varepsilon >0</m>,
+      there is a corresponding <m>\delta >0</m> such that
+      <me>
+        f(z) \in D_{\varepsilon}(w_0)  \text{ whenever }   z \in D_{\delta}^{\ast}(z_0);
+      </me>
+      that is,
+      <me>
+        |f(z)-w_0|\lt \varepsilon  \text{ whenever }   0\lt |z-z_0|\lt \delta
+      </me>.
+    </p>
+    <p>
+      Because <m>f(z) -w_0=u(x, y) -u_0+i(v(x, y) -v_0)</m>,
+      we can use Inequalities xxxxxxx to conclude that
+      <me>
+        |u(x, y) -u_0| \le |f(z)-w_0|  \text{ and }   |v(x, y)-v_0| \le |f(z)-w_0|
+      </me>.
+    </p>
+    <p>
+      It now follows that <m>|u(x, y) -u_0|\lt \varepsilon</m> and
+      <m>|v(x, y) -v_0|\lt \varepsilon</m> whenever <m>0\lt |z-z_0|\lt \delta</m>,
+      and so <xref ref="real_limit">Statement</xref> is true.
+    </p>
+    <p>
+      Conversely, assume that <xref ref="real_limit">Statement</xref> is true.
+      Then for each <m>\varepsilon >0</m>,
+      there exists <m>\delta _1>0</m> and <m>\delta_2>0</m> so that
+      <md>
+        <mrow>|u(x, y) -u_0|\amp  \lt \frac{\varepsilon }{2} \text{ whenever } 0\lt |z-z_0|\lt \delta _1 \ \ \text{ and }</mrow>
+        <mrow>|v(x, y) -v_0|\amp  \lt \frac{\varepsilon }{2} \text{ whenever } 0\lt |z-z_0|\lt \delta _2</mrow>
+      </md>.
+    </p>
+    <p>
+      We choose <m>\delta</m> to be the minimum of the two values
+      <m>\delta _1</m> and <m>\delta _2</m>.
+      Then we can use the triangle inequality
+      <me>
+        |f(z) -w_0|\le |u(x, y) -u_0|+|v(x, y)-v_0|
+      </me>
+      to conclude that
+      <me>
+        |f(z) -w_0|\lt \frac{\varepsilon}{2}+\frac{ \varepsilon}{2}=\varepsilon  \text{ whenever }   0\lt |z-z_0|\lt \delta;
+      </me>
+      that is,
+      <me>
+        f(z) \in D_{\varepsilon}(w_0)  \text{ whenever }   z\in D_{\delta}^{\ast}(z_0)
+      </me>.
+    </p>
+    <p>
+      Hence the truth of <xref ref="real_limit">Statement</xref>
+      implies the truth of <xref ref="complex_limit">Statement</xref>,
+      and the proof of the theorem is complete.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\lim\limits_{z\to 1+i}</m> <m>(z^2-2z+1) = -1</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let
+        <me>
+          f(z) =z^2-2z+1=x^2-y^2-2x+1+i(2xy-2y)
+        </me>.
+      </p>
+      <p>
+        Computing the limits for <m>u</m> and <m>v</m>, we obtain
+        <md>
+          <mrow>\lim\limits_{(x,y) \to (1,1)}u(x, y) \amp  =1-1-2+1=-1\ \ \text{ and }</mrow>
+          <mrow>\lim\limits_{(x,y) \to (1,1)}v(x, y) \amp  =2-2=0</mrow>
+        </md>,
+        so our previous theorem implies that <m>\lim\limits_{z\to 1+i}</m> <m>f(z) = -1</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    Limits of complex functions are formally the same as those of real functions,
+    and the sum,
+    difference,
+    product, and quotient of functions have limits given by the sum,
+    difference, product, and quotient of the respective limits.
+    We state this result as a theorem and leave the proof as an exercise.
+  </p>
+  <theorem xml:id="LimitThm">
+    <statement>
+      <p>
+        Suppose that <m>\lim\limits_{z\to z_0}</m>
+        <m>f(z) = A</m> and <m>\lim\limits_{z\to z_0}g(z) =B</m>.
+        Then
+        <md>
+          <mrow xml:id="limsum" number="yes">\lim\limits_{z\to z_0}\left[ f(z) \pm g(z) \right] \amp =A\pm B,</mrow>
+          <mrow xml:id="limproduct" number="yes">\lim\limits_{z\to z_0}f(z) g(z) \amp =AB,  \text{ and }</mrow>
+          <mrow xml:id="limquotient" number="yes">\lim\limits_{z\to z_0}\frac{f(z)}{g(z)} \amp = \frac{A}{B},  \text{ where }   B \ne 0</mrow>
+        </md>.
+      </p>
+    </statement>
+  </theorem>
+  <definition>
+    <title><em>Continuity of</em> $\bm{u(x,y)}$</title>
+    <statement>
+      <p>
+        Let <m>u(x, y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m>.
+        We say that <m>u</m> is continuous at the point
+        <m>(x_0,\,y_0)</m> if three conditions are satisfied:
+        <md>
+          <mrow xml:id="continuity_1" number="yes">\lim\limits_{(x,y) \to (x_0,y_0) }u(x, y) \amp \text{ exists, }</mrow>
+          <mrow xml:id="continuity_2" number="yes">u(x_0,\,y_0) \amp  \text{ exists } ,  \text{ and }</mrow>
+          <mrow xml:id="continuity_3" number="yes">\lim\limits_{(x,y) \to (x_0,y_0) }u(x, y) \amp =u(x_0,\,y_0) </mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    <xref ref="continuity_3">Condition</xref>
+    actually implies <xref ref="continuity_1">Conditions</xref>
+    and <xref ref="continuity_2"></xref>
+    because the existence of the quantity on each side of Equation <xref ref="continuity_3"/> is implicitly understood to exist.
+    For example, if <m>u(x, y) =\frac{x^{3}}{x^2+y^2}</m> when
+    <m>(x, y) \ne (0,\,0)</m> and if <m>u(0,\,0) =0</m>,
+    then <m>u(x, y) \to (0,\,0)</m> so that <xref ref="continuity_1">Conditions</xref>,
+    <xref ref="continuity_2"></xref>,
+    and <xref ref="continuity_3"></xref> are satisfied.
+    Hence <m>u(x, y)</m> is continuous at <m>(0, 0)</m>.
+  </p>
+  <p>
+    There is a similar definition for complex valued functions.
+  </p>
+  <definition>
+    <title><em>Continuity of</em> $\bm{f(z)}$</title>
+    <statement>
+      <p>
+        Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in some neighborhood of <m>z_0</m>.
+        We say that <m>f</m> is continuous at <m>z_0</m> if three conditions are satisfied:
+        <md>
+          <mrow xml:id="Ccont_1" number="yes">\lim\limits_{z\to z_0}f(z) \amp \text{ exists } ,</mrow>
+          <mrow xml:id="Ccont_2" number="yes">f(z_0) \amp  \text{ exists } ,  \text{ and }</mrow>
+          <mrow xml:id="Ccont_3" number="yes">\lim\limits_{z\to z_0}\,f(z) \amp  =f(z_0)</mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
+  <remark>
+    <p>
+      <xref ref="conj">Example</xref> shows that the function <m>f(z) = \overline{z}</m> is continuous.
+    </p>
+  </remark>
+  <p>
+    A complex function <m>f</m> is continuous iff its real and imaginary parts,
+    <m>u</m> and <m>v</m>, are continuous.
+    The proof of this fact is an immediate consequence of <xref ref="ReC_Limit_Thm">Theorem</xref>.
+    Continuity of complex functions is formally the same as that of real functions,
+    and sums,
+    differences,
+    and products of continuous functions are continuous;
+    their quotient is continuous at points where the denominator is not zero.
+    These results are summarized by the following theorems.
+    We leave the proofs as exercises.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>f(z) =u(x, y) +iv(x, y)</m> be defined in some neighborhood of <m>z_0</m> Then <m>f</m> is continuous at
+        <m>z_0=x_0+iy_0</m> iff <m>u</m> and <m>v</m> are continuous at <m>(x_0,\,y_0)</m>.
+      </p>
+    </statement>
+  </theorem>
+  <theorem xml:id="ContThm">
+    <statement>
+      <p>
+        Suppose that <m>f</m> and <m>g</m> are continuous at the point <m>z_0</m>.
+        Then the following functions are continuous at <m>z_0</m>:
+        <ul>
+          <li>
+            <p>
+              The sum <m>f+g</m>, where <m>(f+g)(z)=f(z) +g(z)</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              The difference <m>f-g</m>, where <m>(f-g)(z)=f(z)-g(z)</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              Rhe product <m>fg</m>, where <m>(fg) (z)=f(z)g(z)</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              The quotient <m>\frac{f}{g}</m>,
+              where <m>\frac{f}{g}(z)=\frac{f(z)}{g(z)}</m>,
+              provided <m>g(z_0) \ne 0</m>; and
+            </p>
+          </li>
+          <li>
+            <p>
+              The composition <m>f\circ g</m>,
+              where <m>(f\circ g)(z) =f\big(g(z)\big)</m>,
+              provided <m>f</m> is continuous in a neighborhood of <m>g(z_0)</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Show that the polynomial function given by
+        <me>
+          w=P(z) =a_0+a_1z+a_2z^2+\cdots +a_{n}z^{n}
+        </me>
+        is continuous at each point <m>z_0</m> in the complex plane.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If <m>a_0</m> is the constant function,
+        then <m>\lim\limits_{z \to z_0}a_0 = a_0</m>;
+        and if <m>a_1 \ne 0</m>,
+        then we can use <xref ref="LimitDef">Definition</xref>
+        with <m>f(z) =a_1z</m> and the choice
+        <m>\delta =\frac{\varepsilon}{|a_1|}</m> to prove that <m>\lim\limits_{z \to z_0}(a_1z) = a_1z_0</m>.
+        Using <xref ref="limproduct">Property</xref>
+        and mathematical induction, we obtain
+        <men xml:id="limproducts">
+          \lim\limits_{z\to z_0}(a_{k}z^{k}) =a_{k}z_0^{k}  \text{ for }   k=0,1,2,\ldots,n
+        </men>.
+      </p>
+      <p>
+        We can extend <xref ref="limsum">Property</xref>
+        to a finite sum of terms and use the result of Equation <xref ref="limproducts"/> to get
+        <me>
+          \lim\limits_{z\to z_0}P(z)=\lim\limits_{z\to z_0}\left(\sum\limits_{k=0}^n a_kz^k\right)=\sum\limits_{k=0}^n a_kz_0^k = P(z_0)
+        </me>.
+      </p>
+      <p>
+        <xref ref="Ccont_1">Conditions</xref>,
+        <xref ref="Ccont_2"></xref>, and <xref ref="Ccont_3"></xref> are satisfied,
+        so we conclude that <m>P</m> is continuous at <m>z_0</m>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    One technique for computing limits is to apply <xref ref="ContThm">Theorem</xref> to quotients.
+    If we let <m>P</m> and <m>Q</m> be polynomials and if <m>Q(z_0) \ne 0</m>, then
+    <me>
+      \lim\limits_{z\to z_0}\frac{P(z)}{Q(z)}= \frac{P(z_0)}{Q(z_0)}
+    </me>.
+  </p>
+  <p>
+    Another technique involves factoring polynomials.
+    If both <m>P(z_0) =0</m> and <m>Q(z_0) =0</m>,
+    then <m>P</m> and <m>Q</m> can be factored as
+    <m>P(z) = (z-z_0) P_1(z)</m> and <m>Q(z)= (z-z_0)Q_1(z)</m>.
+    If <m>Q_1(z_0) \ne 0</m>, then the limit is
+    <me>
+      \lim_{z\to z_0}\frac{P(z)}{Q(z)} = \lim_{z\to z_0}\frac{(z-z_0) P_1(z)}{(z-z_0) Q_1(z)} = \frac{P_1(z_0)}{Q_1(z_0)}
+    </me>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\lim\limits_{z\to 1+i}\frac{z^2-2i}{z^2-2z+2}=1-i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Here <m>P</m> and <m>Q</m> can be factored in the form
+        <me>
+          P(z) =(z-1-i) (z+1+i)  \text{ and }   Q(z) = (z-1-i)(z-1+i)
+        </me>
+        so that the limit is obtained by the calculation
+        <md>
+          <mrow>\lim\limits_{z\to 1+i}\frac{z^2-2i}{z^2-2z+2}\amp =\lim\limits_{z\to 1+i}\frac{(z-1-i)(z+1+i)}{(z-1-i) (z-1+i)}</mrow>
+          <mrow>\amp  =\lim\limits_{z\to 1+i}\text{} \frac{z+1+i}{z-1+i}</mrow>
+          <mrow>\amp  =\frac{(1+i) +1+i}{(1+i) -1+i}</mrow>
+          <mrow>\amp  =\frac{2+2i}{2i}</mrow>
+          <mrow>\amp  =1-i</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_limits-continuity">Section</xref></title>
+    <exercise xml:id="x2_3_1">
+      <p>
+        Find the following limits.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\lim\limits_{z\to 2+i}(z^2-4z+2+5i)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lim\limits_{z\to i}\frac{z^2+4z+2}{z+1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lim\limits_{z\to i}\frac{z^{4}-1}{z-i}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lim\limits_{z\to 1+i}\frac{z^2+z-2+i}{z^2-2z+1}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\lim\limits_{z\to 1+i}\frac{z^2+z-1-3i}{z^2-2z+2}</m> by factoring.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise>
+      <p>
+        Determine where the following functions are continuous.
+        <ol>
+          <li>
+            <p>
+              <m>z^4-9z^2+iz-2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{z+1}{z^2+1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{z^2+6z+5}{z^2+3z+2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{z^{4}+1}{z^2+2z+2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{x+iy}{x-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{x+iy}{|z|-1}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        State why <m>\lim\limits_{z \to z_0}</m> <m>(e^{x}\cos y+ix^2y) =e^{x_0}\cos y_0+ix_0^2y_0</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        State why <m>\lim\limits_{z\to z_0}\ \left[ \ln (x^2+y^2) +iy\right] =\ln (x_0^2+y_0^2) +iy_0</m>,
+        provided <m>|z_0| \ne 0</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Show that
+        <ol>
+          <li>
+            <p>
+              <m>\lim\limits_{z\to 0}\frac{|z|^2}{z}=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\lim\limits_{z\to 0}\frac{x^2}{z}=0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_2">
+      <p>
+        Let <m>f(z) =\frac{z\mathrm{Re}(z)}{|z|}</m> when <m>z \ne 0</m> and let <m>f(0) =0</m>.
+        Show that <m>f(z)</m> is continuous for all values of <m>z</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_3">
+      <p>
+        Let <m>f(z) =\frac{z^2}{|z|^2} = \frac{x^2-y^2+i2xy}{x^2+y^2}</m>.
+        <ol>
+          <li>
+            <p>
+              Find <m>\lim\limits_{z\to 0}\ f(z)</m> as <m>z \to 0</m> along the line <m>y=x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>\lim\limits_{z\to 0}\ f(z)</m> as <m>z \to 0</m> along the line <m>y=2x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>\lim\limits_{z\to 0}\ f(z)</m> as <m>z \to 0</m> along the parabola <m>y=x^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              What can you conclude about the limit of <m>f(z)</m> as <m>z \to 0</m>?
+              Why?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_4">
+      <p>
+        Let <m>f(z)=f(x, y) = \frac{xy^{3}}{x^2+2y^{6}}+i\frac{x^{3}y}{5x^{6}+y^2}</m> when <m>z \ne 0</m>,
+        and let <m>f(0)=0</m>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>\lim\limits_{z\to 0}\ f(z) =f(0) =0</m> if <m>z</m> approaches zero along any straight line that passes through the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>f</m> is not continuous at the point 0.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_5">
+      <p>
+        For <m>z \ne 0</m>, let <m>f(z) =\frac{\overline{z}}{z}</m>.
+        Does <m>f(z)</m> have a limit as <m>z\to 0</m>?
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_6">
+      <p>
+        Does <m>\lim\limits_{z\to -4}</m> <m>\mathrm{Arg}\,z</m> exist?
+        Why?
+        <em>Hint</em>: Use polar coordinates and let <m>z</m> approach <m>-4</m> from the upper and lower half-planes.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_7">
+      <p>
+        Let <m>f(z)=z^{\frac{1}{2}}=r^{\frac{1}{2}}(\cos \frac{\theta}{2}+i\sin \frac{\theta}{2})</m>,
+        where <m>z=re^{i\theta}</m>, <m>r>0</m>,
+        and <m>-\pi \lt \theta \le \pi</m>.
+        Use the polar form of <m>z</m> and show that
+        <ol>
+          <li>
+            <p>
+              <m>f(z) \to i</m> as <m>z\to -1</m> along the upper semicircle <m>r=1</m>,
+              <m>0\lt \theta \le \pi</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(z) \to -i</m> as <m>z\to -1</m> along the lower semicircle <m>r=1</m>,
+              <m>-\pi \lt \theta \lt 0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_8">
+      <p>
+        Let <m>f(z) =\frac{x^2+iy^2}{|z|^2}</m> when <m>z \ne 0</m> and let <m>f(0) =1</m>.
+        Show that <m>f(z)</m> is not continuous at <m>z_0=0</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_9">
+      <p>
+        Let <m>f(z) =xe^{y}+iy^2e^{-x}</m>.
+        Show that <m>f(z)</m> is continuous for all values of <m>z</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_10">
+      <p>
+        Use the definition of the limit to show that <m>\lim\limits_{z \to 3+4i}</m> <m>z^2=-7+24i</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_11">
+      <p>
+        Let <m>f(z) =\frac{\mathrm{Re}(z)}{|z|}</m> when <m>z \ne 0</m> and let <m>f(0) =1</m>.
+        Is <m>f(z)</m> continuous at the origin?
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_12">
+      <p>
+        Let <m>f(z) =\frac{\big(\mathrm{Re}(z)\big)^2}{|z|}</m> when <m>z \ne 0</m> and let <m>f(0) =0</m>.
+        Is <m>f(z)</m> continuous at the origin?
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_13">
+      <p>
+        Let <m>f(z) =z^{\frac{1}{2}}=|z|^{\frac{1}{2}}e^{i\frac{\mathrm{Arg}(z)}{2}}</m>,
+        where <m>z \ne 0</m>.
+        Show that <m>f(z)</m> is discontinuous at each point along the negative <m>x</m> axis.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_14">
+      <p>
+        Let <m>f(z) =\ln |z|+i\mathrm{Arg} \, z</m>,
+        where <m>-\pi \lt \mathrm{Arg}\,z\le \pi</m>.
+        Show that <m>f(z)</m> is discontinuous at <m>z_0=0</m> and at each point along the negative <m>x</m> axis.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_15">
+      <p>
+        Let <m>|g(z) |\le M</m> and <m>\lim\limits_{z \to z_0}</m> <m>f(z) =0</m>.
+        Show that <m>\lim\limits_{z\to z_0}</m> <m>f(z) g(z) =0</m>.
+        Note: <xref ref="LimitThm">Theorem</xref>
+        is of no use here because you don't know whether <m>\lim\limits_{z\to z_0}g(z)</m> exists.
+        Give an <m>\varepsilon, \, \delta</m> argument.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_16">
+      <p>
+        Let <m>\Delta z=z-z_0</m>.
+        Show that <m>\lim\limits_{z\to z_0}</m> <m>f(z) = w_0</m> iff
+        <m>\lim\limits_{\Delta z\to 0}</m> <m>f(z_0+\Delta z) = w_0</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_17">
+      <p>
+        Let <m>f(z)</m> be continuous for all values of <m>z</m>.
+        <ol>
+          <li>
+            <p>
+              Show that <m>g(z) =f(\overline{z})</m> is continuous for all <m>z</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>g(z) =\overline{f(z)}</m> is continuous for all <m>z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_18">
+      <p>
+        Verify the identities
+        <ol>
+          <li>
+            <p>
+              <xref ref="limsum"></xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="limproduct"></xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="limproduct"></xref>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_19">
+      <p>
+        Verify the results of <xref ref="ContThm">Theorem</xref>.
+      </p>
+    </exercise>
+    <exercise xml:id="x2_3_20">
+      <p>
+        Show that the principal branch of the argument, <m>\mathrm{Arg}\,z</m>,
+        is discontinuous at 0 and all points along the negative real axis.
+      </p>
+    </exercise>
+  </exercises>
+</section>

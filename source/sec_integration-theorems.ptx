@@ -1,0 +1,405 @@
+<section xml:id="sec_integration-theorems">
+  <title>The Fundamental Theorems of Integration</title>
+  <p>
+    Let <m>f</m> be analytic in the simply connected domain <m>D</m>.
+    The theorems in this section show that an antiderivative <m>F</m> can be constructed by contour integration.
+    A consequence will be the fact that in a simply connected domain,
+    the integral of an analytic function <m>f</m> along any contour joining <m>z_1</m> to <m>z_2</m> is the same,
+    and its value is given by <m>F(z_2) -F(z_1)</m>.
+    As a result,
+    we can use the antiderivative formulas from calculus to compute the value of definite integrals.
+  </p>
+  <theorem xml:id="Antideriv_Thm">
+    <title>Indefinite integrals, or antiderivatives</title>
+    <statement>
+      <p>
+        Let <m>f</m><nbsp/>be analytic in the simply connected domain <m>D</m>.
+        If <m>z_0</m> is a fixed value in <m>D</m>,
+        and if <m>C</m> is any contour in <m>D</m> with initial point <m>z_0</m> and terminal point <m>z</m>,
+        then the function
+        <men xml:id="Antideriv_Eq">
+          F(z)=\int_Cf(\xi )\,d\xi = \int_{z_0}^{z}f(\xi)\,d\xi
+        </men>
+        is well-defined and analytic in <m>D</m>,
+        with its derivative given by <m>F\,'(z)=f(z)</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      We first establish that the integral is independent of the path of integration.
+      This will show that the function <m>F</m> is well-def<em>i.e.</em>,
+      which in turn will justify the notation <m>F(z)=\int_{z_0}^zf(\xi)\,d\xi</m>.
+    </p>
+    <p>
+      We let <m>C_1</m> and <m>C_2</m> be two contours in <m>D</m>,
+      both with initial point <m>z_0</m> and terminal point <m>z</m>,
+      as shown in <xref ref="fig_ch-06-30">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-30">
+      <caption>The contours <m>C_1</m> and <m>C_2</m> joining <m>z_0</m> to <m>z</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-30.pdf"/>
+    </figure>
+    <p>
+      Then <m>C_1-C_2</m> is a simple closed contour,
+      and the Cauchy-Goursat theorem implies that
+      <me>
+        \int_{C_1}f(\xi)\,d\xi -\int_{C_2}f(\xi)\,d\xi = \int_{C_1-C_2}f(\xi)\,d\xi = 0
+      </me>.
+    </p>
+    <p>
+      Therefore, the contour integral in Equation <xref ref="Antideriv_Eq"/> is independent of path.
+      Here we have taken the liberty of drawing contours that intersect only at the endpoints.
+      A slight modification of the proof shows that a finite number of other points of intersection are permitted.
+    </p>
+    <p>
+      We now show that <m>F\,'(z)=f(z)</m>.
+      Let <m>z</m> be held fixed,
+      and let <m>\left\vert \Delta z\right\vert</m> be chosen small enough so that the point
+      <m>z+\Delta z</m> also lies in the domain <m>D</m>.
+      Since <m>z</m> is held fixed, <m>f(z)=K</m>,
+      where <m>K</m> is a constant,
+      and Equation <xref ref="Int_Prop_6"/> implies that
+      <men xml:id="Ad_Eq_1">
+        \int_z^{z+\Delta z}f(z)\,d\xi = \int_z^{z+\Delta z}K\,d\xi = K \Delta z = f(z) \Delta z
+      </men>.
+    </p>
+    <p>
+      Using the additive property of contours and the definition of <m>F</m> given in Equation <xref ref="Antideriv_Eq"/>, we have
+      <md>
+        <mrow>F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(\xi)\,d\xi</mrow>
+        <mrow xml:id="Ad_Eq_2" number="yes">\amp = \int_{\Gamma _2}f(\xi)\,d\xi -\int_{\Gamma _1}f(\xi)\,d\xi =\int_{\Gamma}f(\xi)\,d\xi</mrow>
+      </md>.
+      where the contour <m>\Gamma</m> is the straight-line segment joining <m>z</m> to <m>z+\Delta z</m>,
+      and <m>\Gamma_1</m> and <m>\Gamma_2</m> join <m>z_0</m> to <m>z</m>,
+      and <m>z_0</m> to <m>z+\Delta z</m>, respectively,
+      as shown in <xref ref="fig_ch-06-31">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-31">
+      <caption>The contours <m>\Gamma _1</m> and <m>\Gamma _2</m> and the line segment <m>\Gamma</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-31.pdf"/>
+    </figure>
+    <p>
+      Since <m>f</m> is continuous at <m>z</m>,
+      for any <m>\varepsilon >0</m> there is a <m>\delta>0</m> so that
+      <me>
+        |f(\xi )-f(z)| \lt  \varepsilon  \text{ when }   |\xi -z| \lt  \delta
+      </me>.
+    </p>
+    <p>
+      If we require that <m>\left\vert \Delta z\right\vert \lt \delta</m> and combine this last inequality with Equations <xref ref="Ad_Eq_1"/> and <xref ref="Ad_Eq_2"/>, and <xref ref="ML_Ineq">Theorem</xref>, we get
+      <md>
+        <mrow>\left|\frac{F(z+\Delta z) -F(z)}{\Delta z} -f(z)\right| \amp = \frac{1}{|\Delta z|} \left\vert \int_{\Gamma }f(\xi)\,d\xi - \int_{\Gamma }f(z)\,d\xi \right\vert</mrow>
+        <mrow>\amp  \le \frac{1}{|\Delta z|}\int_{\Gamma}\big|f(\xi ) -f(z)\big|  \big|d\xi\big|</mrow>
+        <mrow>\amp \lt  \frac{1}{|\Delta z|}\varepsilon |\Delta z|</mrow>
+        <mrow>\amp = \varepsilon </mrow>
+      </md>.
+    </p>
+    <p>
+      Thus <m>\left|\frac{F(z+\Delta z) -F(z)}{\Delta z}-f(z)\right|</m> tends to 0 as
+      <m>\Delta z \to 0</m>, so <m>F\,'(z)=f(z)</m>.
+    </p>
+  </proof>
+  <remark>
+    <p>
+      It is important to stress that the line integral of an analytic function is independent of path.
+      In <xref ref="Int_z_two_ways">Example</xref>
+      we showed that <m>\int_{C_1}z\ dz=\int_{C_2}z\ dz=4+2i</m>,
+      where <m>C_1</m> and <m>C_2</m> were different contours joining <m>-1-i</m> to <m>3+i</m>.
+      Because the integrand <m>f(z)=z</m> is an analytic function, Theorem 6.8 lets us know ahead of time that the value of the two integrals is the same;
+      hence one calculation would have sufficed.
+      If you ever have to compute a line integral of an analytic function over a difficult contour,
+      change the contour to something easier.
+      You are guaranteed to get the same answer.
+      Of course, you must be sure that the function you're dealing with is analytic in a simply connected domain containing your original and new contours.
+    </p>
+  </remark>
+  <p>
+    If we set <m>z=z_1</m> in <xref ref="Antideriv_Thm">Theorem</xref>,
+    then we obtain the following familiar result for evaluating a definite integral of an analytic function.
+  </p>
+  <theorem xml:id="DInt_Thm">
+    <title>Definite integrals</title>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic in a simply connected domain <m>D</m>.
+        If <m>z_0</m> and <m>z_1</m> are any two points in <m>D</m> joined by a contour <m>C</m>, then
+        <men xml:id="DInt_Eq">
+          \int_Cf(z)\,dz = \int_{z_0}^{z_1}f(z)\,dz=F(z_1) - F(z_0)
+        </men>,
+        where <m>F</m> is any antiderivative of <m>f</m> in <m>D</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      If we choose <m>F</m> to be the function defined by <xref ref="Antideriv_Eq">Formula</xref>,
+      then Equation <xref ref="DInt_Eq"/> holds.
+      If <m>G</m> is any other antiderivative of <m>f</m> in <m>D</m>,
+      then <m>G\,'(z)=F\,'(z)</m> for all <m>z\in D</m>.
+      Thus the function <m>H(z)=G(z) -F(z)</m> is analytic in <m>D</m>,
+      and <m>H\,'(z) = G\,'(z)-F\,'(z) = 0</m>, for all <m>z\in D</m>.
+      Thus, by <xref ref="Df_0_implies_f_const">Theorem</xref>,
+      this means <m>H( z)=K</m>,
+      for all <m>z\in D</m>, where <m>K</m> is some complex constant.
+      Therefore <m>G(z)=F(z) +K</m>,
+      so <m>G(z_1)-G(z_0) = F(z_1)-F(z_0)</m>,
+      which establishes our theorem.
+    </p>
+  </proof>
+  <p>
+    <xref ref="DInt_Thm">Theorem</xref>
+    gives an important method for evaluating definite integrals when the integrand is an analytic function in a simply connected domain.
+    In essence, it permits you to use all the rules of integration that you learned in calculus.
+    When the conditions of <xref ref="DInt_Thm">Theorem</xref> are met,
+    applying it is generally much easier than parametrizing a contour.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that
+        <me>
+          \int_C\frac{dz}{2z^{\frac{1}{2}}}=1+i
+        </me>,
+        where <m>z^{\frac{1}{2}}</m> is the principal branch of the square root function and <m>C</m> is the line segment joining 4 to <m>8+6i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We showed in Chapter 3 that if <m>F(z)=z^{\frac{1}{2}}</m>,
+        then <m>F\,'(z)=\frac{1}{2z^{\frac{1}{2}}}</m>,
+        where the principal branch of the square root function is used in both the formulas for <m>F</m> and <m>F\,'</m>.
+        We note that <m>C</m> is contained in the simply connected domain <m>D_4(6+3i)</m>,
+        which is the open disk of radius 4 centered at the midpoint of the segment <m>C</m>.
+        Since <m>f(z)=\frac{1}{2z^{\frac{1}{2}}}</m> is analytic in <m>D_4( 6+3i)</m>,
+        <xref ref="DInt_Thm">Theorem</xref> guarantees that
+        <me>
+          \int_4^{8+6i}\frac{dz}{2z^{\frac{1}{2}}} = (8+6i)^{ \frac{1}{2}}-4^{\frac{1}{2}}=3+i-2=1+i
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\int_C\cos z\ dz=-\sin 1+i\sinh 1</m>,
+        where <m>C</m> is the line segment between 1 and <m>i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        An antiderivative of <m>f(z)=\cos z</m> is <m>F(z)=\sin z</m>.
+        Because <m>F</m> is entire,
+        we use <xref ref="DInt_Thm">Theorem</xref> to conclude that
+        <me>
+          \int_C\cos z\ dz=\int_1^{i}\cos z\ dz=\sin i-\sin 1=-\sin 1+i\sinh i
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example xml:id="Int_dz_z">
+    <statement>
+      <p>
+        We let <m>D=\{z=re^{i\theta }:r>0 \text{ and }  -\pi \lt \theta \lt \pi \}</m> be the simply connected domain shown in <xref ref="fig_ch-06-32">Figure</xref>.
+        We know that <m>f(z)=\frac{{1}}{z}</m> is analytic in <m>D</m> and has an antiderivative
+        <m>F(z)=\mathrm{Log}(z)</m>, for all <m>z\in D</m>.
+        If <m>C</m> is a contour in <m>D</m> that joins the point <m>z_1</m> to the point <m>z_2</m>,
+        then <xref ref="DInt_Thm">Theorem</xref> implies that
+        <me>
+          \int_C\frac{dz}{z}=\int_{z_1}^{z_2}\frac{dz}{z}=\mathrm{Log}(z_2)-\mathrm{Log}(z_1)
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <figure xml:id="fig_ch-06-32">
+    <caption>The simply connected domain <m>D</m> from <xref ref="Int_dz_z">Examples</xref> and <xref ref="Int_dz_z___2Pi_I"></xref></caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-32.pdf"/>
+  </figure>
+  <example xml:id="Int_dz_z___2Pi_I">
+    <statement>
+      <p>
+        Show that <m>\int_{C_1^+(0)}\frac{dz}{z} = 2\pi i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Recall that <m>C_1^+(0)</m> is the unit circle with positive orientation.
+        We let <m>C</m> be that circle with the point <m>-1</m> omitted,
+        as shown in Figure 6.32(b).
+        The contour <m>C</m> is contained in the simply connected domain <m>D</m> of <xref ref="Int_dz_z">Example</xref>.
+        We know that <m>f(z)=\frac{1 }{z}</m> is analytic in <m>D</m>,
+        and has an antiderivative <m>F(z)= \mathrm{Log}(z)</m>,
+        for all <m>z\in D</m>.
+        Therefore, if we let <m>z_2</m> approach <m>-1</m> on <m>C</m> through the upper half-plane and <m>z_1</m> approach <m>-1</m> on <m>C</m> through the lower half-plane,
+        <md>
+          <mrow>\int_{C_1^+(0)}\frac{dz}{z} \amp = \lim_{\substack{ { z_2 \to -1\,(z_2\in C,\,\mathrm{Im}z_2>0)}  \\ {z_1 \to -1\,(z_1\in C,\,\mathrm{Im}z_1\lt 0)}} }\int_{z_1}^{z_2}\frac{dz}{z}</mrow>
+          <mrow>\amp = \lim_{z_2 \to -1\,(z_2\in C,\,\mathrm{Im}z_2>0)}\mathrm{Log}(z_2)-\lim_{z_1 \to -1\,(z_1\in C,\,\mathrm{Im}z_1\lt 0)}\mathrm{Log}(z_1)</mrow>
+          <mrow>\amp = i\pi -(-i\pi )</mrow>
+          <mrow>\amp  =2\pi i</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    <em>Exercises for <xref ref="sec_integration-theorems">Section</xref></em>
+    For Exercises 1<ndash/>14,
+    find the value of the definite integral using <xref ref="Antideriv_Thm">Theorem</xref>
+    and explain why you are justified in using it.
+  </p>
+  <ol>
+    <li xml:id="x6_4_1">
+      <p>
+        <m>\int_Cz^2\ dz</m>,
+        where <m>C</m> is the line segment from <m>1+i</m> to <m>2+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_2">
+      <p>
+        <m>\int_C \cos z\ dz</m>,
+        where <m>C</m> is the line segment from <m>-i</m> to <m>1+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_3">
+      <p>
+        <m>\int_C \exp z\ dz</m>,
+        where <m>C</m> is the line segment from <m>2</m> to <m>i\frac{\pi }{2}</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_4">
+      <p>
+        <m>\int_C z\exp z\ dz</m>,
+        where <m>C</m> is the line segment from <m>-1-i\frac{\pi }{2}</m> to <m>2+i\pi</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_5">
+      <p>
+        <m>\int_C \frac{1+z}{z}\ dz</m>,
+        where <m>C</m> is the line segment from <m>1</m> to <m>i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_6">
+      <p>
+        <m>\int_C \sin \frac{z}{2}\ dz</m>,
+        where <m>C</m> is the line segment from <m>0</m> to <m>\pi -2i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_7">
+      <p>
+        <m>\int_C (z^2+z^{-2}) dz</m>,
+        where <m>C</m> is the line segment from <m>i</m> to <m>1+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_8">
+      <p>
+        <m>\int_C z\exp (z^2) dz</m>,
+        where <m>C</m> is the line segment from <m>1-2i</m> to <m>1+2i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_9">
+      <p>
+        <m>\int_Cz\cos z\ dz</m>,
+        where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_10">
+      <p>
+        <m>\int_C\sin ^2z\ dz</m>,
+        where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_11">
+      <p>
+        <m>\int_C</m>Log <m>z\ dz</m>,
+        where <m>C</m> is the line segment from <m>1</m> to <m>1+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_12">
+      <p>
+        <m>\int_C\frac{dz}{z^2-z}</m>,
+        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_13">
+      <p>
+        <m>\int_C\frac{2z-1}{z^2-z}\ dz</m>,
+        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_14">
+      <p>
+        <m>\int_C\frac{z-2}{z^2-z}\ dz</m>,
+        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_15">
+      <p>
+        Show that <m>\int_C1\ dz=z_2-z_1</m>,
+        where <m>C</m> is the line segment from <m>z_1</m> to <m>z_2</m>,
+        by parametrizing <m>C</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_16">
+      <p>
+        Let <m>z_1</m> and <m>z_2</m> be points in the right half-plane and let <m>C</m> be the line segment joining them.
+        Show that <m>\int_C \frac{dz}{z^2} = \frac{1}{z_1}-\frac{1}{z_2}</m>.
+      </p>
+    </li>
+    <li xml:id="x6_4_17">
+      <p>
+        Let <m>z^{\frac{1}{2}}</m> be the principal branch of the square root function.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Evaluate <m>\int_C\frac{dz}{2z^{\frac{1}{2}}}</m>,
+            where <m>C</m> is the line segment joining <m>9</m> to <m>3+4i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <m>\int_Cz^{\frac{1}{2}}\ dz</m>,
+            where <m>C</m> is the right half of the circle
+            <m>C_2^+(0)</m> joining <m>-2i</m> to <m>2i</m>.
+          </p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>
+        Using partial fraction decomposition,
+        show that if <m>z</m> lies in the right half-plane and <m>C</m> is the line segment joining <m>0</m> to <m>z</m>,
+        then\label {6.4.18}
+        <me>
+          \int_C\frac{d\xi }{\xi ^2+1} = \mathrm{Arctan}(z) = \frac{i}{2}\mathrm{Log}(z+i)-\frac{i}{2}\mathrm{Log}(z-i)+\frac{\pi }{2}
+        </me>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>f\,'</m> and <m>g'</m> be analytic for all <m>z</m> and let <m>C</m> be any contour joining the points <m>z_1</m> and <m>z_2</m>.
+        Show that\label {6.4.19}
+        <me>
+          \int_C f(z)g'(z)\,dz = f(z_2)g(z_2) - f(z_1)g(z_1) - \int_C f\,'(z)g(z)\,dz
+        </me>.
+      </p>
+    </li>
+    <li xml:id="x6_4_20">
+      <p>
+        Compare the various methods for evaluating contour integrals.
+        What are the limitations of each method?
+      </p>
+    </li>
+    <li xml:id="x6_4_21">
+      <p>
+        Explain how the fundamental theorem of calculus studied in complex analysis and the fundamental theorem of calculus studied in calculus are different.
+        How are they similar?
+      </p>
+    </li>
+    <li xml:id="x6_4_22">
+      <p>
+        Show that <m>\int_Cz^{i}dz=(i-1) \frac{1+e^{-\pi }}{2}</m>,
+        where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
+      </p>
+    </li>
+  </ol>
+</section>

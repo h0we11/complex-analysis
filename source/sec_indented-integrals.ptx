@@ -1,0 +1,382 @@
+<section xml:id="sec_indented-integrals">
+  <title>Indented Contour Integrals</title>
+  <p>
+    If <m>f</m> is continuous on the interval <m>b\lt x\le c</m>,
+    but discontinuous at <m>b</m>,
+    then the improper integral of <m>f</m> over <m>[b,c]</m> is defined by
+    <me>
+      \int_b^c f(x)\,dx = \lim_{r \to b^{+}}\int_{r}^{c}f(x)\,dx
+    </me>,
+    provided the limit exists.
+    Similarly, if <m>f</m> is continuous on the interval <m>a \le x\lt b</m>,
+    but discontinuous at <m>b</m>,
+    then the improper integral of <m>f</m> over <m>[a,b]</m> is defined by
+    <me>
+      \int_{a}^{b}f(x)\,dx = \lim_{R \to b^{-}} \int_{a}^{R}f(x)\,dx
+    </me>,
+    provided the limit exists.
+    For example,
+    <me>
+      \int_0^{9}\frac{dx}{2\sqrt{x}} = \lim_{r \to 0^{+}} \int_{r}^{9}\frac{dx}{2\sqrt{x}} = \lim\limits_{r \to 0^{+}}(\sqrt{x})\Big|_{x=r}^{x=9} = 3-\lim\limits_{r \to 0^{+}}\sqrt{r} = 3
+    </me>.
+  </p>
+  <p>
+    If <m>f</m> is continuous for all values of <m>x</m> in the interval <m>[a,c]</m>,
+    except at the value <m>x=b</m>, where <m>a\lt b\lt c</m>,
+    then the Cauchy principal value of <m>f</m> over <m>[a,c]</m> is defined by
+    <me>
+      \text{ P.V. } \int_{a}^{c}f(x)\,dx = \lim_{r \to 0^{+}}\left[\int_{a}^{b-r}f(x)\,dx+\int_{b+r}^{c}f(x)\,dx\right]
+    </me>,
+    provided the limit exists.
+  </p>
+  <example>
+    <statement>
+      <me>
+        \text{ P.V. } .\int_{-1}^{8}\frac{dx}{x^{1/3}} =
+        \lim_{r \to 0^{+}}\left[\int_{-1}^{-r}\frac{dx}{x^{1/3}}+\int_{r}^{8}\frac{dx}{x^{1/3}}\right]
+      </me>.
+      <p>
+        Evaluating the integrals and computing limits gives
+        <me>
+          \lim_{r \to 0^{+}}\left[\frac{3}{2}r^{2/3} - \frac{3}{2} + 6 - \frac{3}{2}r^{2/3}\right] = \frac{9}{2}
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <p>
+    In this section we show how to use residues to evaluate the Cauchy principal value of the integral of <m>f</m> over
+    <m>(-\infty, \infty)</m> when the integrand <m>f</m> has simple poles on the <m>x</m>-axis.
+    We state our main results and then look at some examples before giving proofs.
+  </p>
+  <theorem xml:id="Thm_8_5">
+    <statement>
+      <p>
+        Let <m>f(z) =\frac{P(z)}{Q(z)}</m>,
+        where <m>P</m> and <m>Q</m> are polynomials with real coefficients of degree <m>m</m> and <m>n</m>,
+        respectively, and <m>n \ge m+2</m>.
+        If <m>Q</m> has simple zeros at the points
+        <m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m><nbsp/>axis, then
+        <men xml:id="EQ_8_4">
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)\,dx}{Q(x)} = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}] +\pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_{j}]
+        </men>,
+        where <m>z_1, \, z_2, \, \ldots, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
+      </p>
+    </statement>
+  </theorem>
+  <theorem xml:id="Thm_8_6">
+    <statement>
+      <p>
+        Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>,
+        respectively, where <m>n \ge m+1</m>,
+        and let <m>Q</m> have simple zeros at the points
+        <m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m>-axis.
+        If <m>\alpha</m> is a positive real number and if <m>f(z) =\frac{\exp(i\alpha z)P(z)}{Q(z)}</m>, then
+        <men xml:id="EQ_8_5">
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_{j}]) - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_{j}])
+        </men>
+        and
+        <men xml:id="EQ_8_6">
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx = 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_{j}]) + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_{j}])
+        </men>
+        where <m>z_1, \, z_2, \, \ldots ,z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
+      </p>
+    </statement>
+  </theorem>
+  <remark>
+    <p>
+      The formulas in these theorems give the Cauchy principal value of the integral,
+      which pays special attention to the manner in which any limits are taken.
+      They are similar to those in <xref ref="sec_improper-rational-fn-int">Sections</xref>
+      and <xref ref="sec_improper-trig-integrals"></xref>,
+      except here we add one-half the value of each residue at the points
+      <m>t_1, \, t_2, \, \ldots, \, t_l</m> on the <m>x</m>-axis.
+    </p>
+  </remark>
+  <example>
+    <statement>
+      <p>
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{xdx}{x^3-8}</m> by using complex analysis.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The integrand
+        <me>
+          f(z) = \frac{z}{z^3-8}=\frac{z}{(z-2)(z+1+i\sqrt{3})(z+1-i\sqrt{3})}
+        </me>
+        has simple poles at the points <m>t_1=2</m> on the <m>x</m>-axis and
+        <m>z_1=-1+i \sqrt{3}</m> in the upper half-plane.
+        By <xref ref="Thm_8_5">Theorem</xref>,
+        <md>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{x\,dx}{x^3-8} \amp = 2\pi i\mathrm{Res}[f,z_1] +\pi i\mathrm{Res}[f,t_1]</mrow>
+          <mrow>\amp = 2\pi i\frac{-1-i\sqrt{3}}{12}+\pi i\frac{1}{6}=\frac{\pi \sqrt{3}}{6}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{t\,dx}{t^3-8}</m> with a computer algebra system.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Computer algebra systems such as Mathematica or MAPLE give the indefinite integral
+        <me>
+          \int\frac{t}{t^3-8}\,dt = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}}+\frac{\mathrm{Log}(t-2)}{6}+\frac{\mathrm{Log}(t^2+2t+4)}{12}=g(t)
+        </me>.
+      </p>
+      <p>
+        However, for real numbers,
+        we should write the second term as
+        <m>\frac{\mathrm{ Log}[(t-2)^2] }{12}</m> and use the equivalent formula:
+        <me>
+          g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}[(t-2)^2] }{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}
+        </me>.
+      </p>
+      <p>
+        This antiderivative has the property <m>\lim\limits_{t \to 2}g(t) = -\infty</m>,
+        as <xref ref="fig_ch-08-05">Figure</xref> shows.
+      </p>
+      <figure xml:id="fig_ch-08-05">
+        <caption>Graph of <m>s=g(t) =\int \frac{t}{t^3-8}\ dt</m></caption>
+        <image width="73%" source="figs/ch-08/ch-08-fig-05.pdf"/>
+      </figure>
+      <p>
+        We also compute
+        <me>
+          \lim_{t\to \infty}g(t) = \frac{\pi \sqrt{3}}{12}  \text{ and }   \lim_{t \to -\infty}g(t) = \frac{-\pi \sqrt{3}}{12}
+        </me>.
+        and the Cauchy principal limit at <m>t=2</m> as <m>r \to 0</m> is
+        <me>
+          \lim_{r \to 0^{+}}[g(2+r) -g(2-r)] = 0
+        </me>.
+      </p>
+      <p>
+        Therefore the Cauchy principal value of the improper integral is {
+        <md>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to 0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty} \frac{t}{t^3-8}\,dt\right]</mrow>
+          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)</mrow>
+          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)</mrow>
+          <mrow>\amp = 0 + \frac{\pi \sqrt{3}}{12} + \frac{\pi \sqrt{3}}{12}</mrow>
+          <mrow>\amp = \frac{\pi \sqrt{3}}{6}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Evaluate P.V. <m>\displaystyle\int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The integrand <m>f(z) = \frac{\exp(iz)}{(z-1)(z^2+4)}</m> has simple poles at the points <m>t_1=1</m> on the <m>x</m>-axis and <m>z_1=2i</m> in the upper half-plane.
+        By <xref ref="Thm_8_6">Theorem</xref>,
+        <md>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x\,dx}{(x-1) (x^2+4)} \amp = 2\pi \mathrm{Re}\big(\mathrm{Res}[f,z_1]\big) +\pi \mathrm{Re}\big(\mathrm{Res}[f,t_1]\big)</mrow>
+          <mrow>\amp = 2\pi \mathrm{Re}\big(\frac{-2+i}{20e^2}\big) +\pi \mathrm{Re}\big(\frac{\cos 1+i\sin 1}{5}\big)</mrow>
+          <mrow>\amp = \frac{\pi}{5}\left(\cos 1-\frac{1}{e^2}\right)</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <p>
+    We are almost ready for the proofs of <xref ref="Thm_8_5">Theorems</xref>
+    and <xref ref="Thm_8_6"></xref>.
+    First, we need the following lemma.
+  </p>
+  <lemma xml:id="Simple_Pole_Lemma">
+    <statement>
+      <p>
+        Suppose that <m>f</m> has a simple pole at the point <m>t_0</m> on the <m>x</m>-axis.
+        If <m>C_{r}</m> is the contour <m>C_{r}:z=t_0+re^{i\theta}</m>,
+        for <m>0\le \theta \le \pi</m>, then
+        <me>
+          \lim_{r \to 0}\int_{C_{r}}f(z)\,dz = i\pi \mathrm{Res}[f,t_0]
+        </me>.
+      </p>
+    </statement>
+  </lemma>
+  <proof>
+    <p>
+      The Laurent series for <m>f</m> at <m>z=t_0</m> has the form
+      <men xml:id="EQ_8_9">
+        f(z) = \frac{\mathrm{Res}[f,t_0] }{z-t_0}+g(z)
+      </men>,
+      where <m>g</m> is analytic at <m>z=t_0</m>.
+      Using the parametrization of <m>C_{r}</m> and Equation <xref ref="EQ_8_9"/>, we get
+      <md>
+        <mrow>\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi }\frac{ire^{i\theta}d\theta}{re^{i\theta}} + ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}\,d\theta</mrow>
+        <mrow xml:id="EQ_8_10" number="yes">\amp = i\pi \mathrm{Res}[f,t_0] + ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}d\theta</mrow>
+      </md>.
+    </p>
+    <p>
+      Since <m>g</m> is continuous at <m>t_0</m>,
+      there is an <m>M>0</m> so that <m>| g(t_0+re^{i\theta}) | \le M</m>, and
+      <me>
+        \left|\lim_{r \to 0}ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}d\theta\right| \le \lim_{r \to 0}r\int_0^{\pi}M \,d\theta = \lim_{r \to 0}r\pi M=0
+      </me>.
+    </p>
+    <p>
+      Combining this inequality with Equation <xref ref="EQ_8_10"/> gives the desired result.
+    </p>
+  </proof>
+  <p>
+    We are now ready to prove <xref ref="Thm_8_5">Theorems</xref>
+    and <xref ref="Thm_8_6"></xref>:
+  </p>
+  <proof>
+    <p>
+      Since <m>f</m> has only a finite number of poles,
+      we can choose <m>r</m> small enough that the semicircles
+      <me>
+        C_j : z = t_j+re^{i\theta},  \text{ for }   0\le \theta \le \pi  \text{ and }   j=1,2,\ldots ,l
+      </me>
+      are disjoint and the poles
+      <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> in the upper half-plane lie above them,
+      as shown in <xref ref="fig_ch-08-06">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-08-06">
+      <caption>The poles <m>t_1, \  t_2, \  \ldots, \  t_l</m> of <m>f</m> that lie on the <m>x</m>- axis and the poles <m>z_1, \  z_2, \  \ldots \  z_k</m>
+      that lie above the semicircles <m>C_1, \  C_2, \  \ldots, \ C_{l}</m></caption>
+      <image width="73%" source="figs/ch-08/ch-08-fig-06.pdf"/>
+    </figure>
+    <p>
+      Let <m>R</m> be large enough so that the poles of <m>f</m> in the upper half-plane lie under the semicircle <m>C_R:z=Re^{i\theta}</m>,
+      for <m>0 \le \theta \le \pi</m>,
+      and the poles of <m>f</m> on the <m>x</m>-axis lie in the interval <m>-R \le x \le R</m>.
+      Let <m>C</m> be the simple closed positively oriented contour that consists of <m>C_R</m> and
+      <m>-C_1, \, -C_2, \, \ldots, \, -C_l</m> and the segments of the real axis that lie between the semicircles shown in Figure 8.6.
+      The residue theorem gives <m>\int_Cf(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}]</m>,
+      which we rewrite as
+      <men xml:id="EQ_8_13">
+        \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] + \sum_{j=1}^{l}\int_{C_{j}}f(z)\,dz - \int_{C_R}f(z)\,dz
+      </men>,
+      where <m>I_R</m> is the portion of the interval
+      <m>-R \le x \le R</m> that lies outside the intervals
+      <m>(t_{j}-r,t_{j}+r)</m> for <m>j=1,2,\ldots,l</m>.
+      Using the same techniques that we used in <xref ref="Ratl_Fcn_Int_Thm">Theorems</xref>
+      and <xref ref="PV_P_Q_sin__cos_thm"></xref> yields
+      <men xml:id="EQ_8_14">
+        \lim_{R \to \infty}\int_{C_R}f(z)\,dz=0
+      </men>.
+    </p>
+    <p>
+      If we let <m>R \to \infty</m> and <m>r \to 0</m> in Equation <xref ref="EQ_8_13"/> and use the results of Equation <xref ref="EQ_8_14"/> and <xref ref="Simple_Pole_Lemma">Lemma</xref>,
+      we obtain
+      <men xml:id="EQ_8_15">
+        \text{ P.V. }  \int_{-\infty}^{\infty}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] + \pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_{j}]
+      </men>.
+    </p>
+    <p>
+      If <m>f</m> is the function given in <xref ref="Thm_8_5">Theorem</xref>,
+      then Equation <xref ref="EQ_8_15"/> becomes Equation <xref ref="EQ_8_4"/>.
+      If <m>f</m> is the function given in <xref ref="Thm_8_6">Theorem</xref>,
+      then equating the real and imaginary parts of Equation <xref ref="EQ_8_15"/> results in Equations <xref ref="EQ_8_5"/> and <xref ref="EQ_8_6"/>,
+      respectively, and with these results our proof is complete.
+    </p>
+  </proof>
+  <p>
+    <em>Exercises for <xref ref="sec_indented-integrals">Section</xref></em>
+    Use residues to compute the following integrals:
+    <ol>
+      <li xml:id="x8_5_1">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{dx}{x(x-1)(x-2)}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_2">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{dx}{x^3+x}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_3">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x\,dx}{x^3+1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_4">
+        <p>
+          P.V<m>.\int_{-\infty}^{\infty}\frac{dx}{x^3+1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_5">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{x^4-1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_6">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x^4\,dx}{x^{6}-1}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_7">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_8">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^2-x}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_9">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(\pi^2-x^2)}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_10">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{\pi^2-4x^2}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_11">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(x^2+1)}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_12">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x\cos x\,dx}{x^2+3x+2}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_13">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(1-x^2)}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_14">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{a^2-x^2}</m>.
+        </p>
+      </li>
+      <li xml:id="x8_5_15">
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x\,dx}{x^2}</m>.
+          <em>Hint</em>: Use trigonometric identity <m>\sin^2x=\frac{1}{2}-\frac{1}{2} \cos 2x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{1}{x^3+1}\,dx</m>.
+          <em>Hint</em>: Use the contour
+          <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-08">Figure</xref>
+        </p>
+      </li>
+      <li>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{x}{x^3+1}\,dx</m>.
+          <em>Hint</em>: Use the contour
+          <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-08">Figure</xref>
+          <figure xml:id="fig_ch-08-08">
+            <caption>The contour <m>C=L_1+C_r-L_2</m> for Exercises 16 and 17</caption>
+            <image width="73%" source="figs/ch-08/ch-08-fig-08.pdf"/>
+          </figure>
+        </p>
+      </li>
+    </ol>
+  </p>
+</section>

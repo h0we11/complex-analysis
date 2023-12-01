@@ -1,0 +1,810 @@
+<section xml:id="sec_cauchy-goursat">
+  <title>The Cauchy-Goursat Theorem</title>
+  <p>
+    The Cauchy-Goursat theorem states that within certain domains the integral of an analytic function over a simple closed contour is zero.
+    An extension of this theorem allows us to replace integrals over certain complicated contours with integrals over contours that are easy to evaluate.
+    We demonstrate how to use the technique of partial fractions with the Cauchy-Goursat theorem to evaluate certain integrals.
+    In <xref ref="sec_integration-theorems">Section</xref>
+    we show that the Cauchy-Goursat theorem implies that an analytic function has an antiderivative.
+    To begin, we need to introduce some new concepts.
+  </p>
+  <p>
+    Recall from <xref ref="sec_topology">Section</xref>
+    that each simple closed contour <m>C</m> divides the plane into two domains.
+    One domain is bounded and is called the
+    <term>interior</term> of <m>C</m>;
+    the other domain is unbounded and is called the
+    <term>exterior</term> of <m>C</m>.
+    <xref ref="fig_ch-06-15">Figure</xref> illustrates this concept,
+    which is known as the Jordan curve theorem.
+  </p>
+  <figure xml:id="fig_ch-06-15">
+    <caption>The interior and exterior of simple closed contours</caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-15.pdf"/>
+  </figure>
+  <p>
+    Recall also that a domain <m>D</m> is a connected open set.
+    In particular,
+    if <m>z_1</m> and <m>z_2</m> are any pair of points in <m>D</m>,
+    then they can be joined by a curve that lies entirely in <m>D</m>.
+    A domain <m>D</m> is said to be a
+    <em> simply connected domain</em>
+    if the interior of any simple closed contour <m>C</m> contained in <m>D</m> is contained in <m>D</m>.
+    In other words, there are no
+    <q>holes</q>
+    in a simply connected domain.
+    A domain that is not simply connected is said to be a
+    <term>multiply connected domain</term>.
+    <xref ref="fig_ch-06-16">Figure</xref>
+    illustrates uses of the terms <em>simply connected</em>
+    and <em>multiply connected</em>.
+  </p>
+  <figure xml:id="fig_ch-06-16">
+    <caption>Simply connected and multiply connected domains</caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-16.pdf"/>
+  </figure>
+  <p>
+    Let the simple closed contour <m>C</m> have the parametrization
+    <m>C:z( t)=x(t) +iy(t)</m> for <m>a \le t \le b</m>.
+    Recall that if <m>C</m> is parametrized so that the interior of <m>C</m> is kept on the left as <m>z(t)</m> moves around <m>C</m>,
+    then we say that <m>C</m> is oriented
+    <em>positively</em> (counterclockwise);
+    otherwise, <m>C</m> is oriented
+    <em>negatively</em> (clockwise)<em>.</em>
+    If <m>C</m> is positively oriented,
+    then <m>-C</m> is negatively oriented.
+    <xref ref="fig_ch-06-17">Figure</xref>
+    illustrates the concept of positive and negative orientation.
+  </p>
+  <figure xml:id="fig_ch-06-17">
+    <caption>Positively and negatively oriented simple closed contours</caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-17.pdf"/>
+  </figure>
+  <p>
+    Green's theorem is an important result from the calculus of real variables.
+    It tells you how to evaluate the line integral of real-valued functions.
+  </p>
+  <theorem xml:id="Green_s_Thm">
+    <title>Green's theorem</title>
+    <statement>
+      <p>
+        Let <m>C</m> be a simple closed contour with positive orientation and let <m>R</m> be the domain that forms the interior of <m>C</m>.
+        If <m>P</m> and <m>Q</m> are continuous and have continuous partial derivatives <m>P_{x}, \, P_{y}, \,Q_{x}</m>,
+        and <m>Q_{y}</m> at all points on <m>C</m> and <m>R</m><nbsp/> then
+        <men xml:id="Green_s_Thm_Eq">
+          \int_CP(x\text{ \(,\) } y)\,dx+Q(x,y)\,dy = \iint\limits_R\big[ Q_{x}(x,y) -P_{y}(x,y)\big]\, dx\,dy
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      (For a standard region<fn>
+      A standard region is bounded by a contour <m>C</m>,
+      which can be expressed in the two forms <m>C=C_1+C_2</m> and
+      <m>C=C_3+C_4</m> that are used in the proof.
+      </fn>.) If <m>R</m> is a standard region,
+      then there exist functions <m>y=g_1(x)</m>,
+      and <m>y=g_2(x)</m>, for <m>a \le x \le b</m>,
+      whose graphs form the lower and upper portions of <m>C</m>,
+      respectively,
+      as indicated in <xref ref="fig_ch-06-18">Figure</xref>.
+      As <m>C</m> is positively oriented,
+      these functions can be used to express <m>C</m> as the sum of two contours <m>C_1</m> and <m>C_2</m>, where
+      <md>
+        <mrow>{3} \amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{ for }    \amp \amp  a \le t \le b, \text{ and }</mrow>
+        <mrow>\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{ for }   \amp \amp  -b \le t \le -a</mrow>
+      </md>.
+    </p>
+    <p>
+      We now use the functions <m>g_1(x)</m> and <m>g_2(x)</m> to express the double integral of
+      <m>-P_{y}(x,y)</m> over <m>R</m> as an iterated integral,
+      first with respect to <m>y</m> and second with respect to <m>x</m>:
+      <me>
+        -\iint_RP_y(x,y)\,dx\,dy = -\int_a^b\left[\int_{g_1(x)}^{g_2(x)}P_{y}(x,y)\,dy\right]dx
+      </me>.
+    </p>
+    <p>
+      Computing the first iterated integral on the right side gives
+      <me>
+        -\iint_RP_{y}(x,y)\,dx\,dy = \int_a^bP\big(x,\,g_1(x)\big)\,dx - \int_a^bP\big(x,\,g_2(x)\big)\,dx
+      </me>.
+    </p>
+    <p>
+      In the second integral on the right side of this equation we can use the change of variable <m>x=-t</m> to obtain
+      <me>
+        -\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\, g_1(x)\big)\,dx + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt
+      </me>.
+    </p>
+    <figure xml:id="fig_ch-06-18">
+      <caption>Integration over a standard region, where <m>C=C_1+C_2</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-18.pdf"/>
+    </figure>
+    <p>
+      Interpreting the two integrals on the right side of this equation as contour integrals along <m>C_1</m> and <m>C_2</m>,
+      respectively, gives
+      <men xml:id="Green1">
+        -\iint\limits_RP_{y}(x,y)\,dx\,dy =\int_{C_1}P(x,y)\,dx + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx
+      </men>.
+    </p>
+    <p>
+      To complete the proof,
+      we rely on the fact that for a standard region there exist functions
+      <m>x=h_1(y)</m> and <m>x=h_2(y)</m> for
+      <m>c \le y \le d</m> whose graphs form the left and right portions of <m>C</m>,
+      respectively,
+      as indicated in <xref ref="fig_ch-06-19">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-19">
+      <caption>Integration over a standard region, where <m>C=C_3+C_4</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-19.pdf"/>
+    </figure>
+    <p>
+      Because <m>C</m> has positive orientation,
+      it can be expressed as the sum of two contours <m>C_3</m> and <m>C_4</m>, where
+      <md>
+        <mrow>{3} \amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{ for }   \amp \amp  -d \le t \le -c,  \text{ and }</mrow>
+        <mrow>\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{ for }   \amp \amp  c \le t \le d</mrow>
+      </md>.
+    </p>
+    <p>
+      Using the functions <m>h_1(y)</m> and <m>h_2(y)</m>,
+      we express the double integral of
+      <m>Q_{x}(x.y)</m> over <m>R</m> as an iterated integral:
+      <me>
+        \iint\limits_RQ_{x}(x,y)\,dx\,dy = \int_{c}^{d} \left[\int_{h_1(y)}^{h_2(y)}Q_{x}(x,y)\,dx\right] dy
+      </me>.
+    </p>
+    <p>
+      A derivation similar to that which led to Equation <xref ref="Green1"/> shows that
+      <men xml:id="Green2">
+        \iint\limits_RQ_{x}(x\text{ \(,\) } y)\,dx\,dy = \int_CQ(x,y)\,dy
+      </men>.
+    </p>
+    <p>
+      Adding Equations <xref ref="Green1"/> and <xref ref="Green2"/> gives Equation <xref ref="Green_s_Thm_Eq"/>.
+    </p>
+  </proof>
+  <p>
+    We are now ready to state the main result of this section.
+  </p>
+  <theorem xml:id="CG_Thm">
+    <title>Cauchy-Goursat theorem</title>
+    <statement>
+      <p>
+        Let <m>f</m> be analytic in a simply connected domain <m>D</m>.
+        If <m>C</m> is a simple closed contour that lies in <m>D</m>, then
+        <me>
+          \int_Cf(z)\,dz=0
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    We give two proofs.
+    The first, by Augustin Cauchy,
+    is more intuitive but requires the additional hypothesis that <m>f\,'</m> is continuous.
+  </p>
+  <proof>
+    <p>
+      (Cauchy's proof of <xref ref="CG_Thm">Theorem</xref>.) If we suppose that <m>f\,'</m> is continuous,
+      then with <m>C</m> oriented positively we use Equation <xref ref="bookkeeping"/> to write
+      <men xml:id="CG0">
+        \int_Cf(z)\,dz = \int_Cu\ dx-v\,dy+i\int_Cv\,dx + u\,dy
+      </men>.
+    </p>
+    <p>
+      If we use Green's theorem on the real part of the right side of Equation <xref ref="CG0"/> (with <m>P=u</m> and <m>Q=-v)</m>,
+      we obtain
+      <men xml:id="CG1">
+        \int_Cu\,dx - v\,dy = \iint\limits_R(-v_{x}-u_{y})\,dx\,dy
+      </men>,
+      where <m>R</m> is the region that is the interior of <m>C</m>.
+      If we use Green's theorem on the imaginary part, we get
+      <men xml:id="CG2">
+        \int_Cv\,dx +u\,dy = \iint\limits_R(u_{x}-v_{y})\,dx\,dy
+      </men>.
+    </p>
+    <p>
+      If we use the Cauchy-Riemann equations <m>u_{x}=v_{y}</m> and
+      <m>u_{y}=-v_{x}</m> in Equations <xref ref="CG1"/> and <xref ref="CG2"/>, Equation <xref ref="CG0"/> becomes
+      <me>
+        \int_Cf(z)\,dz = \iint\limits_R0\,dx\ dy +i\iint\limits_R0\,dx\,dy=0
+      </me>,
+      which completes the proof.
+    </p>
+  </proof>
+  <p>
+    In 1883, Edward Goursat (1858-1936) produced a proof that does not require the continuity of <m>f\,'</m>.
+  </p>
+  <proof>
+    <p>
+      We first establish the result for a triangular contour <m>C</m> with positive orientation.
+      We then construct four positively oriented contours <m>C^1</m>,
+      <m>C^2</m>,
+      <m>C^3</m>,
+      and <m>C^{4}</m> that are the triangles obtained by joining the midpoints of the sides of <m>C</m>,
+      as <xref ref="fig_ch-06-20">Figure</xref> shows.
+    </p>
+    <figure xml:id="fig_ch-06-20">
+      <caption>The triangular contours <m>C</m> and <m>C^1</m>, <m>C^2</m>, <m>C^3</m>, and <m>C^4</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-20.pdf"/>
+    </figure>
+    <p>
+      Each contour is positively oriented,
+      so if we sum the integrals along the four triangular contours,
+      the integrals along the segments interior to <m>C</m> cancel out in pairs, giving
+      <men xml:id="CG2_25">
+        \int_Cf(z)\,dz = \sum\limits_{k=1}^4\int_{C^{k}}f(z)\,dz
+      </men>.
+    </p>
+    <p>
+      Let <m>C_1</m> be selected from <m>C^1</m>, <m>C^2</m>,
+      <m>C^3</m>, and <m>C^4</m> so that the following holds:
+      <me>
+        \left| \int_Cf(z)\,dz \right| \le \sum_{k=1}^4 \left|\int_{C^{k}}f(z)\,dz\right|  \le 4\left|\int_{C_1}f(z)\,dz\right|
+      </me>.
+    </p>
+    <p>
+      Proceeding inductively,
+      we carry out a similar subdivision process to obtain a sequence of triangular contours <m>\{C_n\}</m>,
+      where the interior of <m>C_{n+1}</m> lies in the interior of <m>C_n</m> and the following inequality holds:
+      <men xml:id="CG2_5">
+        \left|\int_{C_n}f(z)\,dz\right| \le 4\left|\int_{C_{n+1}}f(z)\,dz\right|,  \text{ for }   n=1,\,2,\ldots
+      </men>
+    </p>
+    <p>
+      We let <m>T_n</m> denote the closed region that consists of <m>C_n</m> and its interior.
+      The length of the sides of <m>C_n</m> go to zero as <m>n \to \infty</m>,
+      so there exists a unique point <m>z_0</m> that belongs to all the closed triangular regions <m>\{T_n\}</m>.
+      Since <m>D</m> is simply connected,
+      <m>z_0\in D</m>, so <m>f</m> is analytic at the point <m>z_0</m>.
+      Thus, there exists a function <m>\eta (z)</m> such that
+      <men xml:id="CG3">
+        f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0)
+      </men>.
+      where <m>\lim\limits_{z \to z_0}\eta (z)=0</m>.
+    </p>
+    <p>
+      Using Equation <xref ref="CG3"/> and integrating <m>f</m> along <m>C_n</m>, we get
+      <md>
+        <mrow>\int_{C_n}f(z)\,dz \amp = \int_{C_n}f(z_0)\,dz + \int_{C_n}f'(z_0) (z-z_0) dz</mrow>
+        <mrow>\amp + \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
+        <mrow>\amp = \big[f(z_0)-f\,'(z_0)z_0\big] \int_{C_n} 1 \,dz + f\,'(z_0) \int_{C_n}z\,dz</mrow>
+        <mrow>\amp  +\int_{C_n}\eta(z) (z-z_0)\,dz</mrow>
+        <mrow>\amp = \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
+      </md>.
+    </p>
+    <p>
+      Since <m>\lim\limits_{z \to z_0}\eta (z)=0</m>,
+      we know that given <m>\varepsilon >0</m>,
+      we can find <m>\delta >0</m> such that
+      <men xml:id="CG4">
+        |z-z_0| \lt  \delta  \text{ implies that }   |\eta (z)| \lt  \frac{2}{L^2} \varepsilon
+      </men>,
+      where <m>L</m> is the length of the original contour <m>C</m>.
+      We can now choose an integer <m>n</m> so that <m>C_n</m> lies in the neighborhood
+      <m>z-z_0| \lt  \delta</m>, as shown in Figure 6.21.
+    </p>
+    <figure xml:id="fig_ch-06-21">
+      <caption>The contour <m>C_n</m> that lies in the neighborhood <m>|z-z_0| \lt  \delta</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-21.pdf"/>
+    </figure>
+    <p>
+      Since the distance between any point <m>z</m> on a triangle and a point <m>z_0</m> interior to the triangle is less than half the perimeter of the triangle,
+      it follows that
+      <me>
+        |z-z_0| \lt  \frac{1}{2} L_n,  \text{ for all }  z \text{ on }  C_n
+      </me>,
+      where <m>L_n</m> is the length of the triangle <m>C_n</m>.
+      From the preceding construction process, it follows that
+      <men xml:id="CG5">
+        L_n=\left(\frac{1}{2}\right)^{\!n}L,  \text{ and }   |z-z_0| \lt  \left(\frac{1}{2}\right)^{\! n+1}L,  \text{ for } z \text{ on } C_n
+      </men>.
+    </p>
+    <p>
+      We can use Equations <xref ref="CG2_5"/>, <xref ref="CG4"/>,
+      and <xref ref="CG5"></xref> and <xref ref="ML_Inequality_Thm">Theorem</xref> to conclude
+      <md>
+        <mrow>\left|\int_Cf(z)\,dz\right| \amp \le 4^n\int_{C_n} \big|\eta (z) ( z-z_0)\big| \, |dz|</mrow>
+        <mrow>\amp  \le 4^n\int_{C_n}\frac{2}{L^2}\varepsilon \left(\frac{1}{2}\right)^{\! n+1}L\left\vert dz\right\vert</mrow>
+        <mrow>\amp = \frac{2^n\varepsilon }{L}\int_{C_n}\left\vert dz\right\vert</mrow>
+        <mrow>\amp = \frac{2^n\varepsilon }{L}\left(\frac{1}{2}\right)^{\!n}L</mrow>
+        <mrow>\amp = \varepsilon</mrow>
+      </md>.
+    </p>
+    <p>
+      Because <m>\varepsilon</m> was arbitrary,
+      it follows that our theorem holds for the triangular contour <m>C</m>.
+      If <m>C</m> is a polygonal contour,
+      then we can add interior edges until the interior is subdivided into a finite number of triangles.
+      The integral around each triangle is zero,
+      and the sum of all these integrals equals the integral around the polygonal contour <m>C</m>.
+      Therefore our theorem also holds for polygonal contours.
+      The proof for an arbitrary simple closed contour is established by approximating the contour
+      <q>sufficiently close</q>
+      with a polygonal contour.
+      We omit the details of this last step.
+    </p>
+  </proof>
+  <example>
+    <statement>
+      <p>
+        Recall that <m>\exp z</m>, <m>\cos z</m>, and <m>z^n</m>
+        (where <m>n</m> is a positive integer)
+        are all entire functions.
+        The Cauchy-Goursat theorem implies that,
+        for any simple closed contour,
+        <me>
+          \int_C\exp z\ dz=0, \int_C\cos z\,dz=0,  \text{ and }   \int_Cz^n\,dz=0
+        </me>.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Let <m>n</m> be an integer.
+        If <m>C</m> is a simple closed contour such that the origin does not lie interior to <m>C</m>,
+        then there is a simply connected domain <m>D</m> that contains <m>C</m> in which <m>f(z)=\frac{1}{z^n}</m> is analytic,
+        as is indicated in <xref ref="fig_ch-06-22">Figure</xref>.
+        The Cauchy-Goursat theorem implies that <m>\int_C\frac{1}{z^n}\,dz=0</m>.
+      </p>
+      <figure xml:id="fig_ch-06-22">
+        <caption>A simple connected domain <m>D</m> containing the simple closed contour <m>C</m> that does not contain the origin</caption>
+        <image width="73%" source="figs/ch-06/ch-06-fig-22.pdf"/>
+      </figure>
+    </statement>
+  </example>
+  <p>
+    We want to be able to replace integrals over certain complicated contours with integrals that are easy to evaluate.
+    If <m>C_1</m> is a simple closed contour that can be
+    <q>continuously deformed</q>
+    into another simple closed contour <m>C_2</m> without passing through a point where <m>f</m> is not analytic,
+    then the value of the contour integral of <m>f</m> over <m>C_1</m> is the same as the value of the integral of <m>f</m> over <m>C_2</m>.
+    To be precise, we state the following result.
+  </p>
+  <theorem xml:id="Deformation_of_Contour">
+    <title>Deformation of contour</title>
+    <statement>
+      <p>
+        Let <m>C_1</m> and <m>C_2</m> be two simple closed positively oriented contours such that <m>C_1</m> lies interior to <m>C_2</m>.
+        If <m>f</m> is analytic in a domain <m>D</m> that contains both <m>C_1</m> and <m>C_2</m> and the region between them,
+        as shown in <xref ref="fig_ch-06-23">Figure</xref>, then
+        <me>
+          \int_{C_1}f(z)\,dz = \int_{C_2}f(z)\,dz
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <figure xml:id="fig_ch-06-23">
+    <caption>The domain <m>D</m> that contains the simple closed contours <m>C_1</m> and <m>C_2</m> and the region between them</caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-23.pdf"/>
+  </figure>
+  <proof>
+    <p>
+      Assume that both <m>C_1</m> and <m>C_2</m> have positive (counterclockwise) orientation.
+      We construct two disjoint contours or <em>cuts</em>,
+      <m>L_1</m> and <m>L_2</m>, that join <m>C_1</m> to <m>C_2</m>.
+      The contour <m>C_1</m> is cut into two contours
+      <m>C_1^{\ast }</m> and <m>C_1^{\ast \ast }</m>,
+      and the contour <m>C_2</m> is cut into
+      <m>C_2^{\ast}</m> and <m>C_2^{\ast \ast}</m>.
+      We now form two new contours:
+      <me>
+        K_1=-C_1^{\ast }+L_1+C_2^{\ast }-L_2  \text{ and }   K_2 = -C_1^{\ast \ast }+L_2+C_2^{\ast \ast }-L_1
+      </me>,
+      which are shown in <xref ref="fig_ch-06-24">Figure</xref>.
+      The function <m>f</m> will be analytic on a simply connected domain <m>D_1</m> that contains <m>K_1</m>,
+      and <m>f</m> will be analytic on the simply<nbsp/>connected domain <m>D_2</m> that contains <m>K_2</m>,
+      as illustrated in <xref ref="fig_ch-06-24">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-24">
+      <caption>The cuts <m>L_1</m> and <m>L_2</m> and the contours <m>K_1</m> and <m>K_2</m> used to prove the deformation of contour theorem</caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-24.pdf"/>
+    </figure>
+    <p>
+      We apply the Cauchy-Goursat theorem to the contours <m>K_1</m> and <m>K_2</m>, giving
+      <men xml:id="DC1">
+        \int_{K_1}f(z)\,dz=0  \text{ and }   \int_{K_2}f(z)\,dz=0
+      </men>.
+    </p>
+    <p>
+      Adding contours gives
+      <md>
+        <mrow>K_1+K_2 \amp = -C_1^{\ast }+L_1+C_2^{\ast }-L_2-C_1^{\ast \ast }+L_2+C_2^{\ast \ast }-L_1</mrow>
+        <mrow>\amp = C_2^{\ast }+C_2^{\ast \ast }-C_1^{\ast }-C_1^{\ast \ast }</mrow>
+        <mrow xml:id="DC2" number="yes">\amp = C_2-C_1</mrow>
+      </md>.
+    </p>
+    <p>
+      We use <xref ref="Int_-C___-Int_C">Identities</xref>
+      and <xref ref="Int_C1_C2___Int_C1_IntC2"></xref>
+      of <xref ref="sec_contour-integrals">Section</xref>
+      and Equations <xref ref="DC1"/> and <xref ref="DC2"/> in this proof to conclude that
+      <me>
+        \int_{C_2} f(z)\,dz-\int_{C_1}f(z)\,dz = \int_{K_1}f(z)\,dz + \int_{K_2}f(z)\,dz = 0
+      </me>,
+      which establishes the theorem.
+    </p>
+  </proof>
+  <p>
+    We now state as a corollary an important result that is implied by the deformation<nbsp/>of contour theorem.
+    This result occurs several times in the theory to be developed and is an important tool for computations.
+    You may want to compare the proof of Corollary 6.1 with your solution to <xref ref="x6_2_9">Exercise</xref> from Section 6.2.
+  </p>
+  <corollary xml:id="x2Pi_or_zero">
+    <statement>
+      <p>
+        Let <m>z_0</m> denote a fixed complex value.
+        If <m>C</m> is a simple closed contour with positive orientation such that <m>z_0</m> lies interior to <m>C</m>, then
+        <me>
+          \int_C\frac{dz}{z-z_0} = 2\pi i,  \text{ and }   \int_C\frac{dz}{(z-z_0) ^n} = 0
+        </me>,
+        where <m>n</m> is any integer except <m>n=1</m>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Since <m>z_0</m> lies interior to <m>C</m>,
+      we can choose <m>R</m> so that the circle <m>C_R</m> with center <m>z_0</m> and radius <m>R</m> lies interior to <m>C</m>.
+      Hence <m>f(z)=\frac{1}{(z-z_0)^n}</m> is analytic in a domain <m>D</m> that contains both <m>C</m> and <m>C_R</m> and the region between them,
+      as shown in <xref ref="fig_ch-06-25">Figure</xref>.
+    </p>
+    <figure xml:id="fig_ch-06-25">
+      <caption>The domain <m>D</m> that contains both <m>C</m> and <m>C_R</m></caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-25.pdf"/>
+    </figure>
+    <p>
+      We let <m>C_R</m> have the parametrization
+      <me>
+        C_R:z(\theta )=z_0+Re^{i\theta }  \text{ and }   dz =iRe^{i\theta }d\theta,  \text{ for }   0 \le \theta  \le 2\pi
+      </me>.
+    </p>
+    <p>
+      The deformation of contour theorem implies that the integral of <m>f</m> over <m>C_R</m> has the same value as the integral of <m>f</m> over <m>C</m>, so
+      <me>
+        \int_C\frac{dz}{z-z_0}=\int_{C_R}\frac{dz}{z-z_0} =\int_0^{2\pi}\frac{iRe^{i\theta }}{Re^{i\theta}}\,d\theta =i\int_0^{2\pi }\,d\theta =2\pi i
+      </me>
+      and
+      <md>
+        <mrow>\int_C\frac{dz}{(z-z_0) ^n} \amp = \int_{C_R}\frac{dz}{(z-z_0)^n} = \int_0^{2\pi}\frac{iRe^{i\theta }}{R^ne^{in\theta}}\,d\theta =iR^{1-n}\int_0^{2\pi}e^{i(1-n) \theta }\ d\theta</mrow>
+        <mrow>\amp = \left.\frac{R^{1-n}}{1-n}e^{i(1-n) \theta }\right|_{\theta =0}^{\theta =2\pi}=\frac{R^{1-n}}{1-n}-\frac{R^{1-n}}{1-n}=0</mrow>
+      </md>.
+    </p>
+  </proof>
+  <p>
+    The deformation of contour theorem is an extension of the Cauchy-Goursat theorem to a doubly connected domain in the following sense.
+    We let <m>D</m> be a domain that contains <m>C_1</m> and <m>C_2</m> and the region between them,
+    as shown in <xref ref="fig_ch-06-23">Figure</xref>.
+    Then the contour <m>C=C_2-C_1</m> is a parametrization of the boundary of the region <m>R</m> that lies between <m>C_1</m> and <m>C_2</m> so that the points of <m>R</m> lie to the left of <m>C</m> as a point <m>z(t)</m> moves around <m>C</m>.
+    Hence <m>C</m> is a positive orientation of the boundary of <m>R</m>,
+    and <xref ref="Deformation_of_Contour">Theorem</xref>
+    implies that <m>\int_C f(z)\,dz=0</m>.
+  </p>
+  <p>
+    We can extend <xref ref="Deformation_of_Contour">Theorem</xref>
+    to multiply connected domains with more than one
+    <q>hole.</q>
+    The proof, which we leave for you,
+    involves the introduction of several cuts and is similar to the proof of <xref ref="Deformation_of_Contour">Theorem</xref>.
+  </p>
+  <theorem xml:id="Extended_CG_Thm">
+    <title>Extended Cauchy-Goursat theorem</title>
+    <statement>
+      <p>
+        Let <m>C,\,C_1,\ldots ,\,C_n</m><nbsp/>be simple closed positively oriented contours with the properties that <m>C_k</m><nbsp/>lies interior to <m>C</m> for <m>k=1,\,2,\ldots ,\,n</m>,
+        and the interior of <m>C_k</m><nbsp/>has no points in common with the interior of <m>C_{j}</m><nbsp/>if <m>k\ne j</m>.
+        Let <m>f</m> be analytic on a domain <m>D</m><nbsp/>that contains all the contours and the region between <m>C</m><nbsp/>and
+        <m>C_1+C_2+\cdots + C_n</m>, as shown in Figure 6.26.
+        Then
+        <me>
+          \int_Cf(z)\,dz = \sum_{k=1}^n\int_{C_k}f(z)\,dz
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <figure xml:id="fig_ch-06-26">
+    <caption>The multiply connected domain <m>D</m> and the contours <m>C</m> and <m>C_1,\ C_2,\ldots ,\ C_n</m> in the statement of the
+    extended Cauchy-Goursat theorem</caption>
+    <image width="73%" source="figs/ch-06/ch-06-fig-26.pdf"/>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\int_{C_2^+(0)}\frac{2z}{ z^2+2}\ dz=4\pi i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Recall that <m>C_2^+(0)</m> is the circle
+        <m>\{z:|z=2|\}</m> with positive orientation.
+        Using partial fraction decomposition gives
+        <me>
+          \frac{2z}{z^2+2}=\frac{2z}{(z+i\sqrt{2}) (z-i\sqrt{2})} = \frac{1}{z+i\sqrt{2}}+\frac{1}{z-i\sqrt{2}},  \text{ so }
+        </me>
+        <men xml:id="Int_2z__z_2_2_">
+          \int_{C_2^+(0)}\frac{2z}{z^2+2}\,dz = \int_{C_2^+(0)}\frac{1}{z+i\sqrt{2}}\,dz + \int_{C_2^+(0)}\frac{1}{z-i\sqrt{2}}\,dz
+        </men>.
+      </p>
+      <p>
+        The points <m>z=\pm i\sqrt{2}</m> lie interior to <m>C_2^+(0)</m>,
+        so <xref ref="x2Pi_or_zero">Corollary</xref> implies that
+        <me>
+          \int_{C_2^+(0)}\frac{dz}{z\pm i\sqrt{2}} = 2\pi i
+        </me>.
+      </p>
+      <p>
+        Substituting these values into Equation <xref ref="Int_2z__z_2_2_"/> yields
+        <me>
+          \int_{C_2^+(0)}\frac{2z}{z^2+2}\ dz=2\pi i+2\pi i=4\pi i
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=2\pi i</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Recall that <m>C_1^+(i)</m> is the circle
+        <m>\{z:|z-i|=1\}</m> having positive orientation.
+        Using partial fractions again, we have
+        <me>
+          \int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz = \int_{C_1^+(i)}\frac{dz}{z+i\sqrt{2}} + \int_{C_1^+(i)}\frac{dz}{z-i\sqrt{2}}
+        </me>.
+      </p>
+      <p>
+        In this case, <m>z=i\sqrt{2}</m> lies interior to
+        <m>C_1^+(i)</m> but <m>z=-i\sqrt{2}</m> does not,
+        as shown in <xref ref="fig_ch-06-27">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-06-27">
+        <caption>The circle <m>C_1^+(i)</m> and the points <m>z=\pm i\sqrt{2}</m></caption>
+        <image width="73%" source="figs/ch-06/ch-06-fig-27.pdf"/>
+      </figure>
+      <p>
+        By <xref ref="x2Pi_or_zero">Corollary</xref>,
+        the second integral on the right side of this equation has the value <m>2\pi i</m>.
+        The first integral equals zero by the Cauchy-Goursat theorem because the function
+        <m>f(z)=\frac{1}{z+i\sqrt{2}}</m> is analytic on a simply connected domain that contains <m>C_1^+(i)</m>.
+        Thus
+        <me>
+          \int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=0+2\pi i =2\pi i
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <example xml:id="Prob_Ex">
+    <statement>
+      <p>
+        Show that <m>\int_C\frac{z-2}{z^2-z}\,dz = -6\pi i</m>,
+        where <m>C</m> is the
+        <q>figure eight</q>
+        contour shown in <xref ref="fig_ch-06-28">Figure</xref>(a).
+      </p>
+      <figure xml:id="fig_ch-06-28">
+        <caption>The contour <m>C=C_1+C_2</m></caption>
+        <image width="73%" source="figs/ch-06/ch-06-fig-28.pdf"/>
+      </figure>
+    </statement>
+    <solution>
+      <p>
+        Again, we use partial fractions to express the integral:
+        <men xml:id="Example__z-2___z_2-z_">
+          \int_C\frac{z-2}{z^2-z}\ dz=2\int_C\frac{1}{z}\,dz - \int_C\frac{1}{z-1}\,dz
+        </men>.
+      </p>
+      <p>
+        Using the Cauchy-Goursat theorem,
+        <xref ref="Int_-C___-Int_C">Property</xref>,
+        and <xref ref="x2Pi_or_zero">Corollary</xref>
+        (with <m>z_0=0</m>),
+        we compute the value of the first integral on the right side of Equation <xref ref="Example__z-2___z_2-z_"/>:
+        <md>
+          <mrow>2\int_C\frac{1}{z}\,dz \amp = 2\int_{C_1}\frac{1}{z}\,dz+2\int_{C_2}\frac{1}{z}\ dz</mrow>
+          <mrow>\amp = -2\int_{-C_1}\frac{1}{z}\,dz+0</mrow>
+          <mrow>\amp = -2(2\pi i)</mrow>
+          <mrow>\amp = -4\pi i</mrow>
+        </md>.
+      </p>
+      <p>
+        Similarly, we find that
+        <md>
+          <mrow>-\int_C\frac{dz}{z-1} \amp = -\int_{C_1}\frac{dz}{z-1} - \int_{C_2}\frac{dz}{z-1}</mrow>
+          <mrow>\amp = 0-2\pi i</mrow>
+          <mrow>\amp =-2\pi i</mrow>
+        </md>.
+      </p>
+      <p>
+        If we substitute the results of the last two equations into Equation <xref ref="Example__z-2___z_2-z_"/> we get
+        <me>
+          \int_C\frac{z-2}{z^2-z}\,dz=-4\pi i-2\pi i=-6\pi i
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_cauchy-goursat">Section</xref></title>
+    <exercise xml:id="x6_3_1">
+      <p>
+        Determine the domain of analyticity for the following functions and evaluate <m>\int_{C_1^+(0)}f(z) dz</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>f(z)=\frac{z}{z^2+2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z)=\frac{1}{z^2+2z+2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z)=\tan z</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z)=\mathrm{Log}(z+5)</m>.
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise xml:id="x6_3_2">
+      <p>
+        Show that <m>\int_Cz^{-1}dz=2\pi i</m>,
+        where <m>C</m> is the square with vertices <m>1\pm i</m>,
+        and <m>-1\pm i</m> and having positive orientation.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_3">
+      <p>
+        Show that <m>\int_{C_1^+(0)}(4z^2-4z+5) ^{-1}\,dz = 0</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Find <m>\int_C(z^2-z)^{-1}\,dz</m> for
+        <ol>
+          <li>
+            <p>
+              circle <m>C=C_2^+(1)=\{z:|z-1|=2\}</m> having positive orientation.
+            </p>
+          </li>
+          <li>
+            <p>
+              circle <m>C=C_{1/2}^+(1)=\{z:|z-1|=\frac{1}{2}\}</m> having positive orientation.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_5">
+      <p>
+        Find <m>\int_C(2z-1) (z^2-z)^{-1}\,dz</m> for the following:
+        <ol>
+          <li>
+            <p>
+              The circle <m>C=C_2^+(0)=\{z:|z|=2\}</m> having positive orientation.
+            </p>
+          </li>
+          <li>
+            <p>
+              The circle <m>C=C_{1/2}^+(0)=\{z:|z|=\frac{1}{2}\}</m> having positive orientation.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_6">
+      <p>
+        Let <m>C</m> be the triangle with vertices 0, 1, and <m>i</m> and having positive orientation.
+        Parametrize <m>C</m> and show that
+        <ol>
+          <li>
+            <p>
+              <m>\int_C1\ dz=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\int_Cz\ dz=0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Evaluate <m>\int_C(4z^2+4z-3)^{-1}\,dz = \int_C(2z-1)^{-1}(2z+3)^{-1}\,dz</m> for the following:
+        <ol>
+          <li>
+            <p>
+              The circle <m>C=C_1^+(0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The circle <m>C=C_1^+(-\frac{2}{3}) = \{z:\left|z+\frac{2}{3}\right|=1\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the circle <m>C=C_3^+(0)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_8">
+      <p>
+        Use Green's theorem to show that the area enclosed by a simple closed contour <m>C</m> is <m>\frac{1}{2}\int_Cx\ dy-y\,dx</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_9">
+      <p>
+        Parametrize <m>C_1^+(0)</m> with <m>z(t)=\cos t+i\sin t</m>,
+        for <m>-\pi \le t \le \pi</m>.
+        Use the principal branch of the square root function:
+        <m>z^{\frac{1}{2}}=r^{\frac{1}{2}}\cos \frac{\theta }{2} +ir^{\frac{1}{2}}\sin \frac{\theta }{2}</m>,
+        for <m>-\pi \lt \theta \le \pi </m>,
+        to find <m>\int_{C_1^+(0)}z^{\frac{1}{2}}\,dz</m>.
+        <em>Hint</em>: Take limits as <m>t \to -\pi</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_10">
+      <p>
+        Evaluate <m>\int_C(z^2-1) ^{-1}dz</m> for the contours shown in <xref ref="fig_ch-06-29">Figure</xref>.
+        <figure xml:id="fig_ch-06-29">
+          <caption>For <xref ref="x6_3_10">Exercise</xref></caption>
+          <image width="73%" source="figs/ch-06/ch-06-fig-29.pdf"/>
+        </figure>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_11">
+      <p>
+        Evaluate <m>\int_{C_1^+(0)}|z|^2 \exp z\,dz</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_12">
+      <p>
+        Suppose that <m>f(z)=u(r,\theta) +iv(r,\theta)</m> is analytic for all values of <m>z=re^{i\theta }</m>.
+        Show that
+        <me>
+          \int_0^{2\pi}\big[u(r,\theta) \cos \theta - v(r,\theta) \sin \theta\big]\,d\theta =0
+        </me>.
+        <em>Hint</em>: Integrate <m>f</m> around the circle <m>C_1^+(0)</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_13">
+      <p>
+        If <m>C</m> is the figure eight contour shown in Figure 6.28(a),
+        <ol>
+          <li>
+            <p>
+              evaluate <m>\int_C(z^2-z)^{-1}\,dz</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              evaluate <m>\int_C(2z-1)(z^2-z)^{-1}\,dz</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </exercise>
+    <exercise xml:id="x6_3_14">
+      <p>
+        Compare the various methods for evaluating contour integrals.
+        What are the limitations of each method?
+      </p>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,184 @@
+<section xml:id="sec_2d-models">
+  <title>Two-Dimensional Mathematical Models</title>
+  <p>
+    We now consider problems involving steady state heat flow,
+    electrostatics,
+    and ideal fluid flow that can be solved with conformal mapping techniques.
+    Conformal mapping transforms a region in which the problem is posed to one in which the solution is easy to obtain.
+    As our solutions involve only two independent variables,
+    <m>x</m> and <m>y</m>,
+    we first mention a basic assumption needed for the validity of the model.
+  </p>
+  <p>
+    The physical problems we just mentioned are real-world applications and involve solutions in three-dimensional Cartesian space.
+    Such problems generally would involve the Laplacian in three variables and the divergence and curl of three-dimensional vector functions.
+    Since complex analysis involves only <m>x</m> and <m>y</m>,
+    we consider the special case in which the solution does not vary with the coordinate along the axis perpendicular to the <m>xy</m> plane.
+    For steady state heat flow and electrostatics,
+    this assumption means that the temperature, <m>T</m>,
+    or the potential, <m>V</m>, varies only with <m>x</m> and <m>y</m>.
+    Thus for the flow of ideal fluids,
+    the fluid motion is the same in any plane that is parallel to the <m>z</m> plane.
+    Curves drawn in the <m>z</m> plane are to be interpreted as cross sections that correspond to infinite cylinders perpendicular to the <m>z</m> plane.
+    An infinite cylinder is the limiting case of a
+    <q>long</q>
+    physical cylinder,
+    so the mathematical model that we present is valid provided the three-dimensional problem involves a physical cylinder long enough that the effects at the ends can be reasonably neglected.
+  </p>
+  <p>
+    In Sections 11.1 and 11.2, we showed how to obtain solutions
+    <m>\phi(x,y)</m> for harmonic functions.
+    For applications, we need to consider the family of level curves
+    <men xml:id="reharmonic">
+      \{\phi(x,y) =K_1:K_1 \text{ is a real constant } \}
+    </men>
+    and the conjugate harmonic function
+    <m>\psi(x,y)</m> and its family of level curves
+    <men xml:id="imharm">
+      \{\psi(x,y)  =K_2:K_2 \text{ is a real constant } \}
+    </men>.
+  </p>
+  <p>
+    For convenience, we introduce the term
+    <term>complex potential</term>
+    for the analytic function
+    <me>
+      F(z) = \phi(x,y) + i\psi(x,y)
+    </me>.
+  </p>
+  <p>
+    We use Theorem 11.4, regarding the orthogonality of the families of level curves
+    (<xref ref="reharmonic">Equations</xref>
+    and <xref ref="imharm"></xref>),
+    to develop ideas concerning the physical applications that we will consider.
+  </p>
+  <theorem>
+    <title>Orthogonal families of level curves</title>
+    <statement>
+      <p>
+        Suppose <m>\phi(x,y)</m> is harmonic in a domain <m>D</m>,
+        <m>\psi(x,y)</m> is its harmonic conjugate,
+        and <m>F(z)=\phi(x,y)+i\psi(x,y)</m> is the complex potential.
+        Then the two families of level curves given in <xref ref="reharmonic">Equations</xref>
+        and <xref ref="imharm"></xref>, respectively,
+        are orthogonal in the sense that if <m>(a,b)</m> is a point common to the two curves
+        <m>\phi(x,y)=K_1</m> and <m>\psi(x,y)=K_2</m>,
+        and if <m>F,'(a+ib) \ne 0</m>,
+        then these two curves intersect orthogonally.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Since <m>\phi(x,y)=K_1</m> is an implicit equation of a plane curve,
+      the gradient vector grad <m>\phi</m>,
+      evaluated at <m>(a,b)</m>, is perpendicular to the curve at <m>(a,b)</m>.
+      This vector is given by
+      <me>
+        \mathbf{N}_1=\phi_x(a,b) +i\phi_y(a,b)
+      </me>.
+    </p>
+    <p>
+      Similarly, the vector <em>N</em><m>_2</m> defined by
+      <me>
+        \mathbf{N}_2=\psi_x(a,b) +i\psi_y(a,b)
+      </me>
+      is orthogonal to the curve <m>\psi(x,y) =K_2</m> at <m>(a,b)</m>.
+      Using the Cauchy-Riemann equations,
+      <m>\phi_x=\psi_y</m> and <m>\phi_y=-\psi_x</m>, we have
+      <md>
+        <mrow xml:id="perpeqn" number="yes">\mathbf{N}_1 \cdot \mathbf{N}_2 \amp = \phi_x(a,b)\psi_x(a,b)+\phi_y(a,b)\psi_y(a,b)</mrow>
+        <mrow>\amp = -\phi_x (a,b) \phi_y(a,b) + \phi_y(a,b) \phi_x(a,b)</mrow>
+        <mrow>\amp = 0</mrow>
+      </md>.
+    </p>
+    <p>
+      In addition, <m>F,'(a+ib) \ne 0</m>, so we have
+      <me>
+        \phi_x(a,b) +i\psi_x(a,b) \ne 0
+      </me>.
+    </p>
+    <p>
+      The Cauchy-Riemann equations and the facts
+      <m>\phi_x(a,b) \ne 0</m> and <m>\psi_x(a,b) \ne 0</m> imply that both
+      <m>\mathbf{N}_1</m> and <m>\mathbf{N}_2</m> are nonzero.
+      Therefore <xref ref="perpeqn">Equation</xref>
+      implies that <m>\mathbf{N}_1</m> is perpendicular to <m>\mathbf{N}_2</m>,
+      and hence the curves are orthogonal.
+    </p>
+  </proof>
+  <p>
+    The complex potential <m>F(z)=\phi(x,y)+i\psi(x,y)</m> has many physical interpretations.
+    Suppose, for example,
+    that we have solved a problem in steady state temperatures.
+    Then we can obtain the solution to a similar problem with the same boundary conditions in electrostatics by interpreting the isothermals as equipotential curves and the heat flow lines as flux lines.
+    This implies that heat flow and electrostatics correspond directly.
+  </p>
+  <p>
+    Or suppose that we have solved a fluid flow problem.
+    Then we can obtain a solution to an analogous problem in heat flow by interpreting the equipotentials as isothermals and streamlines as heat flow lines.
+    Various interpretations of the families of level curves given in <xref ref="reharmonic">Equations</xref>
+    and <xref ref="imharm"></xref>
+    and correspondences between families are summarized in Table 11.1.
+  </p>
+  <table>
+    <title>Interpretations for Level Curves</title>
+    <tabular>
+      <row>
+        <cell><em>Physical Phenomenon</em></cell>
+        <cell><m>\phi(x,y)=</m><em><nbsp/>constant</em></cell>
+        <cell><m>\psi(x,y) =</m><em><nbsp/>constant</em></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Heat flow</cell>
+        <cell>Isothermals</cell>
+        <cell>Heat flow lines</cell>
+      </row>
+      <row>
+        <cell>Electrostatics</cell>
+        <cell>Equipotential curves</cell>
+        <cell>Flux lines</cell>
+      </row>
+      <row>
+        <cell>Fluid flow</cell>
+        <cell>Equipotentials</cell>
+        <cell>Streamlines</cell>
+      </row>
+      <row>
+        <cell>Gravitational field</cell>
+        <cell>Gravitational potential</cell>
+        <cell>Lines of force</cell>
+      </row>
+      <row>
+        <cell>Magnetism</cell>
+        <cell>Potential</cell>
+        <cell>Lines of force</cell>
+      </row>
+      <row>
+        <cell>Diffusion</cell>
+        <cell>Concentration</cell>
+        <cell>Lines of flow</cell>
+      </row>
+      <row>
+        <cell>Elasticity</cell>
+        <cell>Strain function</cell>
+        <cell>Stress lines</cell>
+      </row>
+      <row>
+        <cell>Current flow</cell>
+        <cell>Potential</cell>
+        <cell>Lines of flow</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+</section>

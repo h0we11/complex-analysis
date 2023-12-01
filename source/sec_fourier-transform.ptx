@@ -1,0 +1,321 @@
+<section xml:id="sec_fourier-transform">
+  <title>The Fourier Transform</title>
+  <p>
+    Let <m>U(t)</m> be a real-valued function with period <m>2\pi</m> which is piecewise continuous such that <m>U'(t)</m> also exists and is piecewise continuous.
+    Then <m>U(t)</m> has the <em>complex Fourier series</em> representation
+    <me>
+      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{int},  \text{ where }
+    </me>
+    <me>
+      c_n=\frac{1}{2\pi}\int_{-\pi}^{\pi}U(t) e^{-int}\,dt  \text{ for all }   n
+    </me>.
+  </p>
+  <p>
+    The coefficients <m>\{c_nt\}</m> are complex numbers.
+    Previously, we expressed <m>U(t)</m> as a real trigonometric series:
+    <men xml:id="TrigSeries">
+      U(t) =\frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)
+    </men>.
+  </p>
+  <p>
+    Hence, a relationship between the coefficients is
+    <md>
+      <mrow>a_n=c_n+c_{-n} \amp   \text{ for }   n=0,1,2, \ldots , \text{ and }</mrow>
+      <mrow>b_n=i(c_n-c_{-n}) \amp   \text{ for }   n=1,2, \ldots </mrow>
+    </md>,
+  </p>
+  <p>
+    These relations are easy to establish.
+    We start by writing
+    <md>
+      <mrow xml:id="TrigSeries2" number="yes">U(t) \amp = c_0 + \sum_{n=1}^{\infty }c_ne^{int} + \sum_{n=1}^{\infty}c_{-n}e^{-int}</mrow>
+      <mrow>\amp = c_0 + \sum_{n=1}^{\infty}c_n(\cos nt+i\sin nt) + \sum_{n=1}^{\infty}c_{-n}(\cos nt-i\sin nt)</mrow>
+      <mrow>\amp = c_0 + \sum_{n=1}^{\infty}[(c_n+c_{-n}) \cos nt+i(c_n-c_{-n}) \sin nt]</mrow>
+    </md>.
+  </p>
+  <p>
+    Comparing Equation <xref ref="TrigSeries2"/> with Equation <xref ref="TrigSeries"/>, we see that <m>a_0=2c_0</m>,
+    <m>a_n=c_n+c_{-n}</m>, and <m>b_n=i( c_n-c_{-n})</m>.
+  </p>
+  <p>
+    If <m>U(t)</m> and <m>U'(t)</m> are piecewise continuous and have period <m>2L</m>,
+    then <m>U(t)</m> has the <em>complex Fourier series</em> representation
+    <men xml:id="ComplexFourier">
+      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\pi n(t/L)},  \text{ where }
+    </men>
+    <men xml:id="ComplexFourierC">
+      c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\pi n(t/L)}\,dt  \text{ for all }   n
+    </men>.
+  </p>
+  <p>
+    We have seen how periodic functions are represented by trigonometric series.
+    Many practical problems involve nonperiodic functions.
+    A representation analogous to Fourier series for a nonperiodic function <m>U(t)</m> is obtained by considering the Fourier series of <m>U(t)</m> for
+    <m>-L\lt t\lt L</m> and then taking the limit as <m>L \to \infty</m>.
+    The result is known as the Fourier transform of <m>U(t)</m>.
+  </p>
+  <p>
+    Start with a nonperiodic function <m>U(t)</m> and consider the periodic function <m>U_L(t)</m> with period <m>2L</m>, where
+    <md>
+      <mrow>U_L(t) \amp = U(t) \amp \amp  \text{ for }   -L\lt t \le L,  \text{ and }</mrow>
+      <mrow>U_L(t) \amp =U_L(t+2L) \amp \amp  \text{ for all }   t</mrow>
+    </md>.
+  </p>
+  <p>
+    Then <m>U_L(t)</m> has the complex Fourier series representation
+    <men xml:id="ComplexFourierL">
+      U_L(t)=\sum_{n=-\infty}^{\infty}c_ne^{i\pi nt/L}
+    </men>.
+  </p>
+  <p>
+    We introduce some terminology to discuss the terms in Equation <xref ref="ComplexFourierL"/>, first
+    <men xml:id="Frequency">
+      w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }
+    </men>
+  </p>
+  <p>
+    If <m>t</m> denotes time,
+    then the units for <m>w_n</m> are radians per unit time.
+    The set of all possible frequencies is called the
+    <em>frequency spectrum, i.e.</em>,
+    <me>
+      \left\{\ldots ,\frac{-3\pi}{L},\frac{-2\pi}{L},\frac{-\pi}{L},\frac{\pi}{L}, \frac{2\pi}{L},\frac{3\pi}{L}, \ldots\right\}
+    </me>.
+  </p>
+  <p>
+    It is important to note that as <m>L</m> increases,
+    the spectrum becomes finer and approaches a continuous spectrum of frequencies.
+    It is reasonable to expect that the summation in the Fourier series for <m>U_L(t)</m> will give rise to an integral over <m>[-\infty .\infty ]</m>.
+    This is stated in the following important theorem.
+  </p>
+  <theorem xml:id="thm_fourier-transform">
+    <title>Fourier Transform</title>
+    <statement>
+      <p>
+        Let <m>U(t)</m> and <m>U'(t)</m> be piecewise continuous, and
+        <me>
+          \int_{-\infty}^{\infty}\left| U(t) \right| dt\lt M
+        </me>,
+        for some positive constant <m>M</m>.
+        The Fourier transform <m>F(w)</m> of <m>U(t)</m> is defined as
+        <men xml:id="FourierTransform">
+          F(w) = \frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}U(t)e^{-iwt}\,dt
+        </men>.
+      </p>
+      <p>
+        At points of continuity, <m>U(t)</m> has the integral representation
+        <me>
+          U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw
+        </me>.
+        and at a point <m>t=a</m> of discontinuity of <m>U</m>,
+        the integral converges to <m>\frac{U(a^-)+U(a^+)}{2}</m>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Note: It is common to express the fact that <m>U</m> is transformed into <m>F</m> by using the operator notation
+    <me>
+      \mathrm{F}(U(t))=F(w)
+    </me>.
+  </p>
+  <proof>
+    <p>
+      Set <m>\Delta w_n=w_{n+1}-w_n=\frac{\pi}{L}</m> and <m>\frac{1}{2L}=\frac{1}{2\pi}\Delta w_n</m>.
+      These quantities are used in conjunction with Equations <xref ref="ComplexFourier"/>, <xref ref="ComplexFourierC"/>,
+      <xref ref="ComplexFourierL"/> and the frequency in <xref ref="Frequency"/> to obtain
+      <md>
+        <mrow xml:id="ComplexFourierL2" number="yes">U_L(t) \amp = \sum_{n=-\infty}^{\infty}\left[\frac{1}{2L} \int_{-L}^{L}U(t) e^{-iw_nt}\,dt\right] e^{iw_nt}</mrow>
+        <mrow>\amp = \sum\limits_{n=-\infty}^{\infty}\left[\frac{1}{2\pi}\int_{-L}^{L}U(t) e^{-iw_nt}\,dt\right] e^{iw_nt}\Delta w_n</mrow>
+      </md>.
+    </p>
+    <p>
+      If we define <m>F_L(w)</m> by
+      <me>
+        F_L(w) = \frac{1}{2\pi}\int_{-L}^{L}U(t)e^{-iwt}\,dt
+      </me>,
+      then Equation <xref ref="ComplexFourierL2"/> can be written as
+      <men xml:id="ComplexFourierL3">
+        U_L(t) = \sum_{n=-\infty}^{\infty}F_L(w_n)e^{iw_nt}\Delta w_n
+      </men>.
+    </p>
+    <p>
+      As <m>L</m> gets large,
+      <m>F_L(w_n)</m> approaches <m>F(w_n)</m> and <m>\Delta w_n</m> tends to zero.
+      Thus the limit on the right-hand side of Equation <xref ref="ComplexFourierL3"/> can be viewed as an integral.
+      This substantiates the Fourier integral representation
+      <me>
+        U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw
+      </me>.
+    </p>
+    <p>
+      A more rigorous proof of this fact can be found in advanced texts.
+    </p>
+  </proof>
+  <p>
+    Table 10.1 gives some important properties of the Fourier transform.
+  </p>
+  <p>
+    Table 10.1
+  </p>
+  <p>
+    Properties of the Fourier Transform
+  </p>
+  <tabular>
+    <row>
+      <cell>Linearity</cell>
+      <cell><m>\mathrm{F}\big(aU_1(t) + bU_2(t)\big) =a\,\mathrm{F}(U_1(t)) +b\,\mathrm{F}\big(U_2(t)\big)</m>;</cell>
+    </row>
+    <row>
+      <cell>Symmetry</cell>
+      <cell>If <m>\mathrm{F}\big(U(t)\big)=F(w)</m>, then <m>\mathrm{F}\big(F(t)\big) = \frac{1}{2\pi}U(-w)</m>;</cell>
+    </row>
+    <row>
+      <cell>Time scaling</cell>
+      <cell><m>\mathrm{F}(U(at)) = \frac{1}{|a|}F(\frac{w}{a})</m>;</cell>
+    </row>
+    <row>
+      <cell>Time shifting</cell>
+      <cell><m>\mathrm{F}(U(t-t_0)) = e^{-it_0w}F(w)</m>;</cell>
+    </row>
+    <row>
+      <cell>Frequency shifting</cell>
+      <cell><m>\mathrm{F}\big(e^{-iw_0t}U(t)\big) = F(w-w_0)</m>;</cell>
+    </row>
+    <row>
+      <cell>Time differentiation</cell>
+      <cell><m>\mathrm{F}\big(U'(t)\big) = iwF(w)</m>;</cell>
+    </row>
+    <row>
+      <cell>Frequency differentiation</cell>
+      <cell><m>\frac{d^nF(w)}{dw^n} = \mathrm{F}\big((-it)^nU(t)\big)</m>;</cell>
+    </row>
+    <row>
+      <cell>Moment Theorem</cell>
+      <cell>If <m>M_n = \int_{-\infty}^{\infty}t^nU(t)\,dt</m>, then <m>(-i)^nM_n</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell>= <m>2\pi F^{(n)}(0)</m>.</cell>
+    </row>
+  </tabular>
+  <example xml:id="ex_10_5">
+    <statement>
+      <p>
+        Show that <m>F\big(e^{-|t|}\big) = \frac{1}{\pi(1+w^2)}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using <xref ref="FourierTransform">formula</xref> we obtain
+        <md>
+          <mrow>F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^{-iwt}\,dt</mrow>
+          <mrow>\amp = \frac{1}{2\pi}\int\nolimits_{-\infty}^{0}e^{(1-iw)t}\,dt + \frac{1}{2\pi}\int_0^{\infty}e^{(-1-iw) t}\,dt</mrow>
+          <mrow>\amp = \frac{1}{2\pi (1-iw) }e^{(1-iw) t}\bigg|_{t=-\infty}^{t=0}+\frac{1}{2\pi (-1-iw) }e^{(-1-iw) t} \bigg|_{t=0}^{t=\infty}.</mrow>
+          <mrow>\amp = \frac{1}{2\pi (1-iw) }+\frac{1}{2\pi (1+iw)}</mrow>
+          <mrow>\amp = \frac{1}{\pi (1+w^2)}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Show that <m>\mathrm{F}\big(\frac{1}{1+t^2}\big) = \frac{1}{2}e^{-|w|}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using the result of <xref ref="ex_10_5">Example</xref>
+        and the symmetry property and the symmetry property, we obtain
+        <me>
+          \mathrm{F}\left(\frac{1}{\pi (1+t^2)}\right) = \frac{1}{2\pi}e^{-|-w|} = \frac{1}{2\pi}e^{-|w|}
+        </me>.
+      </p>
+      <p>
+        By the linearity property, with each term is multiplied by <m>\pi</m>, we get
+        <me>
+          \mathrm{F}\left(\frac{1}{1+t^2}\right) = \frac{1}{2}e^{-|w|}
+        </me>.
+      </p>
+    </solution>
+  </example>
+  <exercises>
+    <title>Exercises for <xref ref="sec_fourier-transform">Section</xref></title>
+    <exercise>
+      <p>
+        Find <m>\mathrm{F}\big(U(t)\big)</m> for each of the following:
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>U(t) = \begin{cases}1 \amp \text{ for } |t| \lt 1,\\ 0 \amp \text{ for } |t| > 1. \end{cases}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>U(t) = \begin{cases}1-|t| \amp \text{ for } |t| \le 1,\\ 0 \amp \text{ for } |t|>1. \end{cases}</m>
+          </p>
+        </li>
+      </ol>
+    </exercise>
+    <exercise>
+      <p>
+        Let <m>U(t) = \begin{cases}\sin t \amp \text{ for } |t| \le \pi,\\ \;\;\, 0 \amp \text{ for } |t| > \pi. \end{cases}</m> Show that <m>\mathrm{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}</m>.
+      </p>
+    </exercise>
+    <exercise xml:id="ex_12_3">
+      <p>
+        Let <m>U(t) =e^{-r^2/2}</m>.
+        Show that <m>\mathrm{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-w^2/2}</m>.
+        <em>Hint:</em> Use the integral definition and combine the terms in the exponent,
+        then complete the square and use the fact that <m>\int\nolimits_{-\infty}^{\infty}e^{-r^2/2}\,dt=\sqrt{2\pi}</m>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the time scaling property and the example in the text to show that
+        <me>
+          \mathrm{F}(e^{-a\left| t\right| }) =\frac{\left| a\right| }{\pi(a^2+w^2)}
+        </me>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the symmetry and linearity properties and the result of <xref ref="ex_12_1a">Exercise</xref> to show that
+        <me>
+          \mathrm{F}\left(\frac{\sin t}{t}\right) = \begin{cases}\frac{1}{2} \amp  \text{ for }   |w| \lt  1,\\ 0 \amp  \text{ for }   |w| > 1. \end{cases}
+        </me>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the symmetry and linearity properties and the result of <xref ref="ex_12_2">Exercise</xref> to show that
+        <me>
+          \mathrm{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = \begin{cases}\frac{i\sin w}{2} \amp  \text{ for }  |w| \le \pi,\\ 0 \amp  \text{ for }   |w| > \pi. \end{cases}
+        </me>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the time differentiation property and the result of <xref ref="ex_12_3">Exercise</xref> to show that
+        <me>
+          \mathrm{F}(te^{-r^2/2}) =\frac{-iwe^{-w^2/2}}{\sqrt{2\pi}}
+        </me>.
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Use the symmetry and linearity properties and the results of <xref ref="ex_12_1b">Exercise</xref> to show that
+        <me>
+          F(\frac{\sin^2\frac{t}{2}}{t^2}) = \begin{cases}\frac{1-|w|}{4\pi} \amp  \text{ for }   |w| \le 1, \\ 0 \amp  \text{ for }   |w| >1. \end{cases}
+        </me>
+      </p>
+    </exercise>
+    <exercise>
+      <p>
+        Write a report on the Fourier transform.
+        Discuss some of the ideas you found in the literature that are not mentioned in the text.
+      </p>
+    </exercise>
+  </exercises>
+</section>
