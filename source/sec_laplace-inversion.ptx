@@ -5,12 +5,12 @@
     (or part of a transform)
     that is expressed by
     <men xml:id="quotientPQ">
-      Y(s) = \frac{P(s) }{Q(s)}
+      Y(s) = \frac{P(s)}{Q(s)}
     </men>.
     where <m>P</m> and <m>Q</m> are polynomials that have no common factors.
-    The inverse of <m>Y(s)</m> is found by using its partial fraction representation and referring to Table 10.2.
+    The inverse of <m>Y(s)</m> is found by using its partial fraction representation and referring to <xref ref="table_laplace-transforms">Table</xref>.
     We now show how the theory of complex variables can be used to systematically find the partial fraction representation.
-    The first result is an extension of Lemma 8.1 to <m>n</m> linear factors.
+    The first result is an extension of <xref ref="Jordan_s_Lemma">Lemma</xref> to <m>n</m> linear factors.
     The proof is left for the reader.
   </p>
   <theorem xml:id="thm_nonrepeated-factors">
@@ -22,7 +22,7 @@
         and has distinct complex roots <m>a_1,a_2,\ldots,a_n</m>,
         then Equation <xref ref="quotientPQ"/> has the representation
         <men xml:id="nonrepfact">
-          Y(s) = \frac{P(s) }{(s-a_1)(s-a_2) \cdots (s-a_n)} = \sum_{k=1}^n\frac{\mathrm{Res}[Y,a_k]}{s-a_k}
+          Y(s) = \frac{P(s)}{(s-a_1)(s-a_2) \cdots (s-a_n)} = \sum_{k=1}^n\frac{\mathrm{Res}[Y,a_k]}{s-a_k}
         </men>.
       </p>
     </statement>
@@ -32,7 +32,7 @@
     <statement>
       <p>
         If <m>P(s)</m> and <m>Q(s)</m> are polynomials of degree <m>\mu</m> and <m>v</m>,
-        respectively, and <m>\mu \lt v + n</m> and <m>Q(a) \neq 0</m>,
+        respectively, and <m>\mu \lt v + n</m> and <m>Q(a) \ne 0</m>,
         then Equation <xref ref="quotientPQ"/> has the representation
         <men xml:id="repeatfact">
           Y(s) = \frac{P(s)}{(s-a)^nQ(s)} = \sum_{k=1}^n\frac{A_k}{(s-a)^k} +R (s)
@@ -51,10 +51,8 @@
       We employ the method of residues.
       First, multiplying both sides of Equation <xref ref="repeatfact"/> by <m>(s-a)^n</m> gives
       <me>
-        \frac{P(s) }{Q(s) }=\sum\limits_{j=1}^nA_j(s-a)^{n-j}+R(s)(s-a)^n
+        \frac{P(s)}{Q(s)}=\sum\limits_{j=1}^nA_j(s-a)^{n-j}+R(s)(s-a)^n
       </me>.
-    </p>
-    <p>
       We can differentiate both sides of this equation <m>n-k</m> times to obtain
       <me>
         \frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right) = \sum_{j=1}^kA_j\frac{(n-j)!}{(k-j)!}(s-a)^{k-j} + \frac{d^{n-k}}{ds^{n-k}}[R(s)(s-a)^n]
@@ -72,18 +70,14 @@
   <example>
     <statement>
       <p>
-        Let <m>Y(s) =\frac{s^3-4s+1}{s(s-1) ^3}</m>.
-        Find <m>\mathcal{L}^{-1}(Y(s))</m>.
+        Let <m>Y(s) =\frac{s^3-4s+1}{s(s-1)^3}</m>.
+        Find <m>\mathcal{L}^{-1}\big(Y(s)\big)</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         From Equations <xref ref="nonrepfact"/> and <xref ref="repeatfact"/> we can write
         <me>
-          \frac{s^3-4s-1}{s(s-1) ^3} = \frac{A_3}{(s-1)^3} + \frac{A_2}{(s-1)^2}+\frac{A_1}{s-1}+\frac{B_1}{s}
+          \frac{s^3-4s-1}{s(s-1)^3} = \frac{A_3}{(s-1)^3} + \frac{A_2}{(s-1)^2}+\frac{A_1}{s-1}+\frac{B_1}{s}
         </me>.
-      </p>
-      <p>
         The coefficient <m>B_1</m> is found by the calculation
         <me>
           B_1 = \mathrm{Res}[Y,0] = \lim_{s \to 0}\frac{s^3-4s+1}{(s-1)^3} = -1
@@ -96,8 +90,8 @@
         so we get
         <md>
           <mrow>A_3 \amp = \lim_{s \to 1}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\frac{s^3-4s+1}{s} = -2.</mrow>
-          <mrow>A_2 \amp = \frac{1}{1!}\lim_{s \to 1}\frac{d}{ds}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}(2s-\frac{1}{s^2}) = 1.</mrow>
-          <mrow>A_1 \amp = \frac{1}{2}\lim_{s \to 1}\frac{d^2}{ds^2}\left(\frac{P(s)}{Q(s)}\right) = \frac{1}{2}\lim_{s \to 1}(2+\frac{2}{s^3}) = 2</mrow>
+          <mrow>A_2 \amp = \frac{1}{1!}\lim_{s \to 1}\frac{d}{ds}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\left(2s-\frac{1}{s^2}\right) = 1.</mrow>
+          <mrow>A_1 \amp = \frac{1}{2}\lim_{s \to 1}\frac{d^2}{ds^2}\left(\frac{P(s)}{Q(s)}\right) = \frac{1}{2}\lim_{s \to 1}\left(2+\frac{2}{s^3}\right) = 2</mrow>
         </md>.
       </p>
       <p>
@@ -107,8 +101,13 @@
         </me>,
         and the inverse is
         <me>
-          y(t) =-t^2e^{t}+te^{t}+2e^{t}-1
+          y(t) =-t^2e^t+te^t+2e^t-1
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -119,10 +118,10 @@
         Let <m>P</m> and <m>Q</m> be polynomials with real coefficients such that the degree of <m>P</m> is at most <m>1</m> larger than the degree of <m>Q</m>.
         If <m>T</m> does not have a factor of the form <m>(s-a)^2+b^2</m>, then
         <me>
-          Y(s) = \frac{P(s)}{Q(s)} = \frac{P(s)}{[(s-a)^2+b^2]T(s} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2} + R(s), \text{ where }
+          Y(s) = \frac{P(s)}{Q(s)} = \frac{P(s)}{\Big[(s-a)^2+b^2\Big]T(s)} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2} + R(s), \text{ where }
         </me>
         <men xml:id="AandB">
-          A+iB=\frac{P(a+ib)}{Q'(a+ib)}
+          A+iB=\frac{P(a+ib)}{Q\,'(a+ib)}
         </men>.
       </p>
     </statement>
@@ -134,10 +133,8 @@
       <me>
         P(a-ib) = \overline{P(a+ib)}  \text{ and }   Q'(a-ib) = \overline{Q'(a+ib)}
       </me>.
-    </p>
-    <p>
       The polynomial <m>Q</m> has simple zeros at <m>s=a\pm ib</m>,
-      this implies that <m>Q'(a\pm ib) \neq 0</m>.
+      this implies that <m>Q'(a\pm ib) \ne 0</m>.
       Therefore, we obtain
       <men xml:id="residueY">
         \mathrm{Res}[Y,a\pm ib] = \lim_{s \to a\pm ib}\left(\frac{s-(a\pm ib)}{Q(s)-Q(a\pm ib)}P(s)\right) = \frac{P(a\pm ib)}{Q'(a\pm ib)}
@@ -149,14 +146,11 @@
     </p>
     <p>
       If we set <m>A+iB=</m> <m>\mathrm{Res}[Y,a+ib]</m> and use <xref ref="thm_nonrepeated-factors">Theorem</xref>
-      and <xref ref="AandB">equations</xref>,
-      <xref ref="residueY"></xref>,
-      and <xref ref="residueYconj"></xref>, then we find that
+      and Equations <xref ref="AandB"/>,
+      <xref ref="residueY"/>, and <xref ref="residueYconj"/>, then we find that
       <me>
         Y(s) = \frac{A+iB}{s-a-ib}+\frac{A-iB}{s-a+ib}+R(s)
       </me>.
-    </p>
-    <p>
       The first two terms on the right side of this equation are now combined to obtain
       <me>
         \frac{(A+iB)(s-a+ib)+(A-iB)(s-a-ib)}{(s-a)^2+b^2} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2}
@@ -168,17 +162,15 @@
     <statement>
       <p>
         Let <m>Y(s) = \frac{5s}{(s^2+4) (s^2+9)}</m>.
-        Find <m>\mathcal{L}^{-1}(Y(s))</m>.
+        Find <m>\mathcal{L}^{-1}\big(Y(s)\big)</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Here we have <m>P(s)=5s</m> and <m>Q(s)=s^4+13s^2+36</m>,
         and the roots of <m>Q(s)</m> occur at <m>0 \pm 2i</m> and <m>0 \pm 3i</m>.
         Computing the residues gives
         <md>
-          <mrow>\mathrm{Res}[Y,2i] \amp = \frac{P(2i) }{Q'(2i) } = \frac{5(2i) }{4(2i) ^3-26(2i)} = \frac{1}{2},  \text{ and }</mrow>
-          <mrow>\mathrm{Res}[Y,3i] \amp = \frac{P(3i) }{Q'(3i)} = \frac{5(3i) }{4(3i) ^3-26(3i)} = -\frac{1}{2}</mrow>
+          <mrow>\mathrm{Res}[Y,2i] \amp = \frac{P(2i)}{Q'(2i)} = \frac{5(2i)}{4(2i)^3-26(2i)} = \frac{1}{2},  \text{ and }</mrow>
+          <mrow>\mathrm{Res}[Y,3i] \amp = \frac{P(3i)}{Q'(3i)} = \frac{5(3i)}{4(3i)^3-26(3i)} = -\frac{1}{2}</mrow>
         </md>.
       </p>
       <p>
@@ -192,7 +184,12 @@
         and the desired solution is
         <me>
           \mathcal{L}^{-1}\big(Y(s)\big) = \mathcal{L}^{-1}\left(\frac{s}{s^2+4}\right) - \mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right) = \cos 2t-\cos 3t
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -201,15 +198,11 @@
       <p>
         Find <m>\mathcal{L}^{-1}\big(Y(s)\big)</m> if <m>Y(s) = \frac{s^3+3s^2-s+1}{s(s+1)^2(s^2+1)}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         The partial fraction expression for <m>Y(s)</m> has the form
         <me>
           Y(s) = \frac{D}{s}+\frac{C_1}{s+1}+\frac{C_2}{(s+1)^2} + \frac{2A(s-0) - 2B(1)}{(s-0)^2+1^2}
         </me>.
-      </p>
-      <p>
         Since the linear factor <m>s</m> is nonrepeated, we have
         <me>
           D = \mathrm{Res}[Y(s),0] = \lim_{s \to 0} \frac{s^3+3s^2-s+1}{(s+1)^2(s^2+1)} = 1
@@ -241,10 +234,15 @@
         </md>.
       </p>
       <p>
-        Now we use Table 10.2 to get
+        Now we use <xref ref="table_laplace-transforms">Table</xref> to get
         <me>
           y(t) = 1-2e^{-t}-2te^{-t} + \cos t + \sin t
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -254,11 +252,9 @@
         Use Laplace transforms to solve the system
         <md>
           <mrow>y\,'(t) \amp = y(t) - x(t),  \text{ with }   y(0) = 1.</mrow>
-          <mrow>x'(t) \amp = 5y(t) -3x(t)  \text{ with }    x(0) =2</mrow>
+          <mrow>x\,'(t) \amp = 5y(t) -3x(t)  \text{ with }    x(0) =2</mrow>
         </md>.
       </p>
-    </statement>
-    <solution>
       <p>
         Let <m>Y(s)</m> and <m>X(s)</m> denote the Laplace transforms of <m>y(t)</m> and <m>x(t)</m>,
         respectively.
@@ -291,11 +287,15 @@
           <mrow>x(t) \amp = e^{-t}(2\cos t+\sin t) </mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+        DD
+      </p>
     </solution>
   </example>
   <p>
-    According to <xref ref="LaplaceInverse">equation</xref>
-    of <xref ref="sec_laplace-transform">Section</xref>,
+    According to Equation <xref ref="LaplaceInverse"/> of <xref ref="sec_laplace-transform">Section</xref>,
     the inverse Laplace transform is given by the integral formula
     <me>
       f(t) = \mathcal{L}^{-1}\big(F(s)\big) = \frac{1}{2\pi i}\int_{\sigma_0-i\infty}^{\sigma_0+i\infty}F(s)e^{st}\,ds
@@ -329,12 +329,12 @@
       Let <m>\sigma_0</m> be chosen so that all the poles of
       <m>F(s) e^{st}</m> lie to the left of the vertical line <m>s=\sigma_0+i\tau</m>.
       Let <m>\Gamma_{R}</m> denote the contour consisting of the vertical line segment between the points
-      <m>\sigma_0\pm iR</m> and the left semicircle <m>C_{R}:s=\sigma_0+\mathrm{Re}^{i\theta }</m>,
+      <m>\sigma_0\pm iR</m> and the left semicircle <m>C_{R}:s=\sigma_0+\mathrm{Re}^{i\theta}</m>,
       where <m>\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}</m>,
-      as shown in <xref ref="fig_ch-11-27">Figure</xref>.
+      as illustrated in <xref ref="fig_ch-11-27">Figure</xref>.
       A slight modification of the proof of Jordan's lemma shows that
       <me>
-        \lim_{R \to +\infty}\int_{C_{R}}\frac{P(s) }{Q(s)}e^{st}\,ds = 0
+        \lim_{R \to +\infty}\int_{C_{R}}\frac{P(s)}{Q(s)}e^{st}\,ds = 0
       </me>.
     </p>
     <p>
@@ -346,7 +346,7 @@
   </proof>
   <figure xml:id="fig_ch-11-27">
     <caption>The contour <m>\Gamma_R</m>.</caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-27.pdf"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-27.png"/>
   </figure>
   <theorem>
     <title>Heaviside Expansion Theorem</title>
@@ -357,7 +357,7 @@
         If <m>Q(s)</m> has <m>n</m> distinct simple zeros at the points <m>s_1,s_2,\ldots,s_n</m>,
         then <m>\frac{P(s)}{Q(s)}</m> is the Laplace transform of the function <m>f(t)</m> given by
         <men xml:id="expansionform">
-          f(t) = \mathcal{L}^{-1}\left(\frac{P(s)}{Q(s)}\right) = \sum_{k=1}^n\frac{P(s_k) }{Q'(s_k)}e^{s_kt}
+          f(t) = \mathcal{L}^{-1}\left(\frac{P(s)}{Q(s)}\right) = \sum_{k=1}^n\frac{P(s_k)}{Q'(s_k)}e^{s_kt}
         </men>.
       </p>
     </statement>
@@ -366,12 +366,9 @@
     <p>
       If <m>P(s)</m> and <m>Q(s)</m> are polynomials and <m>s_k</m> is a simple zero of <m>Q(s)</m>, then
       <me>
-        \mathrm{Res}[F(s) e^{st},s_k] = \lim_{s \to s_k}\frac{s-s_k}{Q(s) - Q(s_k)}P(s)e^{st} = \frac{P(s_k) }{Q'(s_k)}e^{s_kt}
+        \mathrm{Res}[F(s) e^{st},s_k] = \lim_{s \to s_k}\frac{s-s_k}{Q(s) - Q(s_k)}P(s)e^{st} = \frac{P(s_k)}{Q'(s_k)}e^{s_kt}
       </me>.
-    </p>
-    <p>
-      This outcome allows us to write the residues in <xref ref="invlapform"></xref>
-      in the more convenient form given in <xref ref="expansionform"></xref>.
+      This outcome allows us to write the residues in Equation <xref ref="invlapform"/> in the more convenient form given in Equation <xref ref="expansionform"/>.
     </p>
   </proof>
   <example>
@@ -380,16 +377,14 @@
         Find the inverse Laplace transform of the function
         <me>
           F(s) = \frac{4s+3}{s^3+2s^2+s+2}
-        </me>.
+        </me>
       </p>
-    </statement>
-    <solution>
       <p>
         Here we have <m>P(s)=4s+3</m> and <m>Q(s)=(s+2)(s^2+1)</m>,
         so that <m>Q</m> has simple zeros located at the points <m>s_1=-2, \, s_2=i</m>,
         and <m>s_3=-i</m>.
         Using <m>Q'(s) = 3s^2+4s+1</m>,
-        calculation reveals that <m>\frac{P(-2) }{Q'(-2) }=\frac{-8+3}{12-8+1}=-1</m> and <m>\frac{P(\pm i)}{Q'(\pm i)} = \frac{\pm 4i+3}{-2\pm 4i}=\frac{1}{2}\mp i</m>.
+        calculation reveals that <m>\frac{P(-2)}{Q'(-2)}=\frac{-8+3}{12-8+1}=-1</m> and <m>\frac{P(\pm i)}{Q'(\pm i)} = \frac{\pm 4i+3}{-2\pm 4i}=\frac{1}{2}\mp i</m>.
         Applying <xref ref="expansionform">formula</xref>,
         we see that <m>f(t)</m> is given by
         <md>
@@ -399,181 +394,292 @@
           <mrow>\amp = -e^{-2t}+\cos t+2\sin t</mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+        DD
+      </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_laplace-inversion">Section</xref></title>
+  <exercises xml:id="exercises_laplace-inversion">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Use partial fractions to find the inverse Laplace transform of
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Use partial fractions to find the inverse Laplace transform of
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
-            <m>Y(s) = \frac{2s+1}{s(s-1) }</m>.
+            <m>Y(s) = \frac{2s+1}{s(s-1)}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>Y(s) = \frac{2s^3-s^2+4s-6}{s^4}</m>.
+            <m>\mathcal{L}^{-1}\Big(\frac{2s+1}{s(s-1)}\Big) = -1 + 3e^t</m>.
+            AA
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) = \frac{2s^3-s^2+4s-6}{s^4}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>Y(s) = \frac{4s^2-6s-12}{s(s+2)(s-2)}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>Y(s) = \frac{s^3-5s^2+6s-6}{(s-2)^4}</m>.
+            <m>\mathcal{L}^{-1}\Big(\frac{4s^2-6s-12}{s(s+2)(s-2)}\Big) = 3 + 2e^{-2t} - e^{2t}</m>.
+            AA
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) = \frac{s^3-5s^2+6s-6}{(s-2)^4}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>Y(s) = \frac{2s^2+s+3}{(s+2)(s-1)^2}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>Y(s) = \frac{4-s}{s^2+4s+5}</m>.
+            <m>\mathcal{L}^{-1}\Big(\frac{2s^2+s+3}{(s+2)(s-1)^2}\Big) = e^{-2t} + e^t + 2te^t</m>.
+            AA
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) = \frac{4-s}{s^2+4s+5}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Use a contour integral to find the inverse Laplace transform of
-        <ol>
-          <li>
-            <p>
-              <m>Y(s) = \frac{1}{s^2+4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>Y(s) = \frac{s+3}{(s-2)(s^2+1)}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use a contour integral to find the inverse Laplace transform of
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>Y(s) = \frac{1}{s^2+4}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}^{-1}\Big(\frac{1}{s^2+4}\Big) = \frac{1}{2}\sin 2t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) = \frac{s+3}{(s-2)(s^2+1)}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Use the heaviside expansion theorem to find the inverse Laplace transform of
-        <ol>
-          <li>
-            <p>
-              <m>Y(s) =\frac{s^3+s^2-s+3}{s^{5}-s}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>Y(s) =\frac{s^3+2s^2-s+2}{s^{5}-s}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>Y(s) =\frac{s^3+3s^2-s+1}{s^{5}-s}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>Y(s) =\frac{s^3+s^2+s+3}{s^{5}-s}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use the Heaviside Expansion Theorem to find the inverse Laplace transform of
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>Y(s) =\frac{s^3+s^2-s+3}{s^{5}-s}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}^{-1}\Big(\frac{s^3+s^2-s+3}{s^5-s}\Big) = -3+e^t+e^{-t}+\cos t+\sin t=-3+2\cosh t+\cos t+\sin t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) =\frac{s^3+2s^2-s+2}{s^{5}-s}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>Y(s) =\frac{s^3+3s^2-s+1}{s^{5}-s}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}^{-1}\Big(\frac{s^{3}+3s^2-s+1}{s^{5}-s}\Big) = -1+e^t+e^{-t}-\cos t+\sin t=-1+2\cosh t-\cos t+\sin t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>Y(s) =\frac{s^3+s^2+s+3}{s^{5}-s}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Find the inverse Laplace transform of <m>Y(s) = \frac{s^3+2s^2+4s+2}{(s^2+1)(s^2+4)}</m>.
-      </p>
+      <statement>
+        <p>
+          Find the inverse Laplace transform of <m>Y(s) = \frac{s^3+2s^2+4s+2}{(s^2+1)(s^2+4)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}^{-1}\Big(\frac{s^{3}+2s^2+4s+2}{(s^2+1)(s^2+4)}\Big) = \cos t+\sin 2t</m>.
+          CC
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Solve the following initial value problems.
-        <ol>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) +y(t) =3\sin 2t</m>,
-              with <m>y(0) =0</m>, and <m>y'(0) = 3</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) + 5y(t) = 4e^{-t}</m>,
-              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) + 2y(t) = 2</m>,
-              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) +4y(t) = 5e^{-t}</m>,
-              with <m>y(0) =2</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) +y(t) = t</m>,
-              with <m>y(0) = -1</m> and <m>y'(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 3y\,'(t) + 2y(t) = 2t + 5</m>,
-              with <m>y(0) = 1</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Solve the following initial value problems.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) + 2y\,'(t) + 5y(t) = 4e^{-t}</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = e^{-t}+e^{-t}\sin 2t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) +y(t) = 3\sin 2t</m>,
+          with <m>y(0) =0</m>, and <m>y\,'(0) = 3</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) +4y(t) = 5e^{-t}</m>,
+            with <m>y(0) =2</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = e^{-t}+\cos 2t+\sin 2t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) + 2y\,'(t) + 2y(t) = 2</m>,
+          with <m>y(0) = 1</m> and <m>y\,'(0) = 1</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) + 3y\,'(t) + 2y(t) = 2t + 5</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = 1+t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) + 2y\,'(t) +y(t) = t</m>,
+          with <m>y(0) = -1</m> and <m>y\,'(0) = 0</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Solve the following systems of differential equations.
-        <ol>
-          <li>
-            <p>
-              <m>x'(t) = 10y(t) - 5x(t), \, y\,'(t) = y(t) - x(t)</m>,
-              with <m>x(0) = 3</m> and <m>y(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>x'(t) = 2y(t) - 3x(t), \, y\,'(t) = 2y(t) - 2x(t)</m>,
-              with <m>x(0) = 1</m> and <m>y(0) = -1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>x'(t) = 2x(t) +3y(t), \, y\,'(t) = 2x(t) + y(t)</m>,
-              with <m>x(0) = 2</m> and <m>y(0) = 3</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>x'(t) = 4y(t) - 3x(t), \, y\,'(t) = y(t) -x(t)</m>,
-              with <m>x(0) = -1</m> and <m>y(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>x'(t) = 4y(t) - 3x(t) + 5, \, y\,'(t) =y (t) - x(t) + 1</m>,
-              with <m>x(0) =0</m> and <m>y(0) = 2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>x'(t) = 8y(t) - 3x(t) + 2, \, y\,'(t) = y(t) - x(t) - 1</m>,
-              with <m>x(0) = 4</m> and <m>y(0) = 2</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Solve the following systems of differential equations.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>x\,'(t) = 2y(t) - 3x(t), \, y\,'(t) = 2y(t) - 2x(t)</m>,
+            with <m>x(0) = 1</m> and <m>y(0) = -1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>x(t) = 2e^{-2t}-e^t</m>, and <m>y(t) = e^{-2t} - 2e^t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>x\,'(t) = 10y(t) - 5x(t), \, y\,'(t) = y(t) - x(t)</m>,
+          with <m>x(0) = 3</m> and <m>y(0) = 1</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>x\,'(t) = 4y(t) - 3x(t), \, y\,'(t) = y(t) -x(t)</m>,
+            with <m>x(0) = -1</m> and <m>y(0) = 0</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>x(t) = -e^{-t} + 2te^{-t}</m>,
+            and <m>y(t) = te^{-t}</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>x\,'(t) = 2x(t) +3y(t), \, y\,'(t) = 2x(t) + y(t)</m>,
+          with <m>x(0) = 2</m> and <m>y(0) = 3</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>x\,'(t) = 8y(t) - 3x(t) + 2, \, y\,'(t) = y(t) - x(t) - 1</m>,
+            with <m>x(0) = 4</m> and <m>y(0) = 2</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>x(t) = -2+6e^{-t}\cos 2t+6e^{-t}\sin 2t</m>,
+            and <m>y(t)=-1+3e^{-t}\cos 2t</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>x\,'(t) = 4y(t) - 3x(t) + 5, \, y\,'(t) =y (t) - x(t) + 1</m>,
+          with <m>x(0) =0</m> and <m>y(0) = 2</m>.
+        </p>
+      </task>
     </exercise>
   </exercises>
 </section>

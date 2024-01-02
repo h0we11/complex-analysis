@@ -1,15 +1,14 @@
 <section xml:id="sec_argument-rouche">
   <title>The Argument Principle &amp; Rouch&#xe9;'s Theorem</title>
   <p>
-    We now derive two results based on Cauchy's residue theorem.
+    We now derive two results based on Cauchy<nbsp/>'s residue theorem.
     They have important practical applications and pertain only to functions all of whose isolated singularities are poles.
   </p>
   <definition>
     <title>Meromorphic function</title>
     <statement>
       <p>
-        A function <m>f</m> is said to be <term>meromorphic</term>
-        in a domain <m>D</m> provided the only singularities of <m>f</m> are isolated poles and removable singularities.
+        A function <m>f</m> is said to be meromorphic in a domain <m>D</m> provided the only singularities of <m>f</m> are isolated poles and removable singularities.
       </p>
     </statement>
   </definition>
@@ -79,7 +78,7 @@
     <p>
       <xref ref="x2Pi_or_zero">Corollary</xref> then gives
       <md>
-        <mrow>\int_{C}\frac{dz}{(z-a_{j})} \amp = 2\pi i,  \text{ for }   j=1,2,\ldots ,Z_f,  \text{ and }</mrow>
+        <mrow>\int_{C}\frac{dz}{(z-a_j)} \amp = 2\pi i,  \text{ for }   j=1,2,\ldots ,Z_f,  \text{ and }</mrow>
         <mrow>\int_{C}\frac{dz}{(z-b_k)} \amp = 2\pi i,  \text{ for }   k=1,2,\ldots ,P_f</mrow>
       </md>.
     </p>
@@ -160,9 +159,8 @@
     For <m>k=0,1,\ldots,n</m>,
     we let <m>z_k=z(t_k)</m> denote the corresponding points on <m>C</m>,
     where <m>z_0=z_n</m>.
-    If <m>z^{\ast}</m> lies inside <m>C</m>,
-    then the curve <m>C:z(t)</m> winds around
-    <m>z^{\ast}</m> once as <m>t</m> goes from <m>a</m> to <m>b</m>,
+    If <m>z^*</m> lies inside <m>C</m>,
+    then the curve <m>C:z(t)</m> winds around <m>z^*</m> once as <m>t</m> goes from <m>a</m> to <m>b</m>,
     as shown in <xref ref="fig_ch-08-10">Figure</xref>.
   </p>
   <p>
@@ -171,7 +169,7 @@
     for <m>k=0,1,\ldots ,n</m>, where <m>w_0=w_n</m>.
     We can choose subintervals
     <m>[t_{k-1},t_k]</m> small enough so that,
-    on the portion of <m>f( C)</m> between <m>w_{k-1}</m> and <m>w_k</m>,
+    on the portion of <m>f(C)</m> between <m>w_{k-1}</m> and <m>w_k</m>,
     we can define a continuous branch of the logarithm
     <me>
       \log_{\alpha_k}w=\ln |w| +i\arg_{\alpha_k}w = \ln \rho +i\phi
@@ -190,11 +188,11 @@
   </p>
   <figure xml:id="fig_ch-08-11">
     <caption>The points <m>z_k</m> on the contour <m>C</m> that winds around <m>z^*</m></caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-11.pdf"/>
+    <image width="73%" source="figs/ch-08/ch-08-fig-11.png"/>
   </figure>
   <p>
     We can now show why <m>\int_{C}\frac{f\,'(z)}{f(z)}\,dz</m> counts the number of times that <m>f(C)</m> winds around the origin.
-    We parametrize <m>C:z(t)</m>, for <m>a\le t\le b</m>,
+    We parametrize <m>C:z(t)</m>, for <m>a\le t \le b</m>,
     and choose the appropriate branches of <m>\log_{\alpha_k}w</m>,giving
     <md>
       <mrow>\int_{C}\frac{f\,'(z)}{f(z)}\,dz \amp = \sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{f\,'\big(z(t)\big)}{f\big(z(t)\big)}z\,'(t)\,dt</mrow>
@@ -210,7 +208,7 @@
     When we use the fact that <m>\rho _0=\rho _n</m>,
     the first summation in Equation <xref ref="Winding_Number_Eq"/> vanishes.
     The summation of the quantities
-    <m>\Delta \phi _k</m> expresses the accumulated radian measure of <m>f( C)</m> around the origin.
+    <m>\Delta \phi _k</m> expresses the accumulated radian measure of <m>f(C)</m> around the origin.
     Therefore, when we divide both sides of Equation <xref ref="Winding_Number_Eq"/> by <m>2\pi i</m>,
     its right side becomes<nbsp/>an integer
     (by <xref ref="Argument_Thm">Theorem</xref>)
@@ -219,8 +217,15 @@
   <example xml:id="Winding_Ex">
     <statement>
       <p>
-        The image of the circle <m>C_2(0)</m> under <m>f(z)=z^2+z</m> is the curve
+        The image of the circle <m>C_2(0)</m> under
+        <m>f(z)=z^2+z</m> is the curve given by
         <m>\{(x,y) =(4\cos 2t+2\cos t,4\sin 2t+2\sin t) :0\lt t\lt 2\pi \}</m> shown in <xref ref="fig_ch-08-12">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-08-12">
+        <caption>The image curve <m>f\big(C_2(0)\big)</m> under <m>f(z) =z^2+z</m></caption>
+        <image width="73%" source="figs/ch-08/ch-08-fig-12.png"/>
+      </figure>
+      <p>
         Note that the image curve <m>f\big(C_2(0)\big)</m> winds twice around the origin.
         We check this by computing <m>\frac{1}{2\pi i}\int_{C_2^{+}(0)}\frac{f\,'(z)}{f(z)}\,dz = \frac{1}{2\pi i}\int_{C_2^{+}(0)}\frac{ 2z+1}{z^2+z}dz</m>.
         The residues of the integrand are at <m>0</m> and <m>-1</m>.
@@ -245,22 +250,17 @@
       <p>
         Suppose that <m>f</m><nbsp/>is meromorphic in the simply connected domain <m>D</m>.
         If <m>C</m> is a simple closed positively oriented contour in <m>D</m>\ such that for <m>z\in C</m>,
-        <m>f( z)  \ne 0</m><nbsp/>and <m>f( z)  \ne\infty</m>, then
+        <m>f(z)  \ne 0</m><nbsp/>and <m>f(z)  \ne\infty</m>, then
         <me>
           W\big(f(C) ,a\big) = \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)-a}\,dz
         </me>,
-        known as the <term>winding number of</term>
-        {<m>\bm f(C)</m>} <term>about</term> <m>\bm a</m>,
+        known as the winding number of {<m>\bm f(C)</m>} about <m>\bm a</m>,
         counts the number of times the curve <m>f(C)</m> winds around the point <m>a</m>.
         If <m>a=0</m>,
         the integral counts the number of times the curve <m>f(C)</m> winds around the origin.
       </p>
     </statement>
   </theorem>
-  <figure xml:id="fig_ch-08-12">
-    <caption>The image curve <m>f\big(C_2(0)\big)</m> under <m>f(z) =z^2+z</m></caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-12.pdf"/>
-  </figure>
   <remark>
     <p>
       Letting <m>f(z) =z</m> in <xref ref="Winding_Number_Thm">Theorem</xref> gives
@@ -302,28 +302,27 @@
     <p>
       For <m>z \in C, \; \frac{f(z)}{g(z)}</m> cannot possibly be zero or any positive real number,
       as that would contradict <xref ref="Rouche_criterion">Inequality</xref>.
-      This means that <m>C^{\ast}</m>,
+      This means that <m>C^*</m>,
       the image of the curve <m>C</m> under the mapping <m>\frac{f}{g}</m>,
       does not contain the interval <m>[0,\infty)</m>,
       and so the function defined by
       <me>
-        w(z) = \log_0\left(\frac{f(z)}{g(z)}\right) = \ln\left|\frac{f(z)}{g(z)}\right| + i\arg_0(\frac{f(z)}{g(z)}) = \ln r+i\phi
+        w(z) = \log_0 \left(\frac{f(z)}{g(z)}\right) = \ln\left|\frac{f(z)}{g(z)}\right|+i\arg_0\left(\frac{f(z)}{g(z)}\right)=\ln r+i\phi
       </me>,
       where <m>\frac{f(z)}{g(z)}=re^{i\phi }\ne 0</m> and <m>0\lt \phi \le 2\pi</m>,
-      is analytic in a simply connected domain
-      <m>D^{\ast}</m> that contains <m>C^{\ast}</m>.
+      is analytic in a simply connected domain <m>D^*</m> that contains <m>C^*</m>.
       We calculate
       <me>
         w\,'(z) =\frac{f\,'(z)}{f(z)} - \frac{g\,'(z)}{g(z)}
       </me>,
-      so <m>w(z) =\log_0(\frac{f(z)}{g(z)})</m> is an antiderivative of <m>\frac{f\,'(z)}{f(z)}-\frac{g\,'(z)}{g(z)}</m>,
-      for all <m>z \in D^{\ast}</m>.
-      Since <m>C^{\ast}</m> is a closed curve in <m>D^{\ast}</m>,
+      so <m>w(z) =\log_0(\frac{f(z)}{g(z)})</m> is an antiderivative of
+      <m>\frac{f\,'(z)}{f(z)}-\frac{g\,'(z)}{g(z)}</m>, for all <m>z \in D^*</m>.
+      Since <m>C^*</m> is a closed curve in <m>D^*</m>,
       <xref ref="DInt_Thm">Theorem</xref>
-      gives <m>\int_{C^{\ast}}(\frac{ f\,'(z)}{f(z)}-\frac{g\,'( z)}{g(z)})\,dz=0</m>.
+      gives <m>\int_{C^*}\left(\frac{ f\,'(z)}{f(z)}-\frac{g\,'(z)}{g(z)}\right)dz=0</m>.
       According to <xref ref="Argument_Thm">Theorem</xref> then,
       <me>
-        \int_{C^{\ast}}\frac{f\,'(z)}{f(z)}\,dz - \int_{C^{\ast}}\frac{g\,'(z)}{g(z)}\,dz=(Z_f-P_f)-(Z_g-P_g) =0
+        \frac{1}{2\pi i}\int_{C^*}\frac{f\,'(z)}{f(z)}\,dz-\frac{1}{2\pi i}\int_{C^*}\frac{g\,'(z)}{g(z)}\,dz=(Z_f-P_f)-(Z_g-P_g)=0
       </me>,
       which completes the proof.
     </p>
@@ -339,7 +338,7 @@
       </p>
     </statement>
   </corollary>
-  <remark>
+  <remark xml:id="remark_8_5">
     <p>
       <xref ref="Rouche_s_Thm">Theorem</xref>
       is usually stated with the requirement that <m>f</m> and <m>g</m> satisfy the condition <m>|f(z)+g(z)|\lt |g(z)|</m>,
@@ -354,7 +353,7 @@
     <statement>
       <p>
         Show that all four zeros of the polynomial
-        <m>g(z)=z^4-7z-1</m> lie in the disk <m>D_2(0) =\{z:|z|\lt 2\}</m>
+        <m>g(z)=z^4-7z-1</m> lie in the disk <m>D_2(0) =\{z:|z|\lt 2\}</m>.
       </p>
     </statement>
     <solution>
@@ -365,14 +364,14 @@
         <me>
           |f(z)+g(z)| \le |-7z| + |-1| = 7(2) + 1 \lt  16 = |f(z)|
         </me>.
-      </p>
-      <p>
         Of course, if <m>|f(z)+g(z)|\lt |f(z)|</m>,
-        then as we indicated in Remark 8.5 we certainly have <m>|f(z)+g(z)|\lt |f(z)|+|g(z)|</m>,
+        then as we indicated in <xref ref="remark_8_5">Remark</xref>
+        we certainly have <m>|f(z)+g(z)|\lt |f(z)|+|g(z)|</m>,
         so that the conditions for applying <xref ref="Rouche_s_Cor">Corollary</xref>
         are satisfied on the circle <m>C_2(0)</m>.
         The function <m>f</m> has a zero of order <m>4</m> at the origin,
         so <m>g</m> must have four zeros inside <m>D_2(0)</m>.
+        CC
       </p>
     </solution>
   </example>
@@ -389,177 +388,258 @@
         <me>
           |f(z)+g(z)| = |z^4| = 1 \lt 6 = |7| - |1| \le |7z-1| = |f(z)|
         </me>.
-      </p>
-      <p>
         The function <m>f</m> has one zero at the point
         <m>-\frac{1}{7}</m> in the disk <m>D_1(0)</m>,
         and the hypotheses of <xref ref="Rouche_s_Cor">Corollary</xref>
         hold on the circle <m>C_1(0)</m>.
         Therefore <m>g</m> has one zero inside <m>D_1(0)</m>.
+        CC
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_argument-rouche">Section</xref></title>
+  <exercises xml:id="exercises_argument-rouche">
+    <title>Exercises</title>
     <exercise xml:id="x8_7_1">
-      <p>
-        Let <m>f(z) =z^5-z</m>.
-        Find the number of times the image <m>f(C)</m> winds around the origin if
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Let <m>f(z) =z^5-z</m>.
+          Find the number of times the image <m>f(C)</m> winds around the origin if
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>C=C_{\frac{1}{2}}(0)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>C</m> is the rectangle with vertices <m>\pm \frac{1}{2}\pm 3i</m>.
+            <m>1</m>.
+            AA
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>C</m> is the rectangle with vertices <m>\pm \frac{1}{2}\pm 3i</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>C=C_2(0)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>C=C_{1.25}(i)</m>.
+            <m>5</m>.
+            AA
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>C=C_{1.25}(i)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_2">
-      <p>
-        Show that four of the five roots of the equation
-        <m>z^5+15z+1=0</m> belong to the annulus <m>A(\frac{3}{2},2,0) =\{z:\frac{3}{2} \lt |z| \lt 2\}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that four of the five roots of the equation
+          <m>z^5+15z+1=0</m> belong to the annulus <m>A(0,\frac{3}{2},2) =\{z:\frac{3}{2} \lt |z| \lt 2\}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x8_7_3">
-      <p>
-        Let <m>g(z) =z^5+4z-15</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there are no zeros in <m>D_1(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are five zeros in <m>D_2(0)</m>.
-              <em>Hint</em>: Consider <m>f(z) =-z^5</m>.
-              <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
-              <me>
-                (z-1.546)(z^2-1.340z+2.857)(z^2+2.885z+3.397)
-              </me>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>g(z) =z^5+4z-15</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Show that there are no zeros in <m>D_1(0)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>f(z) =15</m>.
+            Then <m>|f(z)+g(z)| = |z^{5}+4z| \lt 6 \lt |f(z)|</m>.
+            As <m>f</m> has no roots in <m>D_1(0)</m>,
+            neither does <m>g</m> by Rouch&#xe9;'s Theorem.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that there are five zeros in <m>D_2(0)</m>.
+          </p>
+          <p>
+            <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
+            <me>
+              (z-1.546)(z^2-1.340z+2.857)(z^2+2.885z+3.397)
+            </me>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Consider <m>f(z) =-z^5</m>.
+          </p>
+        </hint>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_4">
-      <p>
-        Let <m>g(z) =z^3+9z+27</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there are no zeros in <m>D_2(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are three zeros in <m>D_4(0)</m>.
-              <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
-              <me>
-                (z+2.047) (z^2-2.047z+13.19)
-              </me>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>g(z) =z^3+9z+27</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Show that there are no zeros in <m>D_2(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that there are three zeros in <m>D_4(0)</m>.
+        </p>
+        <p>
+          <em>Remark</em>: A factorization of the polynomial using numerical approximations for the coefficients is
+          <me>
+            (z+2.047) (z^2-2.047z+13.19)
+          </me>
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_5">
-      <p>
-        Let <m>g(z) =z^5+6z^2+2z+1</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there are two zeros in <m>D_1(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are five zeros in <m>D_2(0)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>g(z) =z^5+6z^2+2z+1</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Show that there are two zeros in <m>D_1(0)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>f(z) =-6z^2</m>.
+            Then <m>|f(z)+g(z)| = |z^{5}+2z+1|</m>.
+            It is easy to show that <m>|f(z)+g(z)| \lt |f(z)|</m> for <m>z \in C_1(0)</m>.
+            Complete the details.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Show that there are five zeros in <m>D_2(0)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_6">
-      <p>
-        Let <m>g(z) =z^{6}-5z^4+10</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there are no zeros in <m>|z|\lt 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are four zeros in <m>|z|\lt 2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are six zeros in <m>|z|\lt 3</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>g(z) =z^{6}-5z^4+10</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Show that there are no zeros in <m>|z|\lt 1</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that there are four zeros in <m>|z|\lt 2</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that there are six zeros in <m>|z|\lt 3</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_7">
-      <p>
-        Let <m>g(z) =3z^3-2iz^2+iz-7</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there are no zeros in <m>|z|\lt 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that there are three zeros in <m>|z|\lt 2</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>g(z) =3z^3-2iz^2+iz-7</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Show that there are no zeros in <m>|z|\lt 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>f(z) =7</m>.
+            Then <m>|f(z)+g(z)| \le 6 \lt |f(z)|</m>.
+            Show the details and explain why this gives the conclusion you want.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Show that there are three zeros in <m>|z|\lt 2</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_7_8">
-      <p>
-        Use Rouch&#xe9;'s theorem to prove the fundamental theorem of algebra.
-        <em>Hint</em>: For the polynomial
-        <m>g(z)=a_0+a_1z+\cdots+a_{n-1}z^{n-1}+a_nz^n</m>, let <m>f(z)=-a_nz^n</m>.
-        Show that, for points <m>z</m> on the circle <m>C_R(0)</m>,
-        <me>
-          |\frac{f(z) +g(z)}{f(z)}| \lt  \frac{|a_0| +|a_1| +\cdots +|a_{n-1}| }{|a_n| R}
-        </me>,
-        and conclude that the right side of this inequality is less than 1 when <m>R</m> is large.
-      </p>
+      <statement>
+        <p>
+          Use Rouch&#xe9;'s theorem to prove the fundamental theorem of algebra.
+          Show that, for points <m>z</m> on the circle <m>C_R(0)</m>,
+          <me>
+            |\frac{f(z) +g(z)}{f(z)}| \lt  \frac{|a_0| +|a_1| +\cdots +|a_{n-1}| }{|a_n| R}
+          </me>,
+          and conclude that the right side of this inequality is less than 1 when <m>R</m> is large.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          For the polynomial <m>g(z)=a_0+a_1z+\cdots+a_{n-1}z^{n-1}+a_nz^n</m>,
+          let <m>f(z)=-a_nz^n</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise xml:id="x8_7_10">
-      <p>
-        Suppose that <m>h(z)</m> is analytic and nonzero and
-        <m>|h(z)|\lt 1</m> for <m>z \in D_1(0)</m>.
-        Prove that the function <m>g(z) = h(z) - z^n</m> has <m>n</m> zeros inside the unit circle <m>C_1(0)</m>.
-      </p>
+      <statement>
+        <p>
+          Suppose that <m>h(z)</m> is analytic and nonzero and
+          <m>|h(z)|\lt 1</m> for <m>z \in D_1(0)</m>.
+          Prove that the function <m>g(z) = h(z) - z^n</m> has <m>n</m> zeros inside the unit circle <m>C_1(0)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>f(z) =z^n</m>.
+          Then <m>|f(z)+g(z)| = |h(z)| \lt 1 = |f(z)|</m>.
+          Complete the argument.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x8_7_11">
-      <p>
-        Suppose that <m>f(z)</m> is analytic inside and on the simple closed contour <m>C</m>.
-        If <m>f(z)</m> is a one-to-one function at points <m>z</m> on <m>C</m>,
-        then prove that <m>f(z)</m> is one-to-one inside <m>C</m>.
-        <em>Hint</em>: Consider the image of <m>C</m>.
-      </p>
+      <statement>
+        <p>
+          Suppose that <m>f(z)</m> is analytic inside and on the simple closed contour <m>C</m>.
+          If <m>f(z)</m> is a one-to-one function at points <m>z</m> on <m>C</m>,
+          then prove that <m>f(z)</m> is one-to-one inside <m>C</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Consider the image of <m>C</m>.
+        </p>
+      </hint>
     </exercise>
   </exercises>
 </section>

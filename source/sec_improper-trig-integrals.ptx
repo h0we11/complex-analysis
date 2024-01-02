@@ -1,5 +1,5 @@
 <section xml:id="sec_improper-trig-integrals">
-  <title>Improper Integrals Involving Trigonometric Functions</title>
+  <title>Improper Integrals of Trigonometric Functions</title>
   <p>
     Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>,
     respectively, where <m>n\ge m+1</m>.
@@ -36,12 +36,12 @@
         </men>.
         then
         <md>
-          <mrow xml:id="PV__P_Q_cos_ax_" number="yes">\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx \amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_{j}]),  \text{ and }</mrow>
-          <mrow xml:id="PV__P_Q_sin_ax_" number="yes">\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx \amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_{j}])</mrow>
+          <mrow xml:id="PV__P_Q_cos_ax_" number="yes">\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx \amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_j]),  \text{ and }</mrow>
+          <mrow xml:id="PV__P_Q_sin_ax_" number="yes">\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx \amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j])</mrow>
         </md>,
         where <m>z_1, \, z_2, \, \ldots, \, z_{k-1}, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane,
-        and <m>\mathrm{Re}(\mathrm{Res}[f,z_{j}])</m> and
-        <m>\mathrm{Im}(\mathrm{Res}[f,z_{j}])</m> are the real and imaginary parts of <m>\mathrm{Res}[f,z_{j}]</m>,
+        and <m>\mathrm{Re}(\mathrm{Res}[f,z_j])</m> and
+        <m>\mathrm{Im}(\mathrm{Res}[f,z_j])</m> are the real and imaginary parts of <m>\mathrm{Res}[f,z_j]</m>,
         respectively.
       </p>
     </statement>
@@ -55,10 +55,8 @@
   <example>
     <statement>
       <p>
-        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{x\sin x\,dx}{x^2+4}</m>.
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+4}\,dx</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         The function <m>f</m> in Equation <xref ref="exp_iaz_P_z__Q_z_"/> is <m>f(z) = \frac{\exp (iz) z}{z^2+4}</m>,
         which has a simple pole at the point <m>2i</m> in the upper half-plane.
@@ -66,12 +64,15 @@
         <me>
           \mathrm{Res}[f,2i] =\lim\limits_{z \to 2i}\frac{\exp(iz)z}{z+2i} = \frac{2ie^{-2}}{4i}=\frac{1}{2e^2}
         </me>.
-      </p>
-      <p>
         Using Equation <xref ref="PV__P_Q_sin_ax_"/> gives
         <me>
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{x\sin x\,dx}{x^2+4} = 2\pi \mathrm{Re}(\mathrm{Res}[f,2i] ) = \frac{\pi }{e^2}
-        </me>.
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{x\sin x}{x^2+4}\,dx = 2\pi \mathrm{Re}(\mathrm{Res}[f,2i]) = \frac{\pi}{e^2}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -80,8 +81,6 @@
       <p>
         Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^4+4}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         The function <m>f</m> in Equation <xref ref="exp_iaz_P_z__Q_z_"/> is <m>f(z) = \frac{\exp (iz)}{z^4+4}</m>,
         which has simple poles at the points <m>z_1=1+i</m> and
@@ -99,13 +98,16 @@
         <me>
           \mathrm{Res}[f, \, -1+i] = \frac{\cos 1 -\sin 1 -i(\cos 1+\sin 1)}{16e}
         </me>.
-      </p>
-      <p>
         Using Equation <xref ref="PV__P_Q_cos_ax_"/>, we get
         <md>
-          <mrow>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^4+4} \amp = -2\pi [\mathrm{Im}(\mathrm{Res}[f,1+i] ) + \mathrm{Im}(\mathrm{Res}[f,-1+i])]</mrow>
+          <mrow>\int_{-\infty}^{\infty}\frac{\cos x}{x^4+4}\,dx \amp = -2\pi [\mathrm{Im}(\mathrm{Res}[f,1+i] ) + \mathrm{Im}(\mathrm{Res}[f,-1+i])]</mrow>
           <mrow>\amp = \frac{\pi (\cos 1+\sin 1)}{4e}</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -120,7 +122,7 @@
         Suppose that <m>P</m><nbsp/>and <m>Q</m><nbsp/>are polynomials of degree <m>m</m> and <m>n</m>,
         respectively, where <m>n \ge m+1</m>.
         If <m>C_R</m> is the upper semicircle <m>z=Re^{i\theta}</m>,
-        for <m>0\le \theta \le \pi</m>, then
+        for <m>0 \le \theta \le \pi</m>, then
         <me>
           \lim_{R \to \infty}\int_{c_{R}}\frac{\exp(iz)P(z)}{Q(z)}\,dz=0
         </me>.
@@ -132,18 +134,18 @@
       From <m>n \ge m+1</m>, it follows that
       <m>|\frac{P(z)}{Q(z)}| \to 0</m> as <m>|z| \to \infty</m>.
       Therefore, for any <m>\varepsilon>0</m>,
-      there exists <m>R_{\varepsilon }>0</m> such that
+      there exists <m>R_{\varepsilon}>0</m> such that
       <men xml:id="P_Q___e_Pi">
-        |\frac{P(z)}{Q(z)}| \lt  \frac{\varepsilon }{\pi}
+        |\frac{P(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}
       </men>
-      whenever <m>|z| \ge R_{\varepsilon }</m>.
+      whenever <m>|z| \ge R_{\varepsilon}</m>.
       Using the ML inequality
       (<xref ref="ML_Inequality_Thm">Theorem</xref>)
       together with <xref ref="P_Q___e_Pi">Inequality</xref>, we get
       <men xml:id="Lemma_Integral">
-        |\int_{C_R}\frac{\exp(iz)P(z)}{Q(z)}\,dz| \le \int_{C_R}\frac{\varepsilon }{\pi }|e^{iz}|\,|dz|
+        \left|\int_{C_R}\frac{\exp(iz)P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi}|e^{iz}|\,|dz|
       </men>.
-      provided <m>R\ge R_{\varepsilon }</m>.
+      provided <m>R\ge R_{\varepsilon}</m>.
       The parametrization of <m>C_R</m> leads to the equation
       <men xml:id="Lemma_Subs">
         |dz| = R\,d\theta,  \text{ and }   |e^{iz}|=e^{-y}=e^{-R\sin \theta}
@@ -154,29 +156,27 @@
       <m>\sin (\pi -\theta) = \sin \theta</m> and Equations <xref ref="Lemma_Subs"/>,
       we express the integral on the right side of <xref ref="Lemma_Integral">Inequality</xref> as
       <men xml:id="Lemma_Integral_2">
-        \int_{C_R}\frac{\varepsilon }{\pi }|e^{iz}|\,|dz| = \frac{\varepsilon }{\pi }\int_0^{\pi}e^{-R\sin \theta}R\,d\theta = \frac{2\varepsilon }{\pi}\int_0^{\pi /2}e^{-R\sin \theta}R\,d\theta
+        \int_{C_R}\frac{\varepsilon}{\pi}|e^{iz}|\,|dz| = \frac{\varepsilon}{\pi}\int_0^{\pi}e^{-R\sin \theta}R\,d\theta = \frac{2\varepsilon}{\pi}\int_0^{\pi /2}e^{-R\sin \theta}R\,d\theta
       </men>.
     </p>
     <p>
-      On the interval <m>0\le \theta \le \pi /2</m> we can use the inequality
+      On the interval <m>0 \le \theta \le \pi /2</m> we can use the inequality
       <me>
-        0\le \frac{2\theta}{\pi }\le \sin \theta
+        0 \le \frac{2\theta}{\pi}\le \sin \theta
       </me>.
-    </p>
-    <p>
       We combine this inequality with <xref ref="Lemma_Integral">Inequality</xref>
       and <xref ref="Lemma_Integral_2">Equation</xref> to conclude that,
       for <m>R \ge R_{\varepsilon}</m>,
       <md>
-        <mrow>|\int_{C_R}\frac{\exp(iz)P(z)\,dz}{Q(z)}| \amp \le \frac{2\varepsilon }{\pi} \int_0^{\pi /2}e^{-2R\theta /\pi }R\,d\theta</mrow>
-        <mrow>\amp = \left. -\varepsilon e^{-2R\theta /\pi}\right|_{\theta=0}^{\theta = \pi /2}</mrow>
+        <mrow>\left|\int_{C_R}\frac{\exp(iz)P(z)}{Q(z)}\,dz\right| \amp \le \frac{2\varepsilon}{\pi} \int_0^{\pi /2}e^{-\frac{2R\theta}{\pi}}R\,d\theta</mrow>
+        <mrow>\amp = \left. -\varepsilon e^{-\frac{2R\theta}{\pi}}\right|_{\theta=0}^{\theta = \pi /2}</mrow>
         <mrow>\amp = \varepsilon (1-e^{-R})</mrow>
         <mrow>\amp \lt  \varepsilon</mrow>
       </md>.
     </p>
     <p>
       Because <m>\varepsilon >0</m> is arbitrary,
-      proof of Jordan's lemma is complete.
+      the proof of Jordan's lemma is complete.
     </p>
   </proof>
   <p>
@@ -189,7 +189,7 @@
       for <m>0 \le \theta \le \pi</m>.
       Using properties of integrals, we have
       <me>
-        \int_{-R}^{R}\frac{\exp(i\alpha x)P(x)\,dx}{Q(x)} = \int_{C}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)} - \int_{C_R}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)}
+        \int_{-R}^{R}\frac{\exp(i\alpha x)P(x)}{Q(x)}\,dx = \int_{C}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz - \int_{C_R}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz
       </me>.
     </p>
     <p>
@@ -197,7 +197,7 @@
       all the poles <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> will lie inside <m>C</m>,
       and we can use the residue theorem to obtain
       <men xml:id="Eq_8_12">
-        \int_{-R}^{R} \frac{\exp (i\alpha x)P(x)\,dx}{Q(x)} = 2 \pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}] - \int_{C_R}\frac{\exp(i\alpha z)P(z)\,dz}{Q(z)}
+        \int_{-R}^{R} \frac{\exp (i\alpha x)P(x)}{Q(x)}\,dx = 2 \pi i\sum_{j=1}^k\mathrm{Res}[f,z_j] - \int_{C_R}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz
       </men>.
     </p>
     <p>
@@ -205,84 +205,155 @@
       the change of variables <m>\zeta=\alpha z</m> shows that the conclusion of Jordan's lemma holds for the integrand <m>\frac{\exp(i\alpha z)P(z)}{Q(z)}</m>.
       Hence we let <m>R \to \infty</m> in Equation <xref ref="Eq_8_12"/> to obtain
       <md>
-        <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{[\cos(\alpha x)+i\sin(\alpha x)]P(x)\,dx}{Q(x)} \amp = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}]</mrow>
-        <mrow>\amp = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_{j}])</mrow>
-        <mrow>\amp + 2\pi i\sum\limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_{j}])</mrow>
+        <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{[\cos(\alpha x)+i\sin(\alpha x)]P(x)}{Q(x)}\,dx \amp = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_j]</mrow>
+        <mrow>\amp = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j])</mrow>
+        <mrow>\amp + 2\pi i\sum\limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j])</mrow>
       </md>.
     </p>
     <p>
       Equating the real and imaginary parts of this equation gives us Equations <xref ref="PV__P_Q_cos_ax_"/> and <xref ref="PV__P_Q_sin_ax_"/>, which completes the proof.
     </p>
   </proof>
-  <p>
-    <em>Exercises for <xref ref="sec_improper-trig-integrals">Section</xref></em>
-    Use residues to find the Cauchy principal value of the following:
-    <ol>
-      <li xml:id="x8_4_1">
+  <exercises xml:id="exercises_improper-trig-integrals">
+    <title>Exercises</title>
+    <p>
+      Use residues to find the Cauchy principal value of the following:
+    </p>
+    <exercise xml:id="x8_4_1">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2+9}\,dx, \text{ and } \int_{-\infty}^{\infty}\frac{\sin x}{x^2+9}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_2">
+      </statement>
+      <solution>
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2+9}\,dx = \frac{\pi}{3e^3}</m>,
+          and <m>\int_{-\infty}^{\infty}\frac{\sin x}{x^2+9}\,dx = 0</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_2">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x\cos x}{x^2+9}\,dx, \text{ and } \int_{-\infty}^{\infty}\frac{x\sin x}{x^2+9}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_3">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_3">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x\sin x}{(x^2+4)^2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_4">
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{4e^2}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_4">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+4)^2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_5">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_5">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+4)(x^2+9)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_6">
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{5}(\frac{1}{2e^2}-\frac{1}{3e^3})</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_6">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{(x^2+1)(x^2+4)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_7">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_7">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2-2x+5}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_8">
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi \cos 1}{2e^2}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_8">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2-4x+5}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_9">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_9">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x\sin x}{x^4+4}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_10">
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi \sin 1}{2e}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_10">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x^3\sin x}{x^4+4}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_11">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_11">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{\cos 2x}{x^2+2x+2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_12">
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi \cos 2}{e^2}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_4_12">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x^3\sin 2x}{x^4+4}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_4_13">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_4_13">
+      <statement>
         <p>
           Why do you need to use the exponential function when evaluating improper integrals involving the sine and cosine functions?
         </p>
-      </li>
-    </ol>
-  </p>
+      </statement>
+      <solution>
+        <p>
+          The inequality <m>\left|\int_{C_{R}}\frac{\exp(iz)P(z)}{Q(z)}\,dz\right| \le \frac{2\varepsilon}{\pi}\int\nolimits_0^\frac{\pi}{2}e^{\frac{-2R\theta}{\pi}}R\,d\theta \lt \varepsilon</m> in Jordan's lemma would not be possible to get if we replaced
+          <m>\exp(iz)</m> by either the complex sine or cosine.
+          Explain!
+          DD
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
 </section>

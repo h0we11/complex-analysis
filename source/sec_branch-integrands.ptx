@@ -8,9 +8,7 @@
   <p>
     Let <m>\alpha</m> be a real number with <m>0\lt \alpha \lt 1</m>.
     In this section we use the branch of
-    <m>z^{\alpha}</m> corresponding to the branch of the logarithm <m>\log_0</m>
-    (see Equation <xref ref="log_a"/>)
-    as follows:
+    <m>z^{\alpha}</m> corresponding to the branch of the logarithm <m>\log_0</m> \big(see Equation <xref ref="log_a"/>\big) as follows:
     <men xml:id="z_a_branch">
       z^{\alpha} = e^{\alpha [\log_0(z) ] }=e^{\alpha(\ln |z| +i\arg_0z)} = e^{\alpha (\ln r+i\theta)} = r^{\alpha}(\cos \alpha \theta +i\sin \alpha \theta)
     </men>.
@@ -29,7 +27,7 @@
         and <m>f(z) = \frac{z^{\alpha}P(z)}{Q(z)}</m>,
         where <m>0\lt \alpha \lt 1</m>, then
         <me>
-          \text{ P.V. }  \int_0^{\infty}\frac{x^{\alpha}P(x)\,dx}{Q(x)} = \frac{2\pi i}{1-e^{i\alpha 2\pi }}\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}]
+          \text{ P.V. }  \int_0^{\infty}\frac{x^{\alpha}P(x)}{Q(x)}\,dx = \frac{2\pi i}{1-e^{i\alpha 2\pi}}\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]
         </me>,
         where <m>z_1, \, z_2, \, \ldots, \, z_k</m> are the nonzero poles of <m>\frac{{P}}{Q}</m>.
       </p>
@@ -38,30 +36,31 @@
   <proof>
     <p>
       Let <m>C</m> denote the simple closed positively oriented contour that consists of the portions of the circles <m>C_r(0)</m> and <m>C_R(0)</m> and the horizontal segments joining them,
-      per <xref ref="fig_ch-08-07">Figure</xref>.
+      per <xref ref="fig_ch-08-08">Figure</xref>.
     </p>
-    <figure xml:id="fig_ch-08-07">
+    <figure xml:id="fig_ch-08-08">
       <caption>Contour <m>C</m> encloses the nonzero poles <m>z_, \  z_2, \  \ldots, \  z_k</m> of <m>\frac{P}Q</m></caption>
-      <image width="73%" source="figs/ch-08/ch-08-fig-07.pdf"/>
+      <image width="73%" source="figs/ch-08/ch-08-fig-08.png"/>
     </figure>
     <p>
       We select a small value of <m>r</m> and a large value of <m>R</m> so that the nonzero poles
       <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>\frac{P}{Q}</m> lie inside <m>C</m>.
       Using the residue theorem, we write
       <men xml:id="Branch_int_eq">
-        \int_{C}f(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}]
+        \int_{C}f(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]
       </men>.
     </p>
     <p>
       If we let <m>r \to 0</m> in Equation <xref ref="Branch_int_eq"/>,
-      the integrand <m>f(z)</m> on the upper horizontal line of Figure 8.7 approaches <m>\frac{x^{\alpha}P(x)}{Q(x)}</m>,
+      the integrand <m>f(z)</m> on the upper horizontal line of <xref ref="fig_ch-08-08">Figure</xref>
+      approaches <m>\frac{x^{\alpha}P(x)}{Q(x)}</m>,
       where <m>x</m> is a real number;
       however, because of the branch we chose for <m>z^{a}</m>
       (see <xref ref="z_a_branch">Equation</xref>),
-      the integrand <m>f(z)</m> on the lower horizontal line approaches <m>\frac{x^{\alpha}e^{i\alpha 2\pi }P(x)}Q(x)</m>.
+      the integrand <m>f(z)</m> on the lower horizontal line approaches <m>\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}Q(x)</m>.
       Therefore
       <men xml:id="Branch_int_eq_2">
-        \lim_{r \to 0}\int_{C}f(z)\,dz = \int_0^R\frac{x^{\alpha}P(x)}{Q(x)}\,dx + \int_R^0 \frac{x^{\alpha}e^{i\alpha 2\pi }P(x)}{Q(x)}\,dx +\int_{C_R^{+}(0)}f(z)\,dz
+        \lim_{r \to 0}\int_{C}f(z)\,dz = \int_0^R\frac{x^{\alpha}P(x)}{Q(x)}\,dx + \int_R^0 \frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx +\int_{C_R^{+}(0)}f(z)\,dz
       </men>.
     </p>
     <p>
@@ -69,15 +68,15 @@
       Otherwise, the first two integrals on the right side of Equation <xref ref="Branch_int_eq_2"/> would not necessarily converge.
       Combining this result with Equation <xref ref="Branch_int_eq"/> gives
       <me>
-        \int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx-\int_0^{R}\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] -\int_{C_R^{+}(0)}f(z)\,dz
+        \int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx-\int_0^{R}\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz
       </me>,
       so
       <me>
-        \int_0^{R}\frac{x^{a}P(x)}{Q(x)}\,dx(1-e^{ia2\pi }) = 2\pi i\sum\limits_{j=1}^kRes[f,z_{j}] -\int_{C_R^{+}(0)}f(z)\,dz
+        \left(\int_0^{R}\frac{x^{a}P(x)}{Q(x)}\,dx\right)\big(1-e^{ia2\pi}\big) = 2\pi i\sum\limits_{j=1}^kRes[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz
       </me>,
       which we rewrite as
       <men xml:id="Branch_int_eq_3">
-        \int_0^{R}\frac{x^{\alpha}P(x)\,dx}{Q(x)} = \frac{2\pi i}{1-e^{i\alpha 2\pi }}\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] - \frac{1}{1-e^{i\alpha 2\pi }}\int_{C_R^{+}(0)}f(z)\,dz
+        \int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx = \frac{2\pi i}{1-e^{i\alpha 2\pi}}\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] - \frac{1}{1-e^{i\alpha 2\pi}}\int_{C_R^{+}(0)}f(z)\,dz
       </men>.
     </p>
     <p>
@@ -100,8 +99,6 @@
         Evaluate P.V. <m>\int_0^{\infty}\frac{x^{\alpha}}{x(x+1)}\,dx</m>,
         where <m>0\lt a\lt 1</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         The function <m>f(z) =\frac{z^{a}}{z(z+1)}</m> has a nonzero pole at the point <m>-1</m>,
         and the denominator has a zero of order at most 1
@@ -110,11 +107,16 @@
         Using <xref ref="Branch_Integrand_Thm">Theorem</xref>,
         we compute
         <md>
-          <mrow>\int_0^{\infty}\frac{x^{a}}{x(x+1)}\,dx \amp = \frac{2\pi i}{1-e^{ia2\pi }}\mathrm{Res}[f,-1]</mrow>
-          <mrow>\amp = \frac{2\pi i}{1-e^{ia2\pi }}\left(\frac{e^{ia\pi }}{-1}\right)</mrow>
-          <mrow>\amp  =\frac{\pi }{\frac{e^{ia\pi }-e^{-ia\pi }}{2i}}</mrow>
-          <mrow>\amp = \frac{\pi }{\sin a\pi} </mrow>
+          <mrow>\int_0^{\infty}\frac{x^{a}}{x(x+1)}\,dx \amp = \frac{2\pi i}{1-e^{ia2\pi}}\mathrm{Res}[f,-1]</mrow>
+          <mrow>\amp = \frac{2\pi i}{1-e^{ia2\pi}}\left(\frac{e^{ia\pi}}{-1}\right)</mrow>
+          <mrow>\amp  =\frac{\pi}{\frac{e^{ia\pi}-e^{-ia\pi}}{2i}}</mrow>
+          <mrow>\amp = \frac{\pi}{\sin a\pi} </mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -127,41 +129,24 @@
         Evaluate P.V. <m>\int_0^{\infty}\frac{\ln x}{x^2+a^2}dx</m>,
         where <m>a>0</m>.
       </p>
-      <solution>
-        <p>
-          We use the function <m>f(z) =\frac{\mathrm{\log }_{-\frac{\pi }{2}}z}{z^2+a^2}</m>.
-          Recall that
-          <me>
-            \log_{-\frac{\pi }{2}}z = \ln |z| + i\arg_{-\frac{\pi }{2}}z = \ln r+i\theta
-          </me>,
-          where <m>z=re^{i\theta}\ne 0</m> and <m>-\frac{\pi }{2}\lt \theta \le \frac{3\pi}{2}</m>.
-          The path <m>C</m> of integration will consist of the segments
-          <m>[-R,-r ]</m> and <m>[r,R]</m> of the <m>x</m>-axis together with the upper semicircles
-          <m>C_{r}:z=re^{i\theta}</m> and <m>C_R:z=Re^{i\theta}</m>,
-          for <m>0\le \theta \le \pi</m>,
-          as shown in <xref ref="fig_ch-08-09">Figure</xref>.
-        </p>
-      </solution>
       <figure xml:id="fig_ch-08-09">
         <caption>The contour <m>C</m> for the integrand <m>f(z) = \frac{\mathrm{\log}_{-\frac{\pi}{2}}z}{z^2+a^2}</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-09.pdf"/>
+        <image width="73%" source="figs/ch-08/ch-08-fig-09.png"/>
       </figure>
       <p>
-        We chose the branch <m>\log_{-\frac{\pi }{2}}</m> because it is analytic on <m>C</m> and its interior,
+        We chose the branch <m>\log_{-\frac{\pi}{2}}</m> because it is analytic on <m>C</m> and its interior,
         hence so is the function <m>f</m>.
         This choice enables us to apply the residue theorem properly
         (see the hypotheses of <xref ref="Residue_Thm">Theorem</xref>),
         and we get
         <me>
-          \int_{C}f(z) dz=2\pi i\mathrm{Res}[f,ai] = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
+          \int_{C}f(z)\,dz=2\pi i\mathrm{Res}[f,ai] = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
         </me>.
-      </p>
-      <p>
         Keeping in mind the branch of logarithm that we're using,
         we then have
         <md>
           <mrow>\int_{C}f(z)\,dz \amp = \int_{-R}^{-r}f(x)\,dx + \int_{-C_{r}}f(z)\,dz+\int_{r}^{R}f(x)\,dx + \int_{C_R}f(z)\,dz</mrow>
-          <mrow>\amp = \int_{-R}^{-r}\frac{\ln |x| +i\pi }{x^2+a^2}\,dx + \int_{-C_{r}}f(z)\,dz</mrow>
+          <mrow>\amp = \int_{-R}^{-r}\frac{\ln |x| +i\pi}{x^2+a^2}\,dx + \int_{-C_{r}}f(z)\,dz</mrow>
           <mrow>\amp + \int_{r}^{R}\frac{\ln x}{x^2+a^2}\,dx+\int_{C_R}f(z)\,dz</mrow>
           <mrow xml:id="log_int_ex" number="yes">\amp = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}</mrow>
         </md>.
@@ -171,196 +156,324 @@
         then by the ML inequality (<xref ref="ML_Inequality_Thm">Theorem</xref>)
         <md>
           <mrow>\left|\int_{C_R}f(z)\,dz\right| \amp = \left|\int_0^{\pi}\frac{\ln R+i\theta}{R^2e^{i2\theta}+a^2} iRe^{i\theta}d\theta\right|</mrow>
-          <mrow>\amp \le \frac{R(\ln R+\pi ) \pi }{R^2-a^2}</mrow>
+          <mrow>\amp \le \frac{R(\ln R+\pi ) \pi}{R^2-a^2}</mrow>
         </md>,
         and L'H&#xf4;pital's rule yields <m>\lim\limits_{R \to \infty}\int_{C_R}f(z)r\,dz=0</m>.
         Engaging in a similar computation shows that <m>\lim\limits_{r \to 0^{+}}\int_{c_{r}}f(z)\,dz=0</m>.
         We use these results when we take limits Equations <xref ref="log_int_ex"/> to get
         <me>
-          \text{ P.V. }  \left(\int_{-\infty}^{0}\frac{\ln|x| +i\pi }{x^2+a^2}\,dx + \int_0^{\infty}\frac{\ln x}{x^2+a^2}\,dx\right) = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
+          \text{ P.V. }  \left(\int_{-\infty}^{0}\frac{\ln|x| +i\pi}{x^2+a^2}\,dx + \int_0^{\infty}\frac{\ln x}{x^2+a^2}\,dx\right) = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
         </me>.
       </p>
       <p>
         Equating the real parts in this equation gives
         <me>
           \text{ P.V. }  \int_0^{\infty}\frac{\ln x}{x^2+a^2}\,dx=\frac{\pi \ln a}{2a}
-        </me>.
+        </me>
       </p>
     </statement>
+    <solution>
+      <p>
+        We use the function <m>f(z) =\frac{\mathrm{\log }_{-\frac{\pi}{2}}z}{z^2+a^2}</m>.
+        Recall that
+        <me>
+          \log_{-\frac{\pi}{2}}z = \ln |z| + i\arg_{-\frac{\pi}{2}}z = \ln r+i\theta
+        </me>,
+        where <m>z=re^{i\theta}\ne 0</m> and <m>-\frac{\pi}{2}\lt \theta \le \frac{3\pi}{2}</m>.
+        The path <m>C</m> of integration will consist of the segments
+        <m>[-R,-r ]</m> and <m>[r,R]</m> of the <m>x</m>-axis together with the upper semicircles
+        <m>C_{r}:z=re^{i\theta}</m> and <m>C_R:z=Re^{i\theta}</m>,
+        for <m>0 \le \theta \le \pi</m>,
+        as shown in <xref ref="fig_ch-08-09">Figure</xref>.
+        CC
+      </p>
+    </solution>
   </example>
   <remark>
     <p>
       The theory of this section is not purely esoteric.
       Many applications of contour integrals surface in government and industry worldwide.
       Several years ago, for example,
-      a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in Figure 8.8.
+      a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in <xref ref="fig_ch-08-08">Figure</xref>.
     </p>
   </remark>
-  <p>
-    <em>Exercises for <xref ref="sec_branch-integrands">Section</xref></em>
-    Use residues to compute the following integrals.
-  </p>
-  <ol>
-    <li xml:id="x8_6_1">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{dx}{x^{2/3}(1+x)}</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_2">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{dx}{x^{1/2}(1+x)}</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_3">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/2}}{(1+x)^2}\,dx</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_4">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/2}}{1+x^2}\,dx</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_5">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{\ln (x^2+1)}{x^2+1}\,dx</m>.
-        <nbsp/><nbsp/> <em>Hint</em>: Use the integrand <m>f(z)=\frac{\log (z+i)}{z^2+1}</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_6">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{\ln x}{(1+x^2)^2}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{(\ln x)^2}{x^2+1}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/2}\ln x}{x^2+1}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        <m>\int_0^{\infty}\frac{\ln x}{x^2+2^2}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Carry out the following computations:
-      </p>
-      <ol>
-        <li>
+  <exercises xml:id="exercises_branch-integrands">
+    <title>Exercises</title>
+    <exercise>
+      <introduction>
+        <p>
+          Use residues to compute the following integrals.
+        </p>
+        <task xml:id="x8_6_1">
+          <statement>
+            <p>
+              P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{2}{3}(1+x)}\,dx</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>\frac{2\pi}{\sqrt{3}}</m>.
+              BB
+            </p>
+          </solution>
+        </task>
+        <task xml:id="x8_6_2">
           <p>
-            For <m>f(z)=\frac{z^{1/3}}{z^3(z+1)}</m>,
-            show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
+            P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{1}{2}(1+x)}\,dx</m>.
           </p>
-        </li>
-        <li>
+        </task>
+        <task xml:id="x8_6_3">
+          <statement>
+            <p>
+              P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{2}}{(1+x)^2}\,dx</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>\frac{\pi}{2}</m>.
+              BB
+            </p>
+          </solution>
+        </task>
+        <task xml:id="x8_6_4">
           <p>
-            Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+            P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{2}}{1+x^2}\,dx</m>.
           </p>
-        </li>
-        <li>
+        </task>
+        <task xml:id="x8_6_5">
+          <statement>
+            <p>
+              P.V. <m>\int_0^{\infty}\frac{\ln (x^2+1)}{x^2+1}\,dx</m>.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              Use the integrand <m>f(z)=\frac{\log (z+i)}{z^2+1}</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              <m>\pi \ln 2</m>.
+              BB
+            </p>
+          </solution>
+        </task>
+        <task xml:id="x8_6_6">
           <p>
-            Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^{1/3}}{x^3(x+1)}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
+            P.V. <m>\int_0^{\infty}\frac{\ln x}{(1+x^2)^2}\,dx</m>.
+          </p>
+        </task>
+        <task xml:id="x8_6_7">
+          <statement>
+            <p>
+              P.V. <m>\int_0^{\infty}\frac{(\ln x)^2}{x^2+1}\,dx</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>\frac{\pi^3}{8}</m>.
+              BB
+            </p>
+          </solution>
+        </task>
+        <task xml:id="x8_6_8">
+          <p>
+            P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{2}\ln x}{x^2+1}\,dx</m>.
+          </p>
+        </task>
+        <task xml:id="x8_6_9">
+          <statement>
+            <p>
+              <m>\int_0^{\infty}\frac{\ln x}{x^2+2^2}\,dx</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>\frac{1}{4}\pi \ln 2</m>.
+              BB
+            </p>
+          </solution>
+        </task>
+        <task xml:id="x8_6_10">
+          <p>
+            Carry out the following computations: \begin{enumerate}
+          </p>
+        </task>
+      </introduction>
+      <task>
+        <p>
+          For <m>f(z)=\frac{z^\frac{1}{3}}{z^3(z+1)}</m>,
+          show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^3(x+1)}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
+          Justify your answer.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x8_6_11">
+      <introduction>
+        <p>
+          Carry out the following computations:
+        </p>
+      </introduction>
+      <task>
+        <p>
+          For <m>f(z)=\frac{z^\frac{4}{3}}{z+1}</m>,
+          show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^\frac{4}{3}}{x+1}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
             Justify your answer.
           </p>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <p>
-        Carry out the following computations:
-        <ol>
-          <li>
-            <p>
-              For <m>f(z)=\frac{z^{4/3}}{z+1}</m>,
-              show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^{4/3}}{x+1}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
-              Justify your answer.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{1}{x^{1/2}(x+1)^2}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{1}{x^{1/2}(1+x^2)}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/3}}{(x+1)^2}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/3}}{x^2+1}\,dx</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{x^{1/3}\ln x}{x^2+1}\,dx</m> and P.V. <m>\int_0^{\infty}\frac{x^{1/3}}{x^2+1}\,dx</m>.
-        <em>Hint</em>: Use the complex integrand <m>f(z)=\frac{z^{1/3}\mathrm{Log} z}{z^2+1}</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_7">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{\ln (1+x)}{x^{1+a}}\,dx</m>,
-        <nbsp/><nbsp/> where <m>0\lt a\lt 1</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_8">
-      <p>
-        P.V. <m>\int_0^{\infty}\frac{\ln x}{(x+a)^2}\,dx</m>,
-        <nbsp/><nbsp/> where <m>a>0</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_9">
-      <p>
-        P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>.
-        <nbsp/><nbsp/> <em>Hint</em>: Use the integrand
-        <m>f(z) =\frac{\exp(iz)}{z}</m> and the contour <m>C</m> in Figure 8.8.
-        Let <m>r \to 0</m> and <m>R \to \infty</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_10">
-      <p>
-        P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m> .
-        <em>Hint</em>: Use the integrand
-        <m>f(z) =\frac{1-\exp (i2z)}{z^2}</m> and the contour <m>C</m> in Figure 8.8.
-        Let <m>r \to 0</m> and <m>R \to \infty</m>.
-      </p>
-    </li>
-    <li xml:id="x8_6_11">
-      <p>
-        The Fresnel integrals <m>\int_0^{\infty}\cos( x^2)\,dx</m> and
-        <m>\int_0^{\infty}\sin (x^2)\,dx</m> are important in the study of optics.
-        Use the integrand <m>f(z)=\exp(-z^2)</m> and the contour <m>C</m> shown in <xref ref="fig_ch-08-10">Figure</xref>,
-        and let <m>R \to \infty</m> to get the value of these integrals.
-        Use the fact from calculus that <m>\int_0^{\infty}e^{-x^2}dx=\sqrt{\frac{\pi}{2}}</m>.
-      </p>
-    </li>
-  </ol>
-  <figure xml:id="fig_ch-08-10">
-    <caption>For Exercise 21</caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-10.pdf"/>
-  </figure>
+        </statement>
+        <solution>
+          <p>
+            No.
+            The hypotheses of <xref ref="Branch_Integrand_Thm">Theorem</xref> are not satisfied.
+            Explain why they are not.
+            AA
+          </p>
+        </solution>
+      </task>
+    </exercise>
+    <exercise xml:id="x8_6_12">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{1}{2}(x+1)^2}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_6_13">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{1}{2}(1+x^2)}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{\sqrt{2}}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_6_14">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{(x+1)^2}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_6_15">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi\sqrt{2}}{1+\sqrt{3}}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_6_16">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}\ln x}{x^2+1}\,dx</m> and P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the complex integrand <m>f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="x8_6_17">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{\ln (1+x)}{x^{1+a}}\,dx</m>,
+          where <m>0\lt a\lt 1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{a\sin \pi a}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_6_18">
+      <statement>
+        <p>
+          P.V. <m>\int_0^{\infty}\frac{\ln x}{(x+a)^2}\,dx</m>, where <m>a>0</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_6_19">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>.
+          Let <m>r \to 0</m> and <m>R \to \infty</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the integrand <m>f(z) =\frac{\exp(iz)}{z}</m> and the contour <m>C</m> in <xref ref="fig_ch-08-08">Figure</xref>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>\pi</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_6_20">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m> . Let <m>r \to 0</m> and <m>R \to \infty</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the integrand <m>f(z) =\frac{1-\exp (i2z)}{z^2}</m> and the contour <m>C</m> in Figure 8.8.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="x8_6_21">
+      <statement>
+        <p>
+          The Fresnel integrals <m>\int_0^{\infty}\cos(x^2)\,dx</m> and
+          <m>\int_0^{\infty}\sin (x^2)\,dx</m> are important in the study of optics.
+          Use the integrand <m>f(z)=\exp(-z^2)</m> and the contour <m>C</m> shown in <xref ref="fig_ch-08-10">Figure</xref>,
+          and let <m>R \to \infty</m> to get the value of these integrals.
+          Use the fact from calculus that <m>\int_0^{\infty}e^{-x^2}dx=\sqrt{\frac{\pi}{2}}</m>.
+        </p>
+        <figure xml:id="fig_ch-08-10">
+          <image width="73%" source="figs/ch-08/ch-08-fig-10.png"/>
+        </figure>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\sqrt{\pi}}{2\sqrt{2}}</m>. } \end{enumerateCC
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
 </section>

@@ -7,10 +7,9 @@
     <m>\left[ a,\,b\right]</m> was an interval on the real axis
     (so that <m>t</m> was real, with <m>t\in \left[ a,\,b\right]</m>).
     In this section,
-    we define and evaluate integrals of the form <m>\int_{c}f (z) \,dz</m>,
-    where <m>f</m> is complex-valued and <m>C</m> is a contour in the plane
-    (so that <m>z</m> is complex, with <m>z\in C</m>).
-    Our main result is <xref ref="thm_contour-integral">Theorem</xref>,
+    we define and evaluate integrals of the form <m>\int_cf (z) \,dz</m>,
+    where <m>f</m> is complex-valued and <m>C</m> is a contour in the plane (so that <m>z</m> is complex,
+    with <m>z\in C</m>).<xref ref="thm_contour-integral">Theorem</xref> provides our main result,
     which shows how to transform the latter type of integral into the kind we investigated in <xref ref="sec_complex-integrals">Section</xref>.
   </p>
   <p>
@@ -29,10 +28,9 @@
     if it does not cross itself,
     which means that <m>z(t_1) \ne z(t_2)</m> whenever <m>t_1 \ne t_2</m>,
     except possibly when <m>t_1 = a</m> and <m>t_2=b</m>.
-    A curve <m>C</m> with the property <m>z(b)=z(a)</m> is a
-    <term>closed curve</term>.
+    A curve <m>C</m> with the property <m>z(b)=z(a)</m> is a closed curve.
     If <m>z(b)=z(a)</m> is the only point of intersection,
-    then we say that <m>C</m> is a <term>simple closed curve.</term>
+    then we say that <m>C</m> is a simple closed curve.
     As the parameter <m>t</m> increases from the value <m>a</m> to the value <m>b</m>,
     the point <m>z(t)</m> starts at the
     <em>initial point</em> <m>z(a)</m>,
@@ -47,7 +45,7 @@
   </p>
   <figure xml:id="fig_ch-06-01">
     <caption>The terms <em>simple</em> and <em>closed</em> used to describe curves</caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-01.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-01.png"/>
   </figure>
   <p>
     The complex-valued function
@@ -57,21 +55,20 @@
     The derivatives on the right, <m>x\,'(a^+)</m>,
     and on the left, <m>x\,'(b^{-})</m>, are defined by the limits
     <me>
-      x\,'(a^+)=\lim\limits_{t \to a^+}\frac{ x(t) -x(a)}{t-a}  \text{ and }  quad x\,^{\prime }(b^{-})=\lim\limits_{t \to b^{-}}\frac{x(t) -x(b)}{t-b}
+      x\,'(a^+)=\lim\limits_{t \to a^+}\frac{x(t)-x(a)}{t-a}  \text{ and }   x\,'(b^-) = \lim\limits_{t \to b^-}\frac{x(t) -x(b)}{t-b}
     </me>.
     </fn> of <m>x(t)</m> and <m>y(t)</m> to exist at the endpoints of the interval.
     As in <xref ref="sec_complex-integrals">Section</xref>,
     the derivative <m>z\,'(t)</m> is
     <me>
-      z\,'(t)=x\,'(t) + iy\,'(t),  \text{ for }  a \le t \le b
-    </me>.
+      z\,'(t)=x\,'(t) + iy\,'(t),  \text{ for }   a \le t \le b
+    </me>
   </p>
   <p>
-    The curve <m>C</m> defined by Equation <xref ref="review-curve"/> is said to be a <term>smooth curve</term>
-    if <m>z\,'</m> is continuous and nonzero on the interval.
+    The curve <m>C</m> defined by Equation <xref ref="review-curve"/> is said to be a smooth curve if the function <m>z\,'</m> is continuous and nonzero on the interval.
     If <m>C</m> is a smooth curve,
     then <m>C</m> has a nonzero tangent vector at each point <m>z(t)</m>,
-    which is given by the vector <m>z\,'( t)</m>.
+    which is given by the vector <m>z\,'(t)</m>.
     If <m>x\,'(t_0)=0</m>,
     then the tangent vector <m>z\,'(t_0)=iy\,'(t_0)</m> is vertical.
     If <m>x\,'(t_0) \ne 0</m>,
@@ -83,14 +80,14 @@
   </p>
   <figure xml:id="fig_ch-06-02">
     <caption>The term <em>smooth</em> used to describe curves</caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-02.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-02.png"/>
   </figure>
   <p>
     If <m>C</m> is a smooth curve,
     then <m>ds</m>, the differential of arc length, is given by
     <me>
       ds=\sqrt{[x\,'(t)^2 + [y\,'(t)]^2} \, dt=|z\,'(t)| \, dt
-    </me>.
+    </me>
   </p>
   <p>
     The function <m>s(t)=\sqrt{x\,'(t)^2 + y\,'(t)^2}</m> is continuous because <m>x\,'</m> and <m>y\,'</m> are continuous functions,
@@ -103,34 +100,30 @@
     Now, consider <m>C</m> to be a curve with parametrization
     <me>
       C:z_1(t)=x(t)+iy(t)  \text{ for }   a \le t \le b
-    </me>.
+    </me>
   </p>
   <p>
-    The <term>opposite curve</term> <m>-C</m> traces out the same set of points in the plane,
+    The opposite curve <m>-C</m> traces out the same set of points in the plane,
     but in the reverse order, and has the parametrization
     <me>
       -C:z_2(t)=x(-t)+iy(-t)  \text{ for }   -b \le t \le -a
     </me>.
-  </p>
-  <p>
     Since <m>z_2(t)=z_1(-t)</m>,
     <m>-C</m> is merely <m>C</m> traversed in the opposite sense,
     as <xref ref="fig_ch-06-03">Figure</xref> illustrates.
   </p>
   <figure xml:id="fig_ch-06-03">
     <caption>The curve <m>C</m> and its opposite curve <m>-C</m></caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-03.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-03.png"/>
   </figure>
   <p>
-    A curve <m>C</m> that is constructed by joining finitely many smooth curves end to end is called a <term>contour</term>.
+    A curve <m>C</m> that is constructed by joining finitely many smooth curves end to end is called a contour.
     Let <m>C_1,\,C_2,\ldots ,\,C_n</m> denote <m>n</m> smooth curves such that the terminal point of the curve <m>C_k</m> coincides with the initial point of <m>C_{k+1}</m>,
     for <m>k=1,\,2,\ldots \,,n-1</m>.
     We express the contour <m>C</m> by the equation
     <me>
       C=C_1+C_2+\cdots +C_n
     </me>.
-  </p>
-  <p>
     A synonym for <em>contour</em> is <em>path</em>.
   </p>
   <example>
@@ -138,8 +131,6 @@
       <p>
         Find a parametrization of the polygonal path <m>C</m> from <m>-1+i</m> to <m>3-i</m> shown in <xref ref="fig_ch-06-04">Figure</xref>.
       </p>
-    </statement>
-    <solution>
       <p>
         We express <m>C</m> as three smooth curves, or <m>C=C_1+C_2+C_3</m>.
         If we set <m>z_0=-1+i</m> and <m>z_1=-1</m>,
@@ -162,16 +153,21 @@
           <mrow>\amp  C_3 \amp \amp : z_3(t)=(1+2t) +i(1-2t), \amp \amp   \text{ for }  \amp \amp   0 \le t \le 1</mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+        DD
+      </p>
     </solution>
   </example>
   <figure xml:id="fig_ch-06-04">
     <caption>The polygonal path { {<m>C=C_1+C_2+C_3</m>}} from  <m>-1+i</m> to <m>3-i</m></caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-04.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-04.png"/>
   </figure>
   <figure xml:id="fig_ch-06-05">
     <caption>Partition points <m>\{z_k\}</m> and function evaluation points <m>\{c_k\}</m> for a Riemann sum along the contour <m>C</m> from <m>z=A</m> to
     <m>z=B</m></caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-05.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-05.png"/>
   </figure>
   <p>
     We are now ready to define the integral of a complex function along a contour <m>C</m> in the plane with initial point <m>A</m> and terminal point <m>B</m>.
@@ -206,7 +202,8 @@
     </statement>
   </definition>
   <p>
-    In Definition 6.2 the value of the integral depends on the contour.
+    In <xref ref="Contoe_fnt_Def">Definition</xref>
+    the value of the integral depends on the contour.
     In <xref ref="sec_cauchy-goursat">Section</xref>
     the Cauchy-Goursat theorem will establish the remarkable fact that,
     if <m>f</m> is analytic,
@@ -224,7 +221,7 @@
         Set <m>n=8</m> in Equation <xref ref="Riemann_Sum"/> and form the partition
         <m>P_8:z_k= \frac{k}{4}+i\frac{\pi k}{32}</m> for <m>k=0,\,1,\,2,\ldots ,\,8</m>.
         For this situation,
-        we have a uniform increment <m>\Delta z_k=\frac{1}{4}+i\frac{\pi }{32}</m>.
+        we have a uniform increment <m>\Delta z_k=\frac{1}{4}+i\frac{\pi}{32}</m>.
         For convenience we select <m>c_k=\frac{z_{k-1}+z_k}{2}=\frac{2k-1}{ 8}+i\frac{\pi(2k-1)}{64}</m>,
         for <m>k=1,\,2,\ldots ,\,8</m>.
         <xref ref="fig_ch-06-06">Figure</xref>
@@ -232,15 +229,13 @@
       </p>
       <figure xml:id="fig_ch-06-06">
         <caption>Partition and evaluation points for the Riemann sum <m>S(P_8)</m></caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-06.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-06.png"/>
       </figure>
       <p>
         One possible Riemann sum, then, is
         <me>
           S(P_8)=\sum_{k=1}^8f(c_k) \Delta z_k = \sum\limits_{k=1}^{8}\exp \left[\frac{2k-1}{8}+i\frac{\pi(2k-1)}{64}\right]\left(\frac{1}{4}+i\frac{\pi}{32}\right)
         </me>.
-      </p>
-      <p>
         By rounding the terms in this Riemann sum to two decimal digits,
         we obtain an approximation for the integral:
         <md>
@@ -253,13 +248,13 @@
         This result compares favorably with the precise value of the integral,
         which you will soon see equals
         <me>
-          \exp\left(2+i\frac{\pi }{4}\right) -1 = -1+e^2\left(\frac{\sqrt{2}}{2}\right)+ie^2\left(\frac{\sqrt{2}}{2}\right) \approx 4.22485+5.22485i
-        </me>.
+          \exp\left(2+i\frac{\pi}{4}\right) -1 = -1+e^2\left(\frac{\sqrt{2}}{2}\right)+ie^2\left(\frac{\sqrt{2}}{2}\right) \approx 4.22485+5.22485i
+        </me>
       </p>
     </solution>
   </example>
   <p>
-    In general, obtaining an exact value for an integral given by Definition 6.2 is a daunting task.
+    In general, obtaining an exact value for an integral given by <xref ref="Contoe_fnt_Def">Definition</xref> could be a daunting task.
     Fortunately,
     there is a beautiful theory that allows for an easy computation of many contour integrals.
     Suppose that we have a parametrization of the contour <m>C</m> given by the function <m>z(t)</m> for <m>a \le t \le b</m>.
@@ -268,34 +263,35 @@
   </p>
   <figure xml:id="fig_ch-06-07">
     <caption>A parametrization of the contour <m>C</m> by <m>z(t)</m>, for <m>a \le t \le b</m></caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-07.pdf"/>
+    <image width="73%" source="figs/ch-06/ch-06-fig-07.png"/>
   </figure>
   <p>
     It follows that
     <md>
-      <mrow>\lim\limits_{n \to \infty }\sum_{k=1}^nf(c_k) \Delta z_k \amp = \lim_{n \to \infty }\sum\limits_{k=1}^nf(c_k) (z_k-z_{k-1})</mrow>
-      <mrow>\amp = \lim\limits_{n \to \infty }\sum\limits_{k=1}^nf(z(\tau_k)) \big[z(t_k)-z(t_{k-1})\big]</mrow>
+      <mrow>\lim\limits_{n \to \infty}\sum_{k=1}^nf(c_k) \Delta z_k \amp = \lim_{n \to \infty}\sum\limits_{k=1}^nf(c_k) (z_k-z_{k-1})</mrow>
+      <mrow>\amp = \lim\limits_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k)) \big[z(t_k)-z(t_{k-1})\big]</mrow>
     </md>.
     where <m>\tau _k</m> and <m>t_k</m> are the points contained in the interval <m>[a,bt]</m> with the property that
     <m>c_k=z(\tau _k)</m> and <m>z_k=z(t_k)</m>,
-    as is also shown in Figure 6.7.
+    as is also shown in <xref ref="fig_ch-06-07">Figure</xref>.
     If for all <m>k</m> we multiply the <m>k</m>th term in the last sum by <m>\frac{{t_k-t_{k-1}} }{{t_k-t_{k-1}}}</m>,
     then we get
     <md>
       <mrow>\amp  \lim_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k))\left[ \frac{z(t_k) -z(t_{k-1})}{t_k-t_{k-1}}\right] (t_k-t_{k-1}) =</mrow>
-      <mrow>\amp  \lim\limits_{n \to \infty }\sum\limits_{k=1}^nf(z(\tau_k)) \left[\frac{z(t_k) -z( t_{k-1})}{t_k-t_{k-1}}\right] \Delta t_k</mrow>
+      <mrow>\amp  \lim\limits_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k)) \left[\frac{z(t_k) -z(t_{k-1})}{t_k-t_{k-1}}\right] \Delta t_k</mrow>
     </md>.
   </p>
   <p>
     The quotient inside the last summation looks suspiciously like a derivative,
     and the entire quantity looks like a Riemann sum.
     Assuming no difficulties,
-    this last expression should equal <m>\int_a^bf(z( t) ) z\,'(t)\,dt</m>,
+    this last expression should equal <m>\int_a^bf(z(t) ) z\,'(t)\,dt</m>,
     as defined in <xref ref="sec_complex-integrals">Section</xref>.
     Of course, if we're to have any hope of this happening,
     we would have to get the same limit
     <em>regardless of how we parametrize the contour</em><m>C</m>.
-    As Theorem 6.1 states, this is indeed the case.
+    As <xref ref="thm_contour-integral">Theorem</xref>
+    states, this is indeed the case.
   </p>
   <theorem xml:id="thm_contour-integral">
     <statement>
@@ -305,19 +301,21 @@
         Then
         <me>
           \int_Cf(z)\, dz=\int_a^bf\big(z(t)\big)z\,'(t)\,dt
-        </me>.
+        </me>
       </p>
     </statement>
   </theorem>
   <p>
-    We omit the proof of Theorem 6.1 because it involves ideas (<em>e.g.</em>,
+    We omit the proof of <xref ref="thm_contour-integral">Theorem</xref>
+    because it involves ideas (<em>e.g.</em>,
     the theory of the Riemann-Stieltjes integral) that are beyond the scope of this book.
     A more rigorous development of the contour integral based on Riemann sums is presented in advanced texts such as L. V. Ahlfors,
     <em>Complex Analysis,</em> 3rd ed. (New York: McGraw-Hill, 1979).
   </p>
   <p>
     Two important facets of <xref ref="thm_contour-integral">Theorem</xref> are worth mentioning.
-    First, Theorem 6.1 makes the problem of evaluating complex-valued functions along contours easy,
+    First, <xref ref="thm_contour-integral">Theorem</xref>
+    makes the problem of evaluating complex-valued functions along contours easy,
     as it reduces the task to the evaluation of complex-valued functions over real intervals<mdash/>a procedure that you studied in <xref ref="sec_complex-integrals">Section</xref>.
     Second, according to Theorem 6.1, this transformation yields the same answer regardless of the parametrization we choose for <m>C</m>.
   </p>
@@ -330,25 +328,26 @@
     <solution>
       <p>
         We must compute <m>\int_C\exp z</m> <m>dz</m>,
-        where <m>C</m> is the line segment joining <m>A=0</m> to <m>B=2+i\frac{\pi }{4}</m>.
+        where <m>C</m> is the line segment joining <m>A=0</m> to <m>B=2+i\frac{\pi}{4}</m>.
         According to <xref ref="Curvez0z1">Equation</xref>,
         we can parametrize <m>C</m> by
-        <m>z(t)=(2+i\frac{ \pi }{4}) t</m>, for <m>0 \le t \le 1</m>.
-        As <m>z\,'(t) = (2+i\frac{\pi }{4})</m>,
+        <m>z(t)=(2+i\frac{ \pi}{4}) t</m>, for <m>0 \le t \le 1</m>.
+        As <m>z\,'(t) = (2+i\frac{\pi}{4})</m>,
         <xref ref="thm_contour-integral">Theorem</xref> guarantees that
         <md>
-          <mrow>\int_C\exp zdz \amp = \int_0^1\exp[z(t)] z\,'(t)\,dt</mrow>
-          <mrow>\amp = \int_0^1\exp \left[\left(2+i\frac{\pi }{4}\right)t\right]\left(2+i\frac{\pi }{4}\right)\,dt</mrow>
-          <mrow>\amp = \left(2+i\frac{\pi}{4}\right) \int_0^1e^{2t}e^{i\frac{\pi }{4}t}\,dt</mrow>
-          <mrow>\amp = \left(2+i\frac{\pi }{4}\right) \int_0^1e^{2t}\left(\cos\frac{\pi t}{4}+i\sin \frac{\pi t}{4}\right)\,dt</mrow>
-          <mrow>\amp = \left(2+i\frac{\pi }{4}\right) \left(\int_0^1e^{2t}\cos \frac{\pi t}{4}\,dt+i\int_0^1e^{2t}\sin \frac{\pi t}{4}dt\right)</mrow>
+          <mrow>\int_C\exp z\,dz \amp = \int_0^1\exp[z(t)] z\,'(t)\,dt</mrow>
+          <mrow>\amp = \int_0^1\exp \left[\left(2+i\frac{\pi}{4}\right)t\right]\left(2+i\frac{\pi}{4}\right)dt</mrow>
+          <mrow>\amp = \left(2+i\frac{\pi}{4}\right) \int_0^1e^{2t}e^{i\frac{\pi}{4}t}\,dt</mrow>
+          <mrow>\amp = \left(2+i\frac{\pi}{4}\right) \int_0^1e^{2t}\left(\cos\frac{\pi t}{4}+i\sin \frac{\pi t}{4}\right)dt</mrow>
+          <mrow>\amp = \left(2+i\frac{\pi}{4}\right) \left(\int_0^1e^{2t}\cos \frac{\pi t}{4}\,dt+i\int_0^1e^{2t}\sin \frac{\pi t}{4}\,dt\right)</mrow>
         </md>.
       </p>
       <p>
         Each integral in the last expression can be done using integration by parts.
         (There is a simpler way<mdash/>see <xref ref="advantage">Remark</xref>.)
-        We leave as an exercise to show that the final answer simplifies to <m>\exp (2+i \frac{\pi }{4}) -1</m>,
+        We leave as an exercise to show that the final answer simplifies to <m>\exp (2+i \frac{\pi}{4}) -1</m>,
         as we claimed in <xref ref="Riemann_Sum_Ex">Example</xref>.
+        CC
       </p>
     </solution>
   </example>
@@ -357,8 +356,6 @@
       <p>
         Evaluate <m>\int_{C_1^+(2)}\frac{1}{z-2} \, dz</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Recall that <m>C_1^+(2)</m> is the upper semicircle with radius 1 centered at <m>x=2</m> oriented in a positive direction
         (<em>i.e.</em>, counterclockwise).
@@ -369,8 +366,13 @@
         <m>f\big(z(t)\big)=\frac{1}{z(t) -2}</m>,
         and <m>z\,'(t) =ie^{it}</m>.) Hence
         <me>
-          \int_C\frac{1}{z-2}\,dz = \int_0^{\pi}\frac{1}{(2+e^{it}) -2}ie^{it}\,dt = \int_0^{\pi }i\ dt=i\pi
-        </me>.
+          \int_C\frac{1}{z-2}\,dz = \int_0^{\pi}\frac{1}{(2+e^{it}) -2}ie^{it}\,dt = \int_0^{\pi}i\ dt=i\pi
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -416,12 +418,12 @@
     <md>
       <mrow>\int_Cf(z)\,dz \amp =\int_a^bf\big(z(t)\big) z\,'(t)\,dt</mrow>
       <mrow>\amp = \int_a^b\left[u\big(z(t)\big) +iv\big(z(t)\big)\right] \left[ x\,'(t) +iy\,'(t) \right]dt</mrow>
-      <mrow>\amp = \int_a^b\left[u\big(z(t)\big) x\,'(t)-v\big(z(t)\big) y\,'( t) \right]\,dt</mrow>
+      <mrow>\amp = \int_a^b\left[u\big(z(t)\big) x\,'(t)-v\big(z(t)\big) y\,'(t) \right]\,dt</mrow>
       <mrow>\amp  \qquad \qquad \qquad \qquad \qquad +i\int_a^b\left[v\big(z(t)\big) x\,'(t)+u\big(z(t)\big) y\,'(t) \right]dt</mrow>
       <mrow xml:id="Line_Int" number="yes">\amp = \int_a^b(ux\,'-vy\,')\,dt+i\int_a^b(vx\,'+uy\,')\,dt</mrow>
     </md>,
-    where we are equating <m>u</m> with
-    <m>u\big(z(t)\big), \, x\,'</m> with <m>x\,'(t)</m>, and so on.
+    where Equation <xref ref="Line_Int"/> replaced <m>u\big(z(t)\big)</m> with
+    <m>u, \; x\,'(t)</m> with <m>x\,'</m>, and so on.
   </p>
   <p>
     If we use the differentials given in Equation <xref ref="dz"/>,
@@ -432,7 +434,7 @@
     which is easy to remember if we recall that, symbolically,
     <me>
       f(z)\,dz=(u+iv)(dx+i\,dy)
-    </me>.
+    </me>
   </p>
   <p>
     We emphasize that Equation <xref ref="bookkeeping"/> is merely a notational device for applying <xref ref="thm_contour-integral">Theorem</xref>.
@@ -453,7 +455,7 @@
       </p>
       <figure xml:id="fig_ch-06-08">
         <caption>Two contours <m>C_1</m> and <m>C_2</m> joining <m>-1-i</m> to <m>3+i</m></caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-08.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-08.png"/>
       </figure>
       <p>
         The line segment joining <m>(-1,-1)</m> to <m>(3,1)</m> is given by the slope intercept formula <m>y=\frac{1}{2}x-\frac{1}{2}</m>,
@@ -470,14 +472,10 @@
         <me>
           \int_{C_1}z\ dz=\int_{-1}^1(2t+1+it)(2+i)\,dt
         </me>.
-      </p>
-      <p>
         We now multiply out the integrand and put it into its real and imaginary parts:
         <me>
           \int_{C_1}z\ dz=\int_{-1}^1(3t+2)\,dt+i\int_{-1}^1(4t+1)\,dt=4+2i
         </me>.
-      </p>
-      <p>
         Similarly, we can parametrize the portion of the parabola
         <m>x=y^2+2y</m> joining <m>(-1,-1)</m> to <m>(3,1)</m> by <m>y=t</m> and <m>x=t^2+2t</m> so that
         <me>
@@ -497,9 +495,10 @@
   <p>
     In <xref ref="fig_ch-06-09">Example</xref>,
     the value of the two integrals is the same.
-    This outcome doesn't hold in general, as Example 6.10 shows.
+    This outcome doesn't hold in general,
+    as <xref ref="ex_6_10">Example</xref> shows.
   </p>
-  <example>
+  <example xml:id="ex_6_10">
     <statement>
       <p>
         Show that
@@ -511,7 +510,7 @@
       </p>
       <figure xml:id="fig_ch-06-09">
         <caption>Two contours <m>C_1</m> and <m>C_2</m> joining <m>-1</m> to 1</caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-09.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-09.png"/>
       </figure>
     </statement>
     <solution>
@@ -520,14 +519,12 @@
         <me>
           C_1:z(t)=-\cos t+i\sin t,  \text{ and }   dz=(\sin t+i\cos t)\,dt,  \text{ for }   0 \le t \le \pi
         </me>.
-      </p>
-      <p>
         Applying <xref ref="thm_contour-integral">Theorem</xref>,
         we have <m>f(z)=\overline{z}</m>, so
         <md>
           <mrow>f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\sin t,  \text{ and }</mrow>
-          <mrow>\int_{C_1}\overline{z}\,dz \amp = \int_0^{\pi }(-\cos t-i\sin t) (\sin t+i\cos t)\,dt</mrow>
-          <mrow>\amp = -i\int_0^{\pi }(\cos ^2t+\sin ^2t)\,dt = -\pi i</mrow>
+          <mrow>\int_{C_1}\overline{z}\,dz \amp = \int_0^{\pi}(-\cos t-i\sin t) (\sin t+i\cos t)\,dt</mrow>
+          <mrow>\amp = -i\int_0^{\pi}(\cos ^2t+\sin ^2t)\,dt = -\pi i</mrow>
         </md>.
       </p>
       <p>
@@ -543,16 +540,13 @@
         <me>
           \int_{C_2}\overline{z}\ dz=\int_0^1(-1-it) i\,dt+\int_0^1(-1+2t-i) 2\,dt+\int_0^1[1-i(1-t)](-i)\,dt
         </me>.
-      </p>
-      <p>
         Separating the right side of this equation into its real and imaginary parts gives
         <me>
           \int_{C_2}\overline{z}\,dz=\int_0^1(6t-3)\,dt+i\int_0^1(-4)\,dt=-4i
         </me>.
-      </p>
-      <p>
         Note that the value of the contour integral along <m>C_1</m> isn't the same as the value of the contour integral along <m>C_2</m>,
         although both integrals have the same initial and terminal points.
+        CC
       </p>
     </solution>
   </example>
@@ -562,8 +556,8 @@
     If <m>C</m> is given by Equation <xref ref="review-curve"/>,
     then the integral for the opposite contour <m>-C</m> is
     <me>
-      \int_{-C}f(z)\,dz = \int_{-b}^{-a}f\big(z(-\tau)\big) \big[-z'(-\tau )\big]\,d\tau
-    </me>.
+      \int_{-C}f(z)\,dz = \int_{-b}^{-a}f\big(z(-\tau)\big) \big[-z\,'(-\tau )\big]\,d\tau
+    </me>
   </p>
   <p>
     Using the change of variable <m>t=-\tau</m> in this last equation and the property that <m>\int_a^bf(t)\,dt=-\int_{b}^{a}f(t)\,dt</m>,
@@ -578,13 +572,13 @@
     and we have the familiar result
     <me>
       \int_C[f(z)+g(z)]\,dz = \int_Cf(z)\,dz + \int_Cg(z)\,dz
-    </me>.
+    </me>
   </p>
   <p>
     Constant multiples also behave as we would expect:
     <me>
       \int_C(a+ib)f(z)\,dz=(a+ib) \int_Cf(z)\,dz
-    </me>.
+    </me>
   </p>
   <p>
     If two contours <m>C_1</m> and <m>C_2</m> are placed end to end so that the terminal point of <m>C_1</m> coincides with the initial point of <m>C_2</m>,
@@ -608,7 +602,7 @@
     <em>reparametrization</em> of the contour <m>C</m>.
     If <m>f</m> is continuous on <m>C</m>, then we have
     <men xml:id="Repar_Int">
-      \int_a^bf\big(z_1(t)\big) z\,_1'(t)\,dt=\int_{c}^{d}f\big(z_2(\tau)\big) z\,_2'(\tau )\,d\tau
+      \int_a^bf\big(z_1(t)\big) z\,_1'(t)\,dt=\int_c^{d}f\big(z_2(\tau)\big) z\,_2'(\tau )\,d\tau
     </men>.
   </p>
   <p>
@@ -657,8 +651,8 @@
       Applying this fact to the left and right sides of Equation <xref ref="Integral_Ineq"/> \big(with
       <m>g(t)=\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]</m> and <m>h(t)=|f(t)|</m>\big) yields
       <me>
-        r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|dt
-      </me>.
+        r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt
+      </me>
     </p>
     <p>
       Since <m>r_0=\left| \int_a^bf(t)\,dt\right|</m>,
@@ -690,7 +684,7 @@
       <xref ref="L_C_"></xref>, and Inequality <xref ref="ML_Proof"/> imply that
       <me>
         \left| \int_Cf(z)\,dz\right|  \le \int_a^bM \big|z\,'(t)\big|\,dt = ML
-      </me>.
+      </me>
     </p>
   </proof>
   <example xml:id="ML_Example">
@@ -698,345 +692,490 @@
       <p>
         Use Inequality <xref ref="ML_Ineq"/> to show that
         <me>
-          \left| \int_{c}\frac{1}{z^2+1}\,dz\right|  \le \frac{1}{2\sqrt{5}}
+          \left| \int_c\frac{1}{z^2+1}\,dz\right|  \le \frac{1}{2\sqrt{5}}
         </me>.
         where <m>C</m> is the straight-line segment from 2 to <m>2+i</m>.
       </p>
-      <solution>
-        <p>
-          Here <m>|z^2+1| = |z-i| \, |z+i|</m>,
-          and the terms <m>|z-i|</m> and <m>|z+i|</m> represent the distance from the point <m>z</m> to the points <m>i</m> and <m>-i</m>,
-          respectively.
-          Referring to <xref ref="fig_ch-06-10">Figure</xref>
-          and using a geometric argument, we get
-          <me>
-            |z-i| \ge 2,  \text{ and }   |z+i| \ge \sqrt{5},  \text{ for }   z \text{ on }  C
-          </me>.
-        </p>
-      </solution>
+      <p>
+        Here <m>|z^2+1| = |z-i| \, |z+i|</m>,
+        and the terms <m>|z-i|</m> and <m>|z+i|</m> represent the distance from the point <m>z</m> to the points <m>i</m> and <m>-i</m>,
+        respectively.
+        Referring to <xref ref="fig_ch-06-10">Figure</xref>
+        and using a geometric argument, we get
+        <me>
+          |z-i| \ge 2,  \text{ and }   |z+i| \ge \sqrt{5},  \text{ for }   z \text{ on }  C
+        </me>
+      </p>
       <figure xml:id="fig_ch-06-10">
         <caption>The distances <m>|z-i|</m> and <m>|z+i|</m> for <m>z</m> on <m>C</m></caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-10.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-10.png"/>
       </figure>
       <p>
         Thus we have
         <me>
           |f(z)| =\frac{1}{|z-i|\,|z+i|} \le \frac{1}{2\sqrt{5}} = M
         </me>.
-      </p>
-      <p>
         Because <m>L</m>, the length of <m>C</m>,
         equals 1, and Inequality <xref ref="ML_Ineq"/> implies that
         <me>
           \left| \int_C\frac{1}{z^2+1}\,dz \right|  \le ML =\frac{1}{2\sqrt{5}}
-        </me>.
+        </me>
       </p>
     </statement>
-  </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_contour-integrals">Section</xref></title>
-    <exercise xml:id="x6_2_1">
+    <solution>
       <p>
-        Give a parametrization of each contour.
+        DD
       </p>
-      <ol>
-        <li>
+    </solution>
+  </example>
+  <exercises xml:id="exercises_contour-integrals">
+    <title>Exercises</title>
+    <exercise xml:id="x6_2_1">
+      <introduction>
+        <p>
+          Give a parametrization of each contour.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>C=C_1+C_2</m>,
             as indicated in <xref ref="fig_ch-06-11">Figure</xref>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>C=C_1+C_2+C_3</m>,
-            as indicated in <xref ref="fig_ch-06-12">Figure</xref>.
+            <m>C_1:z_1(t)=2e^{it}, \, 0 \le t \le \frac{\pi}{2}</m>;
+            <m>C_2:z_2(t)=-t+i(2-t) \, 0 \le t \le 2</m>.
+            AA
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>C=C_1+C_2+C_3</m>,
+          as indicated in <xref ref="fig_ch-06-12">Figure</xref>.
+        </p>
+      </task>
       <figure xml:id="fig_ch-06-11">
-        <caption>For <xref ref="x6_2_1">exerise</xref>(a)</caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-11.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-11.png"/>
       </figure>
       <figure xml:id="fig_ch-06-12">
-        <caption>For <xref ref="x6_2_1">exerise</xref>(b)</caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-12.pdf"/>
+        {0.5\textwidth}
+        <image width="73%" source="figs/ch-06/ch-06-fig-12.png"/>
       </figure>
     </exercise>
     <exercise xml:id="x6_2_2">
-      <p>
-        Sketch the following curves.
-        <ol>
-          <li>
-            <p>
-              <m>z(t)=t^2-1+i(t+4)</m>, for <m>1 \le t \le 3</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>z(t)=\sin t+i\cos 2t</m>, for <m>-\frac{\pi}{2} \le t \le \frac{\pi}{2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>z(t)=5\cos t- i3\sin t</m>,
-              for <m>\frac{\pi}{2} \le t \le 2\pi</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Sketch the following curves.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>z(t)=t^2-1+i(t+4)</m>, for <m>1 \le t \le 3</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>z(t)=\sin t+i\cos 2t</m>, for <m>-\frac{\pi}{2} \le t \le \frac{\pi}{2}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>z(t)=5\cos t- i3\sin t</m>,
+          for <m>\frac{\pi}{2} \le t \le 2\pi</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_3">
-      <p>
-        Consider the integral <m>\int_Cz^2\,dz</m>,
-        where <m>C</m> is the positively oriented upper semicircle of radius 1, centered at 0.
-        <ol>
-          <li>
-            <p>
-              Give a Riemann sum approximation for the integral by selecting <m>n=4</m> and the points
-              <m>z_k=e^{i\frac{k\pi }{4}}</m> <m>(k=0,\ldots 4)</m> and
-              <m>c_k=e^{i\frac{(2k-1) \pi }{8}}</m> <m>(k=1,\ldots 4)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Compute the integral exactly by selecting a parametrization for <m>C</m> and applying <xref ref="thm_contour-integral">Theorem</xref>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the integral <m>\int_Cz^2\,dz</m>,
+          where <m>C</m> is the positively oriented upper semicircle of radius 1, centered at 0.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Give a Riemann sum approximation for the integral by selecting <m>n=4</m> and the points
+            <m>z_k=e^{i\frac{k\pi}{4}}</m> <m>(k=0,\ldots 4)</m> and
+            <m>c_k=e^{i\frac{(2k-1) \pi}{8}}</m> <m>(k=1,\ldots 4)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The approximation simplifies to <m>-2\sqrt{2} + 2 \approx -0.828427</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Compute the integral exactly by selecting a parametrization for <m>C</m> and applying <xref ref="thm_contour-integral">Theorem</xref>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-\frac{2}{3}</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_4">
-      <p>
-        Show that the integral of <xref ref="Cont_Int_Ex_1">Example</xref>
-        simplifies to <m>\exp (2+i\frac{\pi}{4})-1</m>.
-      </p>
+      <statement>
+        <p>
+          Show that the integral of <xref ref="Cont_Int_Ex_1">Example</xref>
+          simplifies to <m>\exp (2+i\frac{\pi}{4})-1</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x6_2_5">
-      <p>
-        Evaluate <m>\int_Cx\,dz</m> from <m>-4</m> to <m>4</m> along the following contours,
-        as shown in <xref ref="fig_ch-06-13">Figures</xref>(a) and <xref ref="fig_ch-06-13"></xref>(b).
-        <ol>
-          <li>
-            <p>
-              The polygonal path <m>C</m> with vertices <m>-4,\,-4+4i,\,4+4i</m>,
-              and <m>4</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The contour <m>C</m> that is the upper half of the circle <m>|z|=4</m>,
-              oriented clockwise.
-            </p>
-          </li>
-        </ol>
-      </p>
-      <figure xml:id="fig_ch-06-13">
-        <caption>For <xref ref="x6_2_5">Excercise</xref> (a) and (b)</caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-13.pdf"/>
-      </figure>
+      <introduction>
+        <p>
+          Evaluate <m>\int_Cx\,dz</m> from <m>-4</m> to <m>4</m> along the following contours,
+          as shown in <xref ref="fig_ch-06-13">Figures</xref>(a) and <xref ref="fig_ch-06-13"></xref>(b).
+        </p>
+        <figure xml:id="fig_ch-06-13">
+          <image width="73%" source="figs/ch-06/ch-06-fig-13.png"/>
+        </figure>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            The polygonal path <m>C</m> with vertices <m>-4,\,-4+4i,\,4+4i</m>,
+            and <m>4</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-32i</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The contour <m>C</m> that is the upper half of the circle <m>|z|=4</m>,
+            oriented clockwise.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-8\pi i</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_6">
-      <p>
-        Evaluate <m>\int_Cy\,dz</m> for <m>-i</m> to <m>i</m> along the following contours,
-        as shown in <xref ref="fig_ch-06-14">Figures</xref>(a) and <xref ref="fig_ch-06-14"></xref>(b).
-        <ol>
-          <li>
-            <p>
-              The polygonal path <m>C</m> with vertices <m>-i,\,-1-i,\,-1</m>,
-              and <m>i</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The contour <m>C</m> that is oriented clockwise, as shown.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Evaluate <m>\int_Cy\,dz</m> for <m>-i</m> to <m>i</m> along the following contours,
+          as shown in <xref ref="fig_ch-06-14">Figures</xref>(a) and <xref ref="fig_ch-06-14"></xref>(b).
+        </p>
+      </introduction>
+      <task>
+        <p>
+          The polygonal path <m>C</m> with vertices <m>-i,\,-1-i,\,-1</m>,
+          and <m>i</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The contour <m>C</m> that is oriented clockwise, as shown.
+        </p>
+      </task>
       <figure xml:id="fig_ch-06-14">
-        <caption>For <xref ref="x6_2_6">Exercise</xref> (a) and (b)</caption>
-        <image width="73%" source="figs/ch-06/ch-06-fig-14.pdf"/>
+        <image width="73%" source="figs/ch-06/ch-06-fig-14.png"/>
       </figure>
     </exercise>
     <exercise xml:id="x6_2_7">
-      <p>
-        Recall <m>C_r^+(a)</m> is the circle of radius <m>r</m> that is centered at <m>a</m> and oriented counter-clockwise.
-        <ol>
-          <li>
-            <p>
-              Evaluate <m>\int_{C_4^+(0)}z\,dz</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_{C_4^+(0)}\overline{z}\,dz</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_{C_2^-(0)}\frac{1}{z}\,dz</m>.
-              (The minus sign means clockwise orientation.)
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_{C_2^-(0)}\frac{1}{\overline{z}}\,dz</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_C(z+1)\,dz</m>,
-              where <m>C</m> is <m>C_1^+(0)</m> in the first quadrant.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_C(x^2-iy^2)\,dz</m>,
-              where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluate <m>\int_C\left\vert z-1\right\vert ^2dz</m>,
-              where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Recall <m>C_r^+(a)</m> is the circle of radius <m>r</m> that is centered at <m>a</m> and oriented counter-clockwise.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\int_{C_4^+(0)}z\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>0</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Evaluate <m>\int_{C_4^+(0)}\overline{z}\,dz</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\int_{C_2^-(0)}\frac{1}{z}\,dz</m>.
+            (The minus sign means clockwise orientation.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-2\pi i</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Evaluate <m>\int_{C_2^-(0)}\frac{1}{\overline{z}}\,dz</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\int_C(z+1)\,dz</m>,
+            where <m>C</m> is <m>C_1^+(0)</m> in the first quadrant.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>i-2</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Evaluate <m>\int_C(x^2-iy^2)\,dz</m>,
+          where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\int_C\left\vert z-1\right\vert ^2dz</m>,
+            where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-4-i\pi</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_8">
-      <p>
-        Let <m>f</m> be a continuous function on the circle <m>\{z:|z-z_0|=R\}</m>.
-        Show that <m>\int_{C_R^+(z_0)}f(z)\,dz = iR\int_0^{2\pi }f(z_0 + Re^{i\theta}) e^{i\theta}\, d\theta</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>f</m> be a continuous function on the circle <m>\{z:|z-z_0|=R\}</m>.
+        </p>
+        <p>
+          Show that <m>\int_{C_R^+(z_0)}f(z)\,dz = iR\int_0^{2\pi}f(z_0 + Re^{i\theta}) e^{i\theta}\, d\theta</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x6_2_9">
-      <p>
-        Use the results of <xref ref="x6_2_8">Exercise</xref> to evaluate
-        <ol>
-          <li>
-            <p>
-              <m>\int_{C_R^+(z_0)}\frac{1}{z-z_0}\,dz</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int_{C_R^+(z_0)}\frac{1}{(z-z_0)^n}\,dz</m>,
-              where <m>n \ne 1</m> is an integer.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use the results of <xref ref="x6_2_8">Exercise</xref> to evaluate
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\int_{C_R^+(z_0)}\frac{1}{z-z_0}\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>2\pi i</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\int_{C_R^+(z_0)}\frac{1}{(z-z_0)^n}\,dz</m>,
+            where <m>n \ne 1</m> is an integer.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>0</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_10">
-      <p>
-        Use the techniques of <xref ref="ML_Example">Example</xref> to show that
-        <ol>
-          <li>
-            <p>
-              <m>\left| \int_C\frac{1}{z^2-1}\,dz\right| \le \frac{\pi }{3}</m>,
-              where <m>C</m> is the first quadrant portion of <m>C_2^+(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\left| \int_{C_R^+(0)}\frac{\mathrm{Log}(z)}{z^2}\,dz\right| \le 2\pi (\frac{\pi +\ln R}{R})</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use the techniques of <xref ref="ML_Example">Example</xref> to show that
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\left| \int_C\frac{1}{z^2-1}\,dz\right| \le \frac{\pi}{3}</m>,
+          where <m>C</m> is the first quadrant portion of <m>C_2^+(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\left| \int_{C_R^+(0)}\frac{\mathrm{Log}(z)}{z^2}\,dz\right| \le 2\pi (\frac{\pi +\ln R}{R})</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_11">
-      <p>
-        Evaluate <m>\int_Cz^2dz</m>,
-        where <m>C</m> is the line segment from 1 to <m>1+i</m>.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_Cz^2dz</m>,
+          where <m>C</m> is the line segment from 1 to <m>1+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-1+\frac{2i}{3}</m>.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x6_2_12">
-      <p>
-        Evaluate <m>\int_C\left| z^2\right|\,dz</m>,
-        where <m>C</m> given by <m>C:z(t)=t+it^2</m>, for <m>0 \le t \le 1</m>.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_C\left| z^2\right|\,dz</m>,
+          where <m>C</m> given by <m>C:z(t)=t+it^2</m>, for <m>0 \le t \le 1</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x6_2_13">
-      <p>
-        Evaluate <m>\int_C\exp z\ dz</m>,
-        where <m>C</m> is the straight-line segment joining 1 to <m>1+i\pi</m>.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_C\exp z\ dz</m>,
+          where <m>C</m> is the straight-line segment joining 1 to <m>1+i\pi</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-2e</m>.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x6_2_14">
-      <p>
-        Evaluate <m>\int_C\overline{z}\exp z\ dz</m>,
-        where <m>C</m> is the square with vertices <m>0</m>, <m>1</m>,
-        <m>1+i</m>,
-        and <m>i</m> taken with the counterclockwise orientation.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_C\overline{z}\exp z\ dz</m>,
+          where <m>C</m> is the square with vertices <m>0</m>, <m>1</m>,
+          <m>1+i</m>,
+          and <m>i</m> taken with the counterclockwise orientation.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x6_2_15">
-      <p>
-        Evaluate <m>\int_C\exp z\ dz</m>,
-        where <m>C</m> is the straight-line segment joining 0 to <m>1+i</m>.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_C\exp z\ dz</m>,
+          where <m>C</m> is the straight-line segment joining 0 to <m>1+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\exp (1+i)-1</m>.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x6_2_16">
-      <p>
-        Let <m>z(t)=x(t) +iy(t)</m>, for <m>a \le t \le b</m>,
-        be a smooth curve.
-        Give a meaning for each of the following expressions.
-        <ol>
-          <li>
-            <p>
-              <m>z\,'(t)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\big|z\,'(t)\big|\,dt</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int_a^b z\,'(t)\,dt</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int_a^b \big|z\,'(t)\big|\,dt</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>z(t)=x(t) +iy(t)</m>, for <m>a \le t \le b</m>,
+          be a smooth curve.
+          Give a meaning for each of the following expressions.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>z\,'(t)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\big|z\,'(t)\big|\,dt</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\int_a^b z\,'(t)\,dt</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\int_a^b \big|z\,'(t)\big|\,dt</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x6_2_17">
-      <p>
-        Evaluate <m>\int_C\cos z\, dz</m>,
-        where <m>C</m> is the polygonal path from 0 to <m>1+i</m> that consists of the line segments from 0 to 1 and 1 to <m>1+i</m>.
-      </p>
+      <statement>
+        <p>
+          Evaluate <m>\int_C\cos z\, dz</m>,
+          where <m>C</m> is the polygonal path from 0 to <m>1+i</m> that consists of the line segments from 0 to 1 and 1 to <m>1+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\sin (1+i)</m>.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x6_2_18">
-      <p>
-        Let <m>f(t)=e^{it}</m> be defined on <m>a \le t \le b</m>,
-        where <m>a=0</m>, and <m>b=2\pi</m>.
-        Show that there is no number
-        <m>c \in (a,b)</m> such that <m>f(c)(b-a)=\int_a^bf(t)\,dt</m>.
-        In other words,
-        the mean value theorem for definite integrals that you learned in calculus does not hold for complex functions.
-      </p>
+      <statement>
+        <p>
+          Let <m>f(t)=e^{it}</m> be defined on <m>a \le t \le b</m>,
+          where <m>a=0</m>, and <m>b=2\pi</m>.
+          Show that there is no number
+          <m>c \in (a,b)</m> such that <m>f(c)(b-a)=\int_a^bf(t)\,dt</m>.
+          In other words,
+          the mean value theorem for definite integrals that you learned in calculus does not hold for complex functions.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x6_2_19">
-      <p>
-        Use the ML inequality to show that <m>|P_n(x)| \le 1</m>,
-        where <m>P_n</m> is the <m>n^{th}</m> Legendre polynomial defined on <m>-1 \le x \le 1</m> by
-        <me>
-          P_n(x)=\frac{1}{\pi} \int_0^{\pi}\left(x+i\sqrt{1-x^2}\cos \theta\right)^{\!n} \, d\theta
-        </me>.
-      </p>
+      <statement>
+        <p>
+          Use the ML inequality to show that <m>|P_n(x)| \le 1</m>,
+          where <m>P_n</m> is the <m>n^{th}</m> Legendre polynomial defined on <m>-1 \le x \le 1</m> by
+          <me>
+            P_n(x)=\frac{1}{\pi} \int_0^{\pi}\left(x+i\sqrt{1-x^2}\cos \theta\right)^{\!n} \, d\theta
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The absolute value of the integrand is <m>\sqrt{x^2+(1-x^2) \cos ^2\theta}^n</m>.
+          This expression simplifies to <m>\sqrt{x^2 \sin^2\theta + \cos^2\theta}^n</m>
+          (show the details for this assertion).
+          The maximum of this expression occurs when <m>x=1</m>.
+          Now simplify and apply the ML inequality.
+          DD
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x6_2_20">
-      <p>
-        Explain how contour integrals in complex analysis and line integrals in calculus are different.
-        How are they similar?
-      </p>
+      <statement>
+        <p>
+          Explain how contour integrals in complex analysis and line integrals in calculus are different.
+          How are they similar?
+        </p>
+      </statement>
     </exercise>
   </exercises>
 </section>

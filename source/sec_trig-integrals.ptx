@@ -31,16 +31,16 @@
     and <m>d\theta</m> in <xref ref="IntFcostsint">Expression</xref>
     transforms the definite integral into the contour integral
     <me>
-      \int_0^{2\pi }F(\cos \theta, \sin \theta)\,d\theta = \int\limits_{C_1^{+}(0)}f(z)\,dz
+      \int_0^{2\pi}F(\cos \theta, \sin \theta)\,d\theta = \int\limits_{C_1^{+}(0)}f(z)\,dz
     </me>.
-    where the new integrand is <m>f(z) = \frac{F(\frac{1}{2}(z+\frac{1}{z}), \frac{1}{2i}(z-\frac{1}{z}))}{iz}</m>.
+    where the new integrand is <m>\displaystyle f(z) = \frac{F\Big(\frac{1}{2}(z+\frac{1}{z}), \; \frac{1}{2i}(z-\frac{1}{z})\Big)}{iz}</m>.
   </p>
   <p>
     Suppose that <m>f</m> is analytic inside and on the unit circle <m>C_1(0)</m>,
     except at the points <m>z_1, \, z_2, \, \ldots , \, z_n</m> that lie interior to <m>C_1(0)</m>.
     Then the residue theorem gives
     <men xml:id="Int_Result">
-      \int_0^{2\pi }F(\cos \theta ,\sin \theta)\,d\theta = 2\pi i\sum_{k=1}^n\mathrm{Res}[f,z_k]
+      \int_0^{2\pi}F(\cos \theta ,\sin \theta)\,d\theta = 2\pi i\sum_{k=1}^n\mathrm{Res}[f,z_k]
     </men>.
   </p>
   <p>
@@ -48,24 +48,22 @@
   </p>
   <figure xml:id="fig_ch-08-02">
     <caption>Changing variables: a definite integral on <m>[0,2\pi]</m> to a contour integral around <m>C</m></caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-02.pdf"/>
+    <image width="73%" source="figs/ch-08/ch-08-fig-02.png"/>
   </figure>
   <example>
     <statement>
       <p>
-        Evaluate <m>\int_0^{2\pi }\frac{1}{1+3\cos^2\theta}\,d\theta</m> by using complex analysis.
+        Evaluate <m>\int_0^{2\pi}\frac{1}{1+3\cos^2\theta}\,d\theta</m> by using complex analysis.
       </p>
-    </statement>
-    <solution>
       <p>
         Using <xref ref="dtheta_sub">Substitutions</xref>
         and <xref ref="trig_subs"></xref>,
         we transform the integral to
         <me>
-          \int\limits_{C_1^{+}(0)}\frac{1}{1+3(\frac{z+z^{-1}}{2})^2} \frac{dz}{iz} = \int\limits_{C_1^{+}(0)}\frac{-i4z}{3z^4+10z^2+3}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
+          \int\limits_{C_1^{+}(0)}\frac{1}{1+3(\frac{z+z^{-1}}{2})^2}\left(\frac{1}{iz}\right)dz = \int\limits_{C_1^{+}(0)}\frac{-i4z}{3z^4+10z^2+3}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
         </me>.
         where <m>f(z) =\frac{-i4z}{3z^4+10z^2+3}</m>.
-        The singularities of <m>f</m> are poles located at the points where <m>3(z^2) ^2+10(z^2) +3=0</m>.
+        The singularities of <m>f</m> are poles located at the points where <m>3(z^2)^2+10(z^2) +3=0</m>.
         Using the quadratic formula,
         we see that the singular points satisfy the relation <m>z^2=\frac{-10\pm \sqrt{100-36}}{6 }=\frac{-5\pm 4}{3}</m>.
         Hence the only singularities that lie inside the unit circle are simple poles corresponding to the solutions of <m>z^2=-\frac{1}{3}</m>,
@@ -85,18 +83,21 @@
         the residues for each <m>z_k</m> are given by <m>\mathrm{Res}[f,z_k] =-\frac{i}{3(-\frac{1}{3})+5} = -\frac{i}{4}</m>.
         Now use Equation <xref ref="Int_Result"/> to compute the value of the integral:
         <me>
-          \int_0^{2\pi }\frac{d\theta}{1+3\cos^2\theta} = 2\pi i\left(\frac{-i}{4}+\frac{-i}{4}\right)= \pi
-        </me>.
+          \int_0^{2\pi}\frac{1}{1+3\cos^2\theta}\,d\theta = 2\pi i\left(\frac{-i}{4}+\frac{-i}{4}\right)= \pi
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
   <example>
     <statement>
       <p>
-        Evaluate <m>\int_0^{2\pi }\frac{1}{1+3\cos^2t}\,dt</m> by using a computer algebra system.
+        Evaluate <m>\int_0^{2\pi}\frac{1}{1+3\cos^2t}\,dt</m> by using a computer algebra system.
       </p>
-    </statement>
-    <solution>
       <p>
         We can obtain the antiderivative of
         <m>\frac{1}{1+3\cos^2t}</m> by using software such as Mathematica or MAPLE. It is <m>\int \frac{1}{1+3\cos^2t}\,dt = \frac{-\mathrm{Arctan}(2\cot t)}{2} = g(t)</m>.
@@ -118,7 +119,7 @@
       </p>
       <figure xml:id="fig_ch-08-03">
         <caption>Graph of <m>g(t) = \int \frac{1}{1+3\cos^2t}\  dt = \frac{-\mathrm{Arctan}(2\cot t)}{2}</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-03.pdf"/>
+        <image width="73%" source="figs/ch-08/ch-08-fig-03.png"/>
       </figure>
       <p>
         The integration algorithm used by computer algebra systems here
@@ -131,150 +132,234 @@
         <m>(\pi ,2\pi )</m> where it is continuous,
         and taking appropriate limits:
         <md>
-          <mrow>{3} \int_0^{2\pi }\frac{dt}{1+3\cos^2t} \amp = \left[\int_0^{\pi} \frac{dt}{1+3\cos^2t}\right] \amp \amp  + \left[\int_{\pi }^{2\pi }\frac{dt}{1+3\cos^2t}\right]</mrow>
-          <mrow>\amp = \left[\lim_{{t \to \pi^{-},}{\,s \to 0^{+}}}\int_{s}^{t}\frac{dt}{1+3\cos^2t}\right] \amp \amp  + \left[\lim_{{t \to 2\pi^{-},}{\,s \to \pi^{+}}}\int_{s}^{t}\frac{dt}{1+3\cos^2t}\right]</mrow>
-          <mrow>\amp = \left[\lim_{t \to \pi^{-}}g(t) -\lim_{s \to 0^{+}}g(s)\right] \amp \amp  + \left[\lim_{t \to 2\pi^{-}}g(t) -\lim_{s \to \pi^{+}}g(s)\right]</mrow>
-          <mrow>\amp = \left[\frac{\pi }{4}-\frac{-\pi }{4}\right] \amp \amp  + \left[\frac{\pi }{4}-\frac{-\pi }{4}\right]</mrow>
+          <mrow>{3} \int_0^{2\pi}\frac{1}{1+3\cos^2t}\,dt \amp = \left[\int_0^{\pi} \frac{1}{1+3\cos^2t}\,dt\right] \amp \amp  + \left[\int_{\pi}^{2\pi}\frac{1}{1+3\cos^2t}\,dt\right]</mrow>
+          <mrow>\amp = \left[\lim_{{t \to \pi^{-},}{\,s \to 0^{+}}}\int_{s}^t\frac{1}{1+3\cos^2t}\,dt\right] \amp \amp  + \left[\lim_{{t \to 2\pi^{-},}{\,s \to \pi^{+}}}\int_{s}^t\frac{1}{1+3\cos^2t}\,dt\right]</mrow>
+          <mrow>\amp = \left[\lim_{t \to \pi^-}g(t) -\lim_{s \to 0^+}g(s)\right] \amp \amp  + \left[\lim_{t \to 2\pi^{-}}g(t) -\lim_{s \to \pi^+}g(s)\right]</mrow>
+          <mrow>\amp = \left[\frac{\pi}{4}-\frac{-\pi}{4}\right] \amp \amp  + \left[\frac{\pi}{4}-\frac{-\pi}{4}\right]</mrow>
           <mrow>\amp = \pi</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
   <example>
     <statement>
       <p>
-        Evaluate <m>\int_0^{2\pi }\frac{\cos 2\theta}{5-4\cos \theta}\,d\theta</m>.
+        Evaluate <m>\int_0^{2\pi}\frac{\cos 2\theta}{5-4\cos \theta}\,d\theta</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         For values of <m>z</m> that lie on the unit circle <m>C_1(0)</m>, we have
         <me>
           z^2 = \cos 2\theta +i\sin 2\theta,  \text{ and }   z^{-2}=\cos 2\theta -i\sin 2\theta
         </me>.
-      </p>
-      <p>
         We solve for <m>\cos 2\theta</m> and
         <m>\sin 2\theta</m> to obtain the substitutions
         <me>
           \cos 2\theta = \frac{1}{2}(z^2+z^{-2}),  \text{ and }   \sin 2\theta = \frac{1}{2i}(z^2-z^{-2})
         </me>.
-      </p>
-      <p>
         Using the identity for <m>\cos 2\theta</m> along with <xref ref="dtheta_sub">Substitutions</xref>
         and <xref ref="trig_subs"></xref>,
         we rewrite the integral as
         <me>
-          \int_{C_1^{+}(0)}\frac{\frac{1}{2}(z^2+z^{-2})}{5-4(\frac{z+z^{-1}}{2})}\ \frac{dz}{iz} = \int_{C_1^{+}(0)}\frac{i(z^4+1)}{2z^2(z-2) (2z-1)}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
+          \int_{C_1^{+}(0)}\frac{\frac{1}{2}(z^2+z^{-2})}{5-4(\frac{z+z^{-1}}{2})}\left(\frac{1}{iz}\right)dz = \int_{C_1^{+}(0)}\frac{i(z^4+1)}{2z^2(z-2) (2z-1)}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
         </me>,
         where <m>f(z) =\frac{i(z^4+1)}{2z^2(z-2) (2z-1)}</m>.
         The singularities of <m>f</m> lying inside <m>C</m> are poles located at the points <m>0</m> and <m>\frac{1}{2}</m>.
         We use <xref ref="Residues_at_Poles">Theorem</xref> to get the residues:
         <md>
-          <mrow>\mathrm{Res}[f,0] \amp = \lim\limits_{z \to 0}\frac{d}{dz}z^2f(z)=\lim\limits_{z \to 0}\frac{d}{dz}i\frac{(z^4+1)}{2(2z^2-5z+2)}</mrow>
-          <mrow>\amp = \lim\limits_{z \to 0}i\frac{4z^3(2z^2-5z+2) - (4z-5)(z^4+1)}{2(2z^2-5z+2)^2}</mrow>
+          <mrow>\mathrm{Res}[f,0] \amp = \lim\limits_{z \to 0}\frac{d}{dz}\left[z^2f(z)\right] = \lim\limits_{z \to 0}\frac{d}{dz}\left[i\frac{(z^4+1)}{2(2z^2-5z+2)}\right]</mrow>
+          <mrow>\amp = \lim\limits_{z \to 0}\left[i\frac{4z^3(2z^2-5z+2) - (4z-5)(z^4+1)}{2(2z^2-5z+2)^2}\right]</mrow>
           <mrow>\amp = \frac{5i}{8}</mrow>
         </md>,
         and
         <me>
-          \mathrm{Res}[f,\frac{1}{2}] =\lim_{z \to \frac{1}{2}}(z-\frac{1}{2})f(z) = \lim_{z \to \frac{1}{2}}\frac{i(z^4+1)}{4z^2(z-2)} = -\frac{ 17i}{24}
+          \mathrm{Res}\left[f,\frac{1}{2}\right] =\lim_{z \to \frac{1}{2}}\left(z-\frac{1}{2}\right)f(z) = \lim_{z \to \frac{1}{2}}\frac{i(z^4+1)}{4z^2(z-2)} = -\frac{ 17i}{24}
         </me>.
       </p>
       <p>
         Therefore we conclude that
         <me>
-          \int_0^{2\pi}\frac{\cos 2\theta d\theta}{5-4\cos \theta} = 2\pi i\left(\frac{5i}{8}-\frac{17i}{24}\right) = \frac{\pi }{6}
-        </me>.
+          \int_0^{2\pi}\frac{\cos 2\theta}{5-4\cos \theta}\,d\theta = 2\pi i\left(\frac{5i}{8}-\frac{17i}{24}\right) = \frac{\pi}{6}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
-  <p>
-    <em>Exercises for <xref ref="sec_trig-integrals">Section</xref></em>
-    Use residues to evaluate the following integrals:
-    <ol>
-      <li xml:id="x8_2_1">
+  <exercises xml:id="exercises_trig-integrals">
+    <title>Exercises</title>
+    <p>
+      Use residues to evaluate the following integrals:
+    </p>
+    <exercise xml:id="x8_2_1">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{3\cos \theta +5}d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{3\cos \theta +5}d\theta</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{4\sin \theta +5}d\theta</m>.\label {8.2.2}
+          <m>\frac{\pi}{2}</m>.
+          DD
         </p>
-      </li>
-      <li xml:id="x8_2_3">
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{15\sin^2\theta +1}d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{4\sin \theta +5}d\theta</m>.\label {8.2.2}
         </p>
-      </li>
-      <li xml:id="x8_2_4">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_3">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{5\cos^2\theta +4}d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{15\sin^2\theta +1}d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_5">
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{\sin^2\theta}{5+4\cos \theta}\,d\theta</m>.
+          <m>\frac{\pi}{2}</m>.
+          DD
         </p>
-      </li>
-      <li xml:id="x8_2_6">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_4">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{\sin^2\theta}{5-3\cos \theta}\,d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{5\cos^2\theta +4}d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_7">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_5">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{(5+3\cos \theta)^2}\,d\theta</m>.
+          <m>\int_0^{2\pi}\frac{\sin^2\theta}{5+4\cos \theta}\,d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_8">
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{(5+4\cos \theta)^2}\,d\theta</m>.
+          <m>\frac{\pi}{4}</m>.
+          DD
         </p>
-      </li>
-      <li xml:id="x8_2_9">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_6">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{\cos 2\theta}{5+3\cos \theta}d\theta</m>.
+          <m>\int_0^{2\pi}\frac{\sin^2\theta}{5-3\cos \theta}\,d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_10">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_7">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{\cos 2\theta}{13-12\cos \theta}\,d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{(5+3\cos \theta)^2}\,d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_11">
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{(1+3\cos^2\theta)^2}\,d\theta</m>.
+          <m>\frac{5\pi}{32}</m>.
+          DD
         </p>
-      </li>
-      <li xml:id="x8_2_12">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_8">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{(1+8\cos^2\theta)^2}\,d\theta</m>.
+          <m>\int_0^{2\pi}\frac{1}{(5+4\cos \theta)^2}\,d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_13">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_9">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{\cos^23\theta}{5-4\cos 2\theta}\,d\theta</m>.
+          <m>\int_0^{2\pi}\frac{\cos 2\theta}{5+3\cos \theta}d\theta</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_14">
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{\cos^23\theta}{5-3\cos 2\theta}\,d\theta</m>.
+          <m>\frac{\pi}{18}</m>.
+          DD
         </p>
-      </li>
-      <li xml:id="x8_2_15">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_10">
+      <statement>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{a\cos \theta +b\sin \theta +d}\,d\theta</m>,
+          <m>\int_0^{2\pi}\frac{\cos 2\theta}{13-12\cos \theta}\,d\theta</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_11">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{1}{(1+3\cos^2\theta)^2}\,d\theta</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{5\pi}{8}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_12">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{1}{(1+8\cos^2\theta)^2}\,d\theta</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_13">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{\cos^23\theta}{5-4\cos 2\theta}\,d\theta</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{3\pi}{8}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_14">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{\cos^23\theta}{5-3\cos 2\theta}\,d\theta</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_2_15">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{1}{a\cos \theta +b\sin \theta +d}\,d\theta</m>,
           where <m>a, \, b</m>, and <m>d</m> are real,
           and <m>a^2+b^2\lt d^2</m>.
         </p>
-      </li>
-      <li xml:id="x8_2_16">
+      </statement>
+      <solution>
         <p>
-          <m>\int_0^{2\pi }\frac{1}{a\cos^2\theta +b\sin^2\theta+d}\,d\theta</m>,where <m>a, \, b</m>,
+          <m>\frac{2\pi}{\sqrt{d^2-a^2-b^2}}</m>.
+          DD
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_2_16">
+      <statement>
+        <p>
+          <m>\int_0^{2\pi}\frac{1}{a\cos^2\theta +b\sin^2\theta+d}\,d\theta</m>,where <m>a, \, b</m>,
           and <m>d</m> are real, <m>a>d</m>, and <m>b>d</m>.
         </p>
-      </li>
-    </ol>
-  </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>

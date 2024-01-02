@@ -9,7 +9,7 @@
         Then,
         <me>
           \mathcal{L}(\,f\,'(t)) = sF(s) -f(0),  \text{ where }   F(s) = \mathcal{L}\big(\,f(t)\big)
-        </me>.
+        </me>
       </p>
     </statement>
   </theorem>
@@ -21,21 +21,17 @@
       <me>
         \mathcal{L}(\,f\,'(t)) = \int_0^{\infty}f\,'(t)e^{-st}\,dt
       </me>.
-    </p>
-    <p>
       Next, using integration by parts,
       we can write the equation this as
       <me>
-        \mathcal{L}(\,f\,'(t)) = \lim_{R \to +\infty}[\,f(t) e^{-st}]\Big|_{t=0}^{t=R}+s\int_0^{\infty}f(t)e^{st}\,dt
+        \mathcal{L}\big(f\,'(t)\big) = \lim_{R \to +\infty}\left[f(t) e^{-st}\right]\Big|_{t=0}^{t=R}+s\int_0^{\infty}f(t)e^{st}\,dt
       </me>.
-    </p>
-    <p>
       Now, <m>f(t)</m> is of exponential order <m>K</m>,
       and <m>\mathrm{Re}(s)>K</m>.
       It follows that <m>\lim\limits_{R \to +\infty}f(R)e^{-sR}=0</m>, so
       <me>
-        \mathcal{L}(\,f\,'(t)) = -f(0) + s\int_0^{\infty}f(t)e^{-st}dt=sF(s) - f(0)
-      </me>.
+        \mathcal{L}\big(f\,'(t)\big) = -f(0) + s\int_0^{\infty}f(t)e^{-st}\,dt = sF(s) - f(0)
+      </me>
     </p>
   </proof>
   <p>
@@ -45,11 +41,11 @@
   <corollary xml:id="cor_laplace-diff-cor">
     <statement>
       <p>
-        If <m>f(t), \, f\,'(t)</m>,
-        and <m>f\,^{\prime \prime}(t)</m> are of exponential order, then
+        If <m>f(t), \, f\,'(t)</m>, and
+        <m>f\,''(t)</m> are of exponential order, then
         <me>
-          \mathcal{L}\big(f\,^{\prime \prime}(t)\big) = s^2f(s)-sf(0)-f\,'(0)
-        </me>.
+          \mathcal{L}\big(f\,''(t)\big) = s^2f(s)-sf(0)-f\,'(0)
+        </me>
       </p>
     </statement>
   </corollary>
@@ -63,12 +59,13 @@
       <p>
         Let <m>f(t) =\cos^2t</m>,
         then <m>f(0) =1</m> and <m>f\,'(t) =-2\sin t\cos t=-\sin 2t</m>.
-        Using the fact that <m>\mathcal{L}(-\sin 2t) =\frac{-2}{s^2+4}</m>,
+        Using the fact that <m>\mathcal{L}(-\sin 2t) = -\frac{2}{s^2+4}</m>,
         <xref ref="thm_laplace-diff">Theorem</xref> implies that
         <me>
-          \frac{-2}{s^2+4}=\mathcal{L}\big(\,f\,'(t)\big) = s\mathcal{L}(\cos^2t) -1
+          -\frac{2}{s^2+4}=\mathcal{L}\big(\,f\,'(t)\big) = s\mathcal{L}(\cos^2t) -1
         </me>.
-        from which it follows that <m>\mathcal{L}(\cos^2t) = \frac{-2}{s(s^2+4)}+\frac{1}{s} = \frac{s^2+2}{s(s^2+4)}</m>.
+        from which it follows that <m>\mathcal{L}(\cos^2t) = -\frac{2}{s(s^2+4)}+\frac{1}{s} = \frac{s^2+2}{s(s^2+4)}</m>.
+        CC
       </p>
     </solution>
   </example>
@@ -79,29 +76,27 @@
         and of exponential order.
         Further, let <m>F(s)</m> be its Laplace transform, then
         <me>
-          \mathcal{L}\left(\int_0^{t}f(\tau)\,d\tau\right) =\frac{F(s)}{s}
-        </me>.
+          \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right) =\frac{F(s)}{s}
+        </me>
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-      Let <m>g(t) =\int_0^{t}f(\tau ) d\tau</m>,
+      Let <m>g(t) =\int_0^tf(\tau ) d\tau</m>,
       then <m>g'(t) =f(t)</m> and <m>g(0) =0</m>.
       If we can show that <m>g</m> is of exponential order,
       then <xref ref="thm_laplace-diff">Theorem</xref> implies that
       <me>
-        \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 = s \mathcal{L}\left(\int_0^{t}f(\tau)\,d\tau\right)
+        \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 = s \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right)
       </me>.
     </p>
     <p>
       Since <m>f(t)</m> is of exponential order,
       there are positive values <m>M</m> and <m>K</m> so that
       <me>
-        |g(t)| \le \int_0^{t}f(\tau)\,d\tau \le M\int_0^t e^{K\tau}\,d\tau = \frac{M}{K}(e^{Kt}-1) \le e^{Kt}
+        |g(t)| \le \int_0^tf(\tau)\,d\tau \le M\int_0^t e^{K\tau}\,d\tau = \frac{M}{K}(e^{Kt}-1) \le e^{Kt}
       </me>.
-    </p>
-    <p>
       Therefore, <m>g</m> is of exponential order.
     </p>
   </proof>
@@ -110,21 +105,22 @@
       <p>
         Show that <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> and <m>\mathcal{L}(t^3) = \frac{6}{s^4}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Using <xref ref="thm_laplace-int">Theorem</xref>
         and the fact that <m>\mathcal{L}(2t) =\frac{2}{s^2}</m> we obtain
         <me>
-          \mathcal{L}(t^2) = \mathcal{L}(\int_0^t 2\tau \,d\tau) = \frac{1}{s}\mathcal{L}(2t) =\frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}
+          \mathcal{L}(t^2) = \mathcal{L}\left(\int_0^t 2\tau \,d\tau\right) = \frac{1}{s}\mathcal{L}(2t) =\frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}
         </me>.
-      </p>
-      <p>
         Now we can use the first result
         <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> to establish the second one:
         <me>
-          \mathcal{L}(t^3) =\mathcal{L}(\int_0^{t}3\tau^2 \, d\tau) = \frac{1}{s}\mathcal{L}(3t^2) =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}
-        </me>.
+          \mathcal{L}(t^3) =\mathcal{L}\left(\int_0^t3\tau^2\,d\tau\right) = \frac{1}{s}\mathcal{L}(3t^2) =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
@@ -137,32 +133,30 @@
     This idea is used to develop a method for solving linear differential equations with constant coefficients.
     Consider the initial value problem
     <me>
-      y^{\prime \prime}(t) + ay\,'(t) + by(t) = f(t)
+      y\,''(t) + ay\,'(t) + by(t) = f(t)
     </me>
-    with initial conditions <m>y(0) =y_0</m> and <m>y'(0)= d_0</m>.
+    with initial conditions <m>y(0) =y_0</m> and <m>y\,'(0)= d_0</m>.
     The linearity property of the Laplace transform can be used to obtain the equation
     <me>
-      \mathcal{L}\big(y^{\prime \prime}(t)\big) + a\mathcal{L}\big(y\,'(t)\big) + b\mathcal{L}\big(y(t)\big) = \mathcal{L}\big(f(t)\big)
+      \mathcal{L}\big(y\,''(t)\big) + a\mathcal{L}\big(y\,'(t)\big) + b\mathcal{L}\big(y(t)\big) = \mathcal{L}\big(f(t)\big)
     </me>.
   </p>
   <p>
-    Let <m>Y(s) =\mathcal{L}(y(t))</m> and <m>F(s) = \mathcal{L}(\,f(t))</m>.
+    Let <m>Y(s) =\mathcal{L}\big(y(t)\big)</m> and <m>F(s) = \mathcal{L}\big(f(t)\big)</m>.
     Now apply <xref ref="thm_laplace-diff">Theorem</xref>
     and <xref ref="cor_laplace-diff-cor">Corollary</xref> to get
     <me>
-      \mathcal{L}(y\,'(t)) = sY(s) - y(0)  \text{ and } \mathcal{L}(y^{\prime \prime}(t)) = s^2Y(s) - sy(0) - y'(0)
+      \mathcal{L}\big(y\,'(t)\big) = sY(s) - y(0)  \text{ and } \mathcal{L}\big(y\,''(t)\big) = s^2Y(s) - sy(0) - y\,'(0)
     </me>.
-  </p>
-  <p>
     We can rewrite the last equation in the form
     <men xml:id="TransEqn">
-      s^2Y(s) + asY(s) + bY(s) = F(s) + sy(0) + y'(0) + ay(0)
+      s^2Y(s) + asY(s) + bY(s) = F(s) + sy(0) + y\,'(0) + ay(0)
     </men>.
   </p>
   <p>
     The Laplace transform <m>Y(s)</m> of the solution <m>y(t)</m> can be shown to be
     <men xml:id="TransSol">
-      Y(s) = \frac{F(s) +sy(0) + y'(0) + ay(0)}{s^2+as+b}
+      Y(s) = \frac{F(s) +sy(0) + y\,'(0) + ay(0)}{s^2+as+b}
     </men>.
   </p>
   <p>
@@ -177,20 +171,23 @@
       <p>
         Solve the initial value problem
         <me>
-          y^{\prime \prime}(t) + y(t) = 0  \text{ with }   y(0) =2  \text{ and } y'(0) = 3
+          y\,''(t) + y(t) = 0  \text{ with }   y(0) =2  \text{ and }   y\,'(0) = 3
+        </me>.
+      </p>
+      <p>
+        Since the right-hand side of the differential equation is
+        <m>f(t) \equiv 0</m> we have <m>F(s) \equiv 0</m>.
+        The initial conditions yield
+        <m>\mathcal{L}\big(y\,''(t)\big) =s^2Y(s) - 2s- 3</m> and Equation <xref ref="TransEqn"/> becomes <m>s^2Y(s) + Y(s) = 2s + 3</m>.
+        Solving we get <m>Y(s) =\frac{2s+3}{s^2+1}</m> and the solution <m>y(t)</m> is assisted by using <xref ref="table_laplace-transforms">Table</xref> and the computation
+        <me>
+          y(t) = \mathcal{L}^{-1}\left(\frac{2s+3}{s^2+1}\right) = 2\mathcal{L}^{-1}\left(\frac{s}{s^2+1}\right) + 3\mathcal{L}^{-1}\left(\frac{1}{s^2+1}\right) =2\cos t+3\sin t
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        Since the right-hand side of the differential equation is
-        <m>f(t) \equiv 0</m> we have <m>F(s) \equiv 0</m>.
-        The initial conditions yield
-        <m>\mathcal{L}(y^{\prime \prime}(t)) =s^2Y(s) - 2s- 3</m> and Equation <xref ref="TransEqn"/> becomes <m>s^2Y(s) + Y(s) = 2s + 3</m>.
-        Solving we get <m>Y(s) =\frac{2s+3}{s^2+1}</m> and the solution <m>y(t)</m> is assisted by using Table 10.2 and the computation
-        <me>
-          y(t) = \mathcal{L}^{-1}\left(\frac{2s+3}{s^2+1}\right) = 2\mathcal{L}^{-1}\left(\frac{s}{s^2+1}\right) + 3\mathcal{L}^{-1}\left(\frac{1}{s^2+1}\right) =2\cos t+3\sin t
-        </me>.
+        DD
       </p>
     </solution>
   </example>
@@ -199,129 +196,219 @@
       <p>
         Solve the initial value problem
         <me>
-          y^{\prime \prime}(t) +y\,'(t) - 2y(t) = 0 \text{ with }   y(0) =1  \text{ and }   y'(0) = 4
+          y\,''(t) +y\,'(t) - 2y(t) = 0 \text{ with }   y(0) =1  \text{ and }   y\,'(0) = 4
         </me>.
       </p>
-    </statement>
-    <solution>
       <p>
         In the spirit of <xref ref="ex_10_15">Example</xref>,
         we use the initial conditions and Equation <xref ref="TransSol"/> becomes
         <me>
           Y(s) = \frac{s+4+1}{s^2+s-2}=\frac{s+5}{(s-1)(s+2)}
         </me>.
-      </p>
-      <p>
         Using partial fraction expansion
         <m>Y(s) =\frac{2}{s-1}-\frac{1}{s+2}</m> and the solution <m>y(t)</m> is
         <me>
-          y(t) = \mathcal{L}^{-1}\big(Y(s)\big) = 2\mathcal{L}^{-1}\left(\frac{1}{s-1}\right) - \mathcal{L}^{-1}\left(\frac{1}{s+2}\right) = 2e^{t}-e^{-2t}
+          y(t) = \mathcal{L}^{-1}\big(Y(s)\big) = 2\mathcal{L}^{-1}\left(\frac{1}{s-1}\right) - \mathcal{L}^{-1}\left(\frac{1}{s+2}\right) = 2e^t-e^{-2t}
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        DD
       </p>
     </solution>
   </example>
-  <p>
-    <em>Exercises for <xref ref="sec_laplace-derivs-integrals">Section</xref></em>
-    <ol>
-      <li>
+  <exercises xml:id="exercises_laplace-derivs-integrals">
+    <title>Exercises</title>
+    <exercise>
+      <statement>
         <p>
           Derive <m>\mathcal{L}(\sin t)</m> from <m>\mathcal{L}(\cos t)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}(\sin t) = \frac{1}{s^2+1}</m>.
+          CC
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Derive <m>\mathcal{L}(\cosh t)</m> from <m>\mathcal{L}(\sinh t)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Find <m>\mathcal{L}(\sin^2t)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
         <p>
-          Show that <m>\mathcal{L}(te^{t}) =\frac{1}{(s-1)^2}</m>.
-          <em>Hint:</em> Let <m>f(t) =te^{t}</m> and <m>f\,'(t) =te^{t}+e^{t}</m>.
+          <m>\mathcal{L}(\sin ^2t) = \frac{2}{s(s^2+4)}</m>.
+          CC
         </p>
-      </li>
-      <li>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(te^t) =\frac{1}{(s-1)^2}</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Let <m>f(t) =te^t</m> and <m>f\,'(t) =te^t+e^t</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Find <m>\mathcal{L}^{-1}\left(\frac{1}{s(s-4)}\right)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}^{-1}\big(\frac{1}{s(s-4)}\big) = - \frac{1}{4} + \frac{1}{4}e^{4t}</m>.
+          CC
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Find <m>\mathcal{L}^{-1}\left(\frac{1}{s(s^2+4)}\right)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Show that <m>\mathcal{L}^{-1}\left(\frac{1}{s^2(s+1)}\right) = t-1+e^t</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}^{-1}\big(\frac{1}{s^2(s+1)}\big) = t-1+e^{-t}</m>.
+          CC
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Show that <m>\mathcal{L}^{-1}\left(\frac{1}{s^2(s^2+1)}\right) = t-\sin t</m>.
+        </p>
+        <p>
           Solve the initial value problem in the following exercises.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) +9y(t) =0</m>,
-          with <m>y(0) =2</m> and <m>y'(0)=9</m>.
+          <m>y\,''(t)+9y(t)=0</m>, with <m>y(0)=2</m> and <m>y\,'(0)=9</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
         <p>
-          <m>y^{\prime \prime}(t) +y(t) =1</m>,
-          with <m>y(0) =0</m> and <m>y'(0)=2</m>.
+          <m>y(t)=2\cos 3t + 3\sin 3t</m>.
+          CC
         </p>
-      </li>
-      <li>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) +4y(t) =-8</m>,
-          with <m>y(0) =0</m> and <m>y'(0)=2</m>.
+          <m>y\,''(t)+y(t)=1</m>, with <m>y(0)=0</m> and <m>y\,'(0)=2</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y\,'(t) +y(t) =1</m>, with <m>y(0)=2</m>.
+          <m>y\,''(t)+4y(t)=-8</m>, with <m>y(0)=0</m> and <m>y\,'(0)=2</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
         <p>
-          <m>y\,'(t) -y(t) =-2</m>, with <m>y(0)=3</m>.
+          <m>y(t) = -2 + 2\cos 2t + \sin 2t</m>.
+          CC
         </p>
-      </li>
-      <li>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) -4y(t) =0</m>,
-          with <m>y(0)=1</m> and <m>y'(0)=2</m>.
+          <m>y\,'(t)+y(t)=1</m>, with <m>y(0)=2</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) -y(t) =1</m>,
-          with <m>y(0)=0</m> and <m>y'(0)=2</m>.
+          <m>y\,'(t)-y(t)=-2</m>, with <m>y(0)=3</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
         <p>
-          <m>y\,'(t) +2y(t) =3e^{t}</m>, with <m>y(0)=2</m>.
+          <m>y(t) = 2 + e^t</m>.
+          CC
         </p>
-      </li>
-      <li>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) +y\,'(t)-2y(t)=0</m>,
-          with <m>y(0)=2</m> and <m>y'(0)=-1</m>.
+          <m>y\,''(t)-4y(t)=0</m>, with <m>y(0)=1</m> and <m>y\,'(0)=2</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
-          <m>y^{\prime \prime}(t) -y\,'(t)-2y(t)=0</m>,
-          with <m>y(0) =2</m> and <m>y'(0)=1</m>.
+          <m>y\,''(t)-y(t)=1</m>, with <m>y(0)=0</m> and <m>y\,'(0)=2</m>.
         </p>
-      </li>
-    </ol>
-  </p>
+      </statement>
+      <solution>
+        <p>
+          <m>y(t) = - 1 - \frac{1}{2}e^{-t} + \frac{3}{2}e^t = -1 + \sinh t + e^t</m>.
+          CC
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>y\,'(t)+2y(t)=3e^t</m>, with <m>y(0)=2</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>y\,''(t)+y\,'(t)-2y(t)=0</m>,
+          with <m>y(0)=2</m> and <m>y\,'(0)=-1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>y(t) = e^{-2t} + e^t</m>.
+          CC
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>y\,''(t)-y\,'(t)-2y(t)=0</m>,
+          with <m>y(0)=2</m> and <m>y\,'(0)=1</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>

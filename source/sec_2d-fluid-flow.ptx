@@ -30,7 +30,7 @@
   </p>
   <figure xml:id="fig_ch-10-047">
     <caption>A two-dimensional vector field</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-047.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-047.png"/>
   </figure>
   <p>
     Both <m>p</m> and <m>q</m> are continuously differentiable,
@@ -40,9 +40,7 @@
       <mrow>q(t,y+\Delta y) - q(t,y) \amp = q_y(t,y_2) \Delta y</mrow>
     </md>,
     where <m>x\lt x_1\lt x+\Delta x</m> and <m>y\lt y_2\lt y+\Delta y</m>.
-    Substitution of the expressions in <xref ref="eqnspq">Equation</xref>
-    into <xref ref="intflow">Equation</xref>
-    and subsequently dividing through by <m>\Delta x\ \Delta y</m> results in
+    Substitution of the expressions displayed in Equation <xref ref="eqnspq"/> into Equation <xref ref="intflow"/> and subsequently dividing through by <m>\Delta x\ \Delta y</m> results in
     <me>
       \frac{1}{\Delta y}\int_y^{y+\Delta y}p_x(x_1,t)\,dt + \frac{1}{\Delta x}\int_x^{x+\Delta x}q_y(t,y_2)\,dt=0
     </me>.
@@ -63,7 +61,7 @@
   <p>
     The curl of the vector field in <xref ref="vvector">Equation</xref> has magnitude
     <me>
-      |\mathrm{curl}\mathbf{V}(x,y) = q_x(x,y) - p_y(x,y)
+      \big|\mathbf{curl}\,\mathbf{V}(x,y)\big| = q_x(x,y) - p_y(x,y)
     </me>
     and is an indication of how the field swirls in the vicinity of a point.
     Imagine that a
@@ -71,15 +69,15 @@
     at the point <m>(x,y)</m> is suddenly frozen and then moves freely in the fluid.
     The fluid element will rotate with an angular velocity given by
     <me>
-      \frac{1}{2}q_y(x,y) - \frac{1}{2}p_x(x,y) = \frac{1}{2}\big|\mathrm{curl}\mathbf{V}(x,y)\big|
-    </me>.
+      \frac{1}{2}q_y(x,y) - \frac{1}{2}p_x(x,y) = \frac{1}{2}\big|\mathbf{curl}\,\mathbf{V}(x,y)\big|
+    </me>
   </p>
   <p>
     We consider only fluid flows for which the curl is zero.
     Such fluid flows are called <em>irrotational.</em>
     This condition is more precisely characterized by requiring that the line integral of the tangential component of
     <m>\mathbf{V}(x,y)</m> along any simply closed contour be identically zero.
-    If we consider the rectangle in Figure 11.47,
+    If we consider the rectangle in <xref ref="fig_ch-10-047">Figure</xref>,
     then the tangential component is given by <m>p</m> on the bottom edge,
     <m>q</m> on the right edge,
     <m>-p</m> on the top edge, and <m>-q</m> on the left edge.
@@ -104,51 +102,45 @@
     </me>.
   </p>
   <p>
-    <xref ref="eqncont">Equations</xref>
-    and this equation show that the function
+    Equation <xref ref="eqncont"/> and this equation show that the function
     <m>f(z) = p(x,y) - iq(x,y)</m> satisfies the Cauchy-Riemann equations and is an analytic function.
     If we let <m>F(z)</m> denote the antiderivative of <m>f(z)</m>, then
     <men xml:id="comppot">
       F(z) = \phi(x,y) +i\psi(x,y)
     </men>,
-    which is the <term>complex potential</term>
-    of the flow and has the property
+    which is the complex potential of the flow and has the property
     <me>
       \overline{F,'(z)} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
-    </me>.
+    </me>
   </p>
   <p>
     Since <m>\phi_x=p</m> and <m>\phi_y=q</m>, we also have
     <me>
       \nabla \phi(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
     </me>,
-    so <m>\phi(x,y)</m> is the <term>velocity potential</term>
-    for the flow, and the curves
+    so <m>\phi(x,y)</m> is the velocity potential for the flow,
+    and the curves
     <me>
       \phi(x,y) = K_1
     </me>
-    are called <term>equipotentials</term>.
-    The function <m>\psi(x,y)</m> is called the
-    <term>stream function</term>.
+    are called equipotentials.
+    The function <m>\psi(x,y)</m> is called the stream function.
     The curves
     <me>
       \psi(x,y) = K_2
     </me>
-    are called <term>streamlines</term>
-    and describe the paths of the fluid particles.
+    are called streamlines and describe the paths of the fluid particles.
     To demonstrate this result,
     we implicitly differentiate
     <m>\psi(x,y)=K_2</m> and find that the slope of a vector tangent is given by
     <me>
       \frac{dy}{dx} = -\frac{\psi_x(x,y)}{\psi_y(x,y)}
     </me>.
-  </p>
-  <p>
     Using the fact that <m>\psi_y=\phi_x</m> and this equation,
     we find that the tangent vector to the curve is
     <me>
       \mathbf{T} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
-    </me>.
+    </me>
   </p>
   <p>
     The salient idea of the preceding discussion is the conclusion that, if
@@ -184,8 +176,6 @@
         <me>
           \mathbf{V}_1(u,v) = \overline{F_1,'(w)}
         </me>.
-      </p>
-      <p>
         If the function <m>w=S(z)=u(x,y)+iv(x,y)</m> is a one-to-one conformal mapping from a domain <m>D</m> in the <m>z</m>-plane onto <m>G</m>,
         then the composite function
         <me>
@@ -196,20 +186,17 @@
         <me>
           \mathbf{V}_2(x,y) = \overline{F_2,'(z)}
         </me>.
-      </p>
-      <p>
         The situation is shown in <xref ref="fig_ch-10-048">Figure</xref>.
       </p>
     </statement>
   </theorem>
   <figure xml:id="fig_ch-10-048">
     <caption>The image of a fluid flow under a conformal mapping</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-048.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-048.png"/>
   </figure>
   <proof>
     <p>
-      From <xref ref="comppot">Equation</xref>,
-      <m>F_1(w)</m> is an analytic function.
+      From Equation <xref ref="comppot"/>, <m>F_1(w)</m> is an analytic function.
       Since the composition of analytic functions is analytic,
       <m>F_2(z)</m> is the required complex potential for an ideal fluid flow in <m>D</m>.
     </p>
@@ -237,10 +224,8 @@
     the fluid pressure <m>P(x,y)</m> and speed
     <m>|\mathbf{V}(x,y)|</m> are related by the following special case of Bernoulli's equation:
     <me>
-      \frac{P(x,y)}{\rho }+\frac{1}{2}|\mathbf{V}(x,y)| = \text{ constant }
+      \frac{P(x,y)}{\rho }+\frac{1}{2}\Big|\mathbf{V}(x,y)\Big| = \text{ constant }
     </me>.
-  </p>
-  <p>
     Note that the pressure is greatest when the speed is least.
   </p>
   <example>
@@ -253,8 +238,8 @@
         respectively,
         and gives rise to the fluid flow defined in the entire complex plane that has a uniform parallel velocity of
         <me>
-          \mathbf{V}(x,y) = \overline{F,'(z)} = a-ib
-        </me>.
+          \mathbf{V}(x,y) = \overline{F\,'(z)} = a-ib
+        </me>
       </p>
       <p>
         The streamlines are parallel lines given by the equation <m>bx+ay=</m> constant and are inclined at an angle <m>\alpha = -\mathrm{Arctan}(\frac{b}{a})</m>,
@@ -264,7 +249,7 @@
   </example>
   <figure xml:id="fig_ch-10-049">
     <caption>A uniform parallel flow</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-049.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-049.png"/>
   </figure>
   <example>
     <statement>
@@ -290,7 +275,7 @@
   </example>
   <figure xml:id="fig_ch-10-050">
     <caption>The fluid flow with complex potential <m>F(z)=\frac{A}{2}z^2</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-050.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-050.png"/>
   </figure>
   <example>
     <statement>
@@ -320,7 +305,7 @@
         We can use polar coordinates to express <m>F_2(z)</m> as
         <me>
           F_2(z) = F_2(re^{i\theta}) = A\left(r+\frac{1}{r}\right) \cos \theta +iA\left(r-\frac{1}{r}\right) \sin \theta
-        </me>.
+        </me>
       </p>
       <p>
         The streamline <m>\psi(r,\theta ) =A(r-\frac{1}{r}) \sin \theta =0</m> consists of the rays
@@ -344,14 +329,15 @@
           \Psi(u,v) = \text{ constant }
         </me>
         under the mapping <m>w=S(z) =z+\frac{1}{z}</m> are illustrated in <xref ref="fig_ch-10-051">Figure</xref>.
+        CC
       </p>
     </solution>
   </example>
   <figure xml:id="fig_ch-10-051">
     <caption>Fluid flow around a circle</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-051.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-051.png"/>
   </figure>
-  <example>
+  <example xml:id="ex_10_25">
     <statement>
       <p>
         Find the complex potential for an ideal fluid flowing from left to right across the complex plane and around the segment from <m>-i</m> to <m>i</m>.
@@ -366,10 +352,14 @@
         where the branch of the square root of
         <m>Z= z \pm i</m> in each factor is <m>Z^\frac{1}{2}=R^\frac{1}{2}e^{i\theta /2}</m>,
         where <m>R=|Z|</m>,
-        and <m>\theta = \arg_{-\frac{\pi}{2}}(Z), \, \frac{-\pi}{2}\lt</m> <m>\theta\le \frac{3\pi}{2}</m>.
-        The function given by <m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m> consisting of the <m>z</m> plane slit along the segment <m>x=0</m>,<m>\,-1\le y\le 1</m> onto the domain <m>G</m> consisting of the <m>w</m> plane slit along the segment <m>-1\le u\le 1</m>,<m>\,v=0</m>.
+        and <m>\theta = \arg_{-\frac{\pi}{2}}(Z), \; -\frac{\pi}{2}\lt</m> <m>\theta\le \frac{3\pi}{2}</m>.
+        The function given by <m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m> consisting of the <m>z</m> plane slit along the segment <m>x=0
+        <me>
+          ,\,-1\le y\le 1$ onto the domain $G$ consisting of the $w$ plane slit along the segment $-1\le u\le 1
+        </me>,
+        \,v=0</m>.
         The complex potential for a uniform horizontal flow parallel to the slit in the <m>w</m> plane is given by <m>F_1(w) =Aw</m>,
-        where for convenience we choose <m>A=1</m> and where the slit lies along the streamline <m>\Psi( u,v) =c=0</m>.
+        where for convenience we choose <m>A=1</m> and where the slit lies along the streamline <m>\Psi(u,v) =c=0</m>.
         The composite function
         <me>
           F_2(z) = F_1\big(S(z)\big) = A(z^2+1)^\frac{1}{2}
@@ -380,8 +370,6 @@
         <me>
           v =c  \text{ and }   u = t,  \text{ for }   -\infty \lt  t \lt \infty
         </me>.
-      </p>
-      <p>
         The corresponding streamline in <m>D</m> is found by solving the equation
         <me>
           t + ic = (z^2+1)^\frac{1}{2}
@@ -391,14 +379,10 @@
         <me>
           t^2 - c^2 - 1 + i2ct = x^2 - y^2 + i2xy
         </me>.
-      </p>
-      <p>
         Equating the real and imaginary parts leads to the system of equations
         <me>
           x^2 - y^2 = t^2 - c^2 - 1  \text{ and }   xy = ct
         </me>.
-      </p>
-      <p>
         Eliminating <m>t</m> in the last two equations gives <m>c^2=(x^2+c^2) (y^2-c^2)</m>,
         and we can solve for <m>y</m> in terms of <m>x</m> to get
         <me>
@@ -408,196 +392,257 @@
         For large values of <m>x</m>,
         this streamline approaches the asymptote <m>y=c</m> and approximates a horizontal flow,
         as shown in <xref ref="fig_ch-10-052">Figure</xref>.
+        CC
       </p>
     </solution>
   </example>
   <figure xml:id="fig_ch-10-052">
     <caption>Flow around a segment</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-052.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-052.png"/>
   </figure>
-  <exercises>
-    <title>Exercises for Section 11.7</title>
+  <exercises xml:id="exercises_2d-fluid-flow">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Consider the ideal fluid flow for the complex potential <m>F(z)=A(z+\frac{1}{z})</m>,
-        where <m>A</m> is a positive real number.
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Consider the ideal fluid flow for the complex potential <m>F(z)=A(z+\frac{1}{z})</m>,
+          where <m>A</m> is a positive real number.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             Show that the velocity vector at the point
             <m>(1,\theta), \, z=re^{i\theta}</m> on the unit circle is given by <m>\mathbf{V}(1,\theta) = A(1-\cos 2\theta -i\sin 2\theta)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
+          <p>
+            <m>V(r,\theta) = A\overline{\left(1-\frac{1}{e^{2i\theta }}\right)} = A\overline{\left(1-e^{-2i\theta}\right)} = A(1-\cos 2\theta -i\sin 2\theta)</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             Show that the velocity vector
             <m>\mathbf{V}(1,\theta)</m> is tangent to the unit circle <m>|z|=1</m> at all points except <m>-1</m> and <m>+1</m>.
-            <em>Hint</em>: Show that <m>\mathbf{V}\cdot \mathbf{P}=0</m>,
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Show that <m>\mathbf{V}\cdot \mathbf{P}=0</m>,
             where <m>\mathbf{P}=\cos \theta +i\sin \theta</m>.
           </p>
-        </li>
-        <li>
+        </hint>
+      </task>
+      <task>
+        <statement>
           <p>
             Show that the speed at the point
             <m>(1,\theta)</m> on the unit circle is given by
             <m>|\mathbf{V}|=2A|\sin \theta|</m> and that the speed attains the maximum of <m>2A</m> at the points <m>\pm i</m> and is zero at the points <m>\pm 1</m>.
             Where is the pressure the greatest?
           </p>
-        </li>
-      </ol>
+        </statement>
+        <solution>
+          <p>
+            <m>z=1</m> and <m>z=-1</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="ex_pot-1">
-      <p>
-        Show that the complex potential
-        <m>F(z) = ze^{-i\alpha} + \frac{e^{i\alpha}}{z}</m> determines the ideal fluid flow around the unit circle <m>|z|=1</m>,
-        where the velocity at points distant from the origin is given approximately by <m>\mathbf{V} \approx e^{i\alpha}</m>;
-        that is, the direction of the flow for large values of <m>z</m> is inclined at an angle <m>\alpha</m> with the <m>x</m> axis,
-        as shown in <xref ref="fig_ch-10-053">Figure</xref>.
-        <figure xml:id="fig_ch-10-053">
-          <caption>For <xref ref="ex_pot-1">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-053.pdf"/>
-        </figure>
-      </p>
+      <statement>
+        <p>
+          Show that the complex potential
+          <m>F(z) = ze^{-i\alpha} + \frac{e^{i\alpha}}{z}</m> determines the ideal fluid flow around the unit circle <m>|z|=1</m>,
+          where the velocity at points distant from the origin is given approximately by <m>\mathbf{V} \approx e^{i\alpha}</m>;
+          that is, the direction of the flow for large values of <m>z</m> is inclined at an angle <m>\alpha</m> with the <m>x</m> axis,
+          as shown in <xref ref="fig_ch-10-053">Figure</xref>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Consider the ideal fluid flow in the channel bounded by the hyperbolas <m>xy=1</m> and <m>xy=4</m> in the first quadrant,
-        where the complex potential is given by
-        <m>F(z) =\frac{A}{2}z^2</m> and <m>A</m> is a positive real number.
-        <ol>
-          <li>
-            <p>
-              Find the speed at each point,
-              and find the point on the boundary at which the speed attains a minimum value.
-            </p>
-          </li>
-          <li>
-            <p>
-              Where is the pressure greatest?
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the ideal fluid flow in the channel bounded by the hyperbolas <m>xy=1</m> and <m>xy=4</m> in the first quadrant,
+          where the complex potential is given by
+          <m>F(z) =\frac{A}{2}z^2</m> and <m>A</m> is a positive real number.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Find the speed at each point,
+            and find the point on the boundary at which the speed attains a minimum value.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Speed <m>=A|\bar{z}|</m>.
+            The minimum speed is <m>A|1-i|=A\sqrt{2}</m>.i AA
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Where is the pressure greatest?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The maximum pressure in the channel occurs at the point <m>1+i</m>.
+            AA
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="ex_pot-2">
-      <p>
-        Show that the stream function is given by
-        <m>\psi(r,\theta) = Ar^3\sin 3\theta</m> for an ideal fluid flow around the angular region
-        <m>0\lt \theta \lt \frac{\pi}{3}</m> indicated in <xref ref="fig_ch-10-054">Figure</xref>.
-        Sketch several streamlines of the flow.
-        <em>Hint:</em> Use the conformal mapping <m>w=z^3</m>.
-        <figure xml:id="fig_ch-10-054">
-          <caption>For <xref ref="ex_pot-2">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-054.pdf"/>
+      <statement>
+        <p>
+          Show that the stream function is given by
+          <m>\psi(r,\theta) = Ar^3\sin 3\theta</m> for an ideal fluid flow around the angular region
+          <m>0\lt \theta \lt \frac{\pi}{3}</m> indicated in <xref ref="fig_ch-10-054">Figure</xref>.
+          Sketch several streamlines of the flow.
+        </p>
+        <figure xml:id="fig_ch-10-053">
+          <image width="73%" source="figs/ch-10/ch-10-fig-053.png"/>
         </figure>
-      </p>
+        <figure xml:id="fig_ch-10-054">
+          {0.5\textwidth}
+          <image width="73%" source="figs/ch-10/ch-10-fig-054.png"/>
+        </figure>
+      </statement>
+      <hint>
+        <p>
+          Use the conformal mapping <m>w=z^3</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise>
-      <p>
-        Consider the ideal fluid flow,
-        where the complex potential is
-        <me>
-          F(z) = Az^\frac{3}{2} = Ar^\frac{3}{2}\left(\cos \frac{3\theta}{2} + i\sin\frac{3\theta}{2}\right), \text{ for }   0 \le \theta \le 2\pi
-        </me>.
-        <ol>
-          <li>
-            <p>
-              Find the stream function <m>\psi(r,\theta )</m>.
-            </p>
-          </li>
-          <li xml:id="ex_pot-3">
-            <p>
-              Sketch streamlines of the flow in the region
-              <m>0 \lt \theta \lt \frac{4\pi}{3}</m> indicated in <xref ref="fig_ch-10-055">Figure</xref>.
-              <figure xml:id="fig_ch-10-055">
-                <caption>For <xref ref="ex_pot-3">Exercise</xref></caption>
-                <image width="73%" source="figs/ch-10/ch-10-fig-055.pdf"/>
-              </figure>
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the ideal fluid flow,
+          where the complex potential is
+          <me>
+            F(z) = Az^\frac{3}{2} = Ar^\frac{3}{2}\left(\cos \frac{3\theta}{2} + i\sin\frac{3\theta}{2}\right), \text{ for }   0 \le \theta \le 2\pi
+          </me>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Find the stream function <m>\psi(r,\theta )</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\Psi(r,\theta) = Ar^{\frac{3}{2}}\sin \frac{3\theta}{2}</m>.
+            AA
+          </p>
+        </solution>
+      </task>
+      <task xml:id="ex_pot-3">
+        <p>
+          Sketch streamlines of the flow in the region
+          <m>0 \lt \theta \lt \frac{4\pi}{3}</m> indicated in <xref ref="fig_ch-10-055">Figure</xref>.
+        </p>
+        <figure xml:id="fig_ch-10-055">
+          <image width="73%" source="figs/ch-10/ch-10-fig-055.png"/>
+        </figure>
+        <figure xml:id="fig_ch-10-056">
+          {0.5\textwidth}
+          <image width="73%" source="figs/ch-10/ch-10-fig-056.png"/>
+        </figure>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Consider the complex potential <m>F(z) =A(z^2+\frac{1}{z^2})</m>
-        <ol>
-          <li xml:id="ex_pot-4">
+      <introduction>
+        <p>
+          Consider the complex potential <m>F(z) =A(z^2+\frac{1}{z^2})</m>
+        </p>
+        <task xml:id="ex_pot-4">
+          <statement>
             <p>
               Let <m>A>0</m>.
               Show that <m>F(z)</m> determines an ideal fluid flow around the domain
               <m>r>1, \, 0\lt \theta \lt \frac{\pi}{2}</m> indicated in <xref ref="fig_ch-10-056">Figure</xref>,
               which shows the flow around a circle in the first quadrant.
-              <em>Hint:</em> Use the conformal mapping <m>w=z^2</m>.
-              <figure xml:id="fig_ch-10-056">
-                <caption>For <xref ref="ex_pot-4">Exercise</xref></caption>
-                <image width="73%" source="figs/ch-10/ch-10-fig-056.pdf"/>
-              </figure>
             </p>
-          </li>
-          <li>
+            <figure xml:id="fig_ch-10-057">
+              <image width="73%" source="figs/ch-10/ch-10-fig-057.png"/>
+            </figure>
+            <figure xml:id="fig_ch-10-058">
+              {0.5\textwidth}
+              <image width="73%" source="figs/ch-10/ch-10-fig-058.png"/>
+            </figure>
+          </statement>
+          <hint>
             <p>
-              Show that the speed at the point
-              <m>z=e^{i\theta}</m> on the quarter-circle
-              <m>r=1, \, 0\lt \theta \lt \frac{\pi}{2}</m> is given by <m>\mathbf{V}=4 A|\sin 2\theta|</m>.
+              Use the conformal mapping <m>w=z^2</m>.
             </p>
-          </li>
-          <li>
-            <p>
-              Determine the stream function for the flow and sketch several streamlines.
-            </p>
-          </li>
-        </ol>
-      </p>
+          </hint>
+        </task>
+      </introduction>
+      <task>
+        <p>
+          Show that the speed at the point
+          <m>z=e^{i\theta}</m> on the quarter-circle
+          <m>r=1, \, 0\lt \theta \lt \frac{\pi}{2}</m> is given by <m>\mathbf{V}=4 A|\sin 2\theta|</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Determine the stream function for the flow and sketch several streamlines.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="ex_pot-5">
-      <p>
-        Show that <m>F(z) = \sin z</m> is the complex potential for the ideal fluid flow inside the semi-infinite strip
-        <m>-\frac{\pi}{2} \lt x \lt \frac{\pi}{2}, \, y>0</m> indicated in <xref ref="fig_ch-10-057">Figure</xref>.
-        Find the stream function.
-        <figure xml:id="fig_ch-10-057">
-          <caption>For <xref ref="ex_pot-5">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-057.pdf"/>
-        </figure>
-      </p>
+      <statement>
+        <p>
+          Show that <m>F(z) = \sin z</m> is the complex potential for the ideal fluid flow inside the semi-infinite strip
+          <m>-\frac{\pi}{2} \lt x \lt \frac{\pi}{2}, \, y>0</m> indicated in <xref ref="fig_ch-10-057">Figure</xref>.
+          Find the stream function.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="ex_pot-6">
-      <p>
-        Let <m>w=S(z) =\frac{1}{2}[z+(z^2-4)^{1/2}]</m> denote the branch of the inverse of
-        <m>z=w+\frac{1}{w}</m> that is a one-to-one mapping of the <m>z</m> plane slit along the segment
-        <m>-2 \le x \le 2, \, y=0</m> onto the domain <m>|w|>1</m>.
-        Use the complex potential <m>F_2(w) = we^{-i\alpha} + \frac{1}{w}e^{i\alpha}</m> in the <m>w</m> plane to show that the complex potential
-        <m>F_1(z) = z \cos \alpha -i(z^2-4)^\frac{1}{2} \sin \alpha</m> determines the ideal fluid flow around the segment <m>-2 \le x \le 2, \, y=0</m>,
-        where the velocity at points distant from the origin is given by <m>\mathbf{V} \approx e^{i\alpha}</m>,
-        as shown in <xref ref="fig_ch-10-058">Figure</xref>.
-        <figure xml:id="fig_ch-10-058">
-          <caption>For <xref ref="ex_pot-6">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-058.pdf"/>
-        </figure>
-      </p>
+      <statement>
+        <p>
+          Let <m>w=S(z) =\frac{1}{2}[z+(z^2-4)^\frac{1}{2}]</m> denote the branch of the inverse of
+          <m>z=w+\frac{1}{w}</m> that is a one-to-one mapping of the <m>z</m> plane slit along the segment
+          <m>-2 \le x \le 2, \, y=0</m> onto the domain <m>|w|>1</m>.
+          Use the complex potential <m>F_2(w) = we^{-i\alpha} + \frac{1}{w}e^{i\alpha}</m> in the <m>w</m> plane to show that the complex potential
+          <m>F_1(z) = z \cos \alpha -i(z^2-4)^\frac{1}{2} \sin \alpha</m> determines the ideal fluid flow around the segment <m>-2 \le x \le 2, \, y=0</m>,
+          where the velocity at points distant from the origin is given by <m>\mathbf{V} \approx e^{i\alpha}</m>,
+          as shown in <xref ref="fig_ch-10-058">Figure</xref>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Consider the complex potential <m>F(z) =-i\mathrm{Arcsin}(z)</m>
-        <ol>
-          <li xml:id="ex_pot-7">
-            <p>
-              Show that <m>F(z)</m> determines the ideal fluid flow through the aperture from <m>-1</m> to <m>+1</m>,
-              as indicated in <xref ref="fig_ch-10-059">Figure</xref>.
-              <figure xml:id="fig_ch-10-059">
-                <caption>For <xref ref="ex_pot-7">Exercise</xref></caption>
-                <image width="73%" source="figs/ch-10/ch-10-fig-059.pdf"/>
-              </figure>
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that the streamline <m>\psi(x,y) =c</m> for the flow is a portion of the hyperbola <m>\frac{x^2}{\sin^2c} - \frac{y^2}{\cos^2c} = 1</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the complex potential <m>F(z) =-i\mathrm{Arcsin}(z)</m>
+        </p>
+        <task xml:id="ex_pot-7">
+          <p>
+            Show that <m>F(z)</m> determines the ideal fluid flow through the aperture from <m>-1</m> to <m>+1</m>,
+            as indicated in <xref ref="fig_ch-10-059">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-059">
+            <image width="73%" source="figs/ch-10/ch-10-fig-059.png"/>
+          </figure>
+        </task>
+      </introduction>
+      <task>
+        <p>
+          Show that the streamline <m>\psi(x,y) =c</m> for the flow is a portion of the hyperbola <m>\frac{x^2}{\sin^2c} - \frac{y^2}{\cos^2c} = 1</m>.
+        </p>
+      </task>
     </exercise>
   </exercises>
 </section>
