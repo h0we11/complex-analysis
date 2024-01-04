@@ -1,5 +1,5 @@
 <section xml:id="sec_poisson-integral-formula">
-  <title>Poisson's Integral Formula for the Upper Half-Plane</title>
+  <title>Poisson's Integral Formula</title>
   <p>
     The Dirichlet problem for the upper half-plane
     <m>\mathrm{Im}(z)>0</m> is to find a function
@@ -28,36 +28,38 @@
   <proof>
     <p>
       <xref ref="PIfun">Equation</xref>
-      is easy to determine from the results of Theorem 11.2 regarding the Dirichlet problem.
+      is easy to determine from the results of <xref ref="thm_N-value-dirichlet">Theorem</xref>
+      regarding the Dirichlet problem.
       Let <m>t_1\lt t_2\lt \cdots \lt t_N</m> denote <m>N</m> points that lie along the <m>x</m> axis.
-      Let <m>t_0^{\ast}\lt t_1^{\ast}\lt \cdots \lt t_N^{\ast}</m> be <m>N+1</m> points chosen so that <m>t_{k-1}^{\ast }\lt t_k\lt t_k^{\ast}</m>,
+      Let <m>t_0^*\lt t_1^*\lt \cdots \lt t_N^*</m> be <m>N+1</m> points chosen so that <m>t_{k-1}^{\ast }\lt t_k\lt t_k^*</m>,
       for <m>k=1,\,2,\,.\,.\,.\,,\,N</m>,
-      and that <m>U( t)</m> is continuous at each value <m>t_k^{\ast}</m>.
-      Then according to Theorem 11.2, the function
+      and that <m>U( t)</m> is continuous at each value <m>t_k^*</m>.
+      Then according to <xref ref="thm_N-value-dirichlet">Theorem</xref>,
+      the function
       <men xml:id="PIeqn">
-        \Phi(x,y) = U(t_N^{\ast}) + \frac{1}{\pi}\sum\limits_{k=1}^{N}\left[ U(t_{k-1}^{\ast})-U(t_k^{\ast}) \right]\mathrm{Arg}(z-t_k)
+        \Phi(x,y) = U(t_N^*) + \frac{1}{\pi}\sum\limits_{k=1}^{N}\left[ U(t_{k-1}^*)-U(t_k^*) \right]\mathrm{Arg}(z-t_k)
       </men>
       is harmonic in the upper half-plane and takes on the boundary values
       <md>
-        <mrow>{llll} \Phi(x,0) \amp = U(t_0^{\ast}),  \text{ for }   x \lt  t_1,</mrow>
-        <mrow>\Phi(x,0) \amp = U(t_k^{\ast}),  \text{ for }   t_k \lt x \lt  t_{k+1},  \text{ and }</mrow>
-        <mrow>\Phi(x,0) \amp = U(t_N^{\ast}),  \text{ for }   x > t_N</mrow>
+        <mrow>{llll} \Phi(x,0) \amp = U(t_0^*),  \text{ for }   x \lt  t_1,</mrow>
+        <mrow>\Phi(x,0) \amp = U(t_k^*),  \text{ for }   t_k \lt x \lt  t_{k+1},  \text{ and }</mrow>
+        <mrow>\Phi(x,0) \amp = U(t_N^*),  \text{ for }   x > t_N</mrow>
       </md>,
-      as shown in Figure 11.13
+      as shown in <xref ref="fig_ch-10-013">Figure</xref>.
     </p>
     <p>
       We use properties of the argument of a complex number
-      (see Section 1.4)
+      (see <xref ref="sec_geometry-2">Section</xref>)
       to write <xref ref="PIeqn">Equation</xref> in the form
       <md>
-        <mrow>\Phi(x,y) \amp = \frac{1}{\pi}U(t_0^{\ast})\mathrm{Arg}(z-t_1) + \frac{1}{\pi}\sum_{k=1}^{N-1}U(t_k^{\ast})\mathrm{Arg}(\frac{z-t_{k+1}}{z-t_k})</mrow>
-        <mrow>\amp + \frac{1}{\pi}U(t_N^{\ast})[\pi-\mathrm{Arg}(z-t_N)]</mrow>
+        <mrow>\Phi(x,y) \amp = \frac{1}{\pi}U(t_0^*)\mathrm{Arg}(z-t_1) + \frac{1}{\pi}\sum_{k=1}^{N-1}U(t_k^*)\mathrm{Arg}\left(\frac{z-t_{k+1}}{z-t_k}\right)</mrow>
+        <mrow>\amp + \frac{1}{\pi}U(t_N^*)[\pi-\mathrm{Arg}(z-t_N)]</mrow>
       </md>.
     </p>
     <p>
       Hence the value <m>\Phi</m> is given by the weighted mean
       <men xml:id="wmean">
-        \Phi(x,y)=\frac{1}{\pi}\sum\limits_{k=0}^{N}U(t_k^{\ast})\Delta \theta_k
+        \Phi(x,y)=\frac{1}{\pi}\sum\limits_{k=0}^{N}U(t_k^*)\Delta \theta_k
       </men>,
       where the angles <m>\Delta \theta_k</m>,
       for <m>k=0, \, 1, \ldots ,N</m>, sum to <m>\pi</m>,
@@ -65,7 +67,7 @@
     </p>
     <figure xml:id="fig_ch-10-013">
       <caption>Boundary values for <m>\Phi</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-013.pdf"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-013.png"/>
     </figure>
     <p>
       Using the substitutions
@@ -74,14 +76,14 @@
       </men>,
       we write <xref ref="wmean">Equation</xref> as
       <me>
-        \Phi(x,y) = \frac{y}{\pi}\sum\limits_{k=0}^{N}\frac{U(t_k^{\ast}) \,\Delta t_k}{(x-t_k^{\ast})^2+y^2}
-      </me>.
+        \Phi(x,y) = \frac{y}{\pi}\sum\limits_{k=0}^{N}\frac{U(t_k^*) \,\Delta t_k}{(x-t_k^*)^2+y^2}
+      </me>
     </p>
     <p>
       The limit of this Riemann sum becomes the improper integral
       <me>
-        \phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty }\frac{U(t)}{(x-t)^2+y^2}\,dt
-      </me>.
+        \phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt
+      </me>
     </p>
   </proof>
   <example>
@@ -93,13 +95,11 @@
           \phi(x,0) = 1,  \text{ for }   -1 \lt  x \lt 1,  \text{ and }   \phi(x,0) = 0,  \text{ for }   |x| > 1
         </me>.
       </p>
-    </statement>
-    <solution>
       <p>
         Using <xref ref="PIfun">Equation</xref>, we obtain
         <me>
           \phi(x,y) = \frac{y}{\pi}\int_{-1}^1\frac{1}{(x-t)^2+y^2}\,dt = \frac{1}{\pi}\int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
-        </me>.
+        </me>
       </p>
       <p>
         Using the antiderivative in <xref ref="antideriv">Equation</xref>,
@@ -109,9 +109,13 @@
           <mrow>\amp = \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)-\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
     </solution>
   </example>
-  <example>
+  <example xml:id="ex_10_12">
     <statement>
       <p>
         Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
@@ -146,7 +150,7 @@
   </example>
   <figure xml:id="fig_ch-10-014">
     <caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0) =x</m> for <m>|x| \lt  1</m>, and <m>\phi(x,0)=0</m> for <m>|x|>1</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-014.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-014.png"/>
   </figure>
   <example>
     <statement>
@@ -162,14 +166,18 @@
     </statement>
     <solution>
       <p>
-        Using techniques from Section 11.2, we find that the function
+        Using techniques from <xref ref="sec_dirichlet-problem">Section</xref>,
+        we find that the function
         <me>
           v(x,y) = 1 - \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) - \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)
         </me>
-        is harmonic in the upper half-plane and has the boundary values <m>v(x,0) =0</m>,
-        for <m>|x|\lt 1, \, v(x,0) =-1</m>,
-        for <m>x\lt -1</m>, and <m>v(x,0)=1</m>, for <m>x>1</m>.
-        This function can be added to the one in Example 11.12 to obtain the desired result:
+        is harmonic in the upper half-plane and has the following boundary values:
+        <me>
+          v(x,0) =0  \text{ for }   |x|\lt 1,  v(x,0) = -1  \text{ for }   x\lt -1, \text{ and }   v(x,0)=1  \text{ for }   x > 1
+        </me>.
+      </p>
+      <p>
+        This function can be added to the one in <xref ref="ex_10_12">Example</xref> to obtain the desired result:
         <me>
           \phi(x,y) = 1 + \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] + \frac{x-1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right) - \frac{x+1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)
         </me>.
@@ -185,10 +193,10 @@
     <m>\phi(x,0) =1</m> for <m>x>1</m></caption>
     <image width="73%" source="figs/ch-10/ch-10-fig-015"/>
   </figure>
-  <p>
-    <em>Exercises for Section 11.3</em>
-    <ol>
-      <li>
+  <exercises xml:id="exercises_poisson-integral-formula">
+    <title>Exercises</title>
+    <exercise>
+      <statement>
         <p>
           Use Poisson's integral formula to find the harmonic function
           <m>\phi(x,y)</m> in the upper half-plane that takes on the boundary values
@@ -198,8 +206,17 @@
             <mrow>\phi(t,0) \amp =  U(t)=0,  \text{ for }   1 \lt t</mrow>
           </md>.
         </p>
-      </li>
-      <li>
+        <p>
+          <m>\phi (x,y)=\frac{y}{2\pi}\ln\Big[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\Big] + \frac{x-1}{\pi}\mathrm{Arctan}(\frac{y}{x-1})-\frac{x+1}{\pi}\mathrm{Arctan}(\frac{y}{x+1})+1</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Use Poisson's integral formula to find the harmonic function
           <m>\phi(x,y)</m> in the upper half-plane that takes on the boundary values
@@ -209,48 +226,79 @@
             <mrow>\phi(t,0) \amp = U(t) =1,  \text{ for }   1 \lt  t</mrow>
           </md>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Use Poisson's integral formula for the upper half-plane to conclude
           <me>
-            \phi(x,y) =e^{-y}\cos x=\frac{y}{\pi}\int_{-\infty }^{\infty }\frac{\cos t}{(x-t)^2+y^2}\,dt
-          </me>.
+            \phi(x,y) =e^{-y}\cos x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\cos t}{(x-t)^2+y^2}\,dt
+          </me>
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
+        <p>
+          Both <m>e^y\cos x</m> and <m>e^{-y}\cos x</m> are harmonic in the upper half plane and satisfy the boundary conditions.
+          Also, <m>\lim\limits_{y \to \infty }e^{-y}\cos x=0</m>.
+          It can be show that the Poisson integral formula defines a bounded function in the upper half plane,
+          therefore the desired solution is <m>\phi(x,y)=e^{-y}\cos x</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Use Poisson's integral formula for the upper half-plane to conclude
           <me>
-            \phi(x,y) = e^{-y}\sin x=\frac{y}{\pi}\int_{-\infty }^{\infty }\frac{\sin t}{(x-t)^2+y^2}\,dt
-          </me>.
+            \phi(x,y) = e^{-y}\sin x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\sin t}{(x-t)^2+y^2}\,dt
+          </me>
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Show that the function <m>\phi(x,y)</m> given by Poisson's integral formula is harmonic by applying Leibniz's rule,
           which permits you to write
           <me>
-            \left(\frac{\partial ^2}{\partial x^2} + \frac{\partial ^2}{\partial y^2}\right) \phi(x,y) = \frac{1}{\pi}\int_{-\infty }^{\infty} U(t)\left[\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt
+            \left(\frac{\partial ^2}{\partial x^2} + \frac{\partial ^2}{\partial y^2}\right) \phi(x,y) = \frac{1}{\pi}\int_{-\infty}^{\infty} U(t)\left[\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt
           </me>.
         </p>
-      </li>
-      <li>
+      </statement>
+      <solution>
+        <p>
+          Apply Leibniz's rule <m>\phi _{xx}</m><m>+\phi _{yy}=\frac{1}{\pi} \int_{-\infty }^{\infty}U(t) \left[\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt</m>.
+          The term in brackets in the integrand is <m>\frac{\partial^2}{\partial x^2}\frac{y}{(x-t)^2+y^2} + \frac{\partial^2}{\partial y^2}\frac{y}{(x-t)^2+y^2} = \frac{2(3t^2y-6txy+3x^2y-y^{3})}{((x-t)^2+y^2)^3}+\frac{2(-3t^2y+6txy-3x^2y + y^3)}{((x-t)^2+y^2)^3} = 0</m>.
+          Hence the integrand vanishes and <m>\phi_{xx}(x,y) + \phi_{yy}(x,y) = 0</m>,
+          which implies that <m>\phi(x,y)</m> is harmonic.
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane.
           If <m>U(t)</m> is an even function so that <m>U(-t) =U(t)</m>,
           then show that the harmonic function
           <m>\phi(x,y)</m> has the property <m>\phi(-x,y)=\phi(x,y)</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane.
           If <m>U(t)</m> is an odd function so that for all <m>t</m> <m>U(-t) =-U(t)</m>,
           then show that the harmonic function
           <m>\phi(x,y)</m> has the property <m>\phi(-x,y) = -\phi(x,y)</m>.
         </p>
-      </li>
-    </ol>
-  </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\phi(-x,y) = \frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(-x-t)^2+y^2} = \frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(x+t)^2+y^2} = \frac{y}{\pi}\int_{\infty }^{-\infty}\frac{U(-t)(-1)\,dt}{(x-t)^2+y^2}</m> <m>=\frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(-t)\,dt}{(x-t)^2+y^2} = -\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{U(t)\,dt}{(x-t)^2+y^2} = -\phi(x,y)</m>.
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
 </section>

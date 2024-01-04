@@ -1,7 +1,7 @@
 <section xml:id="sec_fourier-transform">
   <title>The Fourier Transform</title>
   <p>
-    Let <m>U(t)</m> be a real-valued function with period <m>2\pi</m> which is piecewise continuous such that <m>U'(t)</m> also exists and is piecewise continuous.
+    Let <m>U(t)</m> be a real-valued function with period <m>2\pi</m> which is piecewise continuous such that <m>U\,'(t)</m> also exists and is piecewise continuous.
     Then <m>U(t)</m> has the <em>complex Fourier series</em> representation
     <me>
       U(t) = \sum_{n=-\infty}^{\infty}c_ne^{int},  \text{ where }
@@ -28,7 +28,7 @@
     These relations are easy to establish.
     We start by writing
     <md>
-      <mrow xml:id="TrigSeries2" number="yes">U(t) \amp = c_0 + \sum_{n=1}^{\infty }c_ne^{int} + \sum_{n=1}^{\infty}c_{-n}e^{-int}</mrow>
+      <mrow xml:id="TrigSeries2" number="yes">U(t) \amp = c_0 + \sum_{n=1}^{\infty}c_ne^{int} + \sum_{n=1}^{\infty}c_{-n}e^{-int}</mrow>
       <mrow>\amp = c_0 + \sum_{n=1}^{\infty}c_n(\cos nt+i\sin nt) + \sum_{n=1}^{\infty}c_{-n}(\cos nt-i\sin nt)</mrow>
       <mrow>\amp = c_0 + \sum_{n=1}^{\infty}[(c_n+c_{-n}) \cos nt+i(c_n-c_{-n}) \sin nt]</mrow>
     </md>.
@@ -38,13 +38,13 @@
     <m>a_n=c_n+c_{-n}</m>, and <m>b_n=i( c_n-c_{-n})</m>.
   </p>
   <p>
-    If <m>U(t)</m> and <m>U'(t)</m> are piecewise continuous and have period <m>2L</m>,
+    If <m>U(t)</m> and <m>U\,'(t)</m> are piecewise continuous and have period <m>2L</m>,
     then <m>U(t)</m> has the <em>complex Fourier series</em> representation
     <men xml:id="ComplexFourier">
-      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\pi n(t/L)},  \text{ where }
+      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}},  \text{ where }
     </men>
     <men xml:id="ComplexFourierC">
-      c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\pi n(t/L)}\,dt  \text{ for all }   n
+      c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\frac{\pi nt}{L}}\,dt  \text{ for all }   n
     </men>.
   </p>
   <p>
@@ -64,7 +64,7 @@
   <p>
     Then <m>U_L(t)</m> has the complex Fourier series representation
     <men xml:id="ComplexFourierL">
-      U_L(t)=\sum_{n=-\infty}^{\infty}c_ne^{i\pi nt/L}
+      U_L(t)=\sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}}
     </men>.
   </p>
   <p>
@@ -92,7 +92,7 @@
     <title>Fourier Transform</title>
     <statement>
       <p>
-        Let <m>U(t)</m> and <m>U'(t)</m> be piecewise continuous, and
+        Let <m>U(t)</m> and <m>U\,'(t)</m> be piecewise continuous, and
         <me>
           \int_{-\infty}^{\infty}\left| U(t) \right| dt\lt M
         </me>,
@@ -115,8 +115,8 @@
   <p>
     Note: It is common to express the fact that <m>U</m> is transformed into <m>F</m> by using the operator notation
     <me>
-      \mathrm{F}(U(t))=F(w)
-    </me>.
+      \mathrm{F}\big(U(t)\big)=F(w)
+    </me>
   </p>
   <proof>
     <p>
@@ -146,74 +146,82 @@
       <me>
         U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw
       </me>.
-    </p>
-    <p>
       A more rigorous proof of this fact can be found in advanced texts.
     </p>
   </proof>
   <p>
-    Table 10.1 gives some important properties of the Fourier transform.
+    The following table depicts some important properties of the Fourier transform.
   </p>
-  <p>
-    Table 10.1
-  </p>
-  <p>
-    Properties of the Fourier Transform
-  </p>
-  <tabular>
-    <row>
-      <cell>Linearity</cell>
-      <cell><m>\mathrm{F}\big(aU_1(t) + bU_2(t)\big) =a\,\mathrm{F}(U_1(t)) +b\,\mathrm{F}\big(U_2(t)\big)</m>;</cell>
-    </row>
-    <row>
-      <cell>Symmetry</cell>
-      <cell>If <m>\mathrm{F}\big(U(t)\big)=F(w)</m>, then <m>\mathrm{F}\big(F(t)\big) = \frac{1}{2\pi}U(-w)</m>;</cell>
-    </row>
-    <row>
-      <cell>Time scaling</cell>
-      <cell><m>\mathrm{F}(U(at)) = \frac{1}{|a|}F(\frac{w}{a})</m>;</cell>
-    </row>
-    <row>
-      <cell>Time shifting</cell>
-      <cell><m>\mathrm{F}(U(t-t_0)) = e^{-it_0w}F(w)</m>;</cell>
-    </row>
-    <row>
-      <cell>Frequency shifting</cell>
-      <cell><m>\mathrm{F}\big(e^{-iw_0t}U(t)\big) = F(w-w_0)</m>;</cell>
-    </row>
-    <row>
-      <cell>Time differentiation</cell>
-      <cell><m>\mathrm{F}\big(U'(t)\big) = iwF(w)</m>;</cell>
-    </row>
-    <row>
-      <cell>Frequency differentiation</cell>
-      <cell><m>\frac{d^nF(w)}{dw^n} = \mathrm{F}\big((-it)^nU(t)\big)</m>;</cell>
-    </row>
-    <row>
-      <cell>Moment Theorem</cell>
-      <cell>If <m>M_n = \int_{-\infty}^{\infty}t^nU(t)\,dt</m>, then <m>(-i)^nM_n</m></cell>
-    </row>
-    <row>
-      <cell></cell>
-      <cell>= <m>2\pi F^{(n)}(0)</m>.</cell>
-    </row>
-  </tabular>
+  <table xml:id="table_fourier-transform-properties">
+    <title>Important Properties of the Fourier Transform</title>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Linearity</cell>
+        <cell><m>\mathrm{F}\big(aU_1(t) + bU_2(t)\big) =a\,\mathrm{F}(U_1(t)) +b\,\mathrm{F}\big(U_2(t)\big)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Symmetry</cell>
+        <cell>If <m>\mathrm{F}\big(U(t)\big)=F(w)</m>, then <m>\mathrm{F}\big(F(t)\big) = \frac{1}{2\pi}U(-w)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Time scaling</cell>
+        <cell><m>\mathrm{F}(U(at)) = \frac{1}{|a|}F(\frac{w}{a})</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Time shifting</cell>
+        <cell><m>\mathrm{F}(U(t-t_0)) = e^{-it_0w}F(w)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Frequency shifting</cell>
+        <cell><m>\mathrm{F}\big(e^{-iw_0t}U(t)\big) = F(w-w_0)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Time differentiation</cell>
+        <cell><m>\mathrm{F}\big(U\,'(t)\big) = iwF(w)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Frequency differentiation</cell>
+        <cell><m>\frac{d^nF(w)}{dw^n} = \mathrm{F}\big((-it)^nU(t)\big)</m>;</cell>
+      </row>
+      <row>
+        <cell>\hdashline
+          Moment Theorem</cell>
+        <cell>If <m>M_n = \int_{-\infty}^{\infty}t^nU(t)\,dt</m>, then <m>(-i)^nM_n = 2\pi F^{(n)}(0)</m>.</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
   <example xml:id="ex_10_5">
     <statement>
       <p>
         Show that <m>F\big(e^{-|t|}\big) = \frac{1}{\pi(1+w^2)}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Using <xref ref="FourierTransform">formula</xref> we obtain
         <md>
           <mrow>F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^{-iwt}\,dt</mrow>
           <mrow>\amp = \frac{1}{2\pi}\int\nolimits_{-\infty}^{0}e^{(1-iw)t}\,dt + \frac{1}{2\pi}\int_0^{\infty}e^{(-1-iw) t}\,dt</mrow>
-          <mrow>\amp = \frac{1}{2\pi (1-iw) }e^{(1-iw) t}\bigg|_{t=-\infty}^{t=0}+\frac{1}{2\pi (-1-iw) }e^{(-1-iw) t} \bigg|_{t=0}^{t=\infty}.</mrow>
-          <mrow>\amp = \frac{1}{2\pi (1-iw) }+\frac{1}{2\pi (1+iw)}</mrow>
+          <mrow>\amp = \frac{1}{2\pi (1-iw)}e^{(1-iw) t}\bigg|_{t=-\infty}^{t=0}+\frac{1}{2\pi (-1-iw)}e^{(-1-iw) t} \bigg|_{t=0}^{t=\infty}.</mrow>
+          <mrow>\amp = \frac{1}{2\pi (1-iw)}+\frac{1}{2\pi (1+iw)}</mrow>
           <mrow>\amp = \frac{1}{\pi (1+w^2)}</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -222,100 +230,134 @@
       <p>
         Show that <m>\mathrm{F}\big(\frac{1}{1+t^2}\big) = \frac{1}{2}e^{-|w|}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Using the result of <xref ref="ex_10_5">Example</xref>
         and the symmetry property and the symmetry property, we obtain
         <me>
           \mathrm{F}\left(\frac{1}{\pi (1+t^2)}\right) = \frac{1}{2\pi}e^{-|-w|} = \frac{1}{2\pi}e^{-|w|}
         </me>.
-      </p>
-      <p>
         By the linearity property, with each term is multiplied by <m>\pi</m>, we get
         <me>
           \mathrm{F}\left(\frac{1}{1+t^2}\right) = \frac{1}{2}e^{-|w|}
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_fourier-transform">Section</xref></title>
+  <exercises xml:id="exercises_fourier-transform">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Find <m>\mathrm{F}\big(U(t)\big)</m> for each of the following:
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Find <m>\mathfrak{F}\big(U(t)\big)</m> for each of the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>U(t) = \begin{cases}1 \amp \text{ for } |t| \lt 1,\\ 0 \amp \text{ for } |t| > 1. \end{cases}</m>
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>U(t) = \begin{cases}1-|t| \amp \text{ for } |t| \le 1,\\ 0 \amp \text{ for } |t|>1. \end{cases}</m>
           </p>
-        </li>
-      </ol>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}</m>.
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Let <m>U(t) = \begin{cases}\sin t \amp \text{ for } |t| \le \pi,\\ \;\;\, 0 \amp \text{ for } |t| > \pi. \end{cases}</m> Show that <m>\mathrm{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>U(t) = \begin{cases}\sin t \amp \text{ for } |t| \le \pi,\\ \;\;\, 0 \amp \text{ for } |t| > \pi. \end{cases}</m> Show that <m>\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use the symmetry and linearity properties and the result of <xref ref="ex_12_1a">Exercise</xref> to show that
+          <me>
+            \mathfrak{F}\left(\frac{\sin t}{t}\right) = \begin{cases}\frac{1}{2} \amp  \text{ for }   |w| \lt  1,\\ 0 \amp  \text{ for }   |w| > 1. \end{cases}
+          </me>
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="ex_12_3">
-      <p>
-        Let <m>U(t) =e^{-r^2/2}</m>.
-        Show that <m>\mathrm{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-w^2/2}</m>.
-        <em>Hint:</em> Use the integral definition and combine the terms in the exponent,
-        then complete the square and use the fact that <m>\int\nolimits_{-\infty}^{\infty}e^{-r^2/2}\,dt=\sqrt{2\pi}</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>U(t) =e^{-\frac{t^2}{2}}</m>.
+          Show that <m>\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the integral definition and combine the terms in the exponent,
+          then complete the square and use the fact that <m>\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise>
-      <p>
-        Use the time scaling property and the example in the text to show that
-        <me>
-          \mathrm{F}(e^{-a\left| t\right| }) =\frac{\left| a\right| }{\pi(a^2+w^2)}
-        </me>.
-      </p>
+      <statement>
+        <p>
+          Use the time scaling property and the example in the text to show that
+          <me>
+            \mathfrak{F}(e^{-a|t|}) =\frac{|a|}{\pi(a^2+w^2)}
+          </me>
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Use the symmetry and linearity properties and the result of <xref ref="ex_12_1a">Exercise</xref> to show that
-        <me>
-          \mathrm{F}\left(\frac{\sin t}{t}\right) = \begin{cases}\frac{1}{2} \amp  \text{ for }   |w| \lt  1,\\ 0 \amp  \text{ for }   |w| > 1. \end{cases}
-        </me>
-      </p>
+      <statement>
+        <p>
+          Use the symmetry and linearity properties and the result of <xref ref="ex_12_2">Exercise</xref> to show that
+          <me>
+            \mathfrak{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = \begin{cases}\frac{i\sin w}{2} \amp  \text{ for }  |w| \le \pi,\\ 0 \amp  \text{ for }   |w| > \pi. \end{cases}
+          </me>
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Use the symmetry and linearity properties and the result of <xref ref="ex_12_2">Exercise</xref> to show that
-        <me>
-          \mathrm{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = \begin{cases}\frac{i\sin w}{2} \amp  \text{ for }  |w| \le \pi,\\ 0 \amp  \text{ for }   |w| > \pi. \end{cases}
-        </me>
-      </p>
+      <statement>
+        <p>
+          Use the time differentiation property and the result of <xref ref="ex_12_3">Exercise</xref> to show that
+          <me>
+            \mathfrak{F}\left(te^{-\frac{r^2}{2}}\right) =\frac{-iwe^{-\frac{w^2}{2}}}{\sqrt{2\pi}}
+          </me>
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Use the time differentiation property and the result of <xref ref="ex_12_3">Exercise</xref> to show that
-        <me>
-          \mathrm{F}(te^{-r^2/2}) =\frac{-iwe^{-w^2/2}}{\sqrt{2\pi}}
-        </me>.
-      </p>
+      <statement>
+        <p>
+          Use the symmetry and linearity properties and the results of <xref ref="ex_12_1b">Exercise</xref> to show that
+          <me>
+            F\left(\frac{\sin^2\frac{t}{2}}{t^2}\right) = \begin{cases}\frac{1-|w|}{4\pi} \amp  \text{ for }   |w| \le 1, \\ 0 \amp  \text{ for }   |w| >1. \end{cases}
+          </me>
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Use the symmetry and linearity properties and the results of <xref ref="ex_12_1b">Exercise</xref> to show that
-        <me>
-          F(\frac{\sin^2\frac{t}{2}}{t^2}) = \begin{cases}\frac{1-|w|}{4\pi} \amp  \text{ for }   |w| \le 1, \\ 0 \amp  \text{ for }   |w| >1. \end{cases}
-        </me>
-      </p>
-    </exercise>
-    <exercise>
-      <p>
-        Write a report on the Fourier transform.
-        Discuss some of the ideas you found in the literature that are not mentioned in the text.
-      </p>
+      <statement>
+        <p>
+          Write a report on the Fourier transform.
+          Discuss some of the ideas you found in the literature that are not mentioned in the text.
+        </p>
+      </statement>
     </exercise>
   </exercises>
 </section>

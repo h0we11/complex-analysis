@@ -17,7 +17,7 @@
     provided the limit exists.
     For example,
     <me>
-      \int_0^{9}\frac{dx}{2\sqrt{x}} = \lim_{r \to 0^{+}} \int_{r}^{9}\frac{dx}{2\sqrt{x}} = \lim\limits_{r \to 0^{+}}(\sqrt{x})\Big|_{x=r}^{x=9} = 3-\lim\limits_{r \to 0^{+}}\sqrt{r} = 3
+      \int_0^{9}\frac{1}{2\sqrt{x}}\,dx = \lim_{r \to 0^{+}} \int_{r}^{9}\frac{1}{2\sqrt{x}}\,dx = \lim\limits_{r \to 0^{+}}(\sqrt{x})\Big|_{x=r}^{x=9} = 3-\lim\limits_{r \to 0^{+}}\sqrt{r} = 3
     </me>.
   </p>
   <p>
@@ -32,14 +32,14 @@
   <example>
     <statement>
       <me>
-        \text{ P.V. } .\int_{-1}^{8}\frac{dx}{x^{1/3}} =
-        \lim_{r \to 0^{+}}\left[\int_{-1}^{-r}\frac{dx}{x^{1/3}}+\int_{r}^{8}\frac{dx}{x^{1/3}}\right]
+        \text{ P.V. } .\int_{-1}^{8}\frac{1}{x^\frac{1}{3}}\,dx =
+        \lim_{r \to 0^{+}}\left[\int_{-1}^{-r}\frac{1}{x^\frac{1}{3}}\,dx+\int_{r}^{8}\frac{1}{x^\frac{1}{3}}\,dx\right]
       </me>.
       <p>
         Evaluating the integrals and computing limits gives
         <me>
-          \lim_{r \to 0^{+}}\left[\frac{3}{2}r^{2/3} - \frac{3}{2} + 6 - \frac{3}{2}r^{2/3}\right] = \frac{9}{2}
-        </me>.
+          \lim_{r \to 0^{+}}\left[\frac{3}{2}r^\frac{2}{3} - \frac{3}{2} + 6 - \frac{3}{2}r^\frac{2}{3}\right] = \frac{9}{2}
+        </me>
       </p>
     </statement>
   </example>
@@ -57,7 +57,7 @@
         If <m>Q</m> has simple zeros at the points
         <m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m><nbsp/>axis, then
         <men xml:id="EQ_8_4">
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)\,dx}{Q(x)} = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_{j}] +\pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_{j}]
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_j] +\pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_j]
         </men>,
         where <m>z_1, \, z_2, \, \ldots, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
       </p>
@@ -72,11 +72,11 @@
         <m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m>-axis.
         If <m>\alpha</m> is a positive real number and if <m>f(z) =\frac{\exp(i\alpha z)P(z)}{Q(z)}</m>, then
         <men xml:id="EQ_8_5">
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_{j}]) - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_{j}])
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j]) - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_j])
         </men>
         and
         <men xml:id="EQ_8_6">
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx = 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_{j}]) + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_{j}])
+          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx = 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_j]) + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_j])
         </men>
         where <m>z_1, \, z_2, \, \ldots ,z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
       </p>
@@ -95,10 +95,8 @@
   <example>
     <statement>
       <p>
-        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{xdx}{x^3-8}</m> by using complex analysis.
+        Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{x}{x^3-8}\,dx</m> by using complex analysis.
       </p>
-    </statement>
-    <solution>
       <p>
         The integrand
         <me>
@@ -108,9 +106,13 @@
         <m>z_1=-1+i \sqrt{3}</m> in the upper half-plane.
         By <xref ref="Thm_8_5">Theorem</xref>,
         <md>
-          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{x\,dx}{x^3-8} \amp = 2\pi i\mathrm{Res}[f,z_1] +\pi i\mathrm{Res}[f,t_1]</mrow>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{x}{x^3-8}\,dx \amp = 2\pi i\mathrm{Res}[f,z_1] +\pi i\mathrm{Res}[f,t_1]</mrow>
           <mrow>\amp = 2\pi i\frac{-1-i\sqrt{3}}{12}+\pi i\frac{1}{6}=\frac{\pi \sqrt{3}}{6}</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -119,8 +121,6 @@
       <p>
         Evaluate P.V. <m>\int_{-\infty}^{\infty}\frac{t\,dx}{t^3-8}</m> with a computer algebra system.
       </p>
-    </statement>
-    <solution>
       <p>
         Computer algebra systems such as Mathematica or MAPLE give the indefinite integral
         <me>
@@ -141,12 +141,12 @@
       </p>
       <figure xml:id="fig_ch-08-05">
         <caption>Graph of <m>s=g(t) =\int \frac{t}{t^3-8}\ dt</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-05.pdf"/>
+        <image width="73%" source="figs/ch-08/ch-08-fig-05.png"/>
       </figure>
       <p>
         We also compute
         <me>
-          \lim_{t\to \infty}g(t) = \frac{\pi \sqrt{3}}{12}  \text{ and }   \lim_{t \to -\infty}g(t) = \frac{-\pi \sqrt{3}}{12}
+          \lim_{t\to \infty}g(t) = \frac{\pi \sqrt{3}}{12}  \text{ and }   \lim_{t \to -\infty}g(t) = -\frac{\pi \sqrt{3}}{12}
         </me>.
         and the Cauchy principal limit at <m>t=2</m> as <m>r \to 0</m> is
         <me>
@@ -163,6 +163,10 @@
           <mrow>\amp = \frac{\pi \sqrt{3}}{6}</mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
     </solution>
   </example>
   <example>
@@ -170,16 +174,18 @@
       <p>
         Evaluate P.V. <m>\displaystyle\int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         The integrand <m>f(z) = \frac{\exp(iz)}{(z-1)(z^2+4)}</m> has simple poles at the points <m>t_1=1</m> on the <m>x</m>-axis and <m>z_1=2i</m> in the upper half-plane.
         By <xref ref="Thm_8_6">Theorem</xref>,
         <md>
-          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x\,dx}{(x-1) (x^2+4)} \amp = 2\pi \mathrm{Re}\big(\mathrm{Res}[f,z_1]\big) +\pi \mathrm{Re}\big(\mathrm{Res}[f,t_1]\big)</mrow>
-          <mrow>\amp = 2\pi \mathrm{Re}\big(\frac{-2+i}{20e^2}\big) +\pi \mathrm{Re}\big(\frac{\cos 1+i\sin 1}{5}\big)</mrow>
+          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx \amp = 2\pi \mathrm{Re}\left(\mathrm{Res}[f,z_1]\right) +\pi \mathrm{Re}\left(\mathrm{Res}[f,t_1]\right)</mrow>
+          <mrow>\amp = 2\pi \mathrm{Re}\left(\frac{-2+i}{20e^2}\right) +\pi \mathrm{Re}\left(\frac{\cos 1+i\sin 1}{5}\right)</mrow>
           <mrow>\amp = \frac{\pi}{5}\left(\cos 1-\frac{1}{e^2}\right)</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -193,10 +199,10 @@
       <p>
         Suppose that <m>f</m> has a simple pole at the point <m>t_0</m> on the <m>x</m>-axis.
         If <m>C_{r}</m> is the contour <m>C_{r}:z=t_0+re^{i\theta}</m>,
-        for <m>0\le \theta \le \pi</m>, then
+        for <m>0 \le \theta \le \pi</m>, then
         <me>
           \lim_{r \to 0}\int_{C_{r}}f(z)\,dz = i\pi \mathrm{Res}[f,t_0]
-        </me>.
+        </me>
       </p>
     </statement>
   </lemma>
@@ -209,15 +215,15 @@
       where <m>g</m> is analytic at <m>z=t_0</m>.
       Using the parametrization of <m>C_{r}</m> and Equation <xref ref="EQ_8_9"/>, we get
       <md>
-        <mrow>\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi }\frac{ire^{i\theta}d\theta}{re^{i\theta}} + ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}\,d\theta</mrow>
-        <mrow xml:id="EQ_8_10" number="yes">\amp = i\pi \mathrm{Res}[f,t_0] + ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}d\theta</mrow>
+        <mrow>\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi}\frac{ire^{i\theta}}{re^{i\theta}}\,d\theta + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}\,d\theta</mrow>
+        <mrow xml:id="EQ_8_10" number="yes">\amp = i\pi \mathrm{Res}[f,t_0] + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}d\theta</mrow>
       </md>.
     </p>
     <p>
       Since <m>g</m> is continuous at <m>t_0</m>,
       there is an <m>M>0</m> so that <m>| g(t_0+re^{i\theta}) | \le M</m>, and
       <me>
-        \left|\lim_{r \to 0}ir\int_0^{\pi }g(t_0+re^{i\theta}) e^{i\theta}d\theta\right| \le \lim_{r \to 0}r\int_0^{\pi}M \,d\theta = \lim_{r \to 0}r\pi M=0
+        \left|\lim_{r \to 0}ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}d\theta\right| \le \lim_{r \to 0}r\int_0^{\pi}M \,d\theta = \lim_{r \to 0}r\pi M=0
       </me>.
     </p>
     <p>
@@ -233,7 +239,7 @@
       Since <m>f</m> has only a finite number of poles,
       we can choose <m>r</m> small enough that the semicircles
       <me>
-        C_j : z = t_j+re^{i\theta},  \text{ for }   0\le \theta \le \pi  \text{ and }   j=1,2,\ldots ,l
+        C_j : z = t_j+re^{i\theta},  \text{ for }   0 \le \theta \le \pi  \text{ and }   j=1,2,\ldots ,l
       </me>
       are disjoint and the poles
       <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> in the upper half-plane lie above them,
@@ -242,22 +248,22 @@
     <figure xml:id="fig_ch-08-06">
       <caption>The poles <m>t_1, \  t_2, \  \ldots, \  t_l</m> of <m>f</m> that lie on the <m>x</m>- axis and the poles <m>z_1, \  z_2, \  \ldots \  z_k</m>
       that lie above the semicircles <m>C_1, \  C_2, \  \ldots, \ C_{l}</m></caption>
-      <image width="73%" source="figs/ch-08/ch-08-fig-06.pdf"/>
+      <image width="73%" source="figs/ch-08/ch-08-fig-06.png"/>
     </figure>
     <p>
       Let <m>R</m> be large enough so that the poles of <m>f</m> in the upper half-plane lie under the semicircle <m>C_R:z=Re^{i\theta}</m>,
       for <m>0 \le \theta \le \pi</m>,
       and the poles of <m>f</m> on the <m>x</m>-axis lie in the interval <m>-R \le x \le R</m>.
       Let <m>C</m> be the simple closed positively oriented contour that consists of <m>C_R</m> and
-      <m>-C_1, \, -C_2, \, \ldots, \, -C_l</m> and the segments of the real axis that lie between the semicircles shown in Figure 8.6.
-      The residue theorem gives <m>\int_Cf(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}]</m>,
+      <m>-C_1, \, -C_2, \, \ldots, \, -C_l</m> and the segments of the real axis that lie between the semicircles shown in <xref ref="fig_ch-08-06">Figure</xref>.
+      The residue theorem gives <m>\int_Cf(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]</m>,
       which we rewrite as
       <men xml:id="EQ_8_13">
-        \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] + \sum_{j=1}^{l}\int_{C_{j}}f(z)\,dz - \int_{C_R}f(z)\,dz
+        \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] + \sum_{j=1}^{l}\int_{C_j}f(z)\,dz - \int_{C_R}f(z)\,dz
       </men>,
       where <m>I_R</m> is the portion of the interval
       <m>-R \le x \le R</m> that lies outside the intervals
-      <m>(t_{j}-r,t_{j}+r)</m> for <m>j=1,2,\ldots,l</m>.
+      <m>(t_j-r,t_j+r)</m> for <m>j=1,2,\ldots,l</m>.
       Using the same techniques that we used in <xref ref="Ratl_Fcn_Int_Thm">Theorems</xref>
       and <xref ref="PV_P_Q_sin__cos_thm"></xref> yields
       <men xml:id="EQ_8_14">
@@ -268,115 +274,203 @@
       If we let <m>R \to \infty</m> and <m>r \to 0</m> in Equation <xref ref="EQ_8_13"/> and use the results of Equation <xref ref="EQ_8_14"/> and <xref ref="Simple_Pole_Lemma">Lemma</xref>,
       we obtain
       <men xml:id="EQ_8_15">
-        \text{ P.V. }  \int_{-\infty}^{\infty}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_{j}] + \pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_{j}]
+        \text{ P.V. }  \int_{-\infty}^{\infty}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] + \pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_j]
       </men>.
     </p>
     <p>
       If <m>f</m> is the function given in <xref ref="Thm_8_5">Theorem</xref>,
       then Equation <xref ref="EQ_8_15"/> becomes Equation <xref ref="EQ_8_4"/>.
       If <m>f</m> is the function given in <xref ref="Thm_8_6">Theorem</xref>,
-      then equating the real and imaginary parts of Equation <xref ref="EQ_8_15"/> results in Equations <xref ref="EQ_8_5"/> and <xref ref="EQ_8_6"/>,
-      respectively, and with these results our proof is complete.
+      then equating the real and imaginary parts of Equation <xref ref="EQ_8_15"/> results in Equations <xref ref="EQ_8_5"/> and <xref ref="EQ_8_6"/>, respectively,
+      which completes the proof.
     </p>
   </proof>
-  <p>
-    <em>Exercises for <xref ref="sec_indented-integrals">Section</xref></em>
-    Use residues to compute the following integrals:
-    <ol>
-      <li xml:id="x8_5_1">
+  <exercises xml:id="exercises_indented-integrals">
+    <title>Exercises</title>
+    <p>
+      Use residues to compute the following integrals:
+    </p>
+    <exercise xml:id="x8_5_1">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{dx}{x(x-1)(x-2)}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{1}{x(x-1)(x-2)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_2">
+      </statement>
+      <solution>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{dx}{x^3+x}</m>.
+          <m>0</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_3">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_2">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{x\,dx}{x^3+1}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{1}{x^3+x}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_4">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_3">
+      <statement>
         <p>
-          P.V<m>.\int_{-\infty}^{\infty}\frac{dx}{x^3+1}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x}{x^3+1}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_5">
+      </statement>
+      <solution>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{x^4-1}</m>.
+          <m>\frac{\pi}{\sqrt{3}}</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_6">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_4">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{x^4\,dx}{x^{6}-1}</m>.
+          P.V<m>.\int_{-\infty}^{\infty}\frac{1}{x^3+1}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_7">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_5">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x^2}{x^4-1}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_8">
+      </statement>
+      <solution>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{x^2-x}</m>.
+          <m>\frac{\pi}{2}</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_9">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_6">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(\pi^2-x^2)}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x^4}{x^{6}-1}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_10">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_7">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{\pi^2-4x^2}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_11">
+      </statement>
+      <solution>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(x^2+1)}</m>.
+          <m>\pi</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_12">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_8">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{x\cos x\,dx}{x^2+3x+2}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x}{x^2-x}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_13">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_9">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x\,dx}{x(1-x^2)}</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x(\pi^2-x^2)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_14">
+      </statement>
+      <solution>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x\,dx}{a^2-x^2}</m>.
+          <m>\frac{2}{\pi}</m>.
         </p>
-      </li>
-      <li xml:id="x8_5_15">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_10">
+      <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x\,dx}{x^2}</m>.
-          <em>Hint</em>: Use trigonometric identity <m>\sin^2x=\frac{1}{2}-\frac{1}{2} \cos 2x</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x}{\pi^2-4x^2}\,dx</m>.
         </p>
-      </li>
-      <li>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_11">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x(x^2+1)}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\pi (1-\frac{1}{e})</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_12">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{x\cos x}{x^2+3x+2}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_13">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x(1-x^2)}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\pi (1-\cos 1)</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_5_14">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\cos x}{a^2-x^2}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_5_15">
+      <statement>
+        <p>
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use trigonometric identity <m>\sin^2x=\frac{1}{2}-\frac{1}{2} \cos 2x</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>\pi</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
         <p>
           P.V. <m>\int_0^{\infty}\frac{1}{x^3+1}\,dx</m>.
-          <em>Hint</em>: Use the contour
-          <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-08">Figure</xref>
         </p>
-      </li>
-      <li>
+      </statement>
+      <hint>
         <p>
-          P.V. <m>\int_0^{\infty}\frac{x}{x^3+1}\,dx</m>.
-          <em>Hint</em>: Use the contour
-          <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-08">Figure</xref>
-          <figure xml:id="fig_ch-08-08">
-            <caption>The contour <m>C=L_1+C_r-L_2</m> for Exercises 16 and 17</caption>
-            <image width="73%" source="figs/ch-08/ch-08-fig-08.pdf"/>
-          </figure>
+          Use the contour <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-07">Figure</xref>
         </p>
-      </li>
-    </ol>
-  </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          P.V.}<m>\int_0^{\infty}\frac{x}{x^3+1}\,dx</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the contour <m>C=L_1+C_R-L_2</m> shown in <xref ref="fig_ch-08-07">Figure</xref>
+        </p>
+        <figure xml:id="fig_ch-08-07">
+          <image width="73%" source="figs/ch-08/ch-08-fig-07.png"/>
+        </figure>
+      </hint>
+      <solution>
+        <p>
+          <m>\frac{2\sqrt{3}}{9}\pi</m>.
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
 </section>

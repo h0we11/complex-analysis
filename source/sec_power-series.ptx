@@ -13,11 +13,11 @@
     we get the geometric series.
     The collection of points for which the series
     <m>\sum\limits_{n=0}^{ \infty}c_n(z-\alpha )^n</m> converges is the domain of a function <m>f(z) =\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n</m>,
-    which we call a <term>power series function</term>.
+    which we call a power series function.
     Technically, this series is undefined if
     <m>z=\alpha</m> and <m>n=0</m> because <m>0^{0}</m> is undefined.
     We get around this difficulty by stipulating that the series
-    <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n</m> is really compact notation for <m>c_0+\sum\limits_{n=1}^{\infty}c_n( z-\alpha)^n</m>.
+    <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n</m> is really compact notation for <m>c_0+\sum\limits_{n=1}^{\infty}c_n(z-\alpha)^n</m>.
     In this section we present some results that are useful in helping establish properties of functions defined by power series.
   </p>
   <theorem xml:id="Regions_of_Convergence">
@@ -57,7 +57,7 @@
       the series converges absolutely at those values of <m>z</m> for which <m>\lim\limits_{n \to \infty}\sup |c_n(z-\alpha )^n|^{\frac{1}{n}}\lt 1</m>.
       This condition is the same as requiring
       <men xml:id="lim_sup_inequality">
-        |z-\alpha| \left(\lim_{n \to \infty }\sup |c_n|^{\frac{1}{n}}\right)\lt 1
+        |z-\alpha| \left(\lim_{n \to \infty}\sup |c_n|^{\frac{1}{n}}\right)\lt 1
       </men>.
     </p>
     <p>
@@ -68,9 +68,9 @@
       (<em>i</em>).
       If <m>0\lt \lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}\lt \infty</m>,
       <xref ref="lim_sup_inequality">Inequality</xref>
-      holds iff <m>|z-\alpha |\lt \frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}</m> (<em>i.e.</em>,
+      holds iff <m>|z-\alpha |\lt \frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}</m> \Big(<em>i.e.</em>,
       iff <m>z\in D_{\rho}(\alpha)</m>,
-      where <m>\rho =\frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}</m>) which is case
+      where <m>\rho =\frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}</m>\Big) which is case
       (<em>ii</em>).
       Finally, if the limit supremum equals 0, the left side of <xref ref="lim_sup_inequality">Inequality</xref>
       will be 0 for any value of <m>z</m>, which is case
@@ -83,16 +83,15 @@
     Another way to phrase case (<em>ii</em>) of <xref ref="Regions_of_Convergence">Theorem</xref>
     is to say that the power series <m>f(z) =\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n</m> converges if
     <m>|z-\alpha|\lt \rho</m> and diverges if <m>|z-\alpha|>\rho</m>.
-    We call the number <m>\rho</m> the
-    <term>radius of convergence</term> of the power series
+    We call the number <m>\rho</m> the radius of convergence of the power series
     (see <xref ref="fig_ch-04-03">Figure</xref>).
-    For case (<em>i</em>) of Theorem 4.14,
+    For case (<em>i</em>) of <xref ref="Regions_of_Convergence">Theorem</xref>,
     we say that the radius of convergence is zero and that the radius of convergence is infinity for case
     (<em>iii</em>).
   </p>
   <figure xml:id="fig_ch-04-03">
     <caption>The radius of convergence of a power series</caption>
-    <image width="50%" source="figs/ch-04/ch-04-fig-03.pdf"/>
+    <image width="45%" source="figs/ch-04/ch-04-fig-03.png"/>
   </figure>
   <theorem xml:id="th15">
     <statement>
@@ -104,7 +103,7 @@
           <li>
             <title>i</title>
             <p>
-              Cauchy's root test:
+              Cauchy<nbsp/>'s root test:
               <m>\rho =\frac{1}{\lim\limits_{n \to \infty}|c_n|^{\frac{1}{n}}}</m>
               (provided the limit exists).
             </p>
@@ -121,7 +120,7 @@
             <title>iii</title>
             <p>
               d'Alembert's ratio test:
-              <m>\rho =\frac{1}{\lim\limits_{n\to \infty}|\frac{{c_{n+1}}}{{c_n}}|}</m>
+              <m>\rho =\frac{1}{\lim\limits_{n \to \infty}|\frac{{c_{n+1}}}{{c_n}}|}</m>
               (provided the limit exists).
             </p>
           </li>
@@ -149,14 +148,14 @@
   <example>
     <statement>
       <p>
-        The series <m>\sum\limits_{n=0}^{\infty}(\frac{n+2}{3n+1})^n(z-4)^n</m> has radius of convergence 3 by Cauchy's root test because <m>\lim\limits_{n \to \infty}|c_n|^{\frac{1}{n}}=\lim\limits_{n \to \infty}\frac{n+2}{ 3n+1}=\frac{1}{3}</m>.
+        The series <m>\sum\limits_{n=0}^{\infty}(\frac{n+2}{3n+1})^n(z-4)^n</m> has radius of convergence 3 by Cauchy<nbsp/>'s root test because <m>\lim\limits_{n \to \infty}|c_n|^{\frac{1}{n}}=\lim\limits_{n \to \infty}\frac{n+2}{ 3n+1}=\frac{1}{3}</m>.
       </p>
     </statement>
   </example>
   <example>
     <statement>
       <p>
-        The series <m>\sum\limits_{n=1}^{\infty}c_nz^n=4z+5^2z^2+4^{3}z^3+5^{4}z^{4}+4^{5}z^{5}+\cdots</m> has radius of convergence
+        The series <m>\sum\limits_{n=1}^{\infty}c_nz^n=4z+5^2z^2+4^3z^3+5^4z^4+4^{5}z^{5}+\cdots</m> has radius of convergence
         <m>\frac{1}{5}</m> by the Cauchy-Hadamard formula because <m>\{|c_n|^{\frac{1}{n}}\} =\{ 4,\,5,\,4,\,5,\ldots \}</m>,
         so <m>\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}=5</m>.
       </p>
@@ -165,7 +164,7 @@
   <example xml:id="e_z_Example">
     <statement>
       <p>
-        The series <m>\sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n</m> has radius of convergence <m>\infty</m> by the ratio test because <m>\lim\limits_{n \to \infty}|\frac{n!}{(n+1) !} |=\lim\limits_{n \to \infty}|\frac{1}{n+1}|=0</m>.
+        The series <m>\sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n</m> has radius of convergence <m>\infty</m> by the ratio test because <m>\lim\limits_{n \to \infty}\left|\frac{n!}{(n+1)!}\right| = \lim\limits_{n \to \infty}\left|\frac{1}{n+1}\right|=0</m>.
       </p>
     </statement>
   </example>
@@ -189,13 +188,13 @@
             <title>ii</title>
             <p>
               for all <m>k</m>,
-              <m>f^{(k)}(z)=\sum\limits_{n=k}^{\infty}n(n-1) \cdots (n-k+1)c_n(z-\alpha ) ^{n-k}</m>; and
+              <m>f^{(k)}(z)=\sum\limits_{n=k}^{\infty}n(n-1) \cdots (n-k+1)c_n(z-\alpha )^{n-k}</m>; and
             </p>
           </li>
           <li>
             <title>iii</title>
             <p>
-              <m>c_{k}=\frac{f^{(k)}(\alpha )}{k!}</m>,
+              <m>c_k=\frac{f^{(k)}(\alpha )}{k!}</m>,
               where <m>f^{(k)}</m><nbsp/>denotes the <m>k</m>th derivative of <m>f</m>. (When <m>k=0</m>,
               <m>f^{(k)}</m> denotes the function <m>f</m><nbsp/>itself so that
               <m>f^{(0)}(z) =f(z)</m><nbsp/>for all <m>z</m>.)
@@ -210,27 +209,27 @@
       Remarkably, the entire proof hinges on verifying (<em>ii</em>) for the simple case when <m>k=1</m>.
       The cases in (<em>ii</em>) for <m>k\ge 2</m> follow by induction.
       For instance,
-      we get the case when <m>k=2</m> by applying the result for <m>k=1</m> to the series <m>f\,'(z) =\sum\limits_{n=1}^{\infty}nc_n(z-\alpha ) ^{n-1}</m>.
-      Also, ( <em>i</em>) is an automatic consequence of (<em>ii</em>),
+      we get the case when <m>k=2</m> by applying the result for <m>k=1</m> to the series <m>f\,'(z) =\sum\limits_{n=1}^{\infty}nc_n(z-\alpha )^{n-1}</m>.
+      Also, (<em>i</em>) is an automatic consequence of (<em>ii</em>),
       because (<em>ii</em>) gives a formula for computing derivatives of all orders in addition to assuring us of their existence.
       Finally, (<em>iii</em>) follows by setting <m>z=\alpha</m> in (<em>ii</em>),
       as all the terms drop out except when <m>n=k</m>,
-      giving us <m>f^{(k)}(\alpha ) =k(k-1) \cdots (k-k+1) c_{k}</m>.
-      Solving for <m>c_{k}</m> gives the desired result.
+      giving us <m>f^{(k)}(\alpha ) =k(k-1) \cdots (k-k+1) c_k</m>.
+      Solving for <m>c_k</m> gives the desired result.
     </p>
     <p>
       Verifying (<em>ii</em>) when <m>k=1</m>,
       however, is no simple task.
-      We begin by defining the following functions:
+      We begin by defining the following:
       <md>
-        <mrow>g(z) \amp = \sum_{n=1}^{\infty}nc_n(z-\alpha)^{n-1}</mrow>
-        <mrow>S_{j}(z) \amp = \sum_{n=0}^{j}c_n(z-\alpha )^n\text{,}</mrow>
-        <mrow>R_{j}(z) \amp = \sum_{n=j+1}^{\infty}c_n(z-\alpha)^n</mrow>
+        <mrow>g(z) \amp = \sum_{n=1}^{\infty}nc_n(z-\alpha)^{n-1},</mrow>
+        <mrow>S_j(z) \amp = \sum_{n=0}^jc_n(z-\alpha )^n\text{,}</mrow>
+        <mrow>R_j(z) \amp = \sum_{n=j+1}^{\infty}c_n(z-\alpha)^n</mrow>
       </md>.
     </p>
     <p>
-      Here <m>S_{j}(z)</m> is simply the <m>(j+1)</m>st partial sum of the series <m>f(z)</m>,
-      and <m>R_{j}(z)</m> is the sum of the remaining terms of that series.
+      Here <m>S_j(z)</m> is simply the <m>(j+1)</m>st partial sum of the series <m>f(z)</m>,
+      and <m>R_j(z)</m> is the sum of the remaining terms of that series.
       We leave as an exercise to show that the radius of convergence for <m>g(z)</m> is <m>\rho</m>,
       the same as that of <m>f(z)</m>.
       For a fixed <m>z_0\in D_{\rho}(\alpha)</m>,
@@ -251,16 +250,16 @@
     </p>
     <figure xml:id="fig_ch-04-04">
       <caption>Choosing <m>\delta</m> to prove that <m>f\ '(z_0) =g(z_0)</m></caption>
-      <image width="73%" source="figs/ch-04/ch-04-fig-04.pdf"/>
+      <image width="73%" source="figs/ch-04/ch-04-fig-04.png"/>
     </figure>
     <p>
-      Because <m>f(z) =S_{j}(z) +R_{j}(z)</m>,
+      Because <m>f(z) =S_j(z) +R_j(z)</m>,
       simplifying the right side of the following equation reveals that for all <m>j</m>,
       <md>
-        <mrow>\left[\frac{f(z) -f(z_0)}{z-z_0}-g(z_0)\right] \amp = \left[\frac{S_{j}(z) -S_{j}(z_0)}{z-z_0}-S_{j}^{\,\prime}(z_0) \right]</mrow>
-        <mrow xml:id="x3_parts" number="yes">\amp + \left[ S_{j}^{\,\prime}(z_0) -g(z_0) \right] + \left[ \frac{R_{j}(z) -R_{j}(z_0)}{z-z_0}\right]</mrow>
+        <mrow>\left[\frac{f(z) -f(z_0)}{z-z_0}-g(z_0)\right] \amp = \left[\frac{S_j(z) -S_j(z_0)}{z-z_0}-S_j\,'(z_0) \right]</mrow>
+        <mrow xml:id="x3_parts" number="yes">\amp + \left[ S_j\,'(z_0) -g(z_0) \right] + \left[ \frac{R_j(z) -R_j(z_0)}{z-z_0}\right]</mrow>
       </md>,
-      where <m>S_{j}^{\,\prime}(z_0)</m> is the derivative of the function <m>S_{j}</m> evaluated at <m>z_0</m>.
+      where <m>S_j\,'(z_0)</m> is the derivative of the function <m>S_j</m> evaluated at <m>z_0</m>.
       Equation <xref ref="x3_parts"/> has the general form <m>A=B+C+D</m>.
       By the triangle inequality,
       <me>
@@ -271,9 +270,9 @@
       and <m>|D|</m> is less than <m>\frac{\varepsilon}{3}</m>.
     </p>
     <p>
-      <em>Calculation for</em><m>|D|</m>
+      <em>Calculation for <m>\bm|D|</m>:</em>
       <md>
-        <mrow>\left|\frac{R_{j}(z) -R_{j}(z_0)}{z-z_0}\right| \amp =\left|\frac{1}{z-z_0}\left(\sum\limits_{n=j+1}^{\infty}c_n[(z-\alpha)^n-(z_0-\alpha)^n]\right) \right|</mrow>
+        <mrow>\left|\frac{R_j(z) -R_j(z_0)}{z-z_0}\right| \amp =\left|\frac{1}{z-z_0}\left(\sum\limits_{n=j+1}^{\infty}c_n[(z-\alpha)^n-(z_0-\alpha)^n]\right) \right|</mrow>
         <mrow>\amp \lt  \sum\limits_{n=j+1}^{\infty}|c_n|\left|\frac{(z-\alpha )^n-(z_0-\alpha )^n}{z-z_0}\right|</mrow>
       </md>,
       where the last inequality follows from <xref ref="x4_1_12">Exercise</xref>,
@@ -282,44 +281,44 @@
     <p>
       As an exercise, we ask you to show that
       <men xml:id="Exercise_Ineq">
-        \left|\frac{(z-\alpha )^n-(z_0-\alpha) ^n}{z-z_0}\right| \lt  nr^{n-1}
+        \left|\frac{(z-\alpha )^n-(z_0-\alpha)^n}{z-z_0}\right| \lt  nr^{n-1}
       </men>.
     </p>
     <p>
-      Assuming this to be the case, we get
+      Assuming the validity of this inequality, we then get
       <men xml:id="Rj_ineq">
-        \left|\frac{R_{j}(z) -R_{j}(z_0)}{z-z_0}\right| \lt  \sum_{n=j+1}^{\infty}|c_n| nr^{n-1}\text{.}
-      </men>
+        \left|\frac{R_j(z) - R_j(z_0)}{z-z_0}\right| \lt  \sum_{n=j+1}^{\infty}|c_n|nr^{n-1}
+      </men>.
     </p>
     <p>
       Since <m>r\lt \rho</m>,
       the series <m>\sum\limits_{n=1}^{\infty}| c_n|nr^{n-1}</m> converges
       (can you explain why?).
       Thus the tail part of the series,
-      which is the right side of <xref ref="Rj_ineq">Inequality</xref>,
+      which is the right side of Inequality <xref ref="Rj_ineq"/>,
       can certainly be made less than
       <m>\frac{\varepsilon}{3}</m> if we choose <m>j</m> large enough<mdash/>say,
       <m>j\ge N_1</m>.
     </p>
     <p>
-      <em>Calculation for</em> <m>|C|</m>
+      <em>Calculation for <m>\bm|C|</m>:</em>
     </p>
     <p>
-      Since <m>S_{j}^{\,\prime}(z_0)=\sum\limits_{n=1}^{j}nc_n(z_0-\alpha ) ^{n-1}</m>,
-      it is clear that <m>\lim_{j \to \infty}S_{j}^{\,\prime}(z_0) = g(z_0)</m>.
+      Since <m>S_j\,'(z_0)=\sum\limits_{n=1}^jnc_n(z_0-\alpha )^{n-1}</m>,
+      it is clear that <m>\lim_{j \to \infty}S_j\,(z_0) = g(z_0)</m>.
       Thus there is an integer <m>N_2</m> such that if <m>j \ge N_2</m>,
-      then <m>|S_{j}^{\,\prime}(z_0) -g(z_0)|\lt \frac{\varepsilon}{3}</m>.
+      then <m>|S_j\,'(z_0) -g(z_0)|\lt \frac{\varepsilon}{3}</m>.
     </p>
     <p>
-      <em>Calculation for</em><m>|B|</m>
+      <em>Calculation for <m>\bm|B|</m>:</em>
     </p>
     <p>
-      We define <m>N=\max \{N_1\text{,} N_2\}</m>.
-      Because <m>S_{N}(z)</m> is a polynomial,
-      <m>S_{N}^{\,\prime}(z_0)</m> exists.
+      We define <m>N=\max \{N_1, N_2\}</m>.
+      Because <m>S_N(z)</m> is a polynomial,
+      <m>S_N\,'(z_0)</m> exists.
       This means we can find <m>\delta</m> small enough that it complies with the restriction previously placed on it as well as ensuring that
       <me>
-        |\frac{S_{N}(z) -S_{N}(z_0)}{z-z_0}-S_{N}^{\,\prime}(z_0)|\lt \frac{\varepsilon}{3}
+        \left|\frac{S_N(z) -S_N(z_0)}{z-z_0}-S_N\,'(z_0)\right| \lt  \frac{\varepsilon}{3}
       </me>
       whenever <m>z\in D_{\rho}(\alpha)</m>,
       with <m>0\lt |z-z_0|\lt \delta</m>.
@@ -337,7 +336,8 @@
       <p>
         We know from <xref ref="Geometric_Series">Theorem</xref>
         that <m>f(z) =\frac{1}{1-z}=\sum\limits_{n=0}^{\infty}z^n</m> for all <m>z\in D_1(0)</m>.
-        If we set <m>k=1</m> in Theorem 4.16, part (ii),
+        If we set <m>k=1</m> in <xref ref="Power_Series_Thm">Theorem</xref>,
+        part (ii),
         then <m>f\,'(z) = \frac{1}{(1-z)^2} = \sum\limits_{n=1}^{\infty}nz^{n-1} = \sum\limits_{n=0}^{\infty}(n+1)z^n</m>,
         for all <m>z \in D_1(0)</m>.
       </p>
@@ -352,219 +352,329 @@
         </me>,
         and termwise differentiation shows that its derivative is
         <me>
-          J_0^{\,\prime}(z) = \sum_{n=0}^{\infty}\frac{(-1)^{n+1}}{n!(n+1)!}\left(\frac{z}{2}\right)^{\!2n+1} =\frac{-z}{2}+\frac{1}{1!2!}\left(\frac{z}{2}\right)^{\!3}-\frac{1}{2!3!}\left(\frac{z}{2}\right)^{\!5}+\cdots
+          J_0\,'(z) = \sum_{n=0}^{\infty}\frac{(-1)^{n+1}}{n!(n+1)!}\left(\frac{z}{2}\right)^{\!2n+1} =\frac{-z}{2}+\frac{1}{1!2!}\left(\frac{z}{2}\right)^{\!3}-\frac{1}{2!3!}\left(\frac{z}{2}\right)^{\!5}+\cdots
         </me>.
-      </p>
-      <p>
         We leave as an exercise to show that the radius of convergence of these series is infinity.
-        The Bessel function <m>J_1(z)</m> of order 1 is known to satisfy the differential equation <m>J_1(z) =-J_0^{\,\prime}(z)</m>.
+        The Bessel function <m>J_1(z)</m> of order 1 is known to satisfy the differential equation <m>J_1(z) = -J_0\,'(z)</m>.
       </p>
     </statement>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_power-series">Section</xref></title>
+  <exercises xml:id="exercises_power-series">
+    <title>Exercises</title>
     <exercise xml:id="x4_4_1">
-      <p>
-        Prove part (<em>iii</em>) of <xref ref="th15">Theorem</xref>.
-      </p>
+      <statement>
+        <p>
+          Prove part (<em>iii</em>) of <xref ref="th15">Theorem</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The series for <m>f(z)</m> converges absolutely if <m>\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|\,|z-\alpha |\lt 1</m>.
+          If <m>\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|=0</m>,
+          the series converges for all <m>z</m>.
+          If <m>\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|=\infty</m>,
+          the series converges only when <m>z=\alpha</m>.
+          If <m>\lim\limits_{n \to \infty} |\frac{c_{n+1}}{c_n}|</m> is finite but not zero,
+          then the series converges if <m>|z-\alpha| \lt \frac{1}{\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|} = \rho</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_4_2">
-      <p>
-        Consider the series <m>\sum\limits_{n=0}^{\infty}z^n</m>,
-        <m>\sum\limits_{n=1}^{\infty}\frac{z^n}{n^2}</m>,
-        and <m>\sum\limits_{n=1}^{\infty}\frac{z^n}{n}</m>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Show that each series has radius of convergence 1.
-          </p>
-        </li>
-        <li>
-          <p>
-            Show that the first series converges nowhere on <m>C_1(0) =\{z:|z|=1\}</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Show that the second series converges everywhere on <m>C_1(0)</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            It turns out that the third series converges everywhere on <m>C_1(0)</m>,
-            except at the point <m>z=1</m>.
-            This is not easy to prove.
-            Give it a try.
-          </p>
-        </li>
-      </ol>
+      <introduction>
+        <p>
+          Consider the series <m>\sum\limits_{n=0}^{\infty}z^n</m>,
+          <m>\sum\limits_{n=1}^{\infty}\frac{z^n}{n^2}</m>,
+          and <m>\sum\limits_{n=1}^{\infty}\frac{z^n}{n}</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Show that each series has radius of convergence 1.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that the first series converges nowhere on <m>C_1(0) =\{z:|z|=1\}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that the second series converges everywhere on <m>C_1(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          It turns out that the third series converges everywhere on <m>C_1(0)</m>,
+          except at the point <m>z=1</m>.
+          This is not easy to prove.
+          Give it a try.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_4_3">
-      <p>
-        Find the radius of convergence of the following.
-        <ol>
-          <li>
-            <p>
-              <m>g(z) = \sum\limits_{n=0}^{\infty}(-1)^n \frac{z^n}{(2n)!}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>h(z) = \sum\limits_{n=0}^{\infty}n!z^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f(z) = \sum\limits_{n=0}^{\infty}(\frac{4n^2}{2n+1}-\frac{6n^2}{3n+4})^nz^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>g(z) = \sum\limits_{n=0}^{\infty}\frac{(n!)^2}{(2n)!}z^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>h(z) = \sum\limits_{n=0}^{\infty}(2-(-1)^n)^nz^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f(z) = \sum\limits_{n=0}^{\infty}\frac{n(n-1)z^n}{(3+4i)^n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>g(z) =\sum\limits_{n=0}^{\infty}(\frac{3n+7}{4n+2}^nz^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>h(z) = \sum\limits_{n=0}^{\infty}\frac{2^n}{1+3^n}z^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>g(z) = \sum\limits_{n=0}^{\infty}z^{2n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>g(z) = \sum\limits_{n=0}^{\infty}\frac{n^n}{n!}z^n</m>.
-              <em>Hint</em>:
-              <m>\lim\limits_{n \to \infty}(1+\frac{1}{n})^n=e</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find the radius of convergence of the following.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>g(z) = \sum\limits_{n=0}^{\infty}(-1)^n \frac{z^n}{(2n)!}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\infty</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>h(z) = \sum\limits_{n=0}^{\infty}n!z^n</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>f(z) = \sum\limits_{n=0}^{\infty}(\frac{4n^2}{2n+1}-\frac{6n^2}{3n+4})^nz^n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{3}{5}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>g(z) = \sum\limits_{n=0}^{\infty}\frac{(n!)^2}{(2n)!}z^n</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>h(z) = \sum\limits_{n=0}^{\infty}(2-(-1)^n)^nz^n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{1}{3}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) = \sum\limits_{n=0}^{\infty}\frac{n(n-1)z^n}{(3+4i)^n}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>g(z) =\sum\limits_{n=0}^{\infty}(\frac{3n+7}{4n+2}^nz^n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{4}{3}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>h(z) = \sum\limits_{n=0}^{\infty}\frac{2^n}{1+3^n}z^n</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>g(z) = \sum\limits_{n=0}^{\infty}z^{2n}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>g(z) = \sum\limits_{n=0}^{\infty}\frac{n^n}{n!}z^n</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            <m>\lim\limits_{n \to \infty}(1+\frac{1}{n})^n=e</m>.
+          </p>
+        </hint>
+      </task>
     </exercise>
     <exercise xml:id="x4_4_4">
-      <p>
-        Show that <m>\sum\limits_{n=0}^{\infty}(n+1)^2z^n=\frac{1+z}{(1-z) ^{3}}</m>.
-        For what values of <m>z</m> is this valid?
-      </p>
+      <statement>
+        <p>
+          Show that <m>\sum\limits_{n=0}^{\infty}(n+1)^2z^n=\frac{1+z}{(1-z)^3}</m>.
+          For what values of <m>z</m> is this valid?
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_4_5">
-      <p>
-        Suppose that <m>\sum\limits_{n=0}^{\infty}c_nz^n</m> has radius of convergence <m>R</m>.
-        Show that <m>\sum\limits_{n=0}^{\infty}c_n^2z^n</m> has radius of convergence <m>R^2</m>.
-      </p>
+      <statement>
+        <p>
+          Suppose that <m>\sum\limits_{n=0}^{\infty}c_nz^n</m> has radius of convergence <m>R</m>.
+          Show that <m>\sum\limits_{n=0}^{\infty}c_n^2z^n</m> has radius of convergence <m>R^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Show that <m>\lim\limits_{n \to \infty}\sup |c_n^2|^{\frac{1}{n}} = \big(\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1 }{n}}\big)^2</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_4_6">
-      <p>
-        Does there exist a power series
-        <m>\sum\limits_{n=0}^{\infty}c_nz^n</m> that converges at <m>z_1=4-i</m> and diverges at <m>z_2=2+3i</m>?
-        Why or why not?
-      </p>
+      <statement>
+        <p>
+          Does there exist a power series
+          <m>\sum\limits_{n=0}^{\infty}c_nz^n</m> that converges at <m>z_1=4-i</m> and diverges at <m>z_2=2+3i</m>?
+          Why or why not?
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_4_7">
-      <p>
-        Verify part (<em>ii</em>) of <xref ref="Power_Series_Thm">Theorem</xref>
-        for all <m>k</m> by using mathematical induction.
-      </p>
+      <statement>
+        <p>
+          Verify part (<em>ii</em>) of <xref ref="Power_Series_Thm">Theorem</xref>
+          for all <m>k</m> by using mathematical induction.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The Theorem establishes <m>f^{(k)}(z)=\sum\limits_{n=k}^{\infty}n(n-1) \cdots (n-k+1)c_n(z-\alpha )^{n-k}</m> when <m>k=1</m>.
+          Assume the Theorem is true for some <m>k>1</m>,
+          and set <m>g(z) = \sum\limits_{n=0}^{\infty}b_n(z-\alpha)^n</m>,
+          where <m>b_n=(n+k)(n+k-1) \cdots (n+1)c_{n+k}</m>.
+          In other words, <m>g(z)=f^{(k)}(z)</m>
+          (confirm this).
+          Applying the case when <m>k=1</m> to the function <m>g</m> gives
+          <md>
+            <mrow>g\,'(z) \amp = f^{(k+1)}(z) = \sum\limits_{n=1}^{\infty}nb_n(z-\alpha)^{n-1}</mrow>
+            <mrow>\amp = \sum\limits_{n=1}^{\infty}n(b_n)(n+k)(n+k-1) \cdots (n+1) c_{n+k}(z-\alpha)^{n-1}</mrow>
+            <mrow>\amp = \sum\limits_{n=k+1}^{\infty}n(n-1) \cdots (n-k+1)(n-k)c_n(z-\alpha )^{n-(k+1)}</mrow>
+          </md>
+        </p>
+        <p>
+          (confirm this also), which is what we needed to establish.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_4_8">
-      <p>
-        This exercise establishes that the radius of convergence for <m>g</m> given in <xref ref="Power_Series_Thm">Theorem</xref> is <m>\rho</m>,
-        the same as that of the function <m>f</m>.
-        <ol>
-          <li>
-            <p>
-              Explain why the radius of convergence for <m>g</m> is <m>\frac{1}{\lim\limits_{n \to \infty}\sup |nc_n|^{\frac{{1}}{n-1}}}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that <m>\lim\limits_{n \to \infty}\sup | n|^{\frac{{1}}{n-1}}=1</m>.
-              <em>Hint</em>: The <m>\lim \sup</m> equals the limit.
-              Show that <m>\lim\limits_{n \to \infty}\frac{\log n}{n-1}=0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Assuming that <m>\lim_{n \to \infty}\sup |c_n|^{\frac{{1}}{n-1}}=\lim_{n \to \infty}\sup|c_n|^{\frac{{1}}{n}}</m>,
-              show that the conclusion for this exercise follows.
-            </p>
-          </li>
-          <li>
-            <p>
-              Verify the truth of the assumption made in part (c).
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          This exercise establishes that the radius of convergence for <m>g</m> given in <xref ref="Power_Series_Thm">Theorem</xref> is <m>\rho</m>,
+          the same as that of the function <m>f</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Explain why the radius of convergence for <m>g</m> is <m>\frac{1}{\lim\limits_{n \to \infty}\sup |nc_n|^{\frac{{1}}{n-1}}}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that <m>\lim\limits_{n \to \infty}\sup | n|^{\frac{{1}}{n-1}}=1</m>.
+            Show that <m>\lim\limits_{n \to \infty}\frac{\log n}{n-1}=0</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            The <m>\lim \sup</m> equals the limit.
+          </p>
+        </hint>
+      </task>
+      <task>
+        <p>
+          Assuming that <m>\lim\limits_{n \to \infty}\sup |c_n|^{\frac{{1}}{n-1}} = \lim\limits_{n \to \infty}\sup|c_n|^{\frac{{1}}{n}}</m>,
+          show that the conclusion for this exercise follows.
+        </p>
+      </task>
+      <task>
+        <p>
+          Verify the truth of the assumption made in part (c).
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_4_9">
-      <p>
-        Here we establish the validity of <xref ref="Exercise_Ineq">Inequality</xref>
-        in the proof of <xref ref="Power_Series_Thm">Theorem</xref>.
-        <ol>
-          <li xml:id="x4_4_9a">
-            <p>
-              Show that
-              <md>
-                <mrow>\left|\frac{s^n-t^n}{s-t}\right| \amp = |s^{n-1}+s^{n-2}t+s^{n-3}t^2+\cdots +st^{n-2}+t^{n-1}|</mrow>
-                <mrow>\amp \le |s^{n-1}|+|s^{n-2}t| +|s^{n-3}t^2|+\cdots +|st^{n-2}| +|t^{n-1}|</mrow>
-              </md>,
-              where <m>s</m> and <m>t</m> are arbitrary complex numbers,
-              <m>s \ne t</m>.
-            </p>
-          </li>
-          <li xml:id="x4_4_9b">
-            <p>
-              Explain why, in <xref ref="Exercise_Ineq">Inequality</xref>,
-              <m>|z-\alpha|\lt r</m> and <m>|z_0-\alpha|\lt r</m>.
-            </p>
-          </li>
-          <li xml:id="x4_4_9c">
-            <p>
-              Let <m>s=z-\alpha</m> and <m>t=z_0-\alpha</m> in part (a) to establish <xref ref="Exercise_Ineq">Inequality</xref>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <statement>
+        <p>
+          Here we establish the validity of <xref ref="Exercise_Ineq">Inequality</xref>
+          in the proof of <xref ref="Power_Series_Thm">Theorem</xref>.
+        </p>
+        <task xml:id="x4_4_9a">
+          <p>
+            Show that
+            <md>
+              <mrow>\left|\frac{s^n-t^n}{s-t}\right| \amp = |s^{n-1}+s^{n-2}t+s^{n-3}t^2+\cdots +st^{n-2}+t^{n-1}|</mrow>
+              <mrow>\amp \le |s^{n-1}|+|s^{n-2}t| +|s^{n-3}t^2|+\cdots +|st^{n-2}| +|t^{n-1}|</mrow>
+            </md>,
+            where <m>s</m> and <m>t</m> are arbitrary complex numbers,
+            <m>s \ne t</m>.
+          </p>
+        </task>
+        <task xml:id="x4_4_9b">
+          <p>
+            Explain why, in <xref ref="Exercise_Ineq">Inequality</xref>,
+            <m>|z-\alpha|\lt r</m> and <m>|z_0-\alpha|\lt r</m>.
+          </p>
+        </task>
+        <task xml:id="x4_4_9c">
+          <p>
+            Let <m>s=z-\alpha</m> and <m>t=z_0-\alpha</m> in part (a) to establish <xref ref="Exercise_Ineq">Inequality</xref>.
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          Since <m>s^n-t^n=(s^{n-1}+s^{n-2}t+s^{n-3}t^2+\cdots +st^{n-2}+t^{n-1})(s-t)</m> (verify!), the conclusion follows from division and the triangle inequality.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_4_10">
-      <p>
-        Show that the radius of convergence of the series for <m>J_0(z)</m> and
-        <m>J_0^{\,\prime}(z)</m> in <xref ref="Bessel_Ex">Example</xref> is infinity.
-      </p>
+      <statement>
+        <p>
+          Show that the radius of convergence of the series for <m>J_0(z)</m> and
+          <m>J_0\,'(z)</m> in <xref ref="Bessel_Ex">Example</xref> is infinity.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_4_11">
-      <p>
-        Consider the series obtained by substituting for the complex number <m>z</m> the real number <m>x</m> in the Maclaurin series for <m>\sin x</m>.
-        Where does this series converge?
-      </p>
+      <statement>
+        <p>
+          Consider the series obtained by substituting for the complex number <m>z</m> the real number <m>x</m> in the Maclaurin series for <m>\sin x</m>.
+          Where does this series converge?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The series converges for all values of <m>z</m> by the ratio test.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Show that, for <m>|z-i|\lt \sqrt{2}</m>,
-        <m>\frac{1}{1-z} =\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(1-i) ^{n+1}}</m>.
-        <em>Hint</em>:
-        <m>\frac{1}{1-z}=\frac{1}{(1-i) -(z-i)}=\frac{1 }{1-i}\Big[\frac{1}{1-\frac{z-i}{1-i}}\Big]</m>.
-        Now use <xref ref="Geometric_Series">Theorem</xref>.
-      </p>
+      <statement>
+        <p>
+          Show that, for <m>|z-i|\lt \sqrt{2}</m>,
+          <m>\frac{1}{1-z} =\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}}</m>.
+        </p>
+        <p>
+          Now use <xref ref="Geometric_Series">Theorem</xref>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          <m>\frac{1}{1-z}=\frac{1}{(1-i) -(z-i)}=\frac{1 }{1-i}\Big[\frac{1}{1-\frac{z-i}{1-i}}\Big]</m>.
+        </p>
+      </hint>
     </exercise>
   </exercises>
 </section>

@@ -60,7 +60,7 @@
         <md>
           <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{1}{x^2+1}dx \amp = \lim\limits_{R \to \infty}\int_{-R}^{R}\frac{1}{x^2+1}dx</mrow>
           <mrow>\amp = \lim\limits_{R \to \infty}\big[\mathrm{Arctan}(R)-\mathrm{Arctan}(-R)\big]</mrow>
-          <mrow>\amp = \frac{\pi }{2}-\left(\frac{-\pi}{2}\right)</mrow>
+          <mrow>\amp = \frac{\pi}{2}-\left(-\frac{\pi}{2}\right)</mrow>
           <mrow>\amp = \pi</mrow>
         </md>.
       </p>
@@ -69,7 +69,7 @@
   <p>
     If <m>f(x) =\frac{P(x)}{Q(x)}</m>,
     where <m>P</m> and <m>Q</m> are polynomials,
-    then <m>f</m> is called a <term>rational function</term>.
+    then <m>f</m> is called a rational function.
     In calculus you probably learned techniques for integrating certain types of rational functions.
     We now show how to use the residue theorem to obtain the Cauchy principal value of the integral of <m>f</m> over <m>(-\infty,\infty)</m>.
   </p>
@@ -81,7 +81,7 @@
         respectively.
         If <m>Q(x) \ne 0</m><nbsp/>for all real <m>x</m><nbsp/>and <m>n\ge m+2</m>, then
         <me>
-          \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_{j}\right]
+          \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_j\right]
         </me>,
         where <m>z_1</m>, <m>z_2</m>,
         <m>\ldots</m>, <m>z_{k-1}</m>,
@@ -92,23 +92,21 @@
   </theorem>
   <figure xml:id="fig_ch-08-04">
     <caption>The poles <m>z_1, \  z_2, \ \ldots, \  z_{k-1}, \  z_k</m> of <m>\frac{P}Q</m> that lie in the upper half-plane</caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-04.pdf"/>
+    <image width="73%" source="figs/ch-08/ch-08-fig-04.png"/>
   </figure>
   <proof>
     <p>
       There are a finite number of poles of <m>{P}/{Q}</m> that lie in the upper half-plane,
       so we can find a real number <m>R</m> such that the poles all lie inside the contour <m>C</m>,
       which consists of the segment
-      <m>-R \le x \le R</m> of the <m>x</m>-axis together with the upper semicircle <m>C_R</m> of radius <m>R</m> shown in Figure 8.4.
+      <m>-R \le x \le R</m> of the <m>x</m>-axis and the upper semicircle <m>C_R</m> of radius <m>R</m> shown in <xref ref="fig_ch-08-04">Figure</xref>.
       By properties of integrals,
       <me>
         \int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = \int_{C}\frac{P(z)}{Q(z)}\,dz - \int_{C_R}\frac{P(z)}{Q(z)}\,dz
       </me>.
-    </p>
-    <p>
       Using the residue theorem, we rewrite this equation as
       <men xml:id="RF1">
-        \int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_{j}\right] -\int_{C_R}\frac{P(z)}{Q(z)}\,dz
+        \int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_j\right] -\int_{C_R}\frac{P(z)}{Q(z)}\,dz
       </men>.
     </p>
     <p>
@@ -128,8 +126,7 @@
       so
       <md>
         <mrow>\lim_{|z| \to \infty}\frac{zP(z)}{Q(z)} \amp = \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}</mrow>
-        <mrow>\amp = \lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}</mrow>
-        <mrow>\amp \times \lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}</mrow>
+        <mrow>\amp = \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)</mrow>
       </md>.
     </p>
     <p>
@@ -137,17 +134,17 @@
       this limit reduces to <m>0(\frac{a_{m}}{b_n}) =0</m>.
       Therefore, for any <m>\varepsilon >0</m>,
       we may choose <m>R</m> large enough so that
-      <m>|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon }{\pi }</m> whenever <m>z</m> lies on <m>C_R</m>.
+      <m>|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}</m> whenever <m>z</m> lies on <m>C_R</m>.
       But this means that
       <men xml:id="x_P_Q__bound">
-        \left|\frac{P(z)}{Q(z)}\right| \lt \frac{ \varepsilon }{\pi |z|} = \frac{\varepsilon}{\pi R}
+        \left|\frac{P(z)}{Q(z)}\right| \lt  \frac{\varepsilon}{\pi |z|} = \frac{\varepsilon}{\pi R}
       </men>
       whenever <m>z</m> lies on <m>C_R</m>.
       Using the ML inequality
       (<xref ref="ML_Inequality_Thm">Theorem</xref>)
-      and the result of Inequality <xref ref="x_P_Q__bound"/>, we get
+      and Inequality <xref ref="x_P_Q__bound"/>, we get
       <me>
-        \left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon }{\pi R}\,|dz| = \frac{\varepsilon }{\pi R}\pi R=\varepsilon
+        \left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi R=\varepsilon
       </me>.
     </p>
     <p>
@@ -163,23 +160,23 @@
   <example>
     <statement>
       <p>
-        Evaluate <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}</m>.
+        Evaluate <m>\int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         We write the integrand as <m>f(z) =\frac{1}{(z+i) (z-i) (z+2i) (z-2i)}</m>.
         We see that <m>f</m> has simple poles at the points <m>i</m> and <m>2i</m> in the upper half-plane.
         Computing the residues, we obtain
         <me>
-          \mathrm{Res}[f,i] = \frac{-i}{6},  \text{ and }   \mathrm{Res}[f,2i] = \frac{i}{12}
+          \mathrm{Res}[f,i] = -\frac{i}{6},  \text{ and }   \mathrm{Res}[f,2i] = \frac{i}{12}
         </me>.
-      </p>
-      <p>
         Using <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>, we conclude that
         <me>
-          \int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)} = 2\pi i(\frac{-i}{6}+\frac{i}{12}) = \frac{\pi }{6}
-        </me>.
+          \int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx = 2\pi i\left(-\frac{i}{6}+\frac{i}{12}\right) = \frac{\pi}{6}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -195,98 +192,168 @@
         which is the only singularity of <m>f</m> in the upper half-plane.
         Computing the residue, we get
         <md>
-          <mrow>\mathrm{Res}[f,2i] \amp = \frac{1}{2}\lim\limits_{z \to 2i}\frac{d^2}{dz^2}\frac{1}{(z+2i)^3}</mrow>
-          <mrow>\amp = \frac{1}{2}\lim_{z \to 2i}\frac{d}{dz}\frac{-3}{(z+2i)^4}</mrow>
-          <mrow>\amp = \frac{1}{2}\lim\limits_{z \to 2i}\frac{12}{(z+2i)^5}</mrow>
-          <mrow>\amp = \frac{-3i}{512}</mrow>
+          <mrow>\mathrm{Res}[f,2i] \amp = \frac{1}{2}\lim\limits_{z \to 2i}\frac{d^2}{dz^2}\left[\frac{1}{(z+2i)^3}\right]</mrow>
+          <mrow>\amp = \frac{1}{2}\lim_{z \to 2i}\frac{d}{dz}\left[\frac{-3}{(z+2i)^4}\right]</mrow>
+          <mrow>\amp = \frac{1}{2}\lim\limits_{z \to 2i}\left[\frac{12}{(z+2i)^5}\right]</mrow>
+          <mrow>\amp = -\frac{3i}{512}</mrow>
         </md>.
       </p>
       <p>
-        Therefore <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+4)^3} = 2\pi i(\frac{-3i}{512}) = \frac{3\pi }{256}</m>.
+        Therefore, <m>\displaystyle \int_{-\infty}^{\infty}\frac{1}{(x^2+4)^3}\,dx = 2\pi i\left(\frac{-3i}{512}\right) = \frac{3\pi}{256}</m>.
       </p>
     </solution>
   </example>
-  <p>
-    <em>Exercises for <xref ref="sec_improper-rational-fn-int">Section</xref></em>
-    Use residues to evaluate the following integrals:
-    <ol>
-      <li xml:id="x8_3_1">
+  <exercises xml:id="exercises_improper-rational-fn-int">
+    <title>Exercises</title>
+    <p>
+      Use residues to evaluate the following integrals:
+    </p>
+    <exercise xml:id="x8_3_1">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+16)^2}</m>.
+          <m>\int_{-\infty}^{\infty}\frac{x^2}{(x^2+16)^2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_2">
+      </statement>
+      <solution>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{dx}{x^2+16}</m>.
+          <m>\frac{\pi}{8}</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_3">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_2">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x\,dx}{(x^2+9)^2}</m>.
+          <m>\int_{-\infty}^{\infty}\frac{1}{x^2+16}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_4">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_3">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x+3}{(x^2+9) ^2}\,dx</m>.
+          <m>\int_{-\infty}^{\infty}\frac{x}{(x^2+9)^2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_5">
+      </statement>
+      <solution>
+        <p>
+          <m>0</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_4">
+      <statement>
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x+3}{(x^2+9)^2}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_5">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{2x^2+3}{(x^2+9)^2}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_6">
+      </statement>
+      <solution>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{dx}{x^4+4}</m>.
+          <m>\frac{7\pi}{18}</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_7">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_6">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{x^4+4}</m>.
+          <m>\int_{-\infty}^{\infty}\frac{1}{x^4+4}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_8">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_7">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+4)^3}</m>.
+          <m>\int_{-\infty}^{\infty}\frac{x^2}{x^4+4}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_9">
+      </statement>
+      <solution>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)^2(x^2+4)}</m>.
+          <m>\frac{\pi}{9}</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_10">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_8">
+      <statement>
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{x^2}{(x^2+4)^3}\,dx</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_9">
+      <statement>
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{1}{(x^2+1)^2(x^2+4)}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{9}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_10">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{x+2}{(x^2+4)(x^2+9)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_11">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_11">
+      <statement>
         <p>
           <m>\int_{-\infty}^{\infty}\frac{3x^2+2}{(x^2+4)(x^2+9)}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_12">
+      </statement>
+      <solution>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{dx}{x^{6}+1}</m>.
+          <m>\frac{2\pi}{3}</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_13">
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_12">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x^4\,dx}{x^{6}+1}</m>.
+          <m>\int_{-\infty}^{\infty}\frac{1}{x^{6}+1}\,dx</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_14">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_13">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{dx}{(x^2+a^2) (x^2+b^2)}</m>,
+          <m>\int_{-\infty}^{\infty}\frac{x^4}{x^{6}+1}\,dx</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{2\pi}{3}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x8_3_14">
+      <statement>
+        <p>
+          <m>\int_{-\infty}^{\infty}\frac{1}{(x^2+a^2)(x^2+b^2)}\,dx</m>,
           where <m>a>0</m> and <m>b>0</m>.
         </p>
-      </li>
-      <li xml:id="x8_3_15">
+      </statement>
+    </exercise>
+    <exercise xml:id="x8_3_15">
+      <statement>
         <p>
-          <m>\int_{-\infty}^{\infty}\frac{x^2\,dx}{(x^2+a^2)^3}</m>,
+          <m>\int_{-\infty}^{\infty}\frac{x^2}{(x^2+a^2)^3}\,dx</m>,
           where <m>a>0</m>.
         </p>
-      </li>
-    </ol>
-  </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{8a^3}</m>.
+        </p>
+      </solution>
+    </exercise>
+  </exercises>
 </section>

@@ -12,7 +12,7 @@
         Suppose that <m>f</m> is analytic in a domain <m>D</m> containing <m>\alpha</m> and that <m>f(\alpha) =0</m>.
         If <m>f</m> is not identically zero in <m>D</m>,
         then there exists a punctured disk
-        <m>D_{R}^{\ast}(\alpha)</m> in which <m>f</m> has no zeros.
+        <m>D_{R}^*(\alpha)</m> in which <m>f</m> has no zeros.
       </p>
     </statement>
   </theorem>
@@ -23,8 +23,6 @@
       <me>
         f(z) = \sum_{n=0}^{\infty}\frac{f\,^{(n)}(\alpha)}{n!}(z-\alpha)^n  \text{ for all }   z \in D_{R}(\alpha)
       </me>.
-    </p>
-    <p>
       If all the Taylor coefficients
       <m>\frac{f\,^{(n)}(\alpha)}{n!}</m> of <m>f</m> were zero,
       then <m>f</m> would be identically zero on <m>D_{R}(\alpha)</m>.
@@ -36,7 +34,8 @@
     <p>
       Thus, not all the Taylor coefficients of <m>f</m> are zero,
       and we may select the smallest integer <m>k</m> such that <m>\frac{f\,^{(k)}(\alpha)}{k!} \ne 0</m>.
-      According to the results in Section 7.4, <m>f</m> has a zero of order <m>k</m> at <m>\alpha</m> and can be written in the form
+      According to the results in <xref ref="sec_singularities">Section</xref>,
+      <m>f</m> has a zero of order <m>k</m> at <m>\alpha</m> and can be written in the form
       <me>
         f(z) = (z-\alpha)^kg(z)
       </me>,
@@ -75,7 +74,7 @@
     <xref ref="Isolated_Zeros_Thm">Theorem</xref>
     also allows us to give a simple argument for one version of L'H&#xf4;pital's rule.
   </p>
-  <corollary>
+  <corollary xml:id="cor_L_hospital">
     <statement>
       <p>
         (L'H&#xf4;pital's rule) Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic at <m>\alpha</m>.
@@ -83,7 +82,7 @@
         but <m>g\,'(\alpha) \ne 0</m>, then
         <me>
           \lim_{z \to \alpha }\frac{f(z)}{g(z)} = \frac{f\,'(\alpha)}{g'(\alpha)}
-        </me>.
+        </me>
       </p>
     </statement>
   </corollary>
@@ -92,8 +91,8 @@
       Because <m>g\,'(\alpha)  \ne0</m>,
       <m>g</m> is not identically zero and,
       by <xref ref="Isolated_Zeros_Thm">Theorem</xref>,
-      there is a punctured disk <m>D_r^{\ast}(\alpha)</m> in which <m>g(z) \ne 0</m>.
-      Thus the quotient <m>\frac{f(z)}{g(z)}=\frac{f( z) -f(\alpha)}{g(z) -g(\alpha)}</m> is defined for all <m>z \in D_r^{\ast}(\alpha)</m>,
+      there is a punctured disk <m>D_r^*(\alpha)</m> in which <m>g(z) \ne 0</m>.
+      Thus the quotient <m>\frac{f(z)}{g(z)}=\frac{f(z) -f(\alpha)}{g(z) -g(\alpha)}</m> is defined for all <m>z \in D_r^*(\alpha)</m>,
       and we can write
       <me>
         \lim_{z \to\alpha}\frac{f(z)}{g(z)} = \lim_{z \to\alpha}\frac{f(z) -f(\alpha)}{g(z) - g(\alpha)} = \lim_{z \to\alpha}\frac{[f(z) - f(\alpha)] / (z-\alpha)}{[g(z) - g(\alpha)] /(z-\alpha)} = \frac{f\,'(\alpha)}{g'(\alpha)}
@@ -118,7 +117,7 @@
         If <m>g(\alpha) \ne 0</m>,
         then the quotient <m>\frac{f}{g}</m> has the power series representation
         <me>
-          \frac{f(z)}{g(z)} = \sum_{n=0}^{\infty }c_n(z-\alpha)^n
+          \frac{f(z)}{g(z)} = \sum_{n=0}^{\infty}c_n(z-\alpha)^n
         </me>,
         where the coefficients satisfy the equation
         <me>
@@ -144,7 +143,7 @@
       <p>
         Using long division, we see that
         <me>
-          \sec z = \frac{1}{\cos z} = \frac{1}{1-\frac{z^2}{2!}+\frac{z^{4}}{4!}-\frac{z^{6}}{6!}+\cdots } = 1+\frac{1}{2}z^2+\frac{5}{24}z^{4}+\cdots
+          \sec z = \frac{1}{\cos z} = \frac{1}{1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^{6}}{6!}+\cdots } = 1+\frac{1}{2}z^2+\frac{5}{24}z^4+\cdots
         </me>.
       </p>
       <p>
@@ -162,8 +161,8 @@
     <title>Riemann</title>
     <statement>
       <p>
-        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^{\ast}(\alpha)</m>.
-        If <m>f</m> is bounded in <m>D_r^{\ast}(\alpha)</m>,
+        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^*(\alpha)</m>.
+        If <m>f</m> is bounded in <m>D_r^*(\alpha)</m>,
         then either <m>f</m> is analytic at <m>\alpha</m> or <m>f</m> has a removable singularity at <m>\alpha</m>.
       </p>
     </statement>
@@ -176,7 +175,7 @@
       </men>
     </p>
     <p>
-      Clearly, <m>g</m> is analytic in at least <m>D_r^{\ast}(\alpha)</m>.
+      Clearly, <m>g</m> is analytic in at least <m>D_r^*(\alpha)</m>.
       Straightforward calculation yields
       <me>
         g\,'(\alpha) = \lim_{z \to\alpha}\frac{g(z) -g(\alpha)}{z-\alpha}=\lim_{z \to\alpha }(z-\alpha)f(z) = 0
@@ -212,7 +211,7 @@
   <corollary xml:id="Cor_7_10">
     <statement>
       <p>
-        If <m>f</m> is analytic in <m>D_r^{\ast}(\alpha)</m>,
+        If <m>f</m> is analytic in <m>D_r^*(\alpha)</m>,
         then <m>f</m> can be defined to be analytic at <m>\alpha</m> iff
         <m>\lim\limits_{z \to \alpha }f(z)</m> exists and is finite.
       </p>
@@ -221,7 +220,7 @@
   <theorem xml:id="Thm_7_17">
     <statement>
       <p>
-        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^{\ast}(\alpha)</m>.
+        Suppose that <m>f</m><nbsp/>is analytic in <m>D_r^*(\alpha)</m>.
         The function <m>f</m> has a pole of order <m>k</m> at <m>\alpha</m>,
         iff <m>\lim\limits_{z \to\alpha}|f(z)| = \infty</m>.
       </p>
@@ -301,134 +300,193 @@
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_taylor-laurent-apps">Section</xref></title>
+  <exercises xml:id="exercises_taylor-laurent-apps">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Determine whether there exists a function <m>f</m> that is analytic at <m>0</m> such that for <m>n=1,\,2,\,3,\ldots\,</m>,
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Determine whether there exists a function <m>f</m> that is analytic at <m>0</m> with the property that,
+          for <m>n=1,\,2,\,3,\ldots</m>,
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>f(\frac{1}{2n}) = 0</m> and <m>f(\frac{1}{2n-1}) = 1</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(\frac{1}{n}) =f(\frac{-1}{n}) =\frac{1}{n^2}</m>.
+            No.
+            Otherwise <m>0=\lim\limits_{n \to \infty}f(\frac{1}{2n}) = f(\lim\limits_{n \to \infty} \frac{1}{2n}) = f(0)</m>.
+            On the other hand,
+            <m>1=\lim\limits_{n \to \infty}f(\frac{1}{2n-1}) = f\left(\lim\limits_{n \to \infty}\frac{1}{2n-1}\right) = f(0)</m>.
+            Justify and explain.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
-            <m>f(\frac{1}{n}) =f(\frac{-1}{n}) =\frac{1}{n^3}</m>.
+            <m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^2}</m>.
           </p>
-        </li>
-      </ol>
+        </statement>
+        <solution>
+          <p>
+            Yes.
+            There is a simple function with this property.
+            Find it.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^3}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            No.
+            Use <xref ref="f_g_Cor">Corollary</xref>
+            to show that for all <m>z</m> in some disk
+            <m>D_{r}(0)</m> we have <m>f(z)=z^3</m>,
+            and <m>f(z) = -z^3</m>, and explain why this is impossible.
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x7_5_2">
-      <p>
-        Prove the following corollaries and theorem.
-        <ol>
-          <li>
-            <p>
-              <xref ref="Limit_Zero_Cor">Corollary</xref>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <xref ref="f_g_Cor">Corollary</xref>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <xref ref="Pr_Series_Division">Theorem</xref>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <xref ref="Cor_7_10">Corollary</xref>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Prove the following results.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <xref ref="Limit_Zero_Cor">Corollary</xref>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <xref ref="f_g_Cor">Corollary</xref>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <xref ref="Pr_Series_Division">Theorem</xref>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <xref ref="Cor_7_10">Corollary</xref>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x7_5_3">
-      <p>
-        Consider the function <m>f(z) =z\sin (\frac{1}{z})</m>.
-        <ol>
-          <li>
-            <p>
-              Show that there is a sequence <m>\{z_n\}</m> of points converging to <m>0</m> such that
-              <m>f(z_n) =0</m> for <m>n=1,\,2,\,3,\ldots</m> <nbsp/>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Does this result contradict <xref ref="Limit_Zero_Cor">Corollary</xref>?
-              Why or why not?
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the function <m>f(z) =z\sin (\frac{1}{z})</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Show that there is a sequence <m>\{z_n\}</m> of points converging to <m>0</m> such that
+            <m>f(z_n) =0</m> for <m>n=1,\,2,\,3,\ldots</m> <nbsp/>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>z_n=\frac{1}{\pi n}</m>.
+            Explain.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Does this result contradict <xref ref="Limit_Zero_Cor">Corollary</xref>?
+            Why or why not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            No, the function <m>f</m> is not analytic at zero
+            (explain why),
+            which is required by the corollary.
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x7_5_4">
-      <p>
-        Let <m>f(z) =\tan z</m>.
-        <ol>
-          <li xml:id="x7_5_4a">
-            <p>
-              Use <xref ref="Pr_Series_Division">Theorem</xref>
-              to find the first few terms of the Maclaurin series for <m>f(z)</m>,
-              if <m>|z| \lt \frac{\pi}{2}</m>.
-            </p>
-          </li>
-          <li xml:id="x7_5_4b">
-            <p>
-              What are the values of <m>f\,^{(6)}(0)</m> and <m>f\,^{(7)}(0)</m>?
-            </p>
-          </li>
-        </ol>
-      </p>
+      <statement>
+        <p>
+          Let <m>f(z) =\tan z</m>.
+        </p>
+        <task xml:id="x7_5_4a">
+          <p>
+            Use <xref ref="Pr_Series_Division">Theorem</xref>
+            to find the first few terms of the Maclaurin series for <m>f(z)</m>,
+            if <m>|z| \lt \frac{\pi}{2}</m>.
+          </p>
+        </task>
+        <task xml:id="x7_5_4b">
+          <p>
+            What are the values of <m>f\,^{(6)}(0)</m> and <m>f\,^{(7)}(0)</m>?
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x7_5_5">
-      <p>
-        Show that the real function <m>f</m> defined by
-        <me>
-          f(x) = \begin{cases}x\sin (\frac{1}{x}) , \amp  \text{ when } x \ne 0\text{ , and }  \\ 0, \amp  \text{ when }   x=0, \end{cases}
-        </me>
-        is continuous at <m>x=0</m> but that the corresponding function <m>g(z)</m> defined by
-        <me>
-          g(z) = \begin{cases}z\sin (\frac{1}{z}) , \amp  \text{ when }   z \ne 0,  \text{ and }  \\ 0, \amp  \text{ when }   z=0, \end{cases}
-        </me>
-        is <em>not</em> continuous at <m>z=0</m>.
-      </p>
+      <statement>
+        <p>
+          Show that the real function <m>f</m> defined by
+          <me>
+            f(x) = \begin{cases}x\sin (\frac{1}{x}) , \amp  \text{ when } x \ne 0\text{ , and }  \\ 0, \amp  \text{ when }   x=0, \end{cases}
+          </me>
+          is continuous at <m>x=0</m> but that the corresponding function <m>g(z)</m> defined by
+          <me>
+            g(z) = \begin{cases}z\sin (\frac{1}{z}) , \amp  \text{ when }   z \ne 0,  \text{ and }  \\ 0, \amp  \text{ when }   z=0, \end{cases}
+          </me>
+          is <em>not</em> continuous at <m>z=0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For <m>x\ne 0, \, \lim\limits_{x \to 0}|x\sin \frac{1}{x}| \le \lim\limits_{x\to 0}|x|=0</m>.
+          This implies <m>\lim\limits_{x\to 0}f(x) =0 = f(0)</m>.
+          For the complex case,
+          show that there is an essential singularity at 0 and use <xref ref="Essential_Sing_Thm">Theorem</xref>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x7_5_6">
-      <p>
-        Use L'H&#xf4;pital's rule to find the following limits.
-        <ol>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to 1+i}\frac{z-1-i}{z^{4}+4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to i}\frac{z^2-2iz-1}{z^{4}+2z^2+1}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to i}\frac{1+z^{6}}{1+z^2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to 0}\frac{\sin z+\sinh z-2z}{z^{5}}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use L'H&#xf4;pital's rule to find the following limits.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\lim\limits_{z \to 1+i}\frac{z-1-i}{z^4+4}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{z \to i}\frac{z^2-2iz-1}{z^4+2z^2+1}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{z \to i}\frac{1+z^{6}}{1+z^2}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{z \to 0}\frac{\sin z+\sinh z-2z}{z^{5}}</m>.
+        </p>
+      </task>
     </exercise>
   </exercises>
 </section>

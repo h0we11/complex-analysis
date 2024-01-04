@@ -2,8 +2,7 @@
   <title>Geometric Series and Convergence Theorems</title>
   <p>
     We begin this section by presenting a series of the form <m>\sum\limits_{n=0}^{\infty}z^n</m>,
-    which is called a <term>geometric series</term>
-    and is one of the most important series in mathematics.
+    which is called a geometric series and is one of the most important series in mathematics.
   </p>
   <theorem xml:id="Geometric_Series">
     <title>Geometric series</title>
@@ -12,7 +11,7 @@
         If <m>|z|\lt 1</m> the series <m>\sum\limits_{n=0}^{\infty}z^n</m> converges to
         <m>f(z) =\frac{1}{1-z}</m> That is, if <m>|z|\lt 1</m>, then
         <men xml:id="Geometric_Sum">
-          \sum\limits_{n=0}^{\infty}z^n=1+z+z^2+\cdots +z^{k}+\cdots =\frac{1}{1-z }\text{.}
+          \sum\limits_{n=0}^{\infty}z^n=1+z+z^2+\cdots +z^k+\cdots =\frac{1}{1-z }\text{.}
         </men>
       </p>
       <p>
@@ -52,7 +51,7 @@
     </p>
     <p>
       Now suppose <m>|z| \ge 1</m>.
-      Clearly, <m>\lim\limits_{n\to \infty}|z^n| \ne 0</m>,
+      Clearly, <m>\lim\limits_{n \to \infty}|z^n| \ne 0</m>,
       so <m>\lim\limits_{n \to \infty}z^n\ne 0</m>
       (see <xref ref="x4_1_17">Exercise</xref>,
       <xref ref="sec_sequences-series">Section</xref>).
@@ -91,8 +90,6 @@
       <me>
         \sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{\! n+1}=\frac{1}{z-1}   \text{ if }   \left|\frac{1}{z}\right| \lt 1
       </me>.
-    </p>
-    <p>
       But this expression is equivalent to saying that <m>\sum\limits_{n=1}^{\infty}(\frac{1}{z})^n=\frac{1}{z-1}</m>,
       if <m>1\lt |z|</m>, which is what the corollary claims.
     </p>
@@ -100,13 +97,13 @@
       It is left as an exercise to show that the series diverges if <m>|z| \le 1</m>.
     </p>
   </proof>
-  <corollary>
+  <corollary xml:id="cor_geometric-series">
     <statement>
       <p>
         If <m>z \ne 1</m> then for all <m>n</m>,
         <me>
           \frac{1}{1-z}=1+z+z^2+\cdots +z^{n-1}+\frac{z^n}{1-z}
-        </me>.
+        </me>
       </p>
     </statement>
   </corollary>
@@ -120,51 +117,56 @@
       <p>
         Show that <m>\sum\limits_{n=0}^{\infty} \frac{(1-i)^n}{2^n}=1-i</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         If we set <m>z=\frac{1-i}{2}</m>,
         then <m>|z|=\frac{\sqrt{2}}{2}\lt 1</m>.
         By <xref ref="Geometric_Series">Theorem</xref>, the sum is
         <me>
           \frac{1}{1-\frac{1-i}{2}}=\frac{2}{2-1+i}=\frac{2}{1+i}=1-i
-        </me>.
-      </p>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Evaluate <m>\sum\limits_{n=3}^{\infty}(\frac{i}{2})^n</m>.
+        </me>
       </p>
     </statement>
     <solution>
       <p>
+      </p>
+    </solution>
+  </example>
+  <example xml:id="ex_4_14">
+    <statement>
+      <p>
+        Evaluate <m>\sum\limits_{n=3}^{\infty}(\frac{i}{2})^n</m>.
+      </p>
+      <p>
         We can put this expression in the form of a geometric series:
         <md>
           <mrow>{3} \sum_{n=3}^{\infty}\left(\frac{i}{2}\right)^{\!n} \amp = \sum_{n=3}^{\infty}\left(\frac{i}{2}\right)^{\!3}\left(\frac{i}{2}\right)^{\!n-3} \amp \amp</mrow>
-          <mrow>\amp = \left(\frac{i}{2}\right)^{\!3} \sum_{n=3}^{\infty}\left(\frac{i}{2}\right)^{\!n-3} \amp \amp   \text{ (by Equation (4.1.10) in Theorem 4.5) }</mrow>
+          <mrow>\amp = \left(\frac{i}{2}\right)^{\!3} \sum_{n=3}^{\infty}\left(\frac{i}{2}\right)^{\!n-3} \amp \amp   \text{ (by Equation (4.1.10) in <xref ref="Conv_terms_go_to_0">Theorem</xref>) }</mrow>
           <mrow>\amp = \left(\frac{i}{2}\right)^{\!3} \sum_{n=0}^{\infty}\left(\frac{i}{2}\right)^{\!n} \amp \amp   \text{ (by reindexing) }</mrow>
           <mrow>\amp = \left(\frac{i}{2}\right)^{\!3} \left(\frac{1}{1-\frac{i}{2}}\right) \amp \amp   \text{ (by <xref ref="Geometric_Series">Theorem</xref> because }  \left|\frac{i}{2}\right|=\frac{1}{2}\lt 1)</mrow>
           <mrow>\amp = \frac{1}{20}-\frac{i}{10} \amp \amp   \text{ (by standard simplification procedures) } </mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
     </solution>
   </example>
   <remark>
     <p>
-      The equality given in Example 4.14 illustrates an important point with regard to evaluating a geometric series whose beginning index is other than zero.
+      The equalities given in <xref ref="ex_4_14">Example</xref>
+      collectively illustrate an important point with regard to evaluating a geometric series whose beginning index is other than zero.
       The value of <m>\sum\limits_{n=r}^{\infty}z^n</m> equals <m>\frac{z^{r}}{ 1-z}</m>.
       If we think of <m>z</m> as the
       <q>ratio</q>
       by which any term of the series is multiplied to generate successive terms,
-      we note that the<nbsp/>sum of a geometric series equals <m>\frac{\;\text{ first term\; } }{\;1-\text{ ratio } \;}</m>,
+      we note that the sum of a geometric series equals <m>\frac{\;\text{ first term\; } }{\;1-\text{ ratio } \;}</m>,
       provided <m>|\text{ ratio } |\lt 1</m>.
     </p>
   </remark>
   <p>
-    The geometric series is used in the proof of Theorem 4.12,
-    which is known as the <term>ratio test</term><em>.</em>
+    The geometric series is used in the proof of <xref ref="Geometric_Series">Theorem</xref>,
+    which is known as the ratio test<em>.</em>
     It is one of the most commonly used tests for determining the convergence or divergence of series.
     The proof is similar to the one used for real series,
     and we leave it for you to do.
@@ -213,15 +215,13 @@
         <me>
           \lim_{n \to \infty}\frac{|{(z-i)^{n+1}}/{2^{n+1}}|}{|{(z-i)^n}/{2^n}|}= \lim_{n \to \infty}\frac{|z-i|}{2}=\frac{|z-i|}{2}=L
         </me>.
-      </p>
-      <p>
         If <m>|z-i|\lt 2</m>, then <m>L\lt 1</m>, and the series converges.
         If <m>|z-i|>2</m>, then <m>L>1</m>, and the series diverges.
       </p>
     </solution>
   </example>
   <p>
-    Our next result, known as the <term>root test</term>,
+    Our next result, known as the root test,
     is slightly more powerful than the ratio test.
     Before we present this test,
     we need to discuss a rather sophisticated idea used with it<mdash/>the
@@ -232,7 +232,7 @@
     <statement>
       <p>
         Let <m>\{t_n\}</m> be a sequence of positive real numbers.
-        The <term>limit supremum</term> of the sequence (denoted
+        The limit supremum of the sequence (denoted
         <m>\lim\limits_{n \to \infty} \sup \, t_n)</m> is the smallest real number <m>L</m> having the property that for any <m>\varepsilon>0</m>,
         there are at most finitely many terms in the sequence that are larger than <m>L+\varepsilon</m>.
         If there is no such number <m>L</m>,
@@ -245,7 +245,7 @@
       <p>
         \textrm{} The limit supremum of the sequence
         <me>
-          \{t_n\} =\{ 4.1,\,5.1,\,4.01,\,5.01,\,4.001,\,5.001, \ldots\}  \text{{is} } \lim_{n \to \infty}\sup \, t_n=5
+          \{t_n\} =\{ 4.1,\;5.1,\;4.01,\;5.01,\;4.001,\;5.001, \ldots\}  \text{{is} } \lim_{n \to \infty}\sup \, t_n=5
         </me>,
         because if we set <m>L=5</m>,
         then for any <m>\varepsilon>0</m>,
@@ -262,7 +262,7 @@
       <p>
         The limit supremum of the sequence
         <me>
-          \{t_n\} =\{ 1,\,2,\,3,\,1,\,2,\,3,\,1,\,2,\,3,\,1,\,2,\,3, \ldots \}  \text{ is }   \lim_{n \to \infty}\sup \, t_n=3
+          \{t_n\} =\{ 1,\;2,\;3,\;1,\;2,\;3,\;1,\;2,\;3,\;1,\;2,\;3, \ldots \}  \text{ is }   \lim_{n \to \infty}\sup \, t_n=3
         </me>,
         because if we set <m>L=3</m>,
         then for any <m>\varepsilon>0</m>,
@@ -283,10 +283,8 @@
       <p>
         The limit supremum of the Fibonacci sequence
         <me>
-          \{t_n\} =\{1,\,1,\,2,\,3,\,5,\,8,\,13,\,21,\,34,\ldots \}  \text{ is }   \lim_{n \to \infty}\sup \, t_n=\infty
+          \{t_n\} =\{1,\;1,\;2,\;3,\;5,\;8,\;13,\;21,\;34,\ldots \}  \text{ is }   \lim_{n \to \infty}\sup \, t_n=\infty
         </me>.
-      </p>
-      <p>
         (The Fibonacci sequence satisfies the relation <m>t_n=t_{n-1}+t_{n-2}</m> for <m>n>2</m>.)
       </p>
     </statement>
@@ -294,7 +292,7 @@
   <p>
     The limit supremum is a powerful idea because the limit supremum of a sequence always exists,
     which is not true for the ordinary limit.
-    However, Example 4.20 illustrates the fact that,
+    However, <xref ref="lim_sup___lim">Example</xref> illustrates the fact that,
     if the limit of a sequence does exist,
     then it will be the same as the limit supremum.
   </p>
@@ -304,7 +302,7 @@
         The sequence
         <md>
           <mrow>\{t_n\} \amp = \{1+\frac{1}{n}\}</mrow>
-          <mrow>\amp = \{2,\,1.5,\,1.3\overline{3},\,1.25,\,1.2,\,\ldots \}  \text{ has }   \lim_{n \to \infty}\sup \, t_n=1</mrow>
+          <mrow>\amp = \{2,\;1.5,\;1.3\overline{3},\;1.25,\;1.2,\;\ldots \}  \text{ has }   \lim_{n \to \infty}\sup \, t_n=1</mrow>
         </md>.
       </p>
       <p>
@@ -316,7 +314,7 @@
     <title>Root test</title>
     <statement>
       <p>
-        Suppose the series <m>\sum\limits_{n=0}^{\infty}\zeta _n</m> has <m>\lim_{n \to \infty}\sup |\zeta_n|^{\frac{1}{n}}=L</m>.
+        Suppose the series <m>\sum\limits_{n=0}^{\infty}\zeta _n</m> has <m>\lim\limits_{n \to \infty}\sup |\zeta_n|^{\frac{1}{n}}=L</m>.
         Then the series is absolutely convergent if <m>L\lt 1</m> and divergent if <m>L>1</m>.
       </p>
     </statement>
@@ -331,9 +329,9 @@
       That is, <m>| \zeta _n|\lt r^n</m> for all <m>n>N</m>.
       For <m>r\lt 1</m>, <xref ref="Geometric_Series">Theorem</xref>
       implies that <m>\sum\limits_{n=N+1}^{\infty}r^n</m> converges.
-      But then, by <xref ref="Comparison_Test">Theorem</xref>,
-      <m>\sum \limits_{n=N+1}^{\infty}|\zeta _n|</m> converges and hence so does
-      <m>\sum\limits_{n=0}^{\infty}|\zeta _n|</m> . <xref ref="Abs_Conv_Implies_Conv">Corollary</xref>
+      But then <xref ref="Comparison_Test">Theorem</xref>
+      implies that <m>\sum \limits_{n=N+1}^{\infty}|\zeta _n|</m> converges,
+      and hence so does <m>\sum\limits_{n=0}^{\infty}|\zeta _n|</m> . <xref ref="Abs_Conv_Implies_Conv">Corollary</xref>
       then guarantees that <m>\sum\limits_{n=0}^{\infty}\zeta _n</m> converges.
     </p>
     <p>
@@ -354,150 +352,217 @@
     if <m>L=1</m> the convergence or divergence of the series is unknown,
     and further analysis is required to determine the true state of affairs.
   </p>
-  <exercises>
-    <title>Exercises for <xref ref="sec_convergence-theorems">Section</xref></title>
+  <exercises xml:id="exercises_convergence-theorems">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Evaluate
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Evaluate
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>\sum\limits_{n=0}^{\infty}\frac{(1+i)^n}{2^n}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\sum\limits_{n=0}^{\infty}(\frac{1}{2+i})^n</m>.
+            By <xref ref="Geometric_Series">Theorem</xref>,
+            <m>\sum\limits_{n=0}^{\infty}\frac{(1+i)^n}{2^n}=\frac{1}{1-(\frac{1+i}{2})}=1+i</m>
+            (show the details),
+            since <m>|\frac{1+i}{2}|\lt 1</m>
+            (show this also).
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}(\frac{1}{2+i})^n</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_3_2">
-      <p>
-        Show that <m>\sum\limits_{n=0}^{\infty} \frac{(z+i)^n}{2^n}</m> converges for all values of <m>z</m> in the disk
-        <m>D_2(-i) = \{z:|z+i|\lt 2\}</m> and diverges if <m>|z+i| > 2</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\sum\limits_{n=0}^{\infty} \frac{(z+i)^n}{2^n}</m> converges for all values of <m>z</m> in the disk
+          <m>D_2(-i) = \{z:|z+i|\lt 2\}</m> and diverges if <m>|z+i| > 2</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_3_3">
-      <p>
-        Is the series <m>\sum\limits_{n=0}^{\infty}\frac{(4i)^n}{n!}</m> convergent?
-        Why or why not?
-      </p>
+      <statement>
+        <p>
+          Is the series <m>\sum\limits_{n=0}^{\infty}\frac{(4i)^n}{n!}</m> convergent?
+          Why or why not?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The series converges by the ratio test.
+          Show the details.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_3_4">
-      <p>
-        Use the ratio test to show that the following series converge.
-        <ol>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}(\frac{1+i}{2})^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n2^n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n!}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}\frac{(1+i) ^{2n}}{(2n+1)!}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use the ratio test to show that the following series converge.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}(\frac{1+i}{2})^n</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n2^n}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n!}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}\frac{(1+i)^{2n}}{(2n+1)!}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_3_5">
-      <p>
-        Use the ratio test to find a disk in which the following series converge.
-        <ol>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}(1+i)^nz^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}\frac{z^n}{(3+4i)^n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(3+4i)^n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=0}^{\infty}\frac{(z-3-4i)^n}{2^n}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use the ratio test to find a disk in which the following series converge.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\sum\limits_{n=0}^{\infty}(1+i)^nz^n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Converges in <m>D_\frac{\sqrt{2}}{2}(0)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}\frac{z^n}{(3+4i)^n}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(3+4i)^n}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Converges in <m>D_{5}(i)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}\frac{(z-3-4i)^n}{2^n}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_3_6">
-      <p>
-        Establish the claim in the proof of <xref ref="Geometric_Series">Theorem</xref> that,
-        if <m>|z|\lt 1</m>, then <m>\lim_{n \to \infty}z^n=0</m>.
-      </p>
+      <statement>
+        <p>
+          Establish the claim in the proof of <xref ref="Geometric_Series">Theorem</xref> that,
+          if <m>|z|\lt 1</m>, then <m>\lim\limits_{n \to \infty}z^n=0</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_3_7">
-      <p>
-        In the geometric series,
-        show that if <m>|z|>1</m>, then <m>\lim_{n \to \infty}|S_n|=\infty</m>.
-      </p>
+      <statement>
+        <p>
+          In the geometric series, show that if <m>|z|>1</m>,
+          then <m>\lim\limits_{n \to \infty}|S_n|=\infty</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>|S_n| = |\frac{1}{1-z} - \frac{z^n}{1-z}| \ge |\frac{z^n}{1-z}| - |\frac{1}{1-z}| = |z^n| \, |\frac{1}{1-z}| - |\frac{1}{1-z}|</m>.
+          Now use the fact that <m>|z|>1</m> to get the desired conclusion.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_3_8">
-      <p>
-        Prove that the series in <xref ref="Geom_Series__z____1">Corollary</xref> diverges if <m>|z|\le 1</m>.
-      </p>
+      <statement>
+        <p>
+          Prove that the series in <xref ref="Geom_Series__z____1">Corollary</xref> diverges if <m>|z|\le 1</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_3_9">
-      <p>
-        Prove <xref ref="Ratio_Test">Theorem</xref>.
-      </p>
+      <statement>
+        <p>
+          Prove <xref ref="Ratio_Test">Theorem</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Mimic the argument most calculus texts give for real series,
+          but replace <m>|x|</m> with <m>|z|</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_3_10">
-      <p>
-        Give a rigorous argument to show that
-        <m>\lim_{n \to\infty}</m> sup <m>t_n=1</m> in <xref ref="lim_sup___lim">Example</xref>.
-      </p>
+      <statement>
+        <p>
+          Give a rigorous argument to show that
+          <m>\lim\limits_{n \to\infty}</m> sup <m>t_n=1</m> in <xref ref="lim_sup___lim">Example</xref>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_3_11">
-      <p>
-        For <m>|z|\lt 1</m>,
-        let <m>f(z)=\sum\limits_{n=0}^{\infty}z^{(2^n)}=z+z^2+z^{4}+\cdots +z^{(2^n)}+\cdots</m>.
-        Show that <m>f(z) =z+f(z^2)</m>.
-      </p>
+      <statement>
+        <p>
+          For <m>|z|\lt 1</m>,
+          let <m>f(z)=\sum\limits_{n=0}^{\infty}z^{(2^n)}=z+z^2+z^4+\cdots +z^{2^n}+\cdots</m>.
+          Show that <m>f(z) =z+f(z^2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>f(z)=\sum\limits_{n=0}^{\infty }z^{(2^n)}</m>,
+          then <m>f(z^2) = \sum\limits_{n=0}^{\infty}(z^2)^{(2^n)} = \sum\limits_{n=0}^{\infty}z^{(2\cdot 2^n)} = \sum\limits_{n=0}^{\infty}z^{(2^{n+1})} = \sum\limits_{n=1}^{\infty}z^{(2^n)}</m>.
+          Explain why the conclusion now follows,
+          especially the second equality for <m>f(z^2)</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_3_12">
-      <p>
-        This exercise makes interesting use of the geometric series.
-        <ol>
-          <li>
-            <p>
-              Use the formula for geometric series with <m>z=re^{i\theta}</m>,
-              where <m>r\lt 1</m>, to show that
-              <me>
-                \sum_{n=0}^{\infty}z^n=\sum\limits_{n=0}^{\infty}r^ne^{in\theta} =\frac{1-r\cos \theta +ir\sin \theta}{1+r^2-2r\cos \theta}
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Use part (a) to obtain
-              <md>
-                <mrow>\sum\limits_{n=0}^{\infty}r^n\cos n\theta \amp = \frac{1-r\cos \theta}{1+r^2-2r\cos \theta},  \text{ and }</mrow>
-                <mrow>\sum\limits_{n=0}^{\infty}r^n\sin n\theta \amp = \frac{r\sin \theta}{1+r^2-2r\cos \theta}</mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          This exercise makes interesting use of the geometric series.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Use the formula for geometric series with <m>z=re^{i\theta}</m>,
+          where <m>r\lt 1</m>, to show that
+          <me>
+            \sum_{n=0}^{\infty}z^n=\sum\limits_{n=0}^{\infty}r^ne^{in\theta} =\frac{1-r\cos \theta +ir\sin \theta}{1+r^2-2r\cos \theta}
+          </me>
+        </p>
+      </task>
+      <task>
+        <p>
+          Use part (a) to obtain
+          <md>
+            <mrow>\sum\limits_{n=0}^{\infty}r^n\cos n\theta \amp = \frac{1-r\cos \theta}{1+r^2-2r\cos \theta},  \text{ and }</mrow>
+            <mrow>\sum\limits_{n=0}^{\infty}r^n\sin n\theta \amp = \frac{r\sin \theta}{1+r^2-2r\cos \theta}</mrow>
+          </md>.
+        </p>
+      </task>
     </exercise>
   </exercises>
 </section>

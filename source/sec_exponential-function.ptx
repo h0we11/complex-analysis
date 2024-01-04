@@ -1,7 +1,7 @@
 <section xml:id="sec_exponential-function">
   <title>The Complex Exponential Function</title>
   <p>
-    Recall that the real exponential function can be represented by the power series <m>e^x=\sum\limits_{n=0}^{\infty }\frac{1}{n!}x^n</m>.
+    Recall that the real exponential function can be represented by the power series <m>e^x=\sum\limits_{n=0}^{\infty}\frac{1}{n!}x^n</m>.
     Thus it is only natural to define the complex exponential <m>e^z</m>,
     also written as <m>\exp(z)</m>,in the following way.
   </p>
@@ -9,19 +9,18 @@
     <title>The Complex Exponential</title>
     <statement>
       <me>
-        e^z=\exp(z) =\sum_{n=0}^{\infty }\frac{1}{n!}z^n
-      </me>.
+        e^z=\exp(z) =\sum_{n=0}^{\infty}\frac{1}{n!}z^n
+      </me>
     </statement>
   </definition>
   <p>
     Clearly, this definition agrees with that of the real exponential function when <m>z</m> is a real number.
-    We now show that this complex exponential has two of the key properties associated with its real counterpart and verify the identity <m>e^{i\theta }=\cos \theta +i\sin \theta</m>, which,
-    back in <xref ref="ch_Complex_Numbers"/>
-    (see <xref ref="Euler_s_Formula">Identity</xref>
-    of <xref ref="sec_geometry-2">Section</xref>)
+    We now show that this complex exponential has two of the key properties associated with its real counterpart and verify the identity <m>e^{i\theta}=\cos \theta +i\sin \theta</m>, which,
+    back in <xref ref="ch_Complex_Numbers">Chapter</xref>
+    (see Identity <xref ref="Euler_s_Formula"/> of <xref ref="sec_geometry-2">Section</xref>)
     we promised to establish.
   </p>
-  <theorem xml:id="thm_exp_properties">
+  <theorem xml:id="expz_is_entire">
     <statement>
       <p>
         The function <m>\exp z</m> is an entire function satisfying the following conditions.
@@ -29,8 +28,8 @@
           <li>
             <title>i</title>
             <p>
-              <m>\exp^{\,\prime}(z)=\exp(z)=e^z</m>
-              (using the Leibniz notation, <m>\frac{d}{dz}e^z=e^z</m>).
+              <m>\exp\,'(z)=\exp(z)=e^z</m>
+              (using Leibniz notation we write <m>\frac{d}{dz}e^z=e^z</m>).
             </p>
           </li>
           <li>
@@ -44,7 +43,7 @@
             <title>iii</title>
             <p>
               If <m>\theta</m> is a real number,
-              then <m>e^{i\theta }=\cos \theta +i\sin \theta</m>.
+              then <m>e^{i\theta}=\cos \theta +i\sin \theta</m>.
             </p>
           </li>
         </ol>
@@ -54,17 +53,18 @@
   <proof>
     <p>
       By the ratio test
-      (check Example 4.23),
-      the series in Definition 5.1 has an infinite radius of convergence,
+      (check <xref ref="e_z_Example">Example</xref>),
+      the series in <xref ref="exp_z__Def">Definition</xref>
+      has an infinite radius of convergence,
       so <m>\exp(z)</m> is entire by <xref ref="Power_Series_Thm">Theorem</xref>,
       part (i).
     </p>
     <p>
       Using <xref ref="Power_Series_Thm">Theorem</xref>, part (ii), we get
       <me>
-        \exp^{\,\prime }(z) =\sum\limits_{n=1}^{\infty }\frac{n}{n!} z^{n-1}= \sum\limits_{n=1}^{\infty }\frac{1}{(n-1)!}z^{n-1} = \sum\limits_{n=0}^{\infty }\frac{1}{n!}z^n=\exp(z)
+        \exp\,'(z) =\sum\limits_{n=1}^{\infty}\frac{n}{n!} z^{n-1}= \sum\limits_{n=1}^{\infty}\frac{1}{(n-1)!}z^{n-1} = \sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n=\exp(z)
       </me>,
-      which gives us part (i) of <xref ref="thm_exp_properties">Theorem</xref>
+      which gives us part (i) of <xref ref="expz_is_entire">Theorem</xref>
     </p>
     <p>
       To prove part (ii),
@@ -72,29 +72,21 @@
       <me>
         g(z)=\exp(z)\exp(\zeta -z)
       </me>.
-    </p>
-    <p>
       Using the product rule, chain rule, and part (i), we have
       <me>
-        g^{\,\prime }(z) =\exp(z) \exp(\zeta -z) + \exp(z)[-\exp(\zeta -z)] =0 \text{ for all } z
+        g\,'(z) =\exp(z) \exp(\zeta -z) + \exp(z)[-\exp(\zeta -z)] =0 \text{ for all } z
       </me>.
-    </p>
-    <p>
-      According to Theorem 4.16,
+      According to <xref ref="Df_0_implies_f_const">Theorem</xref>,
       this result implies that the function <m>g</m> must be constant.
       Thus, for all <m>z</m>, <m>g(z)=g(0)</m>.
-      Since <m>\exp()=1</m> (verify!), we deduce
+      Since <m>\exp(0)=1</m> (verify!), we deduce
       <me>
         g(z) =g(0) =\exp(0) \exp(\zeta -0)=\exp(\zeta)
       </me>.
-    </p>
-    <p>
       Hence, for all <m>z</m>,
       <me>
         g(z)=\exp(z) \exp(\zeta -z)=\exp(\zeta)
       </me>.
-    </p>
-    <p>
       Setting <m>z=z_1</m> and letting <m>\zeta =z_1+z_2</m>, we get
       <me>
         \exp(z_1) \exp(z_1+z_2-z_1) =\exp(z_1+z_2)
@@ -103,53 +95,49 @@
     </p>
     <p>
       To prove part (iii), we let <m>\theta</m> be a real number.
-      By Definition 5.1,
+      By <xref ref="exp_z__Def">Definition</xref>,
       <md>
-        <mrow>e^{i\theta } \amp = \exp(i\theta )</mrow>
+        <mrow>e^{i\theta} \amp = \exp(i\theta )</mrow>
         <mrow>\amp = \sum_{n=0}^{\infty}\frac{1}{n!}(i\theta)^n</mrow>
-        <mrow>\amp = \sum_{n=0}^{\infty }\left[\frac{1}{( 2n)!} (i\theta)^{2n}+\frac{1}{( 2n+1)!}( i\theta)^{2n+1}\right] {\text{ (separating odd and even exponents) } }</mrow>
-        <mrow>\amp = \sum_{n=0}^{\infty }\left[\frac{1}{(2n)!}(i^2)^n\theta^{2n} + \frac{1}{(2n+1)!}i(i^2 )^n\theta^{2n+1}\right]</mrow>
+        <mrow>\amp = \sum_{n=0}^{\infty}\left[\frac{1}{(2n)!} (i\theta)^{2n}+\frac{1}{(2n+1)!}(i\theta)^{2n+1}\right] {\text{ (separating odd and even exponents) } }</mrow>
+        <mrow>\amp = \sum_{n=0}^{\infty}\left[\frac{1}{(2n)!}(i^2)^n\theta^{2n} + \frac{1}{(2n+1)!}i(i^2 )^n\theta^{2n+1}\right]</mrow>
         <mrow>\amp = \sum_{n=0}^{\infty}(-1)^n \frac{\theta^{2n}}{(2n)!} + i\sum_{n=0}^{\infty}(-1)^n\frac{\theta^{2n+1}}{(2n+1)!}</mrow>
         <mrow>\amp = \cos \theta +i\sin \theta  {\text{ (by the series representations for the real-valued sine and cosine) } }</mrow>
       </md>.
     </p>
   </proof>
   <p>
-    Note that parts (ii) and (iii) of the <xref ref="thm_exp_properties">Theorem</xref>
+    Note that parts (ii) and (iii) of the <xref ref="expz_is_entire">Theorem</xref>
     combine to verify DeMoivre's formula,
-    which we introduced in <xref ref="sec_algebra-2">Section</xref>
-    (see <xref ref="De_Moivre_s_formula">Identity</xref>).
-  </p>
-  <p>
-    If <m>z=x+iy</m>, then from parts (ii) and (iii) we have
+    which we introduced in <xref ref="sec_algebra-2">Section</xref><mdash/>see Identity <xref ref="De_Moivre_s_formula"/>.
+    Further, if <m>z=x+iy</m>, we have
     <men xml:id="e_z_Cartesian">
       \exp(z) = e^z = e^{x+iy} = e^xe^{iy} = e^x(\cos y+i\sin y)
     </men>.
   </p>
   <p>
-    Some texts start with <xref ref="e_z_Cartesian">Identity</xref>
-    as the definition for <m>\exp(z)</m>.
+    Some texts start with Identity <xref ref="e_z_Cartesian"/> as the definition for <m>\exp(z)</m>.
     In the exercises,
     we show that this is a natural approach from the standpoint of differential equations.
   </p>
   <p>
     The notation <m>\exp(z)</m> is preferred over <m>e^z</m> in some situations.
     For example,
-    <m>\exp(\frac{{1}}{5}) =1.22140275816017\ldots</m> is the value of <m>\exp(z)</m> when
-    <m>z=\frac{{1}}{5}</m> and equals the positive fifth root of <m>e=2.71828182845904\ldots </m>.
-    Thus, the notation <m>e^{\frac{{1}}{5}}</m> is ambiguous and might be interpreted as any of the complex fifth roots of the number <m>e</m> that we discussed in <xref ref="sec_algebra-2">Section</xref>:
+    the number <m>\exp(\frac{{1}}{5}) =1.22140275816017\ldots</m> is the value of <m>\exp(z)</m> when
+    <m>z=\frac{{1}}{5}</m> and equals the positive fifth root of <m>e=2.71828182845904\ldots</m>.
+    The notation <m>e^{\frac{{1}}{5}}</m>, however,
+    is ambiguous and might be interpreted as any of the complex fifth roots of the number <m>e</m> that we discussed in <xref ref="sec_algebra-2">Section</xref>:
     <me>
-      e^{\frac{{1}}{5}}\approx 1.22140275816017\left(\cos \frac{2\pi k}{5}+ i\sin\frac{2\pi k}{5}\right), \text{ for }   k=0,\,1, \, \ldots, \,4
+      e^{\frac{{1}}{5}} \approx 1.22140275816017\left(\cos \frac{2\pi k}{5}+ i\sin\frac{2\pi k}{5}\right),  \text{ for }   k=0,\,1, \, \ldots, \,4
     </me>.
   </p>
   <p>
-    To prevent this confusion,
+    To prevent confusion,
     we often use <m>\exp(z)</m> to denote the single-valued exponential function.
   </p>
   <p>
     We now explore some additional properties of <m>\exp(z)</m>.
-    Using <xref ref="e_z_Cartesian">Identity</xref>,
-    we can easily establish that
+    Using <xref ref="e_z_Cartesian">Identity</xref> it follows that
     <md>
       <mrow xml:id="e_z_Periodic" number="yes">e^{z+i2n\pi} \amp =e^z, \amp \amp  \text{ for all } z\text{ , provided } n\text{ is an integer } ,</mrow>
       <mrow xml:id="e_z___1" number="yes">e^z \amp =1, \amp \amp  \text{ iff } z=i2n\pi \text{ , where } n\text{ is an integer, and }</mrow>
@@ -157,8 +145,8 @@
     </md>.
   </p>
   <p>
-    For example, because <xref ref="e_z_Cartesian">Identity</xref>
-    involves the periodic functions <m>\cos y</m> and <m>\sin y</m>,
+    For example,
+    because Identity <xref ref="e_z_Cartesian"/> involves the periodic functions <m>\cos y</m> and <m>\sin y</m>,
     any two points in the <m>z</m> plane that lie on the same vertical line with their imaginary parts differing by an integral multiple of <m>2\pi</m> are mapped onto the same point in the <m>w</m> plane.
     Thus the complex exponential function is periodic with period <m>2\pi i</m>,
     which establishes Equation <xref ref="e_z_Periodic"/>.
@@ -169,11 +157,11 @@
       <p>
         For any integer <m>n</m>, the points
         <me>
-          z_n=\frac{5}{4}+i\left(\frac{11\pi }{6}+2n\pi\right)
+          z_n=\frac{5}{4}+i\left(\frac{11\pi}{6}+2n\pi\right)
         </me>
         in the <m>z</m> plane are mapped onto the single point
         <me>
-          w_{0}  = \exp(z_n) = e^{\frac{5}{4}}\left(\cos \frac{11\pi }{6}+i\sin \frac{11\pi }{6}\right) = \frac{\sqrt{3}}{2}e^{\frac{5}{4}}-i\frac{1}{2}e^{\frac{5}{4}} \approx 3.02-1.75i
+          w_0  = \exp(z_n) = e^{\frac{5}{4}}\left(\cos \frac{11\pi}{6}+i\sin \frac{11\pi}{6}\right) = \frac{\sqrt{3}}{2}e^{\frac{5}{4}}-i\frac{1}{2}e^{\frac{5}{4}} \approx 3.02-1.75i
         </me>
         in the <m>w</m> plane,
         as indicated in <xref ref="fig_ch-05-01">Figure</xref>.
@@ -181,31 +169,30 @@
     </statement>
   </example>
   <figure xml:id="fig_ch-05-01">
-    <caption>The points <m>\{z_n\}</m> in the <m>z</m> plane (<em>i.e.</em>, the <m>xy</m> plane) and their image <m>w_{0}=\exp(z_n)</m> in the <m>w</m> plane
+    <caption>The points <m>\{z_n\}</m> in the <m>z</m> plane (<em>i.e.</em>, the <m>xy</m> plane) and their image <m>w_0=\exp(z_n)</m> in the <m>w</m> plane
     (<em>i.e.</em>, the <m>uv</m> plane)</caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-01.pdf"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-01.png"/>
   </figure>
   <p>
     Let's look at the range of the exponential function.
     If <m>z=x+iy</m>,
-    we see from <xref ref="e_z_Cartesian">Identity</xref><mdash/><m>e^z=e^xe^{iy}=e^x( \cos y+i\sin y)</m><mdash/>that <m>e^z</m> can never equal zero,
+    we see from Identity <xref ref="e_z_Cartesian"/><mdash/><m>e^z=e^xe^{iy}=e^x( \cos y+i\sin y)</m><mdash/>that <m>e^z</m> can never equal zero,
     as <m>e^x</m> is never zero,
     and the cosine and sine functions are never zero at the same point.
     Suppose, then, that <m>w=e^z \ne 0</m>.
-    If we write <m>w</m> in its exponential form as <m>w=\rho e^{i\phi }</m>,
-    <xref ref="e_z_Cartesian">Identity</xref> gives
+    If we write <m>w</m> in its exponential form as
+    <m>w=\rho e^{i\phi }</m>, Identity <xref ref="e_z_Cartesian"/> gives
     <me>
       \rho e^{i\phi }=e^xe^{iy}
-    </me>.
+    </me>
   </p>
   <p>
-    Using <xref ref="e_z_Cartesian">Identity</xref>,
-    and <xref ref="ExpEquality">Property</xref>
-    of <xref ref="sec_algebra-2">Section</xref>, we get
+    Using Identity <xref ref="e_z_Cartesian"/>,
+    and Property <xref ref="ExpEquality"/> of <xref ref="sec_algebra-2">Section</xref>, we get
     <md>
       <mrow xml:id="rho_and_phi" number="yes">\rho \amp =\amp e^x\text{ and } \phi =y+2n\pi \text{ , where } n\text{ is an integer. Therefore, }</mrow>
       <mrow xml:id="abs_rho" number="yes">\rho \amp =\amp |e^z| =e^x,\text{ and }</mrow>
-      <mrow xml:id="phi" number="yes">\phi \amp \in \amp \arg(e^z) =\{\mathrm{Arg}( e^z) +2n\pi :n\text{ is an integer } \}</mrow>
+      <mrow xml:id="phi" number="yes">\phi \amp \in \amp \arg(e^z) =\{\mathrm{Arg}(e^z) +2n\pi :n\text{ is an integer } \}</mrow>
     </md>.
   </p>
   <p>
@@ -218,14 +205,14 @@
     there are infinitely many complex numbers <m>z=x+iy</m> such that <m>w=e^z</m>.
     From Equations <xref ref="Inverse_of_Exp"/>, the numbers <m>z</m> are
     <md>
-      <mrow>z \amp = x+iy=\ln \rho +i( \phi +2n\pi )</mrow>
-      <mrow xml:id="Inverse_of_Exp_again" number="yes">\amp = \ln |w| +i( \mathrm{Arg}\textit{ }w+2n\pi )</mrow>
+      <mrow>z \amp = x+iy=\ln \rho +i(\phi +2n\pi )</mrow>
+      <mrow xml:id="Inverse_of_Exp_again" number="yes">\amp = \ln |w| +i(\mathrm{Arg}\textit{ }w+2n\pi )</mrow>
     </md>.
     where <m>n</m> is an integer.
     Hence
     <me>
       \exp\big[|w| +i(\mathrm{Arg}\,w+2n\pi)\big] = w
-    </me>.
+    </me>
   </p>
   <p>
     In summary, the transformation <m>w=e^z</m> maps the complex plane
@@ -237,27 +224,26 @@
     <m>-\pi \lt \mathrm{Arg}\,w \le \pi</m>, is used,
     the transformation <m>w=e^z=e^{x+iy}</m> maps the horizontal strip
     <m>\{(x,y):-\pi \lt y \le \pi \}</m> one-to-one and onto the range set <m>S=\{w:w \ne 0\}</m>.
-    This strip is called the <term>fundamental period strip</term>
-    and is shown in <xref ref="fig_ch-05-02">Figure</xref>.
+    This strip is called the fundamental period strip and is shown in <xref ref="fig_ch-05-02">Figure</xref>.
   </p>
   <figure xml:id="fig_ch-05-02">
     <caption>The fundamental period strip for the mapping <m>w=\exp(z)</m></caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-02.pdf"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-02.png"/>
   </figure>
   <p>
     The horizontal line <m>z=t+ib</m>,
     for <m>-\infty \lt t\lt \infty</m> in the <m>z</m> plane,
-    is mapped onto the ray <m>w=e^{t}e^{ib}=e^{t}( \cos b+i\sin b)</m> that is inclined at an angle <m>\phi =b</m> in the <m>w</m> plane.
+    is mapped onto the ray <m>w=e^te^{ib}=e^t(\cos b+i\sin b)</m> that is inclined at an angle <m>\phi =b</m> in the <m>w</m> plane.
     The vertical segment <m>z=a+i\theta</m>,
     for <m>-\pi \lt \theta \le \pi</m> in the <m>z</m> plane,
     is mapped onto the circle centered at the origin with radius <m>e^{a}</m> in the <m>w</m> plane.
-    That is, <m>w=e^{a}e^{i\theta }=e^{a}( \cos \theta +i\sin \theta )</m>.
-    The lines <m>r_1</m>, <m>r_2</m>,
-    and <m>r_3</m>, are mapped to the rays <m>r_1^{\ast}</m>,
-    <m>r_2^{\ast}</m>, and <m>r_3^{\ast}</m>, respectively.
+    That is, <m>w=e^{a}e^{i\theta }=e^{a}(\cos \theta +i\sin \theta )</m>.
+    The lines <m>r_1</m>, <m>r_2</m>, and <m>r_3</m>,
+    are mapped to the rays <m>r_1^*</m>, <m>r_2^*</m>,
+    and <m>r_3^*</m>, respectively.
     Likewise, the segments <m>s_1</m>, <m>s_2</m>,
-    and <m>s_3</m> are mapped to the corresponding circles <m>s_1^{\ast}</m>,
-    <m>s_2^{\ast}</m>, and <m>s_3^{\ast}</m>.
+    and <m>s_3</m> are mapped to the corresponding circles <m>s_1^*</m>,
+    <m>s_2^*</m>, and <m>s_3^*</m>.
   </p>
   <example xml:id="Rectangle_Map">
     <statement>
@@ -267,351 +253,476 @@
         Show that the transformation
         <m>w=e^z=e^{x+iy}</m> maps <m>R</m> onto a portion of an annular region bounded by two rays.
       </p>
-    </statement>
-    <solution>
       <p>
         The image points in the <m>w</m> plane satisfy the following relationships involving the modulus and argument of <m>w</m>:
         <md>
           <mrow>e^{a}  \amp = |e^{a+iy}|  \le |e^{x+iy}| \le |e^{b+iy}| = e^b,  \text{ and }</mrow>
-          <mrow>c     \amp = \mathrm{Arg}( e^{x+ic})  \le \mathrm{Arg}(e^{x+iy}) \le \mathrm{Arg}( e^{x+id}) \le d</mrow>
+          <mrow>c     \amp = \mathrm{Arg}(e^{x+ic})  \le \mathrm{Arg}(e^{x+iy}) \le \mathrm{Arg}(e^{x+id}) \le d</mrow>
         </md>.
         which is a portion of the annulus
         <m>\{\rho e^{i\phi }:e^a \le \rho \le e^b\}</m> in the <m>w</m> plane subtended by the rays <m>\phi =c</m> and <m>\phi =d</m>.
         In <xref ref="fig_ch-05-03">Figure</xref>,
         we show the image of the rectangle
         <me>
-          R = \left\{(x,y) :-1 \le x \le 1\text{ and } \frac{-\pi }{4} \le y \le \frac{\pi }{3}\right\}
-        </me>.
+          R = \left\{(x,y) :-1 \le x \le 1\text{ and }  -\frac{\pi}{4} \le y \le \frac{\pi}{3}\right\}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <figure xml:id="fig_ch-05-03">
     <caption>The image of <m>R</m> under the transformation <m>w=\exp(z)</m></caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-03.pdf"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-03.png"/>
   </figure>
-  <exercises>
-    <title>Exercises for <xref ref="sec_exponential-function">Section</xref></title>
+  <exercises xml:id="exercises_exponential-function">
+    <title>Exercises</title>
     <exercise xml:id="x5_1_1">
-      <p>
-        Using Definition 5.1, explain why <m>\exp (0) =e^{0}=1</m>.
-      </p>
+      <statement>
+        <p>
+          Using <xref ref="exp_z__Def">Definition</xref>,
+          explain why <m>\exp (0) =e^{0}=1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Recall that <m>\sum\limits_{n=0}^{\infty}c_nz^n</m> is compact notation for
+          <m>c_0+\sum\limits_{n=1}^{\infty}c_nz^n</m>, and that <m>0!=1</m>.
+          Then, by definition,
+          <m>\exp (0) = \sum\limits_{n=0}^{\infty}\frac{1}{n!}0^n=\frac{1}{0!} + \sum\limits_{n=1}^{\infty}\frac{1}{n!}0^n=1</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_2">
-      <p>
-        The questions for this problem relate to Figure 5.2.
-        The shaded portion in the <m>w</m> plane indicates the image of the shaded portion in the <m>z</m> plane,
-        with the lighter shading indicating expansion of the area of corresponding regions.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Why is there no shading inside the circle <m>s_1^{\ast}</m>?
-          </p>
-        </li>
-        <li>
-          <p>
-            Explain why the images of <m>r_1</m>,
-            <m>r_2</m>, and <m>r_3</m> appear to make,
-            respectively,
-            angles of <m>-\frac{7\pi }{8}</m>, <m>\frac{\pi}{4}</m>,
-            and <m>\frac{3\pi}{4}</m> radians with the positive <m>u</m> axis.
-          </p>
-        </li>
-        <li>
-          <p>
-            Precisely where should the images of the points <m>\pm i\pi</m> be located?
-          </p>
-        </li>
-      </ol>
+      <introduction>
+        <p>
+          The questions for this problem relate to Figure 5.2.
+          The shaded portion in the <m>w</m> plane indicates the image of the shaded portion in the <m>z</m> plane,
+          with the lighter shading indicating expansion of the area of corresponding regions.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Why is there no shading inside the circle <m>s_1^*</m>?
+        </p>
+      </task>
+      <task>
+        <p>
+          Explain why the images of <m>r_1</m>,
+          <m>r_2</m>, and <m>r_3</m> appear to make,
+          respectively,
+          angles of <m>-\frac{7\pi}{8}</m>, <m>\frac{\pi}{4}</m>,
+          and <m>\frac{3\pi}{4}</m> radians with the positive <m>u</m> axis.
+        </p>
+      </task>
+      <task>
+        <p>
+          Precisely where should the images of the points <m>\pm i\pi</m> be located?
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_3">
-      <p>
-        Verify Equations <xref ref="e_z___1"/> and <xref ref="e_z1___e_z2"/>.
-      </p>
+      <statement>
+        <p>
+          Verify Equations <xref ref="e_z___1"/> and <xref ref="e_z1___e_z2"/>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>n</m> be an integer, and set <m>z=i2n\pi</m>.
+          Then <m>e^{i2n\pi}=\cos (2n\pi ) +i\sin (2n\pi ) =1</m>.
+          Conversely, suppose <m>e^{z}=e^{x+iy}=1</m>.
+          Then <m>e^xe^{iy}=e^x(\cos y+i\sin y) =1+0i</m>.
+          This implies <m>\sin y=0</m>.
+          Because <m>e^x</m> is always positive and
+          <m>e^x\cos y=1, \; y=2n\pi</m> for some integer <m>n</m>.
+          This result forces <m>x=0</m>,
+          so <m>z=x+iy=0+i2n\pi</m>, establishing Equation <xref ref="e_z___1"/>.
+          Equation <xref ref="e_z1___e_z2"/> comes from observing that
+          <m>e^{z_1}=e^{z_2}</m> iff <m>e^{z_1-z_2}=1</m>,
+          and then appealing to Equation <xref ref="e_z___1"/>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_4">
-      <p>
-        Express <m>e^z</m> in the form <m>u+iv</m> for the following values of <m>z</m>.
-        <ol>
-          <li>
-            <p>
-              <m>\frac{-\pi }{3}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{1}{2}-i\frac{\pi }{4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>-4+5i</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>-1+i\frac{3\pi }{2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>1+i\frac{5\pi }{4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{\pi }{3}-2i</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Express <m>e^z</m> in the form <m>u+iv</m> for the following values of <m>z</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>-\frac{\pi}{3}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\frac{1}{2}-i\frac{\pi}{4}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>-4+5i</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>-1+i\frac{3\pi}{2}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>1+i\frac{5\pi}{4}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\frac{\pi}{3}-2i</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Find all values of <m>z</m> for which the following equations hold.\label {5.1.5}
-        <ol>
-          <li>
-            <p>
-              <m>e^z=-4</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>e^z=2+2i</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>e^z=\sqrt{3}-i</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>e^z=-1+i\sqrt{3}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find all values of <m>z</m> for which the following equations hold.\label {5.1.5}
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>e^z=-4</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using properties of the exponential function,
+            <m>e^z=-4</m> iff <m>z=x+iy</m> with
+            <m>y=(2n+1)\pi</m> where <m>n</m> is an integer, and <m>e^x=4</m>.
+            Thus, <m>x=\ln 4</m>, and <m>z=\ln 4+i(2n+1) \pi</m>,
+            where <m>n</m> is an integer.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>e^z=2+2i</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>e^z=\sqrt{3}-i</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>z=\ln 2+i(-\frac{\pi}{6}+2n\pi )</m>,
+            where <m>n</m> is an integer.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>e^z=-1+i\sqrt{3}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_6">
-      <p>
-        Prove that <m>|\exp(z^2 )| \le \exp\big(|z|^2\big)</m> for all <m>z</m>.
-        Where does equality hold?
-      </p>
+      <statement>
+        <p>
+          Prove that <m>|\exp(z^2 )| \le \exp\big(|z|^2\big)</m> for all <m>z</m>.
+          Where does equality hold?
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x5_1_7">
-      <p>
-        Show that <m>\exp(z+i\pi ) =\exp(z-i\pi )</m> holds for all <m>z</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\exp(z+i\pi ) =\exp(z-i\pi )</m> holds for all <m>z</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The conclusion follows immediately from Equation <xref ref="e_z1___e_z2"/>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_8">
-      <p>
-        Express <m>\exp(z^2 )</m> and
-        <m>\exp\left(\frac{1}{z}\right)</m> in the Cartesian form <m>u( x,y) +iv( x,y)</m>.
-      </p>
+      <statement>
+        <p>
+          Express <m>\exp(z^2 )</m> and
+          <m>\exp\left(\frac{1}{z}\right)</m> in the Cartesian form <m>u(x,y) +iv(x,y)</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x5_1_9">
-      <p>
-        Explain why
-        <ol>
-          <li xml:id="x5_1_9a">
-            <p>
-              <m>\exp(\overline{z}) = \overline{\exp z}</m> holds for all <m>z</m>.
-            </p>
-          </li>
-          <li xml:id="x5_1_9b">
-            <p>
-              <m>\exp(\overline{z})</m> is nowhere analytic.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <statement>
+        <p>
+          Explain why
+        </p>
+        <task xml:id="x5_1_9a">
+          <p>
+            <m>\exp(\overline{z}) = \overline{\exp z}</m> holds for all <m>z</m>.
+          </p>
+        </task>
+        <task xml:id="x5_1_9b">
+          <p>
+            <m>\exp(\overline{z})</m> is nowhere analytic.
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          <m>\exp(\bar{z}) = \sum\limits_{n=0}^{\infty}\frac{1}{n!}(\bar{z})^n = \lim\limits_{k \to \infty}\left(\sum\limits_{n=0}^k\frac{1}{ n!}(\bar{z})^n\right) = \lim\limits_{k\to \infty }\left(\overline{\sum\limits_{n=0}^k\frac{1}{n!}z^n}\right) = \overline{\left(\lim\limits_{k\to \infty }\sum\limits_{n=0}^k\frac{1}{n!}z^n\right)}</m>,
+          because the conjugate is a continuous function
+          (explain).
+          This last quantity, of course,
+          equals <m>\overline{\exp(z)}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_10">
-      <p>
-        Show that <m>|e^{-z}| \lt 1</m> iff <m>\mathrm{Re}(z) >0</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>|e^{-z}| \lt 1</m> iff <m>\mathrm{Re}(z) >0</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Verify that
-        <ol>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to 0}\frac{e^z-1}{z}=1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\lim\limits_{z \to i\pi}\frac{e^z+1}{z-i\pi } = -1</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Verify that
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\lim\limits_{z \to 0}\frac{e^z-1}{z}=1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <em>Method 1:</em> <m>\lim\limits_{z \to 0}\frac{ e^{z}-1}{z} = \lim\limits_{z \to 0}\frac{\sum\limits_{n=1}^{\infty} \frac{1}{n!}z^n}{z} = \lim\limits_{z \to 0}\sum\limits_{n=1}^{\infty} \frac{1}{n!}z^{n-1} = 1</m>.
+            Justify the last equality.
+            <em>Method 2:</em> Using L'H&#xf4;pital's rule
+            (<xref ref="LH_s_rule">Theorem</xref>),
+            <m>\lim\limits_{z \to 0}\frac{e^{z}-1}{z} = \lim\limits_{z \to 0}\frac{e^{z}}{1} = 1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{z \to i\pi}\frac{e^z+1}{z-i\pi} = -1</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_12">
-      <p>
-        Show that <m>f(z)=ze^z</m> is analytic for all <m>z</m> by showing that its real and imaginary parts satisfy the Cauchy-Riemann sufficient conditions for differentiability.
-      </p>
+      <statement>
+        <p>
+          Show that <m>f(z)=ze^z</m> is analytic for all <m>z</m> by showing that its real and imaginary parts satisfy the Cauchy-Riemann sufficient conditions for differentiability.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find the derivatives of the following.
-        <ol>
-          <li>
-            <p>
-              <m>e^{iz}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>z^4\exp(z^3)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>e^{(a+ib)z}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\exp(\frac{1}{z})</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find the derivatives of the following.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>e^{iz}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>ie^{iz}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>z^4\exp(z^3)</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>e^{(a+ib)z}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(a+ib) e^{(a+ib) z}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\exp(\frac{1}{z})</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_14">
-      <p>
-        Let <m>n</m> be a positive integer.
-        Show that
-        <ol>
-          <li>
-            <p>
-              <m>(\exp z)^n = \exp(nz)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{1}{(\exp z)^n} = \exp(-nz)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>n</m> be a positive integer.
+          Show that
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>(\exp z)^n = \exp(nz)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\frac{1}{(\exp z)^n} = \exp(-nz)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_15">
-      <p>
-        Show that <m>\sum\limits_{n=0}^{\infty}e^{inz}</m> converges for <m>\mathrm{Im}(z)>0</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\sum\limits_{n=0}^{\infty}e^{inz}</m> converges for <m>\mathrm{Im}(z)>0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\sum\limits_{n=0}^{\infty}e^{inz} = \sum\limits_{n=0}^{\infty}(e^{iz})^n</m>.
+          This is a geometric series.
+          Show that <m>\mathrm{Im}(z)>0</m> implies <m>|e^{iz}|=|e^{i(x+iy)}|\lt 1</m>,
+          so that the series converges by <xref ref="Geometric_Series">Theorem</xref>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_16">
-      <p>
-        Generalize <xref ref="ex_exp_mapping">Example</xref>,
-        where the condition <m>-\pi \lt c\lt d \le \pi</m> is replaced by <m>d-c\lt 2\pi</m>.
-        Illustrate what this means.
-      </p>
+      <statement>
+        <p>
+          Generalize <xref ref="ex_exp_mapping">Example</xref>,
+          where the condition <m>-\pi \lt c\lt d \le \pi</m> is replaced by <m>d-c\lt 2\pi</m>.
+          Illustrate what this means.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x5_1_17">
-      <p>
-        Use the fact that <m>\exp(z^2)</m> is analytic to show that
-        <m>e^{x^2-y^2}\sin 2xy</m> is a harmonic function.
-      </p>
+      <statement>
+        <p>
+          Use the fact that <m>\exp(z^2)</m> is analytic to show that
+          <m>e^{x^2-y^2}\sin 2xy</m> is a harmonic function.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Show that <m>e^{x^2-y^2}\sin 2xy</m> is the imaginary part of <m>\exp (z^2)</m>,
+          and therefore harmonic by <xref ref="Harmonic_Theorem">Theorem</xref>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x5_1_18">
-      <p>
-        Show the following concerning the exponential map.
-        <ol>
-          <li>
-            <p>
-              The image of the line <m>\{(x,y) :x=t, \; y=2\pi+t\}</m>,
-              where <m>-\infty \lt t\lt \infty</m> is a spiral.
-            </p>
-          </li>
-          <li>
-            <p>
-              The image of the first quadrant<m>\{(x,y):x>0, \; y>0\}</m> is the region <m>\{w:|w| > 1\}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>a</m> is a real constant,
-              the horizontal strip <m>\{(x,y) :\alpha \lt y \le \alpha +2\pi \}</m> is mapped one-to-one and onto the nonzero complex numbers.
-            </p>
-          </li>
-          <li>
-            <p>
-              The image of the vertical line segment
-              <m>\{(x,y):
-              x=2, \; y=t\}</m>,
-              where <m>\frac{\pi }{6} \lt t \lt \frac{7\pi }{6}</m> is half a circle.
-            </p>
-          </li>
-          <li>
-            <p>
-              The image of the horizontal ray <m>\{(x,y) :x>0, \; y= \frac{\pi }{3}\}</m> is a ray.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Show the following concerning the exponential map.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          The image of the line <m>\{(x,y) :x=t, \; y=2\pi+t\}</m>,
+          where <m>-\infty \lt t\lt \infty</m> is a spiral.
+        </p>
+      </task>
+      <task>
+        <p>
+          The image of the first quadrant<m>\{(x,y):x>0, \; y>0\}</m> is the region <m>\{w:|w| > 1\}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          If <m>a</m> is a real constant,
+          the horizontal strip <m>\{(x,y) :\alpha \lt y \le \alpha +2\pi \}</m> is mapped one-to-one and onto the nonzero complex numbers.
+        </p>
+      </task>
+      <task>
+        <p>
+          The image of the vertical line segment
+          <m>\{(x,y):
+          x=2, \; y=t\}</m>,
+          where <m>\frac{\pi}{6} \lt t \lt \frac{7\pi}{6}</m> is half a circle.
+        </p>
+      </task>
+      <task>
+        <p>
+          The image of the horizontal ray <m>\{(x,y) :x>0, \; y= \frac{\pi}{3}\}</m> is a ray.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x5_1_19">
-      <p>
-        Explain how the complex function <m>e^z</m> and the real function <m>e^x</m> are different.
-        How are they similar?
-      </p>
+      <statement>
+        <p>
+          Explain how the complex function <m>e^z</m> and the real function <m>e^x</m> are different.
+          How are they similar?
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x5_1_20">
-      <p>
-        Many texts give an alternative definition for <m>\exp(z)</m>,
-        starting with Identity <xref ref="e_z_Cartesian"></xref>
-        as the definition for <m>f(z)=\exp(z)</m>.
-        Recall that this identity states that <m>\exp(z)=\exp(x+iy)=e^x( \cos y+i\sin y)</m>.
-        This exercise shows such a definition is a natural approach in terms of differential equations.
-        We start by requiring <m>f(z)</m> to be the solution to an initial-value problem satisfying three conditions: (1) <m>f</m> is entire, (2)
-        <m>f\,'(z)=f(z)</m> for all <m>z</m>, and (3) <m>f(0)=1</m>.
-        Suppose that <m>f(z)=f( x+iy)=u( x,y)+iv( x,y)</m> satisfies conditions (1), (2), and (3).
-        <ol>
-          <li>
-            <p>
-              Use the result <m>f\,'(z) =u_{x}(x,y)+iv_{x}( x,y)</m> and the requirement
-              <m>f\,'(z)=f(z)</m> from condition (2) to show that
-              <m>u_x(x,y) - u(x,y)=0</m>, for all <m>z=(x,y)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that the result in part (a) implies that <m>\frac{\partial }{\partial x}[u(x,y) e^{-x}] =0</m>.
-              This means <m>u(x,y)e^{-x}</m> is constant with respect to <m>x</m>,
-              so <m>u(x,y)e^{-x}=p(y)</m>, where <m>p(y)</m> is a function of <m>y</m> alone.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using a similar procedure for <m>v(x,y)</m>,
-              show we wind up getting a pair of solutions <m>u(x,y)=p(y)e^x</m>,
-              and <m>v(x,y)=q(y)e^x</m> where <m>p(y)</m> and <m>q(y)</m> are functions of <m>y</m> alone.
-            </p>
-          </li>
-          <li>
-            <p>
-              Now use the Cauchy-Riemann equations to conclude from part (c) that
-              <m>p(y) =q^{\,\prime }(y)</m> and <m>p^{\,\prime }(y)=-q(y)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Use part (d) to show that <m>p^{\,\prime \prime }(y) +p(y) =0</m> and <m>q^{\,\prime \prime }(y)+q(y)=0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Identify the general solutions to part (e).
-              Then, given the initial conditions <m>f(0) =f(0+0i)=u(0,0)+iv(0,0)=1+0i</m>,
-              find the particular solutions and conclude that <xref ref="e_z_Cartesian">Identity</xref> follows.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Many texts give an alternative definition for <m>\exp(z)</m>,
+          starting with Identity <xref ref="e_z_Cartesian"/> as the definition for <m>f(z)=\exp(z)</m>.
+          Recall that this identity states that <m>\exp(z)=\exp(x+iy)=e^x(\cos y+i\sin y)</m>.
+          This exercise shows such a definition is a natural approach in terms of differential equations.
+          We start by requiring <m>f(z)</m> to be the solution to an initial-value problem satisfying three conditions: (1) <m>f</m> is entire, (2)
+          <m>f\,'(z)=f(z)</m> for all <m>z</m>, and (3) <m>f(0)=1</m>.
+          Suppose that <m>f(z)=f(x+iy)=u(x,y)+iv(x,y)</m> satisfies conditions (1), (2), and (3).
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Use the result <m>f\,'(z) =u_x(x,y)+iv_x(x,y)</m> and the requirement
+          <m>f\,'(z)=f(z)</m> from condition (2) to show that
+          <m>u_x(x,y) - u(x,y)=0</m>, for all <m>z=(x,y)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Show that the result in part (a) implies that <m>\frac{\partial }{\partial x}[u(x,y) e^{-x}] =0</m>.
+          This means <m>u(x,y)e^{-x}</m> is constant with respect to <m>x</m>,
+          so <m>u(x,y)e^{-x}=p(y)</m>, where <m>p(y)</m> is a function of <m>y</m> alone.
+        </p>
+      </task>
+      <task>
+        <p>
+          Using a similar procedure for <m>v(x,y)</m>,
+          show we wind up getting a pair of solutions <m>u(x,y)=p(y)e^x</m>,
+          and <m>v(x,y)=q(y)e^x</m> where <m>p(y)</m> and <m>q(y)</m> are functions of <m>y</m> alone.
+        </p>
+      </task>
+      <task>
+        <p>
+          Now use the Cauchy-Riemann equations to conclude from part (c) that
+          <m>p(y) =q\,'(y)</m> and <m>p\,'(y)=-q(y)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Use part (d) to show that <m>p\,''(y) + p(y) =0</m> and <m>q\,''(y) + q(y) = 0</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Identify the general solutions to part (e).
+          Then, given the initial conditions
+        </p>
+        <p>
+          <m>f(0) =f(0+0i)=u(0,0)+iv(0,0)=1+0i</m>,
+        </p>
+        <p>
+          find the particular solutions and conclude that Identity <xref ref="e_z_Cartesian"/> follows.
+        </p>
+      </task>
     </exercise>
   </exercises>
 </section>

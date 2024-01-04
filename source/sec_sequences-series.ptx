@@ -1,14 +1,14 @@
 <section xml:id="sec_sequences-series">
   <title>Sequences and Series</title>
   <p>
-    In formal terms, a <term>complex sequence</term>
-    is a function whose domain is the positive integers and whose range is a subset of the complex numbers.
+    In formal terms,
+    a complex sequence is a function whose domain is the positive integers and whose range is a subset of the complex numbers.
     The following are examples of sequences:
     <md>
-      <mrow xml:id="Seq_Ex_1" number="yes">f(n) \amp = (2-\frac{1}{n}) +(5+\frac{1}{n})i   (n=1,\,2,\,3,\,\ldots);</mrow>
-      <mrow xml:id="Seq_Ex_2" number="yes">g(n) \amp = e^{i\frac{\pi n}{4}}  (n=1,\,2,\,3,\,\ldots);</mrow>
-      <mrow xml:id="Seq_Ex_3" number="yes">h(k) \amp = 5+3i + (\frac{1}{1+i})^{\!k}  (k=1,\,2,\,3,\,\ldots)  \text{ and }</mrow>
-      <mrow xml:id="Seq_Ex_4" number="yes">r(n) \amp = (\frac{1}{4}+\frac{i}{2})^{\!n}  (n=1,\,2,\,3,\,\ldots)</mrow>
+      <mrow xml:id="Seq_Ex_1" number="yes">f(n) \amp = \left(2-\frac{1}{n}\right) + \left(5+\frac{1}{n}\right)i   \text{ for }   n=1,\,2,\,3,\,\ldots;</mrow>
+      <mrow xml:id="Seq_Ex_2" number="yes">g(n) \amp = e^{i\frac{\pi n}{4}}  \text{ for }   n=1,\,2,\,3,\,\ldots;</mrow>
+      <mrow xml:id="Seq_Ex_3" number="yes">h(k) \amp = 5+3i + \left(\frac{1}{1+i}\right)^{\!k}  \text{ for }   k=1,\,2,\,3,\,\ldots  \text{ and }</mrow>
+      <mrow xml:id="Seq_Ex_4" number="yes">r(n) \amp = \left(\frac{1}{4}+\frac{i}{2}\right)^{\!n}  \text{ for }   n=1,\,2,\,3,\,\ldots</mrow>
     </md>.
   </p>
   <p>
@@ -18,7 +18,7 @@
     we can specify it by writing <m>s(1)=z_1, \, s(3)=z_3</m>,
     and so on.
     The values <m>z_1, \, z_2, \, z_3, \ldots</m>,
-    are called the <term>terms</term> of a sequence,
+    are called the terms of a sequence,
     and mathematicians, being generally lazy when it comes to such things,
     often refer to <m>z_1, \, z_2, \, z_3 \ldots</m> as the sequence itself,
     even though they are really speaking of the range of the sequence when they do so.
@@ -48,11 +48,10 @@
   </p>
   <p>
     If <m>\lim_{n \to \infty}z_n = \zeta</m>,
-    we say that the sequence <m>\{z_n\}_1^\infty</m>
-    <term>converges to</term> <m>\zeta</m>.
+    we say that the sequence <m>\{z_n\}_1^\infty</m> converges to <m>\zeta</m>.
   </p>
   <p>
-    We need a rigorous definition for <xref ref="Informal">Statement</xref>, however,
+    We need a rigorous definition for Statement <xref ref="Informal"/>, however,
     if we are to do honest mathematics.
   </p>
   <definition xml:id="Seq_Lim_Def">
@@ -80,7 +79,7 @@
   </p>
   <figure xml:id="fig_ch-04-01">
     <caption>A sequence that converges to <m>\zeta</m></caption>
-    <image width="73%" source="figs/ch-04/ch-04-fig-01.pdf"/>
+    <image width="73%" source="figs/ch-04/ch-04-fig-01.png"/>
   </figure>
   <p>
     In form, Definition <xref ref="Seq_Lim_Def"/> is exactly the same as the corresponding definition for limits of real sequences.
@@ -92,7 +91,7 @@
         Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>\zeta =u+iv</m>.
         Then,
         <md>
-          <mrow xml:id="Complex_Limit" number="yes">\lim_{n \to \infty}z_n \amp = \zeta,  \text{ iff }</mrow>
+          <mrow xml:id="Complex_Limit" number="yes">\lim_{n \to \infty}z_n \amp = \zeta  \text{ iff }</mrow>
           <mrow xml:id="ReIm_Limit" number="yes">\lim_{n \to \infty}x_n \amp = u  \text{ and }   \lim_{n \to \infty}y_n=v\text{.}</mrow>
         </md>
       </p>
@@ -100,15 +99,14 @@
   </theorem>
   <proof>
     <p>
-      First we assume that <xref ref="Complex_Limit">Statement</xref>
-      is true and then deduce the truth of <xref ref="ReIm_Limit">Statement</xref>.
+      First we assume that Statement <xref ref="Complex_Limit"/> is true and then deduce the truth of Statement <xref ref="ReIm_Limit"/>.
       Let <m>\varepsilon</m> be an arbitrary positive real number.
-      To establish <xref ref="ReIm_Limit">Statement</xref>,
+      To establish Statement <xref ref="ReIm_Limit"/>,
       we must show (1) that there is a positive integer <m>N_\varepsilon</m> such that the inequality <m>|x_n-u|\lt \varepsilon</m> holds whenever
       <m>n>N_\varepsilon</m> and (2) that there is a positive integer
       <m>M_\varepsilon</m> such that the inequality
       <m>|y_n -v|\lt \varepsilon</m> holds whenever <m>n>M_\varepsilon</m>.
-      Because we are assuming <xref ref="Complex_Limit">Statement</xref> to be true, we know
+      Because we are assuming Statement <xref ref="Complex_Limit"/> to be true, we know
       (according to <xref ref="Seq_Lim_Def">Definition</xref>)
       that there is a positive integer <m>N_\varepsilon</m> such that
       <m>z_n \in D_\varepsilon(\zeta)</m> if <m>n>N_\varepsilon</m>.
@@ -123,72 +121,32 @@
     <p>
       Similarly, we can show that there is a number <m>M_\varepsilon</m> such that
       <m>|y_n-v|\lt \varepsilon</m> whenever <m>n>M_\varepsilon</m>,
-      which proves <xref ref="ReIm_Limit">Statement</xref>.
+      which proves Statement <xref ref="ReIm_Limit"/>.
     </p>
     <p>
       To complete the proof of this theorem,
-      we must show that Statement
-    </p>
-    <p>
-      <xref ref="ReIm_Limit"></xref> implies <xref ref="Complex_Limit">Statement</xref>.
+      we must show that the conditions of Statement <xref ref="ReIm_Limit"/> imply Statement <xref ref="Complex_Limit"/>.
       Let <m>\varepsilon>0</m> be an arbitrary real number.
-      By <xref ref="ReIm_Limit">Statement</xref>,
+      By Statement <xref ref="ReIm_Limit"/>,
       there exist positive integers
       <m>N_\varepsilon</m> and <m>M_{\varepsilon}</m> such that
       <md>
-        <mrow xml:id="Re_L_e_2" number="yes">|x_n - u|\amp \lt  \frac{\varepsilon}{2}  \text{ whenever }   n>N_\varepsilon  \text{ and }</mrow>
+        <mrow xml:id="Re_L_e_2" number="yes">|x_n - u|\amp \lt  \frac{\varepsilon}{2}  \text{ whenever }   n>N_\varepsilon,  \text{ and }</mrow>
         <mrow xml:id="Im_L_e_2" number="yes">|y_n - v|\amp \lt  \frac{\varepsilon}{2}  \text{ whenever }   n>M_\varepsilon</mrow>
       </md>.
     </p>
     <p>
       Let <m>L_\varepsilon=</m> <m>\max\{N_\varepsilon, \, M_\varepsilon\}</m>;
       then, if <m>n>L_\varepsilon</m>,
-      <me>
-        <tabular>
-          <row>
-            <cell>\(|z_n - \zeta|\)</cell>
-            <cell>\(=\)</cell>
-            <cell>\(|(x_n + iy_n) - (u + iv)|\)</cell>
-            <cell></cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(=\)</cell>
-            <cell>\(|(x_n - u) +i(y_n -v)|\)</cell>
-            <cell></cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(\le \)</cell>
-            <cell>\(|x_n -u|+ |i(y_n -v)|\)</cell>
-            <cell>{ (What is the reason for this step?)}</cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(=\)</cell>
-            <cell>\(|x_n -u|+ |i|\, |y_n -v|\)</cell>
-            <cell>{ (by properties of absolute value)}</cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(=\)</cell>
-            <cell>\(|x_n - u|\, |y_n - v|\)</cell>
-            <cell>{ (because \(|i|=1\))}</cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(\lt \)</cell>
-            <cell>\(\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\)</cell>
-            <cell>{ {(by <xref ref="Re_L_e_2">Statements</xref> and <xref ref="Im_L_e_2"></xref>)}}</cell>
-          </row>
-          <row>
-            <cell></cell>
-            <cell>\(=\)</cell>
-            <cell>\(\varepsilon\).</cell>
-            <cell></cell>
-          </row>
-        </tabular>
-      </me>
+      <md>
+        <mrow>{3} |z_n - \zeta| \amp =  |(x_n + iy_n) - (u + iv)| \amp</mrow>
+        <mrow>\amp =  |(x_n - u) +i(y_n -v)| \amp \amp</mrow>
+        <mrow>\amp \le   |x_n -u|+ |i(y_n -v)| \amp \amp    \text{ (What is the reason for this step?) }</mrow>
+        <mrow>\amp =  |x_n -u|+ |i|\, |y_n -v| \amp \amp    \text{ (by properties of absolute value) }</mrow>
+        <mrow>\amp =  |x_n - u|\, |y_n - v| \amp \amp    \text{ (because \(|i|=1\)) }</mrow>
+        <mrow>\amp \lt   \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \amp \amp    \text{ (by Statements (4.1.8) and (4.1.9)) }</mrow>
+        <mrow>\amp =  \varepsilon.\amp</mrow>
+      </md>
     </p>
   </proof>
   <p>
@@ -205,15 +163,15 @@
   <example>
     <statement>
       <p>
-        Find <m>\lim_{n \to \infty}z_n</m> if <m>z_n=\frac{\sqrt{n} + i(n+1)}{n}</m>.
+        Find <m>\lim\limits_{n \to \infty}z_n</m> if <m>z_n=\frac{\sqrt{n} + i(n+1)}{n}</m>.
       </p>
     </statement>
     <solution>
       <p>
         We write <m>z_n = x_n+iy_n = \frac{1}{\sqrt{n}} +i\frac{n+1}{n}</m>.
         Using results concerning sequences of real numbers,
-        we find that <m>\lim_{n \to \infty}x_n = \lim_{n \to \infty} \frac{1}{\sqrt{n}} = 0</m> and <m>\lim_{n \to \infty}y_n = \lim_{n \to \infty} \frac{n+1}{n} = 1</m>.
-        Therefore, <m>\lim_{n \to \infty}z_n = \lim_{n \to \infty} \frac{\sqrt{n} +i(n+1)}{n}=i</m>.
+        we find that <m>\lim\limits_{n \to \infty}x_n = \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0</m> and <m>\lim\limits_{n \to \infty}y_n = \lim\limits_{n \to \infty} \frac{n+1}{n} = 1</m>.
+        Therefore, <m>\lim\limits_{n \to \infty}z_n = \lim\limits_{n \to \infty} \frac{\sqrt{n} +i(n+1)}{n}=i</m>.
       </p>
     </solution>
   </example>
@@ -232,7 +190,7 @@
       </p>
       <p>
         The real sequences <m>\{(\sqrt{2})^n \cos \frac{n\pi}{4}\}</m> and <m>\{(\sqrt{2})^n \sin \frac{n\pi}{4}\}</m> both diverge,
-        so we conclude that <m>\{(1+i)^n\}</m> diverges.
+        so we conclude that the sequence <m>\{(1+i)^n\}</m> diverges.
       </p>
     </solution>
   </example>
@@ -240,19 +198,18 @@
     <title>Bounded Sequence</title>
     <statement>
       <p>
-        A complex sequence <m>\{z_n\}</m> is <term>bounded</term>
-        provided that there exists a positive real number <m>R</m> and an integer <m>N</m> such that <m>|z_n|\lt R</m> for all <m>n>N</m>.
+        A complex sequence <m>\{z_n\}</m> is bounded provided that there exists a positive real number <m>R</m> and an integer <m>N</m> such that <m>|z_n|\lt R</m> for all <m>n>N</m>.
         In other words, for <m>n>N</m>,
         the sequence <m>\{z_n\}</m> is contained in the disk <m>D_R(0)</m>.
       </p>
     </statement>
   </definition>
   <p>
-    Bounded sequences play an important role in some newer developments in complex analysis that are discussed in Section 4.2.
+    Bounded sequences play an important role in some newer developments in complex analysis that are discussed in <xref ref="sec_julia-mandelbrot">Section</xref>.
     A theorem from real analysis stipulates that convergent sequences are bounded.
     The same result holds for complex sequences.
   </p>
-  <theorem>
+  <theorem xml:id="thm_convergent_implies_bounded">
     <statement>
       <p>
         If <m>\{z_n\}</m> is a convergent sequence,
@@ -315,24 +272,22 @@
     is a theory that allows us to add up infinitely many terms.
     To make sense of such an idea we begin with a sequence <m>\{z_n\}</m>,
     and form a new sequence <m>\{S_n\}</m>,
-    called the <term>sequence of partial sums</term>, as follows.
+    called the sequence of partial sums, as follows.
     <md>
-      <mrow>S_1 \amp =\amp  z_1\text{,}</mrow>
-      <mrow>S_2 \amp =\amp  z_1+z_2\text{,}</mrow>
-      <mrow>S_3 \amp =\amp  z_1+z_2+z_3\text{,}</mrow>
-      <mrow>\amp \amp    \vdots</mrow>
-      <mrow>S_n \amp =\amp z_1+z_2+\cdots +z_n=\sum_{k=1}^nz_k\text{,}</mrow>
-      <mrow>\amp \amp  \vdots</mrow>
+      <mrow>S_1 \amp = z_1,</mrow>
+      <mrow>S_2 \amp = z_1+z_2,</mrow>
+      <mrow>S_3 \amp = z_1+z_2+z_3,</mrow>
+      <mrow>\amp  \;\; \vdots</mrow>
+      <mrow>S_n \amp = z_1+z_2+\cdots +z_n=\sum_{k=1}^nz_k,</mrow>
+      <mrow>\amp  \;\; \vdots</mrow>
     </md>
   </p>
   <definition xml:id="Convergence">
     <title>Infinite Series</title>
     <statement>
       <p>
-        The formal expression <m>\sum\limits_{k=1}^\infty z_k = z_1 + z_2 + \cdots +z_n + \cdots</m> is called an
-        <term>infinite series</term>,
-        and <m>z_1, \, z_2, \ldots</m> are called the
-        <term>terms</term> of the series.
+        The formal expression <m>\sum\limits_{k=1}^\infty z_k = z_1 + z_2 + \cdots +z_n + \cdots</m> is called an infinite series,
+        and <m>z_1, \, z_2, \ldots</m> are called the terms of the series.
       </p>
     </statement>
   </definition>
@@ -341,9 +296,9 @@
     <statement>
       <p>
         If there is a complex number <m>S</m> for which <m>S=\lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum\limits_{k=1}^n z_k</m>,
-        we say that the infinite series <m>\sum\limits_{k=1}^{\infty}z_k</m>
-        <term>converges to</term><m>S</m>,
-        and that <m>S</m> is the <term>sum</term> of the infinite series.
+        we say that the infinite series
+        <m>\sum\limits_{k=1}^{\infty}z_k</m> converges to <m>S</m>,
+        and that <m>S</m> is the sum of the infinite series.
         When convergence occurs, we write <m>S=\sum\limits_{k=1}^{\infty}z_k</m>.
       </p>
     </statement>
@@ -352,9 +307,7 @@
     <title>Absolutely Convergent Series</title>
     <statement>
       <p>
-        The series <m>\sum\limits_{k=1}^{\infty}z_k</m> is said to be
-        <term>absolutely convergent</term>
-        provided that the (real) series of magnitudes <m>\sum\limits_{k=1}^{\infty}|z_k|</m> converges.
+        The series <m>\sum\limits_{k=1}^{\infty}z_k</m> is said to be absolutely convergent provided that the (real) series of magnitudes <m>\sum\limits_{k=1}^{\infty}|z_k|</m> converges.
       </p>
     </statement>
   </definition>
@@ -362,8 +315,7 @@
     <title>Divergent Series</title>
     <statement>
       <p>
-        If a series does not converge,
-        we say that it<term>diverges</term>.
+        If a series does not converge, we say that it diverges.
       </p>
     </statement>
   </definition>
@@ -390,9 +342,9 @@
         Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>S=U+iV</m>.
         Then
         <md>
-          <mrow>S \amp =\amp \sum\limits_{n=1}^{\infty}z_n=\sum\limits_{n=1}^{\infty}( x_n+iy_n) \textit{{\ iff}}</mrow>
-          <mrow>U \amp =\amp \sum\limits_{n=1}^{\infty}x_n\ \ \textit{{and}} V=\sum\limits_{n=1}^{\infty}y_n\text{.}</mrow>
-        </md>
+          <mrow>S \amp = \sum\limits_{n=1}^\infty z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n)  \text{ iff }</mrow>
+          <mrow>U \amp = \sum\limits_{n=1}^\infty x_n  \text{ and }   V=\sum\limits_{n=1}^{\infty}y_n</mrow>
+        </md>.
       </p>
     </statement>
   </theorem>
@@ -401,8 +353,8 @@
       Let <m>U_n=\sum\limits_{k=1}^n x_k</m>,
       <m>V_n=\sum\limits_{k=1}^ny_k</m>, and <m>S_n=U_n+iV_n</m>.
       We use <xref ref="Lim_Zn_Thm">Theorem</xref>
-      to conclude that <m>\lim_{n \to \infty}S_n=\lim_{n \to \infty}(U_n+iV_n) = U+iV=S</m> iff both
-      <m>\lim_{n \to \infty} U_n=U</m> and <m>\lim_{n \to \infty} V_n=V</m>.
+      to conclude that <m>\lim\limits_{n \to \infty}S_n=\lim\limits_{n \to \infty}(U_n+iV_n) = U+iV=S</m> iff both
+      <m>\lim\limits_{n \to \infty} U_n=U</m> and <m>\lim\limits_{n \to \infty} V_n=V</m>.
       The completion of the proof now follows from <xref ref="Convergence">Definition</xref>.
     </p>
   </proof>
@@ -490,7 +442,7 @@
         <m>\sum\limits_{n=0}^{\infty}b_n</m> be convergent series,
         where <m>a_n</m> and <m>b_n</m> are complex numbers.
         The <em>Cauchy product</em> of the two series is defined to be the series <m>\sum\limits_{n=0}^{\infty}c_n</m>,
-        where <m>c_n=\sum \limits_{k=0}^na_{k}b_{n-k}</m>.
+        where <m>c_n=\sum \limits_{k=0}^na_kb_{n-k}</m>.
       </p>
     </statement>
   </definition>
@@ -500,7 +452,7 @@
         If the Cauchy product converges, then
         <me>
           \sum_{n=0}^{\infty}c_n=\left(\sum\limits_{n=0}^{\infty}a_n\right) \left(\sum\limits_{n=0}^{\infty}b_n\right)
-        </me>.
+        </me>
       </p>
     </statement>
   </theorem>
@@ -518,7 +470,7 @@
         Let <m>\sum\limits_{n=1}^{\infty}M_n</m> be a convergent series of real nonnegative terms.
         If <m>\{z_n\}</m> is a sequence of complex numbers and
         <m>|z_n|\le M_n</m> holds for all <m>n</m>,
-        then <m>\sum\limits_{n=1}^{\infty}z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n)</m> converges.
+        then the infinite series <m>\sum\limits_{n=1}^{\infty}z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n)</m> converges.
       </p>
     </statement>
   </theorem>
@@ -533,7 +485,7 @@
       so <m>\sum\limits_{n=1}^{\infty}x_n</m> and <m>\sum\limits_{n=1}^{\infty}y_n</m> are convergent.
       With these results,
       together with <xref ref="Convergent_Thm">Theorem</xref>,
-      we conclude that <m>\sum\limits_{n=1}^{\infty}z_n = \sum\limits_{n=1}^{\infty}x_n +i\sum\limits_{n=1}^{\infty}y_n</m> is convergent.
+      we conclude that the infinite series <m>\sum\limits_{n=1}^{\infty}z_n = \sum\limits_{n=1}^{\infty}x_n +i\sum\limits_{n=1}^{\infty}y_n</m> is convergent.
     </p>
   </proof>
   <corollary xml:id="Abs_Conv_Implies_Conv">
@@ -559,189 +511,319 @@
     </statement>
     <solution>
       <p>
-        We calculate <m>|z_n| = |\frac{(3+4i)^n}{5^n n^2} |=\frac{1}{n^2} = M_n</m>.
+        We calculate <m>|z_n| = \left|\frac{(3+4i)^n}{5^n n^2}\right|=\frac{1}{n^2} = M_n</m>.
         Using the comparison test and the fact that <m>\sum\limits_{n=1}^{\infty}\frac{1}{n^2}</m> converges,
-        we determine that <m>\sum\limits_{n=1}^{\infty}|\frac{(3+4i)^n}{5^n n^2}|</m> converges and hence so does <m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m>.
+        we determine that <m>\sum\limits_{n=1}^{\infty}\left|\frac{(3+4i)^n}{5^n n^2}\right|</m> converges,
+        and hence so does <m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m>.
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_sequences-series">Section</xref></title>
+  <exercises xml:id="exercises_sequences-series">
+    <title>Exercises</title>
     <exercise xml:id="x4_1_1">
-      <p>
-        Find the following limits.
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Find the following limits.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>\lim\limits_{n \to \infty}(\frac{1}{2}+\frac{i}{4})^n</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\lim\limits_{n \to \infty}\frac{n+(i)^n}{n}</m>.
+            <m>0</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{n \to \infty}\frac{n+(i)^n}{n}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>\lim\limits_{n \to \infty}\frac{n^2+i2^n}{2^n}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\lim\limits_{n \to \infty}\frac{(n+i)( 1+ni)}{n^2}</m>.
+            <m>i</m>.
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\lim\limits_{n \to \infty}\frac{(n+i)(1+ni)}{n^2}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_1_2">
-      <p>
-        Show that <m>\lim\limits_{n \to \infty}(i)^{\frac{1}{n}}=1</m>,
-        where <m>(i)^{\frac{1}{n}}</m> is the principal value of the <m>n</m>th root of <m>i</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\lim\limits_{n \to \infty}(i)^{\frac{1}{n}}=1</m>,
+          where <m>(i)^{\frac{1}{n}}</m> is the principal value of the <m>n</m>th root of <m>i</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_3">
-      <p>
-        Suppose that <m>\lim\limits_{n \to \infty}z_n=z_0</m>.
-        Show that <m>\lim\limits_{n \to \infty}\overline{z_n}=\overline{z}_0</m>.
-      </p>
+      <statement>
+        <p>
+          Suppose that <m>\lim\limits_{n \to \infty}z_n=z_0</m>.
+          Show that <m>\lim\limits_{n \to \infty}\overline{z_n}=\overline{z}_0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>\varepsilon >0</m> be given.
+          Since <m>\lim\limits_{n \to \infty}z_n=z_0</m>,
+          there exists <m>N_{\varepsilon}</m> such that if
+          <m>n>N_{\varepsilon}</m> then <m>z_n\in D_{e}(z_0)</m>,
+          <em>i.e.</em>,
+          <m>|z_n-z_0|\lt \varepsilon</m>.
+          But since <m>|\bar{z}_n-\bar{z}_0|=|z_n-z_0|</m>,
+          we see that if <m>n>N_{\varepsilon}</m>,
+          then <m>\bar{z_n}\in D_{\varepsilon}(\bar{z}_0)</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Suppose that the complex series <m>\{z_n\}</m> converges to <m>\zeta</m>.
-        Show that <m>\{z_n\}</m> is bounded in two ways.\label {4.1.4}
-        <ol>
-          <li>
-            <p>
-              Write <m>z_n = x_n+iy_n</m> and use the fact that convergent series of real numbers are bounded.
-            </p>
-          </li>
-          <li>
-            <p>
-              For <m>\varepsilon=1</m>,
-              use Definitions 4.1 and 4.2 to show that there is some integer <m>N</m> such that,
-              for <m>n>N</m>,
-              <m>|z_n| = |\zeta +(z_n-\zeta)| \le |\zeta| + 1</m>.
-              Then set <m>R=\max\{|z_1|, \, |z_2|, \ldots, |z_{N}|, \, \zeta +1\}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Suppose that the complex series <m>\{z_n\}</m> converges to <m>\zeta</m>.
+          Show that <m>\{z_n\}</m> is bounded in two ways.\label {4.1.4}
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Write <m>z_n = x_n+iy_n</m> and use the fact that convergent series of real numbers are bounded.
+        </p>
+      </task>
+      <task>
+        <p>
+          For <m>\varepsilon=1</m>,
+          use <xref ref="Seq_Lim_Def">Definitions</xref>
+          and <xref ref="Bounded_Def"></xref>
+          to show that there is some integer <m>N</m> such that,
+          for <m>n>N</m>,
+          <m>|z_n| = |\zeta +(z_n-\zeta)| \le |\zeta| + 1</m>.
+          Then set <m>R=\max\{|z_1|, \, |z_2|, \ldots, |z_N|, \, \zeta +1\}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_1_5">
-      <p>
-        Show that <m>\sum\limits_{n=0}^{\infty}(\frac{1}{n+1+i}-\frac{1}{n+i}) = i</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\sum\limits_{n=0}^{\infty}(\frac{1}{n+1+i}-\frac{1}{n+i}) = i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is a
+          <q>telescoping sum</q>
+          and we have for the <m>n^{th}</m> partial sum <m>S_n=-\frac{1}{i}+\frac{1}{n+i}</m>
+          (show the details for this).
+          Then <m>\lim\limits_{n \to \infty}S_n = \lim\limits_{n \to \infty}(-\frac{1}{i}+\frac{1}{n+i}) = \lim\limits_{n \to \infty}(i+\frac{n-i}{n^2+1}) = i+0 = i</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_6">
-      <p>
-        Suppose that <m>\sum\limits_{n=1}^{\infty}z_n=S</m>.
-        Show that <m>\sum\limits_{n=1}^{\infty}\overline{z_n}=\overline{S}</m>.
-      </p>
+      <statement>
+        <p>
+          Suppose that <m>\sum\limits_{n=1}^{\infty}z_n=S</m>.
+          Show that <m>\sum\limits_{n=1}^{\infty}\overline{z_n}=\overline{S}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_7">
-      <p>
-        Does <m>\lim\limits_{n \to \infty}(\frac{1+i}{\sqrt{2}})^n</m> exist?
-        Why or why not?
-      </p>
+      <statement>
+        <p>
+          Does <m>\lim\limits_{n \to \infty}(\frac{1+i}{\sqrt{2}})^n</m> exist?
+          Why or why not?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          In polar form we have <m>\lim\limits_{n \to \infty}(e^{i\frac{\pi}{4}})^n = \lim\limits_{n \to \infty}e^{i\frac{n\pi}{4}}</m>.
+          These points oscillate around the eight roots of unity as <xref ref="Seq_Ex_2">Example</xref> indicated.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_8">
-      <p>
-        Let <m>z_n=r_ne^{i\theta _n}\ne 0</m>,
-        where <m>\theta _n = \mathrm{Arg}(z_n)</m>.
-        <ol>
-          <li>
-            <p>
-              Suppose <m>\lim\limits_{n \to \infty}r_n=r_0</m> and <m>\lim\limits_{n \to \infty}\theta _n=\theta _0</m>.
-              Show that <m>\lim\limits_{n \to \infty}r_ne^{i\theta _n}=r_0e^{i\theta_0}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Find an example where <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta _0}, \; \lim\limits_{n \to \infty}r_n = r_0</m>,
-              but <m>\lim\limits_{n \to \infty}\theta _n</m> does not exist.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>\{z_n\} = \{r_ne^{i\theta_n}\}</m>,
-              is it possible to have <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta_0}</m>,
-              but <m>\lim\limits_{n \to \infty}r_n</m> does not exist?
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Let <m>z_n=r_ne^{i\theta _n}\ne 0</m>,
+          where <m>\theta _n = \mathrm{Arg}(z_n)</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Suppose <m>\lim\limits_{n \to \infty}r_n=r_0</m> and <m>\lim\limits_{n \to \infty}\theta _n=\theta _0</m>.
+          Show that <m>\lim\limits_{n \to \infty}r_ne^{i\theta _n}=r_0e^{i\theta_0}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          Find an example where <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta _0}, \; \lim\limits_{n \to \infty}r_n = r_0</m>,
+          but <m>\lim\limits_{n \to \infty}\theta _n</m> does not exist.
+        </p>
+      </task>
+      <task>
+        <p>
+          If <m>\{z_n\} = \{r_ne^{i\theta_n}\}</m>,
+          is it possible to have <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta_0}</m>,
+          but <m>\lim\limits_{n \to \infty}r_n</m> does not exist?
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_1_9">
-      <p>
-        Show that, if <m>\sum\limits_{n=1}^{\infty}z_n</m> converges,
-        then <m>\lim\limits_{n \to \infty}z_n=0</m>.
-        <em>Hint</em>: <m>z_n=S_n-S_{n-1}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that, if <m>\sum\limits_{n=1}^{\infty}z_n</m> converges,
+          then <m>\lim\limits_{n \to \infty}z_n=0</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          <m>z_n=S_n-S_{n-1}</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Since <m>\sum\limits_{n=1}^{\infty}z_n</m> converges,
+          <m>\lim\limits_{n \to \infty}S_n=S</m>,
+          where <m>S</m> is a complex number.
+          But then <m>\lim\limits_{n \to \infty}S_{n-1}=S</m>,
+          so <m>\lim\limits_{n \to \infty}z_n=\lim\limits_{n \to \infty }(S_n-S_{n-1}) = \lim\limits_{n \to \infty }S_n-\lim\limits_{n \to \infty}S_{n-1}=0</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_10">
-      <p>
-        State (with justification) whether the following series converge.
-        <ol>
-          <li>
-            <p>
-              <m>\sum\limits_{n=1}^{\infty}\frac{(i)^n}{n}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\sum\limits_{n=1}^{\infty}(\frac{1}{n}+\frac{i}{2^n})</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          State (with justification) whether the following series converge.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}\frac{i^n}{n}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}(\frac{1}{n}+\frac{i}{2^n})</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x4_1_11">
-      <p>
-        Let <m>\sum\limits_{n=1}^{\infty}(x_n+iy_n) = u+iv</m>.
-        If <m>c=a+ib</m> is a complex constant,
-        show that <m>\sum\limits_{n=1}^{\infty}(a+ib)(x_n+iy_n) = (a+ib)( u+iv)</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>\sum\limits_{n=1}^{\infty}(x_n+iy_n) = u+iv</m>.
+          If <m>c=a+ib</m> is a complex constant, show that
+        </p>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}(a+ib)(x_n+iy_n) = (a+ib)(u+iv)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\sum\limits_{n=1}^{\infty}(a+ib) (x_n+iy_n) = \sum\limits_{n=1}^{\infty}[(ax_n-by_n)+i(bx_n+ay_n)]</m>.
+          By <xref ref="Convergent_Thm">Theorem</xref>,
+          this expression equals <m>(au-bv)+i(bu+av) = (a+ib)(u+iv)</m>.
+          Explain why in detail.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_12">
-      <p>
-        If <m>\sum\limits_{n=0}^{\infty}z_n</m> converges,
-        show that <m>\left|\sum\limits_{n=0}^{\infty}z_n\right| \le \sum\limits_{n=0}^{\infty}|z_n|</m>.
-      </p>
+      <statement>
+        <p>
+          If <m>\sum\limits_{n=0}^{\infty}z_n</m> converges,
+          show that <m>\left|\sum\limits_{n=0}^{\infty}z_n\right| \le \sum\limits_{n=0}^{\infty}|z_n|</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_13">
-      <p>
-        Complete the proof of <xref ref="Lim_Zn_Thm">Theorem</xref>.
-        In other words, suppose that <m>\lim_{n \to \infty}z_n=\zeta</m>,
-        where <m>z_n=x_n+iy_n</m> and <m>\zeta = u+iv</m>.
-        Prove that <m>\lim_{n \to \infty}y_n=v</m>.
-      </p>
+      <statement>
+        <p>
+          Complete the proof of <xref ref="Lim_Zn_Thm">Theorem</xref>.
+          In other words,
+          suppose that <m>\lim\limits_{n \to \infty}z_n=\zeta</m>,
+          where <m>z_n=x_n+iy_n</m> and <m>\zeta = u+iv</m>.
+          Prove that <m>\lim\limits_{n \to \infty}y_n=v</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Duplicate the part of the Theorem that shows <m>\lim\limits_{n \to \infty}x_n=u</m>,
+          but replace <m>x_n</m> with <m>y_n</m> and <m>u</m> with <m>v</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_14">
-      <p>
-        A side comment asked you to justify the first inequality in the proof of <xref ref="Lim_Zn_Thm">Theorem</xref>.
-        Give a justification.
-      </p>
+      <statement>
+        <p>
+          A side comment asked you to justify the first inequality in the proof of <xref ref="Lim_Zn_Thm">Theorem</xref>.
+          Give a justification.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_15">
-      <p>
-        Prove that a sequence can have only one limit.
-        <em>Hint</em>: Suppose that there is a sequence <m>\{z_n\}</m> such that
-        <m>z_n \to \zeta _1</m> and <m>z_n \to \zeta _2</m>.
-        Show this assumption implies
-        <m>\zeta _1=\zeta _2</m> by proving that for all <m>\varepsilon>0</m>,
-        <m>|\zeta _1-\zeta _2| \lt \varepsilon</m>.
-      </p>
+      <statement>
+        <p>
+          Prove that a sequence can have only one limit.
+          Show this assumption implies
+          <m>\zeta _1=\zeta _2</m> by proving that for all <m>\varepsilon>0</m>,
+          <m>|\zeta _1-\zeta _2| \lt \varepsilon</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Suppose that there is a sequence <m>\{z_n\}</m> such that
+          <m>z_n \to \zeta _1</m> and <m>z_n \to \zeta _2</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Following the hint, for <m>\varepsilon >0</m> there exists numbers
+          <m>N_{\varepsilon}</m> and <m>M_{\varepsilon}</m> such that
+          <m>n>N_{\varepsilon}</m> implies <m>|z_n-\zeta _1|\lt \frac{ \varepsilon}{2}</m>,
+          and <m>n>M_{\varepsilon}</m> implies <m>|z_n-\zeta_2|\lt \frac{\varepsilon}{2}</m>.
+          Let <m>L_{\varepsilon}=\max\{N_{\varepsilon},\,M_{\varepsilon}\}</m>.
+          It follows that if <m>n>L_{\varepsilon}</m>,
+          then <m>|\zeta _1-\zeta _2|=|\zeta _1-z_n+z_n-\zeta _2| \le |\zeta _1-z_n|+|z_n-\zeta _2|\lt \varepsilon</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="x4_1_16">
-      <p>
-        Prove <xref ref="Abs_Conv_Implies_Conv">Corollary</xref>.
-      </p>
+      <statement>
+        <p>
+          Prove <xref ref="Abs_Conv_Implies_Conv">Corollary</xref>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_17">
-      <p>
-        Prove that <m>\lim\limits_{n \to \infty}z_n=0</m> iff <m>\lim\limits_{n \to \infty}|z_n|=0</m>.
-      </p>
+      <statement>
+        <p>
+          Prove that <m>\lim\limits_{n \to \infty}z_n=0</m> iff <m>\lim\limits_{n \to \infty}|z_n|=0</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>\varepsilon>0</m> and suppose <m>\lim\limits_{n \to \infty}z_n=0</m>.
+          This means there exists <m>N_{\varepsilon}</m> such that
+          <m>n>N_{\varepsilon}</m> implies <m>z_n \in D_{\varepsilon}(0)</m>,
+          that is, <m>|z_n-0|\lt \varepsilon</m>.
+          But then <m>||z_n|-0|=|z_n-0|\lt \varepsilon</m>,
+          so also we have <m>|z_n|\in D_{\varepsilon}(0)</m>.
+          Therefore, <m>\lim\limits_{n \to \infty}|z_n|=0</m>.
+          The other direction is similar.
+          Show the details.
+        </p>
+      </solution>
     </exercise>
   </exercises>
 </section>

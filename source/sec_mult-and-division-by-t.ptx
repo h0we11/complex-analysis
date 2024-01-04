@@ -5,7 +5,7 @@
     <m>t\sin bt</m>, or <m>t^ne^{at}</m> as part of the solution.
     We now show how the Laplace transforms of <m>tf(t)</m> and
     <m>\frac{f(t)}{t}</m> are related to the Laplace transform of <m>f(t)</m>.
-    The transform of <m>tf( t)</m> will be obtained via differentiation and the transform of
+    The transform of <m>tf(t)</m> will be obtained via differentiation and the transform of
     <m>\frac{f(t)}{t}</m> will be obtained via integration.
     To be precise, we state the following theorems.
   </p>
@@ -17,8 +17,8 @@
       <p>
         If <m>F(s)</m> is the Laplace transform of <m>f(t)</m>, then
         <me>
-          \mathcal{L}\big(tf(t)\big) = -F'(s)
-        </me>.
+          \mathcal{L}\big(tf(t)\big) = -F\,'(s)
+        </me>
       </p>
     </statement>
   </theorem>
@@ -27,7 +27,7 @@
       By definition we have <m>F(s) = \int_0^{\infty}f(t)e^{-st}\,dt</m>.
       Leibniz's rule for partial differentiation under the integral sign permits us to write
       <md>
-        <mrow>F'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt</mrow>
+        <mrow>F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt</mrow>
         <mrow>\amp = \int_0^{\infty}\frac{\partial }{\partial s}[f(t)e^{-st}]\,dt</mrow>
         <mrow>\amp = \int_0^{\infty}[-tf(t) e^{-st}]\,dt</mrow>
         <mrow>\amp = -\int_0^{\infty}tf(t) e^{-st}dt</mrow>
@@ -40,10 +40,10 @@
     <statement>
       <p>
         Let both <m>f(t)</m> and <m>\frac{f(t)}{t}</m> have Laplace transforms and let <m>F(s)</m> denote the transform of <m>f(t)</m>.
-        If <m>\lim\limits_{t \to 0^+}\frac{f(t) }{t}</m> exists,
+        If <m>\lim\limits_{t \to 0^+}\frac{f(t)}{t}</m> exists,
         <me>
-          \mathcal{L}(\frac{f(t)}{t}) = \int_s^{\infty}F(\sigma)\,d\sigma
-        </me>.
+          \mathcal{L}\left(\frac{f(t)}{t}\right) = \int_s^{\infty}F(\sigma)\,d\sigma
+        </me>
       </p>
     </statement>
   </theorem>
@@ -52,15 +52,13 @@
       Since <m>F(\sigma) = \int_0^{\infty}f(t) e^{-\sigma t}\,dt</m>,
       we integrate <m>F(\sigma)</m> from <m>s</m> to <m>\infty</m>:
       <me>
-        \int_s^{\infty}F(\sigma ) d\sigma =\int_0^{\infty}[\int_0^{\infty}f(t) e^{-\sigma t}\,dt]\,d\sigma
+        \int_s^{\infty}F(\sigma ) d\sigma =\int_0^{\infty}\left[\int_0^{\infty}f(t) e^{-\sigma t}\,dt\right]d\sigma
       </me>.
-    </p>
-    <p>
       The order of integration in equation in the double integral is reversed:
       <md>
         <mrow>\int_s^{\infty}F(\sigma )\,d\sigma \amp = \int_0^{\infty}\left[\int_s^{\infty}f(t) e^{-\sigma t}d\sigma\right]dt</mrow>
         <mrow>\amp = \int_0^{\infty}\left[\frac{-f(t)}{t}e^{-\sigma t}\Big|_{\sigma =s}^{\sigma =\infty}\right]dt</mrow>
-        <mrow>\amp = \int_0^{\infty}\frac{f(t) }{t}e^{-st}\,dt</mrow>
+        <mrow>\amp = \int_0^{\infty}\frac{f(t)}{t}e^{-st}\,dt</mrow>
         <mrow>\amp = \mathcal{L}\left(\frac{f(t)}{t}\right)</mrow>
       </md>.
     </p>
@@ -70,15 +68,17 @@
       <p>
         Show that <m>\mathcal{L}(t\cos bt) =\frac{s^2-b^2}{(s^2+b^2)^2}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Let <m>f(t) =\cos bt</m>,
         then <m>F(s) =\mathcal{L}(\cos bt) = \frac{s}{s^2+b^2}</m>.
         Hence, we can differentiate <m>F(s)</m> to obtain the desired result:
         <me>
-          \mathcal{L}(t\cos bt) =-F'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}
-        </me>.
+          \mathcal{L}(t\cos bt) =-F\,'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -87,25 +87,26 @@
       <p>
         Show that <m>\mathcal{L}(\frac{\sin t}{t}) =\arctan \frac{1}{s}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Let <m>f(t) = \sin t</m> and <m>F(s) =\frac{1}{s^2+1}</m>.
         Since <m>\lim\limits_{t \to 0^+}\frac{\sin t}{t}=1</m>,
         we can integrate <m>F(s)</m> to obtain the desired result:
         <me>
-          \mathcal{L}(\frac{\sin t}{t}) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} = \left.-\arctan \frac{1}{\sigma }\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}
+          \mathcal{L}\left(\frac{\sin t}{t}\right) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} = \left.-\arctan \frac{1}{\sigma }\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <p>
-    Some types of differential equations involve the terms
-    <m>ty\,'(t)</m> or <m>ty^{\prime \prime}(t)</m>.
+    Some types of differential equations involve the terms <m>ty\,'(t)</m> or <m>ty\,''(t)</m>.
     Laplace transforms can be used to find the solution if we use the additional substitutions
     <md>
-      <mrow xml:id="Laplacety1" number="yes">\mathcal{L}\big(ty\,'(t)\big) \amp = -sY'(s) - Y(s),  \text{ and }</mrow>
-      <mrow xml:id="Laplacety2" number="yes">\mathcal{L}\big(ty^{\prime \prime}(t)\big) \amp = -s^2Y'(s) - 2sY(s) + y(0)</mrow>
+      <mrow xml:id="Laplacety1" number="yes">\mathcal{L}\big(ty\,'(t)\big) \amp = -sY\,'(s) - Y(s),  \text{ and }</mrow>
+      <mrow xml:id="Laplacety2" number="yes">\mathcal{L}\big(ty\,''(t)\big) \amp = -s^2Y\,'(s) - 2sY(s) + y(0)</mrow>
     </md>.
   </p>
   <example>
@@ -113,23 +114,21 @@
       <p>
         Use Laplace transforms to solve the initial value problem
         <me>
-          ty^{\prime \prime}(t) - ty\,'(t) - y(t) = 0  \text{ with }   y(0) =0
+          ty\,''(t) - ty\,'(t) - y(t) = 0  \text{ with }   y(0) =0
         </me>.
       </p>
-    </statement>
-    <solution>
       <p>
         Let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>,
         then using the <xref ref="Laplacety1">substitutions</xref>
         and <xref ref="Laplacety2"></xref> results in
         <men xml:id="LaplaceTransDE">
-          -s^2Y'(s) -2sY(s) +0+sY'(s) + Y(s) - Y(s) = 0
+          -s^2Y\,'(s) -2sY(s) +0+sY\,'(s) + Y(s) - Y(s) = 0
         </men>.
       </p>
       <p>
-        This equation involves <m>Y'(s)</m> and can be written as a first-order linear differential equation:
+        This equation involves <m>Y\,'(s)</m> and can be written as a first-order linear differential equation:
         <men xml:id="TransDE">
-          Y'(s) + \frac{2}{s-1}Y(s) = 0
+          Y\,'(s) + \left(\frac{2}{s-1}\right)Y(s) = 0
         </men>.
       </p>
       <p>
@@ -141,7 +140,7 @@
       <p>
         Multiplying Equation <xref ref="TransDE"/> by <m>\rho</m> produces
         <me>
-          (s-1)^2Y'(s) +2(s-1) Y(s) = \frac{d}{ds}\big[(s-1)^2Y(s)\big] = 0
+          (s-1)^2Y\,'(s) +2(s-1) Y(s) = \frac{d}{ds}\big[(s-1)^2Y(s)\big] = 0
         </me>.
       </p>
       <p>
@@ -152,138 +151,209 @@
         <me>
           Y(s) = \frac{C}{(s-1)^2}
         </me>.
-      </p>
-      <p>
         The inverse of the transform <m>Y(s)</m> in equation is the desired solution
         <me>
-          y(t) = Cte^{t}
-        </me>.
+          y(t) = Cte^t
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_mult-and-division-by-t">Section</xref></title>
+  <exercises xml:id="exercises_mult-and-division-by-t">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Find the Laplace transform for each of the following:
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Find the Laplace transform for each of the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>\mathcal{L}(te^{-2t})</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\mathcal{L}(t^2e^{4t})</m>.
+            <m>\mathcal{L}(te^{-2t}) = \frac{1}{(s+2)^2}</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\mathcal{L}(t^2e^{4t})</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>\mathcal{L}(t\sin 3t)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\mathcal{L}(t^2\cos 2t)</m>.
+            <m>\mathcal{L}(t\sin 3t) = \frac{6s}{(s^2+9)^2}</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\mathcal{L}(t^2\cos 2t)</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>\mathcal{L}(t\sinh t)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\mathcal{L}(t^2\cosh t)</m>.
+            <m>\mathcal{L}(t\sinh t) = \frac{2s}{(s^2-1)^2}</m>.
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\mathcal{L}(t^2\cosh t)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Show that <m>\mathcal{L}(\frac{e^{t}-1}{t}) = \ln \frac{s}{s-1}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(\frac{1-\cos t}{t}) = \ln \frac{s^2}{s^2+1}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Show that <m>\mathcal{L}(\frac{1-\cos t}{t}) = \ln \frac{s^2}{s^2+1}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(\frac{e^t-1}{t}) = \ln \frac{s}{s-1}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}(t\sin bt)</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}(te^{at}\cos bt)</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}(te^{at}\cos bt)</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}(t\sin bt)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}(t\sin bt) = \frac{2bs}{(s^2+b^2)^2}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}^{-1}(\ln \frac{s^2+1}{(s-1)^2})</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}^{-1}(\ln \frac{s}{s+1})</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}^{-1}(\ln \frac{s}{s+1})</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}^{-1}\big(\ln \frac{s^2+1}{(s-1)^2}\big)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}^{-1}\Big(\ln \frac{s^2+1}{(s-1)^2}\Big) = \frac{2(e^t-\cos t)}{t}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Solve the initial value problem for each of the following:
-        <ol>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) +2y\,'(t) + y(t) = 2e^{-t}</m>,
-              with <m>y(0) = 0</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + y(t) = 2\sin t</m>,
-              with <m>y(0) = 0</m> and <m>y'(0) = -1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>ty^{\prime \prime}(t) - ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>ty^{\prime \prime}(t) + (t-1)y\,'(t) - 2y(t) = 0</m>,
-              with <m>y(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>ty^{\prime \prime}(t) + ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>ty^{\prime \prime}(t) + (t-1)y\,'(t) + y(t) = 0</m>,
-              with <m>y(0) = 0</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Solve the initial value problem for each of the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) +2y\,'(t) + y(t) = 2e^{-t}</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = te^{-t}+t^2e^{-t}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) + y(t) = 2\sin t</m>,
+          with <m>y(0) = 0</m> and <m>y\,'(0) = -1</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>ty\,''(t) - ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = Cte^t</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>ty\,''(t) + (t-1)y\,'(t) - 2y(t) = 0</m>, with <m>y(0) = 0</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>ty\,''(t) + ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = Ct</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>ty\,''(t) + (t-1)y\,'(t) + y(t) = 0</m>, with <m>y(0) = 0</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Solve the Laguerre equation
-        <m>ty^{\prime \prime}(t) + (1-t)y\,'(t) + y(t) = 0</m>,
-        with <m>y(0) = 1</m>.
-      </p>
+      <statement>
+        <p>
+          Solve the Laguerre equation
+          <m>ty\,''(t) + (1-t)y\,'(t) + y(t) = 0</m>, with <m>y(0) = 1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>y(t) = 1-t</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Solve the Laguerre equation
-        <m>ty^{\prime \prime}(t) + (1-t)y\,'(t) + 2y(t) = 0</m>,
-        with <m>y(0) = 1</m>.
-      </p>
+      <statement>
+        <p>
+          Solve the Laguerre equation
+          <m>ty\,''(t) + (1-t)y\,'(t) + 2y(t) = 0</m>, with <m>y(0) = 1</m>.
+        </p>
+      </statement>
     </exercise>
   </exercises>
 </section>

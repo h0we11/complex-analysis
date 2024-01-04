@@ -1,0 +1,582 @@
+<section xml:id="sec_z_n">
+  <title>The Mappings <m>w=z^n</m> and <m>w=z^{\frac{1}{n}}</m></title>
+  <p>
+    { In this section we turn our attention to power functions.
+  </p>
+  <p>
+    For <m>z=re^{i\theta} \ne  0</m>,
+    we can express the function
+    <m>w=f(z)=z^2</m> in polar coordinates as
+    <me>
+      w=f(z) =z^2=r^2e^{i2\theta}
+    </me>.
+    If we also use polar coordinates for
+    <m>w=\rho e^{i\phi}</m> in the <m>w</m> plane,
+    we can express this mapping by the system of equations
+    <me>
+      \rho =r^2  \text{ and }   \phi =2\theta
+    </me>
+  </p>
+  <p>
+    Because an argument of the product <m>(z)(z)</m> is twice an argument of <m>z</m>,
+    we say that <m>f</m> doubles angles at the origin.
+    Points that lie on the ray <m>r>0</m>,
+    <m>\theta =\alpha</m> are mapped onto points that lie on the ray <m>\rho >0</m>,
+    <m>\phi =2\alpha</m>.
+    If we now restrict the domain of <m>w=f(z) =z^2</m> to the region
+    <men xml:id="RestrictedPowerDomain">
+      A=\{re^{i\theta} : r>0  \text{ and }   -\frac{\pi}{2}\lt \theta \le \frac{\pi}{2}\}
+    </men>,
+    then the image of <m>A</m> under the mapping <m>w=z^2</m> can be described by the set
+    <men xml:id="PrincipalRootDomain">
+      B=\{\rho e^{i\phi} : \rho >0  \text{ and }   -\pi \lt  \phi \le  \pi \}
+    </men>,
+    which consists of all points in the <m>w</m> plane except the point <m>w=0</m>.
+  </p>
+  <p>
+    The inverse mapping of <m>f</m>,
+    which we denote <m>g</m>, is then
+    <me>
+      z=g(w) = w^{\frac{1}{2}} = \rho^{\frac{1}{2}}e^{i\frac{\phi}{2}}
+    </me>,
+    where <m>w \in B</m>.
+    That is,
+    <me>
+      z = g(w) =w^{\frac{1}{2}} = |w|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(w)}{2}}
+    </me>,
+    where <m>w \ne 0</m>.
+    The function <m>g</m> is so important that we call special attention to it with a formal definition.
+  </p>
+  <definition>
+    <title>Principal Square Root</title>
+    <statement>
+      <p>
+        The function
+        <men xml:id="PrincipalRootFcn">
+          g(w) =w^{\frac{1}{2}} = |w|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(w)}{2}}  \text{ for }   w \ne  0
+        </men>,
+        is called the principal square root function.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    We leave as an exercise to show that <m>f</m> and <m>g</m> satisfy Equations <xref ref="InverseEqs"/> and thus are inverses of each other that map the set <m>A</m> one-to-one and onto the set <m>B</m><nbsp/>and the set <m>B</m> one-to-one and onto the set <m>A</m>,
+    respectively.
+    <xref ref="fig_ch-02-12">Figure</xref>
+    illustrates this relationship.
+  </p>
+  <figure xml:id="fig_ch-02-12">
+    <caption>The mappings <m>w=z^2</m> and <m>z=w^{1/2}</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-12.png"/>
+  </figure>
+  <p>
+    What are the images of rectangles under the mapping <m>w=z^2</m>?
+    To find out, we use the Cartesian form
+    <me>
+      w=u+iv=f(z)=z^2 = x^2-y^2+i2xy=(x^2-y^2, 2xy) =(u, v)
+    </me>
+    and the resulting system of equations
+    <men xml:id="uv_for_z_2">
+      u = x^2-y^2  \text{ and }   v=2xy
+    </men>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        Show that the transformation <m>w=f(z) =z^2</m>, for <m>z\ne 0</m>,
+        usually maps vertical and horizontal lines onto parabolas and use this fact to find the image of the rectangle <m>\{(x, y) : 0\lt x\lt a, \; 0\lt y\lt b\}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Using Equations <xref ref="uv_for_z_2"/>,
+        we determine that the vertical line <m>x=a</m> is mapped onto the set of points given by the equations <m>u=a^2-y^2</m> and <m>v=2ay</m>.
+        If <m>a \ne 0</m>, then <m>y=\frac{v}{2a}</m> and
+        <men xml:id="Parabola1">
+          u=a^2-\frac{v^2}{4a^2}
+        </men>.
+      </p>
+      <p>
+        Equation <xref ref="Parabola1"/> represents a parabola with vertex at <m>a^2</m>,
+        oriented horizontally, and opening to the left.
+        If <m>a>0</m>,
+        the set <m>\{(u, v) : u=a^2-y^2, \; v=2ay\}</m> has <m>v>0</m> precisely when <m>y>0</m>,
+        so the part of the line <m>x=a</m> lying above the <m>x</m> axis is<nbsp/>mapped to the top half of the parabola.
+      </p>
+      <p>
+        The horizontal line <m>y=b</m> is mapped onto the parabola given by the equations <m>u=x^2-b^2</m> and <m>v=2xb</m>.
+        If <m>b \ne 0</m>, then as before we get
+        <men xml:id="Parabola2">
+          u = -b^2 + \frac{v^2}{4b^2}
+        </men>.
+      </p>
+      <p>
+        Equation <xref ref="Parabola2"/> represents a parabola with vertex at <m>-b^2</m>,
+        oriented horizontally and opening to the right.
+        If <m>b>0</m>,
+        the part of the line <m>y=b</m> to the right of the <m>y</m> axis is mapped to the top half of the parabola because the set
+        <m>\{(u, v) : u = x^2-b^2, \; v=2bx\}</m> has <m>v>0</m> precisely when <m>x>0</m>.
+      </p>
+      <p>
+        Quadrant I is mapped onto quadrants I and II by <m>w=z^2</m>,
+        so the rectangle <m>0\lt x\lt a</m>,
+        <nbsp/> <m>0\lt y\lt b</m> is mapped onto the region bounded by the top halves of the parabolas given by Equations <xref ref="Parabola1"/> and <xref ref="Parabola2"/> and the <m>u</m> axis.
+        The vertices 0, <m>a</m>, <m>a+ib</m>,
+        and <m>ib</m> of the rectangle are mapped onto the four points 0, <m>a^2</m>,
+        <m>a^2-b^2+i2ab</m>, and <m>-b^2</m>,
+        respectively,
+        as indicated in <xref ref="fig_ch-02-13">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-02-13">
+        <caption>The transformation <m>w=z^2</m></caption>
+        <image width="73%" source="figs/ch-02/ch-02-fig-13.png"/>
+      </figure>
+      <p>
+        Finally, we can verify that the vertical line
+        <m>x=0, \, y \ne 0</m> is mapped to <m>\{(-y^2, 0) : y \ne 0\}</m>.
+        This is simply the set of negative real numbers.
+        Likewise, the horizontal line
+        <m>y=0, \, x \ne 0</m> is mapped to the set <m>\{(x^2, 0) : x \ne 0\}</m>,
+        which is the set of positive real numbers.
+      </p>
+    </solution>
+  </example>
+  <p>
+    What happens to images of regions under the mapping
+    <me>
+      w=f(z) = |z|^\frac{1}{2}e^{i\frac{{\mathrm{Arg}}(z)}{2}} = r^\frac{1}{2}e^{i\frac{\theta}{2}}  \text{ for }   z=re^{i\theta} \ne 0
+    </me>,
+    where <m>-\pi \lt \theta \le \pi</m>?
+    If we use polar coordinates for
+    <m>w=\rho e^{i\phi}</m> in the <m>w</m> plane,
+    we can represent this mapping by the system
+    <men xml:id="Root_Polar_Equations">
+      \rho =r^\frac{1}{2} \text{ and }   \phi =\frac{\theta}{2}
+    </men>.
+  </p>
+  <p>
+    Equations <xref ref="Root_Polar_Equations"/> indicate that the argument of <m>f(z)</m> is half the argument of <m>z</m> and that the modulus of <m>f(z)</m> is the square root of the modulus of <m>z</m>.
+    Points that lie on the ray <m>r>0</m>,
+    <m>\theta =\alpha</m> are mapped onto the ray <m>\rho >0, \, \phi =\frac{\alpha}{2}</m>.
+    The image of the <m>z</m> plane
+    (with the point <m>z=0</m> deleted)
+    consists of the right half-plane
+    <m>\mathrm{Re}(w) > 0</m> together with the positive <m>v</m> axis.
+    The mapping is shown in <xref ref="fig_ch-02-14">Figure</xref>
+  </p>
+  <figure xml:id="fig_ch-02-14">
+    <caption>The mapping <m>w=z^{\frac{1}{2}}</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-14.png"/>
+  </figure>
+  <p>
+    We can use knowledge of the inverse mapping <m>z=w^2</m> to get further insight into how the mapping <m>w=z^{\frac{1}{2}}</m> acts on rectangles.
+    If we let <m>z=x+iy \ne 0</m>, then
+    <me>
+      z=w^2 = u^2-v^2 + i2uv
+    </me>,
+    and we note that the point <m>z=x+iy</m> in the <m>z</m> plane is related to the point
+    <m>w=u+iv=z^{\frac{1}{2}}</m> in the <m>w</m> plane by the system of equations
+    <men xml:id="xy_for_z__5">
+      x=u^2-v^2  \text{ and }   y=2uv
+    </men>.
+  </p>
+  <example xml:id="ex_2_13">
+    <statement>
+      <p>
+        Show that the transformation
+        <m>w=f(z) = z^{\frac{1}{2}}</m> usually maps vertical and horizontal lines onto portions of hyperbolas.
+        Let <m>a>0</m>.
+        Equations <xref ref="xy_for_z__5"/> map the right half-plane given by
+        <m>\mathrm{Re}(z) >a</m> (i.e., <m>x>a</m>) onto the region in the right half-plane satisfying
+        <m>u^2-v^2>a</m> and lying to the right of the hyperbola <m>u^2-v^2=a</m>.
+        If <m>b>0</m>, Equations <xref ref="xy_for_z__5"/> map the upper half-plane <m>\mathrm{Im}(z) >b</m> (<em>i.e.</em>,
+        <m>y>b</m>) onto the region in quadrant I satisfying <m>2uv>b</m> and lying above the hyperbola <m>2uv=b</m>.
+        This situation is illustrated in <xref ref="fig_ch-02-15">Figure</xref>.
+        We leave as an exercise the investigation of what happens when <m>a=0</m> or <m>b=0</m>.
+      </p>
+      <figure xml:id="fig_ch-02-15">
+        <caption>The mapping <m>w=z^{\frac{1}{2}}</m></caption>
+        <image width="73%" source="figs/ch-02/ch-02-fig-15.png"/>
+      </figure>
+    </statement>
+    <solution>
+      <p>
+      </p>
+    </solution>
+  </example>
+  <p>
+    We can easily extend what we've done to integer powers greater than 2.
+    We begin by letting <m>n</m> be a positive integer,
+    considering the function <m>w=f(z) =z^n</m>,
+    for <m>z=re^{i\theta} \ne 0</m>,
+    and then expressing it in the polar coordinate form
+    <men xml:id="PowerN">
+      w=f(z) =z^n=r^ne^{in\theta}
+    </men>.
+  </p>
+  <p>
+    If we use polar coordinates
+    <m>w=\rho e^{i\phi}</m> in the <m>w</m> plane,
+    the mapping defined by Equation <xref ref="PowerN"/> can be given by the system of equations
+    <me>
+      \rho =r^n  \text{ and }   \phi =n \theta
+    </me>
+  </p>
+  <p>
+    The image of the ray <m>r>0, \, \theta =\alpha</m> is the ray <m>\rho >0</m>,
+    <m>\phi =n\alpha</m>,
+    and the angles at the origin are increased by the factor <m>n</m>.
+    The functions <m>\cos n\theta</m> and
+    <m>\sin n\theta</m> are periodic with period <m>2\pi /n</m>,
+    so <m>f</m> is in general an <m>n</m>-to-one function;
+    that is, <m>n</m> points in the <m>z</m> plane are mapped onto each non-zero point in the <m>w</m> plane.
+  </p>
+  <p>
+    If we now restrict the domain of <m>w=f(z) =z^n</m> to the region
+    <me>
+      E=\left\{re^{i\theta}:r>0  \text{ and }   -\frac{\pi}{n}\lt \theta \le \frac{\pi}{n}\right\}
+    </me>,
+    then the image of <m>E</m> under the mapping <m>w=z^n</m> can be described by the set
+    <me>
+      F=\{\rho e^{i\phi} : \rho >0  \text{ and }   -\pi \lt \phi \le \pi \}
+    </me>,
+    which consists of all points in the <m>w</m> plane except the point <m>w=0</m>.
+    The inverse mapping of <m>f</m>,
+    which we denote <m>g</m>, is then
+    <me>
+      z=g(w) =w^{\frac{1}{n}}=\rho^{\frac{1}{n}}e^{i\frac{\phi}{n}}
+    </me>,
+    where <m>w\in F</m>.
+    That is,
+    <me>
+      z=g(w) =w^{\frac{1}{n}}=|w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}}
+    </me>,
+    where <m>w \ne 0</m>.
+    As with the principle square root function,
+    we make an analogous definition for <m>n</m>th roots.
+  </p>
+  <definition xml:id="def_principal_nth_root">
+    <title>Principal $n$th Root</title>
+    <statement>
+      <p>
+        The function
+        <me>
+          g(w) = w^{\frac{1}{n}} = |w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}}  \text{ for }   w \ne 0
+        </me>
+        is called the principal nth root function.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    We leave as an exercise to show that <m>f</m> and <m>g</m> are inverses of each other that map the set <m>E</m> one-to-one and onto the set <m>F</m>\ and the set <m>F</m> one-to-one and onto the set <m>E</m>,
+    respectively.
+    <xref ref="fig_ch-02-16">Figure</xref>
+    illustrates this relationship.
+  </p>
+  <figure xml:id="fig_ch-02-16">
+    <caption>The mappings <m>w=z^n</m> and <m>z=w^{\frac{1}{n}}</m></caption>
+    <image width="73%" source="figs/ch-02/ch-02-fig-16.png"/>
+  </figure>
+  <exercises xml:id="exercises_z_n">
+    <title>Exercises</title>
+    <exercise xml:id="x2_2_1">
+      <introduction>
+        <p>
+          Find the images of the mapping <m>w=z^2</m> in each case,
+          and sketch the mapping.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            The horizontal line <m>\{(x, y) : y=1\}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using Equations <xref ref="uv_for_z_2"/> we see that,
+            if <m>A=\{(x,y):y=1\}</m>,
+            then <m>f(A)=\{(u,v):u=x^2-1,\;v=2x\} = \{(u,v):u=\frac{v^2}{4}-1\}</m>.
+            The region in the upper half plane
+            <m>\mathrm{Im}(w)>0</m> that lies between the parabolas
+            <m>u=4-\frac{v^2}{16}</m> and <m>u=\frac{v^2}{4}-1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          The vertical line <m>\{(x, y) : x=2\}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The rectangle <m>\{(x, y) : 0\lt x\lt 2, \; 0\lt y\lt 1\}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The point <m>(x,y)</m> in the <m>xy</m> plane is mapped to the point <m>(u,v)=(x^2-y^2, \, 2xy)</m>.
+            For any <m>x, \; u=x^2-\frac{v^2}{4x^2}</m>.
+            If <m>x=1</m> then <m>u=1-\frac{v^2}{4}</m>.If <m>x=2</m> then <m>u=4-\frac{v^2}{16}</m>.
+            Your only remaining task is to show that the strip
+            <m>\{(x,y):1\lt x\lt 2\}</m> is mapped between these two parabolas.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          The triangle with vertices <m>0, \, 2</m>, and <m>2+2i</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The infinite strip <m>\{(x, y) : 1\lt x\lt 2\}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The infinite strip <m>\{(u,v):1\lt v\lt 2\}</m>,
+            which is the region in the <m>uv</m> plane between <m>v=i</m> and <m>v=2i</m>.
+            Show the details in a manner similar to the answer for part a.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          The right half-plane region to the right of the hyperbola <m>x^2-y^2=1</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The first quadrant region between the hyperbolas <m>xy=\frac{1}{2}</m> and <m>xy=4</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_2">
+      <statement>
+        <p>
+          For what values of <m>z</m> does
+          <m>(z^2)^{\frac{1}{2}}=z</m> hold if the principal value of the square root is to be used?
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x2_2_3">
+      <introduction>
+        <p>
+          Sketch the set of points satisfying the following relations.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\mathrm{Re}(z^2)>4</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The points that lie to the extreme right or left of the branches of the hyperbola <m>x^2-y^2=4</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\mathrm{Im}(z^2)>6</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_4">
+      <introduction>
+        <p>
+          Find and illustrate the images of the following sets under the mapping <m>w=z^{\frac{1}{2}}</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\{re^{i\theta}:r>1 \text{ and } \frac{\pi}{3} \lt \theta \lt \frac{\pi}{2}\}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\{re^{i\theta}:1\lt r\lt 9 \text{ and } 0\lt \theta \lt \frac{2\pi}{3} \}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\{re^{i\theta}:r\lt 4 \text{ and } -\pi \lt \theta \lt \frac{\pi}{2} \}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The vertical line <m>\{(x, y) : x=4\}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The infinite strip <m>\{(x, y) : 2\lt y\lt 6\}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The region to the right of the parabola <m>x=4-\frac{y^2}{16}</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Use the inverse mapping <m>z=w^2</m> to show that the answer is the right half-plane <m>\mathrm{Re}(w) >2</m>.
+          </p>
+        </hint>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_5">
+      <statement>
+        <p>
+          Find the image of the right half-plane
+          <m>\mathrm{Re}(z) >1</m> under the mapping <m>w=z^2+2z+1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The region in the <m>w</m> plane that lies to the right of the parabola <m>u=4-\frac{v^2}{16}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x2_2_6">
+      <introduction>
+        <p>
+          Find the image of the following sets under the mapping <m>w=z^3</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>\{re^{i\theta}:1\lt r\lt 2 \text{ and } \frac{\pi}{4}\lt \theta \lt \frac{\pi}{3}\}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>\{re^{i\theta}:r>3 \text{ and } \frac{2\pi}{3}\lt \theta \lt \frac{3\pi}{4}\}</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_7">
+      <introduction>
+        <p>
+          Find the image of <m>\{re^{i\theta}:r>2 \text{ and } \frac{\pi}{4} \lt 0\lt \frac{\pi}{3}\}</m> under the following \-mappings.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>w=z^3</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The set <m>\{re^{i\theta}:r>8 \text{ and } \frac{3\pi}{4} \lt \theta \lt \pi\}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>w=z^4</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>w=z^6</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The set <m>\{re^{i\theta}:r>64 \text{ and } \frac{3\pi}{2} \lt \theta \lt 2\pi\}</m>.
+          </p>
+        </solution>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_8">
+      <introduction>
+        <p>
+          Find the image of the sector <m>r>0</m>,
+          <m>-\pi \lt \theta \lt \frac{2\pi}{3}</m> under the following mappings.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>w=z^{\frac{1}{2}}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>w=z^{\frac{1}{3}}</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>w=z^{\frac{1}{4}}</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x2_2_9">
+      <statement>
+        <p>
+          Use your knowledge of the principal square root function to explain the fallacy in the following logic:
+          <me>
+            1=\sqrt{(-1) (-1)}=\sqrt{(-1)}\sqrt{(-1)}=(i) (i) =-1
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          See also problem 2.
+          The fallacy lies in the assumption implicit in the second equality that
+          <m>\sqrt{z_1z_2}=\sqrt{z_1}\sqrt{z_2}</m> for all complex numbers <m>z_1</m> and <m>z_2</m>.
+          Assuming the principal square root is used,
+          then <m>\sqrt{z_1z_2} = |z_1z_2|^{\frac{1}{2}} e^{i\frac{{\mathrm{Arg}}(z_1z_2)}{2}}</m>.
+          This quantity will equal <m>\sqrt{z_1}\sqrt{z_2} = |z_1|^{\frac{1}{2}} e^{i\frac{{\mathrm{Arg}}(z_1)}{2}}|z_2|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(z_2)}{2}}</m> precisely when <m>{\mathrm{Arg}}(z_1z_2) ={\mathrm{Arg}}(z_1) +{\mathrm{Arg}}(z_2)</m><mdash/>explain!
+          The latter equality is plainly false when <m>z_1=z_2=-1</m>.
+          (Again, explain.)
+          To give a very thorough answer to this problem,
+          you should state precisely when the last equality <em>is</em>
+          true, and prove your assertion.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x2_2_10">
+      <statement>
+        <p>
+          Show that the functions <m>f(z) =z^2</m> and
+          <m>g(w) =w^{\frac{1}{2}} = |w|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(w)}{2}}</m> with domains given by Equations <xref ref="RestrictedPowerDomain"/> and <xref ref="PrincipalRootDomain"/>,
+          respectively, satisfy Equations <xref ref="InverseEqs"/>.
+          Thus, <m>f</m> and <m>g</m> are inverses of each other that map the shaded regions in <xref ref="fig_ch-02-14">Figure</xref>
+          one-to-one and onto each other.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x2_2_11">
+      <statement>
+        <p>
+          Show what happens when <m>a=0</m> and <m>b=0</m> in <xref ref="ex_2_13">Example</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The right half plane given by
+          <m>\mathrm{Re}(z)>0</m> is mapped onto the region in the right half plane satisfying
+          <m>u^2-v^2>0</m> and lies to the right of <m>u^2-v^2=0</m>.
+          This is the region between the lines <m>u=v</m> and <m>u=-v</m> in the right half of the <m>w</m> plane.
+          A similar analysis can be applied to the case where <m>b=0</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x2_2_12">
+      <statement>
+        <p>
+          Establish the result referred to in <xref ref="def_principal_nth_root">Definition</xref>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

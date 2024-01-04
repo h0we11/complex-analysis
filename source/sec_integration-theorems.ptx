@@ -38,7 +38,7 @@
     </p>
     <figure xml:id="fig_ch-06-30">
       <caption>The contours <m>C_1</m> and <m>C_2</m> joining <m>z_0</m> to <m>z</m></caption>
-      <image width="73%" source="figs/ch-06/ch-06-fig-30.pdf"/>
+      <image width="73%" source="figs/ch-06/ch-06-fig-30.png"/>
     </figure>
     <p>
       Then <m>C_1-C_2</m> is a simple closed contour,
@@ -77,7 +77,7 @@
     </p>
     <figure xml:id="fig_ch-06-31">
       <caption>The contours <m>\Gamma _1</m> and <m>\Gamma _2</m> and the line segment <m>\Gamma</m></caption>
-      <image width="73%" source="figs/ch-06/ch-06-fig-31.pdf"/>
+      <image width="73%" source="figs/ch-06/ch-06-fig-31.png"/>
     </figure>
     <p>
       Since <m>f</m> is continuous at <m>z</m>,
@@ -85,8 +85,6 @@
       <me>
         |f(\xi )-f(z)| \lt  \varepsilon  \text{ when }   |\xi -z| \lt  \delta
       </me>.
-    </p>
-    <p>
       If we require that <m>\left\vert \Delta z\right\vert \lt \delta</m> and combine this last inequality with Equations <xref ref="Ad_Eq_1"/> and <xref ref="Ad_Eq_2"/>, and <xref ref="ML_Ineq">Theorem</xref>, we get
       <md>
         <mrow>\left|\frac{F(z+\Delta z) -F(z)}{\Delta z} -f(z)\right| \amp = \frac{1}{|\Delta z|} \left\vert \int_{\Gamma }f(\xi)\,d\xi - \int_{\Gamma }f(z)\,d\xi \right\vert</mrow>
@@ -106,7 +104,9 @@
       In <xref ref="Int_z_two_ways">Example</xref>
       we showed that <m>\int_{C_1}z\ dz=\int_{C_2}z\ dz=4+2i</m>,
       where <m>C_1</m> and <m>C_2</m> were different contours joining <m>-1-i</m> to <m>3+i</m>.
-      Because the integrand <m>f(z)=z</m> is an analytic function, Theorem 6.8 lets us know ahead of time that the value of the two integrals is the same;
+      Because the integrand <m>f(z)=z</m> is an analytic function,
+      <xref ref="Antideriv_Thm">Theorem</xref>
+      lets us know ahead of time that the value of the two integrals is the same;
       hence one calculation would have sufficed.
       If you ever have to compute a line integral of an analytic function over a difficult contour,
       change the contour to something easier.
@@ -133,14 +133,13 @@
   </theorem>
   <proof>
     <p>
-      If we choose <m>F</m> to be the function defined by <xref ref="Antideriv_Eq">Formula</xref>,
-      then Equation <xref ref="DInt_Eq"/> holds.
+      If we choose <m>F</m> to be the function defined by Formula <xref ref="Antideriv_Eq"/>, then Equation <xref ref="DInt_Eq"/> holds.
       If <m>G</m> is any other antiderivative of <m>f</m> in <m>D</m>,
       then <m>G\,'(z)=F\,'(z)</m> for all <m>z\in D</m>.
       Thus the function <m>H(z)=G(z) -F(z)</m> is analytic in <m>D</m>,
       and <m>H\,'(z) = G\,'(z)-F\,'(z) = 0</m>, for all <m>z\in D</m>.
       Thus, by <xref ref="Df_0_implies_f_const">Theorem</xref>,
-      this means <m>H( z)=K</m>,
+      this means <m>H(z)=K</m>,
       for all <m>z\in D</m>, where <m>K</m> is some complex constant.
       Therefore <m>G(z)=F(z) +K</m>,
       so <m>G(z_1)-G(z_0) = F(z_1)-F(z_0)</m>,
@@ -157,25 +156,24 @@
   <example>
     <statement>
       <p>
-        Show that
-        <me>
-          \int_C\frac{dz}{2z^{\frac{1}{2}}}=1+i
-        </me>,
+        Show that <m>\displaystyle \int_C\frac{1}{2z^{\frac{1}{2}}}\,dz = 1+i</m>,
         where <m>z^{\frac{1}{2}}</m> is the principal branch of the square root function and <m>C</m> is the line segment joining 4 to <m>8+6i</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         We showed in Chapter 3 that if <m>F(z)=z^{\frac{1}{2}}</m>,
         then <m>F\,'(z)=\frac{1}{2z^{\frac{1}{2}}}</m>,
         where the principal branch of the square root function is used in both the formulas for <m>F</m> and <m>F\,'</m>.
         We note that <m>C</m> is contained in the simply connected domain <m>D_4(6+3i)</m>,
         which is the open disk of radius 4 centered at the midpoint of the segment <m>C</m>.
-        Since <m>f(z)=\frac{1}{2z^{\frac{1}{2}}}</m> is analytic in <m>D_4( 6+3i)</m>,
-        <xref ref="DInt_Thm">Theorem</xref> guarantees that
+        Since <m>f(z)=\frac{1}{2z^{\frac{1}{2}}}</m> is analytic in <m>D_4(6+3i)</m>,
+        <xref ref="DInt_Thm">Theorem</xref> implies
         <me>
-          \int_4^{8+6i}\frac{dz}{2z^{\frac{1}{2}}} = (8+6i)^{ \frac{1}{2}}-4^{\frac{1}{2}}=3+i-2=1+i
-        </me>.
+          \int_4^{8+6i}\frac{1}{2z^{\frac{1}{2}}}\,dz = (8+6i)^{ \frac{1}{2}}-4^{\frac{1}{2}}=3+i-2=1+i
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -185,221 +183,328 @@
         Show that <m>\int_C\cos z\ dz=-\sin 1+i\sinh 1</m>,
         where <m>C</m> is the line segment between 1 and <m>i</m>.
       </p>
+      <p>
+        An antiderivative of <m>f(z)=\cos z</m> is <m>F(z)=\sin z</m>.
+        Since <m>F</m> is entire, <xref ref="DInt_Thm">Theorem</xref> yields
+        <me>
+          \int_C\cos z\ dz=\int_1^{i}\cos z\ dz=\sin i-\sin 1=-\sin 1+i\sinh i
+        </me>
+      </p>
     </statement>
     <solution>
       <p>
-        An antiderivative of <m>f(z)=\cos z</m> is <m>F(z)=\sin z</m>.
-        Because <m>F</m> is entire,
-        we use <xref ref="DInt_Thm">Theorem</xref> to conclude that
-        <me>
-          \int_C\cos z\ dz=\int_1^{i}\cos z\ dz=\sin i-\sin 1=-\sin 1+i\sinh i
-        </me>.
       </p>
     </solution>
   </example>
   <example xml:id="Int_dz_z">
     <statement>
       <p>
-        We let <m>D=\{z=re^{i\theta }:r>0 \text{ and }  -\pi \lt \theta \lt \pi \}</m> be the simply connected domain shown in <xref ref="fig_ch-06-32">Figure</xref>.
+        We let <m>D=\{z=re^{i\theta}:r>0 \text{ and } -\pi \lt \theta \lt \pi \}</m> be the simply connected domain shown in <xref ref="fig_ch-06-32">Figure</xref>.
+      </p>
+      <figure xml:id="fig_ch-06-32">
+        <caption>The simply connected domain <m>D</m> from <xref ref="Int_dz_z">Examples</xref> and <xref ref="Int_dz_z___2Pi_I"></xref></caption>
+        <image width="73%" source="figs/ch-06/ch-06-fig-32.png"/>
+      </figure>
+      <p>
         We know that <m>f(z)=\frac{{1}}{z}</m> is analytic in <m>D</m> and has an antiderivative
         <m>F(z)=\mathrm{Log}(z)</m>, for all <m>z\in D</m>.
         If <m>C</m> is a contour in <m>D</m> that joins the point <m>z_1</m> to the point <m>z_2</m>,
         then <xref ref="DInt_Thm">Theorem</xref> implies that
         <me>
-          \int_C\frac{dz}{z}=\int_{z_1}^{z_2}\frac{dz}{z}=\mathrm{Log}(z_2)-\mathrm{Log}(z_1)
-        </me>.
+          \int_C\frac{1}{z}\,dz = \int_{z_1}^{z_2}\frac{1}{z}\,dz = \mathrm{Log}(z_2)-\mathrm{Log}(z_1)
+        </me>
       </p>
     </statement>
   </example>
-  <figure xml:id="fig_ch-06-32">
-    <caption>The simply connected domain <m>D</m> from <xref ref="Int_dz_z">Examples</xref> and <xref ref="Int_dz_z___2Pi_I"></xref></caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-32.pdf"/>
-  </figure>
   <example xml:id="Int_dz_z___2Pi_I">
     <statement>
       <p>
         Show that <m>\int_{C_1^+(0)}\frac{dz}{z} = 2\pi i</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Recall that <m>C_1^+(0)</m> is the unit circle with positive orientation.
         We let <m>C</m> be that circle with the point <m>-1</m> omitted,
-        as shown in Figure 6.32(b).
+        as shown in <xref ref="fig_ch-06-32">Figure</xref>(b).
         The contour <m>C</m> is contained in the simply connected domain <m>D</m> of <xref ref="Int_dz_z">Example</xref>.
         We know that <m>f(z)=\frac{1 }{z}</m> is analytic in <m>D</m>,
         and has an antiderivative <m>F(z)= \mathrm{Log}(z)</m>,
         for all <m>z\in D</m>.
         Therefore, if we let <m>z_2</m> approach <m>-1</m> on <m>C</m> through the upper half-plane and <m>z_1</m> approach <m>-1</m> on <m>C</m> through the lower half-plane,
         <md>
-          <mrow>\int_{C_1^+(0)}\frac{dz}{z} \amp = \lim_{\substack{ { z_2 \to -1\,(z_2\in C,\,\mathrm{Im}z_2>0)}  \\ {z_1 \to -1\,(z_1\in C,\,\mathrm{Im}z_1\lt 0)}} }\int_{z_1}^{z_2}\frac{dz}{z}</mrow>
+          <mrow>\int_{C_1^+(0)}\frac{1}{z}\,dz \amp = \lim_{\substack{ { z_2 \to -1\,(z_2\in C,\,\mathrm{Im}z_2>0)}  \\ {z_1 \to -1\,(z_1\in C,\,\mathrm{Im}z_1\lt 0)}} }\int_{z_1}^{z_2}\frac{1}{z}\,dz</mrow>
           <mrow>\amp = \lim_{z_2 \to -1\,(z_2\in C,\,\mathrm{Im}z_2>0)}\mathrm{Log}(z_2)-\lim_{z_1 \to -1\,(z_1\in C,\,\mathrm{Im}z_1\lt 0)}\mathrm{Log}(z_1)</mrow>
           <mrow>\amp = i\pi -(-i\pi )</mrow>
           <mrow>\amp  =2\pi i</mrow>
         </md>.
       </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
     </solution>
   </example>
-  <p>
-    <em>Exercises for <xref ref="sec_integration-theorems">Section</xref></em>
-    For Exercises 1<ndash/>14,
-    find the value of the definite integral using <xref ref="Antideriv_Thm">Theorem</xref>
-    and explain why you are justified in using it.
-  </p>
-  <ol>
-    <li xml:id="x6_4_1">
-      <p>
-        <m>\int_Cz^2\ dz</m>,
-        where <m>C</m> is the line segment from <m>1+i</m> to <m>2+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_2">
-      <p>
-        <m>\int_C \cos z\ dz</m>,
-        where <m>C</m> is the line segment from <m>-i</m> to <m>1+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_3">
-      <p>
-        <m>\int_C \exp z\ dz</m>,
-        where <m>C</m> is the line segment from <m>2</m> to <m>i\frac{\pi }{2}</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_4">
-      <p>
-        <m>\int_C z\exp z\ dz</m>,
-        where <m>C</m> is the line segment from <m>-1-i\frac{\pi }{2}</m> to <m>2+i\pi</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_5">
-      <p>
-        <m>\int_C \frac{1+z}{z}\ dz</m>,
-        where <m>C</m> is the line segment from <m>1</m> to <m>i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_6">
-      <p>
-        <m>\int_C \sin \frac{z}{2}\ dz</m>,
-        where <m>C</m> is the line segment from <m>0</m> to <m>\pi -2i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_7">
-      <p>
-        <m>\int_C (z^2+z^{-2}) dz</m>,
-        where <m>C</m> is the line segment from <m>i</m> to <m>1+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_8">
-      <p>
-        <m>\int_C z\exp (z^2) dz</m>,
-        where <m>C</m> is the line segment from <m>1-2i</m> to <m>1+2i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_9">
-      <p>
-        <m>\int_Cz\cos z\ dz</m>,
-        where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_10">
-      <p>
-        <m>\int_C\sin ^2z\ dz</m>,
-        where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_11">
-      <p>
-        <m>\int_C</m>Log <m>z\ dz</m>,
-        where <m>C</m> is the line segment from <m>1</m> to <m>1+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_12">
-      <p>
-        <m>\int_C\frac{dz}{z^2-z}</m>,
-        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_13">
-      <p>
-        <m>\int_C\frac{2z-1}{z^2-z}\ dz</m>,
-        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_14">
-      <p>
-        <m>\int_C\frac{z-2}{z^2-z}\ dz</m>,
-        where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_15">
-      <p>
-        Show that <m>\int_C1\ dz=z_2-z_1</m>,
-        where <m>C</m> is the line segment from <m>z_1</m> to <m>z_2</m>,
-        by parametrizing <m>C</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_16">
-      <p>
-        Let <m>z_1</m> and <m>z_2</m> be points in the right half-plane and let <m>C</m> be the line segment joining them.
-        Show that <m>\int_C \frac{dz}{z^2} = \frac{1}{z_1}-\frac{1}{z_2}</m>.
-      </p>
-    </li>
-    <li xml:id="x6_4_17">
-      <p>
-        Let <m>z^{\frac{1}{2}}</m> be the principal branch of the square root function.
-      </p>
-      <ol>
-        <li>
+  <exercises xml:id="exercises_integration-theorems">
+    <title>Exercises</title>
+    <p>
+      For Exercises 1<ndash/>14,
+      find the value of the definite integral using <xref ref="Antideriv_Thm">Theorem</xref>
+      and explain why you are justified in using it.
+    </p>
+    <exercise xml:id="x6_4_1">
+      <statement>
+        <p>
+          <m>\int_Cz^2\ dz</m>,
+          where <m>C</m> is the line segment from <m>1+i</m> to <m>2+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{4}{3}+3i</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_2">
+      <statement>
+        <p>
+          <m>\int_C \cos z\ dz</m>,
+          where <m>C</m> is the line segment from <m>-i</m> to <m>1+i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_3">
+      <statement>
+        <p>
+          <m>\int_C \exp z\ dz</m>,
+          where <m>C</m> is the line segment from <m>2</m> to <m>i\frac{\pi}{2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-e^2+i</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_4">
+      <statement>
+        <p>
+          <m>\int_C z\exp z\ dz</m>,
+          where <m>C</m> is the line segment from <m>-1-i\frac{\pi}{2}</m> to <m>2+i\pi</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_5">
+      <statement>
+        <p>
+          <m>\int_C \frac{1+z}{z}\ dz</m>,
+          where <m>C</m> is the line segment from <m>1</m> to <m>i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-1+i\frac{\pi +2}{2}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_6">
+      <statement>
+        <p>
+          <m>\int_C \sin \frac{z}{2}\ dz</m>,
+          where <m>C</m> is the line segment from <m>0</m> to <m>\pi -2i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_7">
+      <statement>
+        <p>
+          <m>\int_C (z^2+z^{-2}) dz</m>,
+          where <m>C</m> is the line segment from <m>i</m> to <m>1+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-\frac{7}{6}+i\frac{1}{2}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_8">
+      <statement>
+        <p>
+          <m>\int_C z\exp (z^2) dz</m>,
+          where <m>C</m> is the line segment from <m>1-2i</m> to <m>1+2i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_9">
+      <statement>
+        <p>
+          <m>\int_Cz\cos z\ dz</m>,
+          where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-1-\sinh 1+\cosh 1</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_10">
+      <statement>
+        <p>
+          <m>\int_C\sin ^2z\ dz</m>,
+          where <m>C</m> is the line segment from <m>0</m> to <m>i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_11">
+      <statement>
+        <p>
+          <m>\int_C</m>Log <m>z\ dz</m>,
+          where <m>C</m> is the line segment from <m>1</m> to <m>1+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\ln \sqrt{2}-\frac{\pi}{4}+i(\ln \sqrt{2}+\frac{\pi}{4}-1)</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_12">
+      <statement>
+        <p>
+          <m>\int_C\frac{dz}{z^2-z}</m>,
+          where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_13">
+      <statement>
+        <p>
+          <m>\int_C\frac{2z-1}{z^2-z}\ dz</m>,
+          where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathrm{Log}(1+i) - \mathrm{Log}(2) + \mathrm{Log}(2+i) = -\ln\sqrt{2} + \ln\sqrt{5} + i\Big(\frac{\pi}{4}+\mathrm{Arctan}(\frac{1}{2})\Big)</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_14">
+      <statement>
+        <p>
+          <m>\int_C\frac{z-2}{z^2-z}\ dz</m>,
+          where <m>C</m> is the line segment from <m>2</m> to <m>2+i</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_15">
+      <statement>
+        <p>
+          Show that <m>\int_C1\ dz=z_2-z_1</m>,
+          where <m>C</m> is the line segment from <m>z_1</m> to <m>z_2</m>,
+          by parametrizing <m>C</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Parametrize <m>C</m> with <m>z(t) = z_1 + ( z_2-z_1)t, \, 0 \le t \le 1</m>.
+          Then we see that <m>\int_{C}1\,dz = \int_0^{1}z\,'(t)\,dt = \int_0^{1}(z_2-z_1)\,dt = (z_2-z_1)t\Big|_{t=0}^{t=1} = z_2-z_1</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_16">
+      <statement>
+        <p>
+          Let <m>z_1</m> and <m>z_2</m> be points in the right half-plane and let <m>C</m> be the line segment joining them.
+          Show that <m>\int_C \frac{1}{z^2}\,dz = \frac{1}{z_1}-\frac{1}{z_2}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_17">
+      <introduction>
+        <p>
+          Let <m>z^{\frac{1}{2}}</m> be the principal branch of the square root function.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
-            Evaluate <m>\int_C\frac{dz}{2z^{\frac{1}{2}}}</m>,
+            Evaluate <m>\int_C\frac{1}{2z^{\frac{1}{2}}}\,dz</m>,
             where <m>C</m> is the line segment joining <m>9</m> to <m>3+4i</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            Evaluate <m>\int_Cz^{\frac{1}{2}}\ dz</m>,
-            where <m>C</m> is the right half of the circle
-            <m>C_2^+(0)</m> joining <m>-2i</m> to <m>2i</m>.
+            <m>-1+i</m>.
           </p>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <p>
-        Using partial fraction decomposition,
-        show that if <m>z</m> lies in the right half-plane and <m>C</m> is the line segment joining <m>0</m> to <m>z</m>,
-        then\label {6.4.18}
-        <me>
-          \int_C\frac{d\xi }{\xi ^2+1} = \mathrm{Arctan}(z) = \frac{i}{2}\mathrm{Log}(z+i)-\frac{i}{2}\mathrm{Log}(z-i)+\frac{\pi }{2}
-        </me>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Let <m>f\,'</m> and <m>g'</m> be analytic for all <m>z</m> and let <m>C</m> be any contour joining the points <m>z_1</m> and <m>z_2</m>.
-        Show that\label {6.4.19}
-        <me>
-          \int_C f(z)g'(z)\,dz = f(z_2)g(z_2) - f(z_1)g(z_1) - \int_C f\,'(z)g(z)\,dz
-        </me>.
-      </p>
-    </li>
-    <li xml:id="x6_4_20">
-      <p>
-        Compare the various methods for evaluating contour integrals.
-        What are the limitations of each method?
-      </p>
-    </li>
-    <li xml:id="x6_4_21">
-      <p>
-        Explain how the fundamental theorem of calculus studied in complex analysis and the fundamental theorem of calculus studied in calculus are different.
-        How are they similar?
-      </p>
-    </li>
-    <li xml:id="x6_4_22">
-      <p>
-        Show that <m>\int_Cz^{i}dz=(i-1) \frac{1+e^{-\pi }}{2}</m>,
-        where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
-      </p>
-    </li>
-  </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Evaluate <m>\int_Cz^{\frac{1}{2}}\ dz</m>,
+          where <m>C</m> is the right half of the circle
+          <m>C_2^+(0)</m> joining <m>-2i</m> to <m>2i</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Using partial fraction decomposition,
+          show that if <m>z</m> lies in the right half-plane and <m>C</m> is the line segment joining <m>0</m> to <m>z</m>,
+          then\label {6.4.18}
+          <me>
+            \int_C\frac{1}{\xi ^2+1}\,d\xi = \mathrm{Arctan}(z) = \frac{i}{2}\mathrm{Log}(z+i)-\frac{i}{2}\mathrm{Log}(z-i)+\frac{\pi}{2}
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>f\,'</m> and <m>g\,'</m> be analytic for all <m>z</m>,
+          and let <m>C</m> be any contour joining the points <m>z_1</m> and <m>z_2</m>.
+          Show that\label {6.4.19}
+          <me>
+            \int_C f(z)g\,'(z)\,dz = f(z_2)g(z_2) - f(z_1)g(z_1) - \int_C f\,'(z)g(z)\,dz
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We know that an antiderivative of the function
+          <m>fg\,' + gf\,'</m> is <m>fg</m> by the product rule.
+          Since <m>fg\,'</m> and <m>gf\,'</m> are analytic
+          (explain why!),
+          <xref ref="DInt_Thm">Theorem</xref>
+          gives us <m>\int_{C}\left[ f(z) g\,'( z) +g(z) f\,'(z) \right]dz = f(z)g(z)\Big|_{z=z_1}^{z=z_2}</m>.
+          Explain why the conclusion now follows.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_4_20">
+      <statement>
+        <p>
+          Compare the various methods for evaluating contour integrals.
+          What are the limitations of each method?
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_21">
+      <statement>
+        <p>
+          Explain how the fundamental theorem of calculus studied in complex analysis and the fundamental theorem of calculus studied in calculus are different.
+          How are they similar?
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_4_22">
+      <statement>
+        <p>
+          Show that <m>\int_Cz^{i}dz=(i-1) \frac{1+e^{-\pi}}{2}</m>,
+          where <m>C</m> is the upper half of <m>C_1^+(0)</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>

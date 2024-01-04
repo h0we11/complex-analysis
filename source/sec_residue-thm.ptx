@@ -15,9 +15,8 @@
       <p>
         Let <m>f</m> have a nonremovable isolated singularity at the point <m>z_0</m>.
         Then <m>f</m> has the Laurent series representation for all <m>z</m> in some disk
-        <m>D_{R}^{\ast}(z_0)</m> given by <m>f(z) = \sum\limits_{n=-\infty}^{\infty}a_n(z-z_0)^n</m>.
-        The coefficient <m>a_{-1}</m> is called the <term>residue of</term>
-        <m>\bm f</m> <term>at</term> <m>\bm z_0</m>.
+        <m>D_{R}^*(z_0)</m> given by <m>f(z) = \sum\limits_{n=-\infty}^{\infty}a_n(z-z_0)^n</m>.
+        The coefficient <m>a_{-1}</m> is called the residue of <m>\bm f</m> at <m>\bm z_0</m>.
         We use the notation
         <me>
           \mathrm{Res}[f,z_0] = a_{-1}
@@ -31,8 +30,8 @@
         If <m>f(z) = \exp(\frac{2}{z})</m>,
         then the Laurent series of <m>f</m> about the point 0 has the form
         <me>
-          f(z) = \exp\left(\frac{2}{z}\right) = 1+\frac{2}{z}+\frac{2^2}{2!z^2} + \frac{2^3}{3!z^3}+\cdots\,
-        </me>.
+          f(z) = \exp\left(\frac{2}{z}\right) = 1+\frac{2}{z}+\frac{2^2}{2!z^2} + \frac{2^3}{3!z^3}+\cdots\
+        </me>,.
         and <m>\mathrm{Res}[f,0] =a_{-1}=2</m>.
       </p>
     </statement>
@@ -45,32 +44,30 @@
     </statement>
     <solution>
       <p>
-        Using <xref ref="ex_three-laurent-expansions">Example</xref>,
+        Using the techniques of <xref ref="ex_three-laurent-expansions">Example</xref>,
         we find that <m>g</m> has three Laurent series representations involving powers of <m>z</m>.
-        The Laurent series valid in the punctured disk
-        <m>D_1^{\ast}(0)</m> is <m>g(z) = \sum\limits_{n=0}^{\infty}[(-1)^n+\frac{1}{2^{n+1}}]z^{n-1}</m>.
+        In the punctured disk <m>D_1^*(0)</m>,
+        <m>g(z) = \sum\limits_{n=0}^{\infty}[(-1)^n+\frac{1}{2^{n+1}}]z^{n-1}</m>.
         Computing the first few coefficients, we obtain
         <me>
           g(z) = \frac{3}{2}\frac{1}{z}-\frac{3}{4}+\frac{9}{8}z-\frac{15}{16}z^2+\cdots
         </me>.
-      </p>
-      <p>
         Therefore, <m>\mathrm{Res}[g,0] =a_{-1}=\frac{3}{2}</m>.
       </p>
     </solution>
   </example>
   <p>
     Recall that, for a function <m>f</m> analytic in
-    <m>D_{R}^{\ast}(z_0)</m> and for any <m>r</m> with <m>0\lt r\lt R</m>,
+    <m>D_{R}^*(z_0)</m> and for any <m>r</m> with <m>0\lt r\lt R</m>,
     the Laurent series coefficients of <m>f</m> are given by
     <men xml:id="Laruent_Coeffs">
-      a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)\,d\xi }{(\xi -z_0)^{n+1}}  \text{ for } n=0,\pm 1,\pm 2,\ldots
+      a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}}\,d\xi  \text{ for } n=0, \, \pm 1, \, \pm 2, \, \ldots
     </men>,
     where <m>C_{r}^{+}(z_0)</m> denotes the circle
     <m>\{z:|z-z_0| =r\}</m> with positive orientation.
     This result gives us an important fact concerning <m>\mathrm{Res}[f,z_0]</m>.
     If we set <m>n=-1</m> in Equation <xref ref="Laruent_Coeffs"/> and replace
-    <m>C_{r}^{+}( z_0)</m> with any positively oriented simple closed contour <m>C</m> containing <m>z_0</m>,
+    <m>C_{r}^{+}(z_0)</m> with any positively oriented simple closed contour <m>C</m> containing <m>z_0</m>,
     provided <m>z_0</m> is the still only singularity of <m>f</m> that lies inside <m>C</m>,
     then we obtain
     <men xml:id="Int_f_z__formula">
@@ -86,21 +83,23 @@
       <p>
         Evaluate <m>\int\limits_{C_1^{+}(0)}\exp(\frac{2}{z})\,dz</m>.
       </p>
-    </statement>
-    <solution>
       <p>
-        In <xref ref="Residue_Ex">Example</xref>
-        we showed that the residue of
+        <xref ref="Residue_Ex">Example</xref>
+        showed that the residue of
         <m>f(z) = \exp\left(\frac{2}{z}\right)</m> at <m>z_0=0</m> is <m>\mathrm{Res}[f,0] =2</m>.
         Using Equation <xref ref="Int_f_z__formula"/>, we get
         <me>
           \int\limits_{C_1^{+}(0)}\exp\left(\frac{2}{z}\right)dz = 2\pi i\mathrm{Res}[f,0] =4\pi i
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <theorem xml:id="Residue_Thm">
-    <title>Cauchy's residue theorem</title>
+    <title>Cauchy<nbsp/>'s residue theorem</title>
     <statement>
       <p>
         Let <m>D</m><nbsp/>be a simply connected domain and let <m>C</m> be a simple closed positively oriented contour that lies in <m>D</m>.
@@ -109,16 +108,14 @@
         <me>
           \int\limits_{C}f(z)\,dz = 2\pi i\sum\limits_{k=1}^n\mathrm{Res}[f,z_k]
         </me>.
-      </p>
-      <p>
         The situation is illustrated in <xref ref="fig_ch-08-01">Figure</xref>.
       </p>
     </statement>
   </theorem>
   <figure xml:id="fig_ch-08-01">
-    <caption>The domain <m>D</m> and contour <m>C</m> and the singular points <m>z_1, \  z_2, \  \ldots, \  z_n</m> in the statement of Cauchy's
+    <caption>The domain <m>D</m> and contour <m>C</m> and the singular points <m>z_1, \  z_2, \  \ldots, \  z_n</m> in the statement of Cauchy<nbsp/>'s
     residue theorem</caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-01.pdf"/>
+    <image width="73%" source="figs/ch-08/ch-08-fig-01.png"/>
   </figure>
   <proof>
     <p>
@@ -132,21 +129,17 @@
       <me>
         \int\limits_{C}f(z)\,dz = \sum\limits_{k=1}^n\int\limits_{C_k}f(z)\,dz
       </me>.
-    </p>
-    <p>
       The function <m>f</m> is analytic in a punctured disk with center <m>z_k</m> that contains the circle <m>C_k</m>,
       so we can use Equation <xref ref="Int_f_z__formula"/> to obtain
       <me>
-        \int\limits_{C_k}f(z) dz=2\pi i\mathrm{Res}[f,z_k],  \text{ for }   k=1,2,\ldots ,n
+        \int\limits_{C_k}f(z)\,dz=2\pi i\mathrm{Res}[f,z_k],  \text{ for }   k=1,2,\ldots ,n
       </me>.
-    </p>
-    <p>
       Combining the last two equations gives the desired result.
     </p>
   </proof>
   <p>
     The domain <m>D</m> and contour <m>C</m> and the singular points
-    <m>z_1, \, z_2, \, \ldots, \, z_n</m> in the statement of Cauchy's residue theorem.
+    <m>z_1, \, z_2, \, \ldots, \, z_n</m> in the statement of Cauchy<nbsp/>'s residue theorem.
   </p>
   <p>
     The calculation of a Laurent series expansion is tedious in most circumstances.
@@ -200,8 +193,6 @@
       <me>
         f(z) =\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots
       </me>.
-    </p>
-    <p>
       If we multiply both sides of this equation by <m>(z-z_0)</m> and take the limit as <m>z \to z_0</m>,
       we obtain
       <md>
@@ -217,14 +208,10 @@
       <me>
         f(z) = \frac{a_{-k}}{(z-z_0)^k}+\frac{a_{-k+1}}{(z-z_0)^{k-1}}+\cdots +\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+\cdots
       </me>.
-    </p>
-    <p>
       Multiplying both sides of this equation by <m>(z-z_0)^k</m> gives
       <me>
         (z-z_0)^kf(z) =a_{-k}+\cdots +a_{-1}(z-z_0)^{k-1}+a_0(z-z_0)^k+\cdots
       </me>.
-    </p>
-    <p>
       If we differentiate both sides <m>k-1</m> times we get
       <md>
         <mrow>\frac{d^{k-1}}{dz^{k-1}}[(z-z_0)^kf(z)]  \amp  =(k-1) !a_{-1}+k!a_0(z-z_0)</mrow>
@@ -243,8 +230,6 @@
       <p>
         Find the residue of <m>f(z) =\frac{\pi \cot (\pi z)}{z^2}</m> at <m>z_0=0</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         We write <m>f(z) =\frac{\pi \cos (\pi z)}{z^2\sin (\pi z)}</m>.
         Because <m>z^2\sin \pi z</m> has a zero of order <m>3</m> at <m>z_0=0</m> and <m>\pi \cos (\pi z_0) \ne 0</m>,
@@ -264,16 +249,20 @@
         <md>
           <mrow>\mathrm{Res}[f,0] \amp = \pi^2\lim\limits_{z \to 0}\frac{-\pi^2z\sin (\pi z)+\pi \cos (\pi z)-\pi \cos(\pi z)}{3\pi \sin^2(\pi z)\cos (\pi z)}</mrow>
           <mrow>\amp = \pi^2\lim\limits_{z \to 0}\frac{-\pi z}{3\sin (\pi z) \cos(\pi z)}</mrow>
-          <mrow>\amp = \frac{-\pi^2}{3}\lim\limits_{z \to 0}\frac{\pi z}{\sin(\pi z)}\lim\limits_{z \to 0}\frac{1}{\cos (\pi z)}</mrow>
-          <mrow>\amp = \frac{-\pi^2}{3}</mrow>
+          <mrow>\amp = -\frac{\pi^2}{3}\lim\limits_{z \to 0}\frac{\pi z}{\sin(\pi z)}\lim\limits_{z \to 0}\frac{1}{\cos (\pi z)}</mrow>
+          <mrow>\amp = -\frac{\pi^2}{3}</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <example>
     <statement>
       <p>
-        Find <m>\int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}dz</m>.
+        Find <m>\int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}\,dz</m>.
       </p>
     </statement>
     <solution>
@@ -283,20 +272,19 @@
         and a pole of order <m>2</m> at the origin.
         We compute the residues as follows:
         <md>
-          <mrow>\mathrm{Res}[f,0] \amp = \lim_{z \to 0}\frac{d}{dz}[z^2f(z)] = \lim_{z \to 0}\frac{-2z-1}{(z^2+z-2)^2}=\frac{-1}{4}.</mrow>
+          <mrow>\mathrm{Res}[f,0] \amp = \lim_{z \to 0}\frac{d}{dz}[z^2f(z)] = \lim_{z \to 0}\frac{-2z-1}{(z^2+z-2)^2} = -\frac{1}{4}.</mrow>
           <mrow>\mathrm{Res}[f,1] \amp = \lim_{z \to 1}(z-1)f(z) = \lim_{z \to 1}\frac{1}{z^2(z+2)} = \frac{1}{3},  \text{ and }</mrow>
-          <mrow>\mathrm{Res}[f,-2] \amp = \lim_{z \to -2}(z+2)f(z) = \lim_{z \to -2}\frac{1}{z^2(z-1)} = \frac{-1}{12}</mrow>
+          <mrow>\mathrm{Res}[f,-2] \amp = \lim_{z \to -2}(z+2)f(z) = \lim_{z \to -2}\frac{1}{z^2(z-1)} = -\frac{1}{12}</mrow>
         </md>.
       </p>
       <p>
         Finally, the residue theorem yields
         <me>
-          \int\limits_{C_3^{+}(0)}\frac{dz}{z^4+z^3-2z^2}=2\pi i \left[\frac{-1}{4}+\frac{1}{3}-\frac{1}{12}\right] = 0
+          \int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}\,dz=2\pi i \left[-\frac{1}{4}+\frac{1}{3}-\frac{1}{12}\right] = 0
         </me>.
       </p>
       <p>
-        The answer, <m>\int\limits_{C_3^{+}(0)}\frac{dz}{z^4+z^3-2z^2}=0</m>,
-        is not at all obvious,
+        The answer <m>\int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}\,dz=0</m> is not at all obvious,
         and all the preceding calculations are required to get it.
       </p>
     </solution>
@@ -306,31 +294,31 @@
       <p>
         Find<m>\int\limits_{C_2^{+}(1)}(z^4+4)^{-1}\,dz</m>.
       </p>
-      <solution>
-        <p>
-          The singularities of the integrand
-          <m>f(z) =\displaystyle\frac{1}{z^4+4}</m> that lie inside <m>C_2(1)</m> are simple poles occurring at the points <m>1\pm i</m>,
-          as the points <m>-1\pm i</m> lie outside <m>C_2(1)</m>.
-          Factoring the denominator is tedious,
-          so we use a different approach.
-          If <m>z_0</m> is any one of the singularities of <m>f</m>,
-          then we can use L'H&#xf4;pital's rule to compute <m>\mathrm{Res}[f,z_0]</m>:
-        </p>
-      </solution>
-      <me>
-        \mathrm{Res}[f,z_0] = \lim_{z \to z_0}\frac{z-z_0}{z^4+4} = \lim_{z \to z_0}\frac{1}{4z^3} = \frac{1}{4z_0^3}
-      </me>.
       <p>
+        <me>
+          \mathrm{Res}[f,z_0] = \lim_{z \to z_0}\frac{z-z_0}{z^4+4} = \lim_{z \to z_0}\frac{1}{4z^3} = \frac{1}{4z_0^3}
+        </me>.
         Since <m>z_0^4=-4</m>,
         we can simplify this expression further to yield <m>\mathrm{Res}[f,z_0] = -\frac{1}{16}z_0</m>.
         Hence <m>\mathrm{Res}[f,1+i] = \frac{-1-i}{16}</m>,
         and <m>\mathrm{Res}[f,1-i] =\frac{-1+i}{16}</m>.
         We now use the residue theorem to get
         <me>
-          \int\limits_{C_2^{+}(1)}\frac{dz}{z^4+4} = 2\pi i\left(\frac{-1-i}{16}+\frac{-1+i}{16}\right) = \frac{-\pi i}{4}
-        </me>.
+          \int\limits_{C_2^{+}(1)}\frac{1}{z^4+4}\,dz = 2\pi i\left(\frac{-1-i}{16}+\frac{-1+i}{16}\right) = -\frac{\pi i}{4}
+        </me>
       </p>
     </statement>
+    <solution>
+      <p>
+        The singularities of the integrand
+        <m>f(z) =\displaystyle\frac{1}{z^4+4}</m> that lie inside <m>C_2(1)</m> are simple poles occurring at the points <m>1\pm i</m>,
+        as the points <m>-1\pm i</m> lie outside <m>C_2(1)</m>.
+        Factoring the denominator is tedious,
+        so we use a different approach.
+        If <m>z_0</m> is any one of the singularities of <m>f</m>,
+        then we can use L'H&#xf4;pital's rule to compute <m>\mathrm{Res}[f,z_0]</m>:
+      </p>
+    </solution>
   </example>
   <p>
     The theory of residues can be used to expand the quotient of two polynomials into its
@@ -342,7 +330,7 @@
         Let <m>P(z)</m> be a polynomial of degree at most <m>2</m>.
         Show that if <m>a, \, b</m>, and <m>c</m> are distinct complex numbers, then
         <md>
-          <mrow>f(z) \amp = \frac{P(z)}{(z-a)( z-b)(z-c)}</mrow>
+          <mrow>f(z) \amp = \frac{P(z)}{(z-a)(z-b)(z-c)}</mrow>
           <mrow>\amp = \frac{A}{z-a}+\frac{B}{z-b}+\frac{C}{z-c},  \text{ where }</mrow>
           <mrow>A \amp = \mathrm{Res}[f,a] =\frac{P(a)}{(a-b)(a-c)}.</mrow>
           <mrow>B \amp = \mathrm{Res}[f,b] =\frac{P(b)}{(b-a)(b-c)}  \text{ and }</mrow>
@@ -356,19 +344,19 @@
         <me>
           \mathrm{Res}[f,a] $. We expand $f$ in its Laurent series about the point $a$ by writing the three terms $\frac{A}{z-a}$, $\frac{B}{z-b}$, and $\frac{C}{z-c}$ in their Laurent series about the point $a$ and adding them. The term $\frac{A}{z-a}$ is itself a one-term Laurent series about the point $a$. The term $\frac{B}{z-b}$ is analytic at the point $a$, and its Laurent series is actually a Taylor series given by
         </me>
-        \frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} = -\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n,
-        <me>
+        \frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} = -\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n
+        <me>,
           which is valid for $|z-a| \lt  |b-a|$. Likewise, the expansion of the term $\frac{C}{z-c}$ is
         </me>
-        \frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n,
-        <me>
+        \frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n
+        <me>,
           which is valid for $|z-a| \lt  |c-a|$. Thus the Laurent series of $f$ about the point $a$ is
         </me>
-        f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n,
-        <me>
+        f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n
+        <me>,
           which is valid for $|z-a| \lt R$, where $R=\min \{ |b-a| ,\,|c-a| \}$. Therefore $A=$ $\mathrm{Res}[f,a] $, and calculation reveals that
         </me>
-        \mathrm{Res}[f,a] =A=\lim\limits_{z \to a}\frac{P(z)}{(z-b)(z-c)} = \frac{P(a)}{(a-b)(a-c)}</m>.$
+        \mathrm{Res}[f,a] =A=\lim\limits_{z \to a}\frac{P(z)}{(z-b)(z-c)} = \frac{P(a)}{(a-b)(a-c)}</m>$.
       </p>
     </solution>
   </example>
@@ -377,8 +365,6 @@
       <p>
         Express <m>f(z) =\frac{3z+2}{z(z-1)(z-2)}</m> in partial fractions.
       </p>
-    </statement>
-    <solution>
       <p>
         Computing the residues, we obtain
         <me>
@@ -389,7 +375,11 @@
         <xref ref="Poly_Residue_Ex">Example</xref> gives us
         <me>
           \frac{3z+2}{z(z-1)(z-2)} = \frac{1}{z} - \frac{5}{z-1} + \frac{4}{z-2}
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -409,8 +399,6 @@
       <p>
         Express <m>f(z) =\frac{z^2+3z+2}{z^2(z-1)}</m> in partial fractions.
       </p>
-    </statement>
-    <solution>
       <p>
         Using the previous remark, we have
         <me>
@@ -428,269 +416,410 @@
         Thus,
         <me>
           \frac{z^2+3z+2}{z^2(z-1)} = \frac{-2}{z^2} - \frac{5}{z}+\frac{6}{z-1}
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_residue-thm">Section</xref></title>
+  <exercises xml:id="exercises_residue-thm">
+    <title>Exercises</title>
     <exercise xml:id="x8_1_1">
-      <p>
-        Find <m>\mathrm{Res}[f,0]</m> for each of the following :
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Find <m>\mathrm{Res}[f,0]</m> for each of the following :
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>f(z) =z^{-1}\exp z</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =z^{-3}\cosh 4z</m>.
+            <m>1</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =z^{-3}\cosh 4z</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =\csc z</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =\frac{z^2+4z+5}{z^2+z}</m>.
+            <m>1</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =\frac{z^2+4z+5}{z^2+z}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =\cot z</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =z^{-3}\cos z</m>.
+            <m>1</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =z^{-3}\cos z</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =z^{-1}\sin z</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =\frac{z^2+4z+5}{z^3}</m>.
+            <m>0</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =\frac{z^2+4z+5}{z^3}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =\exp (1+\frac{1}{z})</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =z^4\sin (\frac{1}{z})</m>.
+            <m>e</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =z^4\sin (\frac{1}{z})</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =z^{-1}\csc z</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =z^{-2}\csc z</m>.
+            <m>0</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =z^{-2}\csc z</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>f(z) =\frac{\exp (4z)-1}{\sin^2z}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>f(z) =z^{-1}\csc^2z</m>.
+            <m>4</m>.
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(z) =z^{-1}\csc^2z</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Let <m>f</m> and <m>g</m> have an isolated singularity at <m>z_0</m>.
-        Show that
-        <men xml:id="x8_1_2">
-          \mathrm{Res}[{f+g},{z_0}] = \mathrm{Res}[f,z_0] + \mathrm{Res}[g,z_0]
-        </men>.
-      </p>
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> have an isolated singularity at <m>z_0</m>.
+          Show that
+          <men xml:id="x8_1_2">
+            \mathrm{Res}[{f+g},{z_0}] = \mathrm{Res}[f,z_0] + \mathrm{Res}[g,z_0]
+          </men>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x8_1_3">
-      <p>
-        Evaluate the following :
-        <ol>
-          <li>
-            <p>
-              <m>\int\limits_{C_1^{+}(-1+i)}\frac{dz}{z^4+4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_2^{+}(i)}\frac{dz}{z(z^2-2z+2)}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_2^{+}(0)}\frac{\exp zdz}{z^3+z}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_2^{+}(0)}\frac{\sin zdz}{4z^2-\pi^2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_2^{+}(0)}\frac{\sin zdz}{z^2+1}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_1^{+}(0)}\frac{dz}{z^2\sin z}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\int\limits_{C_1^{+}(0)}\frac{dz}{z\sin^2z}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Evaluate the following :
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\int\limits_{C_1^{+}(-1+i)}\frac{1}{z^4+4}\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{\pi +i\pi}{8}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\int\limits_{C_2^{+}(i)}\frac{1}{z(z^2-2z+2)}\,dz</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\int\limits_{C_2^{+}(0)}\frac{\exp z}{z^3+z}\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(1-\cos 1)2\pi i</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\int\limits_{C_2^{+}(0)}\frac{\sin z}{4z^2-\pi^2}\,dz</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\int\limits_{C_2^{+}(0)}\frac{\sin z}{z^2+1}\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>i2\pi \sinh 1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\int\limits_{C_1^{+}(0)}\frac{1}{z^2\sin z}\,dz</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\int\limits_{C_1^{+}(0)}\frac{1}{z\sin^2z}\,dz</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{2\pi i}{3}</m>.
+          </p>
+        </solution>
+      </task>
     </exercise>
     <exercise xml:id="x8_1_4">
-      <p>
-        Let <m>f</m> and <m>g</m> be analytic at <m>z_0</m>.
-        If <m>f(z_0) \ne 0</m> and <m>g</m> has a simple zero at <m>z_0</m>,
-        then show that <m>\mathrm{Res}\left[\frac{f}{g},z_0\right] = \frac{f(z_0)}{g'(z_0)}</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> be analytic at <m>z_0</m>.
+          If <m>f(z_0) \ne 0</m> and <m>g</m> has a simple zero at <m>z_0</m>,
+          then show that <m>\mathrm{Res}\left[\frac{f}{g},z_0\right] = \frac{f(z_0)}{g'(z_0)}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x8_1_5">
-      <p>
-        Find <m>\int\limits_{C}(z-1)^{-2}(z^2+4)^{-1}\,dz</m> when
-        <ol>
-          <li>
-            <p>
-              <m>C=C_1^{+}(1)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>C=C_4^{+}(0)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find <m>\int\limits_{C}(z-1)^{-2}(z^2+4)^{-1}\,dz</m> when
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>C=C_1^{+}(1)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-\frac{4\pi i}{25}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>C=C_4^{+}(0)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_1_6">
-      <p>
-        Find <m>\int\limits_{C}(z^{6}+1)^{-1}dz</m> when
-        <ol>
-          <li>
-            <p>
-              <m>C=C_{\frac{1}{2}}^{+}(i)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>C=C_1^{+}(\frac{1+i}{2})</m>.
-              <em>Hint</em>: If <m>z_0</m> is a singularity of <m>f(z) =\frac{1}{z^{6}+1}</m>,
-              show that <m>\mathrm{Res}[f,z_0] = -\frac{1}{6}z_0</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find <m>\int\limits_{C}(z^{6}+1)^{-1}dz</m> when
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>C=C_{\frac{1}{2}}^{+}(i)</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>C=C_1^{+}(\frac{1+i}{2})</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            If <m>z_0</m> is a singularity of <m>f(z) =\frac{1}{z^{6}+1}</m>,
+            show that <m>\mathrm{Res}[f,z_0] = -\frac{1}{6}z_0</m>.
+          </p>
+        </hint>
+      </task>
     </exercise>
     <exercise xml:id="x8_1_7">
-      <p>
-        Find <m>\int\limits_{C}(3z^4+10z^2+3)^{-1}dz</m> when
-        <ol>
-          <li>
-            <p>
-              <m>C=C_1^{+}(i\sqrt{3})</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>C=C_1^{+}(\frac{i}{\sqrt{3}})</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find <m>\int\limits_{C}(3z^4+10z^2+3)^{-1}\,dz</m> when
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>C=C_1^{+}(i\sqrt{3})</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-\frac{\pi \sqrt{3}}{24}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>C=C_1^{+}(\frac{i}{\sqrt{3}})</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_1_8">
-      <p>
-        Find <m>\int\limits_{C}(z^4-z^3-2z^2)^{-1}dz</m> when
-        <ol>
-          <li>
-            <p>
-              <m>C=C_{\frac{1}{2}}^{+}(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>C=C_{\frac{3}{2}}^{+}(0)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Find <m>\int\limits_{C}(z^4-z^3-2z^2)^{-1}dz</m> when
+        </p>
+      </introduction>
+      <task>
+        <p>
+          <m>C=C_{\frac{1}{2}}^{+}(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          <m>C=C_{\frac{3}{2}}^{+}(0)</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Use residues to find the partial fraction representations of: \label {8.1.9}
-        <ol>
-          <li>
-            <p>
-              <m>\frac{1}{z^2+3z+2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{3z-3}{z^2-z-2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{z^2-7z+4}{z^2(z+4)}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{10z}{(z^2+4)(z^2+9)}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{2z^2-3z-1}{(z-1)^3}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{z^3+3z^2-z+1}{z(z+1)^2(z^2+1)}</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Use residues to find the partial fraction representations of: \label {8.1.9}
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\frac{1}{z^2+3z+2}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{1}{z+1}-\frac{1}{z+2}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\frac{3z-3}{z^2-z-2}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\frac{z^2-7z+4}{z^2(z+4)}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{1}{z^2}-\frac{2}{z}+\frac{3}{z+4}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\frac{10z}{(z^2+4)(z^2+9)}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\frac{2z^2-3z-1}{(z-1)^3}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\frac{2}{z-1}+\frac{1}{(z-1)^2}-\frac{2}{(z-1)^3}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>\frac{z^3+3z^2-z+1}{z(z+1)^2(z^2+1)}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise xml:id="x8_1_10">
-      <p>
-        Let <m>f</m> be analytic in a simply connected domain <m>D</m>,
-        and let <m>C</m> be a simple closed positively oriented contour in <m>D</m>.
-        If <m>z_0</m> is the only zero of <m>f</m> in <m>D</m> and <m>z_0</m> lies interior to <m>C</m>,
-        then show that <m>\frac{1}{2\pi i}\int\limits_{C}\frac{f\,'(z)}{f(z)}\,dz = k</m>,
-        where <m>k</m> is the order of the zero at <m>z_0</m>.
-      </p>
+      <statement>
+        <p>
+          Let <m>f</m> be analytic in a simply connected domain <m>D</m>,
+          and let <m>C</m> be a simple closed positively oriented contour in <m>D</m>.
+          If <m>z_0</m> is the only zero of <m>f</m> in <m>D</m> and <m>z_0</m> lies interior to <m>C</m>,
+          then show that <m>\frac{1}{2\pi i}\int\limits_{C}\frac{f\,'(z)}{f(z)}\,dz = k</m>,
+          where <m>k</m> is the order of the zero at <m>z_0</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise xml:id="x8_1_11">
-      <p>
-        Let <m>f</m> be analytic at the points <m>0,\pm 1,\pm 2,\ldots</m>.
-        If <m>g(z) = \pi f(z) \cot \pi z</m>,
-        then show that <m>\mathrm{Res}[g,n] = f(n)</m> for <m>n=0,\pm 1, \, \pm 2, \, \ldots</m><nbsp/>.
-      </p>
+      <statement>
+        <p>
+          Let <m>f</m> be analytic at the points <m>0,\pm 1,\pm 2,\ldots</m><nbsp/>.
+          If <m>g(z) = \pi f(z) \cot \pi z</m>,
+          then show that <m>\mathrm{Res}[g,n] = f(n)</m> for <m>n=0, \, \pm 1, \, \pm 2, \, \ldots</m><nbsp/>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By <xref ref="Residues_at_Poles">Theorem</xref>
+          we have <m>\mathrm{Res}[g, \, n] = \lim\limits_{z \to n}(z-n)g(z)</m>,
+          where <m>n</m> is any integer.
+          Since <m>g(z) =\pi f(z) \cot \pi z = \pi f(z)\frac{\cos(\pi z)}{\sin(\pi z)}</m>,
+          and because <m>f</m>, is analytic at <m>n</m>,
+          we use L'H&#xf4;pital's rule to get <m>\lim\limits_{z \to n}\frac{z-n}{\sin (\pi z) }=1</m>.
+          Explain how this gives the result.
+        </p>
+      </solution>
     </exercise>
   </exercises>
 </section>

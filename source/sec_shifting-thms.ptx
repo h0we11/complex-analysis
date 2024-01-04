@@ -10,7 +10,7 @@
     will show how the transform of <m>f(t-a)</m> can be obtained by multiplying <m>F(s)</m> by <m>e^{-as}</m>.
     Loosely speaking,
     these results show that multiplication of <m>f(t)</m> by <m>e^{at}</m> corresponds to shifting <m>F(s-a)</m>,
-    and shifting <m>f( t-a)</m> corresponds to multiplication of the transform <m>F( s)</m> by <m>e^{as}</m>.
+    and shifting <m>f(t-a)</m> corresponds to multiplication of the transform <m>F(s)</m> by <m>e^{as}</m>.
   </p>
   <theorem xml:id="thm_shifting-s">
     <title>Shifting the Variable
@@ -21,7 +21,7 @@
         If <m>F(s)</m> is the Laplace transform of <m>f(t)</m>, then
         <me>
           \mathcal{L}\big(e^{at}f(t)\big) = F(s-a)
-        </me>.
+        </me>
       </p>
     </statement>
   </theorem>
@@ -30,8 +30,8 @@
       Using the integral definition <m>\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t)e^{-st}\,dt</m>,
       we see that
       <me>
-        \mathcal{L}(e^{at}f(t)) = \int_0^{\infty}e^{at}f(t)e^{-st}dt = \int_0^{\infty}f(t)e^{-(s-a)t}\,dt = F(s-a)
-      </me>.
+        \mathcal{L}\big(e^{at}f(t)\big) = \int_0^{\infty}e^{at}f(t)e^{-st}dt = \int_0^{\infty}f(t)e^{-(s-a)t}\,dt = F(s-a)
+      </me>
     </p>
   </proof>
   <definition xml:id="def_unit-step-function">
@@ -51,7 +51,7 @@
   </p>
   <figure xml:id="fig_ch-11-22">
     <caption>Graph of the unit step function <m>y=U_a(t)</m> in <xref ref="def_unit-step-function">Definition</xref></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-22.pdf"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-22.png"/>
   </figure>
   <theorem xml:id="thm_shifting-t">
     <title>Shifting the Variable
@@ -73,34 +73,28 @@
       <me>
         e^{-as}F(s) = e^{-as}\int_0^{\infty}f(\tau)e^{-s\tau}\,d\tau = \int_0^{\infty}f(\tau)e^{-s(a+\tau)}\,d\tau
       </me>.
-    </p>
-    <p>
       Using the change of variable
       <m>t=a+\tau</m> and <m>dt=d\tau</m>, we obtain
       <me>
         e^{-as}F(s) = \int_a^{\infty}f(t-a)e^{-st}\,dt
       </me>.
-    </p>
-    <p>
       Since <m>U_a(t) \,f(t-a) =0</m> for <m>t\lt a</m>,
       and <m>U_a(t) \,f(t-a) =f(t-a)</m> for <m>t>a</m>,
       we can write the last equation as
       <me>
         e^{-as}F(s) = \int_0^{\infty}U_a(t)f(t-a)e^{-st}\,dt = \mathcal{L}\big(U_a(t)f(t-a)\big)
-      </me>.
+      </me>
     </p>
   </proof>
   <figure xml:id="fig_ch-11-23">
     <caption>Comparison of the functions <m>f(t)</m> and <m>U_a(t)f(t-a)</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-23.pdf"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-23.png"/>
   </figure>
   <example>
     <statement>
       <p>
         Show that <m>\mathcal{L}(t^ne^{at}) =\frac{n!}{(s-a)^{n+1}}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Let <m>f(t)=t^n</m>,
         then <m>F(s) = \mathcal{L}(t^n) = \frac{n!}{s^{n+1}}</m>.
@@ -108,23 +102,29 @@
         we obtain the desired result:
         <me>
           \mathcal{L}(t^ne^{at}) = F(s-a) = \frac{n!}{(s-a)^{n+1}}
-        </me>.
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
-  <example xml:id="ex_10_18">
+  <example xml:id="ex_11_18">
     <statement>
       <p>
         Show that <m>\mathcal{L}(U_c(t)) = \frac{e^{-cs}}{s}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         Set <m>f(t) = 1</m>, then <m>F(s) = \mathcal{L}(1) = \frac{1}{s}</m>.
         Now apply <xref ref="thm_shifting-t">Theorem</xref> and get
         <me>
           \mathcal{L}\big(U_c(t)\big) = \mathcal{L}\big(U_c(t)f(t)\big) = \mathcal{L}\big(U_c(t)\cdot 1\big) = e^{-cs}\mathcal{L}(1) = \frac{e^{-cs}}{s}
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -135,22 +135,22 @@
       </p>
       <figure xml:id="fig_ch-11-24">
         <caption>The function <m>y=f(t)</m> of <xref ref="ex_find-Lft">Example</xref></caption>
-        <image width="73%" source="figs/ch-11/ch-11-fig-24.pdf"/>
+        <image width="73%" source="figs/ch-11/ch-11-fig-24.png"/>
       </figure>
-    </statement>
-    <solution>
       <p>
         We can represent <m>f(t)</m> in terms of step functions:
         <me>
           f(t) = 1-U_1(t)+U_2(t)-U_3(t)+U_4(t)-U_5(t)
         </me>.
-      </p>
-      <p>
         Using the result of <xref ref="ex_10_18">Example</xref> and linearity,
         we obtain
         <me>
           \mathcal{L}\big(f(t)\big) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{-2s}}{s} - \frac{e^{-3s}}{s} + \frac{e^{-4s}}{s} - \frac{e^{-5s}}{s}
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -159,193 +159,285 @@
       <p>
         Use Laplace transforms to solve the initial value problem
         <me>
-          y^{\prime \prime}(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y'(0) =0
+          y\,''(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y\,'(0) =0
         </me>.
       </p>
-    </statement>
-    <solution>
       <p>
         As usual, let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>.
         Then we get
         <me>
           s^2Y(s) + Y(s) = \frac{e^{-\pi s}}{s}
         </me>.
-      </p>
-      <p>
         Solving for <m>Y(s)</m>, we obtain
         <me>
           Y(s) = e^{-\pi s}\frac{1}{s(s^2+1)} = \frac{e^{-\pi s}}{s} - \frac{e^{-\pi s}s}{s^2+1}
         </me>.
-      </p>
-      <p>
         We now use <xref ref="thm_shifting-t">Theorem</xref>
         and the facts that <m>\frac{1}{s}</m> and
         <m>\frac{s}{s^2+1}</m> are the transforms of <m>1</m> and <m>\cos t</m>,
         respectively.
         The solution <m>y(t)</m> computes as follows:
         <me>
-          y(t) = \mathcal{L}^{-1}(\frac{e^{-\pi s}}{s}) - \mathcal{L}^{-1}(\frac{e^{-\pi s}s}{s^2+1}) = U_{\pi}(t) - U_{\pi}(t) \cos (t-\pi)
+          y(t) = \mathcal{L}^{-1}\left(\frac{e^{-\pi s}}{s}\right) - \mathcal{L}^{-1}\left(\frac{e^{-\pi s}s}{s^2+1}\right) = U_{\pi}(t) - U_{\pi}(t) \cos(t-\pi)
         </me>,
         which can be written in the more familiar form:
         <me>
           y(t) = \begin{cases} \; 0 \amp  \text{ for }   t \lt  \pi, \\ 1-\cos t \amp  \text{ for }   t>\pi. \end{cases}
         </me>
       </p>
+    </statement>
+    <solution>
+      <p>
+      </p>
     </solution>
   </example>
-  <exercises>
-    <title>Exercises for <xref ref="sec_shifting-thms">Section</xref></title>
+  <exercises xml:id="exercises_shifting-thms">
+    <title>Exercises</title>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}(e^{t}-te^{t})</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}(e^t-te^t)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}(e^t-te^t) = \frac{-1}{(s-1)^2}+\frac{1}{s-1}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}(e^{-4t}\sin 3t)</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}(e^{-4t}\sin 3t)</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Show that <m>\mathcal{L}(e^{at}\cos bt) =\frac{s-a}{(s-a)^2+b^2}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(e^{at}\cos bt) =\frac{s-a}{(s-a)^2+b^2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}(e^{at}\cos bt) = \frac{s-a}{(s-a)^2+b^2}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Show that <m>\mathcal{L}(e^{at}\sin bt) =\frac{b}{( s-a)^2+b^2}</m>.
-      </p>
+      <statement>
+        <p>
+          Show that <m>\mathcal{L}(e^{at}\sin bt) =\frac{b}{(s-a)^2+b^2}</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}^{-1}(F(s))</m> for the following:
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Find <m>\mathcal{L}^{-1}(F(s))</m> for the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             <m>F(s) =\frac{s+2}{s^2+4s+5}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>F(s) =\frac{8}{s^2-2s+5}</m>.
+            <m>f(t) = \mathcal{L}^{-1}\big(\frac{s+2}{s^2+4s+5}\big) = e^{-2t}\cos t</m>.
           </p>
-        </li>
-        <li>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>F(s) =\frac{8}{s^2-2s+5}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
           <p>
             <m>F(s) =\frac{s+3}{(s+2)^2+1}</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>F(s) =\frac{2s+10}{s^2+6s+25}</m>.
+            <m>f(t) = \mathcal{L}^{-1}\Big(\frac{s+3}{(s+2)^2+1}\Big) = e^{-2t}\cos t + e^{-2t}\sin t</m>.
           </p>
-        </li>
-      </ol>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>F(s) =\frac{2s+10}{s^2+6s+25}</m>.
+        </p>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}(\,f(t))</m> for the following:
-        <ol>
-          <li>
-            <p>
-              <m>f(t) = U_2(t)(t-2)^2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f(t) = U_1(t)e^{1-t}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f(t) = U_{3\pi}(t) \sin(t-3\pi)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f(t) = 2U_1(t) - U_2(t) - U_3(t)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-25">Figure</xref>.
-              <figure xml:id="fig_ch-11-25">
-                <caption>The graph <m>y=f(t)</m> (for Problem 6e)</caption>
-                <image width="73%" source="figs/ch-11/ch-11-fig-25.pdf"/>
-              </figure>
-            </p>
-          </li>
-          <li>
-            <p>
-              Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-26">Figure</xref>.
-              <em>Hint:</em> The function is the integral of the one in Exercise 13.
-              <figure xml:id="fig_ch-11-26">
-                <caption>The graph <m>y=f(t)</m> (for Problem 6f)</caption>
-                <image width="73%" source="figs/ch-11/ch-11-fig-26.pdf"/>
-              </figure>
-            </p>
-          </li>
-        </ol>
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}^{-1}(\frac{1-e^{-s}+e^{-2s}}{s^2})</m>.
+        </p>
+      </statement>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}^{-1}(\frac{e^{-s}+e^{-2s}}{s})</m>.
-      </p>
+      <introduction>
+        <p>
+          Find <m>\mathcal{L}\big(f(t)\big)</m> for the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>f(t) = U_2(t)(t-2)^2</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}\Big(U_2(t)(t-2)^2\Big) = \frac{2e^{-2s}}{s^3}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(t) = U_1(t)e^{1-t}</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>f(t) = U_{3\pi}(t) \sin(t-3\pi)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}\Big(U_{3\pi}(t) \sin(t-3\pi)\Big) = \frac{e^{-3\pi s}}{s^2+1}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>f(t) = 2U_1(t) - U_2(t) - U_3(t)</m>
+        </p>
+      </task>
+      <task xml:id="x12_7_x">
+        <statement>
+          <p>
+            Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-25">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-11-25">
+            <image width="73%" source="figs/ch-11/ch-11-fig-25.png"/>
+          </figure>
+        </statement>
+        <solution>
+          <p>
+            <m>\mathcal{L}\big(f(t)) = \frac{1}{s}(1-2e^{-s}+2e^{-2s}-e^{-3s})</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-26">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-11-26">
+            <image width="73%" source="figs/ch-11/ch-11-fig-26.png"/>
+          </figure>
+        </statement>
+        <hint>
+          <p>
+            The function is the integral of the one in <xref ref="x12_7_x">Exercise</xref>.
+          </p>
+        </hint>
+      </task>
     </exercise>
     <exercise>
-      <p>
-        Find <m>\mathcal{L}^{-1}(\frac{1-e^{-s}+e^{-2s}}{s^2})</m>.
-      </p>
+      <statement>
+        <p>
+          Find <m>\mathcal{L}^{-1}(\frac{e^{-s}+e^{-2s}}{s})</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\mathcal{L}^{-1}\big(\frac{e^{-s}+e^{-2s}}{s}\big) = U_1(t)+U_2(t)</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise>
-      <p>
-        Solve the initial value problem for each of the following:
-        <ol>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) + 2y(t) = 0</m>,
-              with <m>y(0) = -1</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 4y\,'(t) + 5y(t) = 0</m>,
-              with <m>y(0) = 1</m> and <m>y'(0) = -2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>2y^{\prime \prime}(t) + 2y\,'(t) + y(t) = 0</m>,
-              with <m>y(0) =0</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) - 2y\,'(t) + y(t) = 2</m>e<m>^{t}</m>,
-              with <m>y(0) = 0</m> and <m>y'(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) + y(t) = 6te^{-t}</m>,
-              with <m>y(0) = 0</m> and <m>y'(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + 2y\,'(t) + y(t) = 2U_1(t)e^{1-t}</m>,
-              with <m>y(0) =0</m> and <m>y'(0) = 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>y^{\prime \prime}(t) + y(t) = U_{\pi /2}(t)</m>,
-              with <m>y(0) = 0</m> and <m>y'(0) = 1</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Solve the initial value problem for each of the following:
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) + 2y\,'(t) + 2y(t) = 0</m>,
+            with <m>y(0) = -1</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = -e^{-t}\cos t</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) + 4y\,'(t) + 5y(t) = 0</m>,
+          with <m>y(0) = 1</m> and <m>y\,'(0) = -2</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>2y\,''(t) + 2y\,'(t) + y(t) = 0</m>,
+            with <m>y(0) =0</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = 2e^{-\frac{t}{2}}\sin \frac{t}{2}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) - 2y\,'(t) + y(t) = 2</m>e<m>^t</m>,
+          with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) + 2y\,'(t) + y(t) = 6te^{-t}</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t) = t^3e^{-t}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          <m>y\,''(t) + 2y\,'(t) + y(t) = 2U_1(t)e^{1-t}</m>,
+          with <m>y(0) =0</m> and <m>y\,'(0) = 0</m>.
+        </p>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>y\,''(t) + y(t) = U_{\pi /2}(t)</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>y(t)=\big[1-\delta (t-\frac{\pi }{2})\big]\big(\sin(t)\big) + (1-\sin t)U_\frac{\pi}{2}(t)</m>.
+          </p>
+        </solution>
+      </task>
     </exercise>
   </exercises>
 </section>

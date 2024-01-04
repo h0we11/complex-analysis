@@ -1,20 +1,20 @@
 <section xml:id="sec_2d-electrostatics">
-  <title>11.6 Two-Dimensional Electrostatics</title>
+  <title>Two-Dimensional Electrostatics</title>
   <p>
     A two-dimensional electrostatic field is produced by a system of charged wires, plates,
     and cylindrical conductors that are perpendicular to the <m>z</m> plane.
     The wires, plates,
-    and cylinders are assumed to be so long that the effects at the ends can be neglected,
-    as mentioned in Section 11.4.
+    and cylinders are assumed to be long enough so that the effects at the ends can be neglected,
+    as mentioned in <xref ref="sec_2d-models">Section</xref>.
     This assumption results in an electric field
     <m>\mathbf{E}(x,y)</m> that can be interpreted as the force acting on a unit positive charge placed at the point <m>(x,y)</m>.
     In the study of electrostatics,
     the vector field <m>\mathbf{E}(x,y)</m> is shown to be <em>conservative</em>
     and is derivable from a function <m>\phi(x,y)</m>,
-    called the <term>electrostatic potential</term>, expressed as
+    called the electrostatic potential, expressed as
     <me>
       \mathbf{E}(x,y) = -\nabla \phi(x,y) = -\phi_x(x,y) - i\phi_y(x,y)
-    </me>.
+    </me>
   </p>
   <p>
     If we make the additional assumption that there are no charges within the domain <m>D</m>,
@@ -26,8 +26,6 @@
     <me>
       -[\phi_{xx}(x,y) + \phi_{yy}(x,y)] \Delta x \Delta y
     </me>.
-  </p>
-  <p>
     This quantity equals zero,
     so we conclude that <m>\phi(x,y)</m> is a harmonic function.
     If we designate <m>\psi(x,y)</m> as the harmonic conjugate, then
@@ -40,24 +38,24 @@
   <p>
     The curves <m>\phi(x,y) =K_1</m> are called the
     <em> equipotential curves</em>,
-    and the curves <m>\psi(x,y) =K_2</m> are called the
-    <term>lines of flux</term>.
+    and the curves <m>\psi(x,y) =K_2</m> are called the lines of flux.
     If a small test charge is allowed to move under the influence of the field <m>\mathbf{E}(x,y)</m>,
     then it will travel along a line of flux.
     Boundary value problems for the potential function
     <m>\phi(x,y)</m> are mathematically the same as those for steady state heat flow,
     and they are realizations of the Dirichlet problem where the harmonic function is <m>\phi(x,y)</m>.
   </p>
-  <example>
+  <example xml:id="ex_10_18">
     <statement>
       <p>
         Consider two parallel conducting planes that pass perpendicular to the <m>z</m> plane through the lines <m>x=a</m> and <m>x=b</m>,
-        which are kept at the potentials <m>U_1</m> and <m>U_2</m>,
+        which are kept amt the potentials <m>U_1</m> and <m>U_2</m>,
         respectively.
-        Then, according to the result of Example 11.1, the electrical potential is
+        Then, according to the result of <xref ref="ex_10_1">Example</xref>,
+        the electrical potential is
         <me>
           \phi(x,y) = U_1 + \frac{U_2-U_1}{b-a}(x-a)
-        </me>.
+        </me>
       </p>
     </statement>
   </example>
@@ -69,39 +67,39 @@
         which are kept at the potentials <m>U_1</m> and <m>U_2</m>,
         respectively.
       </p>
-      <solution>
-        <p>
-          The function <m>w = \log z = \ln|z|+i\arg z</m> maps the annular region between the circles <m>r=a</m> and <m>r=b</m> onto the infinite strip
-          <m>\ln a\lt u\lt \ln \,b</m> in the <m>w</m> plane, as shown in Figure 11.36.
-          The potential <m>\Phi(u,v)</m> in the infinite strip has the boundary values
-          <me>
-            \Phi(\ln \,a,v) = U_1,  \text{ and }   \Phi(\ln b,v) = U_2  \text{ for all }   v
-          </me>.
-        </p>
-        <p>
-          The result of Example 11.18 gives the electrical potential <m>\Phi(u,v)</m>:
-          <me>
-            \Phi(u,v) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(u-\ln a)
-          </me>.
-        </p>
-        <p>
-          We can use the fact that <m>u = \ln |z|</m> to conclude that the potential <m>\phi(x,y)</m> is
-          <me>
-            \phi(x,y) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(\ln |z|-\ln a)
-          </me>.
-        </p>
-      </solution>
       <p>
         The equipotentials <m>\phi(x,y)=</m> constant are concentric circles centered on the origin,
         and the lines of flux are portions of rays emanating from the origin.
         If <m>U_2\lt U_1</m>,
         then the situation is as illustrated in <xref ref="fig_ch-10-036">Figure</xref>.
       </p>
+      <p>
+        The function <m>w = \log z = \ln|z|+i\arg z</m> maps the annular region between the circles <m>r=a</m> and <m>r=b</m> onto the infinite strip
+        <m>\ln a\lt u\lt \ln \,b</m> in the <m>w</m> plane,
+        as shown in <xref ref="fig_ch-10-036">Figure</xref>.
+        The potential <m>\Phi(u,v)</m> in the infinite strip has the boundary values
+        <me>
+          \Phi(\ln \,a,v) = U_1,  \text{ and }   \Phi(\ln b,v) = U_2  \text{ for all }   v
+        </me>.
+        The result of <xref ref="ex_10_18">Example</xref>
+        gives the electrical potential <m>\Phi(u,v)</m>:
+        <me>
+          \Phi(u,v) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(u-\ln a)
+        </me>.
+        We can use the fact that <m>u = \ln |z|</m> to conclude that the potential <m>\phi(x,y)</m> is
+        <me>
+          \phi(x,y) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(\ln |z|-\ln a)
+        </me>
+      </p>
     </statement>
+    <solution>
+      <p>
+      </p>
+    </solution>
   </example>
   <figure xml:id="fig_ch-10-036">
     <caption>The electrical field in a coaxial cylinder, where <m>U_2\lt U_1</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-036.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-036.png"/>
   </figure>
   <example>
     <statement>
@@ -117,23 +115,24 @@
     </statement>
     <solution>
       <p>
-        The result of Example 10.13 shows that the function <m>w=</m>
+        The result of <xref ref="ex_conformal-sine">Example</xref>
+        shows that the function <m>w=</m>
         <m>\mathrm{Arcsin}(z)</m> is a conformal mapping of the <m>z</m> plane slit along the two rays <m>x\lt -1, \, y=0</m> and
         <m>x>1, \, y=0</m> onto the vertical strip <m>-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>.
         Thus, the problem reduces to finding the potential
         <m>\Phi(u,v)</m> that satisfies the boundary values
         <me>
-          \Phi\left(\frac{-\pi}{2},v\right) = -300  \text{ and } \Phi\left(\frac{\pi}{2},v\right) = 300  \text{ for all }   v
+          \Phi\left(\!-\frac{\pi}{2},v\right) = -300  \text{ and } \Phi\left(\frac{\pi}{2},v\right) = 300  \text{ for all }   v
         </me>.
       </p>
       <p>
-        From Example 11.1,
+        From <xref ref="ex_10_1">Example</xref>,
         <me>
           \Phi(u,v) = \frac{600}{\pi}u
-        </me>.
+        </me>
       </p>
       <p>
-        As in the discussion of Example 11.17,
+        As in the discussion of <xref ref="ex_10_17">Example</xref>,
         the solution in the <m>z</m> plane is
         <md>
           <mrow>\phi(x,y)  \amp = \frac{600}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)</mrow>
@@ -147,7 +146,7 @@
   </example>
   <figure xml:id="fig_ch-10-037">
     <caption>Equipotentials of two charged half-planes perpendicular to the complex plane</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-037.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-037.png"/>
   </figure>
   <example>
     <statement>
@@ -155,8 +154,8 @@
         Find the electrical potential <m>\phi(x,y)</m> in the disk
         <m>D:|z|\lt 1</m> that satisfies the boundary values
         <md>
-          <mrow>\phi(x,y) \amp = 80  \text{ for }   x+iy=z  \text{ on }   C_1=\{z=e^{i\theta}:0\lt \theta \lt \frac{\pi}{2}\};</mrow>
-          <mrow>\phi(x,y) \amp = 0  \text{ for }   x+iy=z  \text{ on }   C_2=\{z=e^{i\theta}:\frac{\pi}{2}\lt \theta \lt 2\pi\}</mrow>
+          <mrow>\phi(x,y) \amp = 80  \text{ for }   x+iy=z  \text{ on }   C_1=\left\{z=e^{i\theta}:0\lt \theta \lt \frac{\pi}{2}\right\};</mrow>
+          <mrow>\phi(x,y) \amp = 0  \text{ for }   x+iy=z  \text{ on }   C_2=\left\{z=e^{i\theta}:\frac{\pi}{2}\lt \theta \lt 2\pi\right\}</mrow>
         </md>.
       </p>
     </statement>
@@ -178,17 +177,12 @@
         <me>
           u+iv = S(z) = \frac{(x-1)^2+(y-1)^2-1 +i(1-x^2-y^2)}{(x-1)^2+y^2}
         </me>.
-      </p>
-      <p>
         We substitute the real and imaginary parts,
         <m>u</m> and <m>v</m> from this equation,
-        into <xref ref="harmfun2">Equation</xref>
-        to obtain the desired solution:
+        into Equation <xref ref="harmfun2"/> to obtain the desired solution:
         <me>
           \phi(x,y) = \frac{80}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{(x-1)^2+(y-1)^2-1}\right)
         </me>.
-      </p>
-      <p>
         The level curve <m>\Phi(u,v) =\alpha</m> in the upper half-plane is a ray emanating from the origin,
         and the preimage <m>\phi(x,y) = \alpha</m> in the unit disk is an arc of a circle that passes through the points 1 and <m>i</m>.
         Several level curves are illustrated in <xref ref="fig_ch-10-038">Figure</xref>.
@@ -197,120 +191,154 @@
   </example>
   <figure xml:id="fig_ch-10-038">
     <caption>The potentials <m>\phi</m> and <m>\Phi</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-038.pdf"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-038.png"/>
   </figure>
-  <exercises>
-    <title>Exercises for Section 11.6</title>
+  <exercises xml:id="exercises_2d-electrostatics">
+    <title>Exercises</title>
     <exercise xml:id="ex_p-1">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> between the two coaxial cylinders <m>r=1</m> and <m>r=2</m> that has the boundary values shown in <xref ref="fig_ch-10-039">Figure</xref>:
-        <md>
-          <mrow>\phi(x,y) \amp = 100  \text{ when }   |z|=1,</mrow>
-          <mrow>\phi(x,y) \amp = 200  \text{ when }   |z|=2</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> between the two coaxial cylinders <m>r=1</m> and <m>r=2</m> that has the boundary values shown in <xref ref="fig_ch-10-039">Figure</xref>:
+          <md>
+            <mrow>\phi(x,y) \amp = 100  \text{ when }   |z|=1,</mrow>
+            <mrow>\phi(x,y) \amp = 200  \text{ when }   |z|=2</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-039">
-          <caption>For <xref ref="ex_p-1">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-039.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-039.png"/>
         </figure>
-      </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\phi(x,y) = 100 + \frac{100}{\ln 2}\ln|t|</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="ex_p-2">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> in the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> that satisfies the boundary values shown in <xref ref="fig_ch-10-040">Figure</xref>:
-        <md>
-          <mrow>\phi(x,0) \amp = \;\; 100  \text{ for }   x>1;</mrow>
-          <mrow>\phi(x,0) \amp =  \; 0 \;  \text{ for }   -1\lt x\lt 1;</mrow>
-          <mrow>\phi(x,0) \amp = -100  \text{ for }   x\lt -1</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the upper half-plane
+          <m>\mathrm{Im}(z) >0</m> that satisfies the boundary values shown in <xref ref="fig_ch-10-040">Figure</xref>:
+          <md>
+            <mrow>\phi(x,0) \amp = \;\; 100  \text{ for }   x>1;</mrow>
+            <mrow>\phi(x,0) \amp =  \; 0 \;  \text{ for }   -1\lt x\lt 1;</mrow>
+            <mrow>\phi(x,0) \amp = -100  \text{ for }   x\lt -1</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-040">
-          <caption>For <xref ref="ex_p-2">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-040.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-040.png"/>
         </figure>
-      </p>
+      </statement>
     </exercise>
     <exercise xml:id="ex_p-3">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> in the crescent-shaped region that lies inside the disk
-        <m>\left| z-2\right| \lt 2</m> and outside the circle
-        <m>\left| z-1\right| =1</m> that satisfies the following boundary values
-        (shown in <xref ref="fig_ch-10-041">Figure</xref>).
-        <md>
-          <mrow>\phi(x,y) \amp = 100  \text{ for }   |z-2|=2,  z \ne 0,</mrow>
-          <mrow>\phi(x,y) \amp = \;\; 50  \text{ for }   |z-1| =1,  z \ne 0</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the crescent-shaped region that lies inside the disk
+          <m>\left| z-2\right| \lt 2</m> and outside the circle
+          <m>\left| z-1\right| =1</m> that satisfies the following boundary values
+          (shown in <xref ref="fig_ch-10-041">Figure</xref>).
+          <md>
+            <mrow>\phi(x,y) \amp = 100  \text{ for }   |z-2|=2,  z \ne 0,</mrow>
+            <mrow>\phi(x,y) \amp = \;\; 50  \text{ for }   |z-1| =1,  z \ne 0</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-041">
-          <caption>For <xref ref="ex_p-3">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-041.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-041.png"/>
         </figure>
-      </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\phi(x,y) = 150 - \frac{200x}{x^2+y^2}</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="ex_p-4">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> in the semi-infinite strip
-        <m>\frac{-\pi}{2}\lt x\lt \frac{\pi}{2},\,y>0</m> that has the boundary values shown in <xref ref="fig_ch-10-042">Figure</xref>:
-        <md>
-          <mrow>\phi(\frac{\pi}{2},y) \amp =  0  \text{ for }   y>0;</mrow>
-          <mrow>\phi(x,0) \amp = 50  \text{ for }   \frac{-\pi}{2} \lt  x \lt  \frac{\pi}{2};</mrow>
-          <mrow>\phi\left(\frac{-\pi}{2},y\right) \amp = 100  \text{ for }   y>0</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the semi-infinite strip
+          <m>-\frac{\pi}{2}\lt x\lt \frac{\pi}{2},\,y>0</m> that has the boundary values shown in <xref ref="fig_ch-10-042">Figure</xref>:
+          <md>
+            <mrow>\phi\left(\frac{\pi}{2},y\right) \amp =  0  \text{ for }   y>0;</mrow>
+            <mrow>\phi(x,0) \amp = 50  \text{ for }   -\frac{\pi}{2} \lt  x \lt  \frac{\pi}{2};</mrow>
+            <mrow>\phi\left(-\frac{\pi}{2},y\right) \amp = 100  \text{ for }   y>0</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-042">
-          <caption>For <xref ref="ex_p-4">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-042.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-042.png"/>
         </figure>
-      </p>
+      </statement>
     </exercise>
     <exercise xml:id="ex_p-5">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> in the domain <m>D</m> in the half-plane
-        <m>\mathrm{Re}(z) >0</m> that lies to the left of the hyperbola
-        <m>2x^2-2y^2=1</m> and satisfies the following boundary values
-        (shown in <xref ref="fig_ch-10-043">Figure</xref>).
-        <md>
-          <mrow>\phi(0,y) \amp = 50  \text{ for all }   y;</mrow>
-          <mrow>\phi(x,y) \amp = 100  \text{ when }   2x^2-2y^2=1</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the domain <m>D</m> in the half-plane
+          <m>\mathrm{Re}(z) >0</m> that lies to the left of the hyperbola
+          <m>2x^2-2y^2=1</m> and satisfies the following boundary values
+          (shown in <xref ref="fig_ch-10-043">Figure</xref>).
+          <md>
+            <mrow>\phi(0,y) \amp = 50  \text{ for all }   y;</mrow>
+            <mrow>\phi(x,y) \amp = 100  \text{ when }   2x^2-2y^2=1</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-043">
-          <caption>For <xref ref="ex_p-5">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-043.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-043.png"/>
         </figure>
-      </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\phi(x,y) = 50 + \frac{200}{\pi }\mathrm{Re}(\mathrm{Arcsin}z)</m>.
+        </p>
+      </solution>
     </exercise>
     <exercise xml:id="ex_p-6">
-      <p>
-        Find the electrostatic potential
-        <m>\phi(x,y)</m> in the infinite strip
-        <m>0\lt x\lt {\pi}/{2}</m> that satisfies the following boundary values
-        (shown in <xref ref="fig_ch-10-044">Figure</xref>).
-        <em>Hint</em>: Use <m>w=\sin z</m>.
-        <md>
-          <mrow>\phi(0,y) \amp = 100  \text{ for }   y>0;</mrow>
-          <mrow>\phi(\frac{\pi}{2},y)  \amp =  0  \text{ for all }   y;</mrow>
-          <mrow>\phi(0,y) \amp = -100  \text{ for }   y\lt 0</mrow>
-        </md>.
+      <statement>
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the infinite strip
+          <m>0\lt x\lt \frac{\pi}{2}</m> that satisfies the following boundary values
+          (shown in <xref ref="fig_ch-10-044">Figure</xref>).
+          <md>
+            <mrow>\phi(0,y) \amp = 100  \text{ for }   y>0;</mrow>
+            <mrow>\phi\left(\frac{\pi}{2},y\right)  \amp =  0  \text{ for all }   y;</mrow>
+            <mrow>\phi(0,y) \amp = -100  \text{ for }   y\lt 0</mrow>
+          </md>.
+        </p>
         <figure xml:id="fig_ch-10-044">
-          <caption>For <xref ref="ex_p-6">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-044.pdf"/>
+          <image width="73%" source="figs/ch-10/ch-10-fig-044.png"/>
         </figure>
-      </p>
+      </statement>
+      <hint>
+        <p>
+          Use <m>w=\sin z</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise>
-      <p>
-        Consider the conformal mapping <m>w = S(z) = \frac{2z-6}{z+3}</m>.
-      </p>
-      <ol>
-        <li>
+      <introduction>
+        <p>
+          Consider the conformal mapping <m>w = S(z) = \frac{2z-6}{z+3}</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
             Show that <m>S(z)</m> maps the domain <m>D</m> that is the portion of the right half-plane
             <m>\mathrm{Re}(z)>0</m> that lies exterior to the circle <m>|z-5|=4</m> onto the annulus <m>1\lt |w|\lt 2</m>.
           </p>
-        </li>
-        <li xml:id="ex_p-7">
+        </statement>
+        <solution>
+          <p>
+            <m>w=S(z)=\frac{2z-6}{z+3}</m>.
+          </p>
+        </solution>
+      </task>
+      <task xml:id="ex_p-7">
+        <statement>
           <p>
             Find the electrostatic potential
             <m>\phi(x,y)</m> in the domain <m>D</m> that satisfies the boundary values shown in <xref ref="fig_ch-10-045">Figure</xref>:
@@ -319,39 +347,42 @@
               <mrow>\phi(x,y) \amp = 200  \text{ when }   |z-5|=4</mrow>
             </md>.
           </p>
-        </li>
-      </ol>
+        </statement>
+        <solution>
+          <p>
+            <m>\phi (x,y)=200-\frac{200}{\ln 2}\ln\big|\frac{2z-6}{z+3}\big|</m>.
+          </p>
+        </solution>
+      </task>
       <figure xml:id="fig_ch-10-045">
-        <caption>For <xref ref="ex_p-7">Exercise</xref></caption>
-        <image width="73%" source="figs/ch-10/ch-10-fig-045.pdf"/>
+        <image width="73%" source="figs/ch-10/ch-10-fig-045.png"/>
       </figure>
     </exercise>
     <exercise>
-      <p>
-        Consider the conformal mapping <m>w = S(z) = \frac{z-10}{2z-5}</m>.
-        <ol>
-          <li>
-            <p>
-              Show that <m>S(z)</m> maps the domain <m>D</m> that is the portion of the disk
-              <m>|z|\lt 5</m> that lies outside the circle <m>|z-2|=2</m> onto the annulus defined by <m>1\lt |w|\lt 2</m>.
-            </p>
-          </li>
-          <li xml:id="ex_p-8">
-            <p>
-              Find the electrostatic potential
-              <m>\phi(x,y)</m> in the domain <m>D</m> that satisfies the boundary values shown in <xref ref="fig_ch-10-046">Figure</xref>.
-              <md>
-                <mrow>\phi(x,y) \amp = 100  \text{ when }   |z|=5;</mrow>
-                <mrow>\phi(x,y) \amp = 200  \text{ when }   |z-2|=2</mrow>
-              </md>.
-              <figure xml:id="fig_ch-10-046">
-                <caption>For <xref ref="ex_p-8">Exercise</xref></caption>
-                <image width="73%" source="figs/ch-10/ch-10-fig-046.pdf"/>
-              </figure>
-            </p>
-          </li>
-        </ol>
-      </p>
+      <introduction>
+        <p>
+          Consider the conformal mapping <m>w = S(z) = \frac{z-10}{2z-5}</m>.
+        </p>
+      </introduction>
+      <task>
+        <p>
+          Show that <m>S(z)</m> maps the domain <m>D</m> that is the portion of the disk
+          <m>|z|\lt 5</m> that lies outside the circle <m>|z-2|=2</m> onto the annulus defined by <m>1\lt |w|\lt 2</m>.
+        </p>
+      </task>
+      <task xml:id="ex_p-8">
+        <p>
+          Find the electrostatic potential
+          <m>\phi(x,y)</m> in the domain <m>D</m> that satisfies the boundary values shown in <xref ref="fig_ch-10-046">Figure</xref>.
+          <md>
+            <mrow>\phi(x,y) \amp = 100  \text{ when }   |z|=5;</mrow>
+            <mrow>\phi(x,y) \amp = 200  \text{ when }   |z-2|=2</mrow>
+          </md>.
+        </p>
+        <figure xml:id="fig_ch-10-046">
+          <image width="73%" source="figs/ch-10/ch-10-fig-046.png"/>
+        </figure>
+      </task>
     </exercise>
   </exercises>
 </section>

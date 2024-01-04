@@ -2,16 +2,16 @@
   <title>Integral Representations</title>
   <p>
     We now present some major results in the theory of functions of a complex variable.
-    The first one is known as Cauchy's integral formula.
+    The first one is known as Cauchy<nbsp/>'s integral formula.
     It shows that the value of an analytic function <m>f</m> can be represented by a certain contour integral.
     The <m>n^{th}</m> derivative,
     <m>f^{(n)}(z)</m>, has a similar representation.
-    In <xref ref="ch_taylor-laurent"/>,
+    In <xref ref="ch_taylor-laurent">Chapter</xref>,
     we use these results to prove Taylor's theorem and also establish the power series representation for analytic functions.
     The Cauchy integral formulas are a convenient tool for evaluating certain contour integrals.
   </p>
   <theorem xml:id="Cauchy_Int_Formula">
-    <title>Cauchy's integral formula</title>
+    <title>Cauchy<nbsp/>'s integral formula</title>
     <statement>
       <p>
         Let <m>f</m> be analytic in the simply connected domain <m>D</m> and let <m>C</m> be a simple closed positively oriented contour that lies in <m>D</m>.
@@ -35,8 +35,8 @@
       </men>.
     </p>
     <figure xml:id="fig_ch-06-33">
-      <caption>The contours <m>C</m> and <m>C_0</m> in the proof of Cauchy's integral formula</caption>
-      <image width="73%" source="figs/ch-06/ch-06-fig-33.pdf"/>
+      <caption>The contours <m>C</m> and <m>C_0</m> in the proof of Cauchy<nbsp/>'s integral formula</caption>
+      <image width="73%" source="figs/ch-06/ch-06-fig-33.png"/>
     </figure>
     <p>
       Since <m>f(z_0)</m> is a fixed value,
@@ -57,9 +57,9 @@
       (<xref ref="ML_Inequality_Thm">Theorem</xref>),
       we obtain the estimate:
       <md>
-        <mrow>\left|\frac{1}{2\pi i}\int_C\frac{f(z)\,dz}{z-z_0}-f(z_0) \right| \amp = \left|\frac{1}{2\pi i} \int_{C_0}\frac{f(z)\,dz}{z-z_0}-\frac{1}{2\pi i} \int_{C_0}\frac{f(z_0) dz}{z-z_0}\right|</mrow>
-        <mrow>\amp \le \frac{1}{2\pi }\int_{C_0}\frac{|f(z) -f(z_0)|}{|z-z_0|} \, |dz|</mrow>
-        <mrow>\amp \le \frac{1}{2\pi }\frac{\varepsilon }{(\frac{1}{2}) \delta } \pi \delta</mrow>
+        <mrow>\left|\frac{1}{2\pi i}\int_C\frac{f(z)}{z-z_0}\,dz - f(z_0) \right| \amp = \left|\frac{1}{2\pi i} \int_{C_0}\frac{f(z)}{z-z_0}\,dz - \frac{1}{2\pi i} \int_{C_0}\frac{f(z_0)}{z-z_0}\,dz\right|</mrow>
+        <mrow>\amp \le \frac{1}{2\pi}\int_{C_0}\frac{|f(z) -f(z_0)|}{|z-z_0|}\,|dz|</mrow>
+        <mrow>\amp \le \frac{1}{2\pi}\frac{\varepsilon}{(\frac{1}{2}) \delta } \pi \delta</mrow>
         <mrow>\amp = \varepsilon </mrow>
       </md>.
     </p>
@@ -79,7 +79,7 @@
         Recall that <m>C_1^+(0)</m> is the circle centered at 0 with radius 1 and having positive orientation.
         We have <m>f(z) = \exp z</m> and <m>f(1)=e</m>.
         The point <m>z_0=1</m> lies interior to the circle,
-        so Cauchy's integral formula implies that
+        so Cauchy<nbsp/>'s integral formula implies that
         <me>
           e = f(1) = \frac{1}{2\pi i}\int_C\frac{\exp z}{z-1}\,dz
         </me>.
@@ -90,19 +90,21 @@
   <example>
     <statement>
       <p>
-        Show that <m>\int_{C_1^+(0)}\frac{\sin z}{4z+\pi}\,dz = i\frac{-\sqrt{2}\pi }{4}</m>.
+        Show that <m>\int_{C_1^+(0)}\frac{\sin z}{4z+\pi}\,dz = i\left(-\frac{\sqrt{2}\pi}{4}\right)</m>.
+      </p>
+      <p>
+        Here we have <m>f(z) = \sin z</m>.
+        We manipulate the integral and use Cauchy<nbsp/>'s integral formula to obtain
+        <md>
+          <mrow>\int_{C_1^+(0)}\frac{\sin z}{4z+\pi}\,dz \amp = \frac{ 1}{4}\int_{C_1^+(0)}\frac{\sin z}{z+(\frac{\pi}{4})}\,dz</mrow>
+          <mrow>\amp = \frac{1}{4}\int_{C_1^+(0)}\frac{f(z)}{z-(-\frac{\pi}{4})}\,dz</mrow>
+          <mrow>\amp = \frac{1}{4}(2\pi i) \, f\!\left(\!-\frac{\pi}{4}\right)</mrow>
+          <mrow>\amp = \frac{\pi i}{2}\sin\!\left(\!-\frac{\pi}{4}\right) = -\frac{\sqrt{2}\pi i}{4}</mrow>
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
-        Here we have <m>f(z) = \sin z</m>.
-        We manipulate the integral and use Cauchy's integral formula to obtain
-        <md>
-          <mrow>\int_{C_1^+(0)}\frac{\sin z}{4z+\pi }\,dz \amp = \frac{ 1}{4}\int_{C_1^+(0)}\frac{\sin z}{z+(\frac{\pi}{4})}\,dz</mrow>
-          <mrow>\amp = \frac{1}{4}\int_{C_1^+(0)}\frac{f(z)}{z-(-\frac{\pi}{4})}\,dz</mrow>
-          <mrow>\amp = \frac{1}{4}(2\pi i) \, f\!\left(\frac{-\pi }{4}\right)</mrow>
-          <mrow>\amp = \frac{\pi i}{2}\sin\!\left(\frac{-\pi }{4}\right) = \frac{-\sqrt{2}\pi i}{4}</mrow>
-        </md>.
       </p>
     </solution>
   </example>
@@ -111,24 +113,26 @@
       <p>
         Show that <m>\displaystyle\int_{C_1^+(0)}\frac{\exp (i\pi z)}{2z^2-5z+2}\,dz=\frac{2\pi}{3}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         We see that <m>2z^2-5z+2 = (2z-1)(z-2) = \frac{1}{2}(z-\frac{1}{2})(z-2)</m>.
         The only zero of this expression that lies in the interior of <m>C_1(0)</m> is <m>z_0 = \frac{1}{2}</m>.
         We set <m>f(z) = \frac{\exp (i\pi z)}{{z-2}}</m> and use <xref ref="Cauchy_Int_Formula">Theorem</xref> to conclude that
         <md>
-          <mrow>\int_{C_1^+(0)}\frac{\exp (i\pi z) dz}{2z^2-5z+2} \amp = \frac{1}{2}\int_{C_1^+(0)}\frac{f(z)\,dz}{z-\frac{{1}}{2}}</mrow>
+          <mrow>\int_{C_1^+(0)}\frac{\exp (i\pi z)}{2z^2-5z+2}\,dz \amp = \frac{1}{2}\int_{C_1^+(0)}\frac{f(z)}{z-\frac{{1}}{2}}\,dz</mrow>
           <mrow>\amp = \frac{1}{2}(2\pi i) \, f\!\left(\frac{1}{2}\right)</mrow>
-          <mrow>\amp = \pi i\frac{\exp (\frac{i\pi }{2})}{\frac{{1}}{2}-2}</mrow>
+          <mrow>\amp = \pi i\frac{\exp (\frac{i\pi}{2})}{\frac{{1}}{2}-2}</mrow>
           <mrow>\amp = \frac{2\pi}{3}</mrow>
         </md>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <p>
     We now state a general result that shows how to accomplish differentiation under the integral sign.
-    The proof is presented in some advanced texts.
+    The proof is in some advanced texts.
     See, for instance, Rolf Nevanlinna and V. Paatero,
     <em>Introduction to Complex Analysis</em>
     (Reading, Mass.: Addison-Wesley, 1969), Section 9.7.
@@ -138,22 +142,22 @@
     <statement>
       <p>
         Let <m>G</m><nbsp/>be an open set and let
-        <m>I:a \le t \le b</m><nbsp/>be an interval of real numbers.
-        Let <m>g(z,t)</m><nbsp/>and its partial derivative
+        <m>I:a \le t \le b</m> be an interval of real numbers.
+        Let <m>g(z,t)</m> and its partial derivative
         <m>g_{z}(z,t)</m><nbsp/>with respect to <m>z</m><nbsp/>be continuous functions for all <m>z</m><nbsp/>in <m>G</m><nbsp/>and all <m>t</m><nbsp/>in <m>I</m>.
-        Then <m>F(z) = \int_a^bg(z\text{ \(,\) } t)\,dt</m> is analytic for <m>z</m><nbsp/>in <m>G</m>,
-        and <m>F\,'(z) = \int_a^bg_z(z \text{ \(,\) } t)\,dt</m>.
+        Then <m>F(z) = \int_a^bg(z,t)\,dt</m> is analytic for <m>z</m><nbsp/>in <m>G</m>,
+        and <m>F\,'(z) = \int_a^bg_z(z,t)\,dt</m>.
       </p>
     </statement>
   </theorem>
   <p>
     We now generalize <xref ref="Cauchy_Int_Formula">Theorem</xref>
     to give an integral representation for the <m>n</m>th derivative,
-    <m>f^{(n)}( z)</m>.
-    We use Leibniz's rule in the proof and note that this method of proof is a mnemonic device for remembering Theorem 6.12.
+    <m>f^{(n)}(z)</m>.
+    We use Leibniz's rule in the proof and note that this method of proof serves as a mnemonic device for remembering <xref ref="Cauchy_Int_Formulas">Theorem</xref>.
   </p>
-  <theorem xml:id="Cauchy_Int_Formulae">
-    <title>Cauchy's integral formulas for derivatives</title>
+  <theorem xml:id="Cauchy_Int_Formulas">
+    <title>Cauchy<nbsp/>'s integral formulas for derivatives</title>
     <statement>
       <p>
         Let <m>f</m><nbsp/>be analytic in the simply connected domain <m>D</m> and let <m>C</m><nbsp/>be a simple closed positively oriented contour that lies in <m>D</m>.
@@ -173,8 +177,6 @@
       <me>
         C:\xi =\xi (t)   \text{ and }   d\,\xi = \xi \,'(t)\,dt,  \text{ for }   a \le t \le b
       </me>.
-    </p>
-    <p>
       We use <xref ref="Cauchy_Int_Formula">Theorem</xref> and write
       <men xml:id="Cauchy_4">
         f(z) = \frac{1}{2\pi i}\int_C\frac{f(\xi)}{\xi -z}\,d\xi = \frac{1}{2\pi i}\int_a^b\frac{f\big(\xi(t)\big) \xi \,'(t)\,dt}{\xi(t)-z}
@@ -185,8 +187,6 @@
       <me>
         g(z,t)=\frac{f\big(\xi(t)\big) \xi \,'(t)}{\xi(t)-z}  \text{ and }   \frac{\partial g}{dz}(z,t)= g_{z}(z,\,t)=\frac{f\big(\xi(t)\big) \xi \,'(t)}{\big(\xi (t)-z\big)^2}
       </me>.
-    </p>
-    <p>
       Moreover, <m>g(z,t)</m> and
       <m>g_{z}(z,t)</m> are continuous on the interior of <m>C</m>,
       which is an open set.
@@ -195,8 +195,7 @@
         f\,'(z)=\frac{1}{2\pi i}\int_a^b\frac{f\big(\xi(t)\big) \xi \,'(t)\,dt}{\big(\xi(t)-z\big)^2}= \frac{1}{2\pi i}\int_C \frac{f(\xi)\,d\xi}{(\xi -z)^2}
       </me>,
       and the proof for the case <m>n=1</m> is complete.
-      We can apply the same argument to the analytic function <m>f\,'</m> and show that its derivative
-      <m>f\,^{\prime \prime }</m> is also represented by Equation <xref ref="f_n_z__etc"/> for <m>n=2</m>.
+      We can apply the same argument to the analytic function <m>f\,'</m> and show that its derivative <m>f\,''</m> is also represented by Equation <xref ref="f_n_z__etc"/> for <m>n=2</m>.
       The principle of mathematical induction establishes the theorem for all integers <m>n \ge 0</m>.
     </p>
   </proof>
@@ -207,23 +206,25 @@
         Show that, if <m>C</m> is a simple closed positively oriented contour such that <m>z_0</m> lies interior to <m>C</m>,
         then for any integer <m>n \ge 1</m>,
         <men xml:id="Cauchy_Int_Ex">
-          \int_C\frac{dz}{z-z_0}=2\pi i  \text{ and }   \int_C\frac{dz}{(z-z_0)^{n+1}} = 0
+          \int_C\frac{1}{z-z_0}\,dz=2\pi i  \text{ and }   \int_C\frac{1}{(z-z_0)^{n+1}}\,dz = 0
         </men>.
       </p>
-    </statement>
-    <solution>
       <p>
         We let <m>f(z)=1</m>.
         Then <m>f^{(n)}(z)=0</m> for <m>n \ge 1</m>.
         <xref ref="Cauchy_Int_Formula">Theorem</xref>
         implies that the value of the first integral in Equations <xref ref="Cauchy_Int_Ex"/> is
         <me>
-          \int_C\frac{dz}{z-z_0} = 2\pi i f(z_0)=2\pi i
+          \int_C\frac{1}{z-z_0}\,dz = 2\pi i f(z_0)=2\pi i
         </me>.
-        and <xref ref="Cauchy_Int_Formulae">Theorem</xref> further implies that
+        and <xref ref="Cauchy_Int_Formulas">Theorem</xref> further implies that
         <me>
-          \int_C\frac{dz}{(z-z_0)^{n+1}} = \frac{2\pi i}{n!}f^{(n)}(z_0)=0
+          \int_C\frac{1}{(z-z_0)^{n+1}}\,dz = \frac{2\pi i}{n!}f^{(n)}(z_0)=0
         </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
@@ -231,27 +232,30 @@
     This result is the same as that proven earlier in <xref ref="x2Pi_or_zero">Corollary</xref>.
     Obviously, though,
     the technique of using <xref ref="Cauchy_Int_Formula">Theorems</xref>
-    and <xref ref="Cauchy_Int_Formulae"></xref> is easier.
+    and <xref ref="Cauchy_Int_Formulas"></xref> is easier.
   </p>
   <example>
     <statement>
       <p>
         Show that <m>\displaystyle\int_{C_2^+(0)}\frac{\exp z^2}{(z-i)^4}\,dz = \frac{-4\pi}{3e}</m>.
       </p>
-    </statement>
-    <solution>
       <p>
         If we let <m>f(z)=\exp z^2</m>,
         then a straightforward calculation shows that <m>f^{(3)}(z)=(12z+8z^3) \exp z^2</m>.
-        Using Cauchy's integral formulas with <m>n=3</m>, we conclude that
+        Using Cauchy<nbsp/>'s integral formulas with <m>n=3</m>,
+        we conclude that
         <me>
-          \int_C\frac{\exp z^2}{(z-i) ^{4}}\ dz=\frac{2\pi i}{3!}f^{(3)}(i)=\frac{2\pi i}{6}\frac{4i}{e}=\frac{-4\pi}{3e}
-        </me>.
+          \int_C\frac{\exp z^2}{(z-i)^4}\ dz=\frac{2\pi i}{3!}f^{(3)}(i)=\frac{2\pi i}{6}\frac{4i}{e}=\frac{-4\pi}{3e}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
       </p>
     </solution>
   </example>
   <p>
-    We now state two important corollaries of <xref ref="Cauchy_Int_Formulae">Theorem</xref>.
+    We now state two important corollaries of <xref ref="Cauchy_Int_Formulas">Theorem</xref>.
   </p>
   <corollary xml:id="All_derivs">
     <statement>
@@ -268,7 +272,7 @@
       For each point <m>z_0</m> in <m>D</m>,
       there exists a closed disk
       <m>\left\vert z-z_0\right\vert \le R</m> that is contained in <m>D</m>.
-      We use the circle <m>C=C_R(z_0)=\{z:|z-z_0|=R\}</m> in <xref ref="Cauchy_Int_Formulae">Theorem</xref>
+      We use the circle <m>C=C_R(z_0)=\{z:|z-z_0|=R\}</m> in <xref ref="Cauchy_Int_Formulas">Theorem</xref>
       to show that <m>f^{(n)}(z_0)</m> exists for all integers <m>n \ge 0</m>.
     </p>
   </proof>
@@ -277,7 +281,7 @@
       This result is interesting,
       as it illustrates a big difference between real and complex functions.
       A real function <m>f</m> can have the property that <m>f\,'</m> exists everywhere in a domain <m>D</m>,
-      but <m>f\,^{\prime \prime}</m> exists nowhere.
+      but <m>f\,''</m> exists nowhere.
       <xref ref="All_derivs">Corollary</xref>
       states that if a complex function <m>f</m> has the property that <m>f\,'</m> exists everywhere in a domain <m>D</m>, then,
       remarkably,
@@ -300,208 +304,308 @@
       In this disk, a conjugate harmonic function <m>v</m> exists,
       so the function <m>f(z) =u+iv</m> is analytic.
       We use the Cauchy-Riemann equations to get
-      <m>f\,^{\prime }(z)=u_{x}+iv_{x}=v_{y}-iu_{y}</m>, for <m>z\in D_R(z_0)</m>.
+      <m>f\,'(z)=u_x+iv_x=v_y-iu_y</m>, for <m>z\in D_R(z_0)</m>.
       Since <m>f\,'</m> is analytic in <m>D_R(z_0)</m>,
       the functions <m>u_x</m> and <m>u_y</m> are harmonic there.
       Again, we can use the Cauchy-Riemann equations to obtain,
       for <m>z\in D_R(z_0)</m>,
       <me>
-        f\,^{\prime \prime }(z) = u_{xx}+iv_{xx} = v_{yx}-iu_{yx}=-u_{yy}-iv_{yy}
+        f\,''(z) = u_{xx}+iv_{xx} = v_{yx}-iu_{yx}=-u_{yy}-iv_{yy}
       </me>.
-    </p>
-    <p>
-      Because <m>f\,^{\prime \prime }</m> is analytic in <m>D_R(z_0)</m>,
+      Because <m>f\,''</m> is analytic in <m>D_R(z_0)</m>,
       the functions <m>u_{xx}</m>,
       <m>u_{xy}</m>, and <m>u_{yy}</m> are harmonic there.
     </p>
   </proof>
-  <p>
-    <em>Exercises for <xref ref="sec_integral-representations">Section</xref></em>
-    Recall that <m>C_{\rho }^+(z_0)</m> denotes the positively oriented circle <m>\{z:|z-z_0| = \rho \}</m>.
-  </p>
-  <ol>
-    <li xml:id="x6_5_1">
-      <p>
-        Evaluate <m>\int_{C_1^+(0)}(\exp z+\cos z)z^{-1}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_2">
-      <p>
-        Evaluate <m>\int_{C_1^+(1)}(z+1) ^{-1}(z-1)^{-1}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_3">
-      <p>
-        Evaluate <m>\int_{C_1^+(1)}(z+1) ^{-1}(z-1)^{-2}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_4">
-      <p>
-        Evaluate <m>\int_{C_1^+(1)}(z^3-1)^{-1}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_5">
-      <p>
-        Evaluate <m>\int_{C_1^+(0)}z^{-4}\sin z\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_6">
-      <p>
-        Evaluate <m>\int_{C_1^+(0)}(z\cos z)^{-1}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_7">
-      <p>
-        Evaluate <m>\int_{C_1^+(0)}z^{-3}\sinh (z^2)\,dz</m>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Evaluate <m>\int_Cz^{-2}\sin z\ dz</m> along the following contours:\label {6.5.8}
-      </p>
-      <ol>
-        <li>
+  <exercises xml:id="exercises_integral-representations">
+    <title>Exercises</title>
+    <p>
+      Recall that <m>C_{\rho }^+(z_0)</m> denotes the positively oriented circle <m>\{z:|z-z_0| = \rho \}</m>.
+    </p>
+    <exercise xml:id="x6_5_1">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(0)}(\exp z+\cos z)z^{-1}\,dz</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>4\pi i</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_2">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(1)}(z+1)^{-1}(z-1)^{-1}\,dz</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_5_3">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(1)}(z+1)^{-1}(z-1)^{-2}\,dz</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-i\frac{\pi}{2}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_4">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(1)}(z^3-1)^{-1}\,dz</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_5_5">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(0)}z^{-4}\sin z\,dz</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>-i\frac{\pi}{3}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_6">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(0)}(z\cos z)^{-1}\,dz</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_5_7">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(0)}z^{-3}\sinh (z^2)\,dz</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>2\pi i</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <introduction>
+        <p>
+          Evaluate <m>\int_Cz^{-2}\sin z\ dz</m> along the following contours: \label {6.5.8}
+        </p>
+      </introduction>
+      <task>
+        <p>
+          The circle <m>C_1^+(\frac{\pi}{2})</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The circle <m>C_1^+(\frac{\pi}{4})</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x6_5_9">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(0)}z^{-n}\exp z\,dz</m>,
+          where <m>n</m> is a positive integer.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{2\pi i}{(n-1) !}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_10">
+      <introduction>
+        <p>
+          Evaluate <m>\int_Cz^{-2}(z^2-16)^{-1}\exp z\,dz</m> along the following contours:
+        </p>
+      </introduction>
+      <task>
+        <p>
+          The circle <m>C_1^+(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The circle <m>C_1^+(4)</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x6_5_11">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(1+i)}(z^4+4)^{-1}\,dz</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\frac{\pi}{8}-i\frac{\pi}{8}</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_12">
+      <introduction>
+        <p>
+          Evaluate <m>\int_Cz^{-1}(z-1)^{-1}\exp z\,dz</m> along the following contours:
+        </p>
+      </introduction>
+      <task>
+        <p>
+          The circle <m>C_{\frac{1}{2}}^+(0)</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          The circle <m>C_2^+(0)</m>.
+        </p>
+      </task>
+    </exercise>
+    <exercise xml:id="x6_5_13">
+      <introduction>
+        <p>
+          Evaluate <m>\int_C(z^2+1)^{-1}\sin z\,dz</m> along the following contours:
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
-            The circle <m>C_1^+(\frac{\pi }{2})</m>.
+            The circle <m>C_1^+(i)</m>.
           </p>
-        </li>
-        <li>
+        </statement>
+        <solution>
           <p>
-            The circle <m>C_1^+(\frac{\pi }{4})</m>.
+            <m>i\pi \sinh 1</m>.
           </p>
-        </li>
-      </ol>
-    </li>
-    <li xml:id="x6_5_9">
-      <p>
-        Evaluate <m>\int_{C_1^+(0)}z^{-n}\exp z\,dz</m>,
-        where <m>n</m> is a positive integer.
-      </p>
-    </li>
-    <li xml:id="x6_5_10">
-      <p>
-        Evaluate <m>\int_Cz^{-2}(z^2-16) ^{-1}\exp z\,dz</m> along the following contours:
-        <ol>
-          <li>
-            <p>
-              The circle <m>C_1^+(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The circle <m>C_1^+(4)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-    <li xml:id="x6_5_11">
-      <p>
-        Evaluate <m>\int_{C_1^+(1+i)}(z^{4}+4) ^{-1}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_12">
-      <p>
-        Evaluate <m>\int_Cz^{-1}(z-1) ^{-1}\exp z\,dz</m> along the following contours:
-        <ol>
-          <li>
-            <p>
-              The circle <m>C_{\frac{1}{2}}^+(0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The circle <m>C_2^+(0)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-    <li xml:id="x6_5_13">
-      <p>
-        Evaluate <m>\int_C(z^2+1) ^{-1}\sin z\,dz</m> along the following contours:
-        <ol>
-          <li>
-            <p>
-              The circle <m>C_1^+(i)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The circle <m>C_1^+(-i)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-    <li xml:id="x6_5_14">
-      <p>
-        Evaluate <m>\int_{C_1^+(i)}(z^2+1) ^{-2}\,dz</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_15">
-      <p>
-        Evaluate <m>\int_C(z^2+1) ^{-1}\,dz</m> along the following contours:
-        <ol>
-          <li>
-            <p>
-              The circle <m>C_1^+(i)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The circle <m>C_1^+(-i)</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-    <li xml:id="x6_5_16">
-      <p>
-        Let <m>P(z)=a_0+a_1z+a_2z^2+a_3z^3</m>.
-        Evaluate <m>\int_{C_1^+(0)}P(z)z^{-n}\,dz</m>,
-        where <m>n</m> is a positive integer.
-      </p>
-    </li>
-    <li>
-      <p>
-        Let <m>z_1</m> and <m>z_2</m> be two complex numbers that lie interior to the simple closed contour <m>C</m> with positive orientation.
-        Evaluate
-        <men xml:id="x6_5_17">
-          \int_C(z-z_1)^{-1}(z-z_2)^{-1}\,dz
-        </men>.
-      </p>
-    </li>
-    <li>
-      <p>
-        Let <m>f</m> be analytic in the simply connected domain <m>D</m> and let <m>z_1</m> and <m>z_2</m> be two complex numbers that lie interior to the simple closed contour <m>C</m> having positive orientation that lies in <m>D</m>.
-        Show that
-        <me>
-          \frac{f(z_2)-f(z_1)}{z_2-z_1} = \frac{1}{2\pi i}\int_C\frac{f(z)\,dz}{(z-z_1)(z-z_2)}
-        </me>.
-        What happens when <m>z_2 \to z_1</m>?
-        Why?
-      </p>
-    </li>
-    <li xml:id="x6_5_18">
-      <p>
-        The <em>Legendre polynomial</em>
-        <m>P_n(z)</m> is defined by
-        <me>
-          P_n(z)=\frac{1}{2^n n!}\frac{d^n}{dz^n}[( z^2-1)^n]
-        </me>.
-        Use Cauchy's integral formula to show that
-        <me>
-          P_n(z) = \frac{1}{2\pi i}\int_C\frac{(\xi ^2-1)^n \, d\xi}{2^n(\xi -z)^{n+1}}
-        </me>,
-        where <m>C</m> is a simple closed contour having positive orientation and <m>z</m> lies inside <m>C</m>.
-      </p>
-    </li>
-    <li xml:id="x6_5_20">
-      <p>
-        Discuss the importance of being able to define an analytic function <m>f(z)</m> with the contour integral in <xref ref="Cauchy_Formula_Eq">Formula</xref>.
-        How does this definition differ from other definitions of a function that you have learned?
-      </p>
-    </li>
-  </ol>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The circle <m>C_1^+(-i)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>i\pi \sinh 1</m>.
+          </p>
+        </solution>
+      </task>
+    </exercise>
+    <exercise xml:id="x6_5_14">
+      <statement>
+        <p>
+          Evaluate <m>\int_{C_1^+(i)}(z^2+1)^{-2}\,dz</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_5_15">
+      <introduction>
+        <p>
+          Evaluate <m>\int_C(z^2+1)^{-1}\,dz</m> along the following contours:
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            The circle <m>C_1^+(i)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\pi</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The circle <m>C_1^+(-i)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>-\pi</m>.
+          </p>
+        </solution>
+      </task>
+    </exercise>
+    <exercise xml:id="x6_5_16">
+      <statement>
+        <p>
+          Let <m>P(z)=a_0+a_1z+a_2z^2+a_3z^3</m>.
+          Evaluate <m>\int_{C_1^+(0)}P(z)z^{-n}\,dz</m>,
+          where <m>n</m> is a positive integer.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>z_1</m> and <m>z_2</m> be two complex numbers that lie interior to the simple closed contour <m>C</m> with positive orientation.
+          Evaluate
+          <men xml:id="x6_5_17">
+            \int_C(z-z_1)^{-1}(z-z_2)^{-1}\,dz
+          </men>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>0</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>f</m> be analytic in the simply connected domain <m>D</m> and let <m>z_1</m> and <m>z_2</m> be two complex numbers that lie interior to the simple closed contour <m>C</m> having positive orientation that lies in <m>D</m>.
+          Show that
+          <me>
+            \frac{f(z_2)-f(z_1)}{z_2-z_1} = \frac{1}{2\pi i}\int_C\frac{f(z)}{(z-z_1)(z-z_2)}\,dz
+          </me>.
+          What happens when <m>z_2 \to z_1</m>?
+          Why?
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="x6_5_18">
+      <statement>
+        <p>
+          The <em>Legendre polynomial</em>
+          <m>P_n(z)</m> is defined by
+          <me>
+            P_n(z)=\frac{1}{2^n n!}\frac{d^n}{dz^n}[(z^2-1)^n]
+          </me>.
+          Use Cauchy<nbsp/>'s integral formula to show that
+          <me>
+            P_n(z) = \frac{1}{2\pi i}\int_C\frac{(\xi ^2-1)^n}{2^n(\xi -z)^{n+1}}\,d\xi
+          </me>,
+          where <m>C</m> is a simple closed contour having positive orientation and <m>z</m> lies inside <m>C</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>f(z)=(z^2-1)^n</m>, which is analytic everywhere.
+          By Cauchy<nbsp/>'s integral formulas,
+          <m>P_n(z) = \frac{1}{2^nn!}f\,^{(n)}(z) = \frac{1}{2^nn!}\left[\frac{n!}{2\pi i}\int_{C}\frac{f(\xi)}{(\xi -z)^{n+1}}\,d\xi\right]</m>.
+          The conclusion follows from this result.
+          Show the details.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="x6_5_20">
+      <statement>
+        <p>
+          Discuss the importance of being able to define an analytic function <m>f(z)</m> with the contour integral in Formula <xref ref="Cauchy_Formula_Eq"/>.
+          How does this definition differ from other definitions of a function that you have learned?
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>
