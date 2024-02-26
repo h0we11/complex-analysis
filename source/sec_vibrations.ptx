@@ -13,7 +13,7 @@
     </p>
     <figure xml:id="fig_ch-11-17">
       <caption>The spring mass system</caption>
-      <image width="73%" source="figs/ch-11/ch-11-fig-17.png"/>
+      <image width="73%" source="figs/ch-11/ch-11-fig-17.svg"/>
     </figure>
     <p>
       Suppose there is no friction to slow down the motion of the mass,
@@ -95,7 +95,7 @@
     </p>
     <figure xml:id="fig_ch-11-18">
       <caption>The spring mass dashpot system</caption>
-      <image width="73%" source="figs/ch-11/ch-11-fig-18.png"/>
+      <image width="73%" source="figs/ch-11/ch-11-fig-18.svg"/>
     </figure>
     <p>
       The damping constant <m>c</m> must be positive, for if <m>U\,'(t)>0</m>,
@@ -128,7 +128,7 @@
     </p>
     <figure xml:id="fig_ch-11-19">
       <caption>The dashpot system with an external force</caption>
-      <image width="73%" source="figs/ch-11/ch-11-fig-19.png"/>
+      <image width="73%" source="figs/ch-11/ch-11-fig-19.svg"/>
     </figure>
     <p>
       Thus, the <em>forced motion</em>
@@ -210,6 +210,8 @@
           Find the general solution to <m>U\,''(t) + 2U\,'(t) + U(t) = F(t)</m>,
           where <m>F(t)</m> is given by the Fourier series <m>F(t)=\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}\cos [(2n-1) t]</m>.
         </p>
+      </statement>
+      <solution>
         <p>
           First we solve <m>U_h\,''(t) + 2U_h\,'(t) + U_h(t) = 0</m> for the transient solution.
           The characteristic equation is <m>\lambda^2+2\lambda +1=0</m>,
@@ -235,10 +237,6 @@
             <mrow>F(t) \amp = \frac{a_0}{2} + \sum_{n=1}^{\infty}\big[(1-n^2) a_n+2nb_n\big] \cos nt</mrow>
             <mrow>\amp +\sum\limits_{n=1}^{\infty}\big[-2na_n+(1-n^2) b_n\big] \sin nt</mrow>
           </md>.
-        </p>
-      </statement>
-      <solution>
-        <p>
         </p>
       </solution>
     </example>
@@ -270,65 +268,69 @@
     </p>
     <exercises xml:id="exercises_vibrations">
       <title>Exercises</title>
-      <p>
-        \end{exercise}
-      </p>
       <exercise>
-        <introduction>
+        <statement>
           <p>
             For the exercises in this section solve for <m>U(t)</m> given the following Fourier series for <m>F(t)</m>.
           </p>
-        </introduction>
-        <task>
+          <task>
+            <p>
+              <m>F(t) = \sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n}\sin(nt)</m>,
+              where <m>F(t)=\frac{t}{2}</m> for <m>-\pi \lt t \lt \pi</m>.
+            </p>
+          </task>
+          <task>
+            <p>
+              <m>F(t) = \sum\limits_{n=1}^\infty \frac{\sin(\frac{n\pi}{2}}{n}\cos(nt)</m>,
+              where <m>F(t) = \begin{cases}-\frac{\pi}{4}, \amp \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ +\frac{\pi}{4}, \amp \text{ for } -\frac{\pi}{2} \lt t \lt \frac{\pi}{2},\\ -\frac{\pi}{4}, \amp \text{ for } -\pi \lt t \lt -\frac{\pi}{2}. \end{cases}</m>
+            </p>
+          </task>
+          <task>
+            <p>
+              <m>F(t) = \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2}}{n^2\pi}\sin(nt)</m>,
+              shown in <xref ref="fig_ch-11-20">Figure</xref>.
+            </p>
+          </task>
+          <task>
+            <p>
+              <m>F(t) = \sum\limits_{n=1}^\infty \frac{1-(-1)^n}{2n^2}\cos(nt)</m>,
+              shown in <xref ref="fig_ch-11-21">Figure</xref>.
+            </p>
+            <figure xml:id="fig_ch-11-20">
+              <caption>Graph of <m>U(t)</m> for the exercises</caption>
+              <image width="73%" source="figs/ch-11/ch-11-fig-20.svg"/>
+            </figure>
+            <figure xml:id="fig_ch-11-21">
+              <caption>Graph of <m>F(t)</m> for the exercises</caption>
+              {0.5\linewidth}
+              <image width="73%" source="figs/ch-11/ch-11-fig-21.svg"/>
+            </figure>
+          </task>
           <p>
-            <m>F(t) = \sum\limits_{n=1}^\infty \frac{(-1)^{n+1}}{n}\sin(nt)</m>,
-            where <m>F(t)=\frac{t}{2}</m> for <m>-\pi \lt t \lt \pi</m>.
+            \begin{task} <m>U\,''(t) + 2U\,'(t) + 2U(t) = F(t)</m>.
           </p>
-        </task>
-        <task>
           <p>
-            <m>F(t) = \sum\limits_{n=1}^\infty \frac{\sin(\frac{n\pi}{2}}{n}\cos(nt)</m>,
-            where <m>F(t) = \begin{cases}-\frac{\pi}{4}, \amp \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ +\frac{\pi}{4}, \amp \text{ for } -\frac{\pi}{2} \lt t \lt \frac{\pi}{2},\\ -\frac{\pi}{4}, \amp \text{ for } -\pi \lt t \lt -\frac{\pi}{2}. \end{cases}</m>
+            \begin{task}[(a)]
           </p>
-        </task>
-        <task>
+        </statement>
+        <solution>
           <p>
-            <m>F(t) = \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2}}{n^2\pi}\sin(nt)</m>,
-            shown in <xref ref="fig_ch-11-20">Figure</xref>.
+            <m>U_h(t)=c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t)</m>,
+            <m>U_p(t) = \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^{n}(n^2-1)}{n(4+n^2)}\sin(nt)</m>,
+            <m>U(t)= c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t) + \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-2)}{n(4+n^2)}\sin(nt)</m>.
           </p>
-        </task>
-        <task>
           <p>
-            <m>F(t) = \sum\limits_{n=1}^\infty \frac{1-(-1)^n}{2n^2}\cos(nt)</m>,
-            shown in <xref ref="fig_ch-11-21">Figure</xref>.
+            \begin{task}[(c)] <m>U_h(t)=c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t)</m>,
+            <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{8\sin(\frac{n\pi}{2})}{n(4+n^2)}\cos(nt) + \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2})(2-n^2)}{n^2(4+n^4)\pi}\sin(nt)</m>,
+            <m>U(t)= c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t) + \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-2)}{n(4+n^2)}\sin(nt)</m>.
           </p>
-          <figure xml:id="fig_ch-11-20">
-            <image width="73%" source="figs/ch-11/ch-11-fig-20.png"/>
-          </figure>
-          <figure xml:id="fig_ch-11-21">
-            {0.5\linewidth}
-            <image width="73%" source="figs/ch-11/ch-11-fig-21.png"/>
-          </figure>
-        </task>
-        <p>
-          \begin{task} <m>U\,''(t) + 2U\,'(t) + 2U(t) = F(t)</m>.
-        </p>
-        <p>
-          \begin{task}[(a)] \solution{ <m>U_h(t)=c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t)</m>,
-          <m>U_p(t) = \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^{n}(n^2-1)}{n(4+n^2)}\sin(nt)</m>,
-          <m>U(t)= c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t) + \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-2)}{n(4+n^2)}\sin(nt)</m>.
-        </p>
-        <p>
-          \begin{task}[(c)] <m>U_h(t)=c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t)</m>,
-          <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{8\sin(\frac{n\pi}{2})}{n(4+n^2)}\cos(nt) + \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2})(2-n^2)}{n^2(4+n^4)\pi}\sin(nt)</m>,
-          <m>U(t)= c_1e^{-t}\sin(t) + c_2e^{-t}\cos(t) + \sum\limits_{n=1}^\infty \frac{2(-1)^n}{4+n^4}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-2)}{n(4+n^2)}\sin(nt)</m>.
-        </p>
-        <p>
-          \begin{task}[(c)] <em>Alternative Answer:</em>
-          <em>Alternative Answer:</em>
-          <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{8(-1)^n}{(2n-1)(16n^4-32n^3+24n^20-8n+5)\pi}\cos\big((2n-1)t\big)</m> <m>+\sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-1)}{(2n-1)^2(16n^4-32n^3+24n^20-8n+5)\pi}\sin\big((2n-1)t\big)</m>,
-          <m>U(t)=c_1e^{-t}\sin(t)+c_2e^{-t}\cos(t)+\sum\limits_{n=1}^\infty\frac{8(-1)^n}{(2n-1)16n^4-32n^3+24n^20-8n+5)\pi}\cos\big((2n-1)t\big)</m> <m>+\sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-1)}{(2n-1)^2(16n^4-32n^3+24n^20-8n+5)\pi}\sin\big((2n-1)t\big)</m>. }
-        </p>
+          <p>
+            \begin{task}[(c)] <em>Alternative Answer:</em>
+            <em>Alternative Answer:</em>
+            <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{8(-1)^n}{(2n-1)(16n^4-32n^3+24n^20-8n+5)\pi}\cos\big((2n-1)t\big)</m> <m>+\sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-1)}{(2n-1)^2(16n^4-32n^3+24n^20-8n+5)\pi}\sin\big((2n-1)t\big)</m>,
+            <m>U(t)=c_1e^{-t}\sin(t)+c_2e^{-t}\cos(t)+\sum\limits_{n=1}^\infty\frac{8(-1)^n}{(2n-1)16n^4-32n^3+24n^20-8n+5)\pi}\cos\big((2n-1)t\big)</m> <m>+\sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-1)}{(2n-1)^2(16n^4-32n^3+24n^20-8n+5)\pi}\sin\big((2n-1)t\big)</m>.
+          </p>
+        </solution>
       </exercise>
       <exercise>
         <statement>
@@ -345,19 +347,17 @@
           <p>
             \begin{task}[(a)]
           </p>
-          <p>
-            \begin{task}[(c)] STARTSOL <m>U_h(t)=c_1e^{-2t} + c_2te^{-2t}</m>,
-            <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{16\sin(\frac{n\pi}{2})}{n(4+n^2)^2\pi}\cos(nt) + \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2}(4-n^2))}{n^2(4+n^2)^2\pi}\sin(nt)</m>,
-            <m>U(t) = c_1e^{-2t} + c_2te^{-2t} - \sum\limits_{n=1}^\infty \frac{16\sin(\frac{n\pi}{2})}{n(4+n^2)^2\pi}\cos(nt) + \sum\limits_{n=1}^\infty \frac{4\sin(\frac{n\pi}{2})(4-n^2)}{n^2(4+n^2)^2\pi}\sin(nt)</m>.
-          </p>
-          <p>
-            \begin{task}[(c)] <em>Alternative Answer:</em>
-            <em>Alternative Answer:</em>
-            <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{16(-1)^n}{2n-1)(4n^2-4n+5)^2\pi}\cos\big((2n-1)t\big) + \sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-3)}{4n^2-4n+5)^2\pi}\sin\big((2n-1)t\big)</m>,
-            <m>U(t) = c_1e^{-2t} + c_2te^{-2t} + \sum\limits_{n=1}^\infty \frac{16(-1)^n}{2n-1)(4n^2-4n+5)^2\pi}\cos\big((2n-1)t\big)</m> <m>+ \sum\limits_{n=1}^\infty \frac{4(-1)^n(4n^2-4n-3)}{4n^2-4n+5)^2\pi}\sin\big((2n-1)t\big)</m>.
-            ENDSOL
-          </p>
         </statement>
+        <solution>
+          <p>
+            <m>U_h(t)=c_1e^{-2t} + c_2te^{-2t}</m>,
+            <m>U_p(t) = -\sum\limits_{n=1}^\infty \frac{4(-1)^n}{(4+n^2)^2}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-4)^2}{n(4+n^2)^2}\sin(nt)</m>,
+            <m>U(t)= c_1e^{-2t} + c_2te^{-2t} - \sum\limits_{n=1}^\infty \frac{4(-1)^n}{(4+n^2)^2}\cos(nt) + \sum\limits_{n=1}^\infty \frac{(-1)^n(n^2-4)}{n(4+n^2)^2}\sin(nt)</m>.
+          </p>
+        </solution>
+        <p>
+          \begin{task}[(c)]
+        </p>
         <solution>
           <p>
             <m>U_h(t)=c_1e^{-2t} + c_2te^{-2t}</m>,

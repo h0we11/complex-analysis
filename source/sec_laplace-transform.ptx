@@ -209,6 +209,8 @@
             f(t) = \begin{cases}1 \amp  \text{ for }   0 \le t\lt c,\\ 0 \amp  \text{ for }   c\lt t \end{cases} \text{ is }   \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}
           </me>.
         </p>
+      </statement>
+      <solution>
         <p>
           Using the integral definition for <m>\mathcal{L}\big(f(t)\big)</m>,
           we obtain
@@ -218,10 +220,6 @@
             <mrow>\amp = \left.\frac{-e^{-st}}{s}\right|_{t=0}^{t=c}</mrow>
             <mrow>\amp = \frac{1-e^{-cs}}{s}</mrow>
           </md>.
-        </p>
-      </statement>
-      <solution>
-        <p>
         </p>
       </solution>
     </example>
@@ -261,16 +259,14 @@
         <p>
           Show that <m>\mathcal{L}(\sinh at) =\frac{a}{s^2-a^2}</m>.
         </p>
+      </statement>
+      <solution>
         <p>
           Since <m>\sinh at = \frac{1}{2}e^{at}-\frac{1}{2}e^{-at}</m>,
           we obtain
           <me>
             \mathcal{L}(\sinh at) = \frac{1}{2}\mathcal{L}(e^{at}) - \frac{1}{2}\mathcal{L}(e^{-at})=\frac{1}{2}\left(\frac{1}{s-a}\right)-\frac{1}{2}\left(\frac{1}{s+a}\right)=\frac{a}{s^2-a^2}
           </me>.
-        </p>
-      </statement>
-      <solution>
-        <p>
         </p>
       </solution>
     </example>
@@ -305,6 +301,8 @@
         <p>
           Show that <m>\mathcal{L}(\cos bt) =\frac{s}{s^2+b^2}</m>.
         </p>
+      </statement>
+      <solution>
         <p>
           A direct approach using the definition is tedious.
           Let us assume that the complex constants <m>\pm ib</m> are permitted and hence following the Laplace transforms exist:
@@ -316,10 +314,6 @@
             \mathcal{L}(\cos bt) = \frac{1}{2}\mathcal{L}(e^{ibt}) + \frac{1}{2}\mathcal{L}(e^{-ibt}) = \frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib} = \frac{s}{s^2+b^2}
           </me>.
         </p>
-      </statement>
-      <solution>
-        <p>
-        </p>
       </solution>
     </example>
     <p>
@@ -330,16 +324,14 @@
         <p>
           Find <m>\mathcal{L}^{-1}(\frac{3s+6}{s^2+9})</m>.
         </p>
+      </statement>
+      <solution>
         <p>
           Using linearity and lines 6 and 7 of <xref ref="table_laplace-transforms">Table</xref>,
           we obtain
           <me>
             \mathcal{L}^{-1}\left(\frac{3s+6}{s^2+9}\right) = 3\mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right) + 2\mathcal{L}^{-1}\left(\frac{3}{s^2+9}\right)= 3\cos 3t+2\sin 3t
           </me>.
-        </p>
-      </statement>
-      <solution>
-        <p>
         </p>
       </solution>
     </example>
@@ -535,161 +527,145 @@
         </statement>
       </exercise>
       <exercise>
-        <introduction>
+        <statement>
           <p>
             Find <m>\mathcal{L}\big(f(t)\big)</m> for each of the following.
           </p>
-        </introduction>
-        <task>
-          <statement>
+          <task>
             <p>
               <m>U(t) = \begin{cases}t \amp \text{ for } 0 \le t\lt c, \\ 0 \amp \text{ otherwise. } \end{cases}</m>
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}</m>.
+              <m>U(t) = \begin{cases}1 \amp \text{ for } 1\lt t\lt 2, \\ 0 \amp \text{ otherwise } . \end{cases}</m>
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>U(t) = \begin{cases}1 \amp \text{ for } 1\lt t\lt 2, \\ 0 \amp \text{ otherwise } . \end{cases}</m>
-          </p>
-        </task>
-        <task>
-          <statement>
+          </task>
+          <task>
             <p>
               <m>U(t) = \begin{cases}e^{at} \amp \text{ for } 0 \le t\lt 1, \\ \; 0 \amp \text{ otherwise. } \end{cases}</m>
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}</m>.
+              <m>U(t) = \begin{cases}\sin t \amp \text{ for } 0 \le t \le \pi , \\ \;\; 0 \amp \text{ otherwise. } \end{cases}</m>
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>U(t) = \begin{cases}\sin t \amp \text{ for } 0 \le t \le \pi , \\ \;\; 0 \amp \text{ otherwise. } \end{cases}</m>
-          </p>
-        </task>
+          </task>
+        </statement>
       </exercise>
       <exercise>
-        <introduction>
+        <statement>
           <p>
             Use the linearity of Laplace transform and <xref ref="table_laplace-transforms">Table</xref> to find:
           </p>
-        </introduction>
-        <task>
-          <statement>
+          <task>
             <p>
               <m>\mathcal{L}(3t^2-4t+5)</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}</m>.
+              <m>\mathcal{L}(2\cos 4t)</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}(2\cos 4t)</m>.
-          </p>
-        </task>
-        <task>
-          <statement>
+          </task>
+          <task>
             <p>
               <m>\mathcal{L}(e^{2t-3})</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}</m>.
+              <m>\mathcal{L}(6e^{-t}+3\sin 5t)</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}(6e^{-t}+3\sin 5t)</m>.
-          </p>
-        </task>
-        <task>
-          <statement>
+          </task>
+          <task>
             <p>
               <m>\mathcal{L}((t+1)^4)</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}</m>.
+              <m>\mathcal{L}(\cosh 2t)</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}(\cosh 2t)</m>.
-          </p>
-        </task>
+          </task>
+        </statement>
       </exercise>
       <exercise>
-        <introduction>
+        <statement>
           <p>
             Use the linearity of the inverse Laplace transform and <xref ref="table_laplace-properties">Table</xref> to find:
           </p>
-        </introduction>
-        <task>
-          <statement>
+          <task>
             <p>
               <m>\mathcal{L}^{-1}(\frac{1}{s^2+25})</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t</m>.
+              <m>\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})</m>.
-          </p>
-        </task>
-        <task>
-          <statement>
+          </task>
+          <task>
             <p>
               <m>\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}</m>.
+              <m>\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})</m>.
-          </p>
-        </task>
-        <task>
-          <statement>
+          </task>
+          <task>
             <p>
               <m>\mathcal{L}^{-1}(\frac{6s}{s^2-4})</m>.
             </p>
-          </statement>
-          <solution>
+            <solution>
+              <p>
+                <m>\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t</m>.
+              </p>
+            </solution>
+          </task>
+          <task>
             <p>
-              <m>\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t</m>.
+              <m>\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)</m>.
-          </p>
-        </task>
+          </task>
+        </statement>
       </exercise>
       <exercise>
         <statement>

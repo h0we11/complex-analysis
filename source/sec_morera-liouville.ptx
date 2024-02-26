@@ -142,7 +142,7 @@
       <caption>The
       <q>chain of disks</q>
       <m>D_0,\ D_1,\ldots ,\ D_n</m> that cover <m>C</m></caption>
-      <image width="73%" source="figs/ch-06/ch-06-fig-34.png"/>
+      <image width="73%" source="figs/ch-06/ch-06-fig-34.svg"/>
     </figure>
     <p>
       Each disk <m>D_k</m> contains the center <m>z_{k+1}</m> of the next disk <m>D_{k+1}</m>,
@@ -386,52 +386,41 @@
   <exercises xml:id="exercises_morera-liouville">
     <title>Exercises</title>
     <exercise xml:id="x6_6_1">
-      <introduction>
+      <statement>
         <p>
           Factor each polynomial as a product of linear factors.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>P(z)=z^4+4</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>(z+1+i)(z+1-i)(z-1+i)(z-1-i)</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>(z+1+i)(z+1-i)(z-1+i)(z-1-i)</m>.
+            <m>P(z)=z^2+(1+i)z+5i</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>P(z)=z^2+(1+i)z+5i</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>P(z)=z^4-4z^3+6z^2-4z+5</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>(z+i)(z-i)(z-2+i)(z-2-i)</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>(z+i)(z-i)(z-2+i)(z-2-i)</m>.
+            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>. \hint{Show that <m>P(i)=0</m>.}
           </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>.
-          </p>
-        </statement>
-        <hint>
-          <p>
-            Show that <m>P(i)=0</m>.
-          </p>
-        </hint>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x6_6_2">
       <statement>
@@ -456,7 +445,7 @@
       </solution>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Let <m>f(z)=z^2</m>.
           Evaluate the following,
@@ -465,95 +454,87 @@
             R=\{z=x+iy:2 \le x \le 3  \text{ and }   1 \le y \le 3\}
           </men>.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>\max\limits_{z\in R} |f(z)|</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\min\limits_{z\in R} |f(z)|</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\max\limits_{z\in R}\mathrm{Re}[f(z)]</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\min\limits_{z\in R}\mathrm{Im}[f(z)]</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>\max\limits_{z\in R} |f(z)|</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\min\limits_{z\in R} |f(z)|</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\max\limits_{z\in R}\mathrm{Re}[f(z)]</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\min\limits_{z\in R}\mathrm{Im}[f(z)]</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x6_6_5">
-      <introduction>
+      <statement>
         <p>
           Let <m>f</m> be analytic in the disk <m>D_5(0)</m> and suppose that
           <m>|f(z)| \le 10</m> for <m>z\in C_3(1)</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Find a bound for <m>|f^{\,(4)}(1)|</m>.
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>|f\,^{(3)}(1)| \le \frac{4!(10)}{3^4}</m>.
-            (Explain.)
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
+          <solution>
+            <p>
+              <m>|f\,^{(3)}(1)| \le \frac{4!(10)}{3^4}</m>.
+              (Explain.)
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
             Find a bound for <m>|f^{\,(4)}(0)|</m>.
           </p>
-        </statement>
-        <hint>
           <p>
-            <m>\overline{D}_2(0) \subseteq \overline{D}_3(1)</m>.
+            \hint{<m>\overline{D}_2(0) \subseteq \overline{D}_3(1)</m>.
             Use <xref ref="Max_Mod_Principle">Theorems</xref>
-            and <xref ref="Cauchy_Ineqs"></xref>.
+            and <xref ref="Cauchy_Ineqs"></xref>.}
           </p>
-        </hint>
-        <solution>
-          <p>
-            <m>|f\,^{(3)}(0)| \le \frac{4!(10)}{2^4}</m>.
-            (Explain.)
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              <m>|f\,^{(3)}(0)| \le \frac{4!(10)}{2^4}</m>.
+              (Explain.)
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x6_6_6">
-      <introduction>
+      <statement>
         <p>
           Let <m>f</m> be an entire function such that <m>|f(z)| \le M|z|</m> for all <m>z</m>.
         </p>
-      </introduction>
-      <task>
-        <p>
-          Show that, for <m>n \ge 2</m>,
-          <m>f\,^{(n)}(z)=0</m> for all <m>z</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Use part (a) to show that <m>f(z)=az+b</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            Show that, for <m>n \ge 2</m>,
+            <m>f\,^{(n)}(z)=0</m> for all <m>z</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Use part (a) to show that <m>f(z)=az+b</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x6_6_7">
-      <introduction>
+      <statement>
         <p>
           Establish the following <em>minimum modulus principle</em>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>,
             and continuous on the closed region <m>R</m> that consists of <m>D</m> and all its boundary points <m>B</m>.
@@ -561,21 +542,21 @@
             then <m>|f(z)|</m> assumes its <em>minimum</em> value,
             but does so only at points(s) <m>z_0</m> on the boundary <m>B</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              If <m>|f(z) |\ge m</m> for all <m>z</m> in <m>D</m>, where <m>m>0</m>,
+              then the function <m>\frac{1}{f}</m> is analytic in <m>D</m>.
+              Apply the maximum modulus Theorem to the function <m>\frac{1}{f}</m> to get your result.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            If <m>|f(z) |\ge m</m> for all <m>z</m> in <m>D</m>, where <m>m>0</m>,
-            then the function <m>\frac{1}{f}</m> is analytic in <m>D</m>.
-            Apply the maximum modulus Theorem to the function <m>\frac{1}{f}</m> to get your result.
+            Show that the requirement <m>f(z) \ne 0</m> in part a is necessary by finding a function for which the requirement fails,
+            and whose minimum modulus is attained at some place other than the boundary.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Show that the requirement <m>f(z) \ne 0</m> in part a is necessary by finding a function for which the requirement fails,
-          and whose minimum modulus is attained at some place other than the boundary.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x6_6_8">
       <statement>
@@ -585,15 +566,10 @@
           <me>
             u(x_0,y_0) = \frac{1}{2\pi}\int_0^{2\pi}u\big(x_0+R\cos \theta, \; y_0+R\sin \theta\big)\,d\theta
           </me>,
-          where <m>R>0</m>.
+          where <m>R>0</m>. \hint{Let <m>f(z)=u(x,y) +iv(x,y)</m>,
+          where <m>v</m> is a harmonic conjugate of <m>u</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Let <m>f(z)=u(x,y) +iv(x,y)</m>,
-          where <m>v</m> is a harmonic conjugate of <m>u</m>.
-        </p>
-      </hint>
     </exercise>
     <exercise xml:id="x6_6_9">
       <statement>
@@ -634,16 +610,12 @@
           <m>|f(z)| = K</m> for all <m>z \in C_1(0)</m>.
           Show that <m>f</m> has a zero in <m>\overline{D}_1(0)</m>,
           <em>i.e.</em>,
-          that there exists some <m>z_0 \in \overline{D}_1(0)</m> such that <m>f(z_0)=0</m>.
+          that there exists some <m>z_0 \in \overline{D}_1(0)</m> such that
+          <m>f(z_0)=0</m>. \hint{Use both the minimum modulus principle
+          (see <xref ref="x6_6_7">Exercise</xref>)
+          and maximum modulus principle.}
         </p>
       </statement>
-      <hint>
-        <p>
-          use both the minimum modulus principle
-          (see <xref ref="x6_6_7">Exercise</xref>)
-          and maximum modulus principle .
-        </p>
-      </hint>
       <solution>
         <p>
           By contraposition) If <m>f</m> does not have a zero,

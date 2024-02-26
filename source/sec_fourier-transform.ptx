@@ -209,6 +209,8 @@
       <p>
         Show that <m>F\big(e^{-|t|}\big) = \frac{1}{\pi(1+w^2)}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Using <xref ref="FourierTransform">formula</xref> we obtain
         <md>
@@ -219,10 +221,6 @@
           <mrow>\amp = \frac{1}{\pi (1+w^2)}</mrow>
         </md>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -230,6 +228,8 @@
       <p>
         Show that <m>\mathrm{F}\big(\frac{1}{1+t^2}\big) = \frac{1}{2}e^{-|w|}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Using the result of <xref ref="ex_10_5">Example</xref>
         and the symmetry property and the symmetry property, we obtain
@@ -241,46 +241,38 @@
           \mathrm{F}\left(\frac{1}{1+t^2}\right) = \frac{1}{2}e^{-|w|}
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <exercises xml:id="exercises_fourier-transform">
     <title>Exercises</title>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Find <m>\mathfrak{F}\big(U(t)\big)</m> for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task xml:id="ex_12_1a">
           <p>
             <m>U(t) = \begin{cases}1 \amp \text{ for } |t| \lt 1,\\ 0 \amp \text{ for } |t| > 1. \end{cases}</m>
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
+          <solution>
+            <p>
+              <m>\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}</m>.
+            </p>
+          </solution>
+        </task>
+        <task xml:id="ex_12_1b">
           <p>
             <m>U(t) = \begin{cases}1-|t| \amp \text{ for } |t| \le 1,\\ 0 \amp \text{ for } |t|>1. \end{cases}</m>
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}</m>.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              <m>\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}</m>.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
-    <exercise>
+    <exercise xml:id="ex_12_2">
       <statement>
         <p>
           Let <m>U(t) = \begin{cases}\sin t \amp \text{ for } |t| \le \pi,\\ \;\;\, 0 \amp \text{ for } |t| > \pi. \end{cases}</m> Show that <m>\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}</m>.
@@ -301,15 +293,10 @@
       <statement>
         <p>
           Let <m>U(t) =e^{-\frac{t^2}{2}}</m>.
-          Show that <m>\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}</m>.
+          Show that <m>\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}</m>. \hint{Use the integral definition and combine the terms in the exponent,
+          then complete the square and use the fact that <m>\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Use the integral definition and combine the terms in the exponent,
-          then complete the square and use the fact that <m>\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}</m>.
-        </p>
-      </hint>
     </exercise>
     <exercise>
       <statement>

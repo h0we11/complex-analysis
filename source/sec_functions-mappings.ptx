@@ -57,7 +57,7 @@
   </p>
   <figure xml:id="fig_ch-02-01">
     <caption>The mapping <m>w=f(z)</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-01.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-01.svg"/>
   </figure>
   <p>
     We now give several examples that illustrate how to express a complex function.
@@ -112,6 +112,8 @@
       <p>
         Express <m>f(z) =4x^2+i4y^2</m> by a formula involving the variables <m>z</m> and <m>\overline{z}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Calculation reveals that
         <md>
@@ -119,10 +121,6 @@
           <mrow>\amp = z^2 + 2z\overline{z} + \overline{z}^2 - i(z^2 - 2z\overline{z} + \overline{z}^2)</mrow>
           <mrow>\amp = (1-i)z^2 + (2+2i)z\overline{z}+(1-i) \overline{z}^2</mrow>
         </md>.
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -145,6 +143,28 @@
       <p>
         Express <m>f(z) =z^2</m> in both Cartesian and polar form.
       </p>
+      <solution>
+        <p>
+          For the Cartesian form, a simple calculation gives
+          <me>
+            f(z) =f(x+iy) =(x+iy)^2 = (x^2-y^2) +i(2xy) =u(x,y) +iv(x,y)
+          </me>
+          so that
+          <me>
+            u(x,y) = x^2-y^2,  \text{ and }   v(x, y) = 2xy
+          </me>
+        </p>
+        <p>
+          For the polar form, we refer to Equation <xref ref="z_n"/> to get
+          <me>
+            f(re^{i\theta})=(re^{i\theta})^2 = r^2e^{i2\theta}=r^2\cos2\theta+ir^2\sin2\theta=U(r,\theta) + iV(r,\theta)
+          </me>,
+          so that
+          <me>
+            U(r,\theta) =r^2\cos2\theta  \text{ and }   V(r,\theta) =r^2\sin2\theta
+          </me>
+        </p>
+      </solution>
       <p>
         Once we have defined <m>u</m> and <m>v</m> for a function <m>f</m> in Cartesian form,
         we must use different symbols if we want to express <m>f</m> in polar form.
@@ -155,34 +175,14 @@
         we can use any symbols we choose.
       </p>
     </statement>
-    <solution>
-      <p>
-        For the Cartesian form, a simple calculation gives
-        <me>
-          f(z) =f(x+iy) =(x+iy)^2 = (x^2-y^2) +i(2xy) =u(x,y) +iv(x,y)
-        </me>
-        so that
-        <me>
-          u(x,y) = x^2-y^2,  \text{ and }   v(x, y) = 2xy
-        </me>
-      </p>
-      <p>
-        For the polar form, we refer to Equation <xref ref="z_n"/> to get
-        <me>
-          f(re^{i\theta})=(re^{i\theta})^2 = r^2e^{i2\theta}=r^2\cos2\theta+ir^2\sin2\theta=U(r,\theta) + iV(r,\theta)
-        </me>,
-        so that
-        <me>
-          U(r,\theta) =r^2\cos2\theta  \text{ and }   V(r,\theta) =r^2\sin2\theta
-        </me>.
-      </p>
-    </solution>
   </example>
   <example>
     <statement>
       <p>
         Express <m>f(z) =z^5+4z^2-6</m> in polar form.
       </p>
+    </statement>
+    <solution>
       <p>
         Again, using Equation <xref ref="z_n"/> we obtain
         <md>
@@ -190,10 +190,6 @@
           <mrow>\amp =(r^5\cos 5\theta +4r^2\cos 2\theta -6) +i(r^5\sin 5\theta +4r^2\sin 2\theta)</mrow>
           <mrow>\amp  =u(r,\theta) +iv(r,\theta)</mrow>
         </md>.
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -241,7 +237,7 @@
   </p>
   <figure xml:id="fig_ch-02-02">
     <caption><m>f</m> maps <m>A</m> <em>onto</em> <m>B</m>; <m>f</m> maps <m>A</m> <em>into</em> <m>R</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-02.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-02.svg"/>
   </figure>
   <p>
     The inverse image of a point <m>w</m> is the set of all points <m>z</m> in <m>D</m> such that <m>w=f(z)</m>.
@@ -277,7 +273,7 @@
   </p>
   <figure xml:id="fig_ch-02-03">
     <caption>A one-to-one function</caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-03.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-03.svg"/>
   </figure>
   <p>
     The function <m>f(z) =z^2</m> <em>is not</em> one-to-one.
@@ -287,7 +283,7 @@
   </p>
   <figure xml:id="fig_ch-02-04">
     <caption>A function that is not one-to-one</caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-04.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-04.svg"/>
   </figure>
   <p>
     In the exercises we ask you to demonstrate that one-to-one functions give rise to inverses that are functions.
@@ -386,14 +382,12 @@
         </md>,
         where <m>\Longleftrightarrow</m> means
         <q>{<em>if and only if</em>}.</q>
-      </p>
-      <p>
-        Note what this result says: <m>u+iv=w \in B \Longleftrightarrow v=-u-1</m>.
+        PARAGRAPH Note what this result says:
+        <m>u+iv=w \in B \Longleftrightarrow v=-u-1</m>.
         The image of <m>A</m> under <m>f</m>, therefore,
         is the set <m>B=\{(u,v):v=-u-1\}</m>.
-      </p>
-      <p>
-        (Method 2): We write <m>u+iv=w=f(z) =i(x+iy)=-y+ix</m> and note that the transformation can be given by the equations <m>u=-y</m> and <m>v=x</m>.
+        PARAGRAPH (Method 2): We write
+        <m>u+iv=w=f(z) =i(x+iy)=-y+ix</m> and note that the transformation can be given by the equations <m>u=-y</m> and <m>v=x</m>.
         Because <m>A</m> is described by <m>A=\{x+iy:y=x+1\}</m>,
         we can substitute <m>u=-y</m> and <m>v=x</m> into the equation <m>y=x+1</m> to obtain <m>-u=v+1</m>,
         which we can rewrite as <m>v=-u-1</m>.
@@ -420,7 +414,7 @@
   </p>
   <figure xml:id="fig_ch-02-05">
     <caption>The translation <m>w=T(z)=z+B=x+a+i(y+b)</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-05.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-05.svg"/>
   </figure>
   <p>
     If we let <m>\alpha</m> be a fixed real number,
@@ -441,7 +435,7 @@
   </p>
   <figure xml:id="fig_ch-02-06">
     <caption>The rotation <m>w=R(z)=re^{i(\theta+\alpha)}</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-06.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-06.svg"/>
   </figure>
   <example>
     <statement>
@@ -469,7 +463,7 @@
   </example>
   <figure xml:id="fig_ch-02-07">
     <caption>Plots of (a) the original ellipse;   (b) the rotated ellipse</caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-07.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-07.svg"/>
   </figure>
   <p>
     If we let <m>K>0</m> be a fixed positive real number, then the transformation
@@ -490,7 +484,7 @@
   </p>
   <figure xml:id="fig_ch-02-08">
     <caption>The magnification <m>w=S(z) =Kz=Kx+iKy</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-08.png"/>
+    <image width="73%" source="figs/ch-02/ch-02-fig-08.svg"/>
   </figure>
   <p>
     Finally, if we let <m>A=Ke^{i\alpha}</m> and <m>B=a+ib</m>,
@@ -513,6 +507,22 @@
         Show that the linear transformation <m>w=iz+i</m> maps the right half-plane
         <m>\mathrm{Re}(z) \ge 1</m> onto the upper half-plane <m>\mathrm{Im}(w) \ge 2</m>.
       </p>
+      <solution>
+        <p>
+          (Method 1): Let <m>A=\{(x,y) : x \ge  1\}</m>.
+          To describe <m>B=f(A)</m>,
+          we solve <m>w=iz+i</m> for <m>z</m> to get <m>z=\frac{w-i}{i}=-iw-1=f^{-1}(w)</m>.
+          Using Equations <xref ref="InverseEqs2"/> and the method of <xref ref="ImageEx">Example</xref> we have
+          <md>
+            <mrow>u+iv=w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) = z \in A</mrow>
+            <mrow>\amp  \Longleftrightarrow -iw-1 \in A</mrow>
+            <mrow>\amp  \Longleftrightarrow v-1-iu \in A</mrow>
+            <mrow>\amp  \Longleftrightarrow (v-1,\,-u) \in A</mrow>
+            <mrow>\amp  \Longleftrightarrow v-1 \ge  1</mrow>
+            <mrow>\amp  \Longleftrightarrow v \ge  2</mrow>
+          </md>.
+        </p>
+      </solution>
       <p>
         Thus <m>B = \{w=u+iv : v \ge 2\}</m>,
         which is the same as saying <m>\mathrm{Im}(w) \ge 2</m>.
@@ -541,27 +551,9 @@
       </p>
       <figure xml:id="fig_ch-02-09">
         <caption>The linear transformation <m>w=f(z) =iz+i</m></caption>
-        <image width="73%" source="figs/ch-02/ch-02-fig-09.png"/>
+        <image width="73%" source="figs/ch-02/ch-02-fig-09.svg"/>
       </figure>
     </statement>
-    <solution>
-      <p>
-        (Method 1): Let <m>A=\{(x,y) : x \ge  1\}</m>.
-        To describe <m>B=f(A)</m>,
-        we solve <m>w=iz+i</m> for <m>z</m> to get <m>z=\frac{w-i}{i}=-iw-1=f^{-1}(w)</m>.
-        Using Equations <xref ref="InverseEqs2"/> and the method of <xref ref="ImageEx">Example</xref> we have
-        <md>
-          <mrow>u+iv=w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) = z \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow -iw-1 \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow v-1-iu \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow (v-1,\,-u) \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow v-1 \ge  1</mrow>
-          <mrow>\amp  \Longleftrightarrow v \ge  2</mrow>
-        </md>.
-      </p>
-      <p>
-      </p>
-    </solution>
   </example>
   <p>
     Translations and rotations preserve angles.
@@ -582,28 +574,28 @@
         Show that the image of <m>D_1(-1-i) = \{z: |z+1+i| \lt 1\}</m> under the transformation
         <m>w=(3-4i) z+6+2i</m> is the open disk <m>D_5(-1+3i) = \{w: |w+1-3i| \lt 5\}</m>.
       </p>
+      <solution>
+        <p>
+          The inverse transformation is <m>z=\frac{w-6-2i}{3-4i}</m>,
+          so if we designate the range of <m>f</m> as <m>B</m>, then
+          <md>
+            <mrow>w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) =z\in D_1(-1-i)</mrow>
+            <mrow>\amp  \Longleftrightarrow \frac{w-6-2i}{3-4i}\in D_1(-1-i)</mrow>
+            <mrow>\amp  \Longleftrightarrow \left|\frac{w-6-2i}{3-4i}+1+i\right| \lt  1.</mrow>
+            <mrow>\amp  \Longleftrightarrow \left|\frac{w-6-2i}{3-4i}+1+i\right| |3-4i| \lt 1 \cdot |3-4i|</mrow>
+            <mrow>\amp  \Longleftrightarrow |w-6-2i+(1+i) (3-4i)| \lt  5</mrow>
+            <mrow>\amp  \Longleftrightarrow |w+1-3i| \lt  5</mrow>
+          </md>.
+        </p>
+        <p>
+          Hence the disk with center <m>-1-i</m> and radius 1 is mapped one-to-one and onto the disk with center <m>-1+3i</m> and radius 5 as shown in <xref ref="fig_ch-02-10">Figure</xref>.
+        </p>
+      </solution>
       <figure xml:id="fig_ch-02-10">
         <caption>The mapping <m>w=S(z) =(3-4i) z+6+2i</m></caption>
-        <image width="73%" source="figs/ch-02/ch-02-fig-10.png"/>
+        <image width="73%" source="figs/ch-02/ch-02-fig-10.svg"/>
       </figure>
     </statement>
-    <solution>
-      <p>
-        The inverse transformation is <m>z=\frac{w-6-2i}{3-4i}</m>,
-        so if we designate the range of <m>f</m> as <m>B</m>, then
-        <md>
-          <mrow>w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) =z\in D_1(-1-i)</mrow>
-          <mrow>\amp  \Longleftrightarrow \frac{w-6-2i}{3-4i}\in D_1(-1-i)</mrow>
-          <mrow>\amp  \Longleftrightarrow \left|\frac{w-6-2i}{3-4i}+1+i\right| \lt  1.</mrow>
-          <mrow>\amp  \Longleftrightarrow \left|\frac{w-6-2i}{3-4i}+1+i\right| |3-4i| \lt 1 \cdot |3-4i|</mrow>
-          <mrow>\amp  \Longleftrightarrow |w-6-2i+(1+i) (3-4i)| \lt  5</mrow>
-          <mrow>\amp  \Longleftrightarrow |w+1-3i| \lt  5</mrow>
-        </md>.
-      </p>
-      <p>
-        Hence the disk with center <m>-1-i</m> and radius 1 is mapped one-to-one and onto the disk with center <m>-1+3i</m> and radius 5 as shown in <xref ref="fig_ch-02-10">Figure</xref>.
-      </p>
-    </solution>
   </example>
   <example>
     <statement>
@@ -612,308 +604,287 @@
         <m>\mathrm{Re}(z) \ge 1</m> under the linear transformation
         <m>w=(-1+i)z-2+3i</m> is the half-plane <m>v \ge u+7</m>.
       </p>
+      <solution>
+        <p>
+          The inverse transformation is given by
+          <me>
+            z=\frac{w+2-3i}{-1+i}=\frac{u+2+i(v-3)}{-1+i}
+          </me>,
+          which we write as
+          <me>
+            x+iy=\frac{-u+v-5}{2}+i\frac{-u-v+1}{2}
+          </me>.
+          Substituting <m>x=\frac{-u+v-5}{2}</m> into Re<m>(z)=x \ge  1</m> gives <m>\frac{-u+v-5}{2} \ge  1</m>,
+          which simplifies to <m>v \ge  u+7</m>.
+          <xref ref="fig_ch-02-11">Figure</xref> illustrates the mapping.
+        </p>
+      </solution>
       <figure xml:id="fig_ch-02-11">
         <caption>The mapping <m>w=f(z) =(-1+i) z-2+3i</m></caption>
-        <image width="73%" source="figs/ch-02/ch-02-fig-11.png"/>
+        <image width="73%" source="figs/ch-02/ch-02-fig-11.svg"/>
       </figure>
     </statement>
-    <solution>
-      <p>
-        The inverse transformation is given by
-        <me>
-          z=\frac{w+2-3i}{-1+i}=\frac{u+2+i(v-3)}{-1+i}
-        </me>,
-        which we write as
-        <me>
-          x+iy=\frac{-u+v-5}{2}+i\frac{-u-v+1}{2}
-        </me>.
-        Substituting <m>x=\frac{-u+v-5}{2}</m> into Re<m>(z)=x \ge  1</m> gives <m>\frac{-u+v-5}{2} \ge  1</m>,
-        which simplifies to <m>v \ge  u+7</m>.
-        <xref ref="fig_ch-02-11">Figure</xref> illustrates the mapping.
-      </p>
-    </solution>
   </example>
   <exercises xml:id="exercises_functions-mappings">
     <title>Exercises</title>
     <exercise xml:id="x2_1_1">
-      <introduction>
+      <statement>
         <p>
           Find <m>f(1+i)</m> for the following functions.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(z)=z+z^{-2}+5</m>
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>6+\frac{1}{2}i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>6+\frac{1}{2}i</m>.
+            <m>f(z) = \frac{1}{z^2+1}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(z) = \frac{1}{z^2+1}</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(z) = f(x+iy) =x+y+i(x^3y-y^2)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>2i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>2i</m>.
+            <m>f(z) = z^2 + 4z\overline{z} - 5\mathrm{Re}(z) + \mathrm{Im}(z)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(z) = z^2 + 4z\overline{z} - 5\mathrm{Re}(z) + \mathrm{Im}(z)</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_2">
-      <introduction>
+      <statement>
         <p>
           Let <m>f(z) =z^{21}-5z^{7}+9z^4</m>.
           Use polar coordinates to find
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>f(-1+i)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>f(1+i\sqrt{3})</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>f(-1+i)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>f(1+i\sqrt{3})</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_3">
-      <introduction>
+      <statement>
         <p>
           Express the following functions in the form <m>u(x,y) + iv(x,y)</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(z)=z^3</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>u(x,y)=x^3-3xy^2; \; v(x,y)=3x^2y-y^3</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>u(x,y)=x^3-3xy^2; \; v(x,y)=3x^2y-y^3</m>.
+            <m>f(z)=\overline{z}^2 + (2-3i)z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(z)=\overline{z}^2 + (2-3i)z</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(z) = \frac{1}{z^2}</m>.
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>u(x,y)=\frac{x^2-y^2}{x^4+2x^2y^2+y^4}; \; v(x,y)=\frac{-2xy}{x^4+2x^2y^2+y^4}</m>.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              <m>u(x,y)=\frac{x^2-y^2}{x^4+2x^2y^2+y^4}; \; v(x,y)=\frac{-2xy}{x^4+2x^2y^2+y^4}</m>.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_4">
-      <introduction>
+      <statement>
         <p>
           Express the following functions in the polar coordinate form <m>u(r, \theta) + iv(r, \theta )</m>.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>f(z) =z^5+\overline{z}^5</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>f(z)=z^5 + \overline{z}^3</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          For what values of <m>z</m> are the above expressions valid?
-          Why?
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>f(z) =z^5+\overline{z}^5</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>f(z)=z^5 + \overline{z}^3</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            For what values of <m>z</m> are the above expressions valid?
+            Why?
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_5">
-      <introduction>
+      <statement>
         <p>
           Let <m>f(z) = f(x+iy) = e^x\cos y+ie^x\sin y</m>.
           Find
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(0)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>1</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>1</m>.
+            <m>f(i\pi)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(i\pi)</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(i\frac{2\pi}{3})</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>-\frac{1}{2}+i\frac{\sqrt{3}}{2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>-\frac{1}{2}+i\frac{\sqrt{3}}{2}</m>.
+            <m>f(2+i\pi )</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(2+i\pi )</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(3\pi i)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>-1</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>-1</m>.
+            Is <m>f</m> a one-to-one function?
+            Why or why not?
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Is <m>f</m> a one-to-one function?
-          Why or why not?
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_6">
-      <introduction>
+      <statement>
         <p>
           For <m>z \ne 0</m>,
           let <m>f(z) =f(x+iy) =\frac{1}{2} \ln (x^2+y^2) +i\arctan \frac{y}{x}</m>.
           Find
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>f(1)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>f(\sqrt{3}+i)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>f(1+i\sqrt{3})</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>f(3+4i)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Is <m>f</m> a one-to-one function?
-          Why or why not?
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>f(1)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>f(\sqrt{3}+i)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>f(1+i\sqrt{3})</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>f(3+4i)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Is <m>f</m> a one-to-one function?
+            Why or why not?
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_7">
-      <introduction>
+      <statement>
         <p>
           For <m>z \ne 0</m>, let <m>f(z) =\ln r+i\theta</m>,
           where <m>r=|z|</m>, and <m>\theta =\mathrm{Arg}\,z</m>.
           Find
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(1)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>0</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>0</m>.
+            <m>f(-2)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(-2)</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(1+i)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\ln \sqrt{2}+i\frac{\pi}{4}</m>,
+              or <m>\frac{1}{2} \ln 2 +i\frac{\pi}{4}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\ln \sqrt{2}+i\frac{\pi}{4}</m>,
-            or <m>\frac{1}{2} \ln 2 +i\frac{\pi}{4}</m>.
+            <m>f(-\sqrt{3}+i)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(-\sqrt{3}+i)</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             Is <m>f</m> a one-to-one function?
             Why or why not?
           </p>
-        </statement>
-        <solution>
-          <p>
-            Yes, because if <m>f(z_1)=f(z_2)</m>
-            (where <m>z_1=r_1e^{i\theta_1}</m> and <m>z_2=r_2e^{i\theta_2}</m>,
-            and <m>\theta _1</m> and <m>\theta _2</m> are the Arguments of <m>z_1</m> and <m>z_2</m>,
-            respectively),
-            then <m>\ln r_1+i\theta_1=\ln r_2+i\theta_2</m>.
-            Equating real and imaginary parts gives <m>\ln r_1=\ln r_2</m>,
-            so <m>r_1=r_2</m>
-            (because the function <m>\ln</m> is one-to-one).
-            Also, <m>i\theta_1=i\theta_2</m>,
-            so <m>r_1e^{i\theta_1}=r_2e^{i\theta_2}</m>,
-            <em>i.e.</em>, <m>z_1=z_2</m>.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              Yes, because if <m>f(z_1)=f(z_2)</m>
+              (where <m>z_1=r_1e^{i\theta_1}</m> and <m>z_2=r_2e^{i\theta_2}</m>,
+              and <m>\theta _1</m> and <m>\theta _2</m> are the Arguments of <m>z_1</m> and <m>z_2</m>,
+              respectively),
+              then <m>\ln r_1+i\theta_1=\ln r_2+i\theta_2</m>.
+              Equating real and imaginary parts gives <m>\ln r_1=\ln r_2</m>,
+              so <m>r_1=r_2</m>
+              (because the function <m>\ln</m> is one-to-one).
+              Also, <m>i\theta_1=i\theta_2</m>,
+              so <m>r_1e^{i\theta_1}=r_2e^{i\theta_2}</m>, \ie, <m>z_1=z_2</m>.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_8">
       <statement>
@@ -930,124 +901,120 @@
       </statement>
     </exercise>
     <exercise xml:id="x2_1_9">
-      <introduction>
+      <statement>
         <p>
           Use the result of <xref ref="x2_1_8">Exercise</xref>
           to find the points <m>z</m> where the total charge
           <em>E</em><m>(z)=0</m> given the following conditions.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Three positively charged rods carry a charge of
             <m>\frac{q}{2}</m> coulombs per unit length and pass through the points 0, <m>1-i</m>,
             and <m>1+i</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              If <m>\mathbf{E}(z) =\frac{k}{\bar{z}-\bar{z}_0}</m>,
+              then with rods at the points <m>z_0=0,\,1-i</m>, and <m>1+i</m>,
+              each carrying a charge of <m>\frac{q}{2}</m> coulombs per unit length,
+              the total charge at <m>z</m> will be <m>\frac{k}{\bar{z}-\bar{0}}+\frac{k}{\bar{z}-(\overline{1-i})}+\frac{k}{\bar{z}-(\overline{1+i})}</m>.
+              Combining terms and solving
+              (using the quadratic formula)
+              for when the numerator equals zero (tedious,
+              but good for you!), reveals the total charge to be zero when <m>z=\frac{2}{3}\pm i\frac{\sqrt{2}}{3}</m>.
+              Be sure to show the details of your calculations.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            If <m>\mathbf{E}(z) =\frac{k}{\bar{z}-\bar{z}_0}</m>,
-            then with rods at the points <m>z_0=0,\,1-i</m>, and <m>1+i</m>,
-            each carrying a charge of <m>\frac{q}{2}</m> coulombs per unit length,
-            the total charge at <m>z</m> will be <m>\frac{k}{\bar{z}-\bar{0}}+\frac{k}{\bar{z}-(\overline{1-i})}+\frac{k}{\bar{z}-(\overline{1+i})}</m>.
-            Combining terms and solving
-            (using the quadratic formula)
-            for when the numerator equals zero (tedious,
-            but good for you!), reveals the total charge to be zero when <m>z=\frac{2}{3}\pm i\frac{\sqrt{2}}{3}</m>.
-            Be sure to show the details of your calculations.
+            A positively charged rod carrying a charge of
+            <m>\frac{q}{2}</m> coulombs per unit length passes through the point 0 and positively charged rods carrying a charge of <m>q</m> coulombs per unit length pass through the points <m>2+i</m> and <m>-2+i</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          A positively charged rod carrying a charge of
-          <m>\frac{q}{2}</m> coulombs per unit length passes through the point 0 and positively charged rods carrying a charge of <m>q</m> coulombs per unit length pass through the points <m>2+i</m> and <m>-2+i</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_10">
-      <introduction>
+      <statement>
         <p>
           Suppose that <m>f</m> maps <m>A</m> into <m>B</m>,
           <m>g</m> maps <m>B</m> into <m>A</m>,
           and that Equations <xref ref="InverseEqs"/> hold.
         </p>
-      </introduction>
-      <task>
-        <p>
-          Show that <m>f</m> is one-to-one.
-        </p>
-      </task>
-      <task>
-        <p>
-          Show that <m>f</m> maps <m>A</m> <em>onto</em> <m>B</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            Show that <m>f</m> is one-to-one.
+          </p>
+        </task>
+        <task>
+          <p>
+            Show that <m>f</m> maps <m>A</m> <em>onto</em> <m>B</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_11">
-      <introduction>
+      <statement>
         <p>
           Suppose <m>f</m> is a one-to-one mapping from <m>D</m> onto <m>T</m> and that <m>A</m> is a subset of <m>D</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Show that <m>f</m> is one-to-one from <m>A</m> onto <m>B</m>,
             where <m>B=\{f(z):z\in A\}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              Clearly, <m>f</m> is onto, because if <m>w \in B</m>,
+              then by definition of <m>B</m> there exists a point <m>z \in A</m> such that <m>f(z)=w</m>.
+              Suppose that <m>f(z_1)=f(z_2)</m> for some values <m>z_1</m> and <m>z_2</m> in <m>A</m>.
+              Then, because <m>A</m> is a subset of
+              <m>D, \, z_1</m> and <m>z_2</m> both belong to <m>D</m>.
+              But <m>f</m> is one-to-one on <m>D</m>.
+              Therefore, <m>z_1=z_2</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            Clearly, <m>f</m> is onto, because if <m>w \in B</m>,
-            then by definition of <m>B</m> there exists a point <m>z \in A</m> such that <m>f(z)=w</m>.
-            Suppose that <m>f(z_1)=f(z_2)</m> for some values <m>z_1</m> and <m>z_2</m> in <m>A</m>.
-            Then, because <m>A</m> is a subset of
-            <m>D, \, z_1</m> and <m>z_2</m> both belong to <m>D</m>.
-            But <m>f</m> is one-to-one on <m>D</m>.
-            Therefore, <m>z_1=z_2</m>.
+            Show, additionally,
+            that if <m>g</m> is one-to-one from <m>B</m> onto <m>S</m>,
+            then <m>h(z)</m> is one-to-one from <m>A</m> onto <m>S</m>,
+            where <m>h(z) = f\big(g(z)\big)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Show, additionally,
-          that if <m>g</m> is one-to-one from <m>B</m> onto <m>S</m>,
-          then <m>h(z)</m> is one-to-one from <m>A</m> onto <m>S</m>,
-          where <m>h(z) = f\big(g(z)\big)</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_12">
-      <introduction>
+      <statement>
         <p>
           Let <m>w=f(z) = (3+4i)z - 2+i</m>.
         </p>
-      </introduction>
-      <task>
-        <p>
-          Find the image of the disk <m>|z-1| \lt 1</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Find the image of the line <m>x=t</m>,
-          <m>y=1-2t</m> for <m>-\infty \lt t\lt \infty</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Find the image of the half-plane <m>\mathrm{Im}(z) > 1</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          For parts a and b, and c, sketch the mapping,
-          identify the points <m>z_1=0, \, z_2 = 1-i</m>,
-          and <m>z_3=2</m>, and indicate their images.
-        </p>
-      </task>
+        <task>
+          <p>
+            Find the image of the disk <m>|z-1| \lt 1</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Find the image of the line <m>x=t</m>,
+            <m>y=1-2t</m> for <m>-\infty \lt t\lt \infty</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Find the image of the half-plane <m>\mathrm{Im}(z) > 1</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            For parts a and b, and c, sketch the mapping,
+            identify the points <m>z_1=0, \, z_2 = 1-i</m>,
+            and <m>z_3=2</m>, and indicate their images.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_13">
       <statement>
@@ -1072,56 +1039,47 @@
       </statement>
     </exercise>
     <exercise xml:id="x2_1_15">
-      <introduction>
+      <statement>
         <p>
           Find the linear transformations <m>w=f(z)</m> that satisfy the following conditions.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             The points <m>z_1=2</m> and <m>z_2=-3i</m> map onto <m>w_1=1+i</m> and <m>w_2=1</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>w = f(z) = \frac{3+2i}{13}z + \frac{7+9i}{13}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>w = f(z) = \frac{3+2i}{13}z + \frac{7+9i}{13}</m>.
+            The circle <m>|z|=1</m> maps onto the circle
+            <m>|w-3+2i| = 5</m>, and <m>f(-i)=3+3i</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          The circle <m>|z|=1</m> maps onto the circle
-          <m>|w-3+2i| = 5</m>, and <m>f(-i)=3+3i</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             The triangle with vertices <m>-4+2i</m>, <m>-4+7i</m>,
             and <m>1+2i</m> maps onto the triangle with vertices 1, 0, and <m>1+i</m>,
             respectively.
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>w = f(z) = \frac{i}{5}z + \frac{7+4i}{5}</m>.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              <m>w = f(z) = \frac{i}{5}z + \frac{7+4i}{5}</m>.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x2_1_16">
       <statement>
         <p>
-          Give a proof that the image of a circle under a linear transformation is a circle.
+          Give a proof that the image of a circle under a linear transformation is a circle. \hint{Let the circle have the parameterization
+          <m>x=x_0 + R\cos t</m> , <m>y=y_0 + R\sin t</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Let the circle have the parameterization
-          <m>x=x_0 + R\cos t</m> , <m>y=y_0 + R\sin t</m>.
-        </p>
-      </hint>
     </exercise>
     <exercise xml:id="x2_1_17">
       <statement>

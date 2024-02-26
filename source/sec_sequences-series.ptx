@@ -79,7 +79,7 @@
   </p>
   <figure xml:id="fig_ch-04-01">
     <caption>A sequence that converges to <m>\zeta</m></caption>
-    <image width="73%" source="figs/ch-04/ch-04-fig-01.png"/>
+    <image width="73%" source="figs/ch-04/ch-04-fig-01.svg"/>
   </figure>
   <p>
     In form, Definition <xref ref="Seq_Lim_Def"/> is exactly the same as the corresponding definition for limits of real sequences.
@@ -295,7 +295,7 @@
     <title>Convergent Series</title>
     <statement>
       <p>
-        If there is a complex number <m>S</m> for which <m>S=\lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum\limits_{k=1}^n z_k</m>,
+        If there is a complex number <m>S</m> for which <m>S=\lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} \sum\limits_{k=1}^n z_k</m>,
         we say that the infinite series
         <m>\sum\limits_{k=1}^{\infty}z_k</m> converges to <m>S</m>,
         and that <m>S</m> is the sum of the infinite series.
@@ -521,45 +521,41 @@
   <exercises xml:id="exercises_sequences-series">
     <title>Exercises</title>
     <exercise xml:id="x4_1_1">
-      <introduction>
+      <statement>
         <p>
           Find the following limits.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\lim\limits_{n \to \infty}(\frac{1}{2}+\frac{i}{4})^n</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>0</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>0</m>.
+            <m>\lim\limits_{n \to \infty}\frac{n+(i)^n}{n}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\lim\limits_{n \to \infty}\frac{n+(i)^n}{n}</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\lim\limits_{n \to \infty}\frac{n^2+i2^n}{2^n}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>i</m>.
+            <m>\lim\limits_{n \to \infty}\frac{(n+i)(1+ni)}{n^2}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\lim\limits_{n \to \infty}\frac{(n+i)(1+ni)}{n^2}</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_2">
       <statement>
@@ -591,28 +587,28 @@
       </solution>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Suppose that the complex series <m>\{z_n\}</m> converges to <m>\zeta</m>.
-          Show that <m>\{z_n\}</m> is bounded in two ways.\label {4.1.4}
+          Show that <m>\{z_n\}</m> is bounded in two ways. \label {4.1.4}
         </p>
-      </introduction>
-      <task>
-        <p>
-          Write <m>z_n = x_n+iy_n</m> and use the fact that convergent series of real numbers are bounded.
-        </p>
-      </task>
-      <task>
-        <p>
-          For <m>\varepsilon=1</m>,
-          use <xref ref="Seq_Lim_Def">Definitions</xref>
-          and <xref ref="Bounded_Def"></xref>
-          to show that there is some integer <m>N</m> such that,
-          for <m>n>N</m>,
-          <m>|z_n| = |\zeta +(z_n-\zeta)| \le |\zeta| + 1</m>.
-          Then set <m>R=\max\{|z_1|, \, |z_2|, \ldots, |z_N|, \, \zeta +1\}</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            Write <m>z_n = x_n+iy_n</m> and use the fact that convergent series of real numbers are bounded.
+          </p>
+        </task>
+        <task>
+          <p>
+            For <m>\varepsilon=1</m>,
+            use <xref ref="Seq_Lim_Def">Definitions</xref>
+            and <xref ref="Bounded_Def"></xref>
+            to show that there is some integer <m>N</m> such that,
+            for <m>n>N</m>,
+            <m>|z_n| = |\zeta +(z_n-\zeta)| \le |\zeta| + 1</m>.
+            Then set <m>R=\max\{|z_1|, \, |z_2|, \ldots, |z_N|, \, \zeta +1\}</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_5">
       <statement>
@@ -654,44 +650,39 @@
       </solution>
     </exercise>
     <exercise xml:id="x4_1_8">
-      <introduction>
+      <statement>
         <p>
           Let <m>z_n=r_ne^{i\theta _n}\ne 0</m>,
           where <m>\theta _n = \mathrm{Arg}(z_n)</m>.
         </p>
-      </introduction>
-      <task>
-        <p>
-          Suppose <m>\lim\limits_{n \to \infty}r_n=r_0</m> and <m>\lim\limits_{n \to \infty}\theta _n=\theta _0</m>.
-          Show that <m>\lim\limits_{n \to \infty}r_ne^{i\theta _n}=r_0e^{i\theta_0}</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Find an example where <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta _0}, \; \lim\limits_{n \to \infty}r_n = r_0</m>,
-          but <m>\lim\limits_{n \to \infty}\theta _n</m> does not exist.
-        </p>
-      </task>
-      <task>
-        <p>
-          If <m>\{z_n\} = \{r_ne^{i\theta_n}\}</m>,
-          is it possible to have <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta_0}</m>,
-          but <m>\lim\limits_{n \to \infty}r_n</m> does not exist?
-        </p>
-      </task>
+        <task>
+          <p>
+            Suppose <m>\lim\limits_{n \to \infty}r_n=r_0</m> and <m>\lim\limits_{n \to \infty}\theta _n=\theta _0</m>.
+            Show that <m>\lim\limits_{n \to \infty}r_ne^{i\theta _n}=r_0e^{i\theta_0}</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Find an example where <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta _0}, \; \lim\limits_{n \to \infty}r_n = r_0</m>,
+            but <m>\lim\limits_{n \to \infty}\theta _n</m> does not exist.
+          </p>
+        </task>
+        <task>
+          <p>
+            If <m>\{z_n\} = \{r_ne^{i\theta_n}\}</m>,
+            is it possible to have <m>\lim\limits_{n \to \infty}z_n = z_0 = r_0e^{i\theta_0}</m>,
+            but <m>\lim\limits_{n \to \infty}r_n</m> does not exist?
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_9">
       <statement>
         <p>
           Show that, if <m>\sum\limits_{n=1}^{\infty}z_n</m> converges,
-          then <m>\lim\limits_{n \to \infty}z_n=0</m>.
+          then <m>\lim\limits_{n \to \infty}z_n=0</m>. \hint{<m>z_n=S_n-S_{n-1}</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          <m>z_n=S_n-S_{n-1}</m>.
-        </p>
-      </hint>
       <solution>
         <p>
           Since <m>\sum\limits_{n=1}^{\infty}z_n</m> converges,
@@ -703,21 +694,21 @@
       </solution>
     </exercise>
     <exercise xml:id="x4_1_10">
-      <introduction>
+      <statement>
         <p>
           State (with justification) whether the following series converge.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>\sum\limits_{n=1}^{\infty}\frac{i^n}{n}</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sum\limits_{n=1}^{\infty}(\frac{1}{n}+\frac{i}{2^n})</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>\sum\limits_{n=1}^{\infty}\frac{i^n}{n}</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sum\limits_{n=1}^{\infty}(\frac{1}{n}+\frac{i}{2^n})</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x4_1_11">
       <statement>
@@ -774,18 +765,13 @@
     <exercise xml:id="x4_1_15">
       <statement>
         <p>
-          Prove that a sequence can have only one limit.
+          Prove that a sequence can have only one limit. \hint{Suppose that there is a sequence <m>\{z_n\}</m> such that
+          <m>z_n \to \zeta _1</m> and <m>z_n \to \zeta _2</m>.
           Show this assumption implies
           <m>\zeta _1=\zeta _2</m> by proving that for all <m>\varepsilon>0</m>,
-          <m>|\zeta _1-\zeta _2| \lt \varepsilon</m>.
+          <m>|\zeta _1-\zeta _2| \lt \varepsilon</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Suppose that there is a sequence <m>\{z_n\}</m> such that
-          <m>z_n \to \zeta _1</m> and <m>z_n \to \zeta _2</m>.
-        </p>
-      </hint>
       <solution>
         <p>
           Following the hint, for <m>\varepsilon >0</m> there exists numbers
