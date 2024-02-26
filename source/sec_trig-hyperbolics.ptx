@@ -233,11 +233,12 @@
     <m>-3 \le y \le 3</m>.
     In the exercises we ask you to show that the images of these vertical segments are hyperbolas in the <m>uv</m> plane,
     as <xref ref="fig_ch-05-07">Figure</xref> illustrates.
-    In Chapter 10, we give a more detailed analysis of the mapping <m>w=\sin z</m>.
+    In <xref ref="ch_harmonic-apps"/>,
+    we give a more detailed analysis of the mapping <m>w=\sin z</m>.
   </p>
   <figure xml:id="fig_ch-05-07">
     <caption>Vertical segments mapped onto hyperbolas by <m>w=\sin(z)</m></caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-07.png"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-07.svg"/>
   </figure>
   <p>
     <xref ref="fig_ch-05-07">Figure</xref>
@@ -355,7 +356,7 @@
   </p>
   <figure xml:id="fig_ch-05-08">
     <caption>Vertical segments mapped onto circular arcs by <m>w=\tan z</m></caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-08.png"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-08.svg"/>
   </figure>
   <p>
     How should we define the complex hyperbolic functions?
@@ -456,7 +457,7 @@
   </p>
   <figure xml:id="fig_ch-05-09">
     <caption>An <m>LRC</m> circuit</caption>
-    <image width="73%" source="figs/ch-05/ch-05-fig-09.png"/>
+    <image width="73%" source="figs/ch-05/ch-05-fig-09.svg"/>
   </figure>
   <p>
     Suppose that the current <m>I(t)</m> in the circuit is given by
@@ -539,7 +540,7 @@
         </task>
         <task xml:id="x5_4_2b">
           <p>
-            Show that <m>g</m> is constant.
+            Show that <m>g</m> is constant. \hint{Look at <m>g\,'(z)</m>.}
           </p>
         </task>
         <task xml:id="x5_4_2c">
@@ -549,31 +550,24 @@
           </p>
         </task>
       </statement>
-      <hint>
-        <p>
-          Look at <m>g\,'(z)</m>.
-        </p>
-      </hint>
     </exercise>
     <exercise xml:id="x5_4_3">
       <statement>
         <p>
           Show that Equation <xref ref="tanz_prelim"/> simplifies to Equation <xref ref="tanz_Cartesian"/>.
         </p>
-      </statement>
-      <hint>
         <p>
-          Use the facts that <m>\cosh^2 y-\sinh^2y=1</m> and
-          <m>\sinh 2y=2\cosh y\sinh y</m>.} <m>\tan z=\frac{2\cos x \sin x}{2(\cos^2x \cosh^2y + \sin^2x \sinh^2y)} + i\frac{2\cosh y \sinh y}{2(\cos^2x \cosh^2y + \sin^2x \sinh^2y)}</m>.
+          \hint{Use the facts that <m>\cosh^2 y-\sinh^2y=1</m> and <m>\sinh 2y=2\cosh y\sinh y</m>.}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\tan z=\frac{2\cos x \sin x}{2(\cos^2x \cosh^2y + \sin^2x \sinh^2y)} + i\frac{2\cosh y \sinh y}{2(\cos^2x \cosh^2y + \sin^2x \sinh^2y)}</m>.
           The numerators simplify to <m>\sin 2x</m> and <m>\sinh 2y</m>,
           respectively.
           Show that the denominator equals
           <m>\cos 2x + \cosh 2y</m> by using the identities
           <m>\cos 2x = \cos^2x - \sin^2x</m> and <m>\cosh^2y - \sinh^2y = 1</m>.
-        </p>
-      </hint>
-      <solution>
-        <p>
         </p>
       </solution>
     </exercise>
@@ -586,265 +580,251 @@
       </statement>
     </exercise>
     <exercise xml:id="x5_4_5">
-      <introduction>
+      <statement>
         <p>
           Show that, for all <m>z</m> ,
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\sin(\pi -z) =\sin z</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              This follows immediately from <m>\sin(z_1+z_2) = \sin z_1 \cos z_2 + \cos z_1 \sin z_2</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            This follows immediately from <m>\sin(z_1+z_2) = \sin z_1 \cos z_2 + \cos z_1 \sin z_2</m>.
+            <m>\sin(\frac{\pi}{2}-z) =\cos z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\sin(\frac{\pi}{2}-z) =\cos z</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\sinh(z+i\pi ) =-\sinh z</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              This follows immediately from <m>\sinh z = \sinh x \cos y + i\cosh x \sin y</m>,
+              where we replace <m>z=x+iy</m> with <m>z=x+iy+i\pi = x+i(y+\pi)</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            This follows immediately from <m>\sinh z = \sinh x \cos y + i\cosh x \sin y</m>,
-            where we replace <m>z=x+iy</m> with <m>z=x+iy+i\pi = x+i(y+\pi)</m>.
+            <m>\tanh(z+i\pi ) =\tanh z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\tanh(z+i\pi ) =\tanh z</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\sin(iz) =i\sinh z</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              This follows immediately from <m>\sin z = \sin x \cosh y + i\cos x \sinh y</m>,
+              where we replace <m>z=x+iy</m> with <m>iz=-y+ix</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            This follows immediately from <m>\sin z = \sin x \cosh y + i\cos x \sinh y</m>,
-            where we replace <m>z=x+iy</m> with <m>iz=-y+ix</m>.
+            <m>\cosh(iz) =\cos z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\cosh(iz) =\cos z</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_6">
-      <introduction>
+      <statement>
         <p>
           Express the following quantities in <m>u+iv</m> form.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>\cos(1+i)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sin(\frac{\pi +4i}{4})</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sin 2i</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cos(-2+i)</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\tan(\frac{\pi +2i}{4})</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\tan(\frac{\pi +i}{2})</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sinh(1+i\pi )</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh \frac{i\pi}{2}</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh(\frac{4-i\pi}{4})</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>\cos(1+i)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sin(\frac{\pi +4i}{4})</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sin 2i</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cos(-2+i)</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\tan(\frac{\pi +2i}{4})</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\tan(\frac{\pi +i}{2})</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sinh(1+i\pi )</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh \frac{i\pi}{2}</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh(\frac{4-i\pi}{4})</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_7">
-      <introduction>
+      <statement>
         <p>
           Find the derivatives of the following and state where they are defined.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\sin(\frac{1}{z})</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>-\frac{1}{z^2}\cos(\frac{1}{z})</m>, valid for <m>z \ne 0</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>-\frac{1}{z^2}\cos(\frac{1}{z})</m>, valid for <m>z \ne 0</m>.
+            <m>z\tan z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>z\tan z</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\sec z^2</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>2z\sec z^2\tan z^2</m>,
+              valid for <m>z \ne (k+\frac{1}{2}) \pi</m>,
+              where <m>k</m> is an integer.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>2z\sec z^2\tan z^2</m>,
-            valid for <m>z \ne (k+\frac{1}{2}) \pi</m>,
-            where <m>k</m> is an integer.
+            <m>z\csc^2 z</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>z\csc^2 z</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>z\sinh z</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>z\cosh z + \sinh z</m>, valid for all <m>z</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>z\cosh z + \sinh z</m>, valid for all <m>z</m>.
+            <m>\cosh z^2</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\cosh z^2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>z\tan z</m>.
-        </p>
-      </task>
+        </task>
+        <task>
+          <p>
+            <m>z\tan z</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_8">
-      <introduction>
+      <statement>
         <p>
           Show that
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>\sin \overline{z}=\overline{\sin z}</m> holds for all <m>z</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sin \overline{z}</m> is nowhere analytic.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh \overline{z}=\overline{\cosh z}</m> holds for all <m>z</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh \overline{z}</m> is nowhere analytic.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>\sin \overline{z}=\overline{\sin z}</m> holds for all <m>z</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sin \overline{z}</m> is nowhere analytic.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh \overline{z}=\overline{\cosh z}</m> holds for all <m>z</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh \overline{z}</m> is nowhere analytic.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_9">
-      <introduction>
+      <statement>
         <p>
           Show that
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\lim\limits_{z \to 0}\frac{\cos z-1}{z}=0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              Use the same methods as in Exercise 11a of <xref ref="sec_exponential-function">Section</xref>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            Use the same methods as in Exercise 11a of <xref ref="sec_exponential-function">Section</xref>.
+            <m>\lim\limits_{y \to +\infty}\tan(x_0+iy) =i</m>,
+            where <m>x_0</m> is any fixed real number.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\lim\limits_{y \to +\infty}\tan(x_0+iy) =i</m>,
-          where <m>x_0</m> is any fixed real number.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_10">
-      <introduction>
+      <statement>
         <p>
           Find all values of <m>z</m> for which each equation holds.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>\sin z=\cosh 4</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cos z=2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sin z=i\sinh 1</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sinh z=\frac{i}{2}</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh z=1</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>\sin z=\cosh 4</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cos z=2</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sin z=i\sinh 1</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sinh z=\frac{i}{2}</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh z=1</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_11">
       <statement>
@@ -894,130 +874,124 @@
       </solution>
     </exercise>
     <exercise xml:id="x5_4_14">
-      <introduction>
+      <statement>
         <p>
           Show that the mapping <m>w=\sin z</m>
         </p>
-      </introduction>
-      <task>
-        <p>
-          maps the <m>y</m> axis one-to-one and onto the <m>v</m> axis;
-        </p>
-      </task>
-      <task>
-        <p>
-          maps the ray given <m>\{(x,y) : x=\frac{\pi}{2},\,y>0\}</m> one-to-one and onto the ray defined by <m>\{(u,v) :u>1,\,v=0\}</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            maps the <m>y</m> axis one-to-one and onto the <m>v</m> axis;
+          </p>
+        </task>
+        <task>
+          <p>
+            maps the ray given <m>\{(x,y) : x=\frac{\pi}{2},\,y>0\}</m> one-to-one and onto the ray defined by <m>\{(u,v) :u>1,\,v=0\}</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_15">
-      <introduction>
+      <statement>
         <p>
           Given an elegant argument that explains why the following functions are harmonic.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>h(x,y) = \sin x\cosh y</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              Consider the real part of Identity <xref ref="sinz_identity_2"/>,
+              and appeal to <xref ref="Harmonic_Theorem">Theorem</xref>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            Consider the real part of Identity <xref ref="sinz_identity_2"/>,
-            and appeal to <xref ref="Harmonic_Theorem">Theorem</xref>.
+            <m>h(x,y) = \cos x\sinh y</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>h(x,y) = \cos x\sinh y</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>h(x,y) = \sinh x\cos y</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              Consider the imaginary part of <m>\sin (iz)</m>,
+              and appeal to <xref ref="Harmonic_Theorem">Theorem</xref>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            Consider the imaginary part of <m>\sin (iz)</m>,
-            and appeal to <xref ref="Harmonic_Theorem">Theorem</xref>.
+            <m>h(x,y) = \cosh x\sin y</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>h(x,y) = \cosh x\sin y</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_16">
-      <introduction>
+      <statement>
         <p>
           Establish the following identities.
         </p>
-      </introduction>
-      <task>
-        <p>
-          <m>e^{iz}=\cos z+i\sin z</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cos z=\cos x\cosh y-i\sin x\sinh y</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sin(z_1+z_2) =\sin z_1\cos z_2+\cos z_1\sin z_2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>|\cos z|^2 =\cos^2x+\sinh^2y</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh z=\cosh x\cos y+i\sinh x\sin y</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh^2 z-\sinh^2z=1</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\cosh(z_1+z_2) =\cosh z_1\cosh z_2+\sinh z_1\sinh z_2</m>.
-        </p>
-      </task>
+        <task>
+          <p>
+            <m>e^{iz}=\cos z+i\sin z</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cos z=\cos x\cosh y-i\sin x\sinh y</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\sin(z_1+z_2) =\sin z_1\cos z_2+\cos z_1\sin z_2</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>|\cos z|^2 =\cos^2x+\sinh^2y</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh z=\cosh x\cos y+i\sinh x\sin y</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh^2 z-\sinh^2z=1</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>\cosh(z_1+z_2) =\cosh z_1\cosh z_2+\sinh z_1\sinh z_2</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_17">
-      <introduction>
+      <statement>
         <p>
           Find the complex impedance <m>Z</m> if
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>R=10, \, L=10, \, C=0.05</m>, and <m>\omega =2</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>Z=10+10i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>Z=10+10i</m>.
+            <m>R=15, \, L=10, \, C=0.05</m>, and <m>\omega =4</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>R=15, \, L=10, \, C=0.05</m>, and <m>\omega =4</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x5_4_18">
       <statement>

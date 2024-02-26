@@ -51,7 +51,7 @@
   </p>
   <figure xml:id="fig_ch-11-22">
     <caption>Graph of the unit step function <m>y=U_a(t)</m> in <xref ref="def_unit-step-function">Definition</xref></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-22.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-22.svg"/>
   </figure>
   <theorem xml:id="thm_shifting-t">
     <title>Shifting the Variable
@@ -88,13 +88,15 @@
   </proof>
   <figure xml:id="fig_ch-11-23">
     <caption>Comparison of the functions <m>f(t)</m> and <m>U_a(t)f(t-a)</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-23.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-23.svg"/>
   </figure>
   <example>
     <statement>
       <p>
         Show that <m>\mathcal{L}(t^ne^{at}) =\frac{n!}{(s-a)^{n+1}}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Let <m>f(t)=t^n</m>,
         then <m>F(s) = \mathcal{L}(t^n) = \frac{n!}{s^{n+1}}</m>.
@@ -104,10 +106,6 @@
           \mathcal{L}(t^ne^{at}) = F(s-a) = \frac{n!}{(s-a)^{n+1}}
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example xml:id="ex_11_18">
@@ -115,16 +113,14 @@
       <p>
         Show that <m>\mathcal{L}(U_c(t)) = \frac{e^{-cs}}{s}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Set <m>f(t) = 1</m>, then <m>F(s) = \mathcal{L}(1) = \frac{1}{s}</m>.
         Now apply <xref ref="thm_shifting-t">Theorem</xref> and get
         <me>
           \mathcal{L}\big(U_c(t)\big) = \mathcal{L}\big(U_c(t)f(t)\big) = \mathcal{L}\big(U_c(t)\cdot 1\big) = e^{-cs}\mathcal{L}(1) = \frac{e^{-cs}}{s}
         </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -135,8 +131,10 @@
       </p>
       <figure xml:id="fig_ch-11-24">
         <caption>The function <m>y=f(t)</m> of <xref ref="ex_find-Lft">Example</xref></caption>
-        <image width="73%" source="figs/ch-11/ch-11-fig-24.png"/>
+        <image width="73%" source="figs/ch-11/ch-11-fig-24.svg"/>
       </figure>
+    </statement>
+    <solution>
       <p>
         We can represent <m>f(t)</m> in terms of step functions:
         <me>
@@ -148,10 +146,6 @@
           \mathcal{L}\big(f(t)\big) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{-2s}}{s} - \frac{e^{-3s}}{s} + \frac{e^{-4s}}{s} - \frac{e^{-5s}}{s}
         </me>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -162,6 +156,8 @@
           y\,''(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y\,'(0) =0
         </me>.
       </p>
+    </statement>
+    <solution>
       <p>
         As usual, let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>.
         Then we get
@@ -184,10 +180,6 @@
         <me>
           y(t) = \begin{cases} \; 0 \amp  \text{ for }   t \lt  \pi, \\ 1-\cos t \amp  \text{ for }   t>\pi. \end{cases}
         </me>
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -232,45 +224,41 @@
       </statement>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Find <m>\mathcal{L}^{-1}(F(s))</m> for the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>F(s) =\frac{s+2}{s^2+4s+5}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t) = \mathcal{L}^{-1}\big(\frac{s+2}{s^2+4s+5}\big) = e^{-2t}\cos t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t) = \mathcal{L}^{-1}\big(\frac{s+2}{s^2+4s+5}\big) = e^{-2t}\cos t</m>.
+            <m>F(s) =\frac{8}{s^2-2s+5}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>F(s) =\frac{8}{s^2-2s+5}</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>F(s) =\frac{s+3}{(s+2)^2+1}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t) = \mathcal{L}^{-1}\Big(\frac{s+3}{(s+2)^2+1}\Big) = e^{-2t}\cos t + e^{-2t}\sin t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t) = \mathcal{L}^{-1}\Big(\frac{s+3}{(s+2)^2+1}\Big) = e^{-2t}\cos t + e^{-2t}\sin t</m>.
+            <m>F(s) =\frac{2s+10}{s^2+6s+25}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>F(s) =\frac{2s+10}{s^2+6s+25}</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
       <statement>
@@ -280,75 +268,67 @@
       </statement>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Find <m>\mathcal{L}\big(f(t)\big)</m> for the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(t) = U_2(t)(t-2)^2</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\mathcal{L}\Big(U_2(t)(t-2)^2\Big) = \frac{2e^{-2s}}{s^3}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\mathcal{L}\Big(U_2(t)(t-2)^2\Big) = \frac{2e^{-2s}}{s^3}</m>.
+            <m>f(t) = U_1(t)e^{1-t}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(t) = U_1(t)e^{1-t}</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>f(t) = U_{3\pi}(t) \sin(t-3\pi)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\mathcal{L}\Big(U_{3\pi}(t) \sin(t-3\pi)\Big) = \frac{e^{-3\pi s}}{s^2+1}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\mathcal{L}\Big(U_{3\pi}(t) \sin(t-3\pi)\Big) = \frac{e^{-3\pi s}}{s^2+1}</m>.
+            <m>f(t) = 2U_1(t) - U_2(t) - U_3(t)</m>
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(t) = 2U_1(t) - U_2(t) - U_3(t)</m>
-        </p>
-      </task>
-      <task xml:id="x12_7_x">
-        <statement>
+        </task>
+        <task xml:id="x12_7_x">
           <p>
             Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-25">Figure</xref>.
           </p>
           <figure xml:id="fig_ch-11-25">
-            <image width="73%" source="figs/ch-11/ch-11-fig-25.png"/>
+            <caption>The graph <m>y=f(t)</m> (for Problem 6e)</caption>
+            <image width="73%" source="figs/ch-11/ch-11-fig-25.svg"/>
           </figure>
-        </statement>
-        <solution>
-          <p>
-            <m>\mathcal{L}\big(f(t)) = \frac{1}{s}(1-2e^{-s}+2e^{-2s}-e^{-3s})</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
+          <solution>
+            <p>
+              <m>\mathcal{L}\big(f(t)) = \frac{1}{s}(1-2e^{-s}+2e^{-2s}-e^{-3s})</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
             Let <m>f(t)</m> be the function given in <xref ref="fig_ch-11-26">Figure</xref>.
           </p>
-          <figure xml:id="fig_ch-11-26">
-            <image width="73%" source="figs/ch-11/ch-11-fig-26.png"/>
-          </figure>
-        </statement>
-        <hint>
           <p>
-            The function is the integral of the one in <xref ref="x12_7_x">Exercise</xref>.
+            \hint{The function is the integral of the one in <xref ref="x12_7_x">Exercise</xref>.}
           </p>
-        </hint>
-      </task>
+          <figure xml:id="fig_ch-11-26">
+            <caption>The graph <m>y=f(t)</m> (for Problem 6f)</caption>
+            <image width="73%" source="figs/ch-11/ch-11-fig-26.svg"/>
+          </figure>
+        </task>
+      </statement>
     </exercise>
     <exercise>
       <statement>
@@ -363,81 +343,73 @@
       </solution>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Solve the initial value problem for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>y\,''(t) + 2y\,'(t) + 2y(t) = 0</m>,
             with <m>y(0) = -1</m> and <m>y\,'(0) = 1</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = -e^{-t}\cos t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = -e^{-t}\cos t</m>.
+            <m>y\,''(t) + 4y\,'(t) + 5y(t) = 0</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = -2</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + 4y\,'(t) + 5y(t) = 0</m>,
-          with <m>y(0) = 1</m> and <m>y\,'(0) = -2</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>2y\,''(t) + 2y\,'(t) + y(t) = 0</m>,
             with <m>y(0) =0</m> and <m>y\,'(0) = 1</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = 2e^{-\frac{t}{2}}\sin \frac{t}{2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = 2e^{-\frac{t}{2}}\sin \frac{t}{2}</m>.
+            <m>y\,''(t) - 2y\,'(t) + y(t) = 2</m>e<m>^t</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) - 2y\,'(t) + y(t) = 2</m>e<m>^t</m>,
-          with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>y\,''(t) + 2y\,'(t) + y(t) = 6te^{-t}</m>,
             with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = t^3e^{-t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = t^3e^{-t}</m>.
+            <m>y\,''(t) + 2y\,'(t) + y(t) = 2U_1(t)e^{1-t}</m>,
+            with <m>y(0) =0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + 2y\,'(t) + y(t) = 2U_1(t)e^{1-t}</m>,
-          with <m>y(0) =0</m> and <m>y\,'(0) = 0</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>y\,''(t) + y(t) = U_{\pi /2}(t)</m>,
             with <m>y(0) = 0</m> and <m>y\,'(0) = 1</m>.
           </p>
-        </statement>
-        <solution>
-          <p>
-            <m>y(t)=\big[1-\delta (t-\frac{\pi }{2})\big]\big(\sin(t)\big) + (1-\sin t)U_\frac{\pi}{2}(t)</m>.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              <m>y(t)=\big[1-\delta (t-\frac{\pi }{2})\big]\big(\sin(t)\big) + (1-\sin t)U_\frac{\pi}{2}(t)</m>.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
   </exercises>
 </section>

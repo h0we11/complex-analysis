@@ -40,7 +40,7 @@
     </p>
     <figure xml:id="fig_ch-08-08">
       <caption>Contour <m>C</m> encloses the nonzero poles <m>z_, \  z_2, \  \ldots, \  z_k</m> of <m>\frac{P}Q</m></caption>
-      <image width="73%" source="figs/ch-08/ch-08-fig-08.png"/>
+      <image width="73%" source="figs/ch-08/ch-08-fig-08.svg"/>
     </figure>
     <p>
       We select a small value of <m>r</m> and a large value of <m>R</m> so that the nonzero poles
@@ -99,6 +99,8 @@
         Evaluate P.V. <m>\int_0^{\infty}\frac{x^{\alpha}}{x(x+1)}\,dx</m>,
         where <m>0\lt a\lt 1</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         The function <m>f(z) =\frac{z^{a}}{z(z+1)}</m> has a nonzero pole at the point <m>-1</m>,
         and the denominator has a zero of order at most 1
@@ -113,10 +115,6 @@
           <mrow>\amp = \frac{\pi}{\sin a\pi} </mrow>
         </md>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <p>
@@ -128,9 +126,24 @@
         Evaluate P.V. <m>\int_0^{\infty}\frac{\ln x}{x^2+a^2}dx</m>,
         where <m>a>0</m>.
       </p>
+      <solution>
+        <p>
+          We use the function <m>f(z) =\frac{\mathrm{\log }_{-\frac{\pi}{2}}z}{z^2+a^2}</m>.
+          Recall that
+          <me>
+            \log_{-\frac{\pi}{2}}z = \ln |z| + i\arg_{-\frac{\pi}{2}}z = \ln r+i\theta
+          </me>,
+          where <m>z=re^{i\theta}\ne 0</m> and <m>-\frac{\pi}{2}\lt \theta \le \frac{3\pi}{2}</m>.
+          The path <m>C</m> of integration will consist of the segments
+          <m>[-R,-r ]</m> and <m>[r,R]</m> of the <m>x</m>-axis together with the upper semicircles
+          <m>C_{r}:z=re^{i\theta}</m> and <m>C_R:z=Re^{i\theta}</m>,
+          for <m>0 \le \theta \le \pi</m>,
+          as shown in <xref ref="fig_ch-08-09">Figure</xref>.
+        </p>
+      </solution>
       <figure xml:id="fig_ch-08-09">
         <caption>The contour <m>C</m> for the integrand <m>f(z) = \frac{\mathrm{\log}_{-\frac{\pi}{2}}z}{z^2+a^2}</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-09.png"/>
+        <image width="73%" source="figs/ch-08/ch-08-fig-09.svg"/>
       </figure>
       <p>
         We chose the branch <m>\log_{-\frac{\pi}{2}}</m> because it is analytic on <m>C</m> and its interior,
@@ -171,21 +184,6 @@
         </me>
       </p>
     </statement>
-    <solution>
-      <p>
-        We use the function <m>f(z) =\frac{\mathrm{\log }_{-\frac{\pi}{2}}z}{z^2+a^2}</m>.
-        Recall that
-        <me>
-          \log_{-\frac{\pi}{2}}z = \ln |z| + i\arg_{-\frac{\pi}{2}}z = \ln r+i\theta
-        </me>,
-        where <m>z=re^{i\theta}\ne 0</m> and <m>-\frac{\pi}{2}\lt \theta \le \frac{3\pi}{2}</m>.
-        The path <m>C</m> of integration will consist of the segments
-        <m>[-R,-r ]</m> and <m>[r,R]</m> of the <m>x</m>-axis together with the upper semicircles
-        <m>C_{r}:z=re^{i\theta}</m> and <m>C_R:z=Re^{i\theta}</m>,
-        for <m>0 \le \theta \le \pi</m>,
-        as shown in <xref ref="fig_ch-08-09">Figure</xref>.
-      </p>
-    </solution>
   </example>
   <remark>
     <p>
@@ -198,16 +196,14 @@
   <exercises xml:id="exercises_branch-integrands">
     <title>Exercises</title>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Use residues to compute the following integrals.
         </p>
         <task xml:id="x8_6_1">
-          <statement>
-            <p>
-              P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{2}{3}(1+x)}\,dx</m>.
-            </p>
-          </statement>
+          <p>
+            P.V. <m>\int_0^{\infty}\frac{1}{x^\frac{2}{3}(1+x)}\,dx</m>.
+          </p>
           <solution>
             <p>
               <m>\frac{2\pi}{\sqrt{3}}</m>.
@@ -220,11 +216,9 @@
           </p>
         </task>
         <task xml:id="x8_6_3">
-          <statement>
-            <p>
-              P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{2}}{(1+x)^2}\,dx</m>.
-            </p>
-          </statement>
+          <p>
+            P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{2}}{(1+x)^2}\,dx</m>.
+          </p>
           <solution>
             <p>
               <m>\frac{\pi}{2}</m>.
@@ -237,16 +231,9 @@
           </p>
         </task>
         <task xml:id="x8_6_5">
-          <statement>
-            <p>
-              P.V. <m>\int_0^{\infty}\frac{\ln (x^2+1)}{x^2+1}\,dx</m>.
-            </p>
-          </statement>
-          <hint>
-            <p>
-              Use the integrand <m>f(z)=\frac{\log (z+i)}{z^2+1}</m>.
-            </p>
-          </hint>
+          <p>
+            P.V. <m>\int_0^{\infty}\frac{\ln (x^2+1)}{x^2+1}\,dx</m>. \hint{Use the integrand <m>f(z)=\frac{\log (z+i)}{z^2+1}</m>.}
+          </p>
           <solution>
             <p>
               <m>\pi \ln 2</m>.
@@ -259,11 +246,9 @@
           </p>
         </task>
         <task xml:id="x8_6_7">
-          <statement>
-            <p>
-              P.V. <m>\int_0^{\infty}\frac{(\ln x)^2}{x^2+1}\,dx</m>.
-            </p>
-          </statement>
+          <p>
+            P.V. <m>\int_0^{\infty}\frac{(\ln x)^2}{x^2+1}\,dx</m>.
+          </p>
           <solution>
             <p>
               <m>\frac{\pi^3}{8}</m>.
@@ -276,11 +261,9 @@
           </p>
         </task>
         <task xml:id="x8_6_9">
-          <statement>
-            <p>
-              <m>\int_0^{\infty}\frac{\ln x}{x^2+2^2}\,dx</m>.
-            </p>
-          </statement>
+          <p>
+            <m>\int_0^{\infty}\frac{\ln x}{x^2+2^2}\,dx</m>.
+          </p>
           <solution>
             <p>
               <m>\frac{1}{4}\pi \ln 2</m>.
@@ -292,57 +275,55 @@
             Carry out the following computations: \begin{enumerate}
           </p>
         </task>
-      </introduction>
-      <task>
-        <p>
-          For <m>f(z)=\frac{z^\frac{1}{3}}{z^3(z+1)}</m>,
-          show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^3(x+1)}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
-          Justify your answer.
-        </p>
-      </task>
+        <task>
+          <p>
+            For <m>f(z)=\frac{z^\frac{1}{3}}{z^3(z+1)}</m>,
+            show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^3(x+1)}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
+            Justify your answer.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x8_6_11">
-      <introduction>
+      <statement>
         <p>
           Carry out the following computations:
         </p>
-      </introduction>
-      <task>
-        <p>
-          For <m>f(z)=\frac{z^\frac{4}{3}}{z+1}</m>,
-          show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        <task>
+          <p>
+            For <m>f(z)=\frac{z^\frac{4}{3}}{z+1}</m>,
+            show that <m>\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+          </p>
+        </task>
+        <task>
           <p>
             Can you conclude that P.V. <m>\int_0^{\infty}\frac{x^\frac{4}{3}}{x+1}\,dx=\frac{2\sqrt{3}}{3}\pi</m>?
             Justify your answer.
           </p>
-        </statement>
-        <solution>
-          <p>
-            No.
-            The hypotheses of <xref ref="Branch_Integrand_Thm">Theorem</xref> are not satisfied.
-            Explain why they are not.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              No.
+              The hypotheses of <xref ref="Branch_Integrand_Thm">Theorem</xref> are not satisfied.
+              Explain why they are not.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x8_6_12">
       <statement>
@@ -387,12 +368,10 @@
         <p>
           P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}\ln x}{x^2+1}\,dx</m> and P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx</m>.
         </p>
-      </statement>
-      <hint>
         <p>
-          Use the complex integrand <m>f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}</m>.
+          \hint{Use the complex integrand <m>f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}</m>.}
         </p>
-      </hint>
+      </statement>
     </exercise>
     <exercise xml:id="x8_6_17">
       <statement>
@@ -417,15 +396,11 @@
     <exercise xml:id="x8_6_19">
       <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>.
-          Let <m>r \to 0</m> and <m>R \to \infty</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>. \hint{Use the integrand
+          <m>f(z) =\frac{\exp(iz)}{z}</m> and the contour <m>C</m> in <xref ref="fig_ch-08-08">Figure</xref>.
+          Let <m>r \to 0</m> and <m>R \to \infty</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Use the integrand <m>f(z) =\frac{\exp(iz)}{z}</m> and the contour <m>C</m> in <xref ref="fig_ch-08-08">Figure</xref>.
-        </p>
-      </hint>
       <solution>
         <p>
           <m>\pi</m>.
@@ -435,14 +410,11 @@
     <exercise xml:id="x8_6_20">
       <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m> . Let <m>r \to 0</m> and <m>R \to \infty</m>.
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m> . \hint{Use the integrand
+          <m>f(z) =\frac{1-\exp (i2z)}{z^2}</m> and the contour <m>C</m> in Figure 8.8.
+          Let <m>r \to 0</m> and <m>R \to \infty</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Use the integrand <m>f(z) =\frac{1-\exp (i2z)}{z^2}</m> and the contour <m>C</m> in Figure 8.8.
-        </p>
-      </hint>
     </exercise>
     <exercise xml:id="x8_6_21">
       <statement>
@@ -454,14 +426,18 @@
           Use the fact from calculus that <m>\int_0^{\infty}e^{-x^2}dx=\sqrt{\frac{\pi}{2}}</m>.
         </p>
         <figure xml:id="fig_ch-08-10">
-          <image width="73%" source="figs/ch-08/ch-08-fig-10.png"/>
+          <caption>For Exercise 21</caption>
+          <image width="73%" source="figs/ch-08/ch-08-fig-10.svg"/>
         </figure>
-      </statement>
-      <solution>
+        <solution>
+          <p>
+            <m>\frac{\sqrt{\pi}}{2\sqrt{2}}</m>.
+          </p>
+        </solution>
         <p>
-          <m>\frac{\sqrt{\pi}}{2\sqrt{2}}</m>. } \end{enumerate
+          \end{enumerate}
         </p>
-      </solution>
+      </statement>
     </exercise>
   </exercises>
 </section>

@@ -69,8 +69,6 @@
       <me>
         \mathbf{\tau }_j=1+0i
       </me>
-    </p>
-    <p>
       (which always points to the right) at the point <m>(x,0)</m> must be rotated by the mapping <m>w=f(z)</m> so that the line segment
       <m>x_{j-1}\lt x\lt x_j</m> is mapped onto the edge of <m>P</m> that lies between the points
       <m>w_{j-1}=f(x_{j-1})</m> and <m>w_j=f(x_j)</m>.
@@ -124,7 +122,7 @@
   </p>
   <figure xml:id="fig_ch-10-070">
     <caption>A Schwarz-Christoffel mapping with <m>n=5</m> and <m>\alpha_1+\alpha_2+\cdots +\alpha_4>\pi</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-070.png"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-070.svg"/>
   </figure>
   <p>
     If the case <m>\alpha_1 + \alpha_2 + \cdots + \alpha_{n-1} \le \pi</m> occurs,
@@ -137,7 +135,7 @@
   </p>
   <figure xml:id="fig_ch-10-071">
     <caption>A Schwarz-Christoffel mapping with <m>n=5</m> and <m>\alpha_1 + \alpha_2 + \cdots + \alpha_4 \le \pi</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-071.png"/>
+    <image width="73%" source="figs/ch-10/ch-10-fig-071.svg"/>
   </figure>
   <p>
     Equation <xref ref="SCfun"/> gives a representation for <m>f</m> in terms of an indefinite integral.
@@ -158,8 +156,10 @@
       </p>
       <figure xml:id="fig_ch-10-072">
         <caption>The region of interest</caption>
-        <image width="73%" source="figs/ch-10/ch-10-fig-072.png"/>
+        <image width="73%" source="figs/ch-10/ch-10-fig-072.svg"/>
       </figure>
+    </statement>
+    <solution>
       <p>
         If we choose <m>x_1=-1, \, x_2=1, \, w_1 = -\frac{\pi}{2}</m>,
         and <m>w_2=\frac{\pi}{2}</m>,
@@ -186,10 +186,6 @@
           f(z) = \mathrm{Arcsin}(z)
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -200,6 +196,8 @@
         <m>\mathrm{Im}(w)>0</m> slit along the segment from <m>0</m> to <m>i</m>.
         (Use the principal square root throughout.)
       </p>
+    </statement>
+    <solution>
       <p>
         If we choose <m>x_1=-1
         <me>
@@ -230,7 +228,7 @@
       </p>
       <figure xml:id="fig_ch-10-073">
         <caption>The regions of interest</caption>
-        <image width="73%" source="figs/ch-10/ch-10-fig-073.png"/>
+        <image width="73%" source="figs/ch-10/ch-10-fig-073.svg"/>
       </figure>
       <p>
         An easy computation reveals that <m>f(z)</m> is given by
@@ -241,10 +239,6 @@
         <me>
           f(z) = (z^2-1)^\frac{1}{2}
         </me>
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -262,8 +256,10 @@
       </p>
       <figure xml:id="fig_ch-10-074">
         <caption>The regions of interest</caption>
-        <image width="73%" source="figs/ch-10/ch-10-fig-074.png"/>
+        <image width="73%" source="figs/ch-10/ch-10-fig-074.svg"/>
       </figure>
+    </statement>
+    <solution>
       <p>
         If we choose <m>x_1=-1
         <me>
@@ -310,225 +306,256 @@
           w=f(z) =\frac{1}{\pi}\mathrm{Arcsin}(z) + \frac{i}{\pi}\mathrm{Arcsin}\left(\frac{1}{z}\right) + \frac{1+i}{2}
         </me>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <exercises xml:id="exercises_schwarz-christoffel-transformation">
     <title>Exercises</title>
-    <task xml:id="ex_11_9-1">
-      <p>
-        Let <m>a</m> and <m>K</m> be real constants with <m>0\lt K\lt 2</m>.
-        Use the Schwarz-Christoffel formula to show that the function
-        <m>w=f(z)=(z-a)^K</m> maps the upper half-plane <m>\mathrm{Im}(z)>0</m> onto the sector
-        <m>0\lt \arg_0 w\lt K\pi</m> shown in <xref ref="fig_ch-10-075">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-075">
-        <image width="73%" source="figs/ch-10/ch-10-fig-075.png"/>
-      </figure>
-      <p>
-        \solution{ <m>f\,'(z)=A(z-a)^{-\frac{\pi -k\pi}{\pi}}=A(z-a)^{k-1}</m>.
-        Integrate and get <m>f(z)=\frac{A}{k}(z-a)^{k}</m>, then choose <m>A=k</m>. }
-      </p>
-    </task>
-    <task xml:id="ex_11_9-2">
-      <p>
-        Let <m>a</m> be a real constant.
-        Use the Schwarz-Christoffel formula to show that the function
-        <m>w=f(z)=\mathrm{Log}(z-a)</m> maps the upper half-plane
-        <m>\mathrm{Im}(z)>0</m> onto the infinite strip
-        <m>0\lt v\lt \pi</m> shown in <xref ref="fig_ch-10-076">Figure</xref>.
-      </p>
-      <p>
-        \hint{Set <m>x_1=a-1 \, x_2=a, \, w_1=i\pi</m>,
-        and<m>w_2=-d</m>.}Then let <m>d \to \infty</m>.
-      </p>
-      <figure xml:id="fig_ch-10-076">
-        <image width="73%" source="figs/ch-10/ch-10-fig-076.png"/>
-      </figure>
-      <p>
-        \end{exercise}
-      </p>
-      <p>
-        \begin{exercise} For the remaining exercises,
-        construct the derivative <m>f\,'(z)</m> and use the Schwarz-Christoffel formula,
-        <xref ref="SCfun">Equation</xref>,
-        and techniques of integration to determine the required conformal mapping <m>w=f(z)</m>.
-      </p>
-    </task>
-    <task xml:id="ex_11_9-3">
-      <p>
-        Show that <m>w=f(z)=\frac{1}{\pi}(z^2-1)^\frac{1}{2} + \frac{1}{\pi}\mathrm{Log}\left[ z+(z^2-1)^\frac{1}{2}\right] - i</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-077">Figure</xref>.
-      </p>
-      <p>
-        \hint{Set <m>x_1=-1
-        <me>
-          ,\,x_2=1
-        </me>,
-        \,w_1=0</m>, and <m>w_2=-i</m>.}
-      </p>
-      <figure xml:id="fig_ch-10-077">
-        <image width="73%" source="figs/ch-10/ch-10-fig-077.png"/>
-      </figure>
-      <p>
-        \solution{ <m>f\,'(z) = A(z+1)^\frac{1}{2}(z-1)^\frac{1}{2} = A\left[\frac{z}{(z^2-1)^\frac{1}{2}} + \frac{1}{(z^2-1)^\frac{1}{2}}\right]</m>.
-        Integrate with the boundary conditions <m>f(-1)=0</m> and <m>f(1)=-1</m> to get <m>w=f(z)=\frac{1}{\pi }\left[(z^2-1)^\frac{1}{2} + \mathrm{Log}(z+(z^2-1)^\frac{1}{2})\right]-i</m>. }
-      </p>
-    </task>
-    <task xml:id="ex_11_9-4">
-      <p>
-        Show that <m>w=f(z)=\frac{2}{\pi}(z^2-1)^\frac{1}{2}+\frac{2}{\pi}\mathrm{Arcsin}\frac{1}{z}</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-078">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-078">
-        <image width="73%" source="figs/ch-10/ch-10-fig-078.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=w_1=-1 ,\, x_2=0, \, x_3=w_3=1</m>,
-        and <m>w_2=-id</m>.}Then let <m>d \to \infty</m>.
-      </p>
-    </task>
-    <task xml:id="ex_11_9-5">
-      <p>
-        Show that <m>w=f(z)=\frac{1}{2}\mathrm{Log}(z^2-1)=\mathrm{Log}\left[(z^2-1)^\frac{1}{2}\right]</m> maps the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> onto the infinite strip
-        <m>0\lt v\lt \pi</m> slit along the ray <m>u\le 0</m><m>,\,v=\frac{\pi}{2}</m>,
-        per <xref ref="fig_ch-10-079">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-079">
-        <image width="73%" source="figs/ch-10/ch-10-fig-079.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=-1, \, x_2=0, \, x_3=1, \, w_1=i\pi -d, \ ,w_2=\frac{i\pi}{2}</m>,
-        and <m>w_3=-d</m>.}Then let <m>d \to \infty</m>.
-      </p>
-      <p>
-        \solution{ <m>f\,'(z) = A(z+1)^{-1}z(z-1)^{-1}</m>,
-        and <m>w=f(z)=\mathrm{Log}(z^2-1)^\frac{1}{2}</m>. }
-      </p>
-    </task>
-    <task xml:id="ex_11_9-6">
-      <p>
-        Show that <m>w=f(z) = -\frac{2}{\pi}z(1-z^2)^\frac{1}{2}-\frac{2}{\pi}\mathrm{Arcsin}(z)</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-080">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-080">
-        <image width="73%" source="figs/ch-10/ch-10-fig-080.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=-1, \, x_2=1, \, w_1=1</m>, and <m>w_2=-1</m>.}
-      </p>
-    </task>
-    <task xml:id="ex_11_9-7">
-      <p>
-        Show that <m>w=f(z)=z+\mathrm{Log}(z)</m> maps the upper half-plane
-        <m>\mathrm{Im}(z)>0</m> onto the upper half-plane
-        <m>\mathrm{Im}(w)>0</m> slit along the ray <m>u \le -1, \, v=\pi</m>,
-        as shown in <xref ref="fig_ch-10-081">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-081">
-        <image width="73%" source="figs/ch-10/ch-10-fig-081.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=-1, \, x_2=0, \, w_1=-1+i\pi</m>,
-        and <m>w_2=-d</m>.}Then Let <m>d \to \infty</m>.
-      </p>
-      <p>
-        \solution{ <m>f\,'(z) = A(z+1)^{1}z^{-1} = A(1+\frac{1}{z})</m>.
-        Integrate to get <m>f(z)=z+\mathrm{Log}(z)</m>. }
-      </p>
-    </task>
-    <task xml:id="ex_11_9-8">
-      <p>
-        Show that <m>w=f(z)=i\pi+2(z+1)^\frac{1}{2}+\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-082">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-082">
-        <image width="73%" source="figs/ch-10/ch-10-fig-082.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=-1, \, x_2=0, \, w_1=i\pi</m>,
-        and <m>w_2=-d</m>.}Then let <m>d \to \infty</m>.
-      </p>
-    </task>
-    <task xml:id="ex_11_9-9">
-      <p>
-        Show that <m>w=f(z)=(z-1)^{\alpha}\left[\frac{1+\alpha z}{1-\alpha}\right]^{1-\alpha}</m> maps the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> onto the upper half-plane
-        <m>\mathrm{Im}(w)>0</m> slit along the segment from <m>0</m> to <m>e^{i\alpha \pi}</m>,
-        per <xref ref="fig_ch-10-083">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-083">
-        <image width="73%" source="figs/ch-10/ch-10-fig-083.png"/>
-      </figure>
-      <p>
-        \hint{Show that <m>f\,'(z) = A\left[\frac{z+(1-\alpha)}{\alpha} \right]^{-\alpha}(z)(z-1)^{\alpha -1}</m>.} \solution{ Select
-        <m>x_1 = -\frac{1-\alpha}{\alpha }</m> and <m>x_2=x_3=1</m>,
-        then form <m>f\,'(z) = A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}</m>.
-      </p>
-      <p>
-        Computation then reveals that <m>A=(\frac{1-\alpha }{\alpha})^{\alpha -1}</m>,
-        which is used to construct the desired function <m>w=f(z) =\int A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}\,dz = (z-1)^{\alpha}(1+ \frac{\alpha z}{1-\alpha})^{1-\alpha}</m>. }
-      </p>
-    </task>
-    <task xml:id="ex_11_9-10">
-      <p>
-        Show that <m>w = f(z) = 4(z+1)^\frac{1}{4} + \log\left[\frac{(z+1)^\frac{1}{4}-1}{(z+1)^\frac{1}{4}+1}\right] + i\log\left[\frac{i-(z+1)^\frac{1}{4}}{i+(z+1)^\frac{1}{4}}\right]</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-084">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-084">
-        <image width="73%" source="figs/ch-10/ch-10-fig-084.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>z_1=-1, \, z_2=0, \, w_1=i\pi</m>,
-        and <m>w_2=-d</m>.}Then let <m>d \to \infty</m>.
-        Use the change of variable <m>z+1=s^4</m> in the resulting integral.
-      </p>
-    </task>
-    <task xml:id="ex_11_9-11">
-      <p>
-        Show that <m>w=f(z) = -\frac{i}{z}z^\frac{1}{2}(z-3)</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-085">Figure</xref>. \hint{Set <m>x_1=0</m>,
-        <m>x_2=1</m>,
-        <m>\,w_1=-d</m>, and <m>w_2=i</m> and let <m>d\to 0</m>.}
-      </p>
-      <figure xml:id="fig_ch-10-085">
-        <image width="73%" source="figs/ch-10/ch-10-fig-085.png"/>
-      </figure>
-      <p>
-        \solution{ <m>f\,'(z) = Az^{-\frac{1}{2}}(z-1) = A(z^\frac{1}{2}-z^{-\frac{1}{2}})</m>.
-        Integrate and get <m>f(z)=-\frac{i}{2}z^\frac{1}{2}(z-3)</m>. }
-      </p>
-    </task>
-    <task>
-      <p>
-        Show that <m>\displaystyle w = f(z) = \int \frac{1}{(1-z^2)^\frac{3}{4}}\,dz</m> maps the upper half-plane
-        <m>\mathrm{Im}(z)>0</m> onto a right triangle with angles
-        <m>\frac{\pi}{2}, \, \frac{\pi}{4}</m>, and <m>\frac{\pi}{4}</m>.
-      </p>
-    </task>
-    <task>
-      <p>
-        Show that <m>\displaystyle w=f(z) =\int\frac{1}{(1-z^2)^\frac{2}{3}}\,dz</m> maps the upper half-plane onto an equilateral triangle.
-      </p>
-    </task>
-    <task>
-      <p>
-        Show that <m>\displaystyle w=f(z)=\int\frac{1}{(z-z^3)^\frac{1}{2}}\,dz</m> maps the upper half-plane onto a square.
-      </p>
-    </task>
-    <task xml:id="ex_11_9-12">
-      <p>
-        Show that <m>w=f(z)=2(z+1)^\frac{1}{2}-\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]</m> maps the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> onto the domain indicated in <xref ref="fig_ch-10-086">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-10-086">
-        <image width="73%" source="figs/ch-10/ch-10-fig-086.png"/>
-      </figure>
-      <p>
-        \hint{Set <m>x_1=-1, \, x_2=0, \, x_3=1, \, w_1=0, \,w_2=d</m>,
-        and <m>w_3 = 2\sqrt{2} - 2\ln(\sqrt{2}-1) + i\pi</m>.} Then let <m>d\to \infty</m>.
-      </p>
-    </task>
-    <p>
-      \end{exercise}
-    </p>
+    <exercise xml:id="ex_11_9-1">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>K</m> be real constants with <m>0\lt K\lt 2</m>.
+          Use the Schwarz-Christoffel formula to show that the function
+          <m>w=f(z)=(z-a)^K</m> maps the upper half-plane <m>\mathrm{Im}(z)>0</m> onto the sector
+          <m>0\lt \arg_0 w\lt K\pi</m> shown in <xref ref="fig_ch-10-075">Figure</xref>.
+        </p>
+        <figure xml:id="fig_ch-10-075">
+          <caption>For <xref ref="ex_11_9-1">Exercise</xref></caption>
+          <image width="73%" source="figs/ch-10/ch-10-fig-075.svg"/>
+        </figure>
+      </statement>
+      <solution>
+        <p>
+          <m>f\,'(z)=A(z-a)^{-\frac{\pi -k\pi}{\pi}}=A(z-a)^{k-1}</m>.
+          Integrate and get <m>f(z)=\frac{A}{k}(z-a)^{k}</m>, then choose <m>A=k</m>.
+        </p>
+      </solution>
+    </exercise>
+    <exercise xml:id="ex_11_9-2">
+      <statement>
+        <p>
+          Let <m>a</m> be a real constant.
+          Use the Schwarz-Christoffel formula to show that the function
+          <m>w=f(z)=\mathrm{Log}(z-a)</m> maps the upper half-plane
+          <m>\mathrm{Im}(z)>0</m> onto the infinite strip
+          <m>0\lt v\lt \pi</m> shown in <xref ref="fig_ch-10-076">Figure</xref>.
+        </p>
+        <p>
+          \hint{Set <m>x_1=a-1 \, x_2=a, \, w_1=i\pi</m>, and<m>w_2=-d</m>.
+          Then let <m>d \to \infty</m>.}
+        </p>
+        <figure xml:id="fig_ch-10-076">
+          <caption>For <xref ref="ex_11_9-2">Exercise</xref></caption>
+          <image width="73%" source="figs/ch-10/ch-10-fig-076.svg"/>
+        </figure>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For the remaining exercises,
+          construct the derivative <m>f\,'(z)</m> and use the Schwarz-Christoffel formula,
+          <xref ref="SCfun">Equation</xref>,
+          and techniques of integration to determine the required conformal mapping <m>w=f(z)</m>.
+        </p>
+        <p>
+          \end{task}
+        </p>
+        <task xml:id="ex_11_9-3">
+          <p>
+            Show that <m>w=f(z)=\frac{1}{\pi}(z^2-1)^\frac{1}{2} + \frac{1}{\pi}\mathrm{Log}\left[ z+(z^2-1)^\frac{1}{2}\right] - i</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-077">Figure</xref>.
+          </p>
+          <p>
+            \hint{Set <m>x_1=-1
+            <me>
+              ,\,x_2=1
+            </me>,
+            \,w_1=0</m>, and <m>w_2=-i</m>.}
+          </p>
+          <figure xml:id="fig_ch-10-077">
+            <caption>For <xref ref="ex_11_9-3">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-077.svg"/>
+          </figure>
+          <solution>
+            <p>
+              <m>f\,'(z) = A(z+1)^\frac{1}{2}(z-1)^\frac{1}{2} = A\left[\frac{z}{(z^2-1)^\frac{1}{2}} + \frac{1}{(z^2-1)^\frac{1}{2}}\right]</m>.
+              Integrate with the boundary conditions <m>f(-1)=0</m> and <m>f(1)=-1</m> to get <m>w=f(z)=\frac{1}{\pi }\left[(z^2-1)^\frac{1}{2} + \mathrm{Log}(z+(z^2-1)^\frac{1}{2})\right]-i</m>.
+            </p>
+          </solution>
+        </task>
+        <task xml:id="ex_11_9-4">
+          <p>
+            Show that <m>w=f(z)=\frac{2}{\pi}(z^2-1)^\frac{1}{2}+\frac{2}{\pi}\mathrm{Arcsin}\frac{1}{z}</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-078">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-078">
+            <caption>For <xref ref="ex_11_9-4">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-078.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=w_1=-1 ,\, x_2=0, \, x_3=w_3=1</m>, and <m>w_2=-id</m>.
+            Then let <m>d \to \infty</m>.}
+          </p>
+        </task>
+        <task xml:id="ex_11_9-5">
+          <p>
+            Show that <m>w=f(z)=\frac{1}{2}\mathrm{Log}(z^2-1)=\mathrm{Log}\left[(z^2-1)^\frac{1}{2}\right]</m> maps the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> onto the infinite strip
+            <m>0\lt v\lt \pi</m> slit along the ray <m>u\le 0</m><m>,\,v=\frac{\pi}{2}</m>,
+            per <xref ref="fig_ch-10-079">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-079">
+            <caption>For <xref ref="ex_11_9-5">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-079.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=-1, \, x_2=0, \, x_3=1, \, w_1=i\pi -d, \ ,w_2=\frac{i\pi}{2}</m>,
+            and <m>w_3=-d</m>.
+            Then let <m>d \to \infty</m>.}
+          </p>
+          <solution>
+            <p>
+              <m>f\,'(z) = A(z+1)^{-1}z(z-1)^{-1}</m>,
+              and <m>w=f(z)=\mathrm{Log}(z^2-1)^\frac{1}{2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task xml:id="ex_11_9-6">
+          <p>
+            Show that <m>w=f(z) = -\frac{2}{\pi}z(1-z^2)^\frac{1}{2}-\frac{2}{\pi}\mathrm{Arcsin}(z)</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-080">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-080">
+            <caption>For <xref ref="ex_11_9-6">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-080.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=-1, \, x_2=1, \, w_1=1</m>, and <m>w_2=-1</m>.}
+          </p>
+        </task>
+        <task xml:id="ex_11_9-7">
+          <p>
+            Show that <m>w=f(z)=z+\mathrm{Log}(z)</m> maps the upper half-plane
+            <m>\mathrm{Im}(z)>0</m> onto the upper half-plane
+            <m>\mathrm{Im}(w)>0</m> slit along the ray <m>u \le -1, \, v=\pi</m>,
+            as shown in <xref ref="fig_ch-10-081">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-081">
+            <caption>For <xref ref="ex_11_9-7">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-081.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=-1, \, x_2=0, \, w_1=-1+i\pi</m>, and <m>w_2=-d</m>.
+            Then Let <m>d \to \infty</m>.}
+          </p>
+          <solution>
+            <p>
+              <m>f\,'(z) = A(z+1)^{1}z^{-1} = A(1+\frac{1}{z})</m>.
+              Integrate to get <m>f(z)=z+\mathrm{Log}(z)</m>.
+            </p>
+          </solution>
+        </task>
+        <task xml:id="ex_11_9-8">
+          <p>
+            Show that <m>w=f(z)=i\pi+2(z+1)^\frac{1}{2}+\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-082">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-082">
+            <caption>For <xref ref="ex_11_9-8">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-082.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=-1, \, x_2=0, \, w_1=i\pi</m>, and <m>w_2=-d</m>.
+            Then let <m>d \to \infty</m>.}
+          </p>
+        </task>
+        <task xml:id="ex_11_9-9">
+          <p>
+            Show that <m>w=f(z)=(z-1)^{\alpha}\left[\frac{1+\alpha z}{1-\alpha}\right]^{1-\alpha}</m> maps the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> onto the upper half-plane
+            <m>\mathrm{Im}(w)>0</m> slit along the segment from <m>0</m> to <m>e^{i\alpha \pi}</m>,
+            per <xref ref="fig_ch-10-083">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-083">
+            <caption>For <xref ref="ex_11_9-9">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-083.svg"/>
+          </figure>
+          <p>
+            \hint{Show that <m>f\,'(z) = A\left[\frac{z+(1-\alpha)}{\alpha} \right]^{-\alpha}(z)(z-1)^{\alpha -1}</m>.}
+          </p>
+          <solution>
+            <p>
+              Select <m>x_1 = -\frac{1-\alpha}{\alpha }</m> and <m>x_2=x_3=1</m>,
+              then form <m>f\,'(z) = A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}</m>.
+            </p>
+            <p>
+              Computation then reveals that <m>A=(\frac{1-\alpha }{\alpha})^{\alpha -1}</m>,
+              which is used to construct the desired function <m>w=f(z) =\int A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}\,dz = (z-1)^{\alpha}(1+ \frac{\alpha z}{1-\alpha})^{1-\alpha}</m>.
+            </p>
+          </solution>
+        </task>
+        <task xml:id="ex_11_9-10">
+          <p>
+            Show that <m>w = f(z) = 4(z+1)^\frac{1}{4} + \log\left[\frac{(z+1)^\frac{1}{4}-1}{(z+1)^\frac{1}{4}+1}\right] + i\log\left[\frac{i-(z+1)^\frac{1}{4}}{i+(z+1)^\frac{1}{4}}\right]</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-084">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-084">
+            <caption>For <xref ref="ex_11_9-10">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-084.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>z_1=-1, \, z_2=0, \, w_1=i\pi</m>, and <m>w_2=-d</m>.
+            Then let <m>d \to \infty</m>.
+            Use the change of variable <m>z+1=s^4</m> in the resulting integral.}
+          </p>
+        </task>
+        <task xml:id="ex_11_9-11">
+          <p>
+            Show that <m>w=f(z) = -\frac{i}{z}z^\frac{1}{2}(z-3)</m> maps the upper half-plane onto the domain indicated in <xref ref="fig_ch-10-085">Figure</xref>.
+          </p>
+          <p>
+            \hint{Set <m>x_1=0</m>, <m>x_2=1</m>,
+            <m>\,w_1=-d</m>, and <m>w_2=i</m> and let <m>d\to 0</m>.}
+          </p>
+          <figure xml:id="fig_ch-10-085">
+            <caption>For <xref ref="ex_11_9-11">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-085.svg"/>
+          </figure>
+          <solution>
+            <p>
+              <m>f\,'(z) = Az^{-\frac{1}{2}}(z-1) = A(z^\frac{1}{2}-z^{-\frac{1}{2}})</m>.
+              Integrate and get <m>f(z)=-\frac{i}{2}z^\frac{1}{2}(z-3)</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <p>
+            Show that <m>\displaystyle w = f(z) = \int \frac{1}{(1-z^2)^\frac{3}{4}}\,dz</m> maps the upper half-plane
+            <m>\mathrm{Im}(z)>0</m> onto a right triangle with angles
+            <m>\frac{\pi}{2}, \, \frac{\pi}{4}</m>, and <m>\frac{\pi}{4}</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            Show that <m>\displaystyle w=f(z) =\int\frac{1}{(1-z^2)^\frac{2}{3}}\,dz</m> maps the upper half-plane onto an equilateral triangle.
+          </p>
+        </task>
+        <task>
+          <p>
+            Show that <m>\displaystyle w=f(z)=\int\frac{1}{(z-z^3)^\frac{1}{2}}\,dz</m> maps the upper half-plane onto a square.
+          </p>
+        </task>
+        <task xml:id="ex_11_9-12">
+          <p>
+            Show that <m>w=f(z)=2(z+1)^\frac{1}{2}-\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]</m> maps the upper half-plane
+            <m>\mathrm{Im}(z) >0</m> onto the domain indicated in <xref ref="fig_ch-10-086">Figure</xref>.
+          </p>
+          <figure xml:id="fig_ch-10-086">
+            <caption>For <xref ref="ex_11_9-12">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-086.svg"/>
+          </figure>
+          <p>
+            \hint{Set <m>x_1=-1, \, x_2=0, \, x_3=1, \, w_1=0, \,w_2=d</m>,
+            and <m>w_3 = 2\sqrt{2} - 2\ln(\sqrt{2}-1) + i\pi</m>.
+            Then let <m>d \to \infty</m>.}
+          </p>
+        </task>
+      </statement>
+    </exercise>
   </exercises>
 </section>

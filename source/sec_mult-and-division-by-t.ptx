@@ -68,6 +68,8 @@
       <p>
         Show that <m>\mathcal{L}(t\cos bt) =\frac{s^2-b^2}{(s^2+b^2)^2}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Let <m>f(t) =\cos bt</m>,
         then <m>F(s) =\mathcal{L}(\cos bt) = \frac{s}{s^2+b^2}</m>.
@@ -76,10 +78,6 @@
           \mathcal{L}(t\cos bt) =-F\,'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -87,6 +85,8 @@
       <p>
         Show that <m>\mathcal{L}(\frac{\sin t}{t}) =\arctan \frac{1}{s}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Let <m>f(t) = \sin t</m> and <m>F(s) =\frac{1}{s^2+1}</m>.
         Since <m>\lim\limits_{t \to 0^+}\frac{\sin t}{t}=1</m>,
@@ -94,10 +94,6 @@
         <me>
           \mathcal{L}\left(\frac{\sin t}{t}\right) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} = \left.-\arctan \frac{1}{\sigma }\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}
         </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -117,6 +113,8 @@
           ty\,''(t) - ty\,'(t) - y(t) = 0  \text{ with }   y(0) =0
         </me>.
       </p>
+    </statement>
+    <solution>
       <p>
         Let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>,
         then using the <xref ref="Laplacety1">substitutions</xref>
@@ -156,71 +154,61 @@
           y(t) = Cte^t
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <exercises xml:id="exercises_mult-and-division-by-t">
     <title>Exercises</title>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Find the Laplace transform for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\mathcal{L}(te^{-2t})</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\mathcal{L}(te^{-2t}) = \frac{1}{(s+2)^2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\mathcal{L}(te^{-2t}) = \frac{1}{(s+2)^2}</m>.
+            <m>\mathcal{L}(t^2e^{4t})</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\mathcal{L}(t^2e^{4t})</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\mathcal{L}(t\sin 3t)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\mathcal{L}(t\sin 3t) = \frac{6s}{(s^2+9)^2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\mathcal{L}(t\sin 3t) = \frac{6s}{(s^2+9)^2}</m>.
+            <m>\mathcal{L}(t^2\cos 2t)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\mathcal{L}(t^2\cos 2t)</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>\mathcal{L}(t\sinh t)</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>\mathcal{L}(t\sinh t) = \frac{2s}{(s^2-1)^2}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>\mathcal{L}(t\sinh t) = \frac{2s}{(s^2-1)^2}</m>.
+            <m>\mathcal{L}(t^2\cosh t)</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\mathcal{L}(t^2\cosh t)</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
       <statement>
@@ -275,64 +263,58 @@
       </solution>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Solve the initial value problem for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>y\,''(t) +2y\,'(t) + y(t) = 2e^{-t}</m>,
             with <m>y(0) = 0</m> and <m>y\,'(0) = 1</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = te^{-t}+t^2e^{-t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = te^{-t}+t^2e^{-t}</m>.
+            <m>y\,''(t) + y(t) = 2\sin t</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = -1</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + y(t) = 2\sin t</m>,
-          with <m>y(0) = 0</m> and <m>y\,'(0) = -1</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>ty\,''(t) - ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = Cte^t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = Cte^t</m>.
+            <m>ty\,''(t) + (t-1)y\,'(t) - 2y(t) = 0</m>, with <m>y(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>ty\,''(t) + (t-1)y\,'(t) - 2y(t) = 0</m>, with <m>y(0) = 0</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>ty\,''(t) + ty\,'(t) - y(t) = 0</m>, with <m>y(0) = 0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = Ct</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = Ct</m>.
+            <m>ty\,''(t) + (t-1)y\,'(t) + y(t) = 0</m>, with <m>y(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>ty\,''(t) + (t-1)y\,'(t) + y(t) = 0</m>, with <m>y(0) = 0</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
       <statement>

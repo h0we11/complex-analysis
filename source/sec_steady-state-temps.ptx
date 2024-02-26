@@ -44,7 +44,7 @@
     </p>
     <figure xml:id="fig_ch-10-016">
       <caption>Steady state temperatures</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-016.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-016.svg"/>
     </figure>
     <p>
       Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
@@ -86,6 +86,15 @@
             T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a)
           </me>
         </p>
+        <solution>
+          <p>
+            A reasonable assumption is that the temperature at all points on the plane passing through the line <m>y=y_0</m> is constant.
+            Hence <m>T(x,y) =t(y)</m>, where <m>t(y)</m> is a function of <m>y</m> alone.
+            Laplace's equation implies that <m>t,''(y) =0</m>,
+            and an argument similar to that in <xref ref="ex_10_1">Example</xref>
+            will show that the solution <m>T(x,y)</m> has the form given in the preceding equation.
+          </p>
+        </solution>
         <p>
           The isothermals <m>T(x,y) =\alpha</m> are easily seen to be horizontal lines.
           The conjugate harmonic function is
@@ -98,19 +107,10 @@
           as illustrated in <xref ref="fig_ch-10-017">Figure</xref>.
         </p>
       </statement>
-      <solution>
-        <p>
-          A reasonable assumption is that the temperature at all points on the plane passing through the line <m>y=y_0</m> is constant.
-          Hence <m>T(x,y) =t(y)</m>, where <m>t(y)</m> is a function of <m>y</m> alone.
-          Laplace's equation implies that <m>t,''(y) =0</m>,
-          and an argument similar to that in <xref ref="ex_10_1">Example</xref>
-          will show that the solution <m>T(x,y)</m> has the form given in the preceding equation.
-        </p>
-      </solution>
     </example>
     <figure xml:id="fig_ch-10-017">
       <caption>The temperature between parallel planes where <m>T_1>T_2</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-017.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-017.svg"/>
     </figure>
     <example>
       <statement>
@@ -121,14 +121,16 @@
             T(x,0) = T_1  \text{ for }   x>0,  \text{ and }   T(x,0) = T_2  \text{ for }   x\lt 0
           </me>.
         </p>
-        <p>
-          Since <m>T(x,y)</m> is a harmonic function,
-          this problem is an example of a Dirichlet problem.
-          From Example 11.2, it follows that the solution is
-          <me>
-            T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z)
-          </me>
-        </p>
+        <solution>
+          <p>
+            Since <m>T(x,y)</m> is a harmonic function,
+            this problem is an example of a Dirichlet problem.
+            From Example 11.2, it follows that the solution is
+            <me>
+              T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z)
+            </me>
+          </p>
+        </solution>
         <p>
           The isotherms <m>T(x,y) =\alpha</m> are rays emanating from the origin.
           The conjugate harmonic function is <m>S(x,y) = \frac{1}{\pi}(T_1-T_2)</m> <m>\ln \,|z|</m>,
@@ -138,14 +140,10 @@
           as shown in <xref ref="fig_ch-10-018">Figure</xref>.
         </p>
       </statement>
-      <solution>
-        <p>
-        </p>
-      </solution>
     </example>
     <figure xml:id="fig_ch-10-018">
       <caption>The temperature <m>T(x,y)</m> in the upper half-plane where <m>T_1>T_2</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-018.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-018.svg"/>
     </figure>
     <example>
       <statement>
@@ -157,45 +155,43 @@
             <mrow>T(x,0) \amp =  50  \text{ for }   - 1 \lt  x \lt  1</mrow>
           </md>.
         </p>
-        <p>
-          As discussed in <xref ref="ex_phi_x_y_">Example</xref>,
-          the function
-          <men xml:id="conmap3">
-            u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
-          </men>
-          is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.
-          The conformal map given by <xref ref="conmap3">Equation</xref>
-          gives rise to a new problem of finding the temperature
-          <m>T^*(u,v)</m> that satisfies the boundary conditions
-          <me>
-            T^*(u,0) = 100  \text{ for }   u > 0,  \text{ and }   T^*(0,v) = 50  \text{ for }   v>0
-          </me>.
-        </p>
-        <p>
-          If we use Example 11.2, the harmonic function <m>T^*(u,v)</m> is given by
-          <men xml:id="harmfun1">
-            T^*(u,v) = 100 + \frac{50-100}{\frac{\pi}{2}}\mathrm{Arg}(w) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
-          </men>.
-        </p>
-        <p>
-          Substituting the expressions for <m>u</m> and <m>v</m> from Equation <xref ref="conmap3"/> into Equation <xref ref="harmfun1"/> yields the desired solution:
-          <me>
-            T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right)
-          </me>
-        </p>
+        <solution>
+          <p>
+            As discussed in <xref ref="ex_phi_x_y_">Example</xref>,
+            the function
+            <men xml:id="conmap3">
+              u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
+            </men>
+            is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.
+            The conformal map given by <xref ref="conmap3">Equation</xref>
+            gives rise to a new problem of finding the temperature
+            <m>T^*(u,v)</m> that satisfies the boundary conditions
+            <me>
+              T^*(u,0) = 100  \text{ for }   u > 0,  \text{ and }   T^*(0,v) = 50  \text{ for }   v>0
+            </me>.
+          </p>
+          <p>
+            If we use Example 11.2, the harmonic function <m>T^*(u,v)</m> is given by
+            <men xml:id="harmfun1">
+              T^*(u,v) = 100 + \frac{50-100}{\frac{\pi}{2}}\mathrm{Arg}(w) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
+            </men>.
+          </p>
+          <p>
+            Substituting the expressions for <m>u</m> and <m>v</m> from Equation <xref ref="conmap3"/> into Equation <xref ref="harmfun1"/> yields the desired solution:
+            <me>
+              T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right)
+            </me>
+          </p>
+        </solution>
         <p>
           The isothermals <m>T(x,y) =</m> constant are circles that pass through the points <m>\pm 1</m>,
           as shown in <xref ref="fig_ch-10-019">Figure</xref>.
         </p>
       </statement>
-      <solution>
-        <p>
-        </p>
-      </solution>
     </example>
     <figure xml:id="fig_ch-10-019">
       <caption>The temperature <m>T(x,y)</m> in a half-disk</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-019.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-019.svg"/>
     </figure>
   </introduction>
   <subsection xml:id="subsec_insulated-segment">
@@ -238,7 +234,7 @@
     </p>
     <figure xml:id="fig_ch-10-020">
       <caption>Steady state temperatures with one boundary portion insulated</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-020.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-020.svg"/>
     </figure>
     <p>
       The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal derivative of <m>T^*(u,v)</m> is zero.
@@ -311,7 +307,7 @@
     <figure xml:id="fig_ch-10-021">
       <caption>The temperature <m>T(x,y)</m> with <m>T_y(x,0)=0</m> for <m>-1\lt x\lt 1</m>, and boundary values <m>T(x,0)=-1</m> for <m>x\lt -1</m> and <m>T(x,0)=1</m>,
       for <m>x>1</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-021.png"/>
+      <image width="73%" source="figs/ch-10/ch-10-fig-021.svg"/>
     </figure>
     <exercises xml:id="exercises_steady-state-temps">
       <title>Exercises</title>
@@ -343,7 +339,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-022">
-            <image width="73%" source="figs/ch-10/ch-10-fig-022.png"/>
+            <caption>For <xref ref="ex_T_x_y_-1">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-022.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -361,7 +358,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-023">
-            <image width="73%" source="figs/ch-10/ch-10-fig-023.png"/>
+            <caption>For <xref ref="ex_T_x_y_-2">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-023.svg"/>
           </figure>
         </statement>
         <solution>
@@ -376,22 +374,19 @@
             Find the temperature function <m>T(x,y)</m> inside the unit disk
             <m>|z|\lt 1</m> that satisfies the following boundary values
             (shown in <xref ref="fig_ch-10-024">Figure</xref>).
-          </p>
-          <p>
             <md>
               <mrow>T(x,y) \amp = 20  \text{ for }   x+iy=z=e^{i\theta},  0\lt \theta \lt  \frac{\pi}{2};</mrow>
               <mrow>T(x,y) \amp = 60  \text{ for }   x+iy=z=e^{i\theta}, \frac{\pi}{2} \lt  \theta \lt  2\pi </mrow>
             </md>.
           </p>
+          <p>
+            \hint{Use <m>w=\frac{i(1-z)}{1+z}</m>.}
+          </p>
           <figure xml:id="fig_ch-10-024">
-            <image width="73%" source="figs/ch-10/ch-10-fig-024.png"/>
+            <caption>For <xref ref="ex_T_x_y_-3">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-024.svg"/>
           </figure>
         </statement>
-        <hint>
-          <p>
-            Use <m>w=\frac{i(1-z)}{1+z}</m>.
-          </p>
-        </hint>
       </exercise>
       <exercise xml:id="ex_T_x_y_-4">
         <statement>
@@ -405,7 +400,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-025">
-            <image width="73%" source="figs/ch-10/ch-10-fig-025.png"/>
+            <caption>For <xref ref="ex_T_x_y_-4">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-025.svg"/>
           </figure>
         </statement>
         <solution>
@@ -419,7 +415,7 @@
           <p>
             Find the temperature function <m>T(x,y)</m> in the domain
             <m>r>1,\;0\lt \theta \lt \pi</m> that satisfies the following boundary values
-            (shown in <xref ref="fig_ch-10-026">Figure</xref>).
+            (shown in <xref ref="fig_ch-10-026">Figure</xref>). \hint{<m>w=\frac{i(1-z)}{1+z}</m>.}
             <md>
               <mrow>T(x,0) \amp = 0  \text{ for }   x > 1;</mrow>
               <mrow>T(x,0) \amp = 0  \text{ for }   x \lt  -1;</mrow>
@@ -427,14 +423,10 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-026">
-            <image width="73%" source="figs/ch-10/ch-10-fig-026.png"/>
+            <caption>For <xref ref="ex_T_x_y_-5">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-026.svg"/>
           </figure>
         </statement>
-        <hint>
-          <p>
-            <m>w=\frac{i(1-z)}{1+z}</m>.
-          </p>
-        </hint>
       </exercise>
       <exercise xml:id="ex_T_x_y_-6">
         <statement>
@@ -452,7 +444,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-027">
-            <image width="73%" source="figs/ch-10/ch-10-fig-027.png"/>
+            <caption>For <xref ref="ex_T_x_y_-6">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-027.svg"/>
           </figure>
         </statement>
         <solution>
@@ -475,7 +468,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-028">
-            <image width="73%" source="figs/ch-10/ch-10-fig-028.png"/>
+            <caption>For <xref ref="ex_T_x_y_-7">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-028.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -493,7 +487,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-029">
-            <image width="73%" source="figs/ch-10/ch-10-fig-029.png"/>
+            <caption>For <xref ref="ex_T_x_y_-8">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-029.svg"/>
           </figure>
         </statement>
         <solution>
@@ -507,7 +502,7 @@
           <p>
             Find the temperature function <m>T(x,y)</m> in the infinite strip
             <m>0\lt y\lt \pi</m> that satisfies the following boundary conditions
-            (shown in <xref ref="fig_ch-10-030">Figure</xref>).
+            (shown in <xref ref="fig_ch-10-030">Figure</xref>). \hint{Use <m>w=e^{z}</m>.}
             <md>
               <mrow>T(x,0) \amp = 50  \text{ for }   x > 0;</mrow>
               <mrow>T(x,\pi) \amp = -50  \text{ for }   x > 0;</mrow>
@@ -516,14 +511,10 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-030">
-            <image width="73%" source="figs/ch-10/ch-10-fig-030.png"/>
+            <caption>For <xref ref="ex_T_x_y_-9">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-030.svg"/>
           </figure>
         </statement>
-        <hint>
-          <p>
-            Use <m>w=e^{z}</m>.
-          </p>
-        </hint>
       </exercise>
       <exercise xml:id="ex_T_x_y_-10">
         <statement>
@@ -539,7 +530,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-031">
-            <image width="73%" source="figs/ch-10/ch-10-fig-031.png"/>
+            <caption>For <xref ref="ex_T_x_y_-10">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-031.svg"/>
           </figure>
         </statement>
         <solution>
@@ -561,7 +553,8 @@
             </md>.
           </p>
           <figure xml:id="fig_ch-10-032">
-            <image width="73%" source="figs/ch-10/ch-10-fig-032.png"/>
+            <caption>For <xref ref="ex_T_x_y_-11">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-032.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -577,7 +570,8 @@
             as illustrated in <xref ref="fig_ch-10-033">Figure</xref>.
           </p>
           <figure xml:id="fig_ch-10-033">
-            <image width="73%" source="figs/ch-10/ch-10-fig-033.png"/>
+            <caption>For <xref ref="ex_T_x_y_-12">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-033.svg"/>
           </figure>
         </statement>
         <solution>
@@ -600,7 +594,8 @@
             as illustrated in <xref ref="fig_ch-10-034">Figure</xref>.
           </p>
           <figure xml:id="fig_ch-10-034">
-            <image width="73%" source="figs/ch-10/ch-10-fig-034.png"/>
+            <caption>For <xref ref="ex_T_x_y_-13">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-034.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -620,15 +615,14 @@
               <mrow>\frac{\partial T}{\partial n} \amp = T_y(x,0) = 0  \text{ when }   1 \lt  |x| \lt \cosh 2</mrow>
             </md>.
           </p>
+          <p>
+            \hint{Use <m>w = \mathrm{Arcsin}(z)</m>.}
+          </p>
           <figure xml:id="fig_ch-10-035">
-            <image width="73%" source="figs/ch-10/ch-10-fig-035.png"/>
+            <caption>For <xref ref="ex_T_x_y_-14">Exercise</xref></caption>
+            <image width="73%" source="figs/ch-10/ch-10-fig-035.svg"/>
           </figure>
         </statement>
-        <hint>
-          <p>
-            Use <m>w = \mathrm{Arcsin}(z)</m>.
-          </p>
-        </hint>
         <solution>
           <p>
             <m>T(x,y) = 40 + 20\Big[\mathrm{Im}\big(\mathrm{Arcsin}(z)\big)\Big]</m>.

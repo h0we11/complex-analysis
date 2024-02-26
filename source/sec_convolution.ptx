@@ -63,7 +63,7 @@
   </proof>
   <figure xml:id="fig_ch-11-28">
     <caption>The region of integration in the convolution theorem</caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-28.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-28.svg"/>
   </figure>
   <p>
     <xref ref="table_convolution-properties">Table</xref>
@@ -106,6 +106,8 @@
       <p>
         Show that <m>\mathcal{L}^{-1}\left(\frac{2s}{(s^2+1)^2}\right) = t\sin t</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         Let <m>F(s) = \frac{1}{s^2+1}</m>,
         <m>G(s) =\frac{2s}{s^2+1}, \, f(t) = \sin t, \, g(t) =2\cos t</m>,
@@ -120,10 +122,6 @@
           <mrow>\amp = t\sin t</mrow>
         </md>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -134,6 +132,8 @@
           f(t) = 2\cos t-\int_0^t(t-\tau)f(\tau)\,d\tau
         </me>
       </p>
+    </statement>
+    <solution>
       <p>
         Letting <m>F(s) =\mathcal{L}\big(f(t)\big)</m> and using
         <m>\mathcal{L}(t) = \frac{1}{s^2}</m> in the convolution theorem we obtain
@@ -148,10 +148,6 @@
         <me>
           f(t) = 2\cos t - t\sin t
         </me>
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -187,13 +183,15 @@
   </p>
   <figure xml:id="fig_ch-11-29">
     <caption>Graphs of <m>y=\delta_a(t)</m> for <m>a=10</m>, <m>40</m>, and <m>100</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-29.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-29.svg"/>
   </figure>
   <example>
     <statement>
       <p>
         Show that <m>\mathcal{L}\big(\delta(t)\big) = 1</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         By definition, the Laplace transform of <m>\delta_a(t)</m> is
         <me>
@@ -206,10 +204,6 @@
         <me>
           \mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = \lim\limits_{a \to 0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1
         </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -226,7 +220,7 @@
   </p>
   <figure xml:id="fig_ch-11-30">
     <caption>The integral of <m>\delta_a(t)</m> is <m>f_a(t)</m>, which becomes <m>U_0(T)</m>, which becomes <m>U_0(t)</m> when <m>a \to 0</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-30.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-30.svg"/>
   </figure>
   <p>
     The response of a system to the unit impulse function is illustrated in the next example.
@@ -239,6 +233,8 @@
           y\,''(t)+4y\,'(t)+13y(t)=3\delta(t) \text{ with }   y(0) =0  \text{ and } y\,'(0^-)=0
         </me>.
       </p>
+    </statement>
+    <solution>
       <p>
         Taking transforms results in <m>(s^2+4s+13)Y(s) = 3\mathcal{L}(\delta (t)) = 3</m>, so that
         <me>
@@ -248,10 +244,6 @@
         <me>
           y(t)=e^{-2t}\sin 3t
         </me>
-      </p>
-    </statement>
-    <solution>
-      <p>
       </p>
     </solution>
   </example>
@@ -266,7 +258,7 @@
   </p>
   <figure xml:id="fig_ch-11-31">
     <caption>The solution <m>y=y(t)</m> to <xref ref="ex_10_32">Example</xref></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-31.png"/>
+    <image width="73%" source="figs/ch-11/ch-11-fig-31.svg"/>
   </figure>
   <p>
     We now illustrate how the convolution method can be used to solve initial value problems.
@@ -289,6 +281,8 @@
         </me>,
         and <m>h(t)</m> is the function whose Laplace transform given by <m>H(s) = \frac{1}{as^2+bs+c}</m>.
       </p>
+    </statement>
+    <solution>
       <p>
         The particular solution is found by solving the equation
         <me>
@@ -314,10 +308,6 @@
           <mrow>y\,'(0) \amp = u\,'(0) +v\,'(0) = y_1 + 0 = y_1</mrow>
         </md>.
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <example>
@@ -328,6 +318,8 @@
           y\,''(t) + y(t) = \tan t,  \text{ with }   y(0) = 1  \text{ and }   y\,'(0) = 2
         </me>.
       </p>
+    </statement>
+    <solution>
       <p>
         First solve <m>u''(t) + u(t) = 0</m> with
         <m>u(0) = 1</m> and <m>u'(0) = 2</m>.
@@ -350,97 +342,85 @@
           y(t) = u(t) + v(t) = \cos t + 3\sin t + \cos(t) \ln \frac{\cos t}{1+\sin t}
         </me>
       </p>
-    </statement>
-    <solution>
-      <p>
-      </p>
     </solution>
   </example>
   <exercises xml:id="exercises_convolution">
     <title>Exercises</title>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Find the indicated convolution for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>t\ast t</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t)=t, \, g(t)=t</m>,
+              and <m>(f \ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau = \int_0^t\tau(t-\tau)\,d\tau = \frac{t^3}{6}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t)=t, \, g(t)=t</m>,
-            and <m>(f \ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau = \int_0^t\tau(t-\tau)\,d\tau = \frac{t^3}{6}</m>.
+            <m>t\ast \sin t</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>t\ast \sin t</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>e^t\ast e^{2t}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t)=e^t, \, g(t)=e^{2t}</m>,
+              and <m>(g \ast f)(t) = \int_0^te^{2\tau }e^{t-\tau}\,d\tau = -e^t+e^{2t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t)=e^t, \, g(t)=e^{2t}</m>,
-            and <m>(g \ast f)(t) = \int_0^te^{2\tau }e^{t-\tau}\,d\tau = -e^t+e^{2t}</m>.
+            <m>\sin t\ast \sin 2t</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\sin t\ast \sin 2t</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Use convolution to find <m>\mathcal{L}^{-1}\big(F(s)\big)</m> for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>F(s) =\frac{2}{(s-1)(s-2)}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t)=\mathcal{L}^{-1}\Big(\frac{2}{(s-1)(s-2)}\Big)=-2e^t+2e^{2t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t)=\mathcal{L}^{-1}\Big(\frac{2}{(s-1)(s-2)}\Big)=-2e^t+2e^{2t}</m>.
+            <m>F(s) = \frac{6}{s^3}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>F(s) = \frac{6}{s^3}</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>F(s) = \frac{1}{s(s^2+1)}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>f(t)=\mathcal{L}^{-1}\Big(\frac{1}{s(s^2+1)}\Big) = 1 - \cos t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>f(t)=\mathcal{L}^{-1}\Big(\frac{1}{s(s^2+1)}\Big) = 1 - \cos t</m>.
+            <m>F(s) = \frac{s}{(s^2+1)(s^2+4)}</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>F(s) = \frac{s}{(s^2+1)(s^2+4)}</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
       <statement>
@@ -550,129 +530,119 @@
       </solution>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Use the convolution theorem to solve the following integral equations.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>f(t) = e^t + \int_0^te^{t-\tau}f(\tau)\,d\tau</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>F(s) = \frac{1}{s-2}</m>, and <m>f(t)=e^{2t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>F(s) = \frac{1}{s-2}</m>, and <m>f(t)=e^{2t}</m>.
+            <m>f(t) + 4\int_0^t(t-\tau)f(\tau)\,d\tau = 2</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(t) + 4\int_0^t(t-\tau)f(\tau)\,d\tau = 2</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>6f(t) = 2t^3 + \int_0^t(t-\tau)^3f(\tau)\,d\tau</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>F(s) = \frac{2}{s^{4}-1}</m>,
+              and <m>f(t)=\sinh t-\sin t</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>F(s) = \frac{2}{s^{4}-1}</m>,
-            and <m>f(t)=\sinh t-\sin t</m>.
+            <m>f(t) = 2t + \int_0^t\sin(t-\tau)f(\tau)\,d\tau</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>f(t) = 2t + \int_0^t\sin(t-\tau)f(\tau)\,d\tau</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Solve the initial value problem for each of the following:
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>y\,''(t) + 2y\,'(t) + y(t) = \delta(t)</m>,
             with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = te^{-t}</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = te^{-t}</m>.
+            <m>y\,''(t) - 2y\,'(t) + 5y(t) = 2\delta(t)</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) - 2y\,'(t) + 5y(t) = 2\delta(t)</m>,
-          with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             <m>y\,''(t) + 4y\,'(t) + 3y(t) = 2\delta(t-1)</m>,
             with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = (-e^{3-3t} + e^{1-t})U_1(t)</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = (-e^{3-3t} + e^{1-t})U_1(t)</m>.
+            <m>y\,''(t) + 4y\,'(t) + 3y(t) = 2\delta(t)</m>,
+            with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + 4y\,'(t) + 3y(t) = 2\delta(t)</m>,
-          with <m>y(0) = 0</m> and <m>y\,'(0) = 0</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
     <exercise>
-      <introduction>
+      <statement>
         <p>
           Use the IVP convolution method to solve the following initial value problems.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>y\,''(t) + 2y\,'(t) +y(t) = t^4</m>,
             with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              <m>y(t) = -21te^{-t} - 119e^{-t} + 120 - 96t + 36t^2 - 8t^3 + t^4</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            <m>y(t) = -21te^{-t} - 119e^{-t} + 120 - 96t + 36t^2 - 8t^3 + t^4</m>.
+            <m>y\,''(t) - 2y\,'(t) + 5y(t) = 8\exp(-t)</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) - 2y\,'(t) + 5y(t) = 8\exp(-t)</m>,
-          with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + 4y\,'(t) + 3y(t) = 24t^2e^{-t}</m>,
-          with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>y\,''(t) + 4y\,'(t) + 3y(t) = 2te^{-t}</m>,
-          with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
-        </p>
-      </task>
+        </task>
+        <task>
+          <p>
+            <m>y\,''(t) + 4y\,'(t) + 3y(t) = 24t^2e^{-t}</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
+          </p>
+        </task>
+        <task>
+          <p>
+            <m>y\,''(t) + 4y\,'(t) + 3y(t) = 2te^{-t}</m>,
+            with <m>y(0) = 1</m> and <m>y\,'(0) = 2</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
   </exercises>
 </section>

@@ -93,7 +93,7 @@
   </p>
   <figure xml:id="fig_ch-07-01">
     <caption>The geometric series does not converge uniformly on <m>(-1,1)</m></caption>
-    <image width="73%" source="figs/ch-07/ch-07-fig-01.png"/>
+    <image width="73%" source="figs/ch-07/ch-07-fig-01.svg"/>
   </figure>
   <p>
     In the exercises,
@@ -313,51 +313,47 @@
   <exercises xml:id="exercises_uniform-convergence">
     <title>Exercises</title>
     <exercise xml:id="x7_1_1">
-      <introduction>
+      <statement>
         <p>
           This exercise relates to <xref ref="fig_ch-07-01">Figure</xref>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             For <m>x</m> near <m>-1</m>,
             is the graph of <m>S_n(x)</m> above or below <m>f(x)</m>?
             Explain.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              By definition, <m>f(-1) =\frac{1}{1-(-1)}=\frac{1}{2}</m>.
+              It appears from the graph that the value of the upper function is approximately 1
+              (certainly larger than <m>\frac{1}{2}</m>),
+              so the graph of <m>S_n</m> must be above the graph of <m>f</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            By definition, <m>f(-1) =\frac{1}{1-(-1)}=\frac{1}{2}</m>.
-            It appears from the graph that the value of the upper function is approximately 1
-            (certainly larger than <m>\frac{1}{2}</m>),
-            so the graph of <m>S_n</m> must be above the graph of <m>f</m>.
+            Is the index <m>n</m> in <m>S_n(x)</m> odd or even?
+            Explain.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Is the index <m>n</m> in <m>S_n(x)</m> odd or even?
-          Explain.
-        </p>
-      </task>
-      <task>
-        <statement>
+        </task>
+        <task>
           <p>
             Assuming that the graph is accurate to scale,
             what is the value of <m>n</m> in <m>S_n(x)</m>?
             Explain.
           </p>
-        </statement>
-        <solution>
-          <p>
-            From the graph, we approximate <m>S_n(1)=5</m>.
-            As <m>S_n(x)=\sum\limits_{k=0}^{n-1}x^k</m>,
-            we deduce that <m>n=5</m>.
-            Explain.
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              From the graph, we approximate <m>S_n(1)=5</m>.
+              As <m>S_n(x)=\sum\limits_{k=0}^{n-1}x^k</m>,
+              we deduce that <m>n=5</m>.
+              Explain.
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x7_1_2">
       <statement>
@@ -368,51 +364,45 @@
       </statement>
     </exercise>
     <exercise xml:id="x7_1_3">
-      <introduction>
+      <statement>
         <p>
           Prove that the following series converge uniformly on the sets indicated.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2}z^k</m> on <m>\overline{D}_1(0) = \{z:|z| \le 1\}</m>
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              We see that <m>|\frac{1}{k^2}z^k| \le \frac{1}{k^2}</m> for <m>z\in \bar{D}_1(0)</m>.
+              By the Weierstrass M-test,
+              the series <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2} z^k</m> converges uniformly on <m>\bar{D}_1(0)=\{z:|z| \le 1 \}</m>,
+              because the series <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2}</m> converges.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            We see that <m>|\frac{1}{k^2}z^k| \le \frac{1}{k^2}</m> for <m>z\in \bar{D}_1(0)</m>.
-            By the Weierstrass M-test,
-            the series <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2} z^k</m> converges uniformly on <m>\bar{D}_1(0)=\{z:|z| \le 1 \}</m>,
-            because the series <m>\sum\limits_{k=1}^{\infty}\frac{1}{k^2}</m> converges.
+            <m>\sum\limits_{k=0}^{\infty}\frac{1}{(z^2-1)^k}</m> on <m>\{z:|z| \ge 2\}</m>
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>\sum\limits_{k=0}^{\infty}\frac{1}{(z^2-1)^k}</m> on <m>\{z:|z| \ge 2\}</m>
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>\sum\limits_{k=0}^{\infty}\frac{z^k}{z^{2k}+1}</m> on
-          <m>\overline{D}_r(0)</m>, where <m>0\lt r\lt 1</m>.
-        </p>
-      </task>
+        </task>
+        <task>
+          <p>
+            <m>\sum\limits_{k=0}^{\infty}\frac{z^k}{z^{2k}+1}</m> on
+            <m>\overline{D}_r(0)</m>, where <m>0\lt r\lt 1</m>.
+          </p>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x7_1_4">
       <statement>
         <p>
           Show that <m>S_n(z)=\sum\limits_{k=0}^{n-1}z^k=\frac{1-z^n}{1-z}</m> does not converge uniformly to <m>f(z)=\frac{1}{1-z}</m> on the set
-          <m>T=D_1(0)</m> by appealing to Statement <xref ref="Unif_conv_negation"/>.
+          <m>T=D_1(0)</m> by appealing to Statement <xref ref="Unif_conv_negation"/>. \hint{Given
+          <m>\varepsilon>0</m> and a positive integer <m>n</m>,
+          let <m>z_n=\varepsilon^{\frac{1}{n}}</m>.}
         </p>
       </statement>
-      <hint>
-        <p>
-          Given <m>\varepsilon>0</m> and a positive integer <m>n</m>,
-          let <m>z_n=\varepsilon^{\frac{1}{n}}</m>.
-        </p>
-      </hint>
     </exercise>
     <exercise xml:id="x7_1_5">
       <statement>
@@ -443,54 +433,50 @@
       </statement>
     </exercise>
     <exercise xml:id="x7_1_7">
-      <introduction>
+      <statement>
         <p>
           Suppose that the sequences of functions <m>\{f_n\}</m> and <m>\{g_n\}</m> converge uniformly on the set <m>T</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Show that the sequence <m>\{f_n+g_n\}</m> converges uniformly on <m>T</m>.
           </p>
-        </statement>
-        <solution>
-          <p>
-            Let us say that <m>\{f_n\}</m> and <m>\{g_n\}</m> converge uniformly on <m>T</m> to <m>f</m> and <m>g</m> respectively.
-            Let <m>\varepsilon>0</m> be given.
-            The uniform convergence of <m>\{f_n\}</m> means there exists an integer
-            <m>N_{\varepsilon}</m> such that <m>n \ge N_{\varepsilon}</m> implies
-            <m>|f_n(z) -f(z)| \lt \frac{\varepsilon}{2}</m> for all <m>z\in T</m>.
-            Likewise, there exists an integer
-            <m>M_{\varepsilon}</m> such that <m>n \ge M_{\varepsilon}</m> implies
-            <m>|g_n(z) -g(z)| \lt \frac{\varepsilon}{2}</m> for all <m>z\in T</m>.
-            If we set <m>L_{\varepsilon} = Max\{N_{\varepsilon}, \, M_{\varepsilon}\}</m>,
-            then for <m>n \ge L_{\varepsilon}, \, \Big|\big(f_n(z)+g_n(z)\big) - \big(f(z)+g(z)\big)\Big| \le |f_n(z)-f(z)| + |g_n(z)-g(z)| \lt \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon</m> for all <m>z\in T</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
+          <solution>
+            <p>
+              Let us say that <m>\{f_n\}</m> and <m>\{g_n\}</m> converge uniformly on <m>T</m> to <m>f</m> and <m>g</m> respectively.
+              Let <m>\varepsilon>0</m> be given.
+              The uniform convergence of <m>\{f_n\}</m> means there exists an integer
+              <m>N_{\varepsilon}</m> such that <m>n \ge N_{\varepsilon}</m> implies
+              <m>|f_n(z) -f(z)| \lt \frac{\varepsilon}{2}</m> for all <m>z\in T</m>.
+              Likewise, there exists an integer
+              <m>M_{\varepsilon}</m> such that <m>n \ge M_{\varepsilon}</m> implies
+              <m>|g_n(z) -g(z)| \lt \frac{\varepsilon}{2}</m> for all <m>z\in T</m>.
+              If we set <m>L_{\varepsilon} = Max\{N_{\varepsilon}, \, M_{\varepsilon}\}</m>,
+              then for <m>n \ge L_{\varepsilon}, \, \Big|\big(f_n(z)+g_n(z)\big) - \big(f(z)+g(z)\big)\Big| \le |f_n(z)-f(z)| + |g_n(z)-g(z)| \lt \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon</m> for all <m>z\in T</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
             Show by example that it is not necessarily the case that
             <m>\{f_n\,g_n\}</m> converges uniformly on <m>T</m>.
           </p>
-        </statement>
-        <solution>
-          <p>
-            For all <m>n</m>, let <m>f_n(x)=x</m>,
-            and <m>g_n(x)=\frac{1}{n}</m>,
-            for all <m>x\in T</m>, where <m>T</m> is the real numbers.
-            Then <m>f_n(x)</m> converges uniformly to <m>x</m>,
-            and <m>g_n(x)</m> converges uniformly to <m>0</m>
-            (verify).
-            However, even though <m>f_n(x) g_n(x)</m> converges to <m>0</m> (explain),
-            the convergence is not uniform
-            (verify).
-            Can you come up with a different example?
-          </p>
-        </solution>
-      </task>
+          <solution>
+            <p>
+              For all <m>n</m>, let <m>f_n(x)=x</m>,
+              and <m>g_n(x)=\frac{1}{n}</m>,
+              for all <m>x\in T</m>, where <m>T</m> is the real numbers.
+              Then <m>f_n(x)</m> converges uniformly to <m>x</m>,
+              and <m>g_n(x)</m> converges uniformly to <m>0</m>
+              (verify).
+              However, even though <m>f_n(x) g_n(x)</m> converges to <m>0</m> (explain),
+              the convergence is not uniform
+              (verify).
+              Can you come up with a different example?
+            </p>
+          </solution>
+        </task>
+      </statement>
     </exercise>
     <exercise xml:id="x7_1_8">
       <statement>
@@ -501,34 +487,32 @@
       </statement>
     </exercise>
     <exercise xml:id="x7_1_9">
-      <introduction>
+      <statement>
         <p>
           Consider the function <m>\zeta (z)=\sum\limits_{n=1}^{\infty}n^{-z}</m>,
           where <m>n^{-z}=\exp(-z \ln n)</m>.
         </p>
-      </introduction>
-      <task>
-        <statement>
+        <task>
           <p>
             Show that <m>\zeta (z)</m> converges uniformly on <m>A=\{z:\mathrm{Re}(z) \ge 2\}</m>.
           </p>
-        </statement>
-        <solution>
+          <solution>
+            <p>
+              For <m>z \in A, \, |n^{-z}| = |\exp[-(x+iy) \ln n]| = |\exp(-iy)|\,|\exp(-x\ln n)| = n^{-x}</m>.
+              Since <m>z \in A</m>, we know <m>\mathrm{Re}(z) = x \ge 2</m>,
+              so <m>n^{-x} \le \frac{1}{n^2}</m>.
+              Thus, with <m>M_n=\frac{1}{n^2}</m>,
+              we see that <m>\zeta (z)</m> converges uniformly on <m>A</m> by the Weierstrass <m>M</m>-test.
+            </p>
+          </solution>
+        </task>
+        <task>
           <p>
-            For <m>z \in A, \, |n^{-z}| = |\exp[-(x+iy) \ln n]| = |\exp(-iy)|\,|\exp(-x\ln n)| = n^{-x}</m>.
-            Since <m>z \in A</m>, we know <m>\mathrm{Re}(z) = x \ge 2</m>,
-            so <m>n^{-x} \le \frac{1}{n^2}</m>.
-            Thus, with <m>M_n=\frac{1}{n^2}</m>,
-            we see that <m>\zeta (z)</m> converges uniformly on <m>A</m> by the Weierstrass <m>M</m>-test.
+            Let <m>D</m> be a closed disk contained in <m>\{z:\mathrm{Re}(z)>1\}</m>.
+            Show that <m>\zeta(z)</m> converges uniformly on <m>D</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Let <m>D</m> be a closed disk contained in <m>\{z:\mathrm{Re}(z)>1\}</m>.
-          Show that <m>\zeta(z)</m> converges uniformly on <m>D</m>.
-        </p>
-      </task>
+        </task>
+      </statement>
     </exercise>
   </exercises>
 </section>
