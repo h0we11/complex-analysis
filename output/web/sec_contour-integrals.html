@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Contours and Contour Integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Complex Analysis">
+<meta property="book:author" content="Russell W. Howell">
+<meta property="book:author" content="John H. Mathews">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec_algebra-1-20-1 { counter-set: sec_algebra-1-20-1 0; }
+#sec_algebra-1-20-1 > li::marker { content: ""counter(sec_algebra-1-20-1,decimal)"."; }
+#sec_algebra-1-20-1 > li { counter-increment: sec_algebra-1-20-1; }
+#sec_julia-mandelbrot-9-8 { counter-set: sec_julia-mandelbrot-9-8 0; }
+#sec_julia-mandelbrot-9-8 > li::marker { content: ""counter(sec_julia-mandelbrot-9-8,decimal)"."; }
+#sec_julia-mandelbrot-9-8 > li { counter-increment: sec_julia-mandelbrot-9-8; }
+#sec_julia-mandelbrot-19-26 { counter-set: sec_julia-mandelbrot-19-26 0; }
+#sec_julia-mandelbrot-19-26 > li::marker { content: ""counter(sec_julia-mandelbrot-19-26,decimal)"."; }
+#sec_julia-mandelbrot-19-26 > li { counter-increment: sec_julia-mandelbrot-19-26; }
+#Regions_of_Convergence-1-1-3 { counter-set: Regions_of_Convergence-1-1-3 0; }
+#Regions_of_Convergence-1-1-3 > li::marker { content: ""counter(Regions_of_Convergence-1-1-3,decimal)"."; }
+#Regions_of_Convergence-1-1-3 > li { counter-increment: Regions_of_Convergence-1-1-3; }
+#th15-1-1-3 { counter-set: th15-1-1-3 0; }
+#th15-1-1-3 > li::marker { content: ""counter(th15-1-1-3,decimal)"."; }
+#th15-1-1-3 > li { counter-increment: th15-1-1-3; }
+#Power_Series_Thm-1-1-4 { counter-set: Power_Series_Thm-1-1-4 0; }
+#Power_Series_Thm-1-1-4 > li::marker { content: ""counter(Power_Series_Thm-1-1-4,decimal)"."; }
+#Power_Series_Thm-1-1-4 > li { counter-increment: Power_Series_Thm-1-1-4; }
+#expz_is_entire-1-1-2 { counter-set: expz_is_entire-1-1-2 0; }
+#expz_is_entire-1-1-2 > li::marker { content: ""counter(expz_is_entire-1-1-2,decimal)"."; }
+#expz_is_entire-1-1-2 > li { counter-increment: expz_is_entire-1-1-2; }
+#Unif_Conv_Properties-1-1-7 { counter-set: Unif_Conv_Properties-1-1-7 0; }
+#Unif_Conv_Properties-1-1-7 > li::marker { content: ""counter(Unif_Conv_Properties-1-1-7,decimal)"."; }
+#Unif_Conv_Properties-1-1-7 > li { counter-increment: Unif_Conv_Properties-1-1-7; }
+#Nuanced_Taylor-1-1-10 { counter-set: Nuanced_Taylor-1-1-10 0; }
+#Nuanced_Taylor-1-1-10 > li::marker { content: ""counter(Nuanced_Taylor-1-1-10,decimal)"."; }
+#Nuanced_Taylor-1-1-10 > li { counter-increment: Nuanced_Taylor-1-1-10; }
+#thm_laurent-properties-2-1-6 { counter-set: thm_laurent-properties-2-1-6 0; }
+#thm_laurent-properties-2-1-6 > li::marker { content: ""counter(thm_laurent-properties-2-1-6,decimal)"."; }
+#thm_laurent-properties-2-1-6 > li { counter-increment: thm_laurent-properties-2-1-6; }
+#sec_singularities-4-2-1-7 { counter-set: sec_singularities-4-2-1-7 0; }
+#sec_singularities-4-2-1-7 > li::marker { content: ""counter(sec_singularities-4-2-1-7,decimal)"."; }
+#sec_singularities-4-2-1-7 > li { counter-increment: sec_singularities-4-2-1-7; }
+#sec_singularities-5-1 { counter-set: sec_singularities-5-1 0; }
+#sec_singularities-5-1 > li::marker { content: ""counter(sec_singularities-5-1,decimal)"."; }
+#sec_singularities-5-1 > li { counter-increment: sec_singularities-5-1; }
+#zero_quotient-1-1-7 { counter-set: zero_quotient-1-1-7 0; }
+#zero_quotient-1-1-7 > li::marker { content: ""counter(zero_quotient-1-1-7,decimal)"."; }
+#zero_quotient-1-1-7 > li { counter-increment: zero_quotient-1-1-7; }
+#sec_singularities-23-2-1-12 { counter-set: sec_singularities-23-2-1-12 0; }
+#sec_singularities-23-2-1-12 > li::marker { content: ""counter(sec_singularities-23-2-1-12,decimal)"."; }
+#sec_singularities-23-2-1-12 > li { counter-increment: sec_singularities-23-2-1-12; }
+#Residues_at_Poles-2-1 { counter-set: Residues_at_Poles-2-1 0; }
+#Residues_at_Poles-2-1 > li::marker { content: ""counter(Residues_at_Poles-2-1,decimal)"."; }
+#Residues_at_Poles-2-1 > li { counter-increment: Residues_at_Poles-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis:</span> <span class="subtitle">an Open Source Textbook</span></a></h1>
+<p class="byline">Russell W. Howell, John H. Mathews</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec_complex-integrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_complex-integration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_cauchy-goursat.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_origin.html#subsec_wessel" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Caspar Wessel Makes a Breakthrough</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_origin.html#exercises_origin" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integral-representations.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Integral Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integral-representations.html#exercises_integral-representations" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle &amp; Rouché’s Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\({\bm w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\bm w=(z^2-1)^\frac{1}{2}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_contour-integrals"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">6.2</span><span class="space"> </span><span class="title">Contours and Contour Integrals</span>
+</h2>
+<div class="para" id="sec_contour-integrals-2">In <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a> we showed how to evaluate integrals of the form <span class="process-math">\(\int_a^bf(t) \ dt\text{,}\)</span> where <span class="process-math">\(f\)</span> was complex-valued and <span class="process-math">\(\left[ a,\,b\right]\)</span> was an interval on the real axis (so that <span class="process-math">\(t\)</span> was real, with <span class="process-math">\(t\in \left[ a,\,b\right]\)</span>). In this section, we define and evaluate integrals of the form <span class="process-math">\(\int_cf (z) \,dz\text{,}\)</span> where <span class="process-math">\(f\)</span> is complex-valued and <span class="process-math">\(C\)</span> is a contour in the plane (so that <span class="process-math">\(z\)</span> is complex, with <span class="process-math">\(z\in C\)</span>).<a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> provides our main result, which shows how to transform the latter type of integral into the kind we investigated in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>.</div>
+<div class="para logical" id="sec_contour-integrals-3">
+<div class="para">We use concepts first introduced in <a href="sec_topology.html" class="internal" title="Section 1.6: The Topology of Complex Numbers">Section 1.6</a>. Recall that to represent a curve <span class="process-math">\(C\)</span> in the plane we use the parametric notation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_topology.html" id="review-curve">
+\begin{equation}
+C:z(t)=x(t) +iy(t),  \text{ for }   a \le t \le b\text{,}\tag{6.2.1}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> are continuous functions. We now place a few more restrictions on the type of curve to be described. The following discussion leads to the concept of a contour, which is a type of curve that is adequate for the study of integration.</div>
+</div>
+<div class="para" id="sec_contour-integrals-4">Recall that <span class="process-math">\(C\)</span> is <em class="emphasis">simple</em> if it does not cross itself, which means that <span class="process-math">\(z(t_1) \ne z(t_2)\)</span> whenever <span class="process-math">\(t_1 \ne t_2\text{,}\)</span> except possibly when <span class="process-math">\(t_1 = a\)</span> and <span class="process-math">\(t_2=b\text{.}\)</span> A curve <span class="process-math">\(C\)</span> with the property <span class="process-math">\(z(b)=z(a)\)</span> is a closed curve. If <span class="process-math">\(z(b)=z(a)\)</span> is the only point of intersection, then we say that <span class="process-math">\(C\)</span> is a simple closed curve. As the parameter <span class="process-math">\(t\)</span> increases from the value <span class="process-math">\(a\)</span> to the value <span class="process-math">\(b\text{,}\)</span> the point <span class="process-math">\(z(t)\)</span> starts at the <em class="emphasis">initial point</em> <span class="process-math">\(z(a)\text{,}\)</span> moves along the curve <span class="process-math">\(C\text{,}\)</span> and ends up at the <em class="emphasis">terminal point</em> <span class="process-math">\(z(b)\text{.}\)</span> If <span class="process-math">\(C\)</span> is simple, then <span class="process-math">\(z(t)\)</span> moves continuously from <span class="process-math">\(z(a)\)</span> to <span class="process-math">\(z(b)\)</span> as <span class="process-math">\(t\)</span> increases and the curve is given an <em class="emphasis">orientation</em>, which we indicate by drawing arrows along the curve. <a href="sec_contour-integrals.html#fig_ch-06-01" class="xref" data-knowl="./knowl/xref/fig_ch-06-01.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.1">Figure 6.2.1</a> illustrates how the terms <em class="emphasis">simple</em> and <em class="emphasis">closed</em> describe a curve.</div>
+<figure class="figure figure-like" id="fig_ch-06-01"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-01.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.1<span class="period">.</span></span><span class="space"> </span>The terms <em class="emphasis">simple</em> and <em class="emphasis">closed</em> used to describe curves</figcaption></figure><div class="para logical" id="sec_contour-integrals-6">
+<div class="para">The complex-valued function <span class="process-math">\(z(t)=x(t) +iy(t)\)</span> is said to be <em class="emphasis">differentiable</em> on <span class="process-math">\([a,b]\)</span> if both <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> are differentiable for <span class="process-math">\(a \le t \le b\text{.}\)</span> Here we require the one-sided derivatives<details class="ptx-footnote" aria-live="polite" id="sec_contour-integrals-6-7"><summary class="ptx-footnote__number" title="Footnote 6.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec_contour-integrals-6-7">The derivatives on the right, <span class="process-math">\(x\,'(a^+)\text{,}\)</span> and on the left, <span class="process-math">\(x\,'(b^{-})\text{,}\)</span> are defined by the limits<div class="displaymath process-math">
+\begin{equation*}
+x\,'(a^+)=\lim\limits_{t \to a^+}\frac{x(t)-x(a)}{t-a}  \text{ and }   x\,'(b^-) = \lim\limits_{t \to b^-}\frac{x(t) -x(b)}{t-b}\text{.}
+\end{equation*}
+</div>
+</div></details> of <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> to exist at the endpoints of the interval. As in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>, the derivative <span class="process-math">\(z\,'(t)\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html">
+\begin{equation*}
+z\,'(t)=x\,'(t) + iy\,'(t),  \text{ for }   a \le t \le b
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_contour-integrals-7">The curve <span class="process-math">\(C\)</span> defined by Equation <a href="sec_contour-integrals.html#review-curve" class="xref" data-knowl="./knowl/xref/review-curve.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.1">(6.2.1)</a> is said to be a smooth curve if the function <span class="process-math">\(z\,'\)</span> is continuous and nonzero on the interval. If <span class="process-math">\(C\)</span> is a smooth curve, then <span class="process-math">\(C\)</span> has a nonzero tangent vector at each point <span class="process-math">\(z(t)\text{,}\)</span> which is given by the vector <span class="process-math">\(z\,'(t)\text{.}\)</span> If <span class="process-math">\(x\,'(t_0)=0\text{,}\)</span> then the tangent vector <span class="process-math">\(z\,'(t_0)=iy\,'(t_0)\)</span> is vertical. If <span class="process-math">\(x\,'(t_0) \ne 0\text{,}\)</span> then the slope <span class="process-math">\(\frac{dy}{dx}\)</span> of the tangent line to <span class="process-math">\(C\)</span> at the point <span class="process-math">\(z(t_0)\)</span> is given by <span class="process-math">\(\frac{{y\,'(t_0)}}{x\,'(t_0)}\text{.}\)</span> Hence for a smooth curve the angle of inclination <span class="process-math">\(\theta (t)\)</span> of its tangent vector <span class="process-math">\(z\,'(t)\)</span> is defined for all values of <span class="process-math">\(t\in [a,b]\)</span> and is continuous. Thus a smooth curve has no corners or cusps. <a href="sec_contour-integrals.html#fig_ch-06-02" class="xref" data-knowl="./knowl/xref/fig_ch-06-02.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.2">Figure 6.2.2</a> illustrates this concept.</div>
+<figure class="figure figure-like" id="fig_ch-06-02"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-02.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.2<span class="period">.</span></span><span class="space"> </span>The term <em class="emphasis">smooth</em> used to describe curves</figcaption></figure><div class="para logical" id="sec_contour-integrals-9">
+<div class="para">If <span class="process-math">\(C\)</span> is a smooth curve, then <span class="process-math">\(ds\text{,}\)</span> the differential of arc length, is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+ds=\sqrt{[x\,'(t)^2 + [y\,'(t)]^2} \, dt=|z\,'(t)| \, dt
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-10">
+<div class="para">The function <span class="process-math">\(s(t)=\sqrt{x\,'(t)^2 + y\,'(t)^2}\)</span> is continuous because <span class="process-math">\(x\,'\)</span> and <span class="process-math">\(y\,'\)</span> are continuous functions, so the length <span class="process-math">\(L(C)\)</span> of the curve <span class="process-math">\(C\)</span> is</div>
+<div class="displaymath process-math" id="Curve_Length">
+\begin{equation}
+L(C)=\int_a^b\sqrt{[x\,'(t)]^2 + [y\,'(t)]^2}\,dt = \int_a^b|z\,'(t)|\,dt\text{.}\tag{6.2.2}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-11">
+<div class="para">Now, consider <span class="process-math">\(C\)</span> to be a curve with parametrization</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C:z_1(t)=x(t)+iy(t)  \text{ for }   a \le t \le b
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-12">
+<div class="para">The opposite curve <span class="process-math">\(-C\)</span> traces out the same set of points in the plane, but in the reverse order, and has the parametrization</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-03.html">
+\begin{equation*}
+-C:z_2(t)=x(-t)+iy(-t)  \text{ for }   -b \le t \le -a\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(z_2(t)=z_1(-t)\text{,}\)</span> <span class="process-math">\(-C\)</span> is merely <span class="process-math">\(C\)</span> traversed in the opposite sense, as <a href="sec_contour-integrals.html#fig_ch-06-03" class="xref" data-knowl="./knowl/xref/fig_ch-06-03.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.3">Figure 6.2.3</a> illustrates.</div>
+</div>
+<figure class="figure figure-like" id="fig_ch-06-03"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-03.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.3<span class="period">.</span></span><span class="space"> </span>The curve <span class="process-math">\(C\)</span> and its opposite curve <span class="process-math">\(-C\)</span></figcaption></figure><div class="para logical" id="sec_contour-integrals-14">
+<div class="para">A curve <span class="process-math">\(C\)</span> that is constructed by joining finitely many smooth curves end to end is called a contour. Let <span class="process-math">\(C_1,\,C_2,\ldots ,\,C_n\)</span> denote <span class="process-math">\(n\)</span> smooth curves such that the terminal point of the curve <span class="process-math">\(C_k\)</span> coincides with the initial point of <span class="process-math">\(C_{k+1}\text{,}\)</span> for <span class="process-math">\(k=1,\,2,\ldots \,,n-1\text{.}\)</span> We express the contour <span class="process-math">\(C\)</span> by the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C=C_1+C_2+\cdots +C_n\text{.}
+\end{equation*}
+</div>
+<div class="para">A synonym for <em class="emphasis">contour</em> is <em class="emphasis">path</em>.</div>
+</div>
+<details id="sec_contour-integrals-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_contour-integrals-15-1-1">Find a parametrization of the polygonal path <span class="process-math">\(C\)</span> from <span class="process-math">\(-1+i\)</span> to <span class="process-math">\(3-i\)</span> shown in <a href="sec_contour-integrals.html#fig_ch-06-04" class="xref" data-knowl="./knowl/xref/fig_ch-06-04.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.5">Figure 6.2.5</a>.</div>
+<div class="solutions"><details id="sec_contour-integrals-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_contour-integrals-15-2-1">
+<div class="para">We express <span class="process-math">\(C\)</span> as three smooth curves, or <span class="process-math">\(C=C_1+C_2+C_3\text{.}\)</span> If we set <span class="process-math">\(z_0=-1+i\)</span> and <span class="process-math">\(z_1=-1\text{,}\)</span> we can use <a href="sec_topology.html#sec_topology-3-2-1-6" class="xref" data-knowl="./knowl/xref/Curvez0z1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.2">Equation (1.6.2)</a> to get a formula for the straight-line segment joining two points:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curvez0z1.html">
+\begin{equation*}
+C_1:z_1(t) = z_0+t(z_1-z_0) = (-1+i)+t[-1-(-1+i)],  \text{ for }   0 \le t \le 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_contour-integrals-15-2-2">
+<div class="para">When simplified, this formula becomes</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_1:z_1(t)=-1+i(1-t),  \text{ for }   0 \le t \le 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_contour-integrals-15-2-3">
+<div class="para">Similarly, the segments <span class="process-math">\(C_2\)</span> and <span class="process-math">\(C_3\)</span> are given by</div>
+<div class="displaymath process-math" id="sec_contour-integrals-15-2-3-3">
+\begin{align*}
+{4} \amp  C_2 \amp \amp : z_2(t)=(-1+2t) +it, \amp \amp   \text{ for }  \amp \amp   0 \le t \le 1,  \text{ and }\\
+\amp  C_3 \amp \amp : z_3(t)=(1+2t) +i(1-2t), \amp \amp   \text{ for }  \amp \amp   0 \le t \le 1\text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article></details><figure class="figure figure-like" id="fig_ch-06-04"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-04.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.5<span class="period">.</span></span><span class="space"> </span>The polygonal path { {<span class="process-math">\(C=C_1+C_2+C_3\)</span>}} from  <span class="process-math">\(-1+i\)</span> to <span class="process-math">\(3-i\)</span></figcaption></figure><figure class="figure figure-like" id="fig_ch-06-05"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-05.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.6<span class="period">.</span></span><span class="space"> </span>Partition points <span class="process-math">\(\{z_k\}\)</span> and function evaluation points <span class="process-math">\(\{c_k\}\)</span> for a Riemann sum along the contour <span class="process-math">\(C\)</span> from <span class="process-math">\(z=A\)</span> to <span class="process-math">\(z=B\)</span></figcaption></figure><div class="para logical" id="sec_contour-integrals-18">
+<div class="para">We are now ready to define the integral of a complex function along a contour <span class="process-math">\(C\)</span> in the plane with initial point <span class="process-math">\(A\)</span> and terminal point <span class="process-math">\(B\text{.}\)</span> Our approach is to mimic what is done in calculus. We create a partition <span class="process-math">\(P_n=\{ z_0=A,z_1,z_2,\,.\,.\,.\,,z_n=B\}\)</span> of points that proceed along <span class="process-math">\(C\)</span> from <span class="process-math">\(A\)</span> to <span class="process-math">\(B\)</span> and form the differences <span class="process-math">\(\Delta z_k=z_k-z_{k-1}\text{,}\)</span> for <span class="process-math">\(k=1,\,2,\,.\,.\,.\,,\,n\text{.}\)</span> Between each pair of partition points <span class="process-math">\(z_{k-1}\)</span> and <span class="process-math">\(z_k\)</span> we select a point <span class="process-math">\(c_k\)</span> on <span class="process-math">\(C\text{,}\)</span> as shown in <a href="sec_contour-integrals.html#fig_ch-06-05" class="xref" data-knowl="./knowl/xref/fig_ch-06-05.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.6">Figure 6.2.6</a>, and evaluate the function <span class="process-math">\(f\text{.}\)</span> We use these values to make a Riemann sum for the partition:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-05.html" id="Riemann_Sum">
+\begin{equation}
+S(P_n)=\sum\limits_{k=1}^nf(c_k)(z_k-z_{k-1})=\sum_{k=1}^nf(c_k)\Delta z_k\text{.}\tag{6.2.3}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sec_contour-integrals-19">Assume now that there exists a unique complex number <span class="process-math">\(L\)</span> that is the limit of every sequence <span class="process-math">\(\{S(P_n)\}\)</span> of Riemann sums given in Equation <a href="sec_contour-integrals.html#Riemann_Sum" class="xref" data-knowl="./knowl/xref/Riemann_Sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.3">(6.2.3)</a>, where the maximum of <span class="process-math">\(|\Delta z_k|\)</span> tends toward 0 for the sequence of partitions. That number is the value of the integral of the function <span class="process-math">\(f\)</span> along <span class="process-math">\(C\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="Contoe_fnt_Def"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">6.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Complex integral.</span>
+</h3> <div class="para logical" id="Contoe_fnt_Def-2-1">
+<div class="para">Let <span class="process-math">\(C\)</span> be a contour. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_Cf(z)\,dt = \lim_{n \to \infty}\sum\limits_{k=1}^nf(c_k) \Delta z_k\text{,}
+\end{equation*}
+</div>
+<div class="para">provided the limit exists in the sense previously discussed.</div>
+</div></article><div class="para" id="sec_contour-integrals-21">In <a href="sec_contour-integrals.html#Contoe_fnt_Def" class="xref" data-knowl="./knowl/xref/Contoe_fnt_Def.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.7: Complex integral">Definition 6.2.7</a> the value of the integral depends on the contour. In <a href="sec_cauchy-goursat.html" class="internal" title="Section 6.3: The Cauchy-Goursat Theorem">Section 6.3</a> the Cauchy-Goursat theorem will establish the remarkable fact that, if <span class="process-math">\(f\)</span> is analytic, then <span class="process-math">\(\int_Cf(z)dz\)</span> is <em class="emphasis">independent</em> of the contour.</div>
+<details id="Riemann_Sum_Ex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.8</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="Riemann_Sum_Ex-1-1">Use a Riemann sum to approximate the integral <span class="process-math">\(\int_C\exp\)</span> <span class="process-math">\(z\ dt\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment joining the point <span class="process-math">\(A=0\)</span> to <span class="process-math">\(B=2+i\frac{\pi}{4}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="Riemann_Sum_Ex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="Riemann_Sum_Ex-2-1">Set <span class="process-math">\(n=8\)</span> in Equation <a href="sec_contour-integrals.html#Riemann_Sum" class="xref" data-knowl="./knowl/xref/Riemann_Sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.3">(6.2.3)</a> and form the partition <span class="process-math">\(P_8:z_k= \frac{k}{4}+i\frac{\pi k}{32}\)</span> for <span class="process-math">\(k=0,\,1,\,2,\ldots ,\,8\text{.}\)</span> For this situation, we have a uniform increment <span class="process-math">\(\Delta z_k=\frac{1}{4}+i\frac{\pi}{32}\text{.}\)</span> For convenience we select <span class="process-math">\(c_k=\frac{z_{k-1}+z_k}{2}=\frac{2k-1}{ 8}+i\frac{\pi(2k-1)}{64}\text{,}\)</span> for <span class="process-math">\(k=1,\,2,\ldots ,\,8\text{.}\)</span> <a href="sec_contour-integrals.html#fig_ch-06-06" class="xref" data-knowl="./knowl/xref/fig_ch-06-06.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.9">Figure 6.2.9</a> shows the points <span class="process-math">\(\{z_k\}\)</span> and <span class="process-math">\(\{c_k\}\text{.}\)</span>
+</div> <figure class="figure figure-like" id="fig_ch-06-06"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-06.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.9<span class="period">.</span></span><span class="space"> </span>Partition and evaluation points for the Riemann sum <span class="process-math">\(S(P_8)\)</span></figcaption></figure> <div class="para logical" id="Riemann_Sum_Ex-2-3">
+<div class="para">One possible Riemann sum, then, is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S(P_8)=\sum_{k=1}^8f(c_k) \Delta z_k = \sum\limits_{k=1}^{8}\exp \left[\frac{2k-1}{8}+i\frac{\pi(2k-1)}{64}\right]\left(\frac{1}{4}+i\frac{\pi}{32}\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">By rounding the terms in this Riemann sum to two decimal digits, we obtain an approximation for the integral:</div>
+<div class="displaymath process-math" id="Riemann_Sum_Ex-2-3-2">
+\begin{align*}
+S(P_8) \amp \approx (0.28+0.13i) +(0.33+0.19i) +(0.41+0.29i) +(0.49+0.42i)\\
+\amp + (0.57+0.6i) +(0.65+0.84i) +(0.72+1.16i) +(0.78+1.57i)\\
+\amp \approx 4.23+5.20i\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="Riemann_Sum_Ex-2-4">
+<div class="para">This result compares favorably with the precise value of the integral, which you will soon see equals</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\exp\left(2+i\frac{\pi}{4}\right) -1 = -1+e^2\left(\frac{\sqrt{2}}{2}\right)+ie^2\left(\frac{\sqrt{2}}{2}\right) \approx 4.22485+5.22485i
+\end{equation*}
+</div>
+</div>
+</div></details></div></article></details><div class="para" id="sec_contour-integrals-23">In general, obtaining an exact value for an integral given by <a href="sec_contour-integrals.html#Contoe_fnt_Def" class="xref" data-knowl="./knowl/xref/Contoe_fnt_Def.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.2.7: Complex integral">Definition 6.2.7</a> could be a daunting task. Fortunately, there is a beautiful theory that allows for an easy computation of many contour integrals. Suppose that we have a parametrization of the contour <span class="process-math">\(C\)</span> given by the function <span class="process-math">\(z(t)\)</span> for <span class="process-math">\(a \le t \le b\text{.}\)</span> That is, <span class="process-math">\(C\)</span> is the range of the function <span class="process-math">\(z(t)\)</span> over the interval <span class="process-math">\([a,b]\text{,}\)</span> as <a href="sec_contour-integrals.html#fig_ch-06-07" class="xref" data-knowl="./knowl/xref/fig_ch-06-07.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.10">Figure 6.2.10</a> shows.</div>
+<figure class="figure figure-like" id="fig_ch-06-07"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-07.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.10<span class="period">.</span></span><span class="space"> </span>A parametrization of the contour <span class="process-math">\(C\)</span> by <span class="process-math">\(z(t)\text{,}\)</span> for <span class="process-math">\(a \le t \le b\)</span></figcaption></figure><div class="para logical" id="sec_contour-integrals-25">
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-07.html" id="sec_contour-integrals-25-1">
+\begin{align*}
+\lim\limits_{n \to \infty}\sum_{k=1}^nf(c_k) \Delta z_k \amp = \lim_{n \to \infty}\sum\limits_{k=1}^nf(c_k) (z_k-z_{k-1})\\
+\amp = \lim\limits_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k)) \big[z(t_k)-z(t_{k-1})\big]\text{.}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\tau _k\)</span> and <span class="process-math">\(t_k\)</span> are the points contained in the interval <span class="process-math">\([a,bt]\)</span> with the property that <span class="process-math">\(c_k=z(\tau _k)\)</span> and <span class="process-math">\(z_k=z(t_k)\text{,}\)</span> as is also shown in <a href="sec_contour-integrals.html#fig_ch-06-07" class="xref" data-knowl="./knowl/xref/fig_ch-06-07.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.10">Figure 6.2.10</a>. If for all <span class="process-math">\(k\)</span> we multiply the <span class="process-math">\(k\)</span>th term in the last sum by <span class="process-math">\(\frac{{t_k-t_{k-1}} }{{t_k-t_{k-1}}}\text{,}\)</span> then we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-07.html" id="sec_contour-integrals-25-11">
+\begin{align*}
+\amp  \lim_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k))\left[ \frac{z(t_k) -z(t_{k-1})}{t_k-t_{k-1}}\right] (t_k-t_{k-1}) =\\
+\amp  \lim\limits_{n \to \infty}\sum\limits_{k=1}^nf(z(\tau_k)) \left[\frac{z(t_k) -z(t_{k-1})}{t_k-t_{k-1}}\right] \Delta t_k\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para" id="sec_contour-integrals-26">The quotient inside the last summation looks suspiciously like a derivative, and the entire quantity looks like a Riemann sum. Assuming no difficulties, this last expression should equal <span class="process-math">\(\int_a^bf(z(t) ) z\,'(t)\,dt\text{,}\)</span> as defined in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>. Of course, if we’re to have any hope of this happening, we would have to get the same limit <em class="emphasis">regardless of how we parametrize the contour</em><span class="process-math">\(C\text{.}\)</span> As <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> states, this is indeed the case.</div>
+<article class="theorem theorem-like" id="thm_contour-integral"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.11</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="thm_contour-integral-1-1">
+<div class="para">Suppose that <span class="process-math">\(f(z)\)</span> is a continuous complex-valued function defined on a set containing the contour <span class="process-math">\(C\text{.}\)</span> Let <span class="process-math">\(z(t)\)</span> be any parametrization of <span class="process-math">\(C\)</span> for <span class="process-math">\(a \le t \le b\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_Cf(z)\, dz=\int_a^bf\big(z(t)\big)z\,'(t)\,dt
+\end{equation*}
+</div>
+</div></article><div class="para" id="sec_contour-integrals-28">We omit the proof of <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> because it involves ideas (<em class="emphasis">e.g.</em>, the theory of the Riemann-Stieltjes integral) that are beyond the scope of this book. A more rigorous development of the contour integral based on Riemann sums is presented in advanced texts such as L. V. Ahlfors, <em class="emphasis">Complex Analysis,</em> 3rd ed. (New York: McGraw-Hill, 1979).</div>
+<div class="para" id="sec_contour-integrals-29">Two important facets of <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> are worth mentioning. First, <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> makes the problem of evaluating complex-valued functions along contours easy, as it reduces the task to the evaluation of complex-valued functions over real intervals—a procedure that you studied in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>. Second, according to Theorem 6.1, this transformation yields the same answer regardless of the parametrization we choose for <span class="process-math">\(C\text{.}\)</span>
+</div>
+<details id="Cont_Int_Ex_1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.12</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="Cont_Int_Ex_1-1-1">Give an exact calculation of the integral in <a href="sec_contour-integrals.html#Riemann_Sum_Ex" class="xref" data-knowl="./knowl/xref/Riemann_Sum_Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.8">Example 6.2.8</a>.</div>
+<div class="solutions"><details id="Cont_Int_Ex_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="Cont_Int_Ex_1-2-1">
+<div class="para">We must compute <span class="process-math">\(\int_C\exp z\)</span> <span class="process-math">\(dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment joining <span class="process-math">\(A=0\)</span> to <span class="process-math">\(B=2+i\frac{\pi}{4}\text{.}\)</span> According to <a href="sec_topology.html#sec_topology-3-2-1-6" class="xref" data-knowl="./knowl/xref/Curvez0z1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.6.2">Equation (1.6.2)</a>, we can parametrize <span class="process-math">\(C\)</span> by <span class="process-math">\(z(t)=(2+i\frac{ \pi}{4}) t\text{,}\)</span> for <span class="process-math">\(0 \le t \le 1\text{.}\)</span> As <span class="process-math">\(z\,'(t) = (2+i\frac{\pi}{4})\text{,}\)</span> <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> guarantees that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curvez0z1.html ./knowl/xref/thm_contour-integral.html" id="Cont_Int_Ex_1-2-1-12">
+\begin{align*}
+\int_C\exp z\,dz \amp = \int_0^1\exp[z(t)] z\,'(t)\,dt\\
+\amp = \int_0^1\exp \left[\left(2+i\frac{\pi}{4}\right)t\right]\left(2+i\frac{\pi}{4}\right)dt\\
+\amp = \left(2+i\frac{\pi}{4}\right) \int_0^1e^{2t}e^{i\frac{\pi}{4}t}\,dt\\
+\amp = \left(2+i\frac{\pi}{4}\right) \int_0^1e^{2t}\left(\cos\frac{\pi t}{4}+i\sin \frac{\pi t}{4}\right)dt\\
+\amp = \left(2+i\frac{\pi}{4}\right) \left(\int_0^1e^{2t}\cos \frac{\pi t}{4}\,dt+i\int_0^1e^{2t}\sin \frac{\pi t}{4}\,dt\right)\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="Cont_Int_Ex_1-2-2">Each integral in the last expression can be done using integration by parts. (There is a simpler way—see <a href="sec_complex-integrals.html#advantage" class="xref" data-knowl="./knowl/xref/advantage.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 6.1.6">Remark 6.1.6</a>.) We leave as an exercise to show that the final answer simplifies to <span class="process-math">\(\exp (2+i \frac{\pi}{4}) -1\text{,}\)</span> as we claimed in <a href="sec_contour-integrals.html#Riemann_Sum_Ex" class="xref" data-knowl="./knowl/xref/Riemann_Sum_Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.8">Example 6.2.8</a>.</div>
+</div></details></div></article></details><details id="Cont_Int_Ex_2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.13</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="Cont_Int_Ex_2-1-1">Evaluate <span class="process-math">\(\int_{C_1^+(2)}\frac{1}{z-2} \, dz\text{.}\)</span>
+</div>
+<div class="solutions"><details id="Cont_Int_Ex_2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="Cont_Int_Ex_2-2-1">
+<div class="para">Recall that <span class="process-math">\(C_1^+(2)\)</span> is the upper semicircle with radius 1 centered at <span class="process-math">\(x=2\)</span> oriented in a positive direction (<em class="emphasis">i.e.</em>, counterclockwise). The function <span class="process-math">\(z(t)=2+e^{it}\text{,}\)</span> for <span class="process-math">\(0 \le t \le \pi\)</span> is a parametrization for <span class="process-math">\(C\text{.}\)</span> We apply <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> with <span class="process-math">\(f(z)=\frac{1}{z-2}\text{.}\)</span> (Note: <span class="process-math">\(f\big(z(t)\big)=\frac{1}{z(t) -2}\text{,}\)</span> and <span class="process-math">\(z\,'(t) =ie^{it}\text{.}\)</span>) Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+\begin{equation*}
+\int_C\frac{1}{z-2}\,dz = \int_0^{\pi}\frac{1}{(2+e^{it}) -2}ie^{it}\,dt = \int_0^{\pi}i\ dt=i\pi
+\end{equation*}
+</div>
+</div></div></details></div></article></details><div class="para" id="sec_contour-integrals-32">To help convince yourself that the value of the integral is independent of the parametrization chosen for the given contour, try working through Example 6.8 with <span class="process-math">\(z(t)=2+e^{i\pi t}\text{,}\)</span> for <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
+</div>
+<div class="para" id="sec_contour-integrals-33">A convenient bookkeeping device can help you remember how to apply <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a>. Because <span class="process-math">\(\int_Cf(z)\,dz=\int_a^bf(z(t) ) z\,'(t)\,dt\text{,}\)</span> you can symbolically equate <span class="process-math">\(z\)</span> with <span class="process-math">\(z(t)\)</span> and <span class="process-math">\(dz\)</span> with <span class="process-math">\(z\,'(t)\,dt\text{.}\)</span> These identities should be easy to remember because <span class="process-math">\(z\)</span> is supposed to be a point on the contour <span class="process-math">\(C\)</span> parametrized by <span class="process-math">\(z(t)\text{,}\)</span> and <span class="process-math">\(\frac{dz}{dt}=z\,'(t)\text{,}\)</span> according to the Leibniz notation for the derivative.</div>
+<div class="para logical" id="sec_contour-integrals-34">
+<div class="para">If <span class="process-math">\(z(t)=x(t) +iy(t)\text{,}\)</span> then by the preceding paragraph we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curve_Length.html" id="dz">
+\begin{equation}
+dz=z\,'(t)\,dt = \big[x\,'(t)+iy\,'(t)\big]\,dt = dx+idy\text{.}\tag{6.2.4}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(dx\)</span> and <span class="process-math">\(dy\)</span> are the differentials for <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\text{,}\)</span> respectively (<em class="emphasis">i.e.</em>, <span class="process-math">\(dx\)</span> is equated with <span class="process-math">\(x\,'(t)\,dt\text{,}\)</span> etc.). The expression <span class="process-math">\(dz\)</span> is often called the <em class="emphasis">complex differential</em> of <span class="process-math">\(z\text{.}\)</span> Just as <span class="process-math">\(dx\)</span> and <span class="process-math">\(dy\)</span> are intuitively considered to be small segments along the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes in real variables, we can think of <span class="process-math">\(dz\)</span> as representing a tiny piece of the contour <span class="process-math">\(C\text{.}\)</span> Moreover, if we write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curve_Length.html">
+\begin{equation*}
+|dz| = \big|[x\,'(t)+iy\,'(t)]\big| = \big|x\,'(t) +iy\,'(t)\big|\, dt = \sqrt{\big[x\,'(t)\big]^2 + \big[y\,'(t)\big]^2}\,dt\text{,}
+\end{equation*}
+</div>
+<div class="para">we can put Equation <a href="sec_contour-integrals.html#Curve_Length" class="xref" data-knowl="./knowl/xref/Curve_Length.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.2">(6.2.2)</a> into the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curve_Length.html" id="L_C_">
+\begin{equation}
+L(C)=\int_a^b\sqrt{\big[ x'(t) \big]^2 + \big[y\,'(t)\big]^2}\,dt =\int_C|dz|\text{.}\tag{6.2.5}
+\end{equation}
+</div>
+<div class="para">so we can think of <span class="process-math">\(\left\vert dz\right\vert\)</span> as representing the length of <span class="process-math">\(dz\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-35">
+<div class="para">Suppose that <span class="process-math">\(f(z)=u(z) +iv(z)\)</span> and that <span class="process-math">\(z(t)=x(t) +iy(t)\)</span> is a parametrization for the contour <span class="process-math">\(C\text{.}\)</span> Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Line_Int.html" id="sec_contour-integrals-35-4">
+\begin{align}
+\int_Cf(z)\,dz \amp =\int_a^bf\big(z(t)\big) z\,'(t)\,dt\notag\\
+\amp = \int_a^b\left[u\big(z(t)\big) +iv\big(z(t)\big)\right] \left[ x\,'(t) +iy\,'(t) \right]dt\notag\\
+\amp = \int_a^b\left[u\big(z(t)\big) x\,'(t)-v\big(z(t)\big) y\,'(t) \right]\,dt\notag\\
+\amp  \qquad \qquad \qquad \qquad \qquad +i\int_a^b\left[v\big(z(t)\big) x\,'(t)+u\big(z(t)\big) y\,'(t) \right]dt\notag\\
+\amp = \int_a^b(ux\,'-vy\,')\,dt+i\int_a^b(vx\,'+uy\,')\,dt\text{,}\tag{6.2.6}
+\end{align}
+</div>
+<div class="para">where Equation <a href="sec_contour-integrals.html#sec_contour-integrals-35-4" class="xref" data-knowl="./knowl/xref/Line_Int.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.6">(6.2.6)</a> replaced <span class="process-math">\(u\big(z(t)\big)\)</span> with <span class="process-math">\(u, \; x\,'(t)\)</span> with <span class="process-math">\(x\,'\text{,}\)</span> and so on.</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-36">
+<div class="para">If we use the differentials given in Equation <a href="sec_contour-integrals.html#dz" class="xref" data-knowl="./knowl/xref/dz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.4">(6.2.4)</a>, then we can write Equation <a href="sec_contour-integrals.html#sec_contour-integrals-35-4" class="xref" data-knowl="./knowl/xref/Line_Int.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.6">(6.2.6)</a> in terms of line integrals of the real-valued functions <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{,}\)</span> giving</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/Line_Int.html" id="bookkeeping">
+\begin{equation}
+\int_Cf(z)\,dz = \int_Cu\,dx-v\,dy+i\int_Cv\,dx + u\,dy\text{.}\tag{6.2.7}
+\end{equation}
+</div>
+<div class="para">which is easy to remember if we recall that, symbolically,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/Line_Int.html">
+\begin{equation*}
+f(z)\,dz=(u+iv)(dx+i\,dy)
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_contour-integrals-37">We emphasize that Equation <a href="sec_contour-integrals.html#bookkeeping" class="xref" data-knowl="./knowl/xref/bookkeeping.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.7">(6.2.7)</a> is merely a notational device for applying <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a>. You should carefully apply Theorem 6.1, as illustrated in <a href="sec_contour-integrals.html#Cont_Int_Ex_1" class="xref" data-knowl="./knowl/xref/Cont_Int_Ex_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.12">Examples 6.2.12</a> and <a href="sec_contour-integrals.html#Cont_Int_Ex_2" class="xref" data-knowl="./knowl/xref/Cont_Int_Ex_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.13">Example 6.2.13</a>, before using any shortcuts suggested by Equation <a href="sec_contour-integrals.html#bookkeeping" class="xref" data-knowl="./knowl/xref/bookkeeping.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.7">(6.2.7)</a>.</div>
+<details id="Int_z_two_ways" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.14</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="Int_z_two_ways-1-1">
+<div class="para">Show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-08.html">
+\begin{equation*}
+\int_{C_1}z\,dz = \int_{C_2}z\ dz=4+2i\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(C_1\)</span> is the line segment from <span class="process-math">\(-1-i\)</span> to <span class="process-math">\(3+i\)</span> and <span class="process-math">\(C_2\)</span> is the portion of the parabola <span class="process-math">\(x=y^2+2y\)</span> joining <span class="process-math">\(-1-i\)</span> to <span class="process-math">\(3+i\text{,}\)</span> as indicated in <a href="sec_contour-integrals.html#fig_ch-06-08" class="xref" data-knowl="./knowl/xref/fig_ch-06-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.15">Figure 6.2.15</a>.</div>
+</div> <figure class="figure figure-like" id="fig_ch-06-08"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-08.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.15<span class="period">.</span></span><span class="space"> </span>Two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> joining <span class="process-math">\(-1-i\)</span> to <span class="process-math">\(3+i\)</span></figcaption></figure> <div class="para logical" id="Int_z_two_ways-1-3">
+<div class="para">The line segment joining <span class="process-math">\((-1,-1)\)</span> to <span class="process-math">\((3,1)\)</span> is given by the slope intercept formula <span class="process-math">\(y=\frac{1}{2}x-\frac{1}{2}\text{,}\)</span> which can be written as <span class="process-math">\(x=2y+1\text{.}\)</span> If we choose the parametrization <span class="process-math">\(y=t\)</span> and <span class="process-math">\(x=2t+1\text{,}\)</span> we can write segment <span class="process-math">\(C_1\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C_1:z(t)=2t+1+it  \text{ and }   dz=(2+i)\,dt,  \text{ for }   -1 \le t \le 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="Int_z_two_ways-1-4">
+<div class="para">Along <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(f(z(t) )=2t+1+it\text{.}\)</span> Applying <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+\begin{equation*}
+\int_{C_1}z\ dz=\int_{-1}^1(2t+1+it)(2+i)\,dt\text{.}
+\end{equation*}
+</div>
+<div class="para">We now multiply out the integrand and put it into its real and imaginary parts:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+\begin{equation*}
+\int_{C_1}z\ dz=\int_{-1}^1(3t+2)\,dt+i\int_{-1}^1(4t+1)\,dt=4+2i\text{.}
+\end{equation*}
+</div>
+<div class="para">Similarly, we can parametrize the portion of the parabola <span class="process-math">\(x=y^2+2y\)</span> joining <span class="process-math">\((-1,-1)\)</span> to <span class="process-math">\((3,1)\)</span> by <span class="process-math">\(y=t\)</span> and <span class="process-math">\(x=t^2+2t\)</span> so that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+\begin{equation*}
+C_2:z(t)=t^2+2t+it  \text{ and }   dz=(2t+2+i)\,dt,  \text{ for }   -1 \le t \le 1\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="Int_z_two_ways-1-5">
+<div class="para">Along <span class="process-math">\(C_2\)</span> we have <span class="process-math">\(f(z(t) )=t^2+2t+it\text{.}\)</span> <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> now gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="Int_z_two_ways-1-5-4">
+\begin{align*}
+\int_{C_2}z\ dz \amp = \int_{-1}^1(t^2+2t+it) (2t+2+i)\,dt\\
+\amp = \int_{-1}^1(2t^3+6t^2+3t)\,dt+i\int_{-1}^1(3t^2+4t)\,dt=4+2i\text{.}
+\end{align*}
+</div>
+</div></article></details><div class="para" id="sec_contour-integrals-39">In <a href="sec_contour-integrals.html#fig_ch-06-09" class="xref" data-knowl="./knowl/xref/fig_ch-06-09.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.17">Example 6.2.17</a>, the value of the two integrals is the same. This outcome doesn’t hold in general, as <a href="sec_contour-integrals.html#ex_6_10" class="xref" data-knowl="./knowl/xref/ex_6_10.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.16">Example 6.2.16</a> shows.</div>
+<details id="ex_6_10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.16</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="ex_6_10-1-1">
+<div class="para">Show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-09.html">
+\begin{equation*}
+\int_{C_1}\overline{z}\,dz = -\pi i,  \text{ but that }   \int_{C_2}\overline{z}\,dz = -4i\text{.}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(C_1\)</span> is the semicircular path from <span class="process-math">\(-1\)</span> to 1 and <span class="process-math">\(C_2\)</span> is the polygonal path from <span class="process-math">\(-1\)</span> to 1, respectively, shown in <a href="sec_contour-integrals.html#fig_ch-06-09" class="xref" data-knowl="./knowl/xref/fig_ch-06-09.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.17">Figure 6.2.17</a>.</div>
+</div> <figure class="figure figure-like" id="fig_ch-06-09"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-09.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.17<span class="period">.</span></span><span class="space"> </span>Two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> joining <span class="process-math">\(-1\)</span> to 1</figcaption></figure><div class="solutions"><details id="ex_6_10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="ex_6_10-2-1">
+<div class="para">We parametrize the semicircle <span class="process-math">\(C_1\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+\begin{equation*}
+C_1:z(t)=-\cos t+i\sin t,  \text{ and }   dz=(\sin t+i\cos t)\,dt,  \text{ for }   0 \le t \le \pi\text{.}
+\end{equation*}
+</div>
+<div class="para">Applying <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a>, we have <span class="process-math">\(f(z)=\overline{z}\text{,}\)</span> so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="ex_6_10-2-1-5">
+\begin{align*}
+f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\sin t,  \text{ and }\\
+\int_{C_1}\overline{z}\,dz \amp = \int_0^{\pi}(-\cos t-i\sin t) (\sin t+i\cos t)\,dt\\
+\amp = -i\int_0^{\pi}(\cos ^2t+\sin ^2t)\,dt = -\pi i\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="ex_6_10-2-2">
+<div class="para">We parametrize <span class="process-math">\(C_2\)</span> in three parts, one for each line segment:</div>
+<div class="displaymath process-math" id="ex_6_10-2-2-2">
+\begin{align*}
+{4} \amp  z_1(t) \amp \amp = -1+it,  \amp \amp   dz_1 = i\,dt, \amp \amp   \text{ and }   f\big(z_1(t)\big)=-1-it.\\
+\amp  z_2(t) \amp \amp = -1+2t+i, \amp \amp   dz_2 = 2\,dt, \amp \amp   \text{ and }   f\big(z_2(t)\big)=-1+2t-i.\\
+\amp  z_3(t) \amp \amp = 1+i(1-t), \amp \amp   dz_3 = -i\,dt, \amp \amp   \text{ and }   f\big(z_3(t)\big)=1-i(1-t)\text{.}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(0 \le t \le 1\)</span> in each case. We get our answer by adding the three integrals along the three segments:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{C_2}\overline{z}\ dz=\int_0^1(-1-it) i\,dt+\int_0^1(-1+2t-i) 2\,dt+\int_0^1[1-i(1-t)](-i)\,dt\text{.}
+\end{equation*}
+</div>
+<div class="para">Separating the right side of this equation into its real and imaginary parts gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{C_2}\overline{z}\,dz=\int_0^1(6t-3)\,dt+i\int_0^1(-4)\,dt=-4i\text{.}
+\end{equation*}
+</div>
+<div class="para">Note that the value of the contour integral along <span class="process-math">\(C_1\)</span> isn’t the same as the value of the contour integral along <span class="process-math">\(C_2\text{,}\)</span> although both integrals have the same initial and terminal points.</div>
+</div>
+</div></details></div></article></details><div class="para logical" id="sec_contour-integrals-41">
+<div class="para">Contour integrals have properties that are similar to those of integrals of a complex function of a real variable, which you studied in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>. If <span class="process-math">\(C\)</span> is given by Equation <a href="sec_contour-integrals.html#review-curve" class="xref" data-knowl="./knowl/xref/review-curve.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.1">(6.2.1)</a>, then the integral for the opposite contour <span class="process-math">\(-C\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html ./knowl/xref/review-curve.html">
+\begin{equation*}
+\int_{-C}f(z)\,dz = \int_{-b}^{-a}f\big(z(-\tau)\big) \big[-z\,'(-\tau )\big]\,d\tau
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-42">
+<div class="para">Using the change of variable <span class="process-math">\(t=-\tau\)</span> in this last equation and the property that <span class="process-math">\(\int_a^bf(t)\,dt=-\int_{b}^{a}f(t)\,dt\text{,}\)</span> we obtain</div>
+<div class="displaymath process-math" id="Int_-C___-Int_C">
+\begin{equation}
+\int_{-C}f(z)\,dz=-\int_Cf(z)\,dz\text{.}\tag{6.2.8}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-43">
+<div class="para">If two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> can be integrated over the same path of integration <span class="process-math">\(C\text{,}\)</span> then their sum can be integrated over <span class="process-math">\(C\text{,}\)</span> and we have the familiar result</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C[f(z)+g(z)]\,dz = \int_Cf(z)\,dz + \int_Cg(z)\,dz
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-44">
+<div class="para">Constant multiples also behave as we would expect:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_C(a+ib)f(z)\,dz=(a+ib) \int_Cf(z)\,dz
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-45">
+<div class="para">If two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> are placed end to end so that the terminal point of <span class="process-math">\(C_1\)</span> coincides with the initial point of <span class="process-math">\(C_2\text{,}\)</span> then the contour <span class="process-math">\(C=C_1+C_2\)</span> is a <em class="emphasis">continuation</em> of <span class="process-math">\(C_1\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="Int_C1_C2___Int_C1_IntC2">
+\begin{equation}
+\int_{C_1+C_2}f(z)\,dz = \int_{C_1}f(z)\,dz + \int_{C_2}f(z)\,dz\text{.}\tag{6.2.9}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="sec_contour-integrals-46">
+<div class="para">If the contour <span class="process-math">\(C\)</span> has two parametrizations</div>
+<div class="displaymath process-math" id="sec_contour-integrals-46-2">
+\begin{align*}
+{2} \amp  C : z_1(t) =x_1(t) +iy_1(t), \amp \amp   \text{ for }   a \le t \le b,  \text{ and }\\
+\amp  C : z_2(\tau) =x_2(\tau) +iy_2(\tau), \amp \amp   \text{ for }   c \le \tau  \le d\text{.}
+\end{align*}
+</div>
+<div class="para">and there exists a differentiable function <span class="process-math">\(\tau =\phi (t)\)</span> such that</div>
+<div class="displaymath process-math" id="Repar_Fcn">
+\begin{equation}
+c=\phi(a),  d=\phi(b),  \text{ and }   \phi\,'(t)&gt;0,  \text{ for }   a\lt t\lt b\text{.}\tag{6.2.10}
+\end{equation}
+</div>
+<div class="para">then we say that <span class="process-math">\(z_2(\tau )\)</span> is a <em class="emphasis">reparametrization</em> of the contour <span class="process-math">\(C\text{.}\)</span> If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(C\text{,}\)</span> then we have</div>
+<div class="displaymath process-math" id="Repar_Int">
+\begin{equation}
+\int_a^bf\big(z_1(t)\big) z\,_1'(t)\,dt=\int_c^{d}f\big(z_2(\tau)\big) z\,_2'(\tau )\,d\tau\text{.}\tag{6.2.11}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sec_contour-integrals-47">Equation <a href="sec_contour-integrals.html#Repar_Int" class="xref" data-knowl="./knowl/xref/Repar_Int.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.11">(6.2.11)</a> shows that the value of a contour integral is invariant under a change in the parametric representation of its contour if the reparametrization satisfies Equations <a href="sec_contour-integrals.html#Repar_Fcn" class="xref" data-knowl="./knowl/xref/Repar_Fcn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.10">(6.2.10)</a>.</div>
+<div class="para" id="sec_contour-integrals-48">We now give two important inequalities relating to complex integrals.</div>
+<article class="theorem theorem-like" id="sec_contour-integrals-49"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Absolute value inequality.</span>
+</h3>
+<div class="para logical" id="sec_contour-integrals-49-2-1">
+<div class="para">If <span class="process-math">\(f(t)=u(t) +iv(t)\)</span> is a continuous function of the real parameter <span class="process-math">\(t\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Int_Triangle_Ineq">
+\begin{equation}
+\left| \int_a^b f(t)\,dt \right| \le \int_a^b \left| f(t) \right| \,dt\text{.}\tag{6.2.12}
+\end{equation}
+</div>
+</div></article><details id="sec_contour-integrals-50" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_contour-integrals-50-1">
+<div class="para">If <span class="process-math">\(\int_a^bf(t)\,dt=0\text{,}\)</span> then Equation <a href="sec_contour-integrals.html#Int_Triangle_Ineq" class="xref" data-knowl="./knowl/xref/Int_Triangle_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.12">(6.2.12)</a> is obviously true. If the integral is not zero, we write its value in polar form, say <span class="process-math">\(\int_a^bf(t)\,dt=r_0e^{i\theta _0}\text{,}\)</span> so that <span class="process-math">\(\left\vert \int_a^bf(t)\,dt\right\vert = |r_0e^{i\theta_0}|=r_0\text{,}\)</span> and <span class="process-math">\(r_0=\int _a^be^{-i\theta _0}f(t)\,dt\text{.}\)</span> Taking the real part of both sides of this last equation gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Int_Triangle_Ineq.html">
+\begin{equation*}
+r_0=\mathrm{Re}(r_0)=\mathrm{Re}\left[ \int_a^be^{-i\theta _0}f(t)\,dt\right] =\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt\text{.}
+\end{equation*}
+</div>
+<div class="para">where the last equality is justified because an integral is a limit of a sum, and its real part is the same as the limit of the sum of its real parts.</div>
+</div> <div class="para logical" id="sec_contour-integrals-50-2">
+<div class="para">Now, using Equation <a href="sec_geometry-1.html#ReImLEMod" class="xref" data-knowl="./knowl/xref/ReImLEMod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.2">(1.3.2)</a>, we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ReImLEMod.html" id="Integral_Ineq">
+\begin{equation}
+\mathrm{Re}\big[e^{-i\theta _0}f(t)\big] \le \big|e^{-i\theta _0}f(t)\big| = |f(t)|\text{.}\tag{6.2.13}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_contour-integrals-50-3">
+<div class="para">Recall that, if <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are real functions, with <span class="process-math">\(g(t) \le h(t)\text{,}\)</span> for all <span class="process-math">\(t \in [a,b]\text{,}\)</span> then <span class="process-math">\(\int_a^bg(t\,dt \le \int_a^b h(t)\,dt\text{.}\)</span> Applying this fact to the left and right sides of Equation <a href="sec_contour-integrals.html#Integral_Ineq" class="xref" data-knowl="./knowl/xref/Integral_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.13">(6.2.13)</a> \big(with <span class="process-math">\(g(t)=\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\)</span> and <span class="process-math">\(h(t)=|f(t)|\)</span>\big) yields</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Integral_Ineq.html">
+\begin{equation*}
+r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt
+\end{equation*}
+</div>
+</div> <div class="para" id="sec_contour-integrals-50-4">Since <span class="process-math">\(r_0=\left| \int_a^bf(t)\,dt\right|\text{,}\)</span> this last inequality establishes our result.</div></article></details><article class="theorem theorem-like" id="ML_Inequality_Thm"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">ML inequality.</span>
+</h3>
+<div class="para logical" id="ML_Inequality_Thm-2-1">
+<div class="para">If <span class="process-math">\(f(z)=u(x,y) +iv(x,y)\)</span> is continuous on the contour <span class="process-math">\(C\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="ML_Ineq">
+\begin{equation}
+\left| \int_Cf(z)\,dz\right|  \le ML\text{,}\tag{6.2.14}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(L\)</span> is the length of the contour <span class="process-math">\(C\)</span> and <span class="process-math">\(M\)</span> is an upper bound for the modulus <span class="process-math">\(|f(z)|\)</span> on <span class="process-math">\(C\text{;}\)</span> that is, <span class="process-math">\(|f(z)| \le M\)</span> for all <span class="process-math">\(z\in C\text{.}\)</span>
+</div>
+</div></article><details id="sec_contour-integrals-52" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_contour-integrals-52-1">
+<div class="para">Using Inequality <a href="sec_contour-integrals.html#Int_Triangle_Ineq" class="xref" data-knowl="./knowl/xref/Int_Triangle_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.12">(6.2.12)</a> with <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Int_Triangle_Ineq.html ./knowl/xref/thm_contour-integral.html" id="ML_Proof">
+\begin{equation}
+\left| \int_Cf(z)\,dz\right| = \left| \int_a^bf(z(t) ) z\,'(t)\,dt\right| \le \int_a^b\big|f(z(t)) z\,'(t)\big|\,dt\text{.}\tag{6.2.15}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_contour-integrals-52-2">
+<div class="para">
+<a href="sec_contour-integrals.html#dz" class="xref" data-knowl="./knowl/xref/dz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.4">Equations (6.2.4)</a>, <a href="sec_contour-integrals.html#L_C_" class="xref" data-knowl="./knowl/xref/L_C_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.5">(6.2.5)</a>, and Inequality <a href="sec_contour-integrals.html#ML_Proof" class="xref" data-knowl="./knowl/xref/ML_Proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.15">(6.2.15)</a> imply that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/L_C_.html ./knowl/xref/ML_Proof.html">
+\begin{equation*}
+\left| \int_Cf(z)\,dz\right|  \le \int_a^bM \big|z\,'(t)\big|\,dt = ML
+\end{equation*}
+</div>
+</div></article></details><details id="ML_Example" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.2.20</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="ML_Example-1-1">
+<div class="para">Use Inequality <a href="sec_contour-integrals.html#ML_Ineq" class="xref" data-knowl="./knowl/xref/ML_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.14">(6.2.14)</a> to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+\begin{equation*}
+\left| \int_c\frac{1}{z^2+1}\,dz\right|  \le \frac{1}{2\sqrt{5}}\text{.}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(C\)</span> is the straight-line segment from 2 to <span class="process-math">\(2+i\text{.}\)</span>
+</div>
+</div> <details id="ML_Example-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ML_Example-1-2-1">
+<div class="para">Here <span class="process-math">\(|z^2+1| = |z-i| \, |z+i|\text{,}\)</span> and the terms <span class="process-math">\(|z-i|\)</span> and <span class="process-math">\(|z+i|\)</span> represent the distance from the point <span class="process-math">\(z\)</span> to the points <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\text{,}\)</span> respectively. Referring to <a href="sec_contour-integrals.html#fig_ch-06-10" class="xref" data-knowl="./knowl/xref/fig_ch-06-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.21">Figure 6.2.21</a> and using a geometric argument, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-10.html">
+\begin{equation*}
+|z-i| \ge 2,  \text{ and }   |z+i| \ge \sqrt{5},  \text{ for }   z \text{ on }  C
+\end{equation*}
+</div>
+</div></div></details> <figure class="figure figure-like" id="fig_ch-06-10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-10.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.21<span class="period">.</span></span><span class="space"> </span>The distances <span class="process-math">\(|z-i|\)</span> and <span class="process-math">\(|z+i|\)</span> for <span class="process-math">\(z\)</span> on <span class="process-math">\(C\)</span></figcaption></figure> <div class="para logical" id="ML_Example-1-4">
+<div class="para">Thus we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+\begin{equation*}
+|f(z)| =\frac{1}{|z-i|\,|z+i|} \le \frac{1}{2\sqrt{5}} = M\text{.}
+\end{equation*}
+</div>
+<div class="para">Because <span class="process-math">\(L\text{,}\)</span> the length of <span class="process-math">\(C\text{,}\)</span> equals 1, and Inequality <a href="sec_contour-integrals.html#ML_Ineq" class="xref" data-knowl="./knowl/xref/ML_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.14">(6.2.14)</a> implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+\begin{equation*}
+\left| \int_C\frac{1}{z^2+1}\,dz \right|  \le ML =\frac{1}{2\sqrt{5}}
+\end{equation*}
+</div>
+</div></article></details><section class="exercises" id="exercises_contour-integrals"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="x6_2_1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_1-1-1">Give a parametrization of each contour.</div> <article class="task exercise-like" id="x6_2_1-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_1-1-2-1">
+<span class="process-math">\(C=C_1+C_2\text{,}\)</span> as indicated in <a href="sec_contour-integrals.html#fig_ch-06-11" class="xref" data-knowl="./knowl/xref/fig_ch-06-11.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.22">Figure 6.2.22</a>.</div>
+<details id="x6_2_1-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_1-1-2-2-1">
+<span class="process-math">\(C_1:z_1(t)=2e^{it}, \, 0 \le t \le \frac{\pi}{2}\text{;}\)</span> <span class="process-math">\(C_2:z_2(t)=-t+i(2-t) \, 0 \le t \le 2\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="x6_2_1-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_1-1-3-1">
+<span class="process-math">\(C=C_1+C_2+C_3\text{,}\)</span> as indicated in <a href="sec_contour-integrals.html#fig_ch-06-12" class="xref" data-knowl="./knowl/xref/fig_ch-06-12.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.23">Figure 6.2.23</a>.</div></article> <figure class="figure figure-like" id="fig_ch-06-11"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-11.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.22<span class="period">.</span></span><span class="space"> </span>For <a href="sec_contour-integrals.html#x6_2_1" class="xref" data-knowl="./knowl/xref/x6_2_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.1">exercise 6.2.1</a>(a)</figcaption></figure> <figure class="figure figure-like" id="fig_ch-06-12"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-12.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.23<span class="period">.</span></span><span class="space"> </span>For <a href="sec_contour-integrals.html#x6_2_1" class="xref" data-knowl="./knowl/xref/x6_2_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.1">exercise 6.2.1</a>(b)</figcaption></figure></article><article class="exercise exercise-like" id="x6_2_2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_2-1-1">Sketch the following curves.</div> <article class="task exercise-like" id="x6_2_2-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_2-1-2-1">
+<span class="process-math">\(z(t)=t^2-1+i(t+4)\text{,}\)</span> for <span class="process-math">\(1 \le t \le 3\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_2-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_2-1-3-1">
+<span class="process-math">\(z(t)=\sin t+i\cos 2t\text{,}\)</span> for <span class="process-math">\(-\frac{\pi}{2} \le t \le \frac{\pi}{2}\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_2-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x6_2_2-1-4-1">
+<span class="process-math">\(z(t)=5\cos t- i3\sin t\text{,}\)</span> for <span class="process-math">\(\frac{\pi}{2} \le t \le 2\pi\text{.}\)</span>
+</div></article></article><article class="exercise exercise-like" id="x6_2_3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_3-1-1">Consider the integral <span class="process-math">\(\int_Cz^2\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the positively oriented upper semicircle of radius 1, centered at 0.</div> <article class="task exercise-like" id="x6_2_3-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_3-1-2-1">Give a Riemann sum approximation for the integral by selecting <span class="process-math">\(n=4\)</span> and the points <span class="process-math">\(z_k=e^{i\frac{k\pi}{4}}\)</span> <span class="process-math">\((k=0,\ldots 4)\)</span> and <span class="process-math">\(c_k=e^{i\frac{(2k-1) \pi}{8}}\)</span> <span class="process-math">\((k=1,\ldots 4)\text{.}\)</span>
+</div>
+<details id="x6_2_3-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_3-1-2-2-1">The approximation simplifies to <span class="process-math">\(-2\sqrt{2} + 2 \approx -0.828427\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="x6_2_3-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_3-1-3-1">Compute the integral exactly by selecting a parametrization for <span class="process-math">\(C\)</span> and applying <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a>.</div>
+<details id="x6_2_3-1-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_3-1-3-2-1"><span class="process-math">\(-\frac{2}{3}\text{.}\)</span></div></div></details></article></article><article class="exercise exercise-like" id="x6_2_4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_4-1-1">Show that the integral of <a href="sec_contour-integrals.html#Cont_Int_Ex_1" class="xref" data-knowl="./knowl/xref/Cont_Int_Ex_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.12">Example 6.2.12</a> simplifies to <span class="process-math">\(\exp (2+i\frac{\pi}{4})-1\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="x6_2_5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_5-1-1">Evaluate <span class="process-math">\(\int_Cx\,dz\)</span> from <span class="process-math">\(-4\)</span> to <span class="process-math">\(4\)</span> along the following contours, as shown in <a href="sec_contour-integrals.html#fig_ch-06-13" class="xref" data-knowl="./knowl/xref/fig_ch-06-13.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.24">Figures 6.2.24</a>(a) and <a href="sec_contour-integrals.html#fig_ch-06-13" class="xref" data-knowl="./knowl/xref/fig_ch-06-13.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.24">Figure 6.2.24</a>(b).</div> <figure class="figure figure-like" id="fig_ch-06-13"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-13.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.24<span class="period">.</span></span><span class="space"> </span>For <a href="sec_contour-integrals.html#x6_2_5" class="xref" data-knowl="./knowl/xref/x6_2_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.5">Exercise 6.2.5</a> (a) and (b)</figcaption></figure> <article class="task exercise-like" id="x6_2_5-1-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_5-1-3-1">The polygonal path <span class="process-math">\(C\)</span> with vertices <span class="process-math">\(-4,\,-4+4i,\,4+4i\text{,}\)</span> and <span class="process-math">\(4\text{.}\)</span>
+</div>
+<details id="x6_2_5-1-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_5-1-3-2-1"><span class="process-math">\(-32i\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x6_2_5-1-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_5-1-4-1">The contour <span class="process-math">\(C\)</span> that is the upper half of the circle <span class="process-math">\(|z|=4\text{,}\)</span> oriented clockwise.</div>
+<details id="x6_2_5-1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_5-1-4-2-1"><span class="process-math">\(-8\pi i\text{.}\)</span></div></div></details></article></article><article class="exercise exercise-like" id="x6_2_6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_6-1-1">Evaluate <span class="process-math">\(\int_Cy\,dz\)</span> for <span class="process-math">\(-i\)</span> to <span class="process-math">\(i\)</span> along the following contours, as shown in <a href="sec_contour-integrals.html#fig_ch-06-14" class="xref" data-knowl="./knowl/xref/fig_ch-06-14.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.25">Figures 6.2.25</a>(a) and <a href="sec_contour-integrals.html#fig_ch-06-14" class="xref" data-knowl="./knowl/xref/fig_ch-06-14.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.25">Figure 6.2.25</a>(b).</div> <article class="task exercise-like" id="x6_2_6-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_6-1-2-1">The polygonal path <span class="process-math">\(C\)</span> with vertices <span class="process-math">\(-i,\,-1-i,\,-1\text{,}\)</span> and <span class="process-math">\(i\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_6-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_6-1-3-1">The contour <span class="process-math">\(C\)</span> that is oriented clockwise, as shown.</div></article> <figure class="figure figure-like" id="fig_ch-06-14"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-14.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.2.25<span class="period">.</span></span><span class="space"> </span>For <a href="sec_contour-integrals.html#x6_2_6" class="xref" data-knowl="./knowl/xref/x6_2_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.6">Exercise 6.2.6</a> (a) and (b)</figcaption></figure></article><article class="exercise exercise-like" id="x6_2_7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_7-1-1">Recall <span class="process-math">\(C_r^+(a)\)</span> is the circle of radius <span class="process-math">\(r\)</span> that is centered at <span class="process-math">\(a\)</span> and oriented counter-clockwise.</div> <article class="task exercise-like" id="x6_2_7-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_7-1-2-1">Evaluate <span class="process-math">\(\int_{C_4^+(0)}z\,dz\text{.}\)</span>
+</div>
+<details id="x6_2_7-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_7-1-2-2-1"><span class="process-math">\(0\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x6_2_7-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_7-1-3-1">Evaluate <span class="process-math">\(\int_{C_4^+(0)}\overline{z}\,dz\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_7-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x6_2_7-1-4-1">Evaluate <span class="process-math">\(\int_{C_2^-(0)}\frac{1}{z}\,dz\text{.}\)</span> (The minus sign means clockwise orientation.)</div>
+<details id="x6_2_7-1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_7-1-4-2-1"><span class="process-math">\(-2\pi i\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x6_2_7-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="x6_2_7-1-5-1">Evaluate <span class="process-math">\(\int_{C_2^-(0)}\frac{1}{\overline{z}}\,dz\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_7-1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="x6_2_7-1-6-1">Evaluate <span class="process-math">\(\int_C(z+1)\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is <span class="process-math">\(C_1^+(0)\)</span> in the first quadrant.</div>
+<details id="x6_2_7-1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_7-1-6-2-1"><span class="process-math">\(i-2\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x6_2_7-1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="x6_2_7-1-7-1">Evaluate <span class="process-math">\(\int_C(x^2-iy^2)\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the upper half of <span class="process-math">\(C_1^+(0)\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_7-1-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="x6_2_7-1-8-1">Evaluate <span class="process-math">\(\int_C\left\vert z-1\right\vert ^2dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the upper half of <span class="process-math">\(C_1^+(0)\text{.}\)</span>
+</div>
+<details id="x6_2_7-1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_7-1-8-2-1"><span class="process-math">\(-4-i\pi\text{.}\)</span></div></div></details></article></article><article class="exercise exercise-like" id="x6_2_8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_8-1-1">Let <span class="process-math">\(f\)</span> be a continuous function on the circle <span class="process-math">\(\{z:|z-z_0|=R\}\text{.}\)</span>
+</div> <div class="para" id="x6_2_8-1-2">Show that <span class="process-math">\(\int_{C_R^+(z_0)}f(z)\,dz = iR\int_0^{2\pi}f(z_0 + Re^{i\theta}) e^{i\theta}\, d\theta\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="x6_2_9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_9-1-1">Use the results of <a href="sec_contour-integrals.html#x6_2_8" class="xref" data-knowl="./knowl/xref/x6_2_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 6.2.8">Exercise 6.2.8</a> to evaluate</div> <article class="task exercise-like" id="x6_2_9-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_9-1-2-1"><span class="process-math">\(\int_{C_R^+(z_0)}\frac{1}{z-z_0}\,dz\text{.}\)</span></div>
+<details id="x6_2_9-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_9-1-2-2-1"><span class="process-math">\(2\pi i\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x6_2_9-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_9-1-3-1">
+<span class="process-math">\(\int_{C_R^+(z_0)}\frac{1}{(z-z_0)^n}\,dz\text{,}\)</span> where <span class="process-math">\(n \ne 1\)</span> is an integer.</div>
+<details id="x6_2_9-1-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_9-1-3-2-1"><span class="process-math">\(0\text{.}\)</span></div></div></details></article></article><article class="exercise exercise-like" id="x6_2_10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_10-1-1">Use the techniques of <a href="sec_contour-integrals.html#ML_Example" class="xref" data-knowl="./knowl/xref/ML_Example.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.20">Example 6.2.20</a> to show that</div> <article class="task exercise-like" id="x6_2_10-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_10-1-2-1">
+<span class="process-math">\(\left| \int_C\frac{1}{z^2-1}\,dz\right| \le \frac{\pi}{3}\text{,}\)</span> where <span class="process-math">\(C\)</span> is the first quadrant portion of <span class="process-math">\(C_2^+(0)\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x6_2_10-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_10-1-3-1"><span class="process-math">\(\left| \int_{C_R^+(0)}\frac{\mathrm{Log}(z)}{z^2}\,dz\right| \le 2\pi (\frac{\pi +\ln R}{R})\text{.}\)</span></div></article></article><article class="exercise exercise-like" id="x6_2_11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_11-1-1">Evaluate <span class="process-math">\(\int_Cz^2dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from 1 to <span class="process-math">\(1+i\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x6_2_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_11-2-1"><span class="process-math">\(-1+\frac{2i}{3}\text{.}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="x6_2_12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_12-1-1">Evaluate <span class="process-math">\(\int_C\left| z^2\right|\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> given by <span class="process-math">\(C:z(t)=t+it^2\text{,}\)</span> for <span class="process-math">\(0 \le t \le 1\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="x6_2_13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_13-1-1">Evaluate <span class="process-math">\(\int_C\exp z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the straight-line segment joining 1 to <span class="process-math">\(1+i\pi\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x6_2_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_13-2-1"><span class="process-math">\(-2e\text{.}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="x6_2_14"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_14-1-1">Evaluate <span class="process-math">\(\int_C\overline{z}\exp z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the square with vertices <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(1+i\text{,}\)</span> and <span class="process-math">\(i\)</span> taken with the counterclockwise orientation.</div></article><article class="exercise exercise-like" id="x6_2_15"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_15-1-1">Evaluate <span class="process-math">\(\int_C\exp z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the straight-line segment joining 0 to <span class="process-math">\(1+i\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x6_2_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_15-2-1"><span class="process-math">\(\exp (1+i)-1\text{.}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="x6_2_16"><h4 class="heading"><span class="codenumber">16<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_16-1-1">Let <span class="process-math">\(z(t)=x(t) +iy(t)\text{,}\)</span> for <span class="process-math">\(a \le t \le b\text{,}\)</span> be a smooth curve. Give a meaning for each of the following expressions.</div> <article class="task exercise-like" id="x6_2_16-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_2_16-1-2-1"><span class="process-math">\(z\,'(t)\text{.}\)</span></div></article> <article class="task exercise-like" id="x6_2_16-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x6_2_16-1-3-1"><span class="process-math">\(\big|z\,'(t)\big|\,dt\text{.}\)</span></div></article> <article class="task exercise-like" id="x6_2_16-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x6_2_16-1-4-1"><span class="process-math">\(\int_a^b z\,'(t)\,dt\text{.}\)</span></div></article> <article class="task exercise-like" id="x6_2_16-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="x6_2_16-1-5-1"><span class="process-math">\(\int_a^b \big|z\,'(t)\big|\,dt\text{.}\)</span></div></article></article><article class="exercise exercise-like" id="x6_2_17"><h4 class="heading"><span class="codenumber">17<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_17-1-1">Evaluate <span class="process-math">\(\int_C\cos z\, dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the polygonal path from 0 to <span class="process-math">\(1+i\)</span> that consists of the line segments from 0 to 1 and 1 to <span class="process-math">\(1+i\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x6_2_17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_17-2-1"><span class="process-math">\(\sin (1+i)\text{.}\)</span></div></div></details></div></article><article class="exercise exercise-like" id="x6_2_18"><h4 class="heading"><span class="codenumber">18<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_18-1-1">Let <span class="process-math">\(f(t)=e^{it}\)</span> be defined on <span class="process-math">\(a \le t \le b\text{,}\)</span> where <span class="process-math">\(a=0\text{,}\)</span> and <span class="process-math">\(b=2\pi\text{.}\)</span> Show that there is no number <span class="process-math">\(c \in (a,b)\)</span> such that <span class="process-math">\(f(c)(b-a)=\int_a^bf(t)\,dt\text{.}\)</span> In other words, the mean value theorem for definite integrals that you learned in calculus does not hold for complex functions.</div></article><article class="exercise exercise-like" id="x6_2_19"><h4 class="heading"><span class="codenumber">19<span class="period">.</span></span></h4>
+<div class="para logical" id="x6_2_19-1-1">
+<div class="para">Use the ML inequality to show that <span class="process-math">\(|P_n(x)| \le 1\text{,}\)</span> where <span class="process-math">\(P_n\)</span> is the <span class="process-math">\(n^{th}\)</span> Legendre polynomial defined on <span class="process-math">\(-1 \le x \le 1\)</span> by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+P_n(x)=\frac{1}{\pi} \int_0^{\pi}\left(x+i\sqrt{1-x^2}\cos \theta\right)^{\!n} \, d\theta
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="x6_2_19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x6_2_19-2-1">The absolute value of the integrand is <span class="process-math">\(\sqrt{x^2+(1-x^2) \cos ^2\theta}^n\text{.}\)</span> This expression simplifies to <span class="process-math">\(\sqrt{x^2 \sin^2\theta + \cos^2\theta}^n\)</span> (show the details for this assertion). The maximum of this expression occurs when <span class="process-math">\(x=1\text{.}\)</span> Now simplify and apply the ML inequality.</div></div></details></div></article><article class="exercise exercise-like" id="x6_2_20"><h4 class="heading"><span class="codenumber">20<span class="period">.</span></span></h4>
+<div class="para" id="x6_2_20-1-1">Explain how contour integrals in complex analysis and line integrals in calculus are different. How are they similar?</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec_complex-integrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_cauchy-goursat.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

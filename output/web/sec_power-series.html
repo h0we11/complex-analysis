@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Power Series Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Complex Analysis">
+<meta property="book:author" content="Russell W. Howell">
+<meta property="book:author" content="John H. Mathews">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec_algebra-1-20-1 { counter-set: sec_algebra-1-20-1 0; }
+#sec_algebra-1-20-1 > li::marker { content: ""counter(sec_algebra-1-20-1,decimal)"."; }
+#sec_algebra-1-20-1 > li { counter-increment: sec_algebra-1-20-1; }
+#sec_julia-mandelbrot-9-8 { counter-set: sec_julia-mandelbrot-9-8 0; }
+#sec_julia-mandelbrot-9-8 > li::marker { content: ""counter(sec_julia-mandelbrot-9-8,decimal)"."; }
+#sec_julia-mandelbrot-9-8 > li { counter-increment: sec_julia-mandelbrot-9-8; }
+#sec_julia-mandelbrot-19-26 { counter-set: sec_julia-mandelbrot-19-26 0; }
+#sec_julia-mandelbrot-19-26 > li::marker { content: ""counter(sec_julia-mandelbrot-19-26,decimal)"."; }
+#sec_julia-mandelbrot-19-26 > li { counter-increment: sec_julia-mandelbrot-19-26; }
+#Regions_of_Convergence-1-1-3 { counter-set: Regions_of_Convergence-1-1-3 0; }
+#Regions_of_Convergence-1-1-3 > li::marker { content: ""counter(Regions_of_Convergence-1-1-3,decimal)"."; }
+#Regions_of_Convergence-1-1-3 > li { counter-increment: Regions_of_Convergence-1-1-3; }
+#th15-1-1-3 { counter-set: th15-1-1-3 0; }
+#th15-1-1-3 > li::marker { content: ""counter(th15-1-1-3,decimal)"."; }
+#th15-1-1-3 > li { counter-increment: th15-1-1-3; }
+#Power_Series_Thm-1-1-4 { counter-set: Power_Series_Thm-1-1-4 0; }
+#Power_Series_Thm-1-1-4 > li::marker { content: ""counter(Power_Series_Thm-1-1-4,decimal)"."; }
+#Power_Series_Thm-1-1-4 > li { counter-increment: Power_Series_Thm-1-1-4; }
+#expz_is_entire-1-1-2 { counter-set: expz_is_entire-1-1-2 0; }
+#expz_is_entire-1-1-2 > li::marker { content: ""counter(expz_is_entire-1-1-2,decimal)"."; }
+#expz_is_entire-1-1-2 > li { counter-increment: expz_is_entire-1-1-2; }
+#Unif_Conv_Properties-1-1-7 { counter-set: Unif_Conv_Properties-1-1-7 0; }
+#Unif_Conv_Properties-1-1-7 > li::marker { content: ""counter(Unif_Conv_Properties-1-1-7,decimal)"."; }
+#Unif_Conv_Properties-1-1-7 > li { counter-increment: Unif_Conv_Properties-1-1-7; }
+#Nuanced_Taylor-1-1-10 { counter-set: Nuanced_Taylor-1-1-10 0; }
+#Nuanced_Taylor-1-1-10 > li::marker { content: ""counter(Nuanced_Taylor-1-1-10,decimal)"."; }
+#Nuanced_Taylor-1-1-10 > li { counter-increment: Nuanced_Taylor-1-1-10; }
+#thm_laurent-properties-2-1-6 { counter-set: thm_laurent-properties-2-1-6 0; }
+#thm_laurent-properties-2-1-6 > li::marker { content: ""counter(thm_laurent-properties-2-1-6,decimal)"."; }
+#thm_laurent-properties-2-1-6 > li { counter-increment: thm_laurent-properties-2-1-6; }
+#sec_singularities-4-2-1-7 { counter-set: sec_singularities-4-2-1-7 0; }
+#sec_singularities-4-2-1-7 > li::marker { content: ""counter(sec_singularities-4-2-1-7,decimal)"."; }
+#sec_singularities-4-2-1-7 > li { counter-increment: sec_singularities-4-2-1-7; }
+#sec_singularities-5-1 { counter-set: sec_singularities-5-1 0; }
+#sec_singularities-5-1 > li::marker { content: ""counter(sec_singularities-5-1,decimal)"."; }
+#sec_singularities-5-1 > li { counter-increment: sec_singularities-5-1; }
+#zero_quotient-1-1-7 { counter-set: zero_quotient-1-1-7 0; }
+#zero_quotient-1-1-7 > li::marker { content: ""counter(zero_quotient-1-1-7,decimal)"."; }
+#zero_quotient-1-1-7 > li { counter-increment: zero_quotient-1-1-7; }
+#sec_singularities-23-2-1-12 { counter-set: sec_singularities-23-2-1-12 0; }
+#sec_singularities-23-2-1-12 > li::marker { content: ""counter(sec_singularities-23-2-1-12,decimal)"."; }
+#sec_singularities-23-2-1-12 > li { counter-increment: sec_singularities-23-2-1-12; }
+#Residues_at_Poles-2-1 { counter-set: Residues_at_Poles-2-1 0; }
+#Residues_at_Poles-2-1 > li::marker { content: ""counter(Residues_at_Poles-2-1,decimal)"."; }
+#Residues_at_Poles-2-1 > li { counter-increment: Residues_at_Poles-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis:</span> <span class="subtitle">an Open Source Textbook</span></a></h1>
+<p class="byline">Russell W. Howell, John H. Mathews</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec_convergence-theorems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_seq-series-fractals.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch_elementary-fcns.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_origin.html#subsec_wessel" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Caspar Wessel Makes a Breakthrough</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_origin.html#exercises_origin" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integral-representations.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Integral Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integral-representations.html#exercises_integral-representations" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle &amp; Rouché’s Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\({\bm w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\bm w=(z^2-1)^\frac{1}{2}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_power-series"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.4</span><span class="space"> </span><span class="title">Power Series Functions</span>
+</h2>
+<div class="para" id="sec_power-series-2">Suppose that we have a series <span class="process-math">\(\sum\limits_{n=0}^{\infty}\zeta_n\text{,}\)</span> where <span class="process-math">\(\zeta_n=c_n(z-\alpha )^n\text{.}\)</span> If <span class="process-math">\(\alpha\)</span> and the collection of <span class="process-math">\(c_n\)</span> are fixed complex numbers, we get different series by selecting different values for <span class="process-math">\(z\text{.}\)</span> For example, if <span class="process-math">\(\alpha =2\)</span> and <span class="process-math">\(c_n=\frac{1}{n!}\)</span> for all <span class="process-math">\(n\text{,}\)</span> we get the series <span class="process-math">\(\sum\limits_{n=0}^{ \infty}\frac{1}{n!}(\frac{i}{2}-2)^n\)</span> if <span class="process-math">\(z=\frac{i}{2}\)</span> and <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{1}{n!}(2+i)^n\)</span> if <span class="process-math">\(z=4+i\text{.}\)</span> Note that, when <span class="process-math">\(\alpha =0\)</span> and <span class="process-math">\(c_n=1\)</span> for all <span class="process-math">\(n\text{,}\)</span> we get the geometric series. The collection of points for which the series <span class="process-math">\(\sum\limits_{n=0}^{ \infty}c_n(z-\alpha )^n\)</span> converges is the domain of a function <span class="process-math">\(f(z) =\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n\text{,}\)</span> which we call a power series function. Technically, this series is undefined if <span class="process-math">\(z=\alpha\)</span> and <span class="process-math">\(n=0\)</span> because <span class="process-math">\(0^{0}\)</span> is undefined. We get around this difficulty by stipulating that the series <span class="process-math">\(\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n\)</span> is really compact notation for <span class="process-math">\(c_0+\sum\limits_{n=1}^{\infty}c_n(z-\alpha)^n\text{.}\)</span> In this section we present some results that are useful in helping establish properties of functions defined by power series.</div>
+<article class="theorem theorem-like" id="Regions_of_Convergence"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="Regions_of_Convergence-1-1">
+<div class="para">Suppose that <span class="process-math">\(f(z)=\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n\text{.}\)</span> Then the set of points <span class="process-math">\(z\)</span> for which the series converges is one of the following:</div>
+<ol class="decimal" id="Regions_of_Convergence-1-1-3">
+<li id="Regions_of_Convergence-1-1-3-1">
+<span class="heading"><span class="title">i.</span></span><div class="para" id="Regions_of_Convergence-1-1-3-1-2">the single point <span class="process-math">\(z=\alpha\text{;}\)</span>
+</div>
+</li>
+<li id="Regions_of_Convergence-1-1-3-2">
+<span class="heading"><span class="title">ii.</span></span><div class="para" id="Regions_of_Convergence-1-1-3-2-2">the disk <span class="process-math">\(D_{\rho}(\alpha ) =\{z:|z-\alpha |\lt \rho \}\text{,}\)</span> along with part (either none, some, or all) of the circle <span class="process-math">\(C_{\rho}(\alpha ) =\{z:|z-\alpha|=\rho\}\text{;}\)</span>
+</div>
+</li>
+<li id="Regions_of_Convergence-1-1-3-3">
+<span class="heading"><span class="title">iii.</span></span><div class="para" id="Regions_of_Convergence-1-1-3-3-2">the entire complex plane.</div>
+</li>
+</ol>
+</div></article><details id="sec_power-series-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_power-series-4-1">
+<div class="para">By <a href="sec_convergence-theorems.html#Root_Test" class="xref" data-knowl="./knowl/xref/Root_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.15: Root test">Theorem 4.3.15</a>, the series converges absolutely at those values of <span class="process-math">\(z\)</span> for which <span class="process-math">\(\lim\limits_{n \to \infty}\sup |c_n(z-\alpha )^n|^{\frac{1}{n}}\lt 1\text{.}\)</span> This condition is the same as requiring</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Root_Test.html" id="lim_sup_inequality">
+\begin{equation}
+|z-\alpha| \left(\lim_{n \to \infty}\sup |c_n|^{\frac{1}{n}}\right)\lt 1\text{.}\tag{4.4.1}
+\end{equation}
+</div>
+</div> <div class="para" id="sec_power-series-4-2">There are three possibilities to consider for the value of <span class="process-math">\(\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}\text{.}\)</span> If the limit supremum equals <span class="process-math">\(\infty\text{,}\)</span> <a href="sec_power-series.html#lim_sup_inequality" class="xref" data-knowl="./knowl/xref/lim_sup_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">Inequality (4.4.1)</a> holds iff <span class="process-math">\(z=\alpha\text{,}\)</span> which is case (<em class="emphasis">i</em>). If <span class="process-math">\(0\lt \lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}\lt \infty\text{,}\)</span> <a href="sec_power-series.html#lim_sup_inequality" class="xref" data-knowl="./knowl/xref/lim_sup_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">Inequality (4.4.1)</a> holds iff <span class="process-math">\(|z-\alpha |\lt \frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}\)</span> \Big(<em class="emphasis">i.e.</em>, iff <span class="process-math">\(z\in D_{\rho}(\alpha)\text{,}\)</span> where <span class="process-math">\(\rho =\frac{{1}}{{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}}\)</span>\Big) which is case (<em class="emphasis">ii</em>). Finally, if the limit supremum equals 0, the left side of <a href="sec_power-series.html#lim_sup_inequality" class="xref" data-knowl="./knowl/xref/lim_sup_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">Inequality (4.4.1)</a> will be 0 for any value of <span class="process-math">\(z\text{,}\)</span> which is case (<em class="emphasis">iii</em>). We are unable to say for sure what happens with respect to convergence on <span class="process-math">\(C_{\rho}(\alpha ) =\{z:|z-\alpha|= \rho \}\text{.}\)</span> You will see in the exercises that there are various possibilities.</div></article></details><div class="para" id="sec_power-series-5">Another way to phrase case (<em class="emphasis">ii</em>) of <a href="sec_power-series.html#Regions_of_Convergence" class="xref" data-knowl="./knowl/xref/Regions_of_Convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.1">Theorem 4.4.1</a> is to say that the power series <span class="process-math">\(f(z) =\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n\)</span> converges if <span class="process-math">\(|z-\alpha|\lt \rho\)</span> and diverges if <span class="process-math">\(|z-\alpha|&gt;\rho\text{.}\)</span> We call the number <span class="process-math">\(\rho\)</span> the radius of convergence of the power series (see <a href="sec_power-series.html#fig_ch-04-03" class="xref" data-knowl="./knowl/xref/fig_ch-04-03.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.2">Figure 4.4.2</a>). For case (<em class="emphasis">i</em>) of <a href="sec_power-series.html#Regions_of_Convergence" class="xref" data-knowl="./knowl/xref/Regions_of_Convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.1">Theorem 4.4.1</a>, we say that the radius of convergence is zero and that the radius of convergence is infinity for case (<em class="emphasis">iii</em>).</div>
+<figure class="figure figure-like" id="fig_ch-04-03"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-04/ch-04-fig-03.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>The radius of convergence of a power series</figcaption></figure><article class="theorem theorem-like" id="th15"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="th15-1-1">
+<div class="para">For the power series function <span class="process-math">\(f(z)=\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n\)</span> we can find <span class="process-math">\(\rho\text{,}\)</span> its radius of convergence, by any of the following methods:</div>
+<ol class="decimal" id="th15-1-1-3">
+<li id="th15-1-1-3-1">
+<span class="heading"><span class="title">i.</span></span><div class="para" id="th15-1-1-3-1-2">Cauchy ’s root test: <span class="process-math">\(\rho =\frac{1}{\lim\limits_{n \to \infty}|c_n|^{\frac{1}{n}}}\)</span> (provided the limit exists).</div>
+</li>
+<li id="th15-1-1-3-2">
+<span class="heading"><span class="title">ii.</span></span><div class="para" id="th15-1-1-3-2-2">Cauchy-Hadamard formula: <span class="process-math">\(\rho =\frac{1}{\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}}\)</span> (this limit always exists).</div>
+</li>
+<li id="th15-1-1-3-3">
+<span class="heading"><span class="title">iii.</span></span><div class="para" id="th15-1-1-3-3-2">d’Alembert’s ratio test: <span class="process-math">\(\rho =\frac{1}{\lim\limits_{n \to \infty}|\frac{{c_{n+1}}}{{c_n}}|}\)</span> (provided the limit exists).</div>
+</li>
+</ol>
+</div> <div class="para" id="th15-1-2">We set <span class="process-math">\(\rho =\infty\)</span> if the limit equals 0 and <span class="process-math">\(\rho =0\)</span> if the limit equals <span class="process-math">\(\infty\text{.}\)</span>
+</div></article><details id="sec_power-series-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_power-series-8-1">If you examine carefully the proof of <a href="sec_power-series.html#Regions_of_Convergence" class="xref" data-knowl="./knowl/xref/Regions_of_Convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.1">Theorem 4.4.1</a>, you will see that we have already proved (<em class="emphasis">i</em>) and (<em class="emphasis">ii</em>). They follow directly from <a href="sec_power-series.html#lim_sup_inequality" class="xref" data-knowl="./knowl/xref/lim_sup_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.1">Inequality (4.4.1)</a> and the fact that the limit supremum equals the limit whenever the limit exists. We can show (<em class="emphasis">iii</em>) by using the ratio test. We leave the details as an exercise.</div></article></details><div class="para" id="sec_power-series-9">We now give an example illustrating each of these cases.</div>
+<details id="sec_power-series-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_power-series-10-1-1">The series <span class="process-math">\(\sum\limits_{n=0}^{\infty}(\frac{n+2}{3n+1})^n(z-4)^n\)</span> has radius of convergence 3 by Cauchy ’s root test because <span class="process-math">\(\lim\limits_{n \to \infty}|c_n|^{\frac{1}{n}}=\lim\limits_{n \to \infty}\frac{n+2}{ 3n+1}=\frac{1}{3}\text{.}\)</span>
+</div></article></details><details id="sec_power-series-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.5</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_power-series-11-1-1">The series <span class="process-math">\(\sum\limits_{n=1}^{\infty}c_nz^n=4z+5^2z^2+4^3z^3+5^4z^4+4^{5}z^{5}+\cdots\)</span> has radius of convergence <span class="process-math">\(\frac{1}{5}\)</span> by the Cauchy-Hadamard formula because <span class="process-math">\(\{|c_n|^{\frac{1}{n}}\} =\{ 4,\,5,\,4,\,5,\ldots \}\text{,}\)</span> so <span class="process-math">\(\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1}{n}}=5\text{.}\)</span>
+</div></article></details><details id="e_z_Example" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.6</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="e_z_Example-1-1">The series <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n\)</span> has radius of convergence <span class="process-math">\(\infty\)</span> by the ratio test because <span class="process-math">\(\lim\limits_{n \to \infty}\left|\frac{n!}{(n+1)!}\right| = \lim\limits_{n \to \infty}\left|\frac{1}{n+1}\right|=0\text{.}\)</span>
+</div></article></details><div class="para" id="sec_power-series-13">We come now to the main result of this section.</div>
+<article class="theorem theorem-like" id="Power_Series_Thm"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.7</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="Power_Series_Thm-1-1">
+<div class="para">
+<em class="emphasis">Suppose that the function</em><span class="process-math">\(f(z)=\sum\limits_{n=0}^{\infty}c_n(z-\alpha )^n\)</span> has radius of convergence <span class="process-math">\(\rho &gt;0\text{.}\)</span> Then</div>
+<ol class="decimal" id="Power_Series_Thm-1-1-4">
+<li id="Power_Series_Thm-1-1-4-1">
+<span class="heading"><span class="title">i.</span></span><div class="para" id="Power_Series_Thm-1-1-4-1-2">
+<span class="process-math">\(f\)</span> is infinitely differentiable for all <span class="process-math">\(z\in D_{\rho}(\alpha )\text{.}\)</span> In fact</div>
+</li>
+<li id="Power_Series_Thm-1-1-4-2">
+<span class="heading"><span class="title">ii.</span></span><div class="para" id="Power_Series_Thm-1-1-4-2-2">for all <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(f^{(k)}(z)=\sum\limits_{n=k}^{\infty}n(n-1) \cdots (n-k+1)c_n(z-\alpha )^{n-k}\text{;}\)</span> and</div>
+</li>
+<li id="Power_Series_Thm-1-1-4-3">
+<span class="heading"><span class="title">iii.</span></span><div class="para" id="Power_Series_Thm-1-1-4-3-2">
+<span class="process-math">\(c_k=\frac{f^{(k)}(\alpha )}{k!}\text{,}\)</span> where <span class="process-math">\(f^{(k)}\)</span> denotes the <span class="process-math">\(k\)</span>th derivative of <span class="process-math">\(f\text{.}\)</span> (When <span class="process-math">\(k=0\text{,}\)</span> <span class="process-math">\(f^{(k)}\)</span> denotes the function <span class="process-math">\(f\)</span> itself so that <span class="process-math">\(f^{(0)}(z) =f(z)\)</span> for all <span class="process-math">\(z\text{.}\)</span>)</div>
+</li>
+</ol>
+</div></article><details id="sec_power-series-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_power-series-15-1">Remarkably, the entire proof hinges on verifying (<em class="emphasis">ii</em>) for the simple case when <span class="process-math">\(k=1\text{.}\)</span> The cases in (<em class="emphasis">ii</em>) for <span class="process-math">\(k\ge 2\)</span> follow by induction. For instance, we get the case when <span class="process-math">\(k=2\)</span> by applying the result for <span class="process-math">\(k=1\)</span> to the series <span class="process-math">\(f\,'(z) =\sum\limits_{n=1}^{\infty}nc_n(z-\alpha )^{n-1}\text{.}\)</span> Also, (<em class="emphasis">i</em>) is an automatic consequence of (<em class="emphasis">ii</em>), because (<em class="emphasis">ii</em>) gives a formula for computing derivatives of all orders in addition to assuring us of their existence. Finally, (<em class="emphasis">iii</em>) follows by setting <span class="process-math">\(z=\alpha\)</span> in (<em class="emphasis">ii</em>), as all the terms drop out except when <span class="process-math">\(n=k\text{,}\)</span> giving us <span class="process-math">\(f^{(k)}(\alpha ) =k(k-1) \cdots (k-k+1) c_k\text{.}\)</span> Solving for <span class="process-math">\(c_k\)</span> gives the desired result.</div> <div class="para logical" id="sec_power-series-15-2">
+<div class="para">Verifying (<em class="emphasis">ii</em>) when <span class="process-math">\(k=1\text{,}\)</span> however, is no simple task. We begin by defining the following:</div>
+<div class="displaymath process-math" id="sec_power-series-15-2-3">
+\begin{align*}
+g(z) \amp = \sum_{n=1}^{\infty}nc_n(z-\alpha)^{n-1},\\
+S_j(z) \amp = \sum_{n=0}^jc_n(z-\alpha )^n\text{,}\\
+R_j(z) \amp = \sum_{n=j+1}^{\infty}c_n(z-\alpha)^n\text{.}
+\end{align*}
+</div>
+</div> <div class="para" id="sec_power-series-15-3">Here <span class="process-math">\(S_j(z)\)</span> is simply the <span class="process-math">\((j+1)\)</span>st partial sum of the series <span class="process-math">\(f(z)\text{,}\)</span> and <span class="process-math">\(R_j(z)\)</span> is the sum of the remaining terms of that series. We leave as an exercise to show that the radius of convergence for <span class="process-math">\(g(z)\)</span> is <span class="process-math">\(\rho\text{,}\)</span> the same as that of <span class="process-math">\(f(z)\text{.}\)</span> For a fixed <span class="process-math">\(z_0\in D_{\rho}(\alpha)\text{,}\)</span> we must prove that <span class="process-math">\(f\,'(z_0)=g(z_0)\text{;}\)</span> that is, we must prove that <span class="process-math">\(\lim_{z \to z_0} \frac{f(z) -f(z_0)}{z-z_0}=g(z_0)\text{.}\)</span> We do so by showing that for all <span class="process-math">\(\varepsilon&gt;0\)</span> there exists <span class="process-math">\(\delta &gt;0\)</span> such that, if <span class="process-math">\(z\in D_{\rho}(\alpha )\)</span> with <span class="process-math">\(0\lt | z-z_0|\lt \delta\text{,}\)</span> then <span class="process-math">\(|\frac{f(z) -f(z_0)}{z-z_0}-g(z_0)| \lt \varepsilon\text{.}\)</span>
+</div> <div class="para" id="sec_power-series-15-4">Let <span class="process-math">\(z_0\in D_{\rho}(\alpha )\)</span> and <span class="process-math">\(\varepsilon&gt;0\)</span> be given. Choose <span class="process-math">\(r\lt \rho\)</span> so that <span class="process-math">\(z_0\in D_{r}(\alpha)\text{.}\)</span> We choose <span class="process-math">\(\delta\)</span> to be small enough so that <span class="process-math">\(D_{\delta}(z_0) \subset D_{r}(\alpha) \subset D_{\rho}(\alpha)\)</span> (see <a href="sec_power-series.html#fig_ch-04-04" class="xref" data-knowl="./knowl/xref/fig_ch-04-04.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.8">Figure 4.4.8</a>) and also small enough to satisfy an additional restriction, which we shall specify in a moment.</div> <figure class="figure figure-like" id="fig_ch-04-04"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-04/ch-04-fig-04.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.8<span class="period">.</span></span><span class="space"> </span>Choosing <span class="process-math">\(\delta\)</span> to prove that <span class="process-math">\(f\ '(z_0) =g(z_0)\)</span></figcaption></figure> <div class="para logical" id="sec_power-series-15-6">
+<div class="para">Because <span class="process-math">\(f(z) =S_j(z) +R_j(z)\text{,}\)</span> simplifying the right side of the following equation reveals that for all <span class="process-math">\(j\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3_parts.html" id="sec_power-series-15-6-3">
+\begin{align}
+\left[\frac{f(z) -f(z_0)}{z-z_0}-g(z_0)\right] \amp = \left[\frac{S_j(z) -S_j(z_0)}{z-z_0}-S_j\,'(z_0) \right]\notag\\
+\amp + \left[ S_j\,'(z_0) -g(z_0) \right] + \left[ \frac{R_j(z) -R_j(z_0)}{z-z_0}\right]\text{,}\tag{4.4.2}
+\end{align}
+</div>
+<div class="para">where <span class="process-math">\(S_j\,'(z_0)\)</span> is the derivative of the function <span class="process-math">\(S_j\)</span> evaluated at <span class="process-math">\(z_0\text{.}\)</span> Equation <a href="sec_power-series.html#sec_power-series-15-6-3" class="xref" data-knowl="./knowl/xref/x3_parts.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.2">(4.4.2)</a> has the general form <span class="process-math">\(A=B+C+D\text{.}\)</span> By the triangle inequality,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3_parts.html">
+\begin{equation*}
+|A|=|B+C+D|\le |B|+|C|+|D|\text{,}
+\end{equation*}
+</div>
+<div class="para">so our proof will be complete if we can show that for a small enough value of <span class="process-math">\(\delta\text{,}\)</span> each of the expressions <span class="process-math">\(|B|, \, |C|\text{,}\)</span> and <span class="process-math">\(|D|\)</span> is less than <span class="process-math">\(\frac{\varepsilon}{3}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec_power-series-15-7">
+<div class="para"><em class="emphasis">Calculation for <span class="process-math">\(\bm|D|\text{:}\)</span></em></div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x4_1_12.html ./knowl/xref/sec_sequences-series.html" id="sec_power-series-15-7-2">
+\begin{align*}
+\left|\frac{R_j(z) -R_j(z_0)}{z-z_0}\right| \amp =\left|\frac{1}{z-z_0}\left(\sum\limits_{n=j+1}^{\infty}c_n[(z-\alpha)^n-(z_0-\alpha)^n]\right) \right|\\
+\amp \lt  \sum\limits_{n=j+1}^{\infty}|c_n|\left|\frac{(z-\alpha )^n-(z_0-\alpha )^n}{z-z_0}\right|\text{,}
+\end{align*}
+</div>
+<div class="para">where the last inequality follows from <a href="sec_sequences-series.html#x4_1_12" class="xref" data-knowl="./knowl/xref/x4_1_12.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.12">Exercise 4.1.12</a>, <a href="sec_sequences-series.html" class="internal" title="Section 4.1: Sequences and Series">Section 4.1</a>.</div>
+</div> <div class="para logical" id="sec_power-series-15-8">
+<div class="para">As an exercise, we ask you to show that</div>
+<div class="displaymath process-math" id="Exercise_Ineq">
+\begin{equation}
+\left|\frac{(z-\alpha )^n-(z_0-\alpha)^n}{z-z_0}\right| \lt  nr^{n-1}\text{.}\tag{4.4.3}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_power-series-15-9">
+<div class="para">Assuming the validity of this inequality, we then get</div>
+<div class="displaymath process-math" id="Rj_ineq">
+\begin{equation}
+\left|\frac{R_j(z) - R_j(z_0)}{z-z_0}\right| \lt  \sum_{n=j+1}^{\infty}|c_n|nr^{n-1}\text{.}\tag{4.4.4}
+\end{equation}
+</div>
+</div> <div class="para" id="sec_power-series-15-10">Since <span class="process-math">\(r\lt \rho\text{,}\)</span> the series <span class="process-math">\(\sum\limits_{n=1}^{\infty}| c_n|nr^{n-1}\)</span> converges (can you explain why?). Thus the tail part of the series, which is the right side of Inequality <a href="sec_power-series.html#Rj_ineq" class="xref" data-knowl="./knowl/xref/Rj_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.4">(4.4.4)</a>, can certainly be made less than <span class="process-math">\(\frac{\varepsilon}{3}\)</span> if we choose <span class="process-math">\(j\)</span> large enough—say, <span class="process-math">\(j\ge N_1\text{.}\)</span>
+</div> <div class="para" id="sec_power-series-15-11"><em class="emphasis">Calculation for <span class="process-math">\(\bm|C|\text{:}\)</span></em></div> <div class="para" id="sec_power-series-15-12">Since <span class="process-math">\(S_j\,'(z_0)=\sum\limits_{n=1}^jnc_n(z_0-\alpha )^{n-1}\text{,}\)</span> it is clear that <span class="process-math">\(\lim_{j \to \infty}S_j\,(z_0) = g(z_0)\text{.}\)</span> Thus there is an integer <span class="process-math">\(N_2\)</span> such that if <span class="process-math">\(j \ge N_2\text{,}\)</span> then <span class="process-math">\(|S_j\,'(z_0) -g(z_0)|\lt \frac{\varepsilon}{3}\text{.}\)</span>
+</div> <div class="para" id="sec_power-series-15-13"><em class="emphasis">Calculation for <span class="process-math">\(\bm|B|\text{:}\)</span></em></div> <div class="para logical" id="sec_power-series-15-14">
+<div class="para">We define <span class="process-math">\(N=\max \{N_1, N_2\}\text{.}\)</span> Because <span class="process-math">\(S_N(z)\)</span> is a polynomial, <span class="process-math">\(S_N\,'(z_0)\)</span> exists. This means we can find <span class="process-math">\(\delta\)</span> small enough that it complies with the restriction previously placed on it as well as ensuring that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x3_parts.html">
+\begin{equation*}
+\left|\frac{S_N(z) -S_N(z_0)}{z-z_0}-S_N\,'(z_0)\right| \lt  \frac{\varepsilon}{3}
+\end{equation*}
+</div>
+<div class="para">whenever <span class="process-math">\(z\in D_{\rho}(\alpha)\text{,}\)</span> with <span class="process-math">\(0\lt |z-z_0|\lt \delta\text{.}\)</span> Using this value of <span class="process-math">\(N\)</span> for <span class="process-math">\(j\)</span> in Equation <a href="sec_power-series.html#sec_power-series-15-6-3" class="xref" data-knowl="./knowl/xref/x3_parts.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.2">(4.4.2)</a>, together with our chosen <span class="process-math">\(\delta\text{,}\)</span> yields conclusion (<em class="emphasis">ii</em>) and hence the entire theorem.</div>
+</div></article></details><details id="ex_4_24" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.9</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="ex_4_24-1-1">Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty}(n+1) z^n=\frac{1}{(1-z)^2}\)</span> for all <span class="process-math">\(z\in D_1(0)\text{.}\)</span>
+</div>
+<div class="solutions"><details id="ex_4_24-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_4_24-2-1">We know from <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a> that <span class="process-math">\(f(z) =\frac{1}{1-z}=\sum\limits_{n=0}^{\infty}z^n\)</span> for all <span class="process-math">\(z\in D_1(0)\text{.}\)</span> If we set <span class="process-math">\(k=1\)</span> in <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>, part (ii), then <span class="process-math">\(f\,'(z) = \frac{1}{(1-z)^2} = \sum\limits_{n=1}^{\infty}nz^{n-1} = \sum\limits_{n=0}^{\infty}(n+1)z^n\text{,}\)</span> for all <span class="process-math">\(z \in D_1(0)\text{.}\)</span>
+</div></div></details></div></article></details><details id="Bessel_Ex" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.10</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="Bessel_Ex-1-1">
+<div class="para">The Bessel function of order zero is defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J_0(z) =\sum\limits_{n=0}^{\infty}\frac{(-1)^n }{(n!)^2}\left(\frac{z}{2}\right)^{\!2n} = 1-\frac{z^2}{2^2} + \frac{z^4}{2^4 4^4}-\frac{z^6}{2^2 4^2 6^2} + \cdots\text{,}
+\end{equation*}
+</div>
+<div class="para">and termwise differentiation shows that its derivative is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+J_0\,'(z) = \sum_{n=0}^{\infty}\frac{(-1)^{n+1}}{n!(n+1)!}\left(\frac{z}{2}\right)^{\!2n+1} =\frac{-z}{2}+\frac{1}{1!2!}\left(\frac{z}{2}\right)^{\!3}-\frac{1}{2!3!}\left(\frac{z}{2}\right)^{\!5}+\cdots\text{.}
+\end{equation*}
+</div>
+<div class="para">We leave as an exercise to show that the radius of convergence of these series is infinity. The Bessel function <span class="process-math">\(J_1(z)\)</span> of order 1 is known to satisfy the differential equation <span class="process-math">\(J_1(z) = -J_0\,'(z)\text{.}\)</span>
+</div>
+</div></article></details><section class="exercises" id="exercises_power-series"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="x4_4_1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_1-1-1">Prove part (<em class="emphasis">iii</em>) of <a href="sec_power-series.html#th15" class="xref" data-knowl="./knowl/xref/th15.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.3">Theorem 4.4.3</a>.</div>
+<div class="solutions"><details id="x4_4_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_1-2-1">The series for <span class="process-math">\(f(z)\)</span> converges absolutely if <span class="process-math">\(\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|\,|z-\alpha |\lt 1\text{.}\)</span> If <span class="process-math">\(\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|=0\text{,}\)</span> the series converges for all <span class="process-math">\(z\text{.}\)</span> If <span class="process-math">\(\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|=\infty\text{,}\)</span> the series converges only when <span class="process-math">\(z=\alpha\text{.}\)</span> If <span class="process-math">\(\lim\limits_{n \to \infty} |\frac{c_{n+1}}{c_n}|\)</span> is finite but not zero, then the series converges if <span class="process-math">\(|z-\alpha| \lt \frac{1}{\lim\limits_{n \to \infty}|\frac{c_{n+1}}{c_n}|} = \rho\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="x4_4_2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_2-1-1">Consider the series <span class="process-math">\(\sum\limits_{n=0}^{\infty}z^n\text{,}\)</span> <span class="process-math">\(\sum\limits_{n=1}^{\infty}\frac{z^n}{n^2}\text{,}\)</span> and <span class="process-math">\(\sum\limits_{n=1}^{\infty}\frac{z^n}{n}\text{.}\)</span>
+</div> <article class="task exercise-like" id="x4_4_2-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x4_4_2-1-2-1">Show that each series has radius of convergence 1.</div></article> <article class="task exercise-like" id="x4_4_2-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x4_4_2-1-3-1">Show that the first series converges nowhere on <span class="process-math">\(C_1(0) =\{z:|z|=1\}\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x4_4_2-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x4_4_2-1-4-1">Show that the second series converges everywhere on <span class="process-math">\(C_1(0)\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x4_4_2-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="x4_4_2-1-5-1">It turns out that the third series converges everywhere on <span class="process-math">\(C_1(0)\text{,}\)</span> except at the point <span class="process-math">\(z=1\text{.}\)</span> This is not easy to prove. Give it a try.</div></article></article><article class="exercise exercise-like" id="x4_4_3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_3-1-1">Find the radius of convergence of the following.</div> <article class="task exercise-like" id="x4_4_3-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x4_4_3-1-2-1"><span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}(-1)^n \frac{z^n}{(2n)!}\text{.}\)</span></div>
+<details id="x4_4_3-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_3-1-2-2-1"><span class="process-math">\(\infty\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x4_4_3-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x4_4_3-1-3-1"><span class="process-math">\(h(z) = \sum\limits_{n=0}^{\infty}n!z^n\text{.}\)</span></div></article> <article class="task exercise-like" id="x4_4_3-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x4_4_3-1-4-1"><span class="process-math">\(f(z) = \sum\limits_{n=0}^{\infty}(\frac{4n^2}{2n+1}-\frac{6n^2}{3n+4})^nz^n\text{.}\)</span></div>
+<details id="x4_4_3-1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_3-1-4-2-1"><span class="process-math">\(\frac{3}{5}\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x4_4_3-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="x4_4_3-1-5-1"><span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}\frac{(n!)^2}{(2n)!}z^n\text{.}\)</span></div></article> <article class="task exercise-like" id="x4_4_3-1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="x4_4_3-1-6-1"><span class="process-math">\(h(z) = \sum\limits_{n=0}^{\infty}(2-(-1)^n)^nz^n\text{.}\)</span></div>
+<details id="x4_4_3-1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_3-1-6-2-1"><span class="process-math">\(\frac{1}{3}\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x4_4_3-1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="x4_4_3-1-7-1"><span class="process-math">\(f(z) = \sum\limits_{n=0}^{\infty}\frac{n(n-1)z^n}{(3+4i)^n}\text{.}\)</span></div></article> <article class="task exercise-like" id="x4_4_3-1-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="x4_4_3-1-8-1"><span class="process-math">\(g(z) =\sum\limits_{n=0}^{\infty}(\frac{3n+7}{4n+2}^nz^n\text{.}\)</span></div>
+<details id="x4_4_3-1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_3-1-8-2-1"><span class="process-math">\(\frac{4}{3}\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x4_4_3-1-9"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<div class="para" id="x4_4_3-1-9-1"><span class="process-math">\(h(z) = \sum\limits_{n=0}^{\infty}\frac{2^n}{1+3^n}z^n\text{.}\)</span></div></article> <article class="task exercise-like" id="x4_4_3-1-10"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<div class="para" id="x4_4_3-1-10-1"><span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}z^{2n}\text{.}\)</span></div>
+<details id="x4_4_3-1-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_3-1-10-2-1"><span class="process-math">\(1\text{.}\)</span></div></div></details></article> <article class="task exercise-like" id="x4_4_3-1-11"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<div class="para" id="x4_4_3-1-11-1">
+<span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}\frac{n^n}{n!}z^n\text{.}\)</span> \hint{<span class="process-math">\(\lim\limits_{n \to \infty}(1+\frac{1}{n})^n=e\text{.}\)</span>}</div></article></article><article class="exercise exercise-like" id="x4_4_4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_4-1-1">Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty}(n+1)^2z^n=\frac{1+z}{(1-z)^3}\text{.}\)</span> For what values of <span class="process-math">\(z\)</span> is this valid?</div></article><article class="exercise exercise-like" id="x4_4_5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_5-1-1">Suppose that <span class="process-math">\(\sum\limits_{n=0}^{\infty}c_nz^n\)</span> has radius of convergence <span class="process-math">\(R\text{.}\)</span> Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty}c_n^2z^n\)</span> has radius of convergence <span class="process-math">\(R^2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x4_4_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_5-2-1">Show that <span class="process-math">\(\lim\limits_{n \to \infty}\sup |c_n^2|^{\frac{1}{n}} = \big(\lim\limits_{n \to \infty}\sup |c_n|^{\frac{1 }{n}}\big)^2\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="x4_4_6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_6-1-1">Does there exist a power series <span class="process-math">\(\sum\limits_{n=0}^{\infty}c_nz^n\)</span> that converges at <span class="process-math">\(z_1=4-i\)</span> and diverges at <span class="process-math">\(z_2=2+3i\text{?}\)</span> Why or why not?</div></article><article class="exercise exercise-like" id="x4_4_7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_7-1-1">Verify part (<em class="emphasis">ii</em>) of <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a> for all <span class="process-math">\(k\)</span> by using mathematical induction.</div>
+<div class="solutions"><details id="x4_4_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="x4_4_7-2-1">
+<div class="para">The Theorem establishes <span class="process-math">\(f^{(k)}(z)=\sum\limits_{n=k}^{\infty}n(n-1) \cdots (n-k+1)c_n(z-\alpha )^{n-k}\)</span> when <span class="process-math">\(k=1\text{.}\)</span> Assume the Theorem is true for some <span class="process-math">\(k&gt;1\text{,}\)</span> and set <span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}b_n(z-\alpha)^n\text{,}\)</span> where <span class="process-math">\(b_n=(n+k)(n+k-1) \cdots (n+1)c_{n+k}\text{.}\)</span> In other words, <span class="process-math">\(g(z)=f^{(k)}(z)\)</span> (confirm this). Applying the case when <span class="process-math">\(k=1\)</span> to the function <span class="process-math">\(g\)</span> gives</div>
+<div class="displaymath process-math" id="x4_4_7-2-1-9">
+\begin{align*}
+g\,'(z) \amp = f^{(k+1)}(z) = \sum\limits_{n=1}^{\infty}nb_n(z-\alpha)^{n-1}\\
+\amp = \sum\limits_{n=1}^{\infty}n(b_n)(n+k)(n+k-1) \cdots (n+1) c_{n+k}(z-\alpha)^{n-1}\\
+\amp = \sum\limits_{n=k+1}^{\infty}n(n-1) \cdots (n-k+1)(n-k)c_n(z-\alpha )^{n-(k+1)}
+\end{align*}
+</div>
+</div> <div class="para" id="x4_4_7-2-2">(confirm this also), which is what we needed to establish.</div>
+</div></details></div></article><article class="exercise exercise-like" id="x4_4_8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_8-1-1">This exercise establishes that the radius of convergence for <span class="process-math">\(g\)</span> given in <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a> is <span class="process-math">\(\rho\text{,}\)</span> the same as that of the function <span class="process-math">\(f\text{.}\)</span>
+</div> <article class="task exercise-like" id="x4_4_8-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x4_4_8-1-2-1">Explain why the radius of convergence for <span class="process-math">\(g\)</span> is <span class="process-math">\(\frac{1}{\lim\limits_{n \to \infty}\sup |nc_n|^{\frac{{1}}{n-1}}}\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x4_4_8-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x4_4_8-1-3-1">Show that <span class="process-math">\(\lim\limits_{n \to \infty}\sup | n|^{\frac{{1}}{n-1}}=1\text{.}\)</span> \hint{The <span class="process-math">\(\lim \sup\)</span> equals the limit. Show that <span class="process-math">\(\lim\limits_{n \to \infty}\frac{\log n}{n-1}=0\text{.}\)</span>}</div></article> <article class="task exercise-like" id="x4_4_8-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x4_4_8-1-4-1">Assuming that <span class="process-math">\(\lim\limits_{n \to \infty}\sup |c_n|^{\frac{{1}}{n-1}} = \lim\limits_{n \to \infty}\sup|c_n|^{\frac{{1}}{n}}\text{,}\)</span> show that the conclusion for this exercise follows.</div></article> <article class="task exercise-like" id="x4_4_8-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="x4_4_8-1-5-1">Verify the truth of the assumption made in part (c).</div></article></article><article class="exercise exercise-like" id="x4_4_9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_9-1-1">Here we establish the validity of <a href="sec_power-series.html#Exercise_Ineq" class="xref" data-knowl="./knowl/xref/Exercise_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.3">Inequality (4.4.3)</a> in the proof of <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>.</div> <article class="task exercise-like" id="x4_4_9a"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para logical" id="x4_4_9a-1">
+<div class="para">Show that</div>
+<div class="displaymath process-math" id="x4_4_9a-1-1">
+\begin{align*}
+\left|\frac{s^n-t^n}{s-t}\right| \amp = |s^{n-1}+s^{n-2}t+s^{n-3}t^2+\cdots +st^{n-2}+t^{n-1}|\\
+\amp \le |s^{n-1}|+|s^{n-2}t| +|s^{n-3}t^2|+\cdots +|st^{n-2}| +|t^{n-1}|\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> are arbitrary complex numbers, <span class="process-math">\(s \ne t\text{.}\)</span>
+</div>
+</div>
+<details id="x4_4_9a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_9a-2-1">Since <span class="process-math">\(s^n-t^n=(s^{n-1}+s^{n-2}t+s^{n-3}t^2+\cdots +st^{n-2}+t^{n-1})(s-t)\)</span> (verify!), the conclusion follows from division and the triangle inequality.</div></div></details></article> <article class="task exercise-like" id="x4_4_9b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="x4_4_9b-1">Explain why, in <a href="sec_power-series.html#Exercise_Ineq" class="xref" data-knowl="./knowl/xref/Exercise_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.3">Inequality (4.4.3)</a>, <span class="process-math">\(|z-\alpha|\lt r\)</span> and <span class="process-math">\(|z_0-\alpha|\lt r\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="x4_4_9c"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="x4_4_9c-1">Let <span class="process-math">\(s=z-\alpha\)</span> and <span class="process-math">\(t=z_0-\alpha\)</span> in part (a) to establish <a href="sec_power-series.html#Exercise_Ineq" class="xref" data-knowl="./knowl/xref/Exercise_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.3">Inequality (4.4.3)</a>.</div></article></article><article class="exercise exercise-like" id="x4_4_10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_10-1-1">Show that the radius of convergence of the series for <span class="process-math">\(J_0(z)\)</span> and <span class="process-math">\(J_0\,'(z)\)</span> in <a href="sec_power-series.html#Bessel_Ex" class="xref" data-knowl="./knowl/xref/Bessel_Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.10">Example 4.4.10</a> is infinity.</div></article><article class="exercise exercise-like" id="x4_4_11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="para" id="x4_4_11-1-1">Consider the series obtained by substituting for the complex number <span class="process-math">\(z\)</span> the real number <span class="process-math">\(x\)</span> in the Maclaurin series for <span class="process-math">\(\sin x\text{.}\)</span> Where does this series converge?</div>
+<div class="solutions"><details id="x4_4_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x4_4_11-2-1">The series converges for all values of <span class="process-math">\(z\)</span> by the ratio test.</div></div></details></div></article><article class="exercise exercise-like" id="exercises_power-series-13"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="exercises_power-series-13-1-1">Show that, for <span class="process-math">\(|z-i|\lt \sqrt{2}\text{,}\)</span> <span class="process-math">\(\frac{1}{1-z} =\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}}\text{.}\)</span>
+</div> <div class="para" id="exercises_power-series-13-1-2">\hint{<span class="process-math">\(\frac{1}{1-z}=\frac{1}{(1-i) -(z-i)}=\frac{1 }{1-i}\Big[\frac{1}{1-\frac{z-i}{1-i}}\Big]\text{.}\)</span> Now use <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a>.}</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec_convergence-theorems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch_elementary-fcns.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

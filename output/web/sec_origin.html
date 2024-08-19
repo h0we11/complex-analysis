@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Origin of Complex Numbers</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Complex Analysis">
+<meta property="book:author" content="Russell W. Howell">
+<meta property="book:author" content="John H. Mathews">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec_algebra-1-20-1 { counter-set: sec_algebra-1-20-1 0; }
+#sec_algebra-1-20-1 > li::marker { content: ""counter(sec_algebra-1-20-1,decimal)"."; }
+#sec_algebra-1-20-1 > li { counter-increment: sec_algebra-1-20-1; }
+#sec_julia-mandelbrot-9-8 { counter-set: sec_julia-mandelbrot-9-8 0; }
+#sec_julia-mandelbrot-9-8 > li::marker { content: ""counter(sec_julia-mandelbrot-9-8,decimal)"."; }
+#sec_julia-mandelbrot-9-8 > li { counter-increment: sec_julia-mandelbrot-9-8; }
+#sec_julia-mandelbrot-19-26 { counter-set: sec_julia-mandelbrot-19-26 0; }
+#sec_julia-mandelbrot-19-26 > li::marker { content: ""counter(sec_julia-mandelbrot-19-26,decimal)"."; }
+#sec_julia-mandelbrot-19-26 > li { counter-increment: sec_julia-mandelbrot-19-26; }
+#Regions_of_Convergence-1-1-3 { counter-set: Regions_of_Convergence-1-1-3 0; }
+#Regions_of_Convergence-1-1-3 > li::marker { content: ""counter(Regions_of_Convergence-1-1-3,decimal)"."; }
+#Regions_of_Convergence-1-1-3 > li { counter-increment: Regions_of_Convergence-1-1-3; }
+#th15-1-1-3 { counter-set: th15-1-1-3 0; }
+#th15-1-1-3 > li::marker { content: ""counter(th15-1-1-3,decimal)"."; }
+#th15-1-1-3 > li { counter-increment: th15-1-1-3; }
+#Power_Series_Thm-1-1-4 { counter-set: Power_Series_Thm-1-1-4 0; }
+#Power_Series_Thm-1-1-4 > li::marker { content: ""counter(Power_Series_Thm-1-1-4,decimal)"."; }
+#Power_Series_Thm-1-1-4 > li { counter-increment: Power_Series_Thm-1-1-4; }
+#expz_is_entire-1-1-2 { counter-set: expz_is_entire-1-1-2 0; }
+#expz_is_entire-1-1-2 > li::marker { content: ""counter(expz_is_entire-1-1-2,decimal)"."; }
+#expz_is_entire-1-1-2 > li { counter-increment: expz_is_entire-1-1-2; }
+#Unif_Conv_Properties-1-1-7 { counter-set: Unif_Conv_Properties-1-1-7 0; }
+#Unif_Conv_Properties-1-1-7 > li::marker { content: ""counter(Unif_Conv_Properties-1-1-7,decimal)"."; }
+#Unif_Conv_Properties-1-1-7 > li { counter-increment: Unif_Conv_Properties-1-1-7; }
+#Nuanced_Taylor-1-1-10 { counter-set: Nuanced_Taylor-1-1-10 0; }
+#Nuanced_Taylor-1-1-10 > li::marker { content: ""counter(Nuanced_Taylor-1-1-10,decimal)"."; }
+#Nuanced_Taylor-1-1-10 > li { counter-increment: Nuanced_Taylor-1-1-10; }
+#thm_laurent-properties-2-1-6 { counter-set: thm_laurent-properties-2-1-6 0; }
+#thm_laurent-properties-2-1-6 > li::marker { content: ""counter(thm_laurent-properties-2-1-6,decimal)"."; }
+#thm_laurent-properties-2-1-6 > li { counter-increment: thm_laurent-properties-2-1-6; }
+#sec_singularities-4-2-1-7 { counter-set: sec_singularities-4-2-1-7 0; }
+#sec_singularities-4-2-1-7 > li::marker { content: ""counter(sec_singularities-4-2-1-7,decimal)"."; }
+#sec_singularities-4-2-1-7 > li { counter-increment: sec_singularities-4-2-1-7; }
+#sec_singularities-5-1 { counter-set: sec_singularities-5-1 0; }
+#sec_singularities-5-1 > li::marker { content: ""counter(sec_singularities-5-1,decimal)"."; }
+#sec_singularities-5-1 > li { counter-increment: sec_singularities-5-1; }
+#zero_quotient-1-1-7 { counter-set: zero_quotient-1-1-7 0; }
+#zero_quotient-1-1-7 > li::marker { content: ""counter(zero_quotient-1-1-7,decimal)"."; }
+#zero_quotient-1-1-7 > li { counter-increment: zero_quotient-1-1-7; }
+#sec_singularities-23-2-1-12 { counter-set: sec_singularities-23-2-1-12 0; }
+#sec_singularities-23-2-1-12 > li::marker { content: ""counter(sec_singularities-23-2-1-12,decimal)"."; }
+#sec_singularities-23-2-1-12 > li { counter-increment: sec_singularities-23-2-1-12; }
+#Residues_at_Poles-2-1 { counter-set: Residues_at_Poles-2-1 0; }
+#Residues_at_Poles-2-1 > li::marker { content: ""counter(Residues_at_Poles-2-1,decimal)"."; }
+#Residues_at_Poles-2-1 > li { counter-increment: Residues_at_Poles-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis:</span> <span class="subtitle">an Open Source Textbook</span></a></h1>
+<p class="byline">Russell W. Howell, John H. Mathews</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_Complex_Numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_Complex_Numbers.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_algebra-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_origin.html#subsec_wessel" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Caspar Wessel Makes a Breakthrough</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_origin.html#exercises_origin" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integral-representations.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Integral Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integral-representations.html#exercises_integral-representations" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle &amp; Rouché’s Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\({\bm w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\bm w=(z^2-1)^\frac{1}{2}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_origin"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">The Origin of Complex Numbers</span>
+</h2>
+<section class="introduction" id="sec_origin-2"><div class="para" id="sec_origin-2-1">Complex analysis can roughly be thought of as the subject that applies the theory of calculus to imaginary numbers. But what exactly are imaginary numbers? Usually, students learn about them in high school with introductory remarks from their teachers along the following lines: “We can’t take the square root of a negative number. But let’s <em class="emphasis">pretend</em> we can and begin by using the symbol <span class="process-math">\(i=\sqrt{-1}\)</span> .” Rules are then learned for doing arithmetic with these numbers. At some level the rules make sense: if <span class="process-math">\(i=\sqrt{-1}\text{,}\)</span> it stands to reason that <span class="process-math">\(i^2=-1\text{.}\)</span> However, it is not uncommon for students to wonder whether they are really doing magic rather than mathematics.</div> <div class="para" id="sec_origin-2-2">If you ever felt that way, congratulate yourself!—you are in the company of some of the great mathematicians from the sixteenth through the nineteenth centuries. They also were perplexed by the notion of roots of negative numbers. Our purpose in this section is to highlight some of the episodes in the very colorful history of how thinking about imaginary numbers developed. We intend to show you that, contrary to popular belief, there is really nothing <em class="emphasis">imaginary</em> about “imaginary umbers.” They are just as real as “real numbers.”</div> <div class="para logical" id="sec_origin-2-3">
+<div class="para">Our story begins in 1545. In that year, the Italian mathematician Girolamo Cardano published <em class="emphasis">Ars Magna</em> (<em class="emphasis">The Great Art</em>), a 40-chapter masterpiece in which he gave for the first time a method for solving the general cubic equation</div>
+<div class="displaymath process-math" id="Cubic_Equation">
+\begin{equation}
+z^3 + a_2 z^2 +a_1z + a_0 = 0\text{.}\tag{1.1.1}
+\end{equation}
+</div>
+</div> <div class="para" id="sec_origin-2-4">Cardano did not have at his disposal the power of today’s algebraic notation, and he tended to think of cubes or squares as geometric objects rather than algebraic quantities. Essentially, however, his solution began by making the substitution <span class="process-math">\(z=x-\frac{a_2}{3}\text{.}\)</span> This move transformed Equation <a href="sec_origin.html#Cubic_Equation" class="xref" data-knowl="./knowl/xref/Cubic_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> into a cubic equation without a squared term, which is called a depressed cubic. To illustrate, begin with <span class="process-math">\(z^3 + 9z^2 + 24z + 20 = 0\)</span> and substitute <span class="process-math">\(z = x - \frac{a_2}{3} = x -\frac{9}{3} = x - 3\text{.}\)</span> The equation then becomes <span class="process-math">\((x-3)^3 +9(x-3)^2 +24(x-3) + 20 = 0\text{,}\)</span> which simplifies to <span class="process-math">\(x^3 -3x + 2 = 0\text{.}\)</span>
+</div> <div class="para logical" id="sec_origin-2-5">
+<div class="para">You need not worry about the computational details here, but in general the substitution <span class="process-math">\(z = x - \frac{a_2}{3}\)</span> transforms Equation <a href="sec_origin.html#Cubic_Equation" class="xref" data-knowl="./knowl/xref/Cubic_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> into</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html" id="DC_Equation">
+\begin{equation}
+x^3 + bx + c = 0\text{,}\tag{1.1.2}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(b = a_1 - \frac{1}{3}a_2^2\text{,}\)</span> and <span class="process-math">\(c = -\frac{1}{3}a_1a_2 + \frac{2}{27}a_2^3 + a_0\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec_origin-2-6">
+<div class="para">If Cardano could get any value of <span class="process-math">\(x\)</span> that solved a depressed cubic, he could easily get a corresponding solution to Equation <a href="sec_origin.html#Cubic_Equation" class="xref" data-knowl="./knowl/xref/Cubic_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a> from the identity <span class="process-math">\(z=x-\frac{a_2}{3}\text{.}\)</span> Happily, Cardano knew how to solve a depressed cubic. The technique had been communicated to him by Niccolo Fontana who, unfortunately, came to be known as Tartaglia (the <em class="emphasis">stammerer</em>) due to a speaking disorder that was caused when he was 12 years old. (Evidently, during the Italian wars, French troops sacked his home in Brescia, Italy in 1512, and struck Tartaglia in the face with a saber.) In any case, the procedure was also independently discovered some 30 years earlier by Scipione del Ferro of Bologna. Ferro and Tartaglia showed that one of the solutions to Equation <a href="sec_origin.html#DC_Equation" class="xref" data-knowl="./knowl/xref/DC_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.2">(1.1.2)</a> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html ./knowl/xref/DC_Equation.html" id="Depressed_Cubic">
+\begin{equation}
+x=\sqrt[3]{-\frac{c}{2}+\sqrt{\frac{c^2}{4}+\frac{b^3}{27}}}+\sqrt[3]{-\frac{c}{2}-\sqrt{\frac{c^2}{4}+\frac{b^3}{27}}.}\tag{1.1.3}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_origin-2-7">
+<div class="para">Although Cardano would not have reasoned in the following way, today we can take this value for <span class="process-math">\(x\)</span> and use it to factor the depressed cubic into a linear and quadratic term. The remaining roots can then be found with the quadratic formula. For example, to solve the (full) cubic equation <span class="process-math">\(z^3 + 9z^2 + 24z + 20 = 0\text{,}\)</span> use the substitution <span class="process-math">\(z=x-3\)</span> to get <span class="process-math">\(x^3-3x+2=0\text{,}\)</span> which is a depressed cubic in the form of Equation <a href="sec_origin.html#DC_Equation" class="xref" data-knowl="./knowl/xref/DC_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.2">(1.1.2)</a>. Next, apply the “Ferro-Tartaglia” formula with <span class="process-math">\(b=-3\)</span> and <span class="process-math">\(c=2\)</span> to get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DC_Equation.html">
+\begin{equation*}
+x= \sqrt[3]{-\frac{2}{2}+\sqrt{\frac{2^2}{4}+\frac{(-3)^3}{27}}} + \sqrt[3]{-\frac{2}{2} - \sqrt{\frac{2^2}{4} + \frac{(-3)^3}{27}}} = \sqrt[3]{-1}+\sqrt[3]{-1} = -2\text{.}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec_origin-2-8">Since <span class="process-math">\(x=-2\)</span> is a root, <span class="process-math">\(x+2\)</span> must be a factor of <span class="process-math">\(x^3-3x+2\text{.}\)</span> Dividing <span class="process-math">\(x+2\)</span> into <span class="process-math">\(x^3-3x+2\)</span> gives <span class="process-math">\(x^2-2x+1 = (x-1)^2\text{,}\)</span> so that the remaining (duplicate) roots are <span class="process-math">\(x=1, x=1\text{.}\)</span> The solutions to <span class="process-math">\(^2+24z+20=0\)</span> are obtained by recalling <span class="process-math">\(z=x-3\text{,}\)</span> which yields the three roots <span class="process-math">\(z_1=-2-3=-5\text{,}\)</span> and <span class="process-math">\(z_2=z_3 = 1-3 = -2\text{.}\)</span>
+</div> <div class="para" id="sec_origin-2-9">So, by using Tartaglia’s work and a clever transformation technique, Cardano was able to crack what had seemed to be the impossible task of solving the general cubic equation. Surprisingly, this development played a significant role in helping to establish the legitimacy of imaginary numbers. Roots of negative numbers, of course, had come up earlier in the simplest of quadratic equations, such as <span class="process-math">\(x^2+1=0\text{.}\)</span> The solutions we know today as <span class="process-math">\(x=\pm \sqrt{-1}\text{,}\)</span> however, were easy for mathematicians to ignore. In Cardano’s time, negative numbers were still being treated with some suspicion, as it was difficult to conceive of any physical reality corresponding to them. Taking square roots of such quantities was surely all the more ludicrous. Nevertheless, Cardano made some genuine attempts to deal with <span class="process-math">\(\sqrt{-1}\text{.}\)</span> Unfortunately, his geometric thinking made it hard to make much headway. At one point he commented that the process of arithmetic that deals with quantities such as <span class="process-math">\(\sqrt{-1}\)</span> “involves mental tortures and is truly sophisticated.” At another point he concluded that the process is “as refined as it is useless.” Many mathematicians held this view, but finally there was a breakthrough.</div> <div class="para logical" id="sec_origin-2-10">
+<div class="para">In his 1572 treatise <em class="emphasis">L’Algebra,</em> Rafael Bombelli showed that roots of negative numbers have great utility. Consider the depressed cubic <span class="process-math">\(x^3 - 15x - 4=0\text{.}\)</span> Using Formula <a href="sec_origin.html#Depressed_Cubic" class="xref" data-knowl="./knowl/xref/Depressed_Cubic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a>, we compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Depressed_Cubic.html">
+\begin{equation*}
+x=\sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} = \sqrt[3]{2+11\sqrt{-1}} + \sqrt[3]{2-11\sqrt{-1}}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_origin-2-11">
+<div class="para">Simplifying this expression would have been very difficult if Bombelli had not come up with what he called a “wild thought.” He suspected that if the original depressed cubic had real solutions, then the two parts of <span class="process-math">\(x\)</span> in the preceding equation could be written as <span class="process-math">\(u+v\sqrt{-1}\)</span> and <span class="process-math">\(u-v\sqrt{-1}\)</span> for some real numbers <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span> That is, Bombelli believed <span class="process-math">\(u+v\sqrt{-1} = \sqrt[3]{2+11\sqrt{-1}}\)</span> and <span class="process-math">\(u-v\sqrt{-1} = \sqrt[3]{2-11\sqrt{-1}}\text{,}\)</span> which would mean</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(u+v\sqrt{-1})^3 = 2+11\sqrt{-1},  \text{ and }   (u-v\sqrt{-1})^3 = 2-11\sqrt{-1}\text{.}
+\end{equation*}
+</div>
+<div class="para">Then, using the well-known algebraic identity <span class="process-math">\((a+b)^3 =a^3+3a^2b+3ab^2+b^3\text{,}\)</span> and assuming that roots of negative numbers obey the rules of algebra, he obtained</div>
+<div class="displaymath process-math" id="sec_origin-2-11-11">
+\begin{align}
+(u+v\sqrt{-1})^3\amp  =u^3+3(u^2)v\sqrt{-1}+3(u)(v\sqrt{-1})^2+(v\sqrt{-1})^3\notag\\
+\amp  =u^3 + 3(u)(v\sqrt{-1})^2 + 3(u^2)v\sqrt{-1} + (v\sqrt{-1})^3\notag\\
+\amp  =(u^3 - 3uv^2) + (3u^2v - v^3)\sqrt{-1}\notag\\
+\amp  =u(u^2 - 3v^2) +v (3u^2-v^2)\sqrt{-1}\tag{1.1.4}\\
+\amp  =2+11\sqrt{-1}\text{.}\tag{1.1.5}
+\end{align}
+</div>
+</div> <div class="para" id="sec_origin-2-12">By equating like parts of Equations <a href="sec_origin.html#sec_origin-2-11-11" class="xref" data-knowl="./knowl/xref/Bombelli_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.4">(1.1.4)</a> and <a href="sec_origin.html#sec_origin-2-11-11" class="xref" data-knowl="./knowl/xref/Bombelli_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.5">(1.1.5)</a> Bombelli reasoned that <span class="process-math">\(u(u^2-3v^2)=2\)</span> and <span class="process-math">\(v(3u^2-v^2)=11\text{.}\)</span> Perhaps thinking even more wildly, Bombelli then supposed that <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> were integers. The only integer factors of 2 are 2 and 1, so the equation <span class="process-math">\(u(u^2-3v^2)=2\)</span> led Bombelli to conclude that <span class="process-math">\(u=2\)</span> and <span class="process-math">\(u^2-3v^2=1\text{.}\)</span> From this conclusion it follows that <span class="process-math">\(v^2=1\text{,}\)</span> or <span class="process-math">\(v=\pm 1\text{.}\)</span> Amazingly, <span class="process-math">\(u=2\)</span> and <span class="process-math">\(v=1\)</span> solve the second equation <span class="process-math">\(v(3u^2-v^2)=11\text{,}\)</span> so Bombelli declared the values for <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> to be <span class="process-math">\(u=2\)</span> and <span class="process-math">\(v=1\text{,}\)</span> respectively.</div> <div class="para logical" id="sec_origin-2-13">
+<div class="para">Since <span class="process-math">\((2+\sqrt{-1})^3 = 2+11\sqrt{-1}\text{,}\)</span> we clearly have <span class="process-math">\(2+\sqrt{-1} = \sqrt[3]{2+11\sqrt{-1}}\text{.}\)</span> Similarly, Bombelli showed that <span class="process-math">\(2-\sqrt{-1} = \sqrt[3]{2-11 \sqrt{-1}}\text{,}\)</span> so that</div>
+<div class="displaymath process-math" id="Bombelli_3">
+\begin{equation}
+\sqrt[3]{2+11\sqrt{-1}}+\sqrt[3]{2-11\sqrt{-1}}=(2+\sqrt{-1})+(2-\sqrt{-1} )=4\text{,}\tag{1.1.6}
+\end{equation}
+</div>
+<div class="para">which was a proverbial bombshell. Prior to Bombelli, mathematicians could easily scoff at imaginary numbers when they arose as solutions to quadratic equations. With cubic equations, they no longer had this luxury. That <span class="process-math">\(x=4\)</span> was a correct solution to the equation <span class="process-math">\(x^3-15x-4=0\)</span> was indisputable, as it could be checked easily. However, to arrive at this very real solution, mathematicians had to take a detour through the uncharted territory of “imaginary numbers.” Thus, whatever else might have been said about these numbers (which, today, we call <em class="emphasis">complex numbers</em>), their utility could no longer be ignored.</div>
+</div></section><section class="subsection" id="subsec_wallis"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="space"> </span><span class="title">Geometric Progress of John Wallis</span>
+</h3>
+<div class="para" id="subsec_wallis-2">As significant as Bombelli’s work was his results left many issues unresolved. For example, his technique applied only to a few specialized cases. Could it be extended? Even if it could be extended a larger question remained: What possible physical representation could complex numbers have? That question remained unanswered for more than two centuries. Paul J. Nahin’s book <em class="emphasis">An Imaginary Tale: the Story of</em> <span class="process-math">\(\sqrt{-1}\)</span> describes the progress in answering it as occurring in several stages. A preliminary step came in 1685 when the English mathematician John Wallis published <em class="emphasis">A Treatise of Algebra, both Historical and Practical</em>.</div>
+<div class="para" id="subsec_wallis-3">Among the many contributions in that book two are particularly noteworthy for our purposes. They are displayed in Wallis’ analysis of a problem from classical geometry that, at first glance, seems completely unrelated to complex numbers.</div>
+<details id="prob_classic-geometry" class="problem example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Problem</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Classical Geometry Problem.</span>
+</h4></summary><article class="problem example-like knowl__content"><div class="para" id="prob_classic-geometry-2-1">Construct a triangle determined by two sides and an angle <em class="emphasis">not</em> included between those sides.</div></article></details><div class="para" id="subsec_wallis-5">We will get to Wallis’ contributions in a moment. First, observe that <a href="sec_origin.html#wallis-1_fig" class="xref" data-knowl="./knowl/xref/wallis-1_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a> illustrates the standard solution to this classical problem. Given side length <span class="process-math">\(a\)</span> (represented by segment <span class="process-math">\(AB\)</span>), angle <span class="process-math">\(\alpha\)</span> (determined by segments <span class="process-math">\(AB\)</span> and <span class="process-math">\(BC\)</span>), and side length <span class="process-math">\(b\text{,}\)</span> draw an arc of radius <span class="process-math">\(b\)</span> whose center is at point <span class="process-math">\(A\text{.}\)</span> If the arc intersects segment <span class="process-math">\(BC\)</span> at points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\text{,}\)</span> then the resulting triangles <span class="process-math">\(ABE\)</span> and <span class="process-math">\(ABF\)</span> each satisfy the problem requirement.</div>
+<figure class="figure figure-like" id="wallis-1_fig"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-01/ch-01-fig-01.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>The standard solution to Wallis’ problem</figcaption></figure></section><section class="subsection" id="subsec_geometric-rep-real"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="space"> </span><span class="title">A Geometric Representation of Real Numbers</span>
+</h3>
+<div class="para" id="subsec_geometric-rep-real-2">Wallis’ first contribution allowed him to associate numbers with the points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> of <a href="sec_origin.html#wallis-1_fig" class="xref" data-knowl="./knowl/xref/wallis-1_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.2">Figure 1.1.2</a>. The association came by way of a construct that may sound completely trivial to us, but that is only because we have been raised with Wallis’ idea: the number line. By choosing an arbitrary point to represent the number zero on a given line, Wallis declared that positive numbers could be viewed as corresponding distances to the <em class="emphasis">right</em> of zero, and negative numbers as corresponding (positive) distances to the <em class="emphasis">left</em> of zero.</div>
+<div class="para" id="subsec_geometric-rep-real-3">To complete the association refer to <a href="sec_origin.html#wallis-2_fig" class="xref" data-knowl="./knowl/xref/wallis-2_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.3">Figure 1.1.3</a> and think of segment <span class="process-math">\(BC\)</span> as lying on a portion of the <span class="process-math">\(x\)</span>-axis. Then draw a perpendicular segment <span class="process-math">\(AD\)</span> to <span class="process-math">\(BC\)</span> and designate <span class="process-math">\(D\)</span> to be the origin. If the length of <span class="process-math">\(AD\)</span> is <span class="process-math">\(c\)</span> the Pythagorean theorem gives <span class="process-math">\(\sqrt{b^2-c^2}\)</span> for the length of segments <span class="process-math">\(ED\)</span> and <span class="process-math">\(DF\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="wallis-2_fig"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/figs/ch-01/ch-01-fig-02.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.3<span class="period">.</span></span><span class="space"> </span>Wallis’ depiction of real numbers</figcaption></figure><div class="para logical" id="subsec_geometric-rep-real-5">
+<div class="para">Combining this result with Wallis’ number line results in points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> representing the numbers</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E = - \sqrt{b^2-c^2},  \text{ and }   F = + \sqrt{b^2-c^2}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="subsec_geometric-rep-real-6">
+<div class="para">Thus, if <span class="process-math">\(b=5\)</span> and <span class="process-math">\(c=4\text{,}\)</span> points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> would represent <span class="process-math">\(-3\)</span> and <span class="process-math">\(+3\text{,}\)</span> respectively, because</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E = - \sqrt{5^2-4^2}=-3,  \text{ and }   F = + \sqrt{5^2-4^2}=+3\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec_geometric-rep-real-7">From both an algebraic and geometric viewpoint this procedure only makes sense if the stipulated length <span class="process-math">\(b\)</span> is greater than or equal to <span class="process-math">\(c\text{.}\)</span> If <span class="process-math">\(b\)</span> were less than <span class="process-math">\(c\)</span> then the algebraic expressions for points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> (<span class="process-math">\(-\sqrt{b^2-c^2}\)</span> and <span class="process-math">\(+\sqrt{b^2-c^2}\)</span>) would be meaningless, as the quantity <span class="process-math">\(b^2-c^2\)</span> inside the square root would be negative. Viewed geometrically, if <span class="process-math">\(b\)</span> were less than <span class="process-math">\(c\)</span> then the arc of radius <span class="process-math">\(b\)</span> that is centered at <span class="process-math">\(A\)</span> would not be able to intersect segment <span class="process-math">\(BC\text{.}\)</span> In other words, if <span class="process-math">\(b\)</span> were less than <span class="process-math">\(c\text{,}\)</span> <a href="sec_origin.html#prob_classic-geometry" class="xref" data-knowl="./knowl/xref/prob_classic-geometry.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 1.1.1: Classical Geometry Problem">Problem 1.1.1</a> would appear to have no solution.</div></section><section class="subsection" id="subsec-geometric-rep-complex"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">A Geometric Representation of Complex Numbers</span>
+</h3>
+<div class="para" id="subsec-geometric-rep-complex-2">Appearances, of course, can be deceiving, and Wallis reinforced the truth of that ancient proverb when he came up with his second—and bolder—contribution. It was a solution <a href="sec_origin.html#prob_classic-geometry" class="xref" data-knowl="./knowl/xref/prob_classic-geometry.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 1.1.1: Classical Geometry Problem">Problem 1.1.1</a> in the case when <span class="process-math">\(b\)</span> is less than <span class="process-math">\(c\text{.}\)</span> <a href="sec_origin.html#wallis-3_fig" class="xref" data-knowl="./knowl/xref/wallis-3_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.4">Figure 1.1.4</a> illustrates how he did it. From the midpoint of <span class="process-math">\(AD\)</span> Wallis drew a circle with diameter <span class="process-math">\(AD\text{.}\)</span> Then, with <span class="process-math">\(A\)</span> as a center he drew an arc of radius <span class="process-math">\(b\text{.}\)</span> Because <span class="process-math">\(b\)</span> is less than <span class="process-math">\(c\)</span> the arc will intersect the circle at two points, say <span class="process-math">\(E\)</span> and <span class="process-math">\(F\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="wallis-3_fig"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/figs/ch-01/ch-01-fig-03.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.4<span class="period">.</span></span><span class="space"> </span>Wallis’ depiction of complex numbers</figcaption></figure><div class="para" id="subsec-geometric-rep-complex-4">Again we get two triangles: <span class="process-math">\(ABE\)</span> and <span class="process-math">\(ABF\text{.}\)</span> Wallis claimed that these triangles each satisfy the requirement of <a href="sec_origin.html#prob_classic-geometry" class="xref" data-knowl="./knowl/xref/prob_classic-geometry.html" data-reveal-label="Reveal" data-close-label="Close" title="Problem 1.1.1: Classical Geometry Problem">Problem 1.1.1</a>. You might object to this construction on the grounds that angle <span class="process-math">\(\alpha\)</span> is not part of either triangle. If you read the problem statement carefully, however, you will notice that it never states that the angle <span class="process-math">\(\alpha\)</span> has to be part of any triangle, only that it must play a role in <em class="emphasis">determining</em> a triangle. From this perspective Wallis completely satisfied the requirement.</div>
+<div class="para" id="subsec-geometric-rep-complex-5">Notice, also, that points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> are no longer on the <span class="process-math">\(x\)</span>-axis as they were when <span class="process-math">\(b\)</span> was greater than <span class="process-math">\(c\)</span> (and when <span class="process-math">\(\sqrt{b^2-c^2}\)</span> was a real number). They are now somewhere above the <span class="process-math">\(x\)</span>-axis, and it is not unreasonable to conclude that points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> give, respectively, geometric representations of the expressions <span class="process-math">\(-\sqrt{b^2-c^2}\)</span> and <span class="process-math">\(+\sqrt{b^2-c^2}\)</span> when <span class="process-math">\(b\)</span> is less than <span class="process-math">\(c\)</span> (and when <span class="process-math">\(\sqrt{b^2-c^2}\)</span> is a complex number).</div>
+<div class="para" id="subsec-geometric-rep-complex-6">Although Wallis only hinted at such a conclusion, he nevertheless helped set the stage for thinking of real numbers as being embedded in a larger set of complex numbers, and that these numbers could be represented as “points in the plane.” Unfortunately, if we tried to apply Wallis’ method to construct complex numbers we would find it had some serious defects. For example, if <span class="process-math">\(b=0\)</span> and <span class="process-math">\(c=1\)</span> the expression <span class="process-math">\(\pm \sqrt{b^2-c^2}\)</span> becomes <span class="process-math">\(\pm \sqrt{-1}\text{,}\)</span> and points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> now coincide at point <span class="process-math">\(A\text{.}\)</span> But we surely would not want to say that <span class="process-math">\(-\sqrt{-1}\)</span> and <span class="process-math">\(+\sqrt{-1}\)</span> are the same number. Thus, even with Wallis’ work the jigsaw of getting a legitimate picture of complex numbers remained. It would be yet another century before someone put most of the pieces together.</div></section><section class="subsection" id="subsec_wessel"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="space"> </span><span class="title">Caspar Wessel Makes a Breakthrough</span>
+</h3>
+<div class="para" id="subsec_wessel-2">Points in the plane can also be thought of as vectors, which are directed line segments from the origin to those points. In 1797 Caspar Wessel presented a paper to the Danish Academy of Sciences in which he described how to manipulate vectors geometrically. This description eventually led to the current representation of complex numbers.</div>
+<div class="para" id="subsec_wessel-3">To add two vectors, make a copy of the second vector and place its tail on the head of the first vector. The resultant vector is the directed line segment drawn from the tail of the first vector to the head of the second copy vector. <a href="sec_origin.html#wessel-1_fig" class="xref" data-knowl="./knowl/xref/wessel-1_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a> illustrates the addition of vector <span class="process-math">\(\mathbf{b}\)</span> to vector <span class="process-math">\(\mathbf{a}\text{.}\)</span>
+</div>
+<div class="para" id="subsec_wessel-4">When Wessel gave his paper the procedure for adding vectors was already known. The unique contribution that he made was his description of how to <em class="emphasis">multiply</em> two vectors.</div>
+<div class="para" id="subsec_wessel-5">To understand Wessel’s thinking recall that any non-zero vector can be represented by two quantities: its length, and its angular displacement from the positive <span class="process-math">\(x\)</span>-axis. <a href="sec_origin.html#wessel-2_fig" class="xref" data-knowl="./knowl/xref/wessel-2_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.6">Figure 1.1.6</a> illustrates this idea for vector <span class="process-math">\(\mathbf{a}\text{:}\)</span> its length is <span class="process-math">\(r\text{,}\)</span> and its angular displacement from the positive <span class="process-math">\(x\)</span>-axis is <span class="process-math">\(\alpha\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="wessel-1_fig"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-01/ch-01-fig-04a.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Addition of two vectors</figcaption></figure><figure class="figure figure-like" id="wessel-2_fig"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-01/ch-01-fig-04b.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Length and direction of a vector</figcaption></figure><div class="para" id="subsec_wessel-8">The geometry of vectors</div>
+<div class="para" id="subsec_wessel-9">Wessel stated that, to multiply two vectors, the length of the product vector should be the product of the lengths of its factors. Should the angular displacement of the product vector likewise be the product of the angular displacements of its factors? Definitely not, and you will see in the exercises why Wessel knew that such a provision would have been a bad idea. What, then, should be the angular displacement of the product?</div>
+<div class="para" id="subsec_wessel-10">In answering this question Wessel drew an analogy from the multiplication of real numbers. He observed that, if <span class="process-math">\(c=ab\text{,}\)</span> then <span class="process-math">\(\frac{c}{a} = b = \frac{b}{1}\text{,}\)</span> and <span class="process-math">\(\frac{c}{b} = a = \frac{a}{1}\text{.}\)</span> In other words, the ratio of the product to any given factor is the same as the ratio of the other factor to the number one.</div>
+<div class="para" id="subsec_wessel-11">What vector represents the number one? It seems obvious that, using the number line of Wallis, it should be the directed line segment from the origin to the number one on the positive <span class="process-math">\(x\)</span>-axis. Let’s call this vector the <em class="emphasis">standard unit vector</em>, as illustrated in <a href="sec_origin.html#unit-vector_fig" class="xref" data-knowl="./knowl/xref/unit-vector_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.7">Figure 1.1.7</a>.</div>
+<figure class="figure figure-like" id="unit-vector_fig"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-01/ch-01-fig-05.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span>The standard unit vector</figcaption></figure><div class="para" id="subsec_wessel-13">With this identification in mind, and using the multiplication analogy just mentioned, Wessel made a brilliant move. He reasoned that the (angular) displacement of the product of two vectors should differ from the displacement of any given factor by the same amount that the displacement of the other factor differs from the displacement of the standard unit vector. That’s quite a mouthful; let’s see what it means.</div>
+<div class="para" id="subsec_wessel-14">What is the (angular) displacement of the standard unit vector? Clearly, its displacement is zero radians, as it coincides with the positive <span class="process-math">\(x\)</span>-axis. Thus, if vectors <span class="process-math">\(\mathbf{a}\)</span> and <span class="process-math">\(\mathbf{b}\)</span> have displacements of <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> respectively, and vector <span class="process-math">\(\mathbf{c} = \mathbf{ab}\text{,}\)</span> then the displacement of <span class="process-math">\(\mathbf{c}\)</span> should be <span class="process-math">\(\alpha + \beta\text{,}\)</span> as shown in <a href="sec_origin.html#wessel-3_fig" class="xref" data-knowl="./knowl/xref/wessel-3_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.8">Figure 1.1.8</a>. The reason for this assertion is that, with such an arrangement, Wessel’s displacement protocol works out perfectly: the displacement of <span class="process-math">\(\mathbf{c}\)</span> (which is <span class="process-math">\(\alpha + \beta\)</span>) differs from the displacement of <span class="process-math">\(\mathbf{a}\)</span> (which is <span class="process-math">\(\alpha\)</span>) by <span class="process-math">\(\beta\text{.}\)</span> This is the same amount that the displacement of <span class="process-math">\(\mathbf{b}\)</span> (which is <span class="process-math">\(\beta\)</span>) differs from the displacement of the standard unit vector (which is 0). Likewise, the displacement of <span class="process-math">\(\mathbf{c}\)</span> differs from the displacement of <span class="process-math">\(\mathbf{b}\)</span> by <span class="process-math">\(\alpha\text{,}\)</span> which is the same amount that the displacement of <span class="process-math">\(\mathbf{a}\)</span> differs from the displacement of the standard unit vector.</div>
+<figure class="figure figure-like" id="wessel-3_fig"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-01/ch-01-fig-06a.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.8<span class="period">.</span></span><span class="space"> </span>Multiplication of two vectors</figcaption></figure><div class="para" id="subsec_wessel-16">How does Wessel’s procedure lead to a geometric representation of complex numbers? Consider what happens if a unit vector is drawn from the origin straight up the <span class="process-math">\(y\)</span>-axis, and then multiplied by itself. By Wessel’s rules the length of the product vector is one unit, as the length of each factor is one unit. What about its direction? The angular displacement of the original vector is <span class="process-math">\(\frac{\pi}{2}\)</span> radians, so by Wessel’s rules again the product vector has a displacement of <span class="process-math">\(\frac{\pi}{2} + \frac{\pi}{2} = \pi\)</span> radians. Thus, the product vector is aligned along the <span class="process-math">\(x\)</span>-axis, but is directed from the origin <em class="emphasis">to the left</em> by one unit, as shown in <a href="sec_origin.html#wessel-4_fig" class="xref" data-knowl="./knowl/xref/wessel-4_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.9">Figure 1.1.9</a>.</div>
+<figure class="figure figure-like" id="wessel-4_fig"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="external/figs/ch-01/ch-01-fig-06b.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.9<span class="period">.</span></span><span class="space"> </span>The square root of <span class="process-math">\(-1\)</span></figcaption></figure><div class="para" id="subsec_wessel-18">Using Wallis’ number line we see that the product vector is naturally identified with the number <span class="process-math">\(-1\text{.}\)</span> Label the original vector as <span class="process-math">\(i\text{.}\)</span> What do you conclude? Obviously, that <span class="process-math">\(i^2 = -1\text{,}\)</span> which must mean that <span class="process-math">\(i = \sqrt{-1}\text{.}\)</span> Neat!</div>
+<div class="para" id="subsec_wessel-19">Neat, yes, but the material we presented leading up to this result was (if you’ll pardon the pun) complex. Thus, you need not worry if you had some difficulty following it. Subsequent sections of this chapter will flesh out these ideas more comprehensively.</div>
+<div class="para" id="subsec_wessel-20">It should be pointed out that Wessel was not the only mathematician—or even the first—who began thinking of complex numbers as vectors, or, as points in the plane. As early as 1732 the great Swiss mathematician Leonard Euler (pronounced “oiler” ) adopted this view concerning the <span class="process-math">\(n\)</span> solutions to the equation <span class="process-math">\(x^n-1=0\text{.}\)</span> You will learn shortly that these solutions can be expressed as <span class="process-math">\(\cos \theta + \sqrt{-1}\sin \theta\)</span> for various values of <span class="process-math">\(\theta\text{.}\)</span> Euler thought of them as being located at the vertices of a regular polygon in the plane. Euler was also the first to use the symbol <span class="process-math">\(i\)</span> for <span class="process-math">\(\sqrt{-1}\text{.}\)</span> Today this notation is still the most popular, although some electrical engineers prefer the symbol <span class="process-math">\(j\)</span> instead so that they can use <span class="process-math">\(i\)</span> to represent current.</div>
+<div class="para" id="subsec_wessel-21">Two additional mathematicians deserve mention. The Frenchman Augustin-Louis Cauchy (1789–1857) formulated many of the classic theorems that are now part of the corpus of complex analysis. The German Carl Friedrich Gauss (1777–1855) reinforced the utility of complex numbers by using them in his several proofs of the fundamental theorem of algebra (see <a href="ch_complex-integration.html" class="internal" title="Chapter 6: Complex Integration">Chapter 6</a>). In an 1831 paper, he produced a clear geometric representation of <span class="process-math">\(x+iy\)</span> by identifying it with the point <span class="process-math">\((x, y)\)</span> in the coordinate plane. He also described how to perform arithmetic operations with these new numbers.</div>
+<div class="para" id="subsec_wessel-22">It would be a mistake, however, to conclude that in 1831 complex numbers were transformed into legitimacy. In that same year the prolific logician Augustus De Morgan commented in his book, <em class="emphasis">On the Study and Difficulties of Mathematics,</em> “We have shown the symbol <span class="process-math">\(\sqrt{-a}\)</span> to be void of meaning, or rather self-contradictory and absurd. Nevertheless, by means of such symbols, a part of algebra is established which is of great utility.”</div>
+<div class="para" id="subsec_wessel-23">There are, indeed, genuine logical problems associated with complex numbers. For example, with real numbers <span class="process-math">\(\sqrt{ab}=\sqrt{a}\sqrt{b}\)</span> so long as both sides of the equation are defined. Applying this identity to complex numbers leads to <span class="process-math">\(1=\sqrt{1}=\sqrt{(-1)(-1)}=\sqrt{-1} \sqrt{-1} = -1\text{.}\)</span> Plausible answers to these problems can be given, however, and you will learn how to resolve this apparent contradiction in <a href="sec_z_n.html" class="internal" title="Section 2.2: The Mappings w=z^n and w=z^{\frac{1}{n}}">Section 2.2</a>. De Morgan’s remark illustrates that many factors are needed to persuade mathematicians to adopt new theories. In this case, as always, a firm logical foundation was crucial, but so, too, was a willingness to modify some ideas concerning certain well-established properties of numbers.</div>
+<div class="para" id="subsec_wessel-24">As time passed, mathematicians gradually refined their thinking, and by the end of the nineteenth century complex numbers were firmly entrenched. Thus, as it is with many new mathematical or scientific innovations, the theory of complex numbers evolved by way of a very intricate process. But what is the theory that Tartaglia, Ferro, Cardano, Bombelli, Wallis, Euler, Cauchy, Gauss, and so many others helped produce? That is, how do we now think of complex numbers? We explore this question in the remainder of this chapter.</div>
+<section class="exercises" id="exercises_origin"><h4 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h4>
+<article class="exercise exercise-like" id="x1_1_1"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_1-1-1">Show that <span class="process-math">\(2-\sqrt{-1}=\sqrt[3]{2-11\sqrt{-1}}\text{.}\)</span>
+</div>
+<div class="solutions"><details id="x1_1_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x1_1_1-2-1">Mimic the argument the text gives in showing <span class="process-math">\(2+\sqrt{-1}=\sqrt[3]{2+\sqrt{-121}}\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="exercises_origin-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="para" id="exercises_origin-3-1-1">Explain why cubic equations, rather than quadratic equations, played a pivotal role in helping to obtain the acceptance of complex numbers. \label {1.1.2}</div></article><article class="exercise exercise-like" id="x1_1_3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_3-1-1">Find all solutions to the following depressed cubics.</div> <article class="task exercise-like" id="x1_1_3a"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="x1_1_3a-1">
+<span class="process-math">\(27x^3-9x-2 = 0\text{.}\)</span> \hint{Get an equivalent monic polynomial.}</div>
+<details id="x1_1_3a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x1_1_3a-2-1">The roots are <span class="process-math">\(x_1=-\frac{1}{3}\text{,}\)</span> <span class="process-math">\(x_2=-\frac{1}{3}, \, x_3=\frac{2}{3}\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="x1_1_3b"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="x1_1_3b-1"><span class="process-math">\(x^3-27x+54=0\text{.}\)</span></div></article></article><article class="exercise exercise-like" id="x1_1_4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_4-1-1">Explain why Wallis’s view of complex numbers results in <span class="process-math">\(-\sqrt{-1}\)</span> being represented by the same point as is <span class="process-math">\(\sqrt{-1}\text{.}\)</span>
+</div></article><article class="exercise exercise-like" id="x1_1_5"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_5-1-1">Use Bombelli’s technique to get all solutions to the following depressed cubics.</div> <article class="task exercise-like" id="x1_1_5a"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="x1_1_5a-1"><span class="process-math">\(x^3-30x-36 = 0\text{.}\)</span></div>
+<details id="x1_1_5a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x1_1_5a-2-1">Use Formula <a href="sec_origin.html#Depressed_Cubic" class="xref" data-knowl="./knowl/xref/Depressed_Cubic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a> to get <span class="process-math">\(x=\sqrt[3]{18+26\sqrt{-1}}+\sqrt[3]{18-26\sqrt{-1}}\text{.}\)</span> Assume, as Bombelli did that this expression can be put in the form <span class="process-math">\((u+v\sqrt{-1})+(u-v\sqrt{-1})\text{,}\)</span> where <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are <em class="emphasis">integers</em>. Next, imitate the argument in the text that leads to <a href="sec_origin.html#sec_origin-2-11-11" class="xref" data-knowl="./knowl/xref/Bombelli_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.4">equations (1.1.4)</a>, <a href="sec_origin.html#sec_origin-2-11-11" class="xref" data-knowl="./knowl/xref/Bombelli_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.5">(1.1.5)</a>, and <a href="sec_origin.html#Bombelli_3" class="xref" data-knowl="./knowl/xref/Bombelli_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.6">(1.1.6)</a> to get <span class="process-math">\(u(u^2-3v^2)+iv(3u^2-v^2)=18+26i\text{.}\)</span> The only factors of 18 are 1, 2, 3, 6, 9, and 18, so you can deduce (explain your reasoning) that <span class="process-math">\(u=3\)</span> and <span class="process-math">\(v=1\)</span> solve this system. Thus, one solution to <span class="process-math">\(x^3-30x-36=0\)</span> is <span class="process-math">\(x=6\text{.}\)</span> Divide <span class="process-math">\(x^3-30x-36\)</span> by <span class="process-math">\(x-6\)</span> and solve the resulting quadratic to get the remaining solutions: <span class="process-math">\(x=-3\pm \sqrt{3}\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="x1_1_5b"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="x1_1_5b-1"><span class="process-math">\(x^3-87x-130 = 0\text{.}\)</span></div></article> <article class="task exercise-like" id="x1_1_5c"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="para" id="x1_1_5c-1"><span class="process-math">\(x^3-60x-32 = 0\text{.}\)</span></div>
+<details id="x1_1_5c-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="x1_1_5c-2-1">Proceed as with part a. The solutions are <span class="process-math">\(x=8\text{,}\)</span> <span class="process-math">\(x=-4\pm 2\sqrt{3}\text{.}\)</span>
+</div></div></details></article></article><article class="exercise exercise-like" id="x1_1_6"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_6-1-1">Use Cardano’s technique (of substituting <span class="process-math">\(z=x-\frac{a_2}{3}\)</span>) to solve the following cubics.</div> <article class="task exercise-like" id="x1_1_6a"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<div class="para" id="x1_1_6a-1"><span class="process-math">\(z^3-6z^2-3z+18 = 0\text{.}\)</span></div></article> <article class="task exercise-like" id="x1_1_6b"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="para" id="x1_1_6b-1"><span class="process-math">\(z^3+3z^2-24z+28 = 0\text{.}\)</span></div></article></article><article class="exercise exercise-like" id="x1_1_7"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_7-1-1">Is it possible to modify slightly Wallis’s picture of complex numbers so that it is consistent with the representation used today? To help you answer this question, refer to the article by Alec Norton and Benjamin Lotto, “Complex Roots Made Visible,” <em class="emphasis">The College Mathematics Journal</em>, 15(3), June 1984, pp. 248–249.</div></article><article class="exercise exercise-like" id="x1_1_8"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="para" id="x1_1_8-1-1">Investigate library or web resources and write up a detailed description explaining why the solution to the depressed cubic, Equation <a href="sec_origin.html#Depressed_Cubic" class="xref" data-knowl="./knowl/xref/Depressed_Cubic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a>, is valid.</div></article></section></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch_Complex_Numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_algebra-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
