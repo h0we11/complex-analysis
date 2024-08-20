@@ -1,13 +1,13 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "root-1-2-3",
+  "id": "frontmatter-1",
   "level": "1",
-  "url": "root-1-2-3.html",
+  "url": "frontmatter-1.html",
   "type": "Front Matter",
   "number": "",
   "title": "Front Matter",
-  "body": "   Russell W. Howell  Kathleen Smith Professor of Mathematics  Westmont College, Santa Barbara, CA  howell@westmont.edu    John H. Mathews  Professor of Mathematics, Emeritus  California State University, Fullerton, CA  fmathews394@gmail.com   Last Update: August 17, 2024   "
+  "body": "   Russell W. Howell  Kathleen Smith Professor of Mathematics  Westmont College, Santa Barbara, CA  howell@westmont.edu    John H. Mathews  Professor of Mathematics, Emeritus  California State University, Fullerton, CA  fmathews394@gmail.com   Last Updat: August 17, 2024e   "
 },
 {
   "id": "ch_preface",
@@ -118,9 +118,9 @@ var ptx_lunr_docs = [
   "body": " Show that .   Mimic the argument the text gives in showing .  "
 },
 {
-  "id": "exercises_origin-3",
+  "id": "exercise-2",
   "level": "2",
-  "url": "sec_origin.html#exercises_origin-3",
+  "url": "sec_origin.html#exercise-2",
   "type": "Exercise",
   "number": "1.1.4.2",
   "title": "",
@@ -208,9 +208,9 @@ var ptx_lunr_docs = [
   "body": " Subtraction   .  "
 },
 {
-  "id": "sec_algebra-1-8",
+  "id": "example-1",
   "level": "2",
-  "url": "sec_algebra-1.html#sec_algebra-1-8",
+  "url": "sec_algebra-1.html#example-1",
   "type": "Example",
   "number": "1.2.3",
   "title": "",
@@ -226,9 +226,9 @@ var ptx_lunr_docs = [
   "body": " Multiplication   .  "
 },
 {
-  "id": "sec_algebra-1-12",
+  "id": "example-2",
   "level": "2",
-  "url": "sec_algebra-1.html#sec_algebra-1-12",
+  "url": "sec_algebra-1.html#example-2",
   "type": "Example",
   "number": "1.2.5",
   "title": "",
@@ -244,9 +244,9 @@ var ptx_lunr_docs = [
   "body": " Division   .  "
 },
 {
-  "id": "sec_algebra-1-18",
+  "id": "example-3",
   "level": "2",
-  "url": "sec_algebra-1.html#sec_algebra-1-18",
+  "url": "sec_algebra-1.html#example-3",
   "type": "Example",
   "number": "1.2.7",
   "title": "",
@@ -280,9 +280,9 @@ var ptx_lunr_docs = [
   "body": " Conjugate   The conjugate of , denoted , is the complex number .   "
 },
 {
-  "id": "sec_algebra-1-33",
+  "id": "example-4",
   "level": "2",
-  "url": "sec_algebra-1.html#sec_algebra-1-33",
+  "url": "sec_algebra-1.html#example-4",
   "type": "Example",
   "number": "1.2.11",
   "title": "",
@@ -325,9 +325,9 @@ var ptx_lunr_docs = [
   "body": " Show that is always a real number.   Let be an arbitrary complex number. Then , which is obviously a real number.  "
 },
 {
-  "id": "exercises_algebra-1-5",
+  "id": "exercise-12",
   "level": "2",
-  "url": "sec_algebra-1.html#exercises_algebra-1-5",
+  "url": "sec_algebra-1.html#exercise-12",
   "type": "Exercise",
   "number": "1.2.4",
   "title": "",
@@ -361,9 +361,9 @@ var ptx_lunr_docs = [
   "body": " Prove that the complex number (which we identify with the real number 1) is the multiplicative identity for complex numbers.   Use the (ordered pair) definition for multiplication to verify that if is any complex number, then .  "
 },
 {
-  "id": "exercises_algebra-1-9",
+  "id": "exercise-16",
   "level": "2",
-  "url": "sec_algebra-1.html#exercises_algebra-1-9",
+  "url": "sec_algebra-1.html#exercise-16",
   "type": "Exercise",
   "number": "1.2.8",
   "title": "",
@@ -505,9 +505,9 @@ var ptx_lunr_docs = [
   "body": " The geometry of negation and conjugation   "
 },
 {
-  "id": "sec_geometry-1-18",
+  "id": "theorem-2",
   "level": "2",
-  "url": "sec_geometry-1.html#sec_geometry-1-18",
+  "url": "sec_geometry-1.html#theorem-2",
   "type": "Theorem",
   "number": "1.3.8",
   "title": "The triangle inequality.",
@@ -523,18 +523,18 @@ var ptx_lunr_docs = [
   "body": " The triangle inequality   "
 },
 {
-  "id": "sec_geometry-1-20",
+  "id": "proof-1",
   "level": "2",
-  "url": "sec_geometry-1.html#sec_geometry-1-20",
+  "url": "sec_geometry-1.html#proof-1",
   "type": "Proof",
   "number": "1.3.1",
   "title": "",
   "body": " We appeal to basic results: .  Taking square roots yields the desired inequality.  "
 },
 {
-  "id": "sec_geometry-1-21",
+  "id": "example-5",
   "level": "2",
-  "url": "sec_geometry-1.html#sec_geometry-1-21",
+  "url": "sec_geometry-1.html#example-5",
   "type": "Example",
   "number": "1.3.10",
   "title": "",
@@ -604,9 +604,9 @@ var ptx_lunr_docs = [
   "body": " Show that nonzero vectors and are perpendicular iff .   Let and . Since neither nor equals zero, they are perpendicular iff their dot product is zero. But their dot product is , which is precisely .  "
 },
 {
-  "id": "exercises_geometry-1-7",
+  "id": "exercise-29",
   "level": "2",
-  "url": "sec_geometry-1.html#exercises_geometry-1-7",
+  "url": "sec_geometry-1.html#exercise-29",
   "type": "Exercise",
   "number": "1.3.6",
   "title": "",
@@ -703,9 +703,9 @@ var ptx_lunr_docs = [
   "body": " Show that , where is an integer.  "
 },
 {
-  "id": "exercises_geometry-1-18",
+  "id": "exercise-40",
   "level": "2",
-  "url": "sec_geometry-1.html#exercises_geometry-1-18",
+  "url": "sec_geometry-1.html#exercise-40",
   "type": "Exercise",
   "number": "1.3.17",
   "title": "",
@@ -811,54 +811,54 @@ var ptx_lunr_docs = [
   "body": " Polar Representation   Identity is known as a polar representation of , and the values and are called polar coordinates of .   "
 },
 {
-  "id": "sec_geometry-2-6",
+  "id": "example-7",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-6",
+  "url": "sec_geometry-2.html#example-7",
   "type": "Example",
   "number": "1.4.3",
   "title": "",
   "body": "  If , then and is a polar representation of . The polar coordinates in this case are , and .   "
 },
 {
-  "id": "sec_geometry-2-8",
+  "id": "definition-10",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-8",
+  "url": "sec_geometry-2.html#definition-10",
   "type": "Definition",
   "number": "1.4.4",
   "title": "<span class=\"process-math\">\\(\\mathbf{\\arg z}\\)<\/span>.",
   "body": "   If , .  If , we say that is an argument of .   "
 },
 {
-  "id": "sec_geometry-2-10",
+  "id": "example-8",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-10",
+  "url": "sec_geometry-2.html#example-8",
   "type": "Example",
   "number": "1.4.5",
   "title": "",
   "body": "  Because , we have    "
 },
 {
-  "id": "sec_geometry-2-12",
+  "id": "definition-11",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-12",
+  "url": "sec_geometry-2.html#definition-11",
   "type": "Definition",
   "number": "1.4.6",
   "title": "<span class=\"process-math\">\\(\\mathbf{\\mathrm{Arg} \\; z}\\)<\/span>.",
   "body": "   Let be a complex number. Then .  If , we call the argument of .   "
 },
 {
-  "id": "sec_geometry-2-13",
+  "id": "example-9",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-13",
+  "url": "sec_geometry-2.html#example-9",
   "type": "Example",
   "number": "1.4.7",
   "title": "",
   "body": "   .   "
 },
 {
-  "id": "sec_geometry-2-14",
+  "id": "remark-1",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-14",
+  "url": "sec_geometry-2.html#remark-1",
   "type": "Remark",
   "number": "1.4.8",
   "title": "",
@@ -874,9 +874,9 @@ var ptx_lunr_docs = [
   "body": "  If , then and . It would be a mistake to use as an acceptable value for , as the point associated with and is in the first quadrant, whereas is in the third quadrant. A correct choice for is because , where is any integer. Notice also, that , which illustrates that is indeed a proper subset of .   "
 },
 {
-  "id": "sec_geometry-2-16",
+  "id": "example-11",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-16",
+  "url": "sec_geometry-2.html#example-11",
   "type": "Example",
   "number": "1.4.10",
   "title": "",
@@ -919,9 +919,9 @@ var ptx_lunr_docs = [
   "body": "  If and , then as sets, .   "
 },
 {
-  "id": "sec_geometry-2-37",
+  "id": "proof-2",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-37",
+  "url": "sec_geometry-2.html#proof-2",
   "type": "Proof",
   "number": "1.4.1",
   "title": "",
@@ -946,18 +946,18 @@ var ptx_lunr_docs = [
   "body": " Relative positions of , and , when   "
 },
 {
-  "id": "sec_geometry-2-43",
+  "id": "example-13",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-43",
+  "url": "sec_geometry-2.html#example-13",
   "type": "Example",
   "number": "1.4.17",
   "title": "",
   "body": "  If , then and . Therefore and has modulus .   "
 },
 {
-  "id": "sec_geometry-2-44",
+  "id": "example-14",
   "level": "2",
-  "url": "sec_geometry-2.html#sec_geometry-2-44",
+  "url": "sec_geometry-2.html#example-14",
   "type": "Example",
   "number": "1.4.18",
   "title": "",
@@ -1099,9 +1099,9 @@ var ptx_lunr_docs = [
   "body": " Let . Show that the polar representation  can be used to denote the displacement vector from to , as indicated in Figure    From the figure it is clear that , and . The exponential form for then gives the desired conclusion.  "
 },
 {
-  "id": "exercises_geometry-2-17",
+  "id": "exercise-64",
   "level": "2",
-  "url": "sec_geometry-2.html#exercises_geometry-2-17",
+  "url": "sec_geometry-2.html#exercise-64",
   "type": "Exercise",
   "number": "1.4.16",
   "title": "",
@@ -1117,18 +1117,18 @@ var ptx_lunr_docs = [
   "body": " The Algebra of Complex Numbers, Part II  The real numbers are deficient in the sense that not all algebraic operations on them produce real numbers. Thus, for to make sense, we must consider the domain of complex numbers. Do complex numbers have this same deficiency? That is, if we are to make sense of expressions such as , must we appeal to yet another new number system? The answer to this question is no. In other words, any reasonable algebraic operation performed on complex numbers gives complex numbers. Later we show how to evaluate intriguing expressions such as . For now we only look at integral powers and roots of complex numbers.  The important players in this regard are the exponential and polar forms of a non-zero complex number . By the laws of exponents (which, you recall, we have promised to prove in Chapter ) we have .    Show that in two ways.    (Method 1): The binomial formula ( Exercise of Section ) gives .    (Method 2): Using Identity and Example yields .    Which method would you use if you were asked to compute ?    Evaluate .     .    An interesting application of the laws of exponents comes from putting the equation in its polar form. Doing so gives , which is known as De Moivre's formula, in honor of the French mathematician Abraham De Moivre (1667 1754).    Use De Moivre's formula (Equation ) to show that   .    If we let and use the binomial formula the left side of Equation becomes .  The real part of this expression is . Equating this to the real part of on the right side of Equation establishes the desired result.    A key aid in determining roots of complex numbers is a corollary to the fundamental theorem of algebra. We prove this theorem in Chapter . Our proofs must be independent of the conclusions we derive here because we are going to make use of the corollary now.   Corollary to the fundamental theorem of algebra   { } If  is a polynomial of degree , with complex coefficients, then the equation   has precisely   (not necessarily distinct) solutions.      Refer to Chapter .     Let . This polynomial of degree 3 can be written as . Hence the equation has solutions , , and . Thus, in accordance with Theorem , we have three solutions, with and being repeated roots.     Theorem implies that, if we can find \\mathit{n} distinct solutions to the equation (or , we will have found all the solutions. We begin our search for these solutions by looking at the simpler equation . Solving this equation will enable us to handle the more general one quite easily.  To solve we first note that, from Identities and , we can deduce an important condition that determines when two nonzero complex numbers are equal. If we let and , then , where is an integer. That is, two complex numbers are equal iff their moduli agree and an argument of one equals an argument of the other to within an integral multiple of .  We now find all solutions to in two stages, with each stage corresponding to one direction in the iff part of Relation . First, we show that if we have a solution to , then the solution must have a certain form. Second, we show that any quantity with that form is indeed a solution.  For the first stage, suppose that is a solution to . Putting the latter equation in exponential form gives , so Relation implies that and . In other words, , where is an integer.  So, if  is a solution to , then Relation must be true. This observation completes the first stage of our solution strategy. For the second stage, we note that if  , and , then is indeed a solution to because . For example, if and , then is a solution to because .  Furthermore, it is easy to verify that we get n distinct solutions to (and, therefore, all solutions, by Theorem ) by setting . The solutions for merely repeat those for , because the arguments so generated agree to within an integral multiple of . The solutions can be expressed as .  They are called the th roots of unity.  When in Equation , we get , which is a rather trivial result. The first interesting root of unity occurs when , giving . This particular value shows up so often that mathematicians have given it a special symbol.   Primitive $n$th root   For any natural number , the value given by is called the primitive th root of unity.    By De Moivre's formula Equation the roots of unity can be expressed as .  Geometrically, the th roots of unity are equally spaced points that lie on the unit circle and form the vertices of a regular polygon with sides, which as we mentioned in Section is a fact discovered by Leonard Euler.    The solutions to the equation are given by the eight values , for . In Cartesian form, these solutions are , and . The primitive 8th root of unity is .    From Expressions it is clear that of Equation , as Figure illustrates.   The eight eighth roots of unity    The procedure for solving is easy to generalize in solving for any nonzero complex number . If and , then iff . But this last equation is satisfied iff   As before, we get distinct solutions given by .  Each solution in Equation can be considered an th root of . Geometrically, the th roots of are equally spaced points that lie on the circle and form the vertices of a regular polygon with sides. Figure illustrates the case for .   The five solutions to the equation    It is interesting to note that if is any particular solution to the equation , then all solutions can be generated by multiplying by the various n th roots of unity. That is, the solution set is .  The reason for this is that, if , then for any , , and that multiplying a number by increases an argument of that number by , so that Expressions contains n distinct values.    Find all cube roots of .    Formula gives .  The Cartesian forms of the solutions are , , and , as shown in Figure      The point and its three cube roots, , , and    Is the quadratic formula valid in the complex domain? The answer is yes , provided we are careful with our terms.   Quadratic formula   { } If , then the solution set for is , where by we mean all distinct square roots of the number inside the parenthesis.     The proof is left as an exercise.     Find all solutions to the equation .   The quadratic formula gives .   As , Equations give , for and 1. In Cartesian form, this expression reduces to and . Thus, our solution set is , or .    In Exercise of Section we asked you to show that a polynomial with non real coefficients must have some roots that do not occur in complex conjugate pairs. This last example gives an illustration of such a phenomenon.   Exercises   Calculate the following.      .          .     Show that   by squaring twice .  by using De Moivre's formula, given in Equation .    Use the method of Example to establish trigonometric identities for and .    .    Let be any nonzero complex number and let be an integer. Show that is a real number.    Find all the roots in both polar and Cartesian form for each expression.      , for .          and .          for .     Prove Theorem , the quadratic formula .    Find all the roots of the equation given that is a root.   Since the coefficients are real, roots come in conjugates. Thus, , and are factors. Dividing the polynomial by yields a quadratic, which can be solved with the quadratic formula ( Theorem ) to get and for the remaining solutions.    Solve the equation .    Find the three solutions to .    .    Let and be positive integers that have no common factor. Show that there are distinct solutions to , given by .    Suppose that .  Show that .  Verify that .   Use part (a) and De Moivre's formula to derive Lagrange's identity , which shows that, for ,   Let For the left hand side of part (a), use De Moivre's formula. Keep on the right hand side and multiply numerator and denominator by . Simplify, and then equate real parts of the left and right hand sides.     If are the n th roots of unity, prove that .    Let be an th root of unity. Prove that .   Use Exercise and recall that if is an root of unity, then .    Equation , De Moivre's formula, can be established without recourse to properties of the exponential function. Note that this identity is trivially true for .  Use basic trigonometric identities to show the identity is valid for .  Use induction to verify the identity for all positive integers.  How would you verify this identity for all negative integers?    Find all four roots of , and use them to demonstrate that can be factored into two quadratics with real coefficients.   The four roots are (show the details). Use the roots as linear factors in conjugate pairs to get .    Verify that Relation is valid.    "
 },
 {
-  "id": "sec_algebra-2-4",
+  "id": "example-15",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-4",
+  "url": "sec_algebra-2.html#example-15",
   "type": "Example",
   "number": "1.5.1",
   "title": "",
   "body": "  Show that in two ways.    (Method 1): The binomial formula ( Exercise of Section ) gives .    (Method 2): Using Identity and Example yields .   "
 },
 {
-  "id": "sec_algebra-2-6",
+  "id": "example-16",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-6",
+  "url": "sec_algebra-2.html#example-16",
   "type": "Example",
   "number": "1.5.2",
   "title": "",
@@ -1153,18 +1153,18 @@ var ptx_lunr_docs = [
   "body": " Corollary to the fundamental theorem of algebra   { } If  is a polynomial of degree , with complex coefficients, then the equation   has precisely   (not necessarily distinct) solutions.    "
 },
 {
-  "id": "sec_algebra-2-11",
+  "id": "proof-3",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-11",
+  "url": "sec_algebra-2.html#proof-3",
   "type": "Proof",
   "number": "1.5.1",
   "title": "",
   "body": " Refer to Chapter .  "
 },
 {
-  "id": "sec_algebra-2-12",
+  "id": "example-18",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-12",
+  "url": "sec_algebra-2.html#example-18",
   "type": "Example",
   "number": "1.5.5",
   "title": "",
@@ -1180,9 +1180,9 @@ var ptx_lunr_docs = [
   "body": " Primitive $n$th root   For any natural number , the value given by is called the primitive th root of unity.   "
 },
 {
-  "id": "sec_algebra-2-24",
+  "id": "example-19",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-24",
+  "url": "sec_algebra-2.html#example-19",
   "type": "Example",
   "number": "1.5.7",
   "title": "",
@@ -1207,9 +1207,9 @@ var ptx_lunr_docs = [
   "body": " The five solutions to the equation   "
 },
 {
-  "id": "sec_algebra-2-33",
+  "id": "example-20",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-33",
+  "url": "sec_algebra-2.html#example-20",
   "type": "Example",
   "number": "1.5.10",
   "title": "",
@@ -1234,18 +1234,18 @@ var ptx_lunr_docs = [
   "body": " Quadratic formula   { } If , then the solution set for is , where by we mean all distinct square roots of the number inside the parenthesis.   "
 },
 {
-  "id": "sec_algebra-2-37",
+  "id": "proof-4",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-37",
+  "url": "sec_algebra-2.html#proof-4",
   "type": "Proof",
   "number": "1.5.2",
   "title": "",
   "body": " The proof is left as an exercise.  "
 },
 {
-  "id": "sec_algebra-2-38",
+  "id": "example-21",
   "level": "2",
-  "url": "sec_algebra-2.html#sec_algebra-2-38",
+  "url": "sec_algebra-2.html#example-21",
   "type": "Example",
   "number": "1.5.13",
   "title": "",
@@ -1261,18 +1261,18 @@ var ptx_lunr_docs = [
   "body": " Calculate the following.      .          .   "
 },
 {
-  "id": "exercises_algebra-2-3",
+  "id": "exercise-66",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-3",
+  "url": "sec_algebra-2.html#exercise-66",
   "type": "Exercise",
   "number": "1.5.2",
   "title": "",
   "body": " Show that   by squaring twice .  by using De Moivre's formula, given in Equation .  "
 },
 {
-  "id": "exercises_algebra-2-4",
+  "id": "exercise-67",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-4",
+  "url": "sec_algebra-2.html#exercise-67",
   "type": "Exercise",
   "number": "1.5.3",
   "title": "",
@@ -1288,18 +1288,18 @@ var ptx_lunr_docs = [
   "body": " Let be any nonzero complex number and let be an integer. Show that is a real number.  "
 },
 {
-  "id": "exercises_algebra-2-6",
+  "id": "exercise-69",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-6",
+  "url": "sec_algebra-2.html#exercise-69",
   "type": "Exercise",
   "number": "1.5.5",
   "title": "",
   "body": " Find all the roots in both polar and Cartesian form for each expression.      , for .          and .          for .   "
 },
 {
-  "id": "exercises_algebra-2-7",
+  "id": "exercise-70",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-7",
+  "url": "sec_algebra-2.html#exercise-70",
   "type": "Exercise",
   "number": "1.5.6",
   "title": "",
@@ -1333,9 +1333,9 @@ var ptx_lunr_docs = [
   "body": " Find the three solutions to .    .  "
 },
 {
-  "id": "exercises_algebra-2-11",
+  "id": "exercise-74",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-11",
+  "url": "sec_algebra-2.html#exercise-74",
   "type": "Exercise",
   "number": "1.5.10",
   "title": "",
@@ -1351,18 +1351,18 @@ var ptx_lunr_docs = [
   "body": " Suppose that .  Show that .  Verify that .   Use part (a) and De Moivre's formula to derive Lagrange's identity , which shows that, for ,   Let For the left hand side of part (a), use De Moivre's formula. Keep on the right hand side and multiply numerator and denominator by . Simplify, and then equate real parts of the left and right hand sides.   "
 },
 {
-  "id": "exercises_algebra-2-13",
+  "id": "exercise-76",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-13",
+  "url": "sec_algebra-2.html#exercise-76",
   "type": "Exercise",
   "number": "1.5.12",
   "title": "",
   "body": " If are the n th roots of unity, prove that .  "
 },
 {
-  "id": "exercises_algebra-2-14",
+  "id": "exercise-77",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-14",
+  "url": "sec_algebra-2.html#exercise-77",
   "type": "Exercise",
   "number": "1.5.13",
   "title": "",
@@ -1387,9 +1387,9 @@ var ptx_lunr_docs = [
   "body": " Find all four roots of , and use them to demonstrate that can be factored into two quadratics with real coefficients.   The four roots are (show the details). Use the roots as linear factors in conjugate pairs to get .  "
 },
 {
-  "id": "exercises_algebra-2-17",
+  "id": "exercise-80",
   "level": "2",
-  "url": "sec_algebra-2.html#exercises_algebra-2-17",
+  "url": "sec_algebra-2.html#exercise-80",
   "type": "Exercise",
   "number": "1.5.16",
   "title": "",
@@ -1405,9 +1405,9 @@ var ptx_lunr_docs = [
   "body": " The Topology of Complex Numbers  In this section we investigate some basic ideas concerning sets of points in the plane. The first concept is that of a curve. Intuitively, we think of a curve as a piece of string placed on a flat surface in some type of meandering pattern. More formally, we define a curve to be the range of a continuous complex-valued function defined on the interval . That is, a curve is the range of a function given by , for , where both and are continuous real-valued functions. If both and are differentiable, we say that the curve is smooth. A curve for which and are differentiable except for a finite number of points is called piecewise smooth . We specify a curve as , and say that is a parametrization for the curve . Note that, with this parametrization, we are specifying a direction for the curve , saying that is a curve that goes from the initial point to the terminal point . If we had another function whose range was the same set of points as but whose initial and final points were reversed, we would indicate the curve that this function defines by .    Find parameterizations for and , where is the straight line segment beginning at and ending at .    Refer to Figure . The vector form of a line shows that the direction of is . As is a point on , its vector equation is .   The straight-line segment joining to    Using the same technique we see that one parametrization for is .    Comparing Equations and illustrates a general principle: If is a curve parametrized by for , then one parametrization for will be , for .  A curve having the property that is said to be a closed curve. The line segment of Expression is not a closed curve. The range of , where , and for is a closed curve because . The range of is the four-leaved rose shown in Figure . Note that, as goes from 0 to , the point is on leaf 1; from to , it is on leaf 2; between and , it is on leaf 3; and finally, for between and , it is on leaf 4.  Note further that, at , the curve has crossed over itself (at points other than those corresponding with and ); we want to be able to distinguish when a curve does not cross over itself in this way. The curve is called simple if it does not cross over itself, except possibly at its initial and terminal points. In other words, the curve , for , is simple provided that whenever , except possibly when and .   The four-leaved rose: , for      Show that the circle with center and radius can be parametrized to form a simple closed curve.    Note that , for , gives the required parametrization.     Figure shows that, as varies from 0 to , the circle is traversed counterclockwise. If you were traveling around the circle in this manner, its interior would be on your left. When a simple closed curve is parametrized in this fashion, we say that the curve has a positive orientation. We will have more to say about this idea shortly.   The simple closed curve , for    We need to develop some vocabulary that will help describe sets of points in the plane. One fundamental idea is that of an -neighborhood of the point . It is the open disk of radius about shown in Figure . Formally, it is the set of all points satisfying the inequality and is denoted by . That is, .   An -neighborhood of the point      The solution sets of the inequalities , and are neighborhoods of the points , and , with radii 1, 2, and 3, respectively. They can also be expressed as , and .    We also define , the closed disk of radius centered at , and , the punctured disk of radius centered at as .  The point is said to be an interior point of the set provided that there exists an -neighborhood of that contains only points of ; is called an exterior point of the set if there exists an -neighborhood of that contains no points of . If is neither an interior point nor an exterior point of , then it is called a boundary point of and has the property that each -neighborhood of contains both points in and points not in . Figure illustrates this situation.   The interior, exterior, and boundary of a set    The boundary of is the circle depicted in Figure . We denote this circle and refer to it as the circle of radius R centered at . Thus .  We use the notation to indicate that the parametrization we chose for this simple closed curve resulted in a positive orientation; denotes the same circle, but with a negative orientation. (In both cases, counterclockwise denotes the positive direction.) Using notation that we have already introduced, we get .    Let . Find the interior, exterior, and boundary of .    We show that every point of is an interior point of . Let be a point of . Then , and we can choose . We claim that . If , then .  Hence the -neighborhood of is contained in , which shows that is an interior point of . It follows that the interior of is the set itself. PARAGRAPH Similarly, it can be shown that the exterior of is , and the boundary of is the unit circle . These claims follow from that fact that, if is any point on the circle, then any -neighborhood of will contain two points: , which belongs to ; and , which does not belong to . We leave the details of demonstrating this claim as an exercise.    The point is called an accumulation point of the set if, for each , the punctured disk contains at least one point of . We ask you to show in the exercises that the set of accumulation points of is , and that there is only one accumulation point of , namely, the point . We also ask you to prove that a set is closed if and only if it contains all of its accumulation points.  A set is called an open set if every point of is an interior point of . Thus, Example shows that is open. A set is called a closed set if it contains all its boundary points. A set is said to be a connected set if every pair of points and contained in can be joined by a curve that lies entirely in . Roughly speaking, a connected set consists of a single piece. The unit disk is a connected open set. We ask you to verify in the exercises that, if and lie in , then the straight-line segment joining them lies entirely in . The annulus is a connected open set because any two points in can be joined by a curve that lies entirely in , as shown in Figure .   The annulus is a connected set    The set consists of two disjoint disks. We leave it as an exercise for you to show that the set is not connected, as shown in Figure .   The set is not a connected set    We call a connected open set a domain. In the exercises we ask you to show that the open unit disk is a domain and that the closed unit disk is not a domain. The term domain is a noun and is a type of set. In we note that it also refers to the set of points on which a function is defined. In the latter context, it does not necessarily mean a connected open set.    Show that the right half-plane is a domain.    First we show that is connected. Let and be any two points in . We claim the obvious: the straight-line segment given by Equation lies entirely within . To prove this claim, we let , for some , be an arbitrary point on . We must show that . Now, .  If , the last expression becomes , which is greater than zero because . Likewise, if , then the right side of Equation reduces to , which also is positive. Finally, if , then each term in Equation is positive, so in this case we also have . PARAGRAPH To show that is open, we suppose without loss of generality that . We claim that , where . We leave the proof of this claim as an exercise.    A domain, together with some, none, or all its boundary points, is called a region. For example, the horizontal strip is a region. A set formed by taking the union of a domain and its boundary is called a closed region; thus is a closed region. A set is said to be a bounded set if it can be completely contained in some closed disk, that is, if there exists an such that for each in we have . The rectangle given by is bounded because it is contained inside the disk . A set that cannot be enclosed by any closed disk is called an unbounded set.  We mentioned earlier that a simple closed curve is positively oriented if its interior is on the left when the curve is traversed. How do we know, though, that any given simple closed curve will have an interior and exterior? Theorem 1.6 guarantees that this is indeed the case. It is due in part to the work of the French mathematician Camille Jordan (1838 1922).   The Jordan curve theorem   The complement of any simple closed curve \\mathit{C} can be partitioned into two mutually exclusive domains, and , in such a way that is bounded, is unbounded, and is the boundary for both and . In addition, is the entire complex plane. The domain is called the interior of , and the domain is called the exterior of .    The Jordan curve theorem is a classic example of a result in mathematics that seems obvious but is very hard to demonstrate, and its proof is beyond the scope of this book. Jordan's original argument, in fact, was inadequate, and not until 1905 was a correct version finally given by the American topologist Oswald Veblen. The difficulty lies in describing the interior and exterior of a simple closed curve analytically, and in showing that they are connected sets. For example, in which domain (interior or exterior) do the two points depicted in Figure lie? If they are in the same domain, how, specifically, can they be connected with a curve? If you appreciated the subtleties involved in showing that the right half-plane of Example is connected, you can begin to appreciate the obstacles that Veblen had to navigate.  Although an introductory treatment of complex analysis can be given without using this theorem, we think it is important for the well-informed student at least to be aware of it.   Are and in the interior or exterior of this simple closed curve?     Exercises   Find a parametrization of the line that  joins the origin to the point .   for .   joins the point 1 to the point .  joins the point to the point .   for .   joins the point 2 to the point .    Sketch the curve   for .  for .  \\hint{Use , and eliminate the parameter .}    Find a parametrization of the curve that is a portion of the parabola that  joins the origin to the point .   for .   joins the point to the origin.  joins the point to the origin.   for .     This exercise completes Example : Suppose that . Show that for all , where .    Find a parametrization of the curve that is a portion of the circle that joins the point to if  the curve is the right semicircle.   for .   the curve is the left semicircle.    Show that is a domain and that is not a domain.    Find a parametrization of the curve that is a portion of the circle that joins the point 1 to if  the parametrization is counterclockwise along the quarter circle.   for .   the parametrization is clockwise.    Fill in the details to complete Example . That is, show that  the set is the exterior of the set .  the set is the boundary of the set .    Consider the following sets. (i) .  (ii) .  (iii) .  (iv) .  (v) .  (vi) .  (vii) .  Sketch each set.  State, with reasons, which of the following terms apply to the above sets: open; connected; domain; region; closed region; bounded.  Open: (i), (iv), (v), (vi), and (vii). Connected: (i) (vi). Domains: (i), (iv), (v), and (vi). Regions: (i) (vi). Closed regions: (iii). Bounded: (iii), (v), and (vii).     Show that is connected. \\hint{Show that if and lie in , then the straight-line segment joining them lies entirely in .}    Let be a finite set of points. Show that is a bounded set.   Let . Clearly, . Thus, is bounded.    Prove that the boundary of is the circle .    Let be the open set consisting of all points such that or . Show that is not connected.   Let be any curve joining and . Then , and . By the intermediate value Theorem, there is some such that . But this means is not in the set in question. Explain why!    Prove is the only accumulation point of .    Regarding the relation between closed sets and accumulation points,  Prove that if a set is closed, then it contains all its accumulations points.  We prove the contrapositive. Suppose is accumulation point of , but that does not belong to . By definition of an accumulation point, every deleted neighborhood, , contains at least one point of . Therefore, every (non-deleted) neighborhood also contains at least one point of  and at least one point not in (namely, ). This condition implies that , which does not belong to , is a boundary point of . (Show the details for this last assertion). Thus, the set is not closed.   Prove that if a set contains all its accumulation points, then it is closed.    Prove that is the set of accumulation points of  The set .  The set .    Memorize and be prepared to illustrate all the terms in bold in this section.    "
 },
 {
-  "id": "sec_topology-3",
+  "id": "example-22",
   "level": "2",
-  "url": "sec_topology.html#sec_topology-3",
+  "url": "sec_topology.html#example-22",
   "type": "Example",
   "number": "1.6.1",
   "title": "",
@@ -1423,9 +1423,9 @@ var ptx_lunr_docs = [
   "body": " The four-leaved rose: , for   "
 },
 {
-  "id": "sec_topology-8",
+  "id": "example-23",
   "level": "2",
-  "url": "sec_topology.html#sec_topology-8",
+  "url": "sec_topology.html#example-23",
   "type": "Example",
   "number": "1.6.4",
   "title": "",
@@ -1450,9 +1450,9 @@ var ptx_lunr_docs = [
   "body": " An -neighborhood of the point   "
 },
 {
-  "id": "sec_topology-13",
+  "id": "example-24",
   "level": "2",
-  "url": "sec_topology.html#sec_topology-13",
+  "url": "sec_topology.html#example-24",
   "type": "Example",
   "number": "1.6.7",
   "title": "",
@@ -1504,9 +1504,9 @@ var ptx_lunr_docs = [
   "body": "  Show that the right half-plane is a domain.    First we show that is connected. Let and be any two points in . We claim the obvious: the straight-line segment given by Equation lies entirely within . To prove this claim, we let , for some , be an arbitrary point on . We must show that . Now, .  If , the last expression becomes , which is greater than zero because . Likewise, if , then the right side of Equation reduces to , which also is positive. Finally, if , then each term in Equation is positive, so in this case we also have . PARAGRAPH To show that is open, we suppose without loss of generality that . We claim that , where . We leave the proof of this claim as an exercise.   "
 },
 {
-  "id": "sec_topology-29",
+  "id": "theorem-6",
   "level": "2",
-  "url": "sec_topology.html#sec_topology-29",
+  "url": "sec_topology.html#theorem-6",
   "type": "Theorem",
   "number": "1.6.13",
   "title": "The Jordan curve theorem.",
@@ -1531,9 +1531,9 @@ var ptx_lunr_docs = [
   "body": " Find a parametrization of the line that  joins the origin to the point .   for .   joins the point 1 to the point .  joins the point to the point .   for .   joins the point 2 to the point .  "
 },
 {
-  "id": "exercises_topology-3",
+  "id": "exercise-82",
   "level": "2",
-  "url": "sec_topology.html#exercises_topology-3",
+  "url": "sec_topology.html#exercise-82",
   "type": "Exercise",
   "number": "1.6.2",
   "title": "",
@@ -1549,9 +1549,9 @@ var ptx_lunr_docs = [
   "body": " Find a parametrization of the curve that is a portion of the parabola that  joins the origin to the point .   for .   joins the point to the origin.  joins the point to the origin.   for .   "
 },
 {
-  "id": "exercises_topology-5",
+  "id": "exercise-84",
   "level": "2",
-  "url": "sec_topology.html#exercises_topology-5",
+  "url": "sec_topology.html#exercise-84",
   "type": "Exercise",
   "number": "1.6.4",
   "title": "",
@@ -1621,9 +1621,9 @@ var ptx_lunr_docs = [
   "body": " Let be a finite set of points. Show that is a bounded set.   Let . Clearly, . Thus, is bounded.  "
 },
 {
-  "id": "exercises_topology-13",
+  "id": "exercise-92",
   "level": "2",
-  "url": "sec_topology.html#exercises_topology-13",
+  "url": "sec_topology.html#exercise-92",
   "type": "Exercise",
   "number": "1.6.12",
   "title": "",
@@ -1711,36 +1711,36 @@ var ptx_lunr_docs = [
   "body": "  Express the function in the form .    Using the elementary properties of complex numbers, it follows that , so that and .   "
 },
 {
-  "id": "sec_functions-mappings-12",
+  "id": "example-29",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-12",
+  "url": "sec_functions-mappings.html#example-29",
   "type": "Example",
   "number": "2.1.4",
   "title": "",
   "body": "  Express by a formula involving the variables and .    Calculation reveals that .   "
 },
 {
-  "id": "sec_functions-mappings-14",
+  "id": "remark-2",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-14",
+  "url": "sec_functions-mappings.html#remark-2",
   "type": "Remark",
   "number": "2.1.5",
   "title": "",
   "body": " For any specific function , the functions and defined here will be different from those of Equation because Equation involves Cartesian coordinates and Equation involves polar coordinates.  "
 },
 {
-  "id": "sec_functions-mappings-15",
+  "id": "example-30",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-15",
+  "url": "sec_functions-mappings.html#example-30",
   "type": "Example",
   "number": "2.1.6",
   "title": "",
   "body": "  Express in both Cartesian and polar form.   For the Cartesian form, a simple calculation gives so that   For the polar form, we refer to Equation to get , so that    Once we have defined and for a function in Cartesian form, we must use different symbols if we want to express in polar form. As is clear here, the functions and are quite different, as are and . Of course, if we are working only in one context, we can use any symbols we choose.   "
 },
 {
-  "id": "sec_functions-mappings-16",
+  "id": "example-31",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-16",
+  "url": "sec_functions-mappings.html#example-31",
   "type": "Example",
   "number": "2.1.7",
   "title": "",
@@ -1819,9 +1819,9 @@ var ptx_lunr_docs = [
   "body": " The rotation   "
 },
 {
-  "id": "sec_functions-mappings-39",
+  "id": "example-34",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-39",
+  "url": "sec_functions-mappings.html#example-34",
   "type": "Example",
   "number": "2.1.16",
   "title": "",
@@ -1846,27 +1846,27 @@ var ptx_lunr_docs = [
   "body": " The magnification   "
 },
 {
-  "id": "sec_functions-mappings-44",
+  "id": "example-35",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-44",
+  "url": "sec_functions-mappings.html#example-35",
   "type": "Example",
   "number": "2.1.19",
   "title": "",
   "body": "  Show that the linear transformation maps the right half-plane onto the upper half-plane .   (Method 1): Let . To describe , we solve for to get . Using Equations and the method of Example we have .   Thus , which is the same as saying .  (Method 2): When we write in Cartesian form as , we see that the transformation can be given by the equations and . Substituting in the inequality gives , or , which is the upper half-plane .  (Method 3): The effect of the transformation is a rotation of the plane through the angle (when is multiplied by ) followed by a translation by the vector . The first operation yields the set . The second shifts this set up 1 unit, resulting in the set .  We illustrate this result in Figure .   The linear transformation     "
 },
 {
-  "id": "sec_functions-mappings-46",
+  "id": "example-36",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-46",
+  "url": "sec_functions-mappings.html#example-36",
   "type": "Example",
   "number": "2.1.21",
   "title": "",
   "body": "  Show that the image of under the transformation is the open disk .   The inverse transformation is , so if we designate the range of as , then .  Hence the disk with center and radius 1 is mapped one-to-one and onto the disk with center and radius 5 as shown in Figure .    The mapping     "
 },
 {
-  "id": "sec_functions-mappings-47",
+  "id": "example-37",
   "level": "2",
-  "url": "sec_functions-mappings.html#sec_functions-mappings-47",
+  "url": "sec_functions-mappings.html#example-37",
   "type": "Example",
   "number": "2.1.23",
   "title": "",
@@ -2026,9 +2026,9 @@ var ptx_lunr_docs = [
   "body": " Prove that the composition of two linear transformations is a linear transformation.   Let and be two linear transformations. Then , which is the required form for a linear transformation.  "
 },
 {
-  "id": "exercises_functions-mappings-19",
+  "id": "exercise-115",
   "level": "2",
-  "url": "sec_functions-mappings.html#exercises_functions-mappings-19",
+  "url": "sec_functions-mappings.html#exercise-115",
   "type": "Exercise",
   "number": "2.1.18",
   "title": "",
@@ -2044,9 +2044,9 @@ var ptx_lunr_docs = [
   "body": " The Mappings and  { In this section we turn our attention to power functions.  For , we can express the function in polar coordinates as . If we also use polar coordinates for in the plane, we can express this mapping by the system of equations   Because an argument of the product is twice an argument of , we say that doubles angles at the origin. Points that lie on the ray , are mapped onto points that lie on the ray , . If we now restrict the domain of to the region , then the image of under the mapping can be described by the set , which consists of all points in the plane except the point .  The inverse mapping of , which we denote , is then , where . That is, , where . The function is so important that we call special attention to it with a formal definition.   Principal Square Root   The function , is called the principal square root function.    We leave as an exercise to show that and satisfy Equations and thus are inverses of each other that map the set one-to-one and onto the set and the set one-to-one and onto the set , respectively. Figure illustrates this relationship.   The mappings and    What are the images of rectangles under the mapping ? To find out, we use the Cartesian form and the resulting system of equations .    Show that the transformation , for , usually maps vertical and horizontal lines onto parabolas and use this fact to find the image of the rectangle .    Using Equations , we determine that the vertical line is mapped onto the set of points given by the equations and . If , then and .  Equation represents a parabola with vertex at , oriented horizontally, and opening to the left. If , the set has precisely when , so the part of the line lying above the axis is mapped to the top half of the parabola.  The horizontal line is mapped onto the parabola given by the equations and . If , then as before we get .  Equation represents a parabola with vertex at , oriented horizontally and opening to the right. If , the part of the line to the right of the axis is mapped to the top half of the parabola because the set has precisely when .  Quadrant I is mapped onto quadrants I and II by , so the rectangle ,  is mapped onto the region bounded by the top halves of the parabolas given by Equations and and the axis. The vertices 0, , , and of the rectangle are mapped onto the four points 0, , , and , respectively, as indicated in Figure .   The transformation    Finally, we can verify that the vertical line is mapped to . This is simply the set of negative real numbers. Likewise, the horizontal line is mapped to the set , which is the set of positive real numbers.    What happens to images of regions under the mapping , where ? If we use polar coordinates for in the plane, we can represent this mapping by the system .  Equations indicate that the argument of is half the argument of and that the modulus of is the square root of the modulus of . Points that lie on the ray , are mapped onto the ray . The image of the plane (with the point deleted) consists of the right half-plane together with the positive axis. The mapping is shown in Figure    The mapping    We can use knowledge of the inverse mapping to get further insight into how the mapping acts on rectangles. If we let , then , and we note that the point in the plane is related to the point in the plane by the system of equations .    Show that the transformation usually maps vertical and horizontal lines onto portions of hyperbolas.    Let . Equations map the right half-plane given by (i.e., ) onto the region in the right half-plane satisfying and lying to the right of the hyperbola . If , Equations map the upper half-plane ( i.e. , ) onto the region in quadrant I satisfying and lying above the hyperbola . This situation is illustrated in Figure . We leave as an exercise the investigation of what happens when or .   The mapping      We can easily extend what we've done to integer powers greater than 2. We begin by letting be a positive integer, considering the function , for , and then expressing it in the polar coordinate form .  If we use polar coordinates in the plane, the mapping defined by Equation can be given by the system of equations   The image of the ray is the ray , , and the angles at the origin are increased by the factor . The functions and are periodic with period , so is in general an -to-one function; that is, points in the plane are mapped onto each non-zero point in the plane.  If we now restrict the domain of to the region , then the image of under the mapping can be described by the set , which consists of all points in the plane except the point . The inverse mapping of , which we denote , is then , where . That is, , where . As with the principle square root function, we make an analogous definition for th roots.   Principal th Root   The function is called the principal nth root function.    We leave as an exercise to show that and are inverses of each other that map the set one-to-one and onto the set \\ and the set one-to-one and onto the set , respectively. Figure illustrates this relationship.   The mappings and     Exercises   Find the images of the mapping in each case, and sketch the mapping.  The horizontal line .  Using Equations we see that, if , then . The region in the upper half plane that lies between the parabolas and .   The vertical line .  The rectangle .  The point in the plane is mapped to the point . For any . If then .If then . Your only remaining task is to show that the strip is mapped between these two parabolas.   The triangle with vertices , and .  The infinite strip .  The infinite strip , which is the region in the plane between and . Show the details in a manner similar to the answer for part a.   The right half-plane region to the right of the hyperbola .  The first quadrant region between the hyperbolas and .    For what values of does hold if the principal value of the square root is to be used?    Sketch the set of points satisfying the following relations.   .  The points that lie to the extreme right or left of the branches of the hyperbola .    .    Find and illustrate the images of the following sets under the mapping .   .   .   .  The vertical line .  The infinite strip .  The region to the right of the parabola . \\hint{Use the inverse mapping to show that the answer is the right half-plane .}    Find the image of the right half-plane under the mapping .   The region in the plane that lies to the right of the parabola .    Find the image of the following sets under the mapping .   .   .    Find the image of under the following \\-mappings.   .  The set .    .   .  The set .     Find the image of the sector , under the following mappings.   .   .   .    Use your knowledge of the principal square root function to explain the fallacy in the following logic: .   See also problem 2. The fallacy lies in the assumption implicit in the second equality that for all complex numbers and . Assuming the principal square root is used, then . This quantity will equal precisely when explain! The latter equality is plainly false when . (Again, explain.) To give a very thorough answer to this problem, you should state precisely when the last equality is true, and prove your assertion.    Show that the functions and with domains given by Equations and , respectively, satisfy Equations . Thus, and are inverses of each other that map the shaded regions in Figure one-to-one and onto each other.    Show what happens when and in Example .   The right half plane given by is mapped onto the region in the right half plane satisfying and lies to the right of . This is the region between the lines and in the right half of the plane. A similar analysis can be applied to the case where .    Establish the result referred to in Definition .    "
 },
 {
-  "id": "sec_z_n-6",
+  "id": "definition-13",
   "level": "2",
-  "url": "sec_z_n.html#sec_z_n-6",
+  "url": "sec_z_n.html#definition-13",
   "type": "Definition",
   "number": "2.2.1",
   "title": "Principal Square Root.",
@@ -2062,9 +2062,9 @@ var ptx_lunr_docs = [
   "body": " The mappings and   "
 },
 {
-  "id": "sec_z_n-10",
+  "id": "example-38",
   "level": "2",
-  "url": "sec_z_n.html#sec_z_n-10",
+  "url": "sec_z_n.html#example-38",
   "type": "Example",
   "number": "2.2.3",
   "title": "",
@@ -2224,27 +2224,27 @@ var ptx_lunr_docs = [
   "body": " Limits and Continuity  Let be a real-valued function of the two real variables and . Recall that has the limit as approaches provided the value of can be made to get as close as we want to the value by taking to be sufficiently close to . When this happens we write .  In more technical language, has the limit as approaches iff can be made arbitrarily small by making both and small. This condition is like the definition of a limit for functions of one variable. The point is in the plane, and the distance between and is . With this perspective we can now give a precise definition of a limit.   Limit of   The expression means that for each number , there is a corresponding number such that .      Show, if , then  .    If and , then . Because and because , . Hence, for any , Inequality is satisfied for ; that is, has the limit as approaches .    The value of the limit must not depend on how approaches , so must approach the value when approaches along any curve that ends at the point . Conversely, if we can find two curves and that end at along which approaches two distinct values and , then does not have a limit as approaches .    Show that the function does not have a limit as approaches .    If we let approach along the axis, then .  But if we let approach along the line , then . Because the value of the limit differs depending on how approaches , we conclude that does not have a limit as approaches .    Let be a complex function of the complex variable that is defined for all values of in some neighborhood of , except perhaps at the point . We say that has the limit as approaches , provided the value can be made as close as we want to the value by taking to be sufficiently close to . When this happens we write .  The distance between the points and can be expressed by , so we can give a precise definition similar to the one for a function of two variables.   Limit of   The expression means that for each real number , there exists a real number such that . Using the notation of and , we can express the last relationship as     The formulation of limits in terms of open disks provides a good context for looking at this definition. It says that for each disk of radius about the point (represented by ) there is a punctured disk of radius about the point (represented by ) such that the image of each point in the punctured disk lies in the disk. The image of the disk does not have to fill up the entire disk; but if approaches along a curve that ends at , then approaches . The situation is illustrated in Figure .   As the function values      Show that if , then , where is any complex number.    As merely reflects points about the axis, we suspect that any disk about the point would contain the image of the punctured disk about if . To confirm this conjecture, we let be any positive number and set . Then we suppose that , which means that . The modulus of a conjugate is the same as the modulus of the number itself, so the last inequality implies that . This inequality is the same as . Since and , this last inequality becomes , or , which is what we needed to show.    If we consider as a mapping from the plane into the plane and think about the previous geometric interpretation of a limit, then we are led to conclude that the limit of a function should be determined by the limits of its real and imaginary parts, and . This conclusion also gives us a tool for computing limits.    Let be a complex function that is defined in some neighborhood of , except perhaps at . Then iff .     We first assume that Statement is true and show that Statement is true. According to the definition of limit, for each , there is a corresponding such that   ; that is, . Because , we can use Inequalities to conclude that . It now follows that and whenever , and so Statement is true.  Conversely, assume that Statement is true. Then for each , there exists and so that .  We choose to be the minimum of the two values and . Then we can use the triangle inequality to conclude that   ; that is, . Hence the truth of Statement implies the truth of Statement , and the proof of the theorem is complete.     Show that  .    Let . Computing the limits for and , we obtain , so our previous theorem implies that  .    Limits of complex functions are formally the same as those of real functions, and the sum, difference, product, and quotient of functions have limits given by the sum, difference, product, and quotient of the respective limits. We state this result as a theorem and leave the proof as an exercise.    Suppose that  and . Then .     Continuity of   Let be a real-valued function of the two real variables and . We say that is continuous at the point if three conditions are satisfied: .    Condition actually implies Conditions and because the existence of the quantity on each side of Equation is implicitly understood to exist. For example, if when and if , then so that Conditions , , and are satisfied. Hence is continuous at .  There is a similar definition for complex valued functions.   Continuity of   Let be a complex function of the complex variable that is defined for all values of in some neighborhood of . We say that is continuous at if three conditions are satisfied: .      Example shows that the function is continuous.   A complex function is continuous iff its real and imaginary parts, and , are continuous. The proof of this fact is an immediate consequence of Theorem . Continuity of complex functions is formally the same as that of real functions, and sums, differences, and products of continuous functions are continuous; their quotient is continuous at points where the denominator is not zero. These results are summarized by the following theorems. We leave the proofs as exercises.    Let be defined in some neighborhood of Then is continuous at iff and are continuous at .      Suppose that and are continuous at the point . Then the following functions are continuous at :   The sum , where ;    The difference , where ;    The product , where ;    The quotient , where , provided ; and    The composition , where , provided is continuous in a neighborhood of .         Show that the polynomial function given by is continuous at each point in the complex plane.    If is the constant function, then ; and if , then we can use Definition with and the choice to prove that . Using Property and mathematical induction, we obtain .  We can extend Property to a finite sum of terms and use the result of Equation to get . Conditions , , and are satisfied, so we conclude that is continuous at .    One technique for computing limits is to apply Theorem to quotients. If we let and be polynomials and if , then   Another technique involves factoring polynomials. If both and , then and can be factored as and . If , then the limit is     Show that .    Here and can be factored in the form so that the limit is obtained by the calculation .     Exercises   Find the following limits.   .   .    .   .   .    .   by factoring.   .     Determine where the following functions are continuous.   .   .   .   .   .   .    State why  .    . Theorem now implies the result since the real and imaginary parts of the last expression have limits that imply the desired conclusion. You should show the details for this, of course.    State why , provided .    Show that   .   .    .    Let when and let . Show that is continuous for all values of .    Let .  Find as along the line .   .   Find as along the line .  Find as along the parabola .   .   What can you conclude about the limit of as ? Why?    Let when , and let .  Show that if approaches zero along any straight line that passes through the origin.  Show that is not continuous at the point 0.    For , let . Does have a limit as ?   No. To see why, approach along the real and imaginary axes respectively.    Does  exist? Why? \\hint{Use polar coordinates and let approach from the upper and lower half-planes.}    Let , where , , and . Use the polar form of and show that   as along the upper semicircle , .  If along the upper semicircle , then .    as along the lower semicircle , .    Let when and let . Show that is not continuous at .    Let . Show that is continuous for all values of .   The real part is continuous since . A similar argument shows the imaginary part is continuous. Theorem then implies that function is continuous.    Use the definition of the limit to show that  .    Let when and let . Is continuous at the origin?   No. The limit does not exist. Show why.    Let when and let . Is continuous at the origin?    Let , where . Show that is discontinuous at each point along the negative axis.   Rewrite as in Exercise , and mimic the argument for part a with an arbitrary negative real number taking the role of .    Let , where . Show that is discontinuous at and at each point along the negative axis.    Let and  . Show that  . Note: Theorem is of no use here because you don't know whether exists. Give an argument.   Let be given. Since , there is some number such that whenever . Show this implies that if , then , so that .    Let . Show that  iff  .    Let be continuous for all values of .  Show that is continuous for all .  We have remarked that Example shows that the function is continuous for all . Since is continuous for all , we can apply Theorem to the function to conclude that is continuous for all .   Show that is continuous for all .    Verify the following identities:   : Identity .   : Identity .   : Identity .    Verify the results of Theorem .   Make use of standard techniques. For example, to show that is continuous, use Theorem applied to the sum of two functions.    Show that the principal branch of the argument, , is discontinuous at 0 and all points along the negative real axis.    "
 },
 {
-  "id": "sec_limits-continuity-4",
+  "id": "definition-15",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-4",
+  "url": "sec_limits-continuity.html#definition-15",
   "type": "Definition",
   "number": "2.3.1",
   "title": "Limit of <span class=\"process-math\">\\(\\mathbf{u(x,y)}\\)<\/span>.",
   "body": " Limit of   The expression means that for each number , there is a corresponding number such that .   "
 },
 {
-  "id": "sec_limits-continuity-5",
+  "id": "example-40",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-5",
+  "url": "sec_limits-continuity.html#example-40",
   "type": "Example",
   "number": "2.3.2",
   "title": "",
   "body": "  Show, if , then  .    If and , then . Because and because , . Hence, for any , Inequality is satisfied for ; that is, has the limit as approaches .   "
 },
 {
-  "id": "sec_limits-continuity-7",
+  "id": "example-41",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-7",
+  "url": "sec_limits-continuity.html#example-41",
   "type": "Example",
   "number": "2.3.3",
   "title": "",
@@ -2287,18 +2287,18 @@ var ptx_lunr_docs = [
   "body": "  Let be a complex function that is defined in some neighborhood of , except perhaps at . Then iff .   "
 },
 {
-  "id": "sec_limits-continuity-16",
+  "id": "proof-5",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-16",
+  "url": "sec_limits-continuity.html#proof-5",
   "type": "Proof",
   "number": "2.3.1",
   "title": "",
   "body": " We first assume that Statement is true and show that Statement is true. According to the definition of limit, for each , there is a corresponding such that   ; that is, . Because , we can use Inequalities to conclude that . It now follows that and whenever , and so Statement is true.  Conversely, assume that Statement is true. Then for each , there exists and so that .  We choose to be the minimum of the two values and . Then we can use the triangle inequality to conclude that   ; that is, . Hence the truth of Statement implies the truth of Statement , and the proof of the theorem is complete.  "
 },
 {
-  "id": "sec_limits-continuity-17",
+  "id": "example-43",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-17",
+  "url": "sec_limits-continuity.html#example-43",
   "type": "Example",
   "number": "2.3.8",
   "title": "",
@@ -2314,36 +2314,36 @@ var ptx_lunr_docs = [
   "body": "  Suppose that  and . Then .   "
 },
 {
-  "id": "sec_limits-continuity-20",
+  "id": "definition-17",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-20",
+  "url": "sec_limits-continuity.html#definition-17",
   "type": "Definition",
   "number": "2.3.10",
   "title": "<em class=\"emphasis\">Continuity of<\/em><span class=\"process-math\">\\(\\; \\mathbf{u(x,y)}\\)<\/span>.",
   "body": " Continuity of   Let be a real-valued function of the two real variables and . We say that is continuous at the point if three conditions are satisfied: .   "
 },
 {
-  "id": "sec_limits-continuity-23",
+  "id": "definition-18",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-23",
+  "url": "sec_limits-continuity.html#definition-18",
   "type": "Definition",
   "number": "2.3.11",
   "title": "<em class=\"emphasis\">Continuity of<\/em><span class=\"process-math\">\\(\\;\\mathbf{f(z)}\\)<\/span>.",
   "body": " Continuity of   Let be a complex function of the complex variable that is defined for all values of in some neighborhood of . We say that is continuous at if three conditions are satisfied: .   "
 },
 {
-  "id": "sec_limits-continuity-24",
+  "id": "remark-4",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-24",
+  "url": "sec_limits-continuity.html#remark-4",
   "type": "Remark",
   "number": "2.3.12",
   "title": "",
   "body": "  Example shows that the function is continuous.  "
 },
 {
-  "id": "sec_limits-continuity-26",
+  "id": "theorem-9",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-26",
+  "url": "sec_limits-continuity.html#theorem-9",
   "type": "Theorem",
   "number": "2.3.13",
   "title": "",
@@ -2359,18 +2359,18 @@ var ptx_lunr_docs = [
   "body": "  Suppose that and are continuous at the point . Then the following functions are continuous at :   The sum , where ;    The difference , where ;    The product , where ;    The quotient , where , provided ; and    The composition , where , provided is continuous in a neighborhood of .      "
 },
 {
-  "id": "sec_limits-continuity-28",
+  "id": "example-44",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-28",
+  "url": "sec_limits-continuity.html#example-44",
   "type": "Example",
   "number": "2.3.15",
   "title": "",
   "body": "  Show that the polynomial function given by is continuous at each point in the complex plane.    If is the constant function, then ; and if , then we can use Definition with and the choice to prove that . Using Property and mathematical induction, we obtain .  We can extend Property to a finite sum of terms and use the result of Equation to get . Conditions , , and are satisfied, so we conclude that is continuous at .   "
 },
 {
-  "id": "sec_limits-continuity-31",
+  "id": "example-45",
   "level": "2",
-  "url": "sec_limits-continuity.html#sec_limits-continuity-31",
+  "url": "sec_limits-continuity.html#example-45",
   "type": "Example",
   "number": "2.3.16",
   "title": "",
@@ -2386,36 +2386,36 @@ var ptx_lunr_docs = [
   "body": " Find the following limits.   .   .    .   .   .    .   by factoring.   .   "
 },
 {
-  "id": "exercises_limits-continuity-3",
+  "id": "exercise-129",
   "level": "2",
-  "url": "sec_limits-continuity.html#exercises_limits-continuity-3",
+  "url": "sec_limits-continuity.html#exercise-129",
   "type": "Exercise",
   "number": "2.3.2",
   "title": "",
   "body": " Determine where the following functions are continuous.   .   .   .   .   .   .  "
 },
 {
-  "id": "exercises_limits-continuity-4",
+  "id": "exercise-130",
   "level": "2",
-  "url": "sec_limits-continuity.html#exercises_limits-continuity-4",
+  "url": "sec_limits-continuity.html#exercise-130",
   "type": "Exercise",
   "number": "2.3.3",
   "title": "",
   "body": " State why  .    . Theorem now implies the result since the real and imaginary parts of the last expression have limits that imply the desired conclusion. You should show the details for this, of course.  "
 },
 {
-  "id": "exercises_limits-continuity-5",
+  "id": "exercise-131",
   "level": "2",
-  "url": "sec_limits-continuity.html#exercises_limits-continuity-5",
+  "url": "sec_limits-continuity.html#exercise-131",
   "type": "Exercise",
   "number": "2.3.4",
   "title": "",
   "body": " State why , provided .  "
 },
 {
-  "id": "exercises_limits-continuity-6",
+  "id": "exercise-132",
   "level": "2",
-  "url": "sec_limits-continuity.html#exercises_limits-continuity-6",
+  "url": "sec_limits-continuity.html#exercise-132",
   "type": "Exercise",
   "number": "2.3.5",
   "title": "",
@@ -2602,27 +2602,27 @@ var ptx_lunr_docs = [
   "body": " Branches of Functions   In Section we defined the principal square root function and investigated some of its properties. We left unanswered some questions concerning the choices of square roots. We now look at these questions because they are similar to situations involving other elementary functions.  In our definition of a function in Section , we specified that each value of the independent variable in the domain is mapped onto one and only one value in the range. As a result, we often talk about a single-valued function, which emphasizes the only one part of the definition and allows us to distinguish such functions from multiple-valued functions, which we now introduce.  Let denote a function whose domain is the set and whose range is the set . If is a value in the range, then there is an associated inverse relation that assigns to each value the value (or values) of in for which the equation holds. But unless takes on the value at most once in , then the inverse relation is necessarily many valued, and we say that is a multivalued function. For example, the inverse of the function is the square root function . For each value other than , then, the two points and are mapped onto the same point ; hence is, in general, a two-valued function.  The study of limits, continuity, and derivatives loses all meaning if an arbitrary or ambiguous assignment of function values is made. For this reason we did not allow multivalued functions to be considered when we defined these concepts. When working with inverse functions, you have to specify carefully one of the many possible inverse values when constructing an inverse function, as when you determine implicit functions in calculus. If the values of a function are determined by an equation that they satisfy rather than by an explicit formula, then we say that the function is defined implicitly or that is an implicit function. In the theory of complex variables we present a similar concept.  We now let be a multiple-valued function. A branch of is any single-valued function that is continuous in some domain (except, perhaps, on the boundary). At each point in the domain, it assigns one of the values of .    We consider some branches of the two-valued square root function  . Define the principal square root function as , where and so that . The function is a branch of . Using the same notation, we can find other branches of the square root function. For example, if we let , then , so and can be thought of as plus and minus square root functions. The negative real axis is called a branch cut for the functions and . Each point on the branch cut is a point of discontinuity for both functions and .      Show that the function is discontinuous along the negative real axis.    Let denote a negative real number. We compute the limit as approaches through the upper half-plane and the limit as approaches through the lower half-plane . In polar coordinates these limits are given by .  The two limits are distinct, so the function is discontinuous at .     Likewise, is discontinuous at . The mappings , , and the branch cut are illustrated in Figure .    The branches and of    We can construct other branches of the square root function by specifying that an argument of given by is to lie in the interval . The corresponding branch is .  The branch cut for is the ray , , which includes the origin. The point , common to all branch cuts for the multivalued square root function, is called a branch point. The mapping and its branch cut are illustrated in Figure .   The branch of      The Riemann Surface for  A Riemann surface is a construct useful for visualizing a multivalued function. It was introduced by G. F. B. Riemann (1826 1866) in 1851. The idea is ingenious a geometric construction that permits surfaces to be the domain or range of a multivalued function. Riemann surfaces depend on the function being investigated. We now give a nontechnical formulation of the Riemann surface for the multivalued square root function.  Consider , which has two values for any . Each function and in Figure is single-valued on the domain formed by cutting the plane along the negative axis. Let and be the domains of and , respectively. The range set for is the set consisting of the right half-plane, and the positive axis; the range set for is the set consisting of the left half-plane and the negative axis. The sets and are glued together along the positive axis and the negative axis to form the plane with the origin deleted.  We stack directly above . The edge of in the upper half-plane is joined to the edge of in the lower half-plane, and the edge of in the lower half-plane is joined to the edge of in the upper half-plane. When these domains are glued together in this manner, they form , which is a Riemann surface domain for the mapping . The portions of , , and that lie in are shown in Figure .  Formation of the Riemann surface for : (a) a portion of and its image under ; (b) a portion of and its image under ; (c) a portion of and its image under .  The beauty of this structure is that it makes this full square root function continuous for all . Normally, the principal square root function would be discontinuous along the negative real axis, as points near but above that axis would get mapped to points close to , and points near but below the axis would get mapped to points close to . As Figure (c) indicates, however, between the point and the point , the domain switches from the edge of in the upper half-plane to the edge of in the lower half-plane. The corresponding mapped points and are exactly where they should be. The surface works in such a way that going directly between the edges of in the upper and lower half-planes is impossible (likewise for ). Going counter-clockwise, the only way to get from the point to the point , for example, is to follow the path indicated by the arrows in Figure (c).   Formation of the Riemann surface for : (a) a portion of and its image under ; (b) a portion of and its image under ; (c) a portion of and its image under     Exercises   Let and be the two branches of the square root function given by Equations and , respectively. Use the polar coordinate formulas in Section to find the image of  quadrant II, and , under the mapping .  The sector , .   quadrant II, and , under the mapping .  the right half-plane Re under the mapping .  The sector , .   the right half-plane Re under the mapping .    Let in Equation . Find the range of the function .    Let in Equation . Find the range of the function .   Since , where (explain!), we see that the point will lie in the lower half plane (again, explain). Thus, the range of is .    Find a branch of the square root that is continuous along the negative axis.    Let , where , and . denotes the principal cube root function.  Show that is a branch of the multivalued cube root .   , so . This shows that is indeed a branch of the cube root function.   What is the range of ?  Where is continuous?    Let , where and .  Show that is a branch of the multivalued cube root .  What is the range of ?  Where is continuous?  What is the branch point associated with ?    Find a branch of the multivalued cube root function that is different from those in Exercises 5 and 6. State the domain and range of the branch you find.   The function , where , and does the job. Explain why, and find the range of this function, or of a different function that you concoct.    Let denote the multivalued th root, where is a positive integer.  Show that is, in general, an -valued function.  Write the principal th root function.  Produce a different branch of the multivalued th root function.    Describe a Riemann surface for the domain of definition of   .  For we have as the three branches of the cube root with domains . As in the text, slit each domain along the negative real axis, and stack , , and directly above each other. Join the edge of in the upper half plane to the edge of in the lower half plane. Join the edge of in the upper half plane to the edge of in the lower half plane. Finally, join the edge of in the upper half plane to the edge of in the lower half plane. To really impress your teacher, make a sketch or real 3D model of this surface!    .    Discuss how Riemann surfaces should be used for both the domain and range to help describe the multivalued function .     "
 },
 {
-  "id": "sec_branches-2-6",
+  "id": "example-46",
   "level": "2",
-  "url": "sec_branches.html#sec_branches-2-6",
+  "url": "sec_branches.html#example-46",
   "type": "Example",
   "number": "2.4.1",
   "title": "",
   "body": "  We consider some branches of the two-valued square root function  . Define the principal square root function as , where and so that . The function is a branch of . Using the same notation, we can find other branches of the square root function. For example, if we let , then , so and can be thought of as plus and minus square root functions. The negative real axis is called a branch cut for the functions and . Each point on the branch cut is a point of discontinuity for both functions and .   "
 },
 {
-  "id": "sec_branches-2-7",
+  "id": "example-47",
   "level": "2",
-  "url": "sec_branches.html#sec_branches-2-7",
+  "url": "sec_branches.html#example-47",
   "type": "Example",
   "number": "2.4.2",
   "title": "",
   "body": "  Show that the function is discontinuous along the negative real axis.    Let denote a negative real number. We compute the limit as approaches through the upper half-plane and the limit as approaches through the lower half-plane . In polar coordinates these limits are given by .  The two limits are distinct, so the function is discontinuous at .   "
 },
 {
-  "id": "sec_branches-2-8",
+  "id": "remark-5",
   "level": "2",
-  "url": "sec_branches.html#sec_branches-2-8",
+  "url": "sec_branches.html#remark-5",
   "type": "Remark",
   "number": "2.4.3",
   "title": "",
@@ -2791,9 +2791,9 @@ var ptx_lunr_docs = [
   "body": " The image of under the mapping   "
 },
 {
-  "id": "sec_reciprocal-transformation-13",
+  "id": "remark-6",
   "level": "2",
-  "url": "sec_reciprocal-transformation.html#sec_reciprocal-transformation-13",
+  "url": "sec_reciprocal-transformation.html#remark-6",
   "type": "Remark",
   "number": "2.5.5",
   "title": "",
@@ -2818,9 +2818,9 @@ var ptx_lunr_docs = [
   "body": " The mapping discussed in Example   "
 },
 {
-  "id": "sec_reciprocal-transformation-18",
+  "id": "example-50",
   "level": "2",
-  "url": "sec_reciprocal-transformation.html#sec_reciprocal-transformation-18",
+  "url": "sec_reciprocal-transformation.html#example-50",
   "type": "Example",
   "number": "2.5.8",
   "title": "",
@@ -3043,18 +3043,18 @@ var ptx_lunr_docs = [
   "body": "  If , show that .    Using Equation , we have .  We can drop the subscript on to obtain as a general formula.   "
 },
 {
-  "id": "sec_diff-analytic-6",
+  "id": "example-52",
   "level": "2",
-  "url": "sec_diff-analytic.html#sec_diff-analytic-6",
+  "url": "sec_diff-analytic.html#example-52",
   "type": "Example",
   "number": "3.1.2",
   "title": "",
   "body": "  Show that the function is nowhere differentiable.    We choose two approaches to the point and compute limits of the difference quotients. First, we approach along a line parallel to the -axis by forcing to be of the form . .  Next, we approach along a line parallel to the axis by forcing to be of the form . .  The limits along the two paths are different, so there is no possible value for the right side of Equation . Therefore is not differentiable at the point , and since was arbitrary, is nowhere differentiable.   "
 },
 {
-  "id": "sec_diff-analytic-7",
+  "id": "remark-7",
   "level": "2",
-  "url": "sec_diff-analytic.html#sec_diff-analytic-7",
+  "url": "sec_diff-analytic.html#remark-7",
   "type": "Remark",
   "number": "3.1.3",
   "title": "",
@@ -3079,9 +3079,9 @@ var ptx_lunr_docs = [
   "body": " Entire   If is analytic on the whole complex plane then is said to be entire.   "
 },
 {
-  "id": "sec_diff-analytic-16",
+  "id": "example-53",
   "level": "2",
-  "url": "sec_diff-analytic.html#sec_diff-analytic-16",
+  "url": "sec_diff-analytic.html#example-53",
   "type": "Example",
   "number": "3.1.6",
   "title": "",
@@ -3097,9 +3097,9 @@ var ptx_lunr_docs = [
   "body": "  If is differentiable at , then is continuous at .   "
 },
 {
-  "id": "sec_diff-analytic-19",
+  "id": "proof-6",
   "level": "2",
-  "url": "sec_diff-analytic.html#sec_diff-analytic-19",
+  "url": "sec_diff-analytic.html#proof-6",
   "type": "Proof",
   "number": "3.1.1",
   "title": "",
@@ -3115,9 +3115,9 @@ var ptx_lunr_docs = [
   "body": " L'Hôpital's rule   Assume that and are analytic at . If , , and , then    "
 },
 {
-  "id": "sec_diff-analytic-26",
+  "id": "proof-7",
   "level": "2",
-  "url": "sec_diff-analytic.html#sec_diff-analytic-26",
+  "url": "sec_diff-analytic.html#proof-7",
   "type": "Proof",
   "number": "3.1.2",
   "title": "",
@@ -3259,9 +3259,9 @@ var ptx_lunr_docs = [
   "body": " Explain why the composition of two entire functions is an entire function.  "
 },
 {
-  "id": "exercises_diff-analytic-17",
+  "id": "exercise-198",
   "level": "2",
-  "url": "sec_diff-analytic.html#exercises_diff-analytic-17",
+  "url": "sec_diff-analytic.html#exercise-198",
   "type": "Exercise",
   "number": "3.1.16",
   "title": "",
@@ -3295,27 +3295,27 @@ var ptx_lunr_docs = [
   "body": " Cauchy-Riemann equations   Suppose that is differentiable at the point . Then the partial derivatives of and exist at the point , and .  Equating the real and imaginary parts of Equations and gives .   "
 },
 {
-  "id": "sec_cauchy-riemann-10",
+  "id": "proof-8",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-10",
+  "url": "sec_cauchy-riemann.html#proof-8",
   "type": "Proof",
   "number": "3.2.1",
   "title": "",
   "body": " Because is differentiable, we know that exists regardless of the path we take as . We will choose horizontal and vertical lines that pass through the point and compute the limiting values of along these lines. Equating the two resulting limits will yield Equations . For the horizontal approach to , we set and obtain .  The last two limits are the partial derivatives of and with respect to , so . giving us Equation .  Along the vertical approach to , we have , so .  The last two limits are the partial derivatives of and with respect to , so . giving us Equation .  Since is differentiable at , the limits given by Equations and must be equal. If we equate the real and imaginary parts in those equations, the result is Equations , and the proof is complete.  "
 },
 {
-  "id": "sec_cauchy-riemann-13",
+  "id": "example-54",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-13",
+  "url": "sec_cauchy-riemann.html#example-54",
   "type": "Example",
   "number": "3.2.3",
   "title": "",
   "body": "  We know that is differentiable and that . We also have . It is easy to verify that Equations are indeed satisfied: . Using Equations and , respectively, to compute gives , as expected.   "
 },
 {
-  "id": "sec_cauchy-riemann-14",
+  "id": "example-55",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-14",
+  "url": "sec_cauchy-riemann.html#example-55",
   "type": "Example",
   "number": "3.2.4",
   "title": "",
@@ -3340,36 +3340,36 @@ var ptx_lunr_docs = [
   "body": " Cauchy-Riemann conditions for differentiability   Let be a continuous function that is defined in some neighborhood of the point . If all the partial derivatives and are continuous at the point , and if the Cauchy-Riemann equations and hold at , then is differentiable at , and can be computed with either Equation or .   "
 },
 {
-  "id": "sec_cauchy-riemann-18",
+  "id": "proof-9",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-18",
+  "url": "sec_cauchy-riemann.html#proof-9",
   "type": "Proof",
   "number": "3.2.2",
   "title": "",
   "body": " Let and , and let be small enough so that lies in the -neighborhood of in which the hypotheses hold. We need to show that approaches the limit given in Equation as approaches zero. We write the difference, , as   If we subtract and add the term , then we get .  The partial derivatives and exist, so the mean value theorem for real functions of two variables implies that a value exists between and such that we can write the first term in brackets on the right side of Equation as . Furthermore, as and are continuous at , there exists a quantity such that . where as and . Because forces , we can use the equation . where as and . Similarly, there exists a quantity such that the second term in brackets on the right side of Equation satisfies the equation . where as and . Combining Equations and gives . where partial derivatives and are evaluated at the point and and tend to zero as and both tend to zero. Similarly, the change is related to the changes and by the equation , where the partial derivatives and are evaluated at the point and and tend to zero as and both tend to zero. Combining these last two equations gives .  We can use the Cauchy-Riemann equations in Equation to obtain   Now we rearrange the terms and get   Since , we can divide both sides of this equation by and take the limit as : .  Because tends to zero as and both tend to zero, we have .  Similarly, the limits of the other quantities in Equation involving , , are zero. Therefore the limit in Equation becomes , which completes the proof of the theorem.  "
 },
 {
-  "id": "sec_cauchy-riemann-19",
+  "id": "example-57",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-19",
+  "url": "sec_cauchy-riemann.html#example-57",
   "type": "Example",
   "number": "3.2.7",
   "title": "",
   "body": "  At the beginning of this section (Equation ) we defined the function . Show that this function is differentiable for all , and find its derivative.    We compute and , so the Cauchy-Riemann Equations are satisfied. Moreover, , and are continuous everywhere. By Theorem , is differentiable everywhere, and Equation gives .  Alternatively, from Equation , .   "
 },
 {
-  "id": "sec_cauchy-riemann-21",
+  "id": "example-58",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-21",
+  "url": "sec_cauchy-riemann.html#example-58",
   "type": "Example",
   "number": "3.2.8",
   "title": "",
   "body": "  Show that the function is differentiable for all and find its derivative.    We first write and and then compute the partial derivatives. .  We note that , and are continuous functions and that the Cauchy-Riemann equations hold for all values of . Hence, using Equation , we write    "
 },
 {
-  "id": "sec_cauchy-riemann-23",
+  "id": "example-59",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-23",
+  "url": "sec_cauchy-riemann.html#example-59",
   "type": "Example",
   "number": "3.2.9",
   "title": "",
@@ -3385,9 +3385,9 @@ var ptx_lunr_docs = [
   "body": " Polar form   Let be a continuous function that is defined in some neighborhood of the point . If all the partial derivatives and are continuous at the point and if the polar form of the Cauchy-Riemann equations, , holds, then is differentiable at and we can compute the derivative by using either of the following formulas: .   "
 },
 {
-  "id": "sec_cauchy-riemann-26",
+  "id": "example-60",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-26",
+  "url": "sec_cauchy-riemann.html#example-60",
   "type": "Example",
   "number": "3.2.11",
   "title": "",
@@ -3403,9 +3403,9 @@ var ptx_lunr_docs = [
   "body": "  Let be an analytic function on the domain . Suppose for all that , where is a constant. Then is constant on .   "
 },
 {
-  "id": "sec_cauchy-riemann-29",
+  "id": "proof-10",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-29",
+  "url": "sec_cauchy-riemann.html#proof-10",
   "type": "Proof",
   "number": "3.2.3",
   "title": "",
@@ -3421,9 +3421,9 @@ var ptx_lunr_docs = [
   "body": "  Let be an analytic function in the domain . If for all in , then is constant in .   "
 },
 {
-  "id": "sec_cauchy-riemann-31",
+  "id": "proof-11",
   "level": "2",
-  "url": "sec_cauchy-riemann.html#sec_cauchy-riemann-31",
+  "url": "sec_cauchy-riemann.html#proof-11",
   "type": "Proof",
   "number": "3.2.4",
   "title": "",
@@ -3592,27 +3592,27 @@ var ptx_lunr_docs = [
   "body": "   Let be an analytic function on a domain . Then both and are harmonic functions on . In other words, the real and imaginary parts of an analytic function are harmonic.   "
 },
 {
-  "id": "sec_harmonic-functions-4",
+  "id": "proof-12",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-4",
+  "url": "sec_harmonic-functions.html#proof-12",
   "type": "Proof",
   "number": "3.3.1",
   "title": "",
   "body": " In Corollary 6.3 we will show that, if is analytic, then all partial derivatives of and are continuous. Using that result here, we see that, as is analytic, and satisfy the Cauchy-Riemann equations . Taking the partial derivative with respect to of each side of these equations gives . Similarly, taking the partial derivative of each side with respect to yields . The partial derivatives , , , and are all continuous, so we use a theorem from the calculus of real functions that states that the mixed partial derivatives are equal; that is, . Combining all these results finally gives , and . Therefore both and are harmonic functions on .  "
 },
 {
-  "id": "sec_harmonic-functions-6",
+  "id": "example-61",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-6",
+  "url": "sec_harmonic-functions.html#example-61",
   "type": "Example",
   "number": "3.3.2",
   "title": "",
   "body": "  If , then ; hence is a harmonic function for all . We find that is also a harmonic function and that . Therefore is a harmonic conjugate of , and the function given by is an analytic function.   "
 },
 {
-  "id": "sec_harmonic-functions-8",
+  "id": "example-62",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-8",
+  "url": "sec_harmonic-functions.html#example-62",
   "type": "Example",
   "number": "3.3.3",
   "title": "",
@@ -3646,18 +3646,18 @@ var ptx_lunr_docs = [
   "body": " Construction of a harmonic conjugate   Let be harmonic in an -neighborhood of the point . Then there exists a conjugate harmonic function defined in this neighborhood such that is an analytic function.   "
 },
 {
-  "id": "sec_harmonic-functions-15",
+  "id": "proof-13",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-15",
+  "url": "sec_harmonic-functions.html#proof-13",
   "type": "Proof",
   "number": "3.3.2",
   "title": "",
   "body": " A conjugate harmonic function will satisfy the Cauchy-Riemann equations and . Assuming that such a function exists, we determine what it would have to look like by using a two-step process. First, we integrate (which should equal ) with respect to and get . where is a function of alone that is yet to be determined. Second, we compute by differentiating both sides of this equation with respect to and replacing with on the left side, which gives . It can be shown (we omit the details) that because is harmonic, all terms except those involving in the last equation will cancel, revealing a formula for involving alone. Elementary integration of the single-variable function can then be used to discover . We finally observe that the function so created indeed has the properties we seek.  "
 },
 {
-  "id": "sec_harmonic-functions-17",
+  "id": "example-63",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-17",
+  "url": "sec_harmonic-functions.html#example-63",
   "type": "Example",
   "number": "3.3.7",
   "title": "",
@@ -3682,9 +3682,9 @@ var ptx_lunr_docs = [
   "body": " The families of orthogonal curves and for the function   "
 },
 {
-  "id": "sec_harmonic-functions-32",
+  "id": "example-64",
   "level": "2",
-  "url": "sec_harmonic-functions.html#sec_harmonic-functions-32",
+  "url": "sec_harmonic-functions.html#example-64",
   "type": "Example",
   "number": "3.3.10",
   "title": "",
@@ -3835,9 +3835,9 @@ var ptx_lunr_docs = [
   "body": " We introduce the logarithmic function in . For now, let . Here we have and . Sketch the equipotentials and streamlines for .   The equipotentials are concentric circles with radii 1, 2, 3, and 4. The streamlines are lines from the origin making an angle of radians for .  "
 },
 {
-  "id": "exercises_harmonic-functions-17",
+  "id": "exercise-230",
   "level": "2",
-  "url": "sec_harmonic-functions.html#exercises_harmonic-functions-17",
+  "url": "sec_harmonic-functions.html#exercise-230",
   "type": "Exercise",
   "number": "3.3.16",
   "title": "",
@@ -3871,9 +3871,9 @@ var ptx_lunr_docs = [
   "body": " Limit of a Sequence    means that for any real number there corresponds a positive integer (which depends on ) such that whenever . That is, whenever .   "
 },
 {
-  "id": "sec_sequences-series-8",
+  "id": "remark-8",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-8",
+  "url": "sec_sequences-series.html#remark-8",
   "type": "Remark",
   "number": "4.1.2",
   "title": "",
@@ -3898,27 +3898,27 @@ var ptx_lunr_docs = [
   "body": "  Let and . Then,    "
 },
 {
-  "id": "sec_sequences-series-13",
+  "id": "proof-14",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-13",
+  "url": "sec_sequences-series.html#proof-14",
   "type": "Proof",
   "number": "4.1.1",
   "title": "",
   "body": " First we assume that Statement is true and then deduce the truth of Statement . Let be an arbitrary positive real number. To establish Statement , we must show (1) that there is a positive integer such that the inequality holds whenever and (2) that there is a positive integer such that the inequality holds whenever . Because we are assuming Statement to be true, we know (according to Definition ) that there is a positive integer such that if . Recall that is equivalent to the inequality . Thus, whenever , we have .  Similarly, we can show that there is a number such that whenever , which proves Statement .  To complete the proof of this theorem, we must show that the conditions of Statement imply Statement . Let be an arbitrary real number. By Statement , there exist positive integers and such that .  Let  ; then, if ,   "
 },
 {
-  "id": "sec_sequences-series-15",
+  "id": "example-65",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-15",
+  "url": "sec_sequences-series.html#example-65",
   "type": "Example",
   "number": "4.1.5",
   "title": "",
   "body": "  Find if .    We write . Using results concerning sequences of real numbers, we find that and . Therefore, .   "
 },
 {
-  "id": "sec_sequences-series-16",
+  "id": "example-66",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-16",
+  "url": "sec_sequences-series.html#example-66",
   "type": "Example",
   "number": "4.1.6",
   "title": "",
@@ -3943,9 +3943,9 @@ var ptx_lunr_docs = [
   "body": "  If is a convergent sequence, then is bounded.   "
 },
 {
-  "id": "sec_sequences-series-20",
+  "id": "proof-15",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-20",
+  "url": "sec_sequences-series.html#proof-15",
   "type": "Proof",
   "number": "4.1.2",
   "title": "",
@@ -3961,18 +3961,18 @@ var ptx_lunr_docs = [
   "body": " Cauchy Sequence   The sequence is a Cauchy sequence if for every there is a positive integer \\ such that if , then , or, equivalently, .   "
 },
 {
-  "id": "sec_sequences-series-24",
+  "id": "theorem-22",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-24",
+  "url": "sec_sequences-series.html#theorem-22",
   "type": "Theorem",
   "number": "4.1.10",
   "title": "",
   "body": "  If is a Cauchy sequence, converges.   "
 },
 {
-  "id": "sec_sequences-series-25",
+  "id": "proof-16",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-25",
+  "url": "sec_sequences-series.html#proof-16",
   "type": "Proof",
   "number": "4.1.3",
   "title": "",
@@ -3988,36 +3988,36 @@ var ptx_lunr_docs = [
   "body": " Infinite Series   The formal expression is called an infinite series, and are called the terms of the series.   "
 },
 {
-  "id": "sec_sequences-series-28",
+  "id": "definition-25",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-28",
+  "url": "sec_sequences-series.html#definition-25",
   "type": "Definition",
   "number": "4.1.12",
   "title": "Convergent Series.",
   "body": " Convergent Series   If there is a complex number for which , we say that the infinite series converges to , and that is the sum of the infinite series. When convergence occurs, we write .   "
 },
 {
-  "id": "sec_sequences-series-29",
+  "id": "definition-26",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-29",
+  "url": "sec_sequences-series.html#definition-26",
   "type": "Definition",
   "number": "4.1.13",
   "title": "Absolutely Convergent Series.",
   "body": " Absolutely Convergent Series   The series is said to be absolutely convergent provided that the (real) series of magnitudes converges.   "
 },
 {
-  "id": "sec_sequences-series-30",
+  "id": "definition-27",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-30",
+  "url": "sec_sequences-series.html#definition-27",
   "type": "Definition",
   "number": "4.1.14",
   "title": "Divergent Series.",
   "body": " Divergent Series   If a series does not converge, we say that it diverges.   "
 },
 {
-  "id": "sec_sequences-series-31",
+  "id": "remark-9",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-31",
+  "url": "sec_sequences-series.html#remark-9",
   "type": "Remark",
   "number": "4.1.15",
   "title": "",
@@ -4033,9 +4033,9 @@ var ptx_lunr_docs = [
   "body": "  Let and . Then .   "
 },
 {
-  "id": "sec_sequences-series-34",
+  "id": "proof-17",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-34",
+  "url": "sec_sequences-series.html#proof-17",
   "type": "Proof",
   "number": "4.1.4",
   "title": "",
@@ -4051,36 +4051,36 @@ var ptx_lunr_docs = [
   "body": "  If is a convergent complex series, then .   "
 },
 {
-  "id": "sec_sequences-series-36",
+  "id": "proof-18",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-36",
+  "url": "sec_sequences-series.html#proof-18",
   "type": "Proof",
   "number": "4.1.5",
   "title": "",
   "body": " The proof is left as an exercise.  "
 },
 {
-  "id": "sec_sequences-series-37",
+  "id": "example-67",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-37",
+  "url": "sec_sequences-series.html#example-67",
   "type": "Example",
   "number": "4.1.18",
   "title": "",
   "body": "  Show that the series is convergent.    Recall that the real series and are convergent. Hence, Theorem implies that the given complex series is convergent.   "
 },
 {
-  "id": "sec_sequences-series-38",
+  "id": "example-68",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-38",
+  "url": "sec_sequences-series.html#example-68",
   "type": "Example",
   "number": "4.1.19",
   "title": "",
   "body": "  Show that the series is divergent.    We know that the real series is divergent. Hence, Theorem implies that the given complex series is divergent.   "
 },
 {
-  "id": "sec_sequences-series-39",
+  "id": "example-69",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-39",
+  "url": "sec_sequences-series.html#example-69",
   "type": "Example",
   "number": "4.1.20",
   "title": "",
@@ -4096,9 +4096,9 @@ var ptx_lunr_docs = [
   "body": "  Let and be convergent series and let be a complex number. Then .   "
 },
 {
-  "id": "sec_sequences-series-41",
+  "id": "proof-19",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-41",
+  "url": "sec_sequences-series.html#proof-19",
   "type": "Proof",
   "number": "4.1.6",
   "title": "",
@@ -4114,18 +4114,18 @@ var ptx_lunr_docs = [
   "body": " Cauchy Product   Let and be convergent series, where and are complex numbers. The Cauchy product of the two series is defined to be the series , where .   "
 },
 {
-  "id": "sec_sequences-series-43",
+  "id": "theorem-26",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-43",
+  "url": "sec_sequences-series.html#theorem-26",
   "type": "Theorem",
   "number": "4.1.23",
   "title": "",
   "body": "  If the Cauchy product converges, then    "
 },
 {
-  "id": "sec_sequences-series-44",
+  "id": "proof-20",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-44",
+  "url": "sec_sequences-series.html#proof-20",
   "type": "Proof",
   "number": "4.1.7",
   "title": "",
@@ -4141,9 +4141,9 @@ var ptx_lunr_docs = [
   "body": " Comparison test   Let be a convergent series of real nonnegative terms. If is a sequence of complex numbers and holds for all , then the infinite series converges.   "
 },
 {
-  "id": "sec_sequences-series-46",
+  "id": "proof-21",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-46",
+  "url": "sec_sequences-series.html#proof-21",
   "type": "Proof",
   "number": "4.1.8",
   "title": "",
@@ -4159,18 +4159,18 @@ var ptx_lunr_docs = [
   "body": "  If converges, then converges. In other words, absolute convergence implies convergence for complex series as well as for real series.   "
 },
 {
-  "id": "sec_sequences-series-48",
+  "id": "proof-22",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-48",
+  "url": "sec_sequences-series.html#proof-22",
   "type": "Proof",
   "number": "4.1.9",
   "title": "",
   "body": " The proof is left as an exercise.  "
 },
 {
-  "id": "sec_sequences-series-49",
+  "id": "example-70",
   "level": "2",
-  "url": "sec_sequences-series.html#sec_sequences-series-49",
+  "url": "sec_sequences-series.html#example-70",
   "type": "Example",
   "number": "4.1.26",
   "title": "",
@@ -4204,9 +4204,9 @@ var ptx_lunr_docs = [
   "body": " Suppose that . Show that .   Let be given. Since , there exists such that if then , i.e. , . But since , we see that if , then .  "
 },
 {
-  "id": "exercises_sequences-series-5",
+  "id": "exercise-235",
   "level": "2",
-  "url": "sec_sequences-series.html#exercises_sequences-series-5",
+  "url": "sec_sequences-series.html#exercise-235",
   "type": "Exercise",
   "number": "4.1.4",
   "title": "",
@@ -4402,9 +4402,9 @@ var ptx_lunr_docs = [
   "body": " A zoom of the rabbit   "
 },
 {
-  "id": "sec_julia-mandelbrot-18",
+  "id": "example-73",
   "level": "2",
-  "url": "sec_julia-mandelbrot.html#sec_julia-mandelbrot-18",
+  "url": "sec_julia-mandelbrot.html#example-73",
   "type": "Example",
   "number": "4.2.8",
   "title": "",
@@ -4510,9 +4510,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is an attracting fixed point for the function . Then there is a disk about such that the iterates of all the points in are drawn toward in the sense that, if , then . In fact, if is the th iterate of , then .   "
 },
 {
-  "id": "sec_julia-mandelbrot-39",
+  "id": "proof-23",
   "level": "2",
-  "url": "sec_julia-mandelbrot.html#sec_julia-mandelbrot-39",
+  "url": "sec_julia-mandelbrot.html#proof-23",
   "type": "Proof",
   "number": "4.2.1",
   "title": "",
@@ -4528,9 +4528,9 @@ var ptx_lunr_docs = [
   "body": "  The function has attracting fixed points iff or , where the square root designates the principal square root function.   "
 },
 {
-  "id": "sec_julia-mandelbrot-42",
+  "id": "proof-24",
   "level": "2",
-  "url": "sec_julia-mandelbrot.html#sec_julia-mandelbrot-42",
+  "url": "sec_julia-mandelbrot.html#proof-24",
   "type": "Proof",
   "number": "4.2.2",
   "title": "",
@@ -4555,18 +4555,18 @@ var ptx_lunr_docs = [
   "body": " Attracting   An n-cycle for a function is said to be attracting if , where is the composition of with itself times. For example, if , then .   "
 },
 {
-  "id": "sec_julia-mandelbrot-45",
+  "id": "example-76",
   "level": "2",
-  "url": "sec_julia-mandelbrot.html#sec_julia-mandelbrot-45",
+  "url": "sec_julia-mandelbrot.html#example-76",
   "type": "Example",
   "number": "4.2.23",
   "title": "",
   "body": "   Example shows that is a 2-cycle for the function . It is not an attracting 2-cycle because and . Hence , so .   "
 },
 {
-  "id": "exercises_julia-mandelbrot-2",
+  "id": "exercise-249",
   "level": "2",
-  "url": "sec_julia-mandelbrot.html#exercises_julia-mandelbrot-2",
+  "url": "sec_julia-mandelbrot.html#exercise-249",
   "type": "Exercise",
   "number": "4.2.1",
   "title": "",
@@ -4699,9 +4699,9 @@ var ptx_lunr_docs = [
   "body": " Geometric series   If the series converges to That is, if , then    If  , the series diverges.    "
 },
 {
-  "id": "sec_convergence-theorems-4",
+  "id": "proof-25",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-4",
+  "url": "sec_convergence-theorems.html#proof-25",
   "type": "Proof",
   "number": "4.3.1",
   "title": "",
@@ -4717,9 +4717,9 @@ var ptx_lunr_docs = [
   "body": "   If the series converges to That is, if then .   If  , the series diverges.    "
 },
 {
-  "id": "sec_convergence-theorems-6",
+  "id": "proof-26",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-6",
+  "url": "sec_convergence-theorems.html#proof-26",
   "type": "Proof",
   "number": "4.3.2",
   "title": "",
@@ -4735,18 +4735,18 @@ var ptx_lunr_docs = [
   "body": "  If then for all ,    "
 },
 {
-  "id": "sec_convergence-theorems-8",
+  "id": "proof-27",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-8",
+  "url": "sec_convergence-theorems.html#proof-27",
   "type": "Proof",
   "number": "4.3.3",
   "title": "",
   "body": " This result follows immediately from Equation .  "
 },
 {
-  "id": "sec_convergence-theorems-9",
+  "id": "example-77",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-9",
+  "url": "sec_convergence-theorems.html#example-77",
   "type": "Example",
   "number": "4.3.4",
   "title": "",
@@ -4762,9 +4762,9 @@ var ptx_lunr_docs = [
   "body": "  Evaluate .    We can put this expression in the form of a geometric series: .   "
 },
 {
-  "id": "sec_convergence-theorems-11",
+  "id": "remark-10",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-11",
+  "url": "sec_convergence-theorems.html#remark-10",
   "type": "Remark",
   "number": "4.3.6",
   "title": "",
@@ -4780,18 +4780,18 @@ var ptx_lunr_docs = [
   "body": " d'Alembert's ratio test   If is a complex series with the property that , then the series is absolutely convergent if and divergent if .   "
 },
 {
-  "id": "sec_convergence-theorems-14",
+  "id": "example-79",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-14",
+  "url": "sec_convergence-theorems.html#example-79",
   "type": "Example",
   "number": "4.3.8",
   "title": "",
   "body": "  Show that converges.    Using the ratio test, we find that .  Because , the series converges.   "
 },
 {
-  "id": "sec_convergence-theorems-15",
+  "id": "example-80",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-15",
+  "url": "sec_convergence-theorems.html#example-80",
   "type": "Example",
   "number": "4.3.9",
   "title": "",
@@ -4807,27 +4807,27 @@ var ptx_lunr_docs = [
   "body": " Limit Supremum   Let be a sequence of positive real numbers. The limit supremum of the sequence (denoted is the smallest real number having the property that for any , there are at most finitely many terms in the sequence that are larger than . If there is no such number , then .   "
 },
 {
-  "id": "sec_convergence-theorems-18",
+  "id": "example-81",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-18",
+  "url": "sec_convergence-theorems.html#example-81",
   "type": "Example",
   "number": "4.3.11",
   "title": "",
   "body": "  \\textrm{} The limit supremum of the sequence , because if we set , then for any , there are only finitely many terms in the sequence larger than . Additionally, if is smaller than 5, then by setting , we can find infinitely many terms in the sequence larger than (because .   "
 },
 {
-  "id": "sec_convergence-theorems-19",
+  "id": "example-82",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-19",
+  "url": "sec_convergence-theorems.html#example-82",
   "type": "Example",
   "number": "4.3.12",
   "title": "",
   "body": "  The limit supremum of the sequence , because if we set , then for any , there are only finitely many terms (actually, there are none) in the sequence larger than . Additionally, if is smaller than 3, then by setting we can find infinitely many terms in the sequence larger than (because , as the following calculation shows: .   "
 },
 {
-  "id": "sec_convergence-theorems-20",
+  "id": "example-83",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-20",
+  "url": "sec_convergence-theorems.html#example-83",
   "type": "Example",
   "number": "4.3.13",
   "title": "",
@@ -4852,18 +4852,18 @@ var ptx_lunr_docs = [
   "body": " Root test   Suppose the series has . Then the series is absolutely convergent if and divergent if .   "
 },
 {
-  "id": "sec_convergence-theorems-24",
+  "id": "proof-28",
   "level": "2",
-  "url": "sec_convergence-theorems.html#sec_convergence-theorems-24",
+  "url": "sec_convergence-theorems.html#proof-28",
   "type": "Proof",
   "number": "4.3.4",
   "title": "",
   "body": " Suppose first that . We can select a number such that . By definition of the limit supremum, only finitely many terms in the sequence exceed , so there exists a positive integer such that for all we have . That is, for all . For , Theorem implies that converges. But then Theorem implies that converges, and hence so does . Corollary then guarantees that converges.  Now suppose that . We can select a number such that . Again, by definition of the limit supremum we conclude that for infinitely many . But this condition means that for infinitely many , and as , this implies that does not converge to 0. By Theorem , does not converge.  "
 },
 {
-  "id": "exercises_convergence-theorems-2",
+  "id": "exercise-262",
   "level": "2",
-  "url": "sec_convergence-theorems.html#exercises_convergence-theorems-2",
+  "url": "sec_convergence-theorems.html#exercise-262",
   "type": "Exercise",
   "number": "4.3.1",
   "title": "",
@@ -4987,9 +4987,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that . Then the set of points for which the series converges is one of the following:   i  the single point ;    ii  the disk , along with part (either none, some, or all) of the circle ;    iii  the entire complex plane.      "
 },
 {
-  "id": "sec_power-series-4",
+  "id": "proof-29",
   "level": "2",
-  "url": "sec_power-series.html#sec_power-series-4",
+  "url": "sec_power-series.html#proof-29",
   "type": "Proof",
   "number": "4.4.1",
   "title": "",
@@ -5014,27 +5014,27 @@ var ptx_lunr_docs = [
   "body": "  For the power series function we can find , its radius of convergence, by any of the following methods:   i  Cauchy 's root test: (provided the limit exists).    ii  Cauchy-Hadamard formula: (this limit always exists).    iii  d'Alembert's ratio test: (provided the limit exists).     We set if the limit equals 0 and if the limit equals .   "
 },
 {
-  "id": "sec_power-series-8",
+  "id": "proof-30",
   "level": "2",
-  "url": "sec_power-series.html#sec_power-series-8",
+  "url": "sec_power-series.html#proof-30",
   "type": "Proof",
   "number": "4.4.2",
   "title": "",
   "body": " If you examine carefully the proof of Theorem , you will see that we have already proved ( i ) and ( ii ). They follow directly from Inequality and the fact that the limit supremum equals the limit whenever the limit exists. We can show ( iii ) by using the ratio test. We leave the details as an exercise.  "
 },
 {
-  "id": "sec_power-series-10",
+  "id": "example-85",
   "level": "2",
-  "url": "sec_power-series.html#sec_power-series-10",
+  "url": "sec_power-series.html#example-85",
   "type": "Example",
   "number": "4.4.4",
   "title": "",
   "body": "  The series has radius of convergence 3 by Cauchy 's root test because .   "
 },
 {
-  "id": "sec_power-series-11",
+  "id": "example-86",
   "level": "2",
-  "url": "sec_power-series.html#sec_power-series-11",
+  "url": "sec_power-series.html#example-86",
   "type": "Example",
   "number": "4.4.5",
   "title": "",
@@ -5059,9 +5059,9 @@ var ptx_lunr_docs = [
   "body": "   Suppose that the function has radius of convergence . Then   i   is infinitely differentiable for all . In fact    ii  for all , ; and    iii   , where denotes the th derivative of . (When , denotes the function itself so that for all .)      "
 },
 {
-  "id": "sec_power-series-15",
+  "id": "proof-31",
   "level": "2",
-  "url": "sec_power-series.html#sec_power-series-15",
+  "url": "sec_power-series.html#proof-31",
   "type": "Proof",
   "number": "4.4.3",
   "title": "",
@@ -5185,9 +5185,9 @@ var ptx_lunr_docs = [
   "body": " Consider the series obtained by substituting for the complex number the real number in the Maclaurin series for . Where does this series converge?   The series converges for all values of by the ratio test.  "
 },
 {
-  "id": "exercises_power-series-13",
+  "id": "exercise-285",
   "level": "2",
-  "url": "sec_power-series.html#exercises_power-series-13",
+  "url": "sec_power-series.html#exercise-285",
   "type": "Exercise",
   "number": "4.4.12",
   "title": "",
@@ -5221,9 +5221,9 @@ var ptx_lunr_docs = [
   "body": "  The function is an entire function satisfying the following conditions.   i   (using Leibniz notation we write ).    ii   ( i.e. , ).    iii  If is a real number, then .      "
 },
 {
-  "id": "sec_exponential-function-6",
+  "id": "proof-32",
   "level": "2",
-  "url": "sec_exponential-function.html#sec_exponential-function-6",
+  "url": "sec_exponential-function.html#proof-32",
   "type": "Proof",
   "number": "5.1.1",
   "title": "",
@@ -5311,9 +5311,9 @@ var ptx_lunr_docs = [
   "body": " Express in the form for the following values of .   .   .   .   .   .   .  "
 },
 {
-  "id": "exercises_exponential-function-6",
+  "id": "exercise-290",
   "level": "2",
-  "url": "sec_exponential-function.html#exercises_exponential-function-6",
+  "url": "sec_exponential-function.html#exercise-290",
   "type": "Exercise",
   "number": "5.1.5",
   "title": "",
@@ -5365,9 +5365,9 @@ var ptx_lunr_docs = [
   "body": " Show that iff .  "
 },
 {
-  "id": "exercises_exponential-function-12",
+  "id": "exercise-296",
   "level": "2",
-  "url": "sec_exponential-function.html#exercises_exponential-function-12",
+  "url": "sec_exponential-function.html#exercise-296",
   "type": "Exercise",
   "number": "5.1.11",
   "title": "",
@@ -5383,9 +5383,9 @@ var ptx_lunr_docs = [
   "body": " Show that is analytic for all by showing that its real and imaginary parts satisfy the Cauchy-Riemann sufficient conditions for differentiability.  "
 },
 {
-  "id": "exercises_exponential-function-14",
+  "id": "exercise-298",
   "level": "2",
-  "url": "sec_exponential-function.html#exercises_exponential-function-14",
+  "url": "sec_exponential-function.html#exercise-298",
   "type": "Exercise",
   "number": "5.1.13",
   "title": "",
@@ -5464,18 +5464,18 @@ var ptx_lunr_docs = [
   "body": " The Complex Logarithm  In Section , we showed that, if is a nonzero complex number, then the equation has infinitely many solutions. Because the function is a many-to-one function, its inverse (the logarithm) is necessarily multivalued.   Multivalued logarithm   For , we define the multivalued function as the inverse of the exponential function; that is, .    If we go through the same steps as we did in Equations and , we find that, for any complex number , the solutions to Equation take the form . where and denotes the natural logarithm of the positive number . Because is the set , we can express the set of values comprising as , where it is understood that Identity refers to the same set of numbers per Identity .  Recall that \\mathrm{Arg} is defined so that for , . We call any one of the values given in Identities or a logarithm of . Note that the different values of all have the same real part and that their imaginary parts differ by the amount , where is an integer. When , we have a special situation.   Principal value of the logarithm   For , we define Log, the principal value of the logarithm, by .    The domain for the function \\mathrm{Log} is the set of all nonzero complex numbers in the plane, and its range is the horizontal strip in the plane. We stress again that \\mathrm{Log} is a single-valued function and corresponds to setting in Equation . As we demonstrated in Chapter , the function \\mathrm{Arg} is discontinuous at each point along the negative axis; hence so is the function \\mathrm{Log}. In fact, because any branch of the multivalued function is discontinuous along some ray, a corresponding branch of the logarithm will have a discontinuity along that same ray.    Find the values of and .    By standard computations, we have .  The principal values are .    We now investigate some of the properties of and \\mathrm{Log}. From Equations , , and , it follows that , and that the mapping is one-to-one from domain in the plane onto the horizontal strip in the plane.  The following example illustrates that, even though \\textrm{Log} is not continuous along the negative real axis, it is still defined there.    Identity reveals that .    When , where is a positive real number, the principal value of the complex logarithm of is . where . Hence \\textrm{Log} is an extension of the real function to the complex case. Are there other similarities? Let's use complex function theory to find the derivative of \\textrm{Log} . When we use polar coordinates for , Equation becomes , where and . Because is discontinuous only at points in its domain that lie on the negative real axis, and have continuous partials for any point in their domain, provided is not on the negative real axis, that is, provided . (Note the strict inequality for here.) In addition, the polar form of the Cauchy-Riemann equations holds in this region (see Equation of Section ), since .  Using Theorem of Section , we see that . provided and . Thus the principal branch of the complex logarithm has the derivative we would expect. Other properties of the logarithm carry over, but only in specified regions of the complex plane.    Show that the identity is not always valid.    Let and . Then .    Our next result explains why didn't hold for the particular numbers we chose.    The identity holds true iff .     Suppose first that . By definition, . Because , it follows that (explain!), and so . The only if part is left as an exercise.   As Example and Theorem illustrate, properties of the complex logarithm don't carry over when arguments of products combine in such a way that they drop down to or rise above . This is because of the restrictions placed on the domain of the function \\mathrm{Arg}. From the set of numbers associated with the multivalued logarithm, however, we can formulate properties that look exactly the same as those corresponding with the real logarithm.    Let and be nonzero complex numbers. The multivalued function obeys the familiar properties of logarithms: .     Identity is easy to establish: Using Identity in Section concerning the argument of a product (and keeping in mind we are dealing with sets of numbers), we write .  Identities and are left as exercises.   We can construct many different branches of the multivalued logarithm function that are continuous and differentiable except at points along any preassigned ray . If we let denote a real fixed number and choose the value of that lies in the range , then the function defined by , where , and , is a single-valued branch of the logarithm function. The branch cut for is the ray , and each point along this ray is a point of discontinuity of . Because , we conclude that the mapping is a one-to-one mapping of the domain onto the horizontal strip . If , then the function maps the set one-to-one and onto the rectangle . Figure shows the mapping , its branch cut , the set , and its image .   The branch of the logarithm    We can easily compute the derivative of any branch of the multivalued logarithm. For a particular branch for , and (note the strict inequality for ), we start with in Equations and differentiate both sides to get .  Solving for gives   The Riemann surface for the multivalued function is similar to the one for the square root function. However, it requires infinitely many copies of the plane cut along the negative axis, which we label for . We stack these cut planes directly on each other so that the corresponding points have the same position, and join the sheet to as follows: For each integer , the edge of the sheet in the upper half-plane is joined to the edge of the sheet in the lower half-plane. The Riemann surface for the domain of looks like a spiral staircase that extends upward on the sheets and downward on the sheets , as shown in Figure . We use polar coordinates for on each sheet. Thus, for we have .  Again, for , the correct branch of on each sheet is .   The Riemann surface for mapping     Exercises   Find all values for   .   .    .   .   .    .   .   , where is an integer.    .   .   , where is an integer.    .    Use the properties of in Section to establish  Equation .  Equation .    Find all the values of for which each equation holds.   .   .    .   .   , where is an integer.    .    Refer to Theorem .  Explain why implies that .  Prove the only if part.    Refer to Equation and pick an appropriate value for so that the branch of the logarithm will not be analytic at , where   .  Since , the function defined for , where , is analytic, and for those values of .    .   .  We set , and deduce that for , where .    .   .  Note that when . Also, respectively. For , the function is differentiable for , where . For , the function is differentiable for , where . Furthermore, in each case for in the respective domains.    .    Show that is analytic everywhere except at the points , , and on the ray .    Show that the following are harmonic functions in the right half-plane .   .   , and is analytic for .    .    Show that , where is an integer and is any branch of the logarithm.    Construct a branch of that is analytic at the point and takes on the value there.   According to Equation , yields   .    For what values of is it true that   ? Why?   ? Why?   ? Why?    Construct branches of that are analytic at all points in the plane except at points on the following rays.   .  The function does the job. Explain why.    .   .  The function works. Explain why.     Show that the mapping maps \\label {5.2.12}  the ray one-to-one and onto the horizontal line .  the semicircle one-to-one and onto the vertical line segment .    Find specific values of and so that .   There are many possibilities, such as . Explain.    Show why the solutions to Equation are given by those in Equation . \\hint{Mimic the process used in obtaining Identities and .}    Explain why no branch of the logarithm is defined when .   Any branch of the logarithm is defined as an inverse of the exponential. Since there is no value for which , there can be no branch of the logarithm that is defined at the number .    "
 },
 {
-  "id": "sec_complex-log-3",
+  "id": "definition-35",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-3",
+  "url": "sec_complex-log.html#definition-35",
   "type": "Definition",
   "number": "5.2.1",
   "title": "Multivalued logarithm.",
   "body": " Multivalued logarithm   For , we define the multivalued function as the inverse of the exponential function; that is, .   "
 },
 {
-  "id": "sec_complex-log-6",
+  "id": "definition-36",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-6",
+  "url": "sec_complex-log.html#definition-36",
   "type": "Definition",
   "number": "5.2.2",
   "title": "Principal value of the logarithm.",
@@ -5491,9 +5491,9 @@ var ptx_lunr_docs = [
   "body": "  Find the values of and .    By standard computations, we have .  The principal values are .   "
 },
 {
-  "id": "sec_complex-log-11",
+  "id": "example-93",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-11",
+  "url": "sec_complex-log.html#example-93",
   "type": "Example",
   "number": "5.2.4",
   "title": "",
@@ -5518,27 +5518,27 @@ var ptx_lunr_docs = [
   "body": "  The identity holds true iff .   "
 },
 {
-  "id": "sec_complex-log-17",
+  "id": "proof-33",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-17",
+  "url": "sec_complex-log.html#proof-33",
   "type": "Proof",
   "number": "5.2.1",
   "title": "",
   "body": " Suppose first that . By definition, . Because , it follows that (explain!), and so . The only if part is left as an exercise.  "
 },
 {
-  "id": "sec_complex-log-19",
+  "id": "theorem-39",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-19",
+  "url": "sec_complex-log.html#theorem-39",
   "type": "Theorem",
   "number": "5.2.7",
   "title": "",
   "body": "  Let and be nonzero complex numbers. The multivalued function obeys the familiar properties of logarithms: .   "
 },
 {
-  "id": "sec_complex-log-20",
+  "id": "proof-34",
   "level": "2",
-  "url": "sec_complex-log.html#sec_complex-log-20",
+  "url": "sec_complex-log.html#proof-34",
   "type": "Proof",
   "number": "5.2.2",
   "title": "",
@@ -5563,9 +5563,9 @@ var ptx_lunr_docs = [
   "body": " The Riemann surface for mapping   "
 },
 {
-  "id": "exercises_complex-log-2",
+  "id": "exercise-306",
   "level": "2",
-  "url": "sec_complex-log.html#exercises_complex-log-2",
+  "url": "sec_complex-log.html#exercise-306",
   "type": "Exercise",
   "number": "5.2.1",
   "title": "",
@@ -5662,9 +5662,9 @@ var ptx_lunr_docs = [
   "body": " Construct branches of that are analytic at all points in the plane except at points on the following rays.   .  The function does the job. Explain why.    .   .  The function works. Explain why.   "
 },
 {
-  "id": "exercises_complex-log-13",
+  "id": "exercise-317",
   "level": "2",
-  "url": "sec_complex-log.html#exercises_complex-log-13",
+  "url": "sec_complex-log.html#exercise-317",
   "type": "Exercise",
   "number": "5.2.12",
   "title": "",
@@ -5707,9 +5707,9 @@ var ptx_lunr_docs = [
   "body": " Complex Exponents  In Section we indicated that it is possible to make sense out of expressions such as or without appealing to a number system beyond the framework of complex numbers. We now show how this is done by taking note of some rudimentary properties of the complex exponential and logarithm, and then using our imagination.  We begin by generalizing Identity . Equations and show that can be expressed as the set . We can easily show (left as an exercise) that, for , , where is any branch of the function . But this means that, for any , the identity holds true. Because denotes the set , we see that , for .  Next, note that Identity gives , where is any natural number, so that , for . With these preliminaries out of the way, we can now come up with a definition of a complex number raised to a complex power.   Complex exponent   Let be a complex number. We define as .    The right side of Equation is a set. This definition makes sense because, if both and are real numbers with , Equation gives the familiar (real) definition for , as the following example illustrates.    Use Equation to evaluate .    Calculating gives .  Thus is the set . The distinct values occur when . Plugging these values into Equation gives and . In other words, .    The expression is different from , as the former represents the set and the latter gives only one value, .  Because is multivalued, the function will, in general, be multivalued. If we want to focus on a single value for , we can do so via the function defined for by , which is called the principal branch of the multivalued function . Note that the principal branch of is obtained from Equation by replacing with the principal branch of the logarithm.    Find the principal values of and .   From Example  .  Identity yields the principal values of and : .   Note that the result of raising a complex number to a complex power may be a real number in a nontrivial way.    We now consider the possibilities that arise when we apply Equation .   Case(i) : Suppose that , where is an integer. Then, if , . Recalling that the complex exponential function has period , we have , which is the single-valued th power of that we discussed in Section .   Case(ii): If , where is an integer, and , then . Hence, Equation becomes .  When we again use the periodicity of the complex exponential function, Equation gives distance values corresponding to .  Therefore, as Example illustrated, the fractional power is the multivalued th root function.   Case(iii): If and are positive integers that have no common factors and , then Equation becomes . Again, there are distance values that correspond with .   Case(iv): If is not a rational number, then there are infinitely many values for , provided .    The values of are , where is an integer. The principal value of is      Figure shows the terms for this multivalued expression corresponding to .  They exhibit a spiral pattern that is often present in complex powers.   Some of the values of    Some of the rules for exponents carry over from the real case. In the exercises we ask you to show that if and are complex numbers and , then , where is an integer.  The following example shows that Identity does not hold if is replaced with an arbitrary complex value.     Since these sets of solutions are not equal, Identity does not always hold.    We can compute the derivative of the principal branch of , which is the function . By the chain rule, .  If we restrict to the principal branch, , then Equation can be written in the familiar form that you learned in calculus. That is, for and not a negative real number,   We can use Identity to define the exponential function with base , where is a complex number:   If we specify a branch of the logarithm, then will be single-valued and we can use the rules of differentiation to show that the resulting branch of is an analytic function. The derivative of is then given by the familiar rule , where is any branch of the logarithm whose branch cut does not include the point .   Exercises   Find the principal value of   .   .    .   .   .    .    Find all values of   .   .   .   .   .   .    Show that, if , then has a unique value.   Note that . This set amounts to the single element zero. Thus, for .    For , show that the principal branch of   is given by the equation , where and .   ( a real number) is given by the equation , where and .    Let for Show that the sequence is a solution to the difference equation for .    . This last expression simplifies to . Now, . Since \\mathrm{Log} is a one-to-one function, the problem is solved by showing . Use properties of the logarithm to do this.    Verify the following identities:  Identity .  Identity .  Identity .  Identity .  Identity .    Does raised to any power always equal ? Why or why not?   No. , where is an integer.    Construct an example that shows that the principal value of need not equal the product of the principal values of and .    If is a complex number, the expression may be multivalued. Suppose all the values of are identical. What are these values, and what can be said about the number ? Justify your assertions.   The number must be real, and .    "
 },
 {
-  "id": "sec_complex-exponents-5",
+  "id": "definition-37",
   "level": "2",
-  "url": "sec_complex-exponents.html#sec_complex-exponents-5",
+  "url": "sec_complex-exponents.html#definition-37",
   "type": "Definition",
   "number": "5.3.1",
   "title": "Complex exponent.",
@@ -5725,18 +5725,18 @@ var ptx_lunr_docs = [
   "body": "  Use Equation to evaluate .    Calculating gives .  Thus is the set . The distinct values occur when . Plugging these values into Equation gives and . In other words, .   "
 },
 {
-  "id": "sec_complex-exponents-10",
+  "id": "example-96",
   "level": "2",
-  "url": "sec_complex-exponents.html#sec_complex-exponents-10",
+  "url": "sec_complex-exponents.html#example-96",
   "type": "Example",
   "number": "5.3.3",
   "title": "",
   "body": "  Find the principal values of and .   From Example  .  Identity yields the principal values of and : .   Note that the result of raising a complex number to a complex power may be a real number in a nontrivial way.   "
 },
 {
-  "id": "sec_complex-exponents-18",
+  "id": "example-97",
   "level": "2",
-  "url": "sec_complex-exponents.html#sec_complex-exponents-18",
+  "url": "sec_complex-exponents.html#example-97",
   "type": "Example",
   "number": "5.3.4",
   "title": "",
@@ -5752,9 +5752,9 @@ var ptx_lunr_docs = [
   "body": " Some of the values of   "
 },
 {
-  "id": "sec_complex-exponents-24",
+  "id": "example-98",
   "level": "2",
-  "url": "sec_complex-exponents.html#sec_complex-exponents-24",
+  "url": "sec_complex-exponents.html#example-98",
   "type": "Example",
   "number": "5.3.6",
   "title": "",
@@ -5869,18 +5869,18 @@ var ptx_lunr_docs = [
   "body": " Other Trigonometric functions     "
 },
 {
-  "id": "sec_trig-hyperbolics-7",
+  "id": "theorem-40",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#sec_trig-hyperbolics-7",
+  "url": "sec_trig-hyperbolics.html#theorem-40",
   "type": "Theorem",
   "number": "5.4.3",
   "title": "",
   "body": "   and are entire functions, with and .   "
 },
 {
-  "id": "sec_trig-hyperbolics-8",
+  "id": "proof-35",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#sec_trig-hyperbolics-8",
+  "url": "sec_trig-hyperbolics.html#proof-35",
   "type": "Proof",
   "number": "5.4.1",
   "title": "",
@@ -5896,9 +5896,9 @@ var ptx_lunr_docs = [
   "body": " Vertical segments mapped onto hyperbolas by   "
 },
 {
-  "id": "sec_trig-hyperbolics-22",
+  "id": "example-99",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#sec_trig-hyperbolics-22",
+  "url": "sec_trig-hyperbolics.html#example-99",
   "type": "Example",
   "number": "5.4.5",
   "title": "",
@@ -5914,18 +5914,18 @@ var ptx_lunr_docs = [
   "body": " Vertical segments mapped onto circular arcs by   "
 },
 {
-  "id": "sec_trig-hyperbolics-29",
+  "id": "definition-40",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#sec_trig-hyperbolics-29",
+  "url": "sec_trig-hyperbolics.html#definition-40",
   "type": "Definition",
   "number": "5.4.7",
   "title": "$\\mathbf{\\cosh} z$ and $\\sinh z$.",
   "body": " $\\mathbf{\\cosh} z$ and $\\sinh z$     "
 },
 {
-  "id": "sec_trig-hyperbolics-31",
+  "id": "definition-41",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#sec_trig-hyperbolics-31",
+  "url": "sec_trig-hyperbolics.html#definition-41",
   "type": "Definition",
   "number": "5.4.8",
   "title": "Complex hyperbolic functions.",
@@ -5950,9 +5950,9 @@ var ptx_lunr_docs = [
   "body": " Establish that for all .    . Explain why the index begins at 1 in the last expression. The result follows from simplification and reindexing.  "
 },
 {
-  "id": "exercises_trig-hyperbolics-3",
+  "id": "exercise-331",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#exercises_trig-hyperbolics-3",
+  "url": "sec_trig-hyperbolics.html#exercise-331",
   "type": "Exercise",
   "number": "5.4.2",
   "title": "",
@@ -6040,9 +6040,9 @@ var ptx_lunr_docs = [
   "body": " Show that the zeros of are at where is an integer.   By Identity , , if and only if . Equate real and imaginary parts to show this occurs iff , where is an integer.  "
 },
 {
-  "id": "exercises_trig-hyperbolics-13",
+  "id": "exercise-341",
   "level": "2",
-  "url": "sec_trig-hyperbolics.html#exercises_trig-hyperbolics-13",
+  "url": "sec_trig-hyperbolics.html#exercise-341",
   "type": "Exercise",
   "number": "5.4.12",
   "title": "",
@@ -6121,27 +6121,27 @@ var ptx_lunr_docs = [
   "body": " A rectangular grid is mapped onto a spider web by   "
 },
 {
-  "id": "sec_inverse-trig-hyperbolics-9",
+  "id": "example-100",
   "level": "2",
-  "url": "sec_inverse-trig-hyperbolics.html#sec_inverse-trig-hyperbolics-9",
+  "url": "sec_inverse-trig-hyperbolics.html#example-100",
   "type": "Example",
   "number": "5.5.2",
   "title": "",
   "body": "  The values of are given by .  Using straightforward techniques, we simplify this equation and obtain   We observe that and then write    "
 },
 {
-  "id": "sec_inverse-trig-hyperbolics-10",
+  "id": "example-101",
   "level": "2",
-  "url": "sec_inverse-trig-hyperbolics.html#sec_inverse-trig-hyperbolics-10",
+  "url": "sec_inverse-trig-hyperbolics.html#example-101",
   "type": "Example",
   "number": "5.5.3",
   "title": "",
   "body": "  Suppose that we make specific choices in Equation by selecting as the value of the square root and using the principal value of the logarithm. With , The result is , and the corresponding value of the derivative is given by    "
 },
 {
-  "id": "sec_inverse-trig-hyperbolics-14",
+  "id": "example-102",
   "level": "2",
-  "url": "sec_inverse-trig-hyperbolics.html#sec_inverse-trig-hyperbolics-14",
+  "url": "sec_inverse-trig-hyperbolics.html#example-102",
   "type": "Example",
   "number": "5.5.4",
   "title": "",
@@ -6175,18 +6175,18 @@ var ptx_lunr_docs = [
   "body": " Complex Integrals  We introduce the integral of a complex function by defining the integral of a complex-valued function of a real variable.   Integral of $f(t)$   Let , where and are real-valued functions of the real variable for . Then .    We generally evaluate integrals of this type by finding the antiderivatives of and and evaluating the definite integrals on the right side of Equation . That is, if , and , for , we have .    Show that .    We write the integrand in terms of its real and imaginary parts, i.e. , . Here, and . The integrals of and are .  Hence, by Definition ,       Show that .    We use the method suggested by Definitions and . .  We can evaluate each of the integrals via integration by parts. For example, .  Adding to both sides of this equation and then dividing by 2 gives . A similar computation procedure yields . Therefore,     Complex integrals have properties that are similar to those of real integrals. We now trace through several commonalities. Let and be continuous on .   Using Definition , we can easily show that the integral of their sum is the sum of their integrals, that is .    If we divide the interval into and and integrate over these subintervals by using Definition , then we get .    Similarly, if denotes a complex constant, then .    If the limits of integration are reversed, then .    The integral of the product becomes .       Let us verify Property . We start by writing . Using Definition , we write the left side of Equation as . which is equivalent to     It is worthwhile to point out the similarity between Equation and its counterpart in calculus. Suppose that and are differentiable on and . Since , Equation takes on the familiar form . where . We can view Equation as an extension of the fundamental theorem of calculus. In Section we show how to generalize this extension to analytic functions of a complex variable. For now, we simply note an important case of Equation : .    Use Equation to show that     We seek a function with the property that . We note that satisfies this requirement, so , which is the same result we obtained in Example , but with a lot less work!      Example illustrates the potential computational advantage we have when we lift our sights to the complex domain. Using ordinary Calculus techniques to evaluate , for example, would require a lengthy integration by parts procedure. When we recognize this expression as the real part of , however, the solution comes quickly. This is just one of the many reasons why good physicists and engineers, in addition to mathematicians, benefit from a thorough working knowledge of complex analysis.    Exercises   Use Equations and to find   .   .    .   .   .    .   .   .     Let and be integers. Show that     Show that provided .   Using Equation we get . Show that implies this last limit equals zero.    Establish the following identities .  Identity .  Identity .  Identity .  Identity .    Let , where and are differentiable. Show that    This follows from Equation , and the fact that if and are differentiable, then is differentiable, and .    Use integration by parts to verify that . \\label {6.1.6}    "
 },
 {
-  "id": "sec_complex-integrals-3",
+  "id": "definition-42",
   "level": "2",
-  "url": "sec_complex-integrals.html#sec_complex-integrals-3",
+  "url": "sec_complex-integrals.html#definition-42",
   "type": "Definition",
   "number": "6.1.1",
   "title": "Integral of $f(t)$.",
   "body": " Integral of $f(t)$   Let , where and are real-valued functions of the real variable for . Then .   "
 },
 {
-  "id": "sec_complex-integrals-5",
+  "id": "example-103",
   "level": "2",
-  "url": "sec_complex-integrals.html#sec_complex-integrals-5",
+  "url": "sec_complex-integrals.html#example-103",
   "type": "Example",
   "number": "6.1.2",
   "title": "",
@@ -6202,9 +6202,9 @@ var ptx_lunr_docs = [
   "body": "  Show that .    We use the method suggested by Definitions and . .  We can evaluate each of the integrals via integration by parts. For example, .  Adding to both sides of this equation and then dividing by 2 gives . A similar computation procedure yields . Therefore,    "
 },
 {
-  "id": "sec_complex-integrals-8",
+  "id": "example-105",
   "level": "2",
-  "url": "sec_complex-integrals.html#sec_complex-integrals-8",
+  "url": "sec_complex-integrals.html#example-105",
   "type": "Example",
   "number": "6.1.4",
   "title": "",
@@ -6265,18 +6265,18 @@ var ptx_lunr_docs = [
   "body": " Establish the following identities .  Identity .  Identity .  Identity .  Identity .  "
 },
 {
-  "id": "exercises_complex-integrals-6",
+  "id": "exercise-354",
   "level": "2",
-  "url": "sec_complex-integrals.html#exercises_complex-integrals-6",
+  "url": "sec_complex-integrals.html#exercise-354",
   "type": "Exercise",
   "number": "6.1.5",
   "title": "",
   "body": " Let , where and are differentiable. Show that    This follows from Equation , and the fact that if and are differentiable, then is differentiable, and .  "
 },
 {
-  "id": "exercises_complex-integrals-7",
+  "id": "exercise-355",
   "level": "2",
-  "url": "sec_complex-integrals.html#exercises_complex-integrals-7",
+  "url": "sec_complex-integrals.html#exercise-355",
   "type": "Exercise",
   "number": "6.1.6",
   "title": "",
@@ -6319,9 +6319,9 @@ var ptx_lunr_docs = [
   "body": " The curve and its opposite curve   "
 },
 {
-  "id": "sec_contour-integrals-15",
+  "id": "example-107",
   "level": "2",
-  "url": "sec_contour-integrals.html#sec_contour-integrals-15",
+  "url": "sec_contour-integrals.html#example-107",
   "type": "Example",
   "number": "6.2.4",
   "title": "",
@@ -6418,18 +6418,18 @@ var ptx_lunr_docs = [
   "body": "  Show that . where is the semicircular path from to 1 and is the polygonal path from to 1, respectively, shown in Figure .   Two contours and joining to 1      We parametrize the semicircle as . Applying Theorem , we have , so .  We parametrize in three parts, one for each line segment: . where in each case. We get our answer by adding the three integrals along the three segments: . Separating the right side of this equation into its real and imaginary parts gives . Note that the value of the contour integral along isn't the same as the value of the contour integral along , although both integrals have the same initial and terminal points.   "
 },
 {
-  "id": "sec_contour-integrals-49",
+  "id": "theorem-42",
   "level": "2",
-  "url": "sec_contour-integrals.html#sec_contour-integrals-49",
+  "url": "sec_contour-integrals.html#theorem-42",
   "type": "Theorem",
   "number": "6.2.18",
   "title": "Absolute value inequality.",
   "body": " Absolute value inequality   If is a continuous function of the real parameter , then .   "
 },
 {
-  "id": "sec_contour-integrals-50",
+  "id": "proof-36",
   "level": "2",
-  "url": "sec_contour-integrals.html#sec_contour-integrals-50",
+  "url": "sec_contour-integrals.html#proof-36",
   "type": "Proof",
   "number": "6.2.1",
   "title": "",
@@ -6445,9 +6445,9 @@ var ptx_lunr_docs = [
   "body": " ML inequality   If is continuous on the contour , then , where is the length of the contour and is an upper bound for the modulus on ; that is, for all .   "
 },
 {
-  "id": "sec_contour-integrals-52",
+  "id": "proof-37",
   "level": "2",
-  "url": "sec_contour-integrals.html#sec_contour-integrals-52",
+  "url": "sec_contour-integrals.html#proof-37",
   "type": "Proof",
   "number": "6.2.2",
   "title": "",
@@ -6688,9 +6688,9 @@ var ptx_lunr_docs = [
   "body": " Green's theorem   Let be a simple closed contour with positive orientation and let be the domain that forms the interior of . If and are continuous and have continuous partial derivatives , and at all points on and then .   "
 },
 {
-  "id": "sec_cauchy-goursat-11",
+  "id": "proof-38",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-11",
+  "url": "sec_cauchy-goursat.html#proof-38",
   "type": "Proof",
   "number": "6.3.1",
   "title": "",
@@ -6706,36 +6706,36 @@ var ptx_lunr_docs = [
   "body": " Cauchy-Goursat theorem   Let be analytic in a simply connected domain . If is a simple closed contour that lies in , then .   "
 },
 {
-  "id": "sec_cauchy-goursat-15",
+  "id": "proof-39",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-15",
+  "url": "sec_cauchy-goursat.html#proof-39",
   "type": "Proof",
   "number": "6.3.2",
   "title": "",
   "body": " (Cauchy 's proof of Theorem .) If we suppose that is continuous, then with oriented positively we use Equation to write .  If we use Green's theorem on the real part of the right side of Equation (with and , we obtain , where is the region that is the interior of . If we use Green's theorem on the imaginary part, we get .  If we use the Cauchy-Riemann equations and in Equations and , Equation becomes , which completes the proof.  "
 },
 {
-  "id": "sec_cauchy-goursat-17",
+  "id": "proof-40",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-17",
+  "url": "sec_cauchy-goursat.html#proof-40",
   "type": "Proof",
   "number": "6.3.3",
   "title": "",
   "body": " We first establish the result for a triangular contour with positive orientation. We then construct four positively oriented contours , , , and that are the triangles obtained by joining the midpoints of the sides of , as Figure shows.   The triangular contours and , , , and    Each contour is positively oriented, so if we sum the integrals along the four triangular contours, the integrals along the segments interior to cancel out in pairs, giving .  Let be selected from , , , and so that the following holds:   Proceeding inductively, we carry out a similar subdivision process to obtain a sequence of triangular contours , where the interior of lies in the interior of and the following inequality holds:   We let denote the closed region that consists of and its interior. The length of the sides of go to zero as , so there exists a unique point that belongs to all the closed triangular regions . Since is simply connected, , so is analytic at the point . Thus, there exists a function such that .  Using Equation and integrating along , we get .  Since , we know that given , we can find such that , where is the length of the original contour . We can now choose an integer so that lies in the neighborhood , as shown in Figure 6.21.   The contour that lies in the neighborhood    Since the distance between any point on a triangle and a point interior to the triangle is less than half the perimeter of the triangle, it follows that , where is the length of the triangle . From the preceding construction process, it follows that .  We can use Equations , , and and Theorem to conclude .  Because was arbitrary, it follows that our theorem holds for the triangular contour . If is a polygonal contour, then we can add interior edges until the interior is subdivided into a finite number of triangles. The integral around each triangle is zero, and the sum of all these integrals equals the integral around the polygonal contour . Therefore our theorem also holds for polygonal contours. The proof for an arbitrary simple closed contour is established by approximating the contour sufficiently close with a polygonal contour. We omit the details of this last step.  "
 },
 {
-  "id": "sec_cauchy-goursat-18",
+  "id": "example-114",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-18",
+  "url": "sec_cauchy-goursat.html#example-114",
   "type": "Example",
   "number": "6.3.10",
   "title": "",
   "body": "  Recall that , , and (where is a positive integer) are all entire functions. The Cauchy-Goursat theorem implies that, for any simple closed contour, .   "
 },
 {
-  "id": "sec_cauchy-goursat-19",
+  "id": "example-115",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-19",
+  "url": "sec_cauchy-goursat.html#example-115",
   "type": "Example",
   "number": "6.3.11",
   "title": "",
@@ -6760,9 +6760,9 @@ var ptx_lunr_docs = [
   "body": " The domain that contains the simple closed contours and and the region between them   "
 },
 {
-  "id": "sec_cauchy-goursat-23",
+  "id": "proof-41",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-23",
+  "url": "sec_cauchy-goursat.html#proof-41",
   "type": "Proof",
   "number": "6.3.4",
   "title": "",
@@ -6778,9 +6778,9 @@ var ptx_lunr_docs = [
   "body": "  Let denote a fixed complex value. If is a simple closed contour with positive orientation such that lies interior to , then , where is any integer except .   "
 },
 {
-  "id": "sec_cauchy-goursat-26",
+  "id": "proof-42",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-26",
+  "url": "sec_cauchy-goursat.html#proof-42",
   "type": "Proof",
   "number": "6.3.5",
   "title": "",
@@ -6805,18 +6805,18 @@ var ptx_lunr_docs = [
   "body": " The multiply connected domain and the contours and in the statement of the extended Cauchy-Goursat theorem   "
 },
 {
-  "id": "sec_cauchy-goursat-31",
+  "id": "example-116",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-31",
+  "url": "sec_cauchy-goursat.html#example-116",
   "type": "Example",
   "number": "6.3.20",
   "title": "",
   "body": "  Show that .    Recall that is the circle with positive orientation. Using partial fraction decomposition gives  .  The points lie interior to , so Corollary implies that . Substituting these values into Equation yields    "
 },
 {
-  "id": "sec_cauchy-goursat-32",
+  "id": "example-117",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#sec_cauchy-goursat-32",
+  "url": "sec_cauchy-goursat.html#example-117",
   "type": "Example",
   "number": "6.3.21",
   "title": "",
@@ -6859,9 +6859,9 @@ var ptx_lunr_docs = [
   "body": " Show that .   By the quadratic formula (see Theorem ), when (verify). Since both these points lie outside , the function is analytic inside , so by the Cauchy-Goursat Theorem.  "
 },
 {
-  "id": "exercises_cauchy-goursat-5",
+  "id": "exercise-379",
   "level": "2",
-  "url": "sec_cauchy-goursat.html#exercises_cauchy-goursat-5",
+  "url": "sec_cauchy-goursat.html#exercise-379",
   "type": "Exercise",
   "number": "6.3.4",
   "title": "",
@@ -6976,18 +6976,18 @@ var ptx_lunr_docs = [
   "body": " Indefinite integrals, or antiderivatives   Let be analytic in the simply connected domain . If is a fixed value in , and if is any contour in with initial point and terminal point , then the function is well-defined and analytic in , with its derivative given by .   "
 },
 {
-  "id": "sec_integration-theorems-4",
+  "id": "proof-43",
   "level": "2",
-  "url": "sec_integration-theorems.html#sec_integration-theorems-4",
+  "url": "sec_integration-theorems.html#proof-43",
   "type": "Proof",
   "number": "6.4.1",
   "title": "",
   "body": " We first establish that the integral is independent of the path of integration. This will show that the function is well-def i.e. , which in turn will justify the notation .  We let and be two contours in , both with initial point and terminal point , as shown in Figure .   The contours and joining to    Then is a simple closed contour, and the Cauchy-Goursat theorem implies that .  Therefore, the contour integral in Equation is independent of path. Here we have taken the liberty of drawing contours that intersect only at the endpoints. A slight modification of the proof shows that a finite number of other points of intersection are permitted.  We now show that . Let be held fixed, and let be chosen small enough so that the point also lies in the domain . Since is held fixed, , where is a constant, and Equation implies that .  Using the additive property of contours and the definition of given in Equation , we have . where the contour is the straight-line segment joining to , and and join to , and to , respectively, as shown in Figure .   The contours and and the line segment    Since is continuous at , for any there is a so that . If we require that and combine this last inequality with Equations and , and Theorem , we get .  Thus tends to 0 as , so .  "
 },
 {
-  "id": "sec_integration-theorems-5",
+  "id": "remark-12",
   "level": "2",
-  "url": "sec_integration-theorems.html#sec_integration-theorems-5",
+  "url": "sec_integration-theorems.html#remark-12",
   "type": "Remark",
   "number": "6.4.4",
   "title": "",
@@ -7003,27 +7003,27 @@ var ptx_lunr_docs = [
   "body": " Definite integrals   Let be analytic in a simply connected domain . If and are any two points in joined by a contour , then , where is any antiderivative of in .   "
 },
 {
-  "id": "sec_integration-theorems-8",
+  "id": "proof-44",
   "level": "2",
-  "url": "sec_integration-theorems.html#sec_integration-theorems-8",
+  "url": "sec_integration-theorems.html#proof-44",
   "type": "Proof",
   "number": "6.4.2",
   "title": "",
   "body": " If we choose to be the function defined by Formula , then Equation holds. If is any other antiderivative of in , then for all . Thus the function is analytic in , and , for all . Thus, by Theorem , this means , for all , where is some complex constant. Therefore , so , which establishes our theorem.  "
 },
 {
-  "id": "sec_integration-theorems-10",
+  "id": "example-119",
   "level": "2",
-  "url": "sec_integration-theorems.html#sec_integration-theorems-10",
+  "url": "sec_integration-theorems.html#example-119",
   "type": "Example",
   "number": "6.4.6",
   "title": "",
   "body": "  Show that , where is the principal branch of the square root function and is the line segment joining 4 to .    We showed in Chapter 3 that if , then , where the principal branch of the square root function is used in both the formulas for and . We note that is contained in the simply connected domain , which is the open disk of radius 4 centered at the midpoint of the segment . Since is analytic in , Theorem implies    "
 },
 {
-  "id": "sec_integration-theorems-11",
+  "id": "example-120",
   "level": "2",
-  "url": "sec_integration-theorems.html#sec_integration-theorems-11",
+  "url": "sec_integration-theorems.html#example-120",
   "type": "Example",
   "number": "6.4.7",
   "title": "",
@@ -7201,18 +7201,18 @@ var ptx_lunr_docs = [
   "body": " Let be the principal branch of the square root function.  Evaluate , where is the line segment joining to .   .   Evaluate , where is the right half of the circle joining to .  "
 },
 {
-  "id": "exercises_integration-theorems-20",
+  "id": "exercise-407",
   "level": "2",
-  "url": "sec_integration-theorems.html#exercises_integration-theorems-20",
+  "url": "sec_integration-theorems.html#exercise-407",
   "type": "Exercise",
   "number": "6.4.18",
   "title": "",
   "body": " Using partial fraction decomposition, show that if lies in the right half-plane and is the line segment joining to , then \\label {6.4.18}   "
 },
 {
-  "id": "exercises_integration-theorems-21",
+  "id": "exercise-408",
   "level": "2",
-  "url": "sec_integration-theorems.html#exercises_integration-theorems-21",
+  "url": "sec_integration-theorems.html#exercise-408",
   "type": "Exercise",
   "number": "6.4.19",
   "title": "",
@@ -7264,36 +7264,36 @@ var ptx_lunr_docs = [
   "body": " Cauchy 's integral formula   Let be analytic in the simply connected domain and let be a simple closed positively oriented contour that lies in . If is a point that lies interior to , then .   "
 },
 {
-  "id": "sec_integral-representations-4",
+  "id": "proof-45",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-4",
+  "url": "sec_integral-representations.html#proof-45",
   "type": "Proof",
   "number": "6.5.1",
   "title": "",
   "body": " Because is continuous at , if is given there is a such that the positively oriented circle lies interior to (as Figure shows) and such that .   The contours and in the proof of Cauchy 's integral formula    Since is a fixed value, we can use the result of Corollary to conclude that .  By the deformation of contour theorem ( Theorem ), .  Using Inequality and Equations and above, together with the ML inequality ( Theorem ), we obtain the estimate: .  This proves the theorem because can be made arbitrarily small.  "
 },
 {
-  "id": "sec_integral-representations-5",
+  "id": "example-123",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-5",
+  "url": "sec_integral-representations.html#example-123",
   "type": "Example",
   "number": "6.5.3",
   "title": "",
   "body": "  Show that .    Recall that is the circle centered at 0 with radius 2 and having positive orientation. We have and . The point lies interior to the circle, so Cauchy 's integral formula implies that . Multiplication by establishes the desired result.   "
 },
 {
-  "id": "sec_integral-representations-6",
+  "id": "example-124",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-6",
+  "url": "sec_integral-representations.html#example-124",
   "type": "Example",
   "number": "6.5.4",
   "title": "",
   "body": "  Show that .    Here we have . We manipulate the integral and use Cauchy 's integral formula to obtain .   "
 },
 {
-  "id": "sec_integral-representations-7",
+  "id": "example-125",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-7",
+  "url": "sec_integral-representations.html#example-125",
   "type": "Example",
   "number": "6.5.5",
   "title": "",
@@ -7318,27 +7318,27 @@ var ptx_lunr_docs = [
   "body": " Cauchy 's integral formulas for derivatives   Let be analytic in the simply connected domain and let be a simple closed positively oriented contour that lies in . If is a point that lies interior to C, then for any integer , .   "
 },
 {
-  "id": "sec_integral-representations-12",
+  "id": "proof-46",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-12",
+  "url": "sec_integral-representations.html#proof-46",
   "type": "Proof",
   "number": "6.5.2",
   "title": "",
   "body": " Because , the case for reduces to Theorem . We now establish the theorem for the case . We start by using the parametrization . We use Theorem and write .  The integrand on the right side of Equation is a function of the two variables and , where . Moreover, and are continuous on the interior of , which is an open set. Applying Leibniz's rule to Equations gives , and the proof for the case is complete. We can apply the same argument to the analytic function and show that its derivative is also represented by Equation for . The principle of mathematical induction establishes the theorem for all integers .  "
 },
 {
-  "id": "sec_integral-representations-13",
+  "id": "example-126",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-13",
+  "url": "sec_integral-representations.html#example-126",
   "type": "Example",
   "number": "6.5.8",
   "title": "",
   "body": "  Let denote a fixed complex value. Show that, if is a simple closed positively oriented contour such that lies interior to , then for any integer , .    We let . Then for . Theorem implies that the value of the first integral in Equations is . and Theorem further implies that .   "
 },
 {
-  "id": "sec_integral-representations-15",
+  "id": "example-127",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-15",
+  "url": "sec_integral-representations.html#example-127",
   "type": "Example",
   "number": "6.5.9",
   "title": "",
@@ -7354,18 +7354,18 @@ var ptx_lunr_docs = [
   "body": "  If is analytic in the domain , then, for integers , all derivatives exist for (and therefore are analytic in ).   "
 },
 {
-  "id": "sec_integral-representations-18",
+  "id": "proof-47",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-18",
+  "url": "sec_integral-representations.html#proof-47",
   "type": "Proof",
   "number": "6.5.3",
   "title": "",
   "body": " For each point in , there exists a closed disk that is contained in . We use the circle in Theorem to show that exists for all integers .  "
 },
 {
-  "id": "sec_integral-representations-19",
+  "id": "remark-13",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-19",
+  "url": "sec_integral-representations.html#remark-13",
   "type": "Remark",
   "number": "6.5.11",
   "title": "",
@@ -7381,9 +7381,9 @@ var ptx_lunr_docs = [
   "body": "  If is a harmonic function at each point in the domain , then all partial derivatives , and exist and are harmonic functions.   "
 },
 {
-  "id": "sec_integral-representations-21",
+  "id": "proof-48",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-21",
+  "url": "sec_integral-representations.html#proof-48",
   "type": "Proof",
   "number": "6.5.4",
   "title": "",
@@ -7453,9 +7453,9 @@ var ptx_lunr_docs = [
   "body": " Evaluate .    .  "
 },
 {
-  "id": "exercises_integral-representations-10",
+  "id": "exercise-419",
   "level": "2",
-  "url": "sec_integral-representations.html#exercises_integral-representations-10",
+  "url": "sec_integral-representations.html#exercise-419",
   "type": "Exercise",
   "number": "6.5.8",
   "title": "",
@@ -7534,18 +7534,18 @@ var ptx_lunr_docs = [
   "body": " Let . Evaluate , where is a positive integer.  "
 },
 {
-  "id": "exercises_integral-representations-19",
+  "id": "exercise-428",
   "level": "2",
-  "url": "sec_integral-representations.html#exercises_integral-representations-19",
+  "url": "sec_integral-representations.html#exercise-428",
   "type": "Exercise",
   "number": "6.5.17",
   "title": "",
   "body": " Let and be two complex numbers that lie interior to the simple closed contour with positive orientation. Evaluate .    .  "
 },
 {
-  "id": "exercises_integral-representations-20",
+  "id": "exercise-429",
   "level": "2",
-  "url": "sec_integral-representations.html#exercises_integral-representations-20",
+  "url": "sec_integral-representations.html#exercise-429",
   "type": "Exercise",
   "number": "6.5.18",
   "title": "",
@@ -7588,9 +7588,9 @@ var ptx_lunr_docs = [
   "body": " Morera's theorem   Let be a continuous function in a simply connected domain . If for every closed contour in , then is analytic in .   "
 },
 {
-  "id": "sec_morera-liouville-4",
+  "id": "proof-49",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-4",
+  "url": "sec_morera-liouville.html#proof-49",
   "type": "Proof",
   "number": "6.6.1",
   "title": "",
@@ -7606,9 +7606,9 @@ var ptx_lunr_docs = [
   "body": " Gauss's mean value theorem   If is analytic in a simply connected domain that contains the circle , then    "
 },
 {
-  "id": "sec_morera-liouville-7",
+  "id": "proof-50",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-7",
+  "url": "sec_morera-liouville.html#proof-50",
   "type": "Proof",
   "number": "6.6.2",
   "title": "",
@@ -7624,9 +7624,9 @@ var ptx_lunr_docs = [
   "body": " Maximum modulus principle   Let be analytic and nonconstant in the domain . Then does not attain a maximum value at any point in .   "
 },
 {
-  "id": "sec_morera-liouville-10",
+  "id": "proof-51",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-10",
+  "url": "sec_morera-liouville.html#proof-51",
   "type": "Proof",
   "number": "6.6.3",
   "title": "",
@@ -7642,9 +7642,9 @@ var ptx_lunr_docs = [
   "body": " Maximum modulus principle   Let be analytic and nonconstant in the bounded domain . If is continuous on the closed region that consists of and all its boundary points , then assumes its maximum value, and does so only at point(s ) on the boundary .   "
 },
 {
-  "id": "sec_morera-liouville-13",
+  "id": "example-128",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-13",
+  "url": "sec_morera-liouville.html#example-128",
   "type": "Example",
   "number": "6.6.6",
   "title": "",
@@ -7660,9 +7660,9 @@ var ptx_lunr_docs = [
   "body": " Cauchy 's inequalities   Let be analytic in the simply connected domain that contains the circle . If holds for all points , then .   "
 },
 {
-  "id": "sec_morera-liouville-15",
+  "id": "proof-52",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-15",
+  "url": "sec_morera-liouville.html#proof-52",
   "type": "Proof",
   "number": "6.6.4",
   "title": "",
@@ -7678,18 +7678,18 @@ var ptx_lunr_docs = [
   "body": " Liouville's theorem   If is an entire function and is bounded for all values of in the complex plane, then is constant.   "
 },
 {
-  "id": "sec_morera-liouville-18",
+  "id": "proof-53",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-18",
+  "url": "sec_morera-liouville.html#proof-53",
   "type": "Proof",
   "number": "6.6.5",
   "title": "",
   "body": " Suppose that holds for all values of , and let denote an arbitrary point. Using the circle and Cauchy 's Inequality with yields . Because can be arbitrarily large we must have . But was arbitrary, so for all . If the derivative of an analytic function is zero for all , then by Theorem the function must be constant. Therefore, is constant.  "
 },
 {
-  "id": "sec_morera-liouville-19",
+  "id": "example-129",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-19",
+  "url": "sec_morera-liouville.html#example-129",
   "type": "Example",
   "number": "6.6.9",
   "title": "",
@@ -7705,18 +7705,18 @@ var ptx_lunr_docs = [
   "body": " The fundamental theorem of algebra   If is a polynomial of degree , then has at least one zero.   "
 },
 {
-  "id": "sec_morera-liouville-22",
+  "id": "proof-54",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-22",
+  "url": "sec_morera-liouville.html#proof-54",
   "type": "Proof",
   "number": "6.6.6",
   "title": "",
   "body": " (By contraposition): We will show that if for all , then the degree of must be zero. Suppose that for all . This supposition implies that the function is an entire function. Our strategy for the rest of the proof is as follows: We will show that is bounded. Then Liouville's theorem will imply that is constant, and since , this conclusion will imply that the polynomial is constant, which will mean that its degree must be zero.  First we write and consider the equation .  For , as , so . Combining this result with Equation gives . In particular, we can find a value of such that .  If , we have . which is a continuous function of the two real variables and . A result from calculus regarding real functions says that a continuous function on a closed and bounded set is bounded. Hence is a bounded function on the closed disk . Thus there exists a positive real number such that . Combining this with Inequality gives , where . By Liouville's theorem, is constant, so that the degree of is zero. This observation completes the argument.  "
 },
 {
-  "id": "sec_morera-liouville-23",
+  "id": "corollary-7",
   "level": "2",
-  "url": "sec_morera-liouville.html#sec_morera-liouville-23",
+  "url": "sec_morera-liouville.html#corollary-7",
   "type": "Corollary",
   "number": "6.6.11",
   "title": "",
@@ -7750,9 +7750,9 @@ var ptx_lunr_docs = [
   "body": " Show that is not a bounded function.   We know that the complex cosine is an entire function that is not a constant. By Liouville's Theorem, it is not bounded.  "
 },
 {
-  "id": "exercises_morera-liouville-5",
+  "id": "exercise-435",
   "level": "2",
-  "url": "sec_morera-liouville.html#exercises_morera-liouville-5",
+  "url": "sec_morera-liouville.html#exercise-435",
   "type": "Exercise",
   "number": "6.6.4",
   "title": "",
@@ -7840,9 +7840,9 @@ var ptx_lunr_docs = [
   "body": " Uniform Convergence  Complex functions are the key to unlocking many of the mysteries encountered when power series are first introduced in a calculus course. We begin by discussing an important property associated with power series uniform convergence.  Recall that, for a function defined on a set , the sequence o f functions converges to at the point , provided . Thus, for the particular point , we know that for each , there exists a positive integer (depending on both and ) such that .  If is the th partial sum of the series , Statement becomes . For a given value of , the integer needed to satisfy Statement often depends on our choice of . This is not the case if the sequence converges uniformly. For a uniformly convergent sequence, it is possible to find an integer (depending only on ) that guarantees Statement no matter what value for we pick. In other words, if is large enough, the function is uniformly close to the function for all . Formally, we have the following definition.   Uniform convergence   The sequence converges uniformly to on the set if for every , there exists a positive integer (depending only on ) such that .  If is the th partial sum of the series , we say that the series converges uniformly to on the set .      The sequence converges uniformly to the function on the entire complex plane because for any , Statement is satisfied for all for , where is any integer greater than . We leave the details of showing this result as an exercise.    A good example of a sequence of functions that does not converge uniformly is the sequence of partial sums forming the geometric series. Recall that the geometric series has converging to for . Because the real numbers are a subset of the complex numbers, we can show that Statement is not satisfied by demonstrating that it does not hold when we restrict our attention to the real numbers. In that context, becomes the open interval , and the inequality becomes , which for real variables is equivalent to the inequality . If Statement were to be satisfied, then given would be within an -bandwidth of  for all  in the interval provided were large enough. Figure illustrates that there is an such that, no matter how large is, we can find with the property that lies outside this bandwidth. In other words, Figure illustrates the negation of Statement , which in technical terms we state as: .   The geometric series does not converge uniformly on    In the exercises, we ask you to use Statement to show that the partial sums of the geometric series do not converge uniformly to for .  A useful procedure known as the Weierstrass -test can help determine whether an infinite series is uniformly convergent.   Weierstrass $M$-test   Suppose that the infinite series has the property that for each , for all . If converges, then converges uniformly on .     Let be the th partial sum of the series. Note that, If , then . Because the series converges, we can make the last expression as small as we want to by choosing a large enough . Thus, for , there is a positive integer such that if , , then . But this means that for all is a Cauchy sequence. According to Theorem , this sequence must converge to a number, which we might as well designate by . That is, . This observation gives us a function to which the series converges. However, we still must show that the convergence is uniform. Let be given. Again, since converges, there exists such that if , then . Thus, if and , then , which completes the argument.    Theorem gives an interesting application of the Weierstrass -test.    Suppose that the power series has radius of convergence . Then for each , , the series converges uniformly on the closed disk , where (by way of reminder) .     Given , with , choose such that . The proof of Theorem part ( ii ) reveals that converges absolutely for , from which it follows that converges. Moreover, for all , . The conclusion follows from the Weierstrass -test with .   An immediate consequence of Theorem is Corollary .    For each , the geometric series converges uniformly on the closed disk .    The following theorem gives important properties of uniformly convergent sequences.    Suppose that is a sequence of continuous functions defined on a set containing the contour . If converges uniformly to on the set , then   i   is continuous on , and    ii   .        Given , we must prove . Let be given. Since converges uniformly to on , there exists a positive integer such that for all whenever . And, as is continuous at , there exists such that if , then . Hence, if , we have , which completes part ( i ).  To prove part ( ii ), let be given and let be the length of the contour . Because converges uniformly to on , there exists a positive integer such that, if , then for all . Because is contained in , if , and we can use the ML inequality ( Theorem ) to get .     If the series converges uniformly to on the set and is a contour contained in , then       Show that , for all .    For , we choose and so that , thus ensuring that and that . By Corollary , the geometric series converges uniformly to on . If is any contour contained in , Corollary gives .  Clearly, the function is analytic in the simply connected domain , and Log is an antiderivative of for all , where Log is the principal branch of the logarithm. Likewise, is analytic in the simply connected domain , and is an antiderivative of for all . Hence, if is the straight-line segment joining to , we can apply Theorem to Equation to get , which becomes . The point was arbitrary, so the solution is complete.     Exercises   This exercise relates to Figure .  For near , is the graph of above or below ? Explain.  By definition, . It appears from the graph that the value of the upper function is approximately 1 (certainly larger than ), so the graph of must be above the graph of .   Is the index in odd or even? Explain.  Assuming that the graph is accurate to scale, what is the value of in ? Explain.  From the graph, we approximate . As , we deduce that . Explain.     Complete the details to verify the claim of Example. .    Prove that the following series converge uniformly on the sets indicated.   on   We see that for . By the Weierstrass M-test, the series converges uniformly on , because the series converges.    on    on , where .    Show that does not converge uniformly to on the set by appealing to Statement . \\hint{Given and a positive integer , let .}    Why can't we use the arguments of Theorem to prove that the geometric series converges uniformly on all of ?   The crucial step in the theorem is the statement, Moreover, for all it is clear that . If we allowed , we would not be able to claim that converges. Explain.    By starting with the series for the complex cosine given in Section , choose an appropriate contour and use the method in Example to obtain the series for the complex sine.    Suppose that the sequences of functions and converge uniformly on the set .  Show that the sequence converges uniformly on .  Let us say that and converge uniformly on to and respectively. Let be given. The uniform convergence of means there exists an integer such that implies for all . Likewise, there exists an integer such that implies for all . If we set , then for for all .   Show by example that it is not necessarily the case that converges uniformly on .  For all , let , and , for all , where is the real numbers. Then converges uniformly to , and converges uniformly to (verify). However, even though converges to (explain), the convergence is not uniform (verify). Can you come up with a different example?     On what portion of does the sequence converge, and on what portion does it converge uniformly?    Consider the function , where .  Show that converges uniformly on .  For . Since , we know , so . Thus, with , we see that converges uniformly on by the Weierstrass -test.   Let be a closed disk contained in . Show that converges uniformly on .    "
 },
 {
-  "id": "sec_uniform-convergence-5",
+  "id": "definition-44",
   "level": "2",
-  "url": "sec_uniform-convergence.html#sec_uniform-convergence-5",
+  "url": "sec_uniform-convergence.html#definition-44",
   "type": "Definition",
   "number": "7.1.1",
   "title": "Uniform convergence.",
@@ -7867,18 +7867,18 @@ var ptx_lunr_docs = [
   "body": " The geometric series does not converge uniformly on   "
 },
 {
-  "id": "sec_uniform-convergence-11",
+  "id": "theorem-60",
   "level": "2",
-  "url": "sec_uniform-convergence.html#sec_uniform-convergence-11",
+  "url": "sec_uniform-convergence.html#theorem-60",
   "type": "Theorem",
   "number": "7.1.4",
   "title": "Weierstrass $M$-test.",
   "body": " Weierstrass $M$-test   Suppose that the infinite series has the property that for each , for all . If converges, then converges uniformly on .   "
 },
 {
-  "id": "sec_uniform-convergence-12",
+  "id": "proof-55",
   "level": "2",
-  "url": "sec_uniform-convergence.html#sec_uniform-convergence-12",
+  "url": "sec_uniform-convergence.html#proof-55",
   "type": "Proof",
   "number": "7.1.1",
   "title": "",
@@ -7894,9 +7894,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that the power series has radius of convergence . Then for each , , the series converges uniformly on the closed disk , where (by way of reminder) .   "
 },
 {
-  "id": "sec_uniform-convergence-15",
+  "id": "proof-56",
   "level": "2",
-  "url": "sec_uniform-convergence.html#sec_uniform-convergence-15",
+  "url": "sec_uniform-convergence.html#proof-56",
   "type": "Proof",
   "number": "7.1.2",
   "title": "",
@@ -7921,9 +7921,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is a sequence of continuous functions defined on a set containing the contour . If converges uniformly to on the set , then   i   is continuous on , and    ii   .      "
 },
 {
-  "id": "sec_uniform-convergence-20",
+  "id": "proof-57",
   "level": "2",
-  "url": "sec_uniform-convergence.html#sec_uniform-convergence-20",
+  "url": "sec_uniform-convergence.html#proof-57",
   "type": "Proof",
   "number": "7.1.3",
   "title": "",
@@ -8038,9 +8038,9 @@ var ptx_lunr_docs = [
   "body": " Taylor Series Representations  In Section we showed that functions defined by power series have derivatives of all orders ( Theorem ). In Section we demonstrated that analytic functions also have derivatives of all orders ( Corollary ). It seems natural, therefore, that there would be some connection between analytic functions and power series. As you might guess, the connection exists via the Taylor and Maclaurin series of analytic functions.   Taylor series   If is analytic at , then the series is called the Taylor series for centered at . When the center is , the series is called the Maclaurin series for  .    To investigate when these series converge we need the following lemma.    If , and are complex numbers with and , then , where is a positive integer.      . The result now follows from Corollary if in it we replace with . We leave verification of the details as an exercise.   We are now ready for the main result of this section.   Taylor's theorem   Suppose that is analytic in a domain and that is any disk contained in . Then the Taylor series for converges to for all in ; that is, .  Furthermore, for any , , the convergence is uniform on the closed subdisk .     If we can establish Equation , the uniform convergence on for will follow immediately from Theorem by equating the of that theorem with .  Let and let designate the distance between and so that . Note that because belongs to the open disk . We choose such that , and let be the positively oriented circle centered at with radius as shown in Figure .   The constructions for Taylor's theorem    With contained in , we can use the Cauchy integral formula to get   Replacing in the integrand by its equivalent expression in Lemma gives , where is a positive integer. We can put the last term in Equation in the form .  Recall also by the Cauchy integral formulas that .  Using these last two identities reduces Equation to   The summation on the right-hand side of this last expression is the first terms of the Taylor series. Verification of Equation relies on our ability to show that we can make the remainder term, , as small as we please by making sufficiently large. We will use the ML inequality ( Theorem ) to get a bound for . According to the constructions shown in Figure , we have .  By Property of Section , we also have .  If we set , Equations and allow us to conclude that, for all , .  The length of the circle is , so the ML inequality in conjunction with Equations and gives .  Because , the fraction is less than 1, so (and hence the right side of Equation ) goes to zero as goes to infinity. Thus, for any , we can find an integer such that for , and this fact completes the proof.   A singular point of a function is a point at which the function fails to be analytic. You will see in Section that singular points of a function can be classified according to how badly the function behaves at those points. Loosely speaking, a nonremovable singular point of a function has the property that it is impossible to redefine the value of the function at that point so as to make it analytic there. For example, the function has a nonremovable singularity at . We give a formal definition of this concept in Section , but with this language we can nuance Taylor's theorem a bit.    Suppose that is analytic in the domain that contains the point . Let be a nonremovable singular point of minimum distance to the point . If , then   i  the Taylor series converges to on all of , and    ii  if , the Taylor series does not converge to .        Taylor's theorem gives us part ( i ) immediately. To establish part ( ii ), we note that if , then whenever . If for some , with , the Taylor series converged to , then according to Theorem , the radius of convergence of the series would be at least equal to . We could then make differentiable at by redefining to equal the value of the series at , thus contradicting the fact that is a nonremovable singular point.     Show that is valid for .    In Example we established this identity with the use of Theorem . We now do so via Theorem . If , then a standard induction argument (which we leave as an exercise) will show that for . Thus , and Taylor's theorem gives , and since is analytic in , this series expansion is valid for all .      Show that, for , .    For , .  If we let take the role of in Equation , we get that for . But iff . Letting take the role of in Equation gives the second part of Equations .      Corollary clears up what often seems to be a mystery when series are first introduced in calculus. The calculus analog of Equations is .  For many students, it makes sense that the first series in Equations converges only on the interval because is undefined at the points . It seems unclear as to why this should also be the case for the series representing , since the real-valued function is defined everywhere. The explanation, of course, comes from the complex domain. The complex function is not defined everywhere. In fact, the singularities of are at the points , and the distance between them and the point equals 1. According to Corollary , therefore, Equations are valid only for , so Equations are valid only for .   Alas, there is a potential fly in this ointment: Corollary applies to Taylor series. To form the Taylor series of a function, we must compute its derivatives. We didn't get the series in Equations by computing derivatives, so how do we know that they are indeed the Taylor series centered at ? Perhaps the Taylor series would give completely different expressions from those given by Equations . Fortunately, Theorem removes this possibility.   Uniqueness of power series   Suppose that in some disk we have . Then , for .     By Theorem part ( ii ), , for .   Thus, any power series representation of is automatically the Taylor series.    Find the Maclaurin series of .    Computing derivatives for would be an onerous task. Fortunately, we can make use of the trigonometric identity . Recall that the series for (valid for all ) is . Using the identity for , we obtain .  By the uniqueness of power series, this last expression is the Maclaurin series for .    In the preceding argument we used some obvious results of power series representations that we haven't yet formally stated. The requisite results are part of Theorem .    Let and have the power series representations .  If and is any complex constant, then , where .  Identity is known as the Cauchy product of the series for and .     We leave the details of establishing Equations and for you to do as an exercise. To establish Equation , we note that the function is analytic in . Thus, for , .  By mathematical induction, we can generalize the preceding pattern to the th derivative, giving Leibniz's formula for the derivative of a product of functions: .  (We will ask you to show this result in an exercise.) By Theorem we know that , so Equation becomes .  Now, according to Taylor's theorem, . Substituting Equation into this equation gives Equation because of the uniqueness of power series.     Use the Cauchy product of series to show that     We let , for . In terms of Theorem , we have , for all , and thus Equation gives      Exercises   By computing derivatives, find the Maclaurin series for each function and state where it is valid.   .   for all .    .  \\textrm{Log} .  Log for all .     Using methods other than computing derivatives, find the Maclaurin series for   . \\hint{Use the trigonometric identity .}  Arc . \\hint{Choose an appropriate contour and integrate second series in Equations .}   .   . \\hint{ , so . Now use the Maclaurin series for .}    Find the Taylor series centered at and state where it converges for   .   . Expand the expression in brackets by replacing with in the geometric series (valid, therefore, for ), then multiply by the term.    . \\hint{ .}    Let and set .  Explain why is analytic at .  Find the Maclaurin series for .  Find the Maclaurin series for , where is the straight-line segment from 0 to .    Show that has its Taylor series representation about the point given by     . Expand the expression in brackets by replacing with in the geometric series (valid, therefore, for , or ). Explain.    Let be the principal branch of , where is a fixed complex number. Establish the validity for of the binomial expansion .    Find for   .  By Taylor's Theorem, . Therefore, , so .    .   .    Suppose that is an entire function.  Find a series representation for , using powers of .  Show that is an entire function.  Does ? Why or why not?    Let , where the coefficients are the Fibonacci numbers defined by , , and , for .  Show that , for all for some number .  Observe that . Reindex and write this as . Now use the relation for to conclude , then solve for .   Find the value of in part (a) for which the series representation is valid. \\hint{Find the singularities of and use Corollary .}    Complete the details in the verification of Lemma .    We used Lemma in establishing Identity . However, Lemma is valid provided and . Explain why these conditions are indeed the case in Identity .   The point is on the circle with center , so . Also, is in the interior of this circle, so again .    Prove by mathematical induction that in Example .    Establish the validity of Identities and .   To verify Identity , let . Clearly . By Taylor's Theorem, .    Use the Maclaurin series and the Cauchy product in Identity to verify that up to terms involving .    Compute the Taylor series for the principal logarithm expanded about the point .   Use the fact that and expand in powers of . Then apply Corollary .    The Fresnel integrals and are defined by   Define by and complete the following:  Verify the identity .  Integrate the power series for and obtain the power series for .  Use the partial sum involving terms up to to find approximations to and .    Let be defined in a domain that contains the origin. The function is said to be even if , and it is called odd if .  Show that the derivative of an odd function is an even function.  By definition, , so using the chain rule, we see that . But this means that is an even function.   Show that the derivative of an even function is an odd function. \\hint{Use limits.}  If is even, show that all the coefficients of the odd powers of in the Maclaurin series are zero.  If is even, then by part b is odd, so . Of course, this implies . Similarly, from part a is even, so . An induction argument gives for all positive integers . Show the details.   If is odd, show that all the coefficients of the even powers of in the Maclaurin series are zero.    Verify Identity by using mathematical induction.    Consider the function   Use Theorem , Taylor's theorem, to show that the Maclaurin series for equals .  It is easy to show that for all positive integers . Do so via mathematical induction.   Obviously, the radius of convergence of this series equals 1 (ratio test). However, the distance between 0 and the nearest singularity of equals . Explain why this condition does not contradict Corollary .  The point is a removable singularity, since may be redefined at to be analytic. State what should equal at that point.     Consider the real-valued function defined on the real numbers as   Show that, for all , , where is the th derivative of . \\hint{Use the limit definition for the derivative to establish the case for and then use mathematical induction to complete your argument.}  Explain why the function is an example of a function that, although differentiable everywhere on the real line, is not expressible as a Taylor series about 0 that is valid for any interval , no matter how small is. \\hint{Evaluate the Taylor series representation for when , and show that the series does not equal .}  Explain why a similar argument could not be made for the complex-valued function defined on the complex numbers as  \\hint{Show that is not even continuous at by taking limits along the real and imaginary axes.}    "
 },
 {
-  "id": "sec_taylor-series-3",
+  "id": "definition-45",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-3",
+  "url": "sec_taylor-series.html#definition-45",
   "type": "Definition",
   "number": "7.2.1",
   "title": "Taylor series.",
@@ -8056,9 +8056,9 @@ var ptx_lunr_docs = [
   "body": "  If , and are complex numbers with and , then , where is a positive integer.   "
 },
 {
-  "id": "sec_taylor-series-6",
+  "id": "proof-58",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-6",
+  "url": "sec_taylor-series.html#proof-58",
   "type": "Proof",
   "number": "7.2.1",
   "title": "",
@@ -8074,9 +8074,9 @@ var ptx_lunr_docs = [
   "body": " Taylor's theorem   Suppose that is analytic in a domain and that is any disk contained in . Then the Taylor series for converges to for all in ; that is, .  Furthermore, for any , , the convergence is uniform on the closed subdisk .   "
 },
 {
-  "id": "sec_taylor-series-9",
+  "id": "proof-59",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-9",
+  "url": "sec_taylor-series.html#proof-59",
   "type": "Proof",
   "number": "7.2.2",
   "title": "",
@@ -8092,9 +8092,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is analytic in the domain that contains the point . Let be a nonremovable singular point of minimum distance to the point . If , then   i  the Taylor series converges to on all of , and    ii  if , the Taylor series does not converge to .      "
 },
 {
-  "id": "sec_taylor-series-12",
+  "id": "proof-60",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-12",
+  "url": "sec_taylor-series.html#proof-60",
   "type": "Proof",
   "number": "7.2.3",
   "title": "",
@@ -8110,18 +8110,18 @@ var ptx_lunr_docs = [
   "body": "  Show that is valid for .    In Example we established this identity with the use of Theorem . We now do so via Theorem . If , then a standard induction argument (which we leave as an exercise) will show that for . Thus , and Taylor's theorem gives , and since is analytic in , this series expansion is valid for all .   "
 },
 {
-  "id": "sec_taylor-series-14",
+  "id": "example-133",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-14",
+  "url": "sec_taylor-series.html#example-133",
   "type": "Example",
   "number": "7.2.7",
   "title": "",
   "body": "  Show that, for , .    For , .  If we let take the role of in Equation , we get that for . But iff . Letting take the role of in Equation gives the second part of Equations .   "
 },
 {
-  "id": "sec_taylor-series-15",
+  "id": "remark-14",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-15",
+  "url": "sec_taylor-series.html#remark-14",
   "type": "Remark",
   "number": "7.2.8",
   "title": "",
@@ -8137,18 +8137,18 @@ var ptx_lunr_docs = [
   "body": " Uniqueness of power series   Suppose that in some disk we have . Then , for .   "
 },
 {
-  "id": "sec_taylor-series-18",
+  "id": "proof-61",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-18",
+  "url": "sec_taylor-series.html#proof-61",
   "type": "Proof",
   "number": "7.2.4",
   "title": "",
   "body": " By Theorem part ( ii ), , for .  "
 },
 {
-  "id": "sec_taylor-series-20",
+  "id": "example-134",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-20",
+  "url": "sec_taylor-series.html#example-134",
   "type": "Example",
   "number": "7.2.10",
   "title": "",
@@ -8164,18 +8164,18 @@ var ptx_lunr_docs = [
   "body": "  Let and have the power series representations .  If and is any complex constant, then , where .  Identity is known as the Cauchy product of the series for and .   "
 },
 {
-  "id": "sec_taylor-series-23",
+  "id": "proof-62",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-23",
+  "url": "sec_taylor-series.html#proof-62",
   "type": "Proof",
   "number": "7.2.5",
   "title": "",
   "body": " We leave the details of establishing Equations and for you to do as an exercise. To establish Equation , we note that the function is analytic in . Thus, for , .  By mathematical induction, we can generalize the preceding pattern to the th derivative, giving Leibniz's formula for the derivative of a product of functions: .  (We will ask you to show this result in an exercise.) By Theorem we know that , so Equation becomes .  Now, according to Taylor's theorem, . Substituting Equation into this equation gives Equation because of the uniqueness of power series.  "
 },
 {
-  "id": "sec_taylor-series-24",
+  "id": "example-135",
   "level": "2",
-  "url": "sec_taylor-series.html#sec_taylor-series-24",
+  "url": "sec_taylor-series.html#example-135",
   "type": "Example",
   "number": "7.2.12",
   "title": "",
@@ -8371,27 +8371,27 @@ var ptx_lunr_docs = [
   "body": " Laurent Series Representations  Suppose that is not analytic in but is analytic in the punctured disk . For example, the function is not analytic when but is analytic for . Clearly, this function does not have a Maclaurin series representation. If we use the Maclaurin series for , however, and formally divide each term in that series by , we obtain the representation , which is valid for all such that .  This example raises the question as to whether it might be possible to generalize the Taylor series method to functions analytic in an annulus . Perhaps we can represent these functions with a series that involves negative powers of in some way as we did with . As you will see shortly, we can indeed. We begin by defining a series that allows for negative powers of .   Laurent Series   Let be a complex number for The doubly infinite series , called a Laurent series , is defined by , provided the series on the right-hand side of this equation converge.     Recall that is a simplified expression for the sum . At times it will be convenient to write as rather than using the expression given in Equation .    Annulus   Given , we define the annulus centered at with radii and by . The closed annulus centered at with radii and is denoted by      Figure illustrates an open annulus.   The open annulus (shaded)      Suppose that the Laurent series converges on the annulus . Then the series converges uniformly on any closed subannulus , where .     According to Equation , . By Theorem , the series must converge uniformly on the closed disk . By the Weierstrass -test, we can show that the series converges uniformly on (we leave the details as an exercise). Combining these two facts yields the required result.   The main result of this section specifies how functions analytic in an annulus can be expanded in a Laurent series. In it, we use symbols of the form , which we remind you designate the positively oriented circle with radius and center . That is, , oriented counterclockwise.   Laurent's theorem   Suppose that , and that is analytic in the annulus . If is any number such that , then for all has the Laurent series representation , where for , the coefficients and are given by .  Moreover, the convergence in Equation is uniform on any closed subannulus , where .     If we can establish Equation , the uniform convergence on will follow from Theorem . Let be an arbitrary point of . Choose small enough so that the circle is contained in . Since is analytic in , the Cauchy integral formula gives .  Let and , where we choose and so that lies in the region between and , and as shown in Figure , where the annulus is the shaded region.   The annulus and, in its interior, the circles , , and    Now let be the domain consisting of the annulus except for the point . The domain includes the contours , , and , as well as the region between and . In addition, since does not belong to , the function is analytic on , so by the extended Cauchy-Goursat theorem we obtain .  Subtracting the last integral from both sides of Equation and using the identity for in Equation give .  Now, if , then , so and we can use the geometric series ( Theorem ) to get .  Moreover, one can show by using the Weierstrass M -test that the preceding series converges uniformly for . We leave the details as an exercise. Likewise, using techniques similar to the ones just discussed, one can show that, for , , and that the convergence is uniform for . Again, we leave the details as an exercise.  Taking the series for as given by Equations and and substituting into the two integrals, respectively, of Equation yields .  Because the series in this equation converge uniformly on and , respectively, we can interchange the summations and the integrals, in accordance with Corollary to obtain .  If we move some terms around in the second series of this equation and reindex, we get .  We apply the extended Cauchy-Goursat theorem once more to conclude that the integrals taken over and in Equation give the same result if they are taken over the contour , where is any number such that . This yields .  Finally, writing the second series first in our last equation gives .  Because was arbitrary, this result establishes Equations and , completing the proof.   What happens to the Laurent series if is analytic in the disk ? Looking at Equation , we see that the coefficient for the positive power equals by using Cauchy 's integral formula for derivatives. Hence the series\\- in Equation involving the positive powers of is actually the Taylor series for . The Cauchy-Goursat theorem shows that the coefficients for the negative powers of equal zero. In this case, therefore, there are no negative powers involved, and the Laurent series reduces to the Taylor series.   Theorem delineates two important properties of the Laurent series.   Properties of Laurent Series   Suppose that is analytic in the annulus and has the Laurent series , for all .   i  If for all , then for all . (In other words, the Laurent series for in a given annulus is unique.)    ii  For all , the derivatives of may be obtained by termwise differentiation of its Laurent series.        We prove part ( i ) only because the proof for part ( ii ) involves no new ideas beyond those in the proof of Theorem . The series converges pointwise on , so Theorem guarantees that this series converges uniformly on , for . By Laurent's theorem, then, .  Since has an antiderivative for all except when , all the terms in the preceding expression drop out except when , giving    The uniqueness of the Laurent series is an important property because the coefficients in the Laurent expansion of a function are seldom found by using Equation . The following examples illustrate some methods for finding Laurent series coefficients.    Find three different Laurent series representations for involving powers of .    The function has singularities at and is analytic in the disk , in the annulus , and in the region . We want to find a different Laurent series for in each of the three domains , , and . We start by writing in its partial fraction form: .  We use Theorem and Corollary to obtain the following representations for the terms on the right side of Equation : .  Representations and are both valid in the disk , and thus we have , which is a Laurent series that reduces to a Maclaurin series. In the annulus , Representations and are valid; hence we get .  Finally, in the region we use Representations and to obtain .      Find the Laurent series representation for that involves powers of .    We use the Maclaurin series for to write . We formally divide each term by to obtain the Laurent series .      Find the Laurent series for centered at .    The Maclaurin series for is , which is valid for all . We let take the role of in this equation to get , which is valid for .     Exercises   Find two Laurent series expansions for that involve powers of .    for for .    Show that has a Laurent series representation about the point given by     Find the Laurent series for that involves powers of .    for .    Show that is valid for .  \\hint{Refer to the solution for Exercise 3a, Section .} \\label {7.3.4}    Find the Laurent series for centered at . Where is the series valid?    valid for .    Show that is valid for .  \\hint{Use the hint for Exercise 3b, Section .}    Find the Laurent series for that involves powers of .    valid for .    Find the Laurent series for that involves powers of and is valid for . \\hint{ .}    Find two Laurent series for involving powers of , and state where they are valid.    for ,   for .    Find three Laurent series for centered at .    Find the Laurent series for Log , where and are positive real numbers with , and state where the series is valid. \\hint{For these conditions, show that .}   Log valid for . Explain.    Can be represented by a Maclaurin series or a Laurent series about the point ? Explain your answer.    Use the Maclaurin series for and then long division to get the Laurent series for with .    .    Show that , where the coefficients can be expressed in the form . \\hint{Let the path of integration be the circle .}    Consider the real-valued function .  Use the substitution and obtain .  This identity is obtained by straightforward substitution, and partial fraction decomposition.   Expand the function in part (a) in a Laurent series that is valid in the annulus .   .   Use the substitutions in part (b) and obtain the Fourier series for , where .    The Bessel function  is sometimes defined by the generating function . Use the circle as the contour of integration and show that     Suppose that the Laurent expansion converges in the annulus , where . Consider the real-valued function and show that has the Fourier series expansion , where    Since is valid for (explain), letting gives immediately. By Laurent's Theorem, for all integers (explain). Parametrizing with for gives the desired result. Show the details.    ( The Z-transform ): Let be a sequence of complex numbers satisfying the growth condition for and for some fixed positive values and . Then the -transform of the sequence is the function defined by .  Prove that converges for .  Find for \\begin{enumerate}   .   .   .   , when is even, and when is odd.    Prove that . This relation is known as the shifting property for the -transform. \\end{enumerate}    Use the Weierstrass -test to show that the series of Theorem converges uniformly on the set as claimed.   Since converges for , the ratio test guarantees that the series converges absolutely for , where (show the details). Thus, if , the series converges. Since for all , the Weierstrass test gives us our conclusion. Explain.    Verify the following claims made in this section.  The series in Equation converges uniformly for .  The validity of Equation , according to Corollary .  The series in Equation converges uniformly for .    "
 },
 {
-  "id": "sec_laurent-series-4",
+  "id": "definition-46",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-4",
+  "url": "sec_laurent-series.html#definition-46",
   "type": "Definition",
   "number": "7.3.1",
   "title": "Laurent Series.",
   "body": " Laurent Series   Let be a complex number for The doubly infinite series , called a Laurent series , is defined by , provided the series on the right-hand side of this equation converge.   "
 },
 {
-  "id": "sec_laurent-series-5",
+  "id": "remark-15",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-5",
+  "url": "sec_laurent-series.html#remark-15",
   "type": "Remark",
   "number": "7.3.2",
   "title": "",
   "body": " Recall that is a simplified expression for the sum . At times it will be convenient to write as rather than using the expression given in Equation .  "
 },
 {
-  "id": "sec_laurent-series-6",
+  "id": "definition-47",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-6",
+  "url": "sec_laurent-series.html#definition-47",
   "type": "Definition",
   "number": "7.3.3",
   "title": "Annulus.",
@@ -8416,9 +8416,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that the Laurent series converges on the annulus . Then the series converges uniformly on any closed subannulus , where .   "
 },
 {
-  "id": "sec_laurent-series-10",
+  "id": "proof-63",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-10",
+  "url": "sec_laurent-series.html#proof-63",
   "type": "Proof",
   "number": "7.3.1",
   "title": "",
@@ -8434,9 +8434,9 @@ var ptx_lunr_docs = [
   "body": " Laurent's theorem   Suppose that , and that is analytic in the annulus . If is any number such that , then for all has the Laurent series representation , where for , the coefficients and are given by .  Moreover, the convergence in Equation is uniform on any closed subannulus , where .   "
 },
 {
-  "id": "sec_laurent-series-13",
+  "id": "proof-64",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-13",
+  "url": "sec_laurent-series.html#proof-64",
   "type": "Proof",
   "number": "7.3.2",
   "title": "",
@@ -8452,9 +8452,9 @@ var ptx_lunr_docs = [
   "body": " Properties of Laurent Series   Suppose that is analytic in the annulus and has the Laurent series , for all .   i  If for all , then for all . (In other words, the Laurent series for in a given annulus is unique.)    ii  For all , the derivatives of may be obtained by termwise differentiation of its Laurent series.      "
 },
 {
-  "id": "sec_laurent-series-17",
+  "id": "proof-65",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-17",
+  "url": "sec_laurent-series.html#proof-65",
   "type": "Proof",
   "number": "7.3.3",
   "title": "",
@@ -8470,18 +8470,18 @@ var ptx_lunr_docs = [
   "body": "  Find three different Laurent series representations for involving powers of .    The function has singularities at and is analytic in the disk , in the annulus , and in the region . We want to find a different Laurent series for in each of the three domains , , and . We start by writing in its partial fraction form: .  We use Theorem and Corollary to obtain the following representations for the terms on the right side of Equation : .  Representations and are both valid in the disk , and thus we have , which is a Laurent series that reduces to a Maclaurin series. In the annulus , Representations and are valid; hence we get .  Finally, in the region we use Representations and to obtain .   "
 },
 {
-  "id": "sec_laurent-series-20",
+  "id": "example-137",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-20",
+  "url": "sec_laurent-series.html#example-137",
   "type": "Example",
   "number": "7.3.10",
   "title": "",
   "body": "  Find the Laurent series representation for that involves powers of .    We use the Maclaurin series for to write . We formally divide each term by to obtain the Laurent series .   "
 },
 {
-  "id": "sec_laurent-series-21",
+  "id": "example-138",
   "level": "2",
-  "url": "sec_laurent-series.html#sec_laurent-series-21",
+  "url": "sec_laurent-series.html#example-138",
   "type": "Example",
   "number": "7.3.11",
   "title": "",
@@ -8515,9 +8515,9 @@ var ptx_lunr_docs = [
   "body": " Find the Laurent series for that involves powers of .    for .  "
 },
 {
-  "id": "exercises_laurent-series-5",
+  "id": "exercise-476",
   "level": "2",
-  "url": "sec_laurent-series.html#exercises_laurent-series-5",
+  "url": "sec_laurent-series.html#exercise-476",
   "type": "Exercise",
   "number": "7.3.4",
   "title": "",
@@ -8686,9 +8686,9 @@ var ptx_lunr_docs = [
   "body": " Singularities, Zeros, and Poles  Recall that the point is called a singular point, or singularity, of the complex function if is not analytic at the point , but every neighborhood of contains at least one point at which is analytic. For example, the function is not analytic at but is analytic for all other values of . Thus the point is a singular point of . As another example, consider the function Log . We showed in Section 5.2 that is analytic for all except at the origin and at the points on the negative real axis. Thus the origin and each point on the negative real axis are singularities of .  The point is called an isolated singularity of a complex function if is not analytic at but there exists a real number such that is analytic everywhere in the punctured disk . The function has an isolated singularity at . The function Log , however, has a singularity at (or at any point of the negative real axis) that is not isolated, because any neighborhood of contains points on the negative real axis, and is not analytic at those points. Functions with isolated singularities have a Laurent series because the punctured disk is the same as the annulus . We now look at this special case of Laurent's theorem in order to classify three types of isolated singularities.   Classification of singularities   Let have an isolated singularity at with Laurent series . Then we distinguish the following types of singularities at .   i  If , for , then has a removable singularity at .    ii  If is a positive integer such that , but for , then has a pole of order at .    iii  If for infinitely many negative integers , then has an essential singularity at .       Let's investigate some examples of these three cases.   i  If has a removable singularity at , then it has a Laurent series . Theorem implies that the power series for defines an analytic function in the disk . If we use this series to define , then the function becomes analytic at , removing the singularity. For example, consider the function . It is undefined at and has an isolated singularity at , as the Laurent series for is . We can remove this singularity if we define , for then will be analytic at in accordance with Theorem . Another example is , which has an isolated singularity at the point , as the Laurent series for is . If we define , then will be analytic for all .    ii  If has a pole of order at , the Laurent series for is , where . For example, has a pole of order 2 at . If has a pole of order 1 at , we say that has a simple pole at . For example, , which has a simple pole at .    iii  If infinitely many negative powers of occur in the Laurent series, then has an essential singularity at . For example, has an essential singularity at the origin.      Zero of order $k$   A function analytic in has a zero of order at the point iff .  A zero of order 1 is called a simple zero.      A function analytic in has a zero of order at the point iff its Taylor series given by has .     The conclusion follows immediately from Definition 7.6, because we have according to Taylor's theorem.     From Theorem we see that the function has a zero of order 3 at . Definition 7.6 confirms this fact because   Then, , but .      Suppose that the function is analytic in . Then has a zero of order \\ at the point iff can be expressed in the form , where is analytic at the point and .     Suppose that has a zero of order at the point , and that for . Theorem assures us that for , and that , so that we can write as , where . The series on the right side of Equation defines a function, which we denote by . That is, . By Theorem , is analytic in , and .  Conversely, suppose that has the form given by Equation . Since is analytic at , it has the power series representation , where by assumption. If we multiply both sides of the expression defining by we get . By Theorem , has a zero of order at the point .   An immediate consequence of Theorem is Corollary . The proof is left as an exercise.    If and are analytic at and have zeros of orders and , respectively, at , then their product has a zero of order at .      Let . Then can be factored as the product of and , which have zeros of orders and , respectively, at . Hence is a zero of order 4 of .     Theorem gives a useful way to characterize a pole.    A function analytic in the punctured disk has a pole of order at the point iff can be expressed in the form , where the function is analytic at the point , and .     Suppose that has a pole of order at the point . We can then write the Laurent series for as , where . The series on the right side of this equation defines a function, which we denote by . That is, . If we specify that , then is analytic in all of , with .  Conversely, suppose that Equation is satisfied. Because is analytic at the point with , it has a power series representation , where . If we divide both sides of this equation by , we obtain the following Laurent series representation for : , where . Since , has a pole of order at .   The following corollaries \\big(  \\big) are useful in determining the order of a zero or a pole. The proofs follow easily from Theorems and , and are left as exercises.    If is analytic and has a zero of order at the point , then has a pole of order at .      If has a pole of order at the point , then has a removable singularity at . If we define , then has a zero of order at .      If and have poles of orders and , respectively, at the point , then their product has a pole of order at .      Let and be analytic with zeros of orders and , respectively, at . Then their quotient has the following behavior:   i  If , then has a removable singularity at . If we define , then has a zero of order at .    ii  If , then has a pole of order at .    iii  If , then has a removable singularity at and can be defined so that is analytic at \\ by .         Locate the zeros and poles of and determine their order.    In Section we saw that the zeros of occur at the points , where is an integer. Because , the zeros of are simple. Similarly, the function has simple zeros at the points and , where is an integer. From the information given, we find that behaves as follows:   i   has simple zeros at , where ;    ii   has simple poles at , where is an integer; and    iii   is analytic at if we define .         Locate the poles of and specify their order.    The roots of the quadratic equation occur at the points and . If we replace with in this equation, the function has simple zeros at the points and . Corollary implies that has simple poles at and .      Locate the poles of and specify their order.    The function has a zero of order at and simple zeros at the points . Corollary implies that has a pole of order at the point and simple poles at the points .     Exercises   Locate the zeros of the following functions and determine their order.   .  Zeros of order 4 at .    .   .  Simple zeros at .    .   .  Simple zeros at and .    .   .  Simple zeros at , , and .    .   .  Zeros of order 2 at and .    .   .  Simple zeros at and , and a zero of order 4 at the origin.    .    Locate the poles of the following functions and determine their order.   .  Poles of order 3 at , and a pole of order 4 at 1.    .   .  Simple poles at , , and .    .   .  Simple poles at and .    .   .  Simple poles at for .    .   .  Simple poles at for , and a pole of order 3 at the origin.    .   .  Simple poles at for .    .    Locate the singularities of the following functions and determine their type.   .  Removable singularity at the origin.    .   .  Essential singularity at the origin.    .   .  Removable singularity at the origin, and a simple pole at .    .   .  Removable singularity at the origin.    .    Suppose that has a removable singularity at . Show that the function has either a removable singularity or a pole at .    Let be analytic and have a zero of order at . Show that has a zero of order at .   By Theorem , , where is analytic at and . We compute , where . Explain why , why is analytic at , and why Theorem now gives the conclusion.    Let and be analytic at and have zeros of order and , respectively, at . What can you say about the zero of at ?    Let and have poles of order and , respectively, at . Show that has either a pole or a removable singularity at    If it so happens that , and the coefficients in the Laurent expansions for and about are negatives of each other, then will have a Taylor series representation at , making a removable singularity (show the details for this). If , then it is easy to show that still has a pole. State why, and what the order of the pole is.    Let be analytic and have a zero of order at . Show that the function has a simple pole at . \\label {7.4.8}    Let have a pole of order at . Show that has a pole of order at .   Appeal to Theorem and mimic the argument given in the solution to Problem .    Prove the following corollaries.   Corollary .   Corollary .   Corollary .   Corollary .   Corollary .    Find the singularities of the following functions.   .  Simple poles at for , and a nonisolated singularity at the origin.    .   .    How are the definitions of singularity in complex analysis and asymptote in calculus different? How are they similar?    "
 },
 {
-  "id": "sec_singularities-4",
+  "id": "definition-48",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-4",
+  "url": "sec_singularities.html#definition-48",
   "type": "Definition",
   "number": "7.4.1",
   "title": "Classification of singularities.",
@@ -8713,18 +8713,18 @@ var ptx_lunr_docs = [
   "body": "  A function analytic in has a zero of order at the point iff its Taylor series given by has .   "
 },
 {
-  "id": "sec_singularities-8",
+  "id": "proof-66",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-8",
+  "url": "sec_singularities.html#proof-66",
   "type": "Proof",
   "number": "7.4.1",
   "title": "",
   "body": " The conclusion follows immediately from Definition 7.6, because we have according to Taylor's theorem.  "
 },
 {
-  "id": "sec_singularities-9",
+  "id": "example-139",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-9",
+  "url": "sec_singularities.html#example-139",
   "type": "Example",
   "number": "7.4.4",
   "title": "",
@@ -8740,9 +8740,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that the function is analytic in . Then has a zero of order \\ at the point iff can be expressed in the form , where is analytic at the point and .   "
 },
 {
-  "id": "sec_singularities-11",
+  "id": "proof-67",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-11",
+  "url": "sec_singularities.html#proof-67",
   "type": "Proof",
   "number": "7.4.2",
   "title": "",
@@ -8758,9 +8758,9 @@ var ptx_lunr_docs = [
   "body": "  If and are analytic at and have zeros of orders and , respectively, at , then their product has a zero of order at .   "
 },
 {
-  "id": "sec_singularities-14",
+  "id": "example-140",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-14",
+  "url": "sec_singularities.html#example-140",
   "type": "Example",
   "number": "7.4.7",
   "title": "",
@@ -8776,9 +8776,9 @@ var ptx_lunr_docs = [
   "body": "  A function analytic in the punctured disk has a pole of order at the point iff can be expressed in the form , where the function is analytic at the point , and .   "
 },
 {
-  "id": "sec_singularities-17",
+  "id": "proof-68",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-17",
+  "url": "sec_singularities.html#proof-68",
   "type": "Proof",
   "number": "7.4.3",
   "title": "",
@@ -8821,27 +8821,27 @@ var ptx_lunr_docs = [
   "body": "  Let and be analytic with zeros of orders and , respectively, at . Then their quotient has the following behavior:   i  If , then has a removable singularity at . If we define , then has a zero of order at .    ii  If , then has a pole of order at .    iii  If , then has a removable singularity at and can be defined so that is analytic at \\ by .      "
 },
 {
-  "id": "sec_singularities-23",
+  "id": "example-141",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-23",
+  "url": "sec_singularities.html#example-141",
   "type": "Example",
   "number": "7.4.13",
   "title": "",
   "body": "  Locate the zeros and poles of and determine their order.    In Section we saw that the zeros of occur at the points , where is an integer. Because , the zeros of are simple. Similarly, the function has simple zeros at the points and , where is an integer. From the information given, we find that behaves as follows:   i   has simple zeros at , where ;    ii   has simple poles at , where is an integer; and    iii   is analytic at if we define .      "
 },
 {
-  "id": "sec_singularities-24",
+  "id": "example-142",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-24",
+  "url": "sec_singularities.html#example-142",
   "type": "Example",
   "number": "7.4.14",
   "title": "",
   "body": "  Locate the poles of and specify their order.    The roots of the quadratic equation occur at the points and . If we replace with in this equation, the function has simple zeros at the points and . Corollary implies that has simple poles at and .   "
 },
 {
-  "id": "sec_singularities-25",
+  "id": "example-143",
   "level": "2",
-  "url": "sec_singularities.html#sec_singularities-25",
+  "url": "sec_singularities.html#example-143",
   "type": "Example",
   "number": "7.4.15",
   "title": "",
@@ -8911,9 +8911,9 @@ var ptx_lunr_docs = [
   "body": " Let and have poles of order and , respectively, at . Show that has either a pole or a removable singularity at    If it so happens that , and the coefficients in the Laurent expansions for and about are negatives of each other, then will have a Taylor series representation at , making a removable singularity (show the details for this). If , then it is easy to show that still has a pole. State why, and what the order of the pole is.  "
 },
 {
-  "id": "exercises_singularities-9",
+  "id": "exercise-501",
   "level": "2",
-  "url": "sec_singularities.html#exercises_singularities-9",
+  "url": "sec_singularities.html#exercise-501",
   "type": "Exercise",
   "number": "7.4.8",
   "title": "",
@@ -8974,9 +8974,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is analytic in a domain containing and that . If is not identically zero in , then there exists a punctured disk in which has no zeros.   "
 },
 {
-  "id": "sec_taylor-laurent-apps-4",
+  "id": "proof-69",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-4",
+  "url": "sec_taylor-laurent-apps.html#proof-69",
   "type": "Proof",
   "number": "7.5.1",
   "title": "",
@@ -9010,9 +9010,9 @@ var ptx_lunr_docs = [
   "body": "  (L'Hôpital's rule) Suppose that and are analytic at . If and , but , then    "
 },
 {
-  "id": "sec_taylor-laurent-apps-10",
+  "id": "proof-70",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-10",
+  "url": "sec_taylor-laurent-apps.html#proof-70",
   "type": "Proof",
   "number": "7.5.2",
   "title": "",
@@ -9028,9 +9028,9 @@ var ptx_lunr_docs = [
   "body": " Division of power series   Suppose that and are analytic at with the power series representations .  If , then the quotient has the power series representation , where the coefficients satisfy the equation .  In other words, we can obtain the series for the quotient by the familiar process of dividing the series for by the series for , using the standard long division algorithm.   "
 },
 {
-  "id": "sec_taylor-laurent-apps-13",
+  "id": "example-144",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-13",
+  "url": "sec_taylor-laurent-apps.html#example-144",
   "type": "Example",
   "number": "7.5.6",
   "title": "",
@@ -9046,9 +9046,9 @@ var ptx_lunr_docs = [
   "body": " Riemann   Suppose that is analytic in . If is bounded in , then either is analytic at or has a removable singularity at .   "
 },
 {
-  "id": "sec_taylor-laurent-apps-16",
+  "id": "proof-71",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-16",
+  "url": "sec_taylor-laurent-apps.html#proof-71",
   "type": "Proof",
   "number": "7.5.3",
   "title": "",
@@ -9073,9 +9073,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is analytic in . The function has a pole of order at , iff .   "
 },
 {
-  "id": "sec_taylor-laurent-apps-20",
+  "id": "proof-72",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-20",
+  "url": "sec_taylor-laurent-apps.html#proof-72",
   "type": "Proof",
   "number": "7.5.4",
   "title": "",
@@ -9091,27 +9091,27 @@ var ptx_lunr_docs = [
   "body": "  The function has an essential singularity at iff does not exist.   "
 },
 {
-  "id": "sec_taylor-laurent-apps-22",
+  "id": "proof-73",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-22",
+  "url": "sec_taylor-laurent-apps.html#proof-73",
   "type": "Proof",
   "number": "7.5.5",
   "title": "",
   "body": " From Corollary and Theorem , the conclusion of Theorem is the only option possible.  "
 },
 {
-  "id": "sec_taylor-laurent-apps-23",
+  "id": "example-145",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#sec_taylor-laurent-apps-23",
+  "url": "sec_taylor-laurent-apps.html#example-145",
   "type": "Example",
   "number": "7.5.11",
   "title": "",
   "body": "  Show that the function defined by is not continuous at .    In Exercise 20, Section , we asked you to show this relation by computing limits along the real and imaginary axes. Note, however, that the Laurent series for in the annulus is , so that is an essential singularity for . According to Theorem , doesn't exist, so is not continuous at .   "
 },
 {
-  "id": "exercises_taylor-laurent-apps-2",
+  "id": "exercise-506",
   "level": "2",
-  "url": "sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps-2",
+  "url": "sec_taylor-laurent-apps.html#exercise-506",
   "type": "Exercise",
   "number": "7.5.1",
   "title": "",
@@ -9172,9 +9172,9 @@ var ptx_lunr_docs = [
   "body": " The Residue Theorem  The Cauchy integral formulas given in Section are useful in evaluating contour integrals over a simple closed contour where the integrand has the form and is an analytic function. In this case, the singularity of the integrand is at worst a pole of order at . We begin this section by extending this result to integrals that have a finite number of isolated singularities inside the contour . This new method can be used in cases where the integrand has an essential singularity at and is an important extension of the previous method.   Residue   Let have a nonremovable isolated singularity at the point . Then has the Laurent series representation for all in some disk given by . The coefficient is called the residue of at . We use the notation .      If , then the Laurent series of about the point 0 has the form ,. and .      Find if .    Using the techniques of Example , we find that has three Laurent series representations involving powers of . In the punctured disk , . Computing the first few coefficients, we obtain . Therefore, .    Recall that, for a function analytic in and for any with , the Laurent series coefficients of are given by , where denotes the circle with positive orientation. This result gives us an important fact concerning . If we set in Equation and replace with any positively oriented simple closed contour containing , provided is the still only singularity of that lies inside , then we obtain .  If we are able to find the Laurent series expansion for , then Equation gives us an important tool for evaluating contour integrals.    Evaluate .     Example showed that the residue of at is . Using Equation , we get      Cauchy 's residue theorem   Let be a simply connected domain and let be a simple closed positively oriented contour that lies in . If is analytic inside and on , except at the points that lie inside , then . The situation is illustrated in Figure .     The domain and contour and the singular points in the statement of Cauchy 's residue theorem     Since there are a finite number of singular points inside , there exists an such that the positively oriented circles , for , are mutually disjoint and all lie inside . From the extended Cauchy-Goursat theorem ( Theorem on page ), it follows that . The function is analytic in a punctured disk with center that contains the circle , so we can use Equation to obtain . Combining the last two equations gives the desired result.   The domain and contour and the singular points in the statement of Cauchy 's residue theorem.  The calculation of a Laurent series expansion is tedious in most circumstances. As the residue at involves only the coefficient in the Laurent expansion, we seek a method to calculate the residue from special information about the nature of the singularity at .  If has a removable singularity at , then , for . Therefore, . The following theorem gives methods for evaluating residues at poles.   Residues at Poles     i  If has a simple pole at , then .    ii  If has a pole of order at , then .    iii  If has a pole of order at , then .       If has a simple pole at , then the Laurent series is . If we multiply both sides of this equation by and take the limit as , we obtain . which establishes part ( i ). We proceed to part ( iii ), as part ( ii ) is a special case of it. Suppose that has a pole of order at . Then can be written as . Multiplying both sides of this equation by gives . If we differentiate both sides times we get . and when we let the result is , which establishes part ( iii ).     Find the residue of at .    We write . Because has a zero of order at and , has a pole of order at . By part ( iii ) of Theorem 8.2, we have .  This last limit involves an indeterminate form, which we evaluate by using L'Hôpital's rule: .      Find .    We write the integrand as . The singularities of that lie inside are simple poles at the points and , and a pole of order at the origin. We compute the residues as follows: .  Finally, the residue theorem yields .  The answer is not at all obvious, and all the preceding calculations are required to get it.      Find .   The singularities of the integrand that lie inside are simple poles occurring at the points , as the points lie outside . Factoring the denominator is tedious, so we use a different approach. If is any one of the singularities of , then we can use L'Hôpital's rule to compute :    . Since , we can simplify this expression further to yield . Hence , and . We now use the residue theorem to get     The theory of residues can be used to expand the quotient of two polynomials into its partial fraction representation.    Let be a polynomial of degree at most . Show that if , and are distinct complex numbers, then .    It will suffice to prove that $.      Express in partial fractions.    Computing the residues, we obtain .   Example gives us      If a repeated root occurs, then the process is similar, and we can easily show that if has degree of at most , then , where  , , and .     Express in partial fractions.    Using the previous remark, we have , where .  Thus,      Exercises   Find for each of the following :   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .    Let and have an isolated singularity at . Show that .    Evaluate the following :   .   .    .   .   .    .   .   .    .   .   .     Let and be analytic at . If and has a simple zero at , then show that .    Find when   .   .    .    Find when   .   . \\hint{If is a singularity of , show that .}    Find when   .   .    .    Find when   .   .    Use residues to find the partial fraction representations of: \\label {8.1.9}   .   .    .   .   .    .   .   .    .    Let be analytic in a simply connected domain , and let be a simple closed positively oriented contour in . If is the only zero of in and lies interior to , then show that , where is the order of the zero at .    Let be analytic at the points . If , then show that for .   By Theorem we have , where is any integer. Since , and because , is analytic at , we use L'Hôpital's rule to get . Explain how this gives the result.    "
 },
 {
-  "id": "sec_residue-thm-3",
+  "id": "definition-50",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-3",
+  "url": "sec_residue-thm.html#definition-50",
   "type": "Definition",
   "number": "8.1.1",
   "title": "Residue.",
@@ -9190,18 +9190,18 @@ var ptx_lunr_docs = [
   "body": "  If , then the Laurent series of about the point 0 has the form ,. and .   "
 },
 {
-  "id": "sec_residue-thm-5",
+  "id": "example-147",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-5",
+  "url": "sec_residue-thm.html#example-147",
   "type": "Example",
   "number": "8.1.3",
   "title": "",
   "body": "  Find if .    Using the techniques of Example , we find that has three Laurent series representations involving powers of . In the punctured disk , . Computing the first few coefficients, we obtain . Therefore, .   "
 },
 {
-  "id": "sec_residue-thm-8",
+  "id": "example-148",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-8",
+  "url": "sec_residue-thm.html#example-148",
   "type": "Example",
   "number": "8.1.4",
   "title": "",
@@ -9226,9 +9226,9 @@ var ptx_lunr_docs = [
   "body": " The domain and contour and the singular points in the statement of Cauchy 's residue theorem   "
 },
 {
-  "id": "sec_residue-thm-11",
+  "id": "proof-74",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-11",
+  "url": "sec_residue-thm.html#proof-74",
   "type": "Proof",
   "number": "8.1.1",
   "title": "",
@@ -9244,36 +9244,36 @@ var ptx_lunr_docs = [
   "body": " Residues at Poles     i  If has a simple pole at , then .    ii  If has a pole of order at , then .    iii  If has a pole of order at , then .     "
 },
 {
-  "id": "sec_residue-thm-16",
+  "id": "proof-75",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-16",
+  "url": "sec_residue-thm.html#proof-75",
   "type": "Proof",
   "number": "8.1.2",
   "title": "",
   "body": " If has a simple pole at , then the Laurent series is . If we multiply both sides of this equation by and take the limit as , we obtain . which establishes part ( i ). We proceed to part ( iii ), as part ( ii ) is a special case of it. Suppose that has a pole of order at . Then can be written as . Multiplying both sides of this equation by gives . If we differentiate both sides times we get . and when we let the result is , which establishes part ( iii ).  "
 },
 {
-  "id": "sec_residue-thm-17",
+  "id": "example-149",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-17",
+  "url": "sec_residue-thm.html#example-149",
   "type": "Example",
   "number": "8.1.8",
   "title": "",
   "body": "  Find the residue of at .    We write . Because has a zero of order at and , has a pole of order at . By part ( iii ) of Theorem 8.2, we have .  This last limit involves an indeterminate form, which we evaluate by using L'Hôpital's rule: .   "
 },
 {
-  "id": "sec_residue-thm-18",
+  "id": "example-150",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-18",
+  "url": "sec_residue-thm.html#example-150",
   "type": "Example",
   "number": "8.1.9",
   "title": "",
   "body": "  Find .    We write the integrand as . The singularities of that lie inside are simple poles at the points and , and a pole of order at the origin. We compute the residues as follows: .  Finally, the residue theorem yields .  The answer is not at all obvious, and all the preceding calculations are required to get it.   "
 },
 {
-  "id": "sec_residue-thm-19",
+  "id": "example-151",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-19",
+  "url": "sec_residue-thm.html#example-151",
   "type": "Example",
   "number": "8.1.10",
   "title": "",
@@ -9289,27 +9289,27 @@ var ptx_lunr_docs = [
   "body": "  Let be a polynomial of degree at most . Show that if , and are distinct complex numbers, then .    It will suffice to prove that $.   "
 },
 {
-  "id": "sec_residue-thm-22",
+  "id": "example-153",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-22",
+  "url": "sec_residue-thm.html#example-153",
   "type": "Example",
   "number": "8.1.12",
   "title": "",
   "body": "  Express in partial fractions.    Computing the residues, we obtain .   Example gives us    "
 },
 {
-  "id": "sec_residue-thm-23",
+  "id": "remark-16",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-23",
+  "url": "sec_residue-thm.html#remark-16",
   "type": "Remark",
   "number": "8.1.13",
   "title": "",
   "body": " If a repeated root occurs, then the process is similar, and we can easily show that if has degree of at most , then , where  , , and .  "
 },
 {
-  "id": "sec_residue-thm-24",
+  "id": "example-154",
   "level": "2",
-  "url": "sec_residue-thm.html#sec_residue-thm-24",
+  "url": "sec_residue-thm.html#example-154",
   "type": "Example",
   "number": "8.1.14",
   "title": "",
@@ -9325,9 +9325,9 @@ var ptx_lunr_docs = [
   "body": " Find for each of the following :   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_residue-thm-3",
+  "id": "exercise-513",
   "level": "2",
-  "url": "sec_residue-thm.html#exercises_residue-thm-3",
+  "url": "sec_residue-thm.html#exercise-513",
   "type": "Exercise",
   "number": "8.1.2",
   "title": "",
@@ -9388,9 +9388,9 @@ var ptx_lunr_docs = [
   "body": " Find when   .   .  "
 },
 {
-  "id": "exercises_residue-thm-10",
+  "id": "exercise-520",
   "level": "2",
-  "url": "sec_residue-thm.html#exercises_residue-thm-10",
+  "url": "sec_residue-thm.html#exercise-520",
   "type": "Exercise",
   "number": "8.1.9",
   "title": "",
@@ -9433,27 +9433,27 @@ var ptx_lunr_docs = [
   "body": " Changing variables: a definite integral on to a contour integral around   "
 },
 {
-  "id": "sec_trig-integrals-8",
+  "id": "example-155",
   "level": "2",
-  "url": "sec_trig-integrals.html#sec_trig-integrals-8",
+  "url": "sec_trig-integrals.html#example-155",
   "type": "Example",
   "number": "8.2.2",
   "title": "",
   "body": "  Evaluate by using complex analysis.    Using Substitutions and , we transform the integral to . where . The singularities of are poles located at the points where . Using the quadratic formula, we see that the singular points satisfy the relation . Hence the only singularities that lie inside the unit circle are simple poles corresponding to the solutions of , which are the two points and . We use Theorem and L'Hôpital's rule to get the residues at , for : .  Since and , the residues for each are given by . Now use Equation to compute the value of the integral:    "
 },
 {
-  "id": "sec_trig-integrals-9",
+  "id": "example-156",
   "level": "2",
-  "url": "sec_trig-integrals.html#sec_trig-integrals-9",
+  "url": "sec_trig-integrals.html#example-156",
   "type": "Example",
   "number": "8.2.3",
   "title": "",
   "body": "  Evaluate by using a computer algebra system.    We can obtain the antiderivative of by using software such as Mathematica or MAPLE. It is . Since and are not defined, the computations for both and are indeterminate. The graph shown in Figure reveals another problem: The integrand is a continuous function for all , but the function has a discontinuity at . This condition appears to be a violation of the fundamental theorem of calculus, which asserts that the integral of a continuous function must be differentiable and hence continuous. The problem is that is not an antiderivative of for all  in the interval . Oddly, it is the antiderivative at all points except  , , and , which you can verify by computing and showing that it equals whenever is defined.   Graph of    The integration algorithm used by computer algebra systems here (the Risch-Norman algorithm) gives the antiderivative , and we must take great care in using this information.  We get the proper value of the integral by using on the open subintervals and where it is continuous, and taking appropriate limits: .   "
 },
 {
-  "id": "sec_trig-integrals-10",
+  "id": "example-157",
   "level": "2",
-  "url": "sec_trig-integrals.html#sec_trig-integrals-10",
+  "url": "sec_trig-integrals.html#example-157",
   "type": "Example",
   "number": "8.2.5",
   "title": "",
@@ -9469,9 +9469,9 @@ var ptx_lunr_docs = [
   "body": "  .    .  "
 },
 {
-  "id": "exercises_trig-integrals-4",
+  "id": "exercise-524",
   "level": "2",
-  "url": "sec_trig-integrals.html#exercises_trig-integrals-4",
+  "url": "sec_trig-integrals.html#exercise-524",
   "type": "Exercise",
   "number": "8.2.2",
   "title": "",
@@ -9631,9 +9631,9 @@ var ptx_lunr_docs = [
   "body": " Cauchy principal value   Let be a continuous real-valued function for all . The Cauchy principal value (P.V.) of the integral is defined by , provided the limit exists.   "
 },
 {
-  "id": "sec_improper-rational-fn-int-7",
+  "id": "example-159",
   "level": "2",
-  "url": "sec_improper-rational-fn-int.html#sec_improper-rational-fn-int-7",
+  "url": "sec_improper-rational-fn-int.html#example-159",
   "type": "Example",
   "number": "8.3.3",
   "title": "",
@@ -9658,27 +9658,27 @@ var ptx_lunr_docs = [
   "body": " The poles of that lie in the upper half-plane   "
 },
 {
-  "id": "sec_improper-rational-fn-int-11",
+  "id": "proof-76",
   "level": "2",
-  "url": "sec_improper-rational-fn-int.html#sec_improper-rational-fn-int-11",
+  "url": "sec_improper-rational-fn-int.html#proof-76",
   "type": "Proof",
   "number": "8.3.1",
   "title": "",
   "body": " There are a finite number of poles of that lie in the upper half-plane, so we can find a real number such that the poles all lie inside the contour , which consists of the segment of the -axis and the upper semicircle of radius shown in Figure . By properties of integrals, . Using the residue theorem, we rewrite this equation as .  Our proof will be complete if we can show that tends to zero as . Suppose that .  Then , so .  Since , this limit reduces to . Therefore, for any , we may choose large enough so that whenever lies on . But this means that whenever lies on . Using the ML inequality ( Theorem ) and Inequality , we get .  Since was arbitrary, we conclude that .  If we let and combine Equations and , we arrive at the desired conclusion.  "
 },
 {
-  "id": "sec_improper-rational-fn-int-12",
+  "id": "example-160",
   "level": "2",
-  "url": "sec_improper-rational-fn-int.html#sec_improper-rational-fn-int-12",
+  "url": "sec_improper-rational-fn-int.html#example-160",
   "type": "Example",
   "number": "8.3.6",
   "title": "",
   "body": "  Evaluate .    We write the integrand as . We see that has simple poles at the points and in the upper half-plane. Computing the residues, we obtain . Using Theorem , we conclude that    "
 },
 {
-  "id": "sec_improper-rational-fn-int-13",
+  "id": "example-161",
   "level": "2",
-  "url": "sec_improper-rational-fn-int.html#sec_improper-rational-fn-int-13",
+  "url": "sec_improper-rational-fn-int.html#example-161",
   "type": "Example",
   "number": "8.3.7",
   "title": "",
@@ -9838,18 +9838,18 @@ var ptx_lunr_docs = [
   "body": "  Let and be polynomials with real coefficients of degree and , respectively, where and , for all real . If and . then , where are the poles of that lie in the upper half-plane, and and are the real and imaginary parts of , respectively.   "
 },
 {
-  "id": "sec_improper-trig-integrals-6",
+  "id": "example-162",
   "level": "2",
-  "url": "sec_improper-trig-integrals.html#sec_improper-trig-integrals-6",
+  "url": "sec_improper-trig-integrals.html#example-162",
   "type": "Example",
   "number": "8.4.2",
   "title": "",
   "body": "  Evaluate P.V. .    The function in Equation is , which has a simple pole at the point in the upper half-plane. Calculating the residue yields . Using Equation gives    "
 },
 {
-  "id": "sec_improper-trig-integrals-7",
+  "id": "example-163",
   "level": "2",
-  "url": "sec_improper-trig-integrals.html#sec_improper-trig-integrals-7",
+  "url": "sec_improper-trig-integrals.html#example-163",
   "type": "Example",
   "number": "8.4.3",
   "title": "",
@@ -9865,18 +9865,18 @@ var ptx_lunr_docs = [
   "body": " Jordan's lemma   Suppose that and are polynomials of degree and , respectively, where . If is the upper semicircle , for , then .   "
 },
 {
-  "id": "sec_improper-trig-integrals-10",
+  "id": "proof-77",
   "level": "2",
-  "url": "sec_improper-trig-integrals.html#sec_improper-trig-integrals-10",
+  "url": "sec_improper-trig-integrals.html#proof-77",
   "type": "Proof",
   "number": "8.4.1",
   "title": "",
   "body": " From , it follows that as . Therefore, for any , there exists such that whenever . Using the ML inequality ( Theorem ) together with Inequality , we get . provided . The parametrization of leads to the equation .  Using the trigonometric identity and Equations , we express the integral on the right side of Inequality as .  On the interval we can use the inequality . We combine this inequality with Inequality and Equation to conclude that, for , .  Because is arbitrary, the proof of Jordan's lemma is complete.  "
 },
 {
-  "id": "sec_improper-trig-integrals-12",
+  "id": "proof-78",
   "level": "2",
-  "url": "sec_improper-trig-integrals.html#sec_improper-trig-integrals-12",
+  "url": "sec_improper-trig-integrals.html#proof-78",
   "type": "Proof",
   "number": "8.4.2",
   "title": "",
@@ -10009,9 +10009,9 @@ var ptx_lunr_docs = [
   "body": " Indented Contour Integrals  If is continuous on the interval , but discontinuous at , then the improper integral of over is defined by , provided the limit exists. Similarly, if is continuous on the interval , but discontinuous at , then the improper integral of over is defined by , provided the limit exists. For example, .  If is continuous for all values of in the interval , except at the value , where , then the Cauchy principal value of over is defined by , provided the limit exists.    . Evaluating the integrals and computing limits gives     In this section we show how to use residues to evaluate the Cauchy principal value of the integral of over when the integrand has simple poles on the -axis. We state our main results and then look at some examples before giving proofs.    Let , where and are polynomials with real coefficients of degree and , respectively, and . If has simple zeros at the points on the axis, then , where are the poles of that lie in the upper half-plane.      Let and be polynomials of degree and , respectively, where , and let have simple zeros at the points on the -axis. If is a positive real number and if , then and where are the poles of that lie in the upper half-plane.     The formulas in these theorems give the Cauchy principal value of the integral, which pays special attention to the manner in which any limits are taken. They are similar to those in Sections and , except here we add one-half the value of each residue at the points on the -axis.     Evaluate P.V. by using complex analysis.    The integrand has simple poles at the points on the -axis and in the upper half-plane. By Theorem , .      Evaluate P.V. with a computer algebra system.    Computer algebra systems such as Mathematica or MAPLE give the indefinite integral .  However, for real numbers, we should write the second term as and use the equivalent formula: .  This antiderivative has the property , as Figure shows.   Graph of    We also compute . and the Cauchy principal limit at as is .  Therefore the Cauchy principal value of the improper integral is { .      Evaluate P.V. .    The integrand has simple poles at the points on the -axis and in the upper half-plane. By Theorem , .    We are almost ready for the proofs of Theorems and . First, we need the following lemma.    Suppose that has a simple pole at the point on the -axis. If is the contour , for , then      The Laurent series for at has the form , where is analytic at . Using the parametrization of and Equation , we get .  Since is continuous at , there is an so that , and .  Combining this inequality with Equation gives the desired result.   We are now ready to prove Theorems and :   Since has only a finite number of poles, we can choose small enough that the semicircles are disjoint and the poles of in the upper half-plane lie above them, as shown in Figure .   The poles of that lie on the - axis and the poles that lie above the semicircles    Let be large enough so that the poles of in the upper half-plane lie under the semicircle , for , and the poles of on the -axis lie in the interval . Let be the simple closed positively oriented contour that consists of and and the segments of the real axis that lie between the semicircles shown in Figure . The residue theorem gives , which we rewrite as , where is the portion of the interval that lies outside the intervals for . Using the same techniques that we used in Theorems and yields .  If we let and in Equation and use the results of Equation and Lemma , we obtain .  If is the function given in Theorem , then Equation becomes Equation . If is the function given in Theorem , then equating the real and imaginary parts of Equation results in Equations and , respectively, which completes the proof.    Exercises  Use residues to compute the following integrals:   P.V. .    .    P.V. .    P.V. .    .    P.V .    P.V. .    .    P.V. .    P.V. .    .    P.V. .    P.V. .    .    P.V. .    P.V. .    .    P.V. .    P.V. .    .    P.V. .    P.V. . \\hint{Use trigonometric identity .}    .    P.V. . \\hint{Use the contour shown in Figure .}    P.V. . \\hint{Use the contour shown in Figure .}   The contour for Exercises 16 and 17  png    .    "
 },
 {
-  "id": "sec_indented-integrals-4",
+  "id": "example-164",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-4",
+  "url": "sec_indented-integrals.html#example-164",
   "type": "Example",
   "number": "8.5.1",
   "title": "",
@@ -10036,36 +10036,36 @@ var ptx_lunr_docs = [
   "body": "  Let and be polynomials of degree and , respectively, where , and let have simple zeros at the points on the -axis. If is a positive real number and if , then and where are the poles of that lie in the upper half-plane.   "
 },
 {
-  "id": "sec_indented-integrals-8",
+  "id": "remark-17",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-8",
+  "url": "sec_indented-integrals.html#remark-17",
   "type": "Remark",
   "number": "8.5.4",
   "title": "",
   "body": " The formulas in these theorems give the Cauchy principal value of the integral, which pays special attention to the manner in which any limits are taken. They are similar to those in Sections and , except here we add one-half the value of each residue at the points on the -axis.  "
 },
 {
-  "id": "sec_indented-integrals-9",
+  "id": "example-165",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-9",
+  "url": "sec_indented-integrals.html#example-165",
   "type": "Example",
   "number": "8.5.5",
   "title": "",
   "body": "  Evaluate P.V. by using complex analysis.    The integrand has simple poles at the points on the -axis and in the upper half-plane. By Theorem , .   "
 },
 {
-  "id": "sec_indented-integrals-10",
+  "id": "example-166",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-10",
+  "url": "sec_indented-integrals.html#example-166",
   "type": "Example",
   "number": "8.5.6",
   "title": "",
   "body": "  Evaluate P.V. with a computer algebra system.    Computer algebra systems such as Mathematica or MAPLE give the indefinite integral .  However, for real numbers, we should write the second term as and use the equivalent formula: .  This antiderivative has the property , as Figure shows.   Graph of    We also compute . and the Cauchy principal limit at as is .  Therefore the Cauchy principal value of the improper integral is { .   "
 },
 {
-  "id": "sec_indented-integrals-11",
+  "id": "example-167",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-11",
+  "url": "sec_indented-integrals.html#example-167",
   "type": "Example",
   "number": "8.5.8",
   "title": "",
@@ -10081,18 +10081,18 @@ var ptx_lunr_docs = [
   "body": "  Suppose that has a simple pole at the point on the -axis. If is the contour , for , then    "
 },
 {
-  "id": "sec_indented-integrals-14",
+  "id": "proof-79",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-14",
+  "url": "sec_indented-integrals.html#proof-79",
   "type": "Proof",
   "number": "8.5.1",
   "title": "",
   "body": " The Laurent series for at has the form , where is analytic at . Using the parametrization of and Equation , we get .  Since is continuous at , there is an so that , and .  Combining this inequality with Equation gives the desired result.  "
 },
 {
-  "id": "sec_indented-integrals-16",
+  "id": "proof-80",
   "level": "2",
-  "url": "sec_indented-integrals.html#sec_indented-integrals-16",
+  "url": "sec_indented-integrals.html#proof-80",
   "type": "Proof",
   "number": "8.5.2",
   "title": "",
@@ -10234,18 +10234,18 @@ var ptx_lunr_docs = [
   "body": " P.V. . \\hint{Use trigonometric identity .}    .  "
 },
 {
-  "id": "exercises_indented-integrals-18",
+  "id": "exercise-582",
   "level": "2",
-  "url": "sec_indented-integrals.html#exercises_indented-integrals-18",
+  "url": "sec_indented-integrals.html#exercise-582",
   "type": "Exercise",
   "number": "8.5.16",
   "title": "",
   "body": " P.V. . \\hint{Use the contour shown in Figure .}  "
 },
 {
-  "id": "exercises_indented-integrals-19",
+  "id": "exercise-583",
   "level": "2",
-  "url": "sec_indented-integrals.html#exercises_indented-integrals-19",
+  "url": "sec_indented-integrals.html#exercise-583",
   "type": "Exercise",
   "number": "8.5.17",
   "title": "",
@@ -10270,45 +10270,45 @@ var ptx_lunr_docs = [
   "body": "  Let and be polynomials of degree and , respectively, where . If , for has a zero of order at most at the origin, and , where , then , where are the nonzero poles of .   "
 },
 {
-  "id": "sec_branch-integrands-5",
+  "id": "proof-81",
   "level": "2",
-  "url": "sec_branch-integrands.html#sec_branch-integrands-5",
+  "url": "sec_branch-integrands.html#proof-81",
   "type": "Proof",
   "number": "8.6.1",
   "title": "",
   "body": " Let denote the simple closed positively oriented contour that consists of the portions of the circles and and the horizontal segments joining them, per Figure .   Contour encloses the nonzero poles of    We select a small value of and a large value of so that the nonzero poles of lie inside . Using the residue theorem, we write .  If we let in Equation , the integrand on the upper horizontal line of Figure approaches , where is a real number; however, because of the branch we chose for (see Equation ), the integrand on the lower horizontal line approaches . Therefore .  It is here that we need the function to have a zero of order at most 1 at the origin. Otherwise, the first two integrals on the right side of Equation would not necessarily converge. Combining this result with Equation gives , so , which we rewrite as .  Using the ML inequality ( Theorem ) gives .  The argument is essentially the same as that used to establish Equation , and we omit the details. If we combine Equations and and let , we arrive at the desired result.  "
 },
 {
-  "id": "sec_branch-integrands-6",
+  "id": "example-168",
   "level": "2",
-  "url": "sec_branch-integrands.html#sec_branch-integrands-6",
+  "url": "sec_branch-integrands.html#example-168",
   "type": "Example",
   "number": "8.6.3",
   "title": "",
   "body": "  Evaluate P.V. , where .    The function has a nonzero pole at the point , and the denominator has a zero of order at most 1 (in fact, exactly 1) at the origin. Using Theorem , we compute .   "
 },
 {
-  "id": "sec_branch-integrands-8",
+  "id": "example-169",
   "level": "2",
-  "url": "sec_branch-integrands.html#sec_branch-integrands-8",
+  "url": "sec_branch-integrands.html#example-169",
   "type": "Example",
   "number": "8.6.4",
   "title": "",
   "body": "  Evaluate P.V. , where .   We use the function . Recall that , where and . The path of integration will consist of the segments and of the -axis together with the upper semicircles and , for , as shown in Figure .    The contour for the integrand    We chose the branch because it is analytic on and its interior, hence so is the function . This choice enables us to apply the residue theorem properly (see the hypotheses of Theorem ), and we get . Keeping in mind the branch of logarithm that we're using, we then have .  If , then by the ML inequality ( Theorem ) , and L'Hôpital's rule yields . Engaging in a similar computation shows that . We use these results when we take limits Equations to get .  Equating the real parts in this equation gives    "
 },
 {
-  "id": "sec_branch-integrands-9",
+  "id": "remark-18",
   "level": "2",
-  "url": "sec_branch-integrands.html#sec_branch-integrands-9",
+  "url": "sec_branch-integrands.html#remark-18",
   "type": "Remark",
   "number": "8.6.6",
   "title": "",
   "body": " The theory of this section is not purely esoteric. Many applications of contour integrals surface in government and industry worldwide. Several years ago, for example, a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in Figure .  "
 },
 {
-  "id": "exercises_branch-integrands-2",
+  "id": "exercise-584",
   "level": "2",
-  "url": "sec_branch-integrands.html#exercises_branch-integrands-2",
+  "url": "sec_branch-integrands.html#exercise-584",
   "type": "Exercise",
   "number": "8.6.1",
   "title": "",
@@ -10423,9 +10423,9 @@ var ptx_lunr_docs = [
   "body": " The Argument Principle & Rouché's Theorem  We now derive two results based on Cauchy 's residue theorem. They have important practical applications and pertain only to functions all of whose isolated singularities are poles.   Meromorphic function   A function is said to be meromorphic in a domain provided the only singularities of are isolated poles and removable singularities.    We make three important observations relating to this definition.   Analytic functions are a special case of meromorphic functions.    Rational functions , where and are polynomials, are meromorphic in the entire complex plane.    By definition, meromorphic functions have no essential singularities.     Suppose that is analytic at each point on a simple closed contour and is meromorphic in the domain that is the interior of . We assert without proof that Theorem can be extended to meromorphic functions so that has at most a finite number of zeros that lie inside . Since the function is also meromorphic, it can have only a finite number of zeros inside , and so can have at most a finite number of poles that lie inside .  The following theorem, known as the argument principle, is useful in determining the number of zeros and poles that a function has.   argument principle   Suppose that is meromorphic in the simply connected domain and that is a simple closed positively oriented contour in such that has no zeros or poles for . Then , where is the number of zeros of that lie inside and is the number of poles of that lie inside .     Let be the zeros of inside counted according to multiplicity and let be the poles of inside counted according to multiplicity. Then has the representation , where is analytic and nonzero on and inside . A standard calculation shows that .   Corollary then gives .  The function is analytic inside and on , so the Cauchy-Goursat theorem gives . These facts lead to the conclusion of our theorem if we integrate both sides of Equation over .     Suppose that is analytic in the simply connected domain . Let be a simple closed positively oriented contour in such that for , . Then , where is the number of zeros of that lie inside .     Certain feedback control systems in engineering must be stable. A test for stability involves the function , where is a rational function. If does not have any zeros in the region , then the system is stable. We determine the number of zeros of by writing , where and are polynomials with no common zero. Then , and we can check for the zeros of by using Theorem . We select a value so that for and then integrate along the contour consisting of the right half of the circle and the line segment between and . This method is known as the Nyquist stability criterion .   Why do we label Theorem as the argument principle ? The answer lies with a fascinating application known as the winding number . Recall that a branch of the logarithm function, , is defined by , where and . Loosely speaking, suppose that for some branch of the logarithm, the composite function were analytic in a simply connected domain containing the contour . This would imply that is an antiderivative of the function for all . Theorems and would then tell us that, as winds around the curve , the quantity would change by . Since is purely imaginary, this result tells us that would change by radians. In other words, as winds around , the integral would count how many times the curve winds around the origin.  Unfortunately, we can't always claim that is an antiderivative of the function for all . If it were, the Cauchy-Goursat theorem would imply that . Nevertheless, the heuristics that we gave indicating that counts how many times the curve winds around the origin still hold true, as we now demonstrate.  Suppose that for is a simple closed contour and that we let be a partition of the interval . For , we let denote the corresponding points on , where . If lies inside , then the curve winds around once as goes from to , as shown in Figure .  Now suppose that a function is analytic at each point on and meromorphic inside . Then is a closed curve in the plane that passes through the points , for , where . We can choose subintervals small enough so that, on the portion of between and , we can define a continuous branch of the logarithm , where and , as shown in Figure . Then , where measures in radians the amount that the portion of the curve between and winds around the origin. With small enough subintervals , the angles and might be different, but the values and will be the same, so that .   The points on the contour that winds around    We can now show why counts the number of times that winds around the origin. We parametrize , for , and choose the appropriate branches of ,giving . which we rewrite as .  When we use the fact that , the first summation in Equation vanishes. The summation of the quantities expresses the accumulated radian measure of around the origin. Therefore, when we divide both sides of Equation by , its right side becomes an integer (by Theorem ) that must count the number of times winds around the origin.    The image of the circle under is the curve given by shown in Figure .   The image curve under    Note that the image curve winds twice around the origin. We check this by computing . The residues of the integrand are at and . Thus .    Finally, we note that if , then , and thus we can generalize what we've just said to compute how many times the curve winds around the point . Theorem summarizes our discussion.   winding numbers   Suppose that is meromorphic in the simply connected domain . If is a simple closed positively oriented contour in \\ such that for , and , then , known as the winding number of { } about , counts the number of times the curve winds around the point . If , the integral counts the number of times the curve winds around the origin.     Letting in Theorem gives which counts the number of times the curve winds around the point . If is not a simple closed curve, but crosses itself perhaps several times, we can show (but omit the proof) that still gives the number of times the curve winds around the point . Thus winding number is indeed an appropriate term.   We close this section with a result that will help us gain information about the location of the zeros and poles of meromorphic functions.   Rouché's theorem   Suppose that and are meromorphic functions defined in the simply connected domain , that is a simply closed contour in , and that and have no zeros or poles for . If the strict inequality holds for all , then .     Because has no zeros or poles on , we may legitimately divide both sides of the inequality by to get .  For cannot possibly be zero or any positive real number, as that would contradict Inequality . This means that , the image of the curve under the mapping , does not contain the interval , and so the function defined by , where and , is analytic in a simply connected domain that contains . We calculate , so is an antiderivative of , for all . Since is a closed curve in , Theorem gives . According to Theorem then, , which completes the proof.     Suppose that and are analytic functions defined in the simply connected domain , that is a simple closed contour in , and that and have no zeros for . If the strict inequality holds for all , then .      Theorem is usually stated with the requirement that and satisfy the condition , for . The improved theorem that we gave was discovered by Irving Glicksberg (see the American Mathematical Monthly , 83 (1976), pp. 186-187). The weaker version is adequate for most purposes, however, as the following examples illustrate.     Show that all four zeros of the polynomial lie in the disk .    Let . Then , and at points on the circle we have the relation . Of course, if , then as we indicated in Remark we certainly have , so that the conditions for applying Corollary are satisfied on the circle . The function has a zero of order at the origin, so must have four zeros inside .      Show that the polynomial has one zero in the disk .    Let , then . At points on the circle we have the relation . The function has one zero at the point in the disk , and the hypotheses of Corollary hold on the circle . Therefore has one zero inside .     Exercises   Let . Find the number of times the image winds around the origin if   .   .    is the rectangle with vertices .   .   .    .    Show that four of the five roots of the equation belong to the annulus .    Let .  Show that there are no zeros in .  Let . Then . As has no roots in , neither does by Rouché's Theorem.   Show that there are five zeros in . \\hint{Consider .}  Remark : A factorization of the polynomial using numerical approximations for the coefficients is     Let .  Show that there are no zeros in .  Show that there are three zeros in .  Remark : A factorization of the polynomial using numerical approximations for the coefficients is     Let .  Show that there are two zeros in .  Let . Then . It is easy to show that for . Complete the details.   Show that there are five zeros in .    Let .  Show that there are no zeros in .  Show that there are four zeros in .  Show that there are six zeros in .    Let .  Show that there are no zeros in .  Let . Then . Show the details and explain why this gives the conclusion you want.   Show that there are three zeros in .    Use Rouché's theorem to prove the fundamental theorem of algebra. \\hint{For the polynomial , let . Show that, for points on the circle , , and conclude that the right side of this inequality is less than 1 when is large.}    Suppose that is analytic and nonzero and for . Prove that the function has zeros inside the unit circle .   Let . Then . Complete the argument.    Suppose that is analytic inside and on the simple closed contour . If is a one-to-one function at points on , then prove that is one-to-one inside . \\hint{Consider the image of .}    "
 },
 {
-  "id": "sec_argument-rouche-3",
+  "id": "definition-52",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-3",
+  "url": "sec_argument-rouche.html#definition-52",
   "type": "Definition",
   "number": "8.7.1",
   "title": "Meromorphic function.",
@@ -10441,9 +10441,9 @@ var ptx_lunr_docs = [
   "body": " argument principle   Suppose that is meromorphic in the simply connected domain and that is a simple closed positively oriented contour in such that has no zeros or poles for . Then , where is the number of zeros of that lie inside and is the number of poles of that lie inside .   "
 },
 {
-  "id": "sec_argument-rouche-8",
+  "id": "proof-82",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-8",
+  "url": "sec_argument-rouche.html#proof-82",
   "type": "Proof",
   "number": "8.7.1",
   "title": "",
@@ -10459,9 +10459,9 @@ var ptx_lunr_docs = [
   "body": "  Suppose that is analytic in the simply connected domain . Let be a simple closed positively oriented contour in such that for , . Then , where is the number of zeros of that lie inside .   "
 },
 {
-  "id": "sec_argument-rouche-10",
+  "id": "remark-19",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-10",
+  "url": "sec_argument-rouche.html#remark-19",
   "type": "Remark",
   "number": "8.7.4",
   "title": "",
@@ -10495,9 +10495,9 @@ var ptx_lunr_docs = [
   "body": " winding numbers   Suppose that is meromorphic in the simply connected domain . If is a simple closed positively oriented contour in \\ such that for , and , then , known as the winding number of { } about , counts the number of times the curve winds around the point . If , the integral counts the number of times the curve winds around the origin.   "
 },
 {
-  "id": "sec_argument-rouche-21",
+  "id": "remark-20",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-21",
+  "url": "sec_argument-rouche.html#remark-20",
   "type": "Remark",
   "number": "8.7.9",
   "title": "",
@@ -10513,9 +10513,9 @@ var ptx_lunr_docs = [
   "body": " Rouché's theorem   Suppose that and are meromorphic functions defined in the simply connected domain , that is a simply closed contour in , and that and have no zeros or poles for . If the strict inequality holds for all , then .   "
 },
 {
-  "id": "sec_argument-rouche-24",
+  "id": "proof-83",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-24",
+  "url": "sec_argument-rouche.html#proof-83",
   "type": "Proof",
   "number": "8.7.2",
   "title": "",
@@ -10540,18 +10540,18 @@ var ptx_lunr_docs = [
   "body": "  Theorem is usually stated with the requirement that and satisfy the condition , for . The improved theorem that we gave was discovered by Irving Glicksberg (see the American Mathematical Monthly , 83 (1976), pp. 186-187). The weaker version is adequate for most purposes, however, as the following examples illustrate.  "
 },
 {
-  "id": "sec_argument-rouche-27",
+  "id": "example-171",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-27",
+  "url": "sec_argument-rouche.html#example-171",
   "type": "Example",
   "number": "8.7.13",
   "title": "",
   "body": "  Show that all four zeros of the polynomial lie in the disk .    Let . Then , and at points on the circle we have the relation . Of course, if , then as we indicated in Remark we certainly have , so that the conditions for applying Corollary are satisfied on the circle . The function has a zero of order at the origin, so must have four zeros inside .   "
 },
 {
-  "id": "sec_argument-rouche-28",
+  "id": "example-172",
   "level": "2",
-  "url": "sec_argument-rouche.html#sec_argument-rouche-28",
+  "url": "sec_argument-rouche.html#example-172",
   "type": "Example",
   "number": "8.7.14",
   "title": "",
@@ -10675,9 +10675,9 @@ var ptx_lunr_docs = [
   "body": "  Let be an analytic function in the domain , and let be a point in . If , then is conformal at .   "
 },
 {
-  "id": "sec_conformal-mappings-10",
+  "id": "proof-84",
   "level": "2",
-  "url": "sec_conformal-mappings.html#sec_conformal-mappings-10",
+  "url": "sec_conformal-mappings.html#proof-84",
   "type": "Proof",
   "number": "9.1.1",
   "title": "",
@@ -10693,9 +10693,9 @@ var ptx_lunr_docs = [
   "body": " Angle preservation when   "
 },
 {
-  "id": "sec_conformal-mappings-13",
+  "id": "example-173",
   "level": "2",
-  "url": "sec_conformal-mappings.html#sec_conformal-mappings-13",
+  "url": "sec_conformal-mappings.html#example-173",
   "type": "Example",
   "number": "9.1.4",
   "title": "",
@@ -10711,9 +10711,9 @@ var ptx_lunr_docs = [
   "body": "  Let be analytic at . If and , then the mapping magnifies angles at the vertex by a factor .   "
 },
 {
-  "id": "sec_conformal-mappings-16",
+  "id": "proof-85",
   "level": "2",
-  "url": "sec_conformal-mappings.html#sec_conformal-mappings-16",
+  "url": "sec_conformal-mappings.html#proof-85",
   "type": "Proof",
   "number": "9.1.2",
   "title": "",
@@ -10729,27 +10729,27 @@ var ptx_lunr_docs = [
   "body": " The analytic mapping at point expands angles by a factor of when , and   "
 },
 {
-  "id": "sec_conformal-mappings-18",
+  "id": "example-174",
   "level": "2",
-  "url": "sec_conformal-mappings.html#sec_conformal-mappings-18",
+  "url": "sec_conformal-mappings.html#example-174",
   "type": "Example",
   "number": "9.1.7",
   "title": "",
   "body": "  Show that the mapping maps the unit square onto the region in the upper half-plane , which lies under the parabolas , as shown in Figure .   The mapping      The derivative is , and we conclude that the mapping is conformal for all . Note that the right angles at the vertices , , and are mapped onto right angles at the vertices , and , respectively. At the point , we have and . Hence angles at the vertex are magnified by the factor . In particular, the right angle at is mapped onto the straight angle at .   "
 },
 {
-  "id": "exercises_conformal-mappings-2",
+  "id": "exercise-606",
   "level": "2",
-  "url": "sec_conformal-mappings.html#exercises_conformal-mappings-2",
+  "url": "sec_conformal-mappings.html#exercise-606",
   "type": "Exercise",
   "number": "9.1.1",
   "title": "",
   "body": " State where the following mappings are conformal.   .  All complex numbers .    .   .  All complex numbers except and .    .   .  All complex numbers except .    .  "
 },
 {
-  "id": "exercises_conformal-mappings-3",
+  "id": "exercise-607",
   "level": "2",
-  "url": "sec_conformal-mappings.html#exercises_conformal-mappings-3",
+  "url": "sec_conformal-mappings.html#exercise-607",
   "type": "Exercise",
   "number": "9.1.2",
   "title": "",
@@ -10783,45 +10783,45 @@ var ptx_lunr_docs = [
   "body": " The image of under   "
 },
 {
-  "id": "sec_bilinear-transformations-2-9",
+  "id": "theorem-89",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-9",
+  "url": "sec_bilinear-transformations.html#theorem-89",
   "type": "Theorem",
   "number": "9.2.3",
   "title": "The implicit formula.",
   "body": " The implicit formula   There exists a unique bilinear transformation that maps three distinct points, , , and , onto three distinct points, , , and , respectively. An implicit formula for the mapping is given by .   "
 },
 {
-  "id": "sec_bilinear-transformations-2-10",
+  "id": "proof-86",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-10",
+  "url": "sec_bilinear-transformations.html#proof-86",
   "type": "Proof",
   "number": "1",
   "title": "",
   "body": " We algebraically manipulate Equation and solve for in terms of . The result is an expression for that has the form of Equation , where the coefficients , , , and involve various combinations of the values , and . The details are left as an exercise.  If we set and in Equation , then both sides of the equation are zero, showing that is the image of . If we set and in Equation , then both sides of the equation take on the value . Hence is the image of . Taking reciprocals, we write Equation in the form .  If we set and in Equation , then both sides of the equation are zero. Therefore is the image of , and we have shown that the transformation has the required properties.  "
 },
 {
-  "id": "sec_bilinear-transformations-2-11",
+  "id": "example-176",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-11",
+  "url": "sec_bilinear-transformations.html#example-176",
   "type": "Example",
   "number": "9.2.4",
   "title": "",
   "body": "  Construct the bilinear transformation that maps the points , , and onto the points , , and , respectively.    We use the implicit formula (Equation ) and write   Expanding this equation, we obtain .  Then, collecting terms involving and on the left results in , from which we obtain . Therefore the desired bilinear transformation is    "
 },
 {
-  "id": "sec_bilinear-transformations-2-12",
+  "id": "example-177",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-12",
+  "url": "sec_bilinear-transformations.html#example-177",
   "type": "Example",
   "number": "9.2.5",
   "title": "",
   "body": "  Find the bilinear transformation that maps the points , and onto , and , respectively.    Again, we use the implicit formula and write . Using the fact that , we rewrite this equation as . We now expand the equation and obtain , which can be solved for in terms of , giving the desired solution    "
 },
 {
-  "id": "sec_bilinear-transformations-2-15",
+  "id": "example-178",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-15",
+  "url": "sec_bilinear-transformations.html#example-178",
   "type": "Example",
   "number": "9.2.6",
   "title": "",
@@ -10837,27 +10837,27 @@ var ptx_lunr_docs = [
   "body": " The bilinear mapping   "
 },
 {
-  "id": "sec_bilinear-transformations-2-17",
+  "id": "corollary-22",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-17",
+  "url": "sec_bilinear-transformations.html#corollary-22",
   "type": "Corollary",
   "number": "9.2.8",
   "title": "",
   "body": "  (The implicit formula with a point at infinity) In Equation , the point at infinity can be introduced as one of the prescribed points in either the plane or the plane.   "
 },
 {
-  "id": "sec_bilinear-transformations-2-18",
+  "id": "proof-87",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-18",
+  "url": "sec_bilinear-transformations.html#proof-87",
   "type": "Proof",
   "number": "2",
   "title": "",
   "body": "  Case 1 If , then we can write and substitute this expression into Equation to obtain    Case 2 If , then we can write and substitute this expression into Equation to obtain .  "
 },
 {
-  "id": "sec_bilinear-transformations-2-20",
+  "id": "example-179",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-20",
+  "url": "sec_bilinear-transformations.html#example-179",
   "type": "Example",
   "number": "9.2.9",
   "title": "",
@@ -10882,27 +10882,27 @@ var ptx_lunr_docs = [
   "body": " Images of under the mapping   "
 },
 {
-  "id": "exercises_bilinear-transformations-2",
+  "id": "exercise-608",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-2",
+  "url": "sec_bilinear-transformations.html#exercise-608",
   "type": "Exercise",
   "number": "9.2.1.1",
   "title": "",
   "body": " If , find .    .  "
 },
 {
-  "id": "exercises_bilinear-transformations-3",
+  "id": "exercise-609",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-3",
+  "url": "sec_bilinear-transformations.html#exercise-609",
   "type": "Exercise",
   "number": "9.2.1.2",
   "title": "",
   "body": " If , find .  "
 },
 {
-  "id": "exercises_bilinear-transformations-4",
+  "id": "exercise-610",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-4",
+  "url": "sec_bilinear-transformations.html#exercise-610",
   "type": "Exercise",
   "number": "9.2.1.3",
   "title": "",
@@ -10918,126 +10918,126 @@ var ptx_lunr_docs = [
   "body": " Show that the bilinear transformation maps the portion of the disk that lies in the upper half-plane onto the first quadrant .  "
 },
 {
-  "id": "exercises_bilinear-transformations-6",
+  "id": "exercise-612",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-6",
+  "url": "sec_bilinear-transformations.html#exercise-612",
   "type": "Exercise",
   "number": "9.2.1.5",
   "title": "",
   "body": " Find the image of the upper half-plane under the transformation    The region .  "
 },
 {
-  "id": "exercises_bilinear-transformations-7",
+  "id": "exercise-613",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-7",
+  "url": "sec_bilinear-transformations.html#exercise-613",
   "type": "Exercise",
   "number": "9.2.1.6",
   "title": "",
   "body": " Find the bilinear transformation that maps the points , and onto , and , respectively.  "
 },
 {
-  "id": "exercises_bilinear-transformations-8",
+  "id": "exercise-614",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-8",
+  "url": "sec_bilinear-transformations.html#exercise-614",
   "type": "Exercise",
   "number": "9.2.1.7",
   "title": "",
   "body": " Find the bilinear transformation that maps the points , and onto , and , respectively.    .  "
 },
 {
-  "id": "exercises_bilinear-transformations-9",
+  "id": "exercise-615",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-9",
+  "url": "sec_bilinear-transformations.html#exercise-615",
   "type": "Exercise",
   "number": "9.2.1.8",
   "title": "",
   "body": " Find the bilinear transformation that maps the points , and onto , and , respectively.  "
 },
 {
-  "id": "exercises_bilinear-transformations-10",
+  "id": "exercise-616",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-10",
+  "url": "sec_bilinear-transformations.html#exercise-616",
   "type": "Exercise",
   "number": "9.2.1.9",
   "title": "",
   "body": " Find the bilinear transformation that maps the points , and onto , and , respectively.    .  "
 },
 {
-  "id": "exercises_bilinear-transformations-11",
+  "id": "exercise-617",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-11",
+  "url": "sec_bilinear-transformations.html#exercise-617",
   "type": "Exercise",
   "number": "9.2.1.10",
   "title": "",
   "body": " Show that the transformation maps the unit disk onto the right half-plane .  "
 },
 {
-  "id": "exercises_bilinear-transformations-12",
+  "id": "exercise-618",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-12",
+  "url": "sec_bilinear-transformations.html#exercise-618",
   "type": "Exercise",
   "number": "9.2.1.11",
   "title": "",
   "body": " Find the image of the lower half-plane under .   The disk .  "
 },
 {
-  "id": "exercises_bilinear-transformations-13",
+  "id": "exercise-619",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-13",
+  "url": "sec_bilinear-transformations.html#exercise-619",
   "type": "Exercise",
   "number": "9.2.1.12",
   "title": "",
   "body": " If and , find and .  "
 },
 {
-  "id": "exercises_bilinear-transformations-14",
+  "id": "exercise-620",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-14",
+  "url": "sec_bilinear-transformations.html#exercise-620",
   "type": "Exercise",
   "number": "9.2.1.13",
   "title": "",
   "body": " Find the image of the quadrant , under .   The portion of the disk that lies in the upper half-plane .  "
 },
 {
-  "id": "exercises_bilinear-transformations-15",
+  "id": "exercise-621",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-15",
+  "url": "sec_bilinear-transformations.html#exercise-621",
   "type": "Exercise",
   "number": "9.2.1.14",
   "title": "",
   "body": " Show that Equation can be written in the form of Equation .  "
 },
 {
-  "id": "exercises_bilinear-transformations-16",
+  "id": "exercise-622",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-16",
+  "url": "sec_bilinear-transformations.html#exercise-622",
   "type": "Exercise",
   "number": "9.2.1.15",
   "title": "",
   "body": " Find the image of the horizontal strip under .   The region of that lies exterior to both the circles and .  "
 },
 {
-  "id": "exercises_bilinear-transformations-17",
+  "id": "exercise-623",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-17",
+  "url": "sec_bilinear-transformations.html#exercise-623",
   "type": "Exercise",
   "number": "9.2.1.16",
   "title": "",
   "body": " Show that the bilinear transformation is conformal at all points .  "
 },
 {
-  "id": "exercises_bilinear-transformations-18",
+  "id": "exercise-624",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-18",
+  "url": "sec_bilinear-transformations.html#exercise-624",
   "type": "Exercise",
   "number": "9.2.1.17",
   "title": "",
   "body": " A fixed point of a mapping is a point such that . Show that a bilinear transformation can have at most two fixed points.   The equation can be written as , and a quadratic equation has, at most, two distinct solutions.  "
 },
 {
-  "id": "exercises_bilinear-transformations-19",
+  "id": "exercise-625",
   "level": "2",
-  "url": "sec_bilinear-transformations.html#exercises_bilinear-transformations-19",
+  "url": "sec_bilinear-transformations.html#exercise-625",
   "type": "Exercise",
   "number": "9.2.1.18",
   "title": "",
@@ -11062,27 +11062,27 @@ var ptx_lunr_docs = [
   "body": " The conformal mapping   "
 },
 {
-  "id": "sec_elementary-mappings-2-4",
+  "id": "example-180",
   "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-4",
+  "url": "sec_elementary-mappings.html#example-180",
   "type": "Example",
   "number": "9.3.2",
   "title": "",
   "body": "  Show that the transformation is a one-to-one conformal mapping of the horizontal strip onto the disk . Furthermore, the -axis is mapped onto the lower semicircle bounding the disk, and the line is mapped onto the upper semicircle.    The function is the composition of followed by . The transformation maps the horizontal strip onto the upper half plane ; the -axis is mapped on to the positive -axis; and the line is mapped onto the negative -axis. Then the bilinear transformation maps the upper half plane onto the disk , the positive -axis is mapped onto the lower semicircle; and the negative -axis onto the upper semicircle. Figures and illustrate the composite mappings.   "
 },
 {
-  "id": "sec_elementary-mappings-2-5",
+  "id": "example-181",
   "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-5",
+  "url": "sec_elementary-mappings.html#example-181",
   "type": "Example",
   "number": "9.3.3",
   "title": "",
   "body": "  Show that the transformation is a one-to-one conformal mapping of the unit disk onto the horizontal strip . Furthermore, the upper semicircle of the disk is mapped onto the line and the lower semicircle onto .   The composite transformation     The composite transformation      The function is the composition of the bilinear transformation followed by the logarithmic mapping . The image of the disk under the bilinear mapping is the right half-plane ; the upper semicircle is mapped onto the positive -axis; and the lower semicircle is mapped onto the negative -axis. The logarithmic function then maps the right half-plane onto the horizontal strip, the image of the positive -axis is the line , and the image of the negative -axis is the line . Figures 9.11 and 9.12 illustrate the composite mappings.   "
 },
 {
-  "id": "sec_elementary-mappings-2-6",
+  "id": "example-182",
   "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-6",
+  "url": "sec_elementary-mappings.html#example-182",
   "type": "Example",
   "number": "9.3.6",
   "title": "",
@@ -11098,9 +11098,9 @@ var ptx_lunr_docs = [
   "body": " The composite transformation   "
 },
 {
-  "id": "sec_elementary-mappings-2-8",
+  "id": "example-183",
   "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-8",
+  "url": "sec_elementary-mappings.html#example-183",
   "type": "Example",
   "number": "9.3.8",
   "title": "",
@@ -11116,9 +11116,9 @@ var ptx_lunr_docs = [
   "body": " The composite transformation and the intermediate steps and   "
 },
 {
-  "id": "sec_elementary-mappings-2-10",
+  "id": "remark-22",
   "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-10",
+  "url": "sec_elementary-mappings.html#remark-22",
   "type": "Remark",
   "number": "9.3.10",
   "title": "",
@@ -11143,144 +11143,144 @@ var ptx_lunr_docs = [
   "body": " The Riemann surfaces for the mapping   "
 },
 {
-  "id": "exercises_elementary-mappings-2",
+  "id": "exercise-626",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-2",
+  "url": "sec_elementary-mappings.html#exercise-626",
   "type": "Exercise",
   "number": "9.3.2.1",
   "title": "",
   "body": " Find the image of the semi-infinite strip , , under the transformation   .   The portion of the disk that lies in the first quadrant .  "
 },
 {
-  "id": "exercises_elementary-mappings-3",
+  "id": "exercise-627",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-3",
+  "url": "sec_elementary-mappings.html#exercise-627",
   "type": "Exercise",
   "number": "9.3.2.2",
   "title": "",
   "body": " Find the image of the rectangle , , under the transformation .  "
 },
 {
-  "id": "exercises_elementary-mappings-4",
+  "id": "exercise-628",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-4",
+  "url": "sec_elementary-mappings.html#exercise-628",
   "type": "Exercise",
   "number": "9.3.2.3",
   "title": "",
   "body": " Find the image of the first quadrant , , under .   The horizontal strip .  "
 },
 {
-  "id": "exercises_elementary-mappings-5",
+  "id": "exercise-629",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-5",
+  "url": "sec_elementary-mappings.html#exercise-629",
   "type": "Exercise",
   "number": "9.3.2.4",
   "title": "",
   "body": " Find the image of the annulus under .  "
 },
 {
-  "id": "exercises_elementary-mappings-6",
+  "id": "exercise-630",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-6",
+  "url": "sec_elementary-mappings.html#exercise-630",
   "type": "Exercise",
   "number": "9.3.2.5",
   "title": "",
   "body": " Show that the multivalued function maps the annulus onto the vertical strip .   The vertical strip .  "
 },
 {
-  "id": "exercises_elementary-mappings-7",
+  "id": "exercise-631",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-7",
+  "url": "sec_elementary-mappings.html#exercise-631",
   "type": "Exercise",
   "number": "9.3.2.6",
   "title": "",
   "body": " Show that maps the portion of the right half-plane that lies to the right of the hyperbola onto the unit disk .  "
 },
 {
-  "id": "exercises_elementary-mappings-8",
+  "id": "exercise-632",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-8",
+  "url": "sec_elementary-mappings.html#exercise-632",
   "type": "Exercise",
   "number": "9.3.2.7",
   "title": "",
   "body": " Show that the function maps the horizontal strip onto the region .   The region .  "
 },
 {
-  "id": "exercises_elementary-mappings-9",
+  "id": "exercise-633",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-9",
+  "url": "sec_elementary-mappings.html#exercise-633",
   "type": "Exercise",
   "number": "9.3.2.8",
   "title": "",
   "body": " Show that maps the horizontal strip onto the unit disk .  "
 },
 {
-  "id": "exercises_elementary-mappings-10",
+  "id": "exercise-634",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-10",
+  "url": "sec_elementary-mappings.html#exercise-634",
   "type": "Exercise",
   "number": "9.3.2.9",
   "title": "",
   "body": " Find the image of the upper half-plane under .   The horizontal strip .  "
 },
 {
-  "id": "exercises_elementary-mappings-11",
+  "id": "exercise-635",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-11",
+  "url": "sec_elementary-mappings.html#exercise-635",
   "type": "Exercise",
   "number": "9.3.2.10",
   "title": "",
   "body": " Find the image of the portion of the upper half-plane that lies outside the circle under the transformation .  "
 },
 {
-  "id": "exercises_elementary-mappings-12",
+  "id": "exercise-636",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-12",
+  "url": "sec_elementary-mappings.html#exercise-636",
   "type": "Exercise",
   "number": "9.3.2.11",
   "title": "",
   "body": " Show that the function maps the portion of the disk that lies in the first quadrant onto the portion of the upper half plane that lies outside the unit disk.   The portion of the upper half-plane that lies in the region .  "
 },
 {
-  "id": "exercises_elementary-mappings-13",
+  "id": "exercise-637",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-13",
+  "url": "sec_elementary-mappings.html#exercise-637",
   "type": "Exercise",
   "number": "9.3.2.12",
   "title": "",
   "body": " Find the image of the upper half-plane under the transformation   .  "
 },
 {
-  "id": "exercises_elementary-mappings-14",
+  "id": "exercise-638",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-14",
+  "url": "sec_elementary-mappings.html#exercise-638",
   "type": "Exercise",
   "number": "9.3.2.13",
   "title": "",
   "body": " Find the branch of that maps the right half-plane onto the right half-plane slit along the segment .    , where the principal brance of the square root is used.  "
 },
 {
-  "id": "exercises_elementary-mappings-15",
+  "id": "exercise-639",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-15",
+  "url": "sec_elementary-mappings.html#exercise-639",
   "type": "Exercise",
   "number": "9.3.2.14",
   "title": "",
   "body": " Show that the transformation maps the portion of the first quadrant , , that lies outside the circle onto the first quadrant .  "
 },
 {
-  "id": "exercises_elementary-mappings-16",
+  "id": "exercise-640",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-16",
+  "url": "sec_elementary-mappings.html#exercise-640",
   "type": "Exercise",
   "number": "9.3.2.15",
   "title": "",
   "body": " Find the image of the sector , under .   The unit disk .  "
 },
 {
-  "id": "exercises_elementary-mappings-17",
+  "id": "exercise-641",
   "level": "2",
-  "url": "sec_elementary-mappings.html#exercises_elementary-mappings-17",
+  "url": "sec_elementary-mappings.html#exercise-641",
   "type": "Exercise",
   "number": "9.3.2.16",
   "title": "",
@@ -11305,9 +11305,9 @@ var ptx_lunr_docs = [
   "body": " The composite transformation   "
 },
 {
-  "id": "sec_conformal-trig-2-3",
+  "id": "example-184",
   "level": "2",
-  "url": "sec_conformal-trig.html#sec_conformal-trig-2-3",
+  "url": "sec_conformal-trig.html#example-184",
   "type": "Example",
   "number": "9.4.2",
   "title": "",
@@ -11350,144 +11350,144 @@ var ptx_lunr_docs = [
   "body": " Riemann mapping theorem   If is any simply connected domain in the plane (other than the entire plane itself), then there exists a one-to-one conformal mapping that maps onto the unit disk .   "
 },
 {
-  "id": "exercises_conformal-trig-2",
+  "id": "exercise-642",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-2",
+  "url": "sec_conformal-trig.html#exercise-642",
   "type": "Exercise",
   "number": "9.4.1.1",
   "title": "",
   "body": " Find the image of the semi-infinite strip , under the mapping .   The portion of the disk that lies in the second quadrant .  "
 },
 {
-  "id": "exercises_conformal-trig-3",
+  "id": "exercise-643",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-3",
+  "url": "sec_conformal-trig.html#exercise-643",
   "type": "Exercise",
   "number": "9.4.1.2",
   "title": "",
   "body": " Find the image of the vertical strip under the mapping .  "
 },
 {
-  "id": "exercises_conformal-trig-4",
+  "id": "exercise-644",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-4",
+  "url": "sec_conformal-trig.html#exercise-644",
   "type": "Exercise",
   "number": "9.4.1.3",
   "title": "",
   "body": " Find the image of the vertical line under the transformation .   The right branch of the hyperbola .  "
 },
 {
-  "id": "exercises_conformal-trig-5",
+  "id": "exercise-645",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-5",
+  "url": "sec_conformal-trig.html#exercise-645",
   "type": "Exercise",
   "number": "9.4.1.4",
   "title": "",
   "body": " Find the image of the horizontal line under the transformation .  "
 },
 {
-  "id": "exercises_conformal-trig-6",
+  "id": "exercise-646",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-6",
+  "url": "sec_conformal-trig.html#exercise-646",
   "type": "Exercise",
   "number": "9.4.1.5",
   "title": "",
   "body": " Find the image of the rectangle under the transformation .   The region in the first quadrant that lies inside the ellipse given by and to the left of the hyperbola .  "
 },
 {
-  "id": "exercises_conformal-trig-7",
+  "id": "exercise-647",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-7",
+  "url": "sec_conformal-trig.html#exercise-647",
   "type": "Exercise",
   "number": "9.4.1.6",
   "title": "",
   "body": " Find the image of the semi-infinite strip , under the mapping .  "
 },
 {
-  "id": "exercises_conformal-trig-8",
+  "id": "exercise-648",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-8",
+  "url": "sec_conformal-trig.html#exercise-648",
   "type": "Exercise",
   "number": "9.4.1.7",
   "title": "",
   "body": " Compute the following limits:   .   .    .   .   "
 },
 {
-  "id": "exercises_conformal-trig-9",
+  "id": "exercise-649",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-9",
+  "url": "sec_conformal-trig.html#exercise-649",
   "type": "Exercise",
   "number": "9.4.1.8",
   "title": "",
   "body": " Use Equations and to find   .   .   .   .  "
 },
 {
-  "id": "exercises_conformal-trig-10",
+  "id": "exercise-650",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-10",
+  "url": "sec_conformal-trig.html#exercise-650",
   "type": "Exercise",
   "number": "9.4.1.9",
   "title": "",
   "body": " Show that maps the rectangle one-to-one and onto the portion of the upper half-plane that lies inside the ellipse .  "
 },
 {
-  "id": "exercises_conformal-trig-11",
+  "id": "exercise-651",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-11",
+  "url": "sec_conformal-trig.html#exercise-651",
   "type": "Exercise",
   "number": "9.4.1.10",
   "title": "",
   "body": " Find the image of the vertical strip under the mapping .  "
 },
 {
-  "id": "exercises_conformal-trig-12",
+  "id": "exercise-652",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-12",
+  "url": "sec_conformal-trig.html#exercise-652",
   "type": "Exercise",
   "number": "9.4.1.11",
   "title": "",
   "body": " Find the image of the horizontal strip under .   The upper half-plane .  "
 },
 {
-  "id": "exercises_conformal-trig-13",
+  "id": "exercise-653",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-13",
+  "url": "sec_conformal-trig.html#exercise-653",
   "type": "Exercise",
   "number": "9.4.1.12",
   "title": "",
   "body": " Find the image of the right half-plane under the mapping   "
 },
 {
-  "id": "exercises_conformal-trig-14",
+  "id": "exercise-654",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-14",
+  "url": "sec_conformal-trig.html#exercise-654",
   "type": "Exercise",
   "number": "9.4.1.13",
   "title": "",
   "body": " Find the image of the first quadrant , under .   The semi-infinite strip .  "
 },
 {
-  "id": "exercises_conformal-trig-15",
+  "id": "exercise-655",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-15",
+  "url": "sec_conformal-trig.html#exercise-655",
   "type": "Exercise",
   "number": "9.4.1.14",
   "title": "",
   "body": " Find the image of the first quadrant , under .  "
 },
 {
-  "id": "exercises_conformal-trig-16",
+  "id": "exercise-656",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-16",
+  "url": "sec_conformal-trig.html#exercise-656",
   "type": "Exercise",
   "number": "9.4.1.15",
   "title": "",
   "body": " Show that the transformation is a one-to-one conformal mapping of the semi-infinite strip , onto the upper half plane .   The upper half-plane .  "
 },
 {
-  "id": "exercises_conformal-trig-17",
+  "id": "exercise-657",
   "level": "2",
-  "url": "sec_conformal-trig.html#exercises_conformal-trig-17",
+  "url": "sec_conformal-trig.html#exercise-657",
   "type": "Exercise",
   "number": "9.4.1.16",
   "title": "",
@@ -11575,18 +11575,18 @@ var ptx_lunr_docs = [
   "body": "  Let be harmonic in a domain in the plane. Then satisfies Laplace's equation at each point in . If is a conformal mapping from a domain in the plane onto , then the composition is harmonic in , and satisfies Laplace's equation at each point in .   "
 },
 {
-  "id": "sec_dirichlet-problem-3",
+  "id": "proof-88",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-3",
+  "url": "sec_dirichlet-problem.html#proof-88",
   "type": "Proof",
   "number": "10.2.1",
   "title": "",
   "body": "  Equations and are Laplace's equations for the harmonic functions and , respectively (see Section ). A direct proof that the function in Equation is harmonic would involve a tedious calculation of the partial derivatives and . An easier proof involves the use of a complex variable technique. We assume that there is a harmonic conjugate so that the function is analytic in a neighborhood of the point . Then the composition is analytic in a neighborhood of and can be written   Recall ( Theorem ) that the real part of the analytic function is harmonic, so is harmonic in a neighborhood of .  "
 },
 {
-  "id": "sec_dirichlet-problem-4",
+  "id": "example-190",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-4",
+  "url": "sec_dirichlet-problem.html#example-190",
   "type": "Example",
   "number": "10.2.2",
   "title": "",
@@ -11602,9 +11602,9 @@ var ptx_lunr_docs = [
   "body": "  Show that the function is harmonic in the upper half-plane and takes on the boundary values .    The function is analytic in the upper half-plane , and its imaginary part is the harmonic function .   "
 },
 {
-  "id": "sec_dirichlet-problem-7",
+  "id": "remark-23",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-7",
+  "url": "sec_dirichlet-problem.html#remark-23",
   "type": "Remark",
   "number": "10.2.4",
   "title": "",
@@ -11629,27 +11629,27 @@ var ptx_lunr_docs = [
   "body": " The boundary conditions for the harmonic function   "
 },
 {
-  "id": "sec_dirichlet-problem-10",
+  "id": "proof-89",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-10",
+  "url": "sec_dirichlet-problem.html#proof-89",
   "type": "Proof",
   "number": "10.2.2",
   "title": "",
   "body": " Each term in the sum in Equation is harmonic, so it follows that is harmonic for . To show that has the prescribed boundary conditions, we fix and let . Using Example , we get .  Substituting these equations into Equation gives .  You can verify that the boundary conditions are correct for and to complete the proof.  "
 },
 {
-  "id": "sec_dirichlet-problem-11",
+  "id": "example-192",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-11",
+  "url": "sec_dirichlet-problem.html#example-192",
   "type": "Example",
   "number": "10.2.7",
   "title": "",
   "body": "  Find the function that is harmonic in the upper half-plane Im and takes on the boundary values indicated in Figure .    This is a four-value Dirichlet problem in the upper half-plane defined by . For the plane, the solution in Equation becomes   Here we have , , , and and , , and , which we substitute into equation for to obtain .   The boundary values for the Dirichlet problem     "
 },
 {
-  "id": "sec_dirichlet-problem-12",
+  "id": "example-193",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-12",
+  "url": "sec_dirichlet-problem.html#example-193",
   "type": "Example",
   "number": "10.2.9",
   "title": "",
@@ -11674,9 +11674,9 @@ var ptx_lunr_docs = [
   "body": " The boundary values for for the Dirichlet problem in the simply connected domain   "
 },
 {
-  "id": "sec_dirichlet-problem-20",
+  "id": "example-194",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-20",
+  "url": "sec_dirichlet-problem.html#example-194",
   "type": "Example",
   "number": "10.2.12",
   "title": "",
@@ -11710,117 +11710,117 @@ var ptx_lunr_docs = [
   "body": " The graph   "
 },
 {
-  "id": "sec_dirichlet-problem-24",
+  "id": "example-196",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#sec_dirichlet-problem-24",
+  "url": "sec_dirichlet-problem.html#example-196",
   "type": "Example",
   "number": "10.2.17",
   "title": "",
   "body": "  Find a function that is harmonic in the quarter disk defined by   and takes on the boundary values .    The function maps the quarter-disk onto the upper half-disk . The new Dirichlet problem in is shown in Figure . From the result of Example the solution in is .   The Dirichlet problems for the domains and    Using Equation , we can show that and , which we use in Equation to construct the solution in :   A three-dimensional graph in cylindrical coordinates is shown in Figure .   The graph     "
 },
 {
-  "id": "exercises_dirichlet-problem-3",
+  "id": "exercise-658",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-3",
+  "url": "sec_dirichlet-problem.html#exercise-658",
   "type": "Exercise",
   "number": "10.2.1",
   "title": "",
   "body": " Find the function that is harmonic in the horizontal strip and has the boundary values     .  "
 },
 {
-  "id": "exercises_dirichlet-problem-4",
+  "id": "exercise-659",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-4",
+  "url": "sec_dirichlet-problem.html#exercise-659",
   "type": "Exercise",
   "number": "10.2.2",
   "title": "",
   "body": " Find the function that is harmonic in the sector and has the boundary values .  "
 },
 {
-  "id": "exercises_dirichlet-problem-5",
+  "id": "exercise-660",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-5",
+  "url": "sec_dirichlet-problem.html#exercise-660",
   "type": "Exercise",
   "number": "10.2.3",
   "title": "",
   "body": " Find the function that is harmonic in the annulus and has the boundary values .    .  "
 },
 {
-  "id": "exercises_dirichlet-problem-6",
+  "id": "exercise-661",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-6",
+  "url": "sec_dirichlet-problem.html#exercise-661",
   "type": "Exercise",
   "number": "10.2.4",
   "title": "",
   "body": " Find the function that is harmonic in the upper half-plane and has the boundary values .  "
 },
 {
-  "id": "exercises_dirichlet-problem-7",
+  "id": "exercise-662",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-7",
+  "url": "sec_dirichlet-problem.html#exercise-662",
   "type": "Exercise",
   "number": "10.2.5",
   "title": "",
   "body": " Find the function that is harmonic in the upper half-plane and has the boundary values .    , or .  "
 },
 {
-  "id": "exercises_dirichlet-problem-8",
+  "id": "exercise-663",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-8",
+  "url": "sec_dirichlet-problem.html#exercise-663",
   "type": "Exercise",
   "number": "10.2.6",
   "title": "",
   "body": " Find the function that is harmonic in the first quadrant and has the boundary values .  "
 },
 {
-  "id": "exercises_dirichlet-problem-9",
+  "id": "exercise-664",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-9",
+  "url": "sec_dirichlet-problem.html#exercise-664",
   "type": "Exercise",
   "number": "10.2.7",
   "title": "",
   "body": " Find the function that is harmonic in the unit disk and has the boundary values .    .  "
 },
 {
-  "id": "exercises_dirichlet-problem-10",
+  "id": "exercise-665",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-10",
+  "url": "sec_dirichlet-problem.html#exercise-665",
   "type": "Exercise",
   "number": "10.2.8",
   "title": "",
   "body": " Find the function that is harmonic in the unit disk and has the boundary values .  "
 },
 {
-  "id": "exercises_dirichlet-problem-11",
+  "id": "exercise-666",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-11",
+  "url": "sec_dirichlet-problem.html#exercise-666",
   "type": "Exercise",
   "number": "10.2.9",
   "title": "",
   "body": " Find the function that is harmonic in the upper half-disk and has the boundary values .    .  "
 },
 {
-  "id": "exercises_dirichlet-problem-12",
+  "id": "exercise-667",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-12",
+  "url": "sec_dirichlet-problem.html#exercise-667",
   "type": "Exercise",
   "number": "10.2.10",
   "title": "",
   "body": " Find the function that is harmonic in the portion of the upper half-plane that lies outside the circle and has the boundary values .  \\hint{Use the mapping and the result of Example .}  "
 },
 {
-  "id": "exercises_dirichlet-problem-13",
+  "id": "exercise-668",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-13",
+  "url": "sec_dirichlet-problem.html#exercise-668",
   "type": "Exercise",
   "number": "10.2.11",
   "title": "",
   "body": " Find the function that is harmonic in the quarter-disk and has the boundary values .    .  "
 },
 {
-  "id": "exercises_dirichlet-problem-14",
+  "id": "exercise-669",
   "level": "2",
-  "url": "sec_dirichlet-problem.html#exercises_dirichlet-problem-14",
+  "url": "sec_dirichlet-problem.html#exercise-669",
   "type": "Exercise",
   "number": "10.2.12",
   "title": "",
@@ -11836,27 +11836,27 @@ var ptx_lunr_docs = [
   "body": " Poisson's Integral Formula  The Dirichlet problem for the upper half-plane is to find a function that is harmonic in the upper half-plane and has the boundary values , where is a real-valued function of the real variable .   Poisson's integral formula   Let be a real-valued function that is piecewise continuous and bounded for all real . The function    is harmonic in the upper half-plane and has the boundary values  wherever is continuous.      Equation is easy to determine from the results of Theorem regarding the Dirichlet problem. Let denote points that lie along the axis. Let be points chosen so that , for , and that is continuous at each value . Then according to Theorem , the function is harmonic in the upper half-plane and takes on the boundary values , as shown in Figure .  We use properties of the argument of a complex number (see Section ) to write Equation in the form .  Hence the value is given by the weighted mean , where the angles , for , sum to , and are also shown in Figure .   Boundary values for    Using the substitutions , we write Equation as   The limit of this Riemann sum becomes the improper integral      Find the function that is harmonic in the upper half-plane and has the boundary values .    Using Equation , we obtain   Using the antiderivative in Equation , we write this solution as .      Find the function that is harmonic in the upper half-plane and has the boundary values .    Using Equation , we obtain .  Using calculus techniques and Equations , we write the solution as .  The function is continuous in the upper half-plane, and on the boundary , it has discontinuities at on the real axis. The graph in Figure shows this phenomenon.     with boundary values for , and for      Find that is harmonic in the upper half-plane and that has the boundary values .    Using techniques from Section , we find that the function is harmonic in the upper half-plane and has the following boundary values: .  This function can be added to the one in Example to obtain the desired result: .   Figure shows the graph of .     with boundary values for , for , and for     Exercises   Use Poisson's integral formula to find the harmonic function in the upper half-plane that takes on the boundary values .        Use Poisson's integral formula to find the harmonic function in the upper half-plane that takes on the boundary values .    Use Poisson's integral formula for the upper half-plane to conclude    Both and are harmonic in the upper half plane and satisfy the boundary conditions. Also, . It can be show that the Poisson integral formula defines a bounded function in the upper half plane, therefore the desired solution is .    Use Poisson's integral formula for the upper half-plane to conclude     Show that the function given by Poisson's integral formula is harmonic by applying Leibniz's rule, which permits you to write .   Apply Leibniz's rule . The term in brackets in the integrand is . Hence the integrand vanishes and , which implies that is harmonic.    Let be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane. If is an even function so that , then show that the harmonic function has the property .    Let be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane. If is an odd function so that for all  , then show that the harmonic function has the property .     .    "
 },
 {
-  "id": "sec_poisson-integral-formula-3",
+  "id": "theorem-93",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#sec_poisson-integral-formula-3",
+  "url": "sec_poisson-integral-formula.html#theorem-93",
   "type": "Theorem",
   "number": "10.3.1",
   "title": "Poisson’s integral formula.",
   "body": " Poisson's integral formula   Let be a real-valued function that is piecewise continuous and bounded for all real . The function    is harmonic in the upper half-plane and has the boundary values  wherever is continuous.   "
 },
 {
-  "id": "sec_poisson-integral-formula-4",
+  "id": "proof-90",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#sec_poisson-integral-formula-4",
+  "url": "sec_poisson-integral-formula.html#proof-90",
   "type": "Proof",
   "number": "10.3.1",
   "title": "",
   "body": "  Equation is easy to determine from the results of Theorem regarding the Dirichlet problem. Let denote points that lie along the axis. Let be points chosen so that , for , and that is continuous at each value . Then according to Theorem , the function is harmonic in the upper half-plane and takes on the boundary values , as shown in Figure .  We use properties of the argument of a complex number (see Section ) to write Equation in the form .  Hence the value is given by the weighted mean , where the angles , for , sum to , and are also shown in Figure .   Boundary values for    Using the substitutions , we write Equation as   The limit of this Riemann sum becomes the improper integral   "
 },
 {
-  "id": "sec_poisson-integral-formula-5",
+  "id": "example-197",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#sec_poisson-integral-formula-5",
+  "url": "sec_poisson-integral-formula.html#example-197",
   "type": "Example",
   "number": "10.3.3",
   "title": "",
@@ -11881,9 +11881,9 @@ var ptx_lunr_docs = [
   "body": " with boundary values for , and for   "
 },
 {
-  "id": "sec_poisson-integral-formula-8",
+  "id": "example-199",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#sec_poisson-integral-formula-8",
+  "url": "sec_poisson-integral-formula.html#example-199",
   "type": "Example",
   "number": "10.3.6",
   "title": "",
@@ -11899,63 +11899,63 @@ var ptx_lunr_docs = [
   "body": " with boundary values for , for , and for   "
 },
 {
-  "id": "exercises_poisson-integral-formula-2",
+  "id": "exercise-670",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-2",
+  "url": "sec_poisson-integral-formula.html#exercise-670",
   "type": "Exercise",
   "number": "10.3.1",
   "title": "",
   "body": " Use Poisson's integral formula to find the harmonic function in the upper half-plane that takes on the boundary values .      "
 },
 {
-  "id": "exercises_poisson-integral-formula-3",
+  "id": "exercise-671",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-3",
+  "url": "sec_poisson-integral-formula.html#exercise-671",
   "type": "Exercise",
   "number": "10.3.2",
   "title": "",
   "body": " Use Poisson's integral formula to find the harmonic function in the upper half-plane that takes on the boundary values .  "
 },
 {
-  "id": "exercises_poisson-integral-formula-4",
+  "id": "exercise-672",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-4",
+  "url": "sec_poisson-integral-formula.html#exercise-672",
   "type": "Exercise",
   "number": "10.3.3",
   "title": "",
   "body": " Use Poisson's integral formula for the upper half-plane to conclude    Both and are harmonic in the upper half plane and satisfy the boundary conditions. Also, . It can be show that the Poisson integral formula defines a bounded function in the upper half plane, therefore the desired solution is .  "
 },
 {
-  "id": "exercises_poisson-integral-formula-5",
+  "id": "exercise-673",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-5",
+  "url": "sec_poisson-integral-formula.html#exercise-673",
   "type": "Exercise",
   "number": "10.3.4",
   "title": "",
   "body": " Use Poisson's integral formula for the upper half-plane to conclude   "
 },
 {
-  "id": "exercises_poisson-integral-formula-6",
+  "id": "exercise-674",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-6",
+  "url": "sec_poisson-integral-formula.html#exercise-674",
   "type": "Exercise",
   "number": "10.3.5",
   "title": "",
   "body": " Show that the function given by Poisson's integral formula is harmonic by applying Leibniz's rule, which permits you to write .   Apply Leibniz's rule . The term in brackets in the integrand is . Hence the integrand vanishes and , which implies that is harmonic.  "
 },
 {
-  "id": "exercises_poisson-integral-formula-7",
+  "id": "exercise-675",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-7",
+  "url": "sec_poisson-integral-formula.html#exercise-675",
   "type": "Exercise",
   "number": "10.3.6",
   "title": "",
   "body": " Let be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane. If is an even function so that , then show that the harmonic function has the property .  "
 },
 {
-  "id": "exercises_poisson-integral-formula-8",
+  "id": "exercise-676",
   "level": "2",
-  "url": "sec_poisson-integral-formula.html#exercises_poisson-integral-formula-8",
+  "url": "sec_poisson-integral-formula.html#exercise-676",
   "type": "Exercise",
   "number": "10.3.7",
   "title": "",
@@ -11980,9 +11980,9 @@ var ptx_lunr_docs = [
   "body": " Orthogonal families of level curves   Suppose is harmonic in a domain , is its harmonic conjugate, and is the complex potential. Then the two families of level curves given in Equations and , respectively, are orthogonal in the sense that if is a point common to the two curves and , and if , then these two curves intersect orthogonally.   "
 },
 {
-  "id": "sec_2d-models-8",
+  "id": "proof-91",
   "level": "2",
-  "url": "sec_2d-models.html#sec_2d-models-8",
+  "url": "sec_2d-models.html#proof-91",
   "type": "Proof",
   "number": "10.4.1",
   "title": "",
@@ -12016,9 +12016,9 @@ var ptx_lunr_docs = [
   "body": " Steady state temperatures   "
 },
 {
-  "id": "sec_steady-state-temps-2-9",
+  "id": "example-200",
   "level": "2",
-  "url": "sec_steady-state-temps.html#sec_steady-state-temps-2-9",
+  "url": "sec_steady-state-temps.html#example-200",
   "type": "Example",
   "number": "10.5.2",
   "title": "",
@@ -12034,9 +12034,9 @@ var ptx_lunr_docs = [
   "body": " The temperature between parallel planes where   "
 },
 {
-  "id": "sec_steady-state-temps-2-11",
+  "id": "example-201",
   "level": "2",
-  "url": "sec_steady-state-temps.html#sec_steady-state-temps-2-11",
+  "url": "sec_steady-state-temps.html#example-201",
   "type": "Example",
   "number": "10.5.4",
   "title": "",
@@ -12052,9 +12052,9 @@ var ptx_lunr_docs = [
   "body": " The temperature in the upper half-plane where   "
 },
 {
-  "id": "sec_steady-state-temps-2-13",
+  "id": "example-202",
   "level": "2",
-  "url": "sec_steady-state-temps.html#sec_steady-state-temps-2-13",
+  "url": "sec_steady-state-temps.html#example-202",
   "type": "Example",
   "number": "10.5.6",
   "title": "",
@@ -12097,9 +12097,9 @@ var ptx_lunr_docs = [
   "body": " The temperature with for , and boundary values for and , for   "
 },
 {
-  "id": "exercises_steady-state-temps-2",
+  "id": "exercise-677",
   "level": "2",
-  "url": "sec_steady-state-temps.html#exercises_steady-state-temps-2",
+  "url": "sec_steady-state-temps.html#exercise-677",
   "type": "Exercise",
   "number": "10.5.1.1",
   "title": "",
@@ -12250,9 +12250,9 @@ var ptx_lunr_docs = [
   "body": "  Consider two parallel conducting planes that pass perpendicular to the plane through the lines and , which are kept amt the potentials and , respectively. Then, according to the result of Example , the electrical potential is    "
 },
 {
-  "id": "sec_2d-electrostatics-6",
+  "id": "example-205",
   "level": "2",
-  "url": "sec_2d-electrostatics.html#sec_2d-electrostatics-6",
+  "url": "sec_2d-electrostatics.html#example-205",
   "type": "Example",
   "number": "10.6.2",
   "title": "",
@@ -12268,9 +12268,9 @@ var ptx_lunr_docs = [
   "body": " The electrical field in a coaxial cylinder, where   "
 },
 {
-  "id": "sec_2d-electrostatics-8",
+  "id": "example-206",
   "level": "2",
-  "url": "sec_2d-electrostatics.html#sec_2d-electrostatics-8",
+  "url": "sec_2d-electrostatics.html#example-206",
   "type": "Example",
   "number": "10.6.4",
   "title": "",
@@ -12286,9 +12286,9 @@ var ptx_lunr_docs = [
   "body": " Equipotentials of two charged half-planes perpendicular to the complex plane   "
 },
 {
-  "id": "sec_2d-electrostatics-10",
+  "id": "example-207",
   "level": "2",
-  "url": "sec_2d-electrostatics.html#sec_2d-electrostatics-10",
+  "url": "sec_2d-electrostatics.html#example-207",
   "type": "Example",
   "number": "10.6.6",
   "title": "",
@@ -12358,18 +12358,18 @@ var ptx_lunr_docs = [
   "body": " Find the electrostatic potential in the infinite strip that satisfies the following boundary values (shown in Figure ). .  \\hint{Use .}   For Exercise    "
 },
 {
-  "id": "exercises_2d-electrostatics-8",
+  "id": "exercise-698",
   "level": "2",
-  "url": "sec_2d-electrostatics.html#exercises_2d-electrostatics-8",
+  "url": "sec_2d-electrostatics.html#exercise-698",
   "type": "Exercise",
   "number": "10.6.7",
   "title": "",
   "body": " Consider the conformal mapping .  Show that maps the domain that is the portion of the right half-plane that lies exterior to the circle onto the annulus .   .   Find the electrostatic potential in the domain that satisfies the boundary values shown in Figure : .   .    For Exercise    "
 },
 {
-  "id": "exercises_2d-electrostatics-9",
+  "id": "exercise-699",
   "level": "2",
-  "url": "sec_2d-electrostatics.html#exercises_2d-electrostatics-9",
+  "url": "sec_2d-electrostatics.html#exercise-699",
   "type": "Exercise",
   "number": "10.6.8",
   "title": "",
@@ -12394,9 +12394,9 @@ var ptx_lunr_docs = [
   "body": " A two-dimensional vector field   "
 },
 {
-  "id": "sec_2d-fluid-flow-16",
+  "id": "theorem-95",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#sec_2d-fluid-flow-16",
+  "url": "sec_2d-fluid-flow.html#theorem-95",
   "type": "Theorem",
   "number": "10.7.2",
   "title": "Invariance of flow.",
@@ -12412,18 +12412,18 @@ var ptx_lunr_docs = [
   "body": " The image of a fluid flow under a conformal mapping   "
 },
 {
-  "id": "sec_2d-fluid-flow-18",
+  "id": "proof-92",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#sec_2d-fluid-flow-18",
+  "url": "sec_2d-fluid-flow.html#proof-92",
   "type": "Proof",
   "number": "10.7.1",
   "title": "",
   "body": " From Equation , is an analytic function. Since the composition of analytic functions is analytic, is the required complex potential for an ideal fluid flow in .  "
 },
 {
-  "id": "sec_2d-fluid-flow-21",
+  "id": "example-208",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#sec_2d-fluid-flow-21",
+  "url": "sec_2d-fluid-flow.html#example-208",
   "type": "Example",
   "number": "10.7.4",
   "title": "",
@@ -12439,9 +12439,9 @@ var ptx_lunr_docs = [
   "body": " A uniform parallel flow   "
 },
 {
-  "id": "sec_2d-fluid-flow-23",
+  "id": "example-209",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#sec_2d-fluid-flow-23",
+  "url": "sec_2d-fluid-flow.html#example-209",
   "type": "Example",
   "number": "10.7.6",
   "title": "",
@@ -12457,9 +12457,9 @@ var ptx_lunr_docs = [
   "body": " The fluid flow with complex potential   "
 },
 {
-  "id": "sec_2d-fluid-flow-25",
+  "id": "example-210",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#sec_2d-fluid-flow-25",
+  "url": "sec_2d-fluid-flow.html#example-210",
   "type": "Example",
   "number": "10.7.8",
   "title": "",
@@ -12493,9 +12493,9 @@ var ptx_lunr_docs = [
   "body": " Flow around a segment   "
 },
 {
-  "id": "exercises_2d-fluid-flow-2",
+  "id": "exercise-700",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#exercises_2d-fluid-flow-2",
+  "url": "sec_2d-fluid-flow.html#exercise-700",
   "type": "Exercise",
   "number": "10.7.1",
   "title": "",
@@ -12511,9 +12511,9 @@ var ptx_lunr_docs = [
   "body": " Show that the complex potential determines the ideal fluid flow around the unit circle , where the velocity at points distant from the origin is given approximately by ; that is, the direction of the flow for large values of is inclined at an angle with the axis, as shown in Figure .  "
 },
 {
-  "id": "exercises_2d-fluid-flow-4",
+  "id": "exercise-702",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#exercises_2d-fluid-flow-4",
+  "url": "sec_2d-fluid-flow.html#exercise-702",
   "type": "Exercise",
   "number": "10.7.3",
   "title": "",
@@ -12529,18 +12529,18 @@ var ptx_lunr_docs = [
   "body": " Show that the stream function is given by for an ideal fluid flow around the angular region indicated in Figure . Sketch several streamlines of the flow.  \\hint{Use the conformal mapping .}   For Exercise     For Exercise {0.5\\textwidth}   "
 },
 {
-  "id": "exercises_2d-fluid-flow-6",
+  "id": "exercise-704",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#exercises_2d-fluid-flow-6",
+  "url": "sec_2d-fluid-flow.html#exercise-704",
   "type": "Exercise",
   "number": "10.7.5",
   "title": "",
   "body": " Consider the ideal fluid flow, where the complex potential is .  Find the stream function .   .   Sketch streamlines of the flow in the region indicated in Figure .  For Exercise    For Exercise {0.5\\textwidth}   "
 },
 {
-  "id": "exercises_2d-fluid-flow-7",
+  "id": "exercise-705",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#exercises_2d-fluid-flow-7",
+  "url": "sec_2d-fluid-flow.html#exercise-705",
   "type": "Exercise",
   "number": "10.7.6",
   "title": "",
@@ -12565,9 +12565,9 @@ var ptx_lunr_docs = [
   "body": " Let denote the branch of the inverse of that is a one-to-one mapping of the plane slit along the segment onto the domain . Use the complex potential in the plane to show that the complex potential determines the ideal fluid flow around the segment , where the velocity at points distant from the origin is given by , as shown in Figure .  "
 },
 {
-  "id": "exercises_2d-fluid-flow-10",
+  "id": "exercise-708",
   "level": "2",
-  "url": "sec_2d-fluid-flow.html#exercises_2d-fluid-flow-10",
+  "url": "sec_2d-fluid-flow.html#exercise-708",
   "type": "Exercise",
   "number": "10.7.9",
   "title": "",
@@ -12664,63 +12664,63 @@ var ptx_lunr_docs = [
   "body": " Flow with circulation around a modified Joukowski airfoil   "
 },
 {
-  "id": "exercises_joukowski-airfoil-2",
+  "id": "exercise-709",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-2",
+  "url": "sec_joukowski-airfoil.html#exercise-709",
   "type": "Exercise",
   "number": "10.8.1.1",
   "title": "",
   "body": " Find the inverse of the Joukowski transformation.  "
 },
 {
-  "id": "exercises_joukowski-airfoil-3",
+  "id": "exercise-710",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-3",
+  "url": "sec_joukowski-airfoil.html#exercise-710",
   "type": "Exercise",
   "number": "10.8.1.2",
   "title": "",
   "body": " Consider the Joukowski transformation .  Show that the circles are mapped onto the ellipses .  Show that the ray .$  "
 },
 {
-  "id": "exercises_joukowski-airfoil-4",
+  "id": "exercise-711",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-4",
+  "url": "sec_joukowski-airfoil.html#exercise-711",
   "type": "Exercise",
   "number": "10.8.1.3",
   "title": "",
   "body": " Let be a circle that passes through the points 1 and and has center .  Find the equation of the circle .  Show that the image of the circle under is a line that passes through the origin.  Show that the line is inclined at the angle .  "
 },
 {
-  "id": "exercises_joukowski-airfoil-5",
+  "id": "exercise-712",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-5",
+  "url": "sec_joukowski-airfoil.html#exercise-712",
   "type": "Exercise",
   "number": "10.8.1.4",
   "title": "",
   "body": " Show that a line through the origin is mapped onto a ray by the mapping .  "
 },
 {
-  "id": "exercises_joukowski-airfoil-6",
+  "id": "exercise-713",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-6",
+  "url": "sec_joukowski-airfoil.html#exercise-713",
   "type": "Exercise",
   "number": "10.8.1.5",
   "title": "",
   "body": " Let be a ray through the origin inclined at an angle .  Show that the image of the ray under is an arc of a circle that passes through 2 and .  Show that the arc is inclined at the angle .  "
 },
 {
-  "id": "exercises_joukowski-airfoil-7",
+  "id": "exercise-714",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-7",
+  "url": "sec_joukowski-airfoil.html#exercise-714",
   "type": "Exercise",
   "number": "10.8.1.6",
   "title": "",
   "body": " Show that a circle passing through the origin is mapped onto a cardioid by . Show that the cusp in the cardioid forms an angle of .  "
 },
 {
-  "id": "exercises_joukowski-airfoil-8",
+  "id": "exercise-715",
   "level": "2",
-  "url": "sec_joukowski-airfoil.html#exercises_joukowski-airfoil-8",
+  "url": "sec_joukowski-airfoil.html#exercise-715",
   "type": "Exercise",
   "number": "10.8.1.7",
   "title": "",
@@ -12754,9 +12754,9 @@ var ptx_lunr_docs = [
   "body": " Schwarz-Christoffel   Let be a polygon in the plane with vertices and exterior angles , where . There exists a one-to-one conformal mapping from the upper half-plane onto that satisfies the boundary conditions in Equations . The derivative is , and the function can be expressed as an indefinite integral , where and are suitably chosen constants. Two of the points may be chosen arbitrarily, and the constants and determine the size and position of .   "
 },
 {
-  "id": "sec_schwarz-christoffel-transformation-6",
+  "id": "proof-93",
   "level": "2",
-  "url": "sec_schwarz-christoffel-transformation.html#sec_schwarz-christoffel-transformation-6",
+  "url": "sec_schwarz-christoffel-transformation.html#proof-93",
   "type": "Proof",
   "number": "10.9.1",
   "title": "",
@@ -12781,27 +12781,27 @@ var ptx_lunr_docs = [
   "body": " A Schwarz-Christoffel mapping with and   "
 },
 {
-  "id": "sec_schwarz-christoffel-transformation-16",
+  "id": "example-212",
   "level": "2",
-  "url": "sec_schwarz-christoffel-transformation.html#sec_schwarz-christoffel-transformation-16",
+  "url": "sec_schwarz-christoffel-transformation.html#example-212",
   "type": "Example",
   "number": "10.9.4",
   "title": "",
   "body": "  Use the Schwarz-Christoffel formula to verify that the function maps the upper half-plane onto the semi-infinite strip shown in Figure .   The region of interest      If we choose , and , then and , and Equation for becomes   Then, using Table , the indefinite integral becomes . Using the image values and , we obtain the system . Solving gives and . Hence, the required function is    "
 },
 {
-  "id": "sec_schwarz-christoffel-transformation-17",
+  "id": "example-213",
   "level": "2",
-  "url": "sec_schwarz-christoffel-transformation.html#sec_schwarz-christoffel-transformation-17",
+  "url": "sec_schwarz-christoffel-transformation.html#example-213",
   "type": "Example",
   "number": "10.9.6",
   "title": "",
   "body": "  Verify that maps the upper half-plane onto the upper half-plane slit along the segment from to . (Use the principal square root throughout.)    If we choose , and , then the formula will determine a mapping from the upper half-plane onto the portion of the upper half-plane that lies outside the triangle with vertices as indicated in Figure (a). If we let , then , and . The limiting formula for the derivative becomes , which will determine a mapping from the upper half-plane onto the upper half-plane slit from to as indicated in Figure (b).   The regions of interest    An easy computation reveals that is given by , and the boundary values and lead to the solution    "
 },
 {
-  "id": "sec_schwarz-christoffel-transformation-18",
+  "id": "example-214",
   "level": "2",
-  "url": "sec_schwarz-christoffel-transformation.html#sec_schwarz-christoffel-transformation-18",
+  "url": "sec_schwarz-christoffel-transformation.html#example-214",
   "type": "Example",
   "number": "10.9.8",
   "title": "",
@@ -12826,9 +12826,9 @@ var ptx_lunr_docs = [
   "body": " Let be a real constant. Use the Schwarz-Christoffel formula to show that the function maps the upper half-plane onto the infinite strip shown in Figure .  \\hint{Set , and . Then let .}   For Exercise    "
 },
 {
-  "id": "exercises_schwarz-christoffel-transformation-4",
+  "id": "exercise-719",
   "level": "2",
-  "url": "sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation-4",
+  "url": "sec_schwarz-christoffel-transformation.html#exercise-719",
   "type": "Exercise",
   "number": "10.9.3",
   "title": "",
@@ -12844,9 +12844,9 @@ var ptx_lunr_docs = [
   "body": " Image of a Fluid Flow  We have already examined several two-dimensional fluid flows and have shown that the image of a flow under a conformal transformation is a flow. The conformal mapping , which we obtained by using the Schwarz-Christoffel formula, allows us to find the streamlines for flows in domains in the plane that are bounded by straight-line segments.  The first technique involves finding the image of a fluid flowing horizontally from left to right across the upper half-plane . The image of the streamline is a streamline given by the parametric equations and is oriented in the positive sense (counterclockwise). The streamline is considered to be a boundary wall for a containing vessel for the fluid flow.    Consider the conformal mapping , which we obtained by using the Schwarz-Christoffel formula. It maps the upper half-plane onto the domain in the plane that lies above the boundary curve consisting of the rays and and the segment . Furthermore, the image of horizontal streamlines in the plane are curves in the plane given by the parametric equation , for . The new flow is that of a step in the bed of a deep stream and is illustrated in Figure (a). The function is also defined for values of in the lower half-plane, and the images of horizontal streamlines that lie above or below the axis are mapped onto streamlines that flow past a long rectangular obstacle, which is illustrated in Figure (b).     Streamline mappings     Exercises  For Exercises 1-4, use the Schwarz-Christoffel formula to find a conformal mapping that will map the flow in the upper half-plane onto the flows indicated.   Use Figure to find the flow over the vertical segment from 0 to .   For Exercise      . Integrate with the boundary conditions and to get .    Use Figure to find the flow around an infinitely long rectangular barrier.   For Exercise      Use Figure to find the flow around  one inclined segment in the upper half-plane.   .   two inclined segments forming a V in the plane.   For Exercise      Use Figure to find the flow over a dam.   For Exercise      For flow around an infinitely long rectangular barrier with a pointed nose, find  the flow up an inclined step, as shown in Figure (a).   .  .   the flow around a pointed object, as shown in Figure (b).  For Exercise      "
 },
 {
-  "id": "sec_fluid-flow-image-4",
+  "id": "example-215",
   "level": "2",
-  "url": "sec_fluid-flow-image.html#sec_fluid-flow-image-4",
+  "url": "sec_fluid-flow-image.html#example-215",
   "type": "Example",
   "number": "10.10.1",
   "title": "",
@@ -12934,9 +12934,9 @@ var ptx_lunr_docs = [
   "body": " Contributions to from the elements of charge situated at , above and below the -plane.   "
 },
 {
-  "id": "subsec_charged-line-10",
+  "id": "example-216",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#subsec_charged-line-10",
+  "url": "sec_sources-and-sinks.html#example-216",
   "type": "Example",
   "number": "10.11.3",
   "title": "Source and sink of equal strength.",
@@ -12952,18 +12952,18 @@ var ptx_lunr_docs = [
   "body": " Fields depicting electrical strength   "
 },
 {
-  "id": "subsec_charged-line-12",
+  "id": "example-217",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#subsec_charged-line-12",
+  "url": "sec_sources-and-sinks.html#example-217",
   "type": "Example",
   "number": "10.11.5",
   "title": "Two sources of equal strength.",
   "body": " Two sources of equal strength   Let two sources of unit strength be located at the points . The resulting complex potential for a fluid flow is . The velocity potential and stream function are, respectively , To solve for the streamline we start with , and obtain the equation . If we express this equation in the form , and use the rotation of axes , then the streamlines must satisfy the equation and are rectangular hyperbolas with centers at the origin that pass through the points . Figure (b) depicts several streamlines.   "
 },
 {
-  "id": "subsec_charged-line-16",
+  "id": "example-218",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#subsec_charged-line-16",
+  "url": "sec_sources-and-sinks.html#example-218",
   "type": "Example",
   "number": "10.11.6",
   "title": "",
@@ -12979,9 +12979,9 @@ var ptx_lunr_docs = [
   "body": " A source in the center of a strip   "
 },
 {
-  "id": "subsec_charged-line-18",
+  "id": "example-219",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#subsec_charged-line-18",
+  "url": "sec_sources-and-sinks.html#example-219",
   "type": "Example",
   "number": "10.11.8",
   "title": "",
@@ -12997,9 +12997,9 @@ var ptx_lunr_docs = [
   "body": " A source and a sink on the edges of a strip   "
 },
 {
-  "id": "subsec_charged-line-21",
+  "id": "example-220",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#subsec_charged-line-21",
+  "url": "sec_sources-and-sinks.html#example-220",
   "type": "Example",
   "number": "10.11.10",
   "title": "",
@@ -13060,9 +13060,9 @@ var ptx_lunr_docs = [
   "body": " Let the axis be considered a wall of a containing vessel for a fluid flow in the right half plane that is produced by a single source located at the point . Find the complex potential for the flow shown in Figure .    .  "
 },
 {
-  "id": "exercises_sources-and-sinks-7",
+  "id": "exercise-730",
   "level": "2",
-  "url": "sec_sources-and-sinks.html#exercises_sources-and-sinks-7",
+  "url": "sec_sources-and-sinks.html#exercise-730",
   "type": "Exercise",
   "number": "10.11.1.6",
   "title": "",
@@ -13141,9 +13141,9 @@ var ptx_lunr_docs = [
   "body": " A function with period   "
 },
 {
-  "id": "sec_fourier-series-2-5",
+  "id": "definition-53",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-5",
+  "url": "sec_fourier-series.html#definition-53",
   "type": "Definition",
   "number": "11.1.2",
   "title": "Piecewise Continuous.",
@@ -13159,9 +13159,9 @@ var ptx_lunr_docs = [
   "body": " A piecewise continuous function over the interval   "
 },
 {
-  "id": "sec_fourier-series-2-9",
+  "id": "definition-54",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-9",
+  "url": "sec_fourier-series.html#definition-54",
   "type": "Definition",
   "number": "11.1.4",
   "title": "Fourier Series.",
@@ -13195,9 +13195,9 @@ var ptx_lunr_docs = [
   "body": " , and approximations , and   "
 },
 {
-  "id": "sec_fourier-series-2-15",
+  "id": "theorem-98",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-15",
+  "url": "sec_fourier-series.html#theorem-98",
   "type": "Theorem",
   "number": "11.1.8",
   "title": "",
@@ -13213,36 +13213,36 @@ var ptx_lunr_docs = [
   "body": " Fourier Cosine Series   Assume that is an even function. If has period , and and are piecewise continuous, then the Fourier series for involves only the cosine terms, i.e. , for all : , where ,   "
 },
 {
-  "id": "sec_fourier-series-2-17",
+  "id": "theorem-100",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-17",
+  "url": "sec_fourier-series.html#theorem-100",
   "type": "Theorem",
   "number": "11.1.10",
   "title": "Fourier Sine Series.",
   "body": " Fourier Sine Series   Assume that is an odd function. If has period and if and are piecewise continuous, then the Fourier series for involves only sine terms, i.e. , for all : , where ,   "
 },
 {
-  "id": "sec_fourier-series-2-18",
+  "id": "theorem-101",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-18",
+  "url": "sec_fourier-series.html#theorem-101",
   "type": "Theorem",
   "number": "11.1.11",
   "title": "Termwise Integration.",
   "body": " Termwise Integration   If has a Fourier series representation given in Equation , then the integral of has a Fourier series representation which can be obtained by termwise integration of the Fourier Series of , that is, , where we have used the expansion from Example .   "
 },
 {
-  "id": "sec_fourier-series-2-19",
+  "id": "theorem-102",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-19",
+  "url": "sec_fourier-series.html#theorem-102",
   "type": "Theorem",
   "number": "11.1.12",
   "title": "Termwise Differentiation.",
   "body": " Termwise Differentiation   If has a Fourier series representation, and is given by Equation , then     "
 },
 {
-  "id": "sec_fourier-series-2-20",
+  "id": "example-222",
   "level": "2",
-  "url": "sec_fourier-series.html#sec_fourier-series-2-20",
+  "url": "sec_fourier-series.html#example-222",
   "type": "Example",
   "number": "11.1.13",
   "title": "",
@@ -13357,18 +13357,18 @@ var ptx_lunr_docs = [
   "body": " Poisson Integral Formula for the Unit Disk   Let be a function that is harmonic in a simply connected domain that contains the closed unit disk . If takes on the boundary values , then has the integral representation that is valid for .   "
 },
 {
-  "id": "sec_dirichlet-8",
+  "id": "proof-94",
   "level": "2",
-  "url": "sec_dirichlet.html#sec_dirichlet-8",
+  "url": "sec_dirichlet.html#proof-94",
   "type": "Proof",
   "number": "11.2.1",
   "title": "",
   "body": " Since is harmonic in the simply connected domain, there exists a conjugate harmonic function such that is analytic. Let denote the contour consisting of the unit circle; then Cauchy 's integral formula expresses the value of at any point inside in terms of the values of at points that lie on the circle . If we set then lies outside the unit circle and the Cauchy-Goursat theorem gives .  If we subtract Equation from Equation , then use the parameterization , and the substitutions , , we get .  The expression inside the parentheses on the right side of this equation can be written as , and it follows that .  Since is the real part of and is the real part of , we can equate the real parts in the latter equation to obtain Equation , completing the proof Theorem .  "
 },
 {
-  "id": "sec_dirichlet-10",
+  "id": "proof-95",
   "level": "2",
-  "url": "sec_dirichlet.html#sec_dirichlet-10",
+  "url": "sec_dirichlet.html#proof-95",
   "type": "Proof",
   "number": "11.2.2",
   "title": "",
@@ -13393,45 +13393,45 @@ var ptx_lunr_docs = [
   "body": " Functions and for Example   "
 },
 {
-  "id": "exercises_dirichlet-3",
+  "id": "exercise-735",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-3",
+  "url": "sec_dirichlet.html#exercise-735",
   "type": "Exercise",
   "number": "11.2.1",
   "title": "",
   "body": "      .  "
 },
 {
-  "id": "exercises_dirichlet-4",
+  "id": "exercise-736",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-4",
+  "url": "sec_dirichlet.html#exercise-736",
   "type": "Exercise",
   "number": "11.2.2",
   "title": "",
   "body": "  (See Figure )   Approximations for and in Exercise 2    "
 },
 {
-  "id": "exercises_dirichlet-5",
+  "id": "exercise-737",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-5",
+  "url": "sec_dirichlet.html#exercise-737",
   "type": "Exercise",
   "number": "11.2.3",
   "title": "",
   "body": "      .  "
 },
 {
-  "id": "exercises_dirichlet-6",
+  "id": "exercise-738",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-6",
+  "url": "sec_dirichlet.html#exercise-738",
   "type": "Exercise",
   "number": "11.2.4",
   "title": "",
   "body": "    "
 },
 {
-  "id": "exercises_dirichlet-7",
+  "id": "exercise-739",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-7",
+  "url": "sec_dirichlet.html#exercise-739",
   "type": "Exercise",
   "number": "11.2.5",
   "title": "",
@@ -13447,36 +13447,36 @@ var ptx_lunr_docs = [
   "body": "  (See Figure )   Approximations for and in Exercise    "
 },
 {
-  "id": "exercises_dirichlet-9",
+  "id": "exercise-741",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-9",
+  "url": "sec_dirichlet.html#exercise-741",
   "type": "Exercise",
   "number": "11.2.7",
   "title": "",
   "body": "       .  "
 },
 {
-  "id": "exercises_dirichlet-10",
+  "id": "exercise-742",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-10",
+  "url": "sec_dirichlet.html#exercise-742",
   "type": "Exercise",
   "number": "11.2.8",
   "title": "",
   "body": "    "
 },
 {
-  "id": "exercises_dirichlet-11",
+  "id": "exercise-743",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-11",
+  "url": "sec_dirichlet.html#exercise-743",
   "type": "Exercise",
   "number": "11.2.9",
   "title": "",
   "body": " Write a report on the Dirichlet problem and include some applications.  "
 },
 {
-  "id": "exercises_dirichlet-12",
+  "id": "exercise-744",
   "level": "2",
-  "url": "sec_dirichlet.html#exercises_dirichlet-12",
+  "url": "sec_dirichlet.html#exercise-744",
   "type": "Exercise",
   "number": "11.2.10",
   "title": "",
@@ -13519,36 +13519,36 @@ var ptx_lunr_docs = [
   "body": " The dashpot system with an external force   "
 },
 {
-  "id": "subsec_forced-vibrations-12",
+  "id": "example-224",
   "level": "2",
-  "url": "sec_vibrations.html#subsec_forced-vibrations-12",
+  "url": "sec_vibrations.html#example-224",
   "type": "Example",
   "number": "11.3.4",
   "title": "",
   "body": "  Find the general solution to , where is given by the Fourier series .    First we solve for the transient solution. The characteristic equation is , which has a double root . Hence . The steady state solution is obtained by assuming that has the Fourier series representation , and that and can be obtained by termwise differentiation: .  Substituting these expansions into the differential equation results in .   "
 },
 {
-  "id": "exercises_vibrations-2",
+  "id": "exercise-745",
   "level": "2",
-  "url": "sec_vibrations.html#exercises_vibrations-2",
+  "url": "sec_vibrations.html#exercise-745",
   "type": "Exercise",
   "number": "11.3.2.1",
   "title": "",
   "body": " For the exercises in this section solve for given the following Fourier series for .   , where for .   , where    , shown in Figure .   , shown in Figure .  Graph of for the exercises    Graph of for the exercises {0.5\\linewidth}   \\begin{task} .  \\begin{task}[(a)]    , , .  \\begin{task}[(c)] , , .  \\begin{task}[(c)] Alternative Answer:  Alternative Answer:   ,  .  "
 },
 {
-  "id": "exercises_vibrations-3",
+  "id": "exercise-746",
   "level": "2",
-  "url": "sec_vibrations.html#exercises_vibrations-3",
+  "url": "sec_vibrations.html#exercise-746",
   "type": "Exercise",
   "number": "11.3.2.2",
   "title": "",
   "body": "  .  "
 },
 {
-  "id": "exercises_vibrations-4",
+  "id": "exercise-747",
   "level": "2",
-  "url": "sec_vibrations.html#exercises_vibrations-4",
+  "url": "sec_vibrations.html#exercise-747",
   "type": "Exercise",
   "number": "11.3.2.3",
   "title": "",
@@ -13573,9 +13573,9 @@ var ptx_lunr_docs = [
   "body": " Fourier Transform   Let and be piecewise continuous, and , for some positive constant . The Fourier transform of is defined as .  At points of continuity, has the integral representation . and at a point of discontinuity of , the integral converges to .   "
 },
 {
-  "id": "sec_fourier-transform-16",
+  "id": "proof-96",
   "level": "2",
-  "url": "sec_fourier-transform.html#sec_fourier-transform-16",
+  "url": "sec_fourier-transform.html#proof-96",
   "type": "Proof",
   "number": "11.4.1",
   "title": "",
@@ -13600,18 +13600,18 @@ var ptx_lunr_docs = [
   "body": "  Show that .    Using formula we obtain .   "
 },
 {
-  "id": "sec_fourier-transform-20",
+  "id": "example-226",
   "level": "2",
-  "url": "sec_fourier-transform.html#sec_fourier-transform-20",
+  "url": "sec_fourier-transform.html#example-226",
   "type": "Example",
   "number": "11.4.4",
   "title": "",
   "body": "  Show that .    Using the result of Example and the symmetry property and the symmetry property, we obtain . By the linearity property, with each term is multiplied by , we get    "
 },
 {
-  "id": "exercises_fourier-transform-2",
+  "id": "exercise-748",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-2",
+  "url": "sec_fourier-transform.html#exercise-748",
   "type": "Exercise",
   "number": "11.4.1",
   "title": "",
@@ -13627,9 +13627,9 @@ var ptx_lunr_docs = [
   "body": " Let Show that .  "
 },
 {
-  "id": "exercises_fourier-transform-4",
+  "id": "exercise-750",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-4",
+  "url": "sec_fourier-transform.html#exercise-750",
   "type": "Exercise",
   "number": "11.4.3",
   "title": "",
@@ -13645,45 +13645,45 @@ var ptx_lunr_docs = [
   "body": " Let . Show that . \\hint{Use the integral definition and combine the terms in the exponent, then complete the square and use the fact that .}  "
 },
 {
-  "id": "exercises_fourier-transform-6",
+  "id": "exercise-752",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-6",
+  "url": "sec_fourier-transform.html#exercise-752",
   "type": "Exercise",
   "number": "11.4.5",
   "title": "",
   "body": " Use the time scaling property and the example in the text to show that   "
 },
 {
-  "id": "exercises_fourier-transform-7",
+  "id": "exercise-753",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-7",
+  "url": "sec_fourier-transform.html#exercise-753",
   "type": "Exercise",
   "number": "11.4.6",
   "title": "",
   "body": " Use the symmetry and linearity properties and the result of Exercise to show that   "
 },
 {
-  "id": "exercises_fourier-transform-8",
+  "id": "exercise-754",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-8",
+  "url": "sec_fourier-transform.html#exercise-754",
   "type": "Exercise",
   "number": "11.4.7",
   "title": "",
   "body": " Use the time differentiation property and the result of Exercise to show that   "
 },
 {
-  "id": "exercises_fourier-transform-9",
+  "id": "exercise-755",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-9",
+  "url": "sec_fourier-transform.html#exercise-755",
   "type": "Exercise",
   "number": "11.4.8",
   "title": "",
   "body": " Use the symmetry and linearity properties and the results of Exercise to show that   "
 },
 {
-  "id": "exercises_fourier-transform-10",
+  "id": "exercise-756",
   "level": "2",
-  "url": "sec_fourier-transform.html#exercises_fourier-transform-10",
+  "url": "sec_fourier-transform.html#exercise-756",
   "type": "Exercise",
   "number": "11.4.9",
   "title": "",
@@ -13699,63 +13699,63 @@ var ptx_lunr_docs = [
   "body": " The Laplace Transform   From Fourier Transforms to Laplace Transforms  We have seen that certain real-valued functions have a Fourier transform and that the integral defines the complex function of the real variable . If we multiply the integrand by , we create a complex function of the complex variable : .  The function is called the two-sided Laplace transform of , and it exists when the Fourier transform of the function exists. From the Fourier transform theory, we can state that a sufficient condition for to exist is that exists. For a given function , this integral is finite for values of that lie in some interval .  The two-sided Laplace transform uses the lower limit of integration, that is, , and hence requires a knowledge of the past history of the function , i.e. , . For most physical applications, one is interested in the behavior of a system only for . Mathematically speaking, the initial conditions , are a consequence of the past history of the system and are often all that is necessary to know. For this reason, it is useful to define the one-sided Laplace transform of , which is commonly referred to simply as the Laplace transform of , which is also defined as an integral: .  If the defining integral for the Laplace transform exists for , then values of with imply that , and thus , and it follows that exists for . Therefore, the Laplace transform is defined for all points in the right half-plane .  Another way to view the relationship between the Fourier transform and the Laplace transform is to consider the function given by   Then the Fourier transform theory shows us that , and since the integrand is zero for , this equation can be written as . Use the change of variable and , where is held fixed, then the new limits of integration are from to . The resulting equation is . Therefore, the Laplace transform is , and the inverse Laplace transform is .    Properties of the Laplace Transform  Although a function may be defined for all values of , its Laplace transform is not influenced by values of , where . The Laplace transform of is actually defined for the function given by   A sufficient condition for the existence of the Laplace transform is that does not grow too rapidly as . We say that the function is of exponential order if there exists real constants and , such that .  All functions in this chapter are assumed to be of exponential order. The next theorem shows that their Laplace transform exists for values of in a domain that includes the right half-plane .   Existence of the Laplace Transform   If is of exponential order, then its Laplace transform is given by . The defining integral for exists at points in the right half plane .     Using we see that can be expressed as . Then for values of , we have , which imply that the integrals defining the real and imaginary parts of exist for values of .    Note : The domain of definition of the defining integral for the Laplace transform seems to be restricted to a half plane. However, the resulting formula might have a domain much larger than this half plane. Later we will show that is an analytic function of the complex variable . For most applications involving Laplace transforms that we will study, the Laplace transforms are rational functions that have the form , where and are polynomials, and some other important ones will have the form .   Linearity of the Laplace Transform   Let and have Laplace transforms and , respectively. If and are constants, then      Let be chosen so that both and are defined for , then .    Uniqueness of the Laplace Transform   Let and have Laplace transforms and , respectively. If , then .     If is sufficiently large, then the integral representation, Equation , for the inverse Laplace transform can be used to obtain .     Show that the Laplace transform of the step function given by .    Using the integral definition for , we obtain .      Show that , where is a real constant.    We will actually show that the integral defining is equal to the formula for values of with , and the extension to other values of is inferred by our knowledge about the domain of a rational function. Using straightforward integration techniques we find that .  Let be held fixed, or where . Then since is a negative real number we have and this result can be used in the latter equation to obtain the desired conclusion.    The property of linearity can be used to find new Laplace transforms from known ones.    Show that .    Since , we obtain .    The technique of integration by parts is also helpful in finding new Laplace transforms.    Show that .    Using integration by parts we obtain .  For values of in the right half plane , an argument similar to that in Example shows that the last limit approaches zero. This observation establishes the result.      Show that .    A direct approach using the definition is tedious. Let us assume that the complex constants are permitted and hence following the Laplace transforms exist: . Using the linearity of the Laplace transform we obtain .    Inverting the Laplace transform is usually accomplished with the aid of a table of known Laplace transforms and the technique of partial fraction expansion.    Find .    Using linearity and lines 6 and 7 of Table , we obtain .     Table gives the Laplace transforms of some well-known functions, and Table highlights some important properties of Laplace transforms.   Well-Known Laplace Transforms                   1.      \\hdashline 2.      \\hdashline 3.  unit step function     \\hdashline 4.      \\hdashline 5.      \\hdashline 6.      \\hdashline 7.      \\hdashline 8.      \\hdashline 9.      \\hdashline 10.      \\hdashline 11.      \\hdashline 12.      \\hdashline 13.             Properties of the Laplace Transform        Definition     \\hdashline First derivative     \\hdashline Second derivative     \\hdashline Integral     \\hdashline Multiplication by     \\hdashline Division by     \\hdashline axis Shifting     \\hdashline axis Shifting   for     \\hdashline Convolution   where           Exercises   Show that by using the integral definition for the Laplace transform. Assume that .   Use and the integral . Supply the details showing that and . From that conclusion it follows that .    Show that by using the integral definition for the Laplace transform. Assume that .    Find for each of the following.      .          .        Use the linearity of Laplace transform and Table to find:   .   .    .   .   .    .   .   .    .    Use the linearity of the inverse Laplace transform and Table to find:   .   .    .   .   .    .   .   .    .    Write a report on how complex analysis is used in the study of Laplace transforms. Include ideas and examples that are not mentioned in the text.     "
 },
 {
-  "id": "sec_laplace-transform-3-5",
+  "id": "theorem-106",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-5",
+  "url": "sec_laplace-transform.html#theorem-106",
   "type": "Theorem",
   "number": "11.5.1",
   "title": "Existence of the Laplace Transform.",
   "body": " Existence of the Laplace Transform   If is of exponential order, then its Laplace transform is given by . The defining integral for exists at points in the right half plane .   "
 },
 {
-  "id": "sec_laplace-transform-3-6",
+  "id": "proof-97",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-6",
+  "url": "sec_laplace-transform.html#proof-97",
   "type": "Proof",
   "number": "11.5.2.1",
   "title": "",
   "body": " Using we see that can be expressed as . Then for values of , we have , which imply that the integrals defining the real and imaginary parts of exist for values of .  "
 },
 {
-  "id": "sec_laplace-transform-3-8",
+  "id": "theorem-107",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-8",
+  "url": "sec_laplace-transform.html#theorem-107",
   "type": "Theorem",
   "number": "11.5.2",
   "title": "Linearity of the Laplace Transform.",
   "body": " Linearity of the Laplace Transform   Let and have Laplace transforms and , respectively. If and are constants, then    "
 },
 {
-  "id": "sec_laplace-transform-3-9",
+  "id": "proof-98",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-9",
+  "url": "sec_laplace-transform.html#proof-98",
   "type": "Proof",
   "number": "11.5.2.2",
   "title": "",
   "body": " Let be chosen so that both and are defined for , then .  "
 },
 {
-  "id": "sec_laplace-transform-3-10",
+  "id": "theorem-108",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-10",
+  "url": "sec_laplace-transform.html#theorem-108",
   "type": "Theorem",
   "number": "11.5.3",
   "title": "Uniqueness of the Laplace Transform.",
   "body": " Uniqueness of the Laplace Transform   Let and have Laplace transforms and , respectively. If , then .   "
 },
 {
-  "id": "sec_laplace-transform-3-11",
+  "id": "proof-99",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-11",
+  "url": "sec_laplace-transform.html#proof-99",
   "type": "Proof",
   "number": "11.5.2.3",
   "title": "",
   "body": " If is sufficiently large, then the integral representation, Equation , for the inverse Laplace transform can be used to obtain .  "
 },
 {
-  "id": "sec_laplace-transform-3-12",
+  "id": "example-227",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-12",
+  "url": "sec_laplace-transform.html#example-227",
   "type": "Example",
   "number": "11.5.4",
   "title": "",
@@ -13771,36 +13771,36 @@ var ptx_lunr_docs = [
   "body": "  Show that , where is a real constant.    We will actually show that the integral defining is equal to the formula for values of with , and the extension to other values of is inferred by our knowledge about the domain of a rational function. Using straightforward integration techniques we find that .  Let be held fixed, or where . Then since is a negative real number we have and this result can be used in the latter equation to obtain the desired conclusion.   "
 },
 {
-  "id": "sec_laplace-transform-3-15",
+  "id": "example-229",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-15",
+  "url": "sec_laplace-transform.html#example-229",
   "type": "Example",
   "number": "11.5.6",
   "title": "",
   "body": "  Show that .    Since , we obtain .   "
 },
 {
-  "id": "sec_laplace-transform-3-17",
+  "id": "example-230",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-17",
+  "url": "sec_laplace-transform.html#example-230",
   "type": "Example",
   "number": "11.5.7",
   "title": "",
   "body": "  Show that .    Using integration by parts we obtain .  For values of in the right half plane , an argument similar to that in Example shows that the last limit approaches zero. This observation establishes the result.   "
 },
 {
-  "id": "sec_laplace-transform-3-18",
+  "id": "example-231",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-18",
+  "url": "sec_laplace-transform.html#example-231",
   "type": "Example",
   "number": "11.5.8",
   "title": "",
   "body": "  Show that .    A direct approach using the definition is tedious. Let us assume that the complex constants are permitted and hence following the Laplace transforms exist: . Using the linearity of the Laplace transform we obtain .   "
 },
 {
-  "id": "sec_laplace-transform-3-20",
+  "id": "example-232",
   "level": "2",
-  "url": "sec_laplace-transform.html#sec_laplace-transform-3-20",
+  "url": "sec_laplace-transform.html#example-232",
   "type": "Example",
   "number": "11.5.9",
   "title": "",
@@ -13825,54 +13825,54 @@ var ptx_lunr_docs = [
   "body": " Properties of the Laplace Transform        Definition     \\hdashline First derivative     \\hdashline Second derivative     \\hdashline Integral     \\hdashline Multiplication by     \\hdashline Division by     \\hdashline axis Shifting     \\hdashline axis Shifting   for     \\hdashline Convolution   where         "
 },
 {
-  "id": "exercises_laplace-transform-2",
+  "id": "exercise-757",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-2",
+  "url": "sec_laplace-transform.html#exercise-757",
   "type": "Exercise",
   "number": "11.5.2.1",
   "title": "",
   "body": " Show that by using the integral definition for the Laplace transform. Assume that .   Use and the integral . Supply the details showing that and . From that conclusion it follows that .  "
 },
 {
-  "id": "exercises_laplace-transform-3",
+  "id": "exercise-758",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-3",
+  "url": "sec_laplace-transform.html#exercise-758",
   "type": "Exercise",
   "number": "11.5.2.2",
   "title": "",
   "body": " Show that by using the integral definition for the Laplace transform. Assume that .  "
 },
 {
-  "id": "exercises_laplace-transform-4",
+  "id": "exercise-759",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-4",
+  "url": "sec_laplace-transform.html#exercise-759",
   "type": "Exercise",
   "number": "11.5.2.3",
   "title": "",
   "body": " Find for each of the following.      .          .      "
 },
 {
-  "id": "exercises_laplace-transform-5",
+  "id": "exercise-760",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-5",
+  "url": "sec_laplace-transform.html#exercise-760",
   "type": "Exercise",
   "number": "11.5.2.4",
   "title": "",
   "body": " Use the linearity of Laplace transform and Table to find:   .   .    .   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_laplace-transform-6",
+  "id": "exercise-761",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-6",
+  "url": "sec_laplace-transform.html#exercise-761",
   "type": "Exercise",
   "number": "11.5.2.5",
   "title": "",
   "body": " Use the linearity of the inverse Laplace transform and Table to find:   .   .    .   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_laplace-transform-7",
+  "id": "exercise-762",
   "level": "2",
-  "url": "sec_laplace-transform.html#exercises_laplace-transform-7",
+  "url": "sec_laplace-transform.html#exercise-762",
   "type": "Exercise",
   "number": "11.5.2.6",
   "title": "",
@@ -13897,9 +13897,9 @@ var ptx_lunr_docs = [
   "body": " Differentiation of $f(t)$   Let and be continuous for , and of exponential order. Then,    "
 },
 {
-  "id": "sec_laplace-derivs-integrals-3",
+  "id": "proof-100",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#sec_laplace-derivs-integrals-3",
+  "url": "sec_laplace-derivs-integrals.html#proof-100",
   "type": "Proof",
   "number": "11.6.1",
   "title": "",
@@ -13915,9 +13915,9 @@ var ptx_lunr_docs = [
   "body": "  If , and are of exponential order, then    "
 },
 {
-  "id": "sec_laplace-derivs-integrals-6",
+  "id": "example-233",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#sec_laplace-derivs-integrals-6",
+  "url": "sec_laplace-derivs-integrals.html#example-233",
   "type": "Example",
   "number": "11.6.3",
   "title": "",
@@ -13933,18 +13933,18 @@ var ptx_lunr_docs = [
   "body": "  (Integration of ] Let be continuous for , and of exponential order. Further, let be its Laplace transform, then    "
 },
 {
-  "id": "sec_laplace-derivs-integrals-8",
+  "id": "proof-101",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#sec_laplace-derivs-integrals-8",
+  "url": "sec_laplace-derivs-integrals.html#proof-101",
   "type": "Proof",
   "number": "11.6.2",
   "title": "",
   "body": " Let , then and . If we can show that is of exponential order, then Theorem implies that .  Since is of exponential order, there are positive values and so that . Therefore, is of exponential order.  "
 },
 {
-  "id": "sec_laplace-derivs-integrals-9",
+  "id": "example-234",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#sec_laplace-derivs-integrals-9",
+  "url": "sec_laplace-derivs-integrals.html#example-234",
   "type": "Example",
   "number": "11.6.5",
   "title": "",
@@ -13960,171 +13960,171 @@ var ptx_lunr_docs = [
   "body": "  Solve the initial value problem .    Since the right-hand side of the differential equation is we have . The initial conditions yield and Equation becomes . Solving we get and the solution is assisted by using Table and the computation .   "
 },
 {
-  "id": "sec_laplace-derivs-integrals-16",
+  "id": "example-236",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#sec_laplace-derivs-integrals-16",
+  "url": "sec_laplace-derivs-integrals.html#example-236",
   "type": "Example",
   "number": "11.6.7",
   "title": "",
   "body": "  Solve the initial value problem .    In the spirit of Example , we use the initial conditions and Equation becomes . Using partial fraction expansion and the solution is .   "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-2",
+  "id": "exercise-763",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-2",
+  "url": "sec_laplace-derivs-integrals.html#exercise-763",
   "type": "Exercise",
   "number": "11.6.1",
   "title": "",
   "body": " Derive from .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-3",
+  "id": "exercise-764",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-3",
+  "url": "sec_laplace-derivs-integrals.html#exercise-764",
   "type": "Exercise",
   "number": "11.6.2",
   "title": "",
   "body": " Derive from .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-4",
+  "id": "exercise-765",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-4",
+  "url": "sec_laplace-derivs-integrals.html#exercise-765",
   "type": "Exercise",
   "number": "11.6.3",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-5",
+  "id": "exercise-766",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-5",
+  "url": "sec_laplace-derivs-integrals.html#exercise-766",
   "type": "Exercise",
   "number": "11.6.4",
   "title": "",
   "body": " Show that . \\hint{Let and .}  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-6",
+  "id": "exercise-767",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-6",
+  "url": "sec_laplace-derivs-integrals.html#exercise-767",
   "type": "Exercise",
   "number": "11.6.5",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-7",
+  "id": "exercise-768",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-7",
+  "url": "sec_laplace-derivs-integrals.html#exercise-768",
   "type": "Exercise",
   "number": "11.6.6",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-8",
+  "id": "exercise-769",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-8",
+  "url": "sec_laplace-derivs-integrals.html#exercise-769",
   "type": "Exercise",
   "number": "11.6.7",
   "title": "",
   "body": " Show that .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-9",
+  "id": "exercise-770",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-9",
+  "url": "sec_laplace-derivs-integrals.html#exercise-770",
   "type": "Exercise",
   "number": "11.6.8",
   "title": "",
   "body": " Show that .  Solve the initial value problem in the following exercises.  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-10",
+  "id": "exercise-771",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-10",
+  "url": "sec_laplace-derivs-integrals.html#exercise-771",
   "type": "Exercise",
   "number": "11.6.9",
   "title": "",
   "body": "  , with and .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-11",
+  "id": "exercise-772",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-11",
+  "url": "sec_laplace-derivs-integrals.html#exercise-772",
   "type": "Exercise",
   "number": "11.6.10",
   "title": "",
   "body": "  , with and .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-12",
+  "id": "exercise-773",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-12",
+  "url": "sec_laplace-derivs-integrals.html#exercise-773",
   "type": "Exercise",
   "number": "11.6.11",
   "title": "",
   "body": "  , with and .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-13",
+  "id": "exercise-774",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-13",
+  "url": "sec_laplace-derivs-integrals.html#exercise-774",
   "type": "Exercise",
   "number": "11.6.12",
   "title": "",
   "body": "  , with .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-14",
+  "id": "exercise-775",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-14",
+  "url": "sec_laplace-derivs-integrals.html#exercise-775",
   "type": "Exercise",
   "number": "11.6.13",
   "title": "",
   "body": "  , with .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-15",
+  "id": "exercise-776",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-15",
+  "url": "sec_laplace-derivs-integrals.html#exercise-776",
   "type": "Exercise",
   "number": "11.6.14",
   "title": "",
   "body": "  , with and .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-16",
+  "id": "exercise-777",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-16",
+  "url": "sec_laplace-derivs-integrals.html#exercise-777",
   "type": "Exercise",
   "number": "11.6.15",
   "title": "",
   "body": "  , with and .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-17",
+  "id": "exercise-778",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-17",
+  "url": "sec_laplace-derivs-integrals.html#exercise-778",
   "type": "Exercise",
   "number": "11.6.16",
   "title": "",
   "body": "  , with .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-18",
+  "id": "exercise-779",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-18",
+  "url": "sec_laplace-derivs-integrals.html#exercise-779",
   "type": "Exercise",
   "number": "11.6.17",
   "title": "",
   "body": "  , with and .    .  "
 },
 {
-  "id": "exercises_laplace-derivs-integrals-19",
+  "id": "exercise-780",
   "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-19",
+  "url": "sec_laplace-derivs-integrals.html#exercise-780",
   "type": "Exercise",
   "number": "11.6.18",
   "title": "",
@@ -14149,9 +14149,9 @@ var ptx_lunr_docs = [
   "body": " Shifting the Variable $s$    If is the Laplace transform of , then    "
 },
 {
-  "id": "sec_shifting-thms-4",
+  "id": "proof-102",
   "level": "2",
-  "url": "sec_shifting-thms.html#sec_shifting-thms-4",
+  "url": "sec_shifting-thms.html#proof-102",
   "type": "Proof",
   "number": "11.7.1",
   "title": "",
@@ -14185,9 +14185,9 @@ var ptx_lunr_docs = [
   "body": " Shifting the Variable $t$    If is the Laplace transform of and , then , where and are illustrated in Figure .   "
 },
 {
-  "id": "sec_shifting-thms-9",
+  "id": "proof-103",
   "level": "2",
-  "url": "sec_shifting-thms.html#sec_shifting-thms-9",
+  "url": "sec_shifting-thms.html#proof-103",
   "type": "Proof",
   "number": "11.7.2",
   "title": "",
@@ -14203,9 +14203,9 @@ var ptx_lunr_docs = [
   "body": " Comparison of the functions and   "
 },
 {
-  "id": "sec_shifting-thms-11",
+  "id": "example-237",
   "level": "2",
-  "url": "sec_shifting-thms.html#sec_shifting-thms-11",
+  "url": "sec_shifting-thms.html#example-237",
   "type": "Example",
   "number": "11.7.6",
   "title": "",
@@ -14230,90 +14230,90 @@ var ptx_lunr_docs = [
   "body": "  Find if is given in Figure .   The function of Example      We can represent in terms of step functions: . Using the result of Example and linearity, we obtain .   "
 },
 {
-  "id": "sec_shifting-thms-14",
+  "id": "example-240",
   "level": "2",
-  "url": "sec_shifting-thms.html#sec_shifting-thms-14",
+  "url": "sec_shifting-thms.html#example-240",
   "type": "Example",
   "number": "11.7.10",
   "title": "",
   "body": "  Use Laplace transforms to solve the initial value problem .    As usual, let denote the Laplace transform of . Then we get . Solving for , we obtain . We now use Theorem and the facts that and are the transforms of and , respectively. The solution computes as follows: , which can be written in the more familiar form:    "
 },
 {
-  "id": "exercises_shifting-thms-2",
+  "id": "exercise-781",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-2",
+  "url": "sec_shifting-thms.html#exercise-781",
   "type": "Exercise",
   "number": "11.7.1",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_shifting-thms-3",
+  "id": "exercise-782",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-3",
+  "url": "sec_shifting-thms.html#exercise-782",
   "type": "Exercise",
   "number": "11.7.2",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_shifting-thms-4",
+  "id": "exercise-783",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-4",
+  "url": "sec_shifting-thms.html#exercise-783",
   "type": "Exercise",
   "number": "11.7.3",
   "title": "",
   "body": " Show that .    .  "
 },
 {
-  "id": "exercises_shifting-thms-5",
+  "id": "exercise-784",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-5",
+  "url": "sec_shifting-thms.html#exercise-784",
   "type": "Exercise",
   "number": "11.7.4",
   "title": "",
   "body": " Show that .  "
 },
 {
-  "id": "exercises_shifting-thms-6",
+  "id": "exercise-785",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-6",
+  "url": "sec_shifting-thms.html#exercise-785",
   "type": "Exercise",
   "number": "11.7.5",
   "title": "",
   "body": " Find for the following:   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_shifting-thms-7",
+  "id": "exercise-786",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-7",
+  "url": "sec_shifting-thms.html#exercise-786",
   "type": "Exercise",
   "number": "11.7.6",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_shifting-thms-8",
+  "id": "exercise-787",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-8",
+  "url": "sec_shifting-thms.html#exercise-787",
   "type": "Exercise",
   "number": "11.7.7",
   "title": "",
   "body": " Find for the following:   .   .    .   .   .      Let be the function given in Figure .  The graph (for Problem 6e)     .   Let be the function given in Figure . \\hint{The function is the integral of the one in Exercise .}  The graph (for Problem 6f)    "
 },
 {
-  "id": "exercises_shifting-thms-9",
+  "id": "exercise-788",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-9",
+  "url": "sec_shifting-thms.html#exercise-788",
   "type": "Exercise",
   "number": "11.7.8",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_shifting-thms-10",
+  "id": "exercise-789",
   "level": "2",
-  "url": "sec_shifting-thms.html#exercises_shifting-thms-10",
+  "url": "sec_shifting-thms.html#exercise-789",
   "type": "Exercise",
   "number": "11.7.9",
   "title": "",
@@ -14329,18 +14329,18 @@ var ptx_lunr_docs = [
   "body": " Multiplication and Division by  Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions , , or as part of the solution. We now show how the Laplace transforms of and are related to the Laplace transform of . The transform of will be obtained via differentiation and the transform of will be obtained via integration. To be precise, we state the following theorems.   Multiplication by $t$    If is the Laplace transform of , then      By definition we have . Leibniz's rule for partial differentiation under the integral sign permits us to write .    Division by $t$   Let both and have Laplace transforms and let denote the transform of . If exists,      Since , we integrate from to : . The order of integration in equation in the double integral is reversed: .     Show that .    Let , then . Hence, we can differentiate to obtain the desired result:       Show that .    Let and . Since , we can integrate to obtain the desired result: .    Some types of differential equations involve the terms or . Laplace transforms can be used to find the solution if we use the additional substitutions .    Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in .  This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution      Exercises   Find the Laplace transform for each of the following:   .   .    .   .   .    .   .   .    .    Show that .    Show that .    Find .    Find .    .    Find .    Find .    .    Solve the initial value problem for each of the following:   , with and .   .    , with and .   , with .   .    , with .   , with .   .    , with .    Solve the Laguerre equation , with .    .    Solve the Laguerre equation , with .    "
 },
 {
-  "id": "sec_mult-and-division-by-t-3",
+  "id": "theorem-113",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-3",
+  "url": "sec_mult-and-division-by-t.html#theorem-113",
   "type": "Theorem",
   "number": "11.8.1",
   "title": "Multiplication by “$t$”.",
   "body": " Multiplication by $t$    If is the Laplace transform of , then    "
 },
 {
-  "id": "sec_mult-and-division-by-t-4",
+  "id": "proof-104",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-4",
+  "url": "sec_mult-and-division-by-t.html#proof-104",
   "type": "Proof",
   "number": "11.8.1",
   "title": "",
@@ -14356,126 +14356,126 @@ var ptx_lunr_docs = [
   "body": " Division by $t$   Let both and have Laplace transforms and let denote the transform of . If exists,    "
 },
 {
-  "id": "sec_mult-and-division-by-t-6",
+  "id": "proof-105",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-6",
+  "url": "sec_mult-and-division-by-t.html#proof-105",
   "type": "Proof",
   "number": "11.8.2",
   "title": "",
   "body": " Since , we integrate from to : . The order of integration in equation in the double integral is reversed: .  "
 },
 {
-  "id": "sec_mult-and-division-by-t-7",
+  "id": "example-241",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-7",
+  "url": "sec_mult-and-division-by-t.html#example-241",
   "type": "Example",
   "number": "11.8.3",
   "title": "",
   "body": "  Show that .    Let , then . Hence, we can differentiate to obtain the desired result:    "
 },
 {
-  "id": "sec_mult-and-division-by-t-8",
+  "id": "example-242",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-8",
+  "url": "sec_mult-and-division-by-t.html#example-242",
   "type": "Example",
   "number": "11.8.4",
   "title": "",
   "body": "  Show that .    Let and . Since , we can integrate to obtain the desired result: .   "
 },
 {
-  "id": "sec_mult-and-division-by-t-10",
+  "id": "example-243",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-10",
+  "url": "sec_mult-and-division-by-t.html#example-243",
   "type": "Example",
   "number": "11.8.5",
   "title": "",
   "body": "  Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in .  This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution    "
 },
 {
-  "id": "exercises_mult-and-division-by-t-2",
+  "id": "exercise-790",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-2",
+  "url": "sec_mult-and-division-by-t.html#exercise-790",
   "type": "Exercise",
   "number": "11.8.1",
   "title": "",
   "body": " Find the Laplace transform for each of the following:   .   .    .   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-3",
+  "id": "exercise-791",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-3",
+  "url": "sec_mult-and-division-by-t.html#exercise-791",
   "type": "Exercise",
   "number": "11.8.2",
   "title": "",
   "body": " Show that .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-4",
+  "id": "exercise-792",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-4",
+  "url": "sec_mult-and-division-by-t.html#exercise-792",
   "type": "Exercise",
   "number": "11.8.3",
   "title": "",
   "body": " Show that .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-5",
+  "id": "exercise-793",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-5",
+  "url": "sec_mult-and-division-by-t.html#exercise-793",
   "type": "Exercise",
   "number": "11.8.4",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-6",
+  "id": "exercise-794",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-6",
+  "url": "sec_mult-and-division-by-t.html#exercise-794",
   "type": "Exercise",
   "number": "11.8.5",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-7",
+  "id": "exercise-795",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-7",
+  "url": "sec_mult-and-division-by-t.html#exercise-795",
   "type": "Exercise",
   "number": "11.8.6",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-8",
+  "id": "exercise-796",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-8",
+  "url": "sec_mult-and-division-by-t.html#exercise-796",
   "type": "Exercise",
   "number": "11.8.7",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-9",
+  "id": "exercise-797",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-9",
+  "url": "sec_mult-and-division-by-t.html#exercise-797",
   "type": "Exercise",
   "number": "11.8.8",
   "title": "",
   "body": " Solve the initial value problem for each of the following:   , with and .   .    , with and .   , with .   .    , with .   , with .   .    , with .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-10",
+  "id": "exercise-798",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-10",
+  "url": "sec_mult-and-division-by-t.html#exercise-798",
   "type": "Exercise",
   "number": "11.8.9",
   "title": "",
   "body": " Solve the Laguerre equation , with .    .  "
 },
 {
-  "id": "exercises_mult-and-division-by-t-11",
+  "id": "exercise-799",
   "level": "2",
-  "url": "sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t-11",
+  "url": "sec_mult-and-division-by-t.html#exercise-799",
   "type": "Exercise",
   "number": "11.8.10",
   "title": "",
@@ -14509,18 +14509,18 @@ var ptx_lunr_docs = [
   "body": " A Repeated Linear Factor   If and are polynomials of degree and , respectively, and and , then Equation has the representation , where is the sum of all partial fractions that do not involve factors of the form . Furthermore, the coefficients can be computed with the formula .   "
 },
 {
-  "id": "sec_laplace-inversion-5",
+  "id": "proof-106",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-5",
+  "url": "sec_laplace-inversion.html#proof-106",
   "type": "Proof",
   "number": "11.9.1",
   "title": "",
   "body": " We employ the method of residues. First, multiplying both sides of Equation by gives . We can differentiate both sides of this equation times to obtain .  In this equation, take the limit as . It is left as an exercise for the reader to fill in the steps to obtain . which establishes Equation .  "
 },
 {
-  "id": "sec_laplace-inversion-6",
+  "id": "example-244",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-6",
+  "url": "sec_laplace-inversion.html#example-244",
   "type": "Example",
   "number": "11.9.3",
   "title": "",
@@ -14536,36 +14536,36 @@ var ptx_lunr_docs = [
   "body": " Irreducible Quadratic Factors   Let and be polynomials with real coefficients such that the degree of is at most larger than the degree of . If does not have a factor of the form , then  .   "
 },
 {
-  "id": "sec_laplace-inversion-8",
+  "id": "proof-107",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-8",
+  "url": "sec_laplace-inversion.html#proof-107",
   "type": "Proof",
   "number": "11.9.2",
   "title": "",
   "body": " Since , and have real coefficients, it follows that . The polynomial has simple zeros at , this implies that . Therefore, we obtain , from which it is easy to see that .  If we set  and use Theorem and Equations , , and , then we find that . The first two terms on the right side of this equation are now combined to obtain , which completes the proof of the theorem.  "
 },
 {
-  "id": "sec_laplace-inversion-9",
+  "id": "example-245",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-9",
+  "url": "sec_laplace-inversion.html#example-245",
   "type": "Example",
   "number": "11.9.5",
   "title": "",
   "body": "  Let . Find .    Here we have and , and the roots of occur at and . Computing the residues gives .  We find that and , which correspond to and , respectively. Thus we obtain , and the desired solution is    "
 },
 {
-  "id": "sec_laplace-inversion-10",
+  "id": "example-246",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-10",
+  "url": "sec_laplace-inversion.html#example-246",
   "type": "Example",
   "number": "11.9.6",
   "title": "",
   "body": "  Find if .    The partial fraction expression for has the form . Since the linear factor is nonrepeated, we have .  Since the factor is repeated, we have .  The term is an irreducible quadratic, with roots , so that , and we obtain and . Therefore, .  Now we use Table to get    "
 },
 {
-  "id": "sec_laplace-inversion-11",
+  "id": "example-247",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-11",
+  "url": "sec_laplace-inversion.html#example-247",
   "type": "Example",
   "number": "11.9.7",
   "title": "",
@@ -14581,9 +14581,9 @@ var ptx_lunr_docs = [
   "body": " Inverse Laplace Transform   Let , where and are polynomials of degree and , respectively, and . The inverse Laplace transformation , denoted by , is given by , where the sum is taken over all of the residues of the complex function at its poles .   "
 },
 {
-  "id": "sec_laplace-inversion-14",
+  "id": "proof-108",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-14",
+  "url": "sec_laplace-inversion.html#proof-108",
   "type": "Proof",
   "number": "11.9.3",
   "title": "",
@@ -14599,81 +14599,81 @@ var ptx_lunr_docs = [
   "body": " The contour .   "
 },
 {
-  "id": "sec_laplace-inversion-16",
+  "id": "theorem-119",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-16",
+  "url": "sec_laplace-inversion.html#theorem-119",
   "type": "Theorem",
   "number": "11.9.10",
   "title": "Heaviside Expansion Theorem.",
   "body": " Heaviside Expansion Theorem   Let and be polynomials of degree and , respectively, where . If has distinct simple zeros at the points , then is the Laplace transform of the function given by .   "
 },
 {
-  "id": "sec_laplace-inversion-17",
+  "id": "proof-109",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-17",
+  "url": "sec_laplace-inversion.html#proof-109",
   "type": "Proof",
   "number": "11.9.4",
   "title": "",
   "body": " If and are polynomials and is a simple zero of , then . This outcome allows us to write the residues in Equation in the more convenient form given in Equation .  "
 },
 {
-  "id": "sec_laplace-inversion-18",
+  "id": "example-248",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-18",
+  "url": "sec_laplace-inversion.html#example-248",
   "type": "Example",
   "number": "11.9.11",
   "title": "",
   "body": "  Find the inverse Laplace transform of the function     Here we have and , so that has simple zeros located at the points , and . Using , calculation reveals that and . Applying formula , we see that is given by .   "
 },
 {
-  "id": "exercises_laplace-inversion-2",
+  "id": "exercise-800",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-2",
+  "url": "sec_laplace-inversion.html#exercise-800",
   "type": "Exercise",
   "number": "11.9.1",
   "title": "",
   "body": " Use partial fractions to find the inverse Laplace transform of   .   .    .   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_laplace-inversion-3",
+  "id": "exercise-801",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-3",
+  "url": "sec_laplace-inversion.html#exercise-801",
   "type": "Exercise",
   "number": "11.9.2",
   "title": "",
   "body": " Use a contour integral to find the inverse Laplace transform of   .   .    .  "
 },
 {
-  "id": "exercises_laplace-inversion-4",
+  "id": "exercise-802",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-4",
+  "url": "sec_laplace-inversion.html#exercise-802",
   "type": "Exercise",
   "number": "11.9.3",
   "title": "",
   "body": " Use the Heaviside Expansion Theorem to find the inverse Laplace transform of   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_laplace-inversion-5",
+  "id": "exercise-803",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-5",
+  "url": "sec_laplace-inversion.html#exercise-803",
   "type": "Exercise",
   "number": "11.9.4",
   "title": "",
   "body": " Find the inverse Laplace transform of .    .  "
 },
 {
-  "id": "exercises_laplace-inversion-6",
+  "id": "exercise-804",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-6",
+  "url": "sec_laplace-inversion.html#exercise-804",
   "type": "Exercise",
   "number": "11.9.5",
   "title": "",
   "body": " Solve the following initial value problems.   , with and .   .    , with , and .   , with and .   .    , with and .   , with and .   .    , with and .  "
 },
 {
-  "id": "exercises_laplace-inversion-7",
+  "id": "exercise-805",
   "level": "2",
-  "url": "sec_laplace-inversion.html#exercises_laplace-inversion-7",
+  "url": "sec_laplace-inversion.html#exercise-805",
   "type": "Exercise",
   "number": "11.9.6",
   "title": "",
@@ -14698,9 +14698,9 @@ var ptx_lunr_docs = [
   "body": " Convolution Theorem   Let and denote the Laplace transforms of and , respectively. Then the product given by is the Laplace transformation of the convolution of and . It is denoted by , and has the integral representation .   "
 },
 {
-  "id": "sec_convolution-4",
+  "id": "proof-110",
   "level": "2",
-  "url": "sec_convolution.html#sec_convolution-4",
+  "url": "sec_convolution.html#proof-110",
   "type": "Proof",
   "number": "11.10.1",
   "title": "",
@@ -14725,18 +14725,18 @@ var ptx_lunr_docs = [
   "body": " Convolution Properties        Commutativity     \\hdashline Distributivity     \\hdashline Associativity     \\hdashline Zero         "
 },
 {
-  "id": "sec_convolution-8",
+  "id": "example-249",
   "level": "2",
-  "url": "sec_convolution.html#sec_convolution-8",
+  "url": "sec_convolution.html#example-249",
   "type": "Example",
   "number": "11.10.4",
   "title": "",
   "body": "  Show that .    Let , , respectively. Applying the convolution theorem we get .   "
 },
 {
-  "id": "sec_convolution-9",
+  "id": "example-250",
   "level": "2",
-  "url": "sec_convolution.html#sec_convolution-9",
+  "url": "sec_convolution.html#example-250",
   "type": "Example",
   "number": "11.10.5",
   "title": "",
@@ -14752,9 +14752,9 @@ var ptx_lunr_docs = [
   "body": " Graphs of for , , and   "
 },
 {
-  "id": "sec_convolution-14",
+  "id": "example-251",
   "level": "2",
-  "url": "sec_convolution.html#sec_convolution-14",
+  "url": "sec_convolution.html#example-251",
   "type": "Example",
   "number": "11.10.7",
   "title": "",
@@ -14797,135 +14797,135 @@ var ptx_lunr_docs = [
   "body": " IVP Convolution Method   Show initial value problem has the unique solution , where is the solution to the homogeneous equation , and is the function whose Laplace transform given by .    The particular solution is found by solving the equation .  Taking the Laplace transform of both sides of this equation produces . Solving for in the latter equation yields . If we set , then , and the particular solution is given by the convolution . The general solution is . To verify that the initial conditions are met we compute .   "
 },
 {
-  "id": "sec_convolution-24",
+  "id": "example-254",
   "level": "2",
-  "url": "sec_convolution.html#sec_convolution-24",
+  "url": "sec_convolution.html#example-254",
   "type": "Example",
   "number": "11.10.12",
   "title": "",
   "body": "  Use the convolution method to solve the IVP .    First solve with and . Taking the Laplace transform yields . Solving for gives , and it follows that . Second, observe that and , so that .  Therefore, the solution is    "
 },
 {
-  "id": "exercises_convolution-2",
+  "id": "exercise-806",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-2",
+  "url": "sec_convolution.html#exercise-806",
   "type": "Exercise",
   "number": "11.10.1",
   "title": "",
   "body": " Find the indicated convolution for each of the following:   .   , and .    .   .   , and .    .  "
 },
 {
-  "id": "exercises_convolution-3",
+  "id": "exercise-807",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-3",
+  "url": "sec_convolution.html#exercise-807",
   "type": "Exercise",
   "number": "11.10.2",
   "title": "",
   "body": " Use convolution to find for each of the following:   .   .    .   .   .    .  "
 },
 {
-  "id": "exercises_convolution-4",
+  "id": "exercise-808",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-4",
+  "url": "sec_convolution.html#exercise-808",
   "type": "Exercise",
   "number": "11.10.3",
   "title": "",
   "body": " Prove the distributive law for convolution: .   Proof: .  "
 },
 {
-  "id": "exercises_convolution-5",
+  "id": "exercise-809",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-5",
+  "url": "sec_convolution.html#exercise-809",
   "type": "Exercise",
   "number": "11.10.4",
   "title": "",
   "body": " Use the convolution theorem and mathematical induction to show that   "
 },
 {
-  "id": "exercises_convolution-6",
+  "id": "exercise-810",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-6",
+  "url": "sec_convolution.html#exercise-810",
   "type": "Exercise",
   "number": "11.10.5",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_convolution-7",
+  "id": "exercise-811",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-7",
+  "url": "sec_convolution.html#exercise-811",
   "type": "Exercise",
   "number": "11.10.6",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_convolution-8",
+  "id": "exercise-812",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-8",
+  "url": "sec_convolution.html#exercise-812",
   "type": "Exercise",
   "number": "11.10.7",
   "title": "",
   "body": " Use the convolution theorem to solve the initial value problem .    .  "
 },
 {
-  "id": "exercises_convolution-9",
+  "id": "exercise-813",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-9",
+  "url": "sec_convolution.html#exercise-813",
   "type": "Exercise",
   "number": "11.10.8",
   "title": "",
   "body": " Use the convolution theorem to show that the solution to the initial value problem   , with and is   "
 },
 {
-  "id": "exercises_convolution-10",
+  "id": "exercise-814",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-10",
+  "url": "sec_convolution.html#exercise-814",
   "type": "Exercise",
   "number": "11.10.9",
   "title": "",
   "body": " Find .    .  "
 },
 {
-  "id": "exercises_convolution-11",
+  "id": "exercise-815",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-11",
+  "url": "sec_convolution.html#exercise-815",
   "type": "Exercise",
   "number": "11.10.10",
   "title": "",
   "body": " Find .  "
 },
 {
-  "id": "exercises_convolution-12",
+  "id": "exercise-816",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-12",
+  "url": "sec_convolution.html#exercise-816",
   "type": "Exercise",
   "number": "11.10.11",
   "title": "",
   "body": " Let . Use convolution to show that    Given and and , we have .  "
 },
 {
-  "id": "exercises_convolution-13",
+  "id": "exercise-817",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-13",
+  "url": "sec_convolution.html#exercise-817",
   "type": "Exercise",
   "number": "11.10.12",
   "title": "",
   "body": " Use the convolution theorem to solve the following integral equations.   .   , and .    .   .   , and .    .  "
 },
 {
-  "id": "exercises_convolution-14",
+  "id": "exercise-818",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-14",
+  "url": "sec_convolution.html#exercise-818",
   "type": "Exercise",
   "number": "11.10.13",
   "title": "",
   "body": " Solve the initial value problem for each of the following:   , with and .   .    , with and .   , with and .   .    , with and .  "
 },
 {
-  "id": "exercises_convolution-15",
+  "id": "exercise-819",
   "level": "2",
-  "url": "sec_convolution.html#exercises_convolution-15",
+  "url": "sec_convolution.html#exercise-819",
   "type": "Exercise",
   "number": "11.10.14",
   "title": "",
