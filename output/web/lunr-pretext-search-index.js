@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Front Matter",
   "number": "",
   "title": "Front Matter",
-  "body": "   Russell W. Howell  Kathleen Smith Professor of Mathematics  Westmont College, Santa Barbara, CA  howell@westmont.edu    John H. Mathews  Professor of Mathematics, Emeritus  California State University, Fullerton, CA  fmathews394@gmail.com   Last Update: August 17, 2024   "
+  "body": "   Russell W. Howell  Kathleen Smith Professor of Mathematics  Westmont College, Santa Barbara, CA  howell@westmont.edu    John H. Mathews  Professor of Mathematics, Emeritus  California State University, Fullerton, CA  fmathews394@gmail.com    Last Update: August 17, 2024    "
 },
 {
   "id": "ch_preface",
