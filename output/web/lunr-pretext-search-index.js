@@ -825,7 +825,7 @@ var ptx_lunr_docs = [
   "url": "sec_geometry-2.html#sec_geometry-2-8",
   "type": "Definition",
   "number": "1.4.4",
-  "title": "<span class=\"process-math\">\\(\\mathbf{\\arg z}\\)<\/span>.",
+  "title": "<span class=\"process-math\">\\(\\boldsymbol{\\arg z}\\)<\/span>.",
   "body": "   If , .  If , we say that is an argument of .   "
 },
 {
@@ -843,7 +843,7 @@ var ptx_lunr_docs = [
   "url": "sec_geometry-2.html#sec_geometry-2-12",
   "type": "Definition",
   "number": "1.4.6",
-  "title": "<span class=\"process-math\">\\(\\mathbf{\\mathrm{Arg} \\; z}\\)<\/span>.",
+  "title": "<span class=\"process-math\">\\(\\mathbf{\\mathrm{Arg}} \\; \\boldsymbol{z}\\)<\/span>.",
   "body": "   Let be a complex number. Then .  If , we call the argument of .   "
 },
 {
