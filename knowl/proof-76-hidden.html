@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">There are a finite number of poles of <span class="process-math">\(\frac{P}{Q}\)</span> that lie in the upper half-plane, so we can find a real number <span class="process-math">\(R\)</span> such that the poles all lie inside the contour <span class="process-math">\(C\text{,}\)</span> which consists of the segment <span class="process-math">\(-R \le x \le R\)</span> of the <span class="process-math">\(x\)</span>-axis and the upper semicircle <span class="process-math">\(C_R\)</span> of radius <span class="process-math">\(R\)</span> shown in <a href="" class="xref" data-knowl="./knowl/fig_ch-08-04.html" title="Figure 8.3.5">Figure 8.3.5</a>. By properties of integrals,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-08-04.html">
+\begin{equation*}
+\int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = \int_{C}\frac{P(z)}{Q(z)}\,dz - \int_{C_R}\frac{P(z)}{Q(z)}\,dz\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the residue theorem, we rewrite this equation as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-08-04.html">
+\begin{equation}
+\int_{-R}^{R}\frac{P(x)}{Q(x)}\,dx = 2\pi i\sum_{j=1}^k\mathrm{Res}\left[\frac{P}{Q},z_j\right] -\int_{C_R}\frac{P(z)}{Q(z)}\,dz\text{.}\tag{8.3.3}
+\end{equation}
+</div>
+</div> <div class="para logical">
+<div class="para">Our proof will be complete if we can show that <span class="process-math">\(\int_{C_R}\frac{P(z)}{Q(z)}\,dz\)</span> tends to zero as <span class="process-math">\(R \to \infty\text{.}\)</span> Suppose that</div>
+<div class="displaymath process-math">
+\begin{align*}
+P(z) \amp = a_{m}z^{m}+a_{m-1}z^{m-1} + \cdots +a_1z + a_0,  \text{ and }\\
+Q(z) \amp = b_nz^n+b_{n-1}z^{n-1} + \cdots + b_1z + b_0\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}\text{,}
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim_{|z| \to \infty}\frac{zP(z)}{Q(z)} \amp = \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}\\
+\amp = \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(n \ge m+2\text{,}\)</span> this limit reduces to <span class="process-math">\(0(\frac{a_{m}}{b_n}) =0\text{.}\)</span> Therefore, for any <span class="process-math">\(\varepsilon &gt;0\text{,}\)</span> we may choose <span class="process-math">\(R\)</span> large enough so that <span class="process-math">\(|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}\)</span> whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span> But this means that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ML_Inequality_Thm.html ./knowl/x_P_Q__bound.html">
+\begin{equation}
+\left|\frac{P(z)}{Q(z)}\right| \lt  \frac{\varepsilon}{\pi |z|} = \frac{\varepsilon}{\pi R}\tag{8.3.4}
+\end{equation}
+</div>
+<div class="para">whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span> Using the ML inequality (<a href="" class="xref" data-knowl="./knowl/ML_Inequality_Thm.html" title="Theorem 6.2.19: ML inequality">Theorem 6.2.19</a>) and Inequality <a href="" class="xref" data-knowl="./knowl/x_P_Q__bound.html" title="Equation 8.3.4">(8.3.4)</a>, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ML_Inequality_Thm.html ./knowl/x_P_Q__bound.html">
+\begin{equation*}
+\left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi R=\varepsilon\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(\varepsilon &gt;0\)</span> was arbitrary, we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation}
+\lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0\text{.}\tag{8.3.5}
+\end{equation}
+</div>
+</div> <div class="para">If we let <span class="process-math">\(R \to \infty\)</span> and combine Equations <a href="" class="xref" data-knowl="./knowl/RF1.html" title="Equation 8.3.3">(8.3.3)</a> and <a href="" class="xref" data-knowl="./knowl/RF2.html" title="Equation 8.3.5">(8.3.5)</a>, we arrive at the desired conclusion.</div></article></body>
+</html>

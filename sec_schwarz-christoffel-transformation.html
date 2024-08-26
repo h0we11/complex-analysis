@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Schwarz-Christoffel Transformation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Complex Analysis">
+<meta property="book:author" content="Russell W. Howell">
+<meta property="book:author" content="John H. Mathews">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec_algebra-1-20-1 { counter-set: sec_algebra-1-20-1 0; }
+#sec_algebra-1-20-1 > li::marker { content: ""counter(sec_algebra-1-20-1,decimal)"."; }
+#sec_algebra-1-20-1 > li { counter-increment: sec_algebra-1-20-1; }
+#sec_julia-mandelbrot-9-8 { counter-set: sec_julia-mandelbrot-9-8 0; }
+#sec_julia-mandelbrot-9-8 > li::marker { content: ""counter(sec_julia-mandelbrot-9-8,decimal)"."; }
+#sec_julia-mandelbrot-9-8 > li { counter-increment: sec_julia-mandelbrot-9-8; }
+#sec_julia-mandelbrot-19-26 { counter-set: sec_julia-mandelbrot-19-26 0; }
+#sec_julia-mandelbrot-19-26 > li::marker { content: ""counter(sec_julia-mandelbrot-19-26,decimal)"."; }
+#sec_julia-mandelbrot-19-26 > li { counter-increment: sec_julia-mandelbrot-19-26; }
+#Regions_of_Convergence-1-1-3 { counter-set: Regions_of_Convergence-1-1-3 0; }
+#Regions_of_Convergence-1-1-3 > li::marker { content: ""counter(Regions_of_Convergence-1-1-3,decimal)"."; }
+#Regions_of_Convergence-1-1-3 > li { counter-increment: Regions_of_Convergence-1-1-3; }
+#th15-1-1-3 { counter-set: th15-1-1-3 0; }
+#th15-1-1-3 > li::marker { content: ""counter(th15-1-1-3,decimal)"."; }
+#th15-1-1-3 > li { counter-increment: th15-1-1-3; }
+#Power_Series_Thm-1-1-4 { counter-set: Power_Series_Thm-1-1-4 0; }
+#Power_Series_Thm-1-1-4 > li::marker { content: ""counter(Power_Series_Thm-1-1-4,decimal)"."; }
+#Power_Series_Thm-1-1-4 > li { counter-increment: Power_Series_Thm-1-1-4; }
+#expz_is_entire-1-1-2 { counter-set: expz_is_entire-1-1-2 0; }
+#expz_is_entire-1-1-2 > li::marker { content: ""counter(expz_is_entire-1-1-2,decimal)"."; }
+#expz_is_entire-1-1-2 > li { counter-increment: expz_is_entire-1-1-2; }
+#Unif_Conv_Properties-1-1-7 { counter-set: Unif_Conv_Properties-1-1-7 0; }
+#Unif_Conv_Properties-1-1-7 > li::marker { content: ""counter(Unif_Conv_Properties-1-1-7,decimal)"."; }
+#Unif_Conv_Properties-1-1-7 > li { counter-increment: Unif_Conv_Properties-1-1-7; }
+#Nuanced_Taylor-1-1-10 { counter-set: Nuanced_Taylor-1-1-10 0; }
+#Nuanced_Taylor-1-1-10 > li::marker { content: ""counter(Nuanced_Taylor-1-1-10,decimal)"."; }
+#Nuanced_Taylor-1-1-10 > li { counter-increment: Nuanced_Taylor-1-1-10; }
+#thm_laurent-properties-2-1-6 { counter-set: thm_laurent-properties-2-1-6 0; }
+#thm_laurent-properties-2-1-6 > li::marker { content: ""counter(thm_laurent-properties-2-1-6,decimal)"."; }
+#thm_laurent-properties-2-1-6 > li { counter-increment: thm_laurent-properties-2-1-6; }
+#sec_singularities-4-2-1-7 { counter-set: sec_singularities-4-2-1-7 0; }
+#sec_singularities-4-2-1-7 > li::marker { content: ""counter(sec_singularities-4-2-1-7,decimal)"."; }
+#sec_singularities-4-2-1-7 > li { counter-increment: sec_singularities-4-2-1-7; }
+#sec_singularities-5-1 { counter-set: sec_singularities-5-1 0; }
+#sec_singularities-5-1 > li::marker { content: ""counter(sec_singularities-5-1,decimal)"."; }
+#sec_singularities-5-1 > li { counter-increment: sec_singularities-5-1; }
+#zero_quotient-1-1-7 { counter-set: zero_quotient-1-1-7 0; }
+#zero_quotient-1-1-7 > li::marker { content: ""counter(zero_quotient-1-1-7,decimal)"."; }
+#zero_quotient-1-1-7 > li { counter-increment: zero_quotient-1-1-7; }
+#sec_singularities-23-2-1-12 { counter-set: sec_singularities-23-2-1-12 0; }
+#sec_singularities-23-2-1-12 > li::marker { content: ""counter(sec_singularities-23-2-1-12,decimal)"."; }
+#sec_singularities-23-2-1-12 > li { counter-increment: sec_singularities-23-2-1-12; }
+#Residues_at_Poles-2-1 { counter-set: Residues_at_Poles-2-1 0; }
+#Residues_at_Poles-2-1 > li::marker { content: ""counter(Residues_at_Poles-2-1,decimal)"."; }
+#Residues_at_Poles-2-1 > li { counter-increment: Residues_at_Poles-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis:</span> <span class="subtitle">an Open Source Textbook</span></a></h1>
+<p class="byline">Russell W. Howell, John H. Mathews</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec_joukowski-airfoil.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_harmonic-apps.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_fluid-flow-image.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_origin.html#subsec_wessel" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Caspar Wessel Makes a Breakthrough</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_origin.html#exercises_origin" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integral-representations.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Integral Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integral-representations.html#exercises_integral-representations" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle &amp; Rouché’s Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\({\bm w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\bm w=(z^2-1)^\frac{1}{2}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_schwarz-christoffel-transformation"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">10.9</span><span class="space"> </span><span class="title">The Schwarz-Christoffel Transformation</span>
+</h2>
+<div class="para logical" id="sec_schwarz-christoffel-transformation-2">
+<div class="para">To proceed further, we must review the rotational effect of a conformal mapping <span class="process-math">\(w=f(z)\)</span> at a point <span class="process-math">\(z_0\text{.}\)</span> If the contour <span class="process-math">\(C\)</span> has the parameterization <span class="process-math">\(z(t)=x(t)+iy(t)\text{,}\)</span> then a vector <span class="process-math">\(\mathbf{\tau }\)</span> tangent to <span class="process-math">\(C\)</span> at the point <span class="process-math">\(z_0\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{\tau} = z\,'(t_0) = x\,'(t_0) + iy\,'(t_0)\text{.}
+\end{equation*}
+</div>
+<div class="para">The image of <span class="process-math">\(C\)</span> is a contour <span class="process-math">\(K\)</span> given by <span class="process-math">\(w=u\big(x(t), \, y(t)\big) + iv\big(x(t), \, y(t)\big)\text{,}\)</span> and a vector <span class="process-math">\(\mathbf{T}\)</span> tangent to <span class="process-math">\(K\)</span> at the point <span class="process-math">\(w_0=f(z_0)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{T} = w\,'(z_0) = f\,'(z_0)z\,'(t_0)\text{.}
+\end{equation*}
+</div>
+<div class="para">If the angle of inclination of <span class="process-math">\(\mathbf{\tau }\)</span> is <span class="process-math">\(\beta =\mathrm{Arg}(z)\,'(t_0)\text{,}\)</span> then the angle of inclination of <span class="process-math">\(\mathbf{T}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{Arg}\big(\mathbf{T}\big) = \mathrm{Arg}[f\,'(z_0) z\,'(t_0)] = \mathrm{Arg}\big(f\,'(z_0)\big) + \beta\text{.}
+\end{equation*}
+</div>
+<div class="para">Hence the angle of inclination of the tangent <span class="process-math">\(\mathbf{\tau}\)</span> to <span class="process-math">\(C\)</span> at <span class="process-math">\(z_0\)</span> is rotated through the angle <span class="process-math">\(\mathrm{Arg}\big(f\,'(z_0)\big)\)</span> to obtain the angle of inclination of the tangent <span class="process-math">\(\mathbf{T}\)</span> to <span class="process-math">\(K\)</span> at the point <span class="process-math">\(w_0\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec_schwarz-christoffel-transformation-3">
+<div class="para">Many applications involving conformal mappings require the construction of a one-to-one conformal mapping from the upper half-plane <span class="process-math">\(\mathrm{Im}( z) &gt;0\)</span> onto a domain <span class="process-math">\(G\)</span> in the <span class="process-math">\(w\)</span> plane where the boundary consists of straight-line segments. Let’s consider the case where <span class="process-math">\(G\)</span> is the interior of a polygon <span class="process-math">\(P\)</span> with vertices <span class="process-math">\(w_1,\,w_2,\,.\,.\,.\,,\,w_n\)</span> specified in the positive sense (counterclockwise). We want to find a function <span class="process-math">\(w=f(z)\)</span> with the property</div>
+<div class="displaymath process-math" id="sec_schwarz-christoffel-transformation-3-8">
+\begin{align}
+w_k \amp = f(x_k)  \text{ for }   k=1,\,2, \ldots ,n-1,  \text{ and }\tag{10.9.1}\\
+w_n \amp = f(\infty)   \text{ where }   x_1 \lt  x_2 \lt  \cdots \lt  x_{n-1}\lt \infty\text{.}\notag
+\end{align}
+</div>
+</div>
+<div class="para" id="sec_schwarz-christoffel-transformation-4">Two German mathematicians Herman Amandus Schwarz (1843–1921) and Elwin Bruno Christoffel (1929–1900) independently discovered a method for finding <span class="process-math">\(f\text{,}\)</span> which we present as <a href="sec_schwarz-christoffel-transformation.html#thm_11_6" class="xref" data-knowl="./knowl/xref/thm_11_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.9.1: Schwarz-Christoffel">Theorem 10.9.1</a>.</div>
+<article class="theorem theorem-like" id="thm_11_6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">10.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Schwarz-Christoffel.</span>
+</h3>
+<div class="para logical" id="thm_11_6-2-1">
+<div class="para">Let <span class="process-math">\(P\)</span> be a polygon in the <span class="process-math">\(w\)</span> plane with vertices <span class="process-math">\(w_1,\,w_2, \ldots ,w_n\)</span> and exterior angles <span class="process-math">\(\alpha_k\text{,}\)</span> where <span class="process-math">\(-\pi \lt  \alpha_k \lt  \pi\text{.}\)</span> There exists a one-to-one conformal mapping <span class="process-math">\(w=f(z)\)</span> from the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto <span class="process-math">\(G\)</span> that satisfies the boundary conditions in <a href="sec_schwarz-christoffel-transformation.html#sec_schwarz-christoffel-transformation-3-8" class="xref" data-knowl="./knowl/xref/SCbdd.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.1">Equations (10.9.1)</a>. The derivative <span class="process-math">\(f\,'(z)\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SCbdd.html" id="SCderivative">
+\begin{equation}
+f\,'(z) = A(z-x_1)^{-\frac{\alpha_1}{\pi}}(z-x_2)^{-\frac{\alpha_2}{\pi}} \cdots (z-x_{n-1})^{-\frac{\alpha_{n-1}}{\pi}}\text{,}\tag{10.9.2}
+\end{equation}
+</div>
+<div class="para">and the function <span class="process-math">\(f\)</span> can be expressed as an indefinite integral</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SCbdd.html" id="SCfun">
+\begin{equation}
+f(z) = B + A\int(z-x_1)^{-\frac{\alpha_1}{\pi}}(z-x_2)^{-\frac{\alpha_2}{\pi}} \cdots (z-x_{n-1})^{-\frac{\alpha_{n-1}}{\pi}}\,dz\text{,}\tag{10.9.3}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are suitably chosen constants. Two of the points <span class="process-math">\(\{x_k\}\)</span> may be chosen arbitrarily, and the constants <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> determine the size and position of <span class="process-math">\(P\text{.}\)</span>
+</div>
+</div></article><details id="sec_schwarz-christoffel-transformation-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_schwarz-christoffel-transformation-6-1">
+<div class="para">The proof relies on finding how much the tangent</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SCderivative.html">
+\begin{equation*}
+\mathbf{\tau }_j=1+0i
+\end{equation*}
+</div>
+<div class="para">(which always points to the right) at the point <span class="process-math">\((x,0)\)</span> must be rotated by the mapping <span class="process-math">\(w=f(z)\)</span> so that the line segment <span class="process-math">\(x_{j-1}\lt x\lt x_j\)</span> is mapped onto the edge of <span class="process-math">\(P\)</span> that lies between the points <span class="process-math">\(w_{j-1}=f(x_{j-1})\)</span> and <span class="process-math">\(w_j=f(x_j)\text{.}\)</span> The amount of rotation is determined by <span class="process-math">\(\mathrm{Arg}\,f\,'(x)\text{,}\)</span> so Equation <a href="sec_schwarz-christoffel-transformation.html#SCderivative" class="xref" data-knowl="./knowl/xref/SCderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.2">(10.9.2)</a> specifies <span class="process-math">\(f\,'(z)\)</span> in terms of the values <span class="process-math">\(x_j\)</span> and the amount of rotation <span class="process-math">\(\alpha_j\)</span> that is required at the vertex <span class="process-math">\(f(x_j)\text{.}\)</span>
+</div>
+</div></article></details><div class="para logical" id="sec_schwarz-christoffel-transformation-7">
+<div class="para">If we let <span class="process-math">\(x_0=-\infty\)</span> and <span class="process-math">\(x_n=\infty\text{,}\)</span> then, for values of <span class="process-math">\(x\)</span> that lie in the interval <span class="process-math">\(x_{j-1} \lt x \lt  x_j\text{,}\)</span> the amount of rotation is</div>
+<div class="displaymath process-math" id="sec_schwarz-christoffel-transformation-7-5">
+\begin{align*}
+\mathrm{Arg}\,f\,'(x) \amp = \mathrm{Arg}(A)-\frac{1}{\pi}\Big[\alpha_1\mathrm{Arg}(x-x_1) +\alpha_2\mathrm{Arg}(x-x_2)\\
+\amp + \cdots +\alpha_{n-1}\mathrm{Arg}(x-x_{n-1})\Big]
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec_schwarz-christoffel-transformation-8">
+<div class="para">Because <span class="process-math">\(\mathrm{Arg}(x-x_k)=0\)</span> for <span class="process-math">\(1\le k\lt j\text{,}\)</span> and <span class="process-math">\(\mathrm{Arg}(x-x_k) =\pi\)</span> for <span class="process-math">\(j\le k\le n-1\text{,}\)</span> we can write this equation as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathrm{Arg}\big(f\,'(x)\big) = \mathrm{Arg}(A) - \alpha_j - \alpha_{j+1} - \cdots - \alpha_{n-1}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_schwarz-christoffel-transformation-9">
+<div class="para">The angle of inclination of the tangent vector <span class="process-math">\(\mathbf{T}_j\)</span> to the polygon <span class="process-math">\(P\)</span> at the point <span class="process-math">\(w=f(x)\)</span> for <span class="process-math">\(x_{j-1} \lt  x \lt  x_j\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma_j = \mathrm{Arg}(A) - \alpha_j - \alpha_{j+1} - \cdots - \alpha_{n-1}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_schwarz-christoffel-transformation-10">
+<div class="para">The angle of inclination of the tangent vector <span class="process-math">\(\mathbf{T}_{j+1}\)</span> to the polygon <span class="process-math">\(P\)</span> at the point <span class="process-math">\(w=f(x)\text{,}\)</span> for <span class="process-math">\(x_j \lt  x \lt  x_{j+1}\text{,}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma_{j+1} = \mathrm{Arg}(A) - \alpha_{j+1} - \alpha_{j+2} - \cdots - \alpha_{n-1}
+\end{equation*}
+</div>
+</div>
+<div class="para" id="sec_schwarz-christoffel-transformation-11">The angle of inclination of the vector tangent to the polygon <span class="process-math">\(P\)</span> jumps abruptly by the amount <span class="process-math">\(\alpha_j\)</span> as the point <span class="process-math">\(w=f(x)\)</span> moves along the side <span class="process-math">\(\widehat{w_{j-1}w_j}\)</span> through the vertex <span class="process-math">\(w_j\)</span> to the side <span class="process-math">\(\widehat{w_jw_{j+1}}\text{.}\)</span> Therefore the exterior angle to the polygon <span class="process-math">\(P\)</span> at the vertex <span class="process-math">\(w_j\)</span> is given by the angle <span class="process-math">\(\alpha_j\)</span> and satisfies the inequality <span class="process-math">\(-\pi\lt \alpha_j\lt \pi\text{,}\)</span> for <span class="process-math">\(j=1,\,2,\ldots,n-1\text{.}\)</span> Since the sum of the exterior angles of a polygon equals <span class="process-math">\(2\pi\text{,}\)</span> we have <span class="process-math">\(\alpha_n = 2\pi - \alpha_1 - \alpha_2 - \cdots - \alpha_{n-1}\)</span> and only <span class="process-math">\(n-1\)</span> angles need to be specified. The case <span class="process-math">\(n=5\)</span> is illustrated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-070" class="xref" data-knowl="./knowl/xref/fig_ch-10-070.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.2">Figure 10.9.2</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-070"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-070.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.2<span class="period">.</span></span><span class="space"> </span>A Schwarz-Christoffel mapping with <span class="process-math">\(n=5\)</span> and <span class="process-math">\(\alpha_1+\alpha_2+\cdots +\alpha_4&gt;\pi\)</span></figcaption></figure><div class="para" id="sec_schwarz-christoffel-transformation-13">If the case <span class="process-math">\(\alpha_1 + \alpha_2 + \cdots + \alpha_{n-1} \le \pi\)</span> occurs, then <span class="process-math">\(\alpha_n&gt;\pi\text{,}\)</span> and the vertices <span class="process-math">\(w_1,\,w_2,\ldots,w_n\)</span> cannot form a closed polygon. For this case, Equations <a href="sec_schwarz-christoffel-transformation.html#SCderivative" class="xref" data-knowl="./knowl/xref/SCderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.2">(10.9.2)</a> and <a href="sec_schwarz-christoffel-transformation.html#SCfun" class="xref" data-knowl="./knowl/xref/SCfun.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.3">(10.9.3)</a> will determine a mapping from the upper half plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto an infinite region in the <span class="process-math">\(w\)</span> plane, where the vertex <span class="process-math">\(w_n\)</span> is at infinity. The case <span class="process-math">\(n=5\)</span> is illustrated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-071" class="xref" data-knowl="./knowl/xref/fig_ch-10-071.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.3">Figure 10.9.3</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-071"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-071.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.3<span class="period">.</span></span><span class="space"> </span>A Schwarz-Christoffel mapping with <span class="process-math">\(n=5\)</span> and <span class="process-math">\(\alpha_1 + \alpha_2 + \cdots + \alpha_4 \le \pi\)</span></figcaption></figure><div class="para" id="sec_schwarz-christoffel-transformation-15">Equation <a href="sec_schwarz-christoffel-transformation.html#SCfun" class="xref" data-knowl="./knowl/xref/SCfun.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.3">(10.9.3)</a> gives a representation for <span class="process-math">\(f\)</span> in terms of an indefinite integral. Note that these integrals do not represent elementary functions unless the image is an infinite region. Also, the integral will involve a multivalued function, and we must select a specific branch to fit the boundary values specified in the problem. <a href="sec_sources-and-sinks.html#table_integrals" class="xref" data-knowl="./knowl/xref/table_integrals.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 10.11.23: Indefinite Integrals">Table 10.11.23</a>, which appears at the end of this chapter, is useful for our purposes.</div>
+<details id="sec_schwarz-christoffel-transformation-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.9.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_schwarz-christoffel-transformation-16-1-1">Use the Schwarz-Christoffel formula to verify that the function <span class="process-math">\(w=f(z)=\mathrm{Arcsin}z\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the semi-infinite strip <span class="process-math">\(-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}, \; v&gt;0\)</span> shown in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-072" class="xref" data-knowl="./knowl/xref/fig_ch-10-072.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.5">Figure 10.9.5</a>.</div> <figure class="figure figure-like" id="fig_ch-10-072"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-072.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.5<span class="period">.</span></span><span class="space"> </span>The region of interest</figcaption></figure><div class="solutions"><details id="sec_schwarz-christoffel-transformation-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_schwarz-christoffel-transformation-16-2-1">
+<div class="para">If we choose <span class="process-math">\(x_1=-1, \, x_2=1, \, w_1 = -\frac{\pi}{2}\text{,}\)</span> and <span class="process-math">\(w_2=\frac{\pi}{2}\text{,}\)</span> then <span class="process-math">\(\alpha_1=\frac{\pi}{2}\)</span> and <span class="process-math">\(\alpha_2=\frac{\pi}{2}\text{,}\)</span> and Equation <a href="sec_schwarz-christoffel-transformation.html#SCderivative" class="xref" data-knowl="./knowl/xref/SCderivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.2">(10.9.2)</a> for <span class="process-math">\(f\,'(z)\)</span> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SCderivative.html">
+\begin{equation*}
+f\,'(z) = A(z+1)^{-(\pi /2)/\pi}(z-1)^{-(\pi /2) /\pi}=\frac{A}{(z^2-1)^\frac{1}{2}}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec_schwarz-christoffel-transformation-16-2-2">
+<div class="para">Then, using <a href="sec_sources-and-sinks.html#table_integrals" class="xref" data-knowl="./knowl/xref/table_integrals.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 10.11.23: Indefinite Integrals">Table 10.11.23</a>, the indefinite integral becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_integrals.html">
+\begin{equation*}
+f(z) = i(A)\mathrm{Arcsin}(z) + B\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the image values <span class="process-math">\(f(-1) = -\frac{\pi}{2}\)</span> and <span class="process-math">\(f(1) = \frac{\pi}{2}\text{,}\)</span> we obtain the system</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_integrals.html">
+\begin{equation*}
+-\frac{\pi}{2} = A\left(\!-\frac{\pi}{2}\right)+B  \text{ and }   \frac{\pi}{2} = A\left(i\frac{\pi}{2}\right) + B\text{.}
+\end{equation*}
+</div>
+<div class="para">Solving gives <span class="process-math">\(B=0\)</span> and <span class="process-math">\(A=-i\text{.}\)</span> Hence, the required function is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_integrals.html">
+\begin{equation*}
+f(z) = \mathrm{Arcsin}(z)
+\end{equation*}
+</div>
+</div>
+</div></details></div></article></details><details id="sec_schwarz-christoffel-transformation-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.9.6</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_schwarz-christoffel-transformation-17-1-1">Verify that <span class="process-math">\(w = f(z) = (z^2-1)^\frac{1}{2}\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\)</span> slit along the segment from <span class="process-math">\(0\)</span> to <span class="process-math">\(i\text{.}\)</span> (Use the principal square root throughout.)</div>
+<div class="solutions"><details id="sec_schwarz-christoffel-transformation-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_schwarz-christoffel-transformation-17-2-1">
+<div class="para">If we choose <span class="process-math">\(x_1=-1
+\,x_3=1
+\,w_2=i\text{,}\)</span> and <span class="process-math">\(w_3=d\text{,}\)</span> then the formula</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-073.html ./knowl/xref/fig_ch-10-073.html">
+\begin{equation*}
+g\,'(z) =A(z+1)^{-\frac{\alpha_1}{\pi}}\left(z^{-\frac{\alpha_2}{\pi}}\right)(z-1)^{-\frac{\alpha_3}{\pi}}
+\end{equation*}
+</div>
+<div class="para">will determine a mapping <span class="process-math">\(w=g(z)\)</span> from the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the portion of the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\)</span> that lies outside the triangle with vertices <span class="process-math">\(\pm d,\,i\)</span> as indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-073" class="xref" data-knowl="./knowl/xref/fig_ch-10-073.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.7">Figure 10.9.7</a>(a). If we let <span class="process-math">\(d \to 0\text{,}\)</span> then <span class="process-math">\(w_1 \to 0, \; w_3 \to 0, \; \alpha_1 \to \frac{\pi}{2}, \;\alpha_2 \to -\pi\text{,}\)</span> and <span class="process-math">\(\alpha_3 \to \frac{\pi}{2}\text{.}\)</span> The limiting formula for the derivative <span class="process-math">\(g\,'(z)\)</span> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-073.html ./knowl/xref/fig_ch-10-073.html">
+\begin{equation*}
+f\,'(z) = A(z+1)^{-\frac{1}{2}}(z)(z-1)^{-\frac{1}{2}}\text{,}
+\end{equation*}
+</div>
+<div class="para">which will determine a mapping <span class="process-math">\(w=f(z)\)</span> from the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\)</span> slit from <span class="process-math">\(0\)</span> to <span class="process-math">\(i\)</span> as indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-073" class="xref" data-knowl="./knowl/xref/fig_ch-10-073.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.7">Figure 10.9.7</a>(b).</div>
+</div> <figure class="figure figure-like" id="fig_ch-10-073"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-073.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.7<span class="period">.</span></span><span class="space"> </span>The regions of interest</figcaption></figure> <div class="para logical" id="sec_schwarz-christoffel-transformation-17-2-3">
+<div class="para">An easy computation reveals that <span class="process-math">\(f(z)\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z) = A\int \frac{z}{(z^2-1)^\frac{1}{2}}\,dz = A(z^2-1)^\frac{1}{2} + B\text{,}
+\end{equation*}
+</div>
+<div class="para">and the boundary values <span class="process-math">\(f(\pm 1)=0\)</span> and <span class="process-math">\(f(0) = i\)</span> lead to the solution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z) = (z^2-1)^\frac{1}{2}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article></details><details id="sec_schwarz-christoffel-transformation-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.9.8</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec_schwarz-christoffel-transformation-18-1-1">
+<div class="para">Show that the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-074.html">
+\begin{equation*}
+w = f(z) =\frac{1}{\pi}\mathrm{Arcsin}(z) + \frac{i}{\pi}\mathrm{Arcsin}\left(\frac{1}{z}+\frac{1+i}{2}\right)
+\end{equation*}
+</div>
+<div class="para">maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the right angle channel in the first quadrant, which is bounded by the coordinate axes and the rays <span class="process-math">\(x \ge 1, \, y=1\)</span> and <span class="process-math">\(y \ge 1, \, x=1\text{,}\)</span> as depicted in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-074" class="xref" data-knowl="./knowl/xref/fig_ch-10-074.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.9">Figure 10.9.9</a>(b).</div>
+</div> <figure class="figure figure-like" id="fig_ch-10-074"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-074.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.9<span class="period">.</span></span><span class="space"> </span>The regions of interest</figcaption></figure><div class="solutions"><details id="sec_schwarz-christoffel-transformation-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_schwarz-christoffel-transformation-18-2-1">
+<div class="para">If we choose <span class="process-math">\(x_1=-1
+\,x_3=1
+\,w_2=d\text{,}\)</span> and <span class="process-math">\(w_3=1+i\text{,}\)</span> then the formula</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-074.html ./knowl/xref/fig_ch-10-074.html ./knowl/xref/table_laplace-transforms.html">
+\begin{equation*}
+g\,'(z) = A_1(z+1)^{-\frac{\alpha_1}{\pi}}\left(z^{-\frac{\alpha_2}{\pi}}\right)(z-1)^{-\frac{\alpha_3}{\pi}}
+\end{equation*}
+</div>
+<div class="para">will determine a mapping <span class="process-math">\(w=g(z)\)</span> of the upper half-plane onto the domain that is indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-074" class="xref" data-knowl="./knowl/xref/fig_ch-10-074.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.9">Figure 10.9.9</a>(a). With <span class="process-math">\(\alpha_1 = \frac{\pi}{2}\text{,}\)</span> we let <span class="process-math">\(d \to \infty\text{,}\)</span> then <span class="process-math">\(\alpha_2 \to \pi\)</span> and <span class="process-math">\(\alpha_3 \to -\frac{\pi}{2}\text{,}\)</span> and the limiting formula for the derivative <span class="process-math">\(g\,'(z)\)</span> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-074.html ./knowl/xref/fig_ch-10-074.html ./knowl/xref/table_laplace-transforms.html" id="sec_schwarz-christoffel-transformation-18-2-1-11">
+\begin{align*}
+f\,'(z) \amp = A_1(z+1)^{-(\pi/2)/\pi}(z)^{-(\pi ) /\pi}(z-1)^{-(-\pi /2) /\pi}\\
+\amp = A_1\frac{1}{z}\frac{(z-1)^\frac{1}{2}}{(z+1)^\frac{1}{2}}\\
+\amp = A_1\frac{z-1}{z(z^2-1)^\frac{1}{2}}\\
+\amp = A\frac{z-1}{z(1-z^2)^\frac{1}{2}}\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(A=-iA_1\text{,}\)</span> which will determine a mapping <span class="process-math">\(w=f(z)\)</span> from the upper half plane onto the channel as indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-074" class="xref" data-knowl="./knowl/xref/fig_ch-10-074.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.9">Figure 10.9.9</a>b. Using <a href="sec_laplace-transform.html#table_laplace-transforms" class="xref" data-knowl="./knowl/xref/table_laplace-transforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.10: Well-Known Laplace Transforms">Table 11.5.10</a>, we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-10-074.html ./knowl/xref/fig_ch-10-074.html ./knowl/xref/table_laplace-transforms.html" id="sec_schwarz-christoffel-transformation-18-2-1-16">
+\begin{align*}
+f(z) \amp = A\left[ \int \frac{1}{(1-z^2)^\frac{1}{2}}\,dz - i\int \frac{1}{z(z^2-1)^\frac{1}{2}}\,dz\right]\\
+\amp = A\left[ \mathrm{Arcsin}(z)+i\mathrm{Arcsin}\left(\frac{1}{z}\right)\right] + B\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_schwarz-christoffel-transformation-18-2-2">
+<div class="para">If we use the principal branch of the inverse sine function, then the boundary values <span class="process-math">\(f(-1)=0\)</span> and <span class="process-math">\(f(1)=1+i\)</span> lead to the system</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A\left(-\frac{\pi}{2} - i\frac{\pi}{2}\right) + B = 0,  \text{ and } A\left(\frac{\pi}{2} + i\frac{\pi}{2}\right) + B = 1 + i\text{,}
+\end{equation*}
+</div>
+<div class="para">which we can solve to obtain <span class="process-math">\(A=\frac{1}{\pi}\)</span> and <span class="process-math">\(B=\frac{1+i}{2}\text{.}\)</span> Hence the required solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+w=f(z) =\frac{1}{\pi}\mathrm{Arcsin}(z) + \frac{i}{\pi}\mathrm{Arcsin}\left(\frac{1}{z}\right) + \frac{1+i}{2}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article></details><section class="exercises" id="exercises_schwarz-christoffel-transformation"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex_11_9-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="ex_11_9-1-1-1">Let <span class="process-math">\(a\)</span> and <span class="process-math">\(K\)</span> be real constants with <span class="process-math">\(0\lt K\lt 2\text{.}\)</span> Use the Schwarz-Christoffel formula to show that the function <span class="process-math">\(w=f(z)=(z-a)^K\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the sector <span class="process-math">\(0\lt \arg_0 w\lt K\pi\)</span> shown in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-075" class="xref" data-knowl="./knowl/xref/fig_ch-10-075.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.10">Figure 10.9.10</a>.</div> <figure class="figure figure-like" id="fig_ch-10-075"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-075.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.10<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-1" class="xref" data-knowl="./knowl/xref/ex_11_9-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.1">Exercise 10.9.1</a></figcaption></figure><div class="solutions"><details id="ex_11_9-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_11_9-1-2-1">
+<span class="process-math">\(f\,'(z)=A(z-a)^{-\frac{\pi -k\pi}{\pi}}=A(z-a)^{k-1}\text{.}\)</span> Integrate and get <span class="process-math">\(f(z)=\frac{A}{k}(z-a)^{k}\text{,}\)</span> then choose <span class="process-math">\(A=k\text{.}\)</span>
+</div></div></details></div></article><article class="exercise exercise-like" id="ex_11_9-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="ex_11_9-2-1-1">Let <span class="process-math">\(a\)</span> be a real constant. Use the Schwarz-Christoffel formula to show that the function <span class="process-math">\(w=f(z)=\mathrm{Log}(z-a)\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the infinite strip <span class="process-math">\(0\lt v\lt \pi\)</span> shown in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-076" class="xref" data-knowl="./knowl/xref/fig_ch-10-076.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.11">Figure 10.9.11</a>.</div> <div class="para" id="ex_11_9-2-1-2">\hint{Set <span class="process-math">\(x_1=a-1 \, x_2=a, \, w_1=i\pi\text{,}\)</span> and<span class="process-math">\(w_2=-d\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div> <figure class="figure figure-like" id="fig_ch-10-076"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-076.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.11<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-2" class="xref" data-knowl="./knowl/xref/ex_11_9-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 10.9.2">Exercise 10.9.2</a></figcaption></figure></article><article class="exercise exercise-like" id="exercises_schwarz-christoffel-transformation-4"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="exercises_schwarz-christoffel-transformation-4-1-1">For the remaining exercises, construct the derivative <span class="process-math">\(f\,'(z)\)</span> and use the Schwarz-Christoffel formula, <a href="sec_schwarz-christoffel-transformation.html#SCfun" class="xref" data-knowl="./knowl/xref/SCfun.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 10.9.3">Equation (10.9.3)</a>, and techniques of integration to determine the required conformal mapping <span class="process-math">\(w=f(z)\text{.}\)</span>
+</div> <div class="para" id="exercises_schwarz-christoffel-transformation-4-1-2">\end{task}</div> <article class="task exercise-like" id="ex_11_9-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="ex_11_9-3-1">Show that <span class="process-math">\(w=f(z)=\frac{1}{\pi}(z^2-1)^\frac{1}{2} + \frac{1}{\pi}\mathrm{Log}\left[ z+(z^2-1)^\frac{1}{2}\right] - i\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-077" class="xref" data-knowl="./knowl/xref/fig_ch-10-077.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.12">Figure 10.9.12</a>.</div>
+<div class="para" id="ex_11_9-3-2">\hint{Set <span class="process-math">\(x_1=-1
+\,w_1=0\text{,}\)</span> and <span class="process-math">\(w_2=-i\text{.}\)</span>}</div>
+<figure class="figure figure-like" id="fig_ch-10-077"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-077.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.12<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-3" class="xref" data-knowl="./knowl/xref/ex_11_9-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Task a">Exercise a</a></figcaption></figure><details id="ex_11_9-3-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_11_9-3-4-1">
+<span class="process-math">\(f\,'(z) = A(z+1)^\frac{1}{2}(z-1)^\frac{1}{2} = A\left[\frac{z}{(z^2-1)^\frac{1}{2}} + \frac{1}{(z^2-1)^\frac{1}{2}}\right]\text{.}\)</span> Integrate with the boundary conditions <span class="process-math">\(f(-1)=0\)</span> and <span class="process-math">\(f(1)=-1\)</span> to get <span class="process-math">\(w=f(z)=\frac{1}{\pi }\left[(z^2-1)^\frac{1}{2} + \mathrm{Log}(z+(z^2-1)^\frac{1}{2})\right]-i\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="ex_11_9-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="ex_11_9-4-1">Show that <span class="process-math">\(w=f(z)=\frac{2}{\pi}(z^2-1)^\frac{1}{2}+\frac{2}{\pi}\mathrm{Arcsin}\frac{1}{z}\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-078" class="xref" data-knowl="./knowl/xref/fig_ch-10-078.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.13">Figure 10.9.13</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-078"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-078.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.13<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-4" class="xref" data-knowl="./knowl/xref/ex_11_9-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Task b">Exercise b</a></figcaption></figure><div class="para" id="ex_11_9-4-3">\hint{Set <span class="process-math">\(x_1=w_1=-1 ,\, x_2=0, \, x_3=w_3=1\text{,}\)</span> and <span class="process-math">\(w_2=-id\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div></article> <article class="task exercise-like" id="ex_11_9-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="ex_11_9-5-1">Show that <span class="process-math">\(w=f(z)=\frac{1}{2}\mathrm{Log}(z^2-1)=\mathrm{Log}\left[(z^2-1)^\frac{1}{2}\right]\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z) &gt;0\)</span> onto the infinite strip <span class="process-math">\(0\lt v\lt \pi\)</span> slit along the ray <span class="process-math">\(u\le 0\)</span><span class="process-math">\(,\,v=\frac{\pi}{2}\text{,}\)</span> per <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-079" class="xref" data-knowl="./knowl/xref/fig_ch-10-079.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.14">Figure 10.9.14</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-079"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-079.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.14<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-5" class="xref" data-knowl="./knowl/xref/ex_11_9-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Task c">Exercise c</a></figcaption></figure><div class="para" id="ex_11_9-5-3">\hint{Set <span class="process-math">\(x_1=-1, \, x_2=0, \, x_3=1, \, w_1=i\pi -d, \ ,w_2=\frac{i\pi}{2}\text{,}\)</span> and <span class="process-math">\(w_3=-d\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div>
+<details id="ex_11_9-5-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_11_9-5-4-1">
+<span class="process-math">\(f\,'(z) = A(z+1)^{-1}z(z-1)^{-1}\text{,}\)</span> and <span class="process-math">\(w=f(z)=\mathrm{Log}(z^2-1)^\frac{1}{2}\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="ex_11_9-6"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="ex_11_9-6-1">Show that <span class="process-math">\(w=f(z) = -\frac{2}{\pi}z(1-z^2)^\frac{1}{2}-\frac{2}{\pi}\mathrm{Arcsin}(z)\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-080" class="xref" data-knowl="./knowl/xref/fig_ch-10-080.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.15">Figure 10.9.15</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-080"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-080.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.15<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-6" class="xref" data-knowl="./knowl/xref/ex_11_9-6.html" data-reveal-label="Reveal" data-close-label="Close" title="Task d">Exercise d</a></figcaption></figure><div class="para" id="ex_11_9-6-3">\hint{Set <span class="process-math">\(x_1=-1, \, x_2=1, \, w_1=1\text{,}\)</span> and <span class="process-math">\(w_2=-1\text{.}\)</span>}</div></article> <article class="task exercise-like" id="ex_11_9-7"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="ex_11_9-7-1">Show that <span class="process-math">\(w=f(z)=z+\mathrm{Log}(z)\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\)</span> slit along the ray <span class="process-math">\(u \le -1, \, v=\pi\text{,}\)</span> as shown in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-081" class="xref" data-knowl="./knowl/xref/fig_ch-10-081.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.16">Figure 10.9.16</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-081"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-081.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.16<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-7" class="xref" data-knowl="./knowl/xref/ex_11_9-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Task e">Exercise e</a></figcaption></figure><div class="para" id="ex_11_9-7-3">\hint{Set <span class="process-math">\(x_1=-1, \, x_2=0, \, w_1=-1+i\pi\text{,}\)</span> and <span class="process-math">\(w_2=-d\text{.}\)</span> Then Let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div>
+<details id="ex_11_9-7-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_11_9-7-4-1">
+<span class="process-math">\(f\,'(z) = A(z+1)^{1}z^{-1} = A(1+\frac{1}{z})\text{.}\)</span> Integrate to get <span class="process-math">\(f(z)=z+\mathrm{Log}(z)\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="ex_11_9-8"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="ex_11_9-8-1">Show that <span class="process-math">\(w=f(z)=i\pi+2(z+1)^\frac{1}{2}+\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-082" class="xref" data-knowl="./knowl/xref/fig_ch-10-082.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.17">Figure 10.9.17</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-082"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-082.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.17<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-8" class="xref" data-knowl="./knowl/xref/ex_11_9-8.html" data-reveal-label="Reveal" data-close-label="Close" title="Task f">Exercise f</a></figcaption></figure><div class="para" id="ex_11_9-8-3">\hint{Set <span class="process-math">\(x_1=-1, \, x_2=0, \, w_1=i\pi\text{,}\)</span> and <span class="process-math">\(w_2=-d\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div></article> <article class="task exercise-like" id="ex_11_9-9"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="ex_11_9-9-1">Show that <span class="process-math">\(w=f(z)=(z-1)^{\alpha}\left[\frac{1+\alpha z}{1-\alpha}\right]^{1-\alpha}\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z) &gt;0\)</span> onto the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\)</span> slit along the segment from <span class="process-math">\(0\)</span> to <span class="process-math">\(e^{i\alpha \pi}\text{,}\)</span> per <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-083" class="xref" data-knowl="./knowl/xref/fig_ch-10-083.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.18">Figure 10.9.18</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-083"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-083.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.18<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-9" class="xref" data-knowl="./knowl/xref/ex_11_9-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Task g">Exercise g</a></figcaption></figure><div class="para" id="ex_11_9-9-3">\hint{Show that <span class="process-math">\(f\,'(z) = A\left[\frac{z+(1-\alpha)}{\alpha} \right]^{-\alpha}(z)(z-1)^{\alpha -1}\text{.}\)</span>}</div>
+<details id="ex_11_9-9-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex_11_9-9-4-1">Select <span class="process-math">\(x_1 = -\frac{1-\alpha}{\alpha }\)</span> and <span class="process-math">\(x_2=x_3=1\text{,}\)</span> then form <span class="process-math">\(f\,'(z) = A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}\text{.}\)</span>
+</div> <div class="para" id="ex_11_9-9-4-2">Computation then reveals that <span class="process-math">\(A=(\frac{1-\alpha }{\alpha})^{\alpha -1}\text{,}\)</span> which is used to construct the desired function <span class="process-math">\(w=f(z) =\int A(z+\frac{1-\alpha}{\alpha })^{-\alpha}(z)(z-1)^{\alpha -1}\,dz = (z-1)^{\alpha}(1+ \frac{\alpha z}{1-\alpha})^{1-\alpha}\text{.}\)</span>
+</div>
+</div></details></article> <article class="task exercise-like" id="ex_11_9-10"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<div class="para" id="ex_11_9-10-1">Show that <span class="process-math">\(w = f(z) = 4(z+1)^\frac{1}{4} + \log\left[\frac{(z+1)^\frac{1}{4}-1}{(z+1)^\frac{1}{4}+1}\right] + i\log\left[\frac{i-(z+1)^\frac{1}{4}}{i+(z+1)^\frac{1}{4}}\right]\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-084" class="xref" data-knowl="./knowl/xref/fig_ch-10-084.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.19">Figure 10.9.19</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-084"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-084.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.19<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-10" class="xref" data-knowl="./knowl/xref/ex_11_9-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Task h">Exercise h</a></figcaption></figure><div class="para" id="ex_11_9-10-3">\hint{Set <span class="process-math">\(z_1=-1, \, z_2=0, \, w_1=i\pi\text{,}\)</span> and <span class="process-math">\(w_2=-d\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span> Use the change of variable <span class="process-math">\(z+1=s^4\)</span> in the resulting integral.}</div></article> <article class="task exercise-like" id="ex_11_9-11"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<div class="para" id="ex_11_9-11-1">Show that <span class="process-math">\(w=f(z) = -\frac{i}{z}z^\frac{1}{2}(z-3)\)</span> maps the upper half-plane onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-085" class="xref" data-knowl="./knowl/xref/fig_ch-10-085.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.20">Figure 10.9.20</a>.</div>
+<div class="para" id="ex_11_9-11-2">\hint{Set <span class="process-math">\(x_1=0\text{,}\)</span> <span class="process-math">\(x_2=1\text{,}\)</span> <span class="process-math">\(\,w_1=-d\text{,}\)</span> and <span class="process-math">\(w_2=i\)</span> and let <span class="process-math">\(d\to 0\text{.}\)</span>}</div>
+<figure class="figure figure-like" id="fig_ch-10-085"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-085.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.20<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-11" class="xref" data-knowl="./knowl/xref/ex_11_9-11.html" data-reveal-label="Reveal" data-close-label="Close" title="Task i">Exercise i</a></figcaption></figure><details id="ex_11_9-11-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_11_9-11-4-1">
+<span class="process-math">\(f\,'(z) = Az^{-\frac{1}{2}}(z-1) = A(z^\frac{1}{2}-z^{-\frac{1}{2}})\text{.}\)</span> Integrate and get <span class="process-math">\(f(z)=-\frac{i}{2}z^\frac{1}{2}(z-3)\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_schwarz-christoffel-transformation-4-1-12"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<div class="para" id="exercises_schwarz-christoffel-transformation-4-1-12-1">Show that <span class="process-math">\(\displaystyle w = f(z) = \int \frac{1}{(1-z^2)^\frac{3}{4}}\,dz\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z)&gt;0\)</span> onto a right triangle with angles <span class="process-math">\(\frac{\pi}{2}, \, \frac{\pi}{4}\text{,}\)</span> and <span class="process-math">\(\frac{\pi}{4}\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="exercises_schwarz-christoffel-transformation-4-1-13"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<div class="para" id="exercises_schwarz-christoffel-transformation-4-1-13-1">Show that <span class="process-math">\(\displaystyle w=f(z) =\int\frac{1}{(1-z^2)^\frac{2}{3}}\,dz\)</span> maps the upper half-plane onto an equilateral triangle.</div></article> <article class="task exercise-like" id="exercises_schwarz-christoffel-transformation-4-1-14"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+<div class="para" id="exercises_schwarz-christoffel-transformation-4-1-14-1">Show that <span class="process-math">\(\displaystyle w=f(z)=\int\frac{1}{(z-z^3)^\frac{1}{2}}\,dz\)</span> maps the upper half-plane onto a square.</div></article> <article class="task exercise-like" id="ex_11_9-12"><h5 class="heading"><span class="codenumber">(m)</span></h5>
+<div class="para" id="ex_11_9-12-1">Show that <span class="process-math">\(w=f(z)=2(z+1)^\frac{1}{2}-\mathrm{Log}\left[\frac{1-(z+1)^\frac{1}{2}}{1+(z+1)^\frac{1}{2}}\right]\)</span> maps the upper half-plane <span class="process-math">\(\mathrm{Im}(z) &gt;0\)</span> onto the domain indicated in <a href="sec_schwarz-christoffel-transformation.html#fig_ch-10-086" class="xref" data-knowl="./knowl/xref/fig_ch-10-086.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.9.21">Figure 10.9.21</a>.</div>
+<figure class="figure figure-like" id="fig_ch-10-086"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-086.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.9.21<span class="period">.</span></span><span class="space"> </span>For <a href="sec_schwarz-christoffel-transformation.html#ex_11_9-12" class="xref" data-knowl="./knowl/xref/ex_11_9-12.html" data-reveal-label="Reveal" data-close-label="Close" title="Task m">Exercise m</a></figcaption></figure><div class="para" id="ex_11_9-12-3">\hint{Set <span class="process-math">\(x_1=-1, \, x_2=0, \, x_3=1, \, w_1=0, \,w_2=d\text{,}\)</span> and <span class="process-math">\(w_3 = 2\sqrt{2} - 2\ln(\sqrt{2}-1) + i\pi\text{.}\)</span> Then let <span class="process-math">\(d \to \infty\text{.}\)</span>}</div></article></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec_joukowski-airfoil.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_fluid-flow-image.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

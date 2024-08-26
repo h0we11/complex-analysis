@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^{\frac{\pi}{2}}\exp(t+it)\,dt = \frac{1}{2} (e^{\frac{\pi}{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">We use the method suggested by <a href="sec_complex-integrals.html#Integral_Def_1" class="xref" data-knowl="./knowl/xref/Integral_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.1">Definitions (6.1.1)</a> and <a href="sec_complex-integrals.html#Integral_Def_2" class="xref" data-knowl="./knowl/xref/Integral_Def_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.2">(6.1.2)</a>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Integral_Def_1.html ./knowl/xref/Integral_Def_2.html">
+\begin{align*}
+\int_0^{\frac{\pi}{2}}\exp (t+it)\,dt \amp = \int_0^{\frac{\pi}{2}}e^te^{it}dt\\
+\amp = \int_0^{\frac{\pi}{2}}e^t(\cos t+i\sin t \,dt\\
+\amp = \int_0^{\frac{\pi}{2}}e^t\cos t \, dt + i\int_0^{\frac{\pi}{2}}e^t\sin t \,dt\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">We can evaluate each of the integrals via integration by parts. For example,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_0^{\frac{\pi}{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\cos t\,dt}} \amp = (\underset{u}{\underbrace{e^t}} \; \underset{v}{\underbrace{\sin t}}) \Big|_{t=0}^{t=\frac{\pi}{2}} -\int_0^{\frac{\pi}{2}}\underset{v}{\underbrace{\sin t}} \; \underset{du}{\underbrace{e^tdt}}\\
+\amp = (e^{\frac{\pi}{2}}\sin \frac{\pi}{2}-e^0\sin 0) -\int_0^{\frac{\pi}{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\sin t \,dt}}\\
+\amp = e^{\frac{\pi}{2}}-\int_0^{\frac{\pi}{2}}\underset{u}{\underbrace{e^t}} \; \underset{dv}{\underbrace{\sin t \,dt}}\\
+\amp = e^{\frac{\pi}{2}} - (\underset{u}{\underbrace{e^t}} \; [\underset{v}{\underbrace{-\cos t}}] ) \Big|_{t=0}^{t=\frac{\pi}{2}} +\int_0^{\frac{\pi}{2}}\underset{v}{\underbrace{-\cos t}} \; \underset{du}{\underbrace{e^t\,dt}}\\
+\amp = e^{\frac{\pi}{2}}-1-\int_0^{\frac{\pi}{2}}e^t\cos t\,dt\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Adding <span class="process-math">\(\int_0^{\frac{\pi}{2}}e^t\cos t\,dt\)</span> to both sides of this equation and then dividing by 2 gives <span class="process-math">\(\int_0^{\frac{\pi}{2}}e^t\cos t)\,dt=\frac{1}{2}(e^{\frac{\pi}{2}}-1)\text{.}\)</span> A similar computation procedure yields <span class="process-math">\(i\int_0^{\frac{\pi}{2}}e^t\sin t\,dt=\frac{i}{2}(e^{\frac{\pi}{2}}+1)\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^{\frac{\pi}{2}}\exp (t+it)\,dt=\frac{1}{2}(e^{\frac{\pi}{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="sec_complex-integrals.html#Int_ex">in-context</a></span>
+</body>
+</html>

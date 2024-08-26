@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Using <a href="" class="xref" data-knowl="./knowl/dtheta_sub.html" title="Equation 8.2.2">Substitutions (8.2.2)</a> and <a href="" class="xref" data-knowl="./knowl/trig_subs.html" title="Equation 8.2.3">(8.2.3)</a>, we transform the integral to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/dtheta_sub.html ./knowl/trig_subs.html ./knowl/Residues_at_Poles.html">
+\begin{equation*}
+\int\limits_{C_1^{+}(0)}\frac{1}{1+3(\frac{z+z^{-1}}{2})^2}\left(\frac{1}{iz}\right)dz = \int\limits_{C_1^{+}(0)}\frac{-i4z}{3z^4+10z^2+3}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz\text{.}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(f(z) =\frac{-i4z}{3z^4+10z^2+3}\text{.}\)</span> The singularities of <span class="process-math">\(f\)</span> are poles located at the points where <span class="process-math">\(3(z^2)^2+10(z^2) +3=0\text{.}\)</span> Using the quadratic formula, we see that the singular points satisfy the relation <span class="process-math">\(z^2=\frac{-10\pm \sqrt{100-36}}{6 }=\frac{-5\pm 4}{3}\text{.}\)</span> Hence the only singularities that lie inside the unit circle are simple poles corresponding to the solutions of <span class="process-math">\(z^2=-\frac{1}{3}\text{,}\)</span> which are the two points <span class="process-math">\(z_1=\frac{i}{\sqrt{3}}\)</span> and <span class="process-math">\(z_2=-\frac{i}{\sqrt{3}}\text{.}\)</span> We use <a href="" class="xref" data-knowl="./knowl/Residues_at_Poles.html" title="Theorem 8.1.7: Residues at Poles">Theorem 8.1.7</a> and L’Hôpital’s rule to get the residues at <span class="process-math">\(z_k\text{,}\)</span> for <span class="process-math">\(k=1, \, 2\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/dtheta_sub.html ./knowl/trig_subs.html ./knowl/Residues_at_Poles.html">
+\begin{align*}
+\mathrm{Res}[f,z_k]  \amp = \lim_{z \to z_k}\frac{-i4z(z-z_k)}{3z^4+10z^2+3}\\
+\amp = \lim_{z \to z_k}\frac{-i4(2z-z_k)}{12z^3+20z}\\
+\amp = \frac{-i4z_k}{12z_k^3+20z_k}\\
+\amp = \frac{-i}{3z_k^2+5}\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Since <span class="process-math">\(z_k=\frac{\pm i}{\sqrt{3}}\)</span> and <span class="process-math">\(z_k^2=-\frac{1}{3}\text{,}\)</span> the residues for each <span class="process-math">\(z_k\)</span> are given by <span class="process-math">\(\mathrm{Res}[f,z_k] =-\frac{i}{3(-\frac{1}{3})+5} = -\frac{i}{4}\text{.}\)</span> Now use Equation <a href="" class="xref" data-knowl="./knowl/Int_Result.html" title="Equation 8.2.4">(8.2.4)</a> to compute the value of the integral:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Int_Result.html">
+\begin{equation*}
+\int_0^{2\pi}\frac{1}{1+3\cos^2\theta}\,d\theta = 2\pi i\left(\frac{-i}{4}+\frac{-i}{4}\right)= \pi
+\end{equation*}
+</div>
+</div>
+</div></body>
+</html>

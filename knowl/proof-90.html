@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">
+<a href="" class="xref" data-knowl="./knowl/PIfun.html" title="Equation 10.3.1">Equation (10.3.1)</a> is easy to determine from the results of <a href="" class="xref" data-knowl="./knowl/thm_N-value-dirichlet.html" title="Theorem 10.2.5: $N$-value Dirichlet problem for the upper half-plane">Theorem 10.2.5</a> regarding the Dirichlet problem. Let <span class="process-math">\(t_1\lt t_2\lt \cdots \lt t_N\)</span> denote <span class="process-math">\(N\)</span> points that lie along the <span class="process-math">\(x\)</span> axis. Let <span class="process-math">\(t_0^*\lt t_1^*\lt \cdots \lt t_N^*\)</span> be <span class="process-math">\(N+1\)</span> points chosen so that <span class="process-math">\(t_{k-1}^{\ast }\lt t_k\lt t_k^*\text{,}\)</span> for <span class="process-math">\(k=1,\,2,\,.\,.\,.\,,\,N\text{,}\)</span> and that <span class="process-math">\(U( t)\)</span> is continuous at each value <span class="process-math">\(t_k^*\text{.}\)</span> Then according to <a href="" class="xref" data-knowl="./knowl/thm_N-value-dirichlet.html" title="Theorem 10.2.5: $N$-value Dirichlet problem for the upper half-plane">Theorem 10.2.5</a>, the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PIfun.html ./knowl/thm_N-value-dirichlet.html ./knowl/thm_N-value-dirichlet.html ./knowl/fig_ch-10-013.html">
+\begin{equation}
+\Phi(x,y) = U(t_N^*) + \frac{1}{\pi}\sum\limits_{k=1}^{N}\left[ U(t_{k-1}^*)-U(t_k^*) \right]\mathrm{Arg}(z-t_k)\tag{10.3.2}
+\end{equation}
+</div>
+<div class="para">is harmonic in the upper half-plane and takes on the boundary values</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PIfun.html ./knowl/thm_N-value-dirichlet.html ./knowl/thm_N-value-dirichlet.html ./knowl/fig_ch-10-013.html">
+\begin{align*}
+{llll} \Phi(x,0) \amp = U(t_0^*),  \text{ for }   x \lt  t_1,\\
+\Phi(x,0) \amp = U(t_k^*),  \text{ for }   t_k \lt x \lt  t_{k+1},  \text{ and }\\
+\Phi(x,0) \amp = U(t_N^*),  \text{ for }   x &gt; t_N\text{,}
+\end{align*}
+</div>
+<div class="para">as shown in <a href="" class="xref" data-knowl="./knowl/fig_ch-10-013.html" title="Figure 10.3.2">Figure 10.3.2</a>.</div>
+</div> <div class="para logical">
+<div class="para">We use properties of the argument of a complex number (see <a href="sec_geometry-2.html" class="internal" title="Section 1.4: The Geometry of Complex Numbers, Part II">Section 1.4</a>) to write <a href="" class="xref" data-knowl="./knowl/PIeqn.html" title="Equation 10.3.2">Equation (10.3.2)</a> in the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/sec_geometry-2.html ./knowl/PIeqn.html">
+\begin{align*}
+\Phi(x,y) \amp = \frac{1}{\pi}U(t_0^*)\mathrm{Arg}(z-t_1) + \frac{1}{\pi}\sum_{k=1}^{N-1}U(t_k^*)\mathrm{Arg}\left(\frac{z-t_{k+1}}{z-t_k}\right)\\
+\amp + \frac{1}{\pi}U(t_N^*)[\pi-\mathrm{Arg}(z-t_N)]\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Hence the value <span class="process-math">\(\Phi\)</span> is given by the weighted mean</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-10-013.html">
+\begin{equation}
+\Phi(x,y)=\frac{1}{\pi}\sum\limits_{k=0}^{N}U(t_k^*)\Delta \theta_k\text{,}\tag{10.3.3}
+\end{equation}
+</div>
+<div class="para">where the angles <span class="process-math">\(\Delta \theta_k\text{,}\)</span> for <span class="process-math">\(k=0, \, 1, \ldots ,N\text{,}\)</span> sum to <span class="process-math">\(\pi\text{,}\)</span> and are also shown in <a href="" class="xref" data-knowl="./knowl/fig_ch-10-013.html" title="Figure 10.3.2">Figure 10.3.2</a>.</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-10/ch-10-fig-013.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">10.3.2<span class="period">.</span></span><span class="space"> </span>Boundary values for <span class="process-math">\(\Phi\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Using the substitutions</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/wmean.html">
+\begin{equation}
+\theta =\mathrm{Arg}(z-t) =\mathrm{Arctan}\left(\frac{y}{x-t}\right)  \text{ and }   d\theta=\frac{y}{(x-t)^2+y^2}\,dt\text{,}\tag{10.3.4}
+\end{equation}
+</div>
+<div class="para">we write <a href="" class="xref" data-knowl="./knowl/wmean.html" title="Equation 10.3.3">Equation (10.3.3)</a> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/wmean.html">
+\begin{equation*}
+\Phi(x,y) = \frac{y}{\pi}\sum\limits_{k=0}^{N}\frac{U(t_k^*) \,\Delta t_k}{(x-t_k^*)^2+y^2}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">The limit of this Riemann sum becomes the improper integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="sec_poisson-integral-formula.html#proof-90" class="internal">in-context</a></span>
+</body>
+</html>

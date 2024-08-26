@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">(We give a proof for a <em class="emphasis">standard region</em>, which is a region that is bounded by a contour <span class="process-math">\(C\)</span> tha can be expressed in the two forms <span class="process-math">\(C=C_1+C_2\)</span> and <span class="process-math">\(C=C_3+C_4\text{.}\)</span>) If <span class="process-math">\(R\)</span> is a standard region, then there exist functions <span class="process-math">\(y=g_1(x)\text{,}\)</span> and <span class="process-math">\(y=g_2(x)\text{,}\)</span> for <span class="process-math">\(a \le x \le b\text{,}\)</span> whose graphs form the lower and upper portions of <span class="process-math">\(C\text{,}\)</span> respectively, as indicated in <a href="" class="xref" data-knowl="./knowl/fig_ch-06-18.html" title="Figure 6.3.5">Figure 6.3.5</a>. As <span class="process-math">\(C\)</span> is positively oriented, these functions can be used to express <span class="process-math">\(C\)</span> as the sum of two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-06-18.html">
+\begin{align*}
+{3} \amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{ for }    \amp \amp  a \le t \le b, \text{ and }\\
+\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{ for }   \amp \amp  -b \le t \le -a\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">We now use the functions <span class="process-math">\(g_1(x)\)</span> and <span class="process-math">\(g_2(x)\)</span> to express the double integral of <span class="process-math">\(-P_y(x,y)\)</span> over <span class="process-math">\(R\)</span> as an iterated integral, first with respect to <span class="process-math">\(y\)</span> and second with respect to <span class="process-math">\(x\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\iint_RP_y(x,y)\,dx\,dy = -\int_a^b\left[\int_{g_1(x)}^{g_2(x)}P_y(x,y)\,dy\right]dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Computing the first iterated integral on the right side gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\,g_1(x)\big)\,dx - \int_a^bP\big(x,\,g_2(x)\big)\,dx\text{.}
+\end{equation*}
+</div>
+<div class="para">In the second integral on the right side of this equation we can use the change of variable <span class="process-math">\(x=-t\)</span> to obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\, g_1(x)\big)\,dx + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt
+\end{equation*}
+</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-18.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.5<span class="period">.</span></span><span class="space"> </span>Integration over a standard region, where <span class="process-math">\(C=C_1+C_2\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Interpreting the two integrals on the right side of this equation as contour integrals along <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{,}\)</span> respectively, gives</div>
+<div class="displaymath process-math">
+\begin{equation}
+-\iint\limits_RP_y(x,y)\,dx\,dy =\int_{C_1}P(x,y)\,dx + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx\text{.}\tag{6.3.2}
+\end{equation}
+</div>
+</div> <div class="para">To complete the proof, we rely on the fact that for a standard region there exist functions <span class="process-math">\(x=h_1(y)\)</span> and <span class="process-math">\(x=h_2(y)\)</span> for <span class="process-math">\(c \le y \le d\)</span> whose graphs form the left and right portions of <span class="process-math">\(C\text{,}\)</span> respectively, as indicated in <a href="" class="xref" data-knowl="./knowl/fig_ch-06-19.html" title="Figure 6.3.6">Figure 6.3.6</a>.</div> <figure class="figure figure-like"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-19.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.3.6<span class="period">.</span></span><span class="space"> </span>Integration over a standard region, where <span class="process-math">\(C=C_3+C_4\)</span></figcaption></figure> <div class="para logical">
+<div class="para">Because <span class="process-math">\(C\)</span> has positive orientation, it can be expressed as the sum of two contours <span class="process-math">\(C_3\)</span> and <span class="process-math">\(C_4\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{align*}
+{3} \amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{ for }   \amp \amp  -d \le t \le -c,  \text{ and }\\
+\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{ for }   \amp \amp  c \le t \le d\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Using the functions <span class="process-math">\(h_1(y)\)</span> and <span class="process-math">\(h_2(y)\text{,}\)</span> we express the double integral of <span class="process-math">\(Q_x(x.y)\)</span> over <span class="process-math">\(R\)</span> as an iterated integral:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Green1.html">
+\begin{equation*}
+\iint\limits_RQ_x(x,y)\,dx\,dy = \int_c^{d} \left[\int_{h_1(y)}^{h_2(y)}Q_x(x,y)\,dx\right] dy\text{.}
+\end{equation*}
+</div>
+<div class="para">A derivation similar to that which led to Equation <a href="" class="xref" data-knowl="./knowl/Green1.html" title="Equation 6.3.2">(6.3.2)</a> shows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Green1.html">
+\begin{equation}
+\iint\limits_RQ_x(x\text{,} y)\,dx\,dy = \int_CQ(x,y)\,dy\text{.}\tag{6.3.3}
+\end{equation}
+</div>
+</div> <div class="para">Adding Equations <a href="" class="xref" data-knowl="./knowl/Green1.html" title="Equation 6.3.2">(6.3.2)</a> and <a href="" class="xref" data-knowl="./knowl/Green2.html" title="Equation 6.3.3">(6.3.3)</a> gives Equation <a href="" class="xref" data-knowl="./knowl/Green_s_Thm_Eq.html" title="Equation 6.3.1">(6.3.1)</a>.</div></article></body>
+</html>

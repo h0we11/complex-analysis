@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic Properties of Conformal Mappings</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Complex Analysis">
+<meta property="book:author" content="Russell W. Howell">
+<meta property="book:author" content="John H. Mathews">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec_algebra-1-20-1 { counter-set: sec_algebra-1-20-1 0; }
+#sec_algebra-1-20-1 > li::marker { content: ""counter(sec_algebra-1-20-1,decimal)"."; }
+#sec_algebra-1-20-1 > li { counter-increment: sec_algebra-1-20-1; }
+#sec_julia-mandelbrot-9-8 { counter-set: sec_julia-mandelbrot-9-8 0; }
+#sec_julia-mandelbrot-9-8 > li::marker { content: ""counter(sec_julia-mandelbrot-9-8,decimal)"."; }
+#sec_julia-mandelbrot-9-8 > li { counter-increment: sec_julia-mandelbrot-9-8; }
+#sec_julia-mandelbrot-19-26 { counter-set: sec_julia-mandelbrot-19-26 0; }
+#sec_julia-mandelbrot-19-26 > li::marker { content: ""counter(sec_julia-mandelbrot-19-26,decimal)"."; }
+#sec_julia-mandelbrot-19-26 > li { counter-increment: sec_julia-mandelbrot-19-26; }
+#Regions_of_Convergence-1-1-3 { counter-set: Regions_of_Convergence-1-1-3 0; }
+#Regions_of_Convergence-1-1-3 > li::marker { content: ""counter(Regions_of_Convergence-1-1-3,decimal)"."; }
+#Regions_of_Convergence-1-1-3 > li { counter-increment: Regions_of_Convergence-1-1-3; }
+#th15-1-1-3 { counter-set: th15-1-1-3 0; }
+#th15-1-1-3 > li::marker { content: ""counter(th15-1-1-3,decimal)"."; }
+#th15-1-1-3 > li { counter-increment: th15-1-1-3; }
+#Power_Series_Thm-1-1-4 { counter-set: Power_Series_Thm-1-1-4 0; }
+#Power_Series_Thm-1-1-4 > li::marker { content: ""counter(Power_Series_Thm-1-1-4,decimal)"."; }
+#Power_Series_Thm-1-1-4 > li { counter-increment: Power_Series_Thm-1-1-4; }
+#expz_is_entire-1-1-2 { counter-set: expz_is_entire-1-1-2 0; }
+#expz_is_entire-1-1-2 > li::marker { content: ""counter(expz_is_entire-1-1-2,decimal)"."; }
+#expz_is_entire-1-1-2 > li { counter-increment: expz_is_entire-1-1-2; }
+#Unif_Conv_Properties-1-1-7 { counter-set: Unif_Conv_Properties-1-1-7 0; }
+#Unif_Conv_Properties-1-1-7 > li::marker { content: ""counter(Unif_Conv_Properties-1-1-7,decimal)"."; }
+#Unif_Conv_Properties-1-1-7 > li { counter-increment: Unif_Conv_Properties-1-1-7; }
+#Nuanced_Taylor-1-1-10 { counter-set: Nuanced_Taylor-1-1-10 0; }
+#Nuanced_Taylor-1-1-10 > li::marker { content: ""counter(Nuanced_Taylor-1-1-10,decimal)"."; }
+#Nuanced_Taylor-1-1-10 > li { counter-increment: Nuanced_Taylor-1-1-10; }
+#thm_laurent-properties-2-1-6 { counter-set: thm_laurent-properties-2-1-6 0; }
+#thm_laurent-properties-2-1-6 > li::marker { content: ""counter(thm_laurent-properties-2-1-6,decimal)"."; }
+#thm_laurent-properties-2-1-6 > li { counter-increment: thm_laurent-properties-2-1-6; }
+#sec_singularities-4-2-1-7 { counter-set: sec_singularities-4-2-1-7 0; }
+#sec_singularities-4-2-1-7 > li::marker { content: ""counter(sec_singularities-4-2-1-7,decimal)"."; }
+#sec_singularities-4-2-1-7 > li { counter-increment: sec_singularities-4-2-1-7; }
+#sec_singularities-5-1 { counter-set: sec_singularities-5-1 0; }
+#sec_singularities-5-1 > li::marker { content: ""counter(sec_singularities-5-1,decimal)"."; }
+#sec_singularities-5-1 > li { counter-increment: sec_singularities-5-1; }
+#zero_quotient-1-1-7 { counter-set: zero_quotient-1-1-7 0; }
+#zero_quotient-1-1-7 > li::marker { content: ""counter(zero_quotient-1-1-7,decimal)"."; }
+#zero_quotient-1-1-7 > li { counter-increment: zero_quotient-1-1-7; }
+#sec_singularities-23-2-1-12 { counter-set: sec_singularities-23-2-1-12 0; }
+#sec_singularities-23-2-1-12 > li::marker { content: ""counter(sec_singularities-23-2-1-12,decimal)"."; }
+#sec_singularities-23-2-1-12 > li { counter-increment: sec_singularities-23-2-1-12; }
+#Residues_at_Poles-2-1 { counter-set: Residues_at_Poles-2-1 0; }
+#Residues_at_Poles-2-1 > li::marker { content: ""counter(Residues_at_Poles-2-1,decimal)"."; }
+#Residues_at_Poles-2-1 > li { counter-increment: Residues_at_Poles-2-1; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis:</span> <span class="subtitle">an Open Source Textbook</span></a></h1>
+<p class="byline">Russell W. Howell, John H. Mathews</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_conformal-mapping.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_conformal-mapping.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_bilinear-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_origin.html#subsec_wessel" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Caspar Wessel Makes a Breakthrough</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_origin.html#exercises_origin" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_integral-representations.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Integral Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integral-representations.html#exercises_integral-representations" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle &amp; Rouché’s Theorem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\({\bm w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\bm w=(z^2-1)^\frac{1}{2}\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_conformal-mappings"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">9.1</span><span class="space"> </span><span class="title">Basic Properties of Conformal Mappings</span>
+</h2>
+<div class="para logical" id="sec_conformal-mappings-2">
+<div class="para">Let <span class="process-math">\(f\)</span> be an analytic function in the domain <span class="process-math">\(D\)</span> and let <span class="process-math">\(z_0\)</span> be a point in <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\(f\,'(z_0) \ne 0\text{,}\)</span> then we can express <span class="process-math">\(f\)</span> in the form</div>
+<div class="displaymath process-math" id="expandf">
+\begin{equation}
+f(z) = f(z_0) +f\,'(z_0)(z-z_0) +\eta(z) (z-z_0)\text{,}\tag{9.1.1}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\eta(z) \to 0\)</span> as <span class="process-math">\(z \to z_0\text{.}\)</span> If <span class="process-math">\(z\)</span> is near <span class="process-math">\(z_0\text{,}\)</span> then the transformation <span class="process-math">\(w=f(z)\)</span> has the linear approximation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S(z) =A+B(z-z_0)=Bz+A-Bz_0\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(A=f(z_0)\)</span> and <span class="process-math">\(B=f\,'(z_0)\text{.}\)</span> Because <span class="process-math">\(\eta(z) \to 0\)</span> when <span class="process-math">\(z \to z_0\text{,}\)</span> for points near <span class="process-math">\(z_0\)</span> the transformation <span class="process-math">\(w=f(z)\)</span> has an effect much like the linear mapping <span class="process-math">\(w=S(z)\text{.}\)</span> The effect of the linear mapping <span class="process-math">\(S\)</span> is a rotation of the plane through the angle <span class="process-math">\(\alpha =\mathrm{Arg}f\,'(z_0)\text{,}\)</span> followed by a magnification by the factor <span class="process-math">\(|f\,'(z_0)|\text{,}\)</span> followed by a rigid translation by the vector <span class="process-math">\(A-Bz_0\text{.}\)</span> Consequently, the mapping <span class="process-math">\(w=S(z)\)</span> preserves the angles at the point <span class="process-math">\(z_0\text{.}\)</span> We now show that the mapping <span class="process-math">\(w=f(z)\)</span> also preserves angles at <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-3">
+<div class="para">Let <span class="process-math">\(C:z(t) =x(t) +iy(t)\text{,}\)</span> <span class="process-math">\(-1 \le t \le 1\)</span> denote a smooth curve that passes through the point <span class="process-math">\(z(0)=z_0\text{.}\)</span> A vector <span class="process-math">\(\mathbf{T}\)</span> tangent to <span class="process-math">\(C\)</span> at the point <span class="process-math">\(z_0\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{T}=z\,'(0)\text{,}
+\end{equation*}
+</div>
+<div class="para">where the complex number <span class="process-math">\(z\,'(0)\)</span> is expressed as a vector.</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-4">
+<div class="para">The angle of inclination of <span class="process-math">\(\mathbf{T}\)</span> with respect to the positive <span class="process-math">\(x\)</span>-axis is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\beta=\mathrm{Arg}\, z\,'(0)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-5">
+<div class="para">The image of <span class="process-math">\(C\)</span> under the mapping <span class="process-math">\(w=f(z)\)</span> is the curve <span class="process-math">\(K\)</span> given by the formula <span class="process-math">\(K:w(t)=u\big(x(t),
+y(t)\big) +iv\big(x(t),y(t)\big)\text{.}\)</span> We can use the chain rule to show that a vector <span class="process-math">\(\mathbf{T}^*\)</span> tangent to <span class="process-math">\(K\)</span> at the point <span class="process-math">\(w_0=f(z_0)\)</span> is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{T}^*=w\,'(0) =f\,'(z_0)z\,'(0)
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-6">
+<div class="para">The angle of inclination of <span class="process-math">\(\mathbf{T}^*\)</span> with respect to the positive <span class="process-math">\(u\)</span>-axis is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-09-01.html" id="incangle">
+\begin{equation}
+\gamma=\mathrm{Arg}\;f\,'(z_0) +\mathrm{Arg} z\,'(0) = \alpha+\beta\text{,}\tag{9.1.2}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\alpha=\mathrm{Arg}\;f\,'(z_0)\text{.}\)</span> Therefore the effect of the transformation <span class="process-math">\(w=f(z)\)</span> is to rotate the angle of inclination of the tangent vector <span class="process-math">\(\mathbf{T}\)</span> at <span class="process-math">\(z_0\)</span> through the angle <span class="process-math">\(\alpha=\mathrm{Arg}\;f\,'(z_0)\)</span> to obtain the angle of inclination of the tangent vector <span class="process-math">\(\mathbf{T}^*\)</span>at <span class="process-math">\(w_0\text{.}\)</span> This situation is illustrated in <a href="sec_conformal-mappings.html#fig_ch-09-01" class="xref" data-knowl="./knowl/xref/fig_ch-09-01.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.1">Figure 9.1.1</a>.</div>
+</div>
+<figure class="figure figure-like" id="fig_ch-09-01"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-09/ch-09-fig-01.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.1<span class="period">.</span></span><span class="space"> </span>Tangents at the points <span class="process-math">\(z_0\)</span> and <span class="process-math">\(w_0\text{,}\)</span> where <span class="process-math">\(f\ '(z_0) \ne 0\)</span></figcaption></figure><div class="para" id="sec_conformal-mappings-8">A mapping <span class="process-math">\(w=f(z)\)</span> is said to be angle preserving, or <em class="emphasis">conformal</em> at <span class="process-math">\(z_0\text{,}\)</span> if it preserves angles between oriented curves in magnitude as well as in orientation. <a href="sec_conformal-mappings.html#thm_conformal" class="xref" data-knowl="./knowl/xref/thm_conformal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.2">Theorem 9.1.2</a> shows where a mapping by an analytic function is conformal.</div>
+<article class="theorem theorem-like" id="thm_conformal"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm_conformal-1-1">Let <span class="process-math">\(f\)</span> be an analytic function in the domain <span class="process-math">\(D\text{,}\)</span> and let <span class="process-math">\(z_0\)</span> be a point in <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\(f\,'(z_0) \ne 0\text{,}\)</span> then <span class="process-math">\(f\)</span> is conformal at <span class="process-math">\(z_0\text{.}\)</span>
+</div></article><details id="sec_conformal-mappings-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_conformal-mappings-10-1">We let <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> be two smooth curves passing through <span class="process-math">\(z_0\)</span> with tangents given by <span class="process-math">\(\mathbf{T}_1\)</span> and <span class="process-math">\(\mathbf{T}_2\text{,}\)</span> respectively. We let <span class="process-math">\(\beta_1\)</span> and <span class="process-math">\(\beta_2\)</span> denote the angles of inclination of <span class="process-math">\(\mathbf{T}_1\)</span> and <span class="process-math">\(\mathbf{T}_2\text{,}\)</span> respectively.</div> <div class="para logical" id="sec_conformal-mappings-10-2">
+<div class="para">The image curves <span class="process-math">\(K_1\)</span> and <span class="process-math">\(K_2\)</span> that pass through the point <span class="process-math">\(w_0=f(z_0)\)</span> have tangents denoted <span class="process-math">\(\mathbf{T}_1^*\)</span> and <span class="process-math">\(\mathbf{T}_2^*\text{,}\)</span> respectively. From Equation <a href="sec_conformal-mappings.html#incangle" class="xref" data-knowl="./knowl/xref/incangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.2">(9.1.2)</a>, the angles of inclination <span class="process-math">\(\gamma_1\)</span> and <span class="process-math">\(\gamma_2\)</span> of <span class="process-math">\(\mathbf{T}_1^*\)</span> and <span class="process-math">\(\mathbf{T}_2^*\)</span> are related to <span class="process-math">\(\beta_1\)</span> and <span class="process-math">\(\beta_2\)</span> by the equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/incangle.html ./knowl/xref/angleab.html" id="angleab">
+\begin{equation}
+\gamma_1=\alpha+\beta_1, \text{ and }   \gamma_2 = \alpha+\beta _2\text{,}\tag{9.1.3}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\alpha=\operatorname*{Arg}f\,'(z_0)\text{.}\)</span> From Equations <a href="sec_conformal-mappings.html#angleab" class="xref" data-knowl="./knowl/xref/angleab.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.3">(9.1.3)</a> we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/incangle.html ./knowl/xref/angleab.html">
+\begin{equation*}
+\gamma_2-\gamma_1=\beta_2-\beta_1\text{.}
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="sec_conformal-mappings-11">The analytic mapping <span class="process-math">\(w=f(z)\)</span> is conformal at the point <span class="process-math">\(z_0\text{,}\)</span> where <span class="process-math">\(f\,'(z_0) \ne 0\)</span> because the angle <span class="process-math">\(\gamma_2-\gamma_1\)</span> from <span class="process-math">\(K_1\)</span> to <span class="process-math">\(K_2\)</span> is the same in magnitude and orientation as the angle <span class="process-math">\(\beta_2-\beta_1\)</span> from <span class="process-math">\(C_1\)</span> to <span class="process-math">\(C_2\text{.}\)</span> This situation is shown in <a href="sec_conformal-mappings.html#fig_ch-09-02" class="xref" data-knowl="./knowl/xref/fig_ch-09-02.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.3">Figure 9.1.3</a>.</div>
+<figure class="figure figure-like" id="fig_ch-09-02"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-09/ch-09-fig-02.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.3<span class="period">.</span></span><span class="space"> </span>Angle preservation when <span class="process-math">\(f\ '(z_0) \ne 0\)</span></figcaption></figure><details id="sec_conformal-mappings-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.4</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec_conformal-mappings-13-1-1">Show that the mapping <span class="process-math">\(w=f(z) =\cos z\)</span> is conformal at the points <span class="process-math">\(z_1=i\text{,}\)</span> <span class="process-math">\(z_2=1\text{,}\)</span> and <span class="process-math">\(z_3=\pi+i\text{,}\)</span> and determine the angle of rotation given by <span class="process-math">\(\alpha=\mathrm{Arg}f\,'(z)\)</span> at the given points.</div>
+<div class="solutions"><details id="sec_conformal-mappings-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_conformal-mappings-13-2-1">
+<div class="para">Because <span class="process-math">\(f\,'(z) =-\sin z\text{,}\)</span> we conclude that the mapping <span class="process-math">\(w=\cos z\)</span> is conformal at all points except <span class="process-math">\(z=n\pi\text{,}\)</span> where <span class="process-math">\(n\)</span> is an integer. Calculation reveals that</div>
+<div class="displaymath process-math" id="sec_conformal-mappings-13-2-1-5">
+\begin{align*}
+f\,'(i) \amp =-\sin(i) =-i\sinh1,\\
+f\,'(1) \amp = -\sin1,  \text{ and }\\
+f\,'(\pi+i) \amp =-\sin (\pi + i) = i\sinh 1\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical" id="sec_conformal-mappings-13-2-2">
+<div class="para">Therefore the angles of rotation are given, respectively, by</div>
+<div class="displaymath process-math" id="sec_conformal-mappings-13-2-2-1">
+\begin{align*}
+\alpha_1 \amp = \mathrm{Arg}\big(f\,'(i)\big) = -\frac{\pi}{2},\\
+\alpha_2 \amp  =\mathrm{Arg}\big(f\,'(1)\big) =\pi,  \text{ and }\\
+\alpha_3 \amp  =\mathrm{Arg}\big(f\,'(\pi+i)\big) =\frac {\pi}{2}\text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article></details><div class="para" id="sec_conformal-mappings-14">Let <span class="process-math">\(f\)</span> be a nonconstant analytic function. If <span class="process-math">\(f\,'(z_0)=0\text{,}\)</span> then <span class="process-math">\(z_0\)</span> is called a <em class="emphasis">critical point</em> of <span class="process-math">\(f\text{,}\)</span> and the mapping <span class="process-math">\(w=f(z)\)</span> is not conformal at <span class="process-math">\(z_0\text{.}\)</span> <a href="sec_conformal-mappings.html#thm_critical_point" class="xref" data-knowl="./knowl/xref/thm_critical_point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 9.1.5">Theorem 9.1.5</a> shows what happens at a critical point.</div>
+<article class="theorem theorem-like" id="thm_critical_point"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.1.5</span><span class="period">.</span>
+</h3>
+<div class="para" id="thm_critical_point-1-1">Let <span class="process-math">\(f\)</span> be analytic at <span class="process-math">\(z_0\text{.}\)</span> If <span class="process-math">\(f\,'(z_0) = 0,\ldots,f^{(k-1)}(z_0)=0\)</span> and <span class="process-math">\(f^{(k)}(z_0) \ne 0\text{,}\)</span> then the mapping <span class="process-math">\(w=f(z)\)</span> magnifies angles at the vertex <span class="process-math">\(z_0\)</span> by a factor <span class="process-math">\(k\text{.}\)</span>
+</div></article><details id="sec_conformal-mappings-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_conformal-mappings-16-1">
+<div class="para">Since <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\text{,}\)</span> it has a Taylor series expansion. Because <span class="process-math">\(a_n=\displaystyle\frac{f^{(n)  }(z_0)  }{n!}=0\text{,}\)</span> for <span class="process-math">\(n=1,\ 2,...,\ k-1\text{,}\)</span> the series representation for <span class="process-math">\(f\)</span> is</div>
+<div class="displaymath process-math" id="notconfatz">
+\begin{equation}
+f(z) = f(z_0) + a_k(z-z_0)^k + a_{k+1}(z-z_0)^{k+1} + \cdots\text{.}\tag{9.1.4}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_conformal-mappings-16-2">
+<div class="para">From Equation <a href="sec_conformal-mappings.html#notconfatz" class="xref" data-knowl="./knowl/xref/notconfatz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.4">(9.1.4)</a> we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/notconfatz.html ./knowl/xref/notconf2.html" id="notconf2">
+\begin{equation}
+f(z) - f(z_0) = (z-z_0)^kg(z)\text{,}\tag{9.1.5}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z_0\)</span> and g<span class="process-math">\((z_0) = a_k \ne 0\text{.}\)</span> Consequently, if <span class="process-math">\(w=f(z)\)</span> and <span class="process-math">\(w_0=f(z_0)\text{,}\)</span> then using Equation <a href="sec_conformal-mappings.html#notconf2" class="xref" data-knowl="./knowl/xref/notconf2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.5">(9.1.5)</a> we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/notconfatz.html ./knowl/xref/notconf2.html" id="notconf3">
+\begin{equation}
+\arg(w-w_0) =\mathrm{Arg}[f(z)-f(z_0)] = k\mathrm{Arg}(z-z_0) + \mathrm{Arg}[g(z)]\text{.}\tag{9.1.6}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_conformal-mappings-16-3">
+<div class="para">If <span class="process-math">\(C\)</span> is a smooth curve that passes through <span class="process-math">\(z_0\)</span> and <span class="process-math">\(z \to z_0\)</span> along <span class="process-math">\(C\text{,}\)</span> then <span class="process-math">\(w\to w_0\)</span> along the image curve <span class="process-math">\(K\text{.}\)</span> The angle of inclination of the tangents <span class="process-math">\(\mathbf{T}\)</span> to <span class="process-math">\(C\)</span> and <span class="process-math">\(\mathbf{T}^*\)</span> to <span class="process-math">\(K\text{,}\)</span> respectively, are then given by the following limits:</div>
+<div class="displaymath process-math" id="notconf4">
+\begin{equation}
+\beta = \lim_{z \to z_0} \mathrm{Arg}(z-z_0)  \text{ and } \gamma = \lim\_{w\to w_0}\ \mathrm{Arg}(w-w_0)\text{.}\tag{9.1.7}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec_conformal-mappings-16-4">
+<div class="para">From Equations <a href="sec_conformal-mappings.html#notconf3" class="xref" data-knowl="./knowl/xref/notconf3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.6">(9.1.6)</a> and <a href="sec_conformal-mappings.html#notconf4" class="xref" data-knowl="./knowl/xref/notconf4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.7">(9.1.7)</a> it follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/notconf3.html ./knowl/xref/notconf4.html" id="notconf5">
+\begin{equation}
+\gamma = \lim_{z \to z_0} (k\mathrm{Arg}(z-z_0) + \mathrm{Arg}[g(z)]) = k\beta+\delta\text{,}\tag{9.1.8}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\delta = \mathrm{Arg}[g(z_0)] = \mathrm{Arg}(a_k)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec_conformal-mappings-16-5">
+<div class="para">If <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> are two smooth curves that pass through <span class="process-math">\(z_0\text{,}\)</span> and <span class="process-math">\(K_1\)</span> and <span class="process-math">\(K_2\)</span> are their images, then from Equation <a href="sec_conformal-mappings.html#notconf5" class="xref" data-knowl="./knowl/xref/notconf5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.8">(9.1.8)</a> it follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/notconf5.html">
+\begin{equation*}
+\Delta\gamma = \gamma_2 - \gamma_1 = k(\beta_2-\beta_1) = k\Delta\beta
+\end{equation*}
+</div>
+</div> <div class="para" id="sec_conformal-mappings-16-6">That is, the angle <span class="process-math">\(\Delta\gamma\)</span> from <span class="process-math">\(K_1\)</span> to <span class="process-math">\(K_2\)</span> is <span class="process-math">\(k\)</span> times as large as the angle <span class="process-math">\(\Delta\beta\)</span> from <span class="process-math">\(C_1\)</span> to <span class="process-math">\(C_2\text{.}\)</span> Therefore angles at the vertex <span class="process-math">\(z_0\)</span> are magnified by the factor <span class="process-math">\(k\text{.}\)</span> This situation is shown in <a href="sec_conformal-mappings.html#fig_ch-09-03" class="xref" data-knowl="./knowl/xref/fig_ch-09-03.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.6">Figure 9.1.6</a>.</div></article></details><figure class="figure figure-like" id="fig_ch-09-03"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-09/ch-09-fig-03.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.6<span class="period">.</span></span><span class="space"> </span>The analytic mapping <span class="process-math">\(w=f(z)\)</span> at point <span class="process-math">\(z_0\)</span> expands angles by a factor of <span class="process-math">\(k\)</span> when <span class="process-math">\(f\ '(z_0)
+=0,\ldots,f^{(k-1)}(z_0)=0\text{,}\)</span> and <span class="process-math">\(f^{(k)}(z_0) \ne 0\)</span></figcaption></figure><details id="sec_conformal-mappings-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.7</span><span class="period">.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec_conformal-mappings-18-1-1">
+<div class="para">Show that the mapping <span class="process-math">\(w=f(z)=z^2\)</span> maps the unit square <span class="process-math">\(S=\{x+iy: 0\lt x\lt 1, \; 0\lt y\lt 1\}\)</span> onto the region in the upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\text{,}\)</span> which lies under the parabolas</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-09-04.html">
+\begin{equation*}
+u=1-\frac{1}{4}v^2,  \text{ and }   u=-1+\frac{1}{4}v^2\text{,}
+\end{equation*}
+</div>
+<div class="para">as shown in <a href="sec_conformal-mappings.html#fig_ch-09-04" class="xref" data-knowl="./knowl/xref/fig_ch-09-04.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.1.8">Figure 9.1.8</a>.</div>
+</div> <figure class="figure figure-like" id="fig_ch-09-04"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-09/ch-09-fig-04.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.1.8<span class="period">.</span></span><span class="space"> </span>The mapping <span class="process-math">\(w=z^2\)</span></figcaption></figure><div class="solutions"><details id="sec_conformal-mappings-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="sec_conformal-mappings-18-2-1">The derivative is <span class="process-math">\(f\,'(z)=2z\text{,}\)</span> and we conclude that the mapping <span class="process-math">\(w=z^2\)</span> is conformal for all <span class="process-math">\(z \ne 0\text{.}\)</span> Note that the right angles at the vertices <span class="process-math">\(z_1=1\text{,}\)</span> <span class="process-math">\(z_2=1+i\text{,}\)</span> and <span class="process-math">\(z_3=i\)</span> are mapped onto right angles at the vertices <span class="process-math">\(w_1=1, \, w_2=2i\text{,}\)</span> and <span class="process-math">\(w_3=-1\text{,}\)</span> respectively. At the point <span class="process-math">\(z_0=0\text{,}\)</span> we have <span class="process-math">\(f\,'(0) =0\)</span> and <span class="process-math">\(f\,''(0) \ne 0\text{.}\)</span> Hence angles at the vertex <span class="process-math">\(z_0=0\)</span> are magnified by the factor <span class="process-math">\(k=2\text{.}\)</span> In particular, the right angle at <span class="process-math">\(z_0=0\)</span> is mapped onto the straight angle at <span class="process-math">\(w_0=0\text{.}\)</span>
+</div></div></details></div></article></details><div class="para logical" id="sec_conformal-mappings-19">
+<div class="para">Another property of a conformal mapping <span class="process-math">\(w=f(z)\)</span> is obtained by considering the modulus of <span class="process-math">\(f\,'(z_0)\)</span> . If <span class="process-math">\(z_1\)</span> is near <span class="process-math">\(z_0\text{,}\)</span> we can use Equation <a href="sec_conformal-mappings.html#expandf" class="xref" data-knowl="./knowl/xref/expandf.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.1">(9.1.1)</a> and neglect the term <span class="process-math">\(\eta(z_1)(z_1-z_0)\text{.}\)</span> We then have the approximation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expandf.html" id="confmod">
+\begin{equation}
+w_1-w_0 = f(z_1)-f(z_0) \approx f\,'(z_0)(z_1-z_0)\text{.}\tag{9.1.9}
+\end{equation}
+</div>
+</div>
+<div class="para" id="sec_conformal-mappings-20">From Equation <a href="sec_conformal-mappings.html#confmod" class="xref" data-knowl="./knowl/xref/confmod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.9">(9.1.9)</a>, the distance <span class="process-math">\(|w_1-w_0|\)</span> between the images of the points <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_0\)</span> is given approximately by <span class="process-math">\(|f\,'(z_0)| \, |z_1-z_0|\text{.}\)</span> Therefore we say that the transformation <span class="process-math">\(w=f(z)\)</span> changes small distances near <span class="process-math">\(z_0\)</span> by the <em class="emphasis">scale factor</em> <span class="process-math">\(|f\,'(z_0)|\text{.}\)</span> For example, the scale factor of the transformation <span class="process-math">\(w=f(z) =z^2\)</span> near the point <span class="process-math">\(z_0=1+i\)</span> is <span class="process-math">\(|f\,'(1+i)| = |2(1+i)| = 2\sqrt{2}\text{.}\)</span>
+</div>
+<div class="para logical" id="sec_conformal-mappings-21">
+<div class="para">We also need to say a few things about the inverse transformation <span class="process-math">\(z=g(w)\)</span> of a conformal mapping <span class="process-math">\(w=f(z)\)</span> near a point <span class="process-math">\(z_0\)</span> , where <span class="process-math">\(f\,'(z_0) \ne 0\text{.}\)</span> A complete justification of the following assertions relies on theorems studied in advanced calculus.<details class="ptx-footnote" aria-live="polite" id="sec_conformal-mappings-21-5"><summary class="ptx-footnote__number" title="Footnote 9.1.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec_conformal-mappings-21-5">See, for instance, R. Creighton Buck, <em class="emphasis">Advanced Calculus</em>, 3rd ed.  (New York, McGraw-Hill), pp. 358—361, 1978.</div></details> We express the mapping <span class="process-math">\(w=f(z)\)</span> in the coordinate form</div>
+<div class="displaymath process-math" id="confsys">
+\begin{equation}
+u = u(x,y),  \text{ and }   v=v(x,y)\text{.}\tag{9.1.10}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-22">
+<div class="para">The mapping in Equations <a href="sec_conformal-mappings.html#confsys" class="xref" data-knowl="./knowl/xref/confsys.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.10">(9.1.10)</a> represents a transformation from the <span class="process-math">\(xy\)</span> plane into the <span class="process-math">\(uv\)</span> plane, and the <em class="emphasis">Jacobian determinant,</em> <span class="process-math">\(J(x,y)\text{,}\)</span> is defined by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/confsys.html" id="jacobian">
+\begin{equation}
+J(x,y) = \begin{vmatrix} u_x(x,y) \amp  u_y(x,y)\\ v_x(x,y) \amp  v_y(x,y). \end{vmatrix}\tag{9.1.11}
+\end{equation}
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-23">
+<div class="para">The transformation in Equations <a href="sec_conformal-mappings.html#confsys" class="xref" data-knowl="./knowl/xref/confsys.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.10">(9.1.10)</a> has a local inverse, provided <span class="process-math">\(J(x,y) \ne 0\text{.}\)</span> Expanding Equation <a href="sec_conformal-mappings.html#jacobian" class="xref" data-knowl="./knowl/xref/jacobian.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.11">(9.1.11)</a> and using the Cauchy-Riemann equations, we obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/confsys.html ./knowl/xref/jacobian.html" id="sec_conformal-mappings-23-4">
+\begin{align}
+J(x_0,y_0) \amp = u_x(x_0,y_0) v_y(x_0,y_0) -v_x(x_0,y_0) u_y(x_0,y_0)\notag\\
+\amp = u_x^2(x_0,y_0) +v_x^2(x_0,y_0)\tag{9.1.12}\\
+\amp = |f\,'(z_0)|^2 \ne 0\text{.}\notag
+\end{align}
+</div>
+</div>
+<div class="para logical" id="sec_conformal-mappings-24">
+<div class="para">Consequently, Equations <a href="sec_conformal-mappings.html#jacobian" class="xref" data-knowl="./knowl/xref/jacobian.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.11">(9.1.11)</a> and <a href="sec_conformal-mappings.html#sec_conformal-mappings-23-4" class="xref" data-knowl="./knowl/xref/jacobian2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.1.12">(9.1.12)</a> imply that a local inverse <span class="process-math">\(z=g(w)\)</span> exists in a neighborhood of the point <span class="process-math">\(w_0\text{.}\)</span> The derivative of <span class="process-math">\(g\)</span> at <span class="process-math">\(w_0\)</span> is given by the familiar expression</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/jacobian.html ./knowl/xref/jacobian2.html" id="sec_conformal-mappings-24-7">
+\begin{align*}
+g'(w_0) \amp = \lim_{w\to w_0} \frac{g(w)-g(w_0)}{w-w_0}\\
+\amp = \lim_{z \to z_0}\ \frac{z-z_0}{f(z)-f(z_0)}\\
+\amp = \frac{1}{f\,'(z_0)}=\frac{1}{f\,'\big(g(w_0)\big)}\text{.}
+\end{align*}
+</div>
+</div>
+<section class="exercises" id="exercises_conformal-mappings"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercises_conformal-mappings-2"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="exercises_conformal-mappings-2-1-1">State where the following mappings are conformal.</div> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-2-1"><span class="process-math">\(w=\exp z\text{.}\)</span></div>
+<details id="exercises_conformal-mappings-2-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-2-1-2-2-1">All complex numbers <span class="process-math">\(z\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-3-1"><span class="process-math">\(w=\sin z\text{.}\)</span></div></article> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-4-1"><span class="process-math">\(w=z^2+2z\text{.}\)</span></div>
+<details id="exercises_conformal-mappings-2-1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-2-1-4-2-1">All complex numbers <span class="process-math">\(z\)</span> except <span class="process-math">\(z=0\)</span> and <span class="process-math">\(z=-2\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-5-1"><span class="process-math">\(w=\exp(z^2+1)\text{.}\)</span></div></article> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-6-1"><span class="process-math">\(w=\displaystyle\frac{1}{z}\text{.}\)</span></div>
+<details id="exercises_conformal-mappings-2-1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-2-1-6-2-1">All complex numbers <span class="process-math">\(z\)</span> except <span class="process-math">\(z=0\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-2-1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="exercises_conformal-mappings-2-1-7-1"><span class="process-math">\(w=\displaystyle\frac{z+1}{z-1}\text{.}\)</span></div></article></article><article class="exercise exercise-like" id="exercises_conformal-mappings-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="exercises_conformal-mappings-3-1-1">For Exercises 2-5, find the angle of rotation <span class="process-math">\(\alpha = \mathrm{Arg}\big(f\,'(z)\big)\)</span> and the scale factor <span class="process-math">\(|f\,'(z)|\)</span> of the mapping <span class="process-math">\(w=f(z)\)</span> at the indicated points.</div> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-2-1">
+<span class="process-math">\(w=\displaystyle\frac{1}{z}\)</span> at the points <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(1+i\text{,}\)</span> and <span class="process-math">\(i\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-3-1">
+<span class="process-math">\(w=\ln r+i\theta\text{,}\)</span> where <span class="process-math">\(-\frac{\pi}{2}\lt \theta\lt \frac{3\pi}{2}\)</span> at the points <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(1+i\text{,}\)</span> <span class="process-math">\(i\text{,}\)</span> and <span class="process-math">\(-1\text{.}\)</span>
+</div>
+<details id="exercises_conformal-mappings-3-1-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-3-1-3-2-1">
+<span class="process-math">\(f\,'(1)=1, \; \alpha = \mathrm{Arg}\big(f\,'(1)\big) = 0, \; |f\,'(1)|=1\text{;}\)</span> <span class="process-math">\(f\,'(1)=\frac{1}{2}-\frac{i}{2}, \; \alpha = \mathrm{Arg}\big(f\,'(1+i)\big) = -\frac{\pi}{4}, \; |f\,'(1+i)=\frac{\sqrt{2}}{2}\text{;}\)</span> <span class="process-math">\(f\,'(1)=-i, \; \alpha = \mathrm{Arg}\big(f\,'(i)\big) = -\frac{\pi}{2}, \; |f\,'(1)| = 1\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-4-1">
+<span class="process-math">\(w=r^\frac{1}{2}\cos\frac{\theta}{2}+ir^\frac{1}{2}\sin\frac{\theta}{2}\text{,}\)</span> where <span class="process-math">\(-\pi\lt \theta\lt \pi\text{,}\)</span> at the points <span class="process-math">\(i, \, 1, \, -i\text{,}\)</span> and <span class="process-math">\(3+4i\text{.}\)</span>
+</div></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-5-1">
+<span class="process-math">\(w=\sin z\)</span> at the points <span class="process-math">\(\frac{\pi}{2}+i, \, 0\text{,}\)</span> and <span class="process-math">\(-\frac{\pi}{2}+i\text{.}\)</span>
+</div>
+<details id="exercises_conformal-mappings-3-1-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-3-1-5-2-1">
+<span class="process-math">\(f\,'(\frac{\pi}{2}+i)=-i\sinh 1, \; \alpha - \mathrm{Arg}\big(f\,'(-\frac{\pi}{2}+i)\big) = -\frac{\pi}{2}, \; f\,'(\frac{\pi}{2}+i) = \sinh 1\text{;}\)</span> <span class="process-math">\(f\,'(-\frac{\pi}{2}+i) = i\sinh 1, \; \alpha = \mathrm{Arg}\big(f\,'(-\frac{\pi}{2}+i)\big) = \frac{\pi}{2}, \; f\,'(-\frac{\pi}{2}+i) = \sinh 1\text{;}\)</span> <span class="process-math">\(f\,'(0)=1, \; \alpha = \mathrm{Arg}\big(f\,'(0)\big) = 0, \; |f\,'(0)| = 1\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-6-1">Consider the mapping <span class="process-math">\(w=z^2\text{.}\)</span> If <span class="process-math">\(a\ne 0\)</span> and <span class="process-math">\(b\ne 0\text{,}\)</span> show that the lines <span class="process-math">\(x=a\)</span> and <span class="process-math">\(y=b\)</span> are mapped onto orthogonal parabolas.</div></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-7-1">Consider the mapping <span class="process-math">\(w=z^\frac{1}{2}\text{,}\)</span> where <span class="process-math">\(z^\frac{1}{2}\)</span> denotes the principal branch of the square root function. If <span class="process-math">\(a&gt;0\)</span> and <span class="process-math">\(b&gt;0\text{,}\)</span> show that the lines <span class="process-math">\(x=a\)</span> and <span class="process-math">\(y=b\)</span> are mapped onto orthogonal curves.</div>
+<details id="exercises_conformal-mappings-3-1-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-3-1-7-2-1">
+<span class="process-math">\(|f\,'(a+ib)| = \frac{1}{|2\sqrt{a+ib}|} = \frac{1}{2(a^2+b^2)^\frac{1}{4}} \ne 0\text{,}\)</span> hence <span class="process-math">\(f(z)\)</span> is conformal at <span class="process-math">\(z = a+ib\text{.}\)</span> The lines <span class="process-math">\(z_1(t) = a+(b+t)i\)</span> and, <span class="process-math">\(z_2(t) = (a+t)+ib\)</span> intersect orthogonally at the point <span class="process-math">\(z_1(0) = z_2(0) = a + ib\text{,}\)</span> therefore, their image curves will intersect orthogonally at the point <span class="process-math">\(a + ib\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-8-1">Consider the mapping <span class="process-math">\(w=\exp z\text{.}\)</span> Show that the lines <span class="process-math">\(x=a\)</span> and <span class="process-math">\(y=b\)</span> are mapped onto orthogonal curves.</div></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-9"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-9-1">For <span class="process-math">\(w=\sin z\)</span> show that the line segment <span class="process-math">\(-\frac{\pi}{2}\lt x\lt \frac{\pi}{2}, \; y=0\text{,}\)</span> and the vertical line <span class="process-math">\(x=a\text{,}\)</span> where <span class="process-math">\(|a| \lt \frac{\pi}{2}\text{,}\)</span> are mapped onto orthogonal curves.</div>
+<details id="exercises_conformal-mappings-3-1-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-3-1-9-2-1">
+<span class="process-math">\(|f\,'(a+ib)| = |\cos(a+ib)| = \sqrt{\cos^2 a \cosh^2 b + \sin^2 a \sinh^2 b} \ne 0\text{,}\)</span> hence <span class="process-math">\(f(z)\)</span> is conformal at <span class="process-math">\(z=a+ib\text{.}\)</span> The lines <span class="process-math">\(z_1(t)=a+ti\)</span> and <span class="process-math">\(z_2(t)=a+t\)</span> intersect orthogonally at the point <span class="process-math">\(z_1(0) = z_2(0) = a\text{.}\)</span> Therefore, their image curves will intersect orthogonally at the point <span class="process-math">\(\sin(a + ib)\text{.}\)</span>
+</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-10"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-10-1">Consider the mapping <span class="process-math">\(w=\mathrm{Log} \, z\text{,}\)</span> where <span class="process-math">\(\mathrm{Log} \, z\)</span> denotes the principal branch of the logarithm function. Show that the positive <span class="process-math">\(x\)</span>-axis and the vertical line <span class="process-math">\(x=1\)</span> are mapped onto orthogonal curves.</div></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-11"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-11-1">If <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(f\,'(z_0) \ne 0\text{,}\)</span> show that the function <span class="process-math">\(g(z) =\overline{f(z)}\)</span> preserves the magnitude, but reverses the sense, of angles at <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+<details id="exercises_conformal-mappings-3-1-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="exercises_conformal-mappings-3-1-11-2-1">First show that the mapping <span class="process-math">\(W = \bar{Z}\)</span> preserves the magnitude, but reverses the sense of angles at <span class="process-math">\(Z_0\text{.}\)</span> Then consider the mapping <span class="process-math">\(w=f(z)\)</span> as a composition.</div></div></details></article> <article class="task exercise-like" id="exercises_conformal-mappings-3-1-12"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<div class="para" id="exercises_conformal-mappings-3-1-12-1">If <span class="process-math">\(w=f(z)\)</span> is a mapping, where <span class="process-math">\(f(z)\)</span> is not analytic, then what behavior would you expect regarding the angles between curves?</div></article></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch_conformal-mapping.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_bilinear-transformations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

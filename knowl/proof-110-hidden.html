@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">The following proof is given for the special case when <span class="process-math">\(s\)</span> is a real number. The general case is covered in advanced texts. Using the dummy variables <span class="process-math">\(\sigma\)</span> and <span class="process-math">\(\tau\)</span> and the integrals defining the transforms, we can express their product as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(s)G(s) = \left[\int_0^{\infty}f(\sigma) e^{-s\sigma}\,d\sigma\right]\left[\int_0^{\infty}g(\tau)e^{-s\tau}\,d\tau\right]\text{.}
+\end{equation*}
+</div>
+<div class="para">The product of integrals in this equation can be written as an iterated integral:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(s)G(s) = \int_0^{\infty}\left[\int_0^{\infty}f(\sigma)e^{-s(\sigma+\tau)}\,d\sigma\right]g(\tau)\,d\tau\text{.}
+\end{equation*}
+</div>
+<div class="para">Hold <span class="process-math">\(\tau\)</span> fixed, and use the change of variables <span class="process-math">\(t=\sigma +\tau\)</span> and <span class="process-math">\(dt=d\sigma\text{.}\)</span> Then the inner integral in the equation can be rewritten to obtain</div>
+<div class="displaymath process-math">
+\begin{align*}
+F(s)G(s) \amp = \int_0^{\infty}\left[\int_{\tau }^{\infty}f(t-\tau)e^{-st}\,dt\right]g(\tau)\,d\tau\\
+\amp = \int_0^{\infty}\left[\int_{\tau }^{\infty}f(t-\tau)g(\tau)e^{-st}dt\right]d\tau\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">The region of integration for this last iterated integral is the wedge-shaped region in the <span class="process-math">\((t,\tau)\)</span> plane shown in <a href="" class="xref" data-knowl="./knowl/fig_ch-11-28.html" title="Figure 11.10.2">Figure 11.10.2</a>. The order of integration in the integral can be reversed to get:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-11-28.html ./knowl/convolution2.html ./knowl/convolution1.html">
+\begin{equation*}
+F(s)G(s) = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)e^{-st}\,d\tau\right]dt\text{.}
+\end{equation*}
+</div>
+<div class="para">This equation can be written as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_ch-11-28.html ./knowl/convolution2.html ./knowl/convolution1.html">
+\begin{align*}
+F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-st}\,dt\\
+\amp = \mathcal{L}^{-1}\left(\int_0^tf(t-\tau)g(\tau)\,d\tau\right)\text{,}
+\end{align*}
+</div>
+<div class="para">which establishes Equation <a href="" class="xref" data-knowl="./knowl/convolution2.html" title="Equation 11.10.2">(11.10.2)</a>. Since we can interchange the role of the functions <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> Equation <a href="" class="xref" data-knowl="./knowl/convolution1.html" title="Equation 11.10.1">(11.10.1)</a> follows immediately.</div>
+</div></article></body>
+</html>

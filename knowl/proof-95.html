@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">The real-valued function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/expression.html">
+\begin{equation*}
+P(r,t-\theta ) = \frac{1-r^2}{1+r^2-2r\cos (t-\theta)}
+\end{equation*}
+</div>
+<div class="para">is known as the <em class="emphasis">Poisson kernel.</em> Expanding the left side of Equation <a href="" class="xref" data-knowl="./knowl/expression.html" title="Equation 11.2.6">(11.2.6)</a> in a geometric series gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/expression.html">
+\begin{align*}
+P(r,t-\theta) \amp = \frac{1}{1-re^{i(\theta -t)}} + \frac{re^{i(t-\theta )}}{1-re^{i(t-\theta)}}\\
+\amp = \sum_{n=0}^{\infty}r^ne^{in(\theta -t)}+\sum\limits_{n=1}^{\infty}r^ne^{in(t-\theta)}\\
+\amp = 1+\sum\limits_{n=1}^{\infty}r^n[e^{in(\theta -t)}+e^{in(t-\theta)}] =1+2\sum\limits_{n=1}^{\infty}r^n\cos[n(\theta -t)]\\
+\amp = 1+2\sum\limits_{n=1}^{\infty}r^n(\cos n\theta \cos nt+\sin n\theta \sin nt)\\
+\amp = 1+2\sum\limits_{n=1}^{\infty}r^n\cos n\theta \cos nt+2\sum\limits_{n=1}^{\infty}r^n\sin n\theta \sin nt\text{.}
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">We now use the above result in Equation <a href="" class="xref" data-knowl="./knowl/PoissonDiskForm.html" title="Equation 11.2.3">(11.2.3)</a> to obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/PoissonDiskForm.html ./knowl/DirichletSol.html">
+\begin{align*}
+u(r\cos \theta, r\sin \theta) \amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}P(r, t-\theta )U(t)\,dt\\
+\amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}U(t)\,dt +\frac{1}{\pi} \int_{-\pi}^{\pi}\sum_{n=1}^{\infty}r^n\cos n\theta \cos nt \, U(t) \,dt\\
+\amp  \qquad \qquad \qquad + \frac{1}{\pi}\int_{-\pi}^{\pi}\sum\limits_{n=1}^{\infty}r^n\sin n\theta \cos nt\,U(t)\,dt\\
+\amp = \frac{1}{2\pi}\int_{-\pi}^{\pi}U(t)\,dt +\sum\limits_{n=1}^{\infty}\frac{r^n}{\pi}\cos n\theta \int_{-\pi}^{\pi}\cos nt\,U(t)\,dt\\
+\amp  \qquad \qquad \qquad + \sum\limits_{n=1}^{\infty}\frac{r^n}{\pi}\sin n\theta \int_{-\pi}^{\pi}\sin nt\,U(t)\,dt\\
+\amp = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_nr^n\cos n\theta +\sum\limits_{n=1}^{\infty}b_nr^n\sin n\theta \text{.}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\{a_n\}\)</span> and <span class="process-math">\(\{b_n\}\)</span> are the Fourier series coefficients for <span class="process-math">\(U(t)\text{.}\)</span> This observation establishes the representation for <span class="process-math">\(u(r\cos \theta ,r\sin \theta )\)</span> in Equation <a href="" class="xref" data-knowl="./knowl/DirichletSol.html" title="Equation 11.2.2">(11.2.2)</a>.</div>
+</div></article><span class="incontext"><a href="sec_dirichlet.html#proof-95" class="internal">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h3 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.5.6.1</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Computer algebra systems such as Mathematica or MAPLE give the indefinite integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int\frac{t}{t^3-8}\,dt = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}}+\frac{\mathrm{Log}(t-2)}{6}+\frac{\mathrm{Log}(t^2+2t+4)}{12}=g(t)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">However, for real numbers, we should write the second term as <span class="process-math">\(\frac{\mathrm{ Log}[(t-2)^2] }{12}\)</span> and use the equivalent formula:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}[(t-2)^2] }{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}\text{.}
+\end{equation*}
+</div>
+</div> <div class="para">This antiderivative has the property <span class="process-math">\(\lim\limits_{t \to 2}g(t) = -\infty\text{,}\)</span> as <a href="" class="xref" data-knowl="./knowl/fig_ch-08-05.html" title="Figure 8.5.7">Figure 8.5.7</a> shows.</div> <figure class="figure figure-like"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-08/ch-08-fig-05.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">8.5.7<span class="period">.</span></span><span class="space"> </span>Graph of <span class="process-math">\(s=g(t) =\int \frac{t}{t^3-8}\ dt\)</span></figcaption></figure> <div class="para logical">
+<div class="para">We also compute</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{t\to \infty}g(t) = \frac{\pi \sqrt{3}}{12}  \text{ and }   \lim_{t \to -\infty}g(t) = -\frac{\pi \sqrt{3}}{12}\text{.}
+\end{equation*}
+</div>
+<div class="para">and the Cauchy principal limit at <span class="process-math">\(t=2\)</span> as <span class="process-math">\(r \to 0\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{r \to 0^{+}}[g(2+r) -g(2-r)] = 0\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Therefore the Cauchy principal value of the improper integral is {</div>
+<div class="displaymath process-math">
+\begin{align*}
+\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to 0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty} \frac{t}{t^3-8}\,dt\right]\\
+\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)\\
+\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)\\
+\amp = 0 + \frac{\pi \sqrt{3}}{12} + \frac{\pi \sqrt{3}}{12}\\
+\amp = \frac{\pi \sqrt{3}}{6}\text{.}
+\end{align*}
+</div>
+</div>
+</div>
+<span class="incontext"><a href="sec_indented-integrals.html#solution-529" class="internal">in-context</a></span>
+</body>
+</html>
