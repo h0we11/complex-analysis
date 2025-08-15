@@ -535,7 +535,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">(We give a proof for a <em class="emphasis">standard region</em>, which is a region that is bounded by a contour <span class="process-math">\(C\)</span> tha can be expressed in the two forms <span class="process-math">\(C=C_1+C_2\)</span> and <span class="process-math">\(C=C_3+C_4\text{.}\)</span>) If <span class="process-math">\(R\)</span> is a standard region, then there exist functions <span class="process-math">\(y=g_1(x)\text{,}\)</span> and <span class="process-math">\(y=g_2(x)\text{,}\)</span> for <span class="process-math">\(a \le x \le b\text{,}\)</span> whose graphs form the lower and upper portions of <span class="process-math">\(C\text{,}\)</span> respectively, as indicated in <a href="sec_cauchy-goursat.html#fig_ch-06-18" class="xref" data-knowl="./knowl/xref/fig_ch-06-18.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.5">Figure 6.3.5</a>. As <span class="process-math">\(C\)</span> is positively oriented, these functions can be used to express <span class="process-math">\(C\)</span> as the sum of two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-18.html" id="sec_cauchy-goursat-11-1-15">
 \begin{align*}
-{3} \amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{ for }    \amp \amp  a \le t \le b, \text{ and }\\
+\amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{ for }    \amp \amp  a \le t \le b, \text{ and }\\
 \amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{ for }   \amp \amp  -b \le t \le -a\text{.}
 \end{align*}
 </div>
@@ -556,31 +556,33 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">In the second integral on the right side of this equation we can use the change of variable <span class="process-math">\(x=-t\)</span> to obtain</div>
-<div class="displaymath process-math">
-\begin{equation*}
--\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\, g_1(x)\big)\,dx + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt
-\end{equation*}
+<div class="displaymath process-math" id="sec_cauchy-goursat-11-2-10">
+\begin{align*}
+-\iint_RP_y(x,y)\,dx\,dy \amp = \int_a^bP\big(x,\, g_1(x)\big)\,dx\\
+\amp + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt\text{.}
+\end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-18"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-18.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-18"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-18.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Integration over a standard region, where <span class="process-math">\(C=C_1+C_2\)</span><div class="autopermalink" data-description="Figure 6.3.5"><a href="#fig_ch-06-18" title="Copy heading and permalink for Figure 6.3.5" aria-label="Copy heading and permalink for Figure 6.3.5">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-11-4">
 <div class="para">Interpreting the two integrals on the right side of this equation as contour integrals along <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\text{,}\)</span> respectively, gives</div>
-<div class="displaymath process-math" id="Green1">
-\begin{equation}
--\iint\limits_RP_y(x,y)\,dx\,dy =\int_{C_1}P(x,y)\,dx + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx\text{.}\tag{6.3.2}
-\end{equation}
+<div class="displaymath process-math" id="sec_cauchy-goursat-11-4-3">
+\begin{align}
+-\iint\limits_RP_y(x,y)\,dx\,dy =\int_{C_1}P(x,y)\,dx\notag\\
+\amp + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx\text{.}\tag{6.3.2}
+\end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_cauchy-goursat-11-5">To complete the proof, we rely on the fact that for a standard region there exist functions <span class="process-math">\(x=h_1(y)\)</span> and <span class="process-math">\(x=h_2(y)\)</span> for <span class="process-math">\(c \le y \le d\)</span> whose graphs form the left and right portions of <span class="process-math">\(C\text{,}\)</span> respectively, as indicated in <a href="sec_cauchy-goursat.html#fig_ch-06-19" class="xref" data-knowl="./knowl/xref/fig_ch-06-19.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.6">Figure 6.3.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-19"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-19.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-19"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-19.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Integration over a standard region, where <span class="process-math">\(C=C_3+C_4\)</span><div class="autopermalink" data-description="Figure 6.3.6"><a href="#fig_ch-06-19" title="Copy heading and permalink for Figure 6.3.6" aria-label="Copy heading and permalink for Figure 6.3.6">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-11-7">
 <div class="para">Because <span class="process-math">\(C\)</span> has positive orientation, it can be expressed as the sum of two contours <span class="process-math">\(C_3\)</span> and <span class="process-math">\(C_4\text{,}\)</span> where</div>
 <div class="displaymath process-math" id="sec_cauchy-goursat-11-7-4">
 \begin{align*}
-{3} \amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{ for }   \amp \amp  -d \le t \le -c,  \text{ and }\\
+\amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{ for }   \amp \amp  -d \le t \le -c,  \text{ and }\\
 \amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{ for }   \amp \amp  c \le t \le d\text{.}
 \end{align*}
 </div>
@@ -593,7 +595,7 @@ eBookConfig.enable_chatcodes =  false;
 \iint\limits_RQ_x(x,y)\,dx\,dy = \int_c^{d} \left[\int_{h_1(y)}^{h_2(y)}Q_x(x,y)\,dx\right] dy\text{.}
 \end{equation*}
 </div>
-<div class="para">A derivation similar to that which led to Equation <a href="sec_cauchy-goursat.html#Green1" class="xref" data-knowl="./knowl/xref/Green1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> shows that</div>
+<div class="para">A derivation similar to that which led to Equation <a href="sec_cauchy-goursat.html#sec_cauchy-goursat-11-4-3" class="xref" data-knowl="./knowl/xref/Green1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> shows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Green1.html" id="Green2">
 \begin{equation}
 \iint\limits_RQ_x(x\text{,} y)\,dx\,dy = \int_CQ(x,y)\,dy\text{.}\tag{6.3.3}
@@ -601,7 +603,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_cauchy-goursat-11-9">Adding Equations <a href="sec_cauchy-goursat.html#Green1" class="xref" data-knowl="./knowl/xref/Green1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> and <a href="sec_cauchy-goursat.html#Green2" class="xref" data-knowl="./knowl/xref/Green2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.3">(6.3.3)</a> gives Equation <a href="sec_cauchy-goursat.html#Green_s_Thm_Eq" class="xref" data-knowl="./knowl/xref/Green_s_Thm_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_cauchy-goursat-11-9">Adding Equations <a href="sec_cauchy-goursat.html#sec_cauchy-goursat-11-4-3" class="xref" data-knowl="./knowl/xref/Green1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.2">(6.3.2)</a> and <a href="sec_cauchy-goursat.html#Green2" class="xref" data-knowl="./knowl/xref/Green2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.3">(6.3.3)</a> gives Equation <a href="sec_cauchy-goursat.html#Green_s_Thm_Eq" class="xref" data-knowl="./knowl/xref/Green_s_Thm_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.1">(6.3.1)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-11-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 6.3.1"><a href="#sec_cauchy-goursat-11" title="Copy heading and permalink for Proof 6.3.1" aria-label="Copy heading and permalink for Proof 6.3.1">🔗</a></div></article></details><div class="para" id="sec_cauchy-goursat-12">We are now ready to state the main result of this section.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -657,7 +659,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <details id="sec_cauchy-goursat-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_cauchy-goursat-17-1">We first establish the result for a triangular contour <span class="process-math">\(C\)</span> with positive orientation. We then construct four positively oriented contours <span class="process-math">\(C^1\text{,}\)</span> <span class="process-math">\(C^2\text{,}\)</span> <span class="process-math">\(C^3\text{,}\)</span> and <span class="process-math">\(C^4\)</span> that are the triangles obtained by joining the midpoints of the sides of <span class="process-math">\(C\text{,}\)</span> as <a href="sec_cauchy-goursat.html#fig_ch-06-20" class="xref" data-knowl="./knowl/xref/fig_ch-06-20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.8">Figure 6.3.8</a> shows.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-20"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-20.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-20"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-06/ch-06-fig-20.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The triangular contours <span class="process-math">\(C\)</span> and <span class="process-math">\(C^1\text{,}\)</span> <span class="process-math">\(C^2\text{,}\)</span> <span class="process-math">\(C^3\text{,}\)</span> and <span class="process-math">\(C^4\)</span><div class="autopermalink" data-description="Figure 6.3.8"><a href="#fig_ch-06-20" title="Copy heading and permalink for Figure 6.3.8" aria-label="Copy heading and permalink for Figure 6.3.8">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-17-3">
 <div class="para">Each contour is positively oriented, so if we sum the integrals along the four triangular contours, the integrals along the segments interior to <span class="process-math">\(C\)</span> cancel out in pairs, giving</div>
 <div class="displaymath process-math" id="CG2_25">
@@ -687,15 +689,16 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para logical" id="sec_cauchy-goursat-17-6">
 <div class="para">We let <span class="process-math">\(T_n\)</span> denote the closed region that consists of <span class="process-math">\(C_n\)</span> and its interior. The length of the sides of <span class="process-math">\(C_n\)</span> go to zero as <span class="process-math">\(n \to \infty\text{,}\)</span> so there exists a unique point <span class="process-math">\(z_0\)</span> that belongs to all the closed triangular regions <span class="process-math">\(\{T_n\}\text{.}\)</span> Since <span class="process-math">\(D\)</span> is simply connected, <span class="process-math">\(z_0\in D\text{,}\)</span> so <span class="process-math">\(f\)</span> is analytic at the point <span class="process-math">\(z_0\text{.}\)</span> Thus, there exists a function <span class="process-math">\(\eta (z)\)</span> such that</div>
-<div class="displaymath process-math" id="CG3">
-\begin{equation}
-f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0),  \text{ where }   \lim\limits_{z \to z_0}\eta (z)=0\text{.}\tag{6.3.9}
-\end{equation}
+<div class="displaymath process-math" id="sec_cauchy-goursat-17-6-12">
+\begin{gather}
+f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0),\tag{6.3.9}\\
+\text{ where }  \, \lim\limits_{z \to z_0}\eta (z)=0\text{.}\notag
+\end{gather}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-17-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_cauchy-goursat-17-7">
-<div class="para">Using Equation <a href="sec_cauchy-goursat.html#CG3" class="xref" data-knowl="./knowl/xref/CG3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.9">(6.3.9)</a> and integrating <span class="process-math">\(f\)</span> along <span class="process-math">\(C_n\text{,}\)</span> we get</div>
+<div class="para">Using Equation <a href="sec_cauchy-goursat.html#sec_cauchy-goursat-17-6-12" class="xref" data-knowl="./knowl/xref/CG3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.9">(6.3.9)</a> and integrating <span class="process-math">\(f\)</span> along <span class="process-math">\(C_n\text{,}\)</span> we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CG3.html" id="sec_cauchy-goursat-17-7-4">
 \begin{align*}
 \int_{C_n}f(z)\,dz \amp = \int_{C_n}f(z_0)\,dz + \int_{C_n}f'(z_0) (z-z_0) dz\\
@@ -717,7 +720,7 @@ f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0),  \text{ where }   \lim\limit
 <div class="para">where <span class="process-math">\(L\)</span> is the length of the original contour <span class="process-math">\(C\text{.}\)</span> We can now choose an integer <span class="process-math">\(n\)</span> so that <span class="process-math">\(C_n\)</span> lies in the neighborhood <span class="process-math">\(z-z_0| \lt  \delta\text{,}\)</span> as shown in Figure 6.21.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-17-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-21"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-21.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-21"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-21.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contour <span class="process-math">\(C_n\)</span> that lies in the neighborhood <span class="process-math">\(|z-z_0| \lt  \delta\)</span><div class="autopermalink" data-description="Figure 6.3.9"><a href="#fig_ch-06-21" title="Copy heading and permalink for Figure 6.3.9" aria-label="Copy heading and permalink for Figure 6.3.9">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-17-10">
 <div class="para">Since the distance between any point <span class="process-math">\(z\)</span> on a triangle and a point <span class="process-math">\(z_0\)</span> interior to the triangle is less than half the perimeter of the triangle, it follows that</div>
 <div class="displaymath process-math">
@@ -764,7 +767,7 @@ L_n=\left(\frac{1}{2}\right)^{\!n}L,  \text{ and }   |z-z_0| \lt  \left(\frac{1}
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_cauchy-goursat-19-1-1">Let <span class="process-math">\(n\)</span> be an integer. If <span class="process-math">\(C\)</span> is a simple closed contour such that the origin does not lie interior to <span class="process-math">\(C\text{,}\)</span> then there is a simply connected domain <span class="process-math">\(D\)</span> that contains <span class="process-math">\(C\)</span> in which <span class="process-math">\(f(z)=\frac{1}{z^n}\)</span> is analytic, as is indicated in <a href="sec_cauchy-goursat.html#fig_ch-06-22" class="xref" data-knowl="./knowl/xref/fig_ch-06-22.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.12">Figure 6.3.12</a>. The Cauchy-Goursat theorem implies that <span class="process-math">\(\int_C\frac{1}{z^n}\,dz=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="figure figure-like" id="fig_ch-06-22"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-22.svg" class="contained"></div>
+</div> <figure class="figure figure-like" id="fig_ch-06-22"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-22.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A simple connected domain <span class="process-math">\(D\)</span> containing the simple closed contour <span class="process-math">\(C\)</span> that does not contain the origin<div class="autopermalink" data-description="Figure 6.3.12"><a href="#fig_ch-06-22" title="Copy heading and permalink for Figure 6.3.12" aria-label="Copy heading and permalink for Figure 6.3.12">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 6.3.11"><a href="#sec_cauchy-goursat-19" title="Copy heading and permalink for Example 6.3.11" aria-label="Copy heading and permalink for Example 6.3.11">🔗</a></div></article><div class="para" id="sec_cauchy-goursat-20">We want to be able to replace integrals over certain complicated contours with integrals that are easy to evaluate. If <span class="process-math">\(C_1\)</span> is a simple closed contour that can be “continuously deformed” into another simple closed contour <span class="process-math">\(C_2\)</span> without passing through a point where <span class="process-math">\(f\)</span> is not analytic, then the value of the contour integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(C_1\)</span> is the same as the value of the integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(C_2\text{.}\)</span> To be precise, we state the following result.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Deformation_of_Contour"><h3 class="heading">
@@ -779,7 +782,7 @@ L_n=\left(\frac{1}{2}\right)^{\!n}L,  \text{ and }   |z-z_0| \lt  \left(\frac{1}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Deformation_of_Contour-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.3.13: Deformation of contour"><a href="#Deformation_of_Contour" title="Copy heading and permalink for Theorem 6.3.13: Deformation of contour" aria-label="Copy heading and permalink for Theorem 6.3.13: Deformation of contour">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-06-23"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-23.svg" class="contained"></div>
+<div class="autopermalink" data-description="Theorem 6.3.13: Deformation of contour"><a href="#Deformation_of_Contour" title="Copy heading and permalink for Theorem 6.3.13: Deformation of contour" aria-label="Copy heading and permalink for Theorem 6.3.13: Deformation of contour">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-06-23"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-06/ch-06-fig-23.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain <span class="process-math">\(D\)</span> that contains the simple closed contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> and the region between them<div class="autopermalink" data-description="Figure 6.3.14"><a href="#fig_ch-06-23" title="Copy heading and permalink for Figure 6.3.14" aria-label="Copy heading and permalink for Figure 6.3.14">🔗</a></div></figcaption></figure><details id="sec_cauchy-goursat-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_cauchy-goursat-23-1">
 <div class="para">Assume that both <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> have positive (counterclockwise) orientation. We construct two disjoint contours or <em class="emphasis">cuts</em>, <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_2\text{,}\)</span> that join <span class="process-math">\(C_1\)</span> to <span class="process-math">\(C_2\text{.}\)</span> The contour <span class="process-math">\(C_1\)</span> is cut into two contours <span class="process-math">\(C_1^{\ast }\)</span> and <span class="process-math">\(C_1^{\ast \ast }\text{,}\)</span> and the contour <span class="process-math">\(C_2\)</span> is cut into <span class="process-math">\(C_2^*\)</span> and <span class="process-math">\(C_2^{\ast \ast}\text{.}\)</span> We now form two new contours:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-24.html ./knowl/xref/fig_ch-06-24.html">
@@ -839,7 +842,7 @@ K_1+K_2 \amp = -C_1^{\ast }+L_1+C_2^{\ast }-L_2-C_1^{\ast \ast }+L_2+C_2^{\ast \
 </div>
 <div class="autopermalink" data-description="Corollary 6.3.16"><a href="#x2Pi_or_zero" title="Copy heading and permalink for Corollary 6.3.16" aria-label="Copy heading and permalink for Corollary 6.3.16">🔗</a></div></article><details id="sec_cauchy-goursat-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_cauchy-goursat-26-1">Since <span class="process-math">\(z_0\)</span> lies interior to <span class="process-math">\(C\text{,}\)</span> we can choose <span class="process-math">\(R\)</span> so that the circle <span class="process-math">\(C_R\)</span> with center <span class="process-math">\(z_0\)</span> and radius <span class="process-math">\(R\)</span> lies interior to <span class="process-math">\(C\text{.}\)</span> Hence <span class="process-math">\(f(z)=\frac{1}{(z-z_0)^n}\)</span> is analytic in a domain <span class="process-math">\(D\)</span> that contains both <span class="process-math">\(C\)</span> and <span class="process-math">\(C_R\)</span> and the region between them, as shown in <a href="sec_cauchy-goursat.html#fig_ch-06-25" class="xref" data-knowl="./knowl/xref/fig_ch-06-25.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.17">Figure 6.3.17</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-25"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-25.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-25"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-25.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain <span class="process-math">\(D\)</span> that contains both <span class="process-math">\(C\)</span> and <span class="process-math">\(C_R\)</span><div class="autopermalink" data-description="Figure 6.3.17"><a href="#fig_ch-06-25" title="Copy heading and permalink for Figure 6.3.17" aria-label="Copy heading and permalink for Figure 6.3.17">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-26-3">
 <div class="para">We let <span class="process-math">\(C_R\)</span> have the parametrization</div>
 <div class="displaymath process-math">
@@ -859,8 +862,11 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 <div class="para">and</div>
 <div class="displaymath process-math" id="sec_cauchy-goursat-26-4-6">
 \begin{align*}
-\int_C\frac{1}{(z-z_0)^n}\,dz \amp = \int_{C_R}\frac{1}{(z-z_0)^n}\,dz = \int_0^{2\pi}\frac{iRe^{i\theta}}{R^ne^{in\theta}}\,d\theta =iR^{1-n}\int_0^{2\pi}e^{i(1-n) \theta}\ d\theta\\
-\amp = \left.\frac{R^{1-n}}{1-n}e^{i(1-n) \theta}\right|_{\theta =0}^{\theta =2\pi}=\frac{R^{1-n}}{1-n}-\frac{R^{1-n}}{1-n}=0\text{.}
+\int_C\frac{1}{(z-z_0)^n}\,dz \amp = \int_{C_R}\frac{1}{(z-z_0)^n}\,dz
+= \int_0^{2\pi}\frac{iRe^{i\theta}}{R^ne^{in\theta}}\,d\theta\\
+\amp =iR^{1-n}\int_0^{2\pi}e^{i(1-n) \theta}\ d\theta
+= \left.\frac{R^{1-n}}{1-n}e^{i(1-n) \theta}\right|_{\theta =0}^{\theta=2\pi}\\
+\amp =\frac{R^{1-n}}{1-n}-\frac{R^{1-n}}{1-n}=0\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-26-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -881,7 +887,7 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Extended_CG_Thm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.3.18: Extended Cauchy-Goursat theorem"><a href="#Extended_CG_Thm" title="Copy heading and permalink for Theorem 6.3.18: Extended Cauchy-Goursat theorem" aria-label="Copy heading and permalink for Theorem 6.3.18: Extended Cauchy-Goursat theorem">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-06-26"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-26.svg" class="contained"></div>
+<div class="autopermalink" data-description="Theorem 6.3.18: Extended Cauchy-Goursat theorem"><a href="#Extended_CG_Thm" title="Copy heading and permalink for Theorem 6.3.18: Extended Cauchy-Goursat theorem" aria-label="Copy heading and permalink for Theorem 6.3.18: Extended Cauchy-Goursat theorem">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-06-26"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-26.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The multiply connected domain <span class="process-math">\(D\)</span> and the contours <span class="process-math">\(C\)</span> and <span class="process-math">\(C_1,\ C_2,\ldots ,\ C_n\)</span> in the statement of the extended Cauchy-Goursat theorem<div class="autopermalink" data-description="Figure 6.3.19"><a href="#fig_ch-06-26" title="Copy heading and permalink for Figure 6.3.19" aria-label="Copy heading and permalink for Figure 6.3.19">🔗</a></div></figcaption></figure><article class="example example-like" id="sec_cauchy-goursat-31"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
@@ -895,10 +901,11 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 \frac{2z}{z^2+2}=\frac{2z}{(z+i\sqrt{2}) (z-i\sqrt{2})} = \frac{1}{z+i\sqrt{2}}+\frac{1}{z-i\sqrt{2}},  \text{ so }
 \end{equation*}
 </div>
-<div class="displaymath process-math" id="Int_2z__z_2_2_">
-\begin{equation}
-\int_{C_2^+(0)}\frac{2z}{z^2+2}\,dz = \int_{C_2^+(0)}\frac{1}{z+i\sqrt{2}}\,dz + \int_{C_2^+(0)}\frac{1}{z-i\sqrt{2}}\,dz\text{.}\tag{6.3.14}
-\end{equation}
+<div class="displaymath process-math" id="sec_cauchy-goursat-31-2-1-4">
+\begin{align}
+\int_{C_2^+(0)}\frac{2z}{z^2+2}\,dz \amp = \int_{C_2^+(0)}\frac{1}{z+i\sqrt{2}}\,dz\notag\\
+\amp + \int_{C_2^+(0)}\frac{1}{z-i\sqrt{2}}\,dz\text{.}\tag{6.3.14}
+\end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-31-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -909,7 +916,7 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 \int_{C_2^+(0)}\frac{1}{z + i\sqrt{2}}\,dz = 2\pi i  \text{ and }   \int_{C_2^+(0)}\frac{1}{z - i\sqrt{2}}\,dz = 2\pi i\text{.}
 \end{equation*}
 </div>
-<div class="para">Substituting these values into Equation <a href="sec_cauchy-goursat.html#Int_2z__z_2_2_" class="xref" data-knowl="./knowl/xref/Int_2z__z_2_2_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.14">(6.3.14)</a> yields</div>
+<div class="para">Substituting these values into Equation <a href="sec_cauchy-goursat.html#sec_cauchy-goursat-31-2-1-4" class="xref" data-knowl="./knowl/xref/Int_2z__z_2_2_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.14">(6.3.14)</a> yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2Pi_or_zero.html ./knowl/xref/Int_2z__z_2_2_.html">
 \begin{equation*}
 \int_{C_2^+(0)}\frac{2z}{z^2+2}\ dz=2\pi i+2\pi i=4\pi i
@@ -935,7 +942,7 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 <div class="para">In this case, <span class="process-math">\(z=i\sqrt{2}\)</span> lies interior to <span class="process-math">\(C_1^+(i)\)</span> but <span class="process-math">\(z=-i\sqrt{2}\)</span> does not, as shown in <a href="sec_cauchy-goursat.html#fig_ch-06-27" class="xref" data-knowl="./knowl/xref/fig_ch-06-27.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.22">Figure 6.3.22</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_cauchy-goursat-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-06-27"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-27.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-06-27"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-06/ch-06-fig-27.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3.22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The circle <span class="process-math">\(C_1^+(i)\)</span> and the points <span class="process-math">\(z=\pm i\sqrt{2}\)</span><div class="autopermalink" data-description="Figure 6.3.22"><a href="#fig_ch-06-27" title="Copy heading and permalink for Figure 6.3.22" aria-label="Copy heading and permalink for Figure 6.3.22">🔗</a></div></figcaption></figure><div class="para logical" id="sec_cauchy-goursat-32-2-3">
 <div class="para">By <a href="sec_cauchy-goursat.html#x2Pi_or_zero" class="xref" data-knowl="./knowl/xref/x2Pi_or_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.3.16">Corollary 6.3.16</a>, the second integral on the right side of this equation has the value <span class="process-math">\(2\pi i\text{.}\)</span> The first integral equals zero by the Cauchy-Goursat theorem because the function <span class="process-math">\(f(z)=\frac{1}{z+i\sqrt{2}}\)</span> is analytic on a simply connected domain that contains <span class="process-math">\(C_1^+(i)\text{.}\)</span> Thus</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/x2Pi_or_zero.html">
@@ -1102,14 +1109,18 @@ C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text
 <div class="para" id="x6_3_8-1-1">Use Green’s theorem to show that the area enclosed by a simple closed contour <span class="process-math">\(C\)</span> is <span class="process-math">\(\frac{1}{2}\int_Cx\ dy-y\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_3_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Exercise 6.3.8"><a href="#x6_3_8" title="Copy heading and permalink for Exercise 6.3.8" aria-label="Copy heading and permalink for Exercise 6.3.8">🔗</a></div></article><article class="exercise exercise-like" id="x6_3_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="x6_3_9-1-1">Parametrize <span class="process-math">\(C_1^+(0)\)</span> with <span class="process-math">\(z(t)=\cos t+i\sin t\text{,}\)</span> for <span class="process-math">\(-\pi \le t \le \pi\text{.}\)</span> Use the principal branch of the square root function: <span class="process-math">\(z^{\frac{1}{2}}=r^{\frac{1}{2}}\cos \frac{\theta}{2} +ir^{\frac{1}{2}}\sin \frac{\theta}{2}\text{,}\)</span> for <span class="process-math">\(-\pi \lt \theta \le \pi\text{,}\)</span> to find <span class="process-math">\(\int_{C_1^+(0)}z^{\frac{1}{2}}\,dz\text{.}\)</span> \hint{Take limits as <span class="process-math">\(t \to -\pi\text{.}\)</span>}<div class="autopermalink" data-description="Paragraph"><a href="#x6_3_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="x6_3_9-1-1">Parametrize <span class="process-math">\(C_1^+(0)\)</span> with <span class="process-math">\(z(t)=\cos t+i\sin t\text{,}\)</span> for <span class="process-math">\(-\pi \le t \le \pi\text{.}\)</span> Use the principal branch of the square root function: <span class="process-math">\(z^{\frac{1}{2}}=r^{\frac{1}{2}}\cos \frac{\theta}{2} +ir^{\frac{1}{2}}\sin \frac{\theta}{2}\text{,}\)</span> for <span class="process-math">\(-\pi \lt \theta \le \pi\text{,}\)</span> to find <span class="process-math">\(\int_{C_1^+(0)}z^{\frac{1}{2}}\,dz\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_3_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_3_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="x6_3_9-2-1">
-<span class="process-math">\(-\frac{4i}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_3_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions">
+<details id="x6_3_9-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<span class="process-math">\(\text{Take limits as } \, t \to -\pi\text{.}\)</span><div class="autopermalink" data-description="Hint 6.3.9.1"><a href="#x6_3_9-2" title="Copy heading and permalink for Hint 6.3.9.1" aria-label="Copy heading and permalink for Hint 6.3.9.1">🔗</a></div>
+</div></details><details id="x6_3_9-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="x6_3_9-3-1">
+<span class="process-math">\(-\frac{4i}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_3_9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 6.3.9.1"><a href="#x6_3_9-2" title="Copy heading and permalink for Solution 6.3.9.1" aria-label="Copy heading and permalink for Solution 6.3.9.1">🔗</a></div>
-</div></details></div>
+<div class="autopermalink" data-description="Solution 6.3.9.1"><a href="#x6_3_9-3" title="Copy heading and permalink for Solution 6.3.9.1" aria-label="Copy heading and permalink for Solution 6.3.9.1">🔗</a></div>
+</div></details>
+</div>
 <div class="autopermalink" data-description="Exercise 6.3.9"><a href="#x6_3_9" title="Copy heading and permalink for Exercise 6.3.9" aria-label="Copy heading and permalink for Exercise 6.3.9">🔗</a></div></article><article class="exercise exercise-like" id="x6_3_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_3_10-1-1">Evaluate <span class="process-math">\(\int_C(z^2-1)^{-1}dz\)</span> for the contours shown in <a href="sec_cauchy-goursat.html#fig_ch-06-29" class="xref" data-knowl="./knowl/xref/fig_ch-06-29.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.3.25">Figure 6.3.25</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x6_3_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig_ch-06-29"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-29.svg" class="contained"></div>
