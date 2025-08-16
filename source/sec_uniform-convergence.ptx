@@ -104,7 +104,7 @@
     A useful procedure known as the Weierstrass <m>M</m>-test can help determine whether an infinite series is uniformly convergent.
   </p>
   <theorem>
-    <title>Weierstrass $M$-test</title>
+    <title>Weierstrass <m>\boldsymbol M</m>-test</title>
     <statement>
       <p>
         Suppose that the infinite series
@@ -230,8 +230,10 @@
       then <m>|S_{N_{\varepsilon}}(z)-S_{N_{\varepsilon}}(z_0)|\lt \frac{\varepsilon}{3}</m>.
       Hence, if <m>|z-z_0|\lt \delta</m>, we have
       <md>
-        <mrow>|f(z) -f(z_0)| \amp = \big|f(z) -S_{N_{\varepsilon}}(z)+S_{N_{\varepsilon}}(z) - S_{N_{\varepsilon}}(z_0)+S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
-        <mrow>\amp  \le \big|f(z) -S_{N_{\varepsilon}}(z)\big| + \big|S_{N_{\varepsilon}}(z)-S_{N_{\varepsilon}}(z_0)\big| + \big|S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
+		  <mrow>|f(z) -f(z_0)| \amp = \big|f(z) -S_{N_{\varepsilon}}(z)+S_{N_{\varepsilon}}(z) -
+		  S_{N_{\varepsilon}}(z_0)+S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
+		  <mrow>\amp  \le \big|f(z) -S_{N_{\varepsilon}}(z)\big| + \big|S_{N_{\varepsilon}}(z)-S_{N_{\varepsilon}}(z_0)\big|</mrow>
+		  <mrow>\amp \qquad \qquad \qquad \qquad \, + \big|S_{N_{\varepsilon}}(z_0) -f(z_0)\big|</mrow>
         <mrow>\amp  \lt \frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}</mrow>
         <mrow>\amp  =\varepsilon</mrow>
       </md>,
@@ -452,7 +454,11 @@
               <m>M_{\varepsilon}</m> such that <m>n \ge M_{\varepsilon}</m> implies
               <m>|g_n(z) -g(z)| \lt \frac{\varepsilon}{2}</m> for all <m>z\in T</m>.
               If we set <m>L_{\varepsilon} = Max\{N_{\varepsilon}, \, M_{\varepsilon}\}</m>,
-              then for <m>n \ge L_{\varepsilon}, \, \Big|\big(f_n(z)+g_n(z)\big) - \big(f(z)+g(z)\big)\Big| \le |f_n(z)-f(z)| + |g_n(z)-g(z)| \lt \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon</m> for all <m>z\in T</m>.
+				  then, for <m>n \ge L_{\varepsilon}</m>,
+					<md>
+						<mrow>\Big|\big(f_n(z)+g_n(z)\big) - \big(f(z)+g(z)\big)\Big| \amp \le |f_n(z)-f(z)| + |g_n(z)-g(z)|</mrow>
+						<mrow>\amp\lt \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon \; \text{ for all } \; z\in T</mrow>
+					</md>.
             </p>
           </solution>
         </task>
