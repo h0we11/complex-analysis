@@ -95,11 +95,13 @@
       If <m>C_R(z_0)</m> is any circle contained in <m>D</m>,
       <xref ref="Gauss_s_MVT">Theorems</xref>
       and <xref ref="ML_Inequality_Thm"></xref> imply that
-      <men xml:id="Max_Mod_1">
-        |f(z_0)| = \left|\frac{1}{2\pi} \int_0^{2\pi}f(z_0+re^{i\theta})\,d\theta\right| \le \frac{1}{2\pi}\int_0^{2\pi}|f(z_0+re^{i\theta})|\,d\theta
-      </men>,
+      <md>
+        <mrow>|f(z_0)| \amp = \left|\frac{1}{2\pi} \int_0^{2\pi}f(z_0+re^{i\theta})\,d\theta\right|</mrow>
+		  <mrow xml:id="Max_Mod_1" number="yes"> \amp \le \frac{1}{2\pi}\int_0^{2\pi}|f(z_0+re^{i\theta})|\,d\theta</mrow>
+      </md>,
       for <m>0 \le r \le R</m>.
-      We now treat <m>|f(z)| = |f(z_0+re^{i\theta})|</m> as a real-valued function of the real variable <m>\theta</m> and use Inequality <xref ref="Max_Mod_asmptn"/> to get
+		We now treat <m>|f(z)| = |f(z_0+re^{i\theta})|</m> as a real-valued function of the real variable <m>\theta</m> and use
+		Inequality <xref ref="Max_Mod_asmptn"/> to get
       <men xml:id="Max_Mod_2">
         \frac{1}{2\pi}\int_0^{2\pi} |f(z_0+re^{i\theta})|\,d\theta  \le \frac{1}{2\pi}\int_0^{2\pi}|f(z_0)|\,d\theta = |f(z_0)|
       </men>,
@@ -110,7 +112,8 @@
       </me>,
       which we rewrite as
       <men xml:id="Max_Mod_3">
-        \frac{1}{2\pi i}\int_0^{2\pi}\Big(\big|f(z_0)\big| - \big|f(z_0+re^{i\theta})\big|\Big)\,d\theta =0, \text{ for }   0 \le r \le R
+		  \!\!\!\!\! \frac{1}{2\pi i}\int_0^{2\pi}\Big(\big|f(z_0)\big| - \big|f(z_0+re^{i\theta})\big|\Big)\,d\theta =0, \text{ for }
+		  0 \le r \le R
       </men>.
     </p>
     <p>
@@ -119,7 +122,8 @@
       Since Inequality <xref ref="Max_Mod_asmptn"/> implies that the integrand in Equation <xref ref="Max_Mod_3"/> is a nonnegative real-valued function,
       we conclude that it is identically zero; that is,
       <men xml:id="Max_Mod_4">
-        \big|f(z_0)\big| = \big|f(z_0+re^{i\theta})\big|,  \text{ for }   0 \le r \le R  \text{ and } 0 \le \theta  \le 2\pi
+		 \!\!\!\!\! \big|f(z_0)\big| = \big|f(z_0+re^{i\theta})\big|,  \text{ for } \,  0 \le r \le R \, \text{ and } \, 0 \le
+		 \theta  \le 2\pi
       </men>.
     </p>
     <p>
@@ -238,9 +242,11 @@
     </p>
     <p>
       We use Cauchy<nbsp/>'s integral formula and write
-      <me>
-        f^{(n)}(z_0) = \frac{n!}{2\pi i}\int_{C_R(z_0)}\frac{f(z)}{(z-z_0)^{n+1}}\,dz = \frac{n!}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta}) iRe^{i\theta}}{R^{n+1}e^{i(n+1)\theta}}\,d\theta
-      </me>.
+      <md>
+        <mrow>f^{(n)}(z_0) \amp = \frac{n!}{2\pi i}\int_{C_R(z_0)}\frac{f(z)}{(z-z_0)^{n+1}}\,dz</mrow>
+		  <mrow> \amp = 
+			  \frac{n!}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta}) iRe^{i\theta}}{R^{n+1}e^{i(n+1)\theta}}\,d\theta</mrow>
+      </md>.
     </p>
     <p>
       Combining this result with the <em>ML</em> inequality
@@ -314,22 +320,19 @@
   </theorem>
   <proof>
     <p>
-      (By contraposition): We will show that if <m>P(z) \ne 0</m> for all <m>z</m>,
-      then the degree of <m>P</m> must be zero.
-      Suppose that <m>P(z) \ne 0</m> for all <m>z</m>.
-      This supposition implies that the function
-      <m>f(z) = \frac{1}{P(z)}</m> is an entire function.
-      Our strategy for the rest of the proof is as follows: We will show that <m>f</m> is bounded.
-      Then Liouville's theorem will imply that <m>f</m> is constant,
-      and since <m>f=\frac{1}{P}</m>,
-      this conclusion will imply that the polynomial <m>P</m> is constant,
-      which will mean that its degree must be zero.
+		(By contraposition): We will show that if <m>P(z) \ne 0</m> for all <m>z</m>, then the degree of <m>P</m> must be zero.
+		Suppose that <m>P(z) \ne 0</m> for all <m>z</m>.  This supposition implies that the function <m>f(z) = \frac{1}{P(z)}</m> is
+		an entire function.  Our strategy for the rest of the proof is as follows: We will show that <m>f</m> is bounded.  Then
+		Liouville's theorem will imply that <m>f</m> is constant, and since <m>f=\frac{1}{P}</m>, this conclusion will imply that
+		the polynomial <m>P</m> is constant, which will mean that its degree must be zero.
     </p>
     <p>
       First we write <m>P(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots +a_1z+a_0</m> and consider the equation
-      <men xml:id="FTOA_EQ_1">
-        |f(z)| = \frac{1}{|P(z)|} = \frac{1}{|z|^n}\frac{1}{\left|a_n+\frac{a_{n-1}}{z} + \frac{a_{n-2}}{z^2}+\cdots +\frac{a_1}{z^{n-1}}+\frac{a_0}{z^n}\right|}
-      </men>.
+      <md>
+        <mrow>|f(z)| \amp = \frac{1}{|P(z)|}</mrow>
+		  <mrow xml:id="FTOA_EQ_1" number="yes"> \amp= \frac{1}{|z|^n}\frac{1}{\left|a_n+\frac{a_{n-1}}{z} +
+		  \frac{a_{n-2}}{z^2}+\cdots +\frac{a_1}{z^{n-1}}+\frac{a_0}{z^n}\right|}</mrow>
+      </md>.
     </p>
     <p>
       For <m>k=1,\ldots n</m>,
@@ -417,7 +420,7 @@
         </task>
         <task>
           <p>
-            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>. \hint{Show that <m>P(i)=0</m>.}
+            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>. <hint><m>\text{Show that } \, P(i)=0</m>.</hint>
           </p>
         </task>
       </statement>
@@ -494,19 +497,12 @@
           </solution>
         </task>
         <task>
-          <p>
             Find a bound for <m>|f^{\,(4)}(0)|</m>.
-          </p>
-          <p>
-            \hint{<m>\overline{D}_2(0) \subseteq \overline{D}_3(1)</m>.
-            Use <xref ref="Max_Mod_Principle">Theorems</xref>
-            and <xref ref="Cauchy_Ineqs"></xref>.}
-          </p>
+          <hint><m>\text{Note that } \, \overline{D}_2(0) \subseteq \overline{D}_3(1) \, \text{ and apply the appropriate
+			 theorems.}</m></hint>
           <solution>
-            <p>
               <m>|f\,^{(4)}(0)| \le \frac{4!(10)}{2\pi 2^5}4\pi = 15</m>.
               (Explain.)
-            </p>
           </solution>
         </task>
       </statement>
