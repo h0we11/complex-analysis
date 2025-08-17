@@ -65,7 +65,7 @@
   </p>
   <figure xml:id="fig_ch-07-03">
     <caption>The open annulus <m>A(\alpha,r,R)</m> (shaded)</caption>
-    <image width="73%" source="figs/ch-07/ch-07-fig-03.svg"/>
+    <image width="40%" source="figs/ch-07/ch-07-fig-03.svg"/>
   </figure>
   <theorem xml:id="Uniform_Laurent">
     <statement>
@@ -144,7 +144,7 @@
     </p>
     <figure xml:id="fig_ch-07-04">
       <caption>The annulus <m>A</m> and, in its interior, the circles <m>C_0</m>, <m>C_1</m>, and <m>C_2</m></caption>
-      <image width="73%" source="figs/ch-07/ch-07-fig-04.svg"/>
+      <image width="50%" source="figs/ch-07/ch-07-fig-04.svg"/>
     </figure>
     <p>
       Now let <m>D</m> be the domain consisting of the annulus <m>A</m> except for the point <m>z_0</m>.
@@ -154,9 +154,10 @@
       In addition, since <m>z_0</m> does not belong to <m>D</m>,
       the function <m>\frac{f(z)}{z-z_0}</m> is analytic on <m>D</m>,
       so by the extended Cauchy-Goursat theorem we obtain
-      <men xml:id="eq_Laurent_2">
-        \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-z_0)}\,dz = \frac{1}{2\pi i} \int_{C_0}\frac{f(z)}{(z-z_0)}\,dz + \frac{1}{2\pi i} \int_{C_1}\frac{f(z)}{(z-z_0)}\,dz
-      </men>.
+      <md>
+        <mrow>\frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-z_0)}\,dz \amp = \frac{1}{2\pi i} \int_{C_0}\frac{f(z)}{(z-z_0)}\,dz</mrow>
+		  <mrow xml:id="eq_Laurent_2" number="yes">\amp + \frac{1}{2\pi i} \int_{C_1}\frac{f(z)}{(z-z_0)}\,dz</mrow>
+      </md>.
     </p>
     <p>
       Subtracting the last integral from both sides of Equation <xref ref="eq_Laurent_2"/> and using the identity for <m>f(z_0)</m> in Equation <xref ref="eq_Laurent_1"/> give
@@ -189,11 +190,12 @@
       Again, we leave the details as an exercise.
     </p>
     <p>
-      Taking the series for <m>\frac{1}{z-z_0}</m> as given by Equations <xref ref="eq_Laurent_4"/> and <xref ref="eq_Laurent_5"/> and substituting into the two integrals,
-      respectively, of Equation <xref ref="eq_Laurent_3"/> yields
-      <me>
-        f(z_0)=\frac{1}{2\pi i}\int_{C_1}\sum_{n=0}^{\infty}\frac{(z-\alpha)^n}{(z_0-\alpha)^{n+1}}f(z)\,dz + \frac{1}{2\pi i}\int_{C_2}\sum_{n=0}^{\infty}\frac{(z_0-\alpha)^n}{(z-\alpha)^{n+1}}f(z)\,dz
-      </me>.
+		Taking the series for <m>\frac{1}{z-z_0}</m> as given by Equations <xref ref="eq_Laurent_4"/> and <xref ref="eq_Laurent_5"/>
+		and substituting into the two integrals, respectively, of Equation <xref ref="eq_Laurent_3"/> yields
+      <md>
+        <mrow>f(z_0) \amp = \frac{1}{2\pi i}\int_{C_1}\sum_{n=0}^{\infty}\frac{(z-\alpha)^n}{(z_0-\alpha)^{n+1}}f(z)\,dz</mrow>
+		  <mrow> \amp + \frac{1}{2\pi i}\int_{C_2}\sum_{n=0}^{\infty}\frac{(z_0-\alpha)^n}{(z-\alpha)^{n+1}}f(z)\,dz</mrow>
+      </md>.
     </p>
     <p>
       Because the series in this equation converge uniformly on <m>C_2</m> and <m>C_1</m> , respectively,
@@ -327,10 +329,14 @@
         and <xref ref="Geom_Series__z____1">Corollary</xref>
         to obtain the following representations for the terms on the right side of Equation <xref ref="le1_1"/>:
         <md>
-          <mrow xml:id="le1_2" number="yes">\frac{1}{1+z} \amp = \sum_{n=0}^{\infty}(-1)^nz^n, \amp  \amp  \text{ valid for }  |z| \lt  1,</mrow>
-          <mrow xml:id="le1_3" number="yes">\frac{1}{1+z} \amp = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}, \amp  \amp  \text{ valid for }  |z| >1,</mrow>
-          <mrow xml:id="le1_4" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp = \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \amp  \amp  \text{ valid for }  |z| \lt 2,  \text{ and }</mrow>
-          <mrow xml:id="le1_5" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp = \sum_{n=1}^{\infty}\frac{-2^{n-1}}{z^n}, \amp  \amp  \text{ valid for }  |z| >2</mrow>
+			 <mrow xml:id="le1_2" number="yes">\frac{1}{1+z} \amp = \sum_{n=0}^{\infty}(-1)^nz^n, \amp  \amp  \text{ valid for }  |z|
+			 \lt  1;</mrow>
+			 <mrow xml:id="le1_3" number="yes">\frac{1}{1+z} \amp = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}, \amp  \amp  \text{
+			 valid for }  |z| >1;</mrow>
+			 <mrow xml:id="le1_4" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp =
+			 \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \amp  \amp  \text{ valid for }  |z| \lt 2;</mrow>
+			 <mrow xml:id="le1_5" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp =
+			 \sum_{n=1}^{\infty}\frac{-2^{n-1}}{z^n}, \amp  \amp  \text{ valid for }  |z| >2</mrow>
         </md>.
       </p>
       <p>
@@ -437,10 +443,9 @@
       <statement>
         <p>
           Show that <m>\frac{1-z}{z-2}=-\sum\limits_{n=0}^{\infty}\frac{1}{(z-1)^n}</m> is valid for <m>|z-1| >1</m>.
-        </p>
-        <p>
-          \hint{Refer to the solution for Exercise 3a,
-          <xref ref="sec_taylor-series">Section</xref>.} \label {7.3.4}
+          <hint><m>\text{Refer to the solution for Exercise 3a, }</m>
+          <xref ref="sec_taylor-series">Section</xref><m>.</m>
+			 </hint>
         </p>
       </statement>
     </exercise>
@@ -462,10 +467,9 @@
       <statement>
         <p>
           Show that <m>\frac{1-z}{z-3}=-\sum\limits_{n=0}^{\infty}\frac{2^n}{(z-1)^n}</m> is valid for <m>|z-1|>2</m>.
-        </p>
-        <p>
-          \hint{Use the hint for Exercise 3b,
-          <xref ref="sec_taylor-series">Section</xref>.}
+          <hint><m> \text{Use the hint for Exercise 3b, </m>
+          <xref ref="sec_taylor-series">Section</xref><m>.</m>
+			 </hint>
         </p>
       </statement>
     </exercise>
@@ -486,7 +490,8 @@
       <statement>
         <p>
           Find the Laurent series for
-          <m>f(z) =\frac{1}{z^4(1-z)^2}</m> that involves powers of <m>z</m> and is valid for <m>|z| >1</m>. \hint{<m>\frac{1}{\left(1-\frac{1}{z}\right)^2}=\frac{z^2}{(1-z)^2}</m>.}
+			 <m>f(z) =\frac{1}{z^4(1-z)^2}</m> that involves powers of <m>z</m> and is valid for <m>|z| >1</m>.
+			 <hint><m>\frac{1}{\left(1-\frac{1}{z}\right)^2}=\frac{z^2}{(1-z)^2}.</m></hint>
         </p>
       </statement>
     </exercise>
@@ -520,8 +525,10 @@
         <p>
           Find the Laurent series for Log<m>(\frac{z-a}{z-b})</m>,
           where <m>a</m> and <m>b</m> are positive real numbers with <m>b>a>1</m>,
-          and state where the series is valid. \hint{For these conditions,
-          show that <m>\mathrm{Log}(\frac{z-a}{z-b}) = \mathrm{Log}(1-\frac{a}{z}) - \mathrm{Log}(1- \frac{b}{z})</m>.}
+          and state where the series is valid.
+			 <hint><m>\text{For these conditions,
+          show that } \, \mathrm{Log}(\frac{z-a}{z-b}) = \mathrm{Log}(1-\frac{a}{z}) - \mathrm{Log}(1- \frac{b}{z}).</m>
+			 </hint>
         </p>
       </statement>
       <solution>
@@ -556,7 +563,8 @@
         <p>
           Show that <m>\cosh (z+\frac{1}{z}) =\sum\limits_{n=- \infty}^{\infty}a_nz^n</m>,
           where the coefficients can be expressed in the form
-          <m>a_n=\frac{1}{2\pi} \int_0^{2\pi}\cos n\theta \cosh (2\cos \theta)\,d\theta</m>. \hint{Let the path of integration be the circle <m>C_1^{+}(0)</m>.}
+			 <m>a_n=\frac{1}{2\pi} \int_0^{2\pi}\cos n\theta \cosh (2\cos \theta)\,d\theta</m>.
+			 <hint><m>\text{Let the path of integration be the circle } \, C_1^{+}(0).</m></hint>
         </p>
       </statement>
     </exercise>
