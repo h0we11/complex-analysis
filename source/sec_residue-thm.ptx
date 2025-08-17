@@ -302,9 +302,9 @@
         </p>
       </solution>
       <me>
-        \mathrm{Res}[f,z_0] = \lim_{z \to z_0}\frac{z-z_0}{z^4+4} = \lim_{z \to z_0}\frac{1}{4z^3} = \frac{1}{4z_0^3}
+        \mathrm{Res}[f,z_0] = \lim_{z \to z_0}\frac{z-z_0}{z^4+4} = \lim_{z \to z_0}\frac{1}{4z^3} = \frac{1}{4z_0^3}.
       </me>
-      <p>.
+      <p>
         Since <m>z_0^4=-4</m>,
         we can simplify this expression further to yield <m>\mathrm{Res}[f,z_0] = -\frac{1}{16}z_0</m>.
         Hence <m>\mathrm{Res}[f,1+i] = \frac{-1-i}{16}</m>,
@@ -336,23 +336,19 @@
     </statement>
     <solution>
       <p>
-        It will suffice to prove that <m>A=
-        <me>
-          \mathrm{Res}[f,a] $. We expand $f$ in its Laurent series about the point $a$ by writing the three terms $\frac{A}{z-a}$, $\frac{B}{z-b}$, and $\frac{C}{z-c}$ in their Laurent series about the point $a$ and adding them. The term $\frac{A}{z-a}$ is itself a one-term Laurent series about the point $a$. The term $\frac{B}{z-b}$ is analytic at the point $a$, and its Laurent series is actually a Taylor series given by
-        </me>
-        \frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} = -\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n
-        <me>,
-          which is valid for $|z-a| \lt  |b-a|$. Likewise, the expansion of the term $\frac{C}{z-c}$ is
-        </me>
-        \frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n
-        <me>,
-          which is valid for $|z-a| \lt  |c-a|$. Thus the Laurent series of $f$ about the point $a$ is
-        </me>
-        f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n
-        <me>,
-          which is valid for $|z-a| \lt R$, where $R=\min \{ |b-a| ,\,|c-a| \}$. Therefore $A=$ $\mathrm{Res}[f,a] $, and calculation reveals that
-        </me>
-        \mathrm{Res}[f,a] =A=\lim\limits_{z \to a}\frac{P(z)}{(z-b)(z-c)} = \frac{P(a)}{(a-b)(a-c)}</m>$.
+		  It will suffice to prove that <m>A=\mathrm{Res}[f,a]</m>. To do so, expand <m>f</m> in its Laurent series about the point
+		  <m>a</m> by writing the three terms <m>\frac{A}{z-a}, \, \frac{B}{z-b}</m> and <m>\frac{C}{z-c}</m> in their Laurent
+		  series about the point $a$ and adding them. The term $\frac{A}{z-a}$ is itself a one-term Laurent series about the point
+		  <m>a</m>. The term \frac{B}{z-b} is analytic at the point <m>a</m>, and its Laurent series is actually a Taylor series
+		  given by
+        <me>\frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} = -\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n,</me>
+        which is valid for <m>|z-a| \lt  |b-a|</m>. Likewise, the expansion of the term <m>\frac{C}{z-c}</m> is
+        <me>\frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n,</me>
+        which is valid for <m>|z-a| \lt  |c-a|</m>. Thus the Laurent series of <m>f</m> about the point <m>a</m> is
+        <me>f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n,</me>
+		  which is valid for <m>|z-a| \lt R</m>, where <m>R=\min \{ |b-a| ,\,|c-a| \}</m>. Therefore
+		  <m>A=\mathrm{Res}[f,a]</m>, and calculation reveals that
+        <me>\mathrm{Res}[f,a] =A=\lim\limits_{z \to a}\frac{P(z)}{(z-b)(z-c)} = \frac{P(a)}{(a-b)(a-c)}.</me>
       </p>
     </solution>
   </example>
@@ -366,8 +362,8 @@
       <p>
         Computing the residues, we obtain
         <me>
-          \mathrm{Res}[f,0] =1\text{ ,\qquad Res } [f,1] = -5,  \text{ and }   \mathrm{Res}[f,2]=4
-        </me>.
+          \mathrm{Res}[f,0] =1, \quad \mathrm{Res}[f,1] = -5, \quad \text{and} \quad  \mathrm{Res}[f,2]=4.
+        </me>
       </p>
       <p>
         <xref ref="Poly_Residue_Ex">Example</xref> gives us
@@ -382,10 +378,9 @@
       If a repeated root occurs, then the process is similar,
       and we can easily show that if <m>P(z)</m> has degree of at most <m>2</m>, then
       <me>
-        f(z) = \frac{P(z)}{(z-a)^2(z-b)} = \frac{A}{(z-a)^2}+\frac{B}{z-a}+\frac{C}{z-b}
-      </me>,
-      where <m>A=</m> <m>\mathrm{Res}[(z-a) f(z) ,a]</m>,
-      <m>B=\mathrm{Res}[f,a]</m>, and <m>C=\mathrm{Res}[f,b]</m>.
+        f(z) = \frac{P(z)}{(z-a)^2(z-b)} = \frac{A}{(z-a)^2}+\frac{B}{z-a}+\frac{C}{z-b},
+      </me>
+      where <m>A = \mathrm{Res}[(z-a) f(z) ,a], \quad B=\mathrm{Res}[f,a], \quad \text{and} \quad C=\mathrm{Res}[f,b]</m>.
     </p>
   </remark>
   <example>
@@ -411,7 +406,7 @@
       <p>
         Thus,
         <me>
-          \frac{z^2+3z+2}{z^2(z-1)} = \frac{-2}{z^2} - \frac{5}{z}+\frac{6}{z-1}
+          \frac{z^2+3z+2}{z^2(z-1)} = \frac{-2}{z^2} - \frac{5}{z}+\frac{6}{z-1}.
         </me>
       </p>
     </solution>
@@ -648,10 +643,9 @@
           <p>
             <m>C=C_1^{+}(\frac{1+i}{2})</m>.
           </p>
-          <p>
-            \hint{If <m>z_0</m> is a singularity of <m>f(z) =\frac{1}{z^{6}+1}</m>,
-            show that <m>\mathrm{Res}[f,z_0] = -\frac{1}{6}z_0</m>.}
-          </p>
+          <hint><m>\text{If } \, z_0 \, \text{ is a singularity of } \, f(z) =\frac{1}{z^{6}+1}, \,
+          \text{ show that } \, \mathrm{Res}[f,z_0] = -\frac{1}{6}z_0.</m>
+			 </hint>
         </task>
       </statement>
     </exercise>
@@ -752,7 +746,7 @@
           Let <m>f</m> be analytic in a simply connected domain <m>D</m>,
           and let <m>C</m> be a simple closed positively oriented contour in <m>D</m>.
           If <m>z_0</m> is the only zero of <m>f</m> in <m>D</m> and <m>z_0</m> lies interior to <m>C</m>,
-          then show that <m>\frac{1}{2\pi i}\int\limits_{C}\frac{f\,'(z)}{f(z)}\,dz = k</m>,
+          show that <me>\frac{1}{2\pi i}\int\limits_{C}\frac{f\,'(z)}{f(z)}\,dz = k,</me>
           where <m>k</m> is the order of the zero at <m>z_0</m>.
         </p>
       </statement>
