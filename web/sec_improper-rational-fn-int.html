@@ -581,7 +581,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">where <span class="process-math">\(z_1\text{,}\)</span> <span class="process-math">\(z_2\text{,}\)</span> <span class="process-math">\(\ldots\text{,}\)</span> <span class="process-math">\(z_{k-1}\text{,}\)</span> <span class="process-math">\(z_k\)</span> are the poles of <span class="process-math">\(\frac{P}{Q}\)</span> that lie in the upper half-plane. The situation is illustrated in <a href="sec_improper-rational-fn-int.html#fig_ch-08-04" class="xref" data-knowl="./knowl/xref/fig_ch-08-04.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.3.5">Figure 8.3.5</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Ratl_Fcn_Int_Thm-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 8.3.4"><a href="#Ratl_Fcn_Int_Thm" title="Copy heading and permalink for Theorem 8.3.4" aria-label="Copy heading and permalink for Theorem 8.3.4">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-08-04"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-08/ch-08-fig-04.svg" class="contained"></div>
+<div class="autopermalink" data-description="Theorem 8.3.4"><a href="#Ratl_Fcn_Int_Thm" title="Copy heading and permalink for Theorem 8.3.4" aria-label="Copy heading and permalink for Theorem 8.3.4">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-08-04"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-08/ch-08-fig-04.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The poles <span class="process-math">\(z_1, \  z_2, \ \ldots, \  z_{k-1}, \  z_k\)</span> of <span class="process-math">\(\frac{P}Q\)</span> that lie in the upper half-plane<div class="autopermalink" data-description="Figure 8.3.5"><a href="#fig_ch-08-04" title="Copy heading and permalink for Figure 8.3.5" aria-label="Copy heading and permalink for Figure 8.3.5">🔗</a></div></figcaption></figure><details id="sec_improper-rational-fn-int-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_improper-rational-fn-int-11-1">
 <div class="para">There are a finite number of poles of <span class="process-math">\(\frac{P}{Q}\)</span> that lie in the upper half-plane, so we can find a real number <span class="process-math">\(R\)</span> such that the poles all lie inside the contour <span class="process-math">\(C\text{,}\)</span> which consists of the segment <span class="process-math">\(-R \le x \le R\)</span> of the <span class="process-math">\(x\)</span>-axis and the upper semicircle <span class="process-math">\(C_R\)</span> of radius <span class="process-math">\(R\)</span> shown in <a href="sec_improper-rational-fn-int.html#fig_ch-08-04" class="xref" data-knowl="./knowl/xref/fig_ch-08-04.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.3.5">Figure 8.3.5</a>. By properties of integrals,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-08-04.html">
@@ -611,29 +611,34 @@ Q(z) \amp = b_nz^n+b_{n-1}z^{n-1} + \cdots + b_1z + b_0\text{.}
 <div class="para">Then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}\text{,}
+\frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots
++ b_1z^{-n+1}+b_0z^{-n})}\text{,}
 \end{equation*}
 </div>
 <div class="para">so</div>
 <div class="displaymath process-math" id="sec_improper-rational-fn-int-11-3-2">
 \begin{align*}
-\lim_{|z| \to \infty}\frac{zP(z)}{Q(z)} \amp = \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}\\
-\amp = \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)\text{.}
+\amp \lim_{|z| \to \infty}\frac{zP(z)}{Q(z)}  =\\
+\amp \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} +
+\cdots + b_1z^{-n+1}+b_0z^{-n})}=\\
+\amp \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots
++ a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-rational-fn-int-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_improper-rational-fn-int-11-4">
-<div class="para">Since <span class="process-math">\(n \ge m+2\text{,}\)</span> this limit reduces to <span class="process-math">\(0(\frac{a_{m}}{b_n}) =0\text{.}\)</span> Therefore, for any <span class="process-math">\(\varepsilon &gt;0\text{,}\)</span> we may choose <span class="process-math">\(R\)</span> large enough so that <span class="process-math">\(|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}\)</span> whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span> But this means that</div>
+<div class="para">Since <span class="process-math">\(n \ge m+2\text{,}\)</span> this limit reduces to <span class="process-math">\(0(\frac{a_{m}}{b_n}) =0\text{.}\)</span>  Therefore, for any <span class="process-math">\(\varepsilon &gt;0\text{,}\)</span> we may choose <span class="process-math">\(R\)</span> large enough so that <span class="process-math">\(|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}\)</span> whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span>  But this means that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Inequality_Thm.html ./knowl/xref/x_P_Q__bound.html" id="x_P_Q__bound">
 \begin{equation}
 \left|\frac{P(z)}{Q(z)}\right| \lt  \frac{\varepsilon}{\pi |z|} = \frac{\varepsilon}{\pi R}\tag{8.3.4}
 \end{equation}
 </div>
-<div class="para">whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span> Using the ML inequality (<a href="sec_contour-integrals.html#ML_Inequality_Thm" class="xref" data-knowl="./knowl/xref/ML_Inequality_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.19: ML inequality">Theorem 6.2.19</a>) and Inequality <a href="sec_improper-rational-fn-int.html#x_P_Q__bound" class="xref" data-knowl="./knowl/xref/x_P_Q__bound.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.3.4">(8.3.4)</a>, we get</div>
+<div class="para">whenever <span class="process-math">\(z\)</span> lies on <span class="process-math">\(C_R\text{.}\)</span>  Using the ML inequality (<a href="sec_contour-integrals.html#ML_Inequality_Thm" class="xref" data-knowl="./knowl/xref/ML_Inequality_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.19: ML inequality">Theorem 6.2.19</a>) and Inequality <a href="sec_improper-rational-fn-int.html#x_P_Q__bound" class="xref" data-knowl="./knowl/xref/x_P_Q__bound.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.3.4">(8.3.4)</a>, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Inequality_Thm.html ./knowl/xref/x_P_Q__bound.html">
 \begin{equation*}
-\left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi R=\varepsilon\text{.}
+\left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi
+R=\varepsilon\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-rational-fn-int-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -642,7 +647,7 @@ Q(z) \amp = b_nz^n+b_{n-1}z^{n-1} + \cdots + b_1z + b_0\text{.}
 <div class="para">Since <span class="process-math">\(\varepsilon &gt;0\)</span> was arbitrary, we conclude that</div>
 <div class="displaymath process-math" id="RF2">
 \begin{equation}
-\lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0\text{.}\tag{8.3.5}
+\lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0.\tag{8.3.5}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-rational-fn-int-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -665,7 +670,7 @@ Q(z) \amp = b_nz^n+b_{n-1}z^{n-1} + \cdots + b_1z + b_0\text{.}
 <div class="para">Using <a href="sec_improper-rational-fn-int.html#Ratl_Fcn_Int_Thm" class="xref" data-knowl="./knowl/xref/Ratl_Fcn_Int_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.3.4">Theorem 8.3.4</a>, we conclude that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Ratl_Fcn_Int_Thm.html">
 \begin{equation*}
-\int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx = 2\pi i\left(-\frac{i}{6}+\frac{i}{12}\right) = \frac{\pi}{6}
+\int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx = 2\pi i\left(-\frac{i}{6}+\frac{i}{12}\right) = \frac{\pi}{6}.
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-rational-fn-int-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
