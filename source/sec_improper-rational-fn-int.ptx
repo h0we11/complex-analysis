@@ -92,7 +92,7 @@
   </theorem>
   <figure xml:id="fig_ch-08-04">
     <caption>The poles <m>z_1, \  z_2, \ \ldots, \  z_{k-1}, \  z_k</m> of <m>\frac{P}Q</m> that lie in the upper half-plane</caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-04.svg"/>
+    <image width="60%" source="figs/ch-08/ch-08-fig-04.svg"/>
   </figure>
   <proof>
     <p>
@@ -121,37 +121,37 @@
     <p>
       Then
       <me>
-        \frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}
+		  \frac{zP(z)}{Q(z)} = \frac{z^{m+1}(a_{m} + a_{m-1}z^{-1}+\cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n + b_{n-1}z^{-1} + \cdots
+		  + b_1z^{-n+1}+b_0z^{-n})}
       </me>,
       so
       <md>
-        <mrow>\lim_{|z| \to \infty}\frac{zP(z)}{Q(z)} \amp = \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} + \cdots + b_1z^{-n+1}+b_0z^{-n})}</mrow>
-        <mrow>\amp = \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)</mrow>
+        <mrow>\amp \lim_{|z| \to \infty}\frac{zP(z)}{Q(z)}  =</mrow>
+		  <mrow>\amp \lim_{|z| \to \infty}\frac{z^{m+1}(a_{m}+a_{m-1}z^{-1} + \cdots + a_1z^{-m+1}+a_0z^{-m})}{z^n(b_n+b_{n-1}z^{-1} +
+		  \cdots + b_1z^{-n+1}+b_0z^{-n})}=</mrow>
+		  <mrow>\amp \left(\lim_{|z| \to \infty}\frac{z^{m+1}}{z^n}\right) \left(\lim_{|z| \to \infty}\frac{a_{m}+a_{m-1}z^{-1} + \cdots
+		  + a_1z^{-m+1}+a_0z^{-m}}{b_n+b_{n-1}z^{-1} + \cdots +b_1z^{-n+1}+b_0z^{-n}}\right)</mrow>
       </md>.
     </p>
     <p>
-      Since <m>n \ge m+2</m>,
-      this limit reduces to <m>0(\frac{a_{m}}{b_n}) =0</m>.
-      Therefore, for any <m>\varepsilon >0</m>,
-      we may choose <m>R</m> large enough so that
-      <m>|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}</m> whenever <m>z</m> lies on <m>C_R</m>.
-      But this means that
+		Since <m>n \ge m+2</m>, this limit reduces to <m>0(\frac{a_{m}}{b_n}) =0</m>.  Therefore, for any <m>\varepsilon >0</m>, we
+		may choose <m>R</m> large enough so that <m>|\frac{zP(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}</m> whenever <m>z</m> lies on
+		<m>C_R</m>.  But this means that
       <men xml:id="x_P_Q__bound">
         \left|\frac{P(z)}{Q(z)}\right| \lt  \frac{\varepsilon}{\pi |z|} = \frac{\varepsilon}{\pi R}
       </men>
-      whenever <m>z</m> lies on <m>C_R</m>.
-      Using the ML inequality
-      (<xref ref="ML_Inequality_Thm">Theorem</xref>)
-      and Inequality <xref ref="x_P_Q__bound"/>, we get
+		whenever <m>z</m> lies on <m>C_R</m>.  Using the ML inequality (<xref ref="ML_Inequality_Thm">Theorem</xref>) and Inequality
+		<xref ref="x_P_Q__bound"/>, we get
       <me>
-        \left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi R=\varepsilon
+		  \left|\int_{C_R}\frac{P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi R}\,|dz| = \frac{\varepsilon}{\pi R}\pi
+		  R=\varepsilon
       </me>.
     </p>
     <p>
       Since <m>\varepsilon >0</m> was arbitrary, we conclude that
       <men xml:id="RF2">
-        \lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0
-      </men>.
+        \lim_{R \to \infty}\int_{C_R}\frac{P(z)}{Q(z)}\,dz=0.
+      </men>
     </p>
     <p>
       If we let <m>R \to \infty</m> and combine Equations <xref ref="RF1"/> and <xref ref="RF2"/>, we arrive at the desired conclusion.
@@ -173,7 +173,7 @@
         </me>.
         Using <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>, we conclude that
         <me>
-          \int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx = 2\pi i\left(-\frac{i}{6}+\frac{i}{12}\right) = \frac{\pi}{6}
+          \int_{-\infty}^{\infty}\frac{1}{(x^2+1)(x^2+4)}\,dx = 2\pi i\left(-\frac{i}{6}+\frac{i}{12}\right) = \frac{\pi}{6}.
         </me>
       </p>
     </solution>
