@@ -1,17 +1,13 @@
 <section xml:id="sec_improper-trig-integrals">
   <title>Improper Integrals of Trigonometric Functions</title>
   <p>
-    Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>,
-    respectively, where <m>n\ge m+1</m>.
-    We can show
-    (but omit the proof)
-    that if <m>Q(x) \ne 0</m> for all real <m>x</m>, then
+	 Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>, respectively, where <m>n\ge m+1</m>.  We can show
+	 (but omit the proof) that if <m>Q(x) \ne 0</m> for all real <m>x</m>, then
     <me>
-      \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx  \text{ and }   \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
+      \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad  \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
     </me>
-    are convergent improper integrals.
-    You may encounter integrals of this type in the study of Fourier transforms and Fourier integrals.
-    We now show how to evaluate them.
+	 are convergent improper integrals.  You may encounter integrals of this type in the study of Fourier transforms and Fourier
+	 integrals.  We now show how to evaluate them.
   </p>
   <p>
     Particularly important is our use of the identities
@@ -146,12 +142,14 @@
       </men>.
     </p>
     <p>
-      Using the trigonometric identity
-      <m>\sin (\pi -\theta) = \sin \theta</m> and Equations <xref ref="Lemma_Subs"/>,
-      we express the integral on the right side of <xref ref="Lemma_Integral">Inequality</xref> as
-      <men xml:id="Lemma_Integral_2">
-        \int_{C_R}\frac{\varepsilon}{\pi}|e^{iz}|\,|dz| = \frac{\varepsilon}{\pi}\int_0^{\pi}e^{-R\sin \theta}R\,d\theta = \frac{2\varepsilon}{\pi}\int_0^{\pi /2}e^{-R\sin \theta}R\,d\theta
-      </men>.
+		Using the trigonometric identity <m>\sin (\pi -\theta) = \sin \theta</m> and Equations <xref ref="Lemma_Subs"/>, we express
+		the integral on the right side of <xref ref="Lemma_Integral">Inequality</xref> as
+      <md>
+        <mrow>\int_{C_R}\frac{\varepsilon}{\pi}|e^{iz}|\,|dz| \amp =
+		  \frac{\varepsilon}{\pi}\int_0^{\pi}e^{-R\sin \theta}R\,d\theta</mrow>
+		  <mrow xml:id="Lemma_Integral_2" number="yes">\amp =
+		  \frac{2\varepsilon}{\pi}\int_0^{\pi /2}e^{-R\sin \theta}R\,d\theta</mrow>
+      </md>.
     </p>
     <p>
       On the interval <m>0 \le \theta \le \pi /2</m> we can use the inequality
@@ -190,9 +188,10 @@
       If <m>R</m> is sufficiently large,
       all the poles <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> will lie inside <m>C</m>,
       and we can use the residue theorem to obtain
-      <men xml:id="Eq_8_12">
-        \int_{-R}^{R} \frac{\exp (i\alpha x)P(x)}{Q(x)}\,dx = 2 \pi i\sum_{j=1}^k\mathrm{Res}[f,z_j] - \int_{C_R}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz
-      </men>.
+      <md>>
+        <mrow>\int_{-R}^{R} \frac{\exp (i\alpha x)P(x)}{Q(x)}\,dx \amp = 2 \pi i\sum_{j=1}^k\mathrm{Res}[f,z_j]</mrow>
+		  <mrow xml:id="Eq_8_12" number="yes"> \amp - \int_{C_R}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz</mrow>
+      </md>.
     </p>
     <p>
       Since <m>\alpha</m> is a positive real number,
