@@ -69,15 +69,19 @@
         Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>,
         respectively, where <m>n \ge m+1</m>,
         and let <m>Q</m> have simple zeros at the points
-        <m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m>-axis.
+        <m>t_1, \, t_2, \, \ldots, \, t_l \,</m> on the <m>x</m>-axis.
         If <m>\alpha</m> is a positive real number and if <m>f(z) =\frac{\exp(i\alpha z)P(z)}{Q(z)}</m>, then
-        <men xml:id="EQ_8_5">
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j]) - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_j])
-        </men>
+        <md>
+			 <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx \amp =
+					 -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j])</mrow>
+			 <mrow  xml:id="EQ_8_5" number="yes"> \amp - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_j]),</mrow>
+        </md>
         and
-        <men xml:id="EQ_8_6">
-          \text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx = 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_j]) + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_j])
-        </men>
+		  <md>
+		    <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx \amp =
+		  			 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_j])</mrow>
+		  	 <mrow xml:id="EQ_8_6" number="yes"> \amp + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_j]),</mrow>
+        </md>
         where <m>z_1, \, z_2, \, \ldots ,z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
       </p>
     </statement>
@@ -123,16 +127,20 @@
     <solution>
       <p>
         Computer algebra systems such as Mathematica or MAPLE give the indefinite integral
-        <me>
-          \int\frac{t}{t^3-8}\,dt = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}}+\frac{\mathrm{Log}(t-2)}{6}+\frac{\mathrm{Log}(t^2+2t+4)}{12}=g(t)
-        </me>.
+        <md>
+			 <mrow>\int\frac{t}{t^3-8}\,dt \amp =
+			 \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}(t-2)}{6} +
+			 \frac{\mathrm{Log}(t^2+2t+4)}{12}</mrow>
+			 <mrow> \amp =g(t)</mrow>
+        </md>.
       </p>
       <p>
         However, for real numbers,
         we should write the second term as
         <m>\frac{\mathrm{ Log}[(t-2)^2] }{12}</m> and use the equivalent formula:
         <me>
-          g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}[(t-2)^2] }{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}
+			 g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} +
+			 \frac{\mathrm{Log}[(t-2)^2]}{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}
         </me>.
       </p>
       <p>
@@ -141,7 +149,7 @@
       </p>
       <figure xml:id="fig_ch-08-05">
         <caption>Graph of <m>s=g(t) =\int \frac{t}{t^3-8}\ dt</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-05.svg"/>
+        <image width="60%" source="figs/ch-08/ch-08-fig-05.svg"/>
       </figure>
       <p>
         We also compute
@@ -154,11 +162,16 @@
         </me>.
       </p>
       <p>
-        Therefore the Cauchy principal value of the improper integral is {
+        Therefore, the Cauchy principal value of the improper integral is 
         <md>
-          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to 0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty} \frac{t}{t^3-8}\,dt\right]</mrow>
-          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)</mrow>
-          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)</mrow>
+			 <mrow>\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to
+			 0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty}
+			 \frac{t}{t^3-8}\,dt\right]
+			 </mrow>
+          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right)</mrow>
+			 <mrow>\amp \qquad \qquad + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)</mrow>
+          <mrow>\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right)</mrow>
+			 <mrow>\amp \qquad \qquad + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)</mrow>
           <mrow>\amp = 0 + \frac{\pi \sqrt{3}}{12} + \frac{\pi \sqrt{3}}{12}</mrow>
           <mrow>\amp = \frac{\pi \sqrt{3}}{6}</mrow>
         </md>.
@@ -173,11 +186,15 @@
     </statement>
     <solution>
       <p>
-        The integrand <m>f(z) = \frac{\exp(iz)}{(z-1)(z^2+4)}</m> has simple poles at the points <m>t_1=1</m> on the <m>x</m>-axis and <m>z_1=2i</m> in the upper half-plane.
+		  The integrand <m>f(z) = \frac{\exp(iz)}{(z-1)(z^2+4)}</m> has simple poles at the points <m>t_1=1</m> on the <m>x</m>-axis
+		  and <m>z_1=2i</m> in the upper half-plane.
         By <xref ref="Thm_8_6">Theorem</xref>,
         <md>
-          <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx \amp = 2\pi \mathrm{Re}\left(\mathrm{Res}[f,z_1]\right) +\pi \mathrm{Re}\left(\mathrm{Res}[f,t_1]\right)</mrow>
-          <mrow>\amp = 2\pi \mathrm{Re}\left(\frac{-2+i}{20e^2}\right) +\pi \mathrm{Re}\left(\frac{\cos 1+i\sin 1}{5}\right)</mrow>
+			 <mrow>\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx \amp =
+				 2\pi \mathrm{Re}\left(\mathrm{Res}[f,z_1]\right)</mrow>
+			 <mrow> \amp \qquad \qquad +\pi \mathrm{Re}\left(\mathrm{Res}[f,t_1]\right)</mrow>
+          <mrow>\amp = 2\pi \mathrm{Re}\left(\frac{-2+i}{20e^2}\right)</mrow>
+			 <mrow>\amp \qquad \qquad +\pi \mathrm{Re}\left(\frac{\cos 1+i\sin 1}{5}\right)</mrow>
           <mrow>\amp = \frac{\pi}{5}\left(\cos 1-\frac{1}{e^2}\right)</mrow>
         </md>.
       </p>
@@ -209,7 +226,9 @@
       where <m>g</m> is analytic at <m>z=t_0</m>.
       Using the parametrization of <m>C_{r}</m> and Equation <xref ref="EQ_8_9"/>, we get
       <md>
-        <mrow>\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi}\frac{ire^{i\theta}}{re^{i\theta}}\,d\theta + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}\,d\theta</mrow>
+		  <mrow>\!\!\!\!\!\!\!\!\!\!\!\!
+		  \int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi}\frac{ire^{i\theta}}{re^{i\theta}}\,d\theta +
+		  ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}\,d\theta</mrow>
         <mrow xml:id="EQ_8_10" number="yes">\amp = i\pi \mathrm{Res}[f,t_0] + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}d\theta</mrow>
       </md>.
     </p>
@@ -253,7 +272,7 @@
       <m>-C_1, \, -C_2, \, \ldots, \, -C_l</m> and the segments of the real axis that lie between the semicircles shown in <xref ref="fig_ch-08-06">Figure</xref>.
       The residue theorem gives <m>\int_Cf(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]</m>,
       which we rewrite as
-      <men xml:id="EQ_8_13">
+      <men xml:id="EQ_8_13">\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
         \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] + \sum_{j=1}^{l}\int_{C_j}f(z)\,dz - \int_{C_R}f(z)\,dz
       </men>,
       where <m>I_R</m> is the portion of the interval
