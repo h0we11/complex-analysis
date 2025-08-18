@@ -1,21 +1,20 @@
 <section xml:id="sec_branch-integrands">
   <title>Integrands with Branch Points</title>
   <p>
-    We now show how to evaluate certain improper real integrals involving the integrand <m>x^{\alpha}\frac{P(x)}{Q x)}</m>.
-    The complex function <m>z^{\alpha}</m> is multivalued,
-    so we must first specify the branch to be used.
+	 We now show how to evaluate certain improper real integrals involving the integrand <m>x^{\alpha}\frac{P(x)}{Q x)}</m>. The
+	 complex function <m>z^{\alpha}</m> is multivalued, so we must first specify the branch to be used.
   </p>
   <p>
-    Let <m>\alpha</m> be a real number with <m>0\lt \alpha \lt 1</m>.
-    In this section we use the branch of
-    <m>z^{\alpha}</m> corresponding to the branch of the logarithm <m>\log_0</m> \big(see Equation <xref ref="log_a"/>\big) as follows:
-    <men xml:id="z_a_branch">
-      z^{\alpha} = e^{\alpha [\log_0(z) ] }=e^{\alpha(\ln |z| +i\arg_0z)} = e^{\alpha (\ln r+i\theta)} = r^{\alpha}(\cos \alpha \theta +i\sin \alpha \theta)
-    </men>.
-    where <m>z=re^{i\theta}\ne 0</m> and <m>0\lt \theta \le 2\pi</m>.
-    Note that this is not the traditional principal branch of <m>z^{a}</m> and that,
-    as defined,
-    the function <m>z^{a}</m> is analytic in the domain <m>\{re^{i\theta} : r>0, \; 0 \lt \theta \lt  2\pi\}</m>.
+	 Let <m>\alpha</m> be a real number with <m>0\lt \alpha \lt 1</m>.  In this section we use the branch of <m>z^{\alpha}</m>
+	 corresponding to the branch of the logarithm <m>\log_0</m> (see Equation <xref ref="log_a"/>) as follows:
+	 <md>
+		 <mrow>z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}</mrow>
+		 <mrow xml:id="z_a_branch" number="yes"> \amp=e^{\alpha (\ln r+i\theta)} = r^{\alpha}(\cos \alpha \theta +i\sin \alpha \theta)
+		 </mrow>
+	 </md>,
+	 where <m>z=re^{i\theta}\ne 0</m> and <m>0\lt \theta \le 2\pi</m>.
+	 Note that this is not the traditional principal branch of <m>z^{a}</m> and that, as defined, the function <m>z^{a}</m> is
+	 analytic in the domain <m>\{re^{i\theta} : r>0, \; 0 \lt \theta \lt  2\pi\}</m>.
   </p>
   <theorem xml:id="Branch_Integrand_Thm">
     <statement>
@@ -35,12 +34,13 @@
   </theorem>
   <proof>
     <p>
-      Let <m>C</m> denote the simple closed positively oriented contour that consists of the portions of the circles <m>C_r(0)</m> and <m>C_R(0)</m> and the horizontal segments joining them,
+		Let <m>C</m> denote the simple closed positively oriented contour that consists of the portions of the circles <m>C_r(0)</m>
+		and <m>C_R(0)</m> and the horizontal segments joining them,
       per <xref ref="fig_ch-08-08">Figure</xref>.
     </p>
     <figure xml:id="fig_ch-08-08">
       <caption>Contour <m>C</m> encloses the nonzero poles <m>z_, \  z_2, \  \ldots, \  z_k</m> of <m>\frac{P}Q</m></caption>
-      <image width="73%" source="figs/ch-08/ch-08-fig-08.svg"/>
+      <image width="50%" source="figs/ch-08/ch-08-fig-08.svg"/>
     </figure>
     <p>
       We select a small value of <m>r</m> and a large value of <m>R</m> so that the nonzero poles
@@ -58,26 +58,31 @@
       however, because of the branch we chose for <m>z^{a}</m>
       (see <xref ref="z_a_branch">Equation</xref>),
       the integrand <m>f(z)</m> on the lower horizontal line approaches <m>\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}Q(x)</m>.
-      Therefore
-      <men xml:id="Branch_int_eq_2">
-        \lim_{r \to 0}\int_{C}f(z)\,dz = \int_0^R\frac{x^{\alpha}P(x)}{Q(x)}\,dx + \int_R^0 \frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx +\int_{C_R^{+}(0)}f(z)\,dz
-      </men>.
+      Therefore,
+      <md>
+		  <mrow>\lim_{r \to 0}\int_{C}f(z)\,dz = \int_0^R\frac{x^{\alpha}P(x)}{Q(x)}\,dx \amp + \int_R^0 \frac{x^{\alpha}e^{i\alpha
+		  2\pi}P(x)}{Q(x)}\,dx</mrow>
+		  <mrow xml:id="Branch_int_eq_2" number="yes"> \amp +\int_{C_R^{+}(0)}f(z)\,dz</mrow>
+		</md>.
     </p>
     <p>
       It is here that we need the function <m>Q</m> to have a zero of order at most 1 at the origin.
       Otherwise, the first two integrals on the right side of Equation <xref ref="Branch_int_eq_2"/> would not necessarily converge.
       Combining this result with Equation <xref ref="Branch_int_eq"/> gives
-      <me>
-        \int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx-\int_0^{R}\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz
-      </me>,
+      <md>
+		  <mrow>\int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx \amp -\int_0^{R}\frac{x^{\alpha}e^{i\alpha 2\pi}P(x)}{Q(x)}\,dx</mrow>
+		  <mrow> \amp \qquad \qquad = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz</mrow>
+      </md>,
       so
       <me>
         \left(\int_0^{R}\frac{x^{a}P(x)}{Q(x)}\,dx\right)\big(1-e^{ia2\pi}\big) = 2\pi i\sum\limits_{j=1}^kRes[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz
       </me>,
       which we rewrite as
-      <men xml:id="Branch_int_eq_3">
-        \int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx = \frac{2\pi i}{1-e^{i\alpha 2\pi}}\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] - \frac{1}{1-e^{i\alpha 2\pi}}\int_{C_R^{+}(0)}f(z)\,dz
-      </men>.
+      <md>
+		  <mrow>\int_0^{R}\frac{x^{\alpha}P(x)}{Q(x)}\,dx \amp =
+		 			 \frac{2\pi i}{1-e^{i\alpha 2\pi}}\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]</mrow>
+		  <mrow xml:id="Branch_int_eq_3" number="yes"> \amp \qquad \qquad- \frac{1}{1-e^{i\alpha 2\pi}}\int_{C_R^{+}(0)}f(z)\,dz</mrow>
+      </md>.
     </p>
     <p>
       Using the ML inequality
@@ -124,7 +129,7 @@
     <statement>
       <p>
         Evaluate P.V. <m>\int_0^{\infty}\frac{\ln x}{x^2+a^2}dx</m>,
-        where <m>a>0</m>.
+        where <m>a>0</m>. To get started, refer to <xref ref="fig_ch-08-09">Figure</xref>.
       </p>
       <solution>
         <p>
@@ -143,7 +148,7 @@
       </solution>
       <figure xml:id="fig_ch-08-09">
         <caption>The contour <m>C</m> for the integrand <m>f(z) = \frac{\mathrm{\log}_{-\frac{\pi}{2}}z}{z^2+a^2}</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-09.svg"/>
+        <image width="60%" source="figs/ch-08/ch-08-fig-09.svg"/>
       </figure>
       <p>
         We chose the branch <m>\log_{-\frac{\pi}{2}}</m> because it is analytic on <m>C</m> and its interior,
@@ -157,9 +162,10 @@
         Keeping in mind the branch of logarithm that we're using,
         we then have
         <md>
-          <mrow>\int_{C}f(z)\,dz \amp = \int_{-R}^{-r}f(x)\,dx + \int_{-C_{r}}f(z)\,dz+\int_{r}^{R}f(x)\,dx + \int_{C_R}f(z)\,dz</mrow>
+          <mrow>\int_{C}f(z)\,dz \amp = \int_{-R}^{-r}f(x)\,dx + \int_{-C_{r}}f(z)\,dz</mrow>
+			 <mrow> \amp \qquad \qquad + \int_{r}^{R}f(x)\,dx + \int_{C_R}f(z)\,dz</mrow>
           <mrow>\amp = \int_{-R}^{-r}\frac{\ln |x| +i\pi}{x^2+a^2}\,dx + \int_{-C_{r}}f(z)\,dz</mrow>
-          <mrow>\amp + \int_{r}^{R}\frac{\ln x}{x^2+a^2}\,dx+\int_{C_R}f(z)\,dz</mrow>
+          <mrow>\amp \qquad \qquad + \int_{r}^{R}\frac{\ln x}{x^2+a^2}\,dx+\int_{C_R}f(z)\,dz</mrow>
           <mrow xml:id="log_int_ex" number="yes">\amp = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}</mrow>
         </md>.
       </p>
@@ -270,11 +276,13 @@
             </p>
           </solution>
         </task>
-        <task xml:id="x8_6_10">
+		</statement>
+    </exercise>
+    <exercise xml:id="x8_6_10">
+		<statement>
           <p>
-            Carry out the following computations: \begin{enumerate}
+            Carry out the following computations:
           </p>
-        </task>
         <task>
           <p>
             For <m>f(z)=\frac{z^\frac{1}{3}}{z^3(z+1)}</m>,
@@ -283,7 +291,8 @@
         </task>
         <task>
           <p>
-            Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+				Use part (a) and <m>\alpha=\frac{1}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i \alpha
+				2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
           </p>
         </task>
         <task>
@@ -307,7 +316,8 @@
         </task>
         <task>
           <p>
-            Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
+				Use part (a) and <m>\alpha=\frac{4}{3}</m> to verify the computation <m>\frac{2\pi
+				i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</m>.
           </p>
         </task>
         <task>
@@ -368,9 +378,7 @@
         <p>
           P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}\ln x}{x^2+1}\,dx</m> and P.V. <m>\int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx</m>.
         </p>
-        <p>
-          \hint{Use the complex integrand <m>f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}</m>.}
-        </p>
+          <hint><m>\text{Use the complex integrand } \, f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}.</m></hint>
       </statement>
     </exercise>
     <exercise xml:id="x8_6_17">
@@ -396,10 +404,12 @@
     <exercise xml:id="x8_6_19">
       <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>. \hint{Use the integrand
-          <m>f(z) =\frac{\exp(iz)}{z}</m> and the contour <m>C</m> in <xref ref="fig_ch-08-08">Figure</xref>.
-          Let <m>r \to 0</m> and <m>R \to \infty</m>.}
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx</m>.
         </p>
+			 <hint><m>\text{Use the integrand } \, f(z) =\frac{\exp(iz)}{z} \, \text{ and the contour } \, C \, 
+			 \text{ in }</m><xref ref="fig_ch-08-08" number="yes">Figure</xref>. <m>\text{Then let } \,r \to 0 \, \text{ and } \,
+			 R \to \infty</m>.
+			 </hint>
       </statement>
       <solution>
         <p>
@@ -410,10 +420,11 @@
     <exercise xml:id="x8_6_20">
       <statement>
         <p>
-          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx</m> . \hint{Use the integrand
-          <m>f(z) =\frac{1-\exp (i2z)}{z^2}</m> and the contour <m>C</m> in Figure 8.8.
-          Let <m>r \to 0</m> and <m>R \to \infty</m>.}
+          P.V. <m>\int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx.</m>
         </p>
+			 <hint><m>\text{Use the integrand } \, f(z) =\frac{1-\exp (i2z)}{z^2} \, \text{ and the contour } \, C \, \text{ in } \, </m>
+			 <xref ref="fig_ch-08-08">Figure</xref>. <m>\text{Then let } \, r \to 0 \, \text{ and } \, R \to \infty</m>.
+			 </hint>
       </statement>
     </exercise>
     <exercise xml:id="x8_6_21">
@@ -421,22 +432,19 @@
         <p>
           The Fresnel integrals <m>\int_0^{\infty}\cos(x^2)\,dx</m> and
           <m>\int_0^{\infty}\sin (x^2)\,dx</m> are important in the study of optics.
-          Use the integrand <m>f(z)=\exp(-z^2)</m> and the contour <m>C</m> shown in <xref ref="fig_ch-08-10">Figure</xref>,
-          and let <m>R \to \infty</m> to get the value of these integrals.
+          Use the integrand <m>f(z)=\exp(-z^2)</m> and the contour <m>C</m> shown in <xref ref="fig_ch-08-10">Figure</xref>.
+          Then let <m>R \to \infty</m> to get the value of these integrals.
           Use the fact from calculus that <m>\int_0^{\infty}e^{-x^2}dx=\sqrt{\frac{\pi}{2}}</m>.
         </p>
         <figure xml:id="fig_ch-08-10">
-          <caption>For Exercise 21</caption>
-          <image width="73%" source="figs/ch-08/ch-08-fig-10.svg"/>
+          <caption>For Exercise <xref ref="x8_6_21"></xref></caption>
+          <image width="40%" source="figs/ch-08/ch-08-fig-10.svg"/>
         </figure>
         <solution>
           <p>
             <m>\frac{\sqrt{\pi}}{2\sqrt{2}}</m>.
           </p>
         </solution>
-        <p>
-          \end{enumerate}
-        </p>
       </statement>
     </exercise>
   </exercises>
