@@ -574,17 +574,21 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="Thm_8_6-1-1">
-<div class="para">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be polynomials of degree <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively, where <span class="process-math">\(n \ge m+1\text{,}\)</span> and let <span class="process-math">\(Q\)</span> have simple zeros at the points <span class="process-math">\(t_1, \, t_2, \, \ldots, \, t_{l}\)</span> on the <span class="process-math">\(x\)</span>-axis. If <span class="process-math">\(\alpha\)</span> is a positive real number and if <span class="process-math">\(f(z) =\frac{\exp(i\alpha z)P(z)}{Q(z)}\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="EQ_8_5">
-\begin{equation}
-\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx = -2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j]) - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_j])\tag{8.5.2}
-\end{equation}
+<div class="para">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be polynomials of degree <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively, where <span class="process-math">\(n \ge m+1\text{,}\)</span> and let <span class="process-math">\(Q\)</span> have simple zeros at the points <span class="process-math">\(t_1, \, t_2, \, \ldots, \, t_l \,\)</span> on the <span class="process-math">\(x\)</span>-axis. If <span class="process-math">\(\alpha\)</span> is a positive real number and if <span class="process-math">\(f(z) =\frac{\exp(i\alpha z)P(z)}{Q(z)}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="Thm_8_6-1-1-11">
+\begin{align}
+\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos \alpha x\,dx \amp =
+-2\pi \sum\limits_{j=1}^k\mathrm{Im}(\mathrm{Res}[f,z_j])\notag\\
+\amp - \pi \sum\limits_{j=1}^{l}\mathrm{Im}(\mathrm{Res}[f,t_j]),\tag{8.5.2}
+\end{align}
 </div>
 <div class="para">and</div>
-<div class="displaymath process-math" id="EQ_8_6">
-\begin{equation}
-\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx = 2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_j]) + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_j])\tag{8.5.3}
-\end{equation}
+<div class="displaymath process-math" id="Thm_8_6-1-1-12">
+\begin{align}
+\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin \alpha x\,dx \amp =
+2\pi \sum\limits_{j=1}^k\mathrm{\mathrm{Re}}(\mathrm{Res}[f,z_j])\notag\\
+\amp + \pi \sum_{j=1}^{l}\mathrm{\mathrm{Re}}(\mathrm{Res}[f,t_j]),\tag{8.5.3}
+\end{align}
 </div>
 <div class="para">where <span class="process-math">\(z_1, \, z_2, \, \ldots ,z_k\)</span> are the poles of <span class="process-math">\(f\)</span> that lie in the upper half-plane.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Thm_8_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -626,10 +630,13 @@ f(z) = \frac{z}{z^3-8}=\frac{z}{(z-2)(z+1+i\sqrt{3})(z+1-i\sqrt{3})}
 <div class="solutions"><details id="sec_indented-integrals-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_indented-integrals-10-2-1">
 <div class="para">Computer algebra systems such as Mathematica or MAPLE give the indefinite integral</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int\frac{t}{t^3-8}\,dt = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}}+\frac{\mathrm{Log}(t-2)}{6}+\frac{\mathrm{Log}(t^2+2t+4)}{12}=g(t)\text{.}
-\end{equation*}
+<div class="displaymath process-math" id="sec_indented-integrals-10-2-1-1">
+\begin{align*}
+\int\frac{t}{t^3-8}\,dt \amp =
+\frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}(t-2)}{6} +
+\frac{\mathrm{Log}(t^2+2t+4)}{12}\\
+\amp =g(t)\text{.}
+\end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -637,14 +644,15 @@ f(z) = \frac{z}{z^3-8}=\frac{z}{(z-2)(z+1+i\sqrt{3})(z+1-i\sqrt{3})}
 <div class="para">However, for real numbers, we should write the second term as <span class="process-math">\(\frac{\mathrm{ Log}[(t-2)^2] }{12}\)</span> and use the equivalent formula:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \frac{\mathrm{Log}[(t-2)^2] }{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}\text{.}
+g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} +
+\frac{\mathrm{Log}[(t-2)^2]}{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_indented-integrals-10-2-3">This antiderivative has the property <span class="process-math">\(\lim\limits_{t \to 2}g(t) = -\infty\text{,}\)</span> as <a href="sec_indented-integrals.html#fig_ch-08-05" class="xref" data-knowl="./knowl/xref/fig_ch-08-05.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.5.7">Figure 8.5.7</a> shows.<div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-08-05"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-08/ch-08-fig-05.svg" class="contained"></div>
+<figure class="figure figure-like" id="fig_ch-08-05"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-08/ch-08-fig-05.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.5.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graph of <span class="process-math">\(s=g(t) =\int \frac{t}{t^3-8}\ dt\)</span><div class="autopermalink" data-description="Figure 8.5.7"><a href="#fig_ch-08-05" title="Copy heading and permalink for Figure 8.5.7" aria-label="Copy heading and permalink for Figure 8.5.7">🔗</a></div></figcaption></figure><div class="para logical" id="sec_indented-integrals-10-2-5">
 <div class="para">We also compute</div>
 <div class="displaymath process-math">
@@ -661,12 +669,16 @@ g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \fra
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-10-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_indented-integrals-10-2-6">
-<div class="para">Therefore the Cauchy principal value of the improper integral is {</div>
+<div class="para">Therefore, the Cauchy principal value of the improper integral is</div>
 <div class="displaymath process-math" id="sec_indented-integrals-10-2-6-1">
 \begin{align*}
-\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to 0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty} \frac{t}{t^3-8}\,dt\right]\\
-\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)\\
-\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right) + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)\\
+\text{ P.V. }  \int_{-\infty}^{\infty} \frac{t}{t^3-8}\,dt \amp = \lim_{r \to
+0^{+}}\left[\int\limits_{-\infty}^{2-r} \frac{t}{t^3-8}\,dt + \int\limits_{2+r}^{\infty}
+\frac{t}{t^3-8}\,dt\right]\\
+\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{t \to -\infty}g(t)\right)\\
+\amp \qquad \qquad + \left(\lim_{t \to \infty}g(t) - \lim_{r \to 0^{+}}g(2+r)\right)\\
+\amp = \left(\lim_{r \to 0^{+}}g(2-r) - \lim_{r \to 0^{+}}g(2+r)\right)\\
+\amp \qquad \qquad + \left(\lim_{t \to \infty}g(t) - \lim_{t \to -\infty}g(t)\right)\\
 \amp = 0 + \frac{\pi \sqrt{3}}{12} + \frac{\pi \sqrt{3}}{12}\\
 \amp = \frac{\pi \sqrt{3}}{6}\text{.}
 \end{align*}
@@ -685,8 +697,11 @@ g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} + \fra
 <div class="para">The integrand <span class="process-math">\(f(z) = \frac{\exp(iz)}{(z-1)(z^2+4)}\)</span> has simple poles at the points <span class="process-math">\(t_1=1\)</span> on the <span class="process-math">\(x\)</span>-axis and <span class="process-math">\(z_1=2i\)</span> in the upper half-plane. By <a href="sec_indented-integrals.html#Thm_8_6" class="xref" data-knowl="./knowl/xref/Thm_8_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.3">Theorem 8.5.3</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Thm_8_6.html" id="sec_indented-integrals-11-2-1-6">
 \begin{align*}
-\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx \amp = 2\pi \mathrm{Re}\left(\mathrm{Res}[f,z_1]\right) +\pi \mathrm{Re}\left(\mathrm{Res}[f,t_1]\right)\\
-\amp = 2\pi \mathrm{Re}\left(\frac{-2+i}{20e^2}\right) +\pi \mathrm{Re}\left(\frac{\cos 1+i\sin 1}{5}\right)\\
+\text{ P.V. }  \int_{-\infty}^{\infty}\frac{\sin x}{(x-1)(x^2+4)}\,dx \amp =
+2\pi \mathrm{Re}\left(\mathrm{Res}[f,z_1]\right)\\
+\amp \qquad \qquad +\pi \mathrm{Re}\left(\mathrm{Res}[f,t_1]\right)\\
+\amp = 2\pi \mathrm{Re}\left(\frac{-2+i}{20e^2}\right)\\
+\amp \qquad \qquad +\pi \mathrm{Re}\left(\frac{\cos 1+i\sin 1}{5}\right)\\
 \amp = \frac{\pi}{5}\left(\cos 1-\frac{1}{e^2}\right)\text{.}
 \end{align*}
 </div>
@@ -718,7 +733,9 @@ f(z) = \frac{\mathrm{Res}[f,t_0] }{z-t_0}+g(z)\text{,}\tag{8.5.4}
 <div class="para">where <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z=t_0\text{.}\)</span> Using the parametrization of <span class="process-math">\(C_{r}\)</span> and Equation <a href="sec_indented-integrals.html#EQ_8_9" class="xref" data-knowl="./knowl/xref/EQ_8_9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.4">(8.5.4)</a>, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/EQ_8_9.html" id="sec_indented-integrals-14-1-8">
 \begin{align}
-\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi}\frac{ire^{i\theta}}{re^{i\theta}}\,d\theta + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}\,d\theta\notag\\
+\!\!\!\!\!\!\!\!\!\!\!\!
+\int_{C_{r}}f(z)\,dz \amp = \mathrm{Res}[f,t_0] \int_0^{\pi}\frac{ire^{i\theta}}{re^{i\theta}}\,d\theta +
+ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}\,d\theta\notag\\
 \amp = i\pi \mathrm{Res}[f,t_0] + ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}d\theta\text{.}\tag{8.5.5}
 \end{align}
 </div>
@@ -753,6 +770,7 @@ z_2, \  \ldots \  z_k\)</span> that lie above the semicircles <span class="proce
 <div class="para">Let <span class="process-math">\(R\)</span> be large enough so that the poles of <span class="process-math">\(f\)</span> in the upper half-plane lie under the semicircle <span class="process-math">\(C_R:z=Re^{i\theta}\text{,}\)</span> for <span class="process-math">\(0 \le \theta \le \pi\text{,}\)</span> and the poles of <span class="process-math">\(f\)</span> on the <span class="process-math">\(x\)</span>-axis lie in the interval <span class="process-math">\(-R \le x \le R\text{.}\)</span> Let <span class="process-math">\(C\)</span> be the simple closed positively oriented contour that consists of <span class="process-math">\(C_R\)</span> and <span class="process-math">\(-C_1, \, -C_2, \, \ldots, \, -C_l\)</span> and the segments of the real axis that lie between the semicircles shown in <a href="sec_indented-integrals.html#fig_ch-08-06" class="xref" data-knowl="./knowl/xref/fig_ch-08-06.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.5.10">Figure 8.5.10</a>. The residue theorem gives <span class="process-math">\(\int_Cf(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]\text{,}\)</span> which we rewrite as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-08-06.html ./knowl/xref/Ratl_Fcn_Int_Thm.html ./knowl/xref/PV_P_Q_sin__cos_thm.html" id="EQ_8_13">
 \begin{equation}
+\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
 \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] + \sum_{j=1}^{l}\int_{C_j}f(z)\,dz - \int_{C_R}f(z)\,dz\text{,}\tag{8.5.6}
 \end{equation}
 </div>
@@ -773,7 +791,7 @@ z_2, \  \ldots \  z_k\)</span> that lie above the semicircles <span class="proce
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-16-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_indented-integrals-16-5">If <span class="process-math">\(f\)</span> is the function given in <a href="sec_indented-integrals.html#Thm_8_5" class="xref" data-knowl="./knowl/xref/Thm_8_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.2">Theorem 8.5.2</a>, then Equation <a href="sec_indented-integrals.html#EQ_8_15" class="xref" data-knowl="./knowl/xref/EQ_8_15.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.8">(8.5.8)</a> becomes Equation <a href="sec_indented-integrals.html#EQ_8_4" class="xref" data-knowl="./knowl/xref/EQ_8_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.1">(8.5.1)</a>. If <span class="process-math">\(f\)</span> is the function given in <a href="sec_indented-integrals.html#Thm_8_6" class="xref" data-knowl="./knowl/xref/Thm_8_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.3">Theorem 8.5.3</a>, then equating the real and imaginary parts of Equation <a href="sec_indented-integrals.html#EQ_8_15" class="xref" data-knowl="./knowl/xref/EQ_8_15.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.8">(8.5.8)</a> results in Equations <a href="sec_indented-integrals.html#EQ_8_5" class="xref" data-knowl="./knowl/xref/EQ_8_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.2">(8.5.2)</a> and <a href="sec_indented-integrals.html#EQ_8_6" class="xref" data-knowl="./knowl/xref/EQ_8_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.3">(8.5.3)</a>, respectively, which completes the proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_indented-integrals-16-5">If <span class="process-math">\(f\)</span> is the function given in <a href="sec_indented-integrals.html#Thm_8_5" class="xref" data-knowl="./knowl/xref/Thm_8_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.2">Theorem 8.5.2</a>, then Equation <a href="sec_indented-integrals.html#EQ_8_15" class="xref" data-knowl="./knowl/xref/EQ_8_15.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.8">(8.5.8)</a> becomes Equation <a href="sec_indented-integrals.html#EQ_8_4" class="xref" data-knowl="./knowl/xref/EQ_8_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.1">(8.5.1)</a>. If <span class="process-math">\(f\)</span> is the function given in <a href="sec_indented-integrals.html#Thm_8_6" class="xref" data-knowl="./knowl/xref/Thm_8_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.5.3">Theorem 8.5.3</a>, then equating the real and imaginary parts of Equation <a href="sec_indented-integrals.html#EQ_8_15" class="xref" data-knowl="./knowl/xref/EQ_8_15.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.8">(8.5.8)</a> results in Equations <a href="sec_indented-integrals.html#Thm_8_6-1-1-11" class="xref" data-knowl="./knowl/xref/EQ_8_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.2">(8.5.2)</a> and <a href="sec_indented-integrals.html#Thm_8_6-1-1-12" class="xref" data-knowl="./knowl/xref/EQ_8_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5.3">(8.5.3)</a>, respectively, which completes the proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec_indented-integrals-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 8.5.2"><a href="#sec_indented-integrals-16" title="Copy heading and permalink for Proof 8.5.2" aria-label="Copy heading and permalink for Proof 8.5.2">🔗</a></div></article></details><section class="exercises" id="exercises_indented-integrals"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
