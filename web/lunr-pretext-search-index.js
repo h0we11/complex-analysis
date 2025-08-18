@@ -10240,7 +10240,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "8.6",
   "title": "Integrands with Branch Points",
-  "body": " Integrands with Branch Points  We now show how to evaluate certain improper real integrals involving the integrand . The complex function is multivalued, so we must first specify the branch to be used.  Let be a real number with . In this section we use the branch of corresponding to the branch of the logarithm \\big(see Equation \\big) as follows: . where and . Note that this is not the traditional principal branch of and that, as defined, the function is analytic in the domain .    Let and be polynomials of degree and , respectively, where . If , for has a zero of order at most at the origin, and , where , then , where are the nonzero poles of .     Let denote the simple closed positively oriented contour that consists of the portions of the circles and and the horizontal segments joining them, per Figure .   Contour encloses the nonzero poles of    We select a small value of and a large value of so that the nonzero poles of lie inside . Using the residue theorem, we write .  If we let in Equation , the integrand on the upper horizontal line of Figure approaches , where is a real number; however, because of the branch we chose for (see Equation ), the integrand on the lower horizontal line approaches . Therefore .  It is here that we need the function to have a zero of order at most 1 at the origin. Otherwise, the first two integrals on the right side of Equation would not necessarily converge. Combining this result with Equation gives , so , which we rewrite as .  Using the ML inequality ( Theorem ) gives .  The argument is essentially the same as that used to establish Equation , and we omit the details. If we combine Equations and and let , we arrive at the desired result.     Evaluate P.V. , where .    The function has a nonzero pole at the point , and the denominator has a zero of order at most 1 (in fact, exactly 1) at the origin. Using Theorem , we compute .    We can apply the preceding ideas to other multivalued functions.    Evaluate P.V. , where .   We use the function . Recall that , where and . The path of integration will consist of the segments and of the -axis together with the upper semicircles and , for , as shown in Figure .    The contour for the integrand    We chose the branch because it is analytic on and its interior, hence so is the function . This choice enables us to apply the residue theorem properly (see the hypotheses of Theorem ), and we get . Keeping in mind the branch of logarithm that we're using, we then have .  If , then by the ML inequality ( Theorem ) , and L'Hôpital's rule yields . Engaging in a similar computation shows that . We use these results when we take limits Equations to get .  Equating the real parts in this equation gives      The theory of this section is not purely esoteric. Many applications of contour integrals surface in government and industry worldwide. Several years ago, for example, a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in Figure .    Exercises    Use residues to compute the following integrals.   P.V. .    .     P.V. .    P.V. .    .     P.V. .    P.V. . \\hint{Use the integrand .}    .     P.V. .    P.V. .    .     P.V. .     .    .     Carry out the following computations: \\begin{enumerate}    For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.       Carry out the following computations:   For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.   No. The hypotheses of Theorem are not satisfied. Explain why they are not.        P.V. .      P.V. .     .      P.V. .      P.V. .     .      P.V. and P.V. .  \\hint{Use the complex integrand .}      P.V. , where .     .      P.V. , where .      P.V. . \\hint{Use the integrand and the contour in Figure . Let and .}     .      P.V. . \\hint{Use the integrand and the contour in Figure 8.8. Let and .}      The Fresnel integrals and are important in the study of optics. Use the integrand and the contour shown in Figure , and let to get the value of these integrals. Use the fact from calculus that .   For Exercise 21      .   \\end{enumerate}     "
+  "body": " Integrands with Branch Points  We now show how to evaluate certain improper real integrals involving the integrand . The complex function is multivalued, so we must first specify the branch to be used.  Let be a real number with . In this section we use the branch of corresponding to the branch of the logarithm (see Equation ) as follows: , where and . Note that this is not the traditional principal branch of and that, as defined, the function is analytic in the domain .    Let and be polynomials of degree and , respectively, where . If , for has a zero of order at most at the origin, and , where , then , where are the nonzero poles of .     Let denote the simple closed positively oriented contour that consists of the portions of the circles and and the horizontal segments joining them, per Figure .   Contour encloses the nonzero poles of    We select a small value of and a large value of so that the nonzero poles of lie inside . Using the residue theorem, we write .  If we let in Equation , the integrand on the upper horizontal line of Figure approaches , where is a real number; however, because of the branch we chose for (see Equation ), the integrand on the lower horizontal line approaches . Therefore, .  It is here that we need the function to have a zero of order at most 1 at the origin. Otherwise, the first two integrals on the right side of Equation would not necessarily converge. Combining this result with Equation gives , so , which we rewrite as .  Using the ML inequality ( Theorem ) gives .  The argument is essentially the same as that used to establish Equation , and we omit the details. If we combine Equations and and let , we arrive at the desired result.     Evaluate P.V. , where .    The function has a nonzero pole at the point , and the denominator has a zero of order at most 1 (in fact, exactly 1) at the origin. Using Theorem , we compute .    We can apply the preceding ideas to other multivalued functions.    Evaluate P.V. , where . To get started, refer to Figure .   We use the function . Recall that , where and . The path of integration will consist of the segments and of the -axis together with the upper semicircles and , for , as shown in Figure .    The contour for the integrand    We chose the branch because it is analytic on and its interior, hence so is the function . This choice enables us to apply the residue theorem properly (see the hypotheses of Theorem ), and we get . Keeping in mind the branch of logarithm that we're using, we then have .  If , then by the ML inequality ( Theorem ) , and L'Hôpital's rule yields . Engaging in a similar computation shows that . We use these results when we take limits Equations to get .  Equating the real parts in this equation gives      The theory of this section is not purely esoteric. Many applications of contour integrals surface in government and industry worldwide. Several years ago, for example, a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in Figure .    Exercises    Use residues to compute the following integrals.   P.V. .    .     P.V. .    P.V. .    .     P.V. .    P.V. . \\hint{Use the integrand .}    .     P.V. .    P.V. .    .     P.V. .     .    .        Carry out the following computations:   For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.       Carry out the following computations:   For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.   No. The hypotheses of Theorem are not satisfied. Explain why they are not.        P.V. .      P.V. .     .      P.V. .      P.V. .     .      P.V. and P.V. .       P.V. , where .     .      P.V. , where .      P.V. .  Figure . .     .      P.V.    Figure . .      The Fresnel integrals and are important in the study of optics. Use the integrand and the contour shown in Figure . Then let to get the value of these integrals. Use the fact from calculus that .   For Exercise      .      "
 },
 {
   "id": "Branch_Integrand_Thm",
@@ -10258,7 +10258,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "8.6.1",
   "title": "",
-  "body": " Let denote the simple closed positively oriented contour that consists of the portions of the circles and and the horizontal segments joining them, per Figure .   Contour encloses the nonzero poles of    We select a small value of and a large value of so that the nonzero poles of lie inside . Using the residue theorem, we write .  If we let in Equation , the integrand on the upper horizontal line of Figure approaches , where is a real number; however, because of the branch we chose for (see Equation ), the integrand on the lower horizontal line approaches . Therefore .  It is here that we need the function to have a zero of order at most 1 at the origin. Otherwise, the first two integrals on the right side of Equation would not necessarily converge. Combining this result with Equation gives , so , which we rewrite as .  Using the ML inequality ( Theorem ) gives .  The argument is essentially the same as that used to establish Equation , and we omit the details. If we combine Equations and and let , we arrive at the desired result.  "
+  "body": " Let denote the simple closed positively oriented contour that consists of the portions of the circles and and the horizontal segments joining them, per Figure .   Contour encloses the nonzero poles of    We select a small value of and a large value of so that the nonzero poles of lie inside . Using the residue theorem, we write .  If we let in Equation , the integrand on the upper horizontal line of Figure approaches , where is a real number; however, because of the branch we chose for (see Equation ), the integrand on the lower horizontal line approaches . Therefore, .  It is here that we need the function to have a zero of order at most 1 at the origin. Otherwise, the first two integrals on the right side of Equation would not necessarily converge. Combining this result with Equation gives , so , which we rewrite as .  Using the ML inequality ( Theorem ) gives .  The argument is essentially the same as that used to establish Equation , and we omit the details. If we combine Equations and and let , we arrive at the desired result.  "
 },
 {
   "id": "sec_branch-integrands-6",
@@ -10276,7 +10276,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "8.6.4",
   "title": "",
-  "body": "  Evaluate P.V. , where .   We use the function . Recall that , where and . The path of integration will consist of the segments and of the -axis together with the upper semicircles and , for , as shown in Figure .    The contour for the integrand    We chose the branch because it is analytic on and its interior, hence so is the function . This choice enables us to apply the residue theorem properly (see the hypotheses of Theorem ), and we get . Keeping in mind the branch of logarithm that we're using, we then have .  If , then by the ML inequality ( Theorem ) , and L'Hôpital's rule yields . Engaging in a similar computation shows that . We use these results when we take limits Equations to get .  Equating the real parts in this equation gives    "
+  "body": "  Evaluate P.V. , where . To get started, refer to Figure .   We use the function . Recall that , where and . The path of integration will consist of the segments and of the -axis together with the upper semicircles and , for , as shown in Figure .    The contour for the integrand    We chose the branch because it is analytic on and its interior, hence so is the function . This choice enables us to apply the residue theorem properly (see the hypotheses of Theorem ), and we get . Keeping in mind the branch of logarithm that we're using, we then have .  If , then by the ML inequality ( Theorem ) , and L'Hôpital's rule yields . Engaging in a similar computation shows that . We use these results when we take limits Equations to get .  Equating the real parts in this equation gives    "
 },
 {
   "id": "sec_branch-integrands-9",
@@ -10294,14 +10294,23 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "8.6.1",
   "title": "",
-  "body": "  Use residues to compute the following integrals.   P.V. .    .     P.V. .    P.V. .    .     P.V. .    P.V. . \\hint{Use the integrand .}    .     P.V. .    P.V. .    .     P.V. .     .    .     Carry out the following computations: \\begin{enumerate}    For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.    "
+  "body": "  Use residues to compute the following integrals.   P.V. .    .     P.V. .    P.V. .    .     P.V. .    P.V. . \\hint{Use the integrand .}    .     P.V. .    P.V. .    .     P.V. .     .    .     "
+},
+{
+  "id": "x8_6_10",
+  "level": "2",
+  "url": "sec_branch-integrands.html#x8_6_10",
+  "type": "Exercise",
+  "number": "8.6.2",
+  "title": "",
+  "body": "  Carry out the following computations:   For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.    "
 },
 {
   "id": "x8_6_11",
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_11",
   "type": "Exercise",
-  "number": "8.6.2",
+  "number": "8.6.3",
   "title": "",
   "body": "  Carry out the following computations:   For , show that .    Use part (a) and to verify the computation .    Can you conclude that P.V. ? Justify your answer.   No. The hypotheses of Theorem are not satisfied. Explain why they are not.     "
 },
@@ -10310,7 +10319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_12",
   "type": "Exercise",
-  "number": "8.6.3",
+  "number": "8.6.4",
   "title": "",
   "body": "  P.V. .   "
 },
@@ -10319,7 +10328,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_13",
   "type": "Exercise",
-  "number": "8.6.4",
+  "number": "8.6.5",
   "title": "",
   "body": "  P.V. .     .   "
 },
@@ -10328,7 +10337,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_14",
   "type": "Exercise",
-  "number": "8.6.5",
+  "number": "8.6.6",
   "title": "",
   "body": "  P.V. .   "
 },
@@ -10337,7 +10346,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_15",
   "type": "Exercise",
-  "number": "8.6.6",
+  "number": "8.6.7",
   "title": "",
   "body": "  P.V. .     .   "
 },
@@ -10346,16 +10355,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_16",
   "type": "Exercise",
-  "number": "8.6.7",
+  "number": "8.6.8",
   "title": "",
-  "body": "  P.V. and P.V. .  \\hint{Use the complex integrand .}   "
+  "body": "  P.V. and P.V. .    "
 },
 {
   "id": "x8_6_17",
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_17",
   "type": "Exercise",
-  "number": "8.6.8",
+  "number": "8.6.9",
   "title": "",
   "body": "  P.V. , where .     .   "
 },
@@ -10364,7 +10373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_18",
   "type": "Exercise",
-  "number": "8.6.9",
+  "number": "8.6.10",
   "title": "",
   "body": "  P.V. , where .   "
 },
@@ -10373,27 +10382,27 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_19",
   "type": "Exercise",
-  "number": "8.6.10",
+  "number": "8.6.11",
   "title": "",
-  "body": "  P.V. . \\hint{Use the integrand and the contour in Figure . Let and .}     .   "
+  "body": "  P.V. .  Figure . .     .   "
 },
 {
   "id": "x8_6_20",
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_20",
   "type": "Exercise",
-  "number": "8.6.11",
+  "number": "8.6.12",
   "title": "",
-  "body": "  P.V. . \\hint{Use the integrand and the contour in Figure 8.8. Let and .}   "
+  "body": "  P.V.    Figure . .   "
 },
 {
   "id": "x8_6_21",
   "level": "2",
   "url": "sec_branch-integrands.html#x8_6_21",
   "type": "Exercise",
-  "number": "8.6.12",
+  "number": "8.6.13",
   "title": "",
-  "body": "  The Fresnel integrals and are important in the study of optics. Use the integrand and the contour shown in Figure , and let to get the value of these integrals. Use the fact from calculus that .   For Exercise 21      .   \\end{enumerate}   "
+  "body": "  The Fresnel integrals and are important in the study of optics. Use the integrand and the contour shown in Figure . Then let to get the value of these integrals. Use the fact from calculus that .   For Exercise      .    "
 },
 {
   "id": "sec_argument-rouche",
