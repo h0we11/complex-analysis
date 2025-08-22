@@ -24,13 +24,15 @@
     <m>p</m> on the right edge,
     <m>q</m> on the top edge, and <m>-p</m> on the left edge.
     Integrating and setting the resulting net flow to zero yields
-    <men xml:id="intflow">
-      \int_y^{y+\Delta y}[p(x+\Delta x,t)-p(x,t)]\,dt + \int_x^{x+\Delta x}[q(t,y+\Delta y)-q(t,y )]\,dt=0
-    </men>.
+    <md>
+      <mrow>\int_y^{y+\Delta y}[p(x+\Delta x,t) \amp -p(x,t)]\,dt</mrow>
+		<mrow> \amp + \int_x^{x+\Delta x}[q(t,y+\Delta y)-q(t,y )]\,dt</mrow>
+		<mrow xml:id="intflow" number="yes">\amp =0.</mrow>
+    </md>
   </p>
   <figure xml:id="fig_ch-10-047">
     <caption>A two-dimensional vector field</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-047.svg"/>
+    <image width="60%" source="figs/ch-10/ch-10-fig-047.svg"/>
   </figure>
   <p>
     Both <m>p</m> and <m>q</m> are continuously differentiable,
@@ -249,7 +251,7 @@
   </example>
   <figure xml:id="fig_ch-10-049">
     <caption>A uniform parallel flow</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-049.svg"/>
+    <image width="50%" source="figs/ch-10/ch-10-fig-049.svg"/>
   </figure>
   <example>
     <statement>
@@ -275,7 +277,7 @@
   </example>
   <figure xml:id="fig_ch-10-050">
     <caption>The fluid flow with complex potential <m>F(z)=\frac{A}{2}z^2</m></caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-050.svg"/>
+    <image width="60%" source="figs/ch-10/ch-10-fig-050.svg"/>
   </figure>
   <example>
     <statement>
@@ -334,7 +336,7 @@
   </example>
   <figure xml:id="fig_ch-10-051">
     <caption>Fluid flow around a circle</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-051.svg"/>
+    <image width="50%" source="figs/ch-10/ch-10-fig-051.svg"/>
   </figure>
   <example xml:id="ex_10_25">
     <statement>
@@ -348,11 +350,10 @@
         <me>
           w = S(z) = (z^2+1)^\frac{1}{2}=(z+i)^\frac{1}{2}(z-i)^\frac{1}{2}
         </me>
-        where the branch of the square root of
-        <m>Z= z \pm i</m> in each factor is <m>Z^\frac{1}{2}=R^\frac{1}{2}e^{i\theta /2}</m>,
-        where <m>R=|Z|</m>,
-        and <m>\theta = \arg_{-\frac{\pi}{2}}(Z), \; -\frac{\pi}{2}\lt</m> <m>\theta\le \frac{3\pi}{2}</m>.
-        The function given by <m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m> consisting of the <m>z</m> plane slit along the segment <m>x=0
+		  where the branch of the square root of <m>Z= z \pm i</m> in each factor is <m>Z^\frac{1}{2}=R^\frac{1}{2}e^{i\theta
+		  /2}</m>, where <m>R=|Z|</m>, and <m>\theta = \arg_{-\frac{\pi}{2}}(Z), \; -\frac{\pi}{2}\lt</m> <m>\theta\le
+		  \frac{3\pi}{2}</m>.  The function given by <m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m>
+		  consisting of the <m>z</m> plane slit along the segment <m>x=0
         <me>
           ,\,-1\le y\le 1$ onto the domain $G$ consisting of the $w$ plane slit along the segment $-1\le u\le 1
         </me>,
@@ -396,7 +397,7 @@
   </example>
   <figure xml:id="fig_ch-10-052">
     <caption>Flow around a segment</caption>
-    <image width="73%" source="figs/ch-10/ch-10-fig-052.svg"/>
+    <image width="50%" source="figs/ch-10/ch-10-fig-052.svg"/>
   </figure>
   <exercises xml:id="exercises_2d-fluid-flow">
     <title>Exercises</title>
@@ -413,7 +414,8 @@
           </p>
           <solution>
             <p>
-              <m>V(r,\theta) = A\overline{\left(1-\frac{1}{e^{2i\theta }}\right)} = A\overline{\left(1-e^{-2i\theta}\right)} = A(1-\cos 2\theta -i\sin 2\theta)</m>.
+				  <m>V(r,\theta) = A\overline{\left(1-\frac{1}{e^{2i\theta }}\right)} = A\overline{\left(1-e^{-2i\theta}\right)} =
+				  A(1-\cos 2\theta -i\sin 2\theta)</m>.
             </p>
           </solution>
         </task>
@@ -422,17 +424,16 @@
             Show that the velocity vector
             <m>\mathbf{V}(1,\theta)</m> is tangent to the unit circle <m>|z|=1</m> at all points except <m>-1</m> and <m>+1</m>.
           </p>
-          <p>
-            \hint{Show that <m>\mathbf{V}\cdot \mathbf{P}=0</m>,
-            where <m>\mathbf{P}=\cos \theta +i\sin \theta</m>.}
-          </p>
+            <hint><m>\text{Show that } \, \mathbf{V}\cdot \mathbf{P}=0 \, \text{ where } \,
+					\mathbf{P} = \cos \theta + i\sin \theta.</m>
+				</hint>
         </task>
         <task>
           <p>
             Show that the speed at the point
             <m>(1,\theta)</m> on the unit circle is given by
-            <m>|\mathbf{V}|=2A|\sin \theta|</m> and that the speed attains the maximum of <m>2A</m> at the points <m>\pm i</m> and is zero at the points <m>\pm 1</m>.
-            Where is the pressure the greatest?
+				<m>|\mathbf{V}|=2A|\sin \theta|</m> and that the speed attains the maximum of <m>2A</m> at the points <m>\pm i</m> and
+				is zero at the points <m>\pm 1</m>. Where is the pressure the greatest?
           </p>
           <solution>
             <p>
@@ -492,17 +493,15 @@
           <m>0\lt \theta \lt \frac{\pi}{3}</m> indicated in <xref ref="fig_ch-10-054">Figure</xref>.
           Sketch several streamlines of the flow.
         </p>
-        <p>
-          \hint{Use the conformal mapping <m>w=z^3</m>.}
-        </p>
+          <hint><m>\text{Use the conformal mapping } \, w=z^3.</m></hint>
         <figure xml:id="fig_ch-10-053">
           <caption>For <xref ref="ex_pot-1">Exercise</xref></caption>
-          <image width="73%" source="figs/ch-10/ch-10-fig-053.svg"/>
+          <image width="40%" source="figs/ch-10/ch-10-fig-053.svg"/>
         </figure>
         <figure xml:id="fig_ch-10-054">
           <caption>For <xref ref="ex_pot-2">Exercise</xref></caption>
           {0.5\textwidth}
-          <image width="73%" source="figs/ch-10/ch-10-fig-054.svg"/>
+          <image width="40%" source="figs/ch-10/ch-10-fig-054.svg"/>
         </figure>
       </statement>
     </exercise>
@@ -532,12 +531,12 @@
           </p>
           <figure xml:id="fig_ch-10-055">
             <caption>For <xref ref="ex_pot-3">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-055.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-055.svg"/>
           </figure>
           <figure xml:id="fig_ch-10-056">
             <caption>For <xref ref="ex_pot-4">Exercise</xref></caption>
             {0.5\textwidth}
-            <image width="73%" source="figs/ch-10/ch-10-fig-056.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-056.svg"/>
           </figure>
         </task>
       </statement>
@@ -554,17 +553,15 @@
             <m>r>1, \, 0\lt \theta \lt \frac{\pi}{2}</m> indicated in <xref ref="fig_ch-10-056">Figure</xref>,
             which shows the flow around a circle in the first quadrant.
           </p>
-          <p>
-            \hint{Use the conformal mapping <m>w=z^2</m>.}
-          </p>
+            <hint><m>\text{Use the conformal mapping } \, w=z^2.</m></hint>
           <figure xml:id="fig_ch-10-057">
             <caption>For <xref ref="ex_pot-5">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-057.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-057.svg"/>
           </figure>
           <figure xml:id="fig_ch-10-058">
             <caption>For <xref ref="ex_pot-6">Exercise</xref></caption>
             {0.5\textwidth}
-            <image width="73%" source="figs/ch-10/ch-10-fig-058.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-058.svg"/>
           </figure>
         </task>
         <task>
@@ -615,7 +612,7 @@
           </p>
           <figure xml:id="fig_ch-10-059">
             <caption>For <xref ref="ex_pot-7">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-059.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-059.svg"/>
           </figure>
         </task>
         <task>
