@@ -2,37 +2,36 @@
   <title>Steady State Temperatures</title>
   <introduction>
     <p>
-      In the theory of heat conduction,
-      an assumption is made that heat flows in the direction of decreasing temperature.
-      Another assumption is that the time rate at which heat flows across a surface area is proportional to the component of the temperature gradient in the direction perpendicular to the surface area.
-      If the temperature <m>T(x,y)</m> does not depend on time,
-      then the heat flow at the point <m>(x,y)</m> is given by the vector
+		In the theory of heat conduction, an assumption is made that heat flows in the direction of decreasing temperature.  Another
+		assumption is that the time rate at which heat flows across a surface area is proportional to the component of the
+		temperature gradient in the direction perpendicular to the surface area.  If the temperature <m>T(x,y)</m> does not depend
+		on time, then the heat flow at the point <m>(x,y)</m> is given by the vector
       <me>
         \mathbf{V}(x,y) =-K \nabla T(x,y) = -K[T_x(x,y) + iT_y(x,y)]
       </me>,
-      where <m>K</m> is the thermal conductivity of the medium and is assumed to be constant.
-      If <m>\Delta z</m> denotes a straight-line segment of length <m>\Delta s</m>,
-      then the amount of heat flowing across the segment per unit of time is
+		where <m>K</m> is the thermal conductivity of the medium and is assumed to be constant.  If <m>\Delta z</m> denotes a
+		straight-line segment of length <m>\Delta s</m>, then the amount of heat flowing across the segment per unit of time is
       <men xml:id="across">
         \mathbf{V} \bullet \mathbf{N}\ \Delta s
       </men>,
       where <m>\mathbf{N}</m> is the unit vector perpendicular to the segment.
     </p>
     <p>
-      If we assume that no thermal energy is created or destroyed within the region,
-      then the net amount of heat flowing through any small rectangle with sides of length <m>\Delta x</m> and
-      <m>\Delta y</m> is identically zero \big(see <xref ref="fig_ch-10-016">Figure</xref>(a)\big).
-      This observation leads to the conclusion that <m>T(x,y)</m> is a harmonic function.
-      The following heuristic argument is often used to suggest that <m>T(x,y)</m> satisfies Laplace's equation.
-      Using Expression <xref ref="across"/>,
-      we find that the amount of heat flowing out of the right edge of the rectangle in <xref ref="fig_ch-10-016">Figure</xref>(a) is approximately
+		If we assume that no thermal energy is created or destroyed within the region, then the net amount of heat flowing through
+		any small rectangle with sides of length <m>\Delta x</m> and <m>\Delta y</m> is identically zero \big(see <xref
+		ref="fig_ch-10-016">Figure</xref>(a)\big).  This observation leads to the conclusion that <m>T(x,y)</m> is a harmonic
+		function.  The following heuristic argument is often used to suggest that <m>T(x,y)</m> satisfies Laplace's equation.  Using
+		Expression <xref ref="across"/>, we find that the amount of heat flowing out of the right edge of the rectangle in <xref
+		ref="fig_ch-10-016">Figure</xref>(a) is approximately
       <md>
-        <mrow xml:id="rightedge" number="yes">\mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y) + iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y</mrow>
+		  <mrow xml:id="rightedge" number="yes">\mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y) +
+		  iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y</mrow>
         <mrow>\amp = -KT_x(x+\Delta x, \, y) \Delta y</mrow>
       </md>,
       and the amount of heat flowing out of the left edge is
       <md>
-        <mrow xml:id="leftedge" number="yes">\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet (-1+0i) \Delta y</mrow>
+		  <mrow xml:id="leftedge" number="yes">\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet
+		  (-1+0i) \Delta y</mrow>
         <mrow>\amp = KT_x(x,y) \Delta y</mrow>
       </md>.
     </p>
@@ -44,7 +43,7 @@
     </p>
     <figure xml:id="fig_ch-10-016">
       <caption>Steady state temperatures</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-016.svg"/>
+      <image width="95%" source="figs/ch-10/ch-10-fig-016.svg"/>
     </figure>
     <p>
       Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
@@ -110,7 +109,7 @@
     </example>
     <figure xml:id="fig_ch-10-017">
       <caption>The temperature between parallel planes where <m>T_1>T_2</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-017.svg"/>
+      <image width="80%" source="figs/ch-10/ch-10-fig-017.svg"/>
     </figure>
     <example>
       <statement>
@@ -127,7 +126,7 @@
             this problem is an example of a Dirichlet problem.
             From Example 11.2, it follows that the solution is
             <me>
-              T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z)
+              T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z).
             </me>
           </p>
         </solution>
@@ -143,7 +142,7 @@
     </example>
     <figure xml:id="fig_ch-10-018">
       <caption>The temperature <m>T(x,y)</m> in the upper half-plane where <m>T_1>T_2</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-018.svg"/>
+      <image width="80%" source="figs/ch-10/ch-10-fig-018.svg"/>
     </figure>
     <example>
       <statement>
@@ -160,7 +159,7 @@
             As discussed in <xref ref="ex_phi_x_y_">Example</xref>,
             the function
             <men xml:id="conmap3">
-              u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
+              \hspace{-0.3in} u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
             </men>
             is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.
             The conformal map given by <xref ref="conmap3">Equation</xref>
@@ -172,26 +171,28 @@
           </p>
           <p>
             If we use Example 11.2, the harmonic function <m>T^*(u,v)</m> is given by
-            <men xml:id="harmfun1">
-              T^*(u,v) = 100 + \frac{50-100}{\frac{\pi}{2}}\mathrm{Arg}(w) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
-            </men>.
+            <md>
+				  <mrow>T^*(u,v) \amp = 100 + \frac{50-100}{\frac{\pi}{2}}\mathrm{Arg}(w)</mrow>
+				  <mrow xml:id="harmfun1" number="yes">\amp= 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)</mrow>
+            </md>.
           </p>
           <p>
-            Substituting the expressions for <m>u</m> and <m>v</m> from Equation <xref ref="conmap3"/> into Equation <xref ref="harmfun1"/> yields the desired solution:
+				Substituting the expressions for <m>u</m> and <m>v</m> from Equation <xref ref="conmap3"/> into Equation <xref
+				ref="harmfun1"/> yields the desired solution:
             <me>
-              T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right)
+              T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right).
             </me>
           </p>
         </solution>
         <p>
-          The isothermals <m>T(x,y) =</m> constant are circles that pass through the points <m>\pm 1</m>,
+          The isothermals <m>\{(x,y):T(x,y) = \text{ constant} \}</m> are circles that pass through the points <m>\pm 1</m>,
           as shown in <xref ref="fig_ch-10-019">Figure</xref>.
         </p>
       </statement>
     </example>
     <figure xml:id="fig_ch-10-019">
       <caption>The temperature <m>T(x,y)</m> in a half-disk</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-019.svg"/>
+      <image width="50%" source="figs/ch-10/ch-10-fig-019.svg"/>
     </figure>
   </introduction>
   <subsection xml:id="subsec_insulated-segment">
@@ -234,7 +235,7 @@
     </p>
     <figure xml:id="fig_ch-10-020">
       <caption>Steady state temperatures with one boundary portion insulated</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-020.svg"/>
+      <image width="80%" source="figs/ch-10/ch-10-fig-020.svg"/>
     </figure>
     <p>
       The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal derivative of <m>T^*(u,v)</m> is zero.
@@ -331,7 +332,8 @@
       <exercise xml:id="ex_T_x_y_-1">
         <statement>
           <p>
-            Find the temperature function <m>T(x,y)</m> in the infinite strip bounded by the lines <m>y=-x</m> and <m>y=1-x</m> that satisfies the following boundary values
+				Find the temperature function <m>T(x,y)</m> in the infinite strip bounded by the lines <m>y=-x</m> and <m>y=1-x</m>
+				that satisfies the following boundary values
             (shown in <xref ref="fig_ch-10-022">Figure</xref>).
             <md>
               <mrow>T(x,-x) \amp = 25  \text{ for all }   x;</mrow>
@@ -340,7 +342,7 @@
           </p>
           <figure xml:id="fig_ch-10-022">
             <caption>For <xref ref="ex_T_x_y_-1">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-022.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-022.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -359,7 +361,7 @@
           </p>
           <figure xml:id="fig_ch-10-023">
             <caption>For <xref ref="ex_T_x_y_-2">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-023.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-023.svg"/>
           </figure>
         </statement>
         <solution>
@@ -379,12 +381,10 @@
               <mrow>T(x,y) \amp = 60  \text{ for }   x+iy=z=e^{i\theta}, \frac{\pi}{2} \lt  \theta \lt  2\pi </mrow>
             </md>.
           </p>
-          <p>
-            \hint{Use <m>w=\frac{i(1-z)}{1+z}</m>.}
-          </p>
+            <hint><m>\text{Use } \, w=\frac{i(1-z)}{1+z}.</m></hint>
           <figure xml:id="fig_ch-10-024">
             <caption>For <xref ref="ex_T_x_y_-3">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-024.svg"/>
+            <image width="35%" source="figs/ch-10/ch-10-fig-024.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -401,7 +401,7 @@
           </p>
           <figure xml:id="fig_ch-10-025">
             <caption>For <xref ref="ex_T_x_y_-4">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-025.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-025.svg"/>
           </figure>
         </statement>
         <solution>
@@ -424,7 +424,7 @@
           </p>
           <figure xml:id="fig_ch-10-026">
             <caption>For <xref ref="ex_T_x_y_-5">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-026.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-026.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -445,7 +445,7 @@
           </p>
           <figure xml:id="fig_ch-10-027">
             <caption>For <xref ref="ex_T_x_y_-6">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-027.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-027.svg"/>
           </figure>
         </statement>
         <solution>
@@ -469,7 +469,7 @@
           </p>
           <figure xml:id="fig_ch-10-028">
             <caption>For <xref ref="ex_T_x_y_-7">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-028.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-028.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -488,7 +488,7 @@
           </p>
           <figure xml:id="fig_ch-10-029">
             <caption>For <xref ref="ex_T_x_y_-8">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-029.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-029.svg"/>
           </figure>
         </statement>
         <solution>
@@ -512,7 +512,7 @@
           </p>
           <figure xml:id="fig_ch-10-030">
             <caption>For <xref ref="ex_T_x_y_-9">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-030.svg"/>
+            <image width="50%" source="figs/ch-10/ch-10-fig-030.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -531,7 +531,7 @@
           </p>
           <figure xml:id="fig_ch-10-031">
             <caption>For <xref ref="ex_T_x_y_-10">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-031.svg"/>
+            <image width="50%" source="figs/ch-10/ch-10-fig-031.svg"/>
           </figure>
         </statement>
         <solution>
@@ -554,7 +554,7 @@
           </p>
           <figure xml:id="fig_ch-10-032">
             <caption>For <xref ref="ex_T_x_y_-11">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-032.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-032.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -571,7 +571,7 @@
           </p>
           <figure xml:id="fig_ch-10-033">
             <caption>For <xref ref="ex_T_x_y_-12">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-033.svg"/>
+            <image width="40%" source="figs/ch-10/ch-10-fig-033.svg"/>
           </figure>
         </statement>
         <solution>
@@ -595,7 +595,7 @@
           </p>
           <figure xml:id="fig_ch-10-034">
             <caption>For <xref ref="ex_T_x_y_-13">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-034.svg"/>
+            <image width="60%" source="figs/ch-10/ch-10-fig-034.svg"/>
           </figure>
         </statement>
       </exercise>
@@ -620,7 +620,7 @@
           </p>
           <figure xml:id="fig_ch-10-035">
             <caption>For <xref ref="ex_T_x_y_-14">Exercise</xref></caption>
-            <image width="73%" source="figs/ch-10/ch-10-fig-035.svg"/>
+            <image width="50%" source="figs/ch-10/ch-10-fig-035.svg"/>
           </figure>
         </statement>
         <solution>
