@@ -14407,7 +14407,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.8",
   "title": "Multiplication and Division by <span class=\"process-math\">\\(t\\)<\/span>",
-  "body": " Multiplication and Division by  Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions , , or as part of the solution. We now show how the Laplace transforms of and are related to the Laplace transform of . The transform of will be obtained via differentiation and the transform of will be obtained via integration. To be precise, we state the following theorems.   Multiplication by $t$    If is the Laplace transform of , then      By definition we have . Leibniz's rule for partial differentiation under the integral sign permits us to write .    Division by $t$   Let both and have Laplace transforms and let denote the transform of . If exists,      Since , we integrate from to : . The order of integration in equation in the double integral is reversed: .     Show that .    Let , then . Hence, we can differentiate to obtain the desired result:       Show that .    Let and . Since , we can integrate to obtain the desired result: .    Some types of differential equations involve the terms or . Laplace transforms can be used to find the solution if we use the additional substitutions .    Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in .  This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution      Exercises    Find the Laplace transform for each of the following:    .    .      .     .    .      .     .    .      .       Show that .      Show that .      Find .      Find .     .      Find .      Find .     .      Solve the initial value problem for each of the following:    , with and .    .      , with and .     , with .    .      , with .     , with .    .      , with .       Solve the Laguerre equation , with .     .      Solve the Laguerre equation , with .     "
+  "body": " Multiplication and Division by  Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions , , or as part of the solution. We now show how the Laplace transforms of and are related to the Laplace transform of . The transform of will be obtained via differentiation and the transform of will be obtained via integration. To be precise, we state the following theorems.   Multiplication by   If is the Laplace transform of , then      By definition we have . Leibniz's rule for partial differentiation under the integral sign permits us to write .    Division by   Let both and have Laplace transforms and let denote the transform of . If exists,      Since , we integrate from to : . The order of integration in equation in the double integral is reversed: .     Show that .    Let , then . Hence, we can differentiate to obtain the desired result:       Show that .    Let and . Since , we can integrate to obtain the desired result:     Some types of differential equations involve the terms or . Laplace transforms can be used to find the solution if we use the additional substitutions .    Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in   This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution      Exercises    Find the Laplace transform for each of the following:    .    .      .     .    .      .     .    .      .       Show that .      Show that .      Find .      Find .     .      Find .      Find .     .      Solve the initial value problem for each of the following:    , with and .    .      , with and .     , with .    .      , with .     , with .    .      , with .       Solve the Laguerre equation , with .     .      Solve the Laguerre equation , with .     "
 },
 {
   "id": "sec_mult-and-division-by-t-3",
@@ -14415,8 +14415,8 @@ var ptx_lunr_docs = [
   "url": "sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-3",
   "type": "Theorem",
   "number": "11.8.1",
-  "title": "Multiplication by “$t$”.",
-  "body": " Multiplication by $t$    If is the Laplace transform of , then    "
+  "title": "Multiplication by <span class=\"process-math\">\\(\\boldsymbol t\\)<\/span>.",
+  "body": " Multiplication by   If is the Laplace transform of , then    "
 },
 {
   "id": "sec_mult-and-division-by-t-4",
@@ -14433,8 +14433,8 @@ var ptx_lunr_docs = [
   "url": "sec_mult-and-division-by-t.html#thm_div-by-t",
   "type": "Theorem",
   "number": "11.8.2",
-  "title": "Division by $t$.",
-  "body": " Division by $t$   Let both and have Laplace transforms and let denote the transform of . If exists,    "
+  "title": "Division by <span class=\"process-math\">\\(\\boldsymbol t\\)<\/span>.",
+  "body": " Division by   Let both and have Laplace transforms and let denote the transform of . If exists,    "
 },
 {
   "id": "sec_mult-and-division-by-t-6",
@@ -14461,7 +14461,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.8.4",
   "title": "",
-  "body": "  Show that .    Let and . Since , we can integrate to obtain the desired result: .   "
+  "body": "  Show that .    Let and . Since , we can integrate to obtain the desired result:    "
 },
 {
   "id": "sec_mult-and-division-by-t-10",
@@ -14470,7 +14470,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.8.5",
   "title": "",
-  "body": "  Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in .  This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution    "
+  "body": "  Use Laplace transforms to solve the initial value problem .    Let denote the Laplace transform of , then using the substitutions and results in   This equation involves and can be written as a first-order linear differential equation: .  The integrating factor for the differential equation is .  Multiplying Equation by produces .  Now we integrate the equation with respect to and the results is , where is the constant of integration. Hence the solution to Equation is . The inverse of the transform in equation is the desired solution    "
 },
 {
   "id": "exercises_mult-and-division-by-t-2",
