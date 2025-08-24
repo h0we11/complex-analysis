@@ -7,11 +7,10 @@
     <men xml:id="quotientPQ">
       Y(s) = \frac{P(s)}{Q(s)}
     </men>.
-    where <m>P</m> and <m>Q</m> are polynomials that have no common factors.
-    The inverse of <m>Y(s)</m> is found by using its partial fraction representation and referring to <xref ref="table_laplace-transforms">Table</xref>.
-    We now show how the theory of complex variables can be used to systematically find the partial fraction representation.
-    The first result is an extension of <xref ref="Jordan_s_Lemma">Lemma</xref> to <m>n</m> linear factors.
-    The proof is left for the reader.
+	 where <m>P</m> and <m>Q</m> are polynomials that have no common factors.  The inverse of <m>Y(s)</m> is found by using its
+	 partial fraction representation and referring to <xref ref="table_laplace-transforms">Table</xref>.  We now show how the
+	 theory of complex variables can be used to systematically find the partial fraction representation.  The first result is an
+	 extension of <xref ref="Jordan_s_Lemma">Lemma</xref> to <m>n</m> linear factors.  The proof is left for the reader.
   </p>
   <theorem xml:id="thm_nonrepeated-factors">
     <title>Nonrepeated Linear Factors</title>
@@ -133,13 +132,14 @@
       The polynomial <m>Q</m> has simple zeros at <m>s=a\pm ib</m>,
       this implies that <m>Q'(a\pm ib) \ne 0</m>.
       Therefore, we obtain
-      <men xml:id="residueY">
-        \mathrm{Res}[Y,a\pm ib] = \lim_{s \to a\pm ib}\left(\frac{s-(a\pm ib)}{Q(s)-Q(a\pm ib)}P(s)\right) = \frac{P(a\pm ib)}{Q'(a\pm ib)}
-      </men>,
+      <md>
+		  <mrow>\mathrm{Res}[Y,a\pm ib] \amp = \lim_{s \to a\pm ib}\left(\frac{s-(a\pm ib)}{Q(s)-Q(a\pm ib)}P(s)\right)</mrow>
+		  <mrow xml:id="residueY" number="yes">\amp = \frac{P(a \pm ib)}{Q'(a\pm ib)},</mrow>
+      </md>
       from which it is easy to see that
       <men xml:id="residueYconj">
-        \mathrm{Res}[Y,a-ib] = \overline{\mathrm{Res}[Y,a-ib]}
-      </men>.
+        \mathrm{Res}[Y,a-ib] = \overline{\mathrm{Res}[Y,a-ib]}.
+      </men>
     </p>
     <p>
       If we set <m>A+iB=</m> <m>\mathrm{Res}[Y,a+ib]</m> and use <xref ref="thm_nonrepeated-factors">Theorem</xref>
@@ -176,13 +176,15 @@
         We find that <m>A_1+iB_1=\frac{1}{2}+0i</m> and <m>A_2+iB_2=-\frac{1}{2}+0i</m>,
         which correspond to <m>a_1+ib_1=0+2i</m> and <m>a_2+ib_2=0+3i</m>,
         respectively.
-        Thus we obtain
-        <me>
-          Y(s) = \frac{2(\frac{1}{2})(s-0) - (2)(0)(2)}{s^2+4} + \frac{2(-\frac{1}{2})(s-0)-(2)(0)(3)}{s^2+9}=\frac{s}{s^2+4}-\frac{s}{s^2+9}
-        </me>,
+        Thus, we obtain
+        <md>
+			 <mrow>Y(s) \amp = \frac{2(\frac{1}{2})(s-0) - (2)(0)(2)}{s^2+4} + \frac{2(-\frac{1}{2})(s-0)-(2)(0)(3)}{s^2+9}</mrow>
+			 <mrow>\amp =\frac{s}{s^2+4}-\frac{s}{s^2+9},</mrow>
+        </md>
         and the desired solution is
         <me>
-          \mathcal{L}^{-1}\big(Y(s)\big) = \mathcal{L}^{-1}\left(\frac{s}{s^2+4}\right) - \mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right) = \cos 2t-\cos 3t
+			 \mathcal{L}^{-1}\big(Y(s)\big) = \mathcal{L}^{-1}\left(\frac{s}{s^2+4}\right) -
+			 \mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right) = \cos 2t-\cos 3t.
         </me>
       </p>
     </solution>
@@ -232,7 +234,7 @@
       <p>
         Now we use <xref ref="table_laplace-transforms">Table</xref> to get
         <me>
-          y(t) = 1-2e^{-t}-2te^{-t} + \cos t + \sin t
+          y(t) = 1-2e^{-t}-2te^{-t} + \cos t + \sin t.
         </me>
       </p>
     </solution>
@@ -334,7 +336,7 @@
   </proof>
   <figure xml:id="fig_ch-11-27">
     <caption>The contour <m>\Gamma_R</m>.</caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-27.svg"/>
+    <image width="40%" source="figs/ch-11/ch-11-fig-27.svg"/>
   </figure>
   <theorem>
     <title>Heaviside Expansion Theorem</title>
@@ -472,9 +474,10 @@
             <m>Y(s) =\frac{s^3+s^2-s+3}{s^{5}-s}</m>.
           </p>
           <solution>
-            <p>
-              <m>\mathcal{L}^{-1}\Big(\frac{s^3+s^2-s+3}{s^5-s}\Big) = -3+e^t+e^{-t}+\cos t+\sin t=-3+2\cosh t+\cos t+\sin t</m>.
-            </p>
+					<md>
+				  		<mrow>\mathcal{L}^{-1}\Big(\frac{s^3+s^2-s+3}{s^5-s}\Big) \amp = -3+e^t+e^{-t}+\cos t+\sin t</mrow>
+					   <mrow>\amp = -3+2\cosh t+\cos t+\sin t.</mrow>
+					</md>
           </solution>
         </task>
         <task>
@@ -487,9 +490,10 @@
             <m>Y(s) =\frac{s^3+3s^2-s+1}{s^{5}-s}</m>.
           </p>
           <solution>
-            <p>
-              <m>\mathcal{L}^{-1}\Big(\frac{s^{3}+3s^2-s+1}{s^{5}-s}\Big) = -1+e^t+e^{-t}-\cos t+\sin t=-1+2\cosh t-\cos t+\sin t</m>.
-            </p>
+					<md>
+						<mrow>\mathcal{L}^{-1}\Big(\frac{s^{3}+3s^2-s+1}{s^{5}-s}\Big) \amp = -1+e^t+e^{-t}-\cos t+\sin t</mrow>
+						<mrow>\amp = -1+2\cosh t-\cos t+\sin t.</mrow>
+					</md>
           </solution>
         </task>
         <task>
