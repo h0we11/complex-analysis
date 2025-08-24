@@ -12,11 +12,9 @@
     <title>Convolution Theorem</title>
     <statement>
       <p>
-        Let <m>F(s)</m> and <m>G(s)</m> denote the Laplace transforms of <m>f(t)</m> and <m>g(t)</m>,
-        respectively.
-        Then the product given by <m>H(s)=F(s)G(s)</m> is the Laplace transformation of the convolution of <m>f</m> and <m>g</m>.
-        It is denoted by <m>h(t)=(f\ast g)(t)</m>,
-        and has the integral representation
+		  Let <m>F(s)</m> and <m>G(s)</m> denote the Laplace transforms of <m>f(t)</m> and <m>g(t)</m>, respectively.  Then the
+		  product given by <m>H(s)=F(s)G(s)</m> is the Laplace transformation of the convolution of <m>f</m> and <m>g</m>.  It is
+		  denoted by <m>h(t)=(f\ast g)(t)</m>, and has the integral representation
         <md>
           <mrow xml:id="convolution1" number="yes">h(t) \amp = (f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau,  \text{ or }</mrow>
           <mrow xml:id="convolution2" number="yes">h(t) \amp = (g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau</mrow>
@@ -26,10 +24,9 @@
   </theorem>
   <proof>
     <p>
-      The following proof is given for the special case when <m>s</m> is a real number.
-      The general case is covered in advanced texts.
-      Using the dummy variables <m>\sigma</m> and <m>\tau</m> and the integrals defining the transforms,
-      we can express their product as
+		The following proof is given for the special case when <m>s</m> is a real number.  The general case is covered in advanced
+		texts.  Using the dummy variables <m>\sigma</m> and <m>\tau</m> and the integrals defining the transforms, we can express
+		their product as
       <me>
         F(s)G(s) = \left[\int_0^{\infty}f(\sigma) e^{-s\sigma}\,d\sigma\right]\left[\int_0^{\infty}g(\tau)e^{-s\tau}\,d\tau\right]
       </me>.
@@ -63,7 +60,7 @@
   </proof>
   <figure xml:id="fig_ch-11-28">
     <caption>The region of integration in the convolution theorem</caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-28.svg"/>
+    <image width="40%" source="figs/ch-11/ch-11-fig-28.svg"/>
   </figure>
   <p>
     <xref ref="table_convolution-properties">Table</xref>
@@ -81,17 +78,17 @@
         <cell><m>f\ast g=g\ast f</m></cell>
       </row>
       <row>
-        <cell>\hdashline
+        <cell>
           Distributivity</cell>
         <cell><m>f\ast (g+h) =f\ast g+f\ast h</m></cell>
       </row>
       <row>
-        <cell>\hdashline
+        <cell>
           Associativity</cell>
         <cell><m>(f\ast g) \ast h=f\ast (g\ast h)</m></cell>
       </row>
       <row>
-        <cell>\hdashline
+        <cell>
           Zero</cell>
         <cell><m>f\ast 0=0</m></cell>
       </row>
@@ -146,7 +143,7 @@
         </me>,
         and the solution is
         <me>
-          f(t) = 2\cos t - t\sin t
+          f(t) = 2\cos t - t\sin t.
         </me>
       </p>
     </solution>
@@ -165,25 +162,18 @@
     The unit impulse function is obtained by letting the interval width go to zero,
     <em>i.e.</em>,
     <me>
-      \delta(t) = \lim_{a \to 0}\delta_a(t)
+      \delta(t) = \lim_{a \to 0}\delta_a(t).
     </me>
   </p>
   <p>
-    <xref ref="fig_ch-11-29">Figure</xref>
-    shows the graph of <m>\delta_a(t)</m> for <m>a=10, \, 40</m>,
-    and <m>100</m>.
-    Although <m>\delta(t)</m> is called the
-    <em>Dirac delta function</em>,
-    it is not an ordinary function.
-    To be precise it is a distribution,
-    and the theory of distributions permits manipulations of
-    <m>\delta(t)</m> as though it were a function.
-    For our work, we will treat
-    <m>\delta(t)</m> as a function and investigate its properties.
+	 <xref ref="fig_ch-11-29">Figure</xref> shows the graph of <m>\delta_a(t)</m> for <m>a=10, \, 40</m>, and <m>100</m>.  Although
+	 <m>\delta(t)</m> is called the <em>Dirac delta function</em>, it is not an ordinary function.  To be precise it is a
+	 distribution, and the theory of distributions permits manipulations of <m>\delta(t)</m> as though it were a function.  For our
+	 work, we will treat <m>\delta(t)</m> as a function and investigate its properties.
   </p>
   <figure xml:id="fig_ch-11-29">
     <caption>Graphs of <m>y=\delta_a(t)</m> for <m>a=10</m>, <m>40</m>, and <m>100</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-29.svg"/>
+    <image width="85%" source="figs/ch-11/ch-11-fig-29.svg"/>
   </figure>
   <example>
     <statement>
@@ -202,7 +192,8 @@
         Letting <m>a \to 0</m> in equation,
         and using L'H&#xf4;pital's rule, we obtain
         <me>
-          \mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = \lim\limits_{a \to 0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1
+			 \mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = \lim\limits_{a \to
+			 0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1
         </me>.
       </p>
     </solution>
@@ -211,16 +202,17 @@
     We now turn our attention to the unit impulse function.
     First, consider the function <m>f_a(t)</m> obtained by integrating <m>\delta_a(t)</m>:
     <me>
-      f_a(t) = \int_0^t\delta_a(\tau )\,d\tau = \begin{cases}0 \amp  \text{ for }   t \lt  0,\\ \frac{t}{a} \amp  \text{ for }   0 \le t \le a,\\ 1 \amp  \text{ for }   a \lt  t. \end{cases}
+		f_a(t) = \int_0^t\delta_a(\tau )\,d\tau = \begin{cases}0 \amp  \text{ for }   t \lt  0,\\ \frac{t}{a} \amp  \text{ for }   0
+		\le t \le a,\\ 1 \amp  \text{ for }   a \lt  t. \end{cases}
     </me>
   </p>
   <p>
-    Then it is easy to see that <m>U_0(t) =\lim\limits_{a \to 0}f_a(t)</m>
-    (see <xref ref="fig_ch-11-30">Figure</xref>).
+    Then it is easy to see that <m>U_0(t) =\lim\limits_{a \to 0}f_a(t)</m> (see <xref ref="fig_ch-11-30">Figure</xref>).
   </p>
   <figure xml:id="fig_ch-11-30">
-    <caption>The integral of <m>\delta_a(t)</m> is <m>f_a(t)</m>, which becomes <m>U_0(T)</m>, which becomes <m>U_0(t)</m> when <m>a \to 0</m></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-30.svg"/>
+	 <caption>The integral of <m>\delta_a(t)</m> is <m>f_a(t)</m>, which becomes <m>U_0(T)</m>, which becomes <m>U_0(t)</m> when
+	 <m>a \to 0</m></caption>
+    <image width="85%" source="figs/ch-11/ch-11-fig-30.svg"/>
   </figure>
   <p>
     The response of a system to the unit impulse function is illustrated in the next example.
@@ -238,11 +230,11 @@
       <p>
         Taking transforms results in <m>(s^2+4s+13)Y(s) = 3\mathcal{L}(\delta (t)) = 3</m>, so that
         <me>
-          Y(s) = \frac{3}{s^2+4s+13}=\frac{3}{(s+2)^2+3^2}
-        </me>,
+          Y(s) = \frac{3}{s^2+4s+13}=\frac{3}{(s+2)^2+3^2},
+        </me>
         so the solution is
         <me>
-          y(t)=e^{-2t}\sin 3t
+          y(t)=e^{-2t}\sin 3t.
         </me>
       </p>
     </solution>
@@ -258,7 +250,7 @@
   </p>
   <figure xml:id="fig_ch-11-31">
     <caption>The solution <m>y=y(t)</m> to <xref ref="ex_10_32">Example</xref></caption>
-    <image width="73%" source="figs/ch-11/ch-11-fig-31.svg"/>
+    <image width="60%" source="figs/ch-11/ch-11-fig-31.svg"/>
   </figure>
   <p>
     We now illustrate how the convolution method can be used to solve initial value problems.
@@ -431,7 +423,12 @@
       </statement>
       <solution>
         <p>
-          Proof: <m>f \ast(g+h) = \int_0^tf(\tau)(g+h)(t-\tau)\,d\tau = \int_0^tf(\tau)g(t-\tau)\,d\tau + \int_{0}^tf(\tau)h(t-\tau )d\tau = f\ast g+f\ast g</m>.
+          Proof:
+				<md>
+					<mrow>f \ast(g+h) \amp = \int_0^tf(\tau)(g+h)(t-\tau)\,d\tau</mrow>
+					<mrow>\amp = \int_0^tf(\tau)g(t-\tau)\,d\tau + \int_{0}^tf(\tau)h(t-\tau )d\tau</mrow>
+					<mrow>\amp = f\ast g+f\ast g.</mrow>
+				</md>
         </p>
       </solution>
     </exercise>
