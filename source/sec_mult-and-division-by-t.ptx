@@ -1,23 +1,19 @@
 <section xml:id="sec_mult-and-division-by-t">
   <title>Multiplication and Division by <m>t</m></title>
   <p>
-    Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions <m>t\cos bt</m>,
-    <m>t\sin bt</m>, or <m>t^ne^{at}</m> as part of the solution.
-    We now show how the Laplace transforms of <m>tf(t)</m> and
-    <m>\frac{f(t)}{t}</m> are related to the Laplace transform of <m>f(t)</m>.
-    The transform of <m>tf(t)</m> will be obtained via differentiation and the transform of
-    <m>\frac{f(t)}{t}</m> will be obtained via integration.
-    To be precise, we state the following theorems.
+	 Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions
+	 <m>t\cos bt</m>, <m>t\sin bt</m>, or <m>t^ne^{at}</m> as part of the solution.  We now show how the Laplace transforms of
+	 <m>tf(t)</m> and <m>\frac{f(t)}{t}</m> are related to the Laplace transform of <m>f(t)</m>.  The transform of <m>tf(t)</m>
+	 will be obtained via differentiation and the transform of <m>\frac{f(t)}{t}</m> will be obtained via integration.  To be
+	 precise, we state the following theorems.
   </p>
   <theorem>
-    <title>Multiplication by
-    <q>$t$</q>
-    </title>
+    <title>Multiplication by <m>\boldsymbol t</m></title>
     <statement>
       <p>
         If <m>F(s)</m> is the Laplace transform of <m>f(t)</m>, then
         <me>
-          \mathcal{L}\big(tf(t)\big) = -F\,'(s)
+          \mathcal{L}\big(tf(t)\big) = -F\,'(s).
         </me>
       </p>
     </statement>
@@ -36,13 +32,13 @@
     </p>
   </proof>
   <theorem xml:id="thm_div-by-t">
-    <title>Division by $t$</title>
+    <title>Division by <m>\boldsymbol t</m></title>
     <statement>
       <p>
         Let both <m>f(t)</m> and <m>\frac{f(t)}{t}</m> have Laplace transforms and let <m>F(s)</m> denote the transform of <m>f(t)</m>.
         If <m>\lim\limits_{t \to 0^+}\frac{f(t)}{t}</m> exists,
         <me>
-          \mathcal{L}\left(\frac{f(t)}{t}\right) = \int_s^{\infty}F(\sigma)\,d\sigma
+          \mathcal{L}\left(\frac{f(t)}{t}\right) = \int_s^{\infty}F(\sigma)\,d\sigma.
         </me>
       </p>
     </statement>
@@ -75,7 +71,7 @@
         then <m>F(s) =\mathcal{L}(\cos bt) = \frac{s}{s^2+b^2}</m>.
         Hence, we can differentiate <m>F(s)</m> to obtain the desired result:
         <me>
-          \mathcal{L}(t\cos bt) =-F\,'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}
+          \mathcal{L}(t\cos bt) =-F\,'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}.
         </me>
       </p>
     </solution>
@@ -92,8 +88,9 @@
         Since <m>\lim\limits_{t \to 0^+}\frac{\sin t}{t}=1</m>,
         we can integrate <m>F(s)</m> to obtain the desired result:
         <me>
-          \mathcal{L}\left(\frac{\sin t}{t}\right) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} = \left.-\arctan \frac{1}{\sigma }\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}
-        </me>.
+			 \mathcal{L}\left(\frac{\sin t}{t}\right) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} = \left.-\arctan \frac{1}{\sigma
+			 }\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}.
+        </me>
       </p>
     </solution>
   </example>
@@ -116,12 +113,11 @@
     </statement>
     <solution>
       <p>
-        Let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>,
-        then using the <xref ref="Laplacety1">substitutions</xref>
-        and <xref ref="Laplacety2"></xref> results in
-        <men xml:id="LaplaceTransDE">
-          -s^2Y\,'(s) -2sY(s) +0+sY\,'(s) + Y(s) - Y(s) = 0
-        </men>.
+		  Let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>, then using the <xref ref="Laplacety1">substitutions</xref>
+		  and <xref ref="Laplacety2"></xref> results in 
+		  <men xml:id="LaplaceTransDE">
+          \hspace{-0.3in} -s^2Y\,'(s) -2sY(s) +0+sY\,'(s) + Y(s) - Y(s) = 0.
+        </men>
       </p>
       <p>
         This equation involves <m>Y\,'(s)</m> and can be written as a first-order linear differential equation:
@@ -151,7 +147,7 @@
         </me>.
         The inverse of the transform <m>Y(s)</m> in equation is the desired solution
         <me>
-          y(t) = Cte^t
+          y(t) = Cte^t.
         </me>
       </p>
     </solution>
