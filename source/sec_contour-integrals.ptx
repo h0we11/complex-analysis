@@ -1,47 +1,32 @@
 <section xml:id="sec_contour-integrals">
   <title>Contours and Contour Integrals</title>
   <p>
-    In <xref ref="sec_complex-integrals">Section</xref>
-    we showed how to evaluate integrals of the form <m>\int_a^bf(t) \ dt</m>,
-    where <m>f</m> was complex-valued and
-    <m>\left[ a,\,b\right]</m> was an interval on the real axis
-    (so that <m>t</m> was real, with <m>t\in \left[ a,\,b\right]</m>).
-    In this section,
-    we define and evaluate integrals of the form <m>\int_cf (z) \,dz</m>,
-    where <m>f</m> is complex-valued and <m>C</m> is a contour in the plane (so that <m>z</m> is complex,
-    with <m>z\in C</m>).<xref ref="thm_contour-integral">Theorem</xref> provides our main result,
-    which shows how to transform the latter type of integral into the kind we investigated in <xref ref="sec_complex-integrals">Section</xref>.
+	 In <xref ref="sec_complex-integrals">Section</xref> we showed how to evaluate integrals of the form <m>\int_a^bf(t) \ dt</m>,
+	 where <m>f</m> was complex-valued and <m>\left[ a,\,b\right]</m> was an interval on the real axis (so that <m>t</m> was real,
+	 with <m>t\in \left[ a,\,b\right]</m>). In this section, we define and evaluate integrals of the form <m>\int_cf (z) \,dz</m>,
+	 where <m>f</m> is complex-valued and <m>C</m> is a contour in the plane (so that <m>z</m> is complex, with <m>z\in
+	 C</m>).<xref ref="thm_contour-integral">Theorem</xref> provides our main result, which shows how to transform the latter type
+	 of integral into the kind we investigated in <xref ref="sec_complex-integrals">Section</xref>.
   </p>
   <p>
-    We use concepts first introduced in <xref ref="sec_topology">Section</xref>.
-    Recall that to represent a curve <m>C</m> in the plane we use the parametric notation
+	 We use concepts first introduced in <xref ref="sec_topology">Section</xref>.  Recall that to represent a curve <m>C</m> in the
+	 plane we use the parametric notation
     <men xml:id="review-curve">
       C:z(t)=x(t) +iy(t),  \text{ for }   a \le t \le b
     </men>,
-    where <m>x(t)</m> and <m>y(t)</m> are continuous functions.
-    We now place a few more restrictions on the type of curve to be described.
-    The following discussion leads to the concept of a contour,
-    which is a type of curve that is adequate for the study of integration.
+	 where <m>x(t)</m> and <m>y(t)</m> are continuous functions.  We now place a few more restrictions on the type of curve to be
+	 described.  The following discussion leads to the concept of a contour, which is a type of curve that is adequate for the
+	 study of integration.
   </p>
   <p>
-    Recall that <m>C</m> is <em>simple</em>
-    if it does not cross itself,
-    which means that <m>z(t_1) \ne z(t_2)</m> whenever <m>t_1 \ne t_2</m>,
-    except possibly when <m>t_1 = a</m> and <m>t_2=b</m>.
-    A curve <m>C</m> with the property <m>z(b)=z(a)</m> is a closed curve.
-    If <m>z(b)=z(a)</m> is the only point of intersection,
-    then we say that <m>C</m> is a simple closed curve.
-    As the parameter <m>t</m> increases from the value <m>a</m> to the value <m>b</m>,
-    the point <m>z(t)</m> starts at the
-    <em>initial point</em> <m>z(a)</m>,
-    moves along the curve <m>C</m>,
-    and ends up at the <em>terminal point</em> <m>z(b)</m>.
-    If <m>C</m> is simple,
-    then <m>z(t)</m> moves continuously from <m>z(a)</m> to <m>z(b)</m> as <m>t</m> increases and the curve is given an <em>orientation</em>,
-    which we indicate by drawing arrows along the curve.
-    <xref ref="fig_ch-06-01">Figure</xref>
-    illustrates how the terms <em>simple</em>
-    and <em>closed</em> describe a curve.
+	 Recall that <m>C</m> is <em>simple</em> if it does not cross itself, which means that <m>z(t_1) \ne z(t_2)</m> whenever 
+	 <m>t_1 \ne t_2</m>, except possibly when <m>t_1 = a</m> and <m>t_2=b</m>.  A curve <m>C</m> with the property <m>z(b)=z(a)</m>
+	 is a closed curve.  If <m>z(b)=z(a)</m> is the only point of intersection, then we say that <m>C</m> is a simple closed curve.
+	 As the parameter <m>t</m> increases from the value <m>a</m> to the value <m>b</m>, the point <m>z(t)</m> starts at the
+	 <em>initial point</em> <m>z(a)</m>, moves along the curve <m>C</m>, and ends up at the <em>terminal point</em> <m>z(b)</m>.
+	 If <m>C</m> is simple, then <m>z(t)</m> moves continuously from <m>z(a)</m> to <m>z(b)</m> as <m>t</m> increases and the curve
+	 is given an <em>orientation</em>, which we indicate by drawing arrows along the curve.  <xref ref="fig_ch-06-01">Figure</xref>
+	 illustrates how the terms <em>simple</em> and <em>closed</em> describe a curve.
   </p>
   <figure xml:id="fig_ch-06-01">
     <caption>The terms <em>simple</em> and <em>closed</em> used to describe curves</caption>
@@ -65,7 +50,8 @@
     </me>
   </p>
   <p>
-    The curve <m>C</m> defined by Equation <xref ref="review-curve"/> is said to be a smooth curve if the function <m>z\,'</m> is continuous and nonzero on the interval.
+	 The curve <m>C</m> defined by Equation <xref ref="review-curve"/> is said to be a smooth curve if the function <m>z\,'</m> is
+	 continuous and nonzero on the interval.
     If <m>C</m> is a smooth curve,
     then <m>C</m> has a nonzero tangent vector at each point <m>z(t)</m>,
     which is given by the vector <m>z\,'(t)</m>.
@@ -360,14 +346,10 @@
     </statement>
     <solution>
       <p>
-        Recall that <m>C_1^+(2)</m> is the upper semicircle with radius 1 centered at <m>x=2</m> oriented in a positive direction
-        (<em>i.e.</em>, counterclockwise).
-        The function <m>z(t)=2+e^{it}</m>,
-        for <m>0 \le t \le \pi</m> is a parametrization for <m>C</m>.
-        We apply <xref ref="thm_contour-integral">Theorem</xref>
-        with <m>f(z)=\frac{1}{z-2}</m>. (Note:
-        <m>f\big(z(t)\big)=\frac{1}{z(t) -2}</m>,
-        and <m>z\,'(t) =ie^{it}</m>.) Hence
+		  Recall that <m>C_1^+(2)</m> is the upper semicircle with radius 1 centered at <m>x=2</m> oriented in a positive direction
+		  (<em>i.e.</em>, counterclockwise). The function <m>z(t)=2+e^{it}</m>, for <m>0 \le t \le \pi</m> is a parametrization for
+		  <m>C</m>. We apply <xref ref="thm_contour-integral">Theorem</xref> with <m>f(z)=\frac{1}{z-2}</m>. After noting that
+		  <m>f\big(z(t)\big)=\frac{1}{z(t) -2}</m>, and <m>z\,'(t) =ie^{it}</m>, we get
         <me>
           \int_C\frac{1}{z-2}\,dz = \int_0^{\pi}\frac{1}{(2+e^{it}) -2}ie^{it}\,dt = \int_0^{\pi}i\ dt=i\pi
         </me>.
