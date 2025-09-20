@@ -1,57 +1,40 @@
 <section xml:id="sec_cauchy-goursat">
   <title>The Cauchy-Goursat Theorem</title>
   <p>
-    The Cauchy-Goursat theorem states that within certain domains the integral of an analytic function over a simple closed contour is zero.
-    An extension of this theorem allows us to replace integrals over certain complicated contours with integrals over contours that are easy to evaluate.
-    We demonstrate how to use the technique of partial fractions with the Cauchy-Goursat theorem to evaluate certain integrals.
-    In <xref ref="sec_integration-theorems">Section</xref>
-    we show that the Cauchy-Goursat theorem implies that an analytic function has an antiderivative.
-    To begin, we need to introduce some new concepts.
+	 The Cauchy-Goursat theorem states that within certain domains the integral of an analytic function over a simple closed
+	 contour is zero.  An extension of this theorem allows us to replace integrals over certain complicated contours with integrals
+	 over contours that are easy to evaluate.  We demonstrate how to use the technique of partial fractions with the Cauchy-Goursat
+	 theorem to evaluate certain integrals.  In <xref ref="sec_integration-theorems">Section</xref> we show that the Cauchy-Goursat
+	 theorem implies that an analytic function has an antiderivative.  To begin, we need to introduce some new concepts.
   </p>
   <p>
-    Recall from <xref ref="sec_topology">Section</xref>
-    that each simple closed contour <m>C</m> divides the plane into two domains.
-    One domain is bounded and is called the interior of <m>C</m>;
-    the other domain is unbounded and is called the exterior of <m>C</m>.
-    <xref ref="fig_ch-06-15">Figure</xref> illustrates this concept,
-    which is known as the Jordan curve theorem.
+	 Recall from <xref ref="sec_topology">Section</xref> that each simple closed contour <m>C</m> divides the plane into two
+	 domains.  One domain is bounded and is called the interior of <m>C</m>; the other domain is unbounded and is called the
+	 exterior of <m>C</m>.  <xref ref="fig_ch-06-15">Figure</xref> illustrates this concept, which is known as the Jordan curve
+	 theorem.
   </p>
   <figure xml:id="fig_ch-06-15">
     <caption>The interior and exterior of simple closed contours</caption>
     <image width="73%" source="figs/ch-06/ch-06-fig-15.svg"/>
   </figure>
   <p>
-    Recall also that a domain <m>D</m> is a connected open set.
-    In particular,
-    if <m>z_1</m> and <m>z_2</m> are any pair of points in <m>D</m>,
-    then they can be joined by a curve that lies entirely in <m>D</m>.
-    A domain <m>D</m> is said to be a
-    <em> simply connected domain</em>
-    if the interior of any simple closed contour <m>C</m> contained in <m>D</m> is contained in <m>D</m>.
-    In other words, there are no
-    <q>holes</q>
-    in a simply connected domain.
-    A domain that is not simply connected is called a multiply connected domain.
-    <xref ref="fig_ch-06-16">Figure</xref>
-    illustrates uses of the terms <em>simply connected</em>
-    and <em>multiply connected</em>.
+	 Recall also that a domain <m>D</m> is a connected open set.  In particular, if <m>z_1</m> and <m>z_2</m> are any pair of
+	 points in <m>D</m>, then they can be joined by a curve that lies entirely in <m>D</m>. A domain <m>D</m> is said to be a 
+	 <em>simply connected domain</em> if the interior of any simple closed contour <m>C</m> contained in <m>D</m> is contained in
+	 <m>D</m>. In other words, there are no <q>holes</q> in a simply connected domain.  A domain that is not simply connected is
+	 called a multiply connected domain.  <xref ref="fig_ch-06-16">Figure</xref> illustrates uses of the terms 
+	 <em>simply connected</em> and <em>multiply connected</em>.
   </p>
   <figure xml:id="fig_ch-06-16">
     <caption>Simply connected and multiply connected domains</caption>
     <image width="73%" source="figs/ch-06/ch-06-fig-16.svg"/>
   </figure>
   <p>
-    Let the simple closed contour <m>C</m> have the parametrization
-    <m>C:z(t)=x(t) +iy(t)</m> for <m>a \le t \le b</m>.
-    Recall that if <m>C</m> is parametrized so that the interior of <m>C</m> is kept on the left as <m>z(t)</m> moves around <m>C</m>,
-    then we say that <m>C</m> is oriented
-    <em>positively</em> (counterclockwise);
-    otherwise, <m>C</m> is oriented
-    <em>negatively</em> (clockwise)<em>.</em>
-    If <m>C</m> is positively oriented,
-    then <m>-C</m> is negatively oriented.
-    <xref ref="fig_ch-06-17">Figure</xref>
-    illustrates the concept of positive and negative orientation.
+	 Let the simple closed contour <m>C</m> have the parametrization <m>C:z(t)=x(t) +iy(t)</m> for <m>a \le t \le b</m>.  Recall
+	 that if <m>C</m> is parametrized so that the interior of <m>C</m> is kept on the left as <m>z(t)</m> moves around <m>C</m>,
+	 then we say that <m>C</m> is oriented <em>positively</em> (counterclockwise); otherwise, <m>C</m> is oriented
+	 <em>negatively</em> (clockwise)<em>.</em> If <m>C</m> is positively oriented, then <m>-C</m> is negatively oriented. 
+	 <xref ref="fig_ch-06-17">Figure</xref> illustrates the concept of positive and negative orientation.
   </p>
   <figure xml:id="fig_ch-06-17">
     <caption>Positively and negatively oriented simple closed contours</caption>
@@ -809,7 +792,9 @@
         </p>
       </statement>
 		<hint>
-		<m> \text{Take limits as } \, t \to -\pi</m>.
+			<p>
+				Take limits as <m>\, t \to -\pi.</m>
+			</p>
 		</hint>
       <solution>
         <p>
@@ -849,7 +834,11 @@
             \int_0^{2\pi}\big[u(r,\theta) \cos \theta - v(r,\theta) \sin \theta\big]\,d\theta =0
           </me>.
         </p>
-          <hint><m>\text{Integrate <m>f</m> around the circle } \, C_1^+(0).</m></hint>
+          <hint>
+			 	<p>
+					Integrate <m>\,f \,</m> around the circle <m>\, C_1^+(0).</m>
+				</p>
+			 </hint>
       </statement>
     </exercise>
     <exercise xml:id="x6_3_13">
