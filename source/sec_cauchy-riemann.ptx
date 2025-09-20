@@ -1,55 +1,33 @@
 <section xml:id="sec_cauchy-riemann">
   <title>The Cauchy-Riemann Equations</title>
   <p>
-    In Section 3.1 we showed that computing the derivative of complex functions written in a form such as
-    <m>f(z)=z^2</m> is a rather simple task.
-    But life isn't always so easy.
-    Many times we encounter complex functions written in the form of <m>f(z) = f(x, y) = u(x, y) +iv(x, y)</m>.
-    For example, suppose we had
+	 In Section 3.1 we showed that computing the derivative of complex functions written in a form such as <m>f(z)=z^2</m> is a
+	 rather simple task.  But life isn't always so easy.  Many times we encounter complex functions written in the form of <m>f(z)
+	 = f(x, y) = u(x, y) +iv(x, y)</m>.  For example, suppose we had
     <men xml:id="f_z__z_3">
       f(z) = f(x, y) = u(x, y) +iv(x, y) = (x^3-3xy^2) +i(3x^2y-y^3)
     </men>.
   </p>
   <p>
-    Is there some criterion that we can use to determine whether <m>f</m> is differentiable,
-    and if so,
-    to find the value of <m>f\,'(z)</m>?
+	 Is there some criterion that we can use to determine whether <m>f</m> is differentiable, and if so, to find the value of
+	 <m>f\,'(z)</m>?
   </p>
   <p>
-    The answer to this question is <em>yes</em>,
-    thanks to the independent discovery of two important equations by the French mathematician Augustin-Louis Cauchy<fn>
-    A.L.<nbsp/>Cauchy (1789<ndash/>1857) played a prominent role in the development of complex analysis,
-    and his name appears often throughout this text.
-    The last name is <em>not</em> pronounced as
-    <q>kaushee.</q>
-    The first syllable has a long
-    <q>o</q>
-    sound, like the word kosher, but with the second syllable having a long
-    <q>e</q>
-    instead of
-    <q>er</q>
-    at the end.
-    Thus, we pronounce Cauchy as
-    <q>k&#333;sh\={e}.</q>
-    In mathematical circles it is not kosher to mispronounce Cauchy!
-    </fn> and the German mathematician Georg Friedrich Bernhard Riemann.
+	 The answer to this question is <em>yes</em>, thanks to the independent discovery of two important equations by the French
+	 mathematician Augustin-Louis Cauchy<fn> A.L.<nbsp/>Cauchy (1789<ndash/>1857) played a prominent role in the development of
+	 complex analysis, and his name appears often throughout this text.  The last name is <em>not</em> pronounced as
+	 <q>kaushee.</q> The first syllable has a long <q>o</q> sound, like the word kosher, but with the second syllable having a long
+	 <q>e</q> instead of <q>er</q> at the end.  Thus, we pronounce Cauchy as <q>k&#333;sh\={e}.</q> In mathematical circles it is
+	 not kosher to mispronounce Cauchy!  </fn> and the German mathematician Georg Friedrich Bernhard Riemann.
   </p>
   <p>
-    First, let's reconsider the derivative of <m>f(z)=z^2</m>.
-    As we have stated,
-    the limit given in Equation <xref ref="Deriv_Def_1"/> must <em>not</em>
-    depend on how <m>z</m> approaches <m>z_0</m>.
-    We investigate two such approaches:
-    a horizontal approach and a vertical approach to <m>z_0</m>.
-    Recall from our graphical analysis of <m>w=z^2</m> that the image of a square is a
-    <q>curvilinear quadrilateral.</q>
-    For convenience, we let the square have vertices <m>z_0=2+i</m>,
-    <m>z_1=2.01+i</m>, <m>z_2=2+1.01i</m>,
-    and <m>z_3=2.01+1.01i</m>.
-    Then the image points are <m>w_0=3+4i</m>,
-    <m>w_1=3.0401+4.02i</m>, <m>w_2=2.9799+4.04i</m>,
-    and <m>w_3=3.02+4.0602i</m>,
-    as shown in <xref ref="fig_ch-03-01">Figure</xref>.
+	 First, let's reconsider the derivative of <m>f(z)=z^2</m>.  As we have stated, the limit given in Equation <xref
+	 ref="Deriv_Def_1"/> must <em>not</em> depend on how <m>z</m> approaches <m>z_0</m>.  We investigate two such approaches: a
+	 horizontal approach and a vertical approach to <m>z_0</m>.  Recall from our graphical analysis of <m>w=z^2</m> that the image
+	 of a square is a <q>curvilinear quadrilateral.</q> For convenience, we let the square have vertices <m>z_0=2+i</m>,
+	 <m>z_1=2.01+i</m>, <m>z_2=2+1.01i</m>, and <m>z_3=2.01+1.01i</m>.  Then the image points are <m>w_0=3+4i</m>,
+	 <m>w_1=3.0401+4.02i</m>, <m>w_2=2.9799+4.04i</m>, and <m>w_3=3.02+4.0602i</m>, as shown in 
+	 <xref ref="fig_ch-03-01">Figure</xref>.
   </p>
   <figure xml:id="fig_ch-03-01">
     <caption>The image of a small square with vertex {<m>z_0=2+i</m>}, using <m>w=z^2</m></caption>
