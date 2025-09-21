@@ -87,7 +87,8 @@
       If we can show that <m>g</m> is of exponential order,
       then <xref ref="thm_laplace-diff">Theorem</xref> implies that
       <me>
-        \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 = s \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right)
+		  \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 = s
+		  \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right)
       </me>.
     </p>
     <p>
@@ -110,20 +111,23 @@
         Using <xref ref="thm_laplace-int">Theorem</xref>
         and the fact that <m>\mathcal{L}(2t) =\frac{2}{s^2}</m> we obtain
         <me>
-          \mathcal{L}(t^2) = \mathcal{L}\left(\int_0^t 2\tau \,d\tau\right) = \frac{1}{s}\mathcal{L}(2t) =\frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}
+			 \mathcal{L}(t^2) = \mathcal{L}\left(\int_0^t 2\tau \,d\tau\right) = \frac{1}{s}\mathcal{L}(2t)
+			 =\frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}
         </me>.
         Now we can use the first result
         <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> to establish the second one:
         <me>
-          \mathcal{L}(t^3) =\mathcal{L}\left(\int_0^t3\tau^2\,d\tau\right) = \frac{1}{s}\mathcal{L}(3t^2) =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}
+			 \mathcal{L}(t^3) =\mathcal{L}\left(\int_0^t3\tau^2\,d\tau\right) = \frac{1}{s}\mathcal{L}(3t^2)
+			 =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}
         </me>
       </p>
     </solution>
   </example>
   <p>
-    One of the main uses of the Laplace transform is its role in the solution of differential equations.
-    The utility of the Laplace transform lies in the fact that the transform of the derivative <m>f\,'(t)</m> corresponds to multiplication of the transform <m>F(s)</m> by <m>s</m> and then the subtraction of <m>f(0)</m>.
-    This permits us to replace the calculus operation of differentiation with simple algebraic operations on transforms.
+	 One of the main uses of the Laplace transform is its role in the solution of differential equations.  The utility of the
+	 Laplace transform lies in the fact that the transform of the derivative <m>f\,'(t)</m> corresponds to multiplication of the
+	 transform <m>F(s)</m> by <m>s</m> and then the subtraction of <m>f(0)</m>.  This permits us to replace the calculus operation
+	 of differentiation with simple algebraic operations on transforms.
   </p>
   <p>
     This idea is used to develop a method for solving linear differential equations with constant coefficients.
@@ -156,11 +160,10 @@
     </men>.
   </p>
   <p>
-    For many physical problems involving mechanical systems and electric circuits,
-    the transform <m>F(s)</m> is known,
-    and the inverse of <m>Y(s)</m> can easily be computed.
-    This process is referred to as the operational calculus and has the advantage of changing problems in differential equations into problems in algebra.
-    Then the solution obtained will satisfy the specific initial conditions.
+	 For many physical problems involving mechanical systems and electric circuits, the transform <m>F(s)</m> is known, and the
+	 inverse of <m>Y(s)</m> can easily be computed.  This process is referred to as the operational calculus and has the advantage
+	 of changing problems in differential equations into problems in algebra.  Then the solution obtained will satisfy the specific
+	 initial conditions.
   </p>
   <example xml:id="ex_10_15">
     <statement>
@@ -207,7 +210,8 @@
         Using partial fraction expansion
         <m>Y(s) =\frac{2}{s-1}-\frac{1}{s+2}</m> and the solution <m>y(t)</m> is
         <me>
-          y(t) = \mathcal{L}^{-1}\big(Y(s)\big) = 2\mathcal{L}^{-1}\left(\frac{1}{s-1}\right) - \mathcal{L}^{-1}\left(\frac{1}{s+2}\right) = 2e^t-e^{-2t}
+			 y(t) = \mathcal{L}^{-1}\big(Y(s)\big) = 2\mathcal{L}^{-1}\left(\frac{1}{s-1}\right) -
+			 \mathcal{L}^{-1}\left(\frac{1}{s+2}\right) = 2e^t-e^{-2t}
         </me>.
       </p>
     </solution>
@@ -248,8 +252,12 @@
     <exercise>
       <statement>
         <p>
-          Show that <m>\mathcal{L}(te^t) =\frac{1}{(s-1)^2}</m>. \hint{Let
-          <m>f(t) =te^t</m> and <m>f\,'(t) =te^t+e^t</m>.}
+          Show that <m>\mathcal{L}(te^t) =\frac{1}{(s-1)^2}</m>.
+			 <hint>
+			 	<p>
+					Let <m>f(t) = te^t</m>, \quad and \quad <m>f\,'(t) = te^t+e^t</m>.
+				</p>
+			 </hint>
         </p>
       </statement>
     </exercise>
