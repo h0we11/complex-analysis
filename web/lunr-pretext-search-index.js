@@ -109,18 +109,18 @@ var ptx_lunr_docs = [
   "body": "  Show that .    Mimic the argument the text gives in showing .   "
 },
 {
-  "id": "x1_1_3",
+  "id": "x1_1_2",
   "level": "2",
-  "url": "sec_origin.html#x1_1_3",
+  "url": "sec_origin.html#x1_1_2",
   "type": "Exercise",
   "number": "1.1.4.2",
   "title": "",
   "body": "  Explain why cubic equations, rather than quadratic equations, played a pivotal role in helping to obtain the acceptance of complex numbers.   "
 },
 {
-  "id": "exercises_origin-4",
+  "id": "x1_1_3",
   "level": "2",
-  "url": "sec_origin.html#exercises_origin-4",
+  "url": "sec_origin.html#x1_1_3",
   "type": "Exercise",
   "number": "1.1.4.3",
   "title": "",
