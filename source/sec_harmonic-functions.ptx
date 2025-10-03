@@ -1,44 +1,30 @@
 <section xml:id="sec_harmonic-functions">
   <title>Harmonic Functions</title>
-  <p>
-    Let <m>\phi (x,y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m> defined on a domain <m>D</m>.
-    (Recall that a domain is a connected open set.)
-    The partial differential equation
-    <men xml:id="Laplace_s_Equation">
-      \phi _{xx}(x,y) +\phi _{yy}(x,y) = 0
-    </men>
-    is known as <em>Laplace's equation</em>
-    (sometimes referred to as the potential equation).
-    If <m>\phi, \, \phi _x, \, \phi_y, \, \phi _{xx}, \, \phi _{xy}, \, \phi _{yx}</m>,
-    and <m>\phi _{yy}</m> are all continuous,
-    and if <m>\phi (x,y)</m> satisfies Laplace's equation,
-    then <m>\phi(x,y)</m> is harmonic on <m>D</m>.
-    Harmonic functions are important in applied mathematics,
-    engineering, and mathematical physics.
-    They are used to solve problems involving steady state temperatures,
-    two-dimensional electrostatics, and ideal fluid flow.
-    In <xref ref="ch_harmonic-apps">Chapter</xref>
-    we describe how complex analysis techniques can be used to solve some problems involving harmonic functions.
-    We begin with an important theorem relating analytic and harmonic functions.
+	<p>
+		Let <m>\phi (x,y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m> defined on a domain
+		<m>D</m>. (Recall that a domain is a connected open set.) The partial differential equation 
+			<men xml:id="Laplace_s_Equation"> \phi _{xx}(x,y) +\phi _{yy}(x,y) = 0 </men>
+		is known as <em>Laplace's equation</em> (sometimes referred to as the potential equation). If 
+		<m>\phi, \, \phi _x, \, \phi_y, \, \phi _{xx}, \, \phi _{xy}, \, \phi _{yx}</m>, and <m>\phi _{yy}</m> are all continuous,
+		and if <m>\phi (x,y)</m> satisfies Laplace's equation, then <m>\phi(x,y)</m> is harmonic on <m>D</m>. Harmonic functions
+		are important in applied mathematics, engineering, and mathematical physics. They are used to solve problems involving
+		steady state temperatures, two-dimensional electrostatics, and ideal fluid flow. 
+		In <xref ref="ch_harmonic-apps">Chapter</xref> we describe how complex analysis techniques can be used to solve some
+		problems involving harmonic functions. We begin with an important theorem relating analytic and harmonic functions.
   </p>
   <theorem xml:id="Harmonic_Theorem">
     <statement>
       <p>
-        <em>Let</em><m>f(z) = u(x,y) +iv(x,y)</m> be an analytic function on a domain <m>D</m>.
-        Then both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
-        In other words,
-        the real and imaginary parts of an analytic function are harmonic.
+		  Let <m>f(z) = u(x,y) +iv(x,y)</m> be an analytic function on a domain <m>D</m>. Then both <m>u</m> and <m>v</m> are
+		  harmonic functions on <m>D</m>. In other words, the real and imaginary parts of an analytic function are harmonic.
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-      In Corollary 6.3 we will show that,
-      if <m>f(z)</m> is analytic,
-      then all partial derivatives of <m>u</m> and <m>v</m> are continuous.
-      Using that result here, we see that,
-      as <m>f</m> is analytic,
-      <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations
+		In Corollary 6.3 we will show that, if <m>f(z)</m> is analytic, then all partial derivatives of <m>u</m> and <m>v</m> are
+		continuous. Using that result here, we see that, as <m>f</m> is analytic, <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann
+		equations
       <me>
         u_x = v_y  \text{ and }   u_y = -v_x
       </me>.
@@ -50,23 +36,20 @@
       <me>
         u_{xy}=v_{yy}  \text{ and }   u_{yy} = -v_{xy}
       </me>.
-      The partial derivatives <m>u_{xy}</m>,
-      <m>u_{yx}</m>, <m>v_{xy}</m>,
-      and <m>v_{yx}</m> are all continuous,
-      so we use a theorem from the calculus of real functions that states that the mixed partial derivatives are equal; that is,
+		The partial derivatives <m>u_{xy}</m>, <m>u_{yx}</m>, <m>v_{xy}</m>, and <m>v_{yx}</m> are all continuous, so we use a
+		theorem from the calculus of real functions that states that the mixed partial derivatives are equal; that is,
       <me>
         u_{xy}=u_{yx}  \text{ and }   v_{xy}=v_{yx}
       </me>.
-      Combining all these results finally gives <m>u_{xx}+u_{yy}=v_{yx}-v_{xy}=0</m>,
-      and <m>v_{xx}+v_{yy}=-u_{yx}+u_{xy}=0</m>.
-      Therefore both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
+		Combining all these results finally gives <m>u_{xx}+u_{yy}=v_{yx}-v_{xy}=0</m>, and <m>v_{xx}+v_{yy}=-u_{yx}+u_{xy}=0</m>.
+		Therefore both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
     </p>
   </proof>
   <p>
-    If we have a function <m>u(x,y)</m> that is harmonic on the domain <m>D</m> and if we can find another harmonic function <m>v(x,y)</m> such that the partial derivatives for <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations throughout <m>D</m>,
-    then we say that <m>v(x,y)</m> is a harmonic conjugate of <m>u(x,y)</m>.
-    It then follows that the function
-    <m>f(z) =u(x,y) + iv(x,y)</m> is analytic on <m>D</m>.
+	 If we have a function <m>u(x,y)</m> that is harmonic on the domain <m>D</m> and if we can find another harmonic function
+	 <m>v(x,y)</m> such that the partial derivatives for <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations throughout
+	 <m>D</m>, then we say that <m>v(x,y)</m> is a harmonic conjugate of <m>u(x,y)</m>. It then follows that the function 
+	 <m>f(z) =u(x,y) + iv(x,y)</m> is analytic on <m>D</m>.
   </p>
   <example>
     <statement>
