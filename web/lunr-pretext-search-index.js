@@ -6199,7 +6199,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Complex Integrals",
-  "body": " Complex Integrals  We introduce the integral of a complex function by defining the integral of a complex-valued function of a real variable.   Integral of   Let , where and are real-valued functions of the real variable for . Then .    We generally evaluate integrals of this type by finding the antiderivatives of and and evaluating the definite integrals on the right side of Equation . That is, if , and , for , we have     Show that .    We write the integrand in terms of its real and imaginary parts, i.e. , . Here, and . The integrals of and are .  Hence, by Definition ,       Show that .    We use the method suggested by Definitions and . .  We can evaluate each of the integrals via integration by parts. For example, .  Adding to both sides of this equation and then dividing by 2 gives . A similar computation procedure yields . Therefore,     Complex integrals have properties that are similar to those of real integrals. We now trace through several commonalities. Let and be continuous on .   Using Definition , we can easily show that the integral of their sum is the sum of their integrals, that is .    If we divide the interval into and and integrate over these subintervals by using Definition , then we get .    Similarly, if denotes a complex constant, then .    If the limits of integration are reversed, then .    The integral of the product becomes .       Let us verify Property . We start by writing . Using Definition , we write the left side of Equation as . which is equivalent to     It is worthwhile to point out the similarity between Equation and its counterpart in calculus. Suppose that and are differentiable on and . Since , Equation takes on the familiar form . where . We can view Equation as an extension of the fundamental theorem of calculus. In Section we show how to generalize this extension to analytic functions of a complex variable. For now, we simply note an important case of Equation : .    Use Equation to show that     We seek a function with the property that . We note that satisfies this requirement, so , which is the same result we obtained in Example , but with a lot less work!      Example illustrates the potential computational advantage we have when we lift our sights to the complex domain. Using ordinary Calculus techniques to evaluate , for example, would require a lengthy integration by parts procedure. When we recognize this expression as the real part of , however, the solution comes quickly. This is just one of the many reasons why good physicists and engineers, in addition to mathematicians, benefit from a thorough working knowledge of complex analysis.    Exercises    Use Equations and to find    .    .      .     .    .      .     .    .        Let and be integers. Show that       Show that provided .    Using Equation we get Show that implies this last limit equals zero.      Establish the following identities .   Identity .    Identity .    Identity .    Identity .       Let , where and are differentiable. Show that     This follows from Equation , and the fact that if and are differentiable, then is differentiable, and .      Use integration by parts to verify that . \\label {6.1.6}     "
+  "body": " Complex Integrals  We introduce the integral of a complex function by defining the integral of a complex-valued function of a real variable.   Integral of   Let , where and are real-valued functions of the real variable for . Then .    We generally evaluate integrals of this type by finding the antiderivatives of and and evaluating the definite integrals on the right side of Equation . That is, if , and , for , we have     Show that .    We write the integrand in terms of its real and imaginary parts, i.e. , . Here, and . The integrals of and are .  Hence, by Definition ,       Show that .    We use the method suggested by Definitions and . .  We can evaluate each of the integrals via integration by parts. For example, .  Adding to both sides of this equation and then dividing by 2 gives . A similar computation procedure yields . Therefore,     Complex integrals have properties that are similar to those of real integrals. We now trace through several commonalities. Let and be continuous on .   Using Definition , we can easily show that the integral of their sum is the sum of their integrals, that is .    If we divide the interval into and and integrate over these subintervals by using Definition , then we get .    Similarly, if denotes a complex constant, then .    If the limits of integration are reversed, then .    The integral of the product becomes .       Let us verify Property . We start by writing . Using Definition , we write the left side of Equation as which is equivalent to     It is worthwhile to point out the similarity between Equation and its counterpart in calculus. Suppose that and are differentiable on and . Since , Equation takes on the familiar form where . We can view Equation as an extension of the fundamental theorem of calculus. In Section we show how to generalize this extension to analytic functions of a complex variable. For now, we simply note an important case of Equation : .    Use Equation to show that     We seek a function with the property that . We note that satisfies this requirement, so , which is the same result we obtained in Example , but with a lot less work!      Example illustrates the potential computational advantage we have when we lift our sights to the complex domain. Using ordinary Calculus techniques to evaluate , for example, would require a lengthy integration by parts procedure. When we recognize this expression as the real part of , however, the solution comes quickly. This is just one of the many reasons why good physicists and engineers, in addition to mathematicians, benefit from a thorough working knowledge of complex analysis.    Exercises    Use Equations and to evaluate the following:      ;     .       ;     k  ;     .       ;       .     .       Let and be integers. Show that       Show that provided .    Using Equation we get To finish the task, show that implies this last limit equals zero.      Establish the following identities;     Identity ;      Identity ;      Identity ;      Identity .       Let , where and are differentiable. Show that     This follows from Equation , and the fact that if and are differentiable, then is differentiable, and .      Use integration by parts to verify that .     "
 },
 {
   "id": "sec_complex-integrals-3",
@@ -6235,7 +6235,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "6.1.4",
   "title": "",
-  "body": "  Let us verify Property . We start by writing . Using Definition , we write the left side of Equation as . which is equivalent to    "
+  "body": "  Let us verify Property . We start by writing . Using Definition , we write the left side of Equation as which is equivalent to    "
 },
 {
   "id": "ex_6_4",
@@ -6262,7 +6262,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.1",
   "title": "",
-  "body": "  Use Equations and to find    .    .      .     .    .      .     .    .     "
+  "body": "  Use Equations and to evaluate the following:      ;     .       ;     k  ;     .       ;       .     .    "
 },
 {
   "id": "x6_1_2",
@@ -6280,7 +6280,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.3",
   "title": "",
-  "body": "  Show that provided .    Using Equation we get Show that implies this last limit equals zero.   "
+  "body": "  Show that provided .    Using Equation we get To finish the task, show that implies this last limit equals zero.   "
 },
 {
   "id": "x6_1_4",
@@ -6289,7 +6289,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "6.1.4",
   "title": "",
-  "body": "  Establish the following identities .   Identity .    Identity .    Identity .    Identity .    "
+  "body": "  Establish the following identities;     Identity ;      Identity ;      Identity ;      Identity .    "
 },
 {
   "id": "exercises_complex-integrals-6",
@@ -6301,13 +6301,13 @@ var ptx_lunr_docs = [
   "body": "  Let , where and are differentiable. Show that     This follows from Equation , and the fact that if and are differentiable, then is differentiable, and .   "
 },
 {
-  "id": "exercises_complex-integrals-7",
+  "id": "x6_1_6",
   "level": "2",
-  "url": "sec_complex-integrals.html#exercises_complex-integrals-7",
+  "url": "sec_complex-integrals.html#x6_1_6",
   "type": "Exercise",
   "number": "6.1.6",
   "title": "",
-  "body": "  Use integration by parts to verify that . \\label {6.1.6}   "
+  "body": "  Use integration by parts to verify that .   "
 },
 {
   "id": "sec_contour-integrals",
