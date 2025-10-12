@@ -71,9 +71,9 @@
       As <m>C</m> is positively oriented,
       these functions can be used to express <m>C</m> as the sum of two contours <m>C_1</m> and <m>C_2</m>, where
       <md>
-        <mrow>\amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{ for }    \amp \amp  a \le t \le b, \text{ and }</mrow>
-        <mrow>\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{ for }   \amp \amp  -b \le t \le -a</mrow>
-      </md>.
+        <mrow>\amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{for}    \amp \amp  a \le t \le b, \;\; \text{and}</mrow>
+        <mrow>\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{for}   \amp \amp \!\!\!\! -b \le t \le -a. \qquad \text{ }</mrow>
+      </md>
     </p>
     <p>
       We now use the functions <m>g_1(x)</m> and <m>g_2(x)</m> to express the double integral of
@@ -120,9 +120,9 @@
       Because <m>C</m> has positive orientation,
       it can be expressed as the sum of two contours <m>C_3</m> and <m>C_4</m>, where
       <md>
-        <mrow>\amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{ for }   \amp \amp  -d \le t \le -c,  \text{ and }</mrow>
-        <mrow>\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{ for }   \amp \amp  c \le t \le d</mrow>
-      </md>.
+        <mrow>\amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{for} \amp \amp \!\!\!\!\! -d \le t \le -c, \;\; \text{ and}</mrow>
+        <mrow>\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{for} \amp \amp c \le t \le d.</mrow>
+      </md>
     </p>
     <p>
       Using the functions <m>h_1(y)</m> and <m>h_2(y)</m>,
@@ -225,7 +225,7 @@
       we carry out a similar subdivision process to obtain a sequence of triangular contours <m>\{C_n\}</m>,
       where the interior of <m>C_{n+1}</m> lies in the interior of <m>C_n</m> and the following inequality holds:
       <men xml:id="CG2_5">
-        \left|\int_{C_n}f(z)\,dz\right| \le 4\left|\int_{C_{n+1}}f(z)\,dz\right|,  \text{ for }   n=1,\,2,\ldots
+        \left|\int_{C_n}f(z)\,dz\right| \le 4\left|\int_{C_{n+1}}f(z)\,dz\right|, \; \text{ for } \;  n=1,\,2,\ldots
       </men>
     </p>
     <p>
@@ -414,21 +414,20 @@
   <corollary xml:id="x2Pi_or_zero">
     <statement>
       <p>
-        Let <m>z_0</m> denote a fixed complex value.
-        If <m>C</m> is a simple closed contour with positive orientation such that <m>z_0</m> lies interior to <m>C</m>, then
+		  Let <m>z_0</m> denote a fixed complex value. If <m>C</m> is a simple closed contour with positive orientation such that
+		  <m>z_0</m> lies interior to <m>C</m>, then
         <me>
-          \int_C\frac{1}{z-z_0}\,dz = 2\pi i,  \text{ and }   \int_C\frac{1}{(z-z_0)^n}\,dz = 0
-        </me>,
+          \int_C\frac{1}{z-z_0}\,dz = 2\pi i, \quad \text{and} \quad  \int_C\frac{1}{(z-z_0)^n}\,dz = 0,
+        </me>
         where <m>n</m> is any integer except <m>n=1</m>.
       </p>
     </statement>
   </corollary>
   <proof>
     <p>
-      Since <m>z_0</m> lies interior to <m>C</m>,
-      we can choose <m>R</m> so that the circle <m>C_R</m> with center <m>z_0</m> and radius <m>R</m> lies interior to <m>C</m>.
-      Hence <m>f(z)=\frac{1}{(z-z_0)^n}</m> is analytic in a domain <m>D</m> that contains both <m>C</m> and <m>C_R</m> and the region between them,
-      as shown in <xref ref="fig_ch-06-25">Figure</xref>.
+		Since <m>z_0</m> lies interior to <m>C</m>, we can choose <m>R</m> so that the circle <m>C_R</m> with center <m>z_0</m> and
+		radius <m>R</m> lies interior to <m>C</m>. Hence <m>f(z)=\frac{1}{(z-z_0)^n}</m> is analytic in a domain <m>D</m> that
+		contains both <m>C</m> and <m>C_R</m> and the region between them, as shown in <xref ref="fig_ch-06-25">Figure</xref>.
     </p>
     <figure xml:id="fig_ch-06-25">
       <caption>The domain <m>D</m> that contains both <m>C</m> and <m>C_R</m></caption>
@@ -437,13 +436,16 @@
     <p>
       We let <m>C_R</m> have the parametrization
       <me>
-        C_R:z(\theta )=z_0+Re^{i\theta}  \text{ and }   dz =iRe^{i\theta}d\theta,  \text{ for }   0 \le \theta  \le 2\pi
-      </me>.
+		  C_R:z(\theta )=z_0+Re^{i\theta} \quad \text{and} \quad  dz =iRe^{i\theta}d\theta, \quad \text{for} \quad  0 \le \theta
+		  \le 2\pi.
+      </me>
     </p>
     <p>
-      The deformation of contour theorem implies that the integral of <m>f</m> over <m>C_R</m> has the same value as the integral of <m>f</m> over <m>C</m>, so
+		The deformation of contour theorem implies that the integral of <m>f</m> over <m>C_R</m> has the same value as the integral
+		of <m>f</m> over <m>C</m>, so
       <me>
-        \int_C\frac{1}{z-z_0}\,dz = \int_{C_R}\frac{1}{z-z_0}\,dz =\int_0^{2\pi}\frac{iRe^{i\theta}}{Re^{i\theta}}\,d\theta =i\int_0^{2\pi}\,d\theta =2\pi i
+		  \int_C\frac{1}{z-z_0}\,dz = \int_{C_R}\frac{1}{z-z_0}\,dz =\int_0^{2\pi}\frac{iRe^{i\theta}}{Re^{i\theta}}\,d\theta =
+		  i\int_0^{2\pi}\,d\theta =2\pi i,
       </me>
       and
       <md>
@@ -456,13 +458,12 @@
     </p>
   </proof>
   <p>
-    The deformation of contour theorem is an extension of the Cauchy-Goursat theorem to a doubly connected domain in the following sense.
-    We let <m>D</m> be a domain that contains <m>C_1</m> and <m>C_2</m> and the region between them,
-    as shown in <xref ref="fig_ch-06-23">Figure</xref>.
-    Then the contour <m>C=C_2-C_1</m> is a parametrization of the boundary of the region <m>R</m> that lies between <m>C_1</m> and <m>C_2</m> so that the points of <m>R</m> lie to the left of <m>C</m> as a point <m>z(t)</m> moves around <m>C</m>.
-    Hence <m>C</m> is a positive orientation of the boundary of <m>R</m>,
-    and <xref ref="Deformation_of_Contour">Theorem</xref>
-    implies that <m>\int_C f(z)\,dz=0</m>.
+	 The deformation of contour theorem is an extension of the Cauchy-Goursat theorem to a doubly connected domain in the following
+	 sense. We let <m>D</m> be a domain that contains <m>C_1</m> and <m>C_2</m> and the region between them, as shown in <xref
+	 ref="fig_ch-06-23">Figure</xref>. Then the contour <m>C=C_2-C_1</m> is a parametrization of the boundary of the region
+	 <m>R</m> that lies between <m>C_1</m> and <m>C_2</m> so that the points of <m>R</m> lie to the left of <m>C</m> as a point
+	 <m>z(t)</m> moves around <m>C</m>. Hence <m>C</m> is a positive orientation of the boundary of <m>R</m>, and 
+	 <xref ref="Deformation_of_Contour">Theorem</xref> implies that <m>\int_C f(z)\,dz=0</m>.
   </p>
   <p>
     We can extend <xref ref="Deformation_of_Contour">Theorem</xref>
@@ -531,19 +532,17 @@
     </statement>
     <solution>
       <p>
-        Recall that <m>C_1^+(i)</m> is the circle
-        <m>\{z:|z-i|=1\}</m> having positive orientation.
-        Using partial fractions again, we have
+		  Recall that <m>C_1^+(i)</m> is the circle <m>\{z:|z-i|=1\}</m> having positive orientation. Using partial fractions again,
+		  we have
         <me>
           \int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz = \int_{C_1^+(i)}\frac{1}{z+i\sqrt{2}}\,dz + \int_{C_1^+(i)}\frac{1}{z-i\sqrt{2}}\,dz
         </me>.
-        In this case, <m>z=i\sqrt{2}</m> lies interior to
-        <m>C_1^+(i)</m> but <m>z=-i\sqrt{2}</m> does not,
-        as shown in <xref ref="fig_ch-06-27">Figure</xref>.
+        In this case, <m>z=i\sqrt{2}</m> lies interior to <m>C_1^+(i)</m> but <m>z=-i\sqrt{2}</m> does not, as shown in 
+		  <xref ref="fig_ch-06-27">Figure</xref>.
       </p>
       <figure xml:id="fig_ch-06-27">
         <caption>The circle <m>C_1^+(i)</m> and the points <m>z=\pm i\sqrt{2}</m></caption>
-        <image width="40%" source="figs/ch-06/ch-06-fig-27.svg"/>
+        <image width="35%" source="figs/ch-06/ch-06-fig-27.svg"/>
       </figure>
       <p>
 		  By <xref ref="x2Pi_or_zero">Corollary</xref>, the second integral on the right side of this equation has the value <m>2\pi
