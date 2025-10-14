@@ -103,53 +103,36 @@
   </corollary>
   <remark>
     <p>
-      Certain feedback control systems in engineering must be stable.
-      A test for stability involves the function <m>G(z) =1+F(z)</m>,
-      where <m>F</m> is a rational function.
-      If <m>G</m> does not have any zeros in the region <m>\{z:\mathrm{Re}(z) \ge 0\}</m>,
-      then the system is stable.
-      We determine the number of zeros of <m>G</m> by writing <m>F(z) =\frac{P(z)}{Q(z)}</m>,
-      where <m>P</m> and <m>Q</m> are polynomials with no common zero.
-      Then <m>G(z) =\frac{ Q(z) +P(z)}{Q(z)}</m>,
-      and we can check for the zeros of
-      <m>Q(z) +P(z)</m> by using <xref ref="Argument_Thm">Theorem</xref>.
-      We select a value <m>R</m> so that <m>G(z) \ne 0</m> for
-      <m>\{z:|z| >R\}</m> and then integrate along the contour consisting of the right half of the circle <m>C_R(0)</m> and the line segment between <m>iR</m> and <m>-iR</m>.
-      This method is known as the <em>Nyquist stability criterion</em>.
+		Certain feedback control systems in engineering must be stable. A test for stability involves the function <m>G(z)
+		=1+F(z)</m>, where <m>F</m> is a rational function. If <m>G</m> does not have any zeros in the region <m>\{z:\mathrm{Re}(z)
+		\ge 0\}</m>, then the system is stable. We determine the number of zeros of <m>G</m> by writing <m>F(z)
+		=\frac{P(z)}{Q(z)}</m>, where <m>P</m> and <m>Q</m> are polynomials with no common zero. Then <m>G(z) =\frac{ Q(z)
+		+P(z)}{Q(z)}</m>, and we can check for the zeros of <m>Q(z) +P(z)</m> by using <xref ref="Argument_Thm">Theorem</xref>. We
+		select a value <m>R</m> so that <m>G(z) \ne 0</m> for <m>\{z:|z| >R\}</m> and then integrate along the contour consisting of
+		the right half of the circle <m>C_R(0)</m> and the line segment between <m>iR</m> and <m>-iR</m>. This method is known as
+		the <em>Nyquist stability criterion</em>.
     </p>
   </remark>
   <p>
-    Why do we label <xref ref="Argument_Thm">Theorem</xref>
-    as the <em>argument principle</em>?
-    The answer lies with a fascinating application known as the
-    <em> winding number</em>.
-    Recall that a branch of the logarithm function,
-    <m>\log_{\alpha}</m>, is defined by
-    <me>
-      \log_{\alpha}z=\ln |z| +i\arg_{\alpha}z=\ln r+i\phi
-    </me>,
-    where <m>z=re^{i\phi }\ne 0</m> and <m>\alpha \lt \phi \le \alpha +2\pi</m>.
-    Loosely speaking, suppose that for some branch of the logarithm,
-    the composite function <m>\log_{\alpha}(f(z) )</m> were analytic in a simply connected domain <m>D</m> containing the contour <m>C</m>.
-    This would imply that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
-    <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z\in D</m>.
-    <xref ref="DInt_Thm">Theorems</xref>
-    and <xref ref="Argument_Thm"></xref> would then tell us that,
-    as <m>z</m> winds around the curve <m>C</m>,
-    the quantity <m>\log_{\alpha}(f(z) )=\ln |f(z)| +i\arg_{\alpha}f(z)</m> would change by <m>2\pi i(Z_f-P_f)</m>.
-    Since <m>2\pi i(Z_f-P_f)</m> is purely imaginary,
-    this result tells us that <m>\arg_{a}f(z)</m> would change by <m>2\pi (Z_f-P_f)</m> radians.
-    In other words, as <m>z</m> winds around <m>C</m>,
-    the integral <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}\,dz</m> would count how many times the curve <m>f(C)</m> winds around the origin.
+	 Why do we label <xref ref="Argument_Thm">Theorem</xref> as the <em>argument principle</em>? The answer lies with a
+	 fascinating application known as the <em> winding number</em>. Recall that a branch of the logarithm function,
+	 <m>\log_{\alpha}</m>, is defined by <me> \log_{\alpha}z=\ln |z| +i\arg_{\alpha}z=\ln r+i\phi </me>, where <m>z=re^{i\phi }\ne
+	 0</m> and <m>\alpha \lt \phi \le \alpha +2\pi</m>.  Loosely speaking, suppose that for some branch of the logarithm, the
+	 composite function <m>\log_{\alpha}(f(z) )</m> were analytic in a simply connected domain <m>D</m> containing the contour
+	 <m>C</m>.  This would imply that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+	 <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z\in D</m>. <xref ref="DInt_Thm">Theorems</xref> and <xref ref="Argument_Thm"></xref>
+	 would then tell us that, as <m>z</m> winds around the curve <m>C</m>, the quantity <m>\log_{\alpha}(f(z) )=\ln |f(z)|
+	 +i\arg_{\alpha}f(z)</m> would change by <m>2\pi i(Z_f-P_f)</m>.  Since <m>2\pi i(Z_f-P_f)</m> is purely imaginary, this result
+	 tells us that <m>\arg_{a}f(z)</m> would change by <m>2\pi (Z_f-P_f)</m> radians.  In other words, as <m>z</m> winds around
+	 <m>C</m>, the integral <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}\,dz</m> would count how many times the curve
+	 <m>f(C)</m> winds around the origin.
   </p>
   <p>
-    Unfortunately, we can't always claim that
-    <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
-    <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z \in D</m>.
-    If it were, the Cauchy-Goursat theorem would imply that <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}dz=0</m>.
-    Nevertheless, the heuristics that we gave<mdash/>indicating that
-    <m>\frac{1}{2\pi i} \int_{C}\frac{f\,'(z)}{f(z)}dz</m> counts how many times the curve <m>f(C)</m> winds around the origin<mdash/>still hold true,
-    as we now demonstrate.
+	 Unfortunately, we can't always claim that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+	 <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z \in D</m>. If it were, the Cauchy-Goursat theorem would imply that <m>\frac{1}{2\pi
+	 i}\int_{C} \frac{f\,'(z)}{f(z)}dz=0</m>. Nevertheless, the heuristics that we gave<mdash/>indicating that <m>\frac{1}{2\pi i}
+	 \int_{C}\frac{f\,'(z)}{f(z)}dz</m> counts how many times the curve <m>f(C)</m> winds around the origin<mdash/>still hold true,
+	 as we now demonstrate.
   </p>
   <p>
     Suppose that <m>C:z(t)=x(t)+iy(t)</m> for
