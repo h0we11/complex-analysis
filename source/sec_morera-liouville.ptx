@@ -1,17 +1,17 @@
 <section xml:id="sec_morera-liouville">
   <title>The Theorems of Morera and Liouville</title>
   <p>
-    In this section we investigate some of the qualitative properties of analytic and harmonic functions.
-    Our first result shows that the existence of an antiderivative for a continuous function is equivalent to the statement that the integral of <m>f</m> is independent of the path of integration.
-    This result is stated in a form that will serve as a converse of the Cauchy-Goursat theorem.
+	 In this section we investigate some of the qualitative properties of analytic and harmonic functions. Our first result shows
+	 that the existence of an antiderivative for a continuous function is equivalent to the statement that the integral of <m>f</m>
+	 is independent of the path of integration. This result is stated in a form that will serve as a converse of the Cauchy-Goursat
+	 theorem.
   </p>
   <theorem xml:id="Morera_s_Thm">
     <title>Morera's theorem</title>
     <statement>
       <p>
-        Let <m>f</m> be a continuous function in a simply connected domain <m>D</m>.
-        If <m>\int_Cf(z)\,dz=0</m> for every closed contour <m>C</m> in <m>D</m>,
-        then <m>f</m> is analytic in <m>D</m>.
+		  Let <m>f</m> be a continuous function in a simply connected domain <m>D</m>. If <m>\int_Cf(z)\,dz=0</m> for every closed
+		  contour <m>C</m> in <m>D</m>, then <m>f</m> is analytic in <m>D</m>.
       </p>
     </statement>
   </theorem>
@@ -21,34 +21,27 @@
       <me>
         F(z) = \int_{z_0}^{z}f(\xi)\,d\xi
       </me>,
-      where the notation indicates the integral is taken on <em>any</em>
-      contour that begins at <m>z_0</m> and ends at <m>z</m>.
-      The function <m>F(z)</m> is well defined because,
-      if <m>C_1</m> and <m>C_2</m> are two contours in <m>D</m><mdash/>both with initial point <m>z_0</m> and terminal point <m>z</m>,
-      then <m>C=C_1-C_2</m> is a closed contour in <m>D</m>,
-      and by hypothesis,
+		where the notation indicates the integral is taken on <em>any</em> contour that begins at <m>z_0</m> and ends at <m>z</m>.
+		The function <m>F(z)</m> is well defined because, if <m>C_1</m> and <m>C_2</m> are two contours in <m>D</m><mdash/>both with
+		initial point <m>z_0</m> and terminal point <m>z</m>, then <m>C=C_1-C_2</m> is a closed contour in <m>D</m>, and by
+		hypothesis,
       <me>
         0 = \int_C f(\xi)\,d\xi =\int_{C_1}f(\xi)\,d\xi - \int_{C_2} f(\xi)\,d\xi
       </me>
     </p>
     <p>
-      Since <m>f</m> is continuous,
-      we know that for any <m>\varepsilon>0</m> there exists <m>\delta>0</m> such that
-      <m>|f(\xi)-f(z)|\lt \varepsilon</m> whenever <m>|\xi -z| \lt \delta</m>.
-      Now we can use the same steps as those in the proof of <xref ref="Antideriv_Thm">Theorem</xref>
-      to show that <m>F\,'(z) = f(z)</m>.
-      Hence <m>F(z)</m> is analytic on <m>D</m>,
-      and <xref ref="All_derivs">Corollary</xref>
-      implies that <m>F\,'(z)</m> and <m>F\,''(z)</m> are also analytic.
-      Therefore <m>f\,'(z) = F\,''(z)</m> exists for all <m>z</m> in <m>D</m>,
-      proving that <m>f(z)</m> is analytic in <m>D</m>.
+		Since <m>f</m> is continuous, we know that for any <m>\varepsilon>0</m> there exists <m>\delta>0</m> such that
+		<m>|f(\xi)-f(z)|\lt \varepsilon</m> whenever <m>|\xi -z| \lt \delta</m>. Now we can use the same steps as those in the proof
+		of <xref ref="Antideriv_Thm">Theorem</xref> to show that <m>F\,'(z) = f(z)</m>. Hence <m>F(z)</m> is analytic on <m>D</m>,
+		and <xref ref="All_derivs">Corollary</xref> implies that <m>F\,'(z)</m> and <m>F\,''(z)</m> are also analytic. Therefore
+		<m>f\,'(z) = F\,''(z)</m> exists for all <m>z</m> in <m>D</m>, proving that <m>f(z)</m> is analytic in <m>D</m>.
     </p>
   </proof>
   <p>
-    Cauchy<nbsp/>'s integral formula shows how the value <m>f(z_0)</m> can be represented by a contour integral.
-    If we choose the contour of integration <m>C</m> to be a circle with center <m>z_0</m>,
-    then we can show that the value <m>f(z_0)</m> is the integral average of the values of <m>f(z)</m> at points <m>z</m> on the circle <m>C</m>,
-    a fact that the following theorem elucidates.
+	 Cauchy<nbsp/>'s integral formula shows how the value <m>f(z_0)</m> can be represented by a contour integral. If we choose the
+	 contour of integration <m>C</m> to be a circle with center <m>z_0</m>, then we can show that the value <m>f(z_0)</m> is the
+	 integral average of the values of <m>f(z)</m> at points <m>z</m> on the circle <m>C</m>, a fact that the following theorem
+	 elucidates.
   </p>
   <theorem xml:id="Gauss_s_MVT">
     <title>Gauss's mean value theorem</title>
@@ -65,11 +58,13 @@
     <p>
       We parametrize the circle <m>C_R(z_0)</m> by
       <me>
-        C_R(z_0) : z(\theta ) = z_0+Re^{i\theta},  \text{ and }   dz = iRe^{i\theta}\,d\theta,  \text{ for }  \quad0 \le \theta  \le 2\pi
+		  C_R(z_0) : z(\theta) = z_0+Re^{i\theta}, \quad \text{and} \quad dz = iRe^{i\theta}\,d\theta, \quad \text{for} \quad \quad
+		  0 \le \theta \le 2\pi.
       </me>,
       and use this parametrization along with Cauchy<nbsp/>'s integral formula to obtain
       <me>
-        f(z_0) = \frac{1}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta})iRe^{i\theta}}{Re^{i\theta}}\,d\theta = \frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
+        f(z_0) = \frac{1}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta})iRe^{i\theta}}{Re^{i\theta}}\,d\theta = 
+		  \frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
       </me>.
     </p>
   </proof>
@@ -80,8 +75,8 @@
     <title>Maximum modulus principle</title>
     <statement>
       <p>
-        Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>.
-        Then <m>|f(z)|</m> does not attain a maximum value at any point <m>z_0</m> in <m>D</m>.
+		  Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>. Then <m>|f(z)|</m> does not attain a maximum value at any
+		  point <m>z_0</m> in <m>D</m>.
       </p>
     </statement>
   </theorem>
@@ -386,264 +381,272 @@
       </p>
     </statement>
   </corollary>
-  <exercises xml:id="exercises_morera-liouville">
-    <title>Exercises</title>
-    <exercise xml:id="x6_6_1">
-      <statement>
-        <p>
-          Factor each polynomial as a product of linear factors.
-        </p>
-        <task>
-          <p>
-            <m>P(z)=z^4+4</m>.
-          </p>
-          <solution>
-            <p>
-              <m>(z+1+i)(z+1-i)(z-1+i)(z-1-i)</m>.
+<exercises xml:id="exercises_morera-liouville">
+<title>Exercises</title>
+	<exercise xml:id="x6_6_1">
+		<introduction>
+			<p>
+				Factor each polynomial as a product of linear factors.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>P(z)=z^4+4</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>(z+1+i)(z+1-i)(z-1+i)(z-1-i)</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>P(z)=z^2+(1+i)z+5i</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>P(z)=z^4-4z^3+6z^2-4z+5</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>(z+i)(z-i)(z-2+i)(z-2-i)</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Show that <m>P(i)=0.</m>
+				</p>
+			</hint>
+		</task>
+	</exercise>
+	<exercise xml:id="x6_6_2">
+		<statement>
+			<p>
+				Let <m>f(z)=az^n+b</m>, where the region is the disk <m>R=\{z:|z| \le 1\}</m>. Show that 
+				<m>\max\limits_{|z| \le 1}|f(z)| = |a|+|b|</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x6_6_3">
+		<statement>
+			<p>
+				Show that <m>\cos z</m> is <em>not</em> a bounded function.'
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We know that the complex cosine is an entire function that is not a constant. By Liouville's Theorem, it is not
+				bounded.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<introduction>
+			<p>
+				Let <m>f(z)=z^2</m>. Evaluate the following, where <m>R</m> represents the rectangular region defined by the set 
+				<men xml:id="x6_6_4"> R=\{z=x+iy:2 \le x \le 3  \quad \text{and} \quad  1 \le y \le 3\}: </men>
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\max\limits_{z\in R} |f(z)|</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\min\limits_{z\in R} |f(z)|</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\max\limits_{z\in R}\mathrm{Re}[f(z)]</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\min\limits_{z\in R}\mathrm{Im}[f(z)]</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x6_6_5">
+		<introduction>
+			<p>
+				For the following, let <m>f</m> be analytic in the disk <m>D_5(0)</m> and suppose that <m>|f(z)| \le 10</m> for
+				<m>z\in C_3(1)</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Find a bound for <m>|f^{\,(4)}(1)|</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>|f\,^{(4)}(1)| \le \frac{4!(10)}{2\pi 3^5}6\pi = \frac{80}{3^3}</m>.  Explain the steps in detail.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>P(z)=z^2+(1+i)z+5i</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>P(z)=z^4-4z^3+6z^2-4z+5</m>.
-          </p>
-          <solution>
-            <p>
-              <m>(z+i)(z-i)(z-2+i)(z-2-i)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>P(z)=z^3-(3+3i) z^2+(-1+6i)z+3-i</m>.
-					<hint>
-						<p>
-							Show that <m>P(i)=0.</m>
-						</p>
-					</hint>
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_2">
-      <statement>
-        <p>
-          Let <m>f(z)=az^n+b</m>,
-          where the region is the disk <m>R=\{z:|z| \le 1\}</m>.
-          Show that <m>\max\limits_{|z| \le 1}|f(z)| = |a|+|b|</m>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_3">
-      <statement>
-        <p>
-          Show that <m>\cos z</m> is <em>not</em> a bounded function.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          We know that the complex cosine is an entire function that is not a constant.
-          By Liouville's Theorem, it is not bounded.
-        </p>
-      </solution>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Let <m>f(z)=z^2</m>.
-          Evaluate the following,
-          where <m>R</m> represents the rectangular region defined by the set
-          <men xml:id="x6_6_4">
-            R=\{z=x+iy:2 \le x \le 3  \text{ and }   1 \le y \le 3\}
-          </men>.
-        </p>
-        <task>
-          <p>
-            <m>\max\limits_{z\in R} |f(z)|</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\min\limits_{z\in R} |f(z)|</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\max\limits_{z\in R}\mathrm{Re}[f(z)]</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\min\limits_{z\in R}\mathrm{Im}[f(z)]</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_5">
-      <statement>
-        <p>
-          Let <m>f</m> be analytic in the disk <m>D_5(0)</m> and suppose that
-          <m>|f(z)| \le 10</m> for <m>z\in C_3(1)</m>.
-        </p>
-        <task>
-          <p>
-            Find a bound for <m>|f^{\,(4)}(1)|</m>.
-          </p>
-          <solution>
-            <p>
-              <m>|f\,^{(4)}(1)| \le \frac{4!(10)}{2\pi 3^5}6\pi = \frac{80}{3^3}</m>.
-              (Explain.)
-            </p>
-          </solution>
-        </task>
-        <task>
-            Find a bound for <m>|f^{\,(4)}(0)|</m>.
-          	<hint>
-					<p>
-						Note that <m>\, \overline{D}_2(0) \subseteq \overline{D}_3(1) \,</m> and apply the appropriate theorems.
-					</p>
-				</hint>
-          <solution>
-              <m>|f\,^{(4)}(0)| \le \frac{4!(10)}{2\pi 2^5}4\pi = 15</m>.
-              (Explain.)
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_6">
-      <statement>
-        <p>
-          Let <m>f</m> be an entire function such that <m>|f(z)| \le M|z|</m> for all <m>z</m>.
-        </p>
-        <task>
-          <p>
-            Show that, for <m>n \ge 2</m>,
-            <m>f\,^{(n)}(z)=0</m> for all <m>z</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Use part (a) to show that <m>f(z)=az+b</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_7">
-      <statement>
-        <p>
-          Establish the following <em>minimum modulus principle</em>.
-        </p>
-        <task>
-          <p>
-            Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>,
-            and continuous on the closed region <m>R</m> that consists of <m>D</m> and all its boundary points <m>B</m>.
-            Show that, if <m>f(z) \ne 0</m> throughout <m>R</m>,
-            then <m>|f(z)|</m> assumes its <em>minimum</em> value,
-            but does so only at point(s) <m>z_0</m> on the boundary <m>B</m>.
-          </p>
-          <solution>
-            <p>
-              If <m>|f(z) |\ge m</m> for all <m>z</m> in <m>D</m>, where <m>m>0</m>,
-              then the function <m>\frac{1}{f}</m> is analytic in <m>D</m>.
-              Apply the maximum modulus Theorem to the function <m>\frac{1}{f}</m> to get your result.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Show that the requirement <m>f(z) \ne 0</m> in part (a) is necessary by finding a function for which the requirement fails,
-            and whose minimum modulus is attained at some place other than the boundary.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_8">
-      <statement>
-        <p>
-          Let <m>u(x,y)</m> be harmonic for all <m>(x,y)</m>.
-          Show that
+			</solution>
+		</task>
+		<task>
+			<statement>
+				Find a bound for <m>|f^{\,(4)}(0)|</m>.
+			</statement>
+			<hint>
+				<p>
+					Note that <m>\, \overline{D}_2(0) \subseteq \overline{D}_3(1) \,</m> and apply the appropriate theorems.
+				</p>
+			</hint>
+			<solution>
+				<p>
+					<m>|f\,^{(4)}(0)| \le \frac{4!(10)}{2\pi 2^5}4\pi = 15</m>.  Explain the steps in detail.
+				</p>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="x6_6_6">
+		<introduction>
+			<p>
+				In the following, let <m>f</m> be an entire function such that <m>|f(z)| \le M|z|</m> for all <m>z</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Show that, for <m>n \ge 2</m>, <m>f\,^{(n)}(z)=0</m> for all <m>z</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Use part (a) to show that <m>f(z)=az+b</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x6_6_7">
+		<introduction>	
+			<p>
+				Establish the following <em>minimum modulus principle</em>:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Let <m>f</m> be analytic and nonconstant in the domain <m>D</m>, and continuous on the closed region <m>R</m> that
+					consists of <m>D</m> and all its boundary points <m>B</m>. Show that, if <m>f(z) \ne 0</m> throughout <m>R</m>,
+					then <m>|f(z)|</m> assumes its <em>minimum</em> value, but does so only at point(s) <m>z_0</m> on the boundary
+					<m>B</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					If <m>|f(z) |\ge m</m> for all <m>z</m> in <m>D</m>, where <m>m>0</m>, then the function <m>\frac{1}{f}</m> is
+					analytic in <m>D</m>. Apply the Maximum Modulus Theorem to the function <m>\frac{1}{f}</m> to get your result.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Show that the requirement <m>f(z) \ne 0</m> in part (a) is necessary by finding a function for which the
+					requirement fails, and whose minimum modulus is attained at some place other than the boundary.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x6_6_8">
+		<statement>
+			<p>
+				Let <m>u(x,y)</m> be harmonic for all <m>(x,y)</m>. Show that
           <me>
             u(x_0,y_0) = \frac{1}{2\pi}\int_0^{2\pi}u\big(x_0+R\cos \theta, \; y_0+R\sin \theta\big)\,d\theta
           </me>,
           where <m>R>0</m>.
-			 <hint>
-			 	<p>
-					Let <m>f(z)=u(x,y) +iv(x,y),</m> where <m>v</m> is a harmonic conjugate of <m>u</m>.
-				</p>
-			 </hint>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_9">
-      <statement>
-        <p>
-          Establish the following maximum principle for harmonic functions: Let <m>u(x,y)</m> be harmonic and nonconstant in the simply connected domain <m>D</m>.
-          Then <m>u</m> does not have a maximum value at any point <m>(x_0, \, y_0)</m> in <m>D</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Let <m>f(z) =u(z) +iv(z)</m>,
-          where <m>v</m> is a harmonic conjugate of <m>u</m>,
-          so that <m>f</m> is analytic in <m>D</m>.
-          The function <m>F(z) =\exp\big(f(z)\big)</m> is also analytic in <m>D</m>,
-          so that <m>|F|</m> does not take on a maximum in <m>D</m> by the maximum modulus Theorem.
-          But <m>|F(z)|=\exp\big(u(z)\big)</m> for all <m>z</m>
-          (show why).
-          This leads to the conclusion since <m>u</m> is a real valued function,
-          and the real valued function <m>\exp</m> is an increasing function.
-          Explain this last part in detail.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x6_6_10">
-      <statement>
-        <p>
-          Let <m>f</m> be an entire function with the property that <m>|f(z)| \ge 1</m> for all <m>z</m>.
-          Show that <m>f</m> is constant.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x6_6_11">
-      <statement>
-        <p>
-          Let <m>f</m> be nonconstant and analytic in the closed disk <m>\overline{D}_1(0)</m>.
-          Suppose that <m>|f(z)|</m> is constant for <m>z \in C_1(0)</m>,
-          i.e., that there is some number <m>K</m> such that
-          <m>|f(z)| = K</m> for all <m>z \in C_1(0)</m>.
-          Show that <m>f</m> has a zero in <m>\overline{D}_1(0)</m>,
-          <em>i.e.</em>,
-          that there exists some <m>z_0 \in \overline{D}_1(0)</m> such that
-          <m>f(z_0)=0</m>.
-			 <hint>
-			 	<p>
-					Use both the minimum modulus principle (see <xref ref="x6_6_7">Exercise</xref>) and the maximum modulus principle.
-		  		</p>
-			 </hint>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          By contraposition) If <m>f</m> does not have a zero,
-          then <m>\frac{1}{f}</m> is analytic in <m>D_1(0)</m>,
-          so its maximum occurs on the boundary.
-          Since <m>f</m> is constant on the boundary,
-          we conclude that both the maximum and the minimum of <m>f</m> are the same,
-          which means <m>f</m> is constant.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x6_6_12">
-      <statement>
-        <p>
-          Why is it important to study the fundamental theorem of algebra in a complex analysis course?
-        </p>
-      </statement>
-    </exercise>
-  </exercises>
+			</p>
+		</statement>
+		<hint>
+			<p>
+				Let <m>f(z)=u(x,y) +iv(x,y),</m> where <m>v</m> is a harmonic conjugate of <m>u</m>.
+			</p>
+		</hint>
+	</exercise>
+	<exercise xml:id="x6_6_9">
+		<statement>
+			<p>
+				Establish the following maximum principle for harmonic functions: Let <m>u(x,y)</m> be harmonic and nonconstant in the
+				simply connected domain <m>D</m>. Then <m>u</m> does not have a maximum value at any point <m>(x_0, \, y_0)</m> in
+				<m>D</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Let <m>f(z) =u(z) +iv(z)</m>, where <m>v</m> is a harmonic conjugate of <m>u</m>, so that <m>f</m> is analytic in
+				<m>D</m>. The function <m>F(z) =\exp\big(f(z)\big)</m> is also analytic in <m>D</m>, so that <m>|F|</m> does not take
+				on a maximum in <m>D</m> by the maximum modulus Theorem. But <m>|F(z)|=\exp\big(u(z)\big)</m> for all <m>z</m> (show
+				why). This observation leads to the conclusion since <m>u</m> is a real valued function, and the real valued function
+				<m>\exp</m> is an increasing function. Explain this last part in detail.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x6_6_10">
+		<statement>
+			<p>
+				Let <m>f</m> be an entire function with the property that <m>|f(z)| \ge 1</m> for all <m>z</m>. Show that <m>f</m> is
+				constant.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x6_6_11">
+		<statement>
+			<p>
+				Let <m>f</m> be nonconstant and analytic in the closed disk <m>\overline{D}_1(0)</m>. Suppose that <m>|f(z)|</m> is
+				constant for <m>z \in C_1(0)</m>, <em>i.e.</em>, that there is some number <m>K</m> such that <m>|f(z)| = K</m> for
+				all <m>z \in C_1(0)</m>. Show that <m>f</m> has a zero in <m>\overline{D}_1(0)</m>, <em>i.e.</em>, that there exists
+				some <m>z_0 \in \overline{D}_1(0)</m> such that <m>f(z_0)=0</m>.
+			</p>
+		</statement>
+		<hint>
+			<p>
+				Use both the minimum modulus principle (see <xref ref="x6_6_7">Exercise</xref>) and the maximum modulus principle.
+			</p>
+		</hint>
+		<solution>
+			<p>
+				By contraposition) If <m>f</m> does not have a zero, then <m>\frac{1}{f}</m> is analytic in <m>D_1(0)</m>, so its
+				maximum occurs on the boundary. Since <m>f</m> is constant on the boundary, we conclude that both the maximum and the
+				minimum of <m>f</m> are the same, which means <m>f</m> is constant.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x6_6_12">
+		<statement>
+			<p>
+				Why is it important to study the fundamental theorem of algebra in a complex analysis course?
+			</p>
+		</statement>
+	</exercise>
+</exercises>
 </section>
