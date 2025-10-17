@@ -281,29 +281,35 @@
   </theorem>
   <proof>
     <p>
-      We prove part (<em>i</em>) only because the proof for part (<em>ii</em>) involves no new ideas beyond those in the proof of <xref ref="Power_Series_Thm">Theorem</xref>.
-      The series <m>\sum\limits_{n=- \infty}^{\infty}b_n(z-\alpha)^n</m> converges pointwise on <m>A(\alpha,r,R)</m>,
-      so <xref ref="Uniform_Laurent">Theorem</xref>
-      guarantees that this series converges uniformly on <m>C_{\rho}^{+}(\alpha)</m>,
-      for <m>0 \le r\lt \rho\lt R</m>.
-      By Laurent's theorem, then,
+		We prove part (<em>i</em>) only because the proof for part (<em>ii</em>) involves no new ideas beyond those in the proof of
+		<xref ref="Power_Series_Thm">Theorem</xref>. The series <m>\sum\limits_{n=- \infty}^{\infty}b_n(z-\alpha)^n</m> converges
+		pointwise on <m>A(\alpha,r,R)</m>, so <xref ref="Uniform_Laurent">Theorem</xref> guarantees that this series converges
+		uniformly on <m>C_{\rho}^{+}(\alpha)</m>, for <m>0 \le r\lt \rho\lt R</m>. By Laurent's theorem, then,
       <md>
-        <mrow>c_n \amp = \frac{1}{2\pi i} \int\limits_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz</mrow>
-        <mrow>\amp = \frac{1}{2\pi i} \int\limits_{C_{\rho}^{+}(\alpha)}\left[(z-\alpha)^{-n-1}\sum_{m= -\infty}^{\infty}b_m(z-\alpha)^{m}\right]dz</mrow>
-        <mrow>\amp = \sum_{m= -\infty}^{\infty}\frac{b_{m}}{2\pi i}\int\limits_{C_{\rho}^{+}(\alpha)}(z-\alpha)^{m-n-1}\,dz</mrow>
+        	<mrow>
+				c_n \amp = \frac{1}{2\pi i} \int\limits_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz
+			</mrow>
+			<mrow>
+				\amp = \frac{1}{2\pi i} \int\limits_{C_{\rho}^+(\alpha)}\left[(z-\alpha)^{-n-1}
+				\sum_{m= -\infty}^{\infty}b_m(z-\alpha)^{m}\right]dz
+			</mrow>
+			<mrow>
+				\amp = \sum_{m= -\infty}^{\infty}\frac{b_{m}}{2\pi i}\int\limits_{C_{\rho}^{+}(\alpha)}(z-\alpha)^{m-n-1}\,dz
+			</mrow>
       </md>.
     </p>
     <p>
-      Since <m>(z-\alpha)^{m-n-1}</m> has an antiderivative for all <m>z</m> except when <m>m=n</m>,
-      all the terms in the preceding expression drop out except when <m>m=n</m>, giving
+		Since <m>(z-\alpha)^{m-n-1}</m> has an antiderivative for all <m>z</m> except when <m>m=n</m>, all the terms in the
+		preceding expression drop out except when <m>m=n</m>, giving
       <me>
-        c_n=\frac{b_n}{2\pi i} \int_{C_{\rho }^{+}(\alpha)}(z-\alpha)^{-1}dz=b_n
+        c_n=\frac{b_n}{2\pi i} \int_{C_{\rho }^{+}(\alpha)}(z-\alpha)^{-1}dz=b_n.
       </me>
     </p>
   </proof>
   <p>
-    The uniqueness of the Laurent series is an important property because the coefficients in the Laurent expansion of a function are seldom found by using Equation <xref ref="cn_Laurent"/>.
-    The following examples illustrate some methods for finding Laurent series coefficients.
+	 The uniqueness of the Laurent series is an important property because the coefficients in the Laurent expansion of a function
+	 are seldom found by using Equation <xref ref="cn_Laurent"/>. The following examples illustrate some methods for finding
+	 Laurent series coefficients.
   </p>
   <example xml:id="ex_three-laurent-expansions">
     <statement>
@@ -326,32 +332,35 @@
         </men>.
       </p>
       <p>
-        We use <xref ref="Geometric_Series">Theorem</xref>
-        and <xref ref="Geom_Series__z____1">Corollary</xref>
+        We use <xref ref="Geometric_Series">Theorem</xref> and <xref ref="Geom_Series__z____1">Corollary</xref>
         to obtain the following representations for the terms on the right side of Equation <xref ref="le1_1"/>:
         <md>
-			 <mrow xml:id="le1_2" number="yes">\frac{1}{1+z} \amp = \sum_{n=0}^{\infty}(-1)^nz^n, \amp  \amp  \text{ valid for }  |z|
-			 \lt  1;</mrow>
-			 <mrow xml:id="le1_3" number="yes">\frac{1}{1+z} \amp = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}, \amp  \amp  \text{
-			 valid for }  |z| >1;</mrow>
-			 <mrow xml:id="le1_4" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp =
-			 \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \amp  \amp  \text{ valid for }  |z| \lt 2;</mrow>
-			 <mrow xml:id="le1_5" number="yes">\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp =
-			 \sum_{n=1}^{\infty}\frac{-2^{n-1}}{z^n}, \amp  \amp  \text{ valid for }  |z| >2</mrow>
-        </md>.
+			 	<mrow xml:id="le1_2" number="yes">\frac{1}{1+z} 
+					\amp = \sum_{n=0}^{\infty}(-1)^nz^n, \amp  \amp  \text{ valid for }  |z| \lt  1;
+				</mrow>
+				<mrow xml:id="le1_3" number="yes">
+					\frac{1}{1+z} \amp = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}, \amp  \amp  \text{ valid for }  |z| >1;
+				</mrow>
+				<mrow xml:id="le1_4" number="yes">
+					\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp = \sum_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \amp  \amp  
+					\text{ valid for }  |z| \lt 2;
+				</mrow>
+				<mrow xml:id="le1_5" number="yes">
+					\frac{1}{2}\left(\frac{1}{1-\frac{z}{2}}\right) \amp = \sum_{n=1}^{\infty}\frac{-2^{n-1}}{z^n}, \amp  \amp  
+					\text{ valid for }  |z| >2
+				</mrow>
+		  </md>.
       </p>
       <p>
-        Representations <xref ref="le1_2"/> and <xref ref="le1_4"/> are both valid in the disk <m>D</m>,
-        and thus we have
+        Representations <xref ref="le1_2"/> and <xref ref="le1_4"/> are both valid in the disk <m>D</m>, and thus we have
         <me>
           f(z) =\sum_{n=0}^{\infty}\left[(-1)^n+\frac{1}{2^{n+1}}\right] z^n,  \text{ valid for } |z| \lt 1
         </me>,
-        which is a Laurent series that reduces to a Maclaurin series.
-        In the annulus <m>A</m>,
-        <xref ref="le1_3">Representations</xref>
-        and <xref ref="le1_4"></xref> are valid; hence we get
+		  which is a Laurent series that reduces to a Maclaurin series.  In the annulus <m>A</m>, 
+		  <xref ref="le1_3">Representations</xref> and <xref ref="le1_4"></xref> are valid; hence we get
         <me>
-          f(z) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}+\sum\limits_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \text{ valid for }  1\lt |z| \lt 2
+			 f(z) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}+\sum\limits_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, \text{ valid for }  
+			 1\lt |z| \lt 2
         </me>.
       </p>
       <p>
@@ -366,8 +375,7 @@
   <example>
     <statement>
       <p>
-        Find the Laurent series representation for
-        <m>f(z) = \frac{\cos z-1}{z^4}</m> that involves powers of <m>z</m>.
+        Find the Laurent series representation for <m>f(z) = \frac{\cos z-1}{z^4}</m> that involves powers of <m>z</m>.
       </p>
     </statement>
     <solution>
@@ -402,359 +410,346 @@
       </p>
     </solution>
   </example>
-  <exercises xml:id="exercises_laurent-series">
-    <title>Exercises</title>
-    <exercise xml:id="x7_3_1">
-      <statement>
-        <p>
-          Find two Laurent series expansions for
-          <m>f(z) =\frac{1}{z^3-z^4}</m> that involve powers of <m>z</m>.
-        </p>
-      </statement>
+<exercises xml:id="exercises_laurent-series">
+<title>Exercises</title>
+	<exercise xml:id="x7_3_1">
+		<statement>
+			<p>
+				Find two Laurent series expansions for <m>f(z) =\frac{1}{z^3-z^4}</m> that involve powers of <m>z</m>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          <m>\frac{1}{z^3-z^4}=\sum\limits_{n=0}^{\infty}z^{n-3}</m> for <m>0\lt |z|\lt 1, \, \frac{1}{z^3-z^4} = -\sum\limits_{n=1}^{\infty}\frac{1}{z^{n+3}}</m> for <m>|z| > 1</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_2">
+			<p>
+				<m>
+					\frac{1}{z^3-z^4}=\sum\limits_{n=0}^{\infty}z^{n-3}</m> for <m>0\lt |z|\lt 1, \, \frac{1}{z^3-z^4} = 
+					-\sum\limits_{n=1}^{\infty}\frac{1}{z^{n+3}}</m> for <m>|z| > 1
+				</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_2">
       <statement>
-        <p>
-          Show that <m>f(z) = \frac{1}{1-z}=\frac{1}{1-i}\left(\frac{1}{1-\frac{z-i}{1-i}}\right)</m> has a Laurent series representation about the point <m>z_0=i</m> given by
-          <me>
-            f(z) =\frac{1}{1-z}=-\sum\limits_{n=1}^{\infty}\frac{(1-i)^{n-1}}{(z-i)^n},  \text{ valid for }  |z-i| >\sqrt{2}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_3">
-      <statement>
-        <p>
-          Find the Laurent series for
-          <m>f(z) =\frac{\sin 2z}{z^4}</m> that involves powers of <m>z</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>\sum\limits_{n=0}^{\infty}\frac{(-1)^n 2^{2n+1}z^{2n-3}}{(2n+1)!}</m> for <m>|z|>0</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Show that <m>\frac{1-z}{z-2}=-\sum\limits_{n=0}^{\infty}\frac{1}{(z-1)^n}</m> is valid for <m>|z-1| >1</m>.
-          <hint>
-			 	<p>
-					Refer to the solution for Exercise 3a, <xref ref="sec_taylor-series">Section</xref>.
-			 	</p>
-			 </hint>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_5">
-      <statement>
-        <p>
-          Find the Laurent series for
-          <m>\sin (\frac{1}{z})</m> centered at <m>\alpha =0</m>.
-          Where is the series valid?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!z^{2n+1}}</m> valid for <m>|z|>0</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_6">
-      <statement>
-        <p>
-          Show that <m>\frac{1-z}{z-3}=-\sum\limits_{n=0}^{\infty}\frac{2^n}{(z-1)^n}</m> is valid for <m>|z-1|>2</m>.
-          <hint>
-			 	<p>
+			<p>
+				Show that <m>f(z) = \frac{1}{1-z}=\frac{1}{1-i}\left(\frac{1}{1-\frac{z-i}{1-i}}\right)</m> has a Laurent series
+				representation about the point <m>z_0=i</m> given by
+				<me>
+					f(z) =\frac{1}{1-z}=-\sum\limits_{n=1}^{\infty}\frac{(1-i)^{n-1}}{(z-i)^n},  \text{ valid for }  |z-i| >\sqrt{2}
+				</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_3_3">
+		<statement>
+			<p>
+				Find the Laurent series for <m>f(z) =\frac{\sin 2z}{z^4}</m> that involves powers of <m>z</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>\sum\limits_{n=0}^{\infty}\frac{(-1)^n 2^{2n+1}z^{2n-3}}{(2n+1)!}</m> for <m>|z|>0</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that <m>\frac{1-z}{z-2}=-\sum\limits_{n=0}^{\infty}\frac{1}{(z-1)^n}</m> is valid for <m>|z-1| >1</m>.
+			</p>
+		</statement>
+		<hint>
+			<p>
+				Refer to the solution for Exercise 3a, <xref ref="sec_taylor-series">Section</xref>.
+			</p>
+		</hint>
+	</exercise>
+	<exercise xml:id="x7_3_5">
+		<statement>
+			<p>
+				Find the Laurent series for <m>\sin (\frac{1}{z})</m> centered at <m>\alpha =0</m>. Where is the series valid?
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>\sum\limits_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!z^{2n+1}}</m> valid for <m>|z|>0</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_6">
+		<statement>
+			<p>
+				Show that <m>\frac{1-z}{z-3}=-\sum\limits_{n=0}^{\infty}\frac{2^n}{(z-1)^n}</m> is valid for <m>|z-1|>2</m>.
+			</p>
+			<hint>
+				<p>
 					Use the hint for Exercise 3b, <xref ref="sec_taylor-series">Section</xref>.
 				</p>
-			 </hint>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_7">
+			</hint>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_3_7">
       <statement>
-        <p>
-          Find the Laurent series for
-          <m>f(z) =\frac{\cosh z-\cos z}{z^5}</m> that involves powers of <m>z</m>.
-        </p>
-      </statement>
+			<p>
+				Find the Laurent series for <m>f(z) =\frac{\cosh z-\cos z}{z^5}</m> that involves powers of <m>z</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>\sum\limits_{n=1}^{\infty}\frac{2z^{4n-7}}{(4n-2)!}</m> valid for <m>|z|>0</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_8">
+		<statement>
+			<p>
+				Find the Laurent series for <m>f(z) =\frac{1}{z^4(1-z)^2}</m> that involves powers of <m>z</m> and is valid for 
+				<m>|z| >1</m>.
+			</p>
+		</statement>
+		<hint>
+			<m>\dfrac{1}{\left(1-\frac{1}{z}\right)^2} = \dfrac{z^2}{(1-z)^2}.</m>
+		</hint>
+	</exercise>
+	<exercise xml:id="x7_3_9">
+		<statement>
+			<p>
+				Find two Laurent series for <m>z^{-1}(4-z)^{-2}</m> involving powers of <m>z</m>, and state where they are valid.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>z^{-1}(4-z)^{-2}=\frac{1}{16z} + \sum\limits_{n=0}^{\infty}\frac{(n+2) z^n}{4^{n+3}}</m> for <m>|z|\lt 4</m>, \quad
+				\text{and}
+			</p>
+			<p>
+				<m>z^{-1}(4-z)^{-2} = \sum\limits_{n=1}^{\infty}\frac{n(4)^{n-1}}{z^{n+2}}</m> for <m>|z|>4</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_10">
+      <statement>
+			<p>
+				Find three Laurent series for <m>(z^2-5z+6)^{-1}</m> centered at <m>\alpha =0</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_3_11">
+      <statement>
+			<p> 
+				Find the Laurent series for Log<m>(\frac{z-a}{z-b})</m>, where <m>a</m> and <m>b</m> are positive real numbers with
+				<m>b>a>1</m>, and state where the series is valid.
+			</p>
+		</statement>
+		<hint>
+			<p>
+				For these conditions, show that 
+				<m>\, \mathrm{Log}(\frac{z-a}{z-b}) = \mathrm{Log}(1-\frac{a}{z}) - \mathrm{Log}(1- \frac{b}{z}).</m>
+			</p>
+		</hint>
       <solution>
-        <p>
-          <m>\sum\limits_{n=1}^{\infty}\frac{2z^{4n-7}}{(4n-2)!}</m> valid for <m>|z|>0</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_8">
-      <statement>
-        <p>
-          Find the Laurent series for
-			 <m>f(z) =\frac{1}{z^4(1-z)^2}</m> that involves powers of <m>z</m> and is valid for <m>|z| >1</m>.
-			 <hint>
-			 	<m>\dfrac{1}{\left(1-\frac{1}{z}\right)^2} = \dfrac{z^2}{(1-z)^2}.</m>
-			 </hint>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_9">
-      <statement>
-        <p>
-          Find two Laurent series for
-          <m>z^{-1}(4-z)^{-2}</m> involving powers of <m>z</m>,
-          and state where they are valid.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>z^{-1}(4-z)^{-2}=\frac{1}{16z} + \sum\limits_{n=0}^{\infty}\frac{(n+2) z^n}{4^{n+3}}</m> for <m>|z|\lt 4</m>,
-        </p>
-        <p>
-          <m>z^{-1}(4-z)^{-2} = \sum\limits_{n=1}^{\infty}\frac{n(4)^{n-1}}{z^{n+2}}</m> for <m>|z|>4</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_10">
-      <statement>
-        <p>
-          Find three Laurent series for
-          <m>(z^2-5z+6)^{-1}</m> centered at <m>\alpha =0</m>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_11">
-      <statement>
-        <p>
-          Find the Laurent series for Log<m>(\frac{z-a}{z-b})</m>,
-          where <m>a</m> and <m>b</m> are positive real numbers with <m>b>a>1</m>,
-          and state where the series is valid.
-			 <hint>
-			 	<p>For these conditions, show that 
-					<m>\, \mathrm{Log}(\frac{z-a}{z-b}) = \mathrm{Log}(1-\frac{a}{z}) - \mathrm{Log}(1- \frac{b}{z}).</m>
-				</p>
-			 </hint>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Log<m>(\frac{z-z}{z-b}) = \sum\limits_{n=1}^{\infty}\frac{b^n-a^n}{nz^n}</m> valid for <m>|z|>b</m>.
-          Explain.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_12">
+			<p>
+				Log<m>(\frac{z-z}{z-b}) = \sum\limits_{n=1}^{\infty}\frac{b^n-a^n}{nz^n}</m> valid for <m>|z|>b</m>. Explain.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_12">
       <statement>
         <p>
           Can <m>\mathrm{Log}\,z</m> be represented by a Maclaurin series or a Laurent series about the point <m>\alpha =0</m>?
           Explain your answer.
         </p>
       </statement>
-    </exercise>
-    <exercise xml:id="x7_3_13">
-      <statement>
-        <p>
-          Use the Maclaurin series for <m>\sin z</m> and then long division to get the Laurent series for <m>\csc z</m> with <m>\alpha=0</m>.
-        </p>
-      </statement>
+	</exercise>
+	<exercise xml:id="x7_3_13">
+		<statement>
+			<p>
+				Use the Maclaurin series for <m>\sin z</m> and then long division to get the Laurent series for <m>\csc z</m> with
+				<m>\alpha=0</m>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          <m>\csc z=\frac{1}{z}+\frac{z}{6}+\frac{7z^3}{360}+\cdots</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_14">
+			<p>
+				<m>\csc z=\frac{1}{z}+\frac{z}{6}+\frac{7z^3}{360}+\cdots</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_14">
       <statement>
-        <p>
-          Show that <m>\cosh (z+\frac{1}{z}) =\sum\limits_{n=- \infty}^{\infty}a_nz^n</m>,
-          where the coefficients can be expressed in the form
-			 <m>a_n=\frac{1}{2\pi} \int_0^{2\pi}\cos n\theta \cosh (2\cos \theta)\,d\theta</m>.
-			 <hint>
-			 	<p>
-					Let the path of integration be the circle <m>\, C_1^{+}(0).</m>
+			<p>
+				Show that <m>\cosh (z+\frac{1}{z}) =\sum\limits_{n=- \infty}^{\infty}a_nz^n</m>, where the coefficients can be
+				expressed in the form <m>a_n=\frac{1}{2\pi} \int_0^{2\pi}\cos n\theta \cosh (2\cos \theta)\,d\theta</m>.
+			</p>
+		</statement>
+		<hint>
+			<p>
+				Let the path of integration be the circle <m>\, C_1^{+}(0).</m>
+			</p>
+		</hint>
+	</exercise>
+	<exercise xml:id="x7_3_15">
+		<introduction>
+			<p>
+				Consider the real-valued function <m>u(\theta)=\frac{1}{5-4\cos \theta}</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Use the substitution <m>\cos \theta =\frac{1}{2}(z+\frac{1}{z})</m> and obtain
+					<me>
+						u(\theta) = f(z) = \frac{-z}{(z-2)(2z-1)} =
+						\frac{1}{3}\left(\frac{1}{1-\frac{z}{2}}\right)-\frac{1}{3}\left(\frac{1}{1-2z}\right)
+					</me>.
 				</p>
-			 </hint>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_15">
-      <statement>
-        <p>
-          Consider the real-valued function <m>u(\theta)=\frac{1}{5-4\cos \theta}</m>.
-        </p>
-        <task>
-          <p>
-            Use the substitution <m>\cos \theta =\frac{1}{2}(z+\frac{1}{z})</m> and obtain
-            <me>
-              u(\theta) = f(z) = \frac{-z}{(z-2)(2z-1)} = \frac{1}{3}\left(\frac{1}{1-\frac{z}{2}}\right)-\frac{1}{3}\left(\frac{1}{1-2z}\right)
-            </me>.
-          </p>
-          <solution>
-            <p>
-              This identity is obtained by straightforward substitution,
-              and partial fraction decomposition.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Expand the function <m>f(z)</m> in part (a) in a Laurent series that is valid in the annulus <m>A(0,\frac{1}{2},2)</m>.
-          </p>
-          <solution>
-            <p>
-              <m>f(z) = \frac{1}{3}+\frac{1}{3} \sum\limits_{n=1}^{\infty}2^{-n}(z^n+z^{-n})</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Use the substitutions <m>\cos (n\theta)=\frac{1}{2}(z^n+z^{-n})</m> in part (b) and obtain the Fourier series for <m>u(\theta)</m>,
-            where <m>u(\theta) = \frac{1}{3}+\frac{1}{3} \sum\limits_{n=1}^{\infty}2^{-n+1}\cos(n\theta)</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_16">
-      <statement>
-        <p>
-          The <em>Bessel function</em> <m>J_n(z)</m> is sometimes defined by the generating function
-          <me>
-            \exp \left[ \frac{z}{2}(t-\frac{1}{t}) \right] =\sum\limits_{n= -\infty}^{\infty}J_n(z) t^n
-          </me>.
-          Use the circle <m>C_1^{+}(0)</m> as the contour of integration and show that
-          <me>
-            J_n(z) =\frac{1}{\pi} \int_0^{\pi}\cos (n\theta-z\sin \theta)\,d\theta
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_17">
-      <statement>
-        <p>
-          Suppose that the Laurent expansion
-          <m>f(z) = \sum\limits_{n=- \infty}^{\infty}a_nz^n</m> converges in the annulus <m>A(0,r_1,r_2)</m>,
-          where <m>r_1\lt 1\lt r_2</m>.
-          Consider the real-valued function <m>u(\theta)=f(e^{i\theta})</m> and show that
-          <m>u(\theta)</m> has the Fourier series expansion
-          <me>
-            u(\theta) = f(e^{i\theta}) = \sum_{n=- \infty}^{\infty}a_ne^{in\theta}
-          </me>,
-          where
-          <me>
-            a_n=\frac{1}{2\pi} \int_0^{2\pi}e^{-in\phi }f(e^{i\phi })\,d\phi
-          </me>
-        </p>
-      </statement>
+			</statement>
+			<solution>
+				<p>
+					This identity is obtained by straightforward substitution, and partial fraction decomposition.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Expand the function <m>f(z)</m> in part (a) in a Laurent series that is valid in the annulus
+					<m>A(0,\frac{1}{2},2)</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>f(z) = \frac{1}{3}+\frac{1}{3} \sum\limits_{n=1}^{\infty}2^{-n}(z^n+z^{-n})</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Use the substitutions <m>\cos (n\theta)=\frac{1}{2}(z^n+z^{-n})</m> in part (b) and obtain the Fourier series for
+					<m>u(\theta)</m>, where <m>u(\theta) = \frac{1}{3}+\frac{1}{3} \sum\limits_{n=1}^{\infty}2^{-n+1}\cos(n\theta)</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_3_16">
+		<statement>
+			<p>
+				The <em>Bessel function</em> <m>J_n(z)</m> is sometimes defined by the generating function
+				<me> \exp \left[ \frac{z}{2}(t-\frac{1}{t}) \right] =\sum\limits_{n= -\infty}^{\infty}J_n(z) t^n </me>.  Use the
+				circle <m>C_1^{+}(0)</m> as the contour of integration and show that
+				<me>J_n(z) =\frac{1}{\pi} \int_0^{\pi}\cos (n\theta-z\sin \theta)\,d\theta.</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_3_17">
+		<statement>
+			<p>
+				Suppose that the Laurent expansion <m>f(z) = \sum\limits_{n=- \infty}^{\infty}a_nz^n</m> converges in the annulus
+				<m>A(0,r_1,r_2)</m>, where <m>r_1\lt 1\lt r_2</m>. Consider the real-valued function <m>u(\theta)=f(e^{i\theta})</m>
+				and show that <m>u(\theta)</m> has the Fourier series expansion
+				<me> u(\theta) = f(e^{i\theta}) = \sum_{n=- \infty}^{\infty}a_ne^{in\theta} </me>,
+				where <me> a_n=\frac{1}{2\pi} \int_0^{2\pi}e^{-in\phi }f(e^{i\phi })\,d\phi. </me>
+			</p>
+		</statement>
       <solution>
-        <p>
-          Since <m>f(z) = \sum\limits_{n=-\infty }^{\infty}a_nz^n</m> is valid for <m>|z|=1</m> (explain),
-          letting <m>z=e^{i\theta}</m> gives <m>f(e^{i\theta}) = \sum\limits_{n=-\infty}^{\infty}a_ne^{in\theta}</m> immediately.
-          By Laurent's Theorem,
-          <m>a_n=\frac{1}{2\pi i}\int_{c_1^{+}(0)} \frac{f(z)}{z^{n+1}}\,dz</m> for all integers <m>n</m>
-          (explain).
-          Parametrizing <m>C_1^{+}(0)</m> with <m>z(\theta) = e^{i\phi}</m> for
-          <m>0 \le \phi \le 2\pi</m> gives the desired result.
-          Show the details.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_18">
-      <statement>
-        <p>
-          (<em>The Z-transform</em>): Let <m>\{a_n\}</m> be a sequence of complex numbers satisfying the growth condition <m>| a_n| \le MR^n</m> for
-          <m>n=0,\,1,\ldots</m> and for some fixed positive values <m>M</m> and <m>R</m>.
-          Then the <m>Z</m>-transform of the sequence <m>\{a_n\}</m> is the function <m>F(z)</m> defined by <m>Z(\{a_n\})=F(z) =\sum\limits_{n=0}^{\infty}a_nz^{-n}</m>.
-        </p>
-        <task>
-          <p>
-            Prove that <m>F(z)</m> converges for <m>|z| > R</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Find <m>Z(\{a_n\})</m> for
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>a_n=2</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>a_n=\frac{1}{n!}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>a_n=\frac{1}{n+1}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>a_n=1</m>, when <m>n</m> is even,
-            and <m>a_n=0</m> when <m>n</m> is odd.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_18c">
-      <statement>
-        <p>
-          Prove that <m>Z\big(\{a_{n+1}\}\big)=z\big[Z(\{a_n\})-a_0\big]</m>.
-          This relation is known as the <em>shifting property</em>
-          for the <m>Z</m>-transform.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_3_19">
-      <statement>
-        <p>
-          Use the Weierstrass <m>M</m>-test to show that the series
-          <m>\sum\limits_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n}</m> of <xref ref="Uniform_Laurent">Theorem</xref>
-          converges uniformly on the set <m>\{z:|z-\alpha| \ge s\}</m> as claimed.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Since <m>\sum\limits_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n}</m> converges for <m>|z-\alpha |>r</m>,
-          the ratio test guarantees that the series converges absolutely for <m>\{z:|z-\alpha| \ge s\}</m>,
-          where <m>s>r</m>
-          (show the details).
-          Thus, if <m>|z-\alpha|=s</m>,
-          the series <m>\sum\limits_{n=1}^{\infty}|c_{-n}|s^{-n}</m> converges.
-          Since <m>|c_{-n}(z-\alpha )^{-n}| \le |c_{-n}|s^{-n}</m> for all <m>|z| \ge s</m>,
-          the Weierstrass <m>M</m> test gives us our conclusion.
-          Explain.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_3_20">
-      <statement>
-        <p>
-          Verify the following claims made in this section.
-        </p>
-        <task xml:id="x7_3_20a">
-          <p>
-            The series in Equation <xref ref="eq_Laurent_4"/> converges uniformly for <m>z \in C_2</m>.
-          </p>
-        </task>
-        <task xml:id="x7_3_20b">
-          <p>
-            The validity of Equation <xref ref="eq_Laurent_5"/>,
-            according to <xref ref="Geom_Series__z____1">Corollary</xref>.
-          </p>
-        </task>
-        <task xml:id="x7_3_20c">
-          <p>
-            The series in Equation <xref ref="eq_Laurent_5"/> converges uniformly for <m>z \in C_1</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-  </exercises>
+			<p>
+				Since <m>f(z) = \sum\limits_{n=-\infty }^{\infty}a_nz^n</m> is valid for <m>|z|=1</m> (explain), letting
+				<m>z=e^{i\theta}</m> gives <m>f(e^{i\theta}) = \sum\limits_{n=-\infty}^{\infty}a_ne^{in\theta}</m> immediately. By
+				Laurent's Theorem, <m>a_n=\frac{1}{2\pi i}\int_{c_1^{+}(0)} \frac{f(z)}{z^{n+1}}\,dz</m> for all integers <m>n</m>
+				(explain). Parametrizing <m>C_1^{+}(0)</m> with <m>z(\theta) = e^{i\phi}</m> for <m>0 \le \phi \le 2\pi</m> gives the
+				desired result. Show the details.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_18">
+		<introduction>
+			<p>
+				(<em>The Z-transform</em>): Let <m>\{a_n\}</m> be a sequence of complex numbers satisfying the growth condition 
+				<m>| a_n| \le MR^n</m> for <m>n=0,\,1,\ldots</m> and for some fixed positive values <m>M</m> and <m>R</m>. Then the
+				<m>Z</m>-transform of the sequence <m>\{a_n\}</m> is the function <m>F(z)</m> defined by 
+				<m>Z(\{a_n\})=F(z) =\sum\limits_{n=0}^{\infty}a_nz^{-n}</m>. Prove that <m>F(z)</m> converges for <m>|z| > R</m>, and
+				then find <m>Z(\{a_n\})</m> for the following:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>a_n=2</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>a_n=\frac{1}{n!}</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>a_n=\frac{1}{n+1}</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>a_n=1</m>, when <m>n</m> is even, and <m>a_n=0</m> when <m>n</m> is odd.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_3_18c">
+		<statement>
+			<p>
+				Prove that <m>Z\big(\{a_{n+1}\}\big)=z\big[Z(\{a_n\})-a_0\big]</m>. This relation is known as the 
+				<em>shifting property</em> for the <m>Z</m>-transform.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_3_19">
+		<statement>
+			<p>
+				Use the Weierstrass <m>M</m>-test to show that the series <m>\sum\limits_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n}</m> of
+				<xref ref="Uniform_Laurent">Theorem</xref> converges uniformly on the set <m>\{z:|z-\alpha| \ge s\}</m> as claimed.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Since <m>\sum\limits_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n}</m> converges for <m>|z-\alpha |>r</m>, the ratio test
+				guarantees that the series converges absolutely for <m>\{z:|z-\alpha| \ge s\}</m>, where <m>s>r</m> (show the
+				details). Thus, if <m>|z-\alpha|=s</m>, the series <m>\sum\limits_{n=1}^{\infty}|c_{-n}|s^{-n}</m> converges. Since
+				<m>|c_{-n}(z-\alpha )^{-n}| \le |c_{-n}|s^{-n}</m> for all <m>|z| \ge s</m>, the Weierstrass <m>M</m> test gives us
+				our conclusion. Explain.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_3_20">
+		<introduction>
+			<p>
+				Verify the following claims that were made in this section.
+			</p>
+		</introduction>
+		<task xml:id="x7_3_20a">
+			<statement>
+				<p>
+					The series in Equation <xref ref="eq_Laurent_4"/> converges uniformly for <m>z \in C_2</m>.
+				</p>
+			</statement>
+		</task>
+		<task xml:id="x7_3_20b">
+			<statement>
+				<p>
+					The validity of Equation <xref ref="eq_Laurent_5"/>, according to <xref ref="Geom_Series__z____1">Corollary</xref>.
+				</p>
+			</statement>
+		</task>
+		<task xml:id="x7_3_20c">
+			<statement>
+				<p>
+					The series in Equation <xref ref="eq_Laurent_5"/> converges uniformly for <m>z \in C_1</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+</exercises>
 </section>
