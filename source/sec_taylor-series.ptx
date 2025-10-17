@@ -422,508 +422,565 @@
         for all <m>n</m>, and thus Equation <xref ref="f_z_g_z_"/> gives
         <me>
 			 \frac{1}{(1-z)^2}=h(z) = f(z) g(z) = \sum_{n=0}^{\infty}\left(\sum_{k=0}^na_kb_{n-k}\right)\!z^n =
-			 \sum_{n=0}^{\infty}(n+1)z^n
+			 \sum_{n=0}^{\infty}(n+1)z^n.
         </me>
       </p>
     </solution>
   </example>
-  <exercises xml:id="exercises_taylor-series">
-    <title>Exercises</title>
-    <exercise xml:id="x7_2_1">
+<exercises xml:id="exercises_taylor-series">
+<title>Exercises</title>
+	<exercise xml:id="x7_2_1">
+		<introduction>
+			<p>
+				By computing derivatives, find the Maclaurin series for each function and state where it is valid.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\sinh z</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\sinh z = \sum\limits_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}</m> for all <m>z</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\cosh z</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathrm{Log}(1+z)</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Log<m>(1+z) = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}z^n</m> for all <m>z \in D_1(0)</m>.
+				</p>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_2">
+		<introduction>
+			<p>
+				Using methods other than computing derivatives, find the Maclaurin series for the following;
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\cos^3z</m>;
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Use the trigonometric identity <m>\ 4\cos^3 z=\cos 3z+3\cos z</m>.
+				</p>
+			</hint>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Arc<m>\tan z</m>;
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Choose an appropriate contour and integrate the second series in Equations <xref ref="Two_Series"/>.
+				</p>
+			</hint>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>f(z) =(z^2+1) \sin z</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>f(z) =e^z\cos z</m>.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					<m>\cos z=\frac{1}{2}(e^{iz}+e^{-iz}) \quad \text{so} \quad f(z)=\frac{1}{2}e^{(1+i)z}+\frac{1}{2}e^{(1-i)z}.</m>
+					Now use the Maclaurin series for <m>\, e^z.</m>
+				</p>
+			</hint>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_3">
+		<introduction>
+			<p>
+				Find the Taylor series centered at <m>a=1</m> and state where it converges for the following functions:'
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>f(z) =\frac{1-z}{z-2}</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\frac{1-z}{z-2} = \frac{z-1}{1-(z-1)} = (z-1)\left[\frac{1}{1-(z-1)}\right]</m>. Expand the expression in
+					brackets by replacing <m>z</m> with <m>z-1</m> in the geometric series (valid, therefore, for <m>|z-1|\lt 1</m>),
+					then multiply by the <m>(z-1)</m> term.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>f(z) =\frac{1-z}{z-3}</m>.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					<m>{\dfrac{1-z}{z-3}} = \left(\dfrac{1}{2}\right)\left({\dfrac{z-1}{1-\frac{{z-1}}{2}}}\right) =
+					\left(\dfrac{1}{2}\right)(z-1)\left({\dfrac{1}{1-\frac{{z-1}}{2}}}\right)</m>.
+				</p>
+			</hint>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_4">
+		<introduction>
+			<p>
+				Let <m>f(z) =\frac{\sin z}{z}</m> and set <m>f(0) =1</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Explain why <m>f</m> is analytic at <m>z=0</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Find the Maclaurin series for <m>f(z)</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Find the Maclaurin series for <m>g(z) = \int\limits_C f(\zeta)\,d\zeta</m>, where <m>C</m> is the straight-line
+					segment from 0 to <m>z</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_5">
       <statement>
-        <p>
-          By computing derivatives, find the Maclaurin series for each function and state where it is valid.
-        </p>
-        <task>
-          <p>
-            <m>\sinh z</m>.
-          </p>
-          <solution>
-            <p>
-              <m>\sinh z = \sum\limits_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}</m> for all <m>z</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>\cosh z</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\mathrm{Log}(1+z)</m>.
-          </p>
-          <solution>
-            <p>
-              Log<m>(1+z) = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}z^n</m> for all <m>z \in D_1(0)</m>.
-            </p>
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_2">
-      <statement>
-        <p>
-          Using methods other than computing derivatives,
-          find the Maclaurin series for
-        </p>
-        <task>
-          <p>
-            <m>\cos^3z</m>.
-			   <hint>
-					<p>
-						Use the trigonometric identity <m>\ 4\cos^3 z=\cos 3z+3\cos z</m>.
-					</p>
-				</hint>
-          </p>
-        </task>
-        <task>
-          <p>
-            Arc<m>\tan z</m>.
-				<hint>
-					<p>
-						Choose an appropriate contour and integrate the second series in Equations <xref ref="Two_Series"/>.
-					</p>
-				</hint>
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>f(z) =(z^2+1) \sin z</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>f(z) =e^z\cos z</m>.
-				<hint>
-					<p>
-						<m>\cos z=\frac{1}{2}(e^{iz}+e^{-iz}) \quad \text{so} \quad 
-						f(z)=\frac{1}{2}e^{(1+i)z}+\frac{1}{2}e^{(1-i)z}.</m> Now use the Maclaurin series for <m>\, e^z.</m>
-					</p>
-				</hint>
-		  	 </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_3">
-      <statement>
-        <p>
-          Find the Taylor series centered at <m>a=1</m> and state where it converges for
-        </p>
-        <task>
-          <p>
-            <m>f(z) =\frac{1-z}{z-2}</m>.
-          </p>
-          <solution>
-            <p>
-              <m>\frac{1-z}{z-2} = \frac{z-1}{1-(z-1)} = (z-1)\left[\frac{1}{1-(z-1)}\right]</m>.
-              Expand the expression in brackets by replacing <m>z</m> with <m>z-1</m> in the geometric series (valid,
-              therefore,
-              for <m>|z-1|\lt 1</m>), then multiply by the <m>(z-1)</m> term.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-				<m>f(z) =\frac{1-z}{z-3}</m>.
-					<hint><m>{\dfrac{1-z}{z-3}} = \left(\dfrac{1}{2}\right)\left({\dfrac{z-1}{1-\frac{{z-1}}{2}}}\right) =
-						\left(\dfrac{1}{2}\right)(z-1)\left({\dfrac{1}{1-\frac{{z-1}}{2}}}\right)</m>.
-					</hint>
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_4">
-      <statement>
-        <p>
-          Let <m>f(z) =\frac{\sin z}{z}</m> and set <m>f(0) =1</m>.
-        </p>
-        <task>
-          <p>
-            Explain why <m>f</m> is analytic at <m>z=0</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Find the Maclaurin series for <m>f(z)</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Find the Maclaurin series for <m>g(z) = \int\limits_C f(\zeta)\,d\zeta</m>,
-            where <m>C</m> is the straight-line segment from 0 to <m>z</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_5">
-      <statement>
-        <p>
-          Show that <m>f(z)=\frac{1}{1-z}</m> has its Taylor series representation about the point <m>\alpha =i</m> given by
-          <me>
-            f(z) = \sum_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}},  \text{ for all }   z \in D_{\sqrt{2}}(i)
-          </me>
-        </p>
-      </statement>
+			<p>
+				Show that <m>f(z)=\frac{1}{1-z}</m> has its Taylor series representation about the point <m>\alpha =i</m> given by 
+				<me> f(z) = \sum_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}},  \text{ for all }   z \in D_{\sqrt{2}}(i) </me>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          <m>f(z) = \frac{1}{1-z} = \frac{1}{1-i}\left[\frac{1}{1-\frac{z-i}{1-i}}\right]</m>.
-          Expand the expression in brackets by replacing <m>z</m> with
-          <m>\frac{z-i}{1-i}</m> in the geometric series
-          (valid, therefore, for <m>|\frac{z-i}{1-i}|\lt 1</m>,
-          or <m>|z-i|\lt \sqrt{2}</m>).
-          Explain.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_2_6">
-      <statement>
-        <p>
-          Let <m>f(z) =(1+z)^{\beta }=\exp[\beta\mathrm{Log}(1+z)]</m> be the principal branch of <m>(1+z)^{\beta }</m>,
-          where <m>\beta</m> is a fixed complex number.
-          Establish the validity for
-          <m>z \in D_1(0)</m> of the binomial expansion
-          <md>
-            <mrow>(1+z)^{\beta } \amp = 1+\beta z+\frac{\beta(\beta -1)}{2!}z^2+\frac{\beta(\beta -1)(\beta -2)}{3!}z^3 + \cdots</mrow>
-            <mrow>\amp = 1+\sum_{n=1}^{\infty}\frac{\beta(\beta -1)(\beta -2) \cdots (\beta -n+1)}{n!}z^n</mrow>
-          </md>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_7">
-      <statement>
-        <p>
-          Find <m>f\,^{(3)}(0)</m> for
-        </p>
-        <task>
-          <p>
-            <m>f(z) =\sum\limits_{n=0}^{\infty}(3+(-1)^n)^nz^n</m>.
-          </p>
-          <solution>
-            <p>
-              By Taylor's Theorem, <m>\frac{f\,^{(n)}(0)}{n!} = (3+(-1)^n)^n</m>.
-              Therefore, <m>\frac{f\,^{(3)}(0)}{3!} = 8</m>,
-              so <m>f\,^{(3)}(0) = 48</m>.
+			<p>
+				<m>f(z) = \frac{1}{1-z} = \frac{1}{1-i}\left[\frac{1}{1-\frac{z-i}{1-i}}\right]</m>. Expand the expression in brackets
+				by replacing <m>z</m> with <m>\frac{z-i}{1-i}</m> in the geometric series (valid, therefore, for
+				<m>|\frac{z-i}{1-i}|\lt 1</m>, or <m>|z-i|\lt \sqrt{2}</m>). Explain.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_2_6">
+		<statement>
+			<p>
+				Let <m>f(z) =(1+z)^{\beta }=\exp[\beta\mathrm{Log}(1+z)]</m> be the principal branch of <m>(1+z)^{\beta }</m>, where
+				<m>\beta</m> is a fixed complex number. Establish the validity for <m>z \in D_1(0)</m> of the binomial expansion
+				<md>
+					<mrow>
+						(1+z)^{\beta } \amp=1+\beta z+\frac{\beta(\beta-1)}{2!}z^2+\frac{\beta(\beta -1)(\beta -2)}{3!}z^3 + \cdots
+					</mrow>
+					<mrow>
+						\amp = 1+\sum_{n=1}^{\infty}\frac{\beta(\beta -1)(\beta -2) \cdots (\beta -n+1)}{n!}z^n
+					</mrow>
+				</md>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_2_7">
+		<introduction>
+			<p>
+				Find <m>f\,^{(3)}(0)</m> for the following:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>f(z) =\sum\limits_{n=0}^{\infty}(3+(-1)^n)^nz^n</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					By Taylor's Theorem, <m>\frac{f\,^{(n)}(0)}{n!} = (3+(-1)^n)^n</m>. Therefore, <m>\frac{f\,^{(3)}(0)}{3!} = 8</m>,
+					so <m>f\,^{(3)}(0) = 48</m>.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>g(z) =\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n}z^n</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>h(z) =\sum\limits_{n=0}^{\infty}\frac{z^n}{(\sqrt{3}+i)^n}</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_8">
-      <statement>
-        <p>
-          Suppose that <m>f(z) = \sum\limits_{n=0}^{\infty}c_nz^n</m> is an entire function.
-        </p>
-        <task>
-          <p>
-            Find a series representation for <m>\overline{f(\overline{z})}</m>,
-            using powers of <m>\overline{z}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Show that <m>\overline{f(\overline{z})}</m> is an entire function.
-          </p>
-        </task>
-        <task>
-          <p>
-            Does <m>\overline{f(\overline{z})} = f(z)</m>?
-            Why or why not?
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_9">
-      <statement>
-        <p>
-          Let <m>f(z) =\sum\limits_{n=0}^{\infty}c_nz^n=1+z+2z^2+3z^3+5z^4+8z^5+13z^6+\cdots</m>,
-          where the coefficients <m>c_n</m> are the Fibonacci numbers defined by <m>c_0=1</m>,
-          <m>c_1=1</m>,
-          and <m>c_n=c_{n-1}+c_{n-2}</m>, for <m>n \ge 2</m>.
-        </p>
-        <task>
-          <p>
-            Show that <m>f(z) =\frac{1}{1-z-z^2}</m>,
-            for all <m>z \in D_{R}(0)</m> for some number <m>R</m>.
-          </p>
-          <solution>
-            <p>
-				  Observe that <m>1+zf(z)+z^2f(z) = 1 + \sum\limits_{n=0}^{\infty}c_nz^{n+1} +
-				  \sum\limits_{n=0}^{\infty}c_nz^{n+2}</m>.  Reindex and write this as <m>1+\sum\limits_{n=1}^{\infty}c_{n-1}z^n +
-				  \sum\limits_{n=2}^{\infty}c_{n-2}z^n = 1 + z + \sum\limits_{n=2}^{\infty}(c_{n-1}+c_{n-2})z^n</m>.  Now use the
-				  relation <m>c_n=c_{n-1}+c_{n-2}</m> for <m>n \ge 2</m> to conclude <m>1+zf(z)+z^2f(z) = f(z)</m>, then solve for
-				  <m>f(z)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Find the value of <m>R</m> in part (a) for which the series representation is valid.
-				<hint>
-					<p>
-						Find the singularities of <m>\,f(z) \,</m> and use <xref ref="Nuanced_Taylor">Corollary</xref>.
-					</p>
-				</hint>
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_10">
-      <statement>
-        <p>
-          Complete the details in the verification of <xref ref="x1__z-z0__expansion">Lemma</xref>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_11">
-      <statement>
-        <p>
-          We used <xref ref="x1__z-z0__expansion">Lemma</xref>
-          in establishing Identity <xref ref="f_z0__expansion"/>.
-          However, <xref ref="x1__z-z0__expansion">Lemma</xref> is valid provided
-          <m>z \ne z_0</m> and <m>z \ne\alpha</m>.
-          Explain why these conditions are indeed the case in Identity <xref ref="f_z0__expansion"/>.
-        </p>
-      </statement>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>g(z) =\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n}z^n</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>h(z) =\sum\limits_{n=0}^{\infty}\frac{z^n}{(\sqrt{3}+i)^n}.</m>
+				</p>
+			</statement>
+		</task> 
+	</exercise>
+	<exercise xml:id="x7_2_8">
+		<introduction>
+			<p>
+				Suppose that <m>f(z) = \sum\limits_{n=0}^{\infty}c_nz^n</m> is an entire function.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Find a series representation for <m>\overline{f(\overline{z})}</m>, using powers of <m>\overline{z}</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Show that <m>\overline{f(\overline{z})}</m> is an entire function.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Does <m>\overline{f(\overline{z})} = f(z)</m>? Why or why not?
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_9">
+		<introduction>
+			<p>
+				Let <m>f(z) =\sum\limits_{n=0}^{\infty}c_nz^n=1+z+2z^2+3z^3+5z^4+8z^5+13z^6+\cdots</m>, where the coefficients
+				<m>c_n</m> are the Fibonacci numbers defined by <m>c_0=1</m>, <m>c_1=1</m>, and <m>c_n=c_{n-1}+c_{n-2}</m>, for 
+				<m>n \ge 2</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Show that <m>f(z) =\frac{1}{1-z-z^2}</m>, for all <m>z \in D_{R}(0)</m> for some number <m>R</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Observe that
+					<m> 1+zf(z)+z^2f(z) = 1 + \sum\limits_{n=0}^{\infty}c_nz^{n+1} + \sum\limits_{n=0}^{\infty}c_nz^{n+2}</m>. 
+					Reindex and write this as 
+					<m>
+						1+\sum\limits_{n=1}^{\infty}c_{n-1}z^n +
+						\sum\limits_{n=2}^{\infty}c_{n-2}z^n = 1 + z + \sum\limits_{n=2}^{\infty}(c_{n-1}+c_{n-2})z^n
+					</m>.
+					Now use the relation <m>c_n=c_{n-1}+c_{n-2}</m> for <m>n \ge 2</m> to conclude <m>1+zf(z)+z^2f(z) = f(z)</m>, then
+					solve for <m>f(z)</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Find the value of <m>R</m> in part (a) for which the series representation is valid.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Find the singularities of <m>\,f(z) \,</m> and use <xref ref="Nuanced_Taylor">Corollary</xref>.
+				</p>
+			</hint>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_10">
+		<statement>
+			<p>
+				Complete the details in the verification of <xref ref="x1__z-z0__expansion">Lemma</xref>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_2_11">
+		<statement>
+			<p>
+				We used <xref ref="x1__z-z0__expansion">Lemma</xref> in establishing Identity <xref ref="f_z0__expansion"/>. However,
+				<xref ref="x1__z-z0__expansion">Lemma</xref> is valid provided <m>z \ne z_0</m> and <m>z \ne\alpha</m>. Explain why
+				these conditions are indeed the case in Identity <xref ref="f_z0__expansion"/>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          The point <m>z</m> is on the circle
-          <m>C_{\rho }(\alpha)</m> with center <m>\alpha</m>, so <m>z \ne \alpha</m>.
-          Also, <m>z_0</m> is in the interior of this circle, so again <m>z\ne z_0</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_2_12">
+			<p>
+				The point <m>z</m> is on the circle <m>C_{\rho }(\alpha)</m> with center <m>\alpha</m>, so <m>z \ne \alpha</m>. Also,
+				<m>z_0</m> is in the interior of this circle, so again <m>z\ne z_0</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_2_12">
+		<statement>
+			<p>
+				Prove by mathematical induction that <m>f\,\,^{(n)}(z) =\frac{(n+1) !}{(1-z)^{n+2}}</m> in 
+				<xref ref="x1__1-z__2_ex">Example</xref>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_2_13">
       <statement>
-        <p>
-          Prove by mathematical induction that
-          <m>f\,\,^{(n)}(z) =\frac{(n+1) !}{(1-z)^{n+2}}</m> in <xref ref="x1__1-z__2_ex">Example</xref>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_13">
-      <statement>
-        <p>
-          Establish the validity of Identities <xref ref="bf_z_"/> and <xref ref="f_z__g_z_"/>.
-        </p>
-      </statement>
+			<p>
+				Establish the validity of Identities <xref ref="bf_z_"/> and <xref ref="f_z__g_z_"/>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          To verify Identity <xref ref="bf_z_"/>, let <m>h(z) =\beta f(z)</m>.
-          Clearly <m>\frac{h\,^{(n)}( \alpha )}{n!} = \frac{\beta f\,^{(n)}(\alpha)}{n!} = \beta a_n</m>.
-          By Taylor's Theorem,
-          <m>h(z) = \beta f( z) = \sum\limits_{n=0}^{\infty}\beta a_n(z-\alpha )^n</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_2_14">
+			<p>
+				To verify Identity <xref ref="bf_z_"/>, let <m>h(z) =\beta f(z)</m>. Clearly 
+				<m>\frac{h\,^{(n)}( \alpha )}{n!} = \frac{\beta f\,^{(n)}(\alpha)}{n!} = \beta a_n</m>. By Taylor's Theorem,
+				<m>h(z) = \beta f( z) = \sum\limits_{n=0}^{\infty}\beta a_n(z-\alpha )^n</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_2_14">
       <statement>
-        <p>
-          Use the Maclaurin series and the Cauchy product in Identity <xref ref="f_z_g_z_"/> to verify that
-          <m>\sin2z = 2\cos z\sin z</m> up to terms involving <m>z^5</m>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_15">
+			<p>
+				Use the Maclaurin series and the Cauchy product in Identity <xref ref="f_z_g_z_"/> to verify that 
+				<m>\sin2z = 2\cos z\sin z</m> up to terms involving <m>z^5</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_2_15">
       <statement>
-        <p>
-          Compute the Taylor series for the principal logarithm
-          <m>f(z) = \mathrm{Log} \, z</m> expanded about the point <m>z_0=-1+i</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Use the fact that <m>f\,'(z) = [z-(-1+i) + (-1+i)]^{-1}</m> and expand <m>f\,'(z)</m> in powers of <m>[z-(-1+i)]</m>.
-          Then apply <xref ref="Sum_Integral_Swap">Corollary</xref>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_2_16">
-      <statement>
-        <p>
-          The Fresnel integrals <m>C(z)</m> and <m>S(z)</m> are defined by
-          <me>
-            C(z) = \int_0^z\cos(\xi^2)\,d\xi  \text{ and }   S(z) = \int_0^z\sin(\xi^2)\,d\xi
-          </me>
-        </p>
-        <p>
-          Define <m>F(z)</m> by <m>F(z) = C(z)+iS(z)</m> and complete the following:
-        </p>
-        <task>
-          <p>
-            Verify the identity <m>F(z) = \int_0^z\exp (i\xi^2)\,d\xi</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Integrate the power series for
-            <m>\exp (i\xi ^2)</m> and obtain the power series for <m>F(z)</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            Use the partial sum involving terms up to <m>z^{9}</m> to find approximations to <m>C(1.0)</m> and <m>S(1.0)</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_17">
-      <statement>
-        <p>
-          Let <m>f</m> be defined in a domain that contains the origin.
-          The function <m>f</m> is said to be even if <m>f(-z) =f(z)</m>,
-          and it is called odd if <m>f(-z) = -f(z)</m>.
-        </p>
-        <task>
-          <p>
-            Show that the derivative of an odd function is an even function.
-          </p>
-          <solution>
-            <p>
-              By definition, <m>f(-z) = -f(z)</m>, so using the chain rule,
-              we see that <m>f\,'(z) = \frac{d}{dz}f(z) = -\frac{d}{dz}f(-z) = -f\,'(-z)(-1) = f\,'(-z)</m>.
-              But this means that <m>f\,'</m> is an even function.
+			<p>
+				Compute the Taylor series for the principal logarithm <m>f(z) = \mathrm{Log} \, z</m> expanded about the point
+				<m>z_0=-1+i</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Use the fact that <m>f\,'(z) = [z-(-1+i) + (-1+i)]^{-1}</m> and expand <m>f\,'(z)</m> in powers of <m>[z-(-1+i)]</m>.
+				Then apply <xref ref="Sum_Integral_Swap">Corollary</xref>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_2_16">
+      <introduction>
+			<p>
+				The Fresnel integrals <m>C(z)</m> and <m>S(z)</m> are defined by
+				<me>
+					C(z) = \int_0^z\cos(\xi^2)\,d\xi  \text{ and }   S(z) = \int_0^z\sin(\xi^2)\,d\xi
+				</me>
+			</p>
+			<p>
+				Define <m>F(z)</m> by <m>F(z) = C(z)+iS(z)</m> and complete the following taqks.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Verify the identity <m>F(z) = \int_0^z\exp (i\xi^2)\,d\xi</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Integrate the power series for <m>\exp (i\xi ^2)</m> and obtain the power series for <m>F(z)</m>.
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Use the partial sum involving terms up to <m>z^{9}</m> to find approximations to <m>C(1.0)</m> and <m>S(1.0)</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_17">
+		<introduction>
+			<p>
+				Let <m>f</m> be defined in a domain that contains the origin. The function <m>f</m> is said to be <em>even</em> if 
+				<m>f(-z) =f(z)</m>, and it is called <em>odd</em> if <m>f(-z) = -f(z)</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Show that the derivative of an odd function is an even function.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					By definition, <m>f(-z) = -f(z)</m>, so using the chain rule, we see that 
+					<m>f\,'(z) = \frac{d}{dz}f(z) = -\frac{d}{dz}f(-z) = -f\,'(-z)(-1) = f\,'(-z)</m>. But this means that <m>f\,'</m>
+					is an even function.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Show that the derivative of an even function is an odd function.
-			  <hint>
-			  		<p>
-						Use limits.
-					</p>
-				</hint>
-          </p>
-        </task>
-        <task>
-          <p>
-            If <m>f(z)</m> is even,
-            show that all the coefficients of the odd powers of <m>z</m> in the Maclaurin series are zero.
-          </p>
-          <solution>
-            <p>
-              If <m>f</m> is even, then by part b <m>f\,'</m> is odd,
-              so <m>f\,'(0) = -f\,'(-0) = -f\,'(0)</m>.
-              Of course, this implies <m>f'(0) = 0</m>.
-              Similarly, from part a <m>f\,''</m> is even, so <m>f\,'''(0)=0</m>.
-              An induction argument gives
-              <m>f\,^{(2n-1)}(0)=0</m> for all positive integers <m>n</m>.
-              Show the details.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            If <m>f(z)</m> is odd,
-            show that all the coefficients of the even powers of <m>z</m> in the Maclaurin series are zero.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_18">
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Show that the derivative of an even function is an odd function.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Use limits.
+				</p>
+			</hint>
+		</task>
+		<task>
+			<statement>
+				<p>
+					If <m>f(z)</m> is even, show that all the coefficients of the odd powers of <m>z</m> in the Maclaurin series are
+					zero.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					If <m>f</m> is even, then by part b <m>f\,'</m> is odd, so <m>f\,'(0) = -f\,'(-0) = -f\,'(0)</m>. Of course, this
+					implies <m>f'(0) = 0</m>. Similarly, from part a <m>f\,''</m> is even, so <m>f\,'''(0)=0</m>. An induction argument
+					gives <m>f\,^{(2n-1)}(0)=0</m> for all positive integers <m>n</m>. Show the details.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					If <m>f(z)</m> is odd, show that all the coefficients of the even powers of <m>z</m> in the Maclaurin series are
+					zero.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_18">
       <statement>
-        <p>
-          Verify Identity <xref ref="x718"/> by using mathematical induction.
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_19">
-      <statement>
-        <p>
-          Consider the function
-          <me>
-            f(z) = \begin{cases}\frac{1}{1-z}, \amp  \text{ when }  z \ne \frac{1}{2}; \\ \;\; 0, \amp  \text{ when }  z = \frac{1}{2}. \end{cases}
-          </me>
-        </p>
-        <task>
-          <p>
-            Use <xref ref="Taylor_s_Theorem">Theorem</xref>, Taylor's theorem,
-            to show that the Maclaurin series for <m>f(z)</m> equals <m>\sum\limits_{n=0}^{\infty}z^n</m>.
-          </p>
-          <solution>
-            <p>
-              It is easy to show that <m>f\,^{(n)}(0) = n!</m> for all positive integers <m>n</m>.
-              Do so via mathematical induction.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Obviously, the radius of convergence of this series equals 1
-            (ratio test).
-            However, the distance between 0 and the nearest singularity of <m>f</m> equals <m>\frac{1}{2}</m>.
-            Explain why this condition does not contradict <xref ref="Nuanced_Taylor">Corollary</xref>.
-          </p>
-          <solution>
-            <p>
-              The point <m>z=\frac{1}{2}</m> is a removable singularity,
-              since <m>f</m> may be redefined at <m>\frac{1}{2}</m> to be analytic.
-              State what <m>f</m> should equal at that point.
-            </p>
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_2_20">
-      <statement>
-        <p>
-          Consider the real-valued function <m>f</m> defined on the real numbers as
-          <me>
-            f(x) = \begin{cases}e^{-\frac{1}{x^2}}, \amp  \text{ when } x \ne 0; \\ \;\; 0, \amp  \text{ when } x=0. \end{cases}
-          </me>
-        </p>
-        <task>
-          <p>
-            Show that, for all <m>n>0</m>, <m>f^{(n)}(0) = 0</m>,
-            where <m>f^{(n)}</m> is the <m>n</m>th derivative of <m>f</m>. 
-			 <hint>
-			 	<p>
+			<p>
+				Verify Identity <xref ref="x718"/> by using mathematical induction.
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="x7_2_19">
+		<introduction>
+			<p>
+				Consider the function
+				<me>
+					f(z) = 
+					\begin{cases}
+						\frac{1}{1-z}, \amp  \text{ when }  z \ne \frac{1}{2}; \\ \;\; 0, \amp  \text{ when }  z = \frac{1}{2}.
+					\end{cases}
+				</me>
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Use <xref ref="Taylor_s_Theorem">Theorem</xref>, Taylor's theorem, to show that the Maclaurin series for
+					<m>f(z)</m> equals <m>\sum\limits_{n=0}^{\infty}z^n</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					It is easy to show that <m>f\,^{(n)}(0) = n!</m> for all positive integers <m>n</m>. Do so via mathematical
+					induction.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Obviously, the radius of convergence of this series equals 1 (ratio test). However, the distance between 0 and the
+					nearest singularity of <m>f</m> equals <m>\frac{1}{2}</m>. Explain why this condition does not contradict 
+					<xref ref="Nuanced_Taylor">Corollary</xref>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The point <m>z=\frac{1}{2}</m> is a removable singularity, since <m>f</m> may be redefined at <m>\frac{1}{2}</m> to
+					be analytic. State what <m>f</m> should equal at that point.
+				</p>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_2_20">
+      <introduction>
+			<p>
+				Consider the real-valued function <m>f</m> defined on the real numbers as
+				<me>
+					f(x) = 
+						\begin{cases}
+							e^{-\frac{1}{x^2}}, \amp  \text{ when } x \ne 0; \\ \;\; 0, \amp  \text{ when } x=0. 
+						\end{cases}
+				</me>
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Show that, for all <m>n>0</m>, <m>f^{(n)}(0) = 0</m>, where <m>f^{(n)}</m> is the <m>n</m>th derivative of <m>f</m>. 
+			 	</p>
+			</statement>
+			<hint>
+				<p>
 					Use the limit definition for the derivative to establish the case for <m>n=1.</m> Then use mathematical induction
 					to complete your argument.
-			 	</p>
-			 </hint>
-          </p>
-        </task>
-        <task>
-          <p>
-            Explain why the function <m>f</m> is an example of a function that,
-            although differentiable everywhere on the real line,
-            is not expressible as a Taylor series about 0 that is valid for any interval <m>(-\varepsilon, \varepsilon)</m>,
-				no matter how small <m>\varepsilon</m> is.
-				<hint>
-					<p>
-						First, evaluate the Taylor series representation for <m>\, f(x) \,</m> when <m>\, x \ne 0.</m>
-            		Then show that the series does not equal <m>\, f(x)</m>.
-					</p>
-				</hint>
-			</p>
-        </task>
-        <task>
-          <p>
-            Explain why a similar argument could not be made for the complex-valued function <m>g</m> defined on the complex numbers as
-            <me>
-              g(z) = \begin{cases}e^{-\frac{1}{z^2}}, \amp  \text{ when } z \ne 0; \\ \;\; 0, \amp  \text{ when } z=0. \end{cases}
-            </me>
-            <hint>
-					<p>
-						Show that <m>\, g(z) \,</m> is not even continuous at <m>\, z=0.\,</m>
-						Do so by taking limits along the real and imaginary axes.
-					</p>
-				</hint>
-          </p>
-        </task>
-      </statement>
-    </exercise>
-  </exercises>
+				</p>
+			</hint>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Explain why the function <m>f</m> is an example of a function that, although differentiable everywhere on the real
+					line, is not expressible as a Taylor series about 0 that is valid for any interval 
+					<m>(-\varepsilon, \varepsilon)</m>, no matter how small <m>\varepsilon</m> is.
+				</p>
+			</statement>
+			<hint>
+				<p>
+					First, evaluate the Taylor series representation for <m>\, f(x) \,</m> when <m>\, x \ne 0</m>. Then show that the
+					series does not equal <m>\, f(x)</m>.
+				</p>
+			</hint>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Explain why a similar argument could not be made for the complex-valued function <m>g</m> defined on the complex
+					numbers as
+					<me>
+						g(z) = 
+						\begin{cases}
+							e^{-\frac{1}{z^2}}, \amp  \text{ when } z \ne 0; \\ \;\; 0, \amp  \text{ when } z=0. 
+						\end{cases}
+					</me>
+				</p>
+			</statement>
+			<hint>
+				<p>
+					Show that <m>\, g(z) \,</m> is not even continuous at <m>\, z=0.\,</m> Do so by taking limits along the real and
+					imaginary axes.
+				</p>
+			</hint>
+		</task>
+	</exercise>
+</exercises>
 </section>
