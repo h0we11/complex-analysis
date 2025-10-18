@@ -99,9 +99,9 @@
     <title>Cauchy<nbsp/>'s residue theorem</title>
     <statement>
       <p>
-        Let <m>D</m><nbsp/>be a simply connected domain and let <m>C</m> be a simple closed positively oriented contour that lies in <m>D</m>.
-        If <m>f</m> is analytic inside <m>C</m> and on <m>C</m>,
-        except at the points <m>z_1, \, z_2, \ldots , z_n</m> that lie inside <m>C</m>, then
+		  Let <m>D</m><nbsp/>be a simply connected domain and let <m>C</m> be a simple closed positively oriented contour that lies
+		  in <m>D</m>. If <m>f</m> is analytic inside <m>C</m> and on <m>C</m>, except at the points <m>z_1, \, z_2, \ldots ,
+		  z_n</m> that lie inside <m>C</m>, then
         <me>
           \int\limits_{C}f(z)\,dz = 2\pi i\sum\limits_{k=1}^n\mathrm{Res}[f,z_k]
         </me>.
@@ -110,24 +110,23 @@
     </statement>
   </theorem>
   <figure xml:id="fig_ch-08-01">
-    <caption>The domain <m>D</m> and contour <m>C</m> and the singular points <m>z_1, \  z_2, \  \ldots, \  z_n</m> in the statement of Cauchy<nbsp/>'s
-    residue theorem</caption>
+	 <caption>
+		The domain <m>D</m> and contour <m>C</m> and the singular points <m>z_1, \  z_2, \  \ldots, \  z_n</m> in the statement of
+		Cauchy<nbsp/>'s residue theorem
+	 </caption>
     <image width="73%" source="figs/ch-08/ch-08-fig-01.svg"/>
   </figure>
   <proof>
     <p>
-      Since there are a finite number of singular points inside <m>C</m>,
-      there exists an <m>r>0</m> such that the positively oriented circles <m>C_k=C_{r}^{+}(z_k)</m>,
-      for <m>k=1,2,\ldots,n</m>, are mutually disjoint and all lie inside <m>C</m>.
-      From the extended Cauchy-Goursat theorem
-      (<xref ref="Extended_CG_Thm">Theorem</xref>
-      on <xref ref="Extended_CG_Thm">page</xref>),
-      it follows that
+		Since there are a finite number of singular points inside <m>C</m>, there exists an <m>r>0</m> such that the positively
+		oriented circles <m>C_k=C_{r}^{+}(z_k)</m>, for <m>k=1,2,\ldots,n</m>, are mutually disjoint and all lie inside <m>C</m>.
+		From the extended Cauchy-Goursat theorem (<xref ref="Extended_CG_Thm">Theorem</xref> on <xref
+		ref="Extended_CG_Thm">page</xref>), it follows that
       <me>
         \int\limits_{C}f(z)\,dz = \sum\limits_{k=1}^n\int\limits_{C_k}f(z)\,dz
       </me>.
-      The function <m>f</m> is analytic in a punctured disk with center <m>z_k</m> that contains the circle <m>C_k</m>,
-      so we can use Equation <xref ref="Int_f_z__formula"/> to obtain
+		The function <m>f</m> is analytic in a punctured disk with center <m>z_k</m> that contains the circle <m>C_k</m>, so we can
+		use Equation <xref ref="Int_f_z__formula"/> to obtain
       <me>
         \int\limits_{C_k}f(z)\,dz=2\pi i\mathrm{Res}[f,z_k],  \text{ for }   k=1,2,\ldots ,n
       </me>.
@@ -135,26 +134,23 @@
     </p>
   </proof>
   <p>
-    The domain <m>D</m> and contour <m>C</m> and the singular points
-    <m>z_1, \, z_2, \, \ldots, \, z_n</m> in the statement of Cauchy<nbsp/>'s residue theorem.
+	 The domain <m>D</m> and contour <m>C</m> and the singular points <m>z_1, \, z_2, \, \ldots, \, z_n</m> in the statement of
+	 Cauchy<nbsp/>'s residue theorem.
   </p>
   <p>
-    The calculation of a Laurent series expansion is tedious in most circumstances.
-    As the residue at <m>z_0</m> involves only the coefficient <m>a_{-1}</m> in the Laurent expansion,
-    we seek a method to calculate the residue from special information about the nature of the singularity at <m>z_0</m>.
+	 The calculation of a Laurent series expansion is tedious in most circumstances. As the residue at <m>z_0</m> involves only the
+	 coefficient <m>a_{-1}</m> in the Laurent expansion, we seek a method to calculate the residue from special information about
+	 the nature of the singularity at <m>z_0</m>.
   </p>
   <p>
-    If <m>f</m> has a removable singularity at <m>z_0</m>,
-    then <m>a_{-n}=0</m>, for <m>n=1,2,\ldots</m>.
-    Therefore, <m>\mathrm{Res}[f,z_0] =0</m>.
-    The following theorem gives methods for evaluating residues at poles.
+	 If <m>f</m> has a removable singularity at <m>z_0</m>, then <m>a_{-n}=0</m>, for <m>n=1,2,\ldots</m>. Therefore,
+	 <m>\mathrm{Res}[f,z_0] =0</m>. The following theorem gives methods for evaluating residues at poles.
   </p>
   <theorem xml:id="Residues_at_Poles">
     <title>Residues at Poles</title>
     <statement>
       <ol>
         <li>
-          <title>i</title>
           <p>
             If <m>f</m> has a simple pole at <m>z_0</m>, then
             <me>
@@ -163,7 +159,6 @@
           </p>
         </li>
         <li>
-          <title>ii</title>
           <p>
             If <m>f</m><nbsp/>has a pole of order <m>2</m><nbsp/>at <m>z_0</m>, then
             <me>
@@ -172,7 +167,6 @@
           </p>
         </li>
         <li>
-          <title>iii</title>
           <p>
             If <m>f</m><nbsp/>has a pole of order <m>k</m><nbsp/>at <m>z_0</m>, then
             <me>
@@ -185,8 +179,7 @@
   </theorem>
   <proof>
     <p>
-      If <m>f</m> has a simple pole at <m>z_0</m>,
-      then the Laurent series is
+      If <m>f</m> has a simple pole at <m>z_0</m>, then the Laurent series is
       <me>
         f(z) =\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots
       </me>.
@@ -196,12 +189,8 @@
         <mrow>\lim_{z \to z_0}(z-z_0) f(z)  \amp = \lim_{z \to z_0}[a_{-1}+a_0(z-z_0)+a_1(z-z_0)^2+\cdots]</mrow>
         <mrow>\amp  =a_{-1} = \mathrm{Res}[f,z_0]</mrow>
       </md>.
-      which establishes part
-      (<em>i</em>).
-      We proceed to part (<em>iii</em>),
-      as part (<em>ii</em>) is a special case of it.
-      Suppose that <m>f</m> has a pole of order <m>k</m> at <m>z_0</m>.
-      Then <m>f</m> can be written as
+		which establishes part (1). We proceed to part (3), as part (2) is a special case of it. Suppose that <m>f</m> has a pole of
+		order <m>k</m> at <m>z_0</m>. Then <m>f</m> can be written as
       <me>
         f(z) = \frac{a_{-k}}{(z-z_0)^k}+\frac{a_{-k+1}}{(z-z_0)^{k-1}}+\cdots +\frac{a_{-1}}{z-z_0}+a_0+a_1(z-z_0)+\cdots
       </me>.
@@ -213,13 +202,12 @@
       <md>
         <mrow>\frac{d^{k-1}}{dz^{k-1}}[(z-z_0)^kf(z)]  \amp  =(k-1) !a_{-1}+k!a_0(z-z_0)</mrow>
         <mrow>\amp + {(k+1)!}\,a_1(z-z_0)^2+\cdots</mrow>
-      </md>.
+      </md>,
       and when we let <m>z \to z_0</m> the result is
       <me>
         \lim_{z \to z_0}\frac{d^{k-1}}{dz^{k-1}}[(z-z_0)^kf(z) ] = (k-1)!a_{-1}=(k-1) !\mathrm{Res}[f,z_0]
       </me>,
-      which establishes part
-      (<em>iii</em>).
+      which establishes part (3).
     </p>
   </proof>
   <example>
