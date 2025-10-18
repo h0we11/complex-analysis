@@ -270,7 +270,7 @@
           g(z) = 
 			 	\begin{cases}
 					e^{-\left(\frac{1}{z^2}\right)}, \amp  \text{when } \; z \ne 0, \quad \text{and}  \\ 
-					0, \amp   \text{when } \;  z=0 \end{cases}
+					\;\;\;\; 0, \amp   \text{when } \;  z=0 \end{cases}
         </me>
         is not continuous at <m>z=0</m>.
       </p>
@@ -288,191 +288,214 @@
       </p>
     </solution>
   </example>
-  <exercises xml:id="exercises_taylor-laurent-apps">
-    <title>Exercises</title>
-    <exercise>
-      <statement>
-        <p>
-          Determine whether there exists a function <m>f</m> that is analytic at <m>0</m> with the property that,
-          for <m>n=1,\,2,\,3,\ldots</m>,
-        </p>
-        <task>
-          <p>
-            <m>f(\frac{1}{2n}) = 0</m> and <m>f(\frac{1}{2n-1}) = 1</m>.
-          </p>
-          <solution>
-            <p>
-              No.
-              Otherwise <m>0=\lim\limits_{n \to \infty}f(\frac{1}{2n}) = f(\lim\limits_{n \to \infty} \frac{1}{2n}) = f(0)</m>.
-              On the other hand,
-              <m>1=\lim\limits_{n \to \infty}f(\frac{1}{2n-1}) = f\left(\lim\limits_{n \to \infty}\frac{1}{2n-1}\right) = f(0)</m>.
-              Justify and explain.
+<exercises xml:id="exercises_taylor-laurent-apps">
+<title>Exercises</title>
+	<exercise>
+		<introduction>
+			<p>
+				Determine whether there exists a function <m>f</m> that is analytic at <m>0</m> with the property that, for
+				<m>n=1,\,2,\,3,\ldots</m>,
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>f(\frac{1}{2n}) = 0</m> and <m>f(\frac{1}{2n-1}) = 1</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					No. Otherwise 
+					<m>
+						0=\lim\limits_{n \to \infty}f(\frac{1}{2n}) = 
+						f(\lim\limits_{n \to \infty} \frac{1}{2n}) = f(0)
+					</m>.
+					On the other hand, 
+					<m>
+						1=\lim\limits_{n \to \infty}f(\frac{1}{2n-1}) = 
+						f\left(\lim\limits_{n \to \infty}\frac{1}{2n-1}\right) = f(0)
+					</m>. 
+					Justify and explain.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^2}</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Yes. There is a simple function with this property. Find it.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^3}</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					No. Use <xref ref="f_g_Cor">Corollary</xref> to show that for all <m>z</m> in some disk <m>D_{r}(0)</m> we have
+					<m>f(z)=z^3</m>, and <m>f(z) = -z^3</m>, and explain why this is impossible.
+				</p>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_5_2"> 
+		<introduction>
+			<p>
+				Prove the following results:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<xref ref="Limit_Zero_Cor">Corollary</xref>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<xref ref="f_g_Cor">Corollary</xref>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<xref ref="Pr_Series_Division">Theorem</xref>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<xref ref="Cor_7_10">Corollary</xref>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_5_3">
+		<introduction>
+			<p>
+				For the following, let <m>f(z) =z\sin (\frac{1}{z})</m>.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					Show that there is a sequence <m>\{z_n\}</m> of points converging to <m>0</m> such that <m>f(z_n) =0</m> for
+					<m>n=1,\,2,\,3,\ldots</m> <nbsp/>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Let <m>z_n=\frac{1}{\pi n}</m>. Explain.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					Does this result contradict <xref ref="Limit_Zero_Cor">Corollary</xref>? Why or why not?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					No, the function <m>f</m> is not analytic at zero (explain why), which is required by the corollary.
             </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^2}</m>.
-          </p>
-          <solution>
-            <p>
-              Yes.
-              There is a simple function with this property.
-              Find it.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            <m>f(\frac{1}{n}) =f(-\frac{1}{n}) = \frac{1}{n^3}</m>.
-          </p>
-          <solution>
-            <p>
-              No.
-              Use <xref ref="f_g_Cor">Corollary</xref>
-              to show that for all <m>z</m> in some disk
-              <m>D_{r}(0)</m> we have <m>f(z)=z^3</m>,
-              and <m>f(z) = -z^3</m>, and explain why this is impossible.
-            </p>
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_5_2">
-      <statement>
-        <p>
-          Prove the following results.
-        </p>
-        <task>
-          <p>
-            <xref ref="Limit_Zero_Cor">Corollary</xref>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <xref ref="f_g_Cor">Corollary</xref>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <xref ref="Pr_Series_Division">Theorem</xref>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <xref ref="Cor_7_10">Corollary</xref>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_5_3">
-      <statement>
-        <p>
-          Consider the function <m>f(z) =z\sin (\frac{1}{z})</m>.
-        </p>
-        <task>
-          <p>
-            Show that there is a sequence <m>\{z_n\}</m> of points converging to <m>0</m> such that
-            <m>f(z_n) =0</m> for <m>n=1,\,2,\,3,\ldots</m> <nbsp/>.
-          </p>
-          <solution>
-            <p>
-              Let <m>z_n=\frac{1}{\pi n}</m>.
-              Explain.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <p>
-            Does this result contradict <xref ref="Limit_Zero_Cor">Corollary</xref>?
-            Why or why not?
-          </p>
-          <solution>
-            <p>
-              No, the function <m>f</m> is not analytic at zero
-              (explain why),
-              which is required by the corollary.
-            </p>
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_5_4">
-      <statement>
-        <p>
-          Let <m>f(z) =\tan z</m>.
-        </p>
-        <task xml:id="x7_5_4a">
-          <p>
-            Use <xref ref="Pr_Series_Division">Theorem</xref>
-            to find the first few terms of the Maclaurin series for <m>f(z)</m>,
-            if <m>|z| \lt \frac{\pi}{2}</m>.
-          </p>
-        </task>
-        <task xml:id="x7_5_4b">
-          <p>
-            What are the values of <m>f\,^{(6)}(0)</m> and <m>f\,^{(7)}(0)</m>?
-          </p>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="x7_5_5">
-      <statement>
-        <p>
-          Show that the real function <m>f</m> defined by
-          <me>
-				f(x) = 
-					\begin{cases}
-						x\sin (\frac{1}{x}), \amp  \text{when } x \ne 0, \quad \text{and}  \\
-						0, \amp  \text{when }  x=0
-					\end{cases}
-          </me>
-          is continuous at <m>x=0</m>, but that the corresponding function <m>g(z)</m> defined by
-          <me>
-				 g(z) = 
-				 	\begin{cases}
-						z\sin (\frac{1}{z}), \amp  \text{when }   z \ne 0, \quad \text{ and } \\ 
-						0, \amp  \text{when } z=0 
-					\end{cases}
-          </me>
-          is <em>not</em> continuous at <m>z=0</m>.
-        </p>
-      </statement>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_5_4">
+		<introduction>
+			<p>
+				For the following, let <m>f(z) =\tan z</m>.
+			</p>
+		</introduction>
+		<task xml:id="x7_5_4a">
+			<statement>
+				<p>
+					Use <xref ref="Pr_Series_Division">Theorem</xref> to find the first few terms of the Maclaurin series for
+					<m>f(z)</m>, if <m>|z| \lt \frac{\pi}{2}</m>.
+				</p>
+			</statement>
+		</task>
+		<task xml:id="x7_5_4b">
+			<statement>
+				<p>
+					What are the values of <m>f\,^{(6)}(0)</m> and <m>f\,^{(7)}(0)</m>?
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise xml:id="x7_5_5">
+		<statement>
+			<p>
+				Show that the real function <m>f</m> defined by
+				<me>
+					f(x) = 
+						\begin{cases}
+							x\sin (\frac{1}{x}), \amp  \text{when } x \ne 0, \quad \text{and}  \\
+							\;\;\;\;\; 0, \amp  \text{when }  x=0
+						\end{cases}
+				</me>
+				is continuous at <m>x=0</m>, but that the corresponding function <m>g(z)</m> defined by
+				<me>
+					g(z) = 
+						\begin{cases}
+							z\sin (\frac{1}{z}), \amp  \text{when }   z \ne 0, \quad \text{ and } \\ 
+							\;\;\;\;\; 0, \amp  \text{when } z=0 
+						\end{cases}
+				</me>
+				is <em>not</em> continuous at <m>z=0</m>.
+			</p>
+		</statement>
       <solution>
-        <p>
-          For <m>x\ne 0, \, \lim\limits_{x \to 0}|x\sin \frac{1}{x}| \le \lim\limits_{x\to 0}|x|=0</m>.
-          This implies <m>\lim\limits_{x\to 0}f(x) =0 = f(0)</m>.
-          For the complex case,
-          show that there is an essential singularity at 0 and use <xref ref="Essential_Sing_Thm">Theorem</xref>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise xml:id="x7_5_6">
-      <statement>
-        <p>
-          Use L'H&#xf4;pital's rule to find the following limits.
-        </p>
-        <task>
-          <p>
-            <m>\lim\limits_{z \to 1+i}\frac{z-1-i}{z^4+4}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\lim\limits_{z \to i}\frac{z^2-2iz-1}{z^4+2z^2+1}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\lim\limits_{z \to i}\frac{1+z^{6}}{1+z^2}</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            <m>\lim\limits_{z \to 0}\frac{\sin z+\sinh z-2z}{z^{5}}</m>.
-          </p>
-        </task>
-      </statement>
-    </exercise>
-  </exercises>
+			<p>
+				For <m>x\ne 0, \, \lim\limits_{x \to 0}|x\sin \frac{1}{x}| \le \lim\limits_{x\to 0}|x|=0</m>. This implies
+				<m>\lim\limits_{x\to 0}f(x) =0 = f(0)</m>. For the complex case, show that there is an essential singularity at 0 and
+				use <xref ref="Essential_Sing_Thm">Theorem</xref>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="x7_5_6">
+		<introduction>
+			<p>
+				Use L'H&#xf4;pital's rule to find the following limits:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\lim\limits_{z \to 1+i}\frac{z-1-i}{z^4+4}</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<p>
+				<m>\lim\limits_{z \to i}\frac{z^2-2iz-1}{z^4+2z^2+1}</m>;
+			</p>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\lim\limits_{z \to i}\frac{1+z^{6}}{1+z^2}</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\lim\limits_{z \to 0}\frac{\sin z+\sinh z-2z}{z^{5}}</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+</exercises>
 </section>
