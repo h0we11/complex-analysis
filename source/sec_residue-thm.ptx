@@ -322,22 +322,27 @@
       </p>
     </statement>
     <solution>
-      <p>
-		  It will suffice to prove that <m>A=\mathrm{Res}[f,a]</m>. To do so, expand <m>f</m> in its Laurent series about the point
-		  <m>a</m> by writing the three terms <m>\frac{A}{z-a}, \, \frac{B}{z-b}</m> and <m>\frac{C}{z-c}</m> in their Laurent
-		  series about the point <m>a</m> and adding them. The term <m>\frac{A}{z-a}</m> is itself a one-term Laurent series about
-		  the point <m>a</m>. The term <m>\frac{B}{z-b}</m> is analytic at the point <m>a</m>, and its Laurent series is actually a
-		  Taylor series given by
-		  <me>
-		  	\frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} =
-			-\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n,
-		  </me>
-        which is valid for <m>|z-a| \lt  |b-a|</m>. Likewise, the expansion of the term <m>\frac{C}{z-c}</m> is
-        <me>\frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n,</me>
-        which is valid for <m>|z-a| \lt  |c-a|</m>. Thus the Laurent series of <m>f</m> about the point <m>a</m> is
-        <me>f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n,</me>
-		  which is valid for <m>|z-a| \lt R</m>, where <m>R=\min \{ |b-a| ,\,|c-a| \}</m>. Therefore
-		  <m>A=\mathrm{Res}[f,a]</m>, and calculation reveals that
+	 	<p>
+			It will suffice to prove that <m>A=\mathrm{Res}[f,a]</m>. To do so, expand <m>f</m> in its Laurent series about the point
+			<m>a</m> by writing the three terms <m>\frac{A}{z-a}, \, \frac{B}{z-b}</m> and <m>\frac{C}{z-c}</m> in their Laurent
+			series about the point <m>a</m> and adding them.
+		</p>
+		<p>
+			The term <m>\frac{A}{z-a}</m> is itself a one-term Laurent series about the point <m>a</m>. The term <m>\frac{B}{z-b}</m>
+			is analytic at the point <m>a</m>, and its Laurent series is actually a Taylor series given by
+			<me>
+				\frac{B}{z-b} = \frac{-B}{b-a}\frac{1}{1-\frac{z-a}{b-a}} =
+				-\sum\limits_{n=0}^{\infty}\frac{B}{(b-a)^{n+1}}(z-a)^n,
+			</me>
+			which is valid for <m>|z-a| \lt  |b-a|</m>.
+		</p>
+		<p>
+			Likewise, the expansion of the term <m>\frac{C}{z-c}</m> is 
+			<me>\frac{C}{z-c}=-\sum\limits_{n=0}^{\infty}\frac{C}{(c-a)^{n+1}}(z-a)^n,</me>
+			which is valid for <m>|z-a| \lt  |c-a|</m>. Thus the Laurent series of <m>f</m> about the point <m>a</m> is
+			<me>f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(c-a)^{n+1}}\right](z-a)^n,</me>
+			which is valid for <m>|z-a| \lt R</m>, where <m>R=\min \{ |b-a| ,\,|c-a| \}</m>. Therefore <m>A=\mathrm{Res}[f,a]</m>,
+			and calculation reveals that
         <me>\mathrm{Res}[f,a] =A=\lim\limits_{z \to a}\frac{P(z)}{(z-b)(z-c)} = \frac{P(a)}{(a-b)(a-c)}.</me>
       </p>
     </solution>
