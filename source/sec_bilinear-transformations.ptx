@@ -2,67 +2,56 @@
   <title>Bilinear Transformations</title>
   <introduction>
     <p>
-      Another important class of elementary mappings was studied by Augustus Ferdinand M&#xf6;bius (1790<ndash/>1868).
-      These mappings are conveniently expressed as the quotient of two linear expressions.
-      They arise naturally in mapping problems involving the function <m>\mathrm{Arctan}(z)</m>.
-      In this section,
-      we show how they are used to map a disk one-to-one and onto a half-plane.
+		Another important class of elementary mappings was studied by Augustus Ferdinand M&#xf6;bius (1790<ndash/>1868). These
+		mappings are conveniently expressed as the quotient of two linear expressions. They arise naturally in mapping problems
+		involving the function <m>\mathrm{Arctan}(z)</m>. In this section, we show how they are used to map a disk one-to-one and
+		onto a half-plane.
     </p>
     <p>
-      If we let <m>a,  \, b, \, c</m>,
-      and <m>d</m> denote four complex constants with the restriction that <m>ad\ne  bc</m>,
-      then the function
+		If we let <m>a,  \, b, \, c</m>, and <m>d</m> denote four complex constants with the restriction that <m>ad\ne  bc</m>, then
+		the function
       <men xml:id="bilineardef">
         w=S(z)=\frac{az+b}{cz+d}
       </men>
-      is called a bilinear transformation,
-      a <em>M&#xf6;bius transformation</em>,
-      or a linear fractional transformation.
-      If the expression for <m>S</m> in Equation <xref ref="bilineardef"/> is multiplied by the quantity <m>cz+d</m>,
-      then the resulting expression has the bilinear form <m>cwz-az+dw-b=0</m>.
-      We collect terms involving <m>z</m> and write <m>z(cw-a)=-dw+b</m>.
-      Then, for values of <m>w\ne \frac{a}{c}</m>,
-      the inverse transformation is given by
+		is called a bilinear transformation, a <em>M&#xf6;bius transformation</em>, or a linear fractional transformation. If the
+		expression for <m>S</m> in Equation <xref ref="bilineardef"/> is multiplied by the quantity <m>cz+d</m>, then the resulting
+		expression has the bilinear form <m>cwz-az+dw-b=0</m>. We collect terms involving <m>z</m> and write <m>z(cw-a)=-dw+b</m>.
+		Then, for values of <m>w\ne \frac{a}{c}</m>, the inverse transformation is given by
       <men xml:id="bilinearinv">
         z=S^{-1}(w) =\frac{-dw+b}{cw-a}
       </men>.
     </p>
     <p>
-      We can extend <m>S</m> and <m>S^{-1}</m> to mappings in the extended complex plane.
-      The value <m>S(\infty)</m> should equal the limit of <m>S(z)</m> as <m>z \to \infty</m>.
-      Therefore we define
+		We can extend <m>S</m> and <m>S^{-1}</m> to mappings in the extended complex plane. The value <m>S(\infty)</m> should equal
+		the limit of <m>S(z)</m> as <m>z \to \infty</m>. Therefore we define
       <me>
         S(\infty) = \lim_{z \to \infty} S(z) = \lim_{z \to \infty} \frac{a+\frac{b}{z}}{c+\frac{d}{z}}=\frac{a}{c}
       </me>,
-      and the inverse is <m>S^{-1}(\frac{a}{c})=\infty</m>.
-      Similarly, the value <m>S^{-1}(\infty)</m> is obtained by
+      and the inverse is <m>S^{-1}(\frac{a}{c})=\infty</m>. Similarly, the value <m>S^{-1}(\infty)</m> is obtained by
       <me>
         S^{-1}(\infty) = \lim_{w \to \infty}\ S^{-1}(w) = \lim_{w \to \infty} \frac{-d+\frac{b}{w}}{c-\frac{a}{w}}=\frac{-d}{c}
       </me>,
-      and the inverse is <m>S(\frac{-d}{c})=\infty</m>.
-      With these extensions we conclude that the transformation <m>w=S(z)</m> is a one-to-one mapping of the extended complex <m>z</m> plane onto the extended complex <m>w</m> plane.
+		and the inverse is <m>S(\frac{-d}{c})=\infty</m>. With these extensions we conclude that the transformation <m>w=S(z)</m> is
+		a one-to-one mapping of the extended complex <m>z</m> plane onto the extended complex <m>w</m> plane.
     </p>
     <p>
-      We now show that a bilinear transformation carries the class of circles and lines onto itself.
-      If <m>S</m> is an arbitrary bilinear transformation given by Equation <xref ref="bilineardef"/> and <m>c=0</m>,
-      then <m>S</m> reduces to a linear transformation,
-      which carries lines onto lines and circles onto circles.
-      If <m>c\ne 0</m>, then we can write <m>S</m> in the form
+		We now show that a bilinear transformation carries the class of circles and lines onto itself. If <m>S</m> is an arbitrary
+		bilinear transformation given by Equation <xref ref="bilineardef"/> and <m>c=0</m>, then <m>S</m> reduces to a linear
+		transformation, which carries lines onto lines and circles onto circles. If <m>c\ne 0</m>, then we can write <m>S</m> in the
+		form
       <men xml:id="bilinearexpand">
         S(z) = \frac{a(cz+d)+bc-ad}{c(cz+d)} = \frac{a}{c}+\left(\frac{bc-ad}{c}\right)\!\left(\frac{1}{cz+d}\right)
       </men>.
     </p>
     <p>
-      The condition <m>ad \ne bc</m> precludes the possibility that <m>S</m> reduces to a constant.
-      Equation <xref ref="bilinearexpand"/> indicates that <m>S</m> can be considered as a composition of functions.
-      It is a linear mapping <m>\xi =cz+d</m>,
-      followed by the reciprocal transformation <m>Z=\frac{1}{\xi }</m>,
-      followed by <m>w=\frac{a}{c}+\frac{bc-ad}{c}Z</m>.
-      In <xref ref="ch_complex-functions"/> we showed that each function in this composition maps the class of circles and lines onto itself;
-      it follows that the bilinear transformation <m>S</m> has this property.
-      A half-plane can be considered to be a family of parallel lines and a disk as a family of circles.
-      Therefore we conclude that a bilinear transformation maps the class of half-planes and disks onto itself.
-      <xref ref="ex_9_3">Example</xref> illustrates this idea.
+		The condition <m>ad \ne bc</m> precludes the possibility that <m>S</m> reduces to a constant. Equation <xref
+		ref="bilinearexpand"/> indicates that <m>S</m> can be considered as a composition of functions. It is a linear mapping
+		<m>\xi =cz+d</m>, followed by the reciprocal transformation <m>Z=\frac{1}{\xi }</m>, followed by
+		<m>w=\frac{a}{c}+\frac{bc-ad}{c}Z</m>. In <xref ref="ch_complex-functions"/> we showed that each function in this
+		composition maps the class of circles and lines onto itself; it follows that the bilinear transformation <m>S</m> has this
+		property. A half-plane can be considered to be a family of parallel lines and a disk as a family of circles. Therefore we
+		conclude that a bilinear transformation maps the class of half-planes and disks onto itself. 
+		<xref ref="ex_9_3">Example</xref> illustrates this idea.
     </p>
     <example xml:id="ex_9_3">
       <statement>
@@ -119,7 +108,7 @@
     </example>
     <figure xml:id="fig_ch-09-05">
       <caption>The image of <m>|z| \lt 1</m> under <m>w=\frac{i(1-z)}{1+z}</m></caption>
-      <image width="73%" source="figs/ch-09/ch-09-fig-05.svg"/>
+      <image width="80%" source="figs/ch-09/ch-09-fig-05.svg"/>
     </figure>
     <p>
       The general formula for a bilinear transformation (Equation <xref ref="bilineardef"/>) appears to involve four independent coefficients:
@@ -205,10 +194,9 @@
           <me>
             2w+2zw=2i-2iz
           </me>,
-          from which we obtain <m>w(1+z) =i(1-z)</m>.
-          Therefore the desired bilinear transformation is
+          from which we obtain <m>w(1+z) =i(1-z)</m>. Therefore, the desired bilinear transformation is
           <me>
-            w=S(z) =\frac{i(1-z)}{1+z}
+            w=S(z) =\frac{i(1-z)}{1+z}.
           </me>
         </p>
       </solution>
@@ -383,233 +371,221 @@
       which comprise the trajectory of an electron placed in an electrical field.
       Consider the bilinear transformation
       <me>
-        w = S(z) = \frac{z}{z-a}  \text{ and }   z = S^{-1}(w) = \frac{aw}{w-1}
+        w = S(z) = \frac{z}{z-a}  \text{ and }   z = S^{-1}(w) = \frac{aw}{w-1}.
       </me>
     </p>
     <p>
-      The half rays <m>\{\mathrm{Arg}(w)=c\}</m>,
-      where <m>c</m> is a constant,
-      that meet at the origin <m>w=0</m> represent the lines of electric flux produced by a source located at <m>w=0</m>
-      (and a sink at <m>w=\infty</m>).
-      The preimage of this family of lines is a family of circles that pass through the points <m>z=0</m> and <m>z=a</m>.
-      We visualize these circles as the lines of electric flux from one point charge to another.
-      The limiting case as <m>a\to 0</m> is called a dipole.
-      The graphs for <m>a=1, \, a=0.5</m>,
-      and <m>a=0.1</m> are shown in <xref ref="fig_ch-09-08">Figure</xref>.
+		The half-rays <m>\{\mathrm{Arg}(w)=c\}</m>, where <m>c</m> is a constant, that meet at the origin <m>w=0</m> represent the
+		lines of electric flux produced by a source located at <m>w=0</m> (and a sink at <m>w=\infty</m>). The preimage of this
+		family of lines is a family of circles that pass through the points <m>z=0</m> and <m>z=a</m>. We visualize these circles as
+		the lines of electric flux from one point charge to another. The limiting case as <m>a\to 0</m> is called a dipole. The
+		graphs for <m>a=1, \, a=0.5</m>, and <m>a=0.1</m> are shown in <xref ref="fig_ch-09-08">Figure</xref>.
     </p>
     <figure xml:id="fig_ch-09-08">
       <caption>Images of <m>\mathrm{Arg}(w) = c</m> under the mapping <m>z = \frac{aw}{w-1}</m></caption>
       <image width="73%" source="figs/ch-09/ch-09-fig-08.svg"/>
     </figure>
-    <exercises xml:id="exercises_bilinear-transformations">
-      <title>Exercises</title>
-      <exercise>
-        <statement>
-          <p>
-            If <m>w=S(z) =\frac{(1-i) z+2}{(1+i) z+2}</m>, find <m>S^{-1}(w)</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>z=S^{-1}(w) = \frac{-2w+2}{(1+i)w-(1-i)} = \frac{(1-i)(1-w)}{i+w}</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            If <m>w=S(z) =\frac{i+z}{i-z}</m>, find <m>S^{-1}(w)</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the image of the right half-plane
-            <m>\mathrm{Re}(z) >0</m> under <m>w=\frac{i(1-z)}{1+z}</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The disk <m>|w|\lt 1</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise xml:id="exercise_09-04">
-        <statement>
-          <p>
-            Show that the bilinear transformation
-            <m>w=\frac{i(1-z)}{1+z }</m> maps the portion of the disk
-            <m>|z|\lt 1</m> that lies in the upper half-plane
-            <m>\mathrm{Im}(z)>0</m> onto the first quadrant <m>u>0, \, v>0</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the image of the upper half-plane
-            <m>\mathrm{Im}(z) >0</m> under the transformation
+<exercises xml:id="exercises_bilinear-transformations">
+<title>Exercises</title>
+	<exercise>
+		<statement>
+			<p>
+				If <m>w=S(z) =\frac{(1-i) z+2}{(1+i) z+2}</m>, find <m>S^{-1}(w)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>z=S^{-1}(w) = \frac{-2w+2}{(1+i)w-(1-i)} = \frac{(1-i)(1-w)}{i+w}</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				If <m>w=S(z) =\frac{i+z}{i-z}</m>, find <m>S^{-1}(w)</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the image of the right half-plane <m>\mathrm{Re}(z) >0</m> under <m>w=\frac{i(1-z)}{1+z}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The disk <m>|w|\lt 1</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise xml:id="exercise_09-04">
+		<statement>
+			<p>
+				Show that the bilinear transformation <m>w=\frac{i(1-z)}{1+z }</m> maps the portion of the disk <m>|z|\lt 1</m> that
+				lies in the upper half-plane <m>\mathrm{Im}(z)>0</m> onto the first quadrant <m>u>0, \, v>0</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the image of the upper half-plane <m>\mathrm{Im}(z) >0</m> under the transformation
             <me>
-              w=\frac{(1-i) z+2}{(1+i) z+2}
+              w=\frac{(1-i) z+2}{(1+i) z+2}.
             </me>
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The region <m>|w|>1</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=i</m>,
-            and <m>z_3=-i</m> onto <m>w_1=-1, \,w_2=1</m>,
-            and <m>w_3=0</m>, respectively.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=-i, \, z_2=0</m>,
-            and <m>z_3=i</m> onto <m>w_1=-1, \, w_2=i</m>,
-            and <m>w_3=1</m>, respectively.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>w=S(z)=\frac{-iz+i}{1+z}</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=1</m>,
-            and <m>z_3=2</m> onto <m>w_1=0, \, w_2=1</m>,
-            and <m>w_3=\infty</m>, respectively.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=1, \, z_2=i</m>,
-            and <m>z_3=-1</m> onto <m>w_1=0, \, w_2=1</m>,
-            and <m>w_3=\infty</m>, respectively.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>w=S(z)=\frac{1-iz}{1+z}</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Show that the transformation <m>w=\frac{i+z}{i-z}</m> maps the unit disk
-            <m>|z|\lt 1</m> onto the right half-plane <m>\mathrm{Re}(w)>0</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the image of the lower half-plane
-            <m>\mathrm{Im}(z)\lt 0</m> under <m>w = \frac{i+z}{i-z}</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The disk <m>|w|\lt 1</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            If <m>S_1(z) =\frac{z-2}{z+1}</m> and <m>S_2(z) = \frac{z}{z+3}</m>,
-            find <m>S_1\big(S_2(z)\big)</m> and <m>S_2\big(S_1(z)\big)</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the image of the quadrant <m>x>0</m>,
-            <m>y>0</m> under <m>w=\frac{z-1}{z+1}</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The portion of the disk <m>|w|\lt 1</m> that lies in the upper half-plane <m>\mathrm{Im}(w)>0</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Show that Equation <xref ref="impform"/> can be written in the form of Equation <xref ref="bilineardef"/>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the image of the horizontal strip
-            <m>0\lt y\lt 2</m> under <m>w=\frac{z}{z-i}</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The region of that lies exterior to both the circles
-            <m>|w-\frac{1}{2}| = \frac{1}{2}</m> and <m>|w-\frac{3}{2}| = \frac{1}{2}</m>.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Show that the bilinear transformation
-            <m>w=S(z) =\frac{az+b}{cz+d}</m> is conformal at all points <m>z \ne \frac{-d}{c}</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            A <em>fixed point</em> of a mapping <m>w=f(z)</m> is a point <m>z_0</m> such that <m>f(z_0)=z_0</m>.
-            Show that a bilinear transformation can have at most two fixed points.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The equation <m>z=\frac{az+ib}{cz+d}</m> can be written as <m>cz^2+(d-a)z-b=0</m>,
-            and a quadratic equation has,
-            at most, two distinct solutions.
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find the fixed points of
-          </p>
-          <task>
-            <p>
-              <m>w=\frac{z-1}{z+1}</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>w=\frac{4z+3}{2z-1}</m>.
-            </p>
-          </task>
-        </statement>
-      </exercise>
-    </exercises>
-  </subsection>
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The region <m>|w|>1</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=i</m>, and <m>z_3=-i</m> onto
+				<m>w_1=-1, \,w_2=1</m>, and <m>w_3=0</m>, respectively.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=-i, \, z_2=0</m>, and <m>z_3=i</m> onto
+				<m>w_1=-1, \, w_2=i</m>, and <m>w_3=1</m>, respectively.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>w=S(z)=\frac{-iz+i}{1+z}</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=0, \, z_2=1</m>, and <m>z_3=2</m> onto
+				<m>w_1=0, \, w_2=1</m>, and <m>w_3=\infty</m>, respectively.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the bilinear transformation <m>w=S(z)</m> that maps the points <m>z_1=1, \, z_2=i</m>, and <m>z_3=-1</m> onto
+				<m>w_1=0, \, w_2=1</m>, and <m>w_3=\infty</m>, respectively.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>w=S(z)=\frac{1-iz}{1+z}</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that the transformation <m>w=\frac{i+z}{i-z}</m> maps the unit disk <m>|z|\lt 1</m> onto the right half-plane
+				<m>\mathrm{Re}(w)>0</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the image of the lower half-plane <m>\mathrm{Im}(z)\lt 0</m> under <m>w = \frac{i+z}{i-z}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The disk <m>|w|\lt 1</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				If <m>S_1(z) =\frac{z-2}{z+1}</m> and <m>S_2(z) = \frac{z}{z+3}</m>, find <m>S_1\big(S_2(z)\big)</m> and
+				<m>S_2\big(S_1(z)\big)</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the image of the quadrant <m>x>0</m>, <m>y>0</m> under <m>w=\frac{z-1}{z+1}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The portion of the disk <m>|w|\lt 1</m> that lies in the upper half-plane <m>\mathrm{Im}(w)>0</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that Equation <xref ref="impform"/> can be written in the form of Equation <xref ref="bilineardef"/>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Find the image of the horizontal strip <m>0\lt y\lt 2</m> under <m>w=\frac{z}{z-i}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The region of that lies exterior to both the circles 
+				<m>|w-\frac{1}{2}| = \frac{1}{2}</m> and <m>|w-\frac{3}{2}| = \frac{1}{2}</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that the bilinear transformation <m>w=S(z) =\frac{az+b}{cz+d}</m> is conformal at all points 
+				<m>z \ne \frac{-d}{c}</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				A <em>fixed point</em> of a mapping <m>w=f(z)</m> is a point <m>z_0</m> such that <m>f(z_0)=z_0</m>. Show that a
+				bilinear transformation can have at most two fixed points.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The equation <m>z=\frac{az+ib}{cz+d}</m> can be written as <m>cz^2+(d-a)z-b=0</m>, and a quadratic equation has, at
+				most, two distinct solutions.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<introduction>
+			<p>
+				Find the fixed points of the following:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>w=\frac{z-1}{z+1}</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>w=\frac{4z+3}{2z-1}</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+</exercises>
+</subsection>
 </section>
