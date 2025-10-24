@@ -168,8 +168,13 @@
   <example>
     <statement>
       <p>
-        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane Im<m>(z) >0</m> and takes on the boundary values indicated in <xref ref="fig_ch-10-005">Figure</xref>.
+		  Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane Im<m>(z) >0</m> and takes on the boundary
+		  values indicated in <xref ref="fig_ch-10-005">Figure</xref>.
       </p>
+		<figure xml:id="fig_ch-10-005">
+			<caption>The boundary values for the Dirichlet problem</caption>
+			<image width="73%" source="figs/ch-10/ch-10-fig-005.svg"/>
+		</figure>
     </statement>
     <solution>
       <p>
@@ -191,55 +196,48 @@
 			 <mrow>\amp \qquad \qquad + \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
         </md>.
       </p>
-      <figure xml:id="fig_ch-10-005">
-        <caption>The boundary values for the Dirichlet problem</caption>
-        <image width="73%" source="figs/ch-10/ch-10-fig-005.svg"/>
-      </figure>
     </solution>
   </example>
   <example>
     <statement>
-      <p>
-        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
-        <m>\mathrm{Re}(z)>0</m> and takes on the boundary values
-        <md>
-          <mrow>\phi(x,0) \amp = 1, \quad \text{for} \quad  |x| \lt  1;</mrow>
-          <mrow>\phi(x,0) \amp = 0, \quad \text{for} \quad  |x| > 1.</mrow>
-        </md>
-      </p>
+	 	<p>
+			Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
+			<m>\mathrm{Re}(z)>0</m> and takes on the boundary values
+			<md>
+				<mrow>\phi(x,0) \amp = 1, \quad \text{for} \quad  |x| \lt  1;</mrow>
+				<mrow>\phi(x,0) \amp = 0, \quad \text{for} \quad  |x| > 1.</mrow>
+			</md>
+			A three-dimensional graph of
+			<m>u=\phi(x,y)</m> is shown in <xref ref="fig_ch-10-006">Figure</xref>.
+			<figure xml:id="fig_ch-10-006">
+				<caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=1</m> for <m>|x|\lt 1</m>, and <m>\phi(x,0)=0</m> for
+				<m>|x|>1</m> 
+				</caption>
+				<image width="60%" source="figs/ch-10/ch-10-fig-006.svg"/> 
+			</figure>
+		</p>
+    </statement>
       <solution>
         <p>
           This three-value Dirichlet problem has <m>a_0=0, \, a_1=1, \, a_2=0, \, x_1=-1, \text{ and }  x_2=1</m>.
           Applying <xref ref="DPfun">Equation</xref> yields
           <md>
             <mrow>\phi(x,y)  \amp = 0 + \frac{0-1}{\pi}\mathrm{Arg}(z+1) + \frac{1-0}{\pi}\mathrm{Arg}(z-1)</mrow>
-            <mrow>\amp = -\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) + \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
+				<mrow>\amp = -\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) +
+					\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)
+				</mrow>
           </md>.
         </p>
       </solution>
-      <p>
-        A three-dimensional graph of
-        <m>u=\phi(x,y)</m> is shown in <xref ref="fig_ch-10-006">Figure</xref>.
-      </p>
-    </statement>
   </example>
-  <figure xml:id="fig_ch-10-006">
-    <caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=1</m> for <m>|x|\lt 1</m>, and <m>\phi(x,0)=0</m> for <m>|x|>1</m></caption>
-    <image width="60%" source="figs/ch-10/ch-10-fig-006.svg"/>
-  </figure>
   <p>
-    We now state the <m>N</m>-value Dirichlet problem for a simply connected domain.
-    We let <m>D</m> be a simply connected domain bounded by the simple closed contour <m>C</m> and let
-    <m>z_1,\,z_2,\,.\,.\,.\,,\,z_N</m> denote <m>N</m> points that lie along <m>C</m> in this specified order as <m>C</m> is traversed in the positive direction
-    (counterclockwise).
-    Then we let <m>C_k</m> denote the portion of <m>C</m> that lies strictly between <m>z_k</m> and <m>z_{k+1}</m>,
-    for <m>k=1, \, 2, \ldots, N-1</m>,
-    and let <m>C_N</m> denote the portion that lies strictly between <m>z_N</m> and <m>z_1</m>.
-    Finally, we let <m>a_1, \, a_2, \ldots,
-    a_N</m> be real constants.
-    We want to find a function
-    <m>\phi(x,y)</m> that is harmonic in <m>D</m> and continuous on
-    <m>D\cup C_1\cup C_2\cup \cdots \cup C_N</m> that takes on the boundary values
+	 We now state the <m>N</m>-value Dirichlet problem for a simply connected domain. We let <m>D</m> be a simply connected domain
+	 bounded by the simple closed contour <m>C</m> and let <m>z_1,\,z_2,\,.\,.\,.\,,\,z_N</m> denote <m>N</m> points that lie along
+	 <m>C</m> in this specified order as <m>C</m> is traversed in the positive direction (counterclockwise). Then we let <m>C_k</m>
+	 denote the portion of <m>C</m> that lies strictly between <m>z_k</m> and <m>z_{k+1}</m>, for <m>k=1, \, 2, \ldots, N-1</m>,
+	 and let <m>C_N</m> denote the portion that lies strictly between <m>z_N</m> and <m>z_1</m>. Finally, we let <m>a_1, \, a_2,
+	 \ldots, a_N</m> be real constants. We want to find a function <m>\phi(x,y)</m> that is harmonic in <m>D</m> and continuous on
+	 <m>D\cup C_1\cup C_2\cup \cdots \cup C_N</m> that takes on the boundary values
     <md>
       <mrow xml:id="Bddvals" number="yes">\phi(x,y) \amp = a_1, \quad \text{for} \quad  z=x+iy \quad \text{on} \quad C_1;</mrow>
       <mrow>\phi(x,y)  \amp = a_2, \quad \text{for} \quad z=x+iy \quad \text{on} \quad C_2;</mrow>
@@ -267,12 +265,10 @@
     <m>u_N=+\infty</m> along the <m>u</m> axis in the <m>w</m> plane.
   </p>
   <p>
-    When we use <xref ref="thm_dirichlet-problem">Theorem</xref>,
-    the mapping in <xref ref="conmapz">Equation</xref>
-    gives rise to a new <m>N</m>-value Dirichlet problem in the upper half-plane
-    <m>\mathrm{Im} (w) >0</m> for which <xref ref="thm_N-value-dirichlet">Theorem</xref> gives the solution.
-    If we set <m>a_0=a_N</m>,
-    then the solution to the Dirichlet problem in <m>D</m> with the boundary values from <xref ref="Bddvals">Equation</xref> is
+	 When we use <xref ref="thm_dirichlet-problem">Theorem</xref>, the mapping in <xref ref="conmapz">Equation</xref> gives rise to
+	 a new <m>N</m>-value Dirichlet problem in the upper half-plane <m>\mathrm{Im} (w) >0</m> for which 
+	 <xref ref="thm_N-value-dirichlet">Theorem</xref> gives the solution. If we set <m>a_0=a_N</m>, then the solution to the
+	 Dirichlet problem in <m>D</m> with the boundary values from <xref ref="Bddvals">Equation</xref> is
     <md>
       <mrow>\phi(x,y)  \amp = a_{N-1} + \frac{1}{\pi}\sum_{k=1}^{N-1}(a_{k-1}-a_k)\mathrm{Arg}[f(z)-u_k]</mrow>
       <mrow>\amp = a_{N-1} + \frac{1}{\pi}\sum\limits_{k=1}^{N-1}(a_{k-1}-a_k)\mathrm{Arctan}\left(\frac{v(x,y)}{u(x,y)-u_k}\right)</mrow>
@@ -435,13 +431,9 @@
       </figure>
     </solution>
   </example>
-  <exercises xml:id="exercises_dirichlet-problem">
-    <title>Exercises</title>
-    <p>
-      For each exercise, find a solution
-      <m>\phi(x,y)</m> of the Dirichlet problem in the domain indicated that takes on the prescribed boundary values.
-    </p>
-    <exercise>
+<exercises xml:id="exercises_dirichlet-problem">
+<title>Exercises</title>
+	<exercise>
       <statement>
         <p>
           Find the function <m>\phi(x,y)</m> that is harmonic in the horizontal strip
