@@ -189,133 +189,147 @@
         <xref ref="fig_ch-10-015">Figure</xref>
         shows the graph of <m>\phi(x,y)</m>.
       </p>
+		<figure xml:id="fig_ch-10-015">
+			<caption>
+				<m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=x</m> for <m>|x|\lt 1, \  \phi(x,0)=-1</m>, for 
+				<m>x\lt -1</m>, and <m>\phi(x,0) =1</m> for <m>x>1</m>
+			</caption>
+			<image width="60%" source="figs/ch-10/ch-10-fig-015"/>
+		</figure>
     </solution>
   </example>
-  <figure xml:id="fig_ch-10-015">
-    <caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=x</m> for <m>|x|\lt 1, \  \phi(x,0)=-1</m>, for <m>x\lt -1</m>, and
-    <m>\phi(x,0) =1</m> for <m>x>1</m></caption>
-    <image width="60%" source="figs/ch-10/ch-10-fig-015"/>
-  </figure>
-  <exercises xml:id="exercises_poisson-integral-formula">
-    <title>Exercises</title>
-    <exercise>
-      <statement>
-        <p>
-          Use Poisson's integral formula to find the harmonic function
-          <m>\phi(x,y)</m> in the upper half-plane that takes on the boundary values
-          <md>
-            <mrow>\phi(t,0) \amp =  U(t)=0,  \text{ for }   t \lt  0;</mrow>
-            <mrow>\phi(t,0) \amp =  U(t)=t,  \text{ for }   0 \lt  t \lt 1;</mrow>
-            <mrow>\phi(t,0) \amp =  U(t)=0,  \text{ for }   1 \lt t</mrow>
+<exercises xml:id="exercises_poisson-integral-formula">
+<title>Exercises</title>
+	<exercise>
+		<statement>
+			<p>
+				Use Poisson's integral formula to find the harmonic function <m>\phi(x,y)</m> in the upper half-plane that takes on
+				the boundary values
+				<md>
+					<mrow>\phi(t,0) \amp =  U(t)=0, \; \text{ for } \;  t \lt  0;</mrow>
+					<mrow>\phi(t,0) \amp =  U(t)=t, \; \text{ for } \;  0 \lt  t \lt 1;</mrow>
+					<mrow>\phi(t,0) \amp =  U(t)=0, \; \text{ for } \; 1 \lt t</mrow>
           </md>.
         </p>
       </statement>
       <solution>
-        <p>
-			 <m>\phi (x,y)=\frac{y}{2\pi}\ln\Big[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\Big] +
-			 \frac{x-1}{\pi}\mathrm{Arctan}(\frac{y}{x-1})-\frac{x+1}{\pi}\mathrm{Arctan}(\frac{y}{x+1})+1.</m>
-        </p>
-      </solution>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use Poisson's integral formula to find the harmonic function
-          <m>\phi(x,y)</m> in the upper half-plane that takes on the boundary values
-          <md>
-            <mrow>\phi(t,0) \amp = U(t) =0,  \text{ for }   t \lt  0;</mrow>
-            <mrow>\phi(t,0) \amp = U(t) =t,  \text{ for }   0 \lt  t \lt 1;</mrow>
-            <mrow>\phi(t,0) \amp = U(t) =1,  \text{ for }   1 \lt  t</mrow>
-          </md>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use Poisson's integral formula for the upper half-plane to conclude
-          <me>
-            \phi(x,y) =e^{-y}\cos x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\cos t}{(x-t)^2+y^2}\,dt
-          </me>
-        </p>
-      </statement>
+			<p>
+				<m>\phi (x,y)=\frac{y}{2\pi}\ln\Big[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\Big] +
+				\frac{x-1}{\pi}\mathrm{Arctan}(\frac{y}{x-1})-\frac{x+1}{\pi}\mathrm{Arctan}(\frac{y}{x+1})+1.</m>
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use Poisson's integral formula to find the harmonic function <m>\phi(x,y)</m> in the upper half-plane that takes on
+				the boundary values
+				<md>
+					<mrow>\phi(t,0) \amp = U(t) =0, \; \text{ for } \; t \lt  0;</mrow>
+					<mrow>\phi(t,0) \amp = U(t) =t, \; \text{ for } \;  0 \lt  t \lt 1;</mrow>
+					<mrow>\phi(t,0) \amp = U(t) =1, \; \text{ for } \; 1 \lt  t</mrow>
+				</md>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use Poisson's integral formula for the upper half-plane to conclude
+				<me>
+					\phi(x,y) =e^{-y}\cos x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\cos t}{(x-t)^2+y^2}\,dt
+				</me>
+			</p>
+		</statement>
       <solution>
-        <p>
-          Both <m>e^y\cos x</m> and <m>e^{-y}\cos x</m> are harmonic in the upper half plane and satisfy the boundary conditions.
-          Also, <m>\lim\limits_{y \to \infty }e^{-y}\cos x=0</m>.
-          It can be show that the Poisson integral formula defines a bounded function in the upper half plane,
-          therefore the desired solution is <m>\phi(x,y)=e^{-y}\cos x</m>.
-        </p>
-      </solution>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use Poisson's integral formula for the upper half-plane to conclude
-          <me>
-            \phi(x,y) = e^{-y}\sin x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\sin t}{(x-t)^2+y^2}\,dt
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Show that the function <m>\phi(x,y)</m> given by Poisson's integral formula is harmonic by applying Leibniz's rule,
-          which permits you to write
-          <me>
-				\left(\frac{\partial ^2}{\partial x^2} + \frac{\partial ^2}{\partial y^2}\right) \phi(x,y) =
-				\frac{1}{\pi}\int_{-\infty}^{\infty} U(t)\left[\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial
-				y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt
-          </me>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-			 Apply Leibniz's rule <m>\phi _{xx}</m><m>+\phi _{yy}=\frac{1}{\pi} \int_{-\infty }^{\infty}U(t)
-			 \left[\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt</m>.
-			 The term in brackets in the integrand is
-			 <md>
-			 	<mrow>\frac{\partial^2}{\partial x^2}\frac{y}{(x-t)^2+y^2} \amp +
-						 \frac{\partial^2}{\partial y^2}\frac{y}{(x-t)^2+y^2}</mrow>
-				<mrow>\amp = \frac{2(3t^2y-6txy+3x^2y-y^{3})}{((x-t)^2+y^2)^3}</mrow>
-			   <mrow>\amp \qquad \qquad +\frac{2(-3t^2y+6txy-3x^2y + y^3)}{\big((x-t)^2+y^2\big)^3}</mrow>
-				<mrow>\amp = 0</mrow>
-			 </md>.
-			 Hence the integrand vanishes and <m>\phi_{xx}(x,y) + \phi_{yy}(x,y) = 0</m>, which implies that <m>\phi(x,y)</m> is harmonic.
-        </p>
-      </solution>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane.
-          If <m>U(t)</m> is an even function so that <m>U(-t) =U(t)</m>,
-          then show that the harmonic function
-          <m>\phi(x,y)</m> has the property <m>\phi(-x,y)=\phi(x,y)</m>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper half-plane.
-          If <m>U(t)</m> is an odd function so that for all <m>t</m> <m>U(-t) =-U(t)</m>,
-          then show that the harmonic function
-          <m>\phi(x,y)</m> has the property <m>\phi(-x,y) = -\phi(x,y)</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-			 <md>
-			 	<mrow>\phi(-x,y) \amp = \frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(-x-t)^2+y^2}
-					= \frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(x+t)^2+y^2}</mrow>
-				<mrow>\amp = \frac{y}{\pi}\int_{\infty}^{-\infty}\frac{U(-t)(-1)\,dt}{(x-t)^2+y^2}
-			 		=\frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(-t)\,dt}{(x-t)^2+y^2}</mrow>
-			 	<mrow>\amp = -\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{U(t)\,dt}{(x-t)^2+y^2} = -\phi(x,y).</mrow>
-		  </md>
-        </p>
-      </solution>
-    </exercise>
-  </exercises>
+			<p>
+				Both <m>e^y\cos x</m> and <m>e^{-y}\cos x</m> are harmonic in the upper half plane and satisfy the boundary
+				conditions.  Also, <m>\lim\limits_{y \to \infty }e^{-y}\cos x=0</m>. It can be show that the Poisson integral formula
+				defines a bounded function in the upper half plane, therefore the desired solution is <m>\phi(x,y)=e^{-y}\cos x</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use Poisson's integral formula for the upper half-plane to conclude
+				<me> 
+					\phi(x,y) = e^{-y}\sin x=\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{\sin t}{(x-t)^2+y^2}\,dt
+				</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that the function <m>\phi(x,y)</m> given by Poisson's integral formula is harmonic by applying Leibniz's rule,
+				which permits you to write
+				<me>
+					\left(\frac{\partial ^2}{\partial x^2} + \frac{\partial ^2}{\partial y^2}\right) \phi(x,y) =
+					\frac{1}{\pi}\int_{-\infty}^{\infty} U(t)\left[\left(\frac{\partial^2}{\partial x^2} +
+					\frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt
+				</me>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Apply Leibniz's rule <m>\phi _{xx}</m><m>+\phi _{yy} =
+				\frac{1}{\pi} \int_{-\infty }^{\infty}U(t) \left[\left(\frac{\partial^2}{\partial x^2} + 
+				\frac{\partial^2}{\partial y^2}\right) \frac{y}{(x-t)^2+y^2}\right]dt</m>. The term in brackets in the integrand is
+				<md>
+					<mrow>
+						\frac{\partial^2}{\partial x^2}\frac{y}{(x-t)^2+y^2} \amp +
+						 \frac{\partial^2}{\partial y^2}\frac{y}{(x-t)^2+y^2}
+					</mrow>
+					<mrow>
+						\amp = \frac{2(3t^2y-6txy+3x^2y-y^{3})}{((x-t)^2+y^2)^3}
+					</mrow>
+					<mrow>
+						\amp \qquad \qquad +\frac{2(-3t^2y+6txy-3x^2y + y^3)}{\big((x-t)^2+y^2\big)^3}
+					</mrow>
+					<mrow>
+						\amp = 0
+					</mrow>
+				</md>.
+				Hence the integrand vanishes and <m>\phi_{xx}(x,y) + \phi_{yy}(x,y) = 0</m>, which implies that <m>\phi(x,y)</m> is
+				harmonic.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper
+				half-plane. If <m>U(t)</m> is an even function so that <m>U(-t) =U(t)</m>, then show that the harmonic function
+				<m>\phi(x,y)</m> has the property <m>\phi(-x,y)=\phi(x,y)</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Let <m>U(t)</m> be a real-valued function that satisfies the conditions for Poisson's integral formula for the upper
+				half-plane. If <m>U(t)</m> is an odd function so that for all <m>t</m> <m>U(-t) =-U(t)</m>, then show that the
+				harmonic function <m>\phi(x,y)</m> has the property <m>\phi(-x,y) = -\phi(x,y)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<md>
+					<mrow>
+						\phi(-x,y) \amp = \frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(-x-t)^2+y^2} = 
+						\frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(t)\,dt}{(x+t)^2+y^2}
+					</mrow>
+					<mrow>
+						\amp = \frac{y}{\pi}\int_{\infty}^{-\infty}\frac{U(-t)(-1)\,dt}{(x-t)^2+y^2} =
+						\frac{y}{\pi}\int_{-\infty }^{\infty}\frac{U(-t)\,dt}{(x-t)^2+y^2}
+					</mrow>
+					<mrow>
+						\amp = -\frac{y}{\pi}\int_{-\infty}^{\infty}\frac{U(t)\,dt}{(x-t)^2+y^2} = -\phi(x,y).
+					</mrow>
+				</md>
+			</p>
+		</solution>
+	</exercise>
+</exercises>
 </section>
