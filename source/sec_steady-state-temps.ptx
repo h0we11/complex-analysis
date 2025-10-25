@@ -24,21 +24,21 @@
 		Expression <xref ref="across"/>, we find that the amount of heat flowing out of the right edge of the rectangle in <xref
 		ref="fig_ch-10-016">Figure</xref>(a) is approximately
       <md>
-		  <mrow xml:id="rightedge" number="yes">\mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y) +
-		  iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y</mrow>
-        <mrow>\amp = -KT_x(x+\Delta x, \, y) \Delta y</mrow>
+		  <mrow> \mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y)</mrow>
+		  <mrow> \amp \qquad \qquad+ iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y </mrow>
+        <mrow xml:id="rightedge" number="yes"> \amp = -KT_x(x+\Delta x, \, y) \Delta y </mrow>
       </md>,
       and the amount of heat flowing out of the left edge is
       <md>
-		  <mrow xml:id="leftedge" number="yes">\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet
-		  (-1+0i) \Delta y</mrow>
-        <mrow>\amp = KT_x(x,y) \Delta y</mrow>
+		  <mrow>\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet (-1+0i) \Delta y</mrow>
+        <mrow xml:id="leftedge" number="yes">\amp = KT_x(x,y) \Delta y</mrow>
       </md>.
     </p>
     <p>
       If we add the contributions in Equations <xref ref="rightedge"/> and <xref ref="leftedge"/> we get
       <men xml:id="leftright">
-        -K\left[\frac{T_x(x+\Delta x, \, y) - T_x(x,y)}{\Delta x}\right] \Delta x \Delta y \approx -KT_{xx}(x,y) \Delta x \Delta y
+        \!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+		  -K\left[\frac{T_x(x+\Delta x, \, y) - T_x(x,y)}{\Delta x}\right] \Delta x \Delta y \approx -KT_{xx}(x,y) \Delta x \Delta y
       </men>.
     </p>
     <figure xml:id="fig_ch-10-016">
@@ -48,102 +48,96 @@
     <p>
       Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
       <men xml:id="topbot">
-        -K\left[ \frac{T_y(x,y+\Delta y) -T_y(x,y)}{\Delta y}\right] \Delta y \Delta y \approx -KT_{yy}(x,y) \Delta x \Delta y
+			\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+			-K\left[ \frac{T_y(x,y+\Delta y) -T_y(x,y)}{\Delta y}\right] \Delta y \Delta y \approx -KT_{yy}(x,y) \Delta x \Delta y
       </men>.
     </p>
     <p>
-      Adding the quantities in Equations <xref ref="leftright"/> and <xref ref="topbot"/>,
-      we find that the net heat flowing out of the rectangle is approximated by the equation
+		Adding the quantities in Equations <xref ref="leftright"/> and <xref ref="topbot"/>, we find that the net heat flowing out
+		of the rectangle is approximated by the equation
       <me>
         -K[T_{xx}(x,y) +T_{yy}(x,y)] \Delta x \Delta y= 0
       </me>,
       which implies that <m>T(x,y)</m> satisfies Laplace's equation and is a harmonic function.
     </p>
     <p>
-      If the domain in which <m>T(x,y)</m> is defined is simply connected,
-      then a conjugate harmonic function <m>S(x,y)</m> exists, and
+		If the domain in which <m>T(x,y)</m> is defined is simply connected, then a conjugate harmonic function <m>S(x,y)</m>
+		exists, and
       <me>
         F(z)=T(x,y)+iS(x,y)
       </me>
-      is an analytic function.
-      The curves <m>T(x,y)=K_1</m> are called isothermals and are lines connecting points of the same temperature.
-      The curves <m>S(x,y)=K_2</m> are called heat flow lines,
-      and we can visualize the heat flowing along these curves from points of higher temperature to points of lower temperature.
-      The situation is illustrated in <xref ref="fig_ch-10-016">Figure</xref>(b).
+		is an analytic function. The curves <m>T(x,y)=K_1</m> are called isothermals and are lines connecting points of the same
+		temperature. The curves <m>S(x,y)=K_2</m> are called heat flow lines, and we can visualize the heat flowing along these
+		curves from points of higher temperature to points of lower temperature. The situation is illustrated in <xref
+		ref="fig_ch-10-016">Figure</xref>(b).
     </p>
     <p>
-      Boundary value problems for steady state temperatures are realizations of the Dirichlet problem where the value of the harmonic function <m>T(x,y)</m> is interpreted as the temperature at the point <m>(x,y)</m>.
+		Boundary value problems for steady state temperatures are realizations of the Dirichlet problem where the value of the
+		harmonic function <m>T(x,y)</m> is interpreted as the temperature at the point <m>(x,y)</m>.
     </p>
     <example>
       <statement>
         <p>
-          Suppose that two parallel planes are perpendicular to the <m>z</m> plane and pass through the horizontal lines <m>y=a</m> and <m>y=b</m> and that the temperature is held constant at the values
-          <m>T(x,a)=T_1</m> and <m>T(x,b) =T_2</m>,
-          respectively, on these planes.
-          Then <m>T</m> is given by
+			 Suppose that two parallel planes are perpendicular to the <m>z</m> plane and pass through the horizontal lines
+			 <m>y=a</m> and <m>y=b</m> and that the temperature is held constant at the values <m>T(x,a)=T_1</m> and 
+			 <m>T(x,b)=T_2</m>, respectively, on these planes. Show that <m>T</m> is given by
           <me>
-            T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a)
+            T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a).
           </me>
         </p>
-        <solution>
-          <p>
-            A reasonable assumption is that the temperature at all points on the plane passing through the line <m>y=y_0</m> is constant.
-            Hence <m>T(x,y) =t(y)</m>, where <m>t(y)</m> is a function of <m>y</m> alone.
-            Laplace's equation implies that <m>t,''(y) =0</m>,
-            and an argument similar to that in <xref ref="ex_10_1">Example</xref>
-            will show that the solution <m>T(x,y)</m> has the form given in the preceding equation.
-          </p>
-        </solution>
-        <p>
-          The isothermals <m>T(x,y) =\alpha</m> are easily seen to be horizontal lines.
-          The conjugate harmonic function is
-          <me>
-            S(x,y) =\frac{T_1-T_2}{b-a}x
-          </me>,
-          and the heat flow lines <m>S(x,y) =\beta</m> are vertical segments between the horizontal lines.
-          If <m>T_1>T_2</m>,
-          then the heat flows along these segments from the plane through <m>y=a</m> to the plane through <m>y=b</m>,
-          as illustrated in <xref ref="fig_ch-10-017">Figure</xref>.
-        </p>
       </statement>
+		<solution>
+			<p>
+				A reasonable assumption is that the temperature at all points on the plane passing through the line <m>y=y_0</m> is
+				constant. Hence <m>T(x,y) =t(y)</m>, where <m>t(y)</m> is a function of <m>y</m> alone. Laplace's equation implies
+				that <m>t,''(y) =0</m>, and an argument similar to that in <xref ref="ex_10_1">Example</xref> will show that the
+				solution <m>T(x,y)</m> has the form given in the preceding equation.
+			</p>
+		</solution>
+			<p>
+				The isothermals <m>T(x,y) =\alpha</m> are easily seen to be horizontal lines. The conjugate harmonic function is
+				<me>
+					S(x,y) =\frac{T_1-T_2}{b-a}x
+				</me>,
+				and the heat flow lines <m>S(x,y) =\beta</m> are vertical segments between the horizontal lines. If <m>T_1>T_2</m>,
+				then the heat flows along these segments from the plane through <m>y=a</m> to the plane through <m>y=b</m>, as
+				illustrated in <xref ref="fig_ch-10-017">Figure</xref>.
+			</p>
     </example>
-    <figure xml:id="fig_ch-10-017">
-      <caption>The temperature between parallel planes where <m>T_1>T_2</m></caption>
-      <image width="80%" source="figs/ch-10/ch-10-fig-017.svg"/>
-    </figure>
+	 <figure xml:id="fig_ch-10-017">
+	 	<caption>The temperature between parallel planes where <m>T_1>T_2</m></caption>
+			<image width="80%" source="figs/ch-10/ch-10-fig-017.svg"/>
+	 </figure>
     <example>
       <statement>
-        <p>
-          Find the temperature <m>T(x,y)</m> at each point in the upper half-plane
-          <m>\mathrm{Im}(z) > 0</m> if the temperature along the <m>x</m> axis satisfies
-          <me>
-            T(x,0) = T_1  \text{ for }   x>0,  \text{ and }   T(x,0) = T_2  \text{ for }   x\lt 0
-          </me>.
-        </p>
-        <solution>
-          <p>
-            Since <m>T(x,y)</m> is a harmonic function,
-            this problem is an example of a Dirichlet problem.
-            From Example 11.2, it follows that the solution is
-            <me>
-              T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z).
-            </me>
-          </p>
-        </solution>
-        <p>
-          The isotherms <m>T(x,y) =\alpha</m> are rays emanating from the origin.
-          The conjugate harmonic function is <m>S(x,y) = \frac{1}{\pi}(T_1-T_2)</m> <m>\ln \,|z|</m>,
-          and the heat flow lines <m>S(x,y) =\beta</m> are semicircles centered at the origin.
-          If <m>T_1>T_2</m>,
-          then the heat flows counterclockwise along the semicircles,
-          as shown in <xref ref="fig_ch-10-018">Figure</xref>.
-        </p>
+			<p>
+				Find the temperature <m>T(x,y)</m> at each point in the upper half-plane <m>\mathrm{Im}(z) > 0</m> if the temperature
+				along the <m>x</m> axis satisfies
+				<me>
+					T(x,0) = T_1  \text{ for }   x>0,  \text{ and }   T(x,0) = T_2  \text{ for }   x\lt 0
+				</me>.
+			</p>
       </statement>
+		<solution>
+			<p>
+				Since <m>T(x,y)</m> is a harmonic function, this problem is an example of a Dirichlet problem. From Example 11.2, it
+				follows that the solution is
+            <me>
+					T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z).
+            </me>
+			</p>
+		</solution>
+			<p>
+				The isotherms <m>T(x,y) =\alpha</m> are rays emanating from the origin. The conjugate harmonic function is 
+				<m>S(x,y) = \frac{1}{\pi}(T_1-T_2)</m> <m>\ln \,|z|</m>, and the heat flow lines <m>S(x,y)=\beta</m> are semicircles
+				centered at the origin. If <m>T_1>T_2</m>, then the heat flows counterclockwise along the semicircles, as shown in
+				<xref ref="fig_ch-10-018">Figure</xref>.
+        </p>
     </example>
     <figure xml:id="fig_ch-10-018">
-      <caption>The temperature <m>T(x,y)</m> in the upper half-plane where <m>T_1>T_2</m></caption>
-      <image width="80%" source="figs/ch-10/ch-10-fig-018.svg"/>
-    </figure>
+	 	<caption>The temperature <m>T(x,y)</m> in the upper half-plane where <m>T_1>T_2</m></caption>
+		<image width="80%" source="figs/ch-10/ch-10-fig-018.svg"/>
+	 </figure>
     <example>
       <statement>
         <p>
@@ -238,32 +232,31 @@
       <image width="80%" source="figs/ch-10/ch-10-fig-020.svg"/>
     </figure>
     <p>
-      The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal derivative of <m>T^*(u,v)</m> is zero.
+		The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal
+		derivative of <m>T^*(u,v)</m> is zero.
       That is,
       <men xml:id="normdif">
         \frac{\partial T^*}{\partial n}=T_{v}^*(u,0) = 0
       </men>,
-      where <m>n</m> is a coordinate measured perpendicular to the segment.
-      We can easily verify that the function
+      where <m>n</m> is a coordinate measured perpendicular to the segment. We can easily verify that the function
       <me>
         T^*(u,v) = T_1+(T_2-T_1)u
       </me>
-      satisfies the conditions stated in <xref ref="Bddvals2">Equations</xref>
-      and <xref ref="normdif"></xref> for region <m>G</m>.
-      Therefore, using <xref ref="conmapz2">Equation</xref>,
-      we find that the solution in <m>D</m> is
+		satisfies the conditions stated in <xref ref="Bddvals2">Equations</xref> and <xref ref="normdif"></xref> for region
+		<m>G</m>. Therefore, using <xref ref="conmapz2">Equation</xref>, we find that the solution in <m>D</m> is
       <me>
-        T(x,y) = T_1 + (T_2-T_1) u(x,y)
+        T(x,y) = T_1 + (T_2-T_1) u(x,y).
       </me>
     </p>
     <p>
-      The isothermals <m>T(x,y) =</m> constant and their images under <m>w=f(z)</m> are also illustrated in <xref ref="fig_ch-10-020">Figure</xref>.
+		The isothermals <m>T(x,y) =</m> constant and their images under <m>w=f(z)</m> are also illustrated in <xref
+		ref="fig_ch-10-020">Figure</xref>.
     </p>
     <example xml:id="ex_10_17">
       <statement>
         <p>
-          Find the steady state temperature <m>T(x,y)</m> for the domain <m>D</m> consisting of the upper half-plane <m>\mathrm{Im}(z) > 0</m>,
-          where <m>T(x,y)</m> has the boundary conditions
+			 Find the steady state temperature <m>T(x,y)</m> for the domain <m>D</m> consisting of the upper half-plane
+			 <m>\mathrm{Im}(z) > 0</m>, where <m>T(x,y)</m> has the boundary conditions
           <md>
             <mrow>T(x,0) \amp = 1  \text{ for }   x > 1,  \text{ and }   T(x,0) = -1  \text{ for }   x \lt  -1;</mrow>
             <mrow>\frac{\partial T}{\partial n} \amp = T_y(x,0) = 0  \text{ for }   -1 \lt  x \lt  1</mrow>
@@ -273,25 +266,29 @@
       </statement>
       <solution>
         <p>
-          The mapping <m>w=</m> <m>\mathrm{Arcsin}(z)</m> conformally maps <m>D</m> onto the semi-infinite strip <m>v>0,\,-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>,
-          where the new problem is to find the steady state temperature
-          <m>T^*(u,v)</m> that has the boundary conditions
+			 The mapping <m>w=</m> <m>\mathrm{Arcsin}(z)</m> conformally maps <m>D</m> onto the semi-infinite strip
+			 <m>v>0,\,-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>, where the new problem is to find the steady state temperature
+			 <m>T^*(u,v)</m> that has the boundary conditions
           <md>
-            <mrow>T^*\left(\frac{\pi}{2},v\right) \amp = 1  \text{ for }   v>0,  \text{ and }   T^*\left(-\frac{\pi}{2},v\right) = -1  \text{ for }   v>0;</mrow>
-            <mrow>\frac{\partial T^*}{\partial n} \amp = T_{v}^*(u,0) =0  \text{ for }   -\frac{\pi}{2} \lt u \lt \frac{\pi}{2}</mrow>
+				<mrow>T^*\left(\frac{\pi}{2},v\right) \amp = 1 \text{ for } \; v>0, \; \text{ and } \; 
+					T^*\left(-\frac{\pi}{2},v\right) = -1 \; \text{ for } \;  v>0;
+				</mrow>
+            <mrow>
+					\frac{\partial T^*}{\partial n} \amp = T_{v}^*(u,0) =0 \; \text{ for } \; 
+					-\frac{\pi}{2} \lt u \lt \frac{\pi}{2}
+				</mrow>
           </md>.
         </p>
         <p>
-          Using the result of <xref ref="ex_10_1">Example</xref>,
-          we can easily obtain the solution:
+          Using the result of <xref ref="ex_10_1">Example</xref>, we can easily obtain the solution:
           <me>
-            T^*(u,v) =\frac{2}{\pi}u
+            T^*(u,v) =\frac{2}{\pi}u.
           </me>
         </p>
         <p>
           Therefore the solution in <m>D</m> is
           <me>
-            T(x,y) = \frac{2}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)
+            T(x,y) = \frac{2}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big).
           </me>
         </p>
         <p>
@@ -306,7 +303,8 @@
       </solution>
     </example>
     <figure xml:id="fig_ch-10-021">
-      <caption>The temperature <m>T(x,y)</m> with <m>T_y(x,0)=0</m> for <m>-1\lt x\lt 1</m>, and boundary values <m>T(x,0)=-1</m> for <m>x\lt -1</m> and <m>T(x,0)=1</m>,
+		<caption>The temperature <m>T(x,y)</m> with <m>T_y(x,0)=0</m> for <m>-1\lt x\lt 1</m>, and boundary values <m>T(x,0)=-1</m>
+		for <m>x\lt -1</m> and <m>T(x,0)=1</m>,
       for <m>x>1</m></caption>
       <image width="73%" source="figs/ch-10/ch-10-fig-021.svg"/>
     </figure>
@@ -315,17 +313,23 @@
       <exercise>
         <statement>
           <p>
-            Show that <m>H(x,y,z)=\frac{1}{\sqrt{x^2+y^2+z^2}}</m> satisfies Laplace's equation
-            <m>H_{xx}+H_{yy}+H_{zz}=0</m> in three-dimensional Cartesian space,
-            but that <m>h(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> <em>does not</em>
-            satisfy equation <m>h_{xx}+h_{yy}=0</m> in two-dimensional Cartesian space.
+				Show that <m>H(x,y,z)=\frac{1}{\sqrt{x^2+y^2+z^2}}</m> satisfies Laplace's equation <m>H_{xx}+H_{yy}+H_{zz}=0</m> in
+				three-dimensional Cartesian space, but that <m>h(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> <em>does not</em> satisfy equation
+				<m>h_{xx}+h_{yy}=0</m> in two-dimensional Cartesian space.
           </p>
         </statement>
         <solution>
           <p>
-            For <m>H(x,y,z)=\frac{1}{\sqrt{x^2+y^2+z^2}}</m>,
-            we get <m>H_{xx}+H_{yy}+H_{zz}=\frac{2x^2-y^2-z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}}+\frac{-x^2+2y^2-z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}} + \frac{-x^2-y^2+2z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}}=0</m>,
-            and for <m>h(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> we have <m>h_{xx}+h_{yy}=\frac{2x^2-y^2}{(x^2+y^2)^{\frac{5}{2}}}+\frac{-x^2+2y^2}{(x^2+y^2)^{\frac{5}{2}}} = \frac{1}{(x^2+y^2)^{\frac{3}{2}}} \ne 0</m>.
+				For <m>H(x,y,z)=\frac{1}{\sqrt{x^2+y^2+z^2}}</m>, we get
+				<m>
+					H_{xx}+H_{yy}+H_{zz}=\frac{2x^2-y^2-z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}} +
+					\frac{-x^2+2y^2-z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}} + \frac{-x^2-y^2+2z^2}{(x^2+y^2+z^2)^{\frac{5}{2}}}=0
+				</m>, 
+				and for <m>h(x,y)=\frac{1}{\sqrt{x^2+y^2}}</m> we have
+				<m>
+					h_{xx}+h_{yy}=\frac{2x^2-y^2}{(x^2+y^2)^{\frac{5}{2}}}+\frac{-x^2+2y^2}{(x^2+y^2)^{\frac{5}{2}}} =
+					\frac{1}{(x^2+y^2)^{\frac{3}{2}}} \ne 0
+				</m>.
           </p>
         </solution>
       </exercise>
