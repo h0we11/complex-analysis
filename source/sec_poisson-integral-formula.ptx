@@ -1,10 +1,9 @@
 <section xml:id="sec_poisson-integral-formula">
   <title>Poisson's Integral Formula</title>
   <p>
-    The Dirichlet problem for the upper half-plane
-    <m>\mathrm{Im}(z)>0</m> is to find a function
-    <m>\phi(x,y)</m> that is harmonic in the upper half-plane and has the boundary values <m>\phi(x,0)=U(x)</m>,
-    where <m>U(x)</m> is a real-valued function of the real variable <m>x</m>.
+	 The Dirichlet problem for the upper half-plane <m>\mathrm{Im}(z)>0</m> is to find a function <m>\phi(x,y)</m> that is harmonic
+	 in the upper half-plane and has the boundary values <m>\phi(x,0)=U(x)</m>, where <m>U(x)</m> is a real-valued function of the
+	 real variable <m>x</m>.
   </p>
   <theorem>
     <title>Poisson's integral formula</title>
@@ -96,15 +95,15 @@
       <p>
         Using <xref ref="PIfun">Equation</xref>, we obtain
         <me>
-          \phi(x,y) = \frac{y}{\pi}\int_{-1}^1\frac{1}{(x-t)^2+y^2}\,dt = \frac{1}{\pi}\int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
+          \phi(x,y) = \frac{y}{\pi}\int_{-1}^1\frac{1}{(x-t)^2+y^2}\,dt = \frac{1}{\pi}\int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt.
         </me>
       </p>
       <p>
-        Using the antiderivative in <xref ref="antideriv">Equation</xref>,
-        we write this solution as
+        Using the antiderivative in <xref ref="antideriv">Equation</xref>, we write this solution as
         <md>
           <mrow>\phi(x,y)  \amp = \left. \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-t}\right)\right|_{t=-1}^{t=1}</mrow>
-          <mrow>\amp = \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)-\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
+			 <mrow>\amp =
+			 \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)-\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
         </md>.
       </p>
     </solution>
@@ -124,12 +123,14 @@
         Using <xref ref="PIfun">Equation</xref>, we obtain
         <md>
           <mrow>\phi(x,y) \amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{t}{(x-t)^2+y^2}\,dt</mrow>
-          <mrow>\amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{(x-t)(-1)}{(x-t)^2+y^2}\,dt + \frac{x}{\pi} \int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt</mrow>
+			 <mrow>
+			 	\amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{(x-t)(-1)}{(x-t)^2+y^2}\,dt + 
+				\frac{x}{\pi} \int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
+			 </mrow>
         </md>.
       </p>
       <p>
-        Using calculus techniques and <xref ref="antideriv">Equations</xref>,
-        we write the solution as
+        Using calculus techniques and <xref ref="antideriv">Equations</xref>, we write the solution as
         <md>
           <mrow>\phi(x,y) = \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] \amp + 
 			 	\frac{x}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
@@ -137,17 +138,19 @@
         </md>.
       </p>
       <p>
-        The function <m>\phi(x,y)</m> is continuous in the upper half-plane,
-        and on the boundary <m>\phi(x,0)</m>,
-        it has discontinuities at <m>x=\pm 1</m> on the real axis.
-        The graph in <xref ref="fig_ch-10-014">Figure</xref> shows this phenomenon.
+		  The function <m>\phi(x,y)</m> is continuous in the upper half-plane, and on the boundary <m>\phi(x,0)</m>, it has
+		  discontinuities at <m>x=\pm 1</m> on the real axis. The graph in <xref ref="fig_ch-10-014">Figure</xref> shows this
+		  phenomenon.
       </p>
+		<figure xml:id="fig_ch-10-014">
+			<caption>
+				<m>\phi(x,y)</m> with boundary values <m>\phi(x,0) =x</m> for <m>|x| \lt  1</m>, and <m>\phi(x,0)=0</m> for 
+				<m>|x|>1</m>
+			</caption>
+			<image width="60%" source="figs/ch-10/ch-10-fig-014.svg"/>
+		</figure>
     </solution>
   </example>
-  <figure xml:id="fig_ch-10-014">
-    <caption><m>\phi(x,y)</m> with boundary values <m>\phi(x,0) =x</m> for <m>|x| \lt  1</m>, and <m>\phi(x,0)=0</m> for <m>|x|>1</m></caption>
-    <image width="60%" source="figs/ch-10/ch-10-fig-014.svg"/>
-  </figure>
   <example>
     <statement>
       <p>
