@@ -75,50 +75,46 @@
           </men>,
           where the coefficients <m>a_n</m> and <m>b_n</m> are given by the so-called Euler's Formulas:
           <men xml:id="FourierCoeffA">
-            a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos nt\,dt  \text{ for }   n=0,1, \ldots
+            a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos nt\,dt \quad  \text{for} \quad  n=0,1, \ldots \, ,
           </men>
           and
           <men xml:id="FourierCoeffB">
-            b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t) \sin nt\,dt  \text{ for }   n=1,2, \ldots \,
+            b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \ldots \,
           </men>.
         </p>
       </statement>
     </definition>
     <p>
-      The factor <m>\frac{1}{2}</m> in the constant term
-      <m>\frac{a_0}{2}</m> on the right side of Equation <xref ref="FourierSdef"/> has been introduced for convenience so that <m>a_0</m> could be obtained from the general formula in Equation <xref ref="FourierCoeffA"/> by setting <m>j=0</m>.
-      The reasons for this will be explained shortly.
-      The next result discusses convergence of the Fourier series.
+		The factor <m>\frac{1}{2}</m> in the constant term <m>\frac{a_0}{2}</m> on the right side of Equation 
+		<xref ref="FourierSdef"/> has been introduced for convenience so that <m>a_0</m> could be obtained from the general formula
+		in Equation <xref ref="FourierCoeffA"/> by setting <m>j=0</m>. The reasons for this will be explained shortly. The next
+		result discusses convergence of the Fourier series.
     </p>
     <theorem xml:id="thm_fourier-expansion">
       <title>Fourier Expansion</title>
       <statement>
         <p>
-          Assume that <m>S(t)</m> is the Fourier series for <m>U(t)</m>.
-          If <m>U\,'(t)</m> is piecewise continuous on <m>[-\pi ,\pi]</m>,
-          then <m>S(t)</m> is convergent for all
-          <m>t \in [-\pi,\pi ]</m> where <m>U(t)</m> is continuous.
-          If <m>t=a</m> is a point of discontinuity of <m>U</m>, then
+			 Assume that <m>S(t)</m> is the Fourier series for <m>U(t)</m>. If <m>U\,'(t)</m> is piecewise continuous on 
+			 <m>[-\pi ,\pi]</m>, then <m>S(t)</m> is convergent for all <m>t \in [-\pi,\pi ]</m> where <m>U(t)</m> is continuous. If
+			 <m>t=a</m> is a point of discontinuity of <m>U</m>, then
           <me>
             S(a) = \frac{U(a^-) +U(a^+)}{2}
           </me>,
-          where <m>U(a^-)</m> and <m>U(a^+)</m> denote the left- and right-hand limits,
-          respectively.
-          With this understanding, we have the Fourier expansion:
+			 where <m>U(a^-)</m> and <m>U(a^+)</m> denote the left- and right-hand limits, respectively. With this understanding, we
+			 have the Fourier expansion:
           <men xml:id="FourierExpansion">
-            U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)
-          </men>.
+            U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt).
+          </men>
         </p>
       </statement>
     </theorem>
     <example xml:id="ex_11_1">
       <statement>
         <p>
-          Show that the function <m>U(t) =\frac{t}{2}</m> for <m>t \in (-\pi ,\pi)</m>,
-          extended periodically by the equation <m>U(t+2\pi)=U(t)</m>,
-          has the Fourier series expansion
+			 Show that the function <m>U(t) =\frac{t}{2}</m> for <m>t \in (-\pi ,\pi)</m>, extended periodically by the equation
+			 <m>U(t+2\pi)=U(t)</m>, has the Fourier series expansion
           <me>
-            U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt
+            U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt.
           </me>
         </p>
       </statement>
@@ -128,15 +124,15 @@
           <md>
 				<mrow>a_n \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\cos nt\,dt</mrow>
 				<mrow>\amp = \left.\left(\frac{t\sin nt }{2\pi n} + \frac{\cos nt}{2\pi n^2}\right)\right|_{-\pi}^{\pi}</mrow>
-				<mrow>\amp = 0  \quad \text{for} \quad   n=1,2,\ldots </mrow>,
+				<mrow>\amp = 0  \quad \text{for} \quad   n=1,2,\ldots \, ,</mrow>
 			 </md>
 			 and then using Formula <xref ref="FourierCoeffB"/> we get
           <md>
 				<mrow>b_n \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\sin nt\,dt</mrow>
 				<mrow>\amp = \left.\left(\frac{ -t\cos nt}{2\pi n}+\frac{\sin nt}{2\pi n^2}\right)\right|_{-\pi}^{\pi}</mrow>
             <mrow>\amp =\frac{-\cos n\pi}{n}</mrow>
-				<mrow>\amp =\frac{(-1)^{n+1}}{n} \quad \text{for} \quad   n=1,2,\ldots</mrow>
-          </md>.
+				<mrow>\amp =\frac{(-1)^{n+1}}{n} \quad \text{for} \quad   n=1,2,\ldots \, .</mrow>
+          </md>
         </p>
         <p>
           The coefficient <m>a_0</m> is computed by the calculation
@@ -163,9 +159,9 @@
     <theorem>
       <statement>
         <p>
-          If <m>U(t)</m> and <m>V(t)</m> have Fourier series representations,
-          then their sum <m>W(t)=U(t)+V(t)</m> has a Fourier series representation,
-          and the Fourier coefficients of <m>W</m> are obtained by adding the corresponding coefficients of <m>U</m> and <m>V</m>.
+			 If <m>U(t)</m> and <m>V(t)</m> have Fourier series representations, then their sum <m>W(t)=U(t)+V(t)</m> has a Fourier
+			 series representation, and the Fourier coefficients of <m>W</m> are obtained by adding the corresponding coefficients of
+			 <m>U</m> and <m>V</m>.
         </p>
       </statement>
     </theorem>
@@ -173,19 +169,16 @@
       <title>Fourier Cosine Series</title>
       <statement>
         <p>
-          Assume that <m>U(x)</m> is an even function.
-          If <m>U(t)</m> has period <m>2\pi</m>,
-          and <m>U(t)</m> and <m>U\,'(t)</m> are piecewise continuous,
-          then the Fourier series for <m>U(t)</m> involves only the cosine terms,
-          <em>i.e.</em>,
-          <m>b_n=0</m>  for all <m>n</m>:
+			 Assume that <m>U(x)</m> is an even function. If <m>U(t)</m> has period <m>2\pi</m>, and <m>U(t)</m> and <m>U\,'(t)</m>
+			 are piecewise continuous, then the Fourier series for <m>U(t)</m> involves only the cosine terms, that is, 
+          <m>b_n=0\;</m> for all <m>\; n</m>:
           <me>
-            U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt
-          </me>,
+            U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt,
+          </me>
           where
           <me>
-            a_n = \frac{2}{\pi}\int_0^{\pi}U(t)\cos nt\,dt,  \text{ for }   n=0,1,\ldots \
-          </me>,
+            a_n = \frac{2}{\pi}\int_0^{\pi}U(t)\cos nt\,dt, \quad \text{for} \quad n=0,1,\ldots \, ,
+          </me>
         </p>
       </statement>
     </theorem>
