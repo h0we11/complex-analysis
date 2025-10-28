@@ -261,14 +261,16 @@
   <subsection xml:id="subsec_euler-formula">
     <title>Proof of Euler's Formulas</title>
     <p>
-      The following intuitive proof will justify the Euler formulas given in Equations <xref ref="FourierCoeffA"/> and <xref ref="FourierCoeffB"/> To determine <m>a_0</m> we integrate both <m>U(t)</m> and the Fourier series representation in Equation <xref ref="FourierSdef"/> from <m>-\pi</m> to <m>\pi</m>,
-      which results in
+		The following intuitive proof will justify the Euler formulas given in Equations <xref ref="FourierCoeffA"/> and 
+		<xref ref="FourierCoeffB"/> To determine <m>a_0</m> we integrate both <m>U(t)</m> and the Fourier series representation in
+		Equation <xref ref="FourierSdef"/> from <m>-\pi</m> to <m>\pi</m>, which results in
       <me>
         \int_{-\pi}^{\pi}U(t)\,dt = \int_{-\pi}^{\pi}\left[\frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)\right]dt
       </me>.
       Next, we perform integration term by term, and we obtain
       <me>
-        \int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + \sum_{n=1}^{\infty}a_n\int_{-\pi}^{\pi}\cos nt\,dt + \sum\limits_{n=1}^{\infty}b_n\int_{-\pi}^{\pi}\sin nt\,dt
+		  \int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + \sum_{n=1}^{\infty}a_n\int_{-\pi}^{\pi}\cos nt\,dt +
+		  \sum\limits_{n=1}^{\infty}b_n\int_{-\pi}^{\pi}\sin nt\,dt
       </me>.
       The value of the first integral on the right side of this equation is <m>2\pi</m> and all the other integrals are zero.
       Hence we obtain the desired formula for <m>a_0</m>:
@@ -324,169 +326,196 @@
       </md>.
     </p>
     <p>
-      Therefore, we can use the results of Equations <xref ref="CoeffA0"/><ndash/><xref ref="CoeffA3"/> in Equation <xref ref="CoeffA"/> to obtain
+		Therefore, we can use the results of Equations <xref ref="CoeffA0"/><ndash/><xref ref="CoeffA3"/> in Equation 
+		<xref ref="CoeffA"/> to obtain
       <me>
         \int_{-\pi}^{\pi}U(t)\cos mt\,dt=\pi a_m  \text{ for }   m=0,1,2, \ldots
       </me>,
-      and Equation <xref ref="FourierCoeffA"/> is established.
-      We leave it as an exercise to establish Euler's <xref ref="FourierCoeffB">Formula</xref>
-      for the coefficients <m>\left\{ b_n\right\}</m>.
-      A complete discussion of the details of the proof of <xref ref="thm_fourier-expansion">Theorem</xref>
-      can be found in some advanced texts.
-      See for instance, John W. Dettman,
-      <xref ref="ch_residue"/> in <em>Applied Complex Variables,</em>
-      The Macmillan Company, New York, 1965.
+		and Equation <xref ref="FourierCoeffA"/> is established. We leave it as an exercise to establish Euler's <xref
+		ref="FourierCoeffB">Formula</xref> for the coefficients <m>\left\{ b_n\right\}</m>. A complete discussion of the details of
+		the proof of <xref ref="thm_fourier-expansion">Theorem</xref> can be found in some advanced texts. See for instance, John W.
+		Dettman, Chapter 8, in <em>Applied Complex Variables,</em> The Macmillan Company, New York, 1965.
     </p>
-    <exercises xml:id="exercises_fourier-series">
-      <title>Exercises</title>
-      <task>
-        <p>
-          For Exercises 1<ndash/>2 and 6<ndash/>11,
-          find the Fourier series representation.
-        </p>
-      </task>
-      <task>
-        <p>
-			 <m>U(t) = \begin{cases}1 \;\;\, \text{ for } 0\lt t\lt \pi, \\ -1 \text{ for } -\pi \lt t\lt 0. \end{cases}</m> See
-			 <xref ref="fig_ch-11-04">Figure</xref>.
-        </p>
-        <solution>
-          <p>
-            <m>U(t) =\frac{4}{\pi}\sum\limits_{n=1}^{\infty }\frac{1}{2n-1}\sin [(2n-1)t]</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-			 <m>V(t) = \begin{cases}\frac{\pi}{2}-t \text{ for } 0 \le t \le \pi . \\ \frac{\pi}{2}+t \text{ for } -\pi \lt t\lt 0.
-			 \end{cases}</m> See <xref ref="fig_ch-11-05">Figure</xref>.
-        </p>
-        <figure xml:id="fig_ch-11-04">
-          <caption>Graph of <m>U(t)</m> for Exercise 1</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-04.svg"/>
-        </figure>
-        <figure xml:id="fig_ch-11-05">
-          <caption>Graph of <m>V(t)</m> for Exercise 2</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-05.svg"/>
-        </figure>
-      </task>
-      <task>
-        <p>
-          For Exercises 1 and 2, verify that
-          <m>U(t) =-V'(t)</m> by termwise differentiation of the Fourier series representation for <m>V(t)</m>.
-        </p>
-        <solution>
+<exercises xml:id="exercises_fourier-series">
+<title>Exercises</title>
+	<introduction>
+		<p>
+			For Exercises 1<ndash/>2 and 6<ndash/>11, find the Fourier series representation.
+		</p>
+	</introduction>
+	<exercise>
+		<p>
+			<m>U(t)= \begin{cases}
+							\;\; 1 \quad \text{for} \quad 0\lt t\lt \pi, \\ 
+							-1 \quad \text{for} \quad -\pi \lt t\lt 0. \quad 
+						\end{cases}</m>
+			See <xref ref="fig_ch-11-04">Figure</xref>.
+		</p>
+      <figure xml:id="fig_ch-11-04">
+			<caption>Graph of <m>U(t)</m> for Exercise 1</caption>
+			<image width="45%" source="figs/ch-11/ch-11-fig-04.svg"/>
+		</figure>
+		<solution>
+			<p>
+				<m>U(t) =\frac{4}{\pi}\sum\limits_{n=1}^{\infty }\frac{1}{2n-1}\sin [(2n-1)t]</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p>
+			<m>V(t)= 
+						\begin{cases}
+							\frac{\pi}{2}-t \quad \text{for} \quad 0 \le t \le \pi. \\ 
+							\frac{\pi}{2}+t \quad \text{for} \quad -\pi \lt t\lt 0.
+						\end{cases}</m> 
+			See <xref ref="fig_ch-11-05">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-11-05">
+			<caption>Graph of <m>V(t)</m> for Exercise 2</caption>
+			<image width="45%" source="figs/ch-11/ch-11-fig-05.svg"/>
+		</figure>
+	</exercise>
+	<exercise>
+		<p>
+			For Exercises 1 and 2, verify that <m>U(t) =-V'(t)</m> by termwise differentiation of the Fourier series representation
+			for <m>V(t)</m>.
+		</p>
+		<solution>
+			<p>
 				<md>
 					<mrow>V\,'(t)\amp =\frac{4}{\pi}\sum\limits_{n=1}^{\infty }\frac{1}{(2n-1)^2}\frac{d}{dt}\cos[(2n-1)t]</mrow>
 					<mrow>\amp= -\frac{4}{\pi} \sum\limits_{n=1}^{\infty}\frac{1}{2n-1}\sin[(2n-1)t]</mrow>
 					<mrow>\amp= -U(t).</mrow>
 				</md>
-        </solution>
-      </task>
-      <task>
-        <p>
-			 For Exercise 1, set <m>t=\frac{\pi}{2}</m> and conclude that
-			 <m>\frac{\pi}{4}=\sum\limits_{j=1}^{\infty}\frac{(-1)^{j-1}}{2j-1}</m>.
-        </p>
-      </task>
-      <task>
-        <p>
-          For Exercise 2, set <m>t=0</m> and conclude that <m>\frac{\pi^2}{8} = \sum\limits_{j=1}^{\infty}\frac{1}{(2j-1)^2}</m>.
-        </p>
-        <solution>
-				<m>\frac{\pi }{2} = V(0) = \frac{4}{\pi}\sum\limits_{n=1}^{\infty} \frac{1}{(2n-1)^2}\cos(0)=\frac{4}{\pi
-				}\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}</m>.
-            Now solve for <m>\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}</m>.
-        </solution>
-      </task>
-      <task>
-        <p>
-			 <m>U(t) = \begin{cases}-1 \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ \;\;\, 1 \text{ for } -\frac{\pi}{2}\lt t \lt
-						\frac{\pi}{2}, \\ -1 \text{ for } -\pi \lt t \lt -\frac{\pi}{2}. \end{cases}</m> See <xref
-						ref="fig_ch-11-06">Figure</xref>.
-					 </p>
-				  </task>
-				  <task>
-					 <p>
-						<m>U(t) = \begin{cases}\pi -t \text{ for } \frac{\pi}{2}\lt t\lt \pi, \\ t \text{ for } -\frac{\pi}{2}\lt t\lt
-			 \frac{\pi}{2}, \\ -\pi -t \text{ for } -\pi \lt t \lt -\frac{\pi}{2}. \end{cases}</m>
-			 See <xref ref="fig_ch-11-07">Figure</xref>.
-        </p>
-        <solution>
-          <p>
-            <m>U(t)=\frac{4}{\pi}\sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{(2n-1)^2}\sin[(2n-1)t]</m>.
-          </p>
-        </solution>
-        <figure xml:id="fig_ch-11-06">
-          <caption>Graph of <m>U(t)</m> for Exercise 6</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-06.svg"/>
-        </figure>
-        <figure xml:id="fig_ch-11-07">
-          <caption>Graph of <m>U(t)</m> for Exercise 7</caption>
-          {0.5\linewidth}
-          <image width="45%" source="figs/ch-11/ch-11-fig-07.svg"/>
-        </figure>
-      </task>
-      <task>
-        <p>
-          <m>U(t)</m>,
-          as defined in <xref ref="fig_ch-11-08">Figure</xref>.
-        </p>
-      </task>
-      <task>
-        <p>
-			 <m>U(t) = \begin{cases}1 \;\;\, \text{ for } \frac{\pi}{2} \lt t \lt \pi, \\ 0 \;\;\, \text{ for } -\frac{\pi}{2}\lt
-			 t\lt \frac{\pi}{2}, \\ -1 \text{ for } -\pi \lt t \lt \frac{-\pi}{2}. \end{cases}</m>
-			 See <xref ref="fig_ch-11-09">Figure</xref>.
-        </p>
-        <figure xml:id="fig_ch-11-08">
-          <caption>Graph of <m>U(t)</m> for Exercise 8</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-08.svg"/>
-        </figure>
-        <figure xml:id="fig_ch-11-09">
-          <caption>Graph of <m>U(t)</m> for Exercise 9</caption>
-          {0.5\linewidth}
-          <image width="45%" source="figs/ch-11/ch-11-fig-09.svg"/>
-        </figure>
-        <solution>
-          <p>
-            <m>U(t)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty}\frac{1}{2n-1}\sin[(2n-1)t] - \frac{4}{\pi }\sum\limits_{n=1}^{\infty}\frac{1}{2(2n-1)}\sin[2(2n-1)t]</m>,
-            where <m>a_n=0</m> for all <m>n</m>,
-            and <m>b_{4n}=0</m> for all <m>n</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          <m>U(t)</m>,
-          as defined in <xref ref="fig_ch-11-10">Figure</xref>.
-        </p>
-      </task>
-      <task>
-        <p>
-          <m>U(t)</m>,
-          as defined in <xref ref="fig_ch-11-11">Figure</xref>.
-        </p>
-        <solution>
-          <p>
-				<m>U(t)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty }\frac{1}{2n-1}\sin[(2n-1)t] + \frac{4}{\pi}\sum\limits_{n=1}^{\infty
-				}\frac{1}{2(2n-1)}\sin[2(2n-1)t]</m>, where <m>a_n=0</m> for all <m>n</m>, and <m>b_{4n}=0</m> for all <m>n</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <p>
-          Establish Euler's Formula <xref ref="FourierCoeffB"/> for the coefficients <m>\{b_n\}</m>.
-        </p>
-        <figure xml:id="fig_ch-11-10">
-          <caption>Graph of <m>U(t)</m> for Exercise 10</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-10.svg"/>
-        </figure>
-        <figure xml:id="fig_ch-11-11">
-          <caption>Graph of <m>U(t)</m> for Exercise 11</caption>
-          <image width="45%" source="figs/ch-11/ch-11-fig-11.svg"/>
-        </figure>
-      </task>
-    </exercises>
-  </subsection>
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p>
+			For Exercise 1, set <m>t=\frac{\pi}{2}</m> and conclude that
+			<m>\frac{\pi}{4}=\sum\limits_{j=1}^{\infty}\frac{(-1)^{j-1}}{2j-1}</m>.
+		</p>
+	</exercise>
+	<exercise>
+		<p>
+			For Exercise 2, set <m>t=0</m> and conclude that <m>\frac{\pi^2}{8} = \sum\limits_{j=1}^{\infty}\frac{1}{(2j-1)^2}</m>.
+		</p>
+		<solution>
+			<p>
+				<m>
+					\frac{\pi }{2} = V(0) = 
+					\frac{4}{\pi}\sum\limits_{n=1}^{\infty} \frac{1}{(2n-1)^2}\cos(0)=
+					\frac{4}{\pi }\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}
+				</m>.
+				Now solve for <m>\sum\limits_{n=1}^{\infty}\frac{1}{(2n-1)^2}</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p> 
+			<m>U(t)= 
+						\begin{cases}
+							-1 \quad \text{for} \quad \frac{\pi}{2} \lt t \lt \pi, \\ 
+							\;\;\, 1 \quad \text{for} \quad -\frac{\pi}{2}\lt t \lt \frac{\pi}{2}, \\ 
+							-1 \quad \text{for} \quad -\pi \lt t \lt -\frac{\pi}{2}. 
+						\end{cases}
+			</m> 
+			See <xref ref="fig_ch-11-06">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-11-06">
+			<caption>Graph of <m>U(t)</m> for Exercise 6</caption>
+			<image width="45%" source="figs/ch-11/ch-11-fig-06.svg"/>
+		</figure>
+	</exercise>
+	<exercise>
+		<p>
+			<m>U(t)= 
+						\begin{cases}
+							\pi -t \quad \text{for} \quad \frac{\pi}{2}\lt t\lt \pi, \\ 
+							\;\;\;\;\;\;\; t \quad \text{for} \quad -\frac{\pi}{2}\lt t\lt \frac{\pi}{2}, \\ 
+							-\pi -t \quad \text{for} \quad -\pi \lt t \lt -\frac{\pi}{2}. 
+						\end{cases}
+			</m> 
+			See <xref ref="fig_ch-11-07">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-11-07">
+			<caption>Graph of <m>U(t)</m> for Exercise 7</caption>
+			{0.5\linewidth}
+			<image width="45%" source="figs/ch-11/ch-11-fig-07.svg"/>
+		</figure>
+		<solution>
+			<p>
+				<m>U(t)=\frac{4}{\pi}\sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{(2n-1)^2}\sin[(2n-1)t]</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p>
+			<m>U(t)</m>, as defined in <xref ref="fig_ch-11-08">Figure</xref>.
+		</p>
+      <figure xml:id="fig_ch-11-08">
+        <caption>Graph of <m>U(t)</m> for Exercise 8</caption>
+        <image width="45%" source="figs/ch-11/ch-11-fig-08.svg"/>
+      </figure>
+	</exercise>
+	<exercise>
+		<p>
+			<m>U(t)= 
+					\begin{cases}
+						1 \;\; \quad \text{for} \quad \frac{\pi}{2} \lt t \lt \pi, \\
+						0 \;\; \quad \text{for} \quad -\frac{\pi}{2}\lt t\lt \frac{\pi}{2}, \\ 
+						-1 \quad \text{for} \quad -\pi \lt t \lt \frac{-\pi}{2}. 
+					\end{cases}
+			</m> 
+			See <xref ref="fig_ch-11-09">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-11-09">
+			<caption>Graph of <m>U(t)</m> for Exercise 9</caption>
+			{0.5\linewidth}
+			<image width="45%" source="figs/ch-11/ch-11-fig-09.svg"/>
+		</figure>
+		<solution>
+			<p>
+				<m>
+					U(t)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty}\frac{1}{2n-1}\sin[(2n-1)t] - 
+					\frac{4}{\pi }\sum\limits_{n=1}^{\infty}\frac{1}{2(2n-1)}\sin[2(2n-1)t],
+				</m>
+				where <m>a_n=0</m> for all <m>n</m>, and <m>b_{4n}=0</m> for all <m>n</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p>
+			<m>U(t)</m>, as defined in <xref ref="fig_ch-11-10">Figure</xref>.
+		</p>
+      <figure xml:id="fig_ch-11-10">
+        <caption>Graph of <m>U(t)</m> for Exercise 10</caption>
+        <image width="45%" source="figs/ch-11/ch-11-fig-10.svg"/>
+      </figure>
+	</exercise>
+	<exercise>
+		<p>
+			<m>U(t)</m>, as defined in <xref ref="fig_ch-11-11">Figure</xref>.
+		</p>
+      <figure xml:id="fig_ch-11-11">
+			<caption>Graph of <m>U(t)</m> for Exercise 11</caption>
+			<image width="45%" source="figs/ch-11/ch-11-fig-11.svg"/>
+		</figure>
+		<solution>
+			<p>
+				<m>
+					U(t)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty }\frac{1}{2n-1}\sin[(2n-1)t] + 
+					\frac{4}{\pi}\sum\limits_{n=1}^{\infty }\frac{1}{2(2n-1)}\sin[2(2n-1)t],
+				</m>
+				where <m>a_n=0</m> for all <m>n</m>, and <m>b_{4n}=0</m> for all <m>n</m>.
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<p>
+			Establish Euler's Formula <xref ref="FourierCoeffB"/> for the coefficients <m>\{b_n\}</m>.
+		</p>
+	</exercise>
+</exercises>
+</subsection>
 </section>
