@@ -1,8 +1,8 @@
 <section xml:id="sec_fourier-transform">
   <title>The Fourier Transform</title>
   <p>
-    Let <m>U(t)</m> be a real-valued function with period <m>2\pi</m> which is piecewise continuous such that <m>U\,'(t)</m> also exists and is piecewise continuous.
-    Then <m>U(t)</m> has the <em>complex Fourier series</em> representation
+	 Let <m>U(t)</m> be a real-valued function with period <m>2\pi</m> which is piecewise continuous such that <m>U\,'(t)</m> also
+	 exists and is piecewise continuous. Then <m>U(t)</m> has the <em>complex Fourier series</em> representation
     <me>
       U(t) = \sum_{n=-\infty}^{\infty}c_ne^{int},  \text{ where }
     </me>
@@ -11,8 +11,7 @@
     </me>.
   </p>
   <p>
-    The coefficients <m>\{c_nt\}</m> are complex numbers.
-    Previously, we expressed <m>U(t)</m> as a real trigonometric series:
+    The coefficients <m>\{c_nt\}</m> are complex numbers. Previously, we expressed <m>U(t)</m> as a real trigonometric series:
     <men xml:id="TrigSeries">
       U(t) =\frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)
     </men>.
@@ -20,15 +19,15 @@
   <p>
     Hence, a relationship between the coefficients is
     <md>
-      <mrow>a_n=c_n+c_{-n} \amp   \text{ for }   n=0,1,2, \ldots , \text{ and }</mrow>
-      <mrow>b_n=i(c_n-c_{-n}) \amp   \text{ for }   n=1,2, \ldots </mrow>
-    </md>,
+      <mrow>a_n \amp = c_n+c_{-n} \quad \text{for} \quad  n=0,1,2, \ldots , \text{ and }</mrow>
+      <mrow>b_n \amp =i(c_n-c_{-n}) \amp \quad  \text{for} \quad  n=1,2, \ldots \, . </mrow>
+    </md>
   </p>
   <p>
-    These relations are easy to establish.
-    We start by writing
+    These relations are easy to establish. We start by writing
     <md>
-      <mrow xml:id="TrigSeries2" number="yes">U(t) \amp = c_0 + \sum_{n=1}^{\infty}c_ne^{int} + \sum_{n=1}^{\infty}c_{-n}e^{-int}</mrow>
+		<mrow xml:id="TrigSeries2" number="yes">U(t) \amp = c_0 + \sum_{n=1}^{\infty}c_ne^{int} +
+		\sum_{n=1}^{\infty}c_{-n}e^{-int}</mrow>
       <mrow>\amp = c_0 + \sum_{n=1}^{\infty}c_n(\cos nt+i\sin nt) + \sum_{n=1}^{\infty}c_{-n}(\cos nt-i\sin nt)</mrow>
       <mrow>\amp = c_0 + \sum_{n=1}^{\infty}[(c_n+c_{-n}) \cos nt+i(c_n-c_{-n}) \sin nt]</mrow>
     </md>.
@@ -38,28 +37,27 @@
     <m>a_n=c_n+c_{-n}</m>, and <m>b_n=i( c_n-c_{-n})</m>.
   </p>
   <p>
-    If <m>U(t)</m> and <m>U\,'(t)</m> are piecewise continuous and have period <m>2L</m>,
-    then <m>U(t)</m> has the <em>complex Fourier series</em> representation
+	 If <m>U(t)</m> and <m>U\,'(t)</m> are piecewise continuous and have period <m>2L</m>, then <m>U(t)</m> has the <em>complex
+	 Fourier series</em> representation
     <men xml:id="ComplexFourier">
-      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}},  \text{ where }
+      U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}}, \quad  \text{where}
     </men>
     <men xml:id="ComplexFourierC">
-      c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\frac{\pi nt}{L}}\,dt  \text{ for all }   n
-    </men>.
+      c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\frac{\pi nt}{L}}\,dt \quad \text{for all} \quad n.
+    </men>
   </p>
   <p>
-    We have seen how periodic functions are represented by trigonometric series.
-    Many practical problems involve nonperiodic functions.
-    A representation analogous to Fourier series for a nonperiodic function <m>U(t)</m> is obtained by considering the Fourier series of <m>U(t)</m> for
-    <m>-L\lt t\lt L</m> and then taking the limit as <m>L \to \infty</m>.
-    The result is known as the Fourier transform of <m>U(t)</m>.
+	 We have seen how periodic functions are represented by trigonometric series. Many practical problems involve nonperiodic
+	 functions. A representation analogous to Fourier series for a nonperiodic function <m>U(t)</m> is obtained by considering the
+	 Fourier series of <m>U(t)</m> for <m>-L\lt t\lt L</m> and then taking the limit as <m>L \to \infty</m>. The result is known as
+	 the Fourier transform of <m>U(t)</m>.
   </p>
   <p>
     Start with a nonperiodic function <m>U(t)</m> and consider the periodic function <m>U_L(t)</m> with period <m>2L</m>, where
     <md>
-      <mrow>U_L(t) \amp = U(t) \amp \amp  \text{ for }   -L\lt t \le L,  \text{ and }</mrow>
-      <mrow>U_L(t) \amp =U_L(t+2L) \amp \amp  \text{ for all }   t</mrow>
-    </md>.
+      <mrow>U_L(t) \amp = U(t) \amp \amp  \text{for} \quad  -L\lt t \le L,  \text{ and }</mrow>
+      <mrow>U_L(t) \amp =U_L(t+2L) \amp \amp  \text{for all} \quad  t.</mrow>
+    </md>
   </p>
   <p>
     Then <m>U_L(t)</m> has the complex Fourier series representation
@@ -83,10 +81,9 @@
     </me>.
   </p>
   <p>
-    It is important to note that as <m>L</m> increases,
-    the spectrum becomes finer and approaches a continuous spectrum of frequencies.
-    It is reasonable to expect that the summation in the Fourier series for <m>U_L(t)</m> will give rise to an integral over <m>[-\infty .\infty ]</m>.
-    This is stated in the following important theorem.
+	 It is important to note that as <m>L</m> increases, the spectrum becomes finer and approaches a continuous spectrum of
+	 frequencies. It is reasonable to expect that the summation in the Fourier series for <m>U_L(t)</m> will give rise to an
+	 integral over <m>[-\infty .\infty ]</m>. This is stated in the following important theorem.
   </p>
   <theorem xml:id="thm_fourier-transform">
     <title>Fourier Transform</title>
@@ -107,15 +104,15 @@
         <me>
           U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw
         </me>.
-        and at a point <m>t=a</m> of discontinuity of <m>U</m>,
-        the integral converges to <m>\frac{U(a^-)+U(a^+)}{2}</m>.
+        and at a point <m>t=a</m> of discontinuity of <m>U</m>, the integral converges to 
+		  <me>\frac{U(a^-)+U(a^+)}{2}.</me>
       </p>
     </statement>
   </theorem>
   <p>
     Note: It is common to express the fact that <m>U</m> is transformed into <m>F</m> by using the operator notation
     <me>
-      \mathrm{F}\big(U(t)\big)=F(w)
+      \mathrm{F}\big(U(t)\big)=F(w).
     </me>
   </p>
   <proof>
@@ -124,8 +121,10 @@
       These quantities are used in conjunction with Equations <xref ref="ComplexFourier"/>, <xref ref="ComplexFourierC"/>,
       <xref ref="ComplexFourierL"/> and the frequency in <xref ref="Frequency"/> to obtain
       <md>
-        <mrow xml:id="ComplexFourierL2" number="yes">U_L(t) \amp = \sum_{n=-\infty}^{\infty}\left[\frac{1}{2L} \int_{-L}^{L}U(t) e^{-iw_nt}\,dt\right] e^{iw_nt}</mrow>
-        <mrow>\amp = \sum\limits_{n=-\infty}^{\infty}\left[\frac{1}{2\pi}\int_{-L}^{L}U(t) e^{-iw_nt}\,dt\right] e^{iw_nt}\Delta w_n</mrow>
+		  <mrow xml:id="ComplexFourierL2" number="yes">U_L(t) \amp = \sum_{n=-\infty}^{\infty}\left[\frac{1}{2L} \int_{-L}^{L}U(t)
+		  e^{-iw_nt}\,dt\right] e^{iw_nt}</mrow>
+		  <mrow>\amp = \sum\limits_{n=-\infty}^{\infty}\left[\frac{1}{2\pi}\int_{-L}^{L}U(t) e^{-iw_nt}\,dt\right] e^{iw_nt}\Delta
+		  w_n</mrow>
       </md>.
     </p>
     <p>
@@ -140,9 +139,8 @@
     </p>
     <p>
       As <m>L</m> gets large,
-      <m>F_L(w_n)</m> approaches <m>F(w_n)</m> and <m>\Delta w_n</m> tends to zero.
-      Thus the limit on the right-hand side of Equation <xref ref="ComplexFourierL3"/> can be viewed as an integral.
-      This substantiates the Fourier integral representation
+		<m>F_L(w_n)</m> approaches <m>F(w_n)</m> and <m>\Delta w_n</m> tends to zero. Thus the limit on the right-hand side of
+		Equation <xref ref="ComplexFourierL3"/> can be viewed as an integral. This substantiates the Fourier integral representation
       <me>
         U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw
       </me>.
@@ -191,7 +189,7 @@
       </row>
       <row>
         <cell> Moment Theorem </cell>
-        <cell>If <m>M_n = \int_{-\infty}^{\infty}t^nU(t)\,dt</m>, then <m>(-i)^nM_n = 2\pi F^{(n)}(0)</m>.</cell>
+        <cell>If <m>M_n = \int_{-\infty}^{\infty}t^nU(t)\,dt</m>, then <m>(-i)^nM_n = 2\pi F^{(n)}(0).</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -211,10 +209,11 @@
         <md>
           <mrow>F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^{-iwt}\,dt</mrow>
           <mrow>\amp = \frac{1}{2\pi}\int\nolimits_{-\infty}^{0}e^{(1-iw)t}\,dt + \frac{1}{2\pi}\int_0^{\infty}e^{(-1-iw) t}\,dt</mrow>
-          <mrow>\amp = \frac{1}{2\pi (1-iw)}e^{(1-iw) t}\bigg|_{t=-\infty}^{t=0}+\frac{1}{2\pi (-1-iw)}e^{(-1-iw) t} \bigg|_{t=0}^{t=\infty}.</mrow>
+			 <mrow>\amp = \frac{1}{2\pi (1-iw)}e^{(1-iw) t}\bigg|_{t=-\infty}^{t=0}+\frac{1}{2\pi (-1-iw)}e^{(-1-iw) t}
+			 \bigg|_{t=0}^{t=\infty}.</mrow>
           <mrow>\amp = \frac{1}{2\pi (1-iw)}+\frac{1}{2\pi (1+iw)}</mrow>
-          <mrow>\amp = \frac{1}{\pi (1+w^2)}</mrow>
-        </md>.
+          <mrow>\amp = \frac{1}{\pi (1+w^2)}.</mrow>
+        </md>
       </p>
     </solution>
   </example>
@@ -237,114 +236,142 @@
       </p>
     </solution>
   </example>
-  <exercises xml:id="exercises_fourier-transform">
-    <title>Exercises</title>
-    <exercise>
-      <statement>
-        <p>
-          Find <m>\mathfrak{F}\big(U(t)\big)</m> for each of the following:
-        </p>
-        <task xml:id="ex_12_1a">
-          <p>
-            <m>U(t) = \begin{cases}1 \amp \text{ for } |t| \lt 1,\\ 0 \amp \text{ for } |t| > 1. \end{cases}</m>
-          </p>
-          <solution>
-            <p>
-              <m>\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}</m>.
-            </p>
-          </solution>
-        </task>
-        <task xml:id="ex_12_1b">
-          <p>
-            <m>U(t) = \begin{cases}1-|t| \amp \text{ for } |t| \le 1,\\ 0 \amp \text{ for } |t|>1. \end{cases}</m>
-          </p>
-          <solution>
-            <p>
-              <m>\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}.</m>
-            </p>
-          </solution>
-        </task>
-      </statement>
-    </exercise>
-    <exercise xml:id="ex_12_2">
-      <statement>
-        <p>
-			 Let <m>U(t) = \begin{cases}\sin t \amp \text{ for } |t| \le \pi,\\ \;\;\, 0 \amp \text{ for } |t| > \pi. \end{cases}</m>
-			 Show that <m>\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}</m>.
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use the symmetry and linearity properties and the result of <xref ref="ex_12_1a">Exercise</xref> to show that
-          <me>
-            \mathfrak{F}\left(\frac{\sin t}{t}\right) = \begin{cases}\frac{1}{2} \amp  \text{ for }   |w| \lt  1,\\ 0 \amp  \text{ for }   |w| > 1. \end{cases}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise xml:id="ex_12_3">
-      <statement>
-        <p>
-          Let <m>U(t) =e^{-\frac{t^2}{2}}</m>.
-			 Show that <m>\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}</m>.
-			 <hint>
-			 	<p>
-					Use the integral definition and combine the terms in the exponent. Then complete the square and use the fact that
-					<m>\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}</m>.
+<exercises xml:id="exercises_fourier-transform">
+<title>Exercises</title>
+	<exercise>
+		<introduction>
+			<p>
+				Find <m>\mathfrak{F}\big(U(t)\big)</m> for each of the following:
+			</p>
+		</introduction>
+		<task xml:id="ex_12_1a">
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}
+									1 \amp \text{ for } |t| \lt 1,\\
+									0 \amp \text{ for } |t| > 1.
+								\end{cases}
+					</m>
 				</p>
-			 </hint>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}.</m>
+				</p>
+			</solution>
+		</task>
+		<task xml:id="ex_12_1b">
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}
+									1-|t| \amp \text{ for } |t| \le 1,\\ 
+									0 \amp \text{ for } |t|>1.
+								\end{cases}
+					</m>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}.</m>
+				</p>
+			</solution>
+		</task>
+	</exercise>
+	<exercise xml:id="ex_12_2">
+		<statement>
+			<p>
+				Let 
+				<m>U(t)= \begin{cases}
+								\sin t \amp \text{ for } |t| \le \pi,\\ 
+								\;\;\, 0 \amp \text{ for } |t| > \pi.
+							\end{cases}
+				</m> 
+				Show that <m>\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}.</m>
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use the symmetry and linearity properties and the result of <xref ref="ex_12_1a">Exercise</xref> to show that
+				<me>
+					\mathfrak{F}\left(\frac{\sin t}{t}\right) =	\begin{cases}
+																					\frac{1}{2} \amp  \text{ for }   |w| \lt  1,\\
+																					0 \amp  \text{ for }   |w| > 1. 
+																				\end{cases}
+				</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise xml:id="ex_12_3">
+		<statement>
+			<p>
+				Let <m>U(t) =e^{-\frac{t^2}{2}}</m>. Show that 
+				<m>\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}.</m>
+			</p>
+		</statement>
+		<hint>
+			<p>
+				Use the integral definition and combine the terms in the exponent. Then complete the square and use the fact that
+				<m>\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}.</m>
+			</p>
+		</hint>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use the time scaling property and the example in the text to show that
+				<me>
+					\mathfrak{F}(e^{-a|t|}) =\frac{|a|}{\pi(a^2+w^2)}.
+				</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use the symmetry and linearity properties and the result of <xref ref="ex_12_2">Exercise</xref> to show that
+				<me>
+					\mathfrak{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = 
+						\begin{cases}
+							\frac{i\sin w}{2} \amp  \text{ for }  |w| \le \pi,\\
+							0 \amp  \text{ for }   |w| > \pi. 
+						\end{cases}
+				</me>
+			</p> 
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Use the time differentiation property and the result of <xref ref="ex_12_3">Exercise</xref> to show that
+				<me>
+					\mathfrak{F}\left(te^{-\frac{r^2}{2}}\right) =\frac{-iwe^{-\frac{w^2}{2}}}{\sqrt{2\pi}}.
+				</me>
         </p>
       </statement>
     </exercise>
     <exercise>
       <statement>
-        <p>
-          Use the time scaling property and the example in the text to show that
-          <me>
-            \mathfrak{F}(e^{-a|t|}) =\frac{|a|}{\pi(a^2+w^2)}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use the symmetry and linearity properties and the result of <xref ref="ex_12_2">Exercise</xref> to show that
-          <me>
-            \mathfrak{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = \begin{cases}\frac{i\sin w}{2} \amp  \text{ for }  |w| \le \pi,\\ 0 \amp  \text{ for }   |w| > \pi. \end{cases}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use the time differentiation property and the result of <xref ref="ex_12_3">Exercise</xref> to show that
-          <me>
-            \mathfrak{F}\left(te^{-\frac{r^2}{2}}\right) =\frac{-iwe^{-\frac{w^2}{2}}}{\sqrt{2\pi}}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Use the symmetry and linearity properties and the results of <xref ref="ex_12_1b">Exercise</xref> to show that
-          <me>
-            F\left(\frac{\sin^2\frac{t}{2}}{t^2}\right) = \begin{cases}\frac{1-|w|}{4\pi} \amp  \text{ for }   |w| \le 1, \\ 0 \amp  \text{ for }   |w| >1. \end{cases}
-          </me>
-        </p>
-      </statement>
-    </exercise>
-    <exercise>
-      <statement>
-        <p>
-          Write a report on the Fourier transform.
-          Discuss some of the ideas you found in the literature that are not mentioned in the text.
-        </p>
-      </statement>
-    </exercise>
-  </exercises>
+			<p>
+				Use the symmetry and linearity properties and the results of <xref ref="ex_12_1b">Exercise</xref> to show that
+				<me>
+				F\left(\frac{\sin^2\frac{t}{2}}{t^2}\right) = 
+					\begin{cases}
+						\frac{1-|w|}{4\pi} \amp  \text{ for }   |w| \le 1, \\ 
+						0 \amp  \text{ for }   |w| >1.
+					\end{cases}
+				</me>
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Write a report on the Fourier transform. Discuss some of the ideas you found in the literature that are not mentioned
+				in the text.
+			</p>
+		</statement>
+	</exercise>
+</exercises>
 </section>
