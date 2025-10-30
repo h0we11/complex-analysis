@@ -5,7 +5,7 @@
     <p>
       We have seen that certain real-valued functions <m>f(t)</m> have a Fourier transform and that the integral
       <me>
-        g(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t},dt
+        g(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t},\dt
       </me>
 		defines the complex function <m>g(\omega)</m> of the real variable <m>\omega</m>.  If we multiply the integrand <m>f(t)
 		e^{-i\omega t}</m> by <m>e^{-\sigma t}</m>, we create a complex function <m>G(\sigma +i\omega)</m> of the complex variable
@@ -32,7 +32,7 @@
 		<m>f(0), \, f\,'(0), \, f\,''(0), \ldots</m>, are a consequence of the past history of the system and are often all that is
 		necessary to know.  For this reason, it is useful to define the one-sided Laplace transform of <m>f(t)</m>, which is
 		commonly referred to simply as the <em>Laplace transform</em> of <m>f(t)</m>, which is also defined as an integral: <men
-		xml:id="LaplaceDef"> \mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt,  \text{ where }   s=\sigma +i\omega
+		xml:id="LaplaceDef"> \mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad  s=\sigma +i\omega
 		</men>.
     </p>
     <p>
@@ -119,10 +119,10 @@
         Then for values of <m>\sigma >K</m>, we have
         <md>
 			 <mrow>\int_0^{\infty}|f(t)| e^{-\sigma t}|\cos \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le
-			 \frac{M}{\sigma -K},  \text{ and }</mrow>
+			 \frac{M}{\sigma -K}, \; \text{ and }</mrow>
 			 <mrow>\int_0^{\infty}|f(t)| e^{-\sigma t}|\sin \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le
-			 \frac{M}{\sigma -K}</mrow>
-        </md>,
+			 \frac{M}{\sigma -K},</mrow>
+        </md>
         which imply that the integrals defining the real and imaginary parts of <m>F</m> exist for values of <m>\mathrm{Re}(s) >K</m>.
       </p>
     </proof>
@@ -142,7 +142,7 @@
           respectively.
           If <m>a</m> and <m>b</m> are constants, then
           <me>
-            \mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s)
+            \mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s).
           </me>
         </p>
       </statement>
@@ -181,15 +181,18 @@
       </p>
     </proof>
     <example>
-      <statement>
-        <p>
-          Show that the Laplace transform of the step function given by
-          <me>
-				f(t) = \begin{cases}1 \amp  \text{ for }   0 \le t\lt c,\\ 0 \amp  \text{ for }   c\lt t \end{cases} \text{ is }
-				\mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}
-          </me>.
-        </p>
-      </statement>
+	 	<statement>
+			<p>
+				Show that the Laplace transform of the step function given by
+				<me>
+					f(t)= \begin{cases}
+								1 \amp  \text{for} \quad  0 \le t\lt c,\\ 
+								0 \amp  \text{for} \quad  c\lt t 
+							\end{cases}
+					\quad \text{is} \quad \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}
+				</me>
+			</p>
+		</statement>
       <solution>
         <p>
           Using the integral definition for <m>\mathcal{L}\big(f(t)\big)</m>, we obtain
@@ -205,8 +208,7 @@
     <example xml:id="ex_10_8">
       <statement>
         <p>
-          Show that <m>\mathcal{L}(e^{at}) =\frac{1}{s-a}</m>,
-          where <m>a</m> is a real constant.
+          Show that <m>\mathcal{L}(e^{at}) =\frac{1}{s-a},</m> where <m>a</m> is a real constant.
         </p>
       </statement>
       <solution>
@@ -226,7 +228,8 @@
           Let <m>s=\sigma +i\tau</m> be held fixed,
           or where <m>\sigma >a</m>.
           Then since <m>a-\sigma</m> is a negative real number we have
-          <m>\lim\limits_{R \to +\infty}e^{(a-s) R}=0</m> and this result can be used in the latter equation to obtain the desired conclusion.
+			 <m>\lim\limits_{R \to +\infty}e^{(a-s) R}=0</m> and this result can be used in the latter equation to obtain the desired
+			 conclusion.
         </p>
       </solution>
     </example>
@@ -483,191 +486,243 @@
         </row>
       </tabular>
     </table>
-    <exercises xml:id="exercises_laplace-transform">
-      <title>Exercises</title>
-      <exercise>
-        <statement>
-          <p>
-            Show that <m>\mathcal{L}(1) =\frac{1}{s}</m> by using the integral definition for the Laplace transform.
-            Assume that <m>\mathrm{Re}(s)>0</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
+<exercises xml:id="exercises_laplace-transform">
+<title>Exercises</title>
+	<exercise>
+		<statement>
+			<p>
+				Show that <m>\mathcal{L}(1) =\frac{1}{s}</m> by using the integral definition for the Laplace transform. Assume that
+				<m>\mathrm{Re}(s)>0</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
 				Use <m>s=\sigma +i\tau</m> and the integral
-				<md>
-					<mrow>
-						\int e^{-(\sigma +i\tau)t}\,dt \amp= \frac{e^{-\sigma t}[-\sigma\cos(\tau t)+\tau\sin(\tau t)]}{\sigma^2+\tau^2}
-					</mrow>
-					<mrow>\amp \qquad \qquad + i\frac{e^{-\sigma t}[\tau\cos(\tau t)+\sigma\sin(\tau t)]}{\sigma ^2+\tau^2}</mrow>
-					<mrow>\amp = u(t)+iv(t).</mrow>
-				</md>
-            Supply the details showing that
-            <m>\lim\limits_{t \to +\infty }u(t)=0</m> and <m>\lim\limits_{t \to +\infty}v(t)=0</m>.
+					<md>
+						<mrow>
+							\int e^{-(\sigma +i\tau)t}\,dt \amp = \frac{e^{-\sigma t}[-\sigma\cos(\tau t)+\tau\sin(\tau t)]}{\sigma^2+\tau^2}
+						</mrow>
+						<mrow>
+							\amp \qquad \qquad + i\frac{e^{-\sigma t}[\tau\cos(\tau t)+\sigma\sin(\tau t)]}{\sigma ^2+\tau^2}
+						</mrow>
+						<mrow>
+							\amp = u(t)+iv(t).
+						</mrow>
+					</md>
+				Supply the details showing that
+					<m>\lim\limits_{t \to +\infty }u(t)=0</m> and <m>\lim\limits_{t \to +\infty}v(t)=0</m>.
 				<p>
 				From that conclusion it follows that
 					<me>\mathcal{L}(1)=\int_0^{\infty}e^{-(\sigma +i\tau)t}\,dt = 0 + 0i - \frac{-1}{\sigma +i\tau }= \frac{1}{s}.</me>
 				</p>
-          </p>
-        </solution>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Show that <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> by using the integral definition for the Laplace transform.
-            Assume that <m>\mathrm{Re}(s) >0</m>.
-          </p>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Find <m>\mathcal{L}\big(f(t)\big)</m> for each of the following.
-          </p>
-          <task>
-            <p>
-              <m>U(t) = \begin{cases}t \amp \text{ for } 0 \le t\lt c, \\ 0 \amp \text{ otherwise. } \end{cases}</m>
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>U(t) = \begin{cases}1 \amp \text{ for } 1\lt t\lt 2, \\ 0 \amp \text{ otherwise } . \end{cases}</m>
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>U(t) = \begin{cases}e^{at} \amp \text{ for } 0 \le t\lt 1, \\ \; 0 \amp \text{ otherwise. } \end{cases}</m>
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>U(t) = \begin{cases}\sin t \amp \text{ for } 0 \le t \le \pi , \\ \;\; 0 \amp \text{ otherwise. } \end{cases}</m>
-            </p>
-          </task>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Use the linearity of Laplace transform and <xref ref="table_laplace-transforms">Table</xref> to find:
-          </p>
-          <task>
-            <p>
-              <m>\mathcal{L}(3t^2-4t+5)</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}(2\cos 4t)</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}(e^{2t-3})</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}(6e^{-t}+3\sin 5t)</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}((t+1)^4)</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}(\cosh 2t)</m>.
-            </p>
-          </task>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Use the linearity of the inverse Laplace transform and <xref ref="table_laplace-properties">Table</xref> to find:
-          </p>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}(\frac{1}{s^2+25})</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}(\frac{6s}{s^2-4})</m>.
-            </p>
-            <solution>
-              <p>
-                <m>\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t</m>.
-              </p>
-            </solution>
-          </task>
-          <task>
-            <p>
-              <m>\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)</m>.
-            </p>
-          </task>
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Write a report on how complex analysis is used in the study of Laplace transforms.
-            Include ideas and examples that are not mentioned in the text.
-          </p>
-        </statement>
-      </exercise>
-    </exercises>
-  </subsection>
+			</p>
+		</solution>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Show that <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> by using the integral definition for the Laplace transform. Assume
+				that <m>\mathrm{Re}(s) >0</m>.
+			</p>
+		</statement>
+	</exercise>
+	<exercise>
+		<introduction>
+			<p>
+				Find <m>\mathcal{L}\big(f(t)\big)</m> for each of the following.
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}
+									t \amp \text{for} \quad 0 \le t\lt c, \\ 
+									0 \amp \text{otherwise}.
+								\end{cases}
+					</m>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}.</m>
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}1 
+									\amp \text{for} \quad 1\lt t\lt 2, \\ 
+									0 \amp \text{otherwise}. 
+								\end{cases}
+					</m>
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}
+									e^{at} \amp \text{for} \quad 0 \le t\lt 1, \\ 
+									\; 0 \amp \text{otherwise}.
+								\end{cases}
+					</m>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>U(t)= \begin{cases}
+									\sin t \amp \text{for} \quad 0 \le t \le \pi , \\ 
+									\;\; 0 \amp \text{otherwise}.
+								\end{cases}
+					</m>
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise>
+		<introduction>
+			<p>
+				Use the linearity of Laplace transform and <xref ref="table_laplace-transforms">Table</xref> to find:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}(3t^2-4t+5)</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}(2\cos 4t)</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}(e^{2t-3})</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}(6e^{-t}+3\sin 5t)</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}((t+1)^4)</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}(\cosh 2t)</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise>
+		<introduction>
+			<p>
+				Use the linearity of the inverse Laplace transform and <xref ref="table_laplace-properties">Table</xref> to find:
+			</p>
+		</introduction>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}(\frac{1}{s^2+25})</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})</m>;
+				</p>
+			</statement>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}(\frac{6s}{s^2-4})</m>;
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t</m>.
+				</p>
+			</solution>
+		</task>
+		<task>
+			<statement>
+				<p>
+					<m>\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)</m>.
+				</p>
+			</statement>
+		</task>
+	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Write a report on how complex analysis is used in the study of Laplace transforms. Include ideas and examples that are
+				not mentioned in the text.
+			</p>
+		</statement>
+	</exercise>
+</exercises>
+</subsection>
 </section>
