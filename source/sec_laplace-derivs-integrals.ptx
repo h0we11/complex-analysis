@@ -1,14 +1,13 @@
 <section xml:id="sec_laplace-derivs-integrals">
   <title>Laplace Transforms of Derivatives and Integrals</title>
   <theorem xml:id="thm_laplace-diff">
-    <title>Differentiation of $f(t)$</title>
+    <title>Differentiation of <m>\boldsymbol{f(t)}</m></title>
     <statement>
       <p>
-        Let <m>f(t)</m> and <m>f\,'(t)</m> be continuous for <m>t \ge 0</m>,
-        and of exponential order.
+        Let <m>f(t)</m> and <m>f\,'(t)</m> be continuous for <m>t \ge 0</m>, and of exponential order.
         Then,
         <me>
-          \mathcal{L}(\,f\,'(t)) = sF(s) -f(0),  \text{ where }   F(s) = \mathcal{L}\big(\,f(t)\big)
+          \mathcal{L}(\,f\,'(t)) = sF(s) -f(0),  \text{ where }   F(s) = \mathcal{L}\big(\,f(t)\big).
         </me>
       </p>
     </statement>
@@ -16,27 +15,23 @@
   <proof>
     <p>
       Let <m>K</m> be chosen large enough so that both <m>f(t)</m> and <m>f\,'(t)</m> are of exponential order <m>K</m>.
-      If <m>\mathrm{Re}(s)>K</m>,
-      then <m>\mathcal{L}\big(\,f\,'(t)\big)</m> is given by
+      If <m>\mathrm{Re}(s)>K</m>, then <m>\mathcal{L}\big(\,f\,'(t)\big)</m> is given by
       <me>
         \mathcal{L}(\,f\,'(t)) = \int_0^{\infty}f\,'(t)e^{-st}\,dt
       </me>.
-      Next, using integration by parts,
-      we can write the equation this as
+      Next, using integration by parts, we can write the equation this as
       <me>
         \mathcal{L}\big(f\,'(t)\big) = \lim_{R \to +\infty}\left[f(t) e^{-st}\right]\Big|_{t=0}^{t=R}+s\int_0^{\infty}f(t)e^{st}\,dt
       </me>.
-      Now, <m>f(t)</m> is of exponential order <m>K</m>,
-      and <m>\mathrm{Re}(s)>K</m>.
-      It follows that <m>\lim\limits_{R \to +\infty}f(R)e^{-sR}=0</m>, so
+		Now, <m>f(t)</m> is of exponential order <m>K</m>, and <m>\mathrm{Re}(s)>K</m>. It follows that 
+		<m>\lim\limits_{R \to +\infty}f(R)e^{-sR}=0</m>, so
       <me>
-        \mathcal{L}\big(f\,'(t)\big) = -f(0) + s\int_0^{\infty}f(t)e^{-st}\,dt = sF(s) - f(0)
+        \mathcal{L}\big(f\,'(t)\big) = -f(0) + s\int_0^{\infty}f(t)e^{-st}\,dt = sF(s) - f(0).
       </me>
     </p>
   </proof>
   <p>
-    An easy consequence of <xref ref="thm_laplace-diff">Theorem</xref> is the following,
-    which we state without proof.
+    An easy consequence of <xref ref="thm_laplace-diff">Theorem</xref> is the following, which we state without proof.
   </p>
   <corollary xml:id="cor_laplace-diff-cor">
     <statement>
@@ -44,7 +39,7 @@
         If <m>f(t), \, f\,'(t)</m>, and
         <m>f\,''(t)</m> are of exponential order, then
         <me>
-          \mathcal{L}\big(f\,''(t)\big) = s^2f(s)-sf(0)-f\,'(0)
+          \mathcal{L}\big(f\,''(t)\big) = s^2f(s)-sf(0)-f\,'(0).
         </me>
       </p>
     </statement>
@@ -57,13 +52,11 @@
     </statement>
     <solution>
       <p>
-        Let <m>f(t) =\cos^2t</m>,
-        then <m>f(0) =1</m> and <m>f\,'(t) =-2\sin t\cos t=-\sin 2t</m>.
-        Using the fact that <m>\mathcal{L}(-\sin 2t) = -\frac{2}{s^2+4}</m>,
-        <xref ref="thm_laplace-diff">Theorem</xref> implies that
+		  Let <m>f(t) =\cos^2t</m>, then <m>f(0) =1</m> and <m>f\,'(t) =-2\sin t\cos t=-\sin 2t</m>. Using the fact that
+		  <m>\mathcal{L}(-\sin 2t) = -\frac{2}{s^2+4}</m>, <xref ref="thm_laplace-diff">Theorem</xref> implies that
         <me>
-          -\frac{2}{s^2+4}=\mathcal{L}\big(\,f\,'(t)\big) = s\mathcal{L}(\cos^2t) -1
-        </me>.
+          -\frac{2}{s^2+4}=\mathcal{L}\big(\,f\,'(t)\big) = s\mathcal{L}(\cos^2t) -1,
+        </me>
         from which it follows that <m>\mathcal{L}(\cos^2t) = -\frac{2}{s(s^2+4)}+\frac{1}{s} = \frac{s^2+2}{s(s^2+4)}</m>.
       </p>
     </solution>
@@ -71,32 +64,28 @@
   <theorem xml:id="thm_laplace-int">
     <statement>
       <p>
-        (Integration of <m>f(t)</m>] Let <m>f(t)</m> be continuous for <m>t \ge 0</m>,
-        and of exponential order.
-        Further, let <m>F(s)</m> be its Laplace transform, then
+		  (Integration of <m>f(t)</m>] Let <m>f(t)</m> be continuous for <m>t \ge 0</m>, and of exponential order. Further, let
+		  <m>F(s)</m> be its Laplace transform, then
         <me>
-          \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right) =\frac{F(s)}{s}
+          \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right) =\frac{F(s)}{s}.
         </me>
       </p>
     </statement>
   </theorem>
   <proof>
     <p>
-      Let <m>g(t) =\int_0^tf(\tau ) d\tau</m>,
-      then <m>g'(t) =f(t)</m> and <m>g(0) =0</m>.
-      If we can show that <m>g</m> is of exponential order,
-      then <xref ref="thm_laplace-diff">Theorem</xref> implies that
+		Let <m>g(t) =\int_0^tf(\tau ) d\tau</m>, then <m>g'(t) =f(t)</m> and <m>g(0) =0</m>. If we can show that <m>g</m> is of
+		exponential order, then <xref ref="thm_laplace-diff">Theorem</xref> implies that
       <me>
-		  \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 = s
-		  \mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right)
-      </me>.
+		  \mathcal{L}\big(f(t)\big) = \mathcal{L}\big(g'(t)\big) = s\mathcal{L}\big(g(t)\big) - 0 =
+		  s\mathcal{L}\left(\int_0^tf(\tau)\,d\tau\right).
+      </me>
     </p>
     <p>
-      Since <m>f(t)</m> is of exponential order,
-      there are positive values <m>M</m> and <m>K</m> so that
+      Since <m>f(t)</m> is of exponential order, there are positive values <m>M</m> and <m>K</m> so that
       <me>
-        |g(t)| \le \int_0^tf(\tau)\,d\tau \le M\int_0^t e^{K\tau}\,d\tau = \frac{M}{K}(e^{Kt}-1) \le e^{Kt}
-      </me>.
+        |g(t)| \le \int_0^tf(\tau)\,d\tau \le M\int_0^t e^{K\tau}\,d\tau = \frac{M}{K}(e^{Kt}-1) \le e^{Kt}.
+      </me>
       Therefore, <m>g</m> is of exponential order.
     </p>
   </proof>
@@ -108,17 +97,16 @@
     </statement>
     <solution>
       <p>
-        Using <xref ref="thm_laplace-int">Theorem</xref>
-        and the fact that <m>\mathcal{L}(2t) =\frac{2}{s^2}</m> we obtain
+        Using <xref ref="thm_laplace-int">Theorem</xref> and the fact that <m>\mathcal{L}(2t) =\frac{2}{s^2}</m> we obtain
         <me>
-			 \mathcal{L}(t^2) = \mathcal{L}\left(\int_0^t 2\tau \,d\tau\right) = \frac{1}{s}\mathcal{L}(2t)
-			 =\frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}
-        </me>.
+			 \mathcal{L}(t^2) = \mathcal{L}\left(\int_0^t 2\tau \,d\tau\right) = \frac{1}{s}\mathcal{L}(2t) =
+			 \frac{1}{s}\frac{2}{s^2}=\frac{2}{s^3}.
+        </me>
         Now we can use the first result
         <m>\mathcal{L}(t^2) =\frac{2}{s^3}</m> to establish the second one:
         <me>
 			 \mathcal{L}(t^3) =\mathcal{L}\left(\int_0^t3\tau^2\,d\tau\right) = \frac{1}{s}\mathcal{L}(3t^2)
-			 =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}
+			 =\frac{1}{s}\frac{6}{s^3}=\frac{6}{s^4}.
         </me>
       </p>
     </solution>
@@ -150,7 +138,7 @@
     </me>.
     We can rewrite the last equation in the form
     <men xml:id="TransEqn">
-      s^2Y(s) + asY(s) + bY(s) = F(s) + sy(0) + y\,'(0) + ay(0)
+      \!\!\!\!\! s^2Y(s) + asY(s) + bY(s) = F(s) + sy(0) + y\,'(0) + ay(0)
     </men>.
   </p>
   <p>
@@ -253,14 +241,14 @@
       <statement>
         <p>
           Show that <m>\mathcal{L}(te^t) =\frac{1}{(s-1)^2}</m>.
-			 <hint>
-			 	<p>
-					Let <m>f(t) = te^t, \quad</m> and <m>\quad f\,'(t) = te^t+e^t</m>.
-				</p>
-			 </hint>
         </p>
       </statement>
-    </exercise>
+		<hint>
+			<p>
+				Let <m>f(t) = te^t, \quad</m> and <m>\quad f\,'(t) = te^t+e^t</m>.
+			</p>
+		</hint>
+  </exercise>
     <exercise>
       <statement>
         <p>
