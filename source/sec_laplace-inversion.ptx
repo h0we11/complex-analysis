@@ -1,27 +1,24 @@
 <section xml:id="sec_laplace-inversion">
   <title>Inverting the Laplace Transform</title>
   <p>
-    So far, most of the applications involving the Laplace transform involve a transform
-    (or part of a transform)
-    that is expressed by
+	 So far, most of the applications involving the Laplace transform involve a transform (or part of a transform) that is
+	 expressed by
     <men xml:id="quotientPQ">
-      Y(s) = \frac{P(s)}{Q(s)}
-    </men>.
-	 where <m>P</m> and <m>Q</m> are polynomials that have no common factors.  The inverse of <m>Y(s)</m> is found by using its
-	 partial fraction representation and referring to <xref ref="table_laplace-transforms">Table</xref>.  We now show how the
-	 theory of complex variables can be used to systematically find the partial fraction representation.  The first result is an
-	 extension of <xref ref="Jordan_s_Lemma">Lemma</xref> to <m>n</m> linear factors.  The proof is left for the reader.
+      Y(s) = \frac{P(s)}{Q(s)},
+    </men>
+	 where <m>P</m> and <m>Q</m> are polynomials that have no common factors. The inverse of <m>Y(s)</m> is found by using its
+	 partial fraction representation and referring to <xref ref="table_laplace-transforms">Table</xref>. We now show how the theory
+	 of complex variables can be used to systematically find the partial fraction representation. The first result is an extension
+	 of <xref ref="Jordan_s_Lemma">Lemma</xref> to <m>n</m> linear factors. The proof is left for the reader.
   </p>
   <theorem xml:id="thm_nonrepeated-factors">
     <title>Nonrepeated Linear Factors</title>
     <statement>
       <p>
-        Let <m>P(s)</m> be a polynomial of degree at most <m>n-1</m>.
-        If <m>Q(s)</m> has degree <m>n</m>,
-        and has distinct complex roots <m>a_1,a_2,\ldots,a_n</m>,
-        then Equation <xref ref="quotientPQ"/> has the representation
+		  Let <m>P(s)</m> be a polynomial of degree at most <m>n-1</m>. If <m>Q(s)</m> has degree <m>n</m>, and has distinct complex
+		  roots <m>a_1,a_2,\ldots,a_n</m>, then Equation <xref ref="quotientPQ"/> has the representation
         <men xml:id="nonrepfact">
-          Y(s) = \frac{P(s)}{(s-a_1)(s-a_2) \cdots (s-a_n)} = \sum_{k=1}^n\frac{\mathrm{Res}[Y,a_k]}{s-a_k}
+          \!\!\!\!\! Y(s) = \frac{P(s)}{(s-a_1)(s-a_2) \cdots (s-a_n)} = \sum_{k=1}^n\frac{\mathrm{Res}[Y,a_k]}{s-a_k}
         </men>.
       </p>
     </statement>
@@ -40,7 +37,8 @@
         Furthermore,
         the coefficients <m>A_k</m> can be computed with the formula
         <men xml:id="coeffPQ">
-          A_k = \frac{1}{(n-k)}\lim_{s \to a}\left[\frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right)\right] \text{ for }   k=1,2,\ldots,n
+			 A_k = \frac{1}{(n-k)}\lim_{s \to a}\left[\frac{d^{n-k}}{ds^{n-k}}\left(\frac{P(s)}{Q(s)}\right)\right] \text{ for }
+			 k=1,2,\ldots,n
         </men>.
       </p>
     </statement>
@@ -85,15 +83,15 @@
         </me>.
       </p>
       <p>
-        The coefficients <m>A_1, \, A_2</m>,
-        and <m>A_3</m> are found by using <xref ref="thm_repeated-linear-factor">Theorem</xref>.
-        In this case <m>a=1</m> and <m>\frac{P(s)}{Q(s)} = \frac{s^3-4s+1}{s}</m>,
-        so we get
+		  The coefficients <m>A_1, \, A_2</m>, and <m>A_3</m> are found by using <xref
+		  ref="thm_repeated-linear-factor">Theorem</xref>. In this case <m>a=1</m> and 
+		  <m>\frac{P(s)}{Q(s)} = \frac{s^3-4s+1}{s}</m>, so we get:
         <md>
-          <mrow>A_3 \amp = \lim_{s \to 1}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\frac{s^3-4s+1}{s} = -2.</mrow>
-          <mrow>A_2 \amp = \frac{1}{1!}\lim_{s \to 1}\frac{d}{ds}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\left(2s-\frac{1}{s^2}\right) = 1.</mrow>
-          <mrow>A_1 \amp = \frac{1}{2}\lim_{s \to 1}\frac{d^2}{ds^2}\left(\frac{P(s)}{Q(s)}\right) = \frac{1}{2}\lim_{s \to 1}\left(2+\frac{2}{s^3}\right) = 2</mrow>
-        </md>.
+          <mrow>A_3 \amp = \lim_{s \to 1}\left(\frac{P(s)}{Q(s)}\right) = \lim_{s \to 1}\frac{s^3-4s+1}{s} = -2;</mrow>
+			 <mrow>A_2 \amp = \frac{1}{1!}\lim_{s \to 1}\frac{d}{ds}\left(\frac{P(s)}{Q(s)}\right) = 
+			 \lim_{s \to 1}\left(2s-\frac{1}{s^2}\right) = 1; \quad \text{and}</mrow>
+			 <mrow>A_1 \amp = \frac{1}{2}\lim_{s \to 1}\frac{d^2}{ds^2}\left(\frac{P(s)}{Q(s)}\right) = 
+			 \frac{1}{2}\lim_{s \to 1}\left(2+\frac{2}{s^3}\right) = 2.</mrow> </md>
       </p>
       <p>
         Hence, the partial fraction representation is
@@ -111,14 +109,15 @@
     <title>Irreducible Quadratic Factors</title>
     <statement>
       <p>
-        Let <m>P</m> and <m>Q</m> be polynomials with real coefficients such that the degree of <m>P</m> is at most <m>1</m> larger than the degree of <m>Q</m>.
+		  Let <m>P</m> and <m>Q</m> be polynomials with real coefficients such that the degree of <m>P</m> is at most <m>1</m>
+		  larger than the degree of <m>Q</m>.
         If <m>T</m> does not have a factor of the form <m>(s-a)^2+b^2</m>, then
-        <me>
-          Y(s) = \frac{P(s)}{Q(s)} = \frac{P(s)}{\Big[(s-a)^2+b^2\Big]T(s)} = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2} + R(s), \text{ where }
-        </me>
-        <men xml:id="AandB">
-          A+iB=\frac{P(a+ib)}{Q\,'(a+ib)}
-        </men>.
+        <md>
+          <mrow>Y(s) \amp = \frac{P(s)}{Q(s)}</mrow>
+			 <mrow>\amp = \frac{P(s)}{\Big[(s-a)^2+b^2\Big]T(s)}</mrow>
+			 <mrow>\amp = \frac{2A(s-a)-2Bb}{(s-a)^2+b^2} + R(s), \quad \text{where}</mrow>
+			 <mrow xml:id="AandB"> A+iB=\frac{P(a+ib)}{Q\,'(a+ib)}. </mrow>
+        </md>
       </p>
     </statement>
   </theorem>
@@ -269,7 +268,7 @@
         <md>
           <mrow>Y(s) \amp = \frac{ \begin{vmatrix} 1 \amp  1</mrow>
           <mrow>-2 \amp  -s-3 \end{vmatrix} } { \begin{vmatrix} s-1 \amp  1</mrow>
-          <mrow>5 \amp  -s-3 \end{vmatrix} } = \frac{-s-3+2}{(s-1) (-s-3) -5} = \frac{s+1}{(s+1)^2+1}</mrow>
+          <mrow>5 \amp  -s-3 \end{vmatrix} } = \frac{-s-3+2}{(s-1) (-s-3) -5} = \frac{s+1}{(s+1)^2+1};</mrow>
           <mrow>X(s) \amp = \frac{ \begin{vmatrix} s-1 \amp  1</mrow>
           <mrow>5 \amp  -2 \end{vmatrix} } { \begin{vmatrix} s-1 \amp  1</mrow>
           <mrow>5 \amp  -s-3 \end{vmatrix} } = \frac{-2s+2-5}{(s-1)(-s-3)-5} = \frac{2(s+1) +1}{(s+1)^2+1}</mrow>
@@ -278,7 +277,7 @@
       <p>
         The desired solution is obtained by computing the inverse transforms:
         <md>
-          <mrow>y(t) \amp = e^{-t}\cos t,</mrow>
+          <mrow>y(t) \amp = e^{-t}\cos t;</mrow>
           <mrow>x(t) \amp = e^{-t}(2\cos t+\sin t) </mrow>
         </md>.
       </p>
