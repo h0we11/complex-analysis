@@ -14794,7 +14794,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.10",
   "title": "Convolution",
-  "body": " Convolution  Let and denote the transforms of and , respectively. Then the inverse of the product is given by the function and is called the convolution of and and can be regarded as a generalized product of and . Convolutions are helpful in solving integral equations.   Convolution Theorem   Let and denote the Laplace transforms of and , respectively. Then the product given by is the Laplace transformation of the convolution of and . It is denoted by , and has the integral representation .     The following proof is given for the special case when is a real number. The general case is covered in advanced texts. Using the dummy variables and and the integrals defining the transforms, we can express their product as . The product of integrals in this equation can be written as an iterated integral: . Hold fixed, and use the change of variables and . Then the inner integral in the equation can be rewritten to obtain .  The region of integration for this last iterated integral is the wedge-shaped region in the plane shown in Figure . The order of integration in the integral can be reversed to get: . This equation can be written as , which establishes Equation . Since we can interchange the role of the functions and , Equation follows immediately.    The region of integration in the convolution theorem     Table summarizes some important convolution properties.   Convolution Properties        Commutativity     Distributivity     Associativity     Zero            Show that .    Let , , respectively. Applying the convolution theorem we get .      Use the convolution theorem to solve the integral equation     Letting and using in the convolution theorem we obtain . Solving for we get , and the solution is     Engineers and physicists sometimes consider forces that produce large effects that are applied over a very short time interval. The force acting at the time an earthquake starts is an example. This leads to the idea of a unit impulse function  . Consider a small positive constant . The function is defined by   The unit impulse function is obtained by letting the interval width go to zero, i.e. ,    Figure shows the graph of for , and . Although is called the Dirac delta function , it is not an ordinary function. To be precise it is a distribution, and the theory of distributions permits manipulations of as though it were a function. For our work, we will treat as a function and investigate its properties.   Graphs of for , , and      Show that .    By definition, the Laplace transform of is .  Letting in equation, and using L'Hôpital's rule, we obtain .    We now turn our attention to the unit impulse function. First, consider the function obtained by integrating :   Then it is easy to see that (see Figure ).   The integral of is , which becomes , which becomes when    The response of a system to the unit impulse function is illustrated in the next example.    Solve the initial value problem .    Taking transforms results in , so that so the solution is     Note: The condition is not satisfied by the solution  . Recall that all solutions using the Laplace transform are to be considered zero for values of . Hence the graph of is given in Figure . We see that has a jump discontinuity of magnitude at the origin. This happens because either or must have a jump discontinuity at the origin whenever the Dirac delta function occurs as part of the input or driving function.   The solution to Example    We now illustrate how the convolution method can be used to solve initial value problems.   IVP Convolution Method   Show initial value problem has the unique solution , where is the solution to the homogeneous equation , and is the function whose Laplace transform given by .    The particular solution is found by solving the equation .  Taking the Laplace transform of both sides of this equation produces . Solving for in the latter equation yields . If we set , then , and the particular solution is given by the convolution . The general solution is . To verify that the initial conditions are met we compute .      Use the convolution method to solve the IVP .    First solve with and . Taking the Laplace transform yields . Solving for gives , and it follows that . Second, observe that and , so that .  Therefore, the solution is      Exercises    Find the indicated convolution for each of the following:    .    , and .      .     .    , and .      .       Use convolution to find for each of the following:    .    .      .     .    .      .       Prove the distributive law for convolution: .    Proof:       Use the convolution theorem and mathematical induction to show that       Find .     .      Find .      Use the convolution theorem to solve the initial value problem .     .      Use the convolution theorem to show that the solution to the initial value problem   , with and is       Find .     .      Find .      Let . Use convolution to show that     Given and and , we have       Use the convolution theorem to solve the following integral equations.    .    , and .      .     .    , and .      .       Solve the initial value problem for each of the following:    , with and .    .      , with and .     , with and .    .      , with and .       Use the IVP convolution method to solve the following initial value problems.    , with and .    .      , with and .     , with and .     , with and .      "
+  "body": " Convolution  Let and denote the transforms of and , respectively. Then the inverse of the product is given by the function and is called the convolution of and and can be regarded as a generalized product of and . Convolutions are helpful in solving integral equations.   Convolution Theorem   Let and denote the Laplace transforms of and , respectively. Then the product given by is the Laplace transformation of the convolution of and . It is denoted by , and has the integral representation .     The following proof is given for the special case when is a real number. The general case is covered in advanced texts. Using the dummy variables and and the integrals defining the transforms, we can express their product as . The product of integrals in this equation can be written as an iterated integral: . Hold fixed, and use the change of variables and . Then the inner integral in the equation can be rewritten to obtain .  The region of integration for this last iterated integral is the wedge-shaped region in the plane shown in Figure . The order of integration in the integral can be reversed to get: . This equation can be written as , which establishes Equation . Since we can interchange the role of the functions and , Equation follows immediately.    The region of integration in the convolution theorem     Table summarizes some important convolution properties.   Convolution Properties        Commutativity     Distributivity     Associativity     Zero            Show that .    Let , , respectively. Applying the convolution theorem we get .      Use the convolution theorem to solve the integral equation     Letting and using in the convolution theorem we obtain . Solving for we get , and the solution is     Engineers and physicists sometimes consider forces that produce large effects that are applied over a very short time interval. The force acting at the time an earthquake starts is an example. This leads to the idea of a unit impulse function  . Consider a small positive constant . The function is defined by   The unit impulse function is obtained by letting the interval width go to zero, i.e. ,    Figure shows the graph of for , and . Although is called the Dirac delta function , it is not an ordinary function. To be precise it is a distribution, and the theory of distributions permits manipulations of as though it were a function. For our work, we will treat as a function and investigate its properties.   Graphs of for , , and      Show that .    By definition, the Laplace transform of is .  Letting in equation, and using L'Hôpital's rule, we obtain .    We now turn our attention to the unit impulse function. First, consider the function obtained by integrating :   Then it is easy to see that (see Figure ).   The integral of is , which becomes , which becomes when    The response of a system to the unit impulse function is illustrated in the next example.    Solve the initial value problem .    Taking transforms results in , so that so the solution is     Note: The condition is not satisfied by the solution  . Recall that all solutions using the Laplace transform are to be considered zero for values of . Hence the graph of is given in Figure . We see that has a jump discontinuity of magnitude at the origin. This happens because either or must have a jump discontinuity at the origin whenever the Dirac delta function occurs as part of the input or driving function.   The solution to Example    We now illustrate how the convolution method can be used to solve initial value problems.   IVP Convolution Method   Show initial value problem has the unique solution , where is the solution to the homogeneous equation , and is the function whose Laplace transform given by .    The particular solution is found by solving the equation .  Taking the Laplace transform of both sides of this equation produces . Solving for in the latter equation yields . If we set , then , and the particular solution is given by the convolution . The general solution is . To verify that the initial conditions are met we compute .      Use the convolution method to solve the IVP .    First solve with and . Taking the Laplace transform yields . Solving for gives , and it follows that . Second, observe that and , so that .  Therefore, the solution is      Exercises    Find the indicated convolution for each of the following:      ;     , and .       ;       ;     , and .       .       Use convolution to find for each of the following:      ;     .       ;       ;     .       .       Prove the distributive law for convolution: .    Proof:       Use the convolution theorem and mathematical induction to show that       Find .     .      Find .      Use the convolution theorem to solve the initial value problem .     .      Use the convolution theorem to show that the solution to the initial value problem is       Find .           Find .      Let . Use convolution to show that     Given and and , we have       Use the convolution theorem to solve the following integral equations:      ;     , and .       ;       ;     and        .       Solve the initial value problem for each of the following:      , with and      .       , with and .       with and \\quad      .       with and        Use the IVP convolution method to solve the following initial value problems:      with and      .       with and .       with and .       with and .      "
 },
 {
   "id": "thm_convolution",
@@ -14920,7 +14920,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.1",
   "title": "",
-  "body": "  Find the indicated convolution for each of the following:    .    , and .      .     .    , and .      .    "
+  "body": "  Find the indicated convolution for each of the following:      ;     , and .       ;       ;     , and .       .    "
 },
 {
   "id": "exercises_convolution-3",
@@ -14929,7 +14929,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.2",
   "title": "",
-  "body": "  Use convolution to find for each of the following:    .    .      .     .    .      .    "
+  "body": "  Use convolution to find for each of the following:      ;     .       ;       ;     .       .    "
 },
 {
   "id": "exercises_convolution-4",
@@ -14983,7 +14983,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.8",
   "title": "",
-  "body": "  Use the convolution theorem to show that the solution to the initial value problem   , with and is    "
+  "body": "  Use the convolution theorem to show that the solution to the initial value problem is    "
 },
 {
   "id": "exercises_convolution-10",
@@ -14992,7 +14992,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.9",
   "title": "",
-  "body": "  Find .     .   "
+  "body": "  Find .        "
 },
 {
   "id": "exercises_convolution-11",
@@ -15019,7 +15019,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.12",
   "title": "",
-  "body": "  Use the convolution theorem to solve the following integral equations.    .    , and .      .     .    , and .      .    "
+  "body": "  Use the convolution theorem to solve the following integral equations:      ;     , and .       ;       ;     and        .    "
 },
 {
   "id": "exercises_convolution-14",
@@ -15028,7 +15028,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.13",
   "title": "",
-  "body": "  Solve the initial value problem for each of the following:    , with and .    .      , with and .     , with and .    .      , with and .    "
+  "body": "  Solve the initial value problem for each of the following:      , with and      .       , with and .       with and \\quad      .       with and     "
 },
 {
   "id": "exercises_convolution-15",
@@ -15037,7 +15037,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.10.14",
   "title": "",
-  "body": "  Use the IVP convolution method to solve the following initial value problems.    , with and .    .      , with and .     , with and .     , with and .    "
+  "body": "  Use the IVP convolution method to solve the following initial value problems:      with and      .       with and .       with and .       with and .    "
 }
 ]
 
