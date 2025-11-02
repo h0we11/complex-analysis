@@ -516,8 +516,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Let <span class="process-math">\(F(s)\)</span> and <span class="process-math">\(G(s)\)</span> denote the Laplace transforms of <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> respectively.  Then the product given by <span class="process-math">\(H(s)=F(s)G(s)\)</span> is the Laplace transformation of the convolution of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span>  It is denoted by <span class="process-math">\(h(t)=(f\ast g)(t)\text{,}\)</span> and has the integral representation</div>
 <div class="displaymath process-math" id="thm_convolution-2-1-9">
 \begin{align}
-h(t) \amp = (f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau,  \text{ or }\tag{11.10.1}\\
-h(t) \amp = (g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau\text{.}\tag{11.10.2}
+h(t)\amp=(f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau, \quad \text{or}\tag{11.10.1}\\
+h(t)\amp=(g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau\text{.}\tag{11.10.2}
 \end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_convolution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -680,7 +680,8 @@ f(t) = 2\cos t - t\sin t.
 <div class="para">By definition, the Laplace transform of <span class="process-math">\(\delta_a(t)\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}\big(\delta_a(t)\big) = \int_0^{\infty}\delta_a(t)e^{-st}\,dt = \int_0^{a}\frac{1}{a}e^{-st}\,dt = \frac{1-e^{-sa}}{sa}\text{.}
+\mathcal{L}\big(\delta_a(t)\big) = \int_0^{\infty}\delta_a(t)e^{-st}\,dt = \int_0^{a}\frac{1}{a}e^{-st}\,dt =
+\frac{1-e^{-sa}}{sa}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -980,7 +981,9 @@ y(t) = \frac{1}{\omega}\int_0^tf(\tau)\sin[\omega(t-\tau )]\,d\tau
 </div>
 <div class="solutions"><details id="exercises_convolution-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="exercises_convolution-10-2-1">
-<span class="process-math">\(\mathcal{L}\left(\int_{0}^te^{-\tau}\cos(t-\tau)\,d\tau \right) = \mathcal{L}(e^t) \mathcal{L}\big(\cos(t)\big) = \frac{s}{(s+1)(s^2+1)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}\left(\int_{0}^te^{-\tau}\cos(t-\tau)\,d\tau \right) =
+\mathcal{L}(e^t) \mathcal{L}\big(\cos(t)\big) = \frac{s}{(s+1)(s^2+1)}
+\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.10.9.1"><a href="#exercises_convolution-10-2" title="Copy heading and permalink for Solution 11.10.9.1" aria-label="Copy heading and permalink for Solution 11.10.9.1">🔗</a></div>
 </div></details></div>
@@ -998,7 +1001,8 @@ y(t) = \frac{1}{\omega}\int_0^tf(\tau)\sin[\omega(t-\tau )]\,d\tau
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="exercises_convolution-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="exercises_convolution-12-2-1">Given <span class="process-math">\(F(s) = \mathcal{L}\big(f(t)\big)\)</span> and <span class="process-math">\(G(s)=\mathcal{L}(1) = \frac{1}{s}\)</span> and <span class="process-math">\(g(t)=1\text{,}\)</span> we have <span class="process-math">\(\mathcal{L}^{-1}\left(\frac{F(s)}{s}\right) = F(s)G(s) = (f \ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau = \int_{0}^tf(\tau)\,d\tau\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises_convolution-12-2-1">Given <span class="process-math">\(F(s) = \mathcal{L}\big(f(t)\big)\)</span> and <span class="process-math">\(G(s)=\mathcal{L}(1) = \frac{1}{s}\)</span> and <span class="process-math">\(g(t)=1\text{,}\)</span> we have <span class="process-math">\(\mathcal{L}^{-1}\left(\frac{F(s)}{s}\right) = F(s)G(s) = (f \ast g)(t) = 
+\int_0^tf(\tau)g(t-\tau)\,d\tau = \int_{0}^tf(\tau)\,d\tau.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.10.11.1"><a href="#exercises_convolution-12-2" title="Copy heading and permalink for Solution 11.10.11.1" aria-label="Copy heading and permalink for Solution 11.10.11.1">🔗</a></div>
 </div></details></div>
