@@ -1,12 +1,11 @@
 <section xml:id="sec_convolution">
   <title>Convolution</title>
   <p>
-    Let <m>F(s)</m> and <m>G(s)</m> denote the transforms of <m>f(t)</m> and <m>g(t)</m>,
-    respectively.
-    Then the inverse of the product
+	 Let <m>F(s)</m> and <m>G(s)</m> denote the transforms of <m>f(t)</m> and <m>g(t)</m>, respectively. Then the inverse of the
+	 product
     <m>F(s)G(s)</m> is given by the function
-    <m>h(t) =(f\ast g)(t)</m> and is called the convolution of <m>f(t)</m> and <m>g(t)</m> and can be regarded as a generalized product of <m>f(t)</m> and <m>g(t)</m>.
-    Convolutions are helpful in solving integral equations.
+	 <m>h(t) =(f\ast g)(t)</m> and is called the convolution of <m>f(t)</m> and <m>g(t)</m> and can be regarded as a generalized
+	 product of <m>f(t)</m> and <m>g(t)</m>. Convolutions are helpful in solving integral equations.
   </p>
   <theorem xml:id="thm_convolution">
     <title>Convolution Theorem</title>
@@ -16,8 +15,8 @@
 		  product given by <m>H(s)=F(s)G(s)</m> is the Laplace transformation of the convolution of <m>f</m> and <m>g</m>.  It is
 		  denoted by <m>h(t)=(f\ast g)(t)</m>, and has the integral representation
         <md>
-          <mrow xml:id="convolution1" number="yes">h(t) \amp = (f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau,  \text{ or }</mrow>
-          <mrow xml:id="convolution2" number="yes">h(t) \amp = (g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau</mrow>
+			 <mrow xml:id="convolution1" number="yes">h(t)\amp=(f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau, \quad \text{or}</mrow>
+          <mrow xml:id="convolution2" number="yes">h(t)\amp=(g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau</mrow>
         </md>.
       </p>
     </statement>
@@ -54,8 +53,8 @@
         <mrow>F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-st}\,dt</mrow>
         <mrow>\amp = \mathcal{L}^{-1}\left(\int_0^tf(t-\tau)g(\tau)\,d\tau\right)</mrow>
       </md>,
-      which establishes Equation <xref ref="convolution2"/>.
-      Since we can interchange the role of the functions <m>f(t)</m> and <m>g(t)</m>, Equation <xref ref="convolution1"/> follows immediately.
+		which establishes Equation <xref ref="convolution2"/>. Since we can interchange the role of the functions <m>f(t)</m> and
+		<m>g(t)</m>, Equation <xref ref="convolution1"/> follows immediately.
     </p>
   </proof>
   <figure xml:id="fig_ch-11-28">
@@ -185,7 +184,8 @@
       <p>
         By definition, the Laplace transform of <m>\delta_a(t)</m> is
         <me>
-          \mathcal{L}\big(\delta_a(t)\big) = \int_0^{\infty}\delta_a(t)e^{-st}\,dt = \int_0^{a}\frac{1}{a}e^{-st}\,dt = \frac{1-e^{-sa}}{sa}
+			 \mathcal{L}\big(\delta_a(t)\big) = \int_0^{\infty}\delta_a(t)e^{-st}\,dt = \int_0^{a}\frac{1}{a}e^{-st}\,dt =
+			 \frac{1-e^{-sa}}{sa}
         </me>.
       </p>
       <p>
@@ -243,10 +243,10 @@
     Note: The condition <m>y\,'(0^-) =0</m> is not satisfied by the
     <q>solution</q>
     <m>y(t)</m>.
-    Recall that all solutions using the Laplace transform are to be considered zero for values of <m>t\lt 0</m>.
-    Hence the graph of <m>y(t)</m> is given in <xref ref="fig_ch-11-31">Figure</xref>.
-    We see that <m>y,'(t)</m> has a jump discontinuity of magnitude <m>+3</m> at the origin.
-    This happens because either <m>y(t)</m> or <m>y\,'(t)</m> must have a jump discontinuity at the origin whenever the Dirac delta function occurs as part of the input or driving function.
+	 Recall that all solutions using the Laplace transform are to be considered zero for values of <m>t\lt 0</m>. Hence the graph
+	 of <m>y(t)</m> is given in <xref ref="fig_ch-11-31">Figure</xref>. We see that <m>y,'(t)</m> has a jump discontinuity of
+	 magnitude <m>+3</m> at the origin. This happens because either <m>y(t)</m> or <m>y\,'(t)</m> must have a jump discontinuity at
+	 the origin whenever the Dirac delta function occurs as part of the input or driving function.
   </p>
   <figure xml:id="fig_ch-11-31">
     <caption>The solution <m>y=y(t)</m> to <xref ref="ex_10_32">Example</xref></caption>
@@ -498,7 +498,10 @@
       </statement>
       <solution>
         <p>
-          <m>\mathcal{L}\left(\int_{0}^te^{-\tau}\cos(t-\tau)\,d\tau \right) = \mathcal{L}(e^t) \mathcal{L}\big(\cos(t)\big) = \frac{s}{(s+1)(s^2+1)}</m>.
+			 <m>
+			 	\mathcal{L}\left(\int_{0}^te^{-\tau}\cos(t-\tau)\,d\tau \right) =
+				\mathcal{L}(e^t) \mathcal{L}\big(\cos(t)\big) = \frac{s}{(s+1)(s^2+1)}
+			 </m>.
         </p>
       </solution>
     </exercise>
@@ -521,8 +524,11 @@
       </statement>
       <solution>
         <p>
-          Given <m>F(s) = \mathcal{L}\big(f(t)\big)</m> and <m>G(s)=\mathcal{L}(1) = \frac{1}{s}</m> and <m>g(t)=1</m>,
-          we have <m>\mathcal{L}^{-1}\left(\frac{F(s)}{s}\right) = F(s)G(s) = (f \ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau = \int_{0}^tf(\tau)\,d\tau</m>.
+			 Given <m>F(s) = \mathcal{L}\big(f(t)\big)</m> and <m>G(s)=\mathcal{L}(1) = \frac{1}{s}</m> and <m>g(t)=1</m>, we have
+			 <m>
+			 	\mathcal{L}^{-1}\left(\frac{F(s)}{s}\right) = F(s)G(s) = (f \ast g)(t) = 
+				\int_0^tf(\tau)g(t-\tau)\,d\tau = \int_{0}^tf(\tau)\,d\tau.
+			 </m>
         </p>
       </solution>
     </exercise>
