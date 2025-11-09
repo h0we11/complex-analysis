@@ -2427,7 +2427,7 @@ var ptx_lunr_docs = [
   "url": "sec_limits-continuity.html#sec_limits-continuity-20",
   "type": "Definition",
   "number": "2.3.10",
-  "title": "<em class=\"emphasis\">Continuity of<\/em> <span class=\"process-math\">\\(\\; \\boldsymbol{u(x,y)}\\)<\/span>.",
+  "title": "<em class=\"emphasis\">Continuity of<\/em> <span class=\"process-math\">\\(\\, \\boldsymbol{u(x,y)}\\)<\/span>.",
   "body": " Continuity of    Let be a real-valued function of the two real variables and . We say that is continuous at the point if three conditions are satisfied: .   "
 },
 {
@@ -2436,7 +2436,7 @@ var ptx_lunr_docs = [
   "url": "sec_limits-continuity.html#sec_limits-continuity-23",
   "type": "Definition",
   "number": "2.3.11",
-  "title": "<em class=\"emphasis\">Continuity of<\/em> <span class=\"process-math\">\\(\\;\\boldsymbol{f(z)}\\)<\/span>.",
+  "title": "<em class=\"emphasis\">Continuity of<\/em> <span class=\"process-math\">\\(\\, \\boldsymbol{f(z)}\\)<\/span>.",
   "body": " Continuity of    Let be a complex function of the complex variable that is defined for all values of in some neighborhood of . We say that is continuous at if three conditions are satisfied: .   "
 },
 {
