@@ -2337,7 +2337,7 @@ var ptx_lunr_docs = [
   "url": "sec_limits-continuity.html#sec_limits-continuity-4",
   "type": "Definition",
   "number": "2.3.1",
-  "title": "Limit of <span class=\"process-math\">\\(\\mathbf{u(x,y)}\\)<\/span>.",
+  "title": "Limit of <span class=\"process-math\">\\(\\boldsymbol{u(x,y)}\\)<\/span>.",
   "body": " Limit of   The expression means that for each number , there is a corresponding number such that    "
 },
 {
