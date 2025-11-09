@@ -1,23 +1,18 @@
 <section xml:id="sec_diff-analytic">
   <title>Differentiable and Analytic Functions</title>
   <p>
-    Using our imagination,
-    we take our lead from elementary calculus and define the derivative of <m>f</m> at <m>z_0</m>,
-    written <m>f\,'(z_0)</m>, by
+	 Using our imagination, we take our lead from elementary calculus and define the derivative of <m>f</m> at <m>z_0</m>, written
+	 <m>f\,'(z_0)</m>, by
     <men xml:id="Deriv_Def_1">
       f\,'(z_0) = \lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}
     </men>,
-    provided the limit exists.
-    If it does, we say that the function <m>f</m> is differentiable at <m>z_0</m>.
-    If we write <m>\Delta z=z-z_0</m>,
-    then we can express Equation <xref ref="Deriv_Def_1"/> in the form
-    <men xml:id="Deriv_Def_2">
-      f\,'(z_0) = \lim\limits_{\Delta z \to 0}\frac{f(z_0+\Delta z) -f(z_0)}{\Delta z}
-    </men>.
+	 provided the limit exists. If it does, we say that the function <m>f</m> is differentiable at <m>z_0</m>. If we write
+	 <m>\Delta z=z-z_0</m>, then we can express Equation <xref ref="Deriv_Def_1"/> in the form 
+	 <men xml:id="Deriv_Def_2"> f\,'(z_0) = \lim\limits_{\Delta z \to 0}\frac{f(z_0+\Delta z) -f(z_0)}{\Delta z}</men>.
   </p>
   <p>
-    If we let <m>w=f(z)</m> and <m>\Delta w=f(z)-f(z_0)</m>,
-    then we can use the Leibniz notation <m>\frac{dw}{dz}</m> for the derivative:
+	 If we let <m>w=f(z)</m> and <m>\Delta w=f(z)-f(z_0)</m>, then we can use the Leibniz notation <m>\frac{dw}{dz}</m> for the
+	 derivative:
     <men xml:id="Deriv_Def_3">
       f\,'(z_0) = \frac{dw}{dz}= \lim\limits_{\Delta z \to 0}\frac{\Delta w}{\Delta z}
     </men>.
@@ -58,16 +53,17 @@
   <example>
     <statement>
       <p>
-        Show that the function <m>w=f(z) = \overline{z}=x-iy</m> is nowhere differentiable.
+        Show that the function <m>w\, =f(z) = \overline{z}=x-iy \,</m> is nowhere differentiable.
       </p>
     </statement>
     <solution>
       <p>
-        We choose two approaches to the point
-        <m>z_0=x_0+iy_0</m> and compute limits of the difference quotients.
-        First, we approach <m>z_0=x_0+iy_0</m> along a line parallel to the <m>x</m>-axis by forcing <m>z</m> to be of the form <m>z=x+iy_0</m>.
+		  We choose two approaches to the point <m>z_0=x_0+iy_0</m> and compute limits of the difference quotients. First, we
+		  approach <m>z_0=x_0+iy_0</m> along a line parallel to the <m>x</m>-axis by forcing <m>z</m> to be of the form
+		  <m>z=x+iy_0</m>.
         <md>
-          <mrow>\lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)} \frac{f(x+iy_0) - f(x_0+iy_0)}{(x+iy_0)-(x_0+iy_0)}</mrow>
+			 <mrow>\lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)} \frac{f(x+iy_0) -
+			 f(x_0+iy_0)}{(x+iy_0)-(x_0+iy_0)}</mrow>
           <mrow>\amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)}\frac{(x-iy_0) -(x_0-iy_0)}{(x-x_0) +i(y_0-y_0)}</mrow>
           <mrow>\amp = \lim\limits_{(x+iy_0)  \to (x_0+iy_0)}\frac{x-x_0}{x-x_0}</mrow>
           <mrow>\amp = 1</mrow>
@@ -76,55 +72,47 @@
       <p>
         Next, we approach <m>z_0</m> along a line parallel to the <m>y</m> axis by forcing <m>z</m> to be of the form <m>z=x_0+iy</m>.
         <md>
-          <mrow>\lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{f(x_0+iy) -f(x_0+iy_0)}{(x_0+iy) -(x_0+iy_0)}</mrow>
+			 <mrow>\lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0} \amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{f(x_0+iy)
+			 -f(x_0+iy_0)}{(x_0+iy) -(x_0+iy_0)}</mrow>
           <mrow>\amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{(x_0-iy) -(x_0-iy_0)}{(x_0-x_0) +i(y-y_0)}</mrow>
           <mrow>\amp = \lim\limits_{(x_0+iy)  \to (x_0+iy_0)}\frac{-i(y-y_0)}{i(y-y_0)}</mrow>
           <mrow>\amp = -1</mrow>
         </md>.
       </p>
       <p>
-        The limits along the two paths are different,
-        so there is no possible value for the right side of Equation <xref ref="Deriv_Def_1"/>.
-        Therefore <m>f( z) = \overline{z}</m> is not differentiable at the point <m>z_0</m>,
-        and since <m>z_0</m> was arbitrary,
-        <m>f(z)</m> is nowhere differentiable.
+		  The limits along the two paths are different, so there is no possible value for the right side of Equation <xref
+		  ref="Deriv_Def_1"/>. Therefore <m>f( z) = \overline{z}</m> is not differentiable at the point <m>z_0</m>, and since
+		  <m>z_0</m> was arbitrary, <m>f(z)</m> is nowhere differentiable.
       </p>
     </solution>
   </example>
   <remark>
     <p>
-      In <xref ref="sec_limits-continuity">Section</xref>
-      we showed that <m>f(z) = \overline{z}</m> is continuous for all <m>z</m>.
-      Thus, we have a simple example of a function that is continuous everywhere but differentiable nowhere.
-      Such functions are hard to construct in real variables.
-      In some sense,
-      the complex case has made pathological constructions simpler!
+		In <xref ref="sec_limits-continuity">Section</xref> we showed that <m>f(z) = \overline{z}</m> is continuous for all
+		<m>z</m>. Thus, we have a simple example of a function that is continuous everywhere but differentiable nowhere. Such
+		functions are hard to construct in real variables. In some sense, the complex case has made pathological constructions
+		simpler!
     </p>
   </remark>
   <p>
-    We seldom are interested in studying functions that aren't differentiable,
-    or are differentiable at only a single point.
-    Complex functions that have a derivative at all points in a neighborhood of <m>z_0</m> deserve further study.
-    Indeed, functions that are differentiable in neighborhoods of points are pillars of the complex analysis edifice.
-    We give them a special name, as indicated in the following definition.
+	 We seldom are interested in studying functions that aren't differentiable, or are differentiable at only a single point.
+	 Complex functions that have a derivative at all points in a neighborhood of <m>z_0</m> deserve further study. Indeed,
+	 functions that are differentiable in neighborhoods of points are pillars of the complex analysis edifice. We give them a
+	 special name, as indicated in the following definition.
   </p>
   <definition xml:id="Analytic_Def">
     <title>Analytic</title>
     <statement>
       <p>
         The complex function <m>f</m> is analytic at the point <m>z_0</m> provided there is some <m>\varepsilon>0</m> such that
-        <m>f\,'( z)</m> exists for all <m>z\in D_{\varepsilon}(z_0)</m>.
-        In other words,
-        <m>f</m> must be differentiable not only at <m>z_0</m>,
-        but also at all points in some
-        <m>\varepsilon</m>-neighborhood of <m>z_0</m>.
+		  <m>f\,'( z)</m> exists for all <m>z\in D_{\varepsilon}(z_0)</m>. In other words, <m>f</m> must be differentiable not only
+		  at <m>z_0</m>, but also at all points in some <m>\varepsilon</m>-neighborhood of <m>z_0</m>.
       </p>
     </statement>
   </definition>
   <p>
-    If <m>f</m> is analytic at each point in the region <m>R</m>,
-    then we say that <m>f</m> is analytic on <m>R</m>.
-    Again, we have a special term if <m>f</m> is analytic on the whole complex plane.
+	 If <m>f</m> is analytic at each point in the region <m>R</m>, then we say that <m>f</m> is analytic on <m>R</m>. Again, we
+	 have a special term if <m>f</m> is analytic on the whole complex plane.
   </p>
   <definition xml:id="Entire_Def">
     <title>Entire</title>
@@ -135,37 +123,39 @@
     </statement>
   </definition>
   <p>
-    Points of non analyticity for a function are called singular points.
-    They are important for certain applications in physics and engineering.
+	 Points of non analyticity for a function are called singular points. They are important for certain applications in physics
+	 and engineering.
   </p>
   <p>
-    Our definition of the derivative for complex functions is formally the same as for real functions and is the natural extension from real variables to complex variables.
-    The basic differentiation formulas are identical to those for real functions,
-    and we obtain the same rules for differentiating powers, sums,
-    products, quotients, and compositions of functions.
-    We can easily establish the proof of the differentiation formulas by using the limit theorems.
+	 Our definition of the derivative for complex functions is formally the same as for real functions and is the natural extension
+	 from real variables to complex variables. The basic differentiation formulas are identical to those for real functions, and we
+	 obtain the same rules for differentiating powers, sums, products, quotients, and compositions of functions. We can easily
+	 establish the proof of the differentiation formulas by using the limit theorems.
   </p>
   <p>
-    Suppose that <m>f</m> and <m>g</m> are differentiable.
-    From Equation <xref ref="Deriv_Def_1"/> and the technique exhibited in the solution to <xref ref="DerivEx">Example</xref>,
-    we can establish the following rules,
-    which are virtually identical to those for real-valued functions.
+	 Suppose that <m>f</m> and <m>g</m> are differentiable. From Equation <xref ref="Deriv_Def_1"/> and the technique exhibited in
+	 the solution to <xref ref="DerivEx">Example</xref>, we can establish the following rules, which are virtually identical to
+	 those for real-valued functions.
     <md>
       <mrow xml:id="Deriv_Eq_4" number="yes">\frac{d}{dz}C \amp = 0,  \text{ where }   C  \text{ is a constant, and }</mrow>
-      <mrow xml:id="Deriv_Eq_5" number="yes">\frac{d}{dz}z^n \amp = nz^{n-1},  \text{ where }   n  \text{ is a positive integer } .</mrow>
+		<mrow xml:id="Deriv_Eq_5" number="yes">\frac{d}{dz}z^n \amp = nz^{n-1},  \text{ where }   n  \text{ is a positive integer},
+		</mrow>
       <mrow xml:id="Deriv_Eq_6" number="yes">\frac{d}{dz}[Cf(z)] \amp = Cf\,'(z)</mrow>
       <mrow xml:id="Deriv_Eq_7" number="yes">\frac{d}{dz}[f(z)+g(z)] \amp = f\,'(z) + g\,'(z)</mrow>
       <mrow xml:id="Deriv_Eq_8" number="yes">\frac{d}{dz} [f(z) g(z)] \amp = f(z) g\,'(z) + g(z) f\,'(z)</mrow>
-      <mrow xml:id="Deriv_Eq_9" number="yes">\frac{d}{dz}\frac{f(z)}{g(z)} \amp = \frac{g(z) f\,'(z) -f(z) g\,'(z)}{[g(z)]^2} \text{ if }   g(z) \ne 0,  \text{ and }</mrow>
+		<mrow xml:id="Deriv_Eq_9" number="yes">\frac{d}{dz}\frac{f(z)}{g(z)} \amp = \frac{g(z) f\,'(z) -f(z) g\,'(z)}{[g(z)]^2}
+		\text{ if }   g(z) \ne 0,  \text{ and }</mrow>
       <mrow xml:id="Deriv_Eq_10" number="yes">\frac{d}{dz}\,f\big(g(z)\big) \amp = f\,'\big(g(z)\big) g\,'(z)</mrow>
     </md>.
   </p>
   <p>
     Important particular cases of Equations <xref ref="Deriv_Eq_9"/> and <xref ref="Deriv_Eq_10"/>, respectively, are
     <md>
-      <mrow xml:id="Deriv_Eq_11" number="yes">\frac{d}{dz}\frac{1}{z^n} \amp = \frac{-n}{z^{n+1}}\text{ ,\qquad for } z \ne 0,  n  \text{ a positive integer, and }</mrow>
-      <mrow xml:id="Deriv_Eq_12" number="yes">\frac{d}{dz}[f(z)]^n \amp  =n[f(z)]^{n-1}f\,'(z),  n  \text{ a positive integer. }</mrow>
-    </md>
+		<mrow xml:id="Deriv_Eq_11" number="yes">\frac{d}{dz}\frac{1}{z^n} \amp = \frac{-n}{z^{n+1}} \;\; \text{for} \;\; z \ne 0, 
+		n \;\; \text{a positive integer, and }</mrow>
+      <mrow xml:id="Deriv_Eq_12" number="yes">\frac{d}{dz}[f(z)]^n \amp  =n[f(z)]^{n-1}f\,'(z), \;\; n \;\; 
+		\text{a positive integer}.</mrow>
+	 </md>
   </p>
   <example>
     <statement>
@@ -173,15 +163,15 @@
         If we use Equation <xref ref="Deriv_Eq_12"/> with
         <m>f(z)=z^2+i2z+3</m> and <m>f\,'(z) =2z+2i</m>, then we get
         <me>
-          \frac{d}{dz}(z^2+i2z+3)^4=8(z^2+i2z+3)^3(z+i)
+          \frac{d}{dz}(z^2+i2z+3)^4=8(z^2+i2z+3)^3(z+i).
         </me>
       </p>
     </statement>
   </example>
   <p>
-    The proofs of the rules given in Equations <xref ref="Deriv_Eq_4"/> through <xref ref="Deriv_Eq_10"/> depend on the validity of extending theorems for real functions to their complex companions.
-    Equation <xref ref="Deriv_Eq_8"/>, for example,
-    relies on <xref ref="Diffl_Implies_Cont">Theorem</xref>.
+	 The proofs of the rules given in Equations <xref ref="Deriv_Eq_4"/> through <xref ref="Deriv_Eq_10"/> depend on the validity
+	 of extending theorems for real functions to their complex companions. Equation <xref ref="Deriv_Eq_8"/>, for example, relies
+	 on <xref ref="Diffl_Implies_Cont">Theorem</xref>.
   </p>
   <theorem xml:id="Diffl_Implies_Cont">
     <statement>
@@ -263,11 +253,10 @@
     <title>L'H&#xf4;pital's rule</title>
     <statement>
       <p>
-        Assume that <m>f</m> and <m>g</m> are analytic at <m>z_0</m>.
-        If <m>f(z_0) =0</m>, <m>g(z_0) =0</m>,
-        and <m>g\,'(z_0) \ne 0</m>, then
+		  Assume that <m>f</m> and <m>g</m> are analytic at <m>z_0</m>. If <m>f(z_0) =0</m>, <m>g(z_0) =0</m>, and 
+		  <m>g\,'(z_0) \ne 0</m>, then
         <me>
-          \lim_{z \to z_0}\frac{f(z)}{g(z)} = \lim_{z \to z_0}\frac{f\,'(z)}{g\,'(z)}
+          \lim_{z \to z_0}\frac{f(z)}{g(z)} = \lim_{z \to z_0}\frac{f\,'(z)}{g\,'(z)}.
         </me>
       </p>
     </statement>
