@@ -549,11 +549,11 @@ A(\alpha ,r,R) =\{z:r\lt |z-\alpha| \lt R\}\text{.}
 <div class="para logical" id="sec_laurent-series-5-1">
 <div class="para">Recall that <span class="process-math">\(\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n\)</span> is a simplified expression for the sum <span class="process-math">\(c_0+\sum\limits_{n=1}^{\infty}c_n (z-\alpha)^n\text{.}\)</span> At times it will be convenient to write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ls.html" id="sec_laurent-series-5-1-4">
-\begin{gather*}
-\sum\limits_{n=-\infty}^{\infty}c_n(z-\alpha)^n \quad \text{as}\\
-\sum\limits_{n=- \infty}^{\infty}c_n(z-\alpha)^n = 
+\begin{align*}
+\amp \sum\limits_{n=-\infty}^{\infty}c_n(z-\alpha)^n \quad \text{as}\\
+\amp \sum\limits_{n=- \infty}^{\infty}c_n(z-\alpha)^n = 
 \sum\limits_{n=- \infty}^{-1}c_n(z-\alpha)^n + \sum \limits_{n=0}^{\infty}c_n(z-\alpha)^n
-\end{gather*}
+\end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laurent-series-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -685,8 +685,10 @@ f(z_0) \amp = \frac{1}{2\pi i}\int_{C_1}\sum_{n=0}^{\infty}\frac{(z-\alpha)^n}{(
 <div class="para">Because the series in this equation converge uniformly on <span class="process-math">\(C_2\)</span> and <span class="process-math">\(C_1\)</span> , respectively, we can interchange the summations and the integrals, in accordance with <a href="sec_uniform-convergence.html#Sum_Integral_Swap" class="xref" data-knowl="./knowl/xref/Sum_Integral_Swap.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.1.8">Corollary 7.1.8</a> to obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Sum_Integral_Swap.html" id="sec_laurent-series-13-9-4">
 \begin{align*}
-f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n\\
-\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}f(z)(z-\alpha)^n\,dz\right] \frac{1}{(z_0-\alpha)^{n+1}}\text{.}
+f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right]
+(z_0-\alpha)^n\\
+\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}f(z)(z-\alpha)^n\,dz\right]
+\frac{1}{(z_0-\alpha)^{n+1}}\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laurent-series-13-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -695,8 +697,10 @@ f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(
 <div class="para">If we move some terms around in the second series of this equation and reindex, we get</div>
 <div class="displaymath process-math" id="sec_laurent-series-13-10-1">
 \begin{align}
-f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right](z_0-\alpha)^n\notag\\
-\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}\frac{f(z)}{(z-\alpha)^{-n+1}}\,dz\right](z_0-\alpha)^{-n}\text{.}\tag{7.3.9}
+f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}
+\int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right](z_0-\alpha)^n\notag\\
+\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i}
+\int_{C_1}\frac{f(z)}{(z-\alpha)^{-n+1}}\,dz\right](z_0-\alpha)^{-n}\text{.}\tag{7.3.9}
 \end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laurent-series-13-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -705,8 +709,10 @@ f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(
 <div class="para">We apply the extended Cauchy-Goursat theorem once more to conclude that the integrals taken over <span class="process-math">\(C_2\)</span> and <span class="process-math">\(C_1\)</span> in Equation <a href="sec_laurent-series.html#sec_laurent-series-13-10-1" class="xref" data-knowl="./knowl/xref/Laurent_6.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.9">(7.3.9)</a> give the same result if they are taken over the contour <span class="process-math">\(C_{\rho }^{+}(\alpha)\text{,}\)</span> where <span class="process-math">\(\rho\)</span> is any number such that <span class="process-math">\(r\lt \rho \lt R\text{.}\)</span> This yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Laurent_6.html" id="sec_laurent-series-13-11-7">
 \begin{align*}
-f(z_0) \amp = \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}\int_{C_{\rho }^+(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n\\
-\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^+(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}\text{.}
+f(z_0) \amp = \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}\int_{C_{\rho
+}^+(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n\\
+\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^+(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right]
+(z_0-\alpha)^{-n}\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laurent-series-13-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -715,8 +721,10 @@ f(z_0) \amp = \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}\int_{C_{\rho }^+(\alpha
 <div class="para">Finally, writing the second series first in our last equation gives</div>
 <div class="displaymath process-math" id="sec_laurent-series-13-12-1">
 \begin{align*}
-f(z_0) \amp = \sum_{n=1}^{\infty}\left[\frac{1}{2\pi i}\int_{C_{\rho }^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}\\
-\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n\text{.}
+f(z_0) \amp = \sum_{n=1}^{\infty}\left[\frac{1}{2\pi i}\int_{C_{\rho
+}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}\\
+\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}
+\int_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laurent-series-13-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
