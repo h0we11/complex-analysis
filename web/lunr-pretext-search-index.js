@@ -8727,7 +8727,7 @@ var ptx_lunr_docs = [
   "url": "sec_singularities.html#order_k_zero_def",
   "type": "Definition",
   "number": "7.4.2",
-  "title": "Zero of order <span class=\"process-math\">\\(\\boldmath{k}\\)<\/span>.",
+  "title": "Zero of order <span class=\"process-math\">\\(\\boldsymbol{k}\\)<\/span>.",
   "body": " Zero of order   A function analytic in has a zero of order at the point iff .  A zero of order 1 is called a simple zero.   "
 },
 {
