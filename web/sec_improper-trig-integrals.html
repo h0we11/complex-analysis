@@ -511,7 +511,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be polynomials of degree <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively, where <span class="process-math">\(n\ge m+1\text{.}\)</span>  We can show (but omit the proof) that if <span class="process-math">\(Q(x) \ne 0\)</span> for all real <span class="process-math">\(x\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad  \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
+\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad  \text{ P.V. }
+\int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
 \end{equation*}
 </div>
 <div class="para">are convergent improper integrals.  You may encounter integrals of this type in the study of Fourier transforms and Fourier integrals.  We now show how to evaluate them.</div>
@@ -521,7 +522,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Particularly important is our use of the identities</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Jordan_s_Lemma.html">
 \begin{equation*}
-\cos(\alpha x) =\mathrm{Re}[\exp(i\alpha x)]  \text{ and }   \sin (\alpha x) =\mathrm{Im}[\exp (i\alpha x)]\text{,}
+\cos(\alpha x) =\mathrm{Re}[\exp(i\alpha x)], \quad  \text{and} \quad \sin (\alpha x) =\mathrm{Im}[\exp (i\alpha x)],
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\alpha\)</span> is a positive real number. The crucial step in the proof of the following Theorem wouldn’t hold if we were to use <span class="process-math">\(\cos(\alpha z)\)</span> and <span class="process-math">\(\sin (\alpha z)\)</span> instead of <span class="process-math">\(\exp (i\alpha z)\text{,}\)</span> as you will see when you get to <a href="sec_improper-trig-integrals.html#Jordan_s_Lemma" class="xref" data-knowl="./knowl/xref/Jordan_s_Lemma.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 8.4.4: Jordan’s lemma">Lemma 8.4.4</a>.</div>
@@ -534,22 +535,22 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Let <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> be polynomials with real coefficients of degree <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> respectively, where <span class="process-math">\(n \ge m+1\)</span> and <span class="process-math">\(Q(x) \ne 0\text{,}\)</span> for all real <span class="process-math">\(x\text{.}\)</span> If <span class="process-math">\(\alpha&gt;0\)</span> and</div>
 <div class="displaymath process-math" id="exp_iaz_P_z__Q_z_">
 \begin{equation}
-f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}\text{.}\tag{8.4.1}
+f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}.\tag{8.4.1}
 \end{equation}
 </div>
 <div class="para">then</div>
 <div class="displaymath process-math" id="PV_P_Q_sin__cos_thm-1-1-13">
 \begin{align}
-\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx
-\amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_j]),  \text{ and }\tag{8.4.2}\\
+\!\!\!\!\!\! \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx
+\amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_j]), \quad \text{and}\tag{8.4.2}\\
 \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx
-\amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j])\text{,}\tag{8.4.3}
+\amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j]),\tag{8.4.3}
 \end{align}
 </div>
 <div class="para">where <span class="process-math">\(z_1, \, z_2, \, \ldots, \, z_{k-1}, \, z_k\)</span> are the poles of <span class="process-math">\(f\)</span> that lie in the upper half-plane, and <span class="process-math">\(\mathrm{Re}(\mathrm{Res}[f,z_j])\)</span> and <span class="process-math">\(\mathrm{Im}(\mathrm{Res}[f,z_j])\)</span> are the real and imaginary parts of <span class="process-math">\(\mathrm{Res}[f,z_j]\text{,}\)</span> respectively.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#PV_P_Q_sin__cos_thm-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 8.4.1"><a href="#PV_P_Q_sin__cos_thm" title="Copy heading and permalink for Theorem 8.4.1" aria-label="Copy heading and permalink for Theorem 8.4.1">🔗</a></div></article><div class="para" id="sec_improper-trig-integrals-5">The proof of <a href="sec_improper-trig-integrals.html#PV_P_Q_sin__cos_thm" class="xref" data-knowl="./knowl/xref/PV_P_Q_sin__cos_thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.4.1">Theorem 8.4.1</a> is similar to the proof of <a href="sec_improper-rational-fn-int.html#Ratl_Fcn_Int_Thm" class="xref" data-knowl="./knowl/xref/Ratl_Fcn_Int_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.3.4">Theorem 8.3.4</a>. Before turning to the proof, we illustrate how to use <a href="sec_improper-trig-integrals.html#PV_P_Q_sin__cos_thm" class="xref" data-knowl="./knowl/xref/PV_P_Q_sin__cos_thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.4.1">Theorem 8.4.1</a><div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-trig-integrals-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 8.4.1"><a href="#PV_P_Q_sin__cos_thm" title="Copy heading and permalink for Theorem 8.4.1" aria-label="Copy heading and permalink for Theorem 8.4.1">🔗</a></div></article><div class="para" id="sec_improper-trig-integrals-5">The proof of <a href="sec_improper-trig-integrals.html#PV_P_Q_sin__cos_thm" class="xref" data-knowl="./knowl/xref/PV_P_Q_sin__cos_thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.4.1">Theorem 8.4.1</a> is similar to the proof of <a href="sec_improper-rational-fn-int.html#Ratl_Fcn_Int_Thm" class="xref" data-knowl="./knowl/xref/Ratl_Fcn_Int_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.3.4">Theorem 8.3.4</a>.  Before turning to the proof, we illustrate how to use <a href="sec_improper-trig-integrals.html#PV_P_Q_sin__cos_thm" class="xref" data-knowl="./knowl/xref/PV_P_Q_sin__cos_thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.4.1">Theorem 8.4.1</a><div class="autopermalink" data-description="Paragraph"><a href="#sec_improper-trig-integrals-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_improper-trig-integrals-6"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
