@@ -40,9 +40,9 @@
 		Recall that <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n</m><nbsp/>is a simplified expression for the sum
 		<m>c_0+\sum\limits_{n=1}^{\infty}c_n (z-\alpha)^n</m>. At times it will be convenient to write 
 		<md>
-			<mrow>\sum\limits_{n=-\infty}^{\infty}c_n(z-\alpha)^n \quad \text{as}</mrow>
+			<mrow>\amp \sum\limits_{n=-\infty}^{\infty}c_n(z-\alpha)^n \quad \text{as}</mrow>
 			<mrow>
-				\sum\limits_{n=- \infty}^{\infty}c_n(z-\alpha)^n = 
+				\amp \sum\limits_{n=- \infty}^{\infty}c_n(z-\alpha)^n = 
 				\sum\limits_{n=- \infty}^{-1}c_n(z-\alpha)^n + \sum \limits_{n=0}^{\infty}c_n(z-\alpha)^n
 			</mrow>
 			rather than using the expression given in Equation <xref ref="ls"/>.
@@ -88,13 +88,10 @@
       <me>
         \sum_{n=- \infty}^{\infty}c_n(z-\alpha)^n = \sum_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n} + \sum_{n=0}^{\infty}c_n(z-\alpha)^n
       </me>.
-      By <xref ref="Unif_Conv_of_Series">Theorem</xref>,
-      the series <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n</m> must converge uniformly on the closed disk <m>\overline{D}_{t}(\alpha)</m>.
-      By the Weierstrass <m>M</m>-test,
-      we can show that the series
+		By <xref ref="Unif_Conv_of_Series">Theorem</xref>, the series <m>\sum\limits_{n=0}^{\infty}c_n(z-\alpha)^n</m> must converge
+		uniformly on the closed disk <m>\overline{D}_{t}(\alpha)</m>. By the Weierstrass <m>M</m>-test, we can show that the series
       <m>\sum\limits_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n}</m> converges uniformly on <m>\{z:|z-\alpha| \ge s\}</m>
-      (we leave the details as an exercise).
-      Combining these two facts yields the required result.
+      (we leave the details as an exercise). Combining these two facts yields the required result.
     </p>
   </proof>
   <p>
@@ -108,10 +105,9 @@
     <title>Laurent's theorem</title>
     <statement>
       <p>
-        Suppose that <m>0 \le r\lt R</m>,
-        and that <m>f</m><nbsp/>is analytic in the annulus <m>A=A(\alpha,r,R)</m>.
-        If <m>\rho</m> is any number such that <m>r \lt  \rho \lt R</m>,
-        then for all <m>z_0 \in A \,  f</m> has the Laurent series representation
+		  Suppose that <m>0 \le r\lt R</m>, and that <m>f</m><nbsp/>is analytic in the annulus <m>A=A(\alpha,r,R)</m>. If
+		  <m>\rho</m> is any number such that <m>r \lt  \rho \lt R</m>, then for all <m>z_0 \in A \,  f</m> has the Laurent series
+		  representation
         <md>
 		  		<mrow>
 					f(z_0) \amp = \sum_{n=- \infty}^{\infty}c_n(z_0-\alpha)^n
@@ -138,14 +134,10 @@
   </theorem>
   <proof>
     <p>
-      If we can establish Equation <xref ref="f_z0__laurent"/>,
-      the uniform convergence on
-      <m>\overline{A}(\alpha ,s,t)</m> will follow from <xref ref="Uniform_Laurent">Theorem</xref>.
-      Let <m>z_0</m> be an arbitrary point of <m>A</m>.
-      Choose <m>r_0</m> small enough so that the circle
-      <m>C_0=C_{r_0}^{+}(z_0)</m> is contained in <m>A</m>.
-      Since <m>f</m> is analytic in <m>D_{r_0}(z_0)</m>,
-      the Cauchy integral formula gives
+		If we can establish Equation <xref ref="f_z0__laurent"/>, the uniform convergence on <m>\overline{A}(\alpha ,s,t)</m> will
+		follow from <xref ref="Uniform_Laurent">Theorem</xref>. Let <m>z_0</m> be an arbitrary point of <m>A</m>. Choose <m>r_0</m>
+		small enough so that the circle <m>C_0=C_{r_0}^{+}(z_0)</m> is contained in <m>A</m>. Since <m>f</m> is analytic in
+		<m>D_{r_0}(z_0)</m>, the Cauchy integral formula gives
       <men xml:id="eq_Laurent_1">
         f(z_0) = \frac{1}{2\pi i} \int_{C_0}\frac{f(z)}{(z-z_0)}\,dz
       </men>.
@@ -161,21 +153,18 @@
       <image width="50%" source="figs/ch-07/ch-07-fig-04.svg"/>
     </figure>
     <p>
-      Now let <m>D</m> be the domain consisting of the annulus <m>A</m> except for the point <m>z_0</m>.
-      The domain <m>D</m> includes the contours <m>C_0</m>,
-      <m>C_1</m>, and <m>C_2</m>,
-      as well as the region between <m>C_2</m> and <m>C_0+C_1</m>.
-      In addition, since <m>z_0</m> does not belong to <m>D</m>,
-      the function <m>\frac{f(z)}{z-z_0}</m> is analytic on <m>D</m>,
-      so by the extended Cauchy-Goursat theorem we obtain
+		Now let <m>D</m> be the domain consisting of the annulus <m>A</m> except for the point <m>z_0</m>. The domain <m>D</m>
+		includes the contours <m>C_0</m>, <m>C_1</m>, and <m>C_2</m>, as well as the region between <m>C_2</m> and <m>C_0+C_1</m>.
+		In addition, since <m>z_0</m> does not belong to <m>D</m>, the function <m>\frac{f(z)}{z-z_0}</m> is analytic on <m>D</m>,
+		so by the extended Cauchy-Goursat theorem we obtain
       <md>
         <mrow>\frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-z_0)}\,dz \amp = \frac{1}{2\pi i} \int_{C_0}\frac{f(z)}{(z-z_0)}\,dz</mrow>
 		  <mrow xml:id="eq_Laurent_2" number="yes">\amp + \frac{1}{2\pi i} \int_{C_1}\frac{f(z)}{(z-z_0)}\,dz</mrow>
       </md>.
     </p>
     <p>
-      Subtracting the last integral from both sides of Equation <xref ref="eq_Laurent_2"/> and using the identity for <m>f(z_0)</m> in Equation <xref ref="eq_Laurent_1"/> give
-      <men xml:id="eq_Laurent_3">
+		Subtracting the last integral from both sides of Equation <xref ref="eq_Laurent_2"/> and using the identity for
+		<m>f(z_0)</m> in Equation <xref ref="eq_Laurent_1"/> give <men xml:id="eq_Laurent_3">
         f(z_0)=-\frac{1}{2\pi i}\int_{C_1}\frac{f(z)}{z-z_0}\,dz + \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{z-z_0}\,dz
       </men>.
     </p>
@@ -216,31 +205,39 @@
       we can interchange the summations and the integrals,
       in accordance with <xref ref="Sum_Integral_Swap">Corollary</xref> to obtain
       <md>
-        <mrow>f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n</mrow>
-        <mrow>\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}f(z)(z-\alpha)^n\,dz\right] \frac{1}{(z_0-\alpha)^{n+1}}</mrow>
+		  <mrow>f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right]
+		  (z_0-\alpha)^n</mrow>
+		  <mrow>\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}f(z)(z-\alpha)^n\,dz\right]
+		  \frac{1}{(z_0-\alpha)^{n+1}}</mrow>
       </md>.
     </p>
     <p>
       If we move some terms around in the second series of this equation and reindex, we get
       <md>
-        <mrow>f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right](z_0-\alpha)^n</mrow>
-        <mrow xml:id="Laurent_6" number="yes">\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_1}\frac{f(z)}{(z-\alpha)^{-n+1}}\,dz\right](z_0-\alpha)^{-n}</mrow>
+		  <mrow>f(z_0) \amp  =\sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}
+		  \int_{C_2}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right](z_0-\alpha)^n</mrow>
+		  <mrow xml:id="Laurent_6" number="yes">\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i}
+		  \int_{C_1}\frac{f(z)}{(z-\alpha)^{-n+1}}\,dz\right](z_0-\alpha)^{-n}</mrow>
       </md>.
     </p>
     <p>
-      We apply the extended Cauchy-Goursat theorem once more to conclude that the integrals taken over <m>C_2</m> and <m>C_1</m> in Equation <xref ref="Laurent_6"/> give the same result if they are taken over the contour <m>C_{\rho }^{+}(\alpha)</m>,
-      where <m>\rho</m> is any number such that <m>r\lt \rho \lt R</m>.
-      This yields
+		We apply the extended Cauchy-Goursat theorem once more to conclude that the integrals taken over <m>C_2</m> and <m>C_1</m>
+		in Equation <xref ref="Laurent_6"/> give the same result if they are taken over the contour <m>C_{\rho }^{+}(\alpha)</m>,
+		where <m>\rho</m> is any number such that <m>r\lt \rho \lt R</m>. This yields
       <md>
-        <mrow>f(z_0) \amp = \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}\int_{C_{\rho }^+(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n</mrow>
-        <mrow>\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^+(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}</mrow>
+		  <mrow>f(z_0) \amp = \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}\int_{C_{\rho
+		  }^+(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n</mrow>
+		  <mrow>\amp + \sum_{n=1}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^+(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right]
+		  (z_0-\alpha)^{-n}</mrow>
       </md>.
     </p>
     <p>
       Finally, writing the second series first in our last equation gives
       <md>
-        <mrow>f(z_0) \amp = \sum_{n=1}^{\infty}\left[\frac{1}{2\pi i}\int_{C_{\rho }^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}</mrow>
-        <mrow>\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i} \int_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n</mrow>
+		  <mrow>f(z_0) \amp = \sum_{n=1}^{\infty}\left[\frac{1}{2\pi i}\int_{C_{\rho
+		  }^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{-n+1}}dz\right] (z_0-\alpha)^{-n}</mrow>
+		  <mrow>\amp + \sum_{n=0}^{\infty}\left[ \frac{1}{2\pi i}
+		  \int_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\alpha)^{n+1}}\,dz\right] (z_0-\alpha)^n</mrow>
       </md>.
     </p>
     <p>
