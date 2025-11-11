@@ -4,7 +4,8 @@
 	 Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>, respectively, where <m>n\ge m+1</m>.  We can show
 	 (but omit the proof) that if <m>Q(x) \ne 0</m> for all real <m>x</m>, then
     <me>
-      \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad  \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
+		\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad  \text{ P.V. }
+		\int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
     </me>
 	 are convergent improper integrals.  You may encounter integrals of this type in the study of Fourier transforms and Fourier
 	 integrals.  We now show how to evaluate them.
@@ -12,31 +13,31 @@
   <p>
     Particularly important is our use of the identities
     <me>
-      \cos(\alpha x) =\mathrm{Re}[\exp(i\alpha x)]  \text{ and }   \sin (\alpha x) =\mathrm{Im}[\exp (i\alpha x)]
-    </me>,
-    where <m>\alpha</m> is a positive real number.
-    The crucial step in the proof of the following Theorem wouldn't hold if we were to use <m>\cos(\alpha z)</m> and
-    <m>\sin (\alpha z)</m> instead of <m>\exp (i\alpha z)</m>,
-    as you will see when you get to <xref ref="Jordan_s_Lemma">Lemma</xref>.
+      \cos(\alpha x) =\mathrm{Re}[\exp(i\alpha x)], \quad  \text{and} \quad \sin (\alpha x) =\mathrm{Im}[\exp (i\alpha x)],
+    </me>
+	 where <m>\alpha</m> is a positive real number. The crucial step in the proof of the following Theorem wouldn't hold if we were
+	 to use <m>\cos(\alpha z)</m> and <m>\sin (\alpha z)</m> instead of <m>\exp (i\alpha z)</m>, as you will see when you get to
+	 <xref ref="Jordan_s_Lemma">Lemma</xref>.
   </p>
   <theorem xml:id="PV_P_Q_sin__cos_thm">
     <statement>
       <p>
-        Let <m>P</m><nbsp/>and <m>Q</m><nbsp/>be polynomials with real coefficients of degree <m>m</m><nbsp/>and <m>n</m>,
-        respectively,
-        where <m>n \ge m+1</m> and
-        <m>Q(x) \ne 0</m>, for all real <m>x</m>.
-        If <m>\alpha>0</m> and
+		  Let <m>P</m><nbsp/>and <m>Q</m><nbsp/>be polynomials with real coefficients of degree <m>m</m><nbsp/>and <m>n</m>,
+		  respectively, where <m>n \ge m+1</m> and <m>Q(x) \ne 0</m>, for all real <m>x</m>. If <m>\alpha>0</m> and
         <men xml:id="exp_iaz_P_z__Q_z_">
-          f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}
-        </men>.
+          f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}.
+        </men>
         then
         <md>
-			 <mrow xml:id="PV__P_Q_cos_ax_" number="yes">\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx
-			 \amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_j]),  \text{ and }</mrow>
-			 <mrow xml:id="PV__P_Q_sin_ax_" number="yes">\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx
-			 \amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j])</mrow>
-        </md>,
+			 <mrow xml:id="PV__P_Q_cos_ax_" number="yes">
+				\!\!\!\!\!\! \text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos(\alpha x)\,dx
+				\amp = -2\pi\sum \limits_{j=1}^k \mathrm{Im}(\mathrm{Res}[f,z_j]), \quad \text{and}
+			 </mrow>
+			 <mrow xml:id="PV__P_Q_sin_ax_" number="yes">
+			 	\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin(\alpha x)\,dx
+				\amp = 2\pi\sum \limits_{j=1}^k\mathrm{Re}(\mathrm{Res}[f,z_j]),
+			 </mrow>
+        </md>
         where <m>z_1, \, z_2, \, \ldots, \, z_{k-1}, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane,
         and <m>\mathrm{Re}(\mathrm{Res}[f,z_j])</m> and
         <m>\mathrm{Im}(\mathrm{Res}[f,z_j])</m> are the real and imaginary parts of <m>\mathrm{Res}[f,z_j]</m>,
@@ -45,10 +46,9 @@
     </statement>
   </theorem>
   <p>
-    The proof of <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>
-    is similar to the proof of <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>.
-    Before turning to the proof,
-    we illustrate how to use <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>
+	 The proof of <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref> is similar to the proof of 
+	 <xref ref="Ratl_Fcn_Int_Thm">Theorem</xref>.  Before turning to the proof, we illustrate how to use 
+	 <xref ref="PV_P_Q_sin__cos_thm">Theorem</xref>
   </p>
   <example>
     <statement>
@@ -59,8 +59,7 @@
     <solution>
       <p>
         The function <m>f</m> in Equation <xref ref="exp_iaz_P_z__Q_z_"/> is <m>f(z) = \frac{\exp (iz) z}{z^2+4}</m>,
-        which has a simple pole at the point <m>2i</m> in the upper half-plane.
-        Calculating the residue yields
+        which has a simple pole at the point <m>2i</m> in the upper half-plane. Calculating the residue yields
         <me>
           \mathrm{Res}[f,2i] =\lim\limits_{z \to 2i}\frac{\exp(iz)z}{z+2i} = \frac{2ie^{-2}}{4i}=\frac{1}{2e^2}
         </me>.
