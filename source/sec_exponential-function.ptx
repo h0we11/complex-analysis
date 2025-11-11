@@ -9,7 +9,7 @@
     <title>The Complex Exponential</title>
     <statement>
       <me>
-        e^z=\exp(z) =\sum_{n=0}^{\infty}\frac{1}{n!}z^n
+        e^z=\exp(z) =\sum_{n=0}^{\infty}\frac{1}{n!}z^n.
       </me>
     </statement>
   </definition>
@@ -26,12 +26,12 @@
         <ol>
           <li>
             <p>
-              <m>\exp\,' (z)=\exp(z)=e^z</m> (using Leibniz notation we write <m>\frac{d}{dz}e^z=e^z</m>).
+              <m>\exp\,' (z)=\exp(z)=e^z</m> (using Leibniz notation we write <m>\frac{d}{dz}e^z=e^z</m>);
             </p>
           </li>
           <li>
             <p>
-              <m>\exp(z_1+z_2) =\exp(z_1) \exp(z_2)\, </m> (<em>i.e.</em>, <m>\, e^{z_1+z_2}=e^{z_1}e^{z_2}</m>).
+              <m>\exp(z_1+z_2) =\exp(z_1) \exp(z_2)\, </m> (<em>i.e.</em>, <m>\, e^{z_1+z_2}=e^{z_1}e^{z_2}</m>);
             </p>
           </li>
           <li>
@@ -55,7 +55,8 @@
     <p>
       Using <xref ref="Power_Series_Thm">Theorem</xref>, part (ii), we get
       <me>
-        \exp\,'(z) =\sum\limits_{n=1}^{\infty}\frac{n}{n!} z^{n-1}= \sum\limits_{n=1}^{\infty}\frac{1}{(n-1)!}z^{n-1} = \sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n=\exp(z)
+		  \exp\,'(z) =\sum\limits_{n=1}^{\infty}\frac{n}{n!} z^{n-1}= \sum\limits_{n=1}^{\infty}\frac{1}{(n-1)!}z^{n-1} =
+		  \sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n=\exp(z)
       </me>,
       which gives us part (i) of <xref ref="expz_is_entire">Theorem</xref>
     </p>
@@ -69,10 +70,8 @@
       <me>
         g\,'(z) =\exp(z) \exp(\zeta -z) + \exp(z)[-\exp(\zeta -z)] =0 \text{ for all } z
       </me>.
-      According to <xref ref="Df_0_implies_f_const">Theorem</xref>,
-      this result implies that the function <m>g</m> must be constant.
-      Thus, for all <m>z</m>, <m>g(z)=g(0)</m>.
-      Since <m>\exp(0)=1</m> (verify!), we deduce
+		According to <xref ref="Df_0_implies_f_const">Theorem</xref>, this result implies that the function <m>g</m> must be
+		constant. Thus, for all <m>z</m>, <m>g(z)=g(0)</m>. Since <m>\exp(0)=1</m> (verify!), we deduce
       <me>
         g(z) =g(0) =\exp(0) \exp(\zeta -0)=\exp(\zeta)
       </me>.
@@ -94,7 +93,8 @@
         <mrow>\amp = \sum_{n=0}^{\infty}\frac{1}{n!}(i\theta)^n \qquad  (\text{now separate odd and even exponents})</mrow>
         <mrow>\amp = \sum_{n=0}^{\infty}\left[\frac{1}{(2n)!} (i\theta)^{2n}+\frac{1}{(2n+1)!}(i\theta)^{2n+1}\right]</mrow>
         <mrow>\amp = \sum_{n=0}^{\infty}\left[\frac{1}{(2n)!}(i^2)^n\theta^{2n} + \frac{1}{(2n+1)!}i(i^2 )^n\theta^{2n+1}\right]</mrow>
-        <mrow>\amp = \sum_{n=0}^{\infty}(-1)^n \frac{\theta^{2n}}{(2n)!} + i\sum_{n=0}^{\infty}(-1)^n\frac{\theta^{2n+1}}{(2n+1)!}</mrow>
+		  <mrow>\amp = \sum_{n=0}^{\infty}(-1)^n \frac{\theta^{2n}}{(2n)!} +
+		  i\sum_{n=0}^{\infty}(-1)^n\frac{\theta^{2n+1}}{(2n+1)!}</mrow>
         <mrow>\amp = \cos \theta +i\sin \theta </mrow>
       </md>.
 		The last equality follows by the series representations for the real-valued sine and cosine.
@@ -133,18 +133,20 @@
     We now explore some additional properties of <m>\exp(z)</m>.
     Using <xref ref="e_z_Cartesian">Identity</xref> it follows that
     <md>
-      <mrow xml:id="e_z_Periodic" number="yes">e^{z+i2n\pi} \amp =e^z, \amp \amp  \text{ for all } z\text{ , provided } n\text{ is an integer } ,</mrow>
-      <mrow xml:id="e_z___1" number="yes">e^z \amp =1, \amp \amp  \text{ iff } z=i2n\pi \text{ , where } n\text{ is an integer, and }</mrow>
-      <mrow xml:id="e_z1___e_z2" number="yes">e^{z_1} \amp =e^{z_2}, \amp \amp  \text{ iff } z_2=z_1+i2n\pi \text{ for some integer } n</mrow>
-    </md>.
+      <mrow xml:id="e_z_Periodic" number="yes">e^{z+i2n\pi} \amp =e^z, \amp \amp  \text{ for all } z,\text{ provided } n \text{ is
+		an integer,} </mrow>
+		<mrow xml:id="e_z___1" number="yes">e^z \amp =1, \amp \amp  \text{ iff } z=i2n\pi, \text{ where } n \text{ is an integer,
+		and }</mrow>
+		<mrow xml:id="e_z1___e_z2" number="yes">e^{z_1} \amp =e^{z_2}, \amp \amp  \text{ iff } z_2=z_1+i2n\pi \, \text{ for some
+		integer } n.</mrow>
+    </md>
   </p>
   <p>
-    For example,
-    because Identity <xref ref="e_z_Cartesian"/> involves the periodic functions <m>\cos y</m> and <m>\sin y</m>,
-    any two points in the <m>z</m> plane that lie on the same vertical line with their imaginary parts differing by an integral multiple of <m>2\pi</m> are mapped onto the same point in the <m>w</m> plane.
-    Thus the complex exponential function is periodic with period <m>2\pi i</m>,
-    which establishes Equation <xref ref="e_z_Periodic"/>.
-    We leave the verification of Equations <xref ref="e_z___1"/> and <xref ref="e_z1___e_z2"/> as exercises.
+	 For example, because Identity <xref ref="e_z_Cartesian"/> involves the periodic functions <m>\cos y</m> and <m>\sin y</m>, any
+	 two points in the <m>z</m> plane that lie on the same vertical line with their imaginary parts differing by an integral
+	 multiple of <m>2\pi</m> are mapped onto the same point in the <m>w</m> plane. Thus the complex exponential function is
+	 periodic with period <m>2\pi i</m>, which establishes Equation <xref ref="e_z_Periodic"/>. We leave the verification of
+	 Equations <xref ref="e_z___1"/> and <xref ref="e_z1___e_z2"/> as exercises.
   </p>
   <example xml:id="ex_exp_mapping">
     <statement>
@@ -154,11 +156,12 @@
           z_n=\frac{5}{4}+i\left(\frac{11\pi}{6}+2n\pi\right)
         </me>
         in the <m>z</m> plane are mapped onto the single point
-        <me>
-          w_0  = \exp(z_n) = e^{\frac{5}{4}}\left(\cos \frac{11\pi}{6}+i\sin \frac{11\pi}{6}\right) = \frac{\sqrt{3}}{2}e^{\frac{5}{4}}-i\frac{1}{2}e^{\frac{5}{4}} \approx 3.02-1.75i
-        </me>
-        in the <m>w</m> plane,
-        as indicated in <xref ref="fig_ch-05-01">Figure</xref>.
+        <md>
+			 <mrow>w_0 \amp = \exp(z_n)</mrow>
+			 <mrow> \amp = e^{\frac{5}{4}}\left(\cos \frac{11\pi}{6}+i\sin \frac{11\pi}{6}\right)</mrow>
+			 <mrow> \amp = \frac{\sqrt{3}}{2}e^{\frac{5}{4}}-i\frac{1}{2}e^{\frac{5}{4}} \approx 3.02-1.75i</mrow>
+        </md>
+        in the <m>w</m> plane, as indicated in <xref ref="fig_ch-05-01">Figure</xref>.
       </p>
     </statement>
   </example>
@@ -168,13 +171,10 @@
     <image width="80%" source="figs/ch-05/ch-05-fig-01.svg"/>
   </figure>
   <p>
-    Let's look at the range of the exponential function.
-    If <m>z=x+iy</m>,
-    we see from Identity <xref ref="e_z_Cartesian"/><mdash/><m>e^z=e^xe^{iy}=e^x( \cos y+i\sin y)</m><mdash/>that <m>e^z</m> can never equal zero,
-    as <m>e^x</m> is never zero,
-    and the cosine and sine functions are never zero at the same point.
-    Suppose, then, that <m>w=e^z \ne 0</m>.
-    If we write <m>w</m> in its exponential form as
+	 Let's look at the range of the exponential function. If <m>z=x+iy</m>, we see from Identity <xref
+	 ref="e_z_Cartesian"/><mdash/><m>e^z=e^xe^{iy}=e^x( \cos y+i\sin y)</m><mdash/>that <m>e^z</m> can never equal zero, as
+	 <m>e^x</m> is never zero, and the cosine and sine functions are never zero at the same point. Suppose, then, that 
+	 <m>w=e^z \ne 0</m>. If we write <m>w</m> in its exponential form as
     <m>w=\rho e^{i\phi }</m>, Identity <xref ref="e_z_Cartesian"/> gives
     <me>
       \rho e^{i\phi }=e^xe^{iy}
@@ -184,9 +184,10 @@
     Using Identity <xref ref="e_z_Cartesian"/>,
     and Property <xref ref="ExpEquality"/> of <xref ref="sec_algebra-2">Section</xref>, we get
     <md>
-      <mrow xml:id="rho_and_phi" number="yes">\rho \amp = p e^x\text{ and } \phi =y+2n\pi \text{ , where } n\text{ is an integer. Therefore, }</mrow>
-      <mrow xml:id="abs_rho" number="yes">\rho \amp = |e^z| =e^x,\text{ and }</mrow>
-      <mrow xml:id="phi" number="yes">\phi \amp \in \arg(e^z) = \{\mathrm{Arg}(e^z) +2n\pi :n\text{ is an integer } \}</mrow>
+		<mrow xml:id="rho_and_phi" number="yes">\rho \amp = p e^x\text{ and } \phi =y+2n\pi, \text{ where } n \text{ is an integer.
+		Therefore, }</mrow>
+      <mrow xml:id="abs_rho" number="yes">\rho \amp = |e^z| =e^x, \text{ and }</mrow>
+      <mrow xml:id="phi" number="yes">\phi \amp \in \arg(e^z) = \{\mathrm{Arg}(e^z) +2n\pi : n \text{ is an integer} \}</mrow>
     </md>.
   </p>
   <p>
@@ -194,10 +195,8 @@
     <men xml:id="Inverse_of_Exp">
       x=\ln \rho \ \ \text{ and } y=\phi +2n\pi
     </men>,
-    where <m>n</m> is an integer.
-    Thus for any complex number <m>w \ne 0</m>,
-    there are infinitely many complex numbers <m>z=x+iy</m> such that <m>w=e^z</m>.
-    From Equations <xref ref="Inverse_of_Exp"/>, the numbers <m>z</m> are
+	 where <m>n</m> is an integer. Thus for any complex number <m>w \ne 0</m>, there are infinitely many complex numbers
+	 <m>z=x+iy</m> such that <m>w=e^z</m>. From Equations <xref ref="Inverse_of_Exp"/>, the numbers <m>z</m> are
     <md>
       <mrow>z \amp = x+iy=\ln \rho +i(\phi +2n\pi )</mrow>
       <mrow xml:id="Inverse_of_Exp_again" number="yes">\amp = \ln |w| +i(\mathrm{Arg}\textit{ }w+2n\pi )</mrow>
@@ -205,38 +204,30 @@
     where <m>n</m> is an integer.
     Hence
     <me>
-      \exp\big[|w| +i(\mathrm{Arg}\,w+2n\pi)\big] = w
+      \exp\big[|w| +i(\mathrm{Arg}\,w+2n\pi)\big] = w.
     </me>
   </p>
   <p>
-    In summary, the transformation <m>w=e^z</m> maps the complex plane
-    (infinitely often)
-    onto the set of nonzero complex numbers.
+	 In summary, the transformation <m>w=e^z</m> maps the complex plane (infinitely often) onto the set of nonzero complex numbers.
   </p>
   <p>
     If we restrict the solutions to Equation <xref ref="Inverse_of_Exp_again"/> so that only the principal value of the argument,
-    <m>-\pi \lt \mathrm{Arg}\,w \le \pi</m>, is used,
-    the transformation <m>w=e^z=e^{x+iy}</m> maps the horizontal strip
-    <m>\{(x,y):-\pi \lt y \le \pi \}</m> one-to-one and onto the range set <m>S=\{w:w \ne 0\}</m>.
-    This strip is called the fundamental period strip and is shown in <xref ref="fig_ch-05-02">Figure</xref>.
+	 <m>-\pi \lt \mathrm{Arg}\,w \le \pi</m>, is used, the transformation <m>w=e^z=e^{x+iy}</m> maps the horizontal strip
+	 <m>\{(x,y):-\pi \lt y \le \pi \}</m> one-to-one and onto the range set <m>S=\{w:w \ne 0\}</m>. This strip is called the
+	 fundamental period strip and is shown in <xref ref="fig_ch-05-02">Figure</xref>.
   </p>
   <figure xml:id="fig_ch-05-02">
     <caption>The fundamental period strip for the mapping <m>w=\exp(z)</m></caption>
     <image width="73%" source="figs/ch-05/ch-05-fig-02.svg"/>
   </figure>
   <p>
-    The horizontal line <m>z=t+ib</m>,
-    for <m>-\infty \lt t\lt \infty</m> in the <m>z</m> plane,
-    is mapped onto the ray <m>w=e^te^{ib}=e^t(\cos b+i\sin b)</m> that is inclined at an angle <m>\phi =b</m> in the <m>w</m> plane.
-    The vertical segment <m>z=a+i\theta</m>,
-    for <m>-\pi \lt \theta \le \pi</m> in the <m>z</m> plane,
-    is mapped onto the circle centered at the origin with radius <m>e^{a}</m> in the <m>w</m> plane.
-    That is, <m>w=e^{a}e^{i\theta }=e^{a}(\cos \theta +i\sin \theta )</m>.
-    The lines <m>r_1</m>, <m>r_2</m>, and <m>r_3</m>,
-    are mapped to the rays <m>r_1^*</m>, <m>r_2^*</m>,
-    and <m>r_3^*</m>, respectively.
-    Likewise, the segments <m>s_1</m>, <m>s_2</m>,
-    and <m>s_3</m> are mapped to the corresponding circles <m>s_1^*</m>,
+	 The horizontal line <m>z=t+ib</m>, for <m>-\infty \lt t\lt \infty</m> in the <m>z</m> plane, is mapped onto the ray
+	 <m>w=e^te^{ib}=e^t(\cos b+i\sin b)</m> that is inclined at an angle <m>\phi =b</m> in the <m>w</m> plane. The vertical segment
+	 <m>z=a+i\theta</m>, for <m>-\pi \lt \theta \le \pi</m> in the <m>z</m> plane, is mapped onto the circle centered at the origin
+	 with radius <m>e^{a}</m> in the <m>w</m> plane. That is, <m>w=e^{a}e^{i\theta }=e^{a}(\cos \theta +i\sin \theta )</m>. The
+	 lines <m>r_1</m>, <m>r_2</m>, and <m>r_3</m>, are mapped to the rays <m>r_1^*</m>, <m>r_2^*</m>, and <m>r_3^*</m>,
+	 respectively. Likewise, the segments <m>s_1</m>, <m>s_2</m>, and <m>s_3</m> are mapped to the corresponding circles
+	 <m>s_1^*</m>,
     <m>s_2^*</m>, and <m>s_3^*</m>.
   </p>
   <example xml:id="Rectangle_Map">
