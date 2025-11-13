@@ -171,15 +171,13 @@
     </ol>
   </p>
   <p>
-    Note that this algorithm doesn't prove anything.
-    In Step 2, there is no a priori reason to justify the assumption mentioned,
-    nor is there any necessity for an initial point <m>z_{ij}</m> to have its sequence of iterates converging to one of the roots of <m>f(z) =0</m> just because a particular iteration is within <m>\varepsilon</m> of that root.
-    Finally, the fact that one point in a rectangle behaves in a certain way does not imply that all the points in that rectangle behave in a like manner.
-    Nevertheless,
-    we can use this algorithm as a basis for mathematical explorations.
-    Indeed, computer experiments such as the one described have contributed to a lot of exciting mathematics during the past 30 years.
-    <xref ref="fig_ch-04-cp-1">Figure</xref>
-    shows the results for the cubic polynomial <m>f(z)=z^3+1</m>.
+	 Note that this algorithm doesn't prove anything. In Step 2, there is no a priori reason to justify the assumption mentioned,
+	 nor is there any necessity for an initial point <m>z_{ij}</m> to have its sequence of iterates converging to one of the roots
+	 of <m>f(z) =0</m> just because a particular iteration is within <m>\varepsilon</m> of that root. Finally, the fact that one
+	 point in a rectangle behaves in a certain way does not imply that all the points in that rectangle behave in a like manner.
+	 Nevertheless, we can use this algorithm as a basis for mathematical explorations. Indeed, computer experiments such as the one
+	 described have contributed to a lot of exciting mathematics during the past 30 years. <xref ref="fig_ch-04-cp-1">Figure</xref>
+	 shows the results for the cubic polynomial <m>f(z)=z^3+1</m>.
   </p>
   <p>
 	 The points in the blue, red, and green regions are those <q>initial guesses</q> that will converge to the roots <m>-1</m>,
@@ -195,23 +193,18 @@
 	 three roots.  <xref ref="fig_ch-04-cp-2">Figure</xref> demonstrates that this outcome does not always occur. It shows the
 	 results of applying the preceding algorithm to the polynomial <m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m>.
   </p>
-  	<figure xml:id="newton-cubics">
-		<caption>Newton's method applied to two different cubics</caption>
-	<sidebyside widths="50% 50%">
-		<figure xml:id="fig_ch-04-cp-1">
-			<caption><m>f(z)=z^3+1</m></caption>
-			<image source="figs/ch-04/ch-04-cp-1.svg"/>
-		</figure>
-		<figure xml:id="fig_ch-04-cp-2">
-			<caption><m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m></caption>
-			<image source="figs/ch-04/ch-04-cp-2.svg"/>
-		</figure>
-	</sidebyside>
-	</figure>
+  <figure xml:id="fig_ch-04-cp-1">
+    <caption>Newton's method applied to <m>f(z)=z^3+1</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-1.svg"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-2">
+    <caption>Newton's method applied to <m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-2.svg"/>
+  </figure>
   <p>
 	 The yellow area shown is often referred to as the <em>rabbit</em>. It consists of a main body and two ears, and is an example
 	 of a <em>fractal image</em>. Mathematicians use the term fractal to indicate an object that is self-similar and infinitely
-	 replicating. <xref ref="fig_ch-04-cp-3">Figure</xref> illustrates this phenomenon by zooming in on a portion of <xref
+	 replicating.  <xref ref="fig_ch-04-cp-3">Figure</xref> illustrates this phenomenon by zooming in on a portion of <xref
 	 ref="fig_ch-04-cp-2">Figure</xref>. You can see that each of the ears consists of a main body and two ears, and so on.
   </p>
   <figure xml:id="fig_ch-04-cp-3">
@@ -233,58 +226,46 @@
 	 form <m>f_c(z) =z^2+c</m>. You will be surprised at the startling pictures that graphical iterates of such a simple function
 	 produce.
   </p>
-  <example>
+  <example xml:id="K-0">
     <statement>
       <p>
-        For <m>f_c(z) =z^2+c</m>,
-        analyze all possible iterations when <m>c=0</m>, that is,
-        for the function <m>f_0</m> defined by <m>f_0(z) =z^2+0</m>.
+		  For <m>f_c(z) =z^2+c</m>, analyze all possible iterations when <m>c=0</m>, that is, for the function <m>f_0</m> defined by
+		  <m>f_0(z) =z^2+0</m>.
       </p>
     </statement>
     <solution>
       <p>
-        We leave as an exercise the claim that,
-        if <m>|z_0|\lt 1</m>, the sequence will converge to 0;
-        if <m>|z_0|>1</m>, the sequence will be unbounded;
-        and if <m>|z_0|=1</m>,
-        the sequence will either oscillate around the unit circle or converge to 1.
+		  We leave as an exercise the claim that, if <m>|z_0|\lt 1</m>, the sequence will converge to 0; if <m>|z_0|>1</m>, the
+		  sequence will be unbounded; and if <m>|z_0|=1</m>, the sequence will either oscillate around the unit circle or converge
+		  to 1.
       </p>
     </solution>
   </example>
   <p>
-    For the function <m>f_c</m>,
-    defined by <m>f_c(z) =z^2+c</m>,
-    and an initial seed <m>z_0</m>,
-    the set of iterates given by
-    <m>z_1=f_c(z_0)</m>, <m>z_2=f_c(z_1)</m>,
-    <ellipsis/> is also called the orbit of <m>z_0</m> generated by <m>f_c</m>.
-    We let <m>K_c</m> denote the set of points with a bounded orbit for <m>f_c</m>.
-    Example 4.9 shows that <m>K_0</m> is the closed unit disk <m>\overline{D}_1(0)</m>.
-    The boundary of <m>K_c</m> is known as the <em>Julia set</em>
-    for the function <m>f_c</m>.
-    Thus the Julia set for <m>f_0</m> is the unit circle <m>C_1(0)</m>.
-    It turns out that <m>K_c</m> is a nice simple set only when <m>c=0</m> or <m>c=-2</m>;
-    otherwise, <m>K_c</m> is fractal.
-    <xref ref="fig_ch-04-cp-4">Figure</xref> shows <m>K_{-1.25}</m>. Its reflective nature
-    has reminded some of St.<nbsp/>Mark's square in Venice when flooding occurs.
-    The variation in colors in that figure indicate the length of time it takes for points to become
-    <q>sufficiently unbounded</q> according to the following algorithm,
-    which uses the same notation as our algorithm for iterations via Newton's method:
+	 For the function <m>f_c</m>, defined by <m>f_c(z) =z^2+c</m>, and an initial seed <m>z_0</m>, the set of iterates given by
+	 <m>z_1=f_c(z_0)</m>, <m>z_2=f_c(z_1)</m>, <ellipsis/> is also called the orbit of <m>z_0</m> generated by <m>f_c</m>. We let
+	 <m>K_c</m> denote the set of points with a bounded orbit for <m>f_c</m>. <xref ref="K-0">Example</xref> shows that <m>K_0</m>
+	 is the closed unit disk <m>\overline{D}_1(0)</m>. The boundary of <m>K_c</m> is known as the <em>Julia set</em> for the
+	 function <m>f_c</m>. Thus the Julia set for <m>f_0</m> is the unit circle <m>C_1(0)</m>. It turns out that <m>K_c</m> is a
+	 nice simple set only when <m>c=0</m> or <m>c=-2</m>; otherwise, <m>K_c</m> is fractal. 
+	 <xref ref="fig_ch-04-cp-4">Figure</xref> shows <m>K_{-1.25}</m>. Its reflective nature has reminded some of St.<nbsp/>Mark's
+	 square in Venice when flooding occurs. The variation in colors in that figure indicate the length of time it takes for points
+	 to become <q>sufficiently unbounded</q> according to the following algorithm, which uses the same notation as our algorithm
+	 for iterations via Newton's method:
     <ol>
       <li>
         <p>
-          Compute <m>f_c(z_{ij})</m>.
-          Continue computing successive iterates of this initial point until the absolute value of one of the iterations exceeds a certain bound (say,
-          <m>L</m>),
-          or until the number of iterations has exceeded a preassigned maximum.
+			 Compute <m>f_c(z_{ij})</m>. Continue computing successive iterates of this initial point until the absolute value of one
+			 of the iterations exceeds a certain bound (say, <m>L</m>), or until the number of iterations has exceeded a preassigned
+			 maximum.
         </p>
       </li>
       <li>
         <p>
-          If Step 1 leaves us with an iteration whose absolute value exceeds <m>L</m> , we color the entire rectangle <m>R_{ij}</m> with a color indicating the number of iterations needed before this value was attained
-          (the more iterations required, the darker the color).
-          Otherwise, we assume that the orbit of the initial point <m>z_{ij}</m> do not diverge to infinity,
-          and we color the entire rectangle black.
+			 If Step 1 leaves us with an iteration whose absolute value exceeds <m>L</m>, we color the entire rectangle <m>R_{ij}</m>
+			 with a color indicating the number of iterations needed before this value was attained (the more iterations required,
+			 the darker the color). Otherwise, we assume that the orbit of the initial point <m>z_{ij}</m> do not diverge to
+			 infinity, and we color the entire rectangle black.
         </p>
       </li>
     </ol>
@@ -294,25 +275,26 @@
     It merely guides the direction of our efforts to do rigorous mathematics.
   </p>
   <p>
-	 <xref ref="fig_ch-04-cp-5">Figure</xref> shows the Julia set for the function <m>f_c</m>, where <m>c=-0.11-0.67i</m>. The
-	 boundary of this set is different from the boundaries of the other sets we have seen, in that it is disconnected. Julia and
-	 Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or
-	 disconnected. We state their result, but omit the proof, as it is beyond the scope of this text.
+    <xref ref="fig_ch-04-cp-5">Figure</xref>
+    shows the Julia set for the function <m>f_c</m>,
+    where <m>c=-0.11-0.67i</m>.
+    The boundary of this set is different from the boundaries of the other sets we have seen,
+    in that it is disconnected.
+    Julia and Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or disconnected.
+    We state their result, but omit the proof,
+    as it is beyond the scope of this text.
   </p>
-	<figure xml:id="julia-sets-example-1">
-		<caption>Results of iterating <m>f_c(z)</m> for two different values of <m>c</m></caption>
-	<sidebyside widths="50% 50%">
-	<figure xml:id="fig_ch-04-cp-4">
-		<caption><m>f_{-1.25}(z)</m></caption>
-		<image source="figs/ch-04/ch-04-cp-4.svg"/>
-	</figure>
-	<figure xml:id="fig_ch-04-cp-5">
-		<caption><m>f_{-0.11-0.67i}(z)</m></caption>
-		<image source="figs/ch-04/ch-04-cp-5.svg"/>
-	</figure>
-	</sidebyside>
-	</figure>
-	<theorem xml:id="Kc_Connected">
+  <figure xml:id="fig_ch-04-cp-4">
+    <caption><m>f_{-1.25}(z)</m></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-4.svg"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-5">
+    <caption><m>f_{-0.11-0.67i}(z)</m></caption>
+    \hspace{\fill}
+    <image width="73%" source="figs/ch-04/ch-04-cp-5.svg"/>
+    \caption{Results of iterating <m>f_c(z)</m> for two different values of <m>c</m>}
+  </figure>
+  <theorem xml:id="Kc_Connected">
     <statement>
       <p>
         The boundary of <m>K_c</m> is connected if and only if <m>0\in K_c</m>.
@@ -374,19 +356,16 @@
     and so on ad infinitum!
     In the remainder of this section we look at some of the properties of this amazing set.
   </p>
-	<figure xml:id="mandelbrot-zoom">
-		<caption>Zooming in on the Mandelbrot set</caption>
-	<sidebyside widths="50% 50%">
-	<figure xml:id="fig_ch-04-cp-7">
-		<caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-6">Figure</xref></caption>
-		<image source="figs/ch-04/ch-04-cp-7.svg"/>
-	</figure>
-	<figure xml:id="fig_ch-04-cp-8">
-		<caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-7">Figure</xref></caption>
-		<image source="figs/ch-04/ch-04-cp-8.svg"/>
-	</figure>
-	</sidebyside>
-	</figure>
+  <figure xml:id="fig_ch-04-cp-7">
+    <caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-6">Figure</xref></caption>
+    <image width="73%" source="figs/ch-04/ch-04-cp-7.svg"/>
+  </figure>
+  <figure xml:id="fig_ch-04-cp-8">
+    <caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-7">Figure</xref></caption>
+    \hspace{\fill}
+    <image width="73%" source="figs/ch-04/ch-04-cp-8.svg"/>
+    \caption{Zooming in on the Mandelbrot set}
+  </figure>
   <example xml:id="Disk__25_in_M">
     <statement>
       <p>
