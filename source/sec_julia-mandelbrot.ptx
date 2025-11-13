@@ -7,43 +7,35 @@
 	 mathematics surrounding this topic has generated a great deal of popular attention in the past few years.
   </p>
   <p>
-    Recall from calculus that Newton's method proceeds by starting with a function <m>f(x)</m> and an initial
-    <q>guess</q>
-    of <m>x_0</m> as a solution to <m>f(x)=0</m>.
-    We then generate a new guess <m>x_1</m> by the computation <m>x_1=x_0-\frac{f(x_0)}{f\,'(x_0)}</m>.
-    Using <m>x_1</m> in place of <m>x_0</m>, this process is repeated,
-    giving <m>x_2=x_1-\frac{{f\,(x_1)}}{{f\,'(x_1)}}</m>.
-    We thus obtain a sequence of points <m>\{x_k\}</m>,
-    where <m>x_{k+1}=x_k-\frac{{f(x_k)}}{{\ f\,'(x_k)}}</m>.
-    The points <m>\{x_k\}_{k=0}^{\infty}</m> are called the iterates of <m>x_0</m>.
-    For functions defined on the real numbers,
-    this method gives remarkably good results,
-    and the sequence <m>\{x_k\}</m> often converges to a solution of <m>f(x) =0</m> rather quickly.
-    In the late 1800s, the British mathematician Arthur Cayley investigated the question of whether Newton's method can be applied to complex functions.
-    He wrote a paper giving an analysis for how this method works for quadratic polynomials and indicated his intention to publish a subsequent paper for cubic polynomials.
-    Unfortunately, Cayley died before producing this paper.
-    As you will see,
-    the extension of Newton's method to the complex domain and the more general question of iteration are quite complicated.
+	 Recall from calculus that Newton's method proceeds by starting with a function <m>f(x)</m> and an initial <q>guess</q> of
+	 <m>x_0</m> as a solution to <m>f(x)=0</m>. We then generate a new guess <m>x_1</m> by the computation
+	 <m>x_1=x_0-\frac{f(x_0)}{f\,'(x_0)}</m>.  Using <m>x_1</m> in place of <m>x_0</m>, this process is repeated, giving
+	 <m>x_2=x_1-\frac{{f\,(x_1)}}{{f\,'(x_1)}}</m>. We thus obtain a sequence of points <m>\{x_k\}</m>, where
+	 <m>x_{k+1}=x_k-\frac{{f(x_k)}}{{\ f\,'(x_k)}}</m>. The points <m>\{x_k\}_{k=0}^{\infty}</m> are called the iterates of
+	 <m>x_0</m>. For functions defined on the real numbers, this method gives remarkably good results, and the sequence
+	 <m>\{x_k\}</m> often converges to a solution of <m>f(x) =0</m> rather quickly. In the late 1800s, the British mathematician
+	 Arthur Cayley investigated the question of whether Newton's method can be applied to complex functions. He wrote a paper
+	 giving an analysis for how this method works for quadratic polynomials and indicated his intention to publish a subsequent
+	 paper for cubic polynomials. Unfortunately, Cayley died before producing this paper. As you will see, the extension of
+	 Newton's method to the complex domain and the more general question of iteration are quite complicated.
   </p>
   <example xml:id="Newton_s_Method_Ex">
     <statement>
       <p>
-        Trace the next five iterates of Newton's method for an initial guess of
-        <m>z_0=\frac{1}{4}+\frac{1}{4}i</m> as a solution to the equation <m>f(z) =0</m>,
-        where <m>f(z) =z^2+1</m>.
+		  Trace the next five iterates of Newton's method for an initial guess of <m>z_0=\frac{1}{4}+\frac{1}{4}i</m> as a solution
+		  to the equation <m>f(z) =0</m>, where <m>f(z) =z^2+1</m>.
       </p>
     </statement>
     <solution>
       <p>
-        For any guess <m>z</m> for a solution, Newton's method gives as the next guess the number <m>z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}</m>.
-        <xref ref="table_iterates">Table</xref> gives the iterates,
-        rounded to five decimal places.
+		  For any guess <m>z</m> for a solution, Newton's method gives as the next guess the number
+		  <m>z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}</m>. <xref ref="table_iterates">Table</xref> gives the iterates, rounded to
+		  five decimal places.
       </p>
       <p>
-        <xref ref="fig_ch-04-02">Figure</xref>
-        shows the relative positions of these points on the <m>z</m> plane.
-        Note that the points <m>z_4</m> and <m>z_5</m> are so close together that they appear to coincide,
-        and that the value for <m>z_5</m> agrees to five decimal places with the actual solution <m>z=i</m>.
+		  <xref ref="fig_ch-04-02">Figure</xref> shows the relative positions of these points on the <m>z</m> plane. Note that the
+		  points <m>z_4</m> and <m>z_5</m> are so close together that they appear to coincide, and that the value for <m>z_5</m>
+		  agrees to five decimal places with the actual solution <m>z=i</m>.
       </p>
     </solution>
   <table xml:id="table_iterates">
@@ -271,28 +263,22 @@
     </ol>
   </p>
   <p>
-    Note, again, that this algorithm doesn't prove anything.
-    It merely guides the direction of our efforts to do rigorous mathematics.
+	 Note, again, that this algorithm doesn't prove anything. It merely guides the direction of our efforts to do rigorous
+	 mathematics.
+	 <figure xml:id="fig_ch-04-cp-4">
+	 	<caption>The Julia set for <m>f_{-1.25}(z)</m></caption>
+		<image width="73%" source="figs/ch-04/ch-04-cp-4.svg"/>
+	</figure>
   </p>
   <p>
-    <xref ref="fig_ch-04-cp-5">Figure</xref>
-    shows the Julia set for the function <m>f_c</m>,
-    where <m>c=-0.11-0.67i</m>.
-    The boundary of this set is different from the boundaries of the other sets we have seen,
-    in that it is disconnected.
-    Julia and Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or disconnected.
-    We state their result, but omit the proof,
-    as it is beyond the scope of this text.
+	 <xref ref="fig_ch-04-cp-5">Figure</xref> shows the Julia set for the function <m>f_c</m>, where <m>c=-0.11-0.67i</m>. The
+	 boundary of this set is different from the boundaries of the other sets we have seen, in that it is disconnected. Julia and
+	 Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or
+	 disconnected. We state their result, but omit the proof, as it is beyond the scope of this text.
   </p>
-  <figure xml:id="fig_ch-04-cp-4">
-    <caption><m>f_{-1.25}(z)</m></caption>
-    <image width="73%" source="figs/ch-04/ch-04-cp-4.svg"/>
-  </figure>
   <figure xml:id="fig_ch-04-cp-5">
-    <caption><m>f_{-0.11-0.67i}(z)</m></caption>
-    \hspace{\fill}
+    <caption>The Julia set for <m>f_{-0.11-0.67i}(z)</m></caption>
     <image width="73%" source="figs/ch-04/ch-04-cp-5.svg"/>
-    \caption{Results of iterating <m>f_c(z)</m> for two different values of <m>c</m>}
   </figure>
   <theorem xml:id="Kc_Connected">
     <statement>
