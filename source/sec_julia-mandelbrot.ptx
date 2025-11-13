@@ -182,65 +182,56 @@
     shows the results for the cubic polynomial <m>f(z)=z^3+1</m>.
   </p>
   <p>
-    The points in the blue, red, and green regions are those
-    <q>initial guesses</q>
-    that will converge to the roots <m>-1</m>,
-    <m>\frac{1}{2} +\frac{\sqrt{3}}{2}i</m>,
-    and <m>\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>, respectively.
-    (The roots themselves are located in the middle of the three largest colored regions.)
-    The complexity of this picture becomes apparent when you observe that,
-    wherever two colors appear to meet,
-    the third color emerges between them.
-    But then, a closer inspection of the area where this third color meets one of the other colors reveals again a different color between them.
-    This process continues with an infinite complexity.
+	 The points in the blue, red, and green regions are those <q>initial guesses</q> that will converge to the roots <m>-1</m>,
+	 <m>\frac{1}{2} +\frac{\sqrt{3}}{2}i</m>, and <m>\frac{1}{2}-\frac{\sqrt{3}}{2}i</m>, respectively. (The roots themselves are
+	 located in the middle of the three largest colored regions.) The complexity of this picture becomes apparent when you observe
+	 that, wherever two colors appear to meet, the third color emerges between them. But then, a closer inspection of the area
+	 where this third color meets one of the other colors reveals again a different color between them. This process continues with
+	 an infinite complexity.
   </p>
   <p>
-    There appear to be no yellow regions with any area in <xref ref="fig_ch-04-cp-1">Figure</xref>,
-    indicating that at least most initial guesses <m>z_0</m> at a solution to <m>z^3+1=0</m> will produce a sequence <m>\{z_k\}</m> that converges to one of the three roots.
-    <xref ref="fig_ch-04-cp-2">Figure</xref>
-    demonstrates that this outcome does not always occur.
-    It shows the results of applying the preceding algorithm to the polynomial <m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m>.
+	 There appear to be no yellow regions with any area in <xref ref="fig_ch-04-cp-1">Figure</xref>, indicating that at least most
+	 initial guesses <m>z_0</m> at a solution to <m>z^3+1=0</m> will produce a sequence <m>\{z_k\}</m> that converges to one of the
+	 three roots.  <xref ref="fig_ch-04-cp-2">Figure</xref> demonstrates that this outcome does not always occur. It shows the
+	 results of applying the preceding algorithm to the polynomial <m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m>.
   </p>
-  <figure xml:id="fig_ch-04-cp-1">
-    <caption><m>f(z)=z^3+1</m></caption>
-    <image width="73%" source="figs/ch-04/ch-04-cp-1.svg"/>
-  </figure>
-  <figure xml:id="fig_ch-04-cp-2">
-    <caption><m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m></caption>
-    \hspace{\fill}
-    <image width="73%" source="figs/ch-04/ch-04-cp-2.svg"/>
-    \caption{Newton's method applied to two different cubics}
-  </figure>
+  	<figure xml:id="newton-cubics">
+		<caption>Newton's method applied to two different cubics</caption>
+	<sidebyside widths="50% 50%">
+		<figure xml:id="fig_ch-04-cp-1">
+			<caption><m>f(z)=z^3+1</m></caption>
+			<image source="figs/ch-04/ch-04-cp-1.svg"/>
+		</figure>
+		<figure xml:id="fig_ch-04-cp-2">
+			<caption><m>f(z)=z^3+(-0.26+0.02i)z+(-0.74+0.02i)</m></caption>
+			<image source="figs/ch-04/ch-04-cp-2.svg"/>
+		</figure>
+	</sidebyside>
+	</figure>
   <p>
-    The yellow area shown is often referred to as the <em>rabbit</em>.
-    It consists of a main body and two ears,
-    and is an example of a <em>fractal image</em>.
-    Mathematicians use the term fractal to indicate an object that is self-similar and infinitely replicating.
-    <xref ref="fig_ch-04-cp-3">Figure</xref>
-    illustrates this phenomenon by zooming in on a portion of <xref ref="fig_ch-04-cp-2">Figure</xref>.
-    You can see that each of the ears consists of a main body and two ears,
-    and so on.
+	 The yellow area shown is often referred to as the <em>rabbit</em>. It consists of a main body and two ears, and is an example
+	 of a <em>fractal image</em>. Mathematicians use the term fractal to indicate an object that is self-similar and infinitely
+	 replicating. <xref ref="fig_ch-04-cp-3">Figure</xref> illustrates this phenomenon by zooming in on a portion of <xref
+	 ref="fig_ch-04-cp-2">Figure</xref>. You can see that each of the ears consists of a main body and two ears, and so on.
   </p>
   <figure xml:id="fig_ch-04-cp-3">
     <caption>A zoom of the rabbit</caption>
     <image width="73%" source="figs/ch-04/ch-04-cp-3.svg"/>
   </figure>
   <p>
-    In 1918, the French mathematicians Gaston Julia and Pierre Fatou noticed this fractal phenomenon when exploring iterations of functions not necessarily connected with Newton's method.
-    Beginning with a function <m>f(z)</m> and a point <m>z_0</m>,
-    they computed the iterates
+	 In 1918, the French mathematicians Gaston Julia and Pierre Fatou noticed this fractal phenomenon when exploring iterations of
+	 functions not necessarily connected with Newton's method. Beginning with a function <m>f(z)</m> and a point <m>z_0</m>, they
+	 computed the iterates
     <me>
       z_1=f(z_0), \, z_2=f(z_1), \, \ldots, \, z_{k+1}=f(z_k), \ldots
     </me>
-    and investigated properties of the sequence <m>\{z_k\}</m>.
-    Their findings did not receive a great deal of attention,
-    largely because computer graphics were not available at that time.
-    With the recent proliferation of computers,
-    it is not surprising that these investigations were revived in the 1980s.
-    Detailed studies of Newton's method and the more general topic of iteration were undertaken by a host of mathematicians including Curry, Devaney, Douady, Garnett, Hubbard, Mandelbrot, Milnor,
-    and Sullivan.
-    We now turn our attention to some of their results by focusing on the iterations produced by quadratics of the form <m>f_c(z) =z^2+c</m>.
-    You will be surprised at the startling pictures that graphical iterates of such a simple function produce.
+	 and investigated properties of the sequence <m>\{z_k\}</m>. Their findings did not receive a great deal of attention, largely
+	 because computer graphics were not available at that time. With the recent proliferation of computers, it is not surprising
+	 that these investigations were revived in the 1980s. Detailed studies of Newton's method and the more general topic of
+	 iteration were undertaken by a host of mathematicians including Curry, Devaney, Douady, Garnett, Hubbard, Mandelbrot, Milnor,
+	 and Sullivan. We now turn our attention to some of their results by focusing on the iterations produced by quadratics of the
+	 form <m>f_c(z) =z^2+c</m>. You will be surprised at the startling pictures that graphical iterates of such a simple function
+	 produce.
   </p>
   <example>
     <statement>
@@ -303,26 +294,25 @@
     It merely guides the direction of our efforts to do rigorous mathematics.
   </p>
   <p>
-    <xref ref="fig_ch-04-cp-5">Figure</xref>
-    shows the Julia set for the function <m>f_c</m>,
-    where <m>c=-0.11-0.67i</m>.
-    The boundary of this set is different from the boundaries of the other sets we have seen,
-    in that it is disconnected.
-    Julia and Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or disconnected.
-    We state their result, but omit the proof,
-    as it is beyond the scope of this text.
+	 <xref ref="fig_ch-04-cp-5">Figure</xref> shows the Julia set for the function <m>f_c</m>, where <m>c=-0.11-0.67i</m>. The
+	 boundary of this set is different from the boundaries of the other sets we have seen, in that it is disconnected. Julia and
+	 Fatou independently discovered a simple criterion that can be used to tell when the Julia set for <m>f_c</m> is connected or
+	 disconnected. We state their result, but omit the proof, as it is beyond the scope of this text.
   </p>
-  <figure xml:id="fig_ch-04-cp-4">
-    <caption><m>f_{-1.25}(z)</m></caption>
-    <image width="73%" source="figs/ch-04/ch-04-cp-4.svg"/>
-  </figure>
-  <figure xml:id="fig_ch-04-cp-5">
-    <caption><m>f_{-0.11-0.67i}(z)</m></caption>
-    \hspace{\fill}
-    <image width="73%" source="figs/ch-04/ch-04-cp-5.svg"/>
-    \caption{Results of iterating <m>f_c(z)</m> for two different values of <m>c</m>}
-  </figure>
-  <theorem xml:id="Kc_Connected">
+	<figure xml:id="julia-sets-example-1">
+		<caption>Results of iterating <m>f_c(z)</m> for two different values of <m>c</m></caption>
+	<sidebyside widths="50% 50%">
+	<figure xml:id="fig_ch-04-cp-4">
+		<caption><m>f_{-1.25}(z)</m></caption>
+		<image source="figs/ch-04/ch-04-cp-4.svg"/>
+	</figure>
+	<figure xml:id="fig_ch-04-cp-5">
+		<caption><m>f_{-0.11-0.67i}(z)</m></caption>
+		<image source="figs/ch-04/ch-04-cp-5.svg"/>
+	</figure>
+	</sidebyside>
+	</figure>
+	<theorem xml:id="Kc_Connected">
     <statement>
       <p>
         The boundary of <m>K_c</m> is connected if and only if <m>0\in K_c</m>.
@@ -384,16 +374,19 @@
     and so on ad infinitum!
     In the remainder of this section we look at some of the properties of this amazing set.
   </p>
-  <figure xml:id="fig_ch-04-cp-7">
-    <caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-6">Figure</xref></caption>
-    <image width="73%" source="figs/ch-04/ch-04-cp-7.svg"/>
-  </figure>
-  <figure xml:id="fig_ch-04-cp-8">
-    <caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-7">Figure</xref></caption>
-    \hspace{\fill}
-    <image width="73%" source="figs/ch-04/ch-04-cp-8.svg"/>
-    \caption{Zooming in on the Mandelbrot set}
-  </figure>
+	<figure xml:id="mandelbrot-zoom">
+		<caption>Zooming in on the Mandelbrot set</caption>
+	<sidebyside widths="50% 50%">
+	<figure xml:id="fig_ch-04-cp-7">
+		<caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-6">Figure</xref></caption>
+		<image source="figs/ch-04/ch-04-cp-7.svg"/>
+	</figure>
+	<figure xml:id="fig_ch-04-cp-8">
+		<caption>A zoom of the upper-portion of <xref ref="fig_ch-04-cp-7">Figure</xref></caption>
+		<image source="figs/ch-04/ch-04-cp-8.svg"/>
+	</figure>
+	</sidebyside>
+	</figure>
   <example xml:id="Disk__25_in_M">
     <statement>
       <p>
