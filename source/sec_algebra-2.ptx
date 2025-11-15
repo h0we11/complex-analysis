@@ -1,120 +1,119 @@
 <section xml:id="sec_algebra-2">
-  <title>The Algebra of Complex Numbers, Part<nbsp/>II</title>
-  <p>
-	 The real numbers are deficient in the sense that not all algebraic operations on them produce real numbers. Thus, for
-	 <m>\sqrt{-1}</m> to make sense, we must consider the domain of complex numbers. Do complex numbers have this same deficiency?
-	 That is, if we are to make sense of expressions such as <m>\sqrt{1+i}</m>, must we appeal to yet another new number system?
-	 The answer to this question is <em>no.</em> In other words, any reasonable algebraic operation performed on complex numbers
-	 gives complex numbers. Later we show how to evaluate intriguing expressions such as <m>i^{i}</m>. For now we only look at
-	 integral powers and roots of complex numbers.
-  </p>
-  <p>
-	 The important players in this regard are the exponential and polar forms of a non-zero complex number
-	 <m>z=re^{i\theta}=r(\cos\theta+i\sin\theta)</m>. By the laws of exponents (which, you recall, we have promised to prove in
-	 <xref ref="ch_elementary-fcns">Chapter</xref>) we have
-    <md>
-		<mrow xml:id="z_n" number="yes">z^n    \amp = (re^{i\theta})^n = r^ne^{in\theta} = r^n[\cos(n\theta) +i\sin(n\theta)] \text{
-		and }</mrow>
-      <mrow>z^{-n}  \amp = (re^{i\theta})^{-n}=r^{-n}e^{-in\theta}=r^{-n}[\cos(-n\theta) +i\sin(-n\theta)]</mrow>
-    </md>.
-  </p>
-  <example>
-    <statement>
-      <p>
-        Show that <m>(-\sqrt{3}-i)^3=-8i</m> in two ways.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        (Method 1): The binomial formula (<xref ref="x1_2_14">Exercise</xref> of <xref ref="sec_algebra-1">Section</xref>) gives
-        <md>
-          <mrow>(-\sqrt{3}-i)^3\amp =(-\sqrt{3})^3+3(-\sqrt{3})^2(-i)+3(-\sqrt{3})(-i)^2+(-i)^3</mrow>
-			 <mrow>\amp =-8i</mrow>
-        </md>.
-      </p>
-    </solution>
-    <solution>
-      <p>
-        (Method 2): Using Identity <xref ref="z_n"/> and <xref ref="ExponentialEx">Example</xref> yields
-        <md>
-			 <mrow>(-\sqrt{3}-i)^3\amp  = \big(2e^{i({-\frac{5\pi}{6}})}\big)^3</mrow>
-			 <mrow>\amp = \big(2^3e^{i({-\frac{15\pi}{6}})}\big)</mrow>
-			 <mrow>\amp = 8\left[\cos\left(-\frac{15\pi}{6}\right)+i\sin\left(-\frac{15\pi}{6}\right)\right]</mrow>
-          <mrow>\amp  =-8i</mrow>
-        </md>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    Which method would you use if you were asked to compute <m>(-\sqrt{3} -i)^{30}</m>?
-  </p>
-  <example>
-    <statement>
-      <p>
-        Evaluate <m>(-\sqrt{3}-i)^{30}</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        <m>(-\sqrt{3}-i)^{30}=\Big(2e^{i({-\frac{5\pi}{6}})}\Big)^{\!{30}} = 2^{30}e^{-i25\pi} = -2^{30}</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    An interesting application of the laws of exponents comes from putting the equation <m>(e^{i\theta})^n=e^{in\theta}</m> in its polar form.
-    Doing so gives
-    <men xml:id="De_Moivre_s_formula">
-      (\cos \theta +i\sin \theta)^n = (\cos n\theta +i\sin n\theta)
-    </men>,
-    which is known as De Moivre's formula,
-    in honor of the French mathematician Abraham De Moivre (1667<ndash/>1754).
-  </p>
-  <example xml:id="De_Moivre_s_Ex">
-    <statement>
-      <p>
-        Use De Moivre's formula (Equation <xref ref="De_Moivre_s_formula"/>) to show that
-      </p>
-      <p>
-        <m>\cos 5\theta =\cos^5\theta-10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        If we let <m>n=5</m> and use the binomial formula the left side of Equation <xref ref="De_Moivre_s_formula"/> becomes
-        <md>
-			 <mrow>\cos ^{5}\theta\amp +i5\cos ^4\theta \sin \theta -10\cos ^3\theta \sin
-			 ^2\theta -10i\cos ^2\theta \sin ^3\theta</mrow>
-			 <mrow>\amp +5\cos \theta \sin ^4\theta +i\sin ^{5}\theta</mrow>
-        </md>.
-      </p>
-      <p>
-        The real part of this expression is <m>\cos ^{5}\theta -10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</m>.
-        Equating this to the real part of
-        <m>\cos 5\theta +i\sin 5\theta</m> on the right side of Equation <xref ref="De_Moivre_s_formula"/> establishes the desired result.
-      </p>
-    </solution>
-  </example>
-  <p>
-    A key aid in determining roots of complex numbers is a corollary to the fundamental theorem of algebra.
-    We prove this theorem in <xref ref="ch_complex-integration">Chapter</xref>.
-    Our proofs must be independent of the conclusions we derive here because we are going to make use of the corollary now.
-  </p>
-  <theorem xml:id="NRoots">
-    <title>Corollary to the fundamental theorem of algebra</title>
-    <statement>
-      <p>
-		  If <m>P(z)</m> is a polynomial of degree <m>n, \, (n>0)</m>, with complex coefficients, then the equation <m>P(z) = 0</m>
-		  has precisely <m>\; n \;</m> (not necessarily distinct) solutions.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      Refer to <xref ref="FTOA">Theorem</xref> and 
-		<xref ref="FTOACOR">Corollary</xref> in <xref ref="ch_complex-integration">Chapter</xref>.
-    </p>
-  </proof>
-  <example>
+<title>The Algebra of Complex Numbers, Part<nbsp/>II</title>
+	<p>
+		The real numbers are deficient in the sense that not all algebraic operations on them produce real numbers. Thus, for
+		<m>\sqrt{-1}</m> to make sense, we must consider the domain of complex numbers. Do complex numbers have this same
+		deficiency?  That is, if we are to make sense of expressions such as <m>\sqrt{1+i}</m>, must we appeal to yet another new
+		number system?  The answer to this question is <em>no.</em> In other words, any reasonable algebraic operation performed on
+		complex numbers gives complex numbers. Later we show how to evaluate intriguing expressions such as <m>i^{i}</m>. For now we
+		only look at integral powers and roots of complex numbers.
+	</p>
+	<p>
+		The important players in this regard are the exponential and polar forms of a non-zero complex number
+		<m>z=re^{i\theta}=r(\cos\theta+i\sin\theta)</m>. By the laws of exponents (which, you recall, we have promised to prove in
+		<xref ref="ch_elementary-fcns">Chapter</xref>) we have
+		<md>
+			<mrow xml:id="z_n" number="yes">
+				z^n  \amp = (re^{i\theta})^n = r^ne^{in\theta} = r^n[\cos(n\theta) +i\sin(n\theta)] \quad \text{and}
+			</mrow>
+			<mrow>z^{-n} \amp = (re^{i\theta})^{-n}=r^{-n}e^{-in\theta}=r^{-n}[\cos(-n\theta) +i\sin(-n\theta)]</mrow>
+		</md>.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Show that <m>(-\sqrt{3}-i)^3=-8i</m> in two ways.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				(Method 1): The binomial formula (<xref ref="x1_2_14">Exercise</xref> of <xref ref="sec_algebra-1">Section</xref>)
+				gives
+				<md>
+					<mrow>(-\sqrt{3}-i)^3\amp =(-\sqrt{3})^3+3(-\sqrt{3})^2(-i)+3(-\sqrt{3})(-i)^2+(-i)^3</mrow>
+					<mrow>\amp =-8i</mrow>
+				</md>.
+			</p>
+			<p>
+				(Method 2): Using Identity <xref ref="z_n"/> and <xref ref="ExponentialEx">Example</xref> yields
+				<md>
+					<mrow>(-\sqrt{3}-i)^3\amp  = \big(2e^{i({-\frac{5\pi}{6}})}\big)^3</mrow>
+					<mrow>\amp = \big(2^3e^{i({-\frac{15\pi}{6}})}\big)</mrow>
+					<mrow>\amp = 8\left[\cos\left(-\frac{15\pi}{6}\right)+i\sin\left(-\frac{15\pi}{6}\right)\right]</mrow>
+					<mrow>\amp  =-8i</mrow>
+				</md>.
+			</p>
+		</solution>
+		<p>
+			Which method would you use if you were asked to compute <m>(-\sqrt{3} -i)^{30}</m>?
+		</p>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Evaluate <m>(-\sqrt{3}-i)^{30}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<m>(-\sqrt{3}-i)^{30}=\Big(2e^{i({-\frac{5\pi}{6}})}\Big)^{\!{30}} = 2^{30}e^{-i25\pi} = -2^{30}</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		An interesting application of the laws of exponents comes from putting the equation <m>(e^{i\theta})^n=e^{in\theta}</m> in
+		its polar form. Doing so gives
+		<men xml:id="De_Moivre_s_formula">
+			(\cos \theta +i\sin \theta)^n = (\cos n\theta +i\sin n\theta)
+		</men>,
+		which is known as De Moivre's formula, in honor of the French mathematician Abraham De Moivre (1667<ndash/>1754).
+	</p>
+	<example xml:id="De_Moivre_s_Ex">
+		<statement>
+			<p>
+				Use De Moivre's formula (Equation <xref ref="De_Moivre_s_formula"/>) to show that
+				<me>\cos 5\theta =\cos^5\theta-10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</me>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				If we let <m>n=5</m> and use the binomial formula the left side of Equation <xref ref="De_Moivre_s_formula"/> becomes
+				<md>
+					<mrow>
+						\cos ^{5}\theta \amp + i5\cos ^4\theta \sin \theta -10\cos ^3\theta \sin ^2\theta -
+						10i\cos ^2\theta \sin ^3\theta
+					</mrow>
+					<mrow>\amp + 5\cos \theta \sin ^4\theta +i\sin ^{5}\theta</mrow>
+				</md>.
+			</p>
+			<p>
+				The real part of this expression is <m>\cos ^{5}\theta -10\cos^3\theta \sin^2\theta +5\cos \theta \sin^4\theta</m>.
+				Equating this to the real part of <m>\cos 5\theta +i\sin 5\theta</m> on the right side of Equation 
+				<xref ref="De_Moivre_s_formula"/> establishes the desired result.
+			</p>
+		</solution>
+	</example>
+	<p>
+		A key aid in determining roots of complex numbers is a corollary to the fundamental theorem of algebra. We prove this
+		theorem in <xref ref="ch_complex-integration">Chapter</xref>. Our proofs must be independent of the conclusions we derive
+		here because we are going to make use of the corollary now.
+	</p>
+	<theorem xml:id="NRoots">
+	<title>Corollary to the fundamental theorem of algebra</title>
+		<statement>
+			<p>
+				If <m>P(z)</m> is a polynomial of degree <m>n, \, (n>0)</m>, with complex coefficients, then the equation 
+				<m>P(z) = 0</m> has precisely <m>\; n \;</m> (not necessarily distinct) solutions.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Refer to <xref ref="FTOA">Theorem</xref> and <xref ref="FTOACOR">Corollary</xref> in 
+			<xref ref="ch_complex-integration">Chapter</xref>.
+		</p>
+	</proof>
+	<example>
     <statement>
       <p>
 		  Let <m>P(z) = z^3+(2-2i)z^2 + (-1-4i)z-2</m>. This polynomial of degree 3 can be written as <m>P(z) =(z-i)^2(z+2)</m>.
