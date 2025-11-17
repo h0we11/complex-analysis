@@ -266,77 +266,73 @@
 			<mrow>f^{-1}\big(f(z)\big) \amp =z \quad \; \text{for all} \quad z \in A, \quad \text{and}</mrow>
 			<mrow xml:id="InverseEqs3" number="yes">f\big(f^{-1}(w)\big) \amp = w \quad \text{for all} \quad w \in B</mrow>
 		</md>.
-  </p>
-  <p>
-    Also, for <m>z_0 \in B</m> and <m>w_0 \in A</m>,
-    <md>
-	 	<mrow>w_0=f(z_0) \quad \amp \text{iff} \quad f^{-1}(w_0)=z_0, \quad \text{and}</mrow>
-		<mrow xml:id="InverseEqs2" number="yes">z_0=f^{-1}(w_0) \quad \amp \text{iff} \quad f(z_0) =w_0.</mrow>
-    </md>
-  </p>
-  <example xml:id="Inverse_Ex">
-    <statement>
-      <p>
-        If <m>w=</m> <m>f(z)=iz</m> for any complex number <m>z</m>,
-        find <m>f^{-1}(w)</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-		  We can easily show <m>f</m> is one-to-one and onto the entire complex plane. We solve for <m>z</m>, given
-		  <m>w=f(z)=iz</m>, to get <m>z=\frac{w}{i}=-iw</m>. By Equations <xref ref="InverseEqs2"/>, this result implies that
-		  <m>f^{-1}(w)=-iw</m> for all complex numbers <m>w</m>.
-      </p>
-    </solution>
-  </example>
-  <remark xml:id="InverseRmk">
-    <p>
-		Once we have specified <m>f^{-1}(w)=-iw</m> for all complex numbers <m>w</m>, we note that there is nothing magical about
-		the symbol <m>w</m>. We could just as easily write <m>f^{-1}(z)=-iz</m> for all complex numbers <m>z</m>.
-    </p>
-  </remark>
-  <p>
-    We now show how to find the image <m>B</m> of a specified set <m>A</m> under a given mapping <m>u+iv=w=f(z)</m>.
-    The set <m>A</m> is usually described with an equation or inequality involving <m>x</m> and <m>y</m>.
-    Using inverse functions,
-    we can construct a chain of equivalent statements leading to a description of the set <m>B</m> in terms of an equation or an inequality involving <m>u</m> and <m>v</m>.
-  </p>
-  <example xml:id="ImageEx">
-    <statement>
-      <p>
-		  Show that the function <m>f(z)=iz</m> maps the line <m>y=x+1</m> in the <m>xy</m> plane onto the line <m>v=-u-1</m> in the
-		  <m>w</m> plane.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        (Method 1): With <m>A=\{(x,y):y=x+1\}</m>,
-        we want to describe <m>B=f(A)</m>.
-        We let <m>z=x+iy \in A</m> and use Equations <xref ref="InverseEqs2"/> and <xref ref="Inverse_Ex">Example</xref> to get
-        <md>
-          <mrow>u+iv=w=f(z) \in B \amp  \Longleftrightarrow f^{-1}(w)=z=x+iy\in A</mrow>
-          <mrow>\amp  \Longleftrightarrow-iw \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow v-iu \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow(v,-u) \in A</mrow>
-          <mrow>\amp  \Longleftrightarrow-u=v+1</mrow>
-          <mrow>\amp  \Longleftrightarrow v=-u-1</mrow>
-        </md>,
-        where <m>\Longleftrightarrow</m> means
-        <q>{<em>if and only if</em>}.</q>
-        PARAGRAPH Note what this result says:
-        <m>u+iv=w \in B \Longleftrightarrow v=-u-1</m>.
-        The image of <m>A</m> under <m>f</m>, therefore,
-        is the set <m>B=\{(u,v):v=-u-1\}</m>.
-        PARAGRAPH (Method 2): We write
-        <m>u+iv=w=f(z) =i(x+iy)=-y+ix</m> and note that the transformation can be given by the equations <m>u=-y</m> and <m>v=x</m>.
-        Because <m>A</m> is described by <m>A=\{x+iy:y=x+1\}</m>,
-        we can substitute <m>u=-y</m> and <m>v=x</m> into the equation <m>y=x+1</m> to obtain <m>-u=v+1</m>,
-        which we can rewrite as <m>v=-u-1</m>.
-        If you use this method,
-        be sure to pay careful attention to domains and ranges.
-      </p>
-    </solution>
-  </example>
+	</p>
+	<p>
+		Also, for <m>z_0 \in B</m> and <m>w_0 \in A</m>,
+		<md>
+			<mrow>w_0=f(z_0) \quad \amp \text{iff} \quad f^{-1}(w_0)=z_0, \quad \text{and}</mrow>
+			<mrow xml:id="InverseEqs2" number="yes">z_0=f^{-1}(w_0) \quad \amp \text{iff} \quad f(z_0) =w_0.</mrow>
+		</md>
+	</p>
+	<example xml:id="Inverse_Ex">
+		<statement>
+			<p>
+				If <m>w=</m> <m>f(z)=iz</m> for any complex number <m>z</m>, find <m>f^{-1}(w)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We can easily show <m>f</m> is one-to-one and onto the entire complex plane. We solve for <m>z</m>, given
+				<m>w=f(z)=iz</m>, to get <m>z=\frac{w}{i}=-iw</m>. By Equations <xref ref="InverseEqs2"/>, this result implies that
+				<m>f^{-1}(w)=-iw</m> for all complex numbers <m>w</m>.
+			</p>
+		</solution>
+	</example>
+	<remark xml:id="InverseRmk">
+		<p>
+			Once we have specified <m>f^{-1}(w)=-iw</m> for all complex numbers <m>w</m>, we note that there is nothing magical about
+			the symbol <m>w</m>. We could just as easily write <m>f^{-1}(z)=-iz</m> for all complex numbers <m>z</m>.
+		</p>
+	</remark>
+	<p>
+		We now show how to find the image <m>B</m> of a specified set <m>A</m> under a given mapping <m>u+iv=w=f(z)</m>. The set
+		<m>A</m> is usually described with an equation or inequality involving <m>x</m> and <m>y</m>. Using inverse functions, we
+		can construct a chain of equivalent statements leading to a description of the set <m>B</m> in terms of an equation or an
+		inequality involving <m>u</m> and <m>v</m>.
+	</p>
+	<example xml:id="ImageEx">
+		<statement>
+			<p>
+				Show that the function <m>f(z)=iz</m> maps the line <m>y=x+1</m> in the <m>xy</m> plane onto the line <m>v=-u-1</m> in
+				the <m>w</m> plane.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				(Method 1): With <m>A=\{(x,y):y=x+1\}</m>, we want to describe <m>B=f(A)</m>. We let <m>z=x+iy \in A</m> and use
+				Equations <xref ref="InverseEqs2"/> and <xref ref="Inverse_Ex">Example</xref> to get
+				<md>
+					<mrow>u+iv=w=f(z) \in B \amp  \Longleftrightarrow f^{-1}(w)=z=x+iy\in A</mrow>
+					<mrow>\amp  \Longleftrightarrow-iw \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow v-iu \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow(v,-u) \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow-u=v+1</mrow>
+					<mrow>\amp  \Longleftrightarrow v=-u-1</mrow>
+				</md>,
+				where <m>\Longleftrightarrow</m> means <q><em>if and only if</em>.</q>
+				<p>
+					Note what this result says: <m>u+iv=w \in B \Longleftrightarrow v=-u-1</m>. The image of <m>A</m> under <m>f</m>,
+					therefore, is the set <m>B=\{(u,v):v=-u-1\}</m>.
+				</p>
+			</p>
+			<p>
+				(Method 2): We write <m>u+iv=w=f(z) =i(x+iy)=-y+ix</m> and note that the transformation can be given by the equations
+				<m>u=-y</m> and <m>v=x</m>. Because <m>A</m> is described by <m>A=\{x+iy:y=x+1\}</m>, we can substitute <m>u=-y</m>
+				and <m>v=x</m> into the equation <m>y=x+1</m> to obtain <m>-u=v+1</m>, which we can rewrite as <m>v=-u-1</m>. If you
+				use this method, be sure to pay careful attention to domains and ranges.
+			</p>
+		</solution>
+	</example>
   <p>
     We now look at some elementary mappings.
     If we let <m>B=a+ib</m> denote a fixed complex constant,
