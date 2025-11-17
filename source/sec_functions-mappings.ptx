@@ -399,103 +399,91 @@
 			<p>
 				<xref ref="fig_ch-02-07">Figure</xref> shows parametric plots of these ellipses.
 			</p>
-    <figure xml:id="fig_ch-02-07">
-    <caption>Plots of (a) the original ellipse;   (b) the rotated ellipse</caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-07.svg"/>
-  </figure>
-  </statement>
-  </example>
-  <p>
-    If we let <m>K>0</m> be a fixed positive real number, then the transformation
-    <me>
-      w=S(z) =Kz=Kx+iKy
-    </me>
-    is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a magnification.
-    If <m>K>1</m>,
-    it has the effect of stretching the distance between points by the factor <m>K</m>.
-    If <m>K\lt 1</m>,
-    then it reduces the distance between points by the factor <m>K</m>.
-    The inverse transformation is given by
-    <me>
-      z=S^{-1}(w) =\frac{1}{K}w=\frac{1}{K}u+i\frac{1}{K}v
-    </me>
-    and shows that <m>S</m> is one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane.
-    The effect of magnification is shown in <xref ref="fig_ch-02-08">Figure</xref>.
-  </p>
-  <figure xml:id="fig_ch-02-08">
-    <caption>The magnification <m>w=S(z) =Kz=Kx+iKy</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-08.svg"/>
-  </figure>
-  <p>
-    Finally, if we let <m>A=Ke^{i\alpha}</m> and <m>B=a+ib</m>,
-    where <m>K>0</m> is a positive real number, then the transformation
-    <me>
-      w = L(z) = Az+B
-    </me>
-    is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a linear transformation.
-    It can be considered as the composition of a rotation,
-    a magnification, and a translation.
-    It has the effect of rotating the plane through an angle given by <m>\alpha =\mathrm{Arg}(A)</m>,
-    followed by a magnification by the factor <m>K=|A|</m>,
-    followed by a translation by the vector <m>B=a+ib</m>.
-    The inverse mapping is given by
-    <m>z=L^{-1}(w) =\frac{1}{A}w-\frac{B}{A}</m> and shows that <m>L</m> is a one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane.
-  </p>
-  <example>
-    <statement>
-      <p>
-        Show that the linear transformation <m>w=iz+i</m> maps the right half-plane
-        <m>\mathrm{Re}(z) \ge 1</m> onto the upper half-plane <m>\mathrm{Im}(w) \ge 2</m>.
-      </p>
-      <solution>
-        <p>
-          (Method 1): Let <m>A=\{(x,y) : x \ge  1\}</m>.
-          To describe <m>B=f(A)</m>,
-          we solve <m>w=iz+i</m> for <m>z</m> to get <m>z=\frac{w-i}{i}=-iw-1=f^{-1}(w)</m>.
-          Using Equations <xref ref="InverseEqs2"/> and the method of <xref ref="ImageEx">Example</xref> we have
-          <md>
-            <mrow>u+iv=w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) = z \in A</mrow>
-            <mrow>\amp  \Longleftrightarrow -iw-1 \in A</mrow>
-            <mrow>\amp  \Longleftrightarrow v-1-iu \in A</mrow>
-            <mrow>\amp  \Longleftrightarrow (v-1,\,-u) \in A</mrow>
-            <mrow>\amp  \Longleftrightarrow v-1 \ge  1</mrow>
-            <mrow>\amp  \Longleftrightarrow v \ge  2</mrow>
-          </md>.
-        </p>
-      </solution>
-      <p>
-        Thus <m>B = \{w=u+iv : v \ge 2\}</m>,
-        which is the same as saying <m>\mathrm{Im}(w) \ge 2</m>.
-      </p>
-      <p>
-        (Method 2): When we write <m>w=f(z)</m> in Cartesian form as
-        <me>
-          w=u+iv=i(x+iy) +i=-y+i(x+1)
-        </me>,
-        we see that the transformation can be given by the equations <m>u=-y</m> and <m>v=x+1</m>.
-        Substituting <m>x=v-1</m> in the inequality
-        <m>\mathrm{Re}(z) = x \ge  1</m> gives <m>v-1 \ge  1</m>,
-        or <m>v \ge  2</m>,
-        which is the upper half-plane <m>\mathrm{Im}(w) \ge  2</m>.
-      </p>
-      <p>
-        (Method 3): The effect of the transformation <m>w=f(z)</m> is a rotation of the plane through the angle <m>\alpha = \frac{\pi}{2}</m>
-        (when <m>z</m> is multiplied by <m>i</m>)
-        followed by a translation by the vector <m>B=i</m>.
-        The first operation yields the set <m>\mathrm{Im}(w) \ge 1</m>.
-        The second shifts this set up 1 unit,
-        resulting in the set <m>\mathrm{Im}(w) \ge 2</m>.
-      </p>
-      <p>
-        We illustrate this result in <xref ref="fig_ch-02-09">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-02-09">
-        <caption>The linear transformation <m>w=f(z) =iz+i</m></caption>
-        <image width="73%" source="figs/ch-02/ch-02-fig-09.svg"/>
-      </figure>
-    </statement>
-  </example>
-  <p>
+			<figure xml:id="fig_ch-02-07">
+				<caption>Plots of (a) the original ellipse;   (b) the rotated ellipse</caption>
+				<image width="73%" source="figs/ch-02/ch-02-fig-07.svg"/>
+			</figure>
+		</statement>
+	</example>
+	<p>
+		If we let <m>K>0</m> be a fixed positive real number, then the transformation
+		<me>
+			w=S(z) =Kz=Kx+iKy
+		</me>
+		is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a magnification. If <m>K>1</m>, it has
+		the effect of stretching the distance between points by the factor <m>K</m>. If <m>K\lt 1</m>, then it reduces the distance
+		between points by the factor <m>K</m>. The inverse transformation is given by
+		<me>
+			z=S^{-1}(w) =\frac{1}{K}w=\frac{1}{K}u+i\frac{1}{K}v
+		</me>
+		and shows that <m>S</m> is one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane. The effect of magnification
+		is shown in <xref ref="fig_ch-02-08">Figure</xref>.
+	</p>
+	<figure xml:id="fig_ch-02-08">
+		<caption>The magnification <m>w=S(z) =Kz=Kx+iKy</m></caption>
+		<image width="73%" source="figs/ch-02/ch-02-fig-08.svg"/>
+	</figure>
+	<p>
+		Finally, if we let <m>A=Ke^{i\alpha}</m> and <m>B=a+ib</m>, where <m>K>0</m> is a positive real number, then the
+		transformation
+		<me>
+			w = L(z) = Az+B
+		</me>
+		is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a linear transformation. It can be
+		considered as the composition of a rotation, a magnification, and a translation. It has the effect of rotating the plane
+		through an angle given by <m>\alpha =\mathrm{Arg}(A)</m>, followed by a magnification by the factor <m>K=|A|</m>, followed
+		by a translation by the vector <m>B=a+ib</m>.  The inverse mapping is given by <m>z=L^{-1}(w) =\frac{1}{A}w-\frac{B}{A}</m>
+		and shows that <m>L</m> is a one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Show that the linear transformation <m>w=iz+i</m> maps the right half-plane <m>\mathrm{Re}(z) \ge 1</m> onto the upper
+				half-plane <m>\mathrm{Im}(w) \ge 2</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				(Method 1): Let <m>A=\{(x,y) : x \ge  1\}</m>. To describe <m>B=f(A)</m>, we solve <m>w=iz+i</m> for <m>z</m> to get
+				<m>z=\frac{w-i}{i}=-iw-1=f^{-1}(w)</m>. Using Equations <xref ref="InverseEqs2"/> and the method of 
+				<xref ref="ImageEx">Example</xref> we have 
+				<md>
+					<mrow>u+iv=w=f(z) \in B  \amp  \Longleftrightarrow f^{-1}(w) = z \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow -iw-1 \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow v-1-iu \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow (v-1,\,-u) \in A</mrow>
+					<mrow>\amp  \Longleftrightarrow v-1 \ge  1</mrow>
+					<mrow>\amp  \Longleftrightarrow v \ge  2</mrow>
+				</md>.
+			</p>
+			<p>
+				Thus <m>B = \{w=u+iv : v \ge 2\}</m>, which is the same as saying <m>\mathrm{Im}(w) \ge 2</m>.
+			</p>
+			<p>
+				(Method 2): When we write <m>w=f(z)</m> in Cartesian form as
+				<me>
+					w=u+iv=i(x+iy) +i=-y+i(x+1)
+				</me>,
+				we see that the transformation can be given by the equations <m>u=-y</m> and <m>v=x+1</m>. Substituting <m>x=v-1</m>
+				in the inequality <m>\mathrm{Re}(z) = x \ge  1</m> gives <m>v-1 \ge  1</m>, or <m>v \ge  2</m>, which is the upper
+				half-plane <m>\mathrm{Im}(w) \ge  2</m>.
+			</p>
+			<p>
+				(Method 3): The effect of the transformation <m>w=f(z)</m> is a rotation of the plane through the angle <m>\alpha =
+				\frac{\pi}{2}</m> (when <m>z</m> is multiplied by <m>i</m>) followed by a translation by the vector <m>B=i</m>. The
+				first operation yields the set <m>\mathrm{Im}(w) \ge 1</m>. The second shifts this set up 1 unit, resulting in the set
+				<m>\mathrm{Im}(w) \ge 2</m>.
+			</p>
+			<p>
+				We illustrate this result in <xref ref="fig_ch-02-09">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-02-09">
+				<caption>The linear transformation <m>w=f(z) =iz+i</m></caption>
+				<image width="73%" source="figs/ch-02/ch-02-fig-09.svg"/>
+			</figure>
+		</solution>
+	</example>
+	<p>
     Translations and rotations preserve angles.
     First, magnifications rescale distance by a factor <m>K</m>,
     so it follows that triangles are mapped onto similar triangles,
