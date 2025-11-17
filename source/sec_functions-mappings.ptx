@@ -1,91 +1,96 @@
 <section xml:id="sec_functions-mappings">
-  <title>Functions and Linear Mappings</title>
-  <p>
-	 A complex-valued function <m>f</m> of the complex variable <m>z</m> is a rule that assigns to each complex number <m>z</m> in
-	 a set <m>D</m> one and only one complex number <m>w</m>. We write <m>w=f(z)</m> and call <m>w</m> the image of<m>z</m> under
-	 <m>f</m>.  A simple example of a complex-valued function is given by the formula <m>w=f(z)=z^2</m>. The set <m>D</m> is
-	 called the domain of <m>f</m>, and the set of all images <m>\{w=f(z) : z \in D \}</m> is called the range of <m>f</m>. When
-	 the context is obvious, we omit the phrase <em>complex-valued</em>, and simply refer to a function <m>f</m>, or to a complex
-	 function <m>f</m>.
-  </p>
-  <p>
-	 We can define the domain to be any set that makes sense for a given rule, so for <m>w=f(z)=z^2</m>, we could have the entire
-	 complex plane for the domain <m>D</m>, or we might artificially restrict the domain to some set such as <m>D=D_1(0)=\{z:|z|\lt
-	 1\}</m>. Determining the range for a function defined by a formula is not always easy, but we will see plenty of examples
-	 later on. In some contexts functions are referred to as <em>mappings</em> or <em>transformations</em>.
-  </p>
-  <p>
-	 In <xref ref="sec_topology">Section</xref>, we used the term <em>domain</em> to indicate a connected open set. When speaking
-	 about the domain of a <em>function</em>, however, we mean only the set of points on which the function is defined. This
-	 distinction is worth noting, and context will make clear the use intended.
-  </p>
-  <p>
-	 Just as <m>z</m> can be expressed by its real and imaginary parts, <m>z=x+iy</m>, we write <m>f(z)=w=u+iv</m>, where <m>u</m>
-	 and <m>v</m> are the real and imaginary parts of <m>w</m>, respectively. Doing so gives us the representation 
-	 <me> w=f(z) =f(x, y) =f(x+iy)=u+iv </me>. Because <m>u</m> and <m>v</m> depend on <m>x</m> and <m>y</m>, they can be
-	 considered to be real-valued functions of the real variables <m>x</m> and <m>y</m>; that is, 
-	 <me>u=u(x, y) \; \text{ and } \; v=v(x, y)</me>. Combining these ideas, we often write a complex function <m>f</m> in the
-	 form 
-	 <men xml:id="f_z_">
-      f(z)=f(x+iy)=u(x, y)+iv(x, y)
-    </men>.
-  </p>
-  <p>
-    <xref ref="fig_ch-02-01">Figure</xref> illustrates the notion of a function (mapping) using these symbols.
-  </p>
-  <figure xml:id="fig_ch-02-01">
-    <caption>The mapping <m>w=f(z)</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-01.svg"/>
-  </figure>
-  <p>
-    We now give several examples that illustrate how to express a complex function.
-  </p>
-  <example xml:id="ex_2_1">
-    <statement>
-      <p>
-        Write <m>f(z)=z^4</m> in the form <m>f(z)=u(x,y) + iv(x,y)</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Using the binomial formula, we obtain
-        <md>
-          <mrow>f(z)  \amp = (x+iy)^4 = x^4+4x^3iy+6x^2(iy)^2 + 4x(iy)^3 + (iy)^4</mrow>
-          <mrow>\amp =(x^4-6x^2y^2+y^4) +i(4x^3y-4xy^3)</mrow>
-        </md>,
-        so that <m>u(x,y) =x^4 - 6x^2 y^2 + y^4</m> and <m>v(x,y) =4x^3 y - 4xy^3</m>.
-      </p>
-    </solution>
-  </example>
-  <example xml:id="ex_2_2">
-    <statement>
-      <p>
-        Express the function <m>f(z) =\overline{z}\mathrm{Re}(z)+z^2 + \mathrm{Im}(z)</m> in the form <m>f(z) =u(x,y) +iv(x,y)</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Using the elementary properties of complex numbers, it follows that
-        <me>
-          f(z) =(x-iy) x+(x^2 - y^2 + i2xy) + y = (2x^2-y^2+y) + i(xy)
-        </me>,
-        so that <m>u(x,y) = 2x^2-y^2+y</m> and <m>v(x,y) = xy</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    <xref ref="ex_2_1">Examples</xref>
-    and <xref ref="ex_2_2"></xref>
-    show how to find <m>u(x,y)</m> and <m>v(x,y)</m> when a rule for computing <m>f</m> is given.
-    Conversely, if <m>u(x,y)</m> and <m>v(x,y)</m> are two real-valued functions of the real variables <m>x</m> and <m>y</m>,
-    they determine a complex-valued function <m>f(x,y) = u(x,y) +iv(x,y)</m>,
-    and we can use the formulas
-    <me>
-      x=\frac{z+\overline{z}}{2}  \text{ and } =\frac{z-\overline{z}}{2i}
-    </me>
-    to find a formula for <m>f</m> involving the variables <m>z</m> and <m>\overline{z}</m>.
-  </p>
-  <example>
+<title>Functions and Linear Mappings</title>
+	<p>
+		A complex-valued function <m>f</m> of the complex variable <m>z</m> is a rule that assigns to each complex number <m>z</m>
+		in a set <m>D</m> one and only one complex number <m>w</m>. We write <m>w=f(z)</m> and call <m>w</m> the image of<m>z</m>
+		under <m>f</m>.  A simple example of a complex-valued function is given by the formula <m>w=f(z)=z^2</m>. The set <m>D</m>
+		is called the domain of <m>f</m>, and the set of all images <m>\{w=f(z) : z \in D \}</m> is called the range of <m>f</m>.
+		When the context is obvious, we omit the phrase <em>complex-valued</em>, and simply refer to a function <m>f</m>, or to a
+		complex function <m>f</m>.
+	</p>
+	<p>
+		We can define the domain to be any set that makes sense for a given rule, so for <m>w=f(z)=z^2</m>, we could have the entire
+		complex plane for the domain <m>D</m>, or we might artificially restrict the domain to some set such as
+		<m>D=D_1(0)=\{z:|z|\lt 1\}</m>. Determining the range for a function defined by a formula is not always easy, but we will
+		see plenty of examples later on. In some contexts functions are referred to as <em>mappings</em> or
+		<em>transformations</em>.
+	</p>
+	<p>
+		In <xref ref="sec_topology">Section</xref>, we used the term <em>domain</em> to indicate a connected open set. When speaking
+		about the domain of a <em>function</em>, however, we mean only the set of points on which the function is defined. This
+		distinction is worth noting, and context will make clear the use intended.
+	</p>
+	<p>
+		Just as <m>z</m> can be expressed by its real and imaginary parts, <m>z=x+iy</m>, we write <m>f(z)=w=u+iv</m>, where
+		<m>u</m> and <m>v</m> are the real and imaginary parts of <m>w</m>, respectively. Doing so gives us the representation 
+		<me> 
+			w=f(z) =f(x, y) =f(x+iy)=u+iv
+		</me>.
+		Because <m>u</m> and <m>v</m> depend on <m>x</m> and <m>y</m>, they can be considered to be real-valued functions of the
+		real variables <m>x</m> and <m>y</m>; that is, 
+		<me>
+			u=u(x, y) \quad \text{and} \quad v=v(x, y)
+		</me>.
+		Combining these ideas, we often write a complex function <m>f</m> in the form 
+		<men xml:id="f_z_">
+			f(z)=f(x+iy)=u(x, y)+iv(x, y)
+		</men>.
+	</p>
+	<p>
+		<xref ref="fig_ch-02-01">Figure</xref> illustrates the notion of a function (mapping) using these symbols.'
+	</p>
+	<figure xml:id="fig_ch-02-01">
+		<caption>The mapping <m>w=f(z)</m></caption>
+		<image width="73%" source="figs/ch-02/ch-02-fig-01.svg"/>
+	</figure>
+	<p>
+		We now give several examples that illustrate how to express a complex function.
+	</p>
+	<example xml:id="ex_2_1">
+		<statement>
+			<p>
+				Write <m>f(z)=z^4</m> in the form <m>f(z)=u(x,y) + iv(x,y)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Using the binomial formula, we obtain
+				<md>
+					<mrow>f(z)  \amp = (x+iy)^4 = x^4+4x^3iy+6x^2(iy)^2 + 4x(iy)^3 + (iy)^4</mrow>
+					<mrow>\amp =(x^4-6x^2y^2+y^4) +i(4x^3y-4xy^3)</mrow> 
+				</md>,
+				so that <m>u(x,y) =x^4 - 6x^2 y^2 + y^4</m> and <m>v(x,y) =4x^3 y - 4xy^3</m>.
+			</p>
+		</solution>
+	</example>
+	<example xml:id="ex_2_2">
+		<statement>
+			<p>
+				Express the function <m>f(z) =\overline{z}\mathrm{Re}(z)+z^2 + \mathrm{Im}(z)</m> in the form 
+				<m>f(z) =u(x,y) +iv(x,y)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Using the elementary properties of complex numbers, it follows that
+				<me>
+					f(z) =(x-iy) x+(x^2 - y^2 + i2xy) + y = (2x^2-y^2+y) + i(xy)'
+				</me>,
+				so that <m>u(x,y) = 2x^2-y^2+y</m> and <m>v(x,y) = xy</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		<xref ref="ex_2_1">Examples</xref> and <xref ref="ex_2_2"></xref> show how to find <m>u(x,y)</m> and <m>v(x,y)</m> when a
+		rule for computing <m>f</m> is given.  Conversely, if <m>u(x,y)</m> and <m>v(x,y)</m> are two real-valued functions of the
+		real variables <m>x</m> and <m>y</m>, they determine a complex-valued function <m>f(x,y) = u(x,y) +iv(x,y)</m>, and we can
+		use the formulas
+		<me>
+			x=\frac{z+\overline{z}}{2} \quad \text{and} \quad =\frac{z-\overline{z}}{2i}
+		</me>
+		to find a formula for <m>f</m> involving the variables <m>z</m> and <m>\overline{z}</m>.
+	</p>
+	<example>
     <statement>
       <p>
         Express <m>f(z) =4x^2+i4y^2</m> by a formula involving the variables <m>z</m> and <m>\overline{z}</m>.
