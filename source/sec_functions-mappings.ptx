@@ -333,75 +333,78 @@
 			</p>
 		</solution>
 	</example>
-  <p>
-    We now look at some elementary mappings.
-    If we let <m>B=a+ib</m> denote a fixed complex constant,
-    the transformation
-    <me>
-      w = T(z) = z+B = x+a+i(y+b)
-    </me>
-    is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a translation.
-    This transformation can be visualized as a rigid translation whereby the point <m>z</m> is displaced through the vector <m>B=a+ib</m> to its new position <m>w=T(z)</m>.
-    The inverse mapping is given by
-    <me>
-      z = T^{-1}(w) = w-B = u-a+i(v-b)
-    </me>
-    and shows that <m>T</m> is a one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane.
-    The effect of a translation is depicted in <xref ref="fig_ch-02-05">Figure</xref>.
-  </p>
-  <figure xml:id="fig_ch-02-05">
-    <caption>The translation <m>w=T(z)=z+B=x+a+i(y+b)</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-05.svg"/>
-  </figure>
-  <p>
-    If we let <m>\alpha</m> be a fixed real number,
-    then for <m>z=re^{i\theta}</m>, the transformation
-    <me>
-      w=R(z) = ze^{i\alpha} = re^{i\theta}e^{i\alpha} = re^{i(\theta +\alpha)}
-    </me>
-    is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a rotation.
-    It can be visualized as a rigid rotation whereby the point <m>z</m> is rotated about the origin through an angle <m>\alpha</m> to its new position <m>w=R(z)</m>.
-    If we use polar coordinates and designate
-    <m>w=\rho ^{i\phi}</m> in the <m>w</m> plane,
-    then the inverse mapping is
-    <me>
-      z = R^{-1}(w) = we^{-i\alpha} = \rho e^{i\phi}e^{-i\alpha} = \rho e^{i(\phi -\alpha)}
-    </me>.
-    This analysis shows that <m>R</m> is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane.
-    The effect of rotation is depicted in <xref ref="fig_ch-02-06">Figure</xref>.
-  </p>
-  <figure xml:id="fig_ch-02-06">
-    <caption>The rotation <m>w=R(z)=re^{i(\theta+\alpha)}</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-06.svg"/>
-  </figure>
-  <example>
-    <statement>
-      <p>
-        The ellipse centered at the origin with a horizontal major axis of four units and vertical minor axis of two units can be represented by the parametric equation
-        <me>
-          s(t)=2\cos t+i\sin t=(2\cos t,\,\sin t)  \text{ for }  0 \le  t \le  2\pi
-        </me>.
-        Suppose that we wanted to rotate the ellipse by an angle of <m>\pi /6</m> radians and shift the center of the ellipse 2 units to the right and 1 unit up.
-        Using complex arithmetic,
-        we can easily generate a parametric equation <m>r(t)</m> that does so:
-        <md>
-          <mrow>r(t)  \amp = s(t) e^{i\frac{\pi}{6}}+(2+i)</mrow>
-          <mrow>\amp = (2\cos t+i\sin t)\left(\cos \frac{\pi}{6}+i\sin \frac{\pi}{6}\right) +(2+i)</mrow>
-          <mrow>\amp = \left(2\cos t\cos\frac{\pi}{6}-\sin t\sin\frac{\pi}{6}\right)+ i\left(2\cos t\sin\frac{\pi}{6}+\sin t\cos\frac{\pi}{6}\right)+(2+i)</mrow>
-          <mrow>\amp = \left(\sqrt{3}\cos t-\frac{1}{2}\sin t+2\right) +i\left(\cos t+\frac{\sqrt{3}}{2}\sin t+1\right)</mrow>
-          <mrow>\amp = \left(\sqrt{3}\cos t-\frac{1}{2}\sin t+2,\;\cos t+\frac{\sqrt{3}}{2}\sin t+1\right) \text{ for }   0 \le  t \le  2\pi</mrow>
-        </md>.
-      </p>
-      <p>
-        <xref ref="fig_ch-02-07">Figure</xref>
-        shows parametric plots of these ellipses.
-      </p>
-    </statement>
-  </example>
-  <figure xml:id="fig_ch-02-07">
+	<p>
+		We now look at some elementary mappings. If we let <m>B=a+ib</m> denote a fixed complex constant, the transformation
+		<me>
+			w = T(z) = z+B = x+a+i(y+b)
+		</me>
+		is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a translation. This transformation can
+		be visualized as a rigid translation whereby the point <m>z</m> is displaced through the vector <m>B=a+ib</m> to its new
+		position <m>w=T(z)</m>. The inverse mapping is given by
+		<me>
+			z = T^{-1}(w) = w-B = u-a+i(v-b)
+		</me>
+		and shows that <m>T</m> is a one-to-one mapping from the <m>z</m> plane onto the <m>w</m> plane. The effect of a translation
+		is depicted in <xref ref="fig_ch-02-05">Figure</xref>.
+	</p>
+	<figure xml:id="fig_ch-02-05">
+		<caption>The translation <m>w=T(z)=z+B=x+a+i(y+b)</m></caption>
+		<image width="73%" source="figs/ch-02/ch-02-fig-05.svg"/>
+	</figure>
+	<p>
+		If we let <m>\alpha</m> be a fixed real number, then for <m>z=re^{i\theta}</m>, the transformation
+		<me>
+			w = R(z) = ze^{i\alpha} = re^{i\theta}e^{i\alpha} = re^{i(\theta +\alpha)}
+		</me>
+		is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane and is called a rotation. It can be visualized as a
+		rigid rotation whereby the point <m>z</m> is rotated about the origin through an angle <m>\alpha</m> to its new position
+		<m>w=R(z)</m>. If we use polar coordinates and designate <m>w=\rho ^{i\phi}</m> in the <m>w</m> plane, then the inverse
+		mapping is
+		<me>
+			z = R^{-1}(w) = we^{-i\alpha} = \rho e^{i\phi}e^{-i\alpha} = \rho e^{i(\phi -\alpha)}
+		</me>.
+		This analysis shows that <m>R</m> is a one-to-one mapping of the <m>z</m> plane onto the <m>w</m> plane. The effect of
+		rotation is depicted in <xref ref="fig_ch-02-06">Figure</xref>.
+	</p>
+	<figure xml:id="fig_ch-02-06">
+		<caption>The rotation <m>w=R(z)=re^{i(\theta+\alpha)}</m></caption>
+		<image width="73%" source="figs/ch-02/ch-02-fig-06.svg"/>
+	</figure>
+	<example>
+		<statement>
+			<p>
+				The ellipse centered at the origin with a horizontal major axis of four units and vertical minor axis of two units can
+				be represented by the parametric equation
+				<me>
+					s(t)=2\cos t+i\sin t=(2\cos t,\,\sin t)  \text{ for }  0 \le  t \le  2\pi
+				</me>.
+				Suppose that we wanted to rotate the ellipse by an angle of <m>\pi /6</m> radians and shift the center of the ellipse
+				2 units to the right and 1 unit up. Using complex arithmetic, we can easily generate a parametric equation <m>r(t)</m>
+				that does so:
+				<md>
+					<mrow>r(t)  \amp = s(t) e^{i\frac{\pi}{6}}+(2+i)</mrow>
+					<mrow>\amp = (2\cos t+i\sin t)\left(\cos \frac{\pi}{6}+i\sin \frac{\pi}{6}\right) + (2+i)</mrow>
+					<mrow> \amp = \left(2\cos t\cos\frac{\pi}{6} - \sin t\sin\frac{\pi}{6}\right)</mrow>
+					<mrow> \amp \qquad \qquad + i\left(2\cos t\sin\frac{\pi}{6} + \sin t\cos\frac{\pi}{6}\right) + (2+i) </mrow>
+					<mrow>
+						\amp = \left(\sqrt{3}\cos t - \frac{1}{2}\sin t+2\right) + 
+						i\left(\cos t+\frac{\sqrt{3}}{2}\sin t+1\right)
+					</mrow>
+					<mrow>
+						\amp = \left(\sqrt{3}\cos t-\frac{1}{2}\sin t+2,\;\cos t + \frac{\sqrt{3}}{2}\sin t+1\right), 
+						\quad \text{for} \quad 0 \le  t \le  2\pi
+					</mrow>
+				</md>.
+			</p>
+			<p>
+				<xref ref="fig_ch-02-07">Figure</xref> shows parametric plots of these ellipses.
+			</p>
+    <figure xml:id="fig_ch-02-07">
     <caption>Plots of (a) the original ellipse;   (b) the rotated ellipse</caption>
     <image width="73%" source="figs/ch-02/ch-02-fig-07.svg"/>
   </figure>
+  </statement>
+  </example>
   <p>
     If we let <m>K>0</m> be a fixed positive real number, then the transformation
     <me>
