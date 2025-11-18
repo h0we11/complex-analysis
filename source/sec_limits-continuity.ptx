@@ -218,70 +218,66 @@
 		</p>
 	</proof>
 	<example>
-    <statement>
-      <p>
-        Show that <m>\lim\limits_{z \to 1+i}</m> <m>(z^2-2z+1) = -1</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Let
-        <me>
-          f(z) =z^2-2z+1=x^2-y^2-2x+1+i(2xy-2y)
-        </me>.
-        Computing the limits for <m>u</m> and <m>v</m>, we obtain
-        <md>
-          <mrow>\lim\limits_{(x,y) \to (1,1)}u(x, y) \amp  =1-1-2+1=-1\ \ \text{ and }</mrow>
-          <mrow>\lim\limits_{(x,y) \to (1,1)}v(x, y) \amp  =2-2=0</mrow>
-        </md>,
-        so our previous theorem implies that <m>\lim\limits_{z \to 1+i}</m> <m>f(z) = -1</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    Limits of complex functions are formally the same as those of real functions,
-    and the sum,
-    difference,
-    product, and quotient of functions have limits given by the sum,
-    difference, product, and quotient of the respective limits.
-    We state this result as a theorem and leave the proof as an exercise.
-  </p>
-  <theorem xml:id="LimitThm">
-    <statement>
-      <p>
-        Suppose that <m>\lim\limits_{z \to z_0}f(z) = A \;</m>  and  <m> \; \lim\limits_{z \to z_0}g(z) =B</m>.
-        Then
-        <md>
-          <mrow xml:id="limsum" number="yes">\lim\limits_{z \to z_0}\left[ f(z) \pm g(z) \right] \amp =A\pm B,</mrow>
-          <mrow xml:id="limproduct" number="yes">\lim\limits_{z \to z_0}f(z) g(z) \amp =AB, \quad \text{and}</mrow>
-          <mrow xml:id="limquotient" number="yes">\lim\limits_{z \to z_0}\frac{f(z)}{g(z)} \amp = \frac{A}{B}, \quad 
-			 	\text{where} \quad B \ne 0</mrow>
-        </md>.
-      </p>
-    </statement>
-  </theorem>
-  <definition>
-    <title><em>Continuity of</em> <m>\, \boldsymbol{u(x,y)}</m></title>
-    <statement>
-      <p>
-        Let <m>u(x, y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m>.
-        We say that <m>u</m> is continuous at the point
-        <m>(x_0,\,y_0)</m> if three conditions are satisfied:
-        <md>
-          <mrow xml:id="continuity_1" number="yes">\lim_{(x,y) \to (x_0,y_0)}u(x, y) \amp \quad \text{exists},</mrow>
-          <mrow xml:id="continuity_2" number="yes">u(x_0,\,y_0)  \amp \quad \text{exists}, \quad \text{and}</mrow>
-          <mrow xml:id="continuity_3" number="yes">\lim_{(x,y) \to (x_0,y_0)}u(x, y) \amp = u(x_0,\,y_0) </mrow>
-        </md>.
-      </p>
-    </statement>
-  </definition>
-  <p>
-	 Condition <xref ref="continuity_3"/> actually implies Conditions <xref ref="continuity_1"/> and <xref ref="continuity_2"/>
-	 because the existence of the quantity on each side of Equation <xref ref="continuity_3"/> is implicitly understood to exist.
-    For example, if <m>u(x, y) =\frac{x^3}{x^2+y^2}</m> when <m>(x, y) \ne (0,\,0)</m> and if <m>u(0,\,0) =0</m>, then 
-	 <m>u(x, y) \to (0,\,0)</m> so that Conditions <xref ref="continuity_1"/>, <xref ref="continuity_2"/>, and 
-	 <xref ref="continuity_3"/> are satisfied. Hence <m>u(x, y)</m> is continuous at <m>(0,\,0)</m>.
-  </p>
+		<statement>
+			<p>
+				Show that <m>\lim\limits_{z \to 1+i}</m> <m>(z^2-2z+1) = -1</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Let
+				<me>
+					f(z) =z^2-2z+1=x^2-y^2-2x+1+i(2xy-2y)
+				</me>.
+				Computing the limits for <m>u</m> and <m>v</m>, we obtain
+				<md>
+					<mrow>\lim\limits_{(x,y) \to (1,1)}u(x, y) \amp  =1-1-2+1=-1, \quad \text{and}</mrow>
+					<mrow>\lim\limits_{(x,y) \to (1,1)}v(x, y) \amp  =2-2=0</mrow>
+				</md>,
+				so our previous theorem implies that <m>\lim\limits_{z \to 1+i}</m> <m>f(z) = -1</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		Limits of complex functions are formally the same as those of real functions, and the sum, difference, product, and quotient
+		of functions have limits given by the sum, difference, product, and quotient of the respective limits. We state this result
+		as a theorem and leave the proof as an exercise.
+	</p>
+	<theorem xml:id="LimitThm">
+		<statement>
+			<p>
+				Suppose that <m>\lim\limits_{z \to z_0}f(z) = A \;</m>  and  <m> \; \lim\limits_{z \to z_0}g(z) =B</m>. Then
+				<md>
+					<mrow xml:id="limsum" number="yes">\lim\limits_{z \to z_0}\left[ f(z) \pm g(z) \right] \amp =A\pm B,</mrow>
+					<mrow xml:id="limproduct" number="yes">\lim\limits_{z \to z_0}f(z) g(z) \amp =AB, \quad \text{and}</mrow>
+					<mrow xml:id="limquotient" number="yes">
+						\lim\limits_{z \to z_0}\frac{f(z)}{g(z)} \amp = \frac{A}{B}, \quad \text{where} \quad B \ne 0
+					</mrow>
+				</md>.
+			</p>
+		</statement>
+	</theorem>
+	<definition>
+	<title><em>Continuity of</em> <m>\, \boldsymbol{u(x,y)}</m></title>
+		<statement>
+			<p>
+				Let <m>u(x, y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m>. We say that <m>u</m> is
+				continuous at the point <m>(x_0,\,y_0)</m> if three conditions are satisfied:
+				<md>
+					<mrow xml:id="continuity_1" number="yes">\lim_{(x,y) \to (x_0,y_0)}u(x, y) \amp \quad \text{exists},</mrow>
+					<mrow xml:id="continuity_2" number="yes">u(x_0,\,y_0)  \amp \quad \text{exists}, \quad \text{and}</mrow>
+					<mrow xml:id="continuity_3" number="yes">\lim_{(x,y) \to (x_0,y_0)}u(x, y) \amp = u(x_0,\,y_0) </mrow> 
+				</md>.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		Condition <xref ref="continuity_3"/> actually implies Conditions <xref ref="continuity_1"/> and <xref ref="continuity_2"/>
+		because the existence of the quantity on each side of Equation <xref ref="continuity_3"/> is implicitly understood to exist.
+		For example, if <m>u(x, y) =\frac{x^3}{x^2+y^2}</m> when <m>(x, y) \ne (0,\,0)</m> and if <m>u(0,\,0) =0</m>, then 
+		<m>u(x, y) \to (0,\,0)</m> so that Conditions <xref ref="continuity_1"/>, <xref ref="continuity_2"/>, and 
+		<xref ref="continuity_3"/> are satisfied. Hence <m>u(x, y)</m> is continuous at <m>(0,\,0)</m>.
+	</p>
   <p>
     There is a similar definition for complex valued functions.
   </p>
