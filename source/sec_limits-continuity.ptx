@@ -278,159 +278,152 @@
 		<m>u(x, y) \to (0,\,0)</m> so that Conditions <xref ref="continuity_1"/>, <xref ref="continuity_2"/>, and 
 		<xref ref="continuity_3"/> are satisfied. Hence <m>u(x, y)</m> is continuous at <m>(0,\,0)</m>.
 	</p>
-  <p>
-    There is a similar definition for complex valued functions.
-  </p>
-  <definition>
-    <title><em>Continuity of</em> <m>\, \boldsymbol{f(z)}</m></title>
-    <statement>
-      <p>
-		  Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in some
-		  neighborhood of <m>z_0</m>. We say that <m>f</m> is continuous at <m>z_0</m> if three conditions are satisfied:
-        <md>
-          <mrow xml:id="Ccont_1" number="yes">\lim\limits_{z \to z_0}f(z) \amp \quad \text{exists},</mrow>
-          <mrow xml:id="Ccont_2" number="yes">f(z_0) \amp \quad \text{exists}, \quad \text{and}</mrow>
-          <mrow xml:id="Ccont_3" number="yes">\lim\limits_{z \to z_0}\,f(z) \amp  = f(z_0)</mrow>
-        </md>.
-      </p>
-    </statement>
-  </definition>
-  <remark>
-    <p>
-      <xref ref="conj">Example</xref> shows that the function <m>f(z) = \overline{z}</m> is continuous.
-    </p>
-  </remark>
-  <p>
-    A complex function <m>f</m> is continuous iff its real and imaginary parts,
-    <m>u</m> and <m>v</m>, are continuous.
-    The proof of this fact is an immediate consequence of <xref ref="ReC_Limit_Thm">Theorem</xref>.
-    Continuity of complex functions is formally the same as that of real functions,
-    and sums,
-    differences,
-    and products of continuous functions are continuous;
-    their quotient is continuous at points where the denominator is not zero.
-    These results are summarized by the following theorems.
-    We leave the proofs as exercises.
-  </p>
-  <theorem>
-    <statement>
-      <p>
-        Let <m>f(z) =u(x, y) +iv(x, y)</m> be defined in some neighborhood of <m>z_0</m> Then <m>f</m> is continuous at
-        <m>z_0=x_0+iy_0</m> iff <m>u</m> and <m>v</m> are continuous at <m>(x_0,\,y_0)</m>.
-      </p>
-    </statement>
-  </theorem>
-  <theorem xml:id="ContThm">
-    <statement>
-      <p>
-        Suppose that <m>f</m> and <m>g</m> are continuous at the point <m>z_0</m>.
-        Then the following functions are continuous at <m>z_0</m>:
-        <ul>
-          <li>
-            <p>
-              The sum <m>f+g</m>, where <m>(f+g)(z)=f(z) +g(z)</m>;
-            </p>
-          </li>
-          <li>
-            <p>
-              The difference <m>f-g</m>, where <m>(f-g)(z)=f(z)-g(z)</m>;
-            </p>
-          </li>
-          <li>
-            <p>
-              The product <m>fg</m>, where <m>(fg) (z)=f(z)g(z)</m>;
-            </p>
-          </li>
-          <li>
-            <p>
-              The quotient <m>\frac{f}{g}</m>,
-              where <m>\frac{f}{g}(z)=\frac{f(z)}{g(z)}</m>,
-              provided <m>g(z_0) \ne 0</m>; and
-            </p>
-          </li>
-          <li>
-            <p>
-              The composition <m>f\circ g</m>,
-              where <m>(f\circ g)(z) =f\big(g(z)\big)</m>,
-              provided <m>f</m> is continuous in a neighborhood of <m>g(z_0)</m>.
-            </p>
-          </li>
-        </ul>
-      </p>
-    </statement>
-  </theorem>
-  <example>
-    <statement>
-      <p>
-        Show that the polynomial function given by
-        <me>
-          w=P(z) =a_0+a_1z+a_2z^2+\cdots +a_nz^n
-        </me>
-        is continuous at each point <m>z_0</m> in the complex plane.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        If <m>a_0</m> is the constant function,
-        then <m>\lim\limits_{z \to z_0}a_0 = a_0</m>;
-        and if <m>a_1 \ne 0</m>,
-        then we can use <xref ref="LimitDef">Definition</xref>
-        with <m>f(z) =a_1z</m> and the choice
-        <m>\delta =\frac{\varepsilon}{|a_1|}</m> to prove that <m>\lim\limits_{z \to z_0}(a_1z) = a_1z_0</m>.
-        Using Property <xref ref="limproduct"/> and mathematical induction,
-        we obtain
-        <men xml:id="limproducts">
-          \lim\limits_{z \to z_0}(a_kz^k) =a_kz_0^k  \text{ for }   k=0,1,2,\ldots,n
-        </men>.
-      </p>
-      <p>
-        We can extend Property <xref ref="limsum"/> to a finite sum of terms and use the result of Equation <xref ref="limproducts"/> to get
-        <me>
-          \lim\limits_{z \to z_0}P(z)=\lim\limits_{z \to z_0}\left(\sum\limits_{k=0}^n a_kz^k\right)=\sum\limits_{k=0}^n a_kz_0^k = P(z_0)
-        </me>.
-        Conditions <xref ref="Ccont_1"/>,
-        <xref ref="Ccont_2"/>, and <xref ref="Ccont_3"/> are satisfied,
-        so we conclude that <m>P</m> is continuous at <m>z_0</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    One technique for computing limits is to apply <xref ref="ContThm">Theorem</xref> to quotients.
-    If we let <m>P</m> and <m>Q</m> be polynomials and if <m>Q(z_0) \ne 0</m>, then
-    <me>
-      \lim\limits_{z \to z_0}\frac{P(z)}{Q(z)}= \frac{P(z_0)}{Q(z_0)}
-    </me>
-  </p>
-  <p>
-	 Another technique involves factoring polynomials. If both <m>P(z_0) =0</m> and <m>Q(z_0) =0</m>, then <m>P</m> and <m>Q</m>
-	 can be factored as <m>P(z) = (z-z_0) P_1(z)</m> and <m>Q(z)= (z-z_0)Q_1(z)</m>. If <m>Q_1(z_0) \ne 0</m>, then the limit is
-    <me>
-      \lim_{z \to z_0}\frac{P(z)}{Q(z)} = \lim_{z \to z_0}\frac{(z-z_0) P_1(z)}{(z-z_0) Q_1(z)} = \frac{P_1(z_0)}{Q_1(z_0)}.
-    </me>
-  </p>
-  <example>
-    <statement>
-      <p>
-        Show that <m>\lim\limits_{z \to 1+i}\frac{z^2-2i}{z^2-2z+2}=1-i</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Here <m>P</m> and <m>Q</m> can be factored in the form
-        <me>
-          P(z) =(z-1-i) (z+1+i)  \text{ and }   Q(z) = (z-1-i)(z-1+i)
-        </me>
-        so that the limit is obtained by the calculation
-        <md>
-          <mrow>\lim\limits_{z \to 1+i}\left(\frac{z^2-2i}{z^2-2z+2}\right) \amp  =\lim\limits_{z \to 1+i}\frac{(z-1-i)(z+1+i)}{(z-1-i) (z-1+i)}</mrow>
-          <mrow>\amp  =\lim\limits_{z \to 1+i}\left(\frac{z+1+i}{z-1+i}\right)</mrow>
-          <mrow>\amp  =\frac{(1+i) +1+i}{(1+i) -1+i}</mrow>
-          <mrow>\amp  =\frac{2+2i}{2i}</mrow>
-          <mrow>\amp  =1-i</mrow>
-        </md>.
-      </p>
-    </solution>
-  </example>
+	<p>
+		There is a similar definition for complex valued functions.
+	</p>
+	<definition>
+	<title><em>Continuity of</em> <m>\, \boldsymbol{f(z)}</m></title>
+		<statement>
+			<p>
+				Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in
+				some neighborhood of <m>z_0</m>. We say that <m>f</m> is continuous at <m>z_0</m> if three conditions are satisfied:
+				<md>
+					<mrow xml:id="Ccont_1" number="yes">\lim\limits_{z \to z_0}f(z) \amp \quad \text{exists},</mrow>
+					<mrow xml:id="Ccont_2" number="yes">f(z_0) \amp \quad \text{exists}, \quad \text{and}</mrow>
+					<mrow xml:id="Ccont_3" number="yes">\lim\limits_{z \to z_0}\,f(z) \amp = f(z_0)</mrow>
+				</md>.
+			</p>
+		</statement>
+	</definition>
+	<remark>
+		<p>
+			<xref ref="conj">Example</xref> shows that the function <m>f(z) = \overline{z}</m> is continuous.
+		</p>
+	</remark>
+	<p>
+		A complex function <m>f</m> is continuous iff its real and imaginary parts, <m>u</m> and <m>v</m>, are continuous. The proof
+		of this fact is an immediate consequence of <xref ref="ReC_Limit_Thm">Theorem</xref>. Continuity of complex functions is
+		formally the same as that of real functions, and sums, differences, and products of continuous functions are continuous;
+		their quotient is continuous at points where the denominator is not zero. These results are summarized by the following
+		theorems. We leave the proofs as exercises.
+	</p>
+	<theorem>
+		<statement>
+			<p>
+				Let <m>f(z) =u(x, y) +iv(x, y)</m> be defined in some neighborhood of <m>z_0</m> Then <m>f</m> is continuous at
+				<m>z_0=x_0+iy_0</m> iff <m>u</m> and <m>v</m> are continuous at <m>(x_0,\,y_0)</m>.
+			
+		</p> </statement>
+	</theorem>
+	<theorem xml:id="ContThm">
+		<statement>
+			<p>
+				Suppose that <m>f</m> and <m>g</m> are continuous at the point <m>z_0</m>. Then the following functions are continuous
+				at <m>z_0</m>:
+				<ul>
+					<li>
+						<p>
+							The sum <m>f+g</m>, where <m>(f+g)(z)=f(z) +g(z)</m>;
+						</p>
+					</li>
+					<li>
+						<p>
+							The difference <m>f-g</m>, where <m>(f-g)(z)=f(z)-g(z)</m>;
+						</p>
+					</li>
+					<li>
+						<p>
+							The product <m>fg</m>, where <m>(fg) (z)=f(z)g(z)</m>;
+						</p>
+					</li>
+					<li>
+						<p>
+							The quotient <m>\frac{f}{g}</m>, where <m>\frac{f}{g}(z)=\frac{f(z)}{g(z)}</m>, provided <m>g(z_0) \ne 0</m>;
+							and
+						</p>
+					</li>
+					<li>
+						<p>
+							The composition <m>f\circ g</m>, where <m>(f\circ g)(z) =f\big(g(z)\big)</m>, provided <m>f</m> is continuous
+							in a neighborhood of <m>g(z_0)</m>.
+						</p>
+					</li>
+				</ul>
+			</p>
+		</statement>
+	</theorem>
+	<example>
+		<statement>
+			<p>
+				Show that the polynomial function given by
+				<me>
+					w=P(z) =a_0+a_1z+a_2z^2+\cdots +a_nz^n
+				</me>
+				is continuous at each point <m>z_0</m> in the complex plane.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				If <m>a_0</m> is the constant function, then <m>\lim\limits_{z \to z_0}a_0 = a_0</m>; and if <m>a_1 \ne 0</m>, then we
+				can use <xref ref="LimitDef">Definition</xref> with <m>f(z) =a_1z</m> and the choice 
+				<m>\delta =\frac{\varepsilon}{|a_1|}</m> to prove that <m>\lim\limits_{z \to z_0}(a_1z) = a_1z_0</m>. Using Property 
+				<xref ref="limproduct"/> and mathematical induction, we obtain
+				<men xml:id="limproducts">
+					\lim\limits_{z \to z_0}(a_kz^k) =a_kz_0^k \quad \text{for} \quad k=0,1,2,\ldots, n
+				</men>.
+			</p>
+			<p>
+				We can extend Property <xref ref="limsum"/> to a finite sum of terms and use the result of Equation 
+				<xref ref="limproducts"/> to get
+				<me>
+					\lim\limits_{z \to z_0}P(z)=\lim\limits_{z \to z_0}\left(\sum\limits_{k=0}^n a_kz^k\right) =
+					\sum\limits_{k=0}^n a_kz_0^k = P(z_0)
+				</me>.
+				Conditions <xref ref="Ccont_1"/>, <xref ref="Ccont_2"/>, and <xref ref="Ccont_3"/> are satisfied, so we conclude that
+				<m>P</m> is continuous at <m>z_0</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		One technique for computing limits is to apply <xref ref="ContThm">Theorem</xref> to quotients. If we let <m>P</m> and
+		<m>Q</m> be polynomials and if <m>Q(z_0) \ne 0</m>, then 
+		<me>
+			\lim\limits_{z \to z_0}\frac{P(z)}{Q(z)} = \frac{P(z_0)}{Q(z_0)}
+		</me>
+	</p>
+	<p>
+		Another technique involves factoring polynomials. If both <m>P(z_0) =0</m> and <m>Q(z_0) =0</m>, then <m>P</m> and <m>Q</m>
+		can be factored as <m>P(z) = (z-z_0) P_1(z)</m> and <m>Q(z)= (z-z_0)Q_1(z)</m>. If <m>Q_1(z_0) \ne 0</m>, then the limit is
+		<me>
+			\lim_{z \to z_0}\frac{P(z)}{Q(z)} = \lim_{z \to z_0}\frac{(z-z_0) P_1(z)}{(z-z_0) Q_1(z)} = \frac{P_1(z_0)}{Q_1(z_0)}
+		</me>.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Show that <m>\lim\limits_{z \to 1+i}\frac{z^2-2i}{z^2-2z+2}=1-i</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Here <m>P</m> and <m>Q</m> can be factored in the form
+				<me>
+					P(z) =(z-1-i) (z+1+i)  \text{ and }   Q(z) = (z-1-i)(z-1+i)
+				</me>
+				so that the limit is obtained by the calculation
+				<md>
+					<mrow>
+						\lim\limits_{z \to 1+i}\left(\frac{z^2-2i}{z^2-2z+2}\right) \amp = 
+						\lim\limits_{z \to 1+i}\frac{(z-1-i)(z+1+i)}{(z-1-i) (z-1+i)}
+					</mrow>
+					<mrow>\amp =\lim\limits_{z \to 1+i}\left(\frac{z+1+i}{z-1+i}\right)</mrow>
+					<mrow>\amp  =\frac{(1+i) +1+i}{(1+i) -1+i}</mrow>
+					<mrow>\amp  =\frac{2+2i}{2i}</mrow>
+					<mrow>\amp  =1-i</mrow>
+				</md>.
+			</p>
+		</solution>
+	</example>
 	<exercises xml:id="exercises_limits-continuity">
 	<title>Exercises</title>
 	<exercise xml:id="x2_3_1">
