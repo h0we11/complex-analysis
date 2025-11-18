@@ -26,208 +26,198 @@
 					\hspace{-0.5in} |u(x, y)-u_0| \lt \varepsilon \quad \text{whenever} \quad 0 \lt \sqrt{(x-x_0)^2+(y-y_0)^2} \lt \delta
 				</men>.
 			</p>
-    </statement>
-  </definition>
-  <example>
-    <statement>
-      <p>
-        Show, if <m>u(x, y) =\frac{2x^3}{(x^2+y^2)}</m>,
-        then <m>\lim\limits_{(x,y) \to (0,0)}</m> <m>u(x, y) = 0</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        If <m>x=r\cos \theta</m> and <m>y=r\sin \theta</m>, then
-        <me>
-          u(x, y) = \frac{2r^3\cos ^3\theta}{r^2\cos ^2\theta +r^2\sin ^2\theta} = 2r\cos^3\theta
-        </me>.
-        Because <m>\sqrt{(x-0)^2+(y-0)^2}=r</m> and because <m>|\cos ^3\theta |\lt 1</m>,
-        <me>
-          |u(x, y) -0|=2r|\cos ^3\theta |\lt \varepsilon \quad \text{whenever} \quad 0\lt \sqrt{x^2+y^2}=r\lt  \frac{\varepsilon}{2}
-        </me>.
-        Hence, for any <m>\varepsilon >0</m>, Inequality <xref ref="lim"/> is satisfied for <m>\delta =\frac{\varepsilon}{2}</m>;
-        that is, <m>u(x, y)</m> has the limit <m>u_0=0</m> as <m>(x, y)</m> approaches <m>(0, 0)</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    The value <m>u_0</m> of the limit must not depend on how <m>(x, y)</m> approaches <m>(x_0, y_0)</m>,
-    so <m>u(x, y)</m> must approach the value <m>u_0</m> when <m>(x, y)</m> approaches
-    <m>(x_0,\,y_0)</m> along any curve that ends at the point <m>(x_0,\,y_0)</m>.
-    Conversely, if we can find two curves <m>C_1</m> and <m>C_2</m> that end at
-    <m>(x_0, y_0)</m> along which <m>u(x, y)</m> approaches two distinct values <m>u_1</m> and <m>u_2</m>,
-    then <m>u(x, y)</m> does not have a limit as <m>(x, y)</m> approaches <m>(x_0, y_0)</m>.
-  </p>
-  <example>
-    <statement>
-      <p>
-        Show that the function <m>u(x, y) =\frac{xy}{x^2+y^2}</m> does not have a limit as <m>(x, y)</m> approaches <m>(0, 0)</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        If we let <m>(x, y)</m> approach <m>(0, 0)</m> along the <m>x</m> axis, then
-        <me>
-          \lim\limits_{(x,0) \to (0,0)} u(x, 0) = \lim\limits_{(x,0) \to (0,0)}\frac{(x)(0)}{x^2+0^2} = 0
-        </me>.
-      </p>
-      <p>
-        But if we let <m>(x, y)</m> approach <m>(0,\,0)</m> along the line <m>y=x</m>, then
-        <me>
-          \lim\limits_{(x,x) \to (0,0)}u(x, x) = \lim\limits_{(x,x) \to (0, 0)}\frac{(x)(x)}{x^2+x^2}=\frac{1}{2}
-        </me>.
-        Because the value of the limit differs depending on how <m>(x, y)</m> approaches <m>(0, 0)</m>,
-        we conclude that <m>u(x, y)</m> does not have a limit as<nbsp/><m>(x, y)</m> approaches <m>(0, 0)</m>.
-      </p>
-    </solution>
-  </example>
-  <p>
-    Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in some neighborhood of <m>z_0</m>,
-    except perhaps at the point <m>z_0</m>.
-    We say that <m>f</m> has the limit <m>w_0</m> as <m>z</m> approaches <m>z_0</m>,
-    provided the value <m>f(z)</m> can be made as close as we want to the value <m>w_0</m> by taking <m>z</m> to be sufficiently close to <m>z_0</m>.
-    When this happens we write
-    <me>
-      \lim\limits_{z \to z_0}f(z) =w_0
-    </me>.
-  </p>
-  <p>
-    The distance between the points <m>z</m> and <m>z_0</m> can be expressed by <m>|z-z_0|</m>,
-    so we can give a precise definition similar to the one for a function of two variables.
-  </p>
-  <definition xml:id="LimitDef">
-    <title>Limit of <m>\mathbf{f(z)}</m></title>
-    <statement>
-      <p>
-        The expression <m>\lim\limits_{z \to z_0}f(z) = w_0</m> means that for each real number <m>\varepsilon > 0</m>,
-        there exists a real number <m>\delta >0</m> such that
-        <me>
-          |f(z) -w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt  |z-z_0| \lt \delta
-        </me>.
-        Using the notation of <xref ref="OpenDisk"/> and <xref ref="PuncturedDisk"/>, we can express the last relationship as
-        <me>
-          f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0).
-        </me>
-      </p>
-    </statement>
-  </definition>
-  <p>
-    The formulation of limits in terms of open disks provides a good context for looking at this definition.
-    It says that for each disk of radius
-    <m>\varepsilon</m> about the point <m>w_0</m> (represented by
-    <m>D_{\varepsilon}(w_0)</m>) there is a punctured disk of radius <m>\delta</m> about the point <m>z_0</m> (represented by
-    <m>D_{\delta}^*(z_0)</m>) such that the image of each point in the punctured <m>\delta</m> disk lies in the <m>\varepsilon</m> disk.
-    The image of the <m>\delta</m> disk does not have to fill up the entire <m>\varepsilon</m> disk;
-    but if <m>z</m> approaches <m>z_0</m> along a curve that ends at <m>z_0</m>,
-    then <m>w=f(z)</m> approaches <m>w_0</m>.
-    The situation is illustrated in <xref ref="fig_ch-02-17">Figure</xref>.
-  </p>
-  <figure xml:id="fig_ch-02-17">
-    <caption>As <m>z \to z_0</m> the function values <m>f(z) \to w_0</m></caption>
-    <image width="73%" source="figs/ch-02/ch-02-fig-17.svg"/>
-  </figure>
-  <example xml:id="conj">
-    <statement>
-      <p>
-        Show that if <m>f(z) = \overline{z}</m>,
-        then <m>\lim\limits_{z \to z_0} f(z) = \overline{z_0}</m>,
-        where <m>z_0</m> is any complex number.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        As <m>f</m> merely reflects points about the <m>y</m> axis,
-        we suspect that any <m>\varepsilon</m> disk about the point
-        <m>\overline{z_0}</m> would contain the image of the punctured <m>\delta</m> disk about <m>z_0</m> if <m>\delta =\varepsilon</m>.
-        To confirm this conjecture,
-        we let <m>\varepsilon</m> be any positive number and set <m>\delta =\varepsilon</m>.
-        Then we suppose that <m>z\in D_{\delta}^*(z_0) =D_{\varepsilon}^*(z_0)</m>,
-        which means that <m>0\lt |z-z_0|\lt \varepsilon</m>.
-        The modulus of a conjugate is the same as the modulus of the number itself,
-        so the last inequality implies that <m>0\lt |\overline{z-z_0}| \lt \varepsilon</m>.
-        This inequality is the same as <m>0\lt |\overline{z}-\overline{ z_0}|\lt \varepsilon</m>.
-        Since <m>f(z) =\overline{z}</m> and <m>w_0=\overline{z_0}</m>,
-        this last inequality becomes <m>0\lt |f(z) - w_0|\lt \varepsilon</m>,
-        or <m>f(z)\in D_{\varepsilon}(\overline{z_0})</m>,
-        which is what we needed to show.
-      </p>
-    </solution>
-  </example>
-  <p>
-    If we consider <m>w=f(z)</m> as a mapping from the <m>z</m> plane into the <m>w</m> plane and think about the previous geometric interpretation of a limit,
-    then we are led to conclude that the limit of a function <m>f</m> should be determined by the limits of its real and imaginary parts,
-    <m>u</m> and <m>v</m>.
-    This conclusion also gives us a tool for computing limits.
-  </p>
-  <theorem xml:id="ReC_Limit_Thm">
-    <statement>
-      <p>
-        Let <m>f(z) = u(x, y) +iv(x, y)</m> be a complex function that is defined in some neighborhood of <m>z_0</m>,
-        except perhaps at <m>z_0=x_0+iy_0</m>.
-        Then
-        <men xml:id="complex_limit">
-          \lim\limits_{z \to z_0}\,f(z) =w_0=u_0+iv_0
-        </men>
-        iff
-        <men xml:id="real_limit">
-          \lim\limits_{(x,y) \to (x_0,y_0)} u(x, y)=u_0 \quad \text{and} \quad \lim\limits_{(x,y) \to (x_0,y_0)} v(x, y)=v_0
-        </men>.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      We first assume that Statement <xref ref="complex_limit"/> is true and show that Statement <xref ref="real_limit"/> is true.
-      According to the definition of limit, for each <m>\varepsilon >0</m>, there is a corresponding <m>\delta >0</m> such that
-      <me>
-        f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0),
-      </me>
-    </p>
-    <p>
-      that is,
-      <me>
-        |f(z)-w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta
-      </me>
-      Because <m>f(z) -w_0=u(x, y) -u_0+i(v(x, y) -v_0)</m>, we can use Inequalities <xref ref="ReImLEMod"/> to conclude that
-      <me>
-        |u(x, y) -u_0| \le |f(z)-w_0|  \text{ and }   |v(x, y)-v_0| \le |f(z)-w_0|
-      </me>.
-      It now follows that <m>|u(x, y) -u_0|\lt \varepsilon</m> and <m>|v(x, y) -v_0|\lt \varepsilon</m> whenever 
-		<m>0\lt |z-z_0|\lt \delta</m>, and so Statement <xref ref="real_limit"/> is true.
-    </p>
-    <p>
-		Conversely, assume that Statement <xref ref="real_limit"/> is true. Then for each <m>\varepsilon >0</m>, there exists
-		<m>\delta _1>0</m> and <m>\delta_2>0</m> so that
-      <md>
-		  <mrow>
-		  	|u(x, y) -u_0|\amp  \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta _1, 
-			\quad \text{and}
-		  </mrow>
-        <mrow>|v(x, y) -v_0|\amp  \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta _2.</mrow>
-      </md>
-    </p>
-    <p>
-		We choose <m>\delta</m> to be the minimum of the two values <m>\delta _1</m> and <m>\delta _2</m>. Then we can use the
-		triangle inequality
-      <me>
-        |f(z) -w_0|\le |u(x, y) -u_0|+|v(x, y)-v_0|
-      </me>
-      to conclude that
-      <me>
-        |f(z) -w_0|\lt \frac{\varepsilon}{2}+\frac{ \varepsilon}{2}=\varepsilon \quad \text{whenever} \quad 0\lt |z-z_0|\lt
-		  \delta,
-      </me>
-    </p>
-    <p>
-      that is,
-      <me>
-        f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z\in D_{\delta}^*(z_0).
-      </me>
-		Hence the truth of Statement <xref ref="real_limit"/> implies the truth of Statement <xref ref="complex_limit"/>, and the
-		proof of the theorem is complete.
-    </p>
-  </proof>
-  <example>
+		</statement>
+	</definition>
+	<example>
+		<statement>
+			<p>
+				Show, if <m>u(x, y) =\frac{2x^3}{(x^2+y^2)}</m>, then <m>\lim\limits_{(x,y) \to (0,0)}</m> <m>u(x, y) = 0</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				If <m>x=r\cos \theta</m> and <m>y=r\sin \theta</m>, then
+				<me>
+					u(x, y) = \frac{2r^3\cos ^3\theta}{r^2\cos ^2\theta +r^2\sin ^2\theta} = 2r\cos^3\theta
+				</me>.
+				Because <m>\sqrt{(x-0)^2+(y-0)^2}=r</m> and because <m>|\cos ^3\theta |\lt 1</m>,
+				<me>
+					|u(x, y) -0|=2r|\cos ^3\theta |\lt \varepsilon \quad \text{whenever} \quad 0 \lt 
+					\sqrt{x^2+y^2}=r\lt \frac{\varepsilon}{2}
+				</me>.
+				Hence, for any <m>\varepsilon >0</m>, Inequality <xref ref="lim"/> is satisfied for 
+				<m>\delta =\frac{\varepsilon}{2}</m>; that is, <m>u(x, y)</m> has the limit <m>u_0=0</m> as <m>(x, y)</m> approaches 
+				<m>(0, 0)</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		The value <m>u_0</m> of the limit must not depend on how <m>(x, y)</m> approaches <m>(x_0, y_0)</m>, so <m>u(x, y)</m> must
+		approach the value <m>u_0</m> when <m>(x, y)</m> approaches <m>(x_0,\,y_0)</m> along any curve that ends at the point
+		<m>(x_0,\,y_0)</m>. Conversely, if we can find two curves <m>C_1</m> and <m>C_2</m> that end at <m>(x_0, y_0)</m> along
+		which <m>u(x, y)</m> approaches two distinct values <m>u_1</m> and <m>u_2</m>, then <m>u(x, y)</m> does not have a limit as
+		<m>(x, y)</m> approaches <m>(x_0, y_0)</m>.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Show that the function <m>u(x, y) =\frac{xy}{x^2+y^2}</m> does not have a limit as 
+				<m>(x, y)</m> approaches <m>(0, 0)</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				If we let <m>(x, y)</m> approach <m>(0, 0)</m> along the <m>x</m> axis, then
+				<me>
+					\lim\limits_{(x,0) \to (0,0)} u(x, 0) = \lim\limits_{(x,0) \to (0,0)}\frac{(x)(0)}{x^2+0^2} = 0
+				</me>.
+			</p>
+			<p>
+				But if we let <m>(x, y)</m> approach <m>(0,\,0)</m> along the line <m>y=x</m>, then
+				<me>
+					\lim\limits_{(x,x) \to (0,0)}u(x, x) = \lim\limits_{(x,x) \to (0, 0)}\frac{(x)(x)}{x^2+x^2}=\frac{1}{2}
+				</me>.
+				Because the value of the limit differs depending on how <m>(x, y)</m> approaches <m>(0, 0)</m>, we conclude that 
+				<m>u(x, y)</m> does not have a limit as<nbsp/><m>(x, y)</m> approaches <m>(0, 0)</m>.
+			</p>
+		</solution>
+	</example>
+	<p>
+		Let <m>f(z)</m> be a complex function of the complex variable <m>z</m> that is defined for all values of <m>z</m> in some
+		neighborhood of <m>z_0</m>, except perhaps at the point <m>z_0</m>. We say that <m>f</m> has the limit <m>w_0</m> as
+		<m>z</m> approaches <m>z_0</m>, provided the value <m>f(z)</m> can be made as close as we want to the value <m>w_0</m> by
+		taking <m>z</m> to be sufficiently close to <m>z_0</m>. When this happens we write
+		<me>
+			\lim\limits_{z \to z_0}f(z) =w_0
+		</me>.
+	</p>
+	<p>
+		The distance between the points <m>z</m> and <m>z_0</m> can be expressed by <m>|z-z_0|</m>, so we can give a precise
+		definition similar to the one for a function of two variables.
+	</p>
+	<definition xml:id="LimitDef">
+	<title>Limit of <m>\mathbf{f(z)}</m></title>
+		<statement>
+			<p>
+				The expression <m>\lim\limits_{z \to z_0}f(z) = w_0</m> means that for each real number <m>\varepsilon > 0</m>, there
+				exists a real number <m>\delta >0</m> such that
+				<me>
+					|f(z) -w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt  |z-z_0| \lt \delta
+				</me>.
+				Using the notation of <xref ref="OpenDisk"/> and <xref ref="PuncturedDisk"/>, we can express the last relationship as
+				<me>
+					f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0).
+				</me>
+			</p>
+		</statement>
+	</definition>
+	<p>
+		The formulation of limits in terms of open disks provides a good context for looking at this definition. It says that for
+		each disk of radius <m>\varepsilon</m> about the point <m>w_0</m> (represented by <m>D_{\varepsilon}(w_0)</m>) there is a
+		punctured disk of radius <m>\delta</m> about the point <m>z_0</m> (represented by <m>D_{\delta}^*(z_0)</m>) such that the
+		image of each point in the punctured <m>\delta</m> disk lies in the <m>\varepsilon</m> disk. The image of the <m>\delta</m>
+		disk does not have to fill up the entire <m>\varepsilon</m> disk; but if <m>z</m> approaches <m>z_0</m> along a curve that
+		ends at <m>z_0</m>, then <m>w=f(z)</m> approaches <m>w_0</m>. The situation is illustrated in <xref
+		ref="fig_ch-02-17">Figure</xref>.
+	</p>
+	<figure xml:id="fig_ch-02-17">
+		<caption>As <m>z \to z_0</m> the function values <m>f(z) \to w_0</m></caption>
+		<image width="73%" source="figs/ch-02/ch-02-fig-17.svg"/>
+	</figure>
+	<example xml:id="conj">
+		<statement>
+			<p>
+				Show that if <m>f(z) = \overline{z}</m>, then <m>\lim\limits_{z \to z_0} f(z) = \overline{z_0}</m>, where <m>z_0</m>
+				is any complex number.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				As <m>f</m> merely reflects points about the <m>y</m> axis, we suspect that any <m>\varepsilon</m> disk about the
+				point <m>\overline{z_0}</m> would contain the image of the punctured <m>\delta</m> disk about <m>z_0</m> if 
+				<m>\delta =\varepsilon</m>. To confirm this conjecture, we let <m>\varepsilon</m> be any positive number and set
+				<m>\delta =\varepsilon</m>. Then we suppose that <m>z\in D_{\delta}^*(z_0) =D_{\varepsilon}^*(z_0)</m>, which means
+				that <m>0\lt |z-z_0|\lt \varepsilon</m>. The modulus of a conjugate is the same as the modulus of the number itself,
+				so the last inequality implies that <m>0\lt |\overline{z-z_0}| \lt \varepsilon</m>. This inequality is the same as
+				<m>0\lt |\overline{z}-\overline{ z_0}|\lt \varepsilon</m>.  Since <m>f(z) =\overline{z}</m> and
+				<m>w_0=\overline{z_0}</m>, this last inequality becomes <m>0\lt |f(z) - w_0|\lt \varepsilon</m>, or <m>f(z)\in
+				D_{\varepsilon}(\overline{z_0})</m>, which is what we needed to show.
+			
+		</p> </solution>
+	</example>
+	<p>
+		If we consider <m>w=f(z)</m> as a mapping from the <m>z</m> plane into the <m>w</m> plane and think about the previous
+		geometric interpretation of a limit, then we are led to conclude that the limit of a function <m>f</m> should be determined
+		by the limits of its real and imaginary parts, <m>u</m> and <m>v</m>. This conclusion also gives us a tool for computing
+		limits.
+	</p>
+	<theorem xml:id="ReC_Limit_Thm">
+		<statement>
+			<p>
+				Let <m>f(z) = u(x, y) +iv(x, y)</m> be a complex function that is defined in some neighborhood of <m>z_0</m>, except
+				perhaps at <m>z_0=x_0+iy_0</m>. Then
+				<men xml:id="complex_limit">
+					\lim\limits_{z \to z_0}\,f(z) =w_0=u_0+iv_0
+				</men>
+				iff
+				<men xml:id="real_limit">
+					\lim\limits_{(x,y) \to (x_0,y_0)} u(x, y)=u_0 \quad \text{and} \quad \lim\limits_{(x,y) \to (x_0,y_0)} v(x, y)=v_0
+				</men>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			We first assume that Statement <xref ref="complex_limit"/> is true and show that Statement <xref ref="real_limit"/> is
+			true. According to the definition of limit, for each <m>\varepsilon >0</m>, there is a corresponding <m>\delta >0</m>
+			such that
+			<me>
+				f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0)
+			</me>,
+		</p>
+		<p>
+			that is,
+			<me>
+				|f(z)-w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta
+			</me>.
+			Because <m>f(z) -w_0=u(x, y) -u_0+i(v(x, y) -v_0)</m>, we can use Inequalities <xref ref="ReImLEMod"/> to conclude that
+			<me>
+				
+			|u(x, y) -u_0| \le |f(z)-w_0|  \text{ and }   |v(x, y)-v_0| \le |f(z)-w_0| </me>.
+			It now follows that <m>|u(x, y) -u_0|\lt \varepsilon</m> and <m>|v(x, y) -v_0|\lt \varepsilon</m> whenever 
+			<m>0\lt |z-z_0|\lt \delta</m>, and so Statement <xref ref="real_limit"/> is true.
+		</p>
+		<p>
+			Conversely, assume that Statement <xref ref="real_limit"/> is true. Then for each <m>\varepsilon >0</m>, there exists
+			<m>\delta _1>0</m> and <m>\delta_2>0</m> so that
+			<md>
+				<mrow> 
+					|u(x, y) -u_0|\amp \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad 0 \lt |z-z_0|\lt \delta _1, 
+					\quad \text{and}
+				</mrow>
+				<mrow>|v(x, y) -v_0|\amp \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta _2</mrow>
+			</md>.
+		</p>
+		<p>
+			We choose <m>\delta</m> to be the minimum of the two values <m>\delta _1</m> and <m>\delta _2</m>. Then we can use the
+			triangle inequality
+			<me>
+				|f(z) -w_0|\le |u(x, y) -u_0|+|v(x, y)-v_0|
+			</me>
+			to conclude that
+			<me>
+				|f(z) -w_0|\lt \frac{\varepsilon}{2} + \frac{ \varepsilon}{2}=\varepsilon 
+				\quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta
+			</me>,
+			that is,
+			<me>
+				f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z\in D_{\delta}^*(z_0)
+			</me>.
+			Hence, the truth of Statement <xref ref="real_limit"/> implies the truth of Statement <xref ref="complex_limit"/>, and the
+			proof of the theorem is complete.
+		</p>
+	</proof>
+	<example>
     <statement>
       <p>
         Show that <m>\lim\limits_{z \to 1+i}</m> <m>(z^2-2z+1) = -1</m>.
