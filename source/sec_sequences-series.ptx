@@ -136,386 +136,362 @@
 		</md>.
     </p>
     <p>
-      Let <m>L_\varepsilon=</m> <m>\max\{N_\varepsilon, \, M_\varepsilon\}</m>;
-      then, if <m>n>L_\varepsilon</m>,
-      <md>
-        <mrow>{3} |z_n - \zeta| \amp =  |(x_n + iy_n) - (u + iv)| \amp</mrow>
-        <mrow>\amp =  |(x_n - u) +i(y_n -v)| \amp \amp</mrow>
-        <mrow>\amp \le   |x_n -u|+ |i(y_n -v)| \amp \amp \text{ (What is the reason for this step?) }</mrow>
-        <mrow>\amp =  |x_n -u|+ |i|\, |y_n -v| \amp \amp \text{ (by properties of absolute value) }</mrow>
-        <mrow>\amp =  |x_n - u|\, |y_n - v| \amp \amp \text{ (because \(|i|=1\))}</mrow>
-        <mrow>\amp \lt   \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \amp \amp    \text{ (by Statements (4.1.8) and (4.1.9)) }</mrow>
-        <mrow>\amp =  \varepsilon.\amp</mrow>
-      </md>
-    </p>
-  </proof>
-  <p>
-    We needed to show the strict inequality <m>|z_n - \zeta|\lt \varepsilon</m>,
-    and the next-to-last line in the proof gives us precisely that.
-    Note also that we have been speaking of
-    <em>the</em> limit of a sequence.
-    Strictly speaking,
-    we are not entitled to use this terminology because we haven't proved that a complex sequence can have only one limit.
-    The proof, however,
-    is almost identical to the corresponding result for real sequences,
-    and we leave it as an exercise.
-  </p>
-  <example>
-    <statement>
-      <p>
-        Find <m>\lim\limits_{n \to \infty}z_n</m> if <m>z_n=\frac{\sqrt{n} + i(n+1)}{n}</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We write <m>z_n = x_n+iy_n = \frac{1}{\sqrt{n}} +i\frac{n+1}{n}</m>.
-        Using results concerning sequences of real numbers,
-        we find that <m>\lim\limits_{n \to \infty}x_n = \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0</m> and <m>\lim\limits_{n \to \infty}y_n = \lim\limits_{n \to \infty} \frac{n+1}{n} = 1</m>.
-        Therefore, <m>\lim\limits_{n \to \infty}z_n = \lim\limits_{n \to \infty} \frac{\sqrt{n} +i(n+1)}{n}=i</m>.
-      </p>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Show that <m>\{(1+i)^n\}</m> diverges.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We have
-        <me>
-          z_n = (1+i)^n = (\sqrt{2})^n\cos \frac{n\pi}{4} + i(\sqrt{2})^n \sin \frac{n\pi}{4}
-        </me>.
-      </p>
-      <p>
-        The real sequences <m>\{(\sqrt{2})^n \cos \frac{n\pi}{4}\}</m> and <m>\{(\sqrt{2})^n \sin \frac{n\pi}{4}\}</m> both diverge,
-        so we conclude that the sequence <m>\{(1+i)^n\}</m> diverges.
-      </p>
-    </solution>
-  </example>
-  <definition xml:id="Bounded_Def">
-    <title>Bounded Sequence</title>
-    <statement>
-      <p>
-        A complex sequence <m>\{z_n\}</m> is bounded provided that there exists a positive real number <m>R</m> and an integer <m>N</m> such that <m>|z_n|\lt R</m> for all <m>n>N</m>.
-        In other words, for <m>n>N</m>,
-        the sequence <m>\{z_n\}</m> is contained in the disk <m>D_R(0)</m>.
-      </p>
-    </statement>
-  </definition>
-  <p>
-    Bounded sequences play an important role in some newer developments in complex analysis that are discussed in <xref ref="sec_julia-mandelbrot">Section</xref>.
-    A theorem from real analysis stipulates that convergent sequences are bounded.
-    The same result holds for complex sequences.
-  </p>
-  <theorem xml:id="thm_convergent_implies_bounded">
-    <statement>
-      <p>
-        If <m>\{z_n\}</m> is a convergent sequence,
-        then <m>\{z_n\}</m> is bounded.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
+	 	Let <m>L_\varepsilon=</m> <m>\max\{N_\varepsilon, \, M_\varepsilon\}</m>. Then, if <m>n>L_\varepsilon</m>,
+		<md>
+			<mrow>{3} |z_n - \zeta| \amp =  |(x_n + iy_n) - (u + iv)| \amp</mrow>
+			<mrow>\amp = |(x_n - u) +i(y_n -v)| \amp \amp</mrow>
+			<mrow>\amp \le |x_n -u|+ |i(y_n -v)| \amp \amp \text{(What is the reason for this step?)}</mrow>
+			<mrow>\amp = |x_n -u|+ |i|\, |y_n -v| \amp \amp \text{(by properties of absolute value)}</mrow>
+			<mrow>\amp = |x_n - u|\, |y_n - v| \amp \amp \text{(because \(|i|=1\))}</mrow>
+			<mrow>\amp \lt \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \amp \amp \big(\text{(by Statements (4.1.8) and (4.1.9)}\big)</mrow>
+			<mrow>\amp =  \varepsilon\amp</mrow>
+		</md>.
+	</p>
+	</proof>
+	<p>
+		We needed to show the strict inequality <m>|z_n - \zeta|\lt \varepsilon</m>, and the next-to-last line in the proof gives us
+		precisely that. Note also that we have been speaking of <em>the</em> limit of a sequence. Strictly speaking, we are not
+		entitled to use this terminology because we haven't proved that a complex sequence can have only one limit. The proof,
+		however, is almost identical to the corresponding result for real sequences, and we leave it as an exercise.
+	</p>
+	<example>
+		<statement>
+			<p>
+				Find <m>\lim\limits_{n \to \infty}z_n</m> if <m>z_n=\frac{\sqrt{n} + i(n+1)}{n}</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We write <m>z_n = x_n+iy_n = \frac{1}{\sqrt{n}} +i\frac{n+1}{n}</m>. Using results concerning sequences of real
+				numbers, we find that <m>\lim\limits_{n \to \infty}x_n = \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0</m> and
+				<m>\lim\limits_{n \to \infty}y_n = \lim\limits_{n \to \infty} \frac{n+1}{n} = 1</m>. Therefore, 
+				<m>\lim\limits_{n \to \infty}z_n = \lim\limits_{n \to \infty} \frac{\sqrt{n} +i(n+1)}{n}=i</m>.
+			</p>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Show that <m>\{(1+i)^n\}</m> diverges.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We have
+				<me>
+					z_n = (1+i)^n = (\sqrt{2})^n\cos \frac{n\pi}{4} + i(\sqrt{2})^n \sin \frac{n\pi}{4}
+				</me>.
+			</p>
+			<p>
+				The real sequences <m>\{(\sqrt{2})^n \cos \frac{n\pi}{4}\}</m> and <m>\{(\sqrt{2})^n \sin \frac{n\pi}{4}\}</m> both
+				diverge, so we conclude that the sequence <m>\{(1+i)^n\}</m> diverges.
+			</p>
+		</solution>
+	</example>
+	<definition xml:id="Bounded_Def">
+	<title>Bounded Sequence</title>
+		<statement>
+			<p>
+				A complex sequence <m>\{z_n\}</m> is bounded provided that there exists a positive real number <m>R</m> and an integer
+				<m>N</m> such that <m>|z_n|\lt R</m> for all <m>n>N</m>. In other words, for <m>n>N</m>, the sequence <m>\{z_n\}</m>
+				is contained in the disk <m>D_R(0)</m>.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		Bounded sequences play an important role in some newer developments in complex analysis that are discussed in 
+		<xref ref="sec_julia-mandelbrot">Section</xref>. A theorem from real analysis stipulates that convergent sequences are
+		bounded. The same result holds for complex sequences.
+	</p>
+	<theorem xml:id="thm_convergent_implies_bounded">
+		<statement>
+			<p>
+				If <m>\{z_n\}</m> is a convergent sequence, then <m>\{z_n\}</m> is bounded.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			The proof is left as an exercise.
+		</p>
+	</proof>
+	<p>
+		As with the real numbers, we also have the following definition.
+	</p>
+	<definition xml:id="Cauchy_sequence_Def">
+	<title>Cauchy Sequence</title>
+		<statement>
+			<p>
+				The sequence <m>\{z_n\}</m> is a <em>Cauchy sequence</em> if for every <m>\varepsilon>0</m> there is a positive
+				integer <m>N_\varepsilon</m>\ such that if <m>n,\,m>N_\varepsilon</m>, then <m>|z_n-z_m|\lt \varepsilon</m>, or,
+				equivalently, <m>z_n - z_m \in D_\varepsilon(0)</m>.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		The following theorem should now come as no surprise.
+	</p>
+	<theorem>
+		<statement>
+			<p>
+				If <m>\{z_n\}</m><nbsp/>is a Cauchy sequence, <m>\{z_n\}</m> converges.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Let <m>z_n = x_n+iy_n</m>.  Using the techniques of <xref ref="Lim_Zn_Thm">Theorem</xref>, we can easily show that both
+			<m>\{x_n\}</m> and <m>\{y_n\}</m> are Cauchy sequences of real numbers.  Since Cauchy sequences of real numbers are
+			convergent, we know that
+			<me>
+				\lim_{n \to \infty} x_n = x_0  \text{ and }   \lim_{n \to \infty} y_n = y_0
+			</me>
+			for some real numbers <m>x_0</m> and <m>y_0</m>. By <xref ref="Lim_Zn_Thm">Theorem</xref>, then, 
+			<m>\lim_{n \to \infty} z_n = z_0</m>, where <m>z_0 = x_0+iy_0</m>. In other words, the sequence <m>\{z_n\}</m> converges
+			to <m>z_0</m>.
+		</p>
+	</proof>
+	<p>
+		One of the most important notions in analysis (real or complex) is a theory that allows us to add up infinitely many terms.
+		To make sense of such an idea we begin with a sequence <m>\{z_n\}</m>, and form a new sequence <m>\{S_n\}</m>, called the
+		sequence of partial sums, as follows.
+		<md>
+			<mrow>S_1 \amp = z_1,</mrow>
+			<mrow>S_2 \amp = z_1+z_2,</mrow>
+			<mrow>S_3 \amp = z_1+z_2+z_3,</mrow>
+			<mrow>\amp \;\; \vdots</mrow>
+			<mrow>S_n \amp = z_1+z_2+\cdots +z_n=\sum_{k=1}^nz_k,</mrow>
+			<mrow>\amp \;\; \vdots</mrow>
+		</md>
+	</p>
+	<definition xml:id="Convergence">
+	<title>Infinite Series</title>
+		<statement>
+			<p>
+				The formal expression <m>\sum\limits_{k=1}^\infty z_k = z_1 + z_2 + \cdots +z_n + \cdots</m> is called an infinite
+				series, and <m>z_1, \, z_2, \ldots</m> are called the terms of the series.
+			</p>
+		</statement>
+	</definition>
+	<definition>
+	<title>Convergent Series</title>
+		<statement>
+			<p>
+				If there is a complex number <m>S</m> for which 
+				<m>S=\lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} \sum\limits_{k=1}^n z_k</m>, we say that the infinite
+				series <m>\sum\limits_{k=1}^{\infty}z_k</m> converges to <m>S</m>, and that <m>S</m> is the sum of the infinite
+				
+			series. When convergence occurs, we write <m>S=\sum\limits_{k=1}^{\infty}z_k</m>.  </p>
+		</statement>
+	</definition>
+	<definition>
+	<title>Absolutely Convergent Series</title>
+		<statement>
+			<p>
+				The series <m>\sum\limits_{k=1}^{\infty}z_k</m> is said to be absolutely convergent provided that the (real) series of
+				magnitudes <m>\sum\limits_{k=1}^{\infty}|z_k|</m> converges.
+			</p>
+		</statement>
+	</definition>
+	<definition>
+	<title>Divergent Series</title>
+		<statement>
+			<p>
+				If a series does not converge, we say that it diverges.
+			</p>
+		</statement>
+	</definition>
+	<remark>
+		<p>
+			The first finitely many terms of a series do not affect its convergence or divergence and, in this respect, the beginning
+			index of a series is irrelevant. Thus, we will without comment conclude that if a series 
+			<m>\sum\limits_{k=N+1}^\infty z_k</m> converges, then so does <m>\sum\limits_{k=0}^\infty z_k</m>, where 
+			<m>z_0, \, z_1, \ldots, z_N</m> is <em>any</em> finite collection of terms. A similar remark applies to determining
+			divergence of a series.
+		</p>
+	</remark>
+	<p>
+		As you might expect, many of the results concerning real series carry over to complex series. We now give several of the
+		more standard theorems for complex series, along with examples of how they are used.
+	</p>
+	<theorem xml:id="Convergent_Thm">
+	<statement>
+		<p>
+			Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>S=U+iV</m>. Then
+			<md>
+				<mrow>S \amp = \sum\limits_{n=1}^\infty z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n) \quad \text{iff}</mrow>
+				<mrow>U \amp = \sum\limits_{n=1}^\infty x_n \quad \text{and} \quad V=\sum\limits_{n=1}^{\infty}y_n</mrow>
+			</md>.
+		</p>
+	</statement>
+	</theorem>
+	<proof>
+		<p>
+			Let <m>U_n=\sum\limits_{k=1}^n x_k</m>, <m>V_n=\sum\limits_{k=1}^ny_k</m>, and <m>S_n=U_n+iV_n</m>. We use <xref
+			ref="Lim_Zn_Thm">Theorem</xref> to conclude that 
+			<m>\lim\limits_{n \to \infty}S_n=\lim\limits_{n \to \infty}(U_n+iV_n) = U+iV=S</m> iff both 
+			<m>\lim\limits_{n \to \infty} U_n=U</m> and <m>\lim\limits_{n \to \infty} V_n=V</m>. The completion of the proof now
+			follows from <xref ref="Convergence">Definition</xref>.
+		</p>
+	</proof>
+	<theorem xml:id="Conv_terms_go_to_0">
+		<statement>
+			<p>
+				If <m>\sum\limits_{n=1}^\infty z_n</m> is a convergent complex series, then <m>\lim\limits_{n \to \infty} z_n=0</m>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			The proof is left as an exercise.
+		</p>
+	</proof>
+	<example>
+		<statement>
+			<p>
+				Show that the series
+				<m>
+					\sum\limits_{n=1}^{\infty}\frac{1+in(-1)^n}{n^2} =
+					\sum\limits_{n=1}^{\infty}\left[\frac{1}{n^2}+i\frac{(-1)^n}{n}\right]
+				</m>
+				is convergent.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Recall that the real series <m>\sum\limits_{n=1}^{\infty}\frac{1}{n^2}</m> and
+				<m>\sum\limits_{n=1}^{\infty}\frac{(-1)^n}{n}</m> are convergent.  Hence, <xref ref="Convergent_Thm">Theorem</xref>
+				implies that the given complex series is convergent.
+			</p>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Show that the series 
+				<m>
+					\sum\limits_{n=1}^{\infty}\frac{(-1)^n+i}{n} =
+					\sum\limits_{n=1}^{\infty}\left[\frac{(-1)^n}{n} + i\frac{1}{n}\right]
+				</m>
+				is divergent.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We know that the real series <m>\sum\limits_{n=1}^{\infty}\frac{1}{n}</m> is divergent. Hence, 
+				<xref ref="Convergent_Thm">Theorem</xref> implies that the given complex series is divergent.
+			</p>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Show that the series <m>\sum\limits_{n=1}^{\infty}(1+i)^n</m> is divergent.
+			</p>
+		</statement>
+		<solution> 
+			<p>
+				Here we set <m>z_n=(1+i)^n</m> and observe that 
+				<m>\lim\limits_{n \to \infty}|z_n|= \lim\limits_{n \to \infty}(\sqrt{2})^n =\infty</m>. Thus 
+				<m>\lim\limits_{n \to \infty}z_n \ne 0</m>, and <xref ref="Conv_terms_go_to_0">Theorem</xref> implies that the series
+				is not convergent; hence it is divergent.
+			</p>
+		</solution>
+	</example>
+	<theorem xml:id="SumConst_Thm">
+		<statement>
+			<p>
+				Let <m>\sum\limits_{n=1}^{\infty}z_n</m><nbsp/>and <m>\sum\limits_{n=1}^{\infty}w_n</m> be convergent series and let
+				<m>c</m> be a complex number. Then
+				<md>
+					<mrow xml:id="SumcZn___cSumZn" number="yes">
+						\sum_{n=1}^{\infty}cz_n \amp = c\sum_{n=1}^{\infty}z_n, \quad \text{and}
+					</mrow>
+					<mrow>\sum_{n=1}^{\infty}(z_n + w_n) \amp = \sum_{n=1}^{\infty}z_n + \sum_{n=1}^{\infty}w_n</mrow>
+				</md>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			The proof is left as an exercise.
+		</p>
+	</proof>
+	<definition xml:id="Cauchy_Product_Def">
+	<title>Cauchy Product</title>
+		<statement>
+			<p>
+				Let <m>\sum\limits_{n=0}^{\infty} a_n</m> and <m>\sum\limits_{n=0}^{\infty}b_n</m> be convergent series, where
+				<m>a_n</m> and <m>b_n</m> are complex numbers. The <em>Cauchy product</em> of the two series is defined to be the
+				series <m>\sum\limits_{n=0}^{\infty}c_n</m>, where <m>c_n=\sum \limits_{k=0}^na_kb_{n-k}</m>.
+			</p>
+		</statement>
+	</definition>
+	<theorem>
+		<statement>
+			<p>
+				If the Cauchy product converges, then
+				<me>
+					\sum_{n=0}^{\infty}c_n=\left(\sum\limits_{n=0}^{\infty}a_n\right) \left(\sum\limits_{n=0}^{\infty}b_n\right)
+				</me>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			The proof can be found in a number of texts<mdash/>for example, <em>Infinite Sequences and Series,</em> by Konrad Knopp
+			(translated by Frederick Bagemihl; New York: Dover, 1956).
+		</p>
+	</proof>
+	<theorem xml:id="Comparison_Test">
+	<title>Comparison test</title>
+		<statement>
+			<p>
+				Let <m>\sum\limits_{n=1}^{\infty}M_n</m> be a convergent series of real nonnegative terms. If <m>\{z_n\}</m> is a
+				sequence of complex numbers and <m>|z_n|\le M_n</m> holds for all <m>n</m>, then the infinite series
+				<m>\sum\limits_{n=1}^{\infty}z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n)</m> converges.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Using Equations <xref ref="ReImLEMod"/>, we determine that <m>|x_n|\le |z_n|\le M_n</m> and <m>|y_n|\le |z_n|\le M_n</m>
+			holds for all <m>n</m>. By the comparison test for real series, we conclude that <m>\sum\limits_{n=1}^{\infty}|x_n|</m>
+			and <m>\sum\limits_{n=1}^{\infty}|y_n|</m> are convergent. An absolutely convergent real series is convergent, so
+			<m>\sum\limits_{n=1}^{\infty}x_n</m> and <m>\sum\limits_{n=1}^{\infty}y_n</m> are convergent. With these results,
+			together with <xref ref="Convergent_Thm">Theorem</xref>, we conclude that the infinite series
+			<m>\sum\limits_{n=1}^{\infty}z_n = \sum\limits_{n=1}^{\infty}x_n +i\sum\limits_{n=1}^{\infty}y_n</m> is convergent.
+		</p>
+	</proof>
+	<corollary xml:id="Abs_Conv_Implies_Conv">
+		<statement>
+			<p>
+				If <m>\sum\limits_{n=1}^{\infty}|z_n|</m> converges, then <m>\sum\limits_{n=0}^{\infty}z_n</m> converges. In other
+				words, absolute convergence implies convergence for complex series as well as for real series.
+			</p>
+		</statement>
+	</corollary>
+	<proof>
     <p>
-      The proof is left as an exercise.
-    </p>
-  </proof>
-  <p>
-    As with the real numbers, we also have the following definition.
-  </p>
-  <definition xml:id="Cauchy_sequence_Def">
-    <title>Cauchy Sequence</title>
-    <statement>
-      <p>
-        The sequence <m>\{z_n\}</m> is a
-        <em>Cauchy sequence</em>
-        if for every <m>\varepsilon>0</m> there is a positive integer
-        <m>N_\varepsilon</m>\ such that if <m>n,\,m>N_\varepsilon</m>,
-        then <m>|z_n-z_m|\lt \varepsilon</m>, or,
-        equivalently, <m>z_n - z_m \in D_\varepsilon(0)</m>.
-      </p>
-    </statement>
-  </definition>
-  <p>
-    The following theorem should now come as no surprise.
-  </p>
-  <theorem>
-    <statement>
-      <p>
-        If <m>\{z_n\}</m><nbsp/>is a Cauchy sequence, <m>\{z_n\}</m> converges.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      Let <m>z_n = x_n+iy_n</m>.
-      Using the techniques of <xref ref="Lim_Zn_Thm">Theorem</xref>,
-      we can easily show that both <m>\{x_n\}</m> and <m>\{y_n\}</m> are Cauchy sequences of real numbers.
-      Since Cauchy sequences of real numbers are convergent,
-      we know that
-      <me>
-        \lim_{n \to \infty} x_n = x_0  \text{ and }   \lim_{n \to \infty} y_n = y_0
-      </me>
-      for some real numbers <m>x_0</m> and <m>y_0</m>.
-      By <xref ref="Lim_Zn_Thm">Theorem</xref>, then,
-      <m>\lim_{n \to \infty} z_n = z_0</m>,
-      where <m>z_0 = x_0+iy_0</m>.
-      In other words,
-      the sequence <m>\{z_n\}</m> converges to <m>z_0</m>.
-    </p>
-  </proof>
-  <p>
-    One of the most important notions in analysis
-    (real or complex)
-    is a theory that allows us to add up infinitely many terms.
-    To make sense of such an idea we begin with a sequence <m>\{z_n\}</m>,
-    and form a new sequence <m>\{S_n\}</m>,
-    called the sequence of partial sums, as follows.
-    <md>
-      <mrow>S_1 \amp = z_1,</mrow>
-      <mrow>S_2 \amp = z_1+z_2,</mrow>
-      <mrow>S_3 \amp = z_1+z_2+z_3,</mrow>
-      <mrow>\amp  \;\; \vdots</mrow>
-      <mrow>S_n \amp = z_1+z_2+\cdots +z_n=\sum_{k=1}^nz_k,</mrow>
-      <mrow>\amp  \;\; \vdots</mrow>
-    </md>
-  </p>
-  <definition xml:id="Convergence">
-    <title>Infinite Series</title>
-    <statement>
-      <p>
-        The formal expression <m>\sum\limits_{k=1}^\infty z_k = z_1 + z_2 + \cdots +z_n + \cdots</m> is called an infinite series,
-        and <m>z_1, \, z_2, \ldots</m> are called the terms of the series.
-      </p>
-    </statement>
-  </definition>
-  <definition>
-    <title>Convergent Series</title>
-    <statement>
-      <p>
-        If there is a complex number <m>S</m> for which <m>S=\lim\limits_{n \to \infty} S_n = \lim\limits_{n \to \infty} \sum\limits_{k=1}^n z_k</m>,
-        we say that the infinite series
-        <m>\sum\limits_{k=1}^{\infty}z_k</m> converges to <m>S</m>,
-        and that <m>S</m> is the sum of the infinite series.
-        When convergence occurs, we write <m>S=\sum\limits_{k=1}^{\infty}z_k</m>.
-      </p>
-    </statement>
-  </definition>
-  <definition>
-    <title>Absolutely Convergent Series</title>
-    <statement>
-      <p>
-        The series <m>\sum\limits_{k=1}^{\infty}z_k</m> is said to be absolutely convergent provided that the (real) series of magnitudes <m>\sum\limits_{k=1}^{\infty}|z_k|</m> converges.
-      </p>
-    </statement>
-  </definition>
-  <definition>
-    <title>Divergent Series</title>
-    <statement>
-      <p>
-        If a series does not converge, we say that it diverges.
-      </p>
-    </statement>
-  </definition>
-  <remark>
-    <p>
-		The first finitely many terms of a series do not affect its convergence or divergence and, in this respect, the beginning
-		index of a series is irrelevant. Thus, we will without comment conclude that if a series 
-		<m>\sum\limits_{k=N+1}^\infty z_k</m> converges, then so does 
-		<m>\sum\limits_{k=0}^\infty z_k</m>, where <m>z_0, \, z_1, \ldots, z_N</m> is <em>any</em> finite collection of terms. A
-		similar remark applies to determining divergence of a series.
-    </p>
-  </remark>
-  <p>
-	 As you might expect, many of the results concerning real series carry over to complex series. We now give several of the more
-	 standard theorems for complex series, along with examples of how they are used.
-  </p>
-  <theorem xml:id="Convergent_Thm">
-    <statement>
-      <p>
-        Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>S=U+iV</m>.
-        Then
-        <md>
-          <mrow>S \amp = \sum\limits_{n=1}^\infty z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n) \quad \text{iff}</mrow>
-          <mrow>U \amp = \sum\limits_{n=1}^\infty x_n \quad \text{and} \quad V=\sum\limits_{n=1}^{\infty}y_n.</mrow>
-        </md>
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      Let <m>U_n=\sum\limits_{k=1}^n x_k</m>,
-      <m>V_n=\sum\limits_{k=1}^ny_k</m>, and <m>S_n=U_n+iV_n</m>.
-      We use <xref ref="Lim_Zn_Thm">Theorem</xref>
-      to conclude that <m>\lim\limits_{n \to \infty}S_n=\lim\limits_{n \to \infty}(U_n+iV_n) = U+iV=S</m> iff both
-      <m>\lim\limits_{n \to \infty} U_n=U</m> and <m>\lim\limits_{n \to \infty} V_n=V</m>.
-      The completion of the proof now follows from <xref ref="Convergence">Definition</xref>.
-    </p>
-  </proof>
-  <theorem xml:id="Conv_terms_go_to_0">
-    <statement>
-      <p>
-        If <m>\sum\limits_{n=1}^\infty z_n</m> is a convergent complex series,
-        then <m>\lim\limits_{n \to \infty} z_n=0</m>.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      The proof is left as an exercise.
-    </p>
-  </proof>
-  <example>
-    <statement>
-      <p>
-        Show that the series <m>\sum\limits_{n=1}^{\infty}\frac{1+in(-1)^n}{n^2}=\sum\limits_{n=1}^{\infty}\left[\frac{1}{n^2}+i\frac{(-1)^n}{n}\right]</m> is convergent.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Recall that the real series
-        <m>\sum\limits_{n=1}^{\infty}\frac{1}{n^2}</m> and <m>\sum\limits_{n=1}^{\infty}\frac{(-1)^n}{n}</m> are convergent.
-        Hence, <xref ref="Convergent_Thm">Theorem</xref>
-        implies that the given complex series is convergent.
-      </p>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Show that the series <m>\sum\limits_{n=1}^{\infty}\frac{(-1)^n+i}{n} =\sum\limits_{n=1}^{\infty}\left[\frac{(-1)^n}{n} + i\frac{1}{n}\right]</m> is divergent.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We know that the real series <m>\sum\limits_{n=1}^{\infty}\frac{1}{n}</m> is divergent.
-        Hence, <xref ref="Convergent_Thm">Theorem</xref>
-        implies that the given complex series is divergent.
-      </p>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Show that the series <m>\sum\limits_{n=1}^{\infty}(1+i)^n</m> is divergent.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Here we set <m>z_n=(1+i)^n</m> and observe that <m>\lim\limits_{n \to \infty}|z_n|= \lim\limits_{n \to \infty}(\sqrt{2})^n =\infty</m>.
-        Thus <m>\lim\limits_{n \to \infty}z_n \ne 0</m>,
-        and <xref ref="Conv_terms_go_to_0">Theorem</xref>
-        implies that the series is not convergent;
-        hence it is divergent.
-      </p>
-    </solution>
-  </example>
-  <theorem xml:id="SumConst_Thm">
-    <statement>
-      <p>
-        Let <m>\sum\limits_{n=1}^{\infty}z_n</m><nbsp/>and
-        <m>\sum\limits_{n=1}^{\infty}w_n</m> be convergent series and let <m>c</m> be a complex number.
-        Then
-        <md>
-          <mrow xml:id="SumcZn___cSumZn" number="yes">\sum_{n=1}^{\infty}cz_n \amp = c\sum_{n=1}^{\infty}z_n, \quad \text{and} </mrow>
-          <mrow>\sum_{n=1}^{\infty}(z_n + w_n) \amp = \sum_{n=1}^{\infty}z_n + \sum_{n=1}^{\infty}w_n</mrow>
-        </md>.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      The proof is left as an exercise.
-    </p>
-  </proof>
-  <definition xml:id="Cauchy_Product_Def">
-    <title>Cauchy Product</title>
-    <statement>
-      <p>
-        Let <m>\sum\limits_{n=0}^{\infty} a_n</m> and
-        <m>\sum\limits_{n=0}^{\infty}b_n</m> be convergent series,
-        where <m>a_n</m> and <m>b_n</m> are complex numbers.
-        The <em>Cauchy product</em> of the two series is defined to be the series <m>\sum\limits_{n=0}^{\infty}c_n</m>,
-        where <m>c_n=\sum \limits_{k=0}^na_kb_{n-k}</m>.
-      </p>
-    </statement>
-  </definition>
-  <theorem>
-    <statement>
-      <p>
-        If the Cauchy product converges, then
-        <me>
-          \sum_{n=0}^{\infty}c_n=\left(\sum\limits_{n=0}^{\infty}a_n\right) \left(\sum\limits_{n=0}^{\infty}b_n\right)
-        </me>
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      The proof can be found in a number of texts<mdash/>for example,
-      <em>Infinite Sequences and Series,</em> by Konrad Knopp
-      (translated by Frederick Bagemihl; New York: Dover, 1956).
-    </p>
-  </proof>
-  <theorem xml:id="Comparison_Test">
-    <title>Comparison test</title>
-    <statement>
-      <p>
-        Let <m>\sum\limits_{n=1}^{\infty}M_n</m> be a convergent series of real nonnegative terms.
-        If <m>\{z_n\}</m> is a sequence of complex numbers and
-        <m>|z_n|\le M_n</m> holds for all <m>n</m>,
-        then the infinite series <m>\sum\limits_{n=1}^{\infty}z_n=\sum\limits_{n=1}^{\infty}(x_n+iy_n)</m> converges.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      Using Equations <xref ref="ReImLEMod"/>,
-      we determine that <m>|x_n|\le |z_n|\le M_n</m> and
-      <m>|y_n|\le |z_n|\le M_n</m> holds for all <m>n</m>.
-      By the comparison test for real series,
-      we conclude that <m>\sum\limits_{n=1}^{\infty}|x_n|</m> and <m>\sum\limits_{n=1}^{\infty}|y_n|</m> are convergent.
-      An absolutely convergent real series is convergent,
-      so <m>\sum\limits_{n=1}^{\infty}x_n</m> and <m>\sum\limits_{n=1}^{\infty}y_n</m> are convergent.
-      With these results,
-      together with <xref ref="Convergent_Thm">Theorem</xref>,
-      we conclude that the infinite series <m>\sum\limits_{n=1}^{\infty}z_n = \sum\limits_{n=1}^{\infty}x_n +i\sum\limits_{n=1}^{\infty}y_n</m> is convergent.
-    </p>
-  </proof>
-  <corollary xml:id="Abs_Conv_Implies_Conv">
-    <statement>
-      <p>
-        If <m>\sum\limits_{n=1}^{\infty}|z_n|</m> converges,
-        then <m>\sum\limits_{n=0}^{\infty}z_n</m> converges.
-        In other words,
-        absolute convergence implies convergence for complex series as well as for real series.
-      </p>
-    </statement>
-  </corollary>
-  <proof>
-    <p>
-      The proof is left as an exercise.
-    </p>
-  </proof>
-  <example>
-    <statement>
-      <p>
-        Show that <m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m> converges.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We calculate <m>|z_n| = \left|\frac{(3+4i)^n}{5^n n^2}\right|=\frac{1}{n^2} = M_n</m>.
-        Using the comparison test and the fact that <m>\sum\limits_{n=1}^{\infty}\frac{1}{n^2}</m> converges,
-        we determine that <m>\sum\limits_{n=1}^{\infty}\left|\frac{(3+4i)^n}{5^n n^2}\right|</m> converges,
-        and hence so does <m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m>.
-      </p>
-    </solution>
-  </example>
-<exercises xml:id="exercises_sequences-series">
-<title>Exercises</title>
+	 	The proof is left as an exercise.
+	</p>
+	</proof>
+	<example>
+		<statement>
+			<p>
+				Show that <m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m> converges.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We calculate <m>|z_n| = \left|\frac{(3+4i)^n}{5^n n^2}\right|=\frac{1}{n^2} = M_n</m>. Using the comparison test and
+				the fact that <m>\sum\limits_{n=1}^{\infty}\frac{1}{n^2}</m> converges, we determine that
+				<m>\sum\limits_{n=1}^{\infty}\left|\frac{(3+4i)^n}{5^n n^2}\right|</m> converges, and hence so does
+				<m>\sum\limits_{n=1}^{\infty} \frac{(3+4i)^n}{5^n n^2}</m>.
+			</p>
+		</solution>
+	</example>
+<exercises xml:id="exercises_sequences-series"> <title>Exercises</title>
 	<exercise xml:id="x4_1_1">
 		<introduction>
 			<p>
