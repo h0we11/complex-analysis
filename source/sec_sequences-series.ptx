@@ -43,104 +43,97 @@
 		</md>
 	</p>
 	<p>
-	 The sequences <m>f</m> and <m>g</m> given by Equations <xref ref="Seq_Ex_1"/> and <xref ref="Seq_Ex_2"/> behave differently as
-	 <m>n</m> gets larger. The terms in Equation <xref ref="Seq_Ex_1"/> approach <m>2+5i=(2,5)</m>, but those in Equation 
-	 <xref ref="Seq_Ex_2"/> do not approach any particular number, as they oscillate around the eight eighth roots of unity on the
-	 unit circle. Informally, the sequence <m>\{z_n\}_1^\infty</m> has <m>\zeta</m> as its limit as <m>n</m> approaches infinity,
-	 provided the terms <m>z_n</m> can be made as close as we want to <m>\zeta</m> by making <m>n</m> large enough. When this
-	 happens, we write
-    <men xml:id="Informal">
-      \lim_{n \to \infty} z_n = \zeta, \quad \text{or} \quad z_n \to \zeta \quad \text{as} \quad n \to \infty
-    </men>.
-  </p>
-  <p>
-    If <m>\lim_{n \to \infty}z_n = \zeta</m>,
-    we say that the sequence <m>\{z_n\}_1^\infty</m> converges to <m>\zeta</m>.
-  </p>
-  <p>
-    We need a rigorous definition for Statement <xref ref="Informal"/>, however,
-    if we are to do honest mathematics.
-  </p>
-  <definition xml:id="Seq_Lim_Def">
-    <title>Limit of a Sequence</title>
-    <statement>
-      <p>
-        <m>\lim_{n \to \infty}z_n = \zeta</m> means that for any real number
-        <m>\varepsilon>0</m><nbsp/>there corresponds a positive integer
-        <m>N_\varepsilon</m><nbsp/>(which depends on <m>\varepsilon</m>) such that
-        <m>z_n \in D_\varepsilon(\zeta )</m><nbsp/>whenever <m>n>N_\varepsilon</m>.
-        That is, <m>|z_n - \zeta|\lt \varepsilon</m> whenever <m>n>N_\varepsilon</m>.
-      </p>
-    </statement>
-  </definition>
-  <remark>
-    <p>
-		The reason that we use the notation <m>N_\varepsilon</m> is to emphasize the fact that this number depends on our choice of
-		<m>\varepsilon</m>. Sometimes, for convenience, we drop the subscript.
-    </p>
-  </remark>
-  <p>
-    <xref ref="fig_ch-04-01">Figure</xref>
-    illustrates a convergent sequence.
-  </p>
-  <figure xml:id="fig_ch-04-01">
-    <caption>A sequence that converges to <m>\zeta</m></caption>
-    <image width="80%" source="figs/ch-04/ch-04-fig-01.svg"/>
-  </figure>
-  <p>
-    In form, Definition <xref ref="Seq_Lim_Def"/> is exactly the same as the corresponding definition for limits of real sequences.
-    In fact, a simple criterion casts the convergence of complex sequences in terms of the convergence of real sequences.
-  </p>
-  <theorem xml:id="Lim_Zn_Thm">
-    <statement>
-      <p>
-        Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>\zeta =u+iv</m>.
-        Then,
-        <md>
-          <mrow xml:id="Complex_seq_Limit" number="yes">\lim_{n \to \infty}z_n \amp = \zeta \quad \text{iff}</mrow>
-			 <mrow xml:id="ReIm_Limit" number="yes">\lim_{n \to \infty}x_n \amp = u \quad \text{and} \quad \lim_{n \to
-			 \infty}y_n=v.</mrow>
-        </md>
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      First we assume that Statement <xref ref="Complex_seq_Limit"/> is true and then deduce the truth of Statement <xref ref="ReIm_Limit"/>.
-      Let <m>\varepsilon</m> be an arbitrary positive real number.
-      To establish Statement <xref ref="ReIm_Limit"/>,
-      we must show (1) that there is a positive integer <m>N_\varepsilon</m> such that the inequality <m>|x_n-u|\lt \varepsilon</m> holds whenever
-      <m>n>N_\varepsilon</m> and (2) that there is a positive integer
-      <m>M_\varepsilon</m> such that the inequality
-      <m>|y_n -v|\lt \varepsilon</m> holds whenever <m>n>M_\varepsilon</m>.
-      Because we are assuming Statement <xref ref="Complex_seq_Limit"/> to be true, we know
-      (according to <xref ref="Seq_Lim_Def">Definition</xref>)
-      that there is a positive integer <m>N_\varepsilon</m> such that
-      <m>z_n \in D_\varepsilon(\zeta)</m> if <m>n>N_\varepsilon</m>.
-      Recall that <m>z_n\in D_\varepsilon(\zeta )</m> is equivalent to the inequality <m>|z_n - \zeta|\lt  \varepsilon</m>.
-      Thus, whenever <m>n > N_\varepsilon</m>, we have
-      <md>
-        <mrow>|x_n -u|  \amp = |\mathrm{Re}(z_n - \zeta)|</mrow>
-        <mrow>\amp \le |z_n - \zeta| \qquad  \qquad (\text{ by Inequality } <xref ref="ReImLEMod"/>)</mrow>
-        <mrow>\amp \lt  \varepsilon</mrow>
+		The sequences <m>f</m> and <m>g</m> given by Equations <xref ref="Seq_Ex_1"/> and <xref ref="Seq_Ex_2"/> behave differently
+		as <m>n</m> gets larger. The terms in Equation <xref ref="Seq_Ex_1"/> approach <m>2+5i=(2,5)</m>, but those in Equation
+		<xref ref="Seq_Ex_2"/> do not approach any particular number, as they oscillate around the eight eighth roots of unity on
+		the unit circle. Informally, the sequence <m>\{z_n\}_1^\infty</m> has <m>\zeta</m> as its limit as <m>n</m> approaches
+		infinity, provided the terms <m>z_n</m> can be made as close as we want to <m>\zeta</m> by making <m>n</m> large enough.
+		When this happens, we write
+		<men xml:id="Informal">
+			\lim_{n \to \infty} z_n = \zeta, \quad \text{or} \quad z_n \to \zeta \quad \text{as} \quad n \to \infty
+		</men>.
+	</p>
+	<p>
+		If <m>\lim_{n \to \infty}z_n = \zeta</m>, we say that the sequence <m>\{z_n\}_1^\infty</m> converges to <m>\zeta</m>.
+	</p>
+	<p>
+		We need a rigorous definition for Statement <xref ref="Informal"/>, however, if we are to do honest mathematics.
+	</p>
+	<definition xml:id="Seq_Lim_Def">
+	<title>Limit of a Sequence</title>
+		<statement>
+			<p>
+				<m>\lim_{n \to \infty}z_n = \zeta</m> means that for any real number <m>\varepsilon>0</m><nbsp/>there corresponds a
+				positive integer <m>N_\varepsilon</m><nbsp/>(which depends on <m>\varepsilon</m>) such that 
+				<m>z_n \in D_\varepsilon(\zeta )</m><nbsp/>whenever <m>n>N_\varepsilon</m>. That is, 
+				<m>|z_n - \zeta|\lt \varepsilon</m> whenever <m>n>N_\varepsilon</m>.
+			</p>
+		</statement>
+	</definition>
+	<remark>
+		<p>
+			The reason that we use the notation <m>N_\varepsilon</m> is to emphasize the fact that this number depends on our choice
+			of <m>\varepsilon</m>. Sometimes, for convenience, we drop the subscript.
+		</p>
+	</remark>
+	<p>
+		<xref ref="fig_ch-04-01">Figure</xref> illustrates a convergent sequence.
+	</p>
+	<figure xml:id="fig_ch-04-01">
+		<caption>A sequence that converges to <m>\zeta</m></caption>
+		<image width="80%" source="figs/ch-04/ch-04-fig-01.svg"/>
+	</figure>
+	<p>
+		In form, Definition <xref ref="Seq_Lim_Def"/> is exactly the same as the corresponding definition for limits of real
+		sequences. In fact, a simple criterion casts the convergence of complex sequences in terms of the convergence of real
+		sequences.
+	</p>
+	<theorem xml:id="Lim_Zn_Thm">
+		<statement>
+			<p>
+				Let <m>z_n=x_n+iy_n</m><nbsp/>and <m>\zeta =u+iv</m>. Then,
+				<md>
+					<mrow xml:id="Complex_seq_Limit" number="yes">\lim_{n \to \infty}z_n \amp = \zeta \quad \text{iff}</mrow>
+					<mrow xml:id="ReIm_Limit" number="yes">
+						\lim_{n \to \infty}x_n \amp = u \quad \text{and} \quad \lim_{n \to \infty}y_n=v
+					</mrow>
+				</md>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			First we assume that Statement <xref ref="Complex_seq_Limit"/> is true and then deduce the truth of Statement 
+			<xref ref="ReIm_Limit"/>. Let <m>\varepsilon</m> be an arbitrary positive real number. To establish Statement <xref
+			ref="ReIm_Limit"/>, we must show (1) that there is a positive integer <m>N_\varepsilon</m> such that the inequality
+			<m>|x_n-u|\lt \varepsilon</m> holds whenever <m>n>N_\varepsilon</m> and (2) that there is a positive integer
+			<m>M_\varepsilon</m> such that the inequality <m>|y_n -v|\lt \varepsilon</m> holds whenever <m>n>M_\varepsilon</m>.
+			Because we are assuming Statement <xref ref="Complex_seq_Limit"/> to be true, we know (according to 
+			<xref ref="Seq_Lim_Def">Definition</xref>) that there is a positive integer <m>N_\varepsilon</m> such that 
+			<m>z_n \in D_\varepsilon(\zeta)</m> if <m>n>N_\varepsilon</m>. Recall that <m>z_n\in D_\varepsilon(\zeta )</m> is
+			equivalent to the inequality <m>|z_n - \zeta|\lt  \varepsilon</m>. Thus, whenever <m>n > N_\varepsilon</m>, we have
+			<md>
+				<mrow>|x_n -u| \amp = |\mathrm{Re}(z_n - \zeta)|</mrow>
+				<mrow>\amp \le |z_n - \zeta| \qquad  \qquad (\text{by Inequality} <xref ref="ReImLEMod"/>)</mrow>
+			<mrow>\amp \lt  \varepsilon</mrow>
       </md>.
     </p>
     <p>
-      Similarly, we can show that there is a number <m>M_\varepsilon</m> such that
-      <m>|y_n-v|\lt \varepsilon</m> whenever <m>n>M_\varepsilon</m>,
-      which proves Statement <xref ref="ReIm_Limit"/>.
-    </p>
-    <p>
-      To complete the proof of this theorem,
-      we must show that the conditions of Statement <xref ref="ReIm_Limit"/> imply Statement <xref ref="Complex_seq_Limit"/>.
-      Let <m>\varepsilon>0</m> be an arbitrary real number.
-      By Statement <xref ref="ReIm_Limit"/>,
-      there exist positive integers
-      <m>N_\varepsilon</m> and <m>M_{\varepsilon}</m> such that
+		Similarly, we can show that there is a number <m>M_\varepsilon</m> such that <m>|y_n-v|\lt \varepsilon</m> whenever
+		<m>n>M_\varepsilon</m>, which proves Statement <xref ref="ReIm_Limit"/>.
+	</p>
+	<p>
+		To complete the proof of this theorem, we must show that the conditions of Statement <xref ref="ReIm_Limit"/> imply
+		Statement <xref ref="Complex_seq_Limit"/>.  Let <m>\varepsilon>0</m> be an arbitrary real number. By Statement 
+		<xref ref="ReIm_Limit"/>, there exist positive integers <m>N_\varepsilon</m> and <m>M_{\varepsilon}</m> such that
       <md>
-        <mrow xml:id="Re_L_e_2" number="yes">|x_n - u|\amp \lt  \frac{\varepsilon}{2}  \text{ whenever }   n>N_\varepsilon,  \text{ and }</mrow>
-        <mrow xml:id="Im_L_e_2" number="yes">|y_n - v|\amp \lt  \frac{\varepsilon}{2}  \text{ whenever }   n>M_\varepsilon</mrow>
-      </md>.
+			<mrow xml:id="Re_L_e_2" number="yes">
+				|x_n - u|\amp \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad n>N_\varepsilon, \quad \text{and}
+			</mrow>
+			<mrow xml:id="Im_L_e_2" number="yes">
+				|y_n - v|\amp \lt \frac{\varepsilon}{2} \quad \text{whenever} \quad n>M_\varepsilon
+			</mrow>
+		</md>.
     </p>
     <p>
       Let <m>L_\varepsilon=</m> <m>\max\{N_\varepsilon, \, M_\varepsilon\}</m>;
