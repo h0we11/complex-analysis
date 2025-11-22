@@ -247,341 +247,335 @@
 			<image width="50%" source="figs/ch-06/ch-06-fig-21.svg"/>
 		</figure>
 		<p>
-			Since the distance between any point <m>z</m> on a triangle and a point <m>z_0</m> interior to the triangle is less than half the perimeter of the triangle,
-      it follows that
-      <me>
-        |z-z_0| \lt  \frac{1}{2} L_n,  \text{ for all }  z \text{ on }  C_n
-      </me>,
-      where <m>L_n</m> is the length of the triangle <m>C_n</m>.
-      From the preceding construction process, it follows that
-      <men xml:id="CG5">
-        L_n=\left(\frac{1}{2}\right)^{\!n}L,  \text{ and }   |z-z_0| \lt  \left(\frac{1}{2}\right)^{\! n+1}L,  \text{ for } z \text{ on } C_n
-      </men>.
-    </p>
-    <p>
-      We can use Equations <xref ref="CG2_5"/>, <xref ref="CG4"/>,
-      and <xref ref="CG5"></xref> and <xref ref="ML_Inequality_Thm">Theorem</xref> to conclude
-      <md>
-        <mrow>\left|\int_Cf(z)\,dz\right| \amp \le 4^n\int_{C_n} \big|\eta (z) (z-z_0)\big| \, |dz|</mrow>
-        <mrow>\amp  \le 4^n\int_{C_n}\frac{2}{L^2}\varepsilon \left(\frac{1}{2}\right)^{\! n+1}L\left\vert dz\right\vert</mrow>
-        <mrow>\amp = \frac{2^n\varepsilon}{L}\int_{C_n}\left\vert dz\right\vert</mrow>
-        <mrow>\amp = \frac{2^n\varepsilon}{L}\left(\frac{1}{2}\right)^{\!n}L</mrow>
-        <mrow>\amp = \varepsilon</mrow>
-      </md>.
-    </p>
-    <p>
-      Because <m>\varepsilon</m> was arbitrary,
-      it follows that our theorem holds for the triangular contour <m>C</m>.
-      If <m>C</m> is a polygonal contour,
-      then we can add interior edges until the interior is subdivided into a finite number of triangles.
-      The integral around each triangle is zero,
-      and the sum of all these integrals equals the integral around the polygonal contour <m>C</m>.
-      Therefore our theorem also holds for polygonal contours.
-      The proof for an arbitrary simple closed contour is established by approximating the contour
-      <q>sufficiently close</q>
-      with a polygonal contour.
-      We omit the details of this last step.
-    </p>
-  </proof>
-  <example>
-    <statement>
-      <p>
-        Recall that <m>\exp z</m>, <m>\cos z</m>, and <m>z^n</m>
-        (where <m>n</m> is a positive integer)
-        are all entire functions.
-        The Cauchy-Goursat theorem implies that,
-        for any simple closed contour,
-        <me>
-          \int_C\exp z\ dz=0, \int_C\cos z\,dz=0,  \text{ and }   \int_Cz^n\,dz=0
-        </me>.
-      </p>
-    </statement>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Let <m>n</m> be an integer.
-        If <m>C</m> is a simple closed contour such that the origin does not lie interior to <m>C</m>,
-        then there is a simply connected domain <m>D</m> that contains <m>C</m> in which <m>f(z)=\frac{1}{z^n}</m> is analytic,
-        as is indicated in <xref ref="fig_ch-06-22">Figure</xref>.
-        The Cauchy-Goursat theorem implies that <m>\int_C\frac{1}{z^n}\,dz=0</m>.
-      </p>
-      <figure xml:id="fig_ch-06-22">
-        <caption>A simple connected domain <m>D</m> containing the simple closed contour <m>C</m> that does not contain the origin</caption>
-        <image width="50%" source="figs/ch-06/ch-06-fig-22.svg"/>
-      </figure>
-    </statement>
-  </example>
-  <p>
-    We want to be able to replace integrals over certain complicated contours with integrals that are easy to evaluate.
-    If <m>C_1</m> is a simple closed contour that can be
-    <q>continuously deformed</q>
-    into another simple closed contour <m>C_2</m> without passing through a point where <m>f</m> is not analytic,
-    then the value of the contour integral of <m>f</m> over <m>C_1</m> is the same as the value of the integral of <m>f</m> over <m>C_2</m>.
-    To be precise, we state the following result.
-  </p>
-  <theorem xml:id="Deformation_of_Contour">
-    <title>Deformation of contour</title>
-    <statement>
-      <p>
-		  Let <m>C_1</m> and <m>C_2</m> be two simple closed positively oriented contours such that <m>C_1</m> lies interior to
-		  <m>C_2</m>. If <m>f</m> is analytic in a domain <m>D</m> that contains both <m>C_1</m> and <m>C_2</m> and the region
-		  between them, as shown in <xref ref="fig_ch-06-23">Figure</xref>, then
-        <me>
-          \int_{C_1}f(z)\,dz = \int_{C_2}f(z)\,dz.
-        </me>
-      </p>
-    </statement>
-  </theorem>
-  <figure xml:id="fig_ch-06-23">
-	 <caption>
-	 	The domain <m>D</m> that contains the simple closed contours <m>C_1</m> and <m>C_2</m> and the region between them
-	 </caption>
-    <image width="40%" source="figs/ch-06/ch-06-fig-23.svg"/>
-  </figure>
-  <proof>
-    <p>
-      Assume that both <m>C_1</m> and <m>C_2</m> have positive (counterclockwise) orientation.
-      We construct two disjoint contours or <em>cuts</em>,
-      <m>L_1</m> and <m>L_2</m>, that join <m>C_1</m> to <m>C_2</m>.
-      The contour <m>C_1</m> is cut into two contours
-      <m>C_1^{\ast }</m> and <m>C_1^{\ast \ast }</m>,
-      and the contour <m>C_2</m> is cut into <m>C_2^*</m> and <m>C_2^{\ast \ast}</m>.
-      We now form two new contours:
-      <me>
-        K_1=-C_1^{\ast }+L_1+C_2^{\ast }-L_2  \text{ and }   K_2 = -C_1^{\ast \ast }+L_2+C_2^{\ast \ast }-L_1
-      </me>,
-      which are shown in <xref ref="fig_ch-06-24">Figure</xref>.
-      The function <m>f</m> will be analytic on a simply connected domain <m>D_1</m> that contains <m>K_1</m>,
-      and <m>f</m> will be analytic on the simply<nbsp/>connected domain <m>D_2</m> that contains <m>K_2</m>,
-      as illustrated in <xref ref="fig_ch-06-24">Figure</xref>.
-    </p>
-    <figure xml:id="fig_ch-06-24">
-      <caption>The cuts <m>L_1</m> and <m>L_2</m> and the contours <m>K_1</m> and <m>K_2</m> used to prove the deformation of contour theorem</caption>
-      <image width="73%" source="figs/ch-06/ch-06-fig-24.svg"/>
-    </figure>
-    <p>
-      We apply the Cauchy-Goursat theorem to the contours <m>K_1</m> and <m>K_2</m>, giving
-      <men xml:id="DC1">
-        \int_{K_1}f(z)\,dz=0  \text{ and }   \int_{K_2}f(z)\,dz=0
-      </men>.
-    </p>
-    <p>
-      Adding contours gives
-      <md>
-        <mrow>(K_1)+(K_2) \amp = (-C_1^{\ast } + L_1 + C_2^{\ast } - L_2)</mrow>
-		  <mrow> \amp \qquad + \, (-C_1^{\ast \ast } + L_2+C_2^{\ast \ast } - L_1) </mrow>
-        <mrow>\amp = (C_2^{\ast } + C_2^{\ast \ast }) - (C_1^{\ast } + C_1^{\ast \ast })</mrow>
-        <mrow xml:id="DC2" number="yes">\amp = C_2-C_1</mrow>
-      </md>.
-    </p>
-    <p>
-		We use Identities <xref ref="Int_-C___-Int_C"/> and <xref ref="Int_C1_C2___Int_C1_IntC2"/> of <xref
-		ref="sec_contour-integrals">Section</xref>
-      and Equations <xref ref="DC1"/> and <xref ref="DC2"/> in this proof to conclude that
-      <me>
-        \int_{C_2} f(z)\,dz-\int_{C_1}f(z)\,dz = \int_{K_1}f(z)\,dz + \int_{K_2}f(z)\,dz = 0
-      </me>,
-      which establishes the theorem.
-    </p>
-  </proof>
-  <p>
-    We now state as a corollary an important result that is implied by the deformation<nbsp/>of contour theorem.
-    This result occurs several times in the theory to be developed and is an important tool for computations.
-    You may want to compare the proof of <xref ref="x2Pi_or_zero">Corollary</xref>
-    with your solution to <xref ref="x6_2_9">Exercise</xref>
-    from <xref ref="sec_contour-integrals">Section</xref>.
-  </p>
-  <corollary xml:id="x2Pi_or_zero">
-    <statement>
-      <p>
-		  Let <m>z_0</m> denote a fixed complex value. If <m>C</m> is a simple closed contour with positive orientation such that
-		  <m>z_0</m> lies interior to <m>C</m>, then
-        <me>
-          \int_C\frac{1}{z-z_0}\,dz = 2\pi i, \quad \text{and} \quad  \int_C\frac{1}{(z-z_0)^n}\,dz = 0,
-        </me>
-        where <m>n</m> is any integer except <m>n=1</m>.
-      </p>
-    </statement>
-  </corollary>
-  <proof>
-    <p>
-		Since <m>z_0</m> lies interior to <m>C</m>, we can choose <m>R</m> so that the circle <m>C_R</m> with center <m>z_0</m> and
-		radius <m>R</m> lies interior to <m>C</m>. Hence <m>f(z)=\frac{1}{(z-z_0)^n}</m> is analytic in a domain <m>D</m> that
-		contains both <m>C</m> and <m>C_R</m> and the region between them, as shown in <xref ref="fig_ch-06-25">Figure</xref>.
-    </p>
-    <figure xml:id="fig_ch-06-25">
-      <caption>The domain <m>D</m> that contains both <m>C</m> and <m>C_R</m></caption>
-      <image width="45%" source="figs/ch-06/ch-06-fig-25.svg"/>
-    </figure>
-    <p>
-      We let <m>C_R</m> have the parametrization
-      <me>
-		  C_R:z(\theta )=z_0+Re^{i\theta} \quad \text{and} \quad  dz =iRe^{i\theta}d\theta, \quad \text{for} \quad  0 \le \theta
-		  \le 2\pi.
-      </me>
-    </p>
-    <p>
-		The deformation of contour theorem implies that the integral of <m>f</m> over <m>C_R</m> has the same value as the integral
-		of <m>f</m> over <m>C</m>, so
-      <me>
-		  \int_C\frac{1}{z-z_0}\,dz = \int_{C_R}\frac{1}{z-z_0}\,dz =\int_0^{2\pi}\frac{iRe^{i\theta}}{Re^{i\theta}}\,d\theta =
-		  i\int_0^{2\pi}\,d\theta =2\pi i,
-      </me>
-      and
-      <md>
-		  <mrow>\int_C\frac{1}{(z-z_0)^n}\,dz \amp = \int_{C_R}\frac{1}{(z-z_0)^n}\,dz
-		  					= \int_0^{2\pi}\frac{iRe^{i\theta}}{R^ne^{in\theta}}\,d\theta</mrow>
-		  <mrow>\amp =iR^{1-n}\int_0^{2\pi}e^{i(1-n) \theta}\ d\theta
-					= \left.\frac{R^{1-n}}{1-n}e^{i(1-n) \theta}\right|_{\theta =0}^{\theta=2\pi}</mrow>
-		  <mrow>\amp =\frac{R^{1-n}}{1-n}-\frac{R^{1-n}}{1-n}=0</mrow>
-      </md>.
-    </p>
-  </proof>
-  <p>
-	 The deformation of contour theorem is an extension of the Cauchy-Goursat theorem to a doubly connected domain in the following
-	 sense. We let <m>D</m> be a domain that contains <m>C_1</m> and <m>C_2</m> and the region between them, as shown in <xref
-	 ref="fig_ch-06-23">Figure</xref>. Then the contour <m>C=C_2-C_1</m> is a parametrization of the boundary of the region
-	 <m>R</m> that lies between <m>C_1</m> and <m>C_2</m> so that the points of <m>R</m> lie to the left of <m>C</m> as a point
-	 <m>z(t)</m> moves around <m>C</m>. Hence <m>C</m> is a positive orientation of the boundary of <m>R</m>, and 
-	 <xref ref="Deformation_of_Contour">Theorem</xref> implies that <m>\int_C f(z)\,dz=0</m>.
-  </p>
-  <p>
-    We can extend <xref ref="Deformation_of_Contour">Theorem</xref>
-    to multiply connected domains with more than one
-    <q>hole.</q>
-    The proof, which we leave for you,
-    involves the introduction of several cuts and is similar to the proof of <xref ref="Deformation_of_Contour">Theorem</xref>.
-  </p>
-  <theorem xml:id="Extended_CG_Thm">
-    <title>Extended Cauchy-Goursat theorem</title>
-    <statement>
-      <p>
-		  Let <m>C,\,C_1,\ldots ,\,C_n</m><nbsp/>be simple closed positively oriented contours with the properties that
-		  <m>C_k</m><nbsp/>lies interior to <m>C</m> for <m>k=1,\,2,\ldots ,\,n</m>, and the interior of <m>C_k</m><nbsp/>has no
-		  points in common with the interior of <m>C_j</m><nbsp/>if <m>k\ne j</m>. Let <m>f</m> be analytic on a domain
-		  <m>D</m><nbsp/>that contains all the contours and the region between <m>C</m><nbsp/>and <m>C_1+C_2+\cdots + C_n</m>, as
-		  shown in <xref ref="fig_ch-06-26">Figure</xref>. Then
-        <me>
-          \int_Cf(z)\,dz = \sum_{k=1}^n\int_{C_k}f(z)\,dz.
-        </me>
-      </p>
-    </statement>
-  </theorem>
-  <figure xml:id="fig_ch-06-26">
-	 <caption>The multiply connected domain <m>D</m> and the contours <m>C</m> and <m>C_1,\ C_2,\ldots ,\ C_n</m> in the statement
-	 of the extended Cauchy-Goursat theorem</caption>
-    <image width="50%" source="figs/ch-06/ch-06-fig-26.svg"/>
-  </figure>
-  <example>
-    <statement>
-      <p>
-        Show that <m>\int_{C_2^+(0)}\frac{2z}{ z^2+2}\ dz=4\pi i</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Recall that <m>C_2^+(0)</m> is the circle
-        <m>\{z:|z=2|\}</m> with positive orientation.
-        Using partial fraction decomposition gives
-        <md>
-			 <mrow>\frac{2z}{z^2+2}\amp=\frac{2z}{(z+i\sqrt{2}) (z-i\sqrt{2})}</mrow>
-			 <mrow> \amp = \frac{1}{z+i\sqrt{2}}+\frac{1}{z-i\sqrt{2}}, \; \text{ so }</mrow>
-          <mrow> \int_{C_2^+(0)}\frac{2z}{z^2+2}\,dz \amp = \int_{C_2^+(0)}\frac{1}{z+i\sqrt{2}}\,dz</mrow>
-			 <mrow  xml:id="Int_2z__z_2_2_" number="yes"> \amp + \int_{C_2^+(0)}\frac{1}{z-i\sqrt{2}}\,dz</mrow>
-        </md>.
-      </p>
-      <p>
-        The points <m>z=\pm i\sqrt{2}</m> lie interior to <m>C_2^+(0)</m>,
-        so <xref ref="x2Pi_or_zero">Corollary</xref> implies that
-        <me>
-          \int_{C_2^+(0)}\frac{1}{z + i\sqrt{2}}\,dz = 2\pi i \quad \text{and} \quad  
-			 \int_{C_2^+(0)}\frac{1}{z - i\sqrt{2}}\,dz = 2\pi i
-        </me>.
-        Substituting these values into Equation <xref ref="Int_2z__z_2_2_"/> yields
-        <me>
-          \int_{C_2^+(0)}\frac{2z}{z^2+2}\ dz=2\pi i+2\pi i=4\pi i.
-        </me>
-      </p>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Show that <m>\int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=2\pi i</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-		  Recall that <m>C_1^+(i)</m> is the circle <m>\{z:|z-i|=1\}</m> having positive orientation. Using partial fractions again,
-		  we have
-        <me>
-          \int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz = \int_{C_1^+(i)}\frac{1}{z+i\sqrt{2}}\,dz + \int_{C_1^+(i)}\frac{1}{z-i\sqrt{2}}\,dz
-        </me>.
-        In this case, <m>z=i\sqrt{2}</m> lies interior to <m>C_1^+(i)</m> but <m>z=-i\sqrt{2}</m> does not, as shown in 
-		  <xref ref="fig_ch-06-27">Figure</xref>.
-      </p>
-      <figure xml:id="fig_ch-06-27">
-        <caption>The circle <m>C_1^+(i)</m> and the points <m>z=\pm i\sqrt{2}</m></caption>
-        <image width="35%" source="figs/ch-06/ch-06-fig-27.svg"/>
-      </figure>
-      <p>
-		  By <xref ref="x2Pi_or_zero">Corollary</xref>, the second integral on the right side of this equation has the value <m>2\pi
-		  i</m>.  The first integral equals zero by the Cauchy-Goursat theorem because the function
-		  <m>f(z)=\frac{1}{z+i\sqrt{2}}</m> is analytic on a simply connected domain that contains <m>C_1^+(i)</m>. Thus
-        <me>
-          \int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=0+2\pi i =2\pi i.
-        </me>
-      </p>
-    </solution>
-  </example>
-  <example xml:id="Prob_Ex">
-    <statement>
-      <p>
-        Show that <m>\int_C\frac{z-2}{z^2-z}\,dz = -6\pi i</m>,
-        where <m>C</m> is the
-        <q>figure eight</q>
-        contour shown in <xref ref="fig_ch-06-28">Figure</xref>(a).
-      </p>
-      <figure xml:id="fig_ch-06-28">
-        <caption>The contour <m>C=C_1+C_2</m></caption>
-        <image width="85%" source="figs/ch-06/ch-06-fig-28.svg"/>
-      </figure>
-    </statement>
-    <solution>
-      <p>
-        Again, we use partial fractions to express the integral:
-        <men xml:id="Example__z-2___z_2-z_">
-          \int_C\frac{z-2}{z^2-z}\ dz=2\int_C\frac{1}{z}\,dz - \int_C\frac{1}{z-1}\,dz
-        </men>.
-      </p>
-      <p>
-        Using the Cauchy-Goursat theorem, Property <xref ref="Int_-C___-Int_C"/>, and <xref ref="x2Pi_or_zero">Corollary</xref>
-        (with <m>z_0=0</m>),
-        we compute the value of the first integral on the right side of Equation <xref ref="Example__z-2___z_2-z_"/>:
-        <md>
-          <mrow>2\int_C\frac{1}{z}\,dz \amp = 2\int_{C_1}\frac{1}{z}\,dz+2\int_{C_2}\frac{1}{z}\ dz</mrow>
-          <mrow>\amp = -2\int_{-C_1}\frac{1}{z}\,dz+0</mrow>
-          <mrow>\amp = -2(2\pi i)</mrow>
-          <mrow>\amp = -4\pi i</mrow>
-        </md>.
-      </p>
-      <p>
-        Similarly, we find that
-        <md>
-          <mrow>-\int_C\frac{1}{z-1}\,dz \amp = -\int_{C_1}\frac{1}{z-1}\,dz - \int_{C_2}\frac{1}{z-1}\,dz</mrow>
-          <mrow>\amp = 0-2\pi i</mrow>
-          <mrow>\amp =-2\pi i</mrow>
-        </md>.
-      </p>
-      <p>
-        If we substitute the results of the last two equations into Equation <xref ref="Example__z-2___z_2-z_"/> we get
-        <me>
-          \int_C\frac{z-2}{z^2-z}\,dz=-4\pi i-2\pi i=-6\pi i.
-        </me>
-      </p>
-    </solution>
-  </example>
+			Since the distance between any point <m>z</m> on a triangle and a point <m>z_0</m> interior to the triangle is less than
+			half the perimeter of the triangle, it follows that
+			<me>
+				|z-z_0| \lt \frac{1}{2} L_n, \quad \text{for all} \quad z \in C_n
+			</me>,
+			where <m>L_n</m> is the length of the triangle <m>C_n</m>. From the preceding construction process, it follows that
+			<men xml:id="CG5">
+				\hspace{-0.75in}L_n=\left(\frac{1}{2}\right)^{\!n}L, \quad \text{and} \quad  |z-z_0| \lt
+				\left(\frac{1}{2}\right)^{\! n+1}L, \quad \text{for} \quad z \in C_n
+			</men>.
+		</p>
+		<p>
+			We can use Equations <xref ref="CG2_5"/>, <xref ref="CG4"/>, and <xref ref="CG5"></xref> and
+			<xref ref="ML_Inequality_Thm">Theorem</xref> to conclude
+			<md>
+				<mrow>\left|\int_Cf(z)\,dz\right| \amp \le 4^n\int_{C_n} \big|\eta (z) (z-z_0)\big| \, |dz|</mrow>
+				<mrow>\amp  \le 4^n\int_{C_n}\frac{2}{L^2}\varepsilon \left(\frac{1}{2}\right)^{\! n+1}L\left\vert dz\right\vert</mrow>
+				<mrow>\amp = \frac{2^n\varepsilon}{L}\int_{C_n}\left\vert dz\right\vert</mrow>
+				<mrow>\amp = \frac{2^n\varepsilon}{L}\left(\frac{1}{2}\right)^{\!n}L</mrow>
+				<mrow>\amp = \varepsilon</mrow>
+			</md>.
+		</p>
+		<p>
+			Because <m>\varepsilon</m> was arbitrary, it follows that our theorem holds for the triangular contour <m>C</m>. If
+			<m>C</m> is a polygonal contour, then we can add interior edges until the interior is subdivided into a finite number of
+			triangles. The integral around each triangle is zero, and the sum of all these integrals equals the integral around the
+			polygonal contour <m>C</m>. Therefore our theorem also holds for polygonal contours. The proof for an arbitrary simple
+			closed contour is established by approximating the contour <q>sufficiently close</q> with a polygonal contour. We omit
+			the details of this last step.
+		</p>
+	</proof>
+	<example>
+		<statement>
+			<p>
+				Recall that <m>\exp z</m>, <m>\cos z</m>, and <m>z^n</m> (where <m>n</m> is a positive integer) are all entire
+				functions. The Cauchy-Goursat theorem implies that, for any simple closed contour,
+				<me>
+					\int_C\exp z\ dz=0, \int_C\cos z\,dz=0, \quad \text{and} \quad \int_Cz^n\,dz=0
+				</me>.
+			</p>
+		</statement>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Let <m>n</m> be an integer. If <m>C</m> is a simple closed contour such that the origin does not lie interior to
+				<m>C</m>, then there is a simply connected domain <m>D</m> that contains <m>C</m> in which <m>f(z)=\frac{1}{z^n}</m>
+				is analytic, as is indicated in <xref ref="fig_ch-06-22">Figure</xref>. The Cauchy-Goursat theorem implies that
+				<m>\int_C\frac{1}{z^n}\,dz=0</m>.
+			</p>
+			<figure xml:id="fig_ch-06-22">'
+				<caption>
+					A simple connected domain <m>D</m> containing the simple closed contour <m>C</m> that does not contain the
+					origin
+				</caption>
+				<image width="50%" source="figs/ch-06/ch-06-fig-22.svg"/>
+			</figure>
+		</statement>
+	</example>
+	<p>
+		We want to be able to replace integrals over certain complicated contours with integrals that are easy to evaluate. If
+		<m>C_1</m> is a simple closed contour that can be <q>continuously deformed</q> into another simple closed contour <m>C_2</m>
+		without passing through a point where <m>f</m> is not analytic, then the value of the contour integral of <m>f</m> over
+		<m>C_1</m> is the same as the value of the integral of <m>f</m> over <m>C_2</m>. To be precise, we state the following
+		result.
+	</p>
+	<theorem xml:id="Deformation_of_Contour">
+	<title>Deformation of contour</title>
+		<statement>
+			<p>
+				Let <m>C_1</m> and <m>C_2</m> be two simple closed positively oriented contours such that <m>C_1</m> lies interior to
+				<m>C_2</m>. If <m>f</m> is analytic in a domain <m>D</m> that contains both <m>C_1</m> and <m>C_2</m> and the region
+				between them, as shown in <xref ref="fig_ch-06-23">Figure</xref>, then
+				<me>
+					\int_{C_1}f(z)\,dz = \int_{C_2}f(z)\,dz
+				</me>.
+			</p>
+			<figure xml:id="fig_ch-06-23">
+			<caption>
+				The domain <m>D</m> that contains the simple closed contours <m>C_1</m> and <m>C_2</m> and the region between them
+			</caption>
+			<image width="40%" source="figs/ch-06/ch-06-fig-23.svg"/>
+		</figure>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Assume that both <m>C_1</m> and <m>C_2</m> have positive (counterclockwise) orientation. We construct two disjoint
+			contours or <em>cuts</em>, <m>L_1</m> and <m>L_2</m>, that join <m>C_1</m> to <m>C_2</m>. The contour <m>C_1</m> is cut
+			into two contours <m>C_1^{\ast }</m> and <m>C_1^{\ast \ast }</m>, and the contour <m>C_2</m> is cut into <m>C_2^*</m> and
+			<m>C_2^{\ast \ast}</m>. We now form two new contours:
+			<me>
+				K_1=-C_1^{\ast }+L_1+C_2^{\ast }-L_2  \text{ and }   K_2 = -C_1^{\ast \ast }+L_2+C_2^{\ast \ast }-L_1
+			</me>,
+			which are shown in <xref ref="fig_ch-06-24">Figure</xref>. The function <m>f</m> will be analytic on a simply connected
+			domain <m>D_1</m> that contains <m>K_1</m>, and <m>f</m> will be analytic on the simply<nbsp/>connected domain <m>D_2</m>
+			that contains <m>K_2</m>, as illustrated in <xref ref="fig_ch-06-24">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-06-24">
+			<caption>
+				The cuts <m>L_1</m> and <m>L_2</m> and the contours <m>K_1</m> and <m>K_2</m> used to prove the deformation of contour
+				theorem
+			</caption>
+			<image width="73%" source="figs/ch-06/ch-06-fig-24.svg"/>
+		</figure>
+		<p>
+			We apply the Cauchy-Goursat theorem to the contours <m>K_1</m> and <m>K_2</m>, giving
+			<men xml:id="DC1">
+				\int_{K_1}f(z)\,dz = 0, \quad \text{and} \quad \int_{K_2}f(z)\,dz = 0
+			</men>.
+		</p>
+		<p>
+			Adding contours gives
+			<md>
+				<mrow>(K_1)+(K_2) \amp = (-C_1^{\ast } + L_1 + C_2^{\ast } - L_2)</mrow>
+				<mrow> \amp \qquad + \, (-C_1^{\ast \ast } + L_2+C_2^{\ast \ast } - L_1) </mrow>
+				<mrow>\amp = (C_2^{\ast } + C_2^{\ast \ast }) - (C_1^{\ast } + C_1^{\ast \ast })</mrow>
+				<mrow xml:id="DC2" number="yes">\amp = C_2-C_1</mrow>
+			</md>.
+		</p>
+		<p>
+			We use Identities <xref ref="Int_-C___-Int_C"/> and <xref ref="Int_C1_C2___Int_C1_IntC2"/> of 
+			<xref ref="sec_contour-integrals">Section</xref> and Equations <xref ref="DC1"/> and <xref ref="DC2"/> in this proof to
+			conclude that
+			<me>
+				\int_{C_2} f(z)\,dz-\int_{C_1}f(z)\,dz = \int_{K_1}f(z)\,dz + \int_{K_2}f(z)\,dz = 0
+			</me>,
+			which establishes the theorem.'
+		</p>
+	</proof>
+	<p>
+		We now state as a corollary an important result that is implied by the deformation<nbsp/>of contour theorem. This result
+		occurs several times in the theory to be developed and is an important tool for computations. You may want to compare the
+		proof of <xref ref="x2Pi_or_zero">Corollary</xref> with your solution to <xref ref="x6_2_9">Exercise</xref> from 
+		<xref ref="sec_contour-integrals">Section</xref>.
+	</p>
+	<corollary xml:id="x2Pi_or_zero">
+		<statement>
+			<p>
+				Let <m>z_0</m> denote a fixed complex value. If <m>C</m> is a simple closed contour with positive orientation such
+				that <m>z_0</m> lies interior to <m>C</m>, then
+				<me>
+					\int_C\frac{1}{z-z_0}\,dz = 2\pi i, \quad \text{and} \quad  \int_C\frac{1}{(z-z_0)^n}\,dz = 0
+				</me>,
+				where <m>n</m> is any integer except <m>n=1</m>.
+			</p>
+		</statement>
+	</corollary>
+	<proof>
+		<p>
+			Since <m>z_0</m> lies interior to <m>C</m>, we can choose <m>R</m> so that the circle <m>C_R</m> with center <m>z_0</m>
+			and radius <m>R</m> lies interior to <m>C</m>. Hence <m>f(z)=\frac{1}{(z-z_0)^n}</m> is analytic in a domain <m>D</m>
+			that contains both <m>C</m> and <m>C_R</m> and the region between them, as shown in 
+			<xref ref="fig_ch-06-25">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-06-25">
+			<caption>The domain <m>D</m> that contains both <m>C</m> and <m>C_R</m></caption>
+			<image width="45%" source="figs/ch-06/ch-06-fig-25.svg"/>
+		</figure>
+		<p>
+			We let <m>C_R</m> have the parametrization
+			<me>
+				C_R:z(\theta )=z_0+Re^{i\theta} \quad \text{and} \quad  dz =iRe^{i\theta}d\theta, \quad \text{for} \quad  0 \le 
+				\theta \le 2\pi
+			</me>.
+		</p>
+		<p>
+			The deformation of contour theorem implies that the integral of <m>f</m> over <m>C_R</m> has the same value as the
+			integral of <m>f</m> over <m>C</m>, so
+			<me>
+				\int_C\frac{1}{z-z_0}\,dz = \int_{C_R}\frac{1}{z-z_0}\,dz =
+				\int_0^{2\pi}\frac{iRe^{i\theta}}{Re^{i\theta}}\,d\theta = i\int_0^{2\pi}\,d\theta =2\pi i
+			</me>,
+			and
+			<md>
+				<mrow>
+					\int_C\frac{1}{(z-z_0)^n}\,dz \amp = \int_{C_R}\frac{1}{(z-z_0)^n}\,dz = 
+					\int_0^{2\pi}\frac{iRe^{i\theta}}{R^ne^{in\theta}}\,d\theta
+				</mrow>
+				<mrow>
+					\amp =iR^{1-n}\int_0^{2\pi}e^{i(1-n) \theta}\ d\theta = 
+					\left.\frac{R^{1-n}}{1-n}e^{i(1-n) \theta}\right|_{\theta =0}^{\theta=2\pi}
+				</mrow>
+				<mrow>\amp =\frac{R^{1-n}}{1-n}-\frac{R^{1-n}}{1-n}=0</mrow>
+			</md>.
+		</p>
+	</proof>
+		<p>
+			The deformation of contour theorem is an extension of the Cauchy-Goursat theorem to a doubly connected domain in the
+			following sense. We let <m>D</m> be a domain that contains <m>C_1</m> and <m>C_2</m> and the region between them, as
+			shown in <xref ref="fig_ch-06-23">Figure</xref>. Then the contour <m>C=C_2-C_1</m> is a parametrization of the boundary
+			of the region <m>R</m> that lies between <m>C_1</m> and <m>C_2</m> so that the points of <m>R</m> lie to the left of
+			<m>C</m> as a point <m>z(t)</m> moves around <m>C</m>. Hence <m>C</m> is a positive orientation of the boundary of
+			<m>R</m>, and <xref ref="Deformation_of_Contour">Theorem</xref> implies that <m>\int_C f(z)\,dz=0</m>.
+		</p>
+		<p>
+			We can extend <xref ref="Deformation_of_Contour">Theorem</xref> to multiply connected domains with more than one
+			<q>hole.</q> The proof, which we leave for you, involves the introduction of several cuts and is similar to the proof of
+			<xref ref="Deformation_of_Contour">Theorem</xref>.
+		</p>
+	<theorem xml:id="Extended_CG_Thm">
+	<title>Extended Cauchy-Goursat theorem</title>
+		<statement>
+			<p>
+				Let <m>C,\,C_1,\ldots ,\,C_n</m><nbsp/>be simple closed positively oriented contours with the properties that
+				<m>C_k</m><nbsp/>lies interior to <m>C</m> for <m>k=1,\,2,\ldots ,\,n</m>, and the interior of <m>C_k</m><nbsp/>has no
+				points in common with the interior of <m>C_j</m><nbsp/>if <m>k\ne j</m>. Let <m>f</m> be analytic on a domain
+				<m>D</m><nbsp/>that contains all the contours and the region between <m>C</m><nbsp/>and <m>C_1+C_2+\cdots + C_n</m>,
+				as shown in <xref ref="fig_ch-06-26">Figure</xref>. Then
+				<me>
+					\int_Cf(z)\,dz = \sum_{k=1}^n\int_{C_k}f(z)\,dz
+				</me>.
+			</p>
+			<figure xml:id="fig_ch-06-26">
+				<caption>
+					The multiply connected domain <m>D</m> and the contours <m>C</m> and <m>C_1,\ C_2,\ldots ,\ C_n</m> in the statement
+					of the extended Cauchy-Goursat theorem
+				</caption>
+				<image width="50%" source="figs/ch-06/ch-06-fig-26.svg"/>
+			</figure>
+		</statement>
+	</theorem>
+	<example>
+		<statement>
+			<p>
+				Show that <m>\int_{C_2^+(0)}\frac{2z}{ z^2+2}\ dz=4\pi i</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Recall that <m>C_2^+(0)</m> is the circle <m>\{z:|z=2|\}</m> with positive orientation. Using partial fraction
+				decomposition gives
+				<md>
+					<mrow>\frac{2z}{z^2+2}\amp=\frac{2z}{(z+i\sqrt{2}) (z-i\sqrt{2})}</mrow>
+					<mrow>\amp = \frac{1}{z+i\sqrt{2}}+\frac{1}{z-i\sqrt{2}}, \; \text{ so }</mrow>
+					<mrow>\int_{C_2^+(0)}\frac{2z}{z^2+2}\,dz \amp = \int_{C_2^+(0)}\frac{1}{z+i\sqrt{2}}\,dz</mrow>
+					<mrow xml:id="Int_2z__z_2_2_" number="yes"> \amp + \int_{C_2^+(0)}\frac{1}{z-i\sqrt{2}}\,dz</mrow>
+				</md>.
+			</p>
+			<p>
+				The points <m>z=\pm i\sqrt{2}</m> lie interior to <m>C_2^+(0)</m>, so <xref ref="x2Pi_or_zero">Corollary</xref>
+				implies that
+				<me>
+					\int_{C_2^+(0)}\frac{1}{z + i\sqrt{2}}\,dz = 2\pi i \quad \text{and} \quad  
+					\int_{C_2^+(0)}\frac{1}{z - i\sqrt{2}}\,dz = 2\pi i
+				</me>.
+				Substituting these values into Equation <xref ref="Int_2z__z_2_2_"/> yields
+				<me>
+					\int_{C_2^+(0)}\frac{2z}{z^2+2}\ dz=2\pi i+2\pi i=4\pi i
+				</me>.
+			</p>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Show that <m>\int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=2\pi i</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Recall that <m>C_1^+(i)</m> is the circle <m>\{z:|z-i|=1\}</m> having positive orientation. Using partial fractions
+				again, we have
+				<me>
+					\int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz = \int_{C_1^+(i)}\frac{1}{z+i\sqrt{2}}\,dz +
+					\int_{C_1^+(i)}\frac{1}{z-i\sqrt{2}}\,dz
+				</me>.
+				In this case, <m>z=i\sqrt{2}</m> lies interior to <m>C_1^+(i)</m> but <m>z=-i\sqrt{2}</m> does not, as shown in 
+				<xref ref="fig_ch-06-27">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-06-27">
+				<caption>The circle <m>C_1^+(i)</m> and the points <m>z=\pm i\sqrt{2}</m></caption>
+				<image width="35%" source="figs/ch-06/ch-06-fig-27.svg"/>
+			</figure>
+			<p>
+				By <xref ref="x2Pi_or_zero">Corollary</xref>, the second integral on the right side of this equation has the value
+				<m>2\pi i</m>. The first integral equals zero by the Cauchy-Goursat theorem because the function
+				<m>f(z)=\frac{1}{z+i\sqrt{2}}</m> is analytic on a simply connected domain that contains <m>C_1^+(i)</m>. Thus
+				<me>
+					\int_{C_1^+(i)}\frac{2z}{z^2+2}\,dz=0+2\pi i =2\pi i
+				</me>.
+			</p>
+		</solution>
+	</example>
+	<example xml:id="Prob_Ex">
+		<statement>
+			<p>
+				Show that <m>\int_C\frac{z-2}{z^2-z}\,dz = -6\pi i</m>, where <m>C</m> is the <q>figure eight</q> contour shown in
+				<xref ref="fig_ch-06-28">Figure</xref>(a).
+			</p>
+			<figure xml:id="fig_ch-06-28">
+				<caption>The contour <m>C=C_1+C_2</m></caption>
+				<image width="85%" source="figs/ch-06/ch-06-fig-28.svg"/>
+			</figure>
+		</statement>
+		<solution>
+			<p>
+				Again, we use partial fractions to express the integral:
+				<men xml:id="Example__z-2___z_2-z_">
+					\int_C\frac{z-2}{z^2-z}\ dz=2\int_C\frac{1}{z}\,dz - \int_C\frac{1}{z-1}\,dz
+				</men>.
+			</p>
+			<p>
+				Using the Cauchy-Goursat theorem, Property <xref ref="Int_-C___-Int_C"/>, and 
+				<xref ref="x2Pi_or_zero">Corollary</xref> (with <m>z_0=0</m>), we compute the value of the first integral on the right
+				side of Equation <xref ref="Example__z-2___z_2-z_"/>:
+				<md>
+					<mrow>2\int_C\frac{1}{z}\,dz \amp = 2\int_{C_1}\frac{1}{z}\,dz+2\int_{C_2}\frac{1}{z}\ dz</mrow>
+					<mrow>\amp = -2\int_{-C_1}\frac{1}{z}\,dz+0</mrow>
+					<mrow>\amp = -2(2\pi i)</mrow>
+					<mrow>\amp = -4\pi i</mrow>
+				</md>.
+			</p>
+			<p>
+				Similarly, we find that
+				<md>
+					<mrow>-\int_C\frac{1}{z-1}\,dz \amp = -\int_{C_1}\frac{1}{z-1}\,dz - \int_{C_2}\frac{1}{z-1}\,dz</mrow>
+					<mrow>\amp = 0-2\pi i</mrow>
+					<mrow>\amp =-2\pi i</mrow>
+				</md>.
+			</p>
+			<p> 
+				If we substitute the results of the last two equations into Equation <xref ref="Example__z-2___z_2-z_"/> we get
+				<me>
+					\int_C\frac{z-2}{z^2-z}\,dz=-4\pi i-2\pi i=-6\pi i
+				</me>.
+			</p>
+		</solution>
+	</example>
 <exercises xml:id="exercises_cauchy-goursat">
 <title>Exercises</title>
 	<exercise xml:id="x6_3_1">
