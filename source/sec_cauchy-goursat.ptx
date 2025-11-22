@@ -1,273 +1,253 @@
 <section xml:id="sec_cauchy-goursat">
-  <title>The Cauchy-Goursat Theorem</title>
-  <p>
-	 The Cauchy-Goursat theorem states that within certain domains the integral of an analytic function over a simple closed
-	 contour is zero.  An extension of this theorem allows us to replace integrals over certain complicated contours with integrals
-	 over contours that are easy to evaluate.  We demonstrate how to use the technique of partial fractions with the Cauchy-Goursat
-	 theorem to evaluate certain integrals.  In <xref ref="sec_integration-theorems">Section</xref> we show that the Cauchy-Goursat
-	 theorem implies that an analytic function has an antiderivative.  To begin, we need to introduce some new concepts.
-  </p>
-  <p>
-	 Recall from <xref ref="sec_topology">Section</xref> that each simple closed contour <m>C</m> divides the plane into two
-	 domains.  One domain is bounded and is called the interior of <m>C</m>; the other domain is unbounded and is called the
-	 exterior of <m>C</m>.  <xref ref="fig_ch-06-15">Figure</xref> illustrates this concept, which is known as the Jordan curve
-	 theorem.
-  </p>
-  <figure xml:id="fig_ch-06-15">
-    <caption>The interior and exterior of simple closed contours</caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-15.svg"/>
-  </figure>
-  <p>
-	 Recall also that a domain <m>D</m> is a connected open set.  In particular, if <m>z_1</m> and <m>z_2</m> are any pair of
-	 points in <m>D</m>, then they can be joined by a curve that lies entirely in <m>D</m>. A domain <m>D</m> is said to be a 
-	 <em>simply connected domain</em> if the interior of any simple closed contour <m>C</m> contained in <m>D</m> is contained in
-	 <m>D</m>. In other words, there are no <q>holes</q> in a simply connected domain.  A domain that is not simply connected is
-	 called a multiply connected domain.  <xref ref="fig_ch-06-16">Figure</xref> illustrates uses of the terms 
-	 <em>simply connected</em> and <em>multiply connected</em>.
-  </p>
-  <figure xml:id="fig_ch-06-16">
-    <caption>Simply connected and multiply connected domains</caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-16.svg"/>
-  </figure>
-  <p>
-	 Let the simple closed contour <m>C</m> have the parametrization 
-	 <me>C:z(t)=x(t) +iy(t) \quad \text{for} \quad a \le t \le b.</me> 
-	 Recall that if <m>C</m> is parametrized so that the interior of <m>C</m> is kept on the left as <m>z(t)</m> moves around
-	 <m>C</m>, then we say that <m>C</m> is oriented <em>positively</em> (counterclockwise); otherwise, <m>C</m> is oriented
-	 <em>negatively</em> (clockwise).If <m>C</m> is positively oriented, then <m>-C</m> is negatively oriented. 
-	 <xref ref="fig_ch-06-17">Figure</xref> illustrates the concept of positive and negative orientation.
-  </p>
-  <figure xml:id="fig_ch-06-17">
-    <caption>Positively and negatively oriented simple closed contours</caption>
-    <image width="73%" source="figs/ch-06/ch-06-fig-17.svg"/>
-  </figure>
-  <p>
-    Green's theorem is an important result from the calculus of real variables.
-    It tells you how to evaluate the line integral of real-valued functions.
-  </p>
-  <theorem xml:id="Green_s_Thm">
-    <title>Green's theorem</title>
-    <statement>
-      <p>
-		  Let <m>C</m> be a simple closed contour with positive orientation and let <m>R</m> be the domain that forms the interior
-		  of <m>C</m>.
-        If <m>P</m> and <m>Q</m> are continuous and have continuous partial derivatives <m>P_x, \, P_y, \,Q_x</m>,
-        and <m>Q_y</m> at all points on <m>C</m> and <m>R</m><nbsp/> then
-        <men xml:id="Green_s_Thm_Eq">
-          \!\!\!\!\!\!\! \int_CP(x\text{,} y)\,dx+Q(x,y)\,dy = \iint\limits_R\big[ Q_x(x,y) -P_y(x,y)\big]\, dx\,dy
-        </men>.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-      (We give a proof for a <em>standard region</em>,
-      which is a region that is bounded by a contour <m>C</m> tha can be expressed in the two forms <m>C=C_1+C_2</m> and
-      <m>C=C_3+C_4</m>.) If <m>R</m> is a standard region,
-      then there exist functions <m>y=g_1(x)</m>,
-      and <m>y=g_2(x)</m>, for <m>a \le x \le b</m>,
-      whose graphs form the lower and upper portions of <m>C</m>,
-      respectively,
-      as indicated in <xref ref="fig_ch-06-18">Figure</xref>.
-      As <m>C</m> is positively oriented,
-      these functions can be used to express <m>C</m> as the sum of two contours <m>C_1</m> and <m>C_2</m>, where
-      <md>
-        <mrow>\amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp   \text{for}    \amp \amp  a \le t \le b, \;\; \text{and}</mrow>
-        <mrow>\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp   \text{for}   \amp \amp \!\!\!\! -b \le t \le -a. \qquad \text{ }</mrow>
-      </md>
-    </p>
-    <p>
-      We now use the functions <m>g_1(x)</m> and <m>g_2(x)</m> to express the double integral of
-      <m>-P_y(x,y)</m> over <m>R</m> as an iterated integral,
-      first with respect to <m>y</m> and second with respect to <m>x</m>:
-      <me>
-        -\iint_RP_y(x,y)\,dx\,dy = -\int_a^b\left[\int_{g_1(x)}^{g_2(x)}P_y(x,y)\,dy\right]dx
-      </me>.
-      Computing the first iterated integral on the right side gives
-      <me>
-        -\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\,g_1(x)\big)\,dx - \int_a^bP\big(x,\,g_2(x)\big)\,dx
-      </me>.
-      In the second integral on the right side of this equation we can use the change of variable <m>x=-t</m> to obtain
-      <md>
-        <mrow>-\iint_RP_y(x,y)\,dx\,dy \amp = \int_a^bP\big(x,\, g_1(x)\big)\,dx</mrow>
-		  <mrow> \amp + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt</mrow>
-      </md>.
-    </p>
-    <figure xml:id="fig_ch-06-18">
-      <caption>Integration over a standard region, where <m>C=C_1+C_2</m></caption>
-      <image width="50%" source="figs/ch-06/ch-06-fig-18.svg"/>
-    </figure>
-    <p>
-      Interpreting the two integrals on the right side of this equation as contour integrals along <m>C_1</m> and <m>C_2</m>,
-      respectively, gives
-      <md>
-        <mrow>-\iint\limits_RP_y(x,y)\,dx\,dy \amp =\int_{C_1}P(x,y)\,dx</mrow>
-		  <mrow xml:id="Green1" number="yes"> \amp + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx</mrow>
-      </md>.
-    </p>
-    <p>
-      To complete the proof,
-      we rely on the fact that for a standard region there exist functions
-      <m>x=h_1(y)</m> and <m>x=h_2(y)</m> for
-      <m>c \le y \le d</m> whose graphs form the left and right portions of <m>C</m>,
-      respectively,
-      as indicated in <xref ref="fig_ch-06-19">Figure</xref>.
-    </p>
-    <figure xml:id="fig_ch-06-19">
-      <caption>Integration over a standard region, where <m>C=C_3+C_4</m></caption>
-      <image width="50%" source="figs/ch-06/ch-06-fig-19.svg"/>
-    </figure>
-    <p>
-      Because <m>C</m> has positive orientation,
-      it can be expressed as the sum of two contours <m>C_3</m> and <m>C_4</m>, where
-      <md>
-        <mrow>\amp  C_3 : z_3(t) = h_1(-t) -it,  \amp \amp  \text{for} \amp \amp \!\!\!\!\! -d \le t \le -c, \;\; \text{ and}</mrow>
-        <mrow>\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{for} \amp \amp c \le t \le d.</mrow>
-      </md>
-    </p>
-    <p>
-      Using the functions <m>h_1(y)</m> and <m>h_2(y)</m>,
-      we express the double integral of
-      <m>Q_x(x.y)</m> over <m>R</m> as an iterated integral:
-      <me>
-        \iint\limits_RQ_x(x,y)\,dx\,dy = \int_c^{d} \left[\int_{h_1(y)}^{h_2(y)}Q_x(x,y)\,dx\right] dy
-      </me>.
-      A derivation similar to that which led to Equation <xref ref="Green1"/> shows that
-      <men xml:id="Green2">
-        \iint\limits_RQ_x(x\text{,} y)\,dx\,dy = \int_CQ(x,y)\,dy
-      </men>.
-    </p>
-    <p>
-      Adding Equations <xref ref="Green1"/> and <xref ref="Green2"/> gives Equation <xref ref="Green_s_Thm_Eq"/>.
-    </p>
-  </proof>
-  <p>
-    We are now ready to state the main result of this section.
-  </p>
-  <theorem xml:id="CG_Thm">
-    <title>Cauchy-Goursat theorem</title>
-    <statement>
-      <p>
-        Let <m>f</m> be analytic in a simply connected domain <m>D</m>.
-        If <m>C</m> is a simple closed contour that lies in <m>D</m>, then
-        <me>
-          \int_Cf(z)\,dz=0
-        </me>.
-      </p>
-    </statement>
-  </theorem>
-  <p>
-    We give two proofs.
-    The first, by Augustin Cauchy,
-    is more intuitive but requires the additional hypothesis that <m>f\,'</m> is continuous.
-  </p>
-  <proof>
-    <p>
-      (Cauchy<nbsp/>'s proof of <xref ref="CG_Thm">Theorem</xref>.) If we suppose that <m>f\,'</m> is continuous,
-      then with <m>C</m> oriented positively we use Equation <xref ref="bookkeeping"/> to write
-      <men xml:id="CG0">
-        \int_Cf(z)\,dz = \int_Cu\ dx-v\,dy+i\int_Cv\,dx + u\,dy
-      </men>.
-    </p>
-    <p>
-      If we use Green's theorem on the real part of the right side of Equation <xref ref="CG0"/> (with <m>P=u</m> and <m>Q=-v)</m>,
-      we obtain
-      <men xml:id="CG1">
-        \int_Cu\,dx - v\,dy = \iint\limits_R(-v_x-u_y)\,dx\,dy
-      </men>,
-      where <m>R</m> is the region that is the interior of <m>C</m>.
-      If we use Green's theorem on the imaginary part, we get
-      <men xml:id="CG2">
-        \int_Cv\,dx +u\,dy = \iint\limits_R(u_x-v_y)\,dx\,dy
-      </men>.
-    </p>
-    <p>
-      If we use the Cauchy-Riemann equations <m>u_x=v_y</m> and
-      <m>u_y=-v_x</m> in Equations <xref ref="CG1"/> and <xref ref="CG2"/>, Equation <xref ref="CG0"/> becomes
-      <me>
-        \int_Cf(z)\,dz = \iint\limits_R0\,dx\ dy +i\iint\limits_R0\,dx\,dy=0
-      </me>,
-      which completes the proof.
-    </p>
-  </proof>
-  <p>
-    In 1883, Edward Goursat (1858-1936) produced a proof that does not require the continuity of <m>f\,'</m>.
-  </p>
-  <proof>
-    <p>
-      We first establish the result for a triangular contour <m>C</m> with positive orientation.
-      We then construct four positively oriented contours <m>C^1</m>,
-      <m>C^2</m>,
-      <m>C^3</m>,
-      and <m>C^4</m> that are the triangles obtained by joining the midpoints of the sides of <m>C</m>,
-      as <xref ref="fig_ch-06-20">Figure</xref> shows.
-    </p>
-    <figure xml:id="fig_ch-06-20">
-      <caption>The triangular contours <m>C</m> and <m>C^1</m>, <m>C^2</m>, <m>C^3</m>, and <m>C^4</m></caption>
-      <image width="60%" source="figs/ch-06/ch-06-fig-20.svg"/>
-    </figure>
-    <p>
-      Each contour is positively oriented,
-      so if we sum the integrals along the four triangular contours,
-      the integrals along the segments interior to <m>C</m> cancel out in pairs, giving
-      <men xml:id="CG2_25">
-        \int_Cf(z)\,dz = \sum\limits_{k=1}^4\int_{C^k}f(z)\,dz
-      </men>.
-    </p>
-    <p>
-      Let <m>C_1</m> be selected from <m>C^1</m>, <m>C^2</m>,
-      <m>C^3</m>, and <m>C^4</m> so that the following holds:
-      <me>
-        \left| \int_Cf(z)\,dz \right| \le \sum_{k=1}^4 \left|\int_{C^k}f(z)\,dz\right|  \le 4\left|\int_{C_1}f(z)\,dz\right|
-      </me>
-    </p>
-    <p>
-      Proceeding inductively,
-      we carry out a similar subdivision process to obtain a sequence of triangular contours <m>\{C_n\}</m>,
-      where the interior of <m>C_{n+1}</m> lies in the interior of <m>C_n</m> and the following inequality holds:
-      <men xml:id="CG2_5">
-        \left|\int_{C_n}f(z)\,dz\right| \le 4\left|\int_{C_{n+1}}f(z)\,dz\right|, \; \text{ for } \;  n=1,\,2,\ldots
-      </men>
-    </p>
-    <p>
-      We let <m>T_n</m> denote the closed region that consists of <m>C_n</m> and its interior.
-      The length of the sides of <m>C_n</m> go to zero as <m>n \to \infty</m>,
-      so there exists a unique point <m>z_0</m> that belongs to all the closed triangular regions <m>\{T_n\}</m>.
-      Since <m>D</m> is simply connected,
-      <m>z_0\in D</m>, so <m>f</m> is analytic at the point <m>z_0</m>.
-      Thus, there exists a function <m>\eta (z)</m> such that
-      <md>
-        <mrow xml:id="CG3" number="yes">f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0),</mrow>
-		  <mrow>\text{ where }  \, \lim\limits_{z \to z_0}\eta (z)=0</mrow>
-      </md>.
-    </p>
-    <p>
-      Using Equation <xref ref="CG3"/> and integrating <m>f</m> along <m>C_n</m>, we get
-      <md>
-        <mrow>\int_{C_n}f(z)\,dz \amp = \int_{C_n}f(z_0)\,dz + \int_{C_n}f'(z_0) (z-z_0) dz</mrow>
-        <mrow>\amp + \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
-        <mrow>\amp = \big[f(z_0)-f\,'(z_0)z_0\big] \int_{C_n} 1 \,dz + f\,'(z_0) \int_{C_n}z\,dz</mrow>
-        <mrow>\amp  +\int_{C_n}\eta(z) (z-z_0)\,dz</mrow>
-        <mrow>\amp = \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
-      </md>.
-    </p>
-    <p>
-      Since <m>\lim\limits_{z \to z_0}\eta (z)=0</m>,
-      we know that given <m>\varepsilon >0</m>,
-      we can find <m>\delta >0</m> such that
-      <men xml:id="CG4">
-        |z-z_0| \lt  \delta  \text{ implies that }   |\eta (z)| \lt  \frac{2}{L^2} \varepsilon
-      </men>,
-      where <m>L</m> is the length of the original contour <m>C</m>.
-      We can now choose an integer <m>n</m> so that <m>C_n</m> lies in the neighborhood
-      <m>z-z_0| \lt  \delta</m>, as shown in Figure 6.21.
-    </p>
-    <figure xml:id="fig_ch-06-21">
-      <caption>The contour <m>C_n</m> that lies in the neighborhood <m>|z-z_0| \lt  \delta</m></caption>
-      <image width="50%" source="figs/ch-06/ch-06-fig-21.svg"/>
-    </figure>
-    <p>
-      Since the distance between any point <m>z</m> on a triangle and a point <m>z_0</m> interior to the triangle is less than half the perimeter of the triangle,
+<title>The Cauchy-Goursat Theorem</title>
+	<p>
+		The Cauchy-Goursat theorem states that within certain domains the integral of an analytic function over a simple closed
+		contour is zero. An extension of this theorem allows us to replace integrals over certain complicated contours with
+		integrals over contours that are easy to evaluate.  We demonstrate how to use the technique of partial fractions with the
+		Cauchy-Goursat theorem to evaluate certain integrals.  In <xref ref="sec_integration-theorems">Section</xref> we show that
+		the Cauchy-Goursat theorem implies that an analytic function has an antiderivative. To begin, we need to introduce some new
+		concepts.
+	</p>
+	<p>
+		Recall from <xref ref="sec_topology">Section</xref> that each simple closed contour <m>C</m> divides the plane into two
+		domains. One domain is bounded and is called the interior of <m>C</m>; the other domain is unbounded and is called the
+		exterior of <m>C</m>. <xref ref="fig_ch-06-15">Figure</xref> illustrates this concept, which is known as the Jordan curve
+		theorem.
+	</p>
+	<figure xml:id="fig_ch-06-15">
+		<caption>The interior and exterior of simple closed contours</caption>
+		<image width="73%" source="figs/ch-06/ch-06-fig-15.svg"/>
+	</figure>
+	<p>
+		Recall also that a domain <m>D</m> is a connected open set. In particular, if <m>z_1</m> and <m>z_2</m> are any pair of
+		points in <m>D</m>, then they can be joined by a curve that lies entirely in <m>D</m>. A domain <m>D</m> is said to be a
+		<em>simply connected domain</em> if the interior of any simple closed contour <m>C</m> contained in <m>D</m> is contained in
+		<m>D</m>. In other words, there are no <q>holes</q> in a simply connected domain. A domain that is not simply connected is
+		called a multiply connected domain.  <xref ref="fig_ch-06-16">Figure</xref> illustrates uses of the terms 
+		<em>simply connected</em> and <em>multiply connected</em>.
+	</p>
+	<figure xml:id="fig_ch-06-16">
+		<caption>Simply connected and multiply connected domains</caption>
+		<image width="73%" source="figs/ch-06/ch-06-fig-16.svg"/>
+	</figure>
+	<p>
+		Let the simple closed contour <m>C</m> have the parametrization <me>C:z(t)=x(t) +iy(t) \quad \text{for} \quad a \le t \le
+		b.</me> Recall that if <m>C</m> is parametrized so that the interior of <m>C</m> is kept on the left as <m>z(t)</m> moves
+		around <m>C</m>, then we say that <m>C</m> is oriented <em>positively</em> (counterclockwise); otherwise, <m>C</m> is
+		oriented <em>negatively</em> (clockwise). If <m>C</m> is positively oriented, then <m>-C</m> is negatively oriented. <xref
+		ref="fig_ch-06-17">Figure</xref> illustrates the concept of positive and negative orientation.
+	</p>
+	<figure xml:id="fig_ch-06-17">
+		<caption>Positively and negatively oriented simple closed contours</caption>
+		<image width="73%" source="figs/ch-06/ch-06-fig-17.svg"/>
+	</figure>
+	<p>
+		Green's theorem is an important result from the calculus of real variables. It tells you how to evaluate the line integral
+		of real-valued functions.
+	</p>
+	<theorem xml:id="Green_s_Thm">
+	<title>Green's theorem</title>
+		<statement>
+			<p>
+				Let <m>C</m> be a simple closed contour with positive orientation and let <m>R</m> be the domain that forms the
+				interior of <m>C</m>. If <m>P</m> and <m>Q</m> are continuous and have continuous partial derivatives 
+				<m>P_x, \, P_y, \,Q_x</m>, and <m>Q_y</m> at all points on <m>C</m> and <m>R</m><nbsp/> then
+				<men xml:id="Green_s_Thm_Eq">
+					\hspace{-0.6in}\int_CP(x, \, y)\,dx + Q(x,\,y)\,dy = \iint\limits_R\big[ Q_x(x,y) -P_y(x,y)\big]\, dx\,dy
+				</men>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			(We give a proof for a <em>standard region</em>, which is a region that is bounded by a contour <m>C</m> tha can be
+			expressed in the two forms <m>C=C_1+C_2</m> and <m>C=C_3+C_4</m>.) If <m>R</m> is a standard region, then there exist
+			functions <m>y=g_1(x)</m>, and <m>y=g_2(x)</m>, for <m>a \le x \le b</m>, whose graphs form the lower and upper portions
+			of <m>C</m>, respectively, as indicated in <xref ref="fig_ch-06-18">Figure</xref>. As <m>C</m> is positively oriented,
+			these functions can be used to express <m>C</m> as the sum of two contours <m>C_1</m> and <m>C_2</m>, where
+			<md>
+				<mrow>\amp  C_1 : z_1(t) = t+ig_1(t), \amp \amp \text{for} \amp \amp  a \le t \le b, \quad \text{and}</mrow>
+				<mrow>\amp  C_2 : z_2(t) = -t+ig_2(-t), \amp \amp \text{for}\amp \amp \!\!\!\! -b \le t \le -a</mrow>
+			</md>.
+		</p>
+		<p>
+			We now use the functions <m>g_1(x)</m> and <m>g_2(x)</m> to express the double integral of <m>-P_y(x,y)</m> over <m>R</m>
+			as an iterated integral, first with respect to <m>y</m> and second with respect to <m>x</m>:
+			<me>
+				-\iint_RP_y(x,y)\,dx\,dy = -\int_a^b\left[\int_{g_1(x)}^{g_2(x)}P_y(x,y)\,dy\right]dx
+			</me>.
+			Computing the first iterated integral on the right side gives
+			<me>
+				-\iint_RP_y(x,y)\,dx\,dy = \int_a^bP\big(x,\,g_1(x)\big)\,dx - \int_a^bP\big(x,\,g_2(x)\big)\,dx
+			</me>.
+			In the second integral on the right side of this equation we can use the change of variable <m>x=-t</m> to obtain
+			<md>
+				<mrow>-\iint_RP_y(x,y)\,dx\,dy \amp = \int_a^bP\big(x,\, g_1(x)\big)\,dx</mrow>
+				<mrow> \amp + \int_{-b}^{-a}P\big(-t,\,g_2(-t)\big)(-1)\,dt</mrow>
+			</md>.
+		</p>
+		<figure xml:id="fig_ch-06-18">
+			<caption>Integration over a standard region, where <m>C=C_1+C_2</m></caption>
+			<image width="50%" source="figs/ch-06/ch-06-fig-18.svg"/>
+		</figure>
+		<p>
+			Interpreting the two integrals on the right side of this equation as contour integrals along <m>C_1</m> and <m>C_2</m>,
+			respectively, gives
+			<md>
+				<mrow>-\iint\limits_RP_y(x,y)\,dx\,dy \amp =\int_{C_1}P(x,y)\,dx</mrow>
+				<mrow xml:id="Green1" number="yes"> \amp + \int_{C_2}P(x,y)\,dx = \int_CP(x,y)\,dx</mrow>
+			</md>.
+		</p>
+		<p>
+			To complete the proof, we rely on the fact that for a standard region there exist functions <m>x=h_1(y)</m> and
+			<m>x=h_2(y)</m> for <m>c \le y \le d</m> whose graphs form the left and right portions of <m>C</m>, respectively, as
+			indicated in <xref ref="fig_ch-06-19">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-06-19">
+			<caption>Integration over a standard region, where <m>C=C_3+C_4</m></caption>
+			<image width="50%" source="figs/ch-06/ch-06-fig-19.svg"/>
+		</figure>
+		<p>
+			Because <m>C</m> has positive orientation, it can be expressed as the sum of two contours <m>C_3</m> and <m>C_4</m>,
+			where
+			<md>
+				<mrow>
+					\amp C_3 : z_3(t) = h_1(-t) -it, \amp \amp \text{for} \amp \amp \!\!\!\!\! -d \le t \le -c, \quad \text{and}</mrow>
+					<mrow>\amp  C_4 : z_4(t)  = h_2(t) +it,  \amp \amp  \text{for} \amp \amp c \le t \le d.
+				</mrow>
+			</md>.
+		</p>
+		<p>
+			Using the functions <m>h_1(y)</m> and <m>h_2(y)</m>, we express the double integral of <m>Q_x(x.y)</m> over <m>R</m> as
+			an iterated integral:
+			<me>
+				\iint\limits_RQ_x(x,y)\,dx\,dy = \int_c^{d} \left[\int_{h_1(y)}^{h_2(y)}Q_x(x,y)\,dx\right] dy
+			</me>.
+			A derivation similar to that which led to Equation <xref ref="Green1"/> shows that
+			<men xml:id="Green2">
+				\iint\limits_RQ_x(x\text{,} y)\,dx\,dy = \int_CQ(x,y)\,dy
+			</men>.
+		</p>
+		<p>
+			Adding Equations <xref ref="Green1"/> and <xref ref="Green2"/> gives Equation <xref ref="Green_s_Thm_Eq"/>.
+		</p>
+	</proof>
+	<p>
+		We are now ready to state the main result of this section.
+	</p>
+	<theorem xml:id="CG_Thm">
+	<title>Cauchy-Goursat theorem</title>
+		<statement>
+			<p>
+				Let <m>f</m> be analytic in a simply connected domain <m>D</m>. If <m>C</m> is a simple closed contour that lies in
+				<m>D</m>, then
+				<me>
+					\int_Cf(z)\,dz=0
+				</me>.
+			</p>
+		</statement>
+	</theorem>
+	<p>
+		We give two proofs. The first, by Augustin Cauchy, is more intuitive but requires the additional hypothesis that <m>f\,'</m>
+		is continuous.
+	</p>
+	<proof>
+		<p>
+			(Cauchy<nbsp/>'s proof of <xref ref="CG_Thm">Theorem</xref>.) If we suppose that <m>f\,'</m> is continuous, then with
+			<m>C</m> oriented positively we use Equation <xref ref="bookkeeping"/> to write
+			<men xml:id="CG0">
+				\int_Cf(z)\,dz = \int_Cu\ dx-v\,dy+i\int_Cv\,dx + u\,dy
+			</men>.
+		</p>
+		<p>
+			If we use Green's theorem on the real part of the right side of Equation <xref ref="CG0"/> (with <m>P=u</m> and
+			<m>Q=-v)</m>, we obtain
+			<men xml:id="CG1">
+				\int_Cu\,dx - v\,dy = \iint\limits_R(-v_x-u_y)\,dx\,dy
+			</men>,
+			where <m>R</m> is the region that is the interior of <m>C</m>. If we use Green's theorem on the imaginary part, we get
+			<men xml:id="CG2">
+				\int_Cv\,dx +u\,dy = \iint\limits_R(u_x-v_y)\,dx\,dy
+			</men>.
+		</p>
+		<p>
+			If we use the Cauchy-Riemann equations <m>u_x=v_y</m> and <m>u_y=-v_x</m> in Equations <xref ref="CG1"/> and 
+			<xref ref="CG2"/>, Equation <xref ref="CG0"/> becomes
+			<me>
+				\int_Cf(z)\,dz = \iint\limits_R0\,dx\ dy +i\iint\limits_R0\,dx\,dy=0
+			</me>,
+			which completes the proof.
+		</p>
+	</proof>
+	<p>
+		In 1883, Edward Goursat (1858-1936) produced a proof that does not require the continuity of <m>f\,'</m>.
+	</p>
+	<proof>
+		<p>
+			We first establish the result for a triangular contour <m>C</m> with positive orientation. We then construct four
+			positively oriented contours <m>C^1</m>, <m>C^2</m>, <m>C^3</m>, and <m>C^4</m> that are the triangles obtained by
+			joining the midpoints of the sides of <m>C</m>, as <xref ref="fig_ch-06-20">Figure</xref> shows.
+		</p>
+		<figure xml:id="fig_ch-06-20">
+			<caption>The triangular contours <m>C</m> and <m>C^1</m>, <m>C^2</m>, <m>C^3</m>, and <m>C^4</m></caption>
+			<image width="60%" source="figs/ch-06/ch-06-fig-20.svg"/>
+		</figure>
+		<p>
+			Each contour is positively oriented, so if we sum the integrals along the four triangular contours, the integrals along
+			the segments interior to <m>C</m> cancel out in pairs, giving
+			<men xml:id="CG2_25">
+				\int_Cf(z)\,dz = \sum\limits_{k=1}^4\int_{C^k}f(z)\,dz
+			</men>.
+		</p>
+		<p>
+			Let <m>C_1</m> be selected from <m>C^1</m>, <m>C^2</m>, <m>C^3</m>, and <m>C^4</m> so that the following holds:
+			<me>
+				\left| \int_Cf(z)\,dz \right| \le \sum_{k=1}^4 \left|\int_{C^k}f(z)\,dz\right| \le 4\left|\int_{C_1}f(z)\,dz\right|
+			</me>.
+		</p>
+		<p>
+			Proceeding inductively, we carry out a similar subdivision process to obtain a sequence of triangular contours
+			<m>\{C_n\}</m>, where the interior of <m>C_{n+1}</m> lies in the interior of <m>C_n</m> and the following inequality
+			holds:
+			<men xml:id="CG2_5">
+				\left|\int_{C_n}f(z)\,dz\right| \le 4\left|\int_{C_{n+1}}f(z)\,dz\right|, \quad \text{for} \quad  n=1,\,2,\ldots
+			</men>.
+		</p>
+		<p>
+			We let <m>T_n</m> denote the closed region that consists of <m>C_n</m> and its interior. The length of the sides of
+			<m>C_n</m> go to zero as <m>n \to \infty</m>, so there exists a unique point <m>z_0</m> that belongs to all the closed
+			triangular regions <m>\{T_n\}</m>. Since <m>D</m> is simply connected, <m>z_0\in D</m>, so <m>f</m> is analytic at the
+			point <m>z_0</m>. Thus, there exists a function <m>\eta (z)</m> such that
+			<md>
+				<mrow xml:id="CG3" number="yes">f(z) = f(z_0) + f\,'(z_0)(z-z_0) + \eta (z)(z-z_0),</mrow>
+				<mrow>\text{where} \quad \lim\limits_{z \to z_0}\eta (z)=0</mrow>
+			</md>.
+		</p>
+		<p>
+			Using Equation <xref ref="CG3"/> and integrating <m>f</m> along <m>C_n</m>, we get
+			<md>
+				<mrow>\int_{C_n}f(z)\,dz \amp = \int_{C_n}f(z_0)\,dz + \int_{C_n}f'(z_0) (z-z_0) dz</mrow>
+				<mrow>\amp + \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
+				<mrow>\amp = \big[f(z_0)-f\,'(z_0)z_0\big] \int_{C_n} 1 \,dz + f\,'(z_0) \int_{C_n}z\,dz</mrow>
+				<mrow>\amp  +\int_{C_n}\eta(z) (z-z_0)\,dz</mrow>
+				<mrow>\amp = \int_{C_n}\eta(z)(z-z_0)\,dz</mrow>
+			</md>.
+		</p>
+		<p>
+			Since <m>\lim\limits_{z \to z_0}\eta (z)=0</m>, we know that given <m>\varepsilon >0</m>, we can find <m>\delta >0</m>
+			such that
+			<men xml:id="CG4">
+				|z-z_0| \lt  \delta \quad \text{implies that} \quad |\eta (z)| \lt \frac{2}{L^2} \varepsilon
+			</men>,
+			where <m>L</m> is the length of the original contour <m>C</m>. We can now choose an integer <m>n</m> so that <m>C_n</m>
+			lies in the neighborhood <m>z-z_0| \lt  \delta</m>, as shown in <xref ref="fig_ch-06-21"/>.
+		</p>
+		<figure xml:id="fig_ch-06-21">
+			<caption>The contour <m>C_n</m> that lies in the neighborhood <m>|z-z_0| \lt  \delta</m></caption>
+			<image width="50%" source="figs/ch-06/ch-06-fig-21.svg"/>
+		</figure>
+		<p>
+			Since the distance between any point <m>z</m> on a triangle and a point <m>z_0</m> interior to the triangle is less than half the perimeter of the triangle,
       it follows that
       <me>
         |z-z_0| \lt  \frac{1}{2} L_n,  \text{ for all }  z \text{ on }  C_n
