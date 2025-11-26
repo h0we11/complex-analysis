@@ -10014,7 +10014,7 @@ var ptx_lunr_docs = [
   "url": "sec_indented-integrals.html#sec_indented-integrals-16",
   "type": "Proof",
   "number": "8.5.2",
-  "title": "Proof of Theorems 8.5.2 and Theorem 8.5.3.",
+  "title": "Proof of Theorems Theorem 8.5.2 and Theorem 8.5.3.",
   "body": " Proof of Theorems and  Since has only a finite number of poles, we can choose small enough that the semicircles are disjoint and the poles of in the upper half-plane lie above them, as shown in Figure .   The poles of that lie on the - axis and the poles that lie above the semicircles     Let be large enough so that the poles of in the upper half-plane lie under the semicircle , for , and the poles of on the -axis lie in the interval . Let be the simple closed positively oriented contour that consists of and and the segments of the real axis that lie between the semicircles shown in Figure . The residue theorem gives , which we rewrite as , where is the portion of the interval that lies outside the intervals for . Using the same techniques that we used in Theorems and yields .  If we let and in Equation and use the results of Equations and Lemma , we obtain .  If is the function given in Theorem , then Equation becomes Equation . If is the function given in Theorem , then equating the real and imaginary parts of Equation results in Equations and , respectively, which completes the proof.  "
 },
 {
