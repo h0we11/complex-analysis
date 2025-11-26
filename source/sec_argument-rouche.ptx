@@ -1,165 +1,174 @@
 <section xml:id="sec_argument-rouche">
-  <title>The Argument Principle and Rouch&#xe9;'s Theorem</title>
-  <p>
-    We now derive two results based on Cauchy<nbsp/>'s residue theorem.
-    They have important practical applications and pertain only to functions all of whose isolated singularities are poles.
-  </p>
-  <definition>
-    <title>Meromorphic function</title>
-    <statement>
-      <p>
-		  A function <m>f</m> is said to be meromorphic in a domain <m>D</m> provided the only singularities of <m>f</m> are
-		  isolated poles and removable singularities.
-      </p>
-    </statement>
-  </definition>
-  <p>
-    We make three important observations relating to this definition.
-    <ul>
-      <li>
-        <p>
-          Analytic functions are a special case of meromorphic functions.
-        </p>
-      </li>
-      <li>
-        <p>
-			 Rational functions <m>f(z) =\frac{{P(z)}}{{Q(z)}}</m>, where <m>P(z)</m> and <m>Q(z)</m> are polynomials, are
-			 meromorphic in the entire complex plane.
-        </p>
-      </li>
-      <li>
-        <p>
-          By definition, meromorphic functions have no essential singularities.
-        </p>
-      </li>
-    </ul>
-  </p>
-  <p>
-	 Suppose that <m>f</m> is analytic at each point on a simple closed contour <m>C</m> and <m>f</m> is meromorphic in the domain
-	 that is the interior of <m>C</m>.  We assert without proof that <xref ref="Isolated_Zeros_Thm">Theorem</xref> can be extended
-	 to meromorphic functions so that <m>f</m> has at most a finite number of zeros that lie inside <m>C</m>.  Since the function
-	 <m>g(z)=\frac{1}{f(z)}</m> is also meromorphic, it can have only a finite number of zeros inside <m>C</m>, and so <m>f</m> can
-	 have at most a finite number of poles that lie inside <m>C</m>.
-  </p>
-  <p>
-	 The following theorem, known as the argument principle, is useful in determining the number of zeros and poles that a function
-	 has.
-  </p>
-  <theorem xml:id="Argument_Thm">
-    <title>Argument Principle</title>
-    <statement>
-      <p>
-		  Suppose that <m>f</m><nbsp/>is meromorphic in the simply connected domain <m>D</m> and that <m>C</m><nbsp/>is a simple
-		  closed positively oriented contour in <m>D</m><nbsp/>such that <m>f</m> has no zeros or poles for <m>z\in C</m>.  Then
-        <men xml:id="Zeros_minus_Poles">
-          \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f-P_f
-        </men>,
-		  where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m> and <m>P_f</m> is the number of
-		  poles of <m>f</m> that lie inside <m>C</m>.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-		Let <m>a_1, \, a_2, \, \ldots, \, a_{Z_f}</m> be the zeros of <m>f</m> inside <m>C</m> counted according to multiplicity and
-		let <m>b_1, \, b_2, \, \ldots, \, b_{P_f}</m> be the poles of <m>f</m> inside <m>C</m> counted according to multiplicity.
-		Then <m>f(z)</m> has the representation
-      <me>
-        f(z) = \frac{(z-a_1) (z-a_2) \cdots (z-a_{Z_f})}{(z-b_1)(z-b_2) \cdots (z-b_{P_f})}g(z)
-      </me>,
-      where <m>g</m> is analytic and nonzero on <m>C</m> and inside <m>C</m>.
-      A standard calculation shows that
-      <md>
-        <mrow>\!\!\!\!\!\!\!\!\! \frac{f\,'(z)}{f(z)}\amp=\frac{1}{(z-a_1)} + \frac{1}{(z-a_2)}+\cdots+\frac{1}{(z-a_{Z_f})}</mrow>
-		  <mrow xml:id="f__f_rep" number="yes">\amp - \frac{1}{(z-b_1)} - \frac{1}{(z-b_2)} - \cdots - \frac{1}{(z-b_{P_f})} +
-		  \frac{g\,'(z)}{g(z)}</mrow>
-      </md>.
-    </p>
-    <p>
-      <xref ref="x2Pi_or_zero">Corollary</xref> then gives
-      <md>
-        <mrow>\int_{C}\frac{dz}{(z-a_j)} \amp = 2\pi i,  \text{ for }   j=1,2,\ldots ,Z_f,  \text{ and }</mrow>
-        <mrow>\int_{C}\frac{dz}{(z-b_k)} \amp = 2\pi i,  \text{ for }   k=1,2,\ldots ,P_f</mrow>
-      </md>.
-    </p>
-    <p>
-		The function <m>\frac{g\,'(z)}{g(z)}</m> is analytic inside and on <m>C</m>, so the Cauchy-Goursat theorem gives
-		<m>\int_{C}\frac{g\,'(z)}{g(z)}\,dz=0</m>. These facts lead to the conclusion of our theorem if we integrate both sides of
-		Equation <xref ref="f__f_rep"/> over <m>C</m>.
-    </p>
-  </proof>
-  <corollary xml:id="Int_f__f___N_Z_">
-    <statement>
-      <p>
-		  Suppose that <m>f</m> is analytic in the simply connected domain <m>D</m>. Let <m>C</m> be a simple closed positively
-		  oriented contour in <m>D</m> such that for <m>z\in C</m>, <m>f(z) \ne 0</m>. Then
-        <me>
-          \frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f
-        </me>,
-        where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m>.
-      </p>
-    </statement>
-  </corollary>
-  <remark>
-    <p>
-		Certain feedback control systems in engineering must be stable. A test for stability involves the function <m>G(z)
-		=1+F(z)</m>, where <m>F</m> is a rational function. If <m>G</m> does not have any zeros in the region <m>\{z:\mathrm{Re}(z)
-		\ge 0\}</m>, then the system is stable. We determine the number of zeros of <m>G</m> by writing <m>F(z)
-		=\frac{P(z)}{Q(z)}</m>, where <m>P</m> and <m>Q</m> are polynomials with no common zero. Then <m>G(z) =\frac{ Q(z)
-		+P(z)}{Q(z)}</m>, and we can check for the zeros of <m>Q(z) +P(z)</m> by using <xref ref="Argument_Thm">Theorem</xref>. We
-		select a value <m>R</m> so that <m>G(z) \ne 0</m> for <m>\{z:|z| >R\}</m> and then integrate along the contour consisting of
-		the right half of the circle <m>C_R(0)</m> and the line segment between <m>iR</m> and <m>-iR</m>. This method is known as
-		the <em>Nyquist stability criterion</em>.
-    </p>
-  </remark>
-  <p>
-	 Why do we label <xref ref="Argument_Thm">Theorem</xref> as the <em>argument principle</em>? The answer lies with a
-	 fascinating application known as the <em> winding number</em>. Recall that a branch of the logarithm function,
-	 <m>\log_{\alpha}</m>, is defined by <me> \log_{\alpha}z=\ln |z| +i\arg_{\alpha}z=\ln r+i\phi </me>, where <m>z=re^{i\phi }\ne
-	 0</m> and <m>\alpha \lt \phi \le \alpha +2\pi</m>.  Loosely speaking, suppose that for some branch of the logarithm, the
-	 composite function <m>\log_{\alpha}(f(z) )</m> were analytic in a simply connected domain <m>D</m> containing the contour
-	 <m>C</m>.  This would imply that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
-	 <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z\in D</m>. <xref ref="DInt_Thm">Theorems</xref> and <xref ref="Argument_Thm"></xref>
-	 would then tell us that, as <m>z</m> winds around the curve <m>C</m>, the quantity <m>\log_{\alpha}(f(z) )=\ln |f(z)|
-	 +i\arg_{\alpha}f(z)</m> would change by <m>2\pi i(Z_f-P_f)</m>.  Since <m>2\pi i(Z_f-P_f)</m> is purely imaginary, this result
-	 tells us that <m>\arg_{a}f(z)</m> would change by <m>2\pi (Z_f-P_f)</m> radians.  In other words, as <m>z</m> winds around
-	 <m>C</m>, the integral <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}\,dz</m> would count how many times the curve
-	 <m>f(C)</m> winds around the origin.
-  </p>
-  <p>
-	 Unfortunately, we can't always claim that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
-	 <m>\frac{f\,'(z)}{f(z)}</m> for all <m>z \in D</m>. If it were, the Cauchy-Goursat theorem would imply that <m>\frac{1}{2\pi
-	 i}\int_{C} \frac{f\,'(z)}{f(z)}dz=0</m>. Nevertheless, the heuristics that we gave<mdash/>indicating that <m>\frac{1}{2\pi i}
-	 \int_{C}\frac{f\,'(z)}{f(z)}dz</m> counts how many times the curve <m>f(C)</m> winds around the origin<mdash/>still hold true,
-	 as we now demonstrate.
-  </p>
-  <p>
-	 Suppose that <m>C:z(t)=x(t)+iy(t)</m> for <m>a \le t \le b</m> is a simple closed contour and that we let <m>a=t_0\lt t_1\lt
-	 \cdots\lt t_n=b</m> be a partition of the interval <m>[a,b]</m>. For <m>k=0,1,\ldots,n</m>, we let <m>z_k=z(t_k)</m> denote
-	 the corresponding points on <m>C</m>, where <m>z_0=z_n</m>. If <m>z^*</m> lies inside <m>C</m>, then the curve <m>C:z(t)</m>
-	 winds around <m>z^*</m> once as <m>t</m> goes from <m>a</m> to <m>b</m>, as shown in <xref ref="fig_ch-08-10">Figure</xref>.
-  </p>
-  <p>
-	 Now suppose that a function <m>f</m> is analytic at each point on <m>C</m> and meromorphic inside <m>C</m>. Then <m>f(C)</m>
-	 is a closed curve in the <m>w</m> plane that passes through the points <m>w_k=f(z_k)</m>, for <m>k=0,1,\ldots ,n</m>, where
-	 <m>w_0=w_n</m>. We can choose subintervals <m>[t_{k-1},t_k]</m> small enough so that, on the portion of <m>f(C)</m> between
-	 <m>w_{k-1}</m> and <m>w_k</m>, we can define a continuous branch of the logarithm 
-	 <me> \log_{\alpha_k}w=\ln |w| +i\arg_{\alpha_k}w = \ln \rho +i\phi </me>,
-	 where <m>w=\rho e^{i\phi }</m> and <m>\alpha_k\lt \phi \lt \alpha_k+2\pi</m>, as shown in
-	 <xref ref="fig_ch-08-11">Figure</xref>. Then
-    <me>
-      \log_{\alpha_k}f(z_k) -\log_{\alpha_k}f(z_{k-1}) = \ln \rho _k-\ln \rho _{k-1}+i\Delta \phi _k
-    </me>,
-	 where <m>\Delta \phi _k=\phi _k-\phi _{k-1}</m> measures in radians the amount that the portion of the curve <m>f(C)</m>
-	 between <m>w_k</m> and <m>w_{k-1}</m> winds around the origin. With small enough subintervals <m>[ t_{k-1},t_k]</m>, the
-	 angles <m>\alpha_{k-1}</m> and <m>\alpha_k</m> might be different, but the values <m>\arg_{\alpha_{k-1}}w_{k-1}</m> and
-	 <m>\arg _{\alpha_k}w_{k-1}</m> will be the same, so that <m>\log_{\alpha_{k-1}}w_{k-1}=\log_{\alpha_k}w_{k-1}</m>.
-  </p>
-  <figure xml:id="fig_ch-08-11">
-    <caption>The points <m>z_k</m> on the contour <m>C</m> that winds around <m>z^*</m></caption>
-    <image width="73%" source="figs/ch-08/ch-08-fig-11.svg"/>
-  </figure>
-  <p>
+<title>The Argument Principle and Rouch&#xe9;'s Theorem</title>
+	<p>
+		We now derive two results based on Cauchy<nbsp/>'s residue theorem. They have important practical applications and pertain
+		only to functions all of whose isolated singularities are poles.
+	</p>
+	<definition>
+	<title>Meromorphic function</title>
+		<statement>
+			<p>
+				A function <m>f</m> is said to be meromorphic in a domain <m>D</m> provided the only singularities of <m>f</m> are
+				isolated poles and removable singularities.
+			</p>
+		</statement>
+	</definition>
+	<p>
+		We make three important observations relating to this definition.
+		<ul>
+			<li>
+				<p>
+					Analytic functions are a special case of meromorphic functions.
+				</p>
+			</li>
+			<li>
+				<p>
+					Rational functions <m>f(z) =\frac{{P(z)}}{{Q(z)}}</m>, where <m>P(z)</m> and <m>Q(z)</m> are polynomials, are
+					meromorphic in the entire complex plane.
+				</p>
+			</li>
+			<li>
+				<p>
+					By definition, meromorphic functions have no essential singularities.
+				</p>
+			</li>
+		</ul>
+	</p>
+	<p>
+		Suppose that <m>f</m> is analytic at each point on a simple closed contour <m>C</m> and <m>f</m> is meromorphic in the
+		domain that is the interior of <m>C</m>. We assert without proof that <xref ref="Isolated_Zeros_Thm">Theorem</xref> can be
+		extended to meromorphic functions so that <m>f</m> has at most a finite number of zeros that lie inside <m>C</m>. Since the
+		function <m>g(z)=\frac{1}{f(z)}</m> is also meromorphic, it can have only a finite number of zeros inside <m>C</m>, and so
+		<m>f</m> can have at most a finite number of poles that lie inside <m>C</m>.
+	</p>
+	<p>
+		The following theorem, known as the argument principle, is useful in determining the number of zeros and poles that a
+		function has.
+	</p>
+	<theorem xml:id="Argument_Thm">
+	<title>Argument Principle</title>
+		<statement>
+			<p>
+				Suppose that <m>f</m><nbsp/>is meromorphic in the simply connected domain <m>D</m> and that <m>C</m><nbsp/>is a simple
+				closed positively oriented contour in <m>D</m><nbsp/>such that <m>f</m> has no zeros or poles for <m>z\in C</m>. Then
+				<men xml:id="Zeros_minus_Poles">
+					\frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f-P_f
+				</men>,
+				where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m> and <m>P_f</m> is the number
+				of poles of <m>f</m> that lie inside <m>C</m>.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Let <m>a_1, a_2, \ldots, a_{Z_f}</m> be the zeros of <m>f</m> inside <m>C</m> counted according to multiplicity and let
+			<m>b_1, b_2, \ldots, b_{P_f}</m> be the poles of <m>f</m> inside <m>C</m> counted according to multiplicity.  Then
+			<m>f(z)</m> has the representation
+			<me>
+				f(z) = \frac{(z-a_1) (z-a_2) \cdots (z-a_{Z_f})}{(z-b_1)(z-b_2) \cdots (z-b_{P_f})}g(z)
+			</me>,
+			where <m>g</m> is analytic and nonzero on <m>C</m> and inside <m>C</m>. A standard calculation shows that
+			<md>
+				<mrow>
+					\hspace{-0.75in}\frac{f\,'(z)}{f(z)}\amp=\frac{1}{(z-a_1)} + \frac{1}{(z-a_2)}+\cdots+\frac{1}{(z-a_{Z_f})}
+				</mrow>
+				<mrow xml:id="f__f_rep" number="yes">
+					\amp - \frac{1}{(z-b_1)} - \frac{1}{(z-b_2)} - \cdots - \frac{1}{(z-b_{P_f})} + \frac{g\,'(z)}{g(z)}
+				</mrow>
+			</md>.
+		</p>
+		<p>
+			<xref ref="x2Pi_or_zero">Corollary</xref> then gives
+			<md>
+				<mrow>\int_{C}\frac{dz}{(z-a_j)} \amp = 2\pi i, \quad \text{for} \quad j=1,2,\ldots, Z_f, \quad \text{and}</mrow>
+				<mrow>\int_{C}\frac{dz}{(z-b_k)} \amp = 2\pi i, \quad \text{for} \quad k=1,2,\ldots, P_f</mrow>
+			</md>.
+		</p>
+		<p>
+			The function <m>\frac{g\,'(z)}{g(z)}</m> is analytic inside and on <m>C</m>, so the Cauchy-Goursat theorem gives
+			<m>\int_{C}\frac{g\,'(z)}{g(z)}\,dz=0</m>. These facts lead to the conclusion of our theorem if we integrate both sides
+			of <xref ref="f__f_rep">Equation</xref> over <m>C</m>.
+		</p>
+	</proof>
+	<corollary xml:id="Int_f__f___N_Z_">
+		<statement>
+			<p>
+				Suppose that <m>f</m> is analytic in the simply connected domain <m>D</m>. Let <m>C</m> be a simple closed positively
+				oriented contour in <m>D</m> such that for <m>z\in C</m>, <m>f(z) \ne 0</m>. Then
+				<me>
+					\frac{1}{2\pi i}\int_{C}\frac{f\,'(z)}{f(z)}\,dz = Z_f
+				</me>,
+				where <m>Z_f</m><nbsp/>is the number of zeros of <m>f</m><nbsp/>that lie inside <m>C</m>.
+			</p>
+		</statement>
+	</corollary>
+	<remark>
+		<p>
+			Certain feedback control systems in engineering must be stable. A test for stability involves the function <m>G(z)
+			=1+F(z)</m>, where <m>F</m> is a rational function. If <m>G</m> does not have any zeros in the region
+			<m>\{z:\mathrm{Re}(z) \ge 0\}</m>, then the system is stable. We determine the number of zeros of <m>G</m> by writing
+			<m>F(z) =\frac{P(z)}{Q(z)}</m>, where <m>P</m> and <m>Q</m> are polynomials with no common zero. Then 
+			<m>G(z) =\frac{ Q(z) +P(z)}{Q(z)}</m>, and we can check for the zeros of <m>Q(z) +P(z)</m> by using
+			<xref ref="Argument_Thm">Theorem</xref>. We select a value <m>R</m> so that <m>G(z) \ne 0</m> for <m>\{z:|z| >R\}</m> and
+			then integrate along the contour consisting of the right half of the circle <m>C_R(0)</m> and the line segment between
+			<m>iR</m> and <m>-iR</m>. This method is known as the <em>Nyquist stability criterion</em>.
+		</p>
+	</remark>
+	<p>
+		Why do we label <xref ref="Argument_Thm">Theorem</xref> as the <em>argument principle</em>? The answer lies with a
+		fascinating application known as the <em> winding number</em>. Recall that a branch of the logarithm function,
+		<m>\log_{\alpha}</m>, is defined by <me> \log_{\alpha}z=\ln |z| +i\arg_{\alpha}z=\ln r+i\phi </me>, where <m>z=re^{i\phi
+		}\ne 0</m> and <m>\alpha \lt \phi \le \alpha +2\pi</m>. Loosely speaking, suppose that for some branch of the logarithm,
+		the composite function <m>\log_{\alpha}(f(z) )</m> were analytic in a simply connected domain <m>D</m> containing the
+		contour <m>C</m>.  This would imply that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+		<m>\frac{f\,'(z)}{f(z)}</m> for all <m>z\in D</m>. <xref ref="DInt_Thm">Theorems</xref> and <xref ref="Argument_Thm"></xref>
+		would then tell us that, as <m>z</m> winds around the curve <m>C</m>, the quantity <m>\log_{\alpha}(f(z) )=\ln |f(z)|
+		+i\arg_{\alpha}f(z)</m> would change by <m>2\pi i(Z_f-P_f)</m>. Since <m>2\pi i(Z_f-P_f)</m> is purely imaginary, this
+		result tells us that <m>\arg_{a}f(z)</m> would change by <m>2\pi (Z_f-P_f)</m> radians. In other words, as <m>z</m> winds
+		around <m>C</m>, the integral <m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}\,dz</m> would count how many times the curve
+		<m>f(C)</m> winds around the origin.
+	</p>
+	<p>
+		Unfortunately, we can't always claim that <m>\log_{\alpha}\big(f(z)\big)</m> is an antiderivative of the function
+		<m>\frac{f\,'(z)}{f(z)}</m> for all <m>z \in D</m>. If it were, the Cauchy-Goursat theorem would imply that 
+		<m>\frac{1}{2\pi i}\int_{C} \frac{f\,'(z)}{f(z)}dz=0</m>. Nevertheless, the heuristics that we gave<mdash/>indicating that
+		<m>\frac{1}{2\pi i} \int_{C}\frac{f\,'(z)}{f(z)}dz</m> counts how many times the curve <m>f(C)</m> winds around the
+		origin<mdash/>still hold true, as we now demonstrate.
+	</p>
+	<p>
+		Suppose that <m>C:z(t)=x(t)+iy(t)</m> for <m>a \le t \le b</m> is a simple closed contour and that we let 
+		<m>a=t_0\lt t_1\lt \cdots\lt t_n=b</m> be a partition of the interval <m>[a,b]</m>. For <m>k=0,1,\ldots,n</m>, we let
+		<m>z_k=z(t_k)</m> denote the corresponding points on <m>C</m>, where <m>z_0=z_n</m>. If <m>z^*</m> lies inside <m>C</m>,
+		then the curve <m>C:z(t)</m> winds around <m>z^*</m> once as <m>t</m> goes from <m>a</m> to <m>b</m>, as shown in
+		<xref ref="fig_ch-08-11">Figure</xref>.
+	</p>
+	<figure xml:id="fig_ch-08-11">
+		<caption>The points <m>z_k</m> on the contour <m>C</m> that winds around <m>z^*</m></caption>
+		<image width="73%" source="figs/ch-08/ch-08-fig-11.svg"/>
+	</figure>
+	<p>
+		Now suppose that a function <m>f</m> is analytic at each point on <m>C</m> and meromorphic inside <m>C</m>. Then <m>f(C)</m>
+		is a closed curve in the <m>w</m> plane that passes through the points <m>w_k=f(z_k)</m>, for <m>k=0,1,\ldots ,n</m>, where
+		<m>w_0=w_n</m>. We can choose subintervals <m>[t_{k-1},t_k]</m> small enough so that, on the portion of <m>f(C)</m> between
+		<m>w_{k-1}</m> and <m>w_k</m>, we can define a continuous branch of the logarithm 
+		<me>
+			\log_{\alpha_k}w=\ln |w| +i\arg_{\alpha_k}w = \ln \rho +i\phi 
+		</me>,
+		where <m>w=\rho e^{i\phi }</m> and <m>\alpha_k\lt \phi \lt \alpha_k+2\pi</m>, as shown in
+		<xref ref="fig_ch-08-12">Figure</xref>. Then
+		<me>
+			\log_{\alpha_k}f(z_k) -\log_{\alpha_k}f(z_{k-1}) = \ln \rho _k-\ln \rho _{k-1}+i\Delta \phi _k
+		</me>,
+		where <m>\Delta \phi _k=\phi _k-\phi _{k-1}</m> measures in radians the amount that the portion of the curve <m>f(C)</m>
+		between <m>w_k</m> and <m>w_{k-1}</m> winds around the origin. With small enough subintervals <m>[ t_{k-1},t_k]</m>, the
+		angles <m>\alpha_{k-1}</m> and <m>\alpha_k</m> might be different, but the values <m>\arg_{\alpha_{k-1}}w_{k-1}</m> and
+		<m>\arg _{\alpha_k}w_{k-1}</m> will be the same, so that <m>\log_{\alpha_{k-1}}w_{k-1}=\log_{\alpha_k}w_{k-1}</m>.
+	</p>
+	<figure xml:id="fig_ch-08-12">
+		<caption>The points <m>z_k</m> on the contour <m>C</m> that winds around <m>z^*</m></caption>
+		<image width="73%" source="figs/ch-08/ch-08-fig-12.svg"/>
+	</figure>
+	<p>
     We can now show why <m>\int_{C}\frac{f\,'(z)}{f(z)}\,dz</m> counts the number of times that <m>f(C)</m> winds around the origin.
     We parametrize <m>C:z(t)</m>, for <m>a\le t \le b</m>,
     and choose the appropriate branches of <m>\log_{\alpha_k}w</m>,giving
@@ -186,11 +195,11 @@
     <statement>
       <p>
         The image of the circle <m>C_2(0)</m> under <m>f(z)=z^2+z</m> is the curve given by
-        <m>\{(x,y) =(4\cos 2t+2\cos t,4\sin 2t+2\sin t) :0\lt t\lt 2\pi \}</m> shown in <xref ref="fig_ch-08-12">Figure</xref>.
+        <m>\{(x,y) =(4\cos 2t+2\cos t,4\sin 2t+2\sin t) :0\lt t\lt 2\pi \}</m> shown in <xref ref="fig_ch-08-13">Figure</xref>.
       </p>
-      <figure xml:id="fig_ch-08-12">
+      <figure xml:id="fig_ch-08-13">
         <caption>The image curve <m>f\big(C_2(0)\big)</m> under <m>f(z) =z^2+z</m></caption>
-        <image width="73%" source="figs/ch-08/ch-08-fig-12.svg"/>
+        <image width="73%" source="figs/ch-08/ch-08-fig-13.svg"/>
       </figure>
       <p>
 		  Note that the image curve <m>f\big(C_2(0)\big)</m> winds twice around the origin.  We check this by computing
