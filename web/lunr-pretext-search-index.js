@@ -11077,7 +11077,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.3",
   "title": "Mappings Involving Elementary Functions",
-  "body": " Mappings Involving Elementary Functions   In Section we showed that the function is a one-to-one mapping of the fundamental period strip in the plane onto the plane with the point deleted. Because , the mapping is a conformal mapping at each point in the complex plane. The family of horizontal lines for and the segments for form an orthogonal grid in the fundamental period strip. Their images under the mapping are the rays and and the circles , respectively. These images form an orthogonal curvilinear grid in the plane, as shown in Figure . If , then the rectangle is mapped one-to-one and onto the region . The inverse mapping is the principal branch of the logarithm .   The conformal mapping    In this section we show how compositions of conformal transformations are used to construct mappings with specified characteristics.    Show that the transformation is a one-to-one conformal mapping of the horizontal strip onto the disk . Furthermore, the -axis is mapped onto the lower semicircle bounding the disk, and the line is mapped onto the upper semicircle.    The function is the composition of followed by . The transformation maps the horizontal strip onto the upper half plane ; the -axis is mapped on to the positive -axis; and the line is mapped onto the negative -axis. Then the bilinear transformation maps the upper half plane onto the disk , the positive -axis is mapped onto the lower semicircle; and the negative -axis onto the upper semicircle. Figures and illustrate the composite mappings.      Show that the transformation is a one-to-one conformal mapping of the unit disk onto the horizontal strip . Furthermore, the upper semicircle of the disk is mapped onto the line and the lower semicircle onto .   The composite transformation     The composite transformation      The function is the composition of the bilinear transformation followed by the logarithmic mapping . The image of the disk under the bilinear mapping is the right half-plane ; the upper semicircle is mapped onto the positive -axis; and the lower semicircle is mapped onto the negative -axis. The logarithmic function then maps the right half-plane onto the horizontal strip, the image of the positive -axis is the line , and the image of the negative -axis is the line . Figures 9.11 and 9.12 illustrate the composite mappings.      Show that the transformation is a one-to-one conformal mapping of the portion of the disk that lies in the upper half-plane onto the upper half-plane . Furthermore, show that the image of the semicircular portion of the boundary is mapped onto the negative -axis, and the segment , is mapped onto the positive -axis.    The function is the composition of the bilinear transformation followed by the mapping . The image of the half-disk under the bilinear mapping is the first quadrant , ; the image of the segment , , is the positive -axis; and the image of the semicircle is the positive -axis. The mapping then maps the first quadrant in the plane onto the upper half-plane , as shown in Figure .     The composite transformation      Consider the function , which is the composition of the functions and , where the branch of the square root is given by the formula , for . Show that the transformation maps the upper half-plane one-to-one and onto the upper half-plane slit along the segment .    The function maps the upper half-plane one-to-one and onto the -plane slit along the ray , . Then the function maps the slit plane onto the slit half-plane, as shown in Figure .     The composite transformation and the intermediate steps and     The images of the horizontal lines are curves in the plane that bend around the segment from to . The curves represent the streamlines of a fluid flowing across the plane. We discuss fluid flows in more detail in Section .     The Mapping  The double-valued function has a branch that is continuous for values of distant from the origin. This feature is spurred by our desire for the approximation to hold for values of distant from the origin. We begin by expressing as , where the principal branch of the square root function is used in both factors. We claim that the mapping is a one-to-one conformal mapping from the domain set , consisting of the plane slit along the segment , onto the range set , consisting of the plane slit along the segment . To verify this claim, we investigate the two formulas on the right side of Equation and express them in the form , where and , and , where and .  The discontinuities of and are points on the real axis such that and , respectively. We now show that is continuous on the ray .  We let denote a point on the ray , and then obtain the following limits as approaches from the upper and lower half-planes, respectively: { ,  } and { .  Both limits agree with the value of , so it follows that is continuous along the ray .  We can easily find the inverse mapping and express it similarly: , where the branches of the square root function are given by , where , and , and , where , and .  A similar argument shows that is continuous for all except those points that lie on the segment . Verification that hold for in and in , respectively, is straightforward. Therefore we conclude that is a one-to-one mapping from onto . Verifying that is also analytic on the ray , is tedious. We leave it as a challenging exercise.    The Riemann Surface for  Using the other branch of the square root, we find that is a one-to-one conformal mapping from the domain set , consisting of the plane slit along the segment , onto the range set , consisting of the plane slit along the segment , . Figure shows the sets and for and and for .  We obtain the Riemann surface for by gluing the edges of and together and the edges of and together. In the domain set, we glue edges to to to , and to . In the image set, we glue edges to , to , to , and to . The result is a Riemann domain surface and Riemann image surface for the mapping, as illustrated in Figures (a) and (b), respectively.   The mappings and     The Riemann surfaces for the mapping     Exercises    Find the image of the semi-infinite strip , , under the transformation .    The portion of the disk that lies in the first quadrant .      Find the image of the rectangle , , under the transformation .      Find the image of the first quadrant , , under .    The horizontal strip .      Find the image of the annulus under .      Show that the multivalued function maps the annulus onto the vertical strip .    The vertical strip .      Show that maps the portion of the right half-plane that lies to the right of the hyperbola onto the unit disk .      What is the image the horizontal strip when mapped by ?    The region .      Show that maps the horizontal strip onto the unit disk .      Find the image of the upper half-plane under .    The horizontal strip .      Find the image of the portion of the upper half-plane that lies outside the circle under the transformation .      Show that the function maps the portion of the disk that lies in the first quadrant onto the portion of the upper half plane that lies outside the unit disk.    The portion of the upper half-plane that lies in the region .      Find the image of the upper half-plane under the transformation .      Find the branch of that maps the right half-plane onto the right half-plane slit along the segment .     , where the principal brance of the square root is used.      Show that the transformation maps the portion of the first quadrant , , that lies outside the circle onto the first quadrant .      Find the image of the sector , under .    The unit disk .      Show that the function in Equation is analytic on the ray .      "
+  "body": " Mappings Involving Elementary Functions   In Section we showed that the function is a one-to-one mapping of the fundamental period strip in the plane onto the plane with the point deleted. Because , the mapping is a conformal mapping at each point in the complex plane. The family of horizontal lines for and the segments for form an orthogonal grid in the fundamental period strip. Their images under the mapping are the rays and and the circles , respectively. These images form an orthogonal curvilinear grid in the plane, as shown in Figure . If , then the rectangle is mapped one-to-one and onto the region . The inverse mapping is the principal branch of the logarithm .   The conformal mapping    In this section we show how compositions of conformal transformations are used to construct mappings with specified characteristics.    Show that the transformation is a one-to-one conformal mapping of the horizontal strip onto the disk . Furthermore, the -axis is mapped onto the lower semicircle bounding the disk, and the line is mapped onto the upper semicircle.    The function is the composition of followed by . The transformation maps the horizontal strip onto the upper half plane ; the -axis is mapped on to the positive -axis; and the line is mapped onto the negative -axis. Then the bilinear transformation maps the upper half plane onto the disk , the positive -axis is mapped onto the lower semicircle; and the negative -axis onto the upper semicircle. Figure illustrates the composite mappings.   The composite transformation        Show that the transformation is a one-to-one conformal mapping of the unit disk onto the horizontal strip . Furthermore, the upper semicircle of the disk is mapped onto the line and the lower semicircle onto .    The function is the composition of the bilinear transformation followed by the logarithmic mapping . The image of the disk under the bilinear mapping is the right half-plane ; the upper semicircle is mapped onto the positive -axis; and the lower semicircle is mapped onto the negative -axis. The logarithmic function then maps the right half-plane onto the horizontal strip, the image of the positive -axis is the line , and the image of the negative -axis is the line . Figure illustrates the composite mappings.  The composite transformation         Show that the transformation is a one-to-one conformal mapping of the portion of the disk that lies in the upper half-plane onto the upper half-plane . Furthermore, show that the image of the semicircular portion of the boundary is mapped onto the negative -axis, and the segment , is mapped onto the positive -axis.    The function is the composition of the bilinear transformation followed by the mapping . The image of the half-disk under the bilinear mapping is the first quadrant , ; the image of the segment , , is the positive -axis; and the image of the semicircle is the positive -axis. The mapping then maps the first quadrant in the plane onto the upper half-plane , as shown in Figure .   The composite transformation        Consider the function , which is the composition of the functions and , where the branch of the square root is given by the formula , for . Show that the transformation maps the upper half-plane one-to-one and onto the upper half-plane slit along the segment .    The function maps the upper half-plane one-to-one and onto the -plane slit along the ray , . Then the function maps the slit plane onto the slit half-plane, as shown in Figure .   The composite transformation and the intermediate steps and        The images of the horizontal lines are curves in the plane that bend around the segment from to . The curves represent the streamlines of a fluid flowing across the plane. We discuss fluid flows in more detail in Section .     The Mapping  The double-valued function has a branch that is continuous for values of distant from the origin. This feature is spurred by our desire for the approximation to hold for values of distant from the origin. We begin by expressing as , where the principal branch of the square root function is used in both factors. We claim that the mapping is a one-to-one conformal mapping from the domain set , consisting of the plane slit along the segment , onto the range set , consisting of the plane slit along the segment . To verify this claim, we investigate the two formulas on the right side of Equation and express them in the form , where and , and , where and .  The discontinuities of and are points on the real axis such that and , respectively. We now show that is continuous on the ray .  We let denote a point on the ray , and then obtain the following limits as approaches from the upper and lower half-planes, respectively:  .  Both limits agree with the value of , so it follows that is continuous along the ray .  We can easily find the inverse mapping and express it similarly: , where the branches of the square root function are given by , where , and , and , where , and .  A similar argument shows that is continuous for all except those points that lie on the segment . Verification that hold for in and in , respectively, is straightforward. Therefore we conclude that is a one-to-one mapping from onto . Verifying that is also analytic on the ray , is tedious. We leave it as a challenging exercise.    The Riemann Surface for  Using the other branch of the square root, we find that is a one-to-one conformal mapping from the domain set , consisting of the plane slit along the segment , onto the range set , consisting of the plane slit along the segment , . Figure shows the sets and for and and for .  We obtain the Riemann surface for by gluing the edges of and together and the edges of and together. In the domain set, we glue edges to to to , and to . In the image set, we glue edges to , to , to , and to . The result is a Riemann domain surface and Riemann image surface for the mapping, as illustrated in (a) and (b), respectively.   The mappings and     The Riemann surfaces for the mapping      Exercises    Find the image of the semi-infinite strip , , under the transformation .    The portion of the disk that lies in the first quadrant .      Find the image of the rectangle , , under the transformation .      Find the image of the first quadrant , , under .    The horizontal strip .      Find the image of the annulus under .      Show that the multivalued function maps the annulus onto the vertical strip .    The vertical strip .      Show that maps the portion of the right half-plane that lies to the right of the hyperbola onto the unit disk .      What is the image the horizontal strip when mapped by ?    The region .      Show that maps the horizontal strip onto the unit disk .      Find the image of the upper half-plane under .    The horizontal strip .      Find the image of the portion of the upper half-plane that lies outside the circle under the transformation .      Show that the function maps the portion of the disk that lies in the first quadrant onto the portion of the upper half plane that lies outside the unit disk.    The portion of the upper half-plane that lies in the region .      Find the image of the upper half-plane under the transformation .      Find the branch of that maps the right half-plane onto the right half-plane slit along the segment .     , where the principal brance of the square root is used.      Show that the transformation maps the portion of the first quadrant , , that lies outside the circle onto the first quadrant .      Find the image of the sector , under .    The unit disk .      Show that the function in Equation is analytic on the ray .     "
 },
 {
   "id": "fig_ch-09-09",
@@ -11095,16 +11095,16 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "9.3.2",
   "title": "",
-  "body": "  Show that the transformation is a one-to-one conformal mapping of the horizontal strip onto the disk . Furthermore, the -axis is mapped onto the lower semicircle bounding the disk, and the line is mapped onto the upper semicircle.    The function is the composition of followed by . The transformation maps the horizontal strip onto the upper half plane ; the -axis is mapped on to the positive -axis; and the line is mapped onto the negative -axis. Then the bilinear transformation maps the upper half plane onto the disk , the positive -axis is mapped onto the lower semicircle; and the negative -axis onto the upper semicircle. Figures and illustrate the composite mappings.   "
+  "body": "  Show that the transformation is a one-to-one conformal mapping of the horizontal strip onto the disk . Furthermore, the -axis is mapped onto the lower semicircle bounding the disk, and the line is mapped onto the upper semicircle.    The function is the composition of followed by . The transformation maps the horizontal strip onto the upper half plane ; the -axis is mapped on to the positive -axis; and the line is mapped onto the negative -axis. Then the bilinear transformation maps the upper half plane onto the disk , the positive -axis is mapped onto the lower semicircle; and the negative -axis onto the upper semicircle. Figure illustrates the composite mappings.   The composite transformation     "
 },
 {
   "id": "sec_elementary-mappings-2-5",
   "level": "2",
   "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-5",
   "type": "Example",
-  "number": "9.3.3",
+  "number": "9.3.4",
   "title": "",
-  "body": "  Show that the transformation is a one-to-one conformal mapping of the unit disk onto the horizontal strip . Furthermore, the upper semicircle of the disk is mapped onto the line and the lower semicircle onto .   The composite transformation     The composite transformation      The function is the composition of the bilinear transformation followed by the logarithmic mapping . The image of the disk under the bilinear mapping is the right half-plane ; the upper semicircle is mapped onto the positive -axis; and the lower semicircle is mapped onto the negative -axis. The logarithmic function then maps the right half-plane onto the horizontal strip, the image of the positive -axis is the line , and the image of the negative -axis is the line . Figures 9.11 and 9.12 illustrate the composite mappings.   "
+  "body": "  Show that the transformation is a one-to-one conformal mapping of the unit disk onto the horizontal strip . Furthermore, the upper semicircle of the disk is mapped onto the line and the lower semicircle onto .    The function is the composition of the bilinear transformation followed by the logarithmic mapping . The image of the disk under the bilinear mapping is the right half-plane ; the upper semicircle is mapped onto the positive -axis; and the lower semicircle is mapped onto the negative -axis. The logarithmic function then maps the right half-plane onto the horizontal strip, the image of the positive -axis is the line , and the image of the negative -axis is the line . Figure illustrates the composite mappings.  The composite transformation      "
 },
 {
   "id": "sec_elementary-mappings-2-6",
@@ -11113,39 +11113,21 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "9.3.6",
   "title": "",
-  "body": "  Show that the transformation is a one-to-one conformal mapping of the portion of the disk that lies in the upper half-plane onto the upper half-plane . Furthermore, show that the image of the semicircular portion of the boundary is mapped onto the negative -axis, and the segment , is mapped onto the positive -axis.    The function is the composition of the bilinear transformation followed by the mapping . The image of the half-disk under the bilinear mapping is the first quadrant , ; the image of the segment , , is the positive -axis; and the image of the semicircle is the positive -axis. The mapping then maps the first quadrant in the plane onto the upper half-plane , as shown in Figure .   "
+  "body": "  Show that the transformation is a one-to-one conformal mapping of the portion of the disk that lies in the upper half-plane onto the upper half-plane . Furthermore, show that the image of the semicircular portion of the boundary is mapped onto the negative -axis, and the segment , is mapped onto the positive -axis.    The function is the composition of the bilinear transformation followed by the mapping . The image of the half-disk under the bilinear mapping is the first quadrant , ; the image of the segment , , is the positive -axis; and the image of the semicircle is the positive -axis. The mapping then maps the first quadrant in the plane onto the upper half-plane , as shown in Figure .   The composite transformation     "
 },
 {
-  "id": "fig_ch-09-12",
+  "id": "sec_elementary-mappings-2-7",
   "level": "2",
-  "url": "sec_elementary-mappings.html#fig_ch-09-12",
-  "type": "Figure",
-  "number": "9.3.7",
+  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-7",
+  "type": "Example",
+  "number": "9.3.8",
   "title": "",
-  "body": " The composite transformation   "
+  "body": "  Consider the function , which is the composition of the functions and , where the branch of the square root is given by the formula , for . Show that the transformation maps the upper half-plane one-to-one and onto the upper half-plane slit along the segment .    The function maps the upper half-plane one-to-one and onto the -plane slit along the ray , . Then the function maps the slit plane onto the slit half-plane, as shown in Figure .   The composite transformation and the intermediate steps and      "
 },
 {
   "id": "sec_elementary-mappings-2-8",
   "level": "2",
   "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-8",
-  "type": "Example",
-  "number": "9.3.8",
-  "title": "",
-  "body": "  Consider the function , which is the composition of the functions and , where the branch of the square root is given by the formula , for . Show that the transformation maps the upper half-plane one-to-one and onto the upper half-plane slit along the segment .    The function maps the upper half-plane one-to-one and onto the -plane slit along the ray , . Then the function maps the slit plane onto the slit half-plane, as shown in Figure .   "
-},
-{
-  "id": "fig_ch-09-13",
-  "level": "2",
-  "url": "sec_elementary-mappings.html#fig_ch-09-13",
-  "type": "Figure",
-  "number": "9.3.9",
-  "title": "",
-  "body": " The composite transformation and the intermediate steps and   "
-},
-{
-  "id": "sec_elementary-mappings-2-10",
-  "level": "2",
-  "url": "sec_elementary-mappings.html#sec_elementary-mappings-2-10",
   "type": "Remark",
   "number": "9.3.10",
   "title": "",
@@ -11174,7 +11156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-2",
   "type": "Exercise",
-  "number": "9.3.2.1",
+  "number": "9.3.3.1",
   "title": "",
   "body": "  Find the image of the semi-infinite strip , , under the transformation .    The portion of the disk that lies in the first quadrant .   "
 },
@@ -11183,7 +11165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-3",
   "type": "Exercise",
-  "number": "9.3.2.2",
+  "number": "9.3.3.2",
   "title": "",
   "body": "  Find the image of the rectangle , , under the transformation .   "
 },
@@ -11192,7 +11174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-4",
   "type": "Exercise",
-  "number": "9.3.2.3",
+  "number": "9.3.3.3",
   "title": "",
   "body": "  Find the image of the first quadrant , , under .    The horizontal strip .   "
 },
@@ -11201,7 +11183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-5",
   "type": "Exercise",
-  "number": "9.3.2.4",
+  "number": "9.3.3.4",
   "title": "",
   "body": "  Find the image of the annulus under .   "
 },
@@ -11210,7 +11192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-6",
   "type": "Exercise",
-  "number": "9.3.2.5",
+  "number": "9.3.3.5",
   "title": "",
   "body": "  Show that the multivalued function maps the annulus onto the vertical strip .    The vertical strip .   "
 },
@@ -11219,7 +11201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-7",
   "type": "Exercise",
-  "number": "9.3.2.6",
+  "number": "9.3.3.6",
   "title": "",
   "body": "  Show that maps the portion of the right half-plane that lies to the right of the hyperbola onto the unit disk .   "
 },
@@ -11228,7 +11210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-8",
   "type": "Exercise",
-  "number": "9.3.2.7",
+  "number": "9.3.3.7",
   "title": "",
   "body": "  What is the image the horizontal strip when mapped by ?    The region .   "
 },
@@ -11237,7 +11219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-9",
   "type": "Exercise",
-  "number": "9.3.2.8",
+  "number": "9.3.3.8",
   "title": "",
   "body": "  Show that maps the horizontal strip onto the unit disk .   "
 },
@@ -11246,7 +11228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-10",
   "type": "Exercise",
-  "number": "9.3.2.9",
+  "number": "9.3.3.9",
   "title": "",
   "body": "  Find the image of the upper half-plane under .    The horizontal strip .   "
 },
@@ -11255,7 +11237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-11",
   "type": "Exercise",
-  "number": "9.3.2.10",
+  "number": "9.3.3.10",
   "title": "",
   "body": "  Find the image of the portion of the upper half-plane that lies outside the circle under the transformation .   "
 },
@@ -11264,7 +11246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-12",
   "type": "Exercise",
-  "number": "9.3.2.11",
+  "number": "9.3.3.11",
   "title": "",
   "body": "  Show that the function maps the portion of the disk that lies in the first quadrant onto the portion of the upper half plane that lies outside the unit disk.    The portion of the upper half-plane that lies in the region .   "
 },
@@ -11273,7 +11255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-13",
   "type": "Exercise",
-  "number": "9.3.2.12",
+  "number": "9.3.3.12",
   "title": "",
   "body": "  Find the image of the upper half-plane under the transformation .   "
 },
@@ -11282,7 +11264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-14",
   "type": "Exercise",
-  "number": "9.3.2.13",
+  "number": "9.3.3.13",
   "title": "",
   "body": "  Find the branch of that maps the right half-plane onto the right half-plane slit along the segment .     , where the principal brance of the square root is used.   "
 },
@@ -11291,7 +11273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-15",
   "type": "Exercise",
-  "number": "9.3.2.14",
+  "number": "9.3.3.14",
   "title": "",
   "body": "  Show that the transformation maps the portion of the first quadrant , , that lies outside the circle onto the first quadrant .   "
 },
@@ -11300,7 +11282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-16",
   "type": "Exercise",
-  "number": "9.3.2.15",
+  "number": "9.3.3.15",
   "title": "",
   "body": "  Find the image of the sector , under .    The unit disk .   "
 },
@@ -11309,7 +11291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_elementary-mappings.html#exercises_elementary-mappings-17",
   "type": "Exercise",
-  "number": "9.3.2.16",
+  "number": "9.3.3.16",
   "title": "",
   "body": "  Show that the function in Equation is analytic on the ray .   "
 },
