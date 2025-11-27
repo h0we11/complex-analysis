@@ -11302,25 +11302,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.4",
   "title": "Mapping by Trigonometric Functions",
-  "body": " Mapping by Trigonometric Functions   The trigonometric functions can be expressed with compositions that involve the exponential function followed by a bilinear function. We can find images of certain regions by following the shapes of successive images in the composite mapping.   The composite transformation      Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the unit disk .     Then, mapping can be considered to be the composition . The function maps the vertical strip one-to-one and onto the right half-plane . Then the bilinear transformation given by maps the half-plane one-to-one and onto the disk, as shown in Figure .      Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the plane slit along the rays , and .    Because for values of satisfying the inequality , it follows that is a conformal mapping. Using Equation 5, we write   If , then the image of the vertical line is the curve in the plane given by the parametric equations , for . Next, we rewrite these equations as   We now eliminate from these equations by squaring and using the hyperbolic identity . The result is the single equation .  The curve given by Equation is identified as a hyperbola in the plane that has foci at the points . Therefore the vertical line is mapped one-to-one onto the branch of the hyperbola given by Equation that passes through the point . If  , then it is the right branch; if , it is the left branch. The image of the -axis, which is the line , is the -axis. The images of several vertical lines are shown in Figure (a).   The transformation w =    The image of the horizontal segment is the curve in the plane given by the parametric equations for . We rewrite them as   We now eliminate from the equations by squaring and using the trigonometric identity . The result is the single equation .  The curve given by Equation is identified as an ellipse in the plane that passes through the points and and has foci at the points . Therefore, if , then , and the image of the horizontal segment is the portion of the ellipse given by Equation that lies in the upper half-plane . If , then it is the portion that lies in the lower half-plane. Figure (b) shows the images of several segments.      The Complex Arcsine Function  We now develop explicit formulas for the real and imaginary parts of the principal value of the arcsine function . We use this mapping to solve problems involving steady temperatures and ideal fluid flow in Section 9.7. The mapping is found by solving the equation for and expressed as functions of and . To solve for , we first equate the real and imaginary parts of Equation and obtain the equations   Then we eliminate from these equations and obtain the single equation .  If we treat as a constant, this equation represents a hyperbola in the plane, the foci occur at the points , and the transverse axis is given by . Therefore a point on the hyperbola must satisfy the equation   The quantity on the right side of this equation is the difference of the distances from to and from to . We now solve the equation for to obtain the real part: .  The principal branch of the real function is used in Equation , where the range values satisfy the inequality .  Similarly, we can start with Equation and obtain the equations . We then eliminate from these equations and obtain the single equation .  If we treat as a constant, then this equation represents an ellipse in the plane, the foci occur at the points , and the major axis has length . Therefore a point on this ellipse must satisfy the equation The quantity on the right side of this equation is the sum of the distances from to and from to .  The function maps points in the upper half (lower half) of the vertical strip onto the upper half-plane (lower half-plane), respectively, so we can solve the preceding equation and obtain as a function of and : , where , if , and , if . In Equation we use the real function given by , with .  Thus, the mapping is a one-to-one conformal mapping of the plane cut along the rays , and , onto the vertical strip in the -plane, which can be construed from Figure if we interchange the roles of the and planes. The image of the square , under , is shown in Figure . We obtained it by plotting the two families of curves and , where , . The formulas in Equations and are also convenient for evaluating , as shown in Example .   The mapping      Find the principal value .    Using Formulas and , we get .  Therefore, we have .    Is there any reason to assume that there exists a conformal mapping for some specified domain onto another domain ? Our final theorem concerning the existence of conformal mappings is attributed to Riemann and is presented in Lars V. Ahlfors, Complex Analysis (New York: McGraw-Hill) , 1966.   Riemann mapping theorem   If is any simply connected domain in the plane (other than the entire plane itself), then there exists a one-to-one conformal mapping that maps onto the unit disk .     Exercises    Find the image of the semi-infinite strip , under the mapping .    The portion of the disk that lies in the second quadrant .      Find the image of the vertical strip under the mapping .      Find the image of the vertical line under the transformation .    The right branch of the hyperbola .      Find the image of the horizontal line under the transformation .      Find the image of the rectangle under the transformation .    The region in the first quadrant that lies inside the ellipse given by and to the left of the hyperbola .      Find the image of the semi-infinite strip , under the mapping .      Compute the following limits:      ;     .       .     .       Use Equations and to evaluate the following:      ;       ;       ;       .       Show that maps the rectangle one-to-one and onto the portion of the upper half-plane that lies inside the ellipse .      Find the image of the vertical strip under the mapping .      Find the image of the horizontal strip under .    The upper half-plane .      Find the image of the right half-plane under the mapping       Find the image of the first quadrant , under .    The semi-infinite strip .      Find the image of the first quadrant , under .      Show that the transformation is a one-to-one conformal mapping of the semi-infinite strip , onto the upper half plane .    The upper half-plane .      Find the image of the semi-infinite strip , under the mapping .      "
+  "body": " Mapping by Trigonometric Functions   The trigonometric functions can be expressed with compositions that involve the exponential function followed by a bilinear function. We can find images of certain regions by following the shapes of successive images in the composite mapping.    Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the unit disk .     . Then, mapping can be considered to be the composition . The function maps the vertical strip one-to-one and onto the right half-plane . Then the bilinear transformation given by maps the half-plane one-to-one and onto the disk, as shown in Figure .  The composite transformation         Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the plane slit along the rays , and .    Because for values of satisfying the inequality , it follows that is a conformal mapping. Using Equation> , we write .  If , then the image of the vertical line is the curve in the plane given by the parametric equations , for . Next, we rewrite these equations as .  We now eliminate from these equations by squaring and using the hyperbolic identity . The result is the single equation .  The curve given by Equation is identified as a hyperbola in the plane that has foci at the points . Therefore the vertical line is mapped one-to-one onto the branch of the hyperbola given by Equation that passes through the point . If , then it is the right branch; if , it is the left branch. The image of the -axis, which is the line , is the -axis. The images of several vertical lines are shown in Figure .   The transformation w =    The image of the horizontal segment is the curve in the plane given by the parametric equations for . We rewrite them as .  We now eliminate from the equations by squaring and using the trigonometric identity . The result is the single equation .  The curve given by Equation is identified as an ellipse in the plane that passes through the points and and has foci at the points . Therefore, if , then , and the image of the horizontal segment is the portion of the ellipse given by Equation that lies in the upper half-plane . If , then it is the portion that lies in the lower half-plane. Figure also shows the images of several horizontal segments.      The Complex Arcsine Function  We now develop explicit formulas for the real and imaginary parts of the principal value of the arcsine function . We will use this mapping to solve problems involving steady temperatures and ideal fluid flow in Section . The mapping is found by solving the equation for and expressed as functions of and . To solve for , we first equate the real and imaginary parts of Equation and obtain the equations .  Then we eliminate from these equations and obtain the single equation .  If we treat as a constant, this equation represents a hyperbola in the plane, the foci occur at the points , and the transverse axis is given by . Therefore a point on the hyperbola must satisfy the equation .  The quantity on the right side of this equation is the difference of the distances from to and from to . We now solve the equation for to obtain the real part: .  The principal branch of the real function is used in Equation , where the range values satisfy the inequality .  Similarly, we can start with Equation and obtain the equations . We then eliminate from these equations and obtain the single equation .  If we treat as a constant, then this equation represents an ellipse in the plane, the foci occur at the points , and the major axis has length . Therefore a point on this ellipse must satisfy the equation . The quantity on the right side of this equation is the sum of the distances from to and from to .  The function maps points in the upper half (lower half) of the vertical strip onto the upper half-plane (lower half-plane), respectively, so we can solve the preceding equation and obtain as a function of and : , where , if , and , if . In Equation we use the real function given by , with .  Thus, the mapping is a one-to-one conformal mapping of the plane cut along the rays , and , onto the vertical strip in the -plane, which can be construed from Figure if we interchange the roles of the and planes. The image of the square , under , is shown in Figure . We obtained it by plotting the two families of curves and , where , . The formulas in Equations and are also convenient for evaluating , as shown in Example .   The mapping      Find the principal value .    Using Formulas and , we get .  Therefore, we have .    Is there any reason to assume that there exists a conformal mapping for some specified domain onto another domain ? Our final theorem concerning the existence of conformal mappings is attributed to Riemann and is presented in Lars V. Ahlfors, Complex Analysis (New York: McGraw-Hill) , 1966.   Riemann mapping theorem   If is any simply connected domain in the plane (other than the entire plane itself), then there exists a one-to-one conformal mapping that maps onto the unit disk .      Exercises    Find the image of the semi-infinite strip , under the mapping .    The portion of the disk that lies in the second quadrant .      Find the image of the vertical strip under the mapping .      Find the image of the vertical line under the transformation .    The right branch of the hyperbola .      Find the image of the horizontal line under the transformation .      Find the image of the rectangle under the transformation .    The region in the first quadrant that lies inside the ellipse given by and to the left of the hyperbola .      Find the image of the semi-infinite strip , under the mapping .      Compute the following limits:      ;     .       .     .       Use Equations and to evaluate the following:      ;       ;       ;       .       Show that maps the rectangle one-to-one and onto the portion of the upper half-plane that lies inside the ellipse .      Find the image of the vertical strip under the mapping .      Find the image of the horizontal strip under .    The upper half-plane .      Find the image of the right half-plane under the mapping       Find the image of the first quadrant , under .    The semi-infinite strip .      Find the image of the first quadrant , under .      Show that the transformation is a one-to-one conformal mapping of the semi-infinite strip , onto the upper half plane .    The upper half-plane .      Find the image of the semi-infinite strip , under the mapping .     "
 },
 {
-  "id": "fig_ch-09-16",
+  "id": "sec_conformal-trig-2-2",
   "level": "2",
-  "url": "sec_conformal-trig.html#fig_ch-09-16",
-  "type": "Figure",
+  "url": "sec_conformal-trig.html#sec_conformal-trig-2-2",
+  "type": "Example",
   "number": "9.4.1",
   "title": "",
-  "body": " The composite transformation   "
-},
-{
-  "id": "sec_conformal-trig-2-3",
-  "level": "2",
-  "url": "sec_conformal-trig.html#sec_conformal-trig-2-3",
-  "type": "Example",
-  "number": "9.4.2",
-  "title": "",
-  "body": "  Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the unit disk .     Then, mapping can be considered to be the composition . The function maps the vertical strip one-to-one and onto the right half-plane . Then the bilinear transformation given by maps the half-plane one-to-one and onto the disk, as shown in Figure .   "
+  "body": "  Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the unit disk .     . Then, mapping can be considered to be the composition . The function maps the vertical strip one-to-one and onto the right half-plane . Then the bilinear transformation given by maps the half-plane one-to-one and onto the disk, as shown in Figure .  The composite transformation      "
 },
 {
   "id": "ex_conformal-sine",
@@ -11329,7 +11320,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "9.4.3",
   "title": "",
-  "body": "  Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the plane slit along the rays , and .    Because for values of satisfying the inequality , it follows that is a conformal mapping. Using Equation 5, we write   If , then the image of the vertical line is the curve in the plane given by the parametric equations , for . Next, we rewrite these equations as   We now eliminate from these equations by squaring and using the hyperbolic identity . The result is the single equation .  The curve given by Equation is identified as a hyperbola in the plane that has foci at the points . Therefore the vertical line is mapped one-to-one onto the branch of the hyperbola given by Equation that passes through the point . If  , then it is the right branch; if , it is the left branch. The image of the -axis, which is the line , is the -axis. The images of several vertical lines are shown in Figure (a).   The transformation w =    The image of the horizontal segment is the curve in the plane given by the parametric equations for . We rewrite them as   We now eliminate from the equations by squaring and using the trigonometric identity . The result is the single equation .  The curve given by Equation is identified as an ellipse in the plane that passes through the points and and has foci at the points . Therefore, if , then , and the image of the horizontal segment is the portion of the ellipse given by Equation that lies in the upper half-plane . If , then it is the portion that lies in the lower half-plane. Figure (b) shows the images of several segments.   "
+  "body": "  Show that the transformation is a one-to-one conformal mapping of the vertical strip onto the plane slit along the rays , and .    Because for values of satisfying the inequality , it follows that is a conformal mapping. Using Equation> , we write .  If , then the image of the vertical line is the curve in the plane given by the parametric equations , for . Next, we rewrite these equations as .  We now eliminate from these equations by squaring and using the hyperbolic identity . The result is the single equation .  The curve given by Equation is identified as a hyperbola in the plane that has foci at the points . Therefore the vertical line is mapped one-to-one onto the branch of the hyperbola given by Equation that passes through the point . If , then it is the right branch; if , it is the left branch. The image of the -axis, which is the line , is the -axis. The images of several vertical lines are shown in Figure .   The transformation w =    The image of the horizontal segment is the curve in the plane given by the parametric equations for . We rewrite them as .  We now eliminate from the equations by squaring and using the trigonometric identity . The result is the single equation .  The curve given by Equation is identified as an ellipse in the plane that passes through the points and and has foci at the points . Therefore, if , then , and the image of the horizontal segment is the portion of the ellipse given by Equation that lies in the upper half-plane . If , then it is the portion that lies in the lower half-plane. Figure also shows the images of several horizontal segments.   "
 },
 {
   "id": "fig_ch-09-18",
@@ -11363,7 +11354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-2",
   "type": "Exercise",
-  "number": "9.4.1.1",
+  "number": "9.4.2.1",
   "title": "",
   "body": "  Find the image of the semi-infinite strip , under the mapping .    The portion of the disk that lies in the second quadrant .   "
 },
@@ -11372,7 +11363,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-3",
   "type": "Exercise",
-  "number": "9.4.1.2",
+  "number": "9.4.2.2",
   "title": "",
   "body": "  Find the image of the vertical strip under the mapping .   "
 },
@@ -11381,7 +11372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-4",
   "type": "Exercise",
-  "number": "9.4.1.3",
+  "number": "9.4.2.3",
   "title": "",
   "body": "  Find the image of the vertical line under the transformation .    The right branch of the hyperbola .   "
 },
@@ -11390,7 +11381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-5",
   "type": "Exercise",
-  "number": "9.4.1.4",
+  "number": "9.4.2.4",
   "title": "",
   "body": "  Find the image of the horizontal line under the transformation .   "
 },
@@ -11399,7 +11390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-6",
   "type": "Exercise",
-  "number": "9.4.1.5",
+  "number": "9.4.2.5",
   "title": "",
   "body": "  Find the image of the rectangle under the transformation .    The region in the first quadrant that lies inside the ellipse given by and to the left of the hyperbola .   "
 },
@@ -11408,7 +11399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-7",
   "type": "Exercise",
-  "number": "9.4.1.6",
+  "number": "9.4.2.6",
   "title": "",
   "body": "  Find the image of the semi-infinite strip , under the mapping .   "
 },
@@ -11417,7 +11408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-8",
   "type": "Exercise",
-  "number": "9.4.1.7",
+  "number": "9.4.2.7",
   "title": "",
   "body": "  Compute the following limits:      ;     .       .     .    "
 },
@@ -11426,7 +11417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-9",
   "type": "Exercise",
-  "number": "9.4.1.8",
+  "number": "9.4.2.8",
   "title": "",
   "body": "  Use Equations and to evaluate the following:      ;       ;       ;       .    "
 },
@@ -11435,7 +11426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-10",
   "type": "Exercise",
-  "number": "9.4.1.9",
+  "number": "9.4.2.9",
   "title": "",
   "body": "  Show that maps the rectangle one-to-one and onto the portion of the upper half-plane that lies inside the ellipse .   "
 },
@@ -11444,7 +11435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-11",
   "type": "Exercise",
-  "number": "9.4.1.10",
+  "number": "9.4.2.10",
   "title": "",
   "body": "  Find the image of the vertical strip under the mapping .   "
 },
@@ -11453,7 +11444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-12",
   "type": "Exercise",
-  "number": "9.4.1.11",
+  "number": "9.4.2.11",
   "title": "",
   "body": "  Find the image of the horizontal strip under .    The upper half-plane .   "
 },
@@ -11462,7 +11453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-13",
   "type": "Exercise",
-  "number": "9.4.1.12",
+  "number": "9.4.2.12",
   "title": "",
   "body": "  Find the image of the right half-plane under the mapping    "
 },
@@ -11471,7 +11462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-14",
   "type": "Exercise",
-  "number": "9.4.1.13",
+  "number": "9.4.2.13",
   "title": "",
   "body": "  Find the image of the first quadrant , under .    The semi-infinite strip .   "
 },
@@ -11480,7 +11471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-15",
   "type": "Exercise",
-  "number": "9.4.1.14",
+  "number": "9.4.2.14",
   "title": "",
   "body": "  Find the image of the first quadrant , under .   "
 },
@@ -11489,7 +11480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-16",
   "type": "Exercise",
-  "number": "9.4.1.15",
+  "number": "9.4.2.15",
   "title": "",
   "body": "  Show that the transformation is a one-to-one conformal mapping of the semi-infinite strip , onto the upper half plane .    The upper half-plane .   "
 },
@@ -11498,7 +11489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_conformal-trig.html#exercises_conformal-trig-17",
   "type": "Exercise",
-  "number": "9.4.1.16",
+  "number": "9.4.2.16",
   "title": "",
   "body": "  Find the image of the semi-infinite strip , under the mapping .   "
 },
