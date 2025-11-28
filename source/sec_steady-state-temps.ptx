@@ -1,89 +1,89 @@
 <section xml:id="sec_steady-state-temps">
-  <title>Steady State Temperatures</title>
-  <introduction>
-    <p>
-		In the theory of heat conduction, an assumption is made that heat flows in the direction of decreasing temperature.  Another
-		assumption is that the time rate at which heat flows across a surface area is proportional to the component of the
-		temperature gradient in the direction perpendicular to the surface area.  If the temperature <m>T(x,y)</m> does not depend
-		on time, then the heat flow at the point <m>(x,y)</m> is given by the vector
-      <me>
-        \mathbf{V}(x,y) =-K \nabla T(x,y) = -K[T_x(x,y) + iT_y(x,y)]
-      </me>,
-		where <m>K</m> is the thermal conductivity of the medium and is assumed to be constant.  If <m>\Delta z</m> denotes a
-		straight-line segment of length <m>\Delta s</m>, then the amount of heat flowing across the segment per unit of time is
-      <men xml:id="across">
-        \mathbf{V} \bullet \mathbf{N}\ \Delta s
-      </men>,
-      where <m>\mathbf{N}</m> is the unit vector perpendicular to the segment.
-    </p>
-    <p>
-		If we assume that no thermal energy is created or destroyed within the region, then the net amount of heat flowing through
-		any small rectangle with sides of length <m>\Delta x</m> and <m>\Delta y</m> is identically zero (see <xref
-		ref="fig_ch-10-016">Figure</xref>(a)).  This observation leads to the conclusion that <m>T(x,y)</m> is a harmonic
-		function.  The following heuristic argument is often used to suggest that <m>T(x,y)</m> satisfies Laplace's equation.  Using
-		Expression <xref ref="across"/>, we find that the amount of heat flowing out of the right edge of the rectangle in <xref
-		ref="fig_ch-10-016">Figure</xref>(a) is approximately
-      <md>
-		  <mrow> \mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y)</mrow>
-		  <mrow> \amp \qquad \qquad+ iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y </mrow>
-        <mrow xml:id="rightedge" number="yes"> \amp = -KT_x(x+\Delta x, \, y) \Delta y </mrow>
-      </md>,
-      and the amount of heat flowing out of the left edge is
-      <md>
-		  <mrow>\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet (-1+0i) \Delta y</mrow>
-        <mrow xml:id="leftedge" number="yes">\amp = KT_x(x,y) \Delta y</mrow>
-      </md>.
-    </p>
-    <p>
-      If we add the contributions in Equations <xref ref="rightedge"/> and <xref ref="leftedge"/> we get
-      <men xml:id="leftright">
-			\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
-		  -K\left[\frac{T_x(x+\Delta x, \, y) - T_x(x,y)}{\Delta x}\right] \Delta x \Delta y \approx -KT_{xx}(x,y) \Delta x \Delta y
-      </men>.
-    </p>
-    <figure xml:id="fig_ch-10-016">
-      <caption>Steady state temperatures</caption>
-      <image width="95%" source="figs/ch-10/ch-10-fig-016.svg"/>
-    </figure>
-    <p>
-      Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
-      <men xml:id="topbot">
-			\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
-			-K\left[ \frac{T_y(x,y+\Delta y) -T_y(x,y)}{\Delta y}\right] \Delta y \Delta y \approx -KT_{yy}(x,y) \Delta x \Delta y
-      </men>.
-    </p>
-    <p>
-		Adding the quantities in Equations <xref ref="leftright"/> and <xref ref="topbot"/>, we find that the net heat flowing out
-		of the rectangle is approximated by the equation
-      <me>
-        -K[T_{xx}(x,y) +T_{yy}(x,y)] \Delta x \Delta y= 0
-      </me>,
-      which implies that <m>T(x,y)</m> satisfies Laplace's equation and is a harmonic function.
-    </p>
-    <p>
-		If the domain in which <m>T(x,y)</m> is defined is simply connected, then a conjugate harmonic function <m>S(x,y)</m>
-		exists, and
-      <me>
-        F(z)=T(x,y)+iS(x,y)
-      </me>
-		is an analytic function. The curves <m>T(x,y)=K_1</m> are called isothermals and are lines connecting points of the same
-		temperature. The curves <m>S(x,y)=K_2</m> are called heat flow lines, and we can visualize the heat flowing along these
-		curves from points of higher temperature to points of lower temperature. The situation is illustrated in <xref
-		ref="fig_ch-10-016">Figure</xref>(b).
-    </p>
-    <p>
+<title>Steady State Temperatures</title>
+	<introduction>
+		<p>
+			In the theory of heat conduction, an assumption is made that heat flows in the direction of decreasing temperature.
+			Another assumption is that the time rate at which heat flows across a surface area is proportional to the component of
+			the temperature gradient in the direction perpendicular to the surface area.  If the temperature <m>T(x,y)</m> does not
+			depend on time, then the heat flow at the point <m>(x,y)</m> is given by the vector
+			<me>
+				\mathbf{V}(x,y) = -K \nabla T(x,y) = -K[T_x(x,y) + iT_y(x,y)]
+			</me>,
+			where <m>K</m> is the thermal conductivity of the medium and is assumed to be constant. If <m>\Delta z</m> denotes a
+			straight-line segment of length <m>\Delta s</m>, then the amount of heat flowing across the segment per unit of time is
+			<men xml:id="across">
+				\mathbf{V} \bullet \mathbf{N} \Delta s
+			</men>,
+			where <m>\mathbf{N}</m> is the unit vector perpendicular to the segment.
+		</p>
+		<p>
+			If we assume that no thermal energy is created or destroyed within the region, then the net amount of heat flowing
+			through any small rectangle with sides of length <m>\Delta x</m> and <m>\Delta y</m> is identically zero (see <xref
+			ref="fig_ch-10-016">Figure</xref>(a)). This observation leads to the conclusion that <m>T(x,y)</m> is a harmonic
+			function. The following heuristic argument is often used to suggest that <m>T(x,y)</m> satisfies Laplace's equation.
+			Using Expression <xref ref="across"/>, we find that the amount of heat flowing out of the right edge of the rectangle in
+			<xref ref="fig_ch-10-016">Figure</xref>(a) is approximately
+			<md>
+				<mrow> \mathbf{V} \bullet \mathbf{N}_1\ \Delta s_1 \amp = -K[T_x(x+\Delta x, \, y)</mrow>
+				<mrow> \amp \qquad \qquad+ iT_y(x+\Delta x, \, y)] \bullet (1+0i)\Delta y </mrow>
+				<mrow xml:id="rightedge" number="yes"> \amp = -KT_x(x+\Delta x, \, y) \Delta y </mrow>
+			</md>,
+			and the amount of heat flowing out of the left edge is
+			<md>
+				<mrow>\mathbf{V} \bullet \mathbf{N}_2\ \Delta s_2 \amp = -K[T_x(x,y) +iT_y(x,y)] \bullet (-1+0i) \Delta y</mrow>
+				<mrow xml:id="leftedge" number="yes">\amp = KT_x(x,y) \Delta y</mrow>
+			</md>.
+		</p>
+		<p>
+			If we add the contributions in Equations <xref ref="rightedge"/> and <xref ref="leftedge"/> we get
+			<men xml:id="leftright">
+				\hspace{-0.75in}-K\left[\frac{T_x(x+\Delta x, \, y) -
+				T_x(x,y)}{\Delta x}\right] \Delta x \Delta y \approx -KT_{xx}(x,y) \Delta x \Delta y
+			</men>.
+		</p>
+		<p>
+			Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
+			<men xml:id="topbot">
+				\hspace{-0.75in}-K\left[ \frac{T_y(x,y+\Delta y) -T_y(x,y)}{\Delta y}\right] \Delta y \Delta y 
+				\approx -KT_{yy}(x,y) \Delta x \Delta y
+			</men>.
+		</p>
+		<p>
+			Adding the quantities in Equations <xref ref="leftright"/> and <xref ref="topbot"/>, we find that the net heat flowing
+			out of the rectangle is approximated by the equation
+			<me>
+				-K[T_{xx}(x,y) +T_{yy}(x,y)] \Delta x \Delta y= 0
+			</me>,
+			which implies that <m>T(x,y)</m> satisfies Laplace's equation and is a harmonic function.
+		</p>
+		<p>
+			If the domain in which <m>T(x,y)</m> is defined is simply connected, then a conjugate harmonic function <m>S(x,y)</m>
+			exists, and
+			<me>
+				F(z)=T(x,y)+iS(x,y)
+			</me>
+			is an analytic function. The curves <m>T(x,y)=K_1</m> are called isothermals and are lines connecting points of the same
+			temperature. The curves <m>S(x,y)=K_2</m> are called heat flow lines, and we can visualize the heat flowing along these
+			curves from points of higher temperature to points of lower temperature. The situation is illustrated in 
+			<xref ref="fig_ch-10-016">Figure</xref>(b).
+			<figure xml:id="fig_ch-10-016">
+				<caption>Steady state temperatures</caption>
+				<image width="95%" source="figs/ch-10/ch-10-fig-016.svg"/>
+			</figure>
+		</p>
+	<p>
 		Boundary value problems for steady state temperatures are realizations of the Dirichlet problem where the value of the
 		harmonic function <m>T(x,y)</m> is interpreted as the temperature at the point <m>(x,y)</m>.
-    </p>
-    <example>
-      <statement>
+	</p>
+	<example>
+		<statement>
         <p>
 			 Suppose that two parallel planes are perpendicular to the <m>z</m> plane and pass through the horizontal lines
 			 <m>y=a</m> and <m>y=b</m> and that the temperature is held constant at the values <m>T(x,a)=T_1</m> and 
 			 <m>T(x,b)=T_2</m>, respectively, on these planes. Show that <m>T</m> is given by
           <me>
-            T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a).
-          </me>
+            T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a)
+          </me>.
         </p>
       </statement>
 		<solution>
@@ -120,11 +120,11 @@
       </statement>
 		<solution>
 			<p>
-				Since <m>T(x,y)</m> is a harmonic function, this problem is an example of a Dirichlet problem. From Example 11.2, it
-				follows that the solution is
+				Since <m>T(x,y)</m> is a harmonic function, this problem is an example of a Dirichlet problem. From
+				<xref ref="ex_Psi_x_y_">Example</xref> it follows that the solution is
             <me>
-					T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z).
-            </me>
+					T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z)
+            </me>.
 			</p>
 		</solution>
 			<p>
@@ -139,32 +139,31 @@
 		<image width="80%" source="figs/ch-10/ch-10-fig-018.svg"/>
 	 </figure>
     <example>
-      <statement>
+	 	<statement>
         <p>
           Find the temperature <m>T(x,y)</m> at each point in the upper half-disk
           <m>H = \{z :\mathrm{Im}(z) > 0, \, |z|\lt 1 \}</m> if the temperatures at points on the boundary satisfy
           <md>
-            <mrow>T(x,y) \amp =  100 \; \text{ for } \; x+iy = z = e^{i\theta}, \;  0 \lt  \theta \lt  \pi;</mrow>
-            <mrow>T(x,0) \amp =  50 \; \text{ for } \; - 1 \lt  x \lt  1</mrow>
+            <mrow>T(x,y)  =  100 \amp \quad \text{for} \quad x+iy = z = e^{i\theta}, \;\;  0 \lt  \theta \lt  \pi;</mrow>
+            <mrow>T(x,0)  =  \;\; 50  \amp \quad \text{for} \quad - 1 \lt  x \lt  1</mrow>
           </md>.
-        </p>
-        <solution>
-          <p>
-            As discussed in <xref ref="ex_phi_x_y_">Example</xref>,
-            the function
-            <men xml:id="conmap3">
-              \hspace{-0.3in} u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
-            </men>
-            is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.
-            The conformal map given by <xref ref="conmap3">Equation</xref>
-            gives rise to a new problem of finding the temperature
-            <m>T^*(u,v)</m> that satisfies the boundary conditions
-            <me>
-              T^*(u,0) = 100 \; \text{ for } \; u > 0, \; \text{ and } \; T^*(0,v) = 50 \; \text{ for } \; v > 0
+			</p>
+		</statement>
+		<solution>
+			<p>
+				As discussed in <xref ref="ex_phi_x_y_">Example</xref>, the function
+				<men xml:id="conmap3">
+					\hspace{-0.3in} u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
+				</men>
+				is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.  The conformal
+				map given by <xref ref="conmap3">Equation</xref> gives rise to a new problem of finding the temperature
+				<m>T^*(u,v)</m> that satisfies the boundary conditions
+				<me>
+					T^*(u,0) = 100 \quad \text{for} \quad u > 0, \quad \text{and} \quad T^*(0,v) = 50 \quad \text{for} \quad v > 0
             </me>.
-          </p>
-          <p>
-            If we use Example 11.2, the harmonic function <m>T^*(u,v)</m> is given by
+			</p>
+			<p>
+				If we use <xref ref="ex_Psi_x_y_">Example</xref>, the harmonic function <m>T^*(u,v)</m> is given by
             <md>
 				  <mrow>T^*(u,v) \amp = 100 + \frac{50-100}{\frac{\pi}{2}}\mathrm{Arg}(w)</mrow>
 				  <mrow xml:id="harmfun1" number="yes">\amp= 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)</mrow>
@@ -181,78 +180,69 @@
         <p>
           The isothermals <m>\{(x,y):T(x,y) = \text{ constant} \}</m> are circles that pass through the points <m>\pm 1</m>,
           as shown in <xref ref="fig_ch-10-019">Figure</xref>.
-        </p>
-      </statement>
-    </example>
-    <figure xml:id="fig_ch-10-019">
-      <caption>The temperature <m>T(x,y)</m> in a half-disk</caption>
-      <image width="50%" source="figs/ch-10/ch-10-fig-019.svg"/>
-    </figure>
-  </introduction>
-  <subsection xml:id="subsec_insulated-segment">
-    <title>An Insulated Segment on the Boundary</title>
-    <p>
-      We now turn to the problem of finding the steady state temperature function <m>T(x,y)</m> inside the simply connected domain <m>D</m> whose boundary consists of three adjacent curves <m>C_1, \, C_2</m>,
-      and <m>C_3</m>,
-      where <m>T(x,y) = T_1</m> along <m>C_1</m>,
-      and <m>T(x,y) = T_2</m> along <m>C_2</m>.
-      The region is insulated along <m>C_3</m>,
-      so that fact that no heat flows across <m>C_3</m> implies that
-      <me>
-        \mathbf{V}(x,y) \bullet \mathbf{N}(x,y) = -K\mathbf{N}(x,y) \bullet \nabla T(x,y) = 0
-      </me>,
-      where <m>\mathbf{N}(x,y)</m> is perpendicular to <m>C_3</m>.
-      Thus the direction of heat flow must be parallel to this portion of the boundary.
-      In other words,
-      <m>C_3</m> must be part of a heat flow line <m>S(x,y) =</m> constant,
-      and the isothermals <m>T(x,y)=</m> constant intersect <m>C_3</m> orthogonally.
-    </p>
-    <p>
-      We can solve this problem by finding a conformal mapping
-      <men xml:id="conmapz2">
-        w = f(z) = u(x,y) +iv(x,y)
-      </men>
-      from <m>D</m> onto the semi-infinite strip
-      <m>G:0\lt u\lt 1,\,v>0</m> so that the image of the curve <m>C_1</m> is the ray <m>u=0</m>;
-      the image of the curve <m>C_2</m> is the ray given by <m>u=1,\,v>0</m>;
-      and the thermally insulated curve <m>C_3</m> is mapped onto the thermally insulated segment
-      <m>0\lt u\lt 1</m> of the <m>u</m> axis,
-      as shown in <xref ref="fig_ch-10-020">Figure</xref>.
-    </p>
-    <p>
-      The new problem in <m>G</m> is to find the steady state temperature function
-      <m>T^*(u,v)</m> so that along the rays,
-      we have the boundary values
-      <men xml:id="Bddvals2">
-        T^*(0,v) = T_1 \; \text{ for } \; v>0, \; \text{ and } \; T^*(1,v) = T_2 \; \text{ for } \; v > 0
-      </men>.
-    </p>
-    <figure xml:id="fig_ch-10-020">
-      <caption>Steady state temperatures with one boundary portion insulated</caption>
-      <image width="80%" source="figs/ch-10/ch-10-fig-020.svg"/>
-    </figure>
+			 <figure xml:id="fig_ch-10-019">
+				 <caption>The temperature <m>T(x,y)</m> in a half-disk</caption>
+				 <image width="50%" source="figs/ch-10/ch-10-fig-019.svg"/>
+				</figure>
+			</p>
+		</example>
+	</introduction>
+	<subsection xml:id="subsec_insulated-segment">
+	<title>An Insulated Segment on the Boundary</title>
+		<p>
+			We now turn to the problem of finding the steady state temperature function <m>T(x,y)</m> inside the simply connected
+			domain <m>D</m> whose boundary consists of three adjacent curves <m>C_1, \, C_2</m>, and <m>C_3</m>, where 
+			<m>T(x,y) = T_1</m> along <m>C_1</m>, and <m>T(x,y) = T_2</m> along <m>C_2</m>. The region is insulated along <m>C_3</m>,
+			so that fact that no heat flows across <m>C_3</m> implies that
+			<me>
+				\mathbf{V}(x,y) \bullet \mathbf{N}(x,y) = -K\mathbf{N}(x,y) \bullet \nabla T(x,y) = 0
+			</me>,
+			where <m>\mathbf{N}(x,y)</m> is perpendicular to <m>C_3</m>. Thus the direction of heat flow must be parallel to this
+			portion of the boundary. In other words, <m>C_3</m> must be part of a heat flow line <m>S(x,y) =</m> constant, and the
+			isothermals <m>T(x,y)=</m> constant intersect <m>C_3</m> orthogonally.
+		</p>
+		<p>
+			We can solve this problem by finding a conformal mapping
+			<men xml:id="conmapz2">
+				w = f(z) = u(x,y) +iv(x,y)
+			</men>
+			from <m>D</m> onto the semi-infinite strip <m>G:0\lt u\lt 1,\,v>0</m> so that the image of the curve <m>C_1</m> is the
+			ray <m>u=0</m>; the image of the curve <m>C_2</m> is the ray given by <m>u=1,\,v>0</m>; and the thermally insulated curve
+			<m>C_3</m> is mapped onto the thermally insulated segment <m>0\lt u\lt 1</m> of the <m>u</m> axis, as shown in 
+			<xref ref="fig_ch-10-020">Figure</xref>.
+			<figure xml:id="fig_ch-10-020">
+				<caption>Steady state temperatures with one boundary portion insulated</caption>
+				<image width="80%" source="figs/ch-10/ch-10-fig-020.svg"/>
+			</figure>
+		</p>
+		<p>
+			The new problem in <m>G</m> is to find the steady state temperature function <m>T^*(u,v)</m> so that along the rays, we
+			have the boundary values
+			<men xml:id="Bddvals2">
+				T^*(0,v) = T_1 \quad \text{for} \quad v>0, \quad \text{and} \quad T^*(1,v) = T_2 \qud \text{for} \quad v > 0
+			</men>.
+		</p>
     <p>
 		The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal
-		derivative of <m>T^*(u,v)</m> is zero.
-      That is,
-      <men xml:id="normdif">
-        \frac{\partial T^*}{\partial n}=T_{v}^*(u,0) = 0
-      </men>,
-      where <m>n</m> is a coordinate measured perpendicular to the segment. We can easily verify that the function
-      <me>
-        T^*(u,v) = T_1+(T_2-T_1)u
-      </me>
+		derivative of <m>T^*(u,v)</m> is zero. That is,
+		<men xml:id="normdif">
+			\frac{\partial T^*}{\partial n}=T_{v}^*(u,0) = 0
+		</men>,
+		where <m>n</m> is a coordinate measured perpendicular to the segment. We can easily verify that the function
+		<me>
+			T^*(u,v) = T_1+(T_2-T_1)u
+		</me>
 		satisfies the conditions stated in <xref ref="Bddvals2">Equations</xref> and <xref ref="normdif"></xref> for region
 		<m>G</m>. Therefore, using <xref ref="conmapz2">Equation</xref>, we find that the solution in <m>D</m> is
-      <me>
-        T(x,y) = T_1 + (T_2-T_1) u(x,y).
-      </me>
-    </p>
-    <p>
-		The isothermals <m>T(x,y) =</m> constant and their images under <m>w=f(z)</m> are also illustrated in <xref
-		ref="fig_ch-10-020">Figure</xref>.
-    </p>
-    <example xml:id="ex_10_17">
+		<me>
+			T(x,y) = T_1 + (T_2-T_1) u(x,y)
+		</me>.
+	</p>
+	<p>
+		The isothermals <m>T(x,y) =</m> constant and their images under <m>w=f(z)</m> are also illustrated in
+		<xref ref="fig_ch-10-020">Figure</xref>.
+	</p>
+	<example xml:id="ex_10_17">
       <statement>
         <p>
 			 Find the steady state temperature <m>T(x,y)</m> for the domain <m>D</m> consisting of the upper half-plane
@@ -265,49 +255,49 @@
         </p>
       </statement>
       <solution>
-        <p>
-			 The mapping <m>w=</m> <m>\mathrm{Arcsin}(z)</m> conformally maps <m>D</m> onto the semi-infinite strip
-			 <m>v>0,\,-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>, where the new problem is to find the steady state temperature
-			 <m>T^*(u,v)</m> that has the boundary conditions
-          <md>
-				<mrow>T^*\left(\frac{\pi}{2},v\right) \amp = 1 \; \text{ for } \; v>0, \; \text{ and } \; 
-					T^*\left(-\frac{\pi}{2},v\right) = -1 \; \text{ for } \;  v>0;
-				</mrow>
-            <mrow>
-					\frac{\partial T^*}{\partial n} \amp = T_{v}^*(u,0) =0 \; \text{ for } \; 
-					-\frac{\pi}{2} \lt u \lt \frac{\pi}{2}
-				</mrow>
-          </md>.
-        </p>
-        <p>
-          Using the result of <xref ref="ex_10_1">Example</xref>, we can easily obtain the solution:
-          <me>
-            T^*(u,v) =\frac{2}{\pi}u.
-          </me>
-        </p>
-        <p>
-          Therefore the solution in <m>D</m> is
-          <me>
-            T(x,y) = \frac{2}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big).
-          </me>
-        </p>
-        <p>
-          If an explicit solution is required,
-          we can use Formula <xref ref="rearcsin"/> to obtain
-          <me>
-            T(x,y) = \frac{2}{\pi}\mathrm{Arcsin} \frac{\sqrt{(x+1)^2+y^2} - \sqrt{(x-1)^2+y^2}}{2}
-          </me>,
-          where <m>-\frac{\pi}{2}\lt \mathrm{Arcsin}(t)\lt \frac{\pi}{2}</m>;
-          see <xref ref="fig_ch-10-021">Figure</xref>.
-        </p>
-      </solution>
-    </example>
-    <figure xml:id="fig_ch-10-021">
-		<caption>The temperature <m>T(x,y)</m> with <m>T_y(x,0)=0</m> for <m>-1\lt x\lt 1</m>, and boundary values <m>T(x,0)=-1</m>
-		for <m>x\lt -1</m> and <m>T(x,0)=1</m>,
-      for <m>x>1</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-021.svg"/>
-    </figure>
+			<p>
+				The mapping <m>w=</m> <m>\mathrm{Arcsin}(z)</m> conformally maps <m>D</m> onto the semi-infinite strip
+				<m>v>0,\,-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>, where the new problem is to find the steady state temperature
+				<m>T^*(u,v)</m> that has the boundary conditions
+				<md>
+					<mrow>
+						T^*\left(\frac{\pi}{2},v\right) \amp = 1 \quad \text{for} \quad v>0, 
+						\quad \text{and} \quad T^*\left(-\frac{\pi}{2},v\right) = -1 \quad \text{for} \quad  v>0;
+					</mrow>
+					<mrow>
+						\frac{\partial T^*}{\partial n} \amp = T_{v}^*(u,0) = 0 
+						\quad \text{for} \quad -\frac{\pi}{2} \lt u \lt \frac{\pi}{2}
+					</mrow>
+				</md>.
+			</p>
+			<p>
+				Using the result of <xref ref="ex_10_1">Example</xref>, we can easily obtain the solution:
+				<me>
+					T^*(u,v) =\frac{2}{\pi}u
+				</me>.
+			</p>
+			<p>
+				Therefore the solution in <m>D</m> is
+				<me>
+					T(x,y) = \frac{2}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)
+				</me>.
+			</p>
+			<p>
+				If an explicit solution is required, we can use Formula <xref ref="rearcsin"/> to obtain
+				<me>
+					T(x,y) = \frac{2}{\pi}\mathrm{Arcsin} \frac{\sqrt{(x+1)^2+y^2} - \sqrt{(x-1)^2+y^2}}{2}
+				</me>,
+				where <m>-\frac{\pi}{2}\lt \mathrm{Arcsin}(t)\lt \frac{\pi}{2}</m>; see <xref ref="fig_ch-10-021">Figure</xref>.
+				<figure xml:id="fig_ch-10-021">
+					<caption>
+						The temperature <m>T(x,y)</m> with <m>T_y(x,0)=0</m> for <m>-1\lt x\lt 1</m>, and boundary values
+						<m>T(x,0)=-1</m> for <m>x\lt -1</m> and <m>T(x,0)=1</m>, for <m>x>1</m>
+					</caption>
+					<image width="73%" source="figs/ch-10/ch-10-fig-021.svg"/>
+				</figure>
+			</p>
+		</solution>
+	</example>
 <exercises xml:id="exercises_steady-state-temps">
 <title>Exercises</title>
 	<exercise>
