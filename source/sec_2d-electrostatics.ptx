@@ -1,174 +1,174 @@
 <section xml:id="sec_2d-electrostatics">
-  <title>Two-Dimensional Electrostatics</title>
-  <p>
-	 A two-dimensional electrostatic field is produced by a system of charged wires, plates, and cylindrical conductors that are
-	 perpendicular to the <m>z</m> plane.  The wires, plates, and cylinders are assumed to be long enough so that the effects at
-	 the ends can be neglected, as mentioned in <xref ref="sec_2d-models">Section</xref>.  This assumption results in an electric
-	 field <m>\mathbf{E}(x,y)</m> that can be interpreted as the force acting on a unit positive charge placed at the point
-	 <m>(x,y)</m>.  In the study of electrostatics, the vector field <m>\mathbf{E}(x,y)</m> is shown to be <em>conservative</em>
-	 and is derivable from a function <m>\phi(x,y)</m>, called the electrostatic potential, expressed as
-    <me>
-      \mathbf{E}(x,y) = -\nabla \phi(x,y) = -\phi_x(x,y) - i\phi_y(x,y).
-    </me>
-  </p>
-  <p>
-	 If we make the additional assumption that there are no charges within the domain <m>D</m>, then Gauss's law for electrostatic
-	 fields implies that the line integral of the outward normal component of <m>\mathbf{E}(x,y)</m> taken around any small
-	 rectangle lying inside <m>D</m> is identically zero.  A heuristic argument similar to the one we used for steady state
-	 temperatures, with <m>T(x,y)</m> replaced by <m>\phi(x,y)</m>, will show that the value of the line integral is
-    <me>
-      -[\phi_{xx}(x,y) + \phi_{yy}(x,y)] \Delta x \Delta y
-    </me>.
-	 This quantity equals zero, so we conclude that <m>\phi(x,y)</m> is a harmonic function. If we designate <m>\psi(x,y)</m> as
-	 the harmonic conjugate, then
-    <me>
-      F(z) = \phi(x,y) + i\psi(x,y)
-    </me>
-    is the complex potential
-    (not to be confused with the electrostatic potential).
-  </p>
-  <p>
-	 The curves <m>\phi(x,y) =K_1</m> are called the <em> equipotential curves</em>, and the curves <m>\psi(x,y) =K_2</m> are
-	 called the lines of flux.  If a small test charge is allowed to move under the influence of the field <m>\mathbf{E}(x,y)</m>,
-	 then it will travel along a line of flux.  Boundary value problems for the potential function <m>\phi(x,y)</m> are
-	 mathematically the same as those for steady state heat flow, and they are realizations of the Dirichlet problem where the
-	 harmonic function is <m>\phi(x,y)</m>.
-  </p>
-  <example xml:id="ex_10_18">
-    <statement>
-      <p>
-		  Consider two parallel conducting planes that pass perpendicular to the <m>z</m> plane through the lines <m>x=a</m> and
-		  <m>x=b</m>, which are kept amt the potentials <m>U_1</m> and <m>U_2</m>, respectively.  Then, according to the result of
-		  <xref ref="ex_10_1">Example</xref>, the electrical potential is
-        <me>
-          \phi(x,y) = U_1 + \frac{U_2-U_1}{b-a}(x-a).
-        </me>
-      </p>
-    </statement>
-  </example>
-  <example>
-    <statement>
-      <p>
-			Find the electrical potential <m>\phi(x,y)</m> in the region between two infinite coaxial cylinders <m>r=a</m> and
-			<m>r=b</m>, which are kept at the potentials <m>U_1</m> and <m>U_2</m>, respectively.
-		</p>
-	</statement>
-	<solution>
-		<p>
-			The function <m>w = \log z = \ln|z|+i\arg z</m> maps the annular region between the circles <m>r=a</m> and <m>r=b</m>
-			onto the infinite strip <m>\ln a\lt u\lt \ln \,b</m> in the <m>w</m> plane, as shown in 
-			<xref ref="fig_ch-10-036">Figure</xref>. 
-		</p>
-		<p>
+<title>Two-Dimensional Electrostatics</title>
+	<p>
+		A two-dimensional electrostatic field is produced by a system of charged wires, plates, and cylindrical conductors that are
+		perpendicular to the <m>z</m> plane. The wires, plates, and cylinders are assumed to be long enough so that the effects at
+		the ends can be neglected, as mentioned in <xref ref="sec_2d-models">Section</xref>. This assumption results in an electric
+		field <m>\mathbf{E}(x,y)</m> that can be interpreted as the force acting on a unit positive charge placed at the point
+		<m>(x,y)</m>. In the study of electrostatics, the vector field <m>\mathbf{E}(x,y)</m> is shown to be <em>conservative</em>
+		and is derivable from a function <m>\phi(x,y)</m>, called the electrostatic potential, expressed as
+		<me>
+			\mathbf{E}(x,y) = -\nabla \phi(x,y) = -\phi_x(x,y) - i\phi_y(x,y)
+		</me>.
+	</p>
+	<p>
+		If we make the additional assumption that there are no charges within the domain <m>D</m>, then Gauss's law for
+		electrostatic fields implies that the line integral of the outward normal component of <m>\mathbf{E}(x,y)</m> taken around
+		any small rectangle lying inside <m>D</m> is identically zero. A heuristic argument similar to the one we used for steady
+		state temperatures, with <m>T(x,y)</m> replaced by <m>\phi(x,y)</m>, will show that the value of the line integral is
+		<me>
+			-[\phi_{xx}(x,y) + \phi_{yy}(x,y)] \Delta x \Delta y
+		</me>.
+		This quantity equals zero, so we conclude that <m>\phi(x,y)</m> is a harmonic function. If we designate <m>\psi(x,y)</m> as
+		the harmonic conjugate, then
+		<me>
+			F(z) = \phi(x,y) + i\psi(x,y)
+		</me>
+		is the complex potential (not to be confused with the electrostatic potential).
+	</p>
+	<p>
+		The curves <m>\phi(x,y) =K_1</m> are called the <em> equipotential curves</em>, and the curves <m>\psi(x,y) =K_2</m> are
+		called the lines of flux.  If a small test charge is allowed to move under the influence of the field
+		<m>\mathbf{E}(x,y)</m>, then it will travel along a line of flux.  Boundary value problems for the potential function
+		<m>\phi(x,y)</m> are mathematically the same as those for steady state heat flow, and they are realizations of the Dirichlet
+		problem where the harmonic function is <m>\phi(x,y)</m>.
+	</p>
+	<example xml:id="ex_10_18">
+		<statement>
+			<p>
+				Consider two parallel conducting planes that pass perpendicular to the <m>z</m> plane through the lines <m>x=a</m> and
+				<m>x=b</m>, which are kept amt the potentials <m>U_1</m> and <m>U_2</m>, respectively. Then, according to the result
+				of <xref ref="ex_10_1">Example</xref>, the electrical potential is
+				<me>
+					\phi(x,y) = U_1 + \frac{U_2-U_1}{b-a}(x-a)
+				</me>.
+			</p>
+		</statement>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Find the electrical potential <m>\phi(x,y)</m> in the region between two infinite coaxial cylinders <m>r=a</m> and
+				<m>r=b</m>, which are kept at the potentials <m>U_1</m> and <m>U_2</m>, respectively.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The function <m>w = \log z = \ln|z|+i\arg z</m> maps the annular region between the circles <m>r=a</m> and <m>r=b</m>
+				onto the infinite strip <m>\ln a\lt u\lt \ln \,b</m> in the <m>w</m> plane, as shown in 
+				<xref ref="fig_ch-10-036">Figure</xref>. 
+			</p>
+			<p>
 			<figure xml:id="fig_ch-10-036">
 				<caption>The electrical field in a coaxial cylinder, where <m>U_2\lt U_1</m></caption>
 				<image width="90%" source="figs/ch-10/ch-10-fig-036.svg"/>
 			</figure>    
-		</p>
-		<p>
-			The potential <m>\Phi(u,v)</m> in the infinite strip has the boundary values
-			<me>
-				\Phi(\ln \,a,v) = U_1, \; \text{ and } \; \Phi(\ln b,v) = U_2 \; \text{ for all } \;  v
-			</me>.
-			The result of <xref ref="ex_10_18">Example</xref> gives the electrical potential <m>\Phi(u,v)</m>:
-			<me>
-				\Phi(u,v) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(u-\ln a)
-			</me>.
-			We can use the fact that <m>u = \ln |z|</m> to conclude that the potential <m>\phi(x,y)</m> is
-			<me>
-				\phi(x,y) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(\ln |z|-\ln a).
-			</me>
-		</p>
-	</solution>
-</example>
-<example>
-    <statement>
-      <p>
-		  Find the electrical potential <m>\phi(x,y)</m> produced by two charged half-planes that are perpendicular to the <m>z</m>
-		  plane and pass through the rays <m>x\lt -1, \, y=0</m> and <m>x>1, \, y=0</m>, where the planes are kept at the fixed
-		  potentials
-        <me>
-          \phi(x,0) = -300  \text{ for }   x \lt  -1,  \text{ and }   \phi(x,0) = 300  \text{ for }   x > 1
-        </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-		  The result of <xref ref="ex_conformal-sine">Example</xref> shows that the function <m>w=</m> <m>\mathrm{Arcsin}(z)</m> is
-		  a conformal mapping of the <m>z</m> plane slit along the two rays <m>x\lt -1, \, y=0</m> and <m>x>1, \, y=0</m> onto the
-		  vertical strip <m>-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>.  Thus, the problem reduces to finding the potential
-		  <m>\Phi(u,v)</m> that satisfies the boundary values
-        <me>
-          \Phi\left(\!-\frac{\pi}{2},v\right) = -300  \text{ and } \Phi\left(\frac{\pi}{2},v\right) = 300  \text{ for all }   v
-        </me>.
-      </p>
-      <p>
-        From <xref ref="ex_10_1">Example</xref>,
-        <me>
-          \Phi(u,v) = \frac{600}{\pi}u
-        </me>
-      </p>
-      <p>
-        As in the discussion of <xref ref="ex_10_17">Example</xref>,
-        the solution in the <m>z</m> plane is
-        <md>
-          <mrow>\phi(x,y)  \amp = \frac{600}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)</mrow>
-          <mrow>\amp = \frac{600}{\pi}\mathrm{Arcsin}\left(\frac{\sqrt{(x+1)^2+y^2}-\sqrt{(x-1)^2+y^2}}{2}\right)</mrow>
-        </md>.
-      </p>
-      <p>
-        Several equipotential curves are shown in <xref ref="fig_ch-10-037">Figure</xref>.
-      </p>
-		<figure xml:id="fig_ch-10-037">
-			<caption>Equipotentials of two charged half-planes perpendicular to the complex plane</caption>
-			<image width="73%" source="figs/ch-10/ch-10-fig-037.svg"/>
-		</figure>
-	</solution>
-</example>
-<example>
-	<statement>
-		<p>
-			Find the electrical potential <m>\phi(x,y)</m> in the disk <m>D:|z|\lt 1</m> that satisfies the boundary values
-			<md>
-		  		<mrow>
-				 	\phi(x,y) \amp = 80 \quad \text{for} \quad x+iy=z \quad \text{on} \quad C_1=\left\{z=e^{i\theta}, \; 0\lt \theta \lt
-					\frac{\pi}{2}\right\};
-				</mrow>
-				<mrow>\phi(x,y) 
-					\amp = \;\; 0 \quad \text{for} \quad x+iy=z \quad \text{on} \quad C_2=\left\{z=e^{i\theta}, \;
-					\frac{\pi}{2}\lt \theta \lt 2\pi\right\}
-				</mrow>
-			</md>.
-		</p>
-	</statement>
-	<solution>
-		<p>
-			The mapping <m>w=S(z) = \frac{(1-i)(z-i)}{z-1}</m> is a one-to-one conformal mapping of <m>D</m> onto the upper
-			half-plane <m>\mathrm{Im}(w) > 0</m> with the property that <m>C_1</m> is mapped onto the negative <m>u</m> axis and
-			<m>C_2</m> is mapped onto the positive <m>u</m> axis. The potential <m>\Phi(u,v)</m> in the upper half-plane that
-			satisfies the new boundary values
-			<me>
-				\Phi(u,0) = 80 \; \text{ for } \; u\lt 0, \; \text{ and } \; \Phi(u,0) = 0  \text{ for } \; u > 0
-			</me>
-        is given by
-		  	<men xml:id="harmfun2">
-				\Phi(u,v) = \frac{80}{\pi}\mathrm{Arg}(w) = \frac{80}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
-			</men>.
-		</p>
-      <p>
-			A straightforward calculation shows that
-			<me>
-				u+iv = S(z) = \frac{(x-1)^2+(y-1)^2-1 +i(1-x^2-y^2)}{(x-1)^2+y^2}
-			</me>.
-			We substitute the real and imaginary parts, <m>u</m> and <m>v</m> from this equation, into Equation <xref
-			ref="harmfun2"/> to obtain the desired solution:
-			<me>
-				\phi(x,y) = \frac{80}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{(x-1)^2+(y-1)^2-1}\right)
-			</me>.
-			The level curve <m>\Phi(u,v) =\alpha</m> in the upper half-plane is a ray emanating from the origin, and the preimage
-			<m>\phi(x,y) = \alpha</m> in the unit disk is an arc of a circle that passes through the points 1 and <m>i</m>. Several
-			level curves are illustrated in <xref ref="fig_ch-10-038">Figure</xref>.
-		</p>
+			</p>
+			<p>
+				The potential <m>\Phi(u,v)</m> in the infinite strip has the boundary values
+				<me>
+					\Phi(\ln \,a,v) = U_1, \; \text{ and } \; \Phi(\ln b,v) = U_2 \; \text{ for all } \;  v
+				</me>.
+				The result of <xref ref="ex_10_18">Example</xref> gives the electrical potential <m>\Phi(u,v)</m>:
+				<me>
+					\Phi(u,v) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(u-\ln a)
+				</me>.
+				We can use the fact that <m>u = \ln |z|</m> to conclude that the potential <m>\phi(x,y)</m> is
+				<me>
+					\phi(x,y) = U_1 + \frac{U_2-U_1}{\ln b-\ln a}(\ln |z|-\ln a)
+				</me>.
+			</p>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Find the electrical potential <m>\phi(x,y)</m> produced by two charged half-planes that are perpendicular to the
+				<m>z</m> plane and pass through the rays <m>x\lt -1, \, y=0</m> and <m>x>1, \, y=0</m>, where the planes are kept at
+				the fixed potentials
+				<me>
+					\phi(x,0) = -300 \quad \text{fo } \quad x \lt -1, \quad \text{and} \quad \phi(x,0) =
+					300 \quad \text{for} \quad x > 1
+				</me>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The result of <xref ref="ex_conformal-sine">Example</xref> shows that the function <m>w=</m> <m>\mathrm{Arcsin}(z)</m>
+				is a conformal mapping of the <m>z</m> plane slit along the two rays <m>x\lt -1, \, y=0</m> and <m>x>1, \, y=0</m>
+				onto the vertical strip <m>-\frac{\pi}{2}\lt u\lt \frac{\pi}{2}</m>.  Thus, the problem reduces to finding the
+				potential <m>\Phi(u,v)</m> that satisfies the boundary values
+				<me>
+					\Phi\left(\!-\frac{\pi}{2},v\right) = -300 \quad \text{and} \quad \Phi\left(\frac{\pi}{2},v\right) = 
+					300 \quad \text{for all} \quad v
+				</me>.
+			</p>
+			<p>
+				From <xref ref="ex_10_1">Example</xref>,
+				<me>
+					\Phi(u,v) = \frac{600}{\pi}u
+				</me>
+			</p>
+			<p>
+				As in the discussion of <xref ref="ex_10_17">Example</xref>, the solution in the <m>z</m> plane is
+				<md>
+					<mrow>\phi(x,y) \amp = \frac{600}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)</mrow>
+					<mrow>\amp = \frac{600}{\pi}\mathrm{Arcsin}\left(\frac{\sqrt{(x+1)^2+y^2}-\sqrt{(x-1)^2+y^2}}{2}\right)</mrow>
+				</md>.
+			</p>
+			<p>
+				Several equipotential curves are shown in <xref ref="fig_ch-10-037">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-037">
+				<caption>Equipotentials of two charged half-planes perpendicular to the complex plane</caption>
+				<image width="73%" source="figs/ch-10/ch-10-fig-037.svg"/>
+			</figure>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Find the electrical potential <m>\phi(x,y)</m> in the disk <m>D:|z|\lt 1</m> that satisfies the boundary values
+				<md>
+					<mrow>
+						\phi(x,y) \amp = 80 \quad \text{for} \quad x+iy=z \quad \text{on} 
+						\quad C_1=\left\{z=e^{i\theta}, \;\; 0\lt \theta \lt \frac{\pi}{2}\right\};
+					</mrow>
+					<mrow>
+						\phi(x,y) \amp = \;\; 0 \quad \text{for} \quad x+iy=z \quad \text{on} 
+						\quad C_2=\left\{z=e^{i\theta}, \;\; \frac{\pi}{2}\lt \theta \lt 2\pi\right\}
+					</mrow>
+				</md>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				The mapping <m>w=S(z) = \frac{(1-i)(z-i)}{z-1}</m> is a one-to-one conformal mapping of <m>D</m> onto the upper
+				half-plane <m>\mathrm{Im}(w) > 0</m> with the property that <m>C_1</m> is mapped onto the negative <m>u</m> axis and
+				<m>C_2</m> is mapped onto the positive <m>u</m> axis. The potential <m>\Phi(u,v)</m> in the upper half-plane that
+				satisfies the new boundary values
+				<me>
+					\Phi(u,0) = 80 \quad \text{for} \quad u\lt 0, \quad \text{and} \quad \Phi(u,0) = 0 \quad \text{for} \quad u > 0
+				</me>
+				is given by
+				<men xml:id="harmfun2">
+					\Phi(u,v) = \frac{80}{\pi}\mathrm{Arg}(w) = \frac{80}{\pi}\mathrm{Arctan}\left(\frac{v}{u}\right)
+				</men>.
+			</p>
+			<p>
+				A straightforward calculation shows that
+				<me>
+					u+iv = S(z) = \frac{(x-1)^2+(y-1)^2-1 +i(1-x^2-y^2)}{(x-1)^2+y^2}
+				</me>.
+				We substitute the real and imaginary parts, <m>u</m> and <m>v</m> from this equation, into 
+				Equation <xref ref="harmfun2"/> to obtain the desired solution:
+				<me>
+					\phi(x,y) = \frac{80}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{(x-1)^2+(y-1)^2-1}\right)
+				</me>.
+				The level curve <m>\Phi(u,v) =\alpha</m> in the upper half-plane is a ray emanating from the origin, and the preimage
+				<m>\phi(x,y) = \alpha</m> in the unit disk is an arc of a circle that passes through the points 1 and <m>i</m>.
+				Several level curves are illustrated in <xref ref="fig_ch-10-038">Figure</xref>.
+			</p>
 			<figure xml:id="fig_ch-10-038">
 				<caption>The potentials <m>\phi</m> and <m>\Phi</m></caption>
 				<image width="90%" source="figs/ch-10/ch-10-fig-038.svg"/>
