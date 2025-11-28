@@ -1,105 +1,103 @@
 <section xml:id="sec_preliminaries">
-  <title>Preliminaries</title>
-  <p>
-	 In most applications involving harmonic functions, a harmonic function that takes on prescribed values along certain contours
-	 must be found.  In presenting the material in this chapter, we assume that you are familiar with the material covered in <xref
-	 ref="sec_branches">Sections</xref>, <xref ref="sec_harmonic-functions"></xref>, <xref ref="sec_exponential-function"></xref>,
-	 and <xref ref="sec_complex-log"></xref>.  If you aren't, please review it before proceeding.
-  </p>
-  <example xml:id="ex_10_1">
-    <statement>
-      <p>
-        Find the function <m>u(x,y)</m> that is harmonic in the vertical strip
-        <m>a \le \mathrm{Re}(z) \le b</m> and takes on the boundary values
-        <me>
-          u(a,y) =U_1  \text{ and }   u(b,y)=U_2
-        </me>
-        along the vertical lines <m>x=a</m> and <m>x=b</m>, respectively.
-      </p>
-      <solution>
-        <p>
-			 Intuition suggests that we should seek a solution that takes on constant values along the vertical lines of the form
-			 <m>x=x_0</m> and that <m>u(x,y)</m> be a function of <m>x</m> alone; that is,
-          <me>
-            u(x,y) =P(x), \;  \text{ for } \;  a \le x \le b, \;  \text{ and for all } \;  y.
-          </me>
-        </p>
-      </solution>
-      <p>
-		  Laplace's equation, <m>u_{xx}(x,y) +u_{yy}(x,y) = 0</m>, implies that <m>P,''(x)=0</m>, which implies <m>P(x)=mx+c</m>,
-		  where <m>m</m> and <m>c</m> are constants.  The stated boundary conditions <m>u(a,y)=P(a)=U_1</m> and
-		  <m>u(b,y)=P(b)=U_2</m> lead to the solution
-        <me>
-          u(x,y) =U_1+\frac{U_2-U_1}{b-a}(x-a).
-        </me>
-      </p>
-      <p>
-        The level curves <m>u(x,y) =</m> constant are vertical lines as indicated in <xref ref="fig_ch-10-001">Figure</xref>.
-      </p>
-    </statement>
-  </example>
-  <figure xml:id="fig_ch-10-001">
-    <caption>Level curves of <m>u(x,y)=U_1+\frac{U_2-U_1}{b-a}(x-a)</m></caption>
-    <image width="50%" source="figs/ch-10/ch-10-fig-001.svg"/>
-  </figure>
-  <example xml:id="ex_Psi_x_y_">
-    <statement>
-      <p>
-        Find the function <m>\Psi(x,y)</m> that is harmonic in the sector <m>0\lt \mathrm{Arg}z\lt \alpha</m>,
-        where <m>\alpha \le \pi</m>, and takes on the boundary values
-        <md>
-          <mrow>\Psi(x,0) \amp = C_1  \text{ for }   x>0, \; \text{ and }</mrow>
-          <mrow>\Psi(x,y) \amp = C_2  \text{ at points on the ray }   r>0, \; \theta =\alpha </mrow>
-        </md>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Recalling that the function
-        <m>\mathrm{Arg}(z)</m> is harmonic and takes on constant values along rays emanating from the origin,
-        we see that a solution has the form
-        <me>
-          \Psi(x,y)=a+b\mathrm{Arg}(z)
-        </me>,
-        where <m>a</m> and <m>b</m> are constants.
-        The boundary conditions lead to
-        <me>
-          \Psi(x,y) = C_1 + \frac{C_2 - C_1}{\alpha}\mathrm{Arg}(z)
-        </me>.
-        The situation is shown in <xref ref="fig_ch-10-002">Figure</xref>.
-      </p>
-		  <figure xml:id="fig_ch-10-002">
-    		<caption>Level curves of <m>\Psi(x,y) = C_1 + (C_2-C_1) \frac{1}{\alpha }\mathrm{Arg}(z)</m></caption>
-			<image width="50%" source="figs/ch-10/ch-10-fig-002.svg"/>
-		  </figure>
-    </solution>
-  </example>
-  <example xml:id="ex_harmonic-in-annulus">
-    <statement>
-	 	<p>
-			Find the function <m>\Phi(x,y)</m> that is harmonic in the annulus <m>1\lt |z| \lt R</m> and takes on the boundary values
-			<md>
-				<mrow>\Phi(x,y) \amp = K_1, \quad \text{when} \quad  |z| = 1, \quad \text{and}</mrow>
-				<mrow>\Phi(x,y) \amp = K_2, \quad \text{when} \quad  |z| = R.</mrow>
-			</md>
+<title>Preliminaries</title>
+	<p>
+		In most applications involving harmonic functions, a harmonic function that takes on prescribed values along certain
+		contours must be found. In presenting the material in this chapter, we assume that you are familiar with the material
+		covered in Sections <xref ref="sec_branches"></xref>, <xref ref="sec_harmonic-functions"></xref>, 
+		<xref ref="sec_exponential-function"></xref>, and <xref ref="sec_complex-log"></xref>. If you aren't, please review it
+		before proceeding.
+	</p>
+	<example xml:id="ex_10_1">
+		<statement>
+			<p>
+				Find the function <m>u(x,y)</m> that is harmonic in the vertical strip <m>a \le \mathrm{Re}(z) \le b</m> and takes on
+				the boundary values
+				<me>
+					u(a,y) =U_1 \quad \text{and} \quad u(b,y)=U_2
+				</me>
+				along the vertical lines <m>x=a</m> and <m>x=b</m>, respectively.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Intuition suggests that we should seek a solution that takes on constant values along the vertical lines of the form
+				<m>x=x_0</m> and that <m>u(x,y)</m> be a function of <m>x</m> alone; that is,
+				<me>
+					u(x,y) = P(x), \quad  \text{for} \quad  a \le x \le b, \quad  \text{and for all} \quad  y
+				</me>.
+			</p>
+		</solution>
+		<p>
+			Laplace's equation, <m>u_{xx}(x,y) + u_{yy}(x,y) = 0</m>, implies that <m>P,''(x)=0</m>, which implies
+			<m>P(x)=mx+c</m>, where <m>m</m> and <m>c</m> are constants.  The stated boundary conditions <m>u(a,y)=P(a)=U_1</m>
+			and <m>u(b,y)=P(b)=U_2</m> lead to the solution
+			<me>
+				u(x,y) =U_1+\frac{U_2-U_1}{b-a}(x-a)
+			</me>.
 		</p>
-	 </statement>
+		<p>
+			The level curves <m>u(x,y) =</m> constant are vertical lines as indicated in <xref ref="fig_ch-10-001">Figure</xref>.
+		</p>
+	</example>
+	<figure xml:id="fig_ch-10-001">
+		<caption>Level curves of <m>u(x,y)=U_1+\frac{U_2-U_1}{b-a}(x-a)</m></caption>
+		<image width="50%" source="figs/ch-10/ch-10-fig-001.svg"/>
+	</figure>
+	<example xml:id="ex_Psi_x_y_">
+		<statement>
+			<p>
+				Find the function <m>\Psi(x,y)</m> that is harmonic in the sector <m>0\lt \mathrm{Arg}z\lt \alpha</m>, where 
+				<m>\alpha \le \pi</m>, and takes on the boundary values
+				<md>
+					<mrow>\Psi(x,0) \amp = C_1 \quad \text{for} \quad x>0, \\quad \text{and}</mrow>
+					<mrow>\Psi(x,y) \amp = C_2 \quad \text{at points on the ray} \quad r>0, \; \theta = \alpha</mrow>
+				</md>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Recalling that the function <m>\mathrm{Arg}(z)</m> is harmonic and takes on constant values along rays emanating from
+				the origin, we see that a solution has the form
+				<me>
+					\Psi(x,y) = a + b\mathrm{Arg}(z)
+				</me>,
+				where <m>a</m> and <m>b</m> are constants. The boundary conditions lead to
+				<me>
+					\Psi(x,y) = C_1 + \frac{C_2 - C_1}{\alpha}\mathrm{Arg}(z)
+				</me>.
+				The situation is shown in <xref ref="fig_ch-10-002">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-002">
+				<caption>Level curves of <m>\Psi(x,y) = C_1 + (C_2-C_1) \frac{1}{\alpha }\mathrm{Arg}(z)</m></caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-002.svg"/>
+			</figure>
+		</solution>
+	</example>
+	<example xml:id="ex_harmonic-in-annulus">
+		<statement>
+			<p>
+				Find the function <m>\Phi(x,y)</m> that is harmonic in the annulus <m>1\lt |z| \lt R</m> and takes on the boundary
+				values
+				<md>
+					<mrow>\Phi(x,y) \amp = K_1, \quad \text{when} \quad |z| = 1, \quad \text{and}</mrow>
+					<mrow>\Phi(x,y) \amp = K_2, \quad \text{when} \quad |z| = R</mrow>
+				</md>.
+			</p>
+		</statement>
       <solution>
 			<p>
 				This problem is a companion to the one in <xref ref="ex_Psi_x_y_">Example</xref>. Here we use the fact that
 				<m>\ln|z|</m> is a harmonic function, for all <m>z \ne 0</m>. The solution is
-			</p>
-			<me>
-				\Phi(x,y)=K_1+\frac{K_2-K_1}{\ln R}\ln|z|,
-			</me>
-			<p>
+				<me>
+					\Phi(x,y)=K_1+\frac{K_2-K_1}{\ln R}\ln|z|
+				</me>,
 				and the level curves <m>\Phi(x,y)=</m> constant are concentric circles, as illustrated in 
 				<xref ref="fig_ch-10-003">Figure</xref>.
 			</p>
-				<figure xml:id="fig_ch-10-003">
-					<caption>Level curves of <m>\Phi(x,y) = K_1 + \frac{K_2-K_1}{\ln R}\ln|z|</m></caption>
-					<image width="50%" source="figs/ch-10/ch-10-fig-003.svg"/>
-				</figure>
+			<figure xml:id="fig_ch-10-003">
+				<caption>Level curves of <m>\Phi(x,y) = K_1 + \frac{K_2-K_1}{\ln R}\ln|z|</m></caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-003.svg"/>
+			</figure>
 		</solution>
-  </example>
+	</example>
 </section>
