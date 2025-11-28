@@ -1,374 +1,369 @@
 <section xml:id="sec_2d-fluid-flow">
-  <title>Two-Dimensional Fluid Flow</title>
-  <p>
-    Suppose that a fluid flows over the complex plane and that the velocity at the point <m>z=x+iy</m> is given by the velocity vector
-    <men xml:id="vvector">
-      \mathbf{V}(x,y) = p(x,y) +iq(x,y)
-    </men>.
-  </p>
-  <p>
-	 We also require that the velocity does not depend on time and the components <m>p(x,y)</m> and <m>q(x,y)</m> have continuous
-	 partial derivatives. The divergence of the vector field in <xref ref="vvector">Equation</xref> is given by
-    <me>
-      \mathrm{div}\mathbf{V}(x,y) = p_x(x,y) + q_y(x,y)
-    </me>
-	 and is a measure of the extent to which the velocity field diverges near the point. We consider only fluid flows for which the
-	 divergence is zero. This condition is more precisely characterized by the requirement that the net flow through any simply
-	 closed contour be identically zero.
-  </p>
-  <p>
-	 If we consider the flow out of the small rectangle shown in <xref ref="fig_ch-10-047">Figure</xref>, then the rate of outward
-	 flow equals the line integral of the exterior normal component of <m>\mathbf{V}(x,y)</m> taken over the sides of the
-	 rectangle. The exterior normal component is given by <m>-q</m> on the bottom edge, <m>p</m> on the right edge, <m>q</m> on the
-	 top edge, and <m>-p</m> on the left edge. Integrating and setting the resulting net flow to zero yields
-    <md>
-      <mrow>\int_y^{y+\Delta y}[p(x+\Delta x,t) \amp -p(x,t)]\,dt</mrow>
-		<mrow> \amp + \int_x^{x+\Delta x}[q(t,y+\Delta y)-q(t,y )]\,dt</mrow>
-		<mrow xml:id="intflow" number="yes">\amp =0.</mrow>
-    </md>
-  </p>
-  <figure xml:id="fig_ch-10-047">
-    <caption>A two-dimensional vector field</caption>
-    <image width="60%" source="figs/ch-10/ch-10-fig-047.svg"/>
-  </figure>
-  <p>
-    Both <m>p</m> and <m>q</m> are continuously differentiable,
-    so the mean value theorem implies that
-    <md>
-      <mrow xml:id="eqnspq" number="yes">p(x+\Delta x,t) - p(x,t) \amp = p_x(x_1,t) \Delta x, \quad \text{and}</mrow>
-      <mrow>q(t,y+\Delta y) - q(t,y) \amp = q_y(t,y_2) \Delta y</mrow>
-    </md>,
-    where <m>x\lt x_1\lt x+\Delta x</m> and <m>y\lt y_2\lt y+\Delta y</m>.
-	 Substitution of the expressions displayed in Equation <xref ref="eqnspq"/> into Equation <xref ref="intflow"/> and
-	 subsequently dividing through by <m>\Delta x\ \Delta y</m> results in
-    <me>
-      \frac{1}{\Delta y}\int_y^{y+\Delta y}p_x(x_1,t)\,dt + \frac{1}{\Delta x}\int_x^{x+\Delta x}q_y(t,y_2)\,dt=0
-    </me>.
-  </p>
-  <p>
-    We can use the mean value theorem for integrals with this equation to show that
-    <me>
-      p_x(x_1,y_1) + q_y(x_2,y_2) =0
-    </me>,
-	 where <m>y\lt y_1\lt y+\Delta y</m> and <m>x\lt x_2\lt x+\Delta x</m>. Letting <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m>
-	 in this equation yields
-    <men xml:id="eqncont">
-      p_x(x,y) + q_y(x,y) =0
-    </men>,
-    which is called the <em>equation of continuity</em>.
-  </p>
-  <p>
-    The curl of the vector field in <xref ref="vvector">Equation</xref> has magnitude
-    <me>
-      \big|\mathbf{curl}\,\mathbf{V}(x,y)\big| = q_x(x,y) - p_y(x,y)
-    </me>
-	 and is an indication of how the field swirls in the vicinity of a point. Imagine that a <q>fluid element</q> at the point
-	 <m>(x,y)</m> is suddenly frozen and then moves freely in the fluid. The fluid element will rotate with an angular velocity
-	 given by
-    <me>
-      \frac{1}{2}q_y(x,y) - \frac{1}{2}p_x(x,y) = \frac{1}{2}\big|\mathbf{curl}\,\mathbf{V}(x,y)\big|.
-    </me>
-  </p>
-  <p>
-	 We consider only fluid flows for which the curl is zero. Such fluid flows are called <em>irrotational.</em> This condition is
-	 more precisely characterized by requiring that the line integral of the tangential component of <m>\mathbf{V}(x,y)</m> along
-	 any simply closed contour be identically zero. If we consider the rectangle in <xref ref="fig_ch-10-047">Figure</xref>, then
-	 the tangential component is given by <m>p</m> on the bottom edge, <m>q</m> on the right edge, <m>-p</m> on the top edge, and
-	 <m>-q</m> on the left edge. Integrating and equating the resulting <em>circulation</em> integral to zero yields
-    <me>
-      \int_y^{y+\Delta y}[q(x+\Delta x,t) - q(x,t)]\,dt - \int_x^{x+\Delta x}[p(t, y+\Delta y) - p(t,y)]\,dt=0
-    </me>.
-  </p>
-  <p>
-    As before, we apply the mean value theorem and divide through by <m>\Delta x\ \Delta y</m>, and obtain the equation
-    <me>
-      \frac{1}{\Delta y}\int_y^{y+\Delta y}q_x(x_1,t)\,dt - \frac{1}{\Delta x}\int_x^{x+\Delta x}p_y(t,y_2)\,dt=0
-    </me>.
-  </p>
-  <p>
-    We can use the mean value for integrals with this equation to deduce that <m>q_x(x_1,y_1) - p_y(x_2, y_2) =0</m>.
-    Letting <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m> yields
-    <me>
-      q_x(x,y) - p_y(x,y) = 0
-    </me>.
-  </p>
-  <p>
-	 Equation <xref ref="eqncont"/> and this equation show that the function <m>f(z) = p(x,y) - iq(x,y)</m> satisfies the
-	 Cauchy-Riemann equations and is an analytic function. If we let <m>F(z)</m> denote the antiderivative of <m>f(z)</m>, then
-	 <men xml:id="comppot"> F(z) = \phi(x,y) +i\psi(x,y) </men>,
-    which is the complex potential of the flow and has the property
-    <me>
-      \overline{F,'(z)} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y).
-    </me>
-  </p>
-  <p>
-    Since <m>\phi_x=p</m> and <m>\phi_y=q</m>, we also have
-    <me>
-      \nabla \phi(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
-    </me>,
-    so <m>\phi(x,y)</m> is the velocity potential for the flow, and the curves
-    <me>
-      \phi(x,y) = K_1
-    </me>
-    are called equipotentials. The function <m>\psi(x,y)</m> is called the stream function. The curves
-    <me>
-      \psi(x,y) = K_2
-    </me>
-	 are called streamlines and describe the paths of the fluid particles. To demonstrate this result, we implicitly differentiate
-    <m>\psi(x,y)=K_2</m> and find that the slope of a vector tangent is given by
-    <me>
-      \frac{dy}{dx} = -\frac{\psi_x(x,y)}{\psi_y(x,y)}
-    </me>.
-    Using the fact that <m>\psi_y=\phi_x</m> and this equation, we find that the tangent vector to the curve is
-    <me>
-      \mathbf{T} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y).
-    </me>
-  </p>
-  <p>
-    The salient idea of the preceding discussion is the conclusion that, if
-    <men xml:id="complexpot">
-      F(z) = \phi(x,y) + i\psi(x,y)
-    </men>
-    is an analytic function, then the family of curves
-    <me>
-      \{\psi(x,y) = K_2\}
-    </me>
-    represents the streamlines of a fluid flow.
-  </p>
-  <p>
-	 The boundary condition for an ideal fluid flow is that <m>\mathbf{V}</m> should be parallel to the boundary curve containing
-	 the fluid (the fluid flows parallel to the walls of a containing vessel). In other words, if 
-	 <xref ref="complexpot">Equation</xref> is the complex potential for the flow, then the boundary curve must be given by
-	 <m>\psi(x,y) =K</m> for some constant <m>K</m>; that is, the boundary curve must be a streamline.
-  </p>
-  <theorem>
-    <title>Invariance of flow</title>
-    <statement>
-      <p>
-        Let
-        <me>
-          F_1(w) = \Phi(u,v) + i\Psi(u,v)
-        </me>
-        denote the complex potential for a fluid flow in a domain <m>G</m> in the <m>w</m> plane, where the velocity is
-        <me>
-          \mathbf{V}_1(u,v) = \overline{F_1,'(w)}
-        </me>.
-		  If the function <m>w=S(z)=u(x,y)+iv(x,y)</m> is a one-to-one conformal mapping from a domain <m>D</m> in the
-		  <m>z</m>-plane onto <m>G</m>, then the composite function
-        <me>
-          F_2(z) = F_1(S(z)) = \Phi\big(u(x,y), \, v(x,y)\big) + i\Psi\big(u(x,y), \, v(x,y)\big)
-        </me>
-        is the complex potential for a fluid flow in <m>D</m>,
-        where the velocity is
-        <me>
-          \mathbf{V}_2(x,y) = \overline{F_2,'(z)}
-        </me>.
-        The situation is shown in <xref ref="fig_ch-10-048">Figure</xref>.
-      </p>
-    </statement>
-  </theorem>
-  <figure xml:id="fig_ch-10-048">
-    <caption>The image of a fluid flow under a conformal mapping</caption>
-    <image width="80%" source="figs/ch-10/ch-10-fig-048.svg"/>
-  </figure>
-  <proof>
-    <p>
-		From Equation <xref ref="comppot"/>, <m>F_1(w)</m> is an analytic function. Since the composition of analytic functions is
-		analytic, <m>F_2(z)</m> is the required complex potential for an ideal fluid flow in <m>D</m>.
-    </p>
-  </proof>
-  <p>
-    We note that the functions
-    <me>
-      \phi(x,y) = \Phi\big(u(x,y), \, v(x,y)\big)  \text{ and }   \psi(x,y) = \Psi\big(u(x,y), \, v(x,y)\big)
-    </me>
-	 are the new velocity potential and stream function, respectively, for the flow in <m>D</m>. A streamline or natural boundary
-	 curve
-    <me>
-      \psi(x,y)=K
-    </me>
-    in the <m>z</m> plane is mapped onto a streamline or natural boundary curve
-    <me>
-      \Psi(u,v)=K
-    </me>
-	 in the <m>w</m> plane by the transformation <m>w=S(z)</m>. One method for finding a flow inside a domain <m>D</m> in the
-	 <m>z</m> plane is to conformally map <m>D</m> onto a domain <m>G</m> in the <m>w</m> plane in which the flow is known.
-  </p>
-  <p>
-    For an ideal fluid with uniform density <m>\rho</m>, the fluid pressure <m>P(x,y)</m> and speed
-    <m>|\mathbf{V}(x,y)|</m> are related by the following special case of Bernoulli's equation:
-    <me>
-      \frac{P(x,y)}{\rho }+\frac{1}{2}\Big|\mathbf{V}(x,y)\Big| = \text{ constant }
-    </me>.
-    Note that the pressure is greatest when the speed is least.
-  </p>
-  <example>
-    <statement>
-      <p>
-        The complex potential <m>F(z) =(a+ib) z</m> has the velocity potential and stream function of
-        <me>
-          \phi(x,y) = ax-by  \text{ and }   \psi(x,y) = bx+ay
-        </me>,
-        respectively,
-        and gives rise to the fluid flow defined in the entire complex plane that has a uniform parallel velocity of
-        <me>
-          \mathbf{V}(x,y) = \overline{F\,'(z)} = a-ib.
-        </me>
-      </p>
-      <p>
-		  The streamlines are parallel lines given by the equation <m>bx+ay=</m> constant and are inclined at an angle <m>\alpha =
-		  -\mathrm{Arctan}(\frac{b}{a})</m>, as indicated in <xref ref="fig_ch-10-049">Figure</xref>.
-      </p>
-    </statement>
-  </example>
-  <figure xml:id="fig_ch-10-049">
-    <caption>A uniform parallel flow</caption>
-    <image width="50%" source="figs/ch-10/ch-10-fig-049.svg"/>
-  </figure>
-  <example>
-    <statement>
-      <p>
-		  Consider the complex potential <m>F(z) = \frac{A}{2}z^2</m>, where <m>A</m> is a positive real number.  The velocity
-		  potential and stream function are given by
-        <me>
-          \phi(x,y) = \frac{A}{2}(x^2-y^2)  \text{ and }   \psi(x,y) = Axy
-        </me>,
-        respectively. The streamlines
-        <me>
-          \psi(x,y)= \text{ constant }
-        </me>
-		  form a family of hyperbolas with asymptotes along the coordinate axes. The velocity vector <m>\mathbf{V}=A\overline{z}</m>
-		  indicates that in the upper half-plane <m>\mathrm{Im}(z) >0</m>, the fluid flows down along the streamlines and spreads
-		  out along the <m>x</m> axis, as against a wall, as depicted in <xref ref="fig_ch-10-050">Figure</xref>.
-      </p>
-    </statement>
-  </example>
-  <figure xml:id="fig_ch-10-050">
-    <caption>The fluid flow with complex potential <m>F(z)=\frac{A}{2}z^2</m></caption>
-    <image width="60%" source="figs/ch-10/ch-10-fig-050.svg"/>
-  </figure>
-  <example>
-    <statement>
-      <p>
-		  Find the complex potential for an ideal fluid flowing from left to right across the complex plane and around the unit
-		  circle <m>|z|=1</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We use the fact that the conformal mapping <m>w=S(z) =z+\frac{1}{z})</m> maps the domain
-        <m>D=\{z:|z|\lt 1\}</m> one-to-one and onto the <m>w</m> plane slit along the segment <m>-2 \le u \le 2, \; v=0</m>.
-        The complex potential for a uniform horizontal flow parallel to this slit in the <m>w</m> plane is
-        <me>
-          F_1(w) = Aw
-        </me>,
-        where <m>A</m> is a positive real number.
-        The stream function for the flow in the <m>w</m> plane is
-        <m>\psi(u,v) =Av</m> so that the slit lies along the streamline <m>\Psi(u,v) =0</m>.
-      </p>
-      <p>
-        The composite function <m>F_2(z) = F_1(S(z))</m> determines the fluid flow in the domain <m>D</m>,
-        where the complex potential is
-        <me>
-          F_2(z) = A\left(z+\frac{1}{z}\right)
-        </me>,
-        where <m>A>0</m>.
-        We can use polar coordinates to express <m>F_2(z)</m> as
-        <me>
-          F_2(z) = F_2(re^{i\theta}) = A\left(r+\frac{1}{r}\right) \cos \theta +iA\left(r-\frac{1}{r}\right) \sin \theta
-        </me>
-      </p>
-      <p>
-        The streamline <m>\psi(r,\theta ) =A(r-\frac{1}{r}) \sin \theta =0</m> consists of the rays
-        <me>
-          r>1, \; \theta =0  \text{ and }   r>1, \; \theta =\pi
-        </me>
-        along the <m>x</m> axis and the curve <m>r-\frac{1}{r}=0</m>,
-        which is the unit circle <m>r=1</m>.
-        Thus the unit circle can be considered as a boundary curve for the fluid flow.
-      </p>
-      <p>
-        The approximation <m>F_2(z) = A(z+\frac{1}{z}) \approx Az</m> is valid for large values of <m>z</m>,
-        so we can approximate the flow with a uniform horizontal flow having speed
-        <m>|\mathbf{V}|=A</m> at points that are distant from the origin.
-        The streamlines
-        <me>
-          \psi(x,y)=  \text{ constant }
-        </me>
-        and their images
-        <me>
-          \Psi(u,v) = \text{ constant }
-        </me>
-        under the mapping <m>w=S(z) =z+\frac{1}{z}</m> are illustrated in <xref ref="fig_ch-10-051">Figure</xref>.
-      </p>
-		<figure xml:id="fig_ch-10-051">
-			<caption>Fluid flow around a circle</caption>
-			<image width="50%" source="figs/ch-10/ch-10-fig-051.svg"/>
-		</figure>
-    </solution>
-  </example>
-  <example xml:id="ex_10_25">
-    <statement>
-      <p>
-		  Find the complex potential for an ideal fluid flowing from left to right across the complex plane and around the segment
-		  from <m>-i</m> to <m>i</m>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We use the conformal mapping
-        <me>
-          w = S(z) = (z^2+1)^\frac{1}{2}=(z+i)^\frac{1}{2}(z-i)^\frac{1}{2}
-        </me>
-		  where the branch of the square root of <m>Z= z \pm i</m> in each factor is <m>Z^\frac{1}{2}=R^\frac{1}{2}e^{i\theta
-		  /2}</m>, where <m>R=|Z|</m>, and <m>\theta = \arg_{-\frac{\pi}{2}}(Z), \; -\frac{\pi}{2}\lt</m> <m>\theta\le
-		  \frac{3\pi}{2}</m>.  The function given by <m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m>
-		  consisting of the <m>z</m> plane slit along the segment <m>x=0
-        <me>
-          ,\,-1\le y\le 1$ onto the domain $G$ consisting of the $w$ plane slit along the segment $-1\le u\le 1
-        </me>,
-        \,v=0</m>.
-        The complex potential for a uniform horizontal flow parallel to the slit in the <m>w</m> plane is given by <m>F_1(w) =Aw</m>,
-        where for convenience we choose <m>A=1</m> and where the slit lies along the streamline <m>\Psi(u,v) =c=0</m>.
-        The composite function
-        <me>
-          F_2(z) = F_1\big(S(z)\big) = A(z^2+1)^\frac{1}{2}
-        </me>
-        is the complex potential for a fluid flow in the domain <m>D</m>.
-        The streamlines given by <m>\psi(x,y) =c</m> for the flow in <m>D</m> are obtained by finding the preimage of the streamline
-        <m>\Psi(u,v) =c</m> in <m>G</m> given by the parametric equations
-        <me>
-          v =c  \text{ and }   u = t,  \text{ for }   -\infty \lt  t \lt \infty
-        </me>.
-        The corresponding streamline in <m>D</m> is found by solving the equation
-        <me>
-          t + ic = (z^2+1)^\frac{1}{2}
-        </me>
-        for <m>x</m> and <m>y</m> in terms of <m>t</m>.
-        Squaring both sides of this equation yields
-        <me>
-          t^2 - c^2 - 1 + i2ct = x^2 - y^2 + i2xy
-        </me>.
-        Equating the real and imaginary parts leads to the system of equations
-        <me>
-          x^2 - y^2 = t^2 - c^2 - 1  \text{ and }   xy = ct
-        </me>.
-        Eliminating <m>t</m> in the last two equations gives <m>c^2=(x^2+c^2) (y^2-c^2)</m>,
-        and we can solve for <m>y</m> in terms of <m>x</m> to get
-        <me>
-          y =c \sqrt{\frac{1+c^2+x^2}{c^2+x^2}}
-        </me>
-        for streamlines in <m>D</m>.
-        For large values of <m>x</m>,
-        this streamline approaches the asymptote <m>y=c</m> and approximates a horizontal flow,
-        as shown in <xref ref="fig_ch-10-052">Figure</xref>.
-      </p>
-		<figure xml:id="fig_ch-10-052">
-			<caption>Flow around a segment</caption>
-			<image width="50%" source="figs/ch-10/ch-10-fig-052.svg"/>
-		</figure>
-    </solution>
-  </example>
+<title>Two-Dimensional Fluid Flow</title>
+	<p>
+		Suppose that a fluid flows over the complex plane and that the velocity at the point <m>z=x+iy</m> is given by the velocity
+		vector
+		<men xml:id="vvector">
+			\mathbf{V}(x,y) = p(x,y) +iq(x,y)
+		</men>.
+	</p>
+	<p>
+		We also require that the velocity does not depend on time and the components <m>p(x,y)</m> and <m>q(x,y)</m> have continuous
+		partial derivatives. The divergence of the vector field in <xref ref="vvector">Equation</xref> is given by
+		<me>
+			\mathrm{div}\mathbf{V}(x,y) = p_x(x,y) + q_y(x,y)
+		</me>
+		and is a measure of the extent to which the velocity field diverges near the point. We consider only fluid flows for which
+		the divergence is zero. This condition is more precisely characterized by the requirement that the net flow through any
+		simply closed contour be identically zero.
+	</p>
+	<p>
+		If we consider the flow out of the small rectangle shown in <xref ref="fig_ch-10-047">Figure</xref>, then the rate of
+		outward flow equals the line integral of the exterior normal component of <m>\mathbf{V}(x,y)</m> taken over the sides of the
+		rectangle. The exterior normal component is given by <m>-q</m> on the bottom edge, <m>p</m> on the right edge, <m>q</m> on
+		the top edge, and <m>-p</m> on the left edge. Integrating and setting the resulting net flow to zero yields
+		<md>
+			<mrow>\int_y^{y+\Delta y}[p(x+\Delta x,t) \amp -p(x,t)]\,dt</mrow>
+			<mrow> \amp + \int_x^{x+\Delta x}[q(t,y+\Delta y)-q(t,y )]\,dt</mrow>
+			<mrow xml:id="intflow" number="yes">\amp =0</mrow>
+		</md>.
+	</p>
+	<figure xml:id="fig_ch-10-047">
+		<caption>A two-dimensional vector field</caption>
+		<image width="60%" source="figs/ch-10/ch-10-fig-047.svg"/>
+	</figure>
+	<p>
+		Both <m>p</m> and <m>q</m> are continuously differentiable, so the mean value theorem implies that
+		<md>
+			<mrow xml:id="eqnspq" number="yes">p(x+\Delta x,t) - p(x,t) \amp = p_x(x_1,t) \Delta x, \quad \text{and}</mrow>
+			<mrow>q(t,y+\Delta y) - q(t,y) \amp = q_y(t,y_2) \Delta y
+			</mrow>
+		</md>,
+		where <m>x\lt x_1\lt x+\Delta x</m> and <m>y\lt y_2\lt y+\Delta y</m>. Substitution of the expressions displayed in Equation
+		<xref ref="eqnspq"/> into Equation <xref ref="intflow"/> and subsequently dividing through by <m>\Delta x\ \Delta y</m>
+		results in
+		<me>
+			\frac{1}{\Delta y}\int_y^{y+\Delta y}p_x(x_1,t)\,dt + \frac{1}{\Delta x}\int_x^{x+\Delta x}q_y(t,y_2)\,dt=0
+		</me>.
+	</p>
+	<p>
+		We can use the mean value theorem for integrals with this equation to show that
+		<me>
+			p_x(x_1,y_1) + q_y(x_2,y_2) = 0
+		</me>,
+		where <m>y\lt y_1\lt y+\Delta y</m> and <m>x\lt x_2\lt x+\Delta x</m>. Letting <m>\Delta x \to 0</m> and 
+		<m>\Delta y \to 0</m> in this equation yields
+		<men xml:id="eqncont">
+			p_x(x,y) + q_y(x,y) = 0
+		</men>,
+		which is called the <em>equation of continuity</em>.
+	</p>
+	<p>
+		The curl of the vector field in <xref ref="vvector">Equation</xref> has magnitude
+		<me>
+			\big|\mathbf{curl}\,\mathbf{V}(x,y)\big| = q_x(x,y) - p_y(x,y)
+		</me>
+		and is an indication of how the field swirls in the vicinity of a point. Imagine that a <q>fluid element</q> at the point
+		<m>(x,y)</m> is suddenly frozen and then moves freely in the fluid. The fluid element will rotate with an angular velocity
+		given by
+		<me>
+			\frac{1}{2}q_y(x,y) - \frac{1}{2}p_x(x,y) = \frac{1}{2}\big|\mathbf{curl}\,\mathbf{V}(x,y)\big|
+		</me>.
+	</p>
+	<p>
+		We consider only fluid flows for which the curl is zero. Such fluid flows are called <em>irrotational.</em> This condition
+		is more precisely characterized by requiring that the line integral of the tangential component of <m>\mathbf{V}(x,y)</m>
+		along any simply closed contour be identically zero. If we consider the rectangle in 
+		<xref ref="fig_ch-10-047">Figure</xref>, then the tangential component is given by <m>p</m> on the bottom edge, <m>q</m> on
+		the right edge, <m>-p</m> on the top edge, and <m>-q</m> on the left edge. Integrating and equating the resulting
+		<em>circulation</em> integral to zero yields
+		<me>
+			\int_y^{y+\Delta y}[q(x+\Delta x,t) - q(x,t)]\,dt - \int_x^{x+\Delta x}[p(t, y+\Delta y) - p(t,y)]\,dt=0
+		</me>.
+	</p>
+	<p>
+		As before, we apply the mean value theorem and divide through by <m>\Delta x\ \Delta y</m>, and obtain the equation
+		<me>
+			\frac{1}{\Delta y}\int_y^{y+\Delta y}q_x(x_1,t)\,dt - \frac{1}{\Delta x}\int_x^{x+\Delta x}p_y(t,y_2)\,dt=0
+		</me>.
+	</p>
+	<p>
+		We can use the mean value for integrals with this equation to deduce that <m>q_x(x_1,y_1) - p_y(x_2, y_2) =0</m>. Letting
+		<m>\Delta x \to 0</m> and <m>\Delta y \to 0</m> yields
+		<me>
+			q_x(x,y) - p_y(x,y) = 0
+		</me>.
+	</p>
+	<p>
+		Equation <xref ref="eqncont"/> and this equation show that the function <m>f(z) = p(x,y) - iq(x,y)</m> satisfies the
+		Cauchy-Riemann equations and is an analytic function. If we let <m>F(z)</m> denote the antiderivative of <m>f(z)</m>, then
+		<men xml:id="comppot">
+			F(z) = \phi(x,y) +i\psi(x,y)
+		</men>,
+		which is the complex potential of the flow and has the property
+		<me>
+			\overline{F,'(z)} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
+		</me>.
+	</p>
+	<p>
+		Since <m>\phi_x=p</m> and <m>\phi_y=q</m>, we also have
+		<me>
+			\nabla \phi(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
+		</me>,
+		so <m>\phi(x,y)</m> is the velocity potential for the flow, and the curves
+		<me>
+			\phi(x,y) = K_1
+		</me>
+		are called <em>equipotentials</em>. The function <m>\psi(x,y)</m> is called the <em>stream function</em>. The curves
+		<me>
+			\psi(x,y) = K_2
+		</me>
+		are called <em>streamlines</em> and describe the paths of the fluid particles. To demonstrate this result, we implicitly
+		differentiate <m>\psi(x,y)=K_2</m> and find that the slope of a vector tangent is given by
+		<me>
+			\frac{dy}{dx} = -\frac{\psi_x(x,y)}{\psi_y(x,y)}
+		</me>.
+		Using the fact that <m>\psi_y=\phi_x</m> and this equation, we find that the tangent vector to the curve is
+		<me>
+			\mathbf{T} = \phi_x(x,y) - i\psi_x(x,y) = p(x,y) + iq(x,y) = \mathbf{V}(x,y)
+		</me>.
+	</p>
+	<p>
+		The salient idea of the preceding discussion is the conclusion that, if
+		<men xml:id="complexpot">
+			F(z) = \phi(x,y) + i\psi(x,y)
+		</men>
+		is an analytic function, then the family of curves
+		<me>
+			\{\psi(x,y) = K_2\}
+		</me>
+		represents the streamlines of a fluid flow.
+	</p>
+	<p>
+		The boundary condition for an ideal fluid flow is that <m>\mathbf{V}</m> should be parallel to the boundary curve containing
+		the fluid (the fluid flows parallel to the walls of a containing vessel). In other words, if
+		<xref ref="complexpot">Equation</xref> is the complex potential for the flow, then the boundary curve must be given by
+		<m>\psi(x,y) =K</m> for some constant <m>K</m>; that is, the boundary curve must be a streamline.
+	</p>
+	<theorem>
+	<title>Invariance of flow</title>
+		<statement>
+			<p>
+				Let
+				<me>
+					F_1(w) = \Phi(u,v) + i\Psi(u,v)
+				</me>
+				denote the complex potential for a fluid flow in a domain <m>G</m> in the <m>w</m> plane, where the velocity is
+				<me>
+					\mathbf{V}_1(u,v) = \overline{F_1,'(w)}
+				</me>.
+				If the function <m>w=S(z)=u(x,y)+iv(x,y)</m> is a one-to-one conformal mapping from a domain <m>D</m> in the
+				<m>z</m>-plane onto <m>G</m>, then the composite function
+				<me>
+					F_2(z) = F_1(S(z)) = \Phi\big(u(x,y), \, v(x,y)\big) + i\Psi\big(u(x,y), \, v(x,y)\big)
+				</me>
+				is the complex potential for a fluid flow in <m>D</m>, where the velocity is
+				<me>
+					\mathbf{V}_2(x,y) = \overline{F_2\,'(z)}
+				</me>.
+				The situation is shown in <xref ref="fig_ch-10-048">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-048">
+				<caption>The image of a fluid flow under a conformal mapping</caption>
+				<image width="80%" source="figs/ch-10/ch-10-fig-048.svg"/>
+			</figure>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			From Equation <xref ref="comppot"/>, <m>F_1(w)</m> is an analytic function. Since the composition of analytic
+			functions is analytic, <m>F_2(z)</m> is the required complex potential for an ideal fluid flow in <m>D</m>.
+		</p>
+	</proof>
+	<p>
+		We note that the functions
+		<me>
+			\phi(x,y) = \Phi\big(u(x,y), \, v(x,y)\big) \quad \text{and} \quad \psi(x,y) = \Psi\big(u(x,y), \, v(x,y)\big)
+		</me>
+		are the new velocity potential and stream function, respectively, for the flow in <m>D</m>. A streamline or natural boundary
+		curve
+		<me>
+			\psi(x,y)=K
+		</me>
+		in the <m>z</m> plane is mapped onto a streamline or natural boundary curve
+		<me>
+			\Psi(u,v)=K
+		</me>
+		in the <m>w</m> plane by the transformation <m>w=S(z)</m>. One method for finding a flow inside a domain <m>D</m> in the
+		<m>z</m> plane is to conformally map <m>D</m> onto a domain <m>G</m> in the <m>w</m> plane in which the flow is known.
+	</p>
+	<p>
+		For an ideal fluid with uniform density <m>\rho</m>, the fluid pressure <m>P(x,y)</m> and speed <m>|\mathbf{V}(x,y)|</m> are
+		related by the following special case of Bernoulli's equation:
+		<me>
+			\frac{P(x,y)}{\rho }+\frac{1}{2}\Big|\mathbf{V}(x,y)\Big| = \; \text{ constant}
+		</me>.
+		Note that the pressure is greatest when the speed is least.
+	</p>
+	<example>
+		<statement>
+			<p>
+				The complex potential <m>F(z) =(a+ib) z</m> has the velocity potential and stream function of
+				<me>
+					\phi(x,y) = ax-by \quad \text{and} \quad \psi(x,y) = bx+ay
+				</me>,
+				respectively, and gives rise to the fluid flow defined in the entire complex plane that has a uniform parallel
+				velocity of
+				<me>
+					\mathbf{V}(x,y) = \overline{F\,'(z)} = a-ib.
+				</me>
+			</p>
+			<p>
+				The streamlines are parallel lines given by the equation <m>bx+ay=</m> constant and are inclined at an angle 
+				<m>\alpha = -\mathrm{Arctan}(\frac{b}{a})</m>, as indicated in <xref ref="fig_ch-10-049">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-049">
+				<caption>A uniform parallel flow</caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-049.svg"/>
+			</figure>
+		</statement>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Consider the complex potential <m>F(z) = \frac{A}{2}z^2</m>, where <m>A</m> is a positive real number. The velocity
+				potential and stream function are given by
+				<me>
+					
+				\phi(x,y) = \frac{A}{2}(x^2-y^2) \quad \text{and} \quad \psi(x,y) = Axy </me>,
+				respectively. The streamlines
+				<me>
+					\psi(x,y) = \; \text{ constant}
+				</me>
+				form a family of hyperbolas with asymptotes along the coordinate axes. The velocity vector
+				<m>\mathbf{V}=A\overline{z}</m> indicates that in the upper half-plane <m>\mathrm{Im}(z) >0</m>, the fluid flows down
+				along the streamlines and spreads out along the <m>x</m> axis, as against a wall, as depicted in 
+				<xref ref="fig_ch-10-050">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-050">
+				<caption>The fluid flow with complex potential <m>F(z)=\frac{A}{2}z^2</m></caption>
+				<image width="60%" source="figs/ch-10/ch-10-fig-050.svg"/>
+			</figure>
+		</statement>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Find the complex potential for an ideal fluid flowing from left to right across the complex plane and around the unit
+				circle <m>|z|=1</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We use the fact that the conformal mapping <m>w=S(z) =z+\frac{1}{z})</m> maps the domain <m>D=\{z:|z|\lt 1\}</m>
+				one-to-one and onto the <m>w</m> plane slit along the segment <m>-2 \le u \le 2, \; v=0</m>. The complex potential for
+				a uniform horizontal flow parallel to this slit in the <m>w</m> plane is
+				<me>
+					F_1(w) = Aw
+				</me>,
+				where <m>A</m> is a positive real number. The stream function for the flow in the <m>w</m> plane is <m>\psi(u,v)
+				=Av</m> so that the slit lies along the streamline <m>\Psi(u,v) =0</m>.
+			</p>
+			<p>
+				The composite function <m>F_2(z) = F_1(S(z))</m> determines the fluid flow in the domain <m>D</m>, where the complex
+				potential is
+				<me>
+					F_2(z) = A\left(z+\frac{1}{z}\right)
+				</me>,
+				where <m>A>0</m>. We can use polar coordinates to express <m>F_2(z)</m> as
+				<me>
+					F_2(z) = F_2(re^{i\theta}) = A\left(r+\frac{1}{r}\right) \cos \theta +iA\left(r-\frac{1}{r}\right) \sin \theta
+				</me>
+			</p>
+			<p>
+				The streamline <m>\psi(r,\theta ) =A(r-\frac{1}{r}) \sin \theta =0</m> consists of the rays
+				<me>
+					r>1, \; \theta =0 \quad \text{and} \quad r>1, \; \theta =\pi
+				</me>
+				along the <m>x</m> axis and the curve <m>r-\frac{1}{r}=0</m>, which is the unit circle <m>r=1</m>. Thus the unit
+				circle can be considered as a boundary curve for the fluid flow.
+			</p>
+			<p>
+				The approximation <m>F_2(z) = A(z+\frac{1}{z}) \approx Az</m> is valid for large values of <m>z</m>, so we can
+				approximate the flow with a uniform horizontal flow having speed <m>|\mathbf{V}|=A</m> at points that are distant from
+				the origin. The streamlines
+				<me>
+					\psi(x,y) = \; \text{ constant}
+				</me>
+				and their images
+				<me>
+					\Psi(u,v) = \; \text{ constant}
+				</me>
+				under the mapping <m>w=S(z) =z+\frac{1}{z}</m> are illustrated in <xref ref="fig_ch-10-051">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-051">
+				<caption>Fluid flow around a circle</caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-051.svg"/>
+			</figure>
+		</solution>
+	</example>
+	<example xml:id="ex_10_25">
+		<statement>
+			<p>
+				Find the complex potential for an ideal fluid flowing from left to right across the complex plane and around the
+				segment from <m>-i</m> to <m>i</m>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				We use the conformal mapping
+				<me>
+					w = S(z) = (z^2+1)^\frac{1}{2}=(z+i)^\frac{1}{2}(z-i)^\frac{1}{2}
+				</me>
+				where the branch of the square root of <m>Z= z \pm i</m> in each factor is 
+				<m>Z^\frac{1}{2}=R^\frac{1}{2}e^{i\theta/2}</m>, where <m>R=|Z|</m>, and 
+				<m>\theta = \arg_{-\frac{\pi}{2}}(Z), \; -\frac{\pi}{2} \lt \theta \le \frac{3\pi}{2}</m>. The function given by
+				<m>w=S(z)</m> is a one-to-one conformal mapping of the domain <m>D</m> consisting of the <m>z</m> plane slit along the
+				segment <m>x=0, \; -1\le y\le 1</m> onto the domain <m>G</m> consisting of the <m>w</m> plane slit along the segment 
+				<m>-1\le u\le 1, \;v=0</m>.
+				The complex potential for a uniform horizontal flow parallel to the slit in the <m>w</m> plane is given by 
+				<m>F_1(w) = Aw</m>, where for convenience we choose <m>A=1</m> and where the slit lies along the streamline
+				<m>\Psi(u,v) =c=0</m>. The composite function
+				<me>
+					F_2(z) = F_1\big(S(z)\big) = A(z^2+1)^\frac{1}{2}
+				</me>
+				is the complex potential for a fluid flow in the domain <m>D</m>. The streamlines given by <m>\psi(x,y) =c</m> for the
+				flow in <m>D</m> are obtained by finding the preimage of the streamline <m>\Psi(u,v) =c</m> in <m>G</m> given by the
+				parametric equations
+				<me>
+					v = c \quad \text{and} \quad u = t, \quad \text{for} \quad -\infty \lt  t \lt \infty
+				</me>.
+				The corresponding streamline in <m>D</m> is found by solving the equation
+				<me>
+					t + ic = (z^2+1)^\frac{1}{2}
+				</me>
+				for <m>x</m> and <m>y</m> in terms of <m>t</m>. Squaring both sides of this equation yields
+				<me>
+					t^2 - c^2 - 1 + i2ct = x^2 - y^2 + i2xy
+				</me>.
+				Equating the real and imaginary parts leads to the system of equations
+				<me>
+					x^2 - y^2 = t^2 - c^2 - 1, \quad \text{and} \quad xy = ct
+				</me>.
+				Eliminating <m>t</m> in the last two equations gives <m>c^2=(x^2+c^2) (y^2-c^2)</m>, and we can solve for <m>y</m> in
+				terms of <m>x</m> to get
+				<me>
+					y =c \sqrt{\frac{1+c^2+x^2}{c^2+x^2}}
+				</me>
+				for streamlines in <m>D</m>. For large values of <m>x</m>, this streamline approaches the asymptote <m>y=c</m> and
+				approximates a horizontal flow, as shown in <xref ref="fig_ch-10-052">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-052">
+				<caption>Flow around a segment</caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-052.svg"/>
+			</figure>
+		</solution>
+	</example>
 <exercises xml:id="exercises_2d-fluid-flow">
 <title>Exercises</title>
 	<exercise>
