@@ -1,203 +1,214 @@
 <section xml:id="sec_poisson-integral-formula">
-  <title>Poisson's Integral Formula</title>
-  <p>
-	 The Dirichlet problem for the upper half-plane <m>\mathrm{Im}(z)>0</m> is to find a function <m>\phi(x,y)</m> that is harmonic
-	 in the upper half-plane and has the boundary values <m>\phi(x,0)=U(x)</m>, where <m>U(x)</m> is a real-valued function of the
-	 real variable <m>x</m>.
-  </p>
-  <theorem>
-    <title>Poisson's integral formula</title>
-    <statement>
-      <p>
-        Let <m>U(t)</m> be a real-valued function that is piecewise continuous and bounded for all real <m>t</m>.
-        The function
-        <men xml:id="PIfun">
-          \phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt
-        </men>
-      </p>
-      <p>
-        is harmonic in the upper half-plane <m>\, \mathrm{Im}(z) >0 \,</m> and has the boundary values
-        <me>
-          \phi(x,0) =U(x)
-        </me>
-        wherever <m>U</m> is continuous.
-      </p>
-    </statement>
-  </theorem>
-  <proof>
-    <p>
-		<xref ref="PIfun">Equation</xref> is easy to determine from the results of <xref ref="thm_N-value-dirichlet">Theorem</xref>
-		regarding the Dirichlet problem.  Let <m>t_1\lt t_2\lt \cdots \lt t_N</m> denote <m>N</m> points that lie along the <m>x</m>
-		axis.  Let <m>t_0^*\lt t_1^*\lt \cdots \lt t_N^*</m> be <m>N+1</m> points chosen so that <m>t_{k-1}^{\ast }\lt t_k\lt
-		t_k^*</m>, for <m>k=1,\,2,\,.\,.\,.\,,\,N</m>, and that <m>U( t)</m> is continuous at each value <m>t_k^*</m>.  Then
-		according to <xref ref="thm_N-value-dirichlet">Theorem</xref>, the function
-      <men xml:id="PIeqn">
-        \hspace{-0.3in} \Phi(x,y) = U(t_N^*) + \frac{1}{\pi}\sum\limits_{k=1}^{N}\left[ U(t_{k-1}^*)-U(t_k^*) \right]\mathrm{Arg}(z-t_k)
-      </men>
-      is harmonic in the upper half-plane and takes on the boundary values
-      <md>
-        <mrow>\Phi(x,0) \amp = U(t_0^*),  \text{ for }   x \lt  t_1,</mrow>
-        <mrow>\Phi(x,0) \amp = U(t_k^*),  \text{ for }   t_k \lt x \lt  t_{k+1},  \text{ and }</mrow>
-        <mrow>\Phi(x,0) \amp = U(t_N^*),  \text{ for }   x > t_N</mrow>
-      </md>,
-      as shown in <xref ref="fig_ch-10-013">Figure</xref>.
-    </p>
-    <p>
-		We use properties of the argument of a complex number (see <xref ref="sec_geometry-2">Section</xref>) to write <xref
-		ref="PIeqn">Equation</xref> in the form
-      <md>
-		  <mrow>\Phi(x,y) \amp = \frac{1}{\pi}U(t_0^*)\mathrm{Arg}(z-t_1) +
-		  \frac{1}{\pi}\sum_{k=1}^{N-1}U(t_k^*)\mathrm{Arg}\left(\frac{z-t_{k+1}}{z-t_k}\right)</mrow>
-        <mrow>\amp + \frac{1}{\pi}U(t_N^*)[\pi-\mathrm{Arg}(z-t_N)]</mrow>
-      </md>.
-    </p>
-    <p>
-      Hence the value <m>\Phi</m> is given by the weighted mean
-      <men xml:id="wmean">
-        \Phi(x,y)=\frac{1}{\pi}\sum\limits_{k=0}^{N}U(t_k^*)\Delta \theta_k
-      </men>,
-		where the angles <m>\Delta \theta_k</m>, for <m>k=0, \, 1, \ldots ,N</m>, sum to <m>\pi</m>, and are also shown in <xref
-		ref="fig_ch-10-013">Figure</xref>.
-    </p>
-    <figure xml:id="fig_ch-10-013">
-      <caption>Boundary values for <m>\Phi</m></caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-013.svg"/>
-    </figure>
-    <p>
-      Using the substitutions
-      <md>
-		  <mrow>\theta \amp = \mathrm{Arg}(z-t) =\mathrm{Arctan}\left(\frac{y}{x-t}\right), \,  \text{ and }</mrow> 
-		  <mrow xml:id="antideriv" number="yes">d\theta \amp = \frac{y}{(x-t)^2+y^2}\,dt</mrow>
-      </md>,
-      we write <xref ref="wmean">Equation</xref> as
-      <me>
-        \Phi(x,y) = \frac{y}{\pi}\sum\limits_{k=0}^{N}\frac{U(t_k^*) \,\Delta t_k}{(x-t_k^*)^2+y^2}.
-      </me>
-    </p>
-    <p>
-      The limit of this Riemann sum becomes the improper integral
-      <me>
-        \phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt.
-      </me>
-    </p>
-  </proof>
-  <example>
-    <statement>
-      <p>
-        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> and has the boundary values
-        <me>
-          \phi(x,0) = 1,  \text{ for }   -1 \lt  x \lt 1,  \text{ and }   \phi(x,0) = 0,  \text{ for }   |x| > 1
-        </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Using <xref ref="PIfun">Equation</xref>, we obtain
-        <me>
-          \phi(x,y) = \frac{y}{\pi}\int_{-1}^1\frac{1}{(x-t)^2+y^2}\,dt = \frac{1}{\pi}\int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt.
-        </me>
-      </p>
-      <p>
-        Using the antiderivative in <xref ref="antideriv">Equation</xref>, we write this solution as
-        <md>
-          <mrow>\phi(x,y)  \amp = \left. \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-t}\right)\right|_{t=-1}^{t=1}</mrow>
-			 <mrow>\amp =
-			 \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)-\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
-        </md>.
-      </p>
-    </solution>
-  </example>
-  <example xml:id="ex_10_12">
-    <statement>
-      <p>
-        Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane
-        <m>\mathrm{Im}(z) >0</m> and has the boundary values
-        <me>
-          \phi(x,0) =x,  \text{ for }   -1 \lt  x \lt 1,  \text{ and }   \phi(x,0) = 0,  \text{ for }   |x| > 1
-        </me>.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Using <xref ref="PIfun">Equation</xref>, we obtain
-        <md>
-          <mrow>\phi(x,y) \amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{t}{(x-t)^2+y^2}\,dt</mrow>
-			 <mrow>
-			 	\amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{(x-t)(-1)}{(x-t)^2+y^2}\,dt + 
-				\frac{x}{\pi} \int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
-			 </mrow>
-        </md>.
-      </p>
-      <p>
-        Using calculus techniques and <xref ref="antideriv">Equations</xref>, we write the solution as
-        <md>
-          <mrow>\phi(x,y) = \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] \amp + 
-			 	\frac{x}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
-			 <mrow>\amp - \frac{x}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
-        </md>.
-      </p>
-      <p>
-		  The function <m>\phi(x,y)</m> is continuous in the upper half-plane, and on the boundary <m>\phi(x,0)</m>, it has
-		  discontinuities at <m>x=\pm 1</m> on the real axis. The graph in <xref ref="fig_ch-10-014">Figure</xref> shows this
-		  phenomenon.
-      </p>
-		<figure xml:id="fig_ch-10-014">
-			<caption>
-				<m>\phi(x,y)</m> with boundary values <m>\phi(x,0) =x</m> for <m>|x| \lt  1</m>, and <m>\phi(x,0)=0</m> for 
-				<m>|x|>1</m>
-			</caption>
-			<image width="60%" source="figs/ch-10/ch-10-fig-014.svg"/>
+<title>Poisson's Integral Formula</title>
+	<p>
+		The Dirichlet problem for the upper half-plane <m>\mathrm{Im}(z)>0</m> is to find a function <m>\phi(x,y)</m> that is
+		harmonic in the upper half-plane and has the boundary values <m>\phi(x,0)=U(x)</m>, where <m>U(x)</m> is a real-valued
+		function of the real variable <m>x</m>.
+	</p>
+	<theorem>
+	<title>Poisson's integral formula</title>
+		<statement>
+			<p>
+				Let <m>U(t)</m> be a real-valued function that is piecewise continuous and bounded for all real <m>t</m>. The function
+				<men xml:id="PIfun">
+					\phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt
+				</men>
+			</p>
+			<p>
+				is harmonic in the upper half-plane <m>\, \mathrm{Im}(z) >0 \,</m> and has the boundary values
+				<me>
+					\phi(x,0) = U(x)
+				</me>
+				wherever <m>U</m> is continuous.
+			</p>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			<xref ref="PIfun">Equation</xref> is easy to determine from the results of 
+			<xref ref="thm_N-value-dirichlet">Theorem</xref> regarding the Dirichlet problem. Let <m>t_1\lt t_2\lt \cdots \lt t_N</m>
+			denote <m>N</m> points that lie along the <m>x</m> axis. Let <m>t_0^*\lt t_1^*\lt \cdots \lt t_N^*</m> be <m>N+1</m>
+			points chosen so that <m>t_{k-1}^{\ast }\lt t_k\lt t_k^*</m>, for <m>k=1,\,2,\,.\,.\,.\,,\,N</m>, and that <m>U( t)</m>
+			is continuous at each value <m>t_k^*</m>.  Then according to <xref ref="thm_N-value-dirichlet">Theorem</xref>, the
+			function
+			<men xml:id="PIeqn">
+				\hspace{-0.3in}\Phi(x,y) = U(t_N^*) + 
+				\frac{1}{\pi}\sum\limits_{k=1}^{N}\left[ U(t_{k-1}^*)-U(t_k^*) \right]\mathrm{Arg}(z-t_k)
+			</men>
+			is harmonic in the upper half-plane and takes on the boundary values
+			<md>
+				<mrow>\Phi(x,0) \amp = U(t_0^*), \quad \text{for} \quad x \lt  t_1,</mrow>
+				<mrow>\Phi(x,0) \amp = U(t_k^*), \quad \text{for} \quad t_k \lt x \lt t_{k+1}, \quad \text{and}</mrow>
+				<mrow>\Phi(x,0) \amp = U(t_N^*), \quad \text{for} \quad x > t_N</mrow>
+			</md>,
+			as shown in <xref ref="fig_ch-10-013">Figure</xref>.
+		</p>
+		<p>
+			We use properties of the argument of a complex number (see <xref ref="sec_geometry-2">Section</xref>) to write 
+			<xref ref="PIeqn">Equation</xref> in the form
+			<md>
+				<mrow>
+					\Phi(x,y) \amp = \frac{1}{\pi}U(t_0^*)\mathrm{Arg}(z-t_1) +
+					\frac{1}{\pi}\sum_{k=1}^{N-1}U(t_k^*)\mathrm{Arg}\left(\frac{z-t_{k+1}}{z-t_k}\right)
+				</mrow>
+				<mrow>\amp + \frac{1}{\pi}U(t_N^*)[\pi-\mathrm{Arg}(z-t_N)]</mrow>
+			</md>.
+		</p>
+		<p>
+			Hence the value <m>\Phi</m> is given by the weighted mean
+			<men xml:id="wmean">
+				\Phi(x,y)=\frac{1}{\pi}\sum\limits_{k=0}^{N}U(t_k^*)\Delta \theta_k
+			</men>,
+			where the angles <m>\Delta \theta_k</m>, for <m>k=0, \, 1, \ldots ,N</m>, sum to <m>\pi</m>, and are also shown in 
+			<xref ref="fig_ch-10-013">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-10-013">
+			<caption>Boundary values for <m>\Phi</m></caption>
+			<image width="73%" source="figs/ch-10/ch-10-fig-013.svg"/>
 		</figure>
-    </solution>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Find <m>\phi(x,y)</m> that is harmonic in the upper half-plane
-        <m>\mathrm{Im}(z)>0</m> and that has the boundary values
-        <md>
-          <mrow>\phi(x,0) =  x, \quad \amp \text{for} \quad |x|\lt 1;</mrow>
-          <mrow>\phi(x,0) = -1, \quad \amp \text{for} \quad x\lt -1; \quad \text{and}</mrow>
-          <mrow>\phi(x,0) =  1, \quad \amp \text{for} \quad  x>1.</mrow>
-        </md>
-      </p>
-    </statement>
-    <solution>
-      <p>
-        Using techniques from <xref ref="sec_dirichlet-problem">Section</xref>,
-        we find that the function
-        <me>
-          v(x,y) = 1 - \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) - \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)
-        </me>
-        is harmonic in the upper half-plane and has the following boundary values:
-        <md>
-		  	<mrow>v(x,0) \amp=0 \quad \text{for} \quad |x| \lt 1, 
-				\qquad v(x,0) = -1  \quad \text{for} \quad x \lt -1, \qquad \text{and}</mrow>
-		   <mrow>v(x,0) \amp =1 \quad \text{for} \quad  x > 1.</mrow>
-		  </md>
-      </p>
-      <p>
-        This function can be added to the one in <xref ref="ex_10_12">Example</xref> to obtain the desired result:
-        <md>
-			 <mrow>\phi(x,y) = 1 + \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] \amp +
-			 	\frac{x-1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
-			 <mrow>\amp - \frac{x+1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
-        </md>.
-      </p>
-      <p>
-        <xref ref="fig_ch-10-015">Figure</xref>
-        shows the graph of <m>\phi(x,y)</m>.
-      </p>
-		<figure xml:id="fig_ch-10-015">
-			<caption>
-				<m>\phi(x,y)</m> with boundary values <m>\phi(x,0)=x</m> for <m>|x|\lt 1, \  \phi(x,0)=-1</m>, for 
-				<m>x\lt -1</m>, and <m>\phi(x,0) =1</m> for <m>x>1</m>
-			</caption>
-			<image width="60%" source="figs/ch-10/ch-10-fig-015"/>
-		</figure>
-    </solution>
-  </example>
+		<p>
+			Using the substitutions
+			<md>
+				<mrow>\theta \amp = \mathrm{Arg}(z-t) = \mathrm{Arctan}\left(\frac{y}{x-t}\right), \quad \text{and}</mrow> 
+				<mrow xml:id="antideriv" number="yes">d\theta \amp = \frac{y}{(x-t)^2+y^2}\,dt</mrow>
+			</md>,
+			we write <xref ref="wmean">Equation</xref> as
+			<me>
+				\Phi(x,y) = \frac{y}{\pi}\sum\limits_{k=0}^{N}\frac{U(t_k^*) \,\Delta t_k}{(x-t_k^*)^2+y^2}
+			</me>.
+		</p>
+		<p>
+			The limit of this Riemann sum becomes the improper integral
+			<me>
+				\phi(x,y) = \frac{y}{\pi}\int\nolimits_{-\infty}^{\infty}\frac{U(t)}{(x-t)^2+y^2}\,dt
+			</me>.
+		</p>
+	</proof>
+	<example>
+		<statement>
+			<p>
+				Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane <m>\mathrm{Im}(z) >0</m> and has the
+				boundary values
+				<me>
+					\phi(x,0) = 1, \quad \text{for} \quad -1 \lt  x \lt 1, \quad \text{and} \quad \phi(x,0) = 0, 
+					\quad \text{for} \quad |x| > 1
+				</me>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Using <xref ref="PIfun">Equation</xref>, we obtain
+				<me>
+					\phi(x,y) = \frac{y}{\pi}\int_{-1}^1\frac{1}{(x-t)^2+y^2}\,dt = \frac{1}{\pi}\int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
+				</me>.
+			</p>
+			<p>
+				Using the antiderivative in <xref ref="antideriv">Equation</xref>, we write this solution as
+				<md>
+					<mrow>\phi(x,y) \amp = \left. \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-t}\right)\right|_{t=-1}^{t=1}</mrow>
+					<mrow>
+						\amp = \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right) -
+						\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)
+					</mrow>
+				</md>.
+			</p>
+		</solution>
+	</example>
+	<example xml:id="ex_10_12">
+		<statement>
+			<p>
+				Find the function <m>\phi(x,y)</m> that is harmonic in the upper half-plane <m>\mathrm{Im}(z) >0</m> and has the
+				boundary values
+				<me>
+					\phi(x,0) = x, \quad \text{for} \quad -1 \lt  x \lt 1, \quad \text{and} \quad \phi(x,0) = 0, 
+					\quad \text{for} \quad |x| > 1
+				</me>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Using <xref ref="PIfun">Equation</xref>, we obtain
+				<md>
+					<mrow>\phi(x,y) \amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{t}{(x-t)^2+y^2}\,dt</mrow>
+					<mrow> 
+						\amp = \frac{y}{\pi}\int\nolimits_{-1}^{1}\frac{(x-t)(-1)}{(x-t)^2+y^2}\,dt + 
+						\frac{x}{\pi} \int_{-1}^1\frac{y}{(x-t)^2+y^2}\,dt
+					</mrow>
+				</md>.
+			</p>
+			<p>
+				Using calculus techniques and <xref ref="antideriv">Equations</xref>, we write the solution as
+				<md>
+					<mrow>
+						\phi(x,y) = \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] \amp + 
+						\frac{x}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)
+					</mrow>
+					<mrow>\amp - \frac{x}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
+				</md>.
+			</p>
+			<p>
+				The function <m>\phi(x,y)</m> is continuous in the upper half-plane, and on the boundary <m>\phi(x,0)</m>, it has
+				discontinuities at <m>x=\pm 1</m> on the real axis. The graph in <xref ref="fig_ch-10-014">Figure</xref> shows this
+				phenomenon.
+			</p>
+			<figure xml:id="fig_ch-10-014">
+				<caption>
+					<m>\phi(x,y)</m> with boundary values <m>\phi(x,0) =x</m> for <m>|x| \lt  1</m>, and <m>\phi(x,0)=0</m> for 
+					<m>|x|>1</m>
+				</caption>
+				<image width="60%" source="figs/ch-10/ch-10-fig-014.svg"/>
+			</figure>
+		</solution>
+	</example>
+	<example>
+		<statement>
+			<p>
+				Find <m>\phi(x,y)</m> that is harmonic in the upper half-plane <m>\mathrm{Im}(z)>0</m> and that has the boundary
+				values 
+				<md>
+					<mrow>\phi(x,0) =  x, \quad \amp \text{for} \quad |x|\lt 1;</mrow>
+					<mrow>\phi(x,0) = -1, \quad \amp \text{for} \quad x\lt -1; \quad \text{and}</mrow>
+					<mrow>\phi(x,0) =  1, \quad \amp \text{for} \quad  x>1</mrow>
+				</md>.
+			</p>
+		</statement>
+		<solution>
+			<p>
+				Using techniques from <xref ref="sec_dirichlet-problem">Section</xref>, we find that the function
+				<me>
+					v(x,y) = 1 - \frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right) -
+					\frac{1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)
+				</me>
+				is harmonic in the upper half-plane and has the following boundary values:
+				<md>
+					<mrow>
+						v(x,0) \amp=0 \quad \text{for} \quad |x| \lt 1, \qquad v(x,0) = -1 
+						\quad \text{for} \quad x \lt -1, \qquad \text{and}
+					</mrow>
+					<mrow>v(x,0) \amp =1 \quad \text{for} \quad  x > 1</mrow>
+				</md>.
+			</p>
+			<p>
+				This function can be added to the one in <xref ref="ex_10_12">Example</xref> to obtain the desired result:
+				<md>
+					<mrow>
+						\phi(x,y) = 1 + \frac{y}{2\pi}\ln\left[\frac{(x-1)^2+y^2}{(x+1)^2+y^2}\right] \amp +
+						\frac{x-1}{\pi}\mathrm{Arctan}\left(\frac{y}{x-1}\right)</mrow>
+					<mrow>\amp - \frac{x+1}{\pi}\mathrm{Arctan}\left(\frac{y}{x+1}\right)</mrow>
+				</md>.
+			</p>
+			<p>
+				<xref ref="fig_ch-10-015">Figure</xref> shows the graph of <m>\phi(x,y)</m>.
+			</p>
+			<figure xml:id="fig_ch-10-015">
+				<caption>
+					<m>\phi(x,y)</m> with boundary values <m>\; \phi(x,0) = x \;</m> for <m>\; |x|\lt 1, \;  \phi(x,0) = -1 \;</m>, for 
+					<m>\; x \lt -1 \;</m>, and <m>\; \phi(x,0) = 1 \;</m> for <m> \; x>1</m>
+				</caption>
+				<image width="60%" source="figs/ch-10/ch-10-fig-015"/>
+			</figure>
+		</solution>
+	</example>
 <exercises xml:id="exercises_poisson-integral-formula">
 <title>Exercises</title>
 	<exercise>
