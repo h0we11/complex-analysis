@@ -1,289 +1,280 @@
 <section xml:id="sec_sources-and-sinks">
-  <title>Sources and Sinks</title>
-  <introduction>
-    <p>
-		If the two-dimensional motion of an ideal fluid consists of an outward radial flow from a point and is symmetrical in all
-		directions, then the point is called a <em>simple source</em>. A source at the origin can be considered as a line
-		perpendicular to the <m>z</m> plane along which fluid is being emitted. If the rate of emission of volume of fluid per unit
-		length is 2<m>\pi m</m>, then the origin is said to be a source of strength <m>m</m>,
-      the complex potential for the flow is
-      <me>
-        F(z) = m\log z
-      </me>,
-      and the velocity <m>\mathbf{V}</m> at the point <m>(x,y)</m> is given by
-      <me>
-        \mathbf{V}(x,y) = \overline{F\,'(z)} = \frac{m}{\bar{z}}
-      </me>.
-		For fluid flows, a sink is a negative source and is a point of inward radial flow at which the fluid is considered to be
-		absorbed or annihilated. <xref ref="fig_ch-10-093">Figure</xref> illustrates these concepts.
-    </p>
-    <figure xml:id="fig_ch-10-093">
-      <caption>Sources and sinks for an ideal fluid</caption>
-      <image width="80%" source="figs/ch-10/ch-10-fig-093.svg"/>
-    </figure>
-  </introduction>
-  <subsection xml:id="subsec_charged-line">
-    <title>Source: A Charged Line</title>
-    <p>
-		In the case of electrostatics, a source will correspond to a uniformly charged line perpendicular to the <m>z</m> plane at
-		the point <m>z_0</m>.  We will show that if the line <m>L</m> is located at <m>z_0=0</m> and carries a charge density of
-		<m>\frac{q}{2}</m> coulombs per unit length, then the magnitude of the electrical field is <m>|\mathbf{E}(x,y)| =
-		\frac{q}{\sqrt{x^2+y^2}}</m>.  Hence, <m>\mathbf{E}</m> is given by
-      <men xml:id="electfield">
-        \mathbf{E}(x,y) = \frac{qz}{|z|^2}=\frac{q}{\bar{z}}
-      </men>,
-      and the complex potential is
-      <me>
-        F(z) = -q\log z, \quad \text{and} \quad \mathbf{E}(x,y) = -\overline{F\,'(z)}
-      </me>.
-    </p>
-    <p>
-      A sink for electrostatics is a negatively charged line perpendicular to the <m>z</m> plane.
-      The electric field for electrostatic problems corresponds to the velocity field for fluid flow problems,
-      except that their corresponding potentials differ by a sign change.
-    </p>
-    <p>
-      To establish Equation <xref ref="electfield"/>,
-      we start with Coulomb's law,
-      which states that two particles with charges <m>q</m> and <m>Q</m> exert a force on one another with magnitude <m>\frac{CqQ}{r^2}</m>,
-      where <m>r</m> is the distance between particles and <m>C</m> is a constant that depends on the scientific units.
-      For simplicity,
-      we assume that <m>C=1</m> and the test particle at the point <m>z</m> has charge <m>Q=1</m>.
-    </p>
-    <p>
-      The contribution <m>\Delta \mathbf{E}_1</m> induced by the element of charge
-      <m>\frac{q\Delta h}{2}</m> along the segment of length
-      <m>\Delta h</m> situated at a height <m>h</m> above the plane has magnitude <m>|\Delta \mathbf{E} _1|</m> given by
-      <me>
-        |\Delta \mathbf{E}_1| = \frac{(\frac{q}{2})\Delta h}{r^2+h^2}
-      </me>.
-      It has the same magnitude as
-      <m>\Delta \mathbf{E}_2</m> induced by the element
-      <m>\frac{q\Delta h}{2}</m> located a distance <m>-h</m> below the plane.
-      From the vertical symmetry involved their sum,
-      <m>\Delta \mathbf{E}_2+\Delta \mathbf{E}_2</m>,
-      lies parallel to the plane along the ray from the origin,
-      as shown in <xref ref="fig_ch-10-094">Figure</xref>.
-    </p>
-    <figure xml:id="fig_ch-10-094">
-      <caption>Contributions to <m>\mathbf{E}</m> from the elements of charge <m>\frac{q\Delta h}{2}</m> situated at <m>(0,0,\pm h)</m>, above and
-      below the <m>z</m>-plane.</caption>
-      <image width="73%" source="figs/ch-10/ch-10-fig-094.svg"/>
-    </figure>
-    <p>
-      By the principal of superposition,
-      we add all contributions from the elements of charge along <m>L</m> to obtain <m>\mathbf{E}=\sum\Delta \mathbf{E}_k</m>.
-      By vertical symmetry,
-      <m>\mathbf{E}</m> lies parallel to the complex plane along the ray from the origin through the point <m>z</m>.
-      Hence the magnitude of <m>\mathbf{E}</m> is the sum of all components
-      <m>|\Delta \mathbf{E}|\cos t</m> that are parallel to the complex plane,
-      where <m>t</m> is the angle between <m>\Delta \mathbf{E}</m> and the plane.
-      Letting <m>\Delta h\to 0</m> in this summation process produces the definite integral
-      <me>
-        |\mathbf{E}(x,y)| =\int_{-\infty}^{\infty}|\Delta \mathbf{E}|\cos t\,dh = \int_{-\infty}^{\infty}\frac{(\frac{q}{2}) \cos t}{r^2+h^2}\,dh
-      </me>.
-    </p>
-    <p>
-      Next, we use the change of variable <m>h=r\tan t</m> and
-      <m>dh=r\sec^2t\,dt</m> and the trigonometric identity
-      <m>\sec ^2t=\frac{r^2+h^2}{r^2}</m> to obtain the equivalent integral:
-      <me>
-		  |\mathbf{E}(x,y)| =\int_{-\frac{\pi}{2}}^\frac{\pi}{2} \frac{(\frac{q}{2}) \cos t}{r^2+h^2}\frac{r^2+h^2}{r}\,dt =
-		  \frac{q}{2r}\int_{-\frac{\pi}{2}}^\frac{\pi}{2}\cos t\,dt=\frac{q}{r}
-      </me>.
-    </p>
-    <p>
-		Multiplying this magnitude <m>\frac{q}{r}</m> by the unit vector <m>\frac{z}{|z|}</m> establishes Formula <xref
-		ref="electfield"/>.  If <m>q>0</m>, then the field is directed away from <m>z_0=0</m> and, if <m>q\lt 0</m>, then it is
-		directed toward <m>z_0=0</m>.  An electrical field located at <m>z_0 \ne 0</m> is given by
-      <me>
-        E(x,y) = \frac{q(z-z_0)}{|z-z_0|^2}=\frac{q}{\overline{z}-\overline{z_0}}
-      </me>,
-      and the corresponding complex potential is
-      <me>
-        F(z) = -q\log(z-z_0).
-      </me>
-    </p>
-    <example>
-      <title>Source and sink of equal strength</title>
-      <statement>
-        <p>
-			 Let a source and sink of unit strength be located at the points <m>+1</m> and <m>-1</m>, respectively. The complex
-			 potential for a fluid flowing from the source at <m>+1</m> to the sink at <m>-1</m> is
-          <me>
-            F(z) = \log(z-1) - \log(z+1) = \log\left(\frac{z-1}{z+1}\right)
-          </me>.
-          The velocity potential and stream function are, respectively
-          <me>
-            \phi(x,y) = \ln \left| \frac{z-1}{z+1}\right|  \text{ and }   \psi(x,y) = \arg\left(\frac{z-1}{z+1}\right)
-          </me>.
-          To solve for the streamline <m>\psi(x,y)=c</m> we start with
-          <me>
-				c = \arg\left(\frac{z-1}{z+1}\right) = \arg\left(\frac{x^2+y^2-1+i2y}{(x+1)^2+y^2}\right) =
-				\arctan\left(\frac{2y}{x^2+y^2-1}\right)
-          </me>,
-			 and obtain the equation <m>(\tan c)(x^2+y^2-1)=2y</m>. A straightforward calculation shows that points on the streamline
-			 must satisfy the equation
-          <me>
-            x^2+(y-\cot c)^2=1+\cot ^2c
-          </me>,
-			 which is the equation of a circle with center at <m>(0, \cot c)</m> that passes through the points <m>(\pm 1, 0)</m>.
-			 Several streamlines are indicated in <xref ref="fig_ch-10-095">Figure</xref>(a).
-        </p>
-      </statement>
-    </example>
-    <figure xml:id="fig_ch-10-095">
-      <caption>Fields depicting electrical strength</caption>
-      <image width="40%" source="figs/ch-10/ch-10-fig-095.svg"/>
-    </figure>
-    <example>
+<title>Sources and Sinks</title>
+	<introduction>
+		<p>
+			If the two-dimensional motion of an ideal fluid consists of an outward radial flow from a point and is symmetrical in all
+			directions, then the point is called a <em>simple source</em>. A source at the origin can be considered as a line
+			perpendicular to the <m>z</m> plane along which fluid is being emitted. If the rate of emission of volume of fluid per
+			unit length is 2<m>\pi m</m>, then the origin is said to be a source of strength <m>m</m>, the complex potential for the
+			flow is
+			<me>
+				F(z) = m\log z
+			</me>,
+			and the velocity <m>\mathbf{V}</m> at the point <m>(x,y)</m> is given by
+			<me>
+				\mathbf{V}(x,y) = \overline{F\,'(z)} = \frac{m}{\bar{z}}
+			</me>.
+			For fluid flows, a sink is a negative source and is a point of inward radial flow at which the fluid is considered to be
+			absorbed or annihilated. <xref ref="fig_ch-10-093">Figure</xref> illustrates these concepts.
+		</p>
+		<figure xml:id="fig_ch-10-093">
+			<caption>Sources and sinks for an ideal fluid</caption>
+			<image width="80%" source="figs/ch-10/ch-10-fig-093.svg"/>
+		</figure>
+	</introduction>
+	<subsection xml:id="subsec_charged-line">
+	<title>Source: A Charged Line</title>
+		<p>
+			In the case of electrostatics, a source will correspond to a uniformly charged line perpendicular to the <m>z</m> plane
+			at the point <m>z_0</m>. We will show that if the line <m>L</m> is located at <m>z_0=0</m> and carries a charge density
+			of <m>\frac{q}{2}</m> coulombs per unit length, then the magnitude of the electrical field is 
+			<m>|\mathbf{E}(x,y)| = \frac{q}{\sqrt{x^2+y^2}}</m>. Hence, <m>\mathbf{E}</m> is given by
+			<men xml:id="electfield">
+				\mathbf{E}(x,y) = \frac{qz}{|z|^2}=\frac{q}{\bar{z}}
+			</men>,
+			and the complex potential is
+			<me>
+				F(z) = -q\log z, \quad \text{and} \quad \mathbf{E}(x,y) = -\overline{F\,'(z)}
+			</me>.
+		</p>
+		<p>
+			A sink for electrostatics is a negatively charged line perpendicular to the <m>z</m> plane. The electric field for
+			electrostatic problems corresponds to the velocity field for fluid flow problems, except that their corresponding
+			potentials differ by a sign change.
+		</p>
+		<p>
+			To establish Equation <xref ref="electfield"/>, we start with Coulomb's law, which states that two particles with charges
+			<m>q</m> and <m>Q</m> exert a force on one another with magnitude <m>\frac{CqQ}{r^2}</m>, where <m>r</m> is the distance
+			between particles and <m>C</m> is a constant that depends on the scientific units. For simplicity, we assume that
+			<m>C=1</m> and the test particle at the point <m>z</m> has charge <m>Q=1</m>.
+		</p>
+		<p>
+			The contribution <m>\Delta \mathbf{E}_1</m> induced by the element of charge <m>\frac{q\Delta h}{2}</m> along the segment
+			of length <m>\Delta h</m> situated at a height <m>h</m> above the plane has magnitude <m>|\Delta \mathbf{E} _1|</m> given
+			by
+			<me>
+				|\Delta \mathbf{E}_1| = \frac{(\frac{q}{2})\Delta h}{r^2+h^2}
+			</me>.
+			It has the same magnitude as <m>\Delta \mathbf{E}_2</m> induced by the element <m>\frac{q\Delta h}{2}</m> located a
+			distance <m>-h</m> below the plane. From the vertical symmetry involved their sum, <m>\Delta \mathbf{E}_2+\Delta
+			\mathbf{E}_2</m>, lies parallel to the plane along the ray from the origin, as shown in
+			<xref ref="fig_ch-10-094">Figure</xref>.
+		</p>
+		<figure xml:id="fig_ch-10-094">
+			<caption>
+				Contributions to <m>\mathbf{E}</m> from the elements of charge <m>\frac{q\Delta h}{2}</m>
+				situated at <m>(0,0,\pm h)</m>, above and below the <m>z</m>-plane
+			</caption>
+			<image width="73%" source="figs/ch-10/ch-10-fig-094.svg"/>
+		</figure>
+		<p>
+			By the principal of superposition, we add all contributions from the elements of charge along <m>L</m> to obtain
+			<m>\mathbf{E}=\sum\Delta \mathbf{E}_k</m>.  By vertical symmetry, <m>\mathbf{E}</m> lies parallel to the complex plane
+			along the ray from the origin through the point <m>z</m>. Hence the magnitude of <m>\mathbf{E}</m> is the sum of all
+			components <m>|\Delta \mathbf{E}|\cos t</m> that are parallel to the complex plane, where <m>t</m> is the angle between
+			<m>\Delta \mathbf{E}</m> and the plane. Letting <m>\Delta h\to 0</m> in this summation process produces the definite
+			integral
+			<me>
+				|\mathbf{E}(x,y)| =\int_{-\infty}^{\infty}|\Delta \mathbf{E}|\cos t\,dh =
+				\int_{-\infty}^{\infty}\frac{(\frac{q}{2}) \cos t}{r^2+h^2}\,dh
+			</me>.
+		</p>
+		<p>
+			Next, we use the change of variable <m>h=r\tan t</m> and <m>dh=r\sec^2t\,dt</m> and the trigonometric identity
+			<m>\sec ^2t=\frac{r^2+h^2}{r^2}</m> to obtain the equivalent integral:
+			<me>
+				|\mathbf{E}(x,y)| =\int_{-\frac{\pi}{2}}^\frac{\pi}{2} \frac{(\frac{q}{2}) \cos t}{r^2+h^2}\frac{r^2+h^2}{r}\,dt =
+				\frac{q}{2r}\int_{-\frac{\pi}{2}}^\frac{\pi}{2}\cos t\,dt=\frac{q}{r}
+			</me>.
+		</p>
+		<p>
+			Multiplying this magnitude <m>\frac{q}{r}</m> by the unit vector <m>\frac{z}{|z|}</m> establishes Formula <xref
+			ref="electfield"/>.  If <m>q>0</m>, then the field is directed away from <m>z_0=0</m> and, if <m>q\lt 0</m>, then it is
+			directed toward <m>z_0=0</m>.  An electrical field located at <m>z_0 \ne 0</m> is given by
+			<me>
+				E(x,y) = \frac{q(z-z_0)}{|z-z_0|^2}=\frac{q}{\overline{z}-\overline{z_0}}
+			</me>,
+			and the corresponding complex potential is
+			<me>
+				F(z) = -q\log(z-z_0)
+			</me>.
+		</p>
+		<example>
+		<title>Source and sink of equal strength</title>
+			<statement>
+				<p>
+					Let a source and sink of unit strength be located at the points <m>+1</m> and <m>-1</m>, respectively. The complex
+					potential for a fluid flowing from the source at <m>+1</m> to the sink at <m>-1</m> is
+					<me>
+						F(z) = \log(z-1) - \log(z+1) = \log\left(\frac{z-1}{z+1}\right)
+					</me>.
+					The velocity potential and stream function are, respectively
+					<me>
+						\phi(x,y) = \ln \left| \frac{z-1}{z+1}\right|  \text{ and }   \psi(x,y) = \arg\left(\frac{z-1}{z+1}\right)
+					</me>.
+					To solve for the streamline <m>\psi(x,y)=c</m> we start with
+					<me>
+						c = \arg\left(\frac{z-1}{z+1}\right) = \arg\left(\frac{x^2+y^2-1+i2y}{(x+1)^2+y^2}\right) =
+						\arctan\left(\frac{2y}{x^2+y^2-1}\right)
+					</me>,
+					and obtain the equation <m>(\tan c)(x^2+y^2-1)=2y</m>. A straightforward calculation shows that points on the
+					streamline must satisfy the equation
+					<me>
+						x^2+(y-\cot c)^2=1+\cot ^2c
+					</me>,
+					which is the equation of a circle with center at <m>(0, \cot c)</m> that passes through the points <m>(\pm 1,
+					0)</m>. Several streamlines are indicated in <xref ref="fig_ch-10-095">Figure</xref>(a).
+				</p>
+				<figure xml:id="fig_ch-10-095">
+					<caption>Fields depicting electrical strength</caption>
+					<image width="40%" source="figs/ch-10/ch-10-fig-095.svg"/>
+				</figure>
+			</statement>
+		</example>
+		<example>
       <title>Two sources of equal strength</title>
-      <statement>
-        <p>
-			 Let two sources of unit strength be located at the points <m>\pm 1</m>. The resulting complex potential for a fluid flow
-			 is
-          <me>
-            F(z) = \log(z-1) + \log(z+1) =\log(z^2-1)
-          </me>.
-          The velocity potential and stream function are, respectively
-          <me>
-            \phi(x,y) = \ln|z^2-1|  \text{ and }   \psi(x,y) = \arg(z^2-1)
-          </me>,
-          To solve for the streamline <m>\psi(x,y)=c</m> we start with
-          <me>
-            c = \arg(z^2-1) = \arg(x^2-y^2-1+i2xy) = \arctan\left(\frac{2xy}{x^2-y^2-1}\right)
-          </me>,
-          and obtain the equation <m>x^2+2xy\cot c-y^2=1</m>.
-          If we express this equation in the form
-          <md>
-            <mrow>\left(x-y\tan \frac{c}{2}\right)\left(x+y\cot \frac{c}{2}\right) \amp = 1,  \text{ or }</mrow>
-				<mrow>\left(x\cos \frac{c}{2}-y\sin \frac{c}{2}\right)\left(x\sin \frac{c}{2} + y\cos \frac{c}{2}\right) \amp =
-				\left(\sin\frac{c}{2}\right)\left(\cos\frac{c}{2}\right)=\frac{\sin c}{2}</mrow>
-          </md>,
-          and use the rotation of axes
-          <me>
-				x^* = x\cos\left(-\frac{c}{2}\right) + y\sin\left(-\frac{c}{2}\right),  \text{ and } y^* =
-				-x\sin\left(-\frac{c}{2}\right) + y\cos\left(-\frac{c}{2}\right)
-          </me>,
-          then the streamlines must satisfy the equation
-			 <m>x^*y^*=\frac{\sin c}{2}</m> and are rectangular hyperbolas with centers at the origin that pass through the points
-			 <m>\pm 1</m>.
-          <xref ref="fig_ch-10-095">Figure</xref>(b) depicts several streamlines.
-        </p>
-      </statement>
-    </example>
-    <p>
-		Let an ideal fluid flow in a domain in the <m>z</m> plane be effected by a source located at the point <m>z_0</m>. Then the
-		flow at points <m>z</m>, which lie in a small neighborhood of the point <m>z_0</m>, is approximated by that of a source with
-		the complex potential
-      <me>
-        \log(z-z_0) + \text{ constant. }
-      </me>
-    </p>
-    <p>
-      If <m>w=S(z)</m> is a conformal mapping and <m>w_0=S(z_0)</m>,
-      then <m>S(z)</m> has a nonzero derivative at <m>z_0</m>, and
-      <me>
-        w-w_0=(z-z_0)[ S\,'(z_0) +\eta(z)]
-      </me>,
-      where <m>\eta(z) \to 0</m> as <m>z \to z_0</m>.
-      Taking logarithms yields
-      <me>
-        \log(w-w_0) = \log(z-z_0) + \mathrm{Log}[S\,'(z_0) + \eta (z)]
-      </me>.
-      Because <m>S\,'(z_0) \ne 0</m>,
-		the term <m>\mathrm{Log}[S\,'(z_0) + \eta(z)]</m> approaches the constant value <m>\mathrm{Log}[S\,'(z_0)]</m> as 
-		<m>z \to z_0</m>. Also, because <m>\log (z-z_0)</m> is the complex potential for a source located at the point <m>z_0</m>,
-		the image of a source under a conformal mapping is a source.  </p>
-    <p>
-		We can use the technique of conformal mapping to determine the fluid flow in a domain <m>D</m> in the <m>z</m> plane that is
-		produced by sources and sinks. If we can construct a conformal mapping <m>w=S(z)</m> so that the image of sources, sinks,
-		and boundary curves for the flow in <m>D</m> are mapped onto sources, sinks, and boundary curves in a domain <m>G</m> where
-		the complex potential is known to be <m>F_1(w)</m>, then the complex potential in <m>D</m> is given by 
-		<m>F_2(z) = F_1\big(S(z)\big)</m>.
-    </p>
-    <example>
-      <statement>
-        <p>
-			 Suppose that the lines <m>x=\pm\frac{\pi}{2}</m> are considered as walls of a containing vessel for a fluid flow
-			 produced by a single source of unit strength located at the origin. The conformal mapping <m>w=S(z) =\sin z</m> maps the
-			 infinite strip bounded by the lines <m>x=\pm\frac{\pi}{2}</m> onto the <m>w</m> plane slit along the boundary rays
-			 <m>u\le -1, \, v=0</m> and <m>u \ge 1, \; v=0</m>, and the image of the source at <m>z_0=0</m> is a source located at
-			 <m>w_0=0</m>. The complex potential
-          <me>
-            F_1(w) =\log w
-          </me>
-			 determines a fluid flow in the <m>w</m> plane past the boundary curves <m>u \le -1, \, v=0</m> and 
-			 <m>u \ge 1, \; v=0</m>, which lie along streamlines of the flow. Therefore the complex potential for the fluid flow in
-			 the infinite strip in the <m>z</m> plane is
-          <me>
-            F_2(z) =\log(\sin z).
-          </me>
-        </p>
-        <p>
-          Several streamlines for the flow are illustrated in <xref ref="fig_ch-10-096">Figure</xref>.
-        </p>
-      </statement>
-    </example>
-    <figure xml:id="fig_ch-10-096">
-      <caption>A source in the center of a strip</caption>
-      <image width="40%" source="figs/ch-10/ch-10-fig-096.svg"/>
-    </figure>
-    <example>
-      <statement>
-        <p>
-			 Suppose that the lines <m>x=\pm\frac{\pi}{2}</m> are considered as walls of a containing vessel for the fluid flow
-			 produced by a single source of unit strength located at the point <m>z_1=\frac{\pi}{2}</m> and a sink of unit strength
-			 located at the point <m>z_2=-\frac{\pi}{2}</m>.  The conformal mapping <m>w=S(z)=\sin z</m> maps the infinite strip
-			 bounded by the lines <m>x=\pm\frac{\pi}{2}</m> onto the <m>w</m> plane slit along the boundary rays 
-			 <m>K_1:u \le -1, \; v=0</m> and <m>K_2:u \ge 1, \; v=0</m>. The image of the source at <m>z_1</m> is a source at
-			 <m>w_1=1</m>, and the image of the sink at <m>z_2</m> is a sink at <m>w_2=-1</m>. The potential
-          <me>
-            F_1(w) =\log\left(\frac{w-1}{w+1}\right)
-          </me>
-          determines a fluid flow in the <m>w</m> plane past the boundary curves <m>K_1</m> and <m>K_2</m>,
-          which lie along streamlines of the flow.
-          Therefore the complex potential for the fluid flow in the infinite strip in the <m>z</m> plane is
-          <me>
-            F_2(z)=\log\left(\frac{\sin z-1}{\sin z+1}\right).
-          </me>
-        </p>
-        <p>
-          Several streamlines for the flow are illustrated in <xref ref="fig_ch-10-097">Figure</xref>.
-        </p>
-      </statement>
-    </example>
-    <figure xml:id="fig_ch-10-097">
-      <caption>A source and a sink on the edges of a strip</caption>
-      <image width="40%" source="figs/ch-10/ch-10-fig-097.svg"/>
-    </figure>
-    <p>
-      We can use the technique of transformation of a source to determine the effluence from a channel extending from infinity.
-      In this case,
-      we construct a conformal mapping <m>w=S(z)</m> from the upper half-plane
-      <m>\mathrm{Im}(z)>0</m> so that the single source located at <m>z_0=0</m> is mapped to the point <m>w_0</m> at infinity that lies along the channel.
-      The streamlines emanating from <m>z_0=0</m> in the upper half-plane are mapped onto streamlines issuing from the channel.
-    </p>
-    <example>
-      <statement>
-        <p>
-          Consider the conformal mapping
-          <me>
-            w=S(z)=\frac{2}{\pi}(z^2-1)^\frac{1}{2}+\frac{2}{\pi}\mathrm{Arcsin}\left(\frac{1}{z}\right)
-          </me>,
-          which maps the upper half-plane
-          <m>\mathrm{Im}(z)>0</m> onto the domain consisting of the upper half-plane
-          <m>\mathrm{Im}(w)>0</m> joined to the channel <m>-1 \le u\le 1, \, v\le 0</m>.
-          The point <m>z_0=0</m> is mapped onto the point <m>w_0=-i\infty</m> along the channel.
-          Images of the rays <m>r>0</m>,
-          <m>\theta =\alpha</m> are streamlines issuing from the channel as indicated in <xref ref="fig_ch-10-098">Figure</xref>.
-        </p>
-      </statement>
-    </example>
-    <figure xml:id="fig_ch-10-098">
-      <caption>Effluence from a channel into a half-plane</caption>
-      <image width="50%" source="figs/ch-10/ch-10-fig-098.svg"/>
-    </figure>
+			<statement>
+				<p>
+					Let two sources of unit strength be located at the points <m>\pm 1</m>. The resulting complex potential for a fluid
+					flow is
+					<me>
+						F(z) = \log(z-1) + \log(z+1) =\log(z^2-1)
+					</me>.
+					The velocity potential and stream function are, respectively
+					<me>
+						\phi(x,y) = \ln|z^2-1|  \text{ and }   \psi(x,y) = \arg(z^2-1)
+					</me>,
+					To solve for the streamline <m>\psi(x,y)=c</m> we start with
+					<me>
+						c = \arg(z^2-1) = \arg(x^2-y^2-1+i2xy) = \arctan\left(\frac{2xy}{x^2-y^2-1}\right)
+					</me>,
+					and obtain the equation <m>x^2+2xy\cot c-y^2=1</m>. If we express this equation in the form
+					<md>
+						<mrow>\left(x-y\tan \frac{c}{2}\right)\left(x+y\cot \frac{c}{2}\right) \amp = 1,  \text{ or }</mrow>
+						<mrow>
+							\left(x\cos \frac{c}{2}-y\sin \frac{c}{2}\right)\left(x\sin \frac{c}{2} + y\cos \frac{c}{2}\right) \amp =
+							\left(\sin\frac{c}{2}\right)\left(\cos\frac{c}{2}\right)=\frac{\sin c}{2}
+						</mrow>
+					</md>,
+					and use the rotation of axes
+					<me>
+						x^* = x\cos\left(-\frac{c}{2}\right) + y\sin\left(-\frac{c}{2}\right), \quad 
+						\text{and} \quad y^* = -x\sin\left(-\frac{c}{2}\right) + y\cos\left(-\frac{c}{2}\right)
+					</me>,
+					then the streamlines must satisfy the equation <m>x^*y^*=\frac{\sin c}{2}</m> and are rectangular hyperbolas with
+					centers at the origin that pass through the points <m>\pm 1</m>. <xref ref="fig_ch-10-095">Figure</xref>(b) depicts
+					several streamlines. 
+				</p>
+			</statement>
+		</example>
+		<p>
+			Let an ideal fluid flow in a domain in the <m>z</m> plane be effected by a source located at the point <m>z_0</m>. Then
+			the flow at points <m>z</m>, which lie in a small neighborhood of the point <m>z_0</m>, is approximated by that of a
+			source with the complex potential
+			<me>
+				\log(z-z_0) + \text{ constant}
+			</me>.
+		</p>
+		<p>
+			If <m>w=S(z)</m> is a conformal mapping and <m>w_0=S(z_0)</m>, then <m>S(z)</m> has a nonzero derivative at <m>z_0</m>,
+			and
+			<me>
+				w-w_0=(z-z_0)[ S\,'(z_0) +\eta(z)]
+			</me>,
+			where <m>\eta(z) \to 0</m> as <m>z \to z_0</m>. Taking logarithms yields
+			<me>
+				\log(w-w_0) = \log(z-z_0) + \mathrm{Log}[S\,'(z_0) + \eta (z)]
+			</me>.
+			Because <m>S\,'(z_0) \ne 0</m>, the term <m>\mathrm{Log}[S\,'(z_0) + \eta(z)]</m> approaches the constant value
+			<m>\mathrm{Log}[S\,'(z_0)]</m> as <m>z \to z_0</m>. Also, because <m>\log (z-z_0)</m> is the complex potential for a
+			source located at the point <m>z_0</m>, the image of a source under a conformal mapping is a source. 
+		</p>
+		<p>
+			We can use the technique of conformal mapping to determine the fluid flow in a domain <m>D</m> in the <m>z</m> plane that
+			is produced by sources and sinks. If we can construct a conformal mapping <m>w=S(z)</m> so that the image of sources,
+			sinks, and boundary curves for the flow in <m>D</m> are mapped onto sources, sinks, and boundary curves in a domain
+			<m>G</m> where the complex potential is known to be <m>F_1(w)</m>, then the complex potential in <m>D</m> is given by
+			<m>F_2(z) = F_1\big(S(z)\big)</m>.
+		</p>
+		<example>
+			<statement>
+				<p>
+					Suppose that the lines <m>x=\pm\frac{\pi}{2}</m> are considered as walls of a containing vessel for a fluid flow
+					produced by a single source of unit strength located at the origin. The conformal mapping <m>w=S(z) =\sin z</m>
+					maps the infinite strip bounded by the lines <m>x=\pm\frac{\pi}{2}</m> onto the <m>w</m> plane slit along the
+					boundary rays <m>u\le -1, \, v=0</m> and <m>u \ge 1, \; v=0</m>, and the image of the source at <m>z_0=0</m> is a
+					source located at <m>w_0=0</m>. The complex potential
+					<me>
+						F_1(w) =\log w
+					</me>
+					determines a fluid flow in the <m>w</m> plane past the boundary curves <m>u \le -1, \, v=0</m> and
+					<m>u \ge 1, \; v=0</m>, which lie along streamlines of the flow. Therefore the complex potential for the fluid flow
+					in the infinite strip in the <m>z</m> plane is
+					<me>
+						F_2(z) =\log(\sin z)
+					</me>.
+				</p>
+				<p>
+					Several streamlines for the flow are illustrated in <xref ref="fig_ch-10-096">Figure</xref>.
+				</p>
+			</statement>
+		</example>
+		<figure xml:id="fig_ch-10-096">
+			<caption>A source in the center of a strip</caption>
+			<image width="40%" source="figs/ch-10/ch-10-fig-096.svg"/>
+		</figure>
+		<example>
+			<statement>
+				<p>
+					Suppose that the lines <m>x=\pm\frac{\pi}{2}</m> are considered as walls of a containing vessel for the fluid flow
+					produced by a single source of unit strength located at the point <m>z_1=\frac{\pi}{2}</m> and a sink of unit
+					strength located at the point <m>z_2=-\frac{\pi}{2}</m>. The conformal mapping <m>w=S(z)=\sin z</m> maps the
+					infinite strip bounded by the lines <m>x=\pm\frac{\pi}{2}</m> onto the <m>w</m> plane slit along the boundary rays
+					<m>K_1:u \le -1, \; v=0</m> and <m>K_2:u \ge 1, \; v=0</m>. The image of the source at <m>z_1</m> is a source at
+					<m>w_1=1</m>, and the image of the sink at <m>z_2</m> is a sink at <m>w_2=-1</m>. The potential
+					<me>
+						F_1(w) =\log\left(\frac{w-1}{w+1}\right)
+					</me>
+					determines a fluid flow in the <m>w</m> plane past the boundary curves <m>K_1</m> and <m>K_2</m>, which lie along
+					streamlines of the flow. Therefore the complex potential for the fluid flow in the infinite strip in the <m>z</m>
+					plane is
+					<me>
+						F_2(z)=\log\left(\frac{\sin z-1}{\sin z+1}\right)
+					</me>.
+				</p>
+				<p>
+					Several streamlines for the flow are illustrated in <xref ref="fig_ch-10-097">Figure</xref>.
+				</p>
+				<figure xml:id="fig_ch-10-097">
+					<caption>A source and a sink on the edges of a strip</caption>
+					<image width="40%" source="figs/ch-10/ch-10-fig-097.svg"/>
+				</figure>
+			</statement>
+		</example>
+		<p>
+			We can use the technique of transformation of a source to determine the effluence from a channel extending from infinity.
+			In this case, we construct a conformal mapping <m>w=S(z)</m> from the upper half-plane <m>\mathrm{Im}(z)>0</m> so that
+			the single source located at <m>z_0=0</m> is mapped to the point <m>w_0</m> at infinity that lies along the channel. The
+			streamlines emanating from <m>z_0=0</m> in the upper half-plane are mapped onto streamlines issuing from the channel.
+		</p>
+	<example>
+		<statement>
+			<p>
+				Consider the conformal mapping
+				<me>
+					w=S(z)=\frac{2}{\pi}(z^2-1)^\frac{1}{2}+\frac{2}{\pi}\mathrm{Arcsin}\left(\frac{1}{z}\right)
+				</me>,
+				which maps the upper half-plane <m>\mathrm{Im}(z)>0</m> onto the domain consisting of the upper half-plane
+				<m>\mathrm{Im}(w)>0</m> joined to the channel <m>-1 \le u\le 1, \, v\le 0</m>. The point <m>z_0=0</m> is mapped onto
+				the point <m>w_0=-i\infty</m> along the channel. Images of the rays <m>r>0</m>, <m>\theta =\alpha</m> are streamlines
+				issuing from the channel as indicated in <xref ref="fig_ch-10-098">Figure</xref>.
+			</p>
+			<figure xml:id="fig_ch-10-098">
+				<caption>Effluence from a channel into a half-plane</caption>
+				<image width="50%" source="figs/ch-10/ch-10-fig-098.svg"/>
+			</figure>
+		</statement>
+	</example>
 <exercises xml:id="exercises_sources-and-sinks">
 <title>Exercises</title>
 	<exercise xml:id="ex_11_11-1">
