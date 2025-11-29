@@ -503,21 +503,20 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_fourier-series"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Series</span>
 </h2>
-<section class="introduction" id="sec_fourier-series-2"><div class="para" id="sec_fourier-series-2-1">In this chapter we show how Fourier series, the Fourier transform, and the Laplace transform are related to the study of complex analysis.  We develop the Fourier series representation of a real-valued function <span class="process-math">\(U(t)\)</span> of the real variable <span class="process-math">\(t\text{.}\)</span>  Complex Fourier series and Fourier transforms are then discussed.  Finally, we develop the Laplace transform and the complex variable technique for finding its inverse.  This chapter focuses on applying these ideas to solving problems involving real-valued functions, so many of the theorems throughout are stated without proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sec_fourier-series-2"><div class="para" id="sec_fourier-series-2-1">In this chapter we show how Fourier series, the Fourier transform, and the Laplace transform are related to the study of complex analysis. We develop the Fourier series representation of a real-valued function <span class="process-math">\(U(t)\)</span> of the real variable <span class="process-math">\(t\text{.}\)</span> Complex Fourier series and Fourier transforms are then discussed. Finally, we develop the Laplace transform and the complex variable technique for finding its inverse. This chapter focuses on applying these ideas to solving problems involving real-valued functions, so many of the theorems throughout are stated without proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-series-2-2">
 <div class="para">Let <span class="process-math">\(U(t)\)</span> be a real-valued function that is periodic with period <span class="process-math">\(2\pi\text{,}\)</span> that is,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-01.html">
 \begin{equation*}
-U(t+2\pi)=U(t)  \text{ for all } t\text{.}
+U(t+2\pi)=U(t) \; \text{ for all } \; t\text{.}
 \end{equation*}
 </div>
 <div class="para">One such function is <span class="process-math">\(s= U(t) = \sin(t-\frac{\pi}{2}) + 0.7\cos(2t-\pi -\frac{1}{4}) +1.7\text{,}\)</span> and its graph is obtained by repeating the portion of the graph in any interval of length <span class="process-math">\(2\pi\text{,}\)</span> as shown in <a href="sec_fourier-series.html#fig_ch-11-01" class="xref" data-knowl="./knowl/xref/fig_ch-11-01.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.1.1">Figure 11.1.1</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-11-01"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/figs/ch-11/ch-11-fig-01.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A function <span class="process-math">\(U\)</span> with period <span class="process-math">\(2\pi\)</span><div class="autopermalink" data-description="Figure 11.1.1"><a href="#fig_ch-11-01" title="Copy heading and permalink for Figure 11.1.1" aria-label="Copy heading and permalink for Figure 11.1.1">🔗</a></div></figcaption></figure><div class="para" id="sec_fourier-series-2-4">Familiar examples of real functions that have period <span class="process-math">\(2\pi\)</span> are <span class="process-math">\(\sin nt\)</span> and <span class="process-math">\(\cos nt\text{,}\)</span> where <span class="process-math">\(n\)</span> is an integer.  This raises the question whether any periodic function can be represented by a sum of terms involving <span class="process-math">\(a_n\cos
-nt\)</span> and <span class="process-math">\(b_n\sin nt\text{,}\)</span> where <span class="process-math">\(a_n\)</span> and <span class="process-math">\(b_n\)</span> are real constants.  As we shall soon see, the answer to this question is often yes.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A function <span class="process-math">\(U\)</span> with period <span class="process-math">\(2\pi\)</span><div class="autopermalink" data-description="Figure 11.1.1"><a href="#fig_ch-11-01" title="Copy heading and permalink for Figure 11.1.1" aria-label="Copy heading and permalink for Figure 11.1.1">🔗</a></div></figcaption></figure><div class="para" id="sec_fourier-series-2-4">Familiar examples of real functions that have period <span class="process-math">\(2\pi\)</span> are <span class="process-math">\(\sin nt\)</span> and <span class="process-math">\(\cos nt\text{,}\)</span> where <span class="process-math">\(n\)</span> is an integer. This raises the question whether any periodic function can be represented by a sum of terms involving <span class="process-math">\(a_n\cos nt\)</span> and <span class="process-math">\(b_n\sin nt\text{,}\)</span> where <span class="process-math">\(a_n\)</span> and <span class="process-math">\(b_n\)</span> are real constants. As we shall soon see, the answer to this question is often yes.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="sec_fourier-series-2-5"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Piecewise Continuous.</span>
@@ -525,16 +524,15 @@ nt\)</span> and <span class="process-math">\(b_n\sin nt\text{,}\)</span> where <
 <div class="para" id="sec_fourier-series-2-5-2-1">The function <span class="process-math">\(U\)</span> is piecewise continuous on the closed interval <span class="process-math">\([a,b]\)</span> if there exists values <span class="process-math">\(t_0,t_1,\ldots,t_n\)</span> with <span class="process-math">\(a = t_0\lt t_1\lt \cdots\lt t_n=b\)</span> such that <span class="process-math">\(U\)</span> is continuous in each of the open intervals <span class="process-math">\(t_{k-1}\lt t\lt t_k(k=1,2,...n)\)</span> and has left- and right-hand limits at the values <span class="process-math">\(t_k\)</span> for <span class="process-math">\(k=0,1,\ldots, n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 11.1.2: Piecewise Continuous"><a href="#sec_fourier-series-2-5" title="Copy heading and permalink for Definition 11.1.2: Piecewise Continuous" aria-label="Copy heading and permalink for Definition 11.1.2: Piecewise Continuous">🔗</a></div></article><div class="para logical" id="sec_fourier-series-2-6">
-<div class="para">We use the symbols <span class="process-math">\(U(a^-)\)</span> and <span class="process-math">\(U(a^+)\)</span> for the left- and right-hand limits, respectively, of a function <span class="process-math">\(U(t)\)</span> as <span class="process-math">\(t\)</span> approaches the point <span class="process-math">\(a\text{.}\)</span>  The graph of a piecewise continuous function is illustrated in <a href="sec_fourier-series.html#fig_ch-11-02" class="xref" data-knowl="./knowl/xref/fig_ch-11-02.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.1.3">Figure 11.1.3</a>.</div>
+<div class="para">We use the symbols <span class="process-math">\(U(a^-)\)</span> and <span class="process-math">\(U(a^+)\)</span> for the left- and right-hand limits, respectively, of a function <span class="process-math">\(U(t)\)</span> as <span class="process-math">\(t\)</span> approaches the point <span class="process-math">\(a\text{.}\)</span> The graph of a piecewise continuous function is illustrated in <a href="sec_fourier-series.html#fig_ch-11-02" class="xref" data-knowl="./knowl/xref/fig_ch-11-02.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.1.3">Figure 11.1.3</a>.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-02.html">
 \begin{equation*}
-U(t)=
-\begin{cases}
-\frac{2}{3}\!\left(t-\frac{1}{2}\right)^2+\frac{1}{4} \amp \text{when } \quad 1 \le t \lt 2,\\
-\frac{5}{2}-(t-2)^2                          \amp \text{when } \quad 2 \lt t \lt 3,\\
-1+\frac{t-3}{4}                              \amp \text{when } \quad 3 \lt t \lt 4,\\
-\frac{6}{5}-(t-5)^3                          \amp \text{when } \quad 4 \lt t \le 6.
-\end{cases}
+U(t)= \begin{cases}
+\frac{2}{3}\!\left(t-\frac{1}{2}\right)^2+\frac{1}{4} \amp \text{when} \quad 1 \le t \lt 2,\\
+\frac{5}{2}-(t-2)^2 \amp \text{when} \quad 2 \lt t \lt 3,\\
+1+\frac{t-3}{4} \amp \text{when} \quad 3 \lt t \lt 4,\\
+\frac{6}{5}-(t-5)^3 \amp \text{when} \quad 4 \lt t \le 6
+\end{cases}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -544,9 +542,9 @@ U(t)=
 <div class="para">The left- and right-hand limits at <span class="process-math">\(t_0=2\text{,}\)</span> <span class="process-math">\(t_1=3\text{,}\)</span> and <span class="process-math">\(t_2=4\)</span> are easy to determine:</div>
 <div class="displaymath process-math" id="sec_fourier-series-2-8-4">
 \begin{align*}
-\amp  \text{At} \quad t=2, \quad U(2^-) = \frac{7}{4} \quad \text{and} \quad U(2^+) = \frac{5}{2};\\
+\amp \text{At} \quad t=2, \quad U(2^-) = \frac{7}{4} \quad \text{and} \quad U(2^+) = \frac{5}{2};\\
 \amp \text{At} \quad t=3, \quad U(3^-) = \frac{3}{2} \quad \text{and} \quad U(3^+) = \; 1;\\
-\amp \text{At} \quad t=4, \quad U(4^-) = \frac{5}{4} \quad \text{and} \quad U(4^+) = \frac{11}{5}.
+\amp \text{At} \quad t=4, \quad U(4^-) = \frac{5}{4} \quad \text{and} \quad U(4^+) = \frac{11}{5}\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -564,7 +562,7 @@ S(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nt + b_n\sin jt)\text{,}\tag{
 <div class="para">where the coefficients <span class="process-math">\(a_n\)</span> and <span class="process-math">\(b_n\)</span> are given by the so-called Euler’s Formulas:</div>
 <div class="displaymath process-math" id="FourierCoeffA">
 \begin{equation}
-a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos nt\,dt \quad  \text{for} \quad  n=0,1, \ldots \, ,\tag{11.1.2}
+a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos nt\,dt \quad \text{for} \quad  n=0,1, \ldots\text{,}\tag{11.1.2}
 \end{equation}
 </div>
 <div class="para">and</div>
@@ -575,7 +573,7 @@ b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 11.1.4: Fourier Series"><a href="#sec_fourier-series-2-9" title="Copy heading and permalink for Definition 11.1.4: Fourier Series" aria-label="Copy heading and permalink for Definition 11.1.4: Fourier Series">🔗</a></div></article><div class="para" id="sec_fourier-series-2-10">The factor <span class="process-math">\(\frac{1}{2}\)</span> in the constant term <span class="process-math">\(\frac{a_0}{2}\)</span> on the right side of Equation <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">(11.1.1)</a> has been introduced for convenience so that <span class="process-math">\(a_0\)</span> could be obtained from the general formula in Equation <a href="sec_fourier-series.html#FourierCoeffA" class="xref" data-knowl="./knowl/xref/FourierCoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.2">(11.1.2)</a> by setting <span class="process-math">\(j=0\text{.}\)</span> The reasons for this will be explained shortly. The next result discusses convergence of the Fourier series.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 11.1.4: Fourier Series"><a href="#sec_fourier-series-2-9" title="Copy heading and permalink for Definition 11.1.4: Fourier Series" aria-label="Copy heading and permalink for Definition 11.1.4: Fourier Series">🔗</a></div></article><div class="para" id="sec_fourier-series-2-10">The factor <span class="process-math">\(\frac{1}{2}\)</span> in the constant term <span class="process-math">\(\frac{a_0}{2}\)</span> on the right side of <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">Equation (11.1.1)</a> has been introduced for convenience so that <span class="process-math">\(a_0\)</span> could be obtained from the general formula in <a href="sec_fourier-series.html#FourierCoeffA" class="xref" data-knowl="./knowl/xref/FourierCoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.2">Equation (11.1.2)</a> by setting <span class="process-math">\(j=0\text{.}\)</span> The reasons for this will be explained shortly. The next result discusses convergence of the Fourier series.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm_fourier-expansion"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Expansion.</span>
@@ -590,7 +588,7 @@ S(a) = \frac{U(a^-) +U(a^+)}{2}\text{,}
 <div class="para">where <span class="process-math">\(U(a^-)\)</span> and <span class="process-math">\(U(a^+)\)</span> denote the left- and right-hand limits, respectively. With this understanding, we have the Fourier expansion:</div>
 <div class="displaymath process-math" id="FourierExpansion">
 \begin{equation}
-U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt).\tag{11.1.4}
+U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)\text{.}\tag{11.1.4}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_fourier-expansion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -602,7 +600,7 @@ U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt).\tag{11.1
 <div class="para">Show that the function <span class="process-math">\(U(t) =\frac{t}{2}\)</span> for <span class="process-math">\(t \in (-\pi ,\pi)\text{,}\)</span> extended periodically by the equation <span class="process-math">\(U(t+2\pi)=U(t)\text{,}\)</span> has the Fourier series expansion</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt.
+U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_11_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -614,7 +612,7 @@ U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt.
 \begin{align*}
 a_n \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\cos nt\,dt\\
 \amp = \left.\left(\frac{t\sin nt }{2\pi n} + \frac{\cos nt}{2\pi n^2}\right)\right|_{-\pi}^{\pi}\\
-\amp = 0  \quad \text{for} \quad   n=1,2,\ldots \, ,
+\amp = 0 \quad \text{for} \quad  n=1,2,\ldots\text{,}
 \end{align*}
 </div>
 <div class="para">and then using Formula <a href="sec_fourier-series.html#FourierCoeffB" class="xref" data-knowl="./knowl/xref/FourierCoeffB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.3">(11.1.3)</a> we get</div>
@@ -623,7 +621,7 @@ a_n \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\cos nt\,dt\\
 b_n \amp = \frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\sin nt\,dt\\
 \amp = \left.\left(\frac{ -t\cos nt}{2\pi n}+\frac{\sin nt}{2\pi n^2}\right)\right|_{-\pi}^{\pi}\\
 \amp =\frac{-\cos n\pi}{n}\\
-\amp =\frac{(-1)^{n+1}}{n} \quad \text{for} \quad   n=1,2,\ldots \, .
+\amp =\frac{(-1)^{n+1}}{n} \quad \text{for} \quad  n=1,2,\ldots\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_11_1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -637,20 +635,19 @@ a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\,dt = \frac{t^2}{4\pi}\bigg|_{-\pi
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_11_1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex_11_1-2-3">Substituting the coefficients <span class="process-math">\(a_j\)</span> and <span class="process-math">\(b_j\)</span> in Equation <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">(11.1.1)</a> produces the required solution.  The graphs of <span class="process-math">\(U(t)\)</span> and the first three partial sums <span class="process-math">\(S_1(t) = \sin t, \, S_2(t) = \sin
-t-\frac{1}{2}\sin 2t\text{,}\)</span> and <span class="process-math">\(S_3(t) = \sin t-\frac{1}{2}\sin 2t + \frac{1}{3}\sin 3t\)</span> are shown in <a href="sec_fourier-series.html#fig_ch-11-03" class="xref" data-knowl="./knowl/xref/fig_ch-11-03.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.1.7">Figure 11.1.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex_11_1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_11_1-2-3">Substituting the coefficients <span class="process-math">\(a_j\)</span> and <span class="process-math">\(b_j\)</span> in Equation <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">(11.1.1)</a> produces the required solution. The graphs of <span class="process-math">\(U(t)\)</span> and the first three partial sums <span class="process-math">\(S_1(t) = \sin t, \, S_2(t) = \sin t-\frac{1}{2}\sin 2t\text{,}\)</span> and <span class="process-math">\(S_3(t) = \sin t-\frac{1}{2}\sin 2t + \frac{1}{3}\sin 3t\)</span> are shown in <a href="sec_fourier-series.html#fig_ch-11-03" class="xref" data-knowl="./knowl/xref/fig_ch-11-03.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.1.7">Figure 11.1.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex_11_1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.1.6.1"><a href="#ex_11_1-2" title="Copy heading and permalink for Solution 11.1.6.1" aria-label="Copy heading and permalink for Solution 11.1.6.1">🔗</a></div>
+<figure class="figure figure-like" id="fig_ch-11-03"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-11/ch-11-fig-03.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(U(t) =\frac{t}{2}\text{,}\)</span> and approximations <span class="process-math">\(S_1(t), \, S_2(t)\text{,}\)</span> and <span class="process-math">\(S_3(t)\)</span><div class="autopermalink" data-description="Figure 11.1.7"><a href="#fig_ch-11-03" title="Copy heading and permalink for Figure 11.1.7" aria-label="Copy heading and permalink for Figure 11.1.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 11.1.6.1"><a href="#ex_11_1-2" title="Copy heading and permalink for Solution 11.1.6.1" aria-label="Copy heading and permalink for Solution 11.1.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.1.6"><a href="#ex_11_1" title="Copy heading and permalink for Example 11.1.6" aria-label="Copy heading and permalink for Example 11.1.6">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-11-03"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-11/ch-11-fig-03.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(U(t) =\frac{t}{2}\text{,}\)</span> and approximations <span class="process-math">\(S_1(t), \  S_2(t)\text{,}\)</span> and <span class="process-math">\(S_3(t)\)</span><div class="autopermalink" data-description="Figure 11.1.7"><a href="#fig_ch-11-03" title="Copy heading and permalink for Figure 11.1.7" aria-label="Copy heading and permalink for Figure 11.1.7">🔗</a></div></figcaption></figure><div class="para" id="sec_fourier-series-2-14">We now state some general properties of Fourier series that are useful for calculating the coefficients. The proofs are left for the reader.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 11.1.6"><a href="#ex_11_1" title="Copy heading and permalink for Example 11.1.6" aria-label="Copy heading and permalink for Example 11.1.6">🔗</a></div></article><div class="para" id="sec_fourier-series-2-13">We now state some general properties of Fourier series that are useful for calculating the coefficients. The proofs are left for the reader.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="sec_fourier-series-2-15"><h3 class="heading">
+<article class="theorem theorem-like" id="sec_fourier-series-2-14"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec_fourier-series-2-15-1-1">If <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(V(t)\)</span> have Fourier series representations, then their sum <span class="process-math">\(W(t)=U(t)+V(t)\)</span> has a Fourier series representation, and the Fourier coefficients of <span class="process-math">\(W\)</span> are obtained by adding the corresponding coefficients of <span class="process-math">\(U\)</span> and <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_fourier-series-2-14-1-1">If <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(V(t)\)</span> have Fourier series representations, then their sum <span class="process-math">\(W(t)=U(t)+V(t)\)</span> has a Fourier series representation, and the Fourier coefficients of <span class="process-math">\(W\)</span> are obtained by adding the corresponding coefficients of <span class="process-math">\(U\)</span> and <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.1.8"><a href="#sec_fourier-series-2-15" title="Copy heading and permalink for Theorem 11.1.8" aria-label="Copy heading and permalink for Theorem 11.1.8">🔗</a></div></article><article class="theorem theorem-like" id="thm_fourier-cosine"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.1.8"><a href="#sec_fourier-series-2-14" title="Copy heading and permalink for Theorem 11.1.8" aria-label="Copy heading and permalink for Theorem 11.1.8">🔗</a></div></article><article class="theorem theorem-like" id="thm_fourier-cosine"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Cosine Series.</span>
 </h3>
 <div class="para logical" id="thm_fourier-cosine-2-1">
@@ -658,21 +655,21 @@ t-\frac{1}{2}\sin 2t\text{,}\)</span> and <span class="process-math">\(S_3(t) = 
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt,
+U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt\text{,}
 \end{equation*}
 </div>
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a_n = \frac{2}{\pi}\int_0^{\pi}U(t)\cos nt\,dt, \quad \text{for} \quad n=0,1,\ldots \, .
+a_n = \frac{2}{\pi}\int_0^{\pi}U(t)\cos nt\,dt, \quad \text{for} \quad n=0,1,\ldots\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_fourier-cosine-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.1.9: Fourier Cosine Series"><a href="#thm_fourier-cosine" title="Copy heading and permalink for Theorem 11.1.9: Fourier Cosine Series" aria-label="Copy heading and permalink for Theorem 11.1.9: Fourier Cosine Series">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-17"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.1.9: Fourier Cosine Series"><a href="#thm_fourier-cosine" title="Copy heading and permalink for Theorem 11.1.9: Fourier Cosine Series" aria-label="Copy heading and permalink for Theorem 11.1.9: Fourier Cosine Series">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-16"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Sine Series.</span>
 </h3>
-<div class="para logical" id="sec_fourier-series-2-17-2-1">
+<div class="para logical" id="sec_fourier-series-2-16-2-1">
 <div class="para">Assume that <span class="process-math">\(U(t)\)</span> is an odd function.  If <span class="process-math">\(U(t)\)</span> has period <span class="process-math">\(2\pi\)</span> and if <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(U\,'(x)\)</span> are piecewise continuous, then the Fourier series for <span class="process-math">\(U(t)\)</span> involves only sine terms, that is, <span class="process-math">\(a_n=0\)</span> for all <span class="process-math">\(n\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -683,15 +680,15 @@ U(t) = \sum_{n=1}^{\infty}b_n \sin nt\text{,}
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-b_n = \frac{2}{\pi}\int_0^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \ldots \,\text{.}
+b_n = \frac{2}{\pi}\int_0^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \ldots\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.1.10: Fourier Sine Series"><a href="#sec_fourier-series-2-17" title="Copy heading and permalink for Theorem 11.1.10: Fourier Sine Series" aria-label="Copy heading and permalink for Theorem 11.1.10: Fourier Sine Series">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-18"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.1.10: Fourier Sine Series"><a href="#sec_fourier-series-2-16" title="Copy heading and permalink for Theorem 11.1.10: Fourier Sine Series" aria-label="Copy heading and permalink for Theorem 11.1.10: Fourier Sine Series">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-17"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Termwise Integration.</span>
 </h3>
-<div class="para logical" id="sec_fourier-series-2-18-2-1">
+<div class="para logical" id="sec_fourier-series-2-17-2-1">
 <div class="para">If <span class="process-math">\(U(t)\)</span> has a Fourier series representation given in <a href="sec_fourier-series.html#FourierExpansion" class="xref" data-knowl="./knowl/xref/FourierExpansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.4">Equation (11.1.4)</a>, then the integral of <span class="process-math">\(U(t)\)</span> has a Fourier series representation which can be obtained by termwise integration of the Fourier Series of <span class="process-math">\(U(t)\text{,}\)</span> that is,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FourierExpansion.html ./knowl/xref/ex_11_1.html">
 \begin{equation*}
@@ -699,46 +696,46 @@ b_n = \frac{2}{\pi}\int_0^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \
 \end{equation*}
 </div>
 <div class="para">where we have used the expansion <span class="process-math">\(a_0(\frac{t}{2}) = \sum\limits_{n=1}^{\infty}\frac{a_0(-1)^{n+1}}{n}\sin nt\)</span> from <a href="sec_fourier-series.html#ex_11_1" class="xref" data-knowl="./knowl/xref/ex_11_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.1.6">Example 11.1.6</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.1.11: Termwise Integration"><a href="#sec_fourier-series-2-18" title="Copy heading and permalink for Theorem 11.1.11: Termwise Integration" aria-label="Copy heading and permalink for Theorem 11.1.11: Termwise Integration">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-19"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.1.11: Termwise Integration"><a href="#sec_fourier-series-2-17" title="Copy heading and permalink for Theorem 11.1.11: Termwise Integration" aria-label="Copy heading and permalink for Theorem 11.1.11: Termwise Integration">🔗</a></div></article><article class="theorem theorem-like" id="sec_fourier-series-2-18"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Termwise Differentiation.</span>
 </h3>
-<div class="para logical" id="sec_fourier-series-2-19-2-1">
-<div class="para">If <span class="process-math">\(U\,'(t)\)</span> has a Fourier series representation, and <span class="process-math">\(U(t)\)</span> is given by Equation <a href="sec_fourier-series.html#FourierExpansion" class="xref" data-knowl="./knowl/xref/FourierExpansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.4">(11.1.4)</a>, then</div>
+<div class="para logical" id="sec_fourier-series-2-18-2-1">
+<div class="para">If <span class="process-math">\(U\,'(t)\)</span> has a Fourier series representation, and <span class="process-math">\(U(t)\)</span> is given by <a href="sec_fourier-series.html#FourierExpansion" class="xref" data-knowl="./knowl/xref/FourierExpansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.4">Equation (11.1.4)</a>, then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FourierExpansion.html">
 \begin{equation*}
-U\,'(t) =\sum\limits_{n=1}^{\infty}(nb_n\cos nt-na_n\sin jn).
+U\,'(t) =\sum\limits_{n=1}^{\infty}(nb_n\cos nt-na_n\sin jn)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.1.12: Termwise Differentiation"><a href="#sec_fourier-series-2-19" title="Copy heading and permalink for Theorem 11.1.12: Termwise Differentiation" aria-label="Copy heading and permalink for Theorem 11.1.12: Termwise Differentiation">🔗</a></div></article><article class="example example-like" id="sec_fourier-series-2-20"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.1.12: Termwise Differentiation"><a href="#sec_fourier-series-2-18" title="Copy heading and permalink for Theorem 11.1.12: Termwise Differentiation" aria-label="Copy heading and permalink for Theorem 11.1.12: Termwise Differentiation">🔗</a></div></article><article class="example example-like" id="sec_fourier-series-2-19"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec_fourier-series-2-20-1-1">
+<div class="para logical" id="sec_fourier-series-2-19-1-1">
 <div class="para">Show that the function <span class="process-math">\(U(t) = |t|\)</span> for <span class="process-math">\(t \in (-\pi ,\pi)\text{,}\)</span> extended periodically the equation <span class="process-math">\(U(t+2\pi) =U(t)\text{,}\)</span> has the Fourier series representation</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t) = |t| = \frac{\pi}{2}-\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}\cos[(2n-1)t].
+U(t) = |t| = \frac{\pi}{2}-\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}\cos[(2n-1)t]\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_fourier-series-2-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec_fourier-series-2-20-2-1">
+<div class="solutions"><details id="sec_fourier-series-2-19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_fourier-series-2-19-2-1">
 <div class="para">The function <span class="process-math">\(U(t)\)</span> is an even function, hence we can use <a href="sec_fourier-series.html#thm_fourier-cosine" class="xref" data-knowl="./knowl/xref/thm_fourier-cosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.1.9: Fourier Cosine Series">Theorem 11.1.9</a> to conclude that <span class="process-math">\(b_n=0\)</span> for all <span class="process-math">\(n\text{,}\)</span> and</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_fourier-cosine.html" id="sec_fourier-series-2-20-2-1-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_fourier-cosine.html" id="sec_fourier-series-2-19-2-1-5">
 \begin{align*}
 a_n \amp = \frac{2}{\pi}\int_0^{\pi}t\cos nt\,dt\\
 \amp = \left.\left(\frac{2t\sin nt}{\pi n} + \frac{2\cos nt}{\pi n^2}\right)\right|_0^{\pi}\\
 \amp = \frac{2\cos n\pi -2}{\pi n^2}\\
-\amp =\frac{2(-1)^n-2}{\pi n^2} \quad \text{for} \quad  n=1,2, \ldots \,\text{.}
+\amp =\frac{2(-1)^n-2}{\pi n^2} \quad \text{for} \quad  n=1,2, \ldots\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec_fourier-series-2-20-2-2">
+<div class="para logical" id="sec_fourier-series-2-19-2-2">
 <div class="para">The coefficient <span class="process-math">\(a_0\)</span> is computed by the calculation:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_fourier-cosine.html">
 \begin{equation*}
@@ -746,15 +743,15 @@ a_0=\frac{2}{\pi}\int_0^{\pi}t\,dt=\left.\frac{t^2}{\pi}\right|_0^{\pi}=\pi\text
 \end{equation*}
 </div>
 <div class="para">Using the <span class="process-math">\(a_n\)</span> and <a href="sec_fourier-series.html#thm_fourier-cosine" class="xref" data-knowl="./knowl/xref/thm_fourier-cosine.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.1.9: Fourier Cosine Series">Theorem 11.1.9</a> produces the required solution.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-20-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-series-2-19-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.1.13.1"><a href="#sec_fourier-series-2-20-2" title="Copy heading and permalink for Solution 11.1.13.1" aria-label="Copy heading and permalink for Solution 11.1.13.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 11.1.13.1"><a href="#sec_fourier-series-2-19-2" title="Copy heading and permalink for Solution 11.1.13.1" aria-label="Copy heading and permalink for Solution 11.1.13.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.1.13"><a href="#sec_fourier-series-2-20" title="Copy heading and permalink for Example 11.1.13" aria-label="Copy heading and permalink for Example 11.1.13">🔗</a></div></article></section><section class="subsection" id="subsec_euler-formula"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 11.1.13"><a href="#sec_fourier-series-2-19" title="Copy heading and permalink for Example 11.1.13" aria-label="Copy heading and permalink for Example 11.1.13">🔗</a></div></article></section><section class="subsection" id="subsec_euler-formula"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof of Euler’s Formulas</span>
 </h3>
 <div class="para logical" id="subsec_euler-formula-2">
-<div class="para">The following intuitive proof will justify the Euler formulas given in Equations <a href="sec_fourier-series.html#FourierCoeffA" class="xref" data-knowl="./knowl/xref/FourierCoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.2">(11.1.2)</a> and <a href="sec_fourier-series.html#FourierCoeffB" class="xref" data-knowl="./knowl/xref/FourierCoeffB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.3">(11.1.3)</a> To determine <span class="process-math">\(a_0\)</span> we integrate both <span class="process-math">\(U(t)\)</span> and the Fourier series representation in Equation <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">(11.1.1)</a> from <span class="process-math">\(-\pi\)</span> to <span class="process-math">\(\pi\text{,}\)</span> which results in</div>
+<div class="para">The following intuitive proof will justify the Euler formulas given in Equations <a href="sec_fourier-series.html#FourierCoeffA" class="xref" data-knowl="./knowl/xref/FourierCoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.2">(11.1.2)</a> and <a href="sec_fourier-series.html#FourierCoeffB" class="xref" data-knowl="./knowl/xref/FourierCoeffB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.3">(11.1.3)</a> To determine <span class="process-math">\(a_0\)</span> we integrate both <span class="process-math">\(U(t)\)</span> and the Fourier series representation in <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">Equation (11.1.1)</a> from <span class="process-math">\(-\pi\)</span> to <span class="process-math">\(\pi\text{,}\)</span> which results in</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FourierCoeffA.html ./knowl/xref/FourierCoeffB.html ./knowl/xref/FourierSdef.html ./knowl/xref/FourierSdef.html">
 \begin{equation*}
 \int_{-\pi}^{\pi}U(t)\,dt = \int_{-\pi}^{\pi}\left[\frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)\right]dt\text{.}
@@ -763,8 +760,8 @@ a_0=\frac{2}{\pi}\int_0^{\pi}t\,dt=\left.\frac{t^2}{\pi}\right|_0^{\pi}=\pi\text
 <div class="para">Next, we perform integration term by term, and we obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FourierCoeffA.html ./knowl/xref/FourierCoeffB.html ./knowl/xref/FourierSdef.html ./knowl/xref/FourierSdef.html">
 \begin{equation*}
-\int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + \sum_{n=1}^{\infty}a_n\int_{-\pi}^{\pi}\cos nt\,dt +
-\sum\limits_{n=1}^{\infty}b_n\int_{-\pi}^{\pi}\sin nt\,dt\text{.}
+\int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + 
+\sum_{n=1}^{\infty}a_n\int_{-\pi}^{\pi}\cos nt\,dt + \sum\limits_{n=1}^{\infty}b_n\int_{-\pi}^{\pi}\sin nt\,dt\text{.}
 \end{equation*}
 </div>
 <div class="para">The value of the first integral on the right side of this equation is <span class="process-math">\(2\pi\)</span> and all the other integrals are zero. Hence we obtain the desired formula for <span class="process-math">\(a_0\text{:}\)</span>
@@ -774,7 +771,7 @@ a_0=\frac{2}{\pi}\int_0^{\pi}t\,dt=\left.\frac{t^2}{\pi}\right|_0^{\pi}=\pi\text
 a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\,dt\text{.}
 \end{equation*}
 </div>
-<div class="para">To determine <span class="process-math">\(a_m\text{,}\)</span> we let <span class="process-math">\(m&gt;1\)</span> denote a fixed integer and multiply both <span class="process-math">\(U(t)\)</span> and the Fourier series representation in Equation <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">(11.1.1)</a> by the term <span class="process-math">\(\cos mt\text{.}\)</span> Then we integrate and obtain</div>
+<div class="para">To determine <span class="process-math">\(a_m\text{,}\)</span> we let <span class="process-math">\(m&gt;1\)</span> denote a fixed integer and multiply both <span class="process-math">\(U(t)\)</span> and the Fourier series representation in <a href="sec_fourier-series.html#FourierSdef" class="xref" data-knowl="./knowl/xref/FourierSdef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.1">Equation (11.1.1)</a> by the term <span class="process-math">\(\cos mt\text{.}\)</span> Then we integrate and obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/FourierCoeffA.html ./knowl/xref/FourierCoeffB.html ./knowl/xref/FourierSdef.html ./knowl/xref/FourierSdef.html" id="subsec_euler-formula-2-18">
 \begin{align}
 \int_{-\pi}^{\pi}U(t)\cos mt\,dt \amp = \frac{a_0}{2}\int_{-\pi}^{\pi}\cos mt\,dt\notag\\
@@ -837,10 +834,10 @@ b_n\int_{-\pi}^{\pi}\cos mt\sin nt\,dt \amp = \frac{b_m}{2}\left[\int_{-\pi}^\pi
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec_euler-formula-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_euler-formula-7">
-<div class="para">Therefore, we can use the results of Equations <a href="sec_fourier-series.html#CoeffA0" class="xref" data-knowl="./knowl/xref/CoeffA0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.6">(11.1.6)</a>–<a href="sec_fourier-series.html#subsec_euler-formula-6-6" class="xref" data-knowl="./knowl/xref/CoeffA3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.9">(11.1.9)</a> in Equation <a href="sec_fourier-series.html#subsec_euler-formula-2-18" class="xref" data-knowl="./knowl/xref/CoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.5">(11.1.5)</a> to obtain</div>
+<div class="para">ATherefore, we can use the results of Equations <a href="sec_fourier-series.html#CoeffA0" class="xref" data-knowl="./knowl/xref/CoeffA0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.6">(11.1.6)</a>–<a href="sec_fourier-series.html#subsec_euler-formula-6-6" class="xref" data-knowl="./knowl/xref/CoeffA3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.9">(11.1.9)</a> in <a href="sec_fourier-series.html#subsec_euler-formula-2-18" class="xref" data-knowl="./knowl/xref/CoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.5">Equation (11.1.5)</a> to obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/CoeffA0.html ./knowl/xref/CoeffA3.html ./knowl/xref/CoeffA.html ./knowl/xref/FourierCoeffA.html ./knowl/xref/FourierCoeffB.html ./knowl/xref/thm_fourier-expansion.html">
 \begin{equation*}
-\int_{-\pi}^{\pi}U(t)\cos mt\,dt=\pi a_m  \text{ for }   m=0,1,2, \ldots\text{,}
+\int_{-\pi}^{\pi}U(t)\cos mt\,dt=\pi a_m \quad \text{fo } \quad  m=0,1,2, \ldots\text{,}
 \end{equation*}
 </div>
 <div class="para">and Equation <a href="sec_fourier-series.html#FourierCoeffA" class="xref" data-knowl="./knowl/xref/FourierCoeffA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.2">(11.1.2)</a> is established. We leave it as an exercise to establish Euler’s <a href="sec_fourier-series.html#FourierCoeffB" class="xref" data-knowl="./knowl/xref/FourierCoeffB.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.1.3">Formula (11.1.3)</a> for the coefficients <span class="process-math">\(\left\{ b_n\right\}\text{.}\)</span> A complete discussion of the details of the proof of <a href="sec_fourier-series.html#thm_fourier-expansion" class="xref" data-knowl="./knowl/xref/thm_fourier-expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.1.5: Fourier Expansion">Theorem 11.1.5</a> can be found in some advanced texts. See for instance, John W. Dettman, Chapter 8, in <em class="emphasis">Applied Complex Variables,</em> The Macmillan Company, New York, 1965.</div>
