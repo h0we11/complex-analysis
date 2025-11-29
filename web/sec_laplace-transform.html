@@ -513,13 +513,13 @@ eBookConfig.enable_chatcodes =  false;
 g(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt
 \end{equation*}
 </div>
-<div class="para">defines the complex function <span class="process-math">\(g(\omega)\)</span> of the real variable <span class="process-math">\(\omega\text{.}\)</span>  If we multiply the integrand <span class="process-math">\(f(t)
+<div class="para">defines the complex function <span class="process-math">\(g(\omega)\)</span> of the real variable <span class="process-math">\(\omega\text{.}\)</span> If we multiply the integrand <span class="process-math">\(f(t)
 e^{-i\omega t}\)</span> by <span class="process-math">\(e^{-\sigma t}\text{,}\)</span> we create a complex function <span class="process-math">\(G(\sigma +i\omega)\)</span> of the complex variable <span class="process-math">\(\sigma +i\omega\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}dt=\int\nolimits_{-\infty}^{\infty
-}f(t) e^{-(\sigma +i\omega) t}dt\text{.}
+G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt =
+\int_{-\infty}^{\infty }f(t) e^{-(\sigma +i\omega)t}\,dt\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -528,10 +528,10 @@ G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\ome
 <div class="para">The function <span class="process-math">\(G(\sigma +i\omega)\)</span> is called the two-sided Laplace transform of <span class="process-math">\(f(t)\text{,}\)</span> and it exists when the Fourier transform of the function <span class="process-math">\(f(t) e^{-\sigma t}\)</span> exists.  From the Fourier transform theory, we can state that a sufficient condition for <span class="process-math">\(G(\sigma +iw)\)</span> to exist is that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_{-\infty}^{\infty}|f(t)|e^{-\sigma t}\,dt \lt  \infty
+\int_{-\infty}^{\infty}|f(t)|e^{-\sigma t}\,dt \lt \infty
 \end{equation*}
 </div>
-<div class="para">exists.  For a given function <span class="process-math">\(f(t)\text{,}\)</span> this integral is finite for values of <span class="process-math">\(\sigma\)</span> that lie in some interval <span class="process-math">\(a\lt \sigma b\text{.}\)</span>
+<div class="para">exists. For a given function <span class="process-math">\(f(t)\text{,}\)</span> this integral is finite for values of <span class="process-math">\(\sigma\)</span> that lie in some interval <span class="process-math">\(a\lt \sigma b\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -539,7 +539,7 @@ G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\ome
 <div class="para">The two-sided Laplace transform uses the lower limit of integration, that is, <span class="process-math">\(t=-\infty\text{,}\)</span> and hence requires a knowledge of the past history of the function <span class="process-math">\(f(t)\text{,}\)</span> <em class="emphasis">i.e.</em>, <span class="process-math">\(t\lt 0\text{.}\)</span>  For most physical applications, one is interested in the behavior of a system only for <span class="process-math">\(t \ge 0\text{.}\)</span>  Mathematically speaking, the initial conditions <span class="process-math">\(f(0), \, f\,'(0), \, f\,''(0), \ldots\text{,}\)</span> are a consequence of the past history of the system and are often all that is necessary to know.  For this reason, it is useful to define the one-sided Laplace transform of <span class="process-math">\(f(t)\text{,}\)</span> which is commonly referred to simply as the <em class="emphasis">Laplace transform</em> of <span class="process-math">\(f(t)\text{,}\)</span> which is also defined as an integral:</div>
 <div class="displaymath process-math" id="LaplaceDef">
 \begin{equation}
-\mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad  s=\sigma +i\omega\text{.}\tag{11.5.1}
+\mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad s = \sigma + i\omega\text{.}\tag{11.5.1}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -548,11 +548,11 @@ G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\ome
 <div class="para">If the defining <a href="sec_laplace-transform.html#LaplaceDef" class="xref" data-knowl="./knowl/xref/LaplaceDef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.5.1">integral (11.5.1)</a> for the Laplace transform exists for <span class="process-math">\(s_0=\sigma_0+i\omega\text{,}\)</span> then values of <span class="process-math">\(\sigma\)</span> with <span class="process-math">\(\sigma &gt; \sigma_0\)</span> imply that <span class="process-math">\(e^{-\sigma t} \lt  e^{-\sigma_0t}\text{,}\)</span> and thus</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LaplaceDef.html">
 \begin{equation*}
-\int_0^{\infty}\left| \,f(t) \right| e^{-\sigma t}\,dt \lt  \int_0^{\infty}\left| \,f(t) \right| e^{-\sigma_0 t}\,dt\lt
-\infty \text{,}
+\int_0^{\infty}\left| \,f(t) \right| e^{-\sigma t}\,dt \lt 
+\int_0^{\infty}\left| \,f(t) \right| e^{-\sigma_0 t}\,dt\lt \infty\text{,}
 \end{equation*}
 </div>
-<div class="para">and it follows that <span class="process-math">\(F(s)\)</span> exists for <span class="process-math">\(s=\sigma +i\omega\text{.}\)</span>  Therefore, the Laplace transform <span class="process-math">\(\mathcal{L}(f(t))\)</span> is defined for all points <span class="process-math">\(s\)</span> in the right half-plane <span class="process-math">\(\mathrm{Re}(s) &gt; \sigma_0\text{.}\)</span>
+<div class="para">and it follows that <span class="process-math">\(F(s)\)</span> exists for <span class="process-math">\(s=\sigma +i\omega\text{.}\)</span> Therefore, the Laplace transform <span class="process-math">\(\mathcal{L}(f(t))\)</span> is defined for all points <span class="process-math">\(s\)</span> in the right half-plane <span class="process-math">\(\mathrm{Re}(s) &gt; \sigma_0\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -560,9 +560,9 @@ G(\sigma +i\omega) =\int\nolimits_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\ome
 <div class="para">Another way to view the relationship between the Fourier transform and the Laplace transform is to consider the function <span class="process-math">\(U(t)\)</span> given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t) = \begin{cases}
-f(t) \amp  \text{for} \quad  t \ge 0,\\ 
-\;\; 0 \amp  \text{for} \quad  t \lt  0. 
+U(t)= \begin{cases}
+f(t) \amp \text{for} \quad t \ge 0,\\ 
+\;\; 0 \amp \text{for} \quad t \lt  0. 
 \end{cases}
 \end{equation*}
 </div>
@@ -572,16 +572,18 @@ f(t) \amp  \text{for} \quad  t \ge 0,\\
 <div class="para">Then the Fourier transform theory shows us that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}U(t)e^{-i\omega t}\,dt\right]e^{i\omega t}\,d\omega\text{,}
+U(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}U(t)e^{-i\omega t}\,dt\right]
+e^{i\omega t}\,d\omega\text{,}
 \end{equation*}
 </div>
 <div class="para">and since the integrand <span class="process-math">\(U(t)\)</span> is zero for <span class="process-math">\(t\lt 0\text{,}\)</span> this equation can be written as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_0^{\infty}f(t) e^{-i\omega t}\,dt\right]e^{i\omega t}\,d\omega\text{.}
+f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_0^{\infty}f(t) e^{-i\omega t}\,dt\right]
+e^{i\omega t}\,d\omega\text{.}
 \end{equation*}
 </div>
-<div class="para">Use the change of variable <span class="process-math">\(s=\sigma +i\omega\)</span> and <span class="process-math">\(d\omega=\frac{ds}{i}\text{,}\)</span> where <span class="process-math">\(\sigma&gt;\sigma_0\)</span> is held fixed, then the new limits of integration are from <span class="process-math">\(s=\sigma -i\omega\)</span> to <span class="process-math">\(s=\sigma +i\omega\text{.}\)</span>  The resulting equation is</div>
+<div class="para">Use the change of variable <span class="process-math">\(s=\sigma +i\omega\)</span> and <span class="process-math">\(d\omega=\frac{ds}{i}\text{,}\)</span> where <span class="process-math">\(\sigma&gt;\sigma_0\)</span> is held fixed, then the new limits of integration are from <span class="process-math">\(s=\sigma -i\omega\)</span> to <span class="process-math">\(s=\sigma +i\omega\text{.}\)</span> The resulting equation is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}f(t) e^{-st}\,dt\right]e^{st}\,ds\text{.}
@@ -590,7 +592,7 @@ f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}
 <div class="para">Therefore, the Laplace transform is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t) e^{-st}\,dt,  \text{ where }   s=\sigma +i\omega\text{,}
+\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad s=\sigma + i\omega\text{,}
 \end{equation*}
 </div>
 <div class="para">and the inverse Laplace transform is</div>
@@ -605,23 +607,22 @@ f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Laplace Transform</span>
 </h3>
 <div class="para logical" id="sec_laplace-transform-3-2">
-<div class="para">Although a function <span class="process-math">\(f(t)\)</span> may be defined for all values of <span class="process-math">\(t\text{,}\)</span> its Laplace transform is not influenced by values of <span class="process-math">\(f(t)\text{,}\)</span> where <span class="process-math">\(t\lt 0\text{.}\)</span>  The Laplace transform of <span class="process-math">\(f(t)\)</span> is actually defined for the function <span class="process-math">\(U(t)\)</span> given by</div>
+<div class="para">Although a function <span class="process-math">\(f(t)\)</span> may be defined for all values of <span class="process-math">\(t\text{,}\)</span> its Laplace transform is not influenced by values of <span class="process-math">\(f(t)\text{,}\)</span> where <span class="process-math">\(t\lt 0\text{.}\)</span> The Laplace transform of <span class="process-math">\(f(t)\)</span> is actually defined for the function <span class="process-math">\(U(t)\)</span> given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U(t) = \begin{cases}
-f(t) \amp  \text{for} \quad t \ge 0,\\ 
-\;\;0 \amp  \text{for} \quad  t \lt  0.
+U(t)= \begin{cases}
+f(t) \amp \text{for} \quad t \ge 0,\\ 
+\;\;0 \amp \text{for} \quad  t \lt  0.
 \end{cases}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_laplace-transform-3-3">
-<div class="para">A sufficient condition for the existence of the Laplace transform is that <span class="process-math">\(|f(t)|\)</span> does not grow too rapidly as <span class="process-math">\(t
-\to +\infty\text{.}\)</span> We say that the function <span class="process-math">\(f\)</span> is of exponential order if there exists real constants <span class="process-math">\(M&gt;0\)</span> and <span class="process-math">\(K\text{,}\)</span> such that</div>
+<div class="para">A sufficient condition for the existence of the Laplace transform is that <span class="process-math">\(|f(t)|\)</span> does not grow too rapidly as <span class="process-math">\(t \to +\infty\text{.}\)</span> We say that the function <span class="process-math">\(f\)</span> is of exponential order if there exists real constants <span class="process-math">\(M&gt;0\)</span> and <span class="process-math">\(K\text{,}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-|f(t)| \le Me^{Kt} \; \text{ holds for all }  \; t \ge 0.
+|f(t)| \le Me^{Kt} \quad \text{holds for all} \quad t \ge 0\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -635,10 +636,10 @@ f(t) \amp  \text{for} \quad t \ge 0,\\
 <div class="para">If <span class="process-math">\(f\)</span> is of exponential order, then its Laplace transform <span class="process-math">\(L\big(f(t)\big)=F(s)\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(s)=\int_0^{\infty}f(t)e^{-st}\,dt,  \text{ where }   s=\sigma+i\omega\text{.}
+F(s)=\int_0^{\infty}f(t)e^{-st}\,dt, \quad \text{where} \quad s=\sigma+i\omega\text{.}
 \end{equation*}
 </div>
-<div class="para">The defining integral for <span class="process-math">\(F\)</span> exists at points <span class="process-math">\(s=\sigma+i\tau\)</span> in the right half plane <span class="process-math">\(\sigma &gt;K\text{.}\)</span>
+<div class="para">The defining integral for <span class="process-math">\(F\)</span> exists at points <span class="process-math">\(s = \sigma+i\tau\)</span> in the right half plane <span class="process-math">\(\sigma &gt;K\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -653,17 +654,17 @@ F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e
 <div class="displaymath process-math" id="sec_laplace-transform-3-6-1-5">
 \begin{align*}
 \int_0^{\infty}|f(t)| e^{-\sigma t}|\cos \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le
-\frac{M}{\sigma -K}, \; \text{ and }\\
+\frac{M}{\sigma -K}, \quad \text{and}\\
 \int_0^{\infty}|f(t)| e^{-\sigma t}|\sin \tau t|\,dt \amp \le M\int_0^{\infty}e^{(K-\sigma)t}\,dt \le
-\frac{M}{\sigma -K},
+\frac{M}{\sigma -K}\text{,}
 \end{align*}
 </div>
-<div class="para">which imply that the integrals defining the real and imaginary parts of <span class="process-math">\(F\)</span> exist for values of <span class="process-math">\(\mathrm{Re}(s) &gt;K\text{.}\)</span>
+<div class="para">which imply that the integrals defining the real and imaginary parts of <span class="process-math">\(F\)</span> exist for values of <span class="process-math">\(\mathrm{Re}(s) &gt; K\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Proof 11.5.2.1"><a href="#sec_laplace-transform-3-6" title="Copy heading and permalink for Proof 11.5.2.1" aria-label="Copy heading and permalink for Proof 11.5.2.1">🔗</a></div></article></details><div class="para" id="sec_laplace-transform-3-7">
-<em class="emphasis">Note</em>: The domain of definition of the defining integral for the Laplace transform <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> seems to be restricted to a half plane.  However, the resulting formula <span class="process-math">\(F(s)\)</span> might have a domain much larger than this half plane.  Later we will show that <span class="process-math">\(F(s)\)</span> is an analytic function of the complex variable <span class="process-math">\(s\text{.}\)</span>  For most applications involving Laplace transforms that we will study, the Laplace transforms are rational functions that have the form <span class="process-math">\(\frac{P(s)}{Q(s)}\text{,}\)</span> where <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are polynomials, and some other important ones will have the form <span class="process-math">\(\frac{e^{as}P(s)}{Q(s)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="emphasis">Note</em>: The domain of definition of the defining integral for the Laplace transform <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> seems to be restricted to a half plane.  However, the resulting formula <span class="process-math">\(F(s)\)</span> might have a domain much larger than this half plane. Later we will show that <span class="process-math">\(F(s)\)</span> is an analytic function of the complex variable <span class="process-math">\(s\text{.}\)</span> For most applications involving Laplace transforms that we will study, the Laplace transforms are rational functions that have the form <span class="process-math">\(\frac{P(s)}{Q(s)}\text{,}\)</span> where <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are polynomials, and some other important ones will have the form <span class="process-math">\(\frac{e^{as}P(s)}{Q(s)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="sec_laplace-transform-3-8"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linearity of the Laplace Transform.</span>
@@ -672,7 +673,7 @@ F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e
 <div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have Laplace transforms <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> respectively. If <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants, then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s).
+\mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s)\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -701,7 +702,7 @@ f(t)\amp = \mathcal{L}^{-1}\big(F(s)\big)\\
 \amp = \frac{1}{2\pi i}\int_{\sigma -i\infty}^{\sigma +i\infty}F(s) e^{st}\,ds\\
 \amp = \frac{1}{2\pi i}\int_{s-i\infty}^{s+i\infty}G(s) e^{st}\,ds\\
 \amp = \mathcal{L}^{-1}i\big(G(s)\big)\\
-\amp = g(t). 
+\amp = g(t)\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -714,10 +715,10 @@ f(t)\amp = \mathcal{L}^{-1}\big(F(s)\big)\\
 <div class="displaymath process-math">
 \begin{equation*}
 f(t)= \begin{cases}
-1 \amp  \text{for} \quad  0 \le t\lt c,\\ 
-0 \amp  \text{for} \quad  c\lt t 
+1 \amp  \text{for} \quad 0 \le t \lt c,\\ 
+0 \amp  \text{for} \quad c \lt t 
 \end{cases}
-\quad \text{is} \quad \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}.
+\quad \text{is} \quad \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -730,7 +731,7 @@ f(t)= \begin{cases}
 \mathcal{L}\big(f(t)\big) \amp = \int_0^{\infty}f(t) e^{-st}\,dt\\
 \amp = \int_0^{c}e^{-st}dt+\int_c^{\infty}e^{-st}(0)\,dt\\
 \amp = \left.\frac{-e^{-st}}{s}\right|_{t=0}^{t=c}\\
-\amp = \frac{1-e^{-cs}}{s}.
+\amp = \frac{1-e^{-cs}}{s}\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -744,7 +745,8 @@ f(t)= \begin{cases}
 </div>
 <div class="solutions"><details id="ex_10_8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_10_8-2-1">
-<div class="para">We will actually show that the integral defining <span class="process-math">\(\mathcal{L}(e^{at})\)</span> is equal to the formula <span class="process-math">\(F(s) =\frac{1}{s-a}\)</span> for values of <span class="process-math">\(s\)</span> with <span class="process-math">\(\mathrm{Re}(s) &gt;a\text{,}\)</span> and the extension to other values of <span class="process-math">\(s\)</span> is inferred by our knowledge about the domain of a rational function. Using straightforward integration techniques we find that</div>
+<div class="para">We will actually show that the integral defining <span class="process-math">\(\mathcal{L}(e^{at})\)</span> is equal to the formula <span class="process-math">\(F(s)
+=\frac{1}{s-a}\)</span> for values of <span class="process-math">\(s\)</span> with <span class="process-math">\(\mathrm{Re}(s) &gt;a\text{,}\)</span> and the extension to other values of <span class="process-math">\(s\)</span> is inferred by our knowledge about the domain of a rational function. Using straightforward integration techniques we find that</div>
 <div class="displaymath process-math" id="ex_10_8-2-1-6">
 \begin{align*}
 \mathcal{L}(e^{at}) \amp = \int\nolimits_0^{\infty}e^{at}e^{-st}\,dt\\
@@ -812,13 +814,14 @@ f(t)= \begin{cases}
 <div class="para">A direct approach using the definition is tedious. Let us assume that the complex constants <span class="process-math">\(\pm ib\)</span> are permitted and hence following the Laplace transforms exist:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}(e^{ibt}) = \frac{1}{s-ib},  \text{ and }   \mathcal{L}(e^{-ibt}) =\frac{1}{s-ib}\text{.}
+\mathcal{L}(e^{ibt}) = \frac{1}{s-ib}, \quad \text{and} \quad \mathcal{L}(e^{-ibt}) =\frac{1}{s-ib}\text{.}
 \end{equation*}
 </div>
 <div class="para">Using the linearity of the Laplace transform we obtain</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}(\cos bt) = \frac{1}{2}\mathcal{L}(e^{ibt}) + \frac{1}{2}\mathcal{L}(e^{-ibt}) = \frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib} = \frac{s}{s^2+b^2}\text{.}
+\mathcal{L}(\cos bt) = \frac{1}{2}\mathcal{L}(e^{ibt}) + \frac{1}{2}\mathcal{L}(e^{-ibt}) = 
+\frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib} = \frac{s}{s^2+b^2}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -839,7 +842,7 @@ f(t)= \begin{cases}
 \begin{align*}
 \mathcal{L}^{-1}\left(\frac{3s+6}{s^2+9}\right) \amp = 3\mathcal{L}^{-1}\left(\frac{s}{s^2+9}\right)\\
 \amp + 2\mathcal{L}^{-1}\left(\frac{3}{s^2+9}\right)\\
-\amp = 3\cos 3t+2\sin 3t.
+\amp = 3\cos 3t+2\sin 3t\text{.}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -982,8 +985,7 @@ f(t)= \begin{cases}
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Convolution</td>
 <td class="l m b0 r0 l0 t0 lines">
-<span class="process-math">\(\mathcal{L}\big(h(t)\big) = F(s) G(s)\)</span>    where    <span class="process-math">\(h(t) =\int_0^tf(t-\tau )
-g(\tau)\,d\tau\)</span>
+<span class="process-math">\(\mathcal{L}\big(h(t)\big)=F(s)G(s)\quad\)</span> where <span class="process-math">\(\quad h(t) = \int_0^tf(t-\tau) g(\tau)\,d\tau\)</span>
 </td>
 </tr>
 <tr>
