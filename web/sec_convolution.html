@@ -509,7 +509,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Convolution Theorem.</span>
 </h3>
 <div class="para logical" id="thm_convolution-2-1">
-<div class="para">Let <span class="process-math">\(F(s)\)</span> and <span class="process-math">\(G(s)\)</span> denote the Laplace transforms of <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> respectively.  Then the product given by <span class="process-math">\(H(s)=F(s)G(s)\)</span> is the Laplace transformation of the convolution of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span>  It is denoted by <span class="process-math">\(h(t)=(f\ast g)(t)\text{,}\)</span> and has the integral representation</div>
+<div class="para">Let <span class="process-math">\(F(s)\)</span> and <span class="process-math">\(G(s)\)</span> denote the Laplace transforms of <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> respectively. Then the product given by <span class="process-math">\(H(s)=F(s)G(s)\)</span> is the Laplace transformation of the convolution of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span> It is denoted by <span class="process-math">\(h(t)=(f\ast g)(t)\text{,}\)</span> and has the integral representation</div>
 <div class="displaymath process-math" id="thm_convolution-2-1-9">
 \begin{align}
 h(t)\amp=(f\ast g)(t) = \int_0^tf(\tau)g(t-\tau)\,d\tau, \quad \text{or}\tag{11.10.1}\\
@@ -519,10 +519,11 @@ h(t)\amp=(g\ast f) (t) =\int_0^tg(\tau)f(t-\tau )\,d\tau\text{.}\tag{11.10.2}
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_convolution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Theorem 11.10.1: Convolution Theorem"><a href="#thm_convolution" title="Copy heading and permalink for Theorem 11.10.1: Convolution Theorem" aria-label="Copy heading and permalink for Theorem 11.10.1: Convolution Theorem">🔗</a></div></article><details id="sec_convolution-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_convolution-4-1">
-<div class="para">The following proof is given for the special case when <span class="process-math">\(s\)</span> is a real number.  The general case is covered in advanced texts.  Using the dummy variables <span class="process-math">\(\sigma\)</span> and <span class="process-math">\(\tau\)</span> and the integrals defining the transforms, we can express their product as</div>
+<div class="para">The following proof is given for the special case when <span class="process-math">\(s\)</span> is a real number. The general case is covered in advanced texts. Using the dummy variables <span class="process-math">\(\sigma\)</span> and <span class="process-math">\(\tau\)</span> and the integrals defining the transforms, we can express their product as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-F(s)G(s) = \left[\int_0^{\infty}f(\sigma) e^{-s\sigma}\,d\sigma\right]\left[\int_0^{\infty}g(\tau)e^{-s\tau}\,d\tau\right]\text{.}
+F(s)G(s) = 
+\left[\int_0^{\infty}f(\sigma) e^{-s\sigma}\,d\sigma\right]\left[\int_0^{\infty}g(\tau)e^{-s\tau}\,d\tau\right]\text{.}
 \end{equation*}
 </div>
 <div class="para">The product of integrals in this equation can be written as an iterated integral:</div>
@@ -541,25 +542,25 @@ F(s)G(s) \amp = \int_0^{\infty}\left[\int_{\tau }^{\infty}f(t-\tau)e^{-st}\,dt\r
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_convolution-4-2">
-<div class="para">The region of integration for this last iterated integral is the wedge-shaped region in the <span class="process-math">\((t,\tau)\)</span> plane shown in <a href="sec_convolution.html#fig_ch-11-28" class="xref" data-knowl="./knowl/xref/fig_ch-11-28.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.2">Figure 11.10.2</a>. The order of integration in the integral can be reversed to get:</div>
+<div class="para">The region of integration for this last iterated integral is the wedge-shaped region in the <span class="process-math">\((t,\tau)\)</span> plane shown in <a href="sec_convolution.html#fig_ch-11-28" class="xref" data-knowl="./knowl/xref/fig_ch-11-28.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.2">Figure 11.10.2</a>. <figure class="figure figure-like" id="fig_ch-11-28"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-11/ch-11-fig-28.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region of integration in the convolution theorem<div class="autopermalink" data-description="Figure 11.10.2"><a href="#fig_ch-11-28" title="Copy heading and permalink for Figure 11.10.2" aria-label="Copy heading and permalink for Figure 11.10.2">🔗</a></div></figcaption></figure> The order of integration in the integral can be reversed to get:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-28.html ./knowl/xref/convolution2.html ./knowl/xref/convolution1.html">
 \begin{equation*}
 F(s)G(s) = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)e^{-st}\,d\tau\right]dt\text{.}
 \end{equation*}
 </div>
 <div class="para">This equation can be written as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-28.html ./knowl/xref/convolution2.html ./knowl/xref/convolution1.html" id="sec_convolution-4-2-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-28.html ./knowl/xref/convolution2.html ./knowl/xref/convolution1.html" id="sec_convolution-4-2-5">
 \begin{align*}
 F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-st}\,dt\\
 \amp = \mathcal{L}^{-1}\left(\int_0^tf(t-\tau)g(\tau)\,d\tau\right)\text{,}
 \end{align*}
 </div>
-<div class="para">which establishes Equation <a href="sec_convolution.html#thm_convolution-2-1-9" class="xref" data-knowl="./knowl/xref/convolution2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.2">(11.10.2)</a>. Since we can interchange the role of the functions <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> Equation <a href="sec_convolution.html#thm_convolution-2-1-9" class="xref" data-knowl="./knowl/xref/convolution1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.1">(11.10.1)</a> follows immediately.</div>
+<div class="para">which establishes Equation <a href="sec_convolution.html#thm_convolution-2-1-9" class="xref" data-knowl="./knowl/xref/convolution2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.2">(11.10.2)</a>. Since we can interchange the role of the functions <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(g(t)\text{,}\)</span> <a href="sec_convolution.html#thm_convolution-2-1-9" class="xref" data-knowl="./knowl/xref/convolution1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.1">Equation (11.10.1)</a> follows immediately.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.10.1"><a href="#sec_convolution-4" title="Copy heading and permalink for Proof 11.10.1" aria-label="Copy heading and permalink for Proof 11.10.1">🔗</a></div></article></details><figure class="figure figure-like" id="fig_ch-11-28"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-11/ch-11-fig-28.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The region of integration in the convolution theorem<div class="autopermalink" data-description="Figure 11.10.2"><a href="#fig_ch-11-28" title="Copy heading and permalink for Figure 11.10.2" aria-label="Copy heading and permalink for Figure 11.10.2">🔗</a></div></figcaption></figure><div class="para" id="sec_convolution-6">
-<a href="sec_convolution.html#table_convolution-properties" class="xref" data-knowl="./knowl/xref/table_convolution-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.10.3: Convolution Properties">Table 11.10.3</a> summarizes some important convolution properties.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 11.10.1"><a href="#sec_convolution-4" title="Copy heading and permalink for Proof 11.10.1" aria-label="Copy heading and permalink for Proof 11.10.1">🔗</a></div></article></details><div class="para" id="sec_convolution-5">
+<a href="sec_convolution.html#table_convolution-properties" class="xref" data-knowl="./knowl/xref/table_convolution-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.10.3: Convolution Properties">Table 11.10.3</a> summarizes some important convolution properties.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="table table-like" id="table_convolution-properties"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Convolution Properties<div class="autopermalink" data-description="Table 11.10.3: Convolution Properties"><a href="#table_convolution-properties" title="Copy heading and permalink for Table 11.10.3: Convolution Properties" aria-label="Copy heading and permalink for Table 11.10.3: Convolution Properties">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -586,15 +587,15 @@ F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-s
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure><article class="example example-like" id="sec_convolution-8"><h3 class="heading">
+</table></div></figure><article class="example example-like" id="sec_convolution-7"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec_convolution-8-1-1">Show that <span class="process-math">\(\mathcal{L}^{-1}\left(\frac{2s}{(s^2+1)^2}\right) = t\sin t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_convolution-7-1-1">Show that <span class="process-math">\(\mathcal{L}^{-1}\left(\frac{2s}{(s^2+1)^2}\right) = t\sin t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convolution-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec_convolution-8-2-1">
+<div class="solutions"><details id="sec_convolution-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_convolution-7-2-1">
 <div class="para">Let <span class="process-math">\(F(s) = \frac{1}{s^2+1}\text{,}\)</span> <span class="process-math">\(G(s) =\frac{2s}{s^2+1}, \, f(t) = \sin t, \, g(t) =2\cos t\text{,}\)</span> respectively. Applying the convolution theorem we get</div>
-<div class="displaymath process-math" id="sec_convolution-8-2-1-3">
+<div class="displaymath process-math" id="sec_convolution-7-2-1-3">
 \begin{align*}
 \mathcal{L}^{-1}\left(\frac{1}{s^2+1}\frac{2s}{s^2+1}\right) \amp = \mathcal{L}^{-1}\big(F(s)G(s)\big)\\
 \amp = \int_0^t2\sin(t-\tau) \cos \tau\,d\tau\\
@@ -604,24 +605,24 @@ F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-s
 \amp = t\sin t\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.10.4.1"><a href="#sec_convolution-8-2" title="Copy heading and permalink for Solution 11.10.4.1" aria-label="Copy heading and permalink for Solution 11.10.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 11.10.4.1"><a href="#sec_convolution-7-2" title="Copy heading and permalink for Solution 11.10.4.1" aria-label="Copy heading and permalink for Solution 11.10.4.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.4"><a href="#sec_convolution-8" title="Copy heading and permalink for Example 11.10.4" aria-label="Copy heading and permalink for Example 11.10.4">🔗</a></div></article><article class="example example-like" id="sec_convolution-9"><h3 class="heading">
+<div class="autopermalink" data-description="Example 11.10.4"><a href="#sec_convolution-7" title="Copy heading and permalink for Example 11.10.4" aria-label="Copy heading and permalink for Example 11.10.4">🔗</a></div></article><article class="example example-like" id="sec_convolution-8"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec_convolution-9-1-1">
+<div class="para logical" id="sec_convolution-8-1-1">
 <div class="para">Use the convolution theorem to solve the integral equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(t) = 2\cos t-\int_0^t(t-\tau)f(\tau)\,d\tau.
+f(t) = 2\cos t-\int_0^t(t-\tau)f(\tau)\,d\tau\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convolution-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec_convolution-9-2-1">
+<div class="solutions"><details id="sec_convolution-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_convolution-8-2-1">
 <div class="para">Letting <span class="process-math">\(F(s) =\mathcal{L}\big(f(t)\big)\)</span> and using <span class="process-math">\(\mathcal{L}(t) = \frac{1}{s^2}\)</span> in the convolution theorem we obtain</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -637,14 +638,14 @@ F(s) = \frac{2s^3}{(s^2+1)^2} = \frac{2s}{s^2+1} - \frac{2s}{(s^2+1)^2}\text{,}
 <div class="para">and the solution is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(t) = 2\cos t - t\sin t.
+f(t) = 2\cos t - t\sin t\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.10.5.1"><a href="#sec_convolution-9-2" title="Copy heading and permalink for Solution 11.10.5.1" aria-label="Copy heading and permalink for Solution 11.10.5.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 11.10.5.1"><a href="#sec_convolution-8-2" title="Copy heading and permalink for Solution 11.10.5.1" aria-label="Copy heading and permalink for Solution 11.10.5.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.5"><a href="#sec_convolution-9" title="Copy heading and permalink for Example 11.10.5" aria-label="Copy heading and permalink for Example 11.10.5">🔗</a></div></article><div class="para logical" id="sec_convolution-10">
+<div class="autopermalink" data-description="Example 11.10.5"><a href="#sec_convolution-8" title="Copy heading and permalink for Example 11.10.5" aria-label="Copy heading and permalink for Example 11.10.5">🔗</a></div></article><div class="para logical" id="sec_convolution-9">
 <div class="para">Engineers and physicists sometimes consider forces that produce large effects that are applied over a very short time interval. The force acting at the time an earthquake starts is an example. This leads to the idea of a <em class="emphasis">unit impulse function</em> <span class="process-math">\(\delta(t)\text{.}\)</span> Consider a small positive constant <span class="process-math">\(a\text{.}\)</span> The function <span class="process-math">\(\delta_a(t)\)</span> is defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -652,28 +653,28 @@ f(t) = 2\cos t - t\sin t.
 \, 0 \amp  \text{otherwise}. \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec_convolution-11">
+<div class="para logical" id="sec_convolution-10">
 <div class="para">The unit impulse function is obtained by letting the interval width go to zero, <em class="emphasis">i.e.</em>,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \delta(t) = \lim_{a \to 0}\delta_a(t).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_convolution-12">
-<a href="sec_convolution.html#fig_ch-11-29" class="xref" data-knowl="./knowl/xref/fig_ch-11-29.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.6">Figure 11.10.6</a> shows the graph of <span class="process-math">\(\delta_a(t)\)</span> for <span class="process-math">\(a=10, \, 40\text{,}\)</span> and <span class="process-math">\(100\text{.}\)</span>  Although <span class="process-math">\(\delta(t)\)</span> is called the <em class="emphasis">Dirac delta function</em>, it is not an ordinary function.  To be precise it is a distribution, and the theory of distributions permits manipulations of <span class="process-math">\(\delta(t)\)</span> as though it were a function.  For our work, we will treat <span class="process-math">\(\delta(t)\)</span> as a function and investigate its properties.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_convolution-11">
+<a href="sec_convolution.html#fig_ch-11-29" class="xref" data-knowl="./knowl/xref/fig_ch-11-29.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.6">Figure 11.10.6</a> shows the graph of <span class="process-math">\(\delta_a(t)\)</span> for <span class="process-math">\(a=10, \, 40\text{,}\)</span> and <span class="process-math">\(100\text{.}\)</span> Although <span class="process-math">\(\delta(t)\)</span> is called the <em class="emphasis">Dirac delta function</em>, it is not an ordinary function. To be precise it is a distribution, and the theory of distributions permits manipulations of <span class="process-math">\(\delta(t)\)</span> as though it were a function. For our work, we will treat <span class="process-math">\(\delta(t)\)</span> as a function and investigate its properties.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-11-29"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/figs/ch-11/ch-11-fig-29.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graphs of <span class="process-math">\(y=\delta_a(t)\)</span> for <span class="process-math">\(a=10\text{,}\)</span> <span class="process-math">\(40\text{,}\)</span> and <span class="process-math">\(100\)</span><div class="autopermalink" data-description="Figure 11.10.6"><a href="#fig_ch-11-29" title="Copy heading and permalink for Figure 11.10.6" aria-label="Copy heading and permalink for Figure 11.10.6">🔗</a></div></figcaption></figure><article class="example example-like" id="sec_convolution-14"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Graphs of <span class="process-math">\(y=\delta_a(t)\)</span> for <span class="process-math">\(a=10\text{,}\)</span> <span class="process-math">\(40\text{,}\)</span> and <span class="process-math">\(100\)</span><div class="autopermalink" data-description="Figure 11.10.6"><a href="#fig_ch-11-29" title="Copy heading and permalink for Figure 11.10.6" aria-label="Copy heading and permalink for Figure 11.10.6">🔗</a></div></figcaption></figure><article class="example example-like" id="sec_convolution-13"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="sec_convolution-14-1-1">Show that <span class="process-math">\(\mathcal{L}\big(\delta(t)\big) = 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_convolution-13-1-1">Show that <span class="process-math">\(\mathcal{L}\big(\delta(t)\big) = 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convolution-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec_convolution-14-2-1">
+<div class="solutions"><details id="sec_convolution-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_convolution-13-2-1">
 <div class="para">By definition, the Laplace transform of <span class="process-math">\(\delta_a(t)\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -681,39 +682,38 @@ f(t) = 2\cos t - t\sin t.
 \frac{1-e^{-sa}}{sa}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec_convolution-14-2-2">
+<div class="para logical" id="sec_convolution-13-2-2">
 <div class="para">Letting <span class="process-math">\(a \to 0\)</span> in equation, and using L’Hôpital’s rule, we obtain</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = \lim\limits_{a \to
-0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1\text{.}
+\mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = 
+\lim\limits_{a \to 0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-13-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.10.7.1"><a href="#sec_convolution-14-2" title="Copy heading and permalink for Solution 11.10.7.1" aria-label="Copy heading and permalink for Solution 11.10.7.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 11.10.7.1"><a href="#sec_convolution-13-2" title="Copy heading and permalink for Solution 11.10.7.1" aria-label="Copy heading and permalink for Solution 11.10.7.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.7"><a href="#sec_convolution-14" title="Copy heading and permalink for Example 11.10.7" aria-label="Copy heading and permalink for Example 11.10.7">🔗</a></div></article><div class="para logical" id="sec_convolution-15">
+<div class="autopermalink" data-description="Example 11.10.7"><a href="#sec_convolution-13" title="Copy heading and permalink for Example 11.10.7" aria-label="Copy heading and permalink for Example 11.10.7">🔗</a></div></article><div class="para logical" id="sec_convolution-14">
 <div class="para">We now turn our attention to the unit impulse function. First, consider the function <span class="process-math">\(f_a(t)\)</span> obtained by integrating <span class="process-math">\(\delta_a(t)\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-f_a(t) = \int_0^t\delta_a(\tau )\,d\tau = 
-\begin{cases}
+f_a(t) = \int_0^t\delta_a(\tau )\,d\tau = \begin{cases}
 \, 0 \amp  \text{for} \quad  t \lt  0,\\ 
 \frac{t}{a} \amp  \text{for} \quad  0 \le t \le a,\\ 
 \, 1 \amp  \text{for} \quad  a \lt  t. 
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_convolution-16">Then it is easy to see that <span class="process-math">\(U_0(t) =\lim\limits_{a \to 0}f_a(t)\)</span> (see <a href="sec_convolution.html#fig_ch-11-30" class="xref" data-knowl="./knowl/xref/fig_ch-11-30.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.8">Figure 11.10.8</a>).<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_convolution-15">Then it is easy to see that <span class="process-math">\(U_0(t) =\lim\limits_{a \to 0}f_a(t)\)</span> (see <a href="sec_convolution.html#fig_ch-11-30" class="xref" data-knowl="./knowl/xref/fig_ch-11-30.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.8">Figure 11.10.8</a>).<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-11-30"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/figs/ch-11/ch-11-fig-30.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The integral of <span class="process-math">\(\delta_a(t)\)</span> is <span class="process-math">\(f_a(t)\text{,}\)</span> which becomes <span class="process-math">\(U_0(T)\text{,}\)</span> which becomes <span class="process-math">\(U_0(t)\)</span> when <span class="process-math">\(a \to 0\)</span><div class="autopermalink" data-description="Figure 11.10.8"><a href="#fig_ch-11-30" title="Copy heading and permalink for Figure 11.10.8" aria-label="Copy heading and permalink for Figure 11.10.8">🔗</a></div></figcaption></figure><div class="para" id="sec_convolution-18">The response of a system to the unit impulse function is illustrated in the next example.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The integral of <span class="process-math">\(\delta_a(t)\)</span> is <span class="process-math">\(f_a(t)\text{,}\)</span> which becomes <span class="process-math">\(U_0(T)\text{,}\)</span> which becomes <span class="process-math">\(U_0(t)\)</span> when <span class="process-math">\(a \to 0\)</span><div class="autopermalink" data-description="Figure 11.10.8"><a href="#fig_ch-11-30" title="Copy heading and permalink for Figure 11.10.8" aria-label="Copy heading and permalink for Figure 11.10.8">🔗</a></div></figcaption></figure><div class="para" id="sec_convolution-17">The response of a system to the unit impulse function is illustrated in the next example.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex_10_32"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -722,7 +722,7 @@ f_a(t) = \int_0^t\delta_a(\tau )\,d\tau =
 <div class="para">Solve the initial value problem</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y\,''(t)+4y\,'(t)+13y(t)=3\delta(t), \quad \text{with} \quad y(0) =0 \quad \text{and} \quad y\,'(0^-)=0\text{.}
+y\,''(t)+4y\,'(t)+13y(t)=3\delta(t), \quad \text{with} \quad y(0) =0 \quad \text{and} \quad y\,'(0^-) = 0\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_10_32-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -732,23 +732,23 @@ y\,''(t)+4y\,'(t)+13y(t)=3\delta(t), \quad \text{with} \quad y(0) =0 \quad \text
 <div class="para">Taking transforms results in <span class="process-math">\((s^2+4s+13)Y(s) = 3\mathcal{L}(\delta (t)) = 3\text{,}\)</span> so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Y(s) = \frac{3}{s^2+4s+13}=\frac{3}{(s+2)^2+3^2},
+Y(s) = \frac{3}{s^2+4s+13}=\frac{3}{(s+2)^2+3^2}\text{,}
 \end{equation*}
 </div>
-<div class="para">so the solution is</div>
+<div class="para">so the solution iso</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y(t)=e^{-2t}\sin 3t.
+y(t)=e^{-2t}\sin 3t\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_10_32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.10.9.1"><a href="#ex_10_32-2" title="Copy heading and permalink for Solution 11.10.9.1" aria-label="Copy heading and permalink for Solution 11.10.9.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.9"><a href="#ex_10_32" title="Copy heading and permalink for Example 11.10.9" aria-label="Copy heading and permalink for Example 11.10.9">🔗</a></div></article><div class="para" id="sec_convolution-20">Note: The condition <span class="process-math">\(y\,'(0^-) =0\)</span> is not satisfied by the “solution” <span class="process-math">\(y(t)\text{.}\)</span> Recall that all solutions using the Laplace transform are to be considered zero for values of <span class="process-math">\(t\lt 0\text{.}\)</span> Hence the graph of <span class="process-math">\(y(t)\)</span> is given in <a href="sec_convolution.html#fig_ch-11-31" class="xref" data-knowl="./knowl/xref/fig_ch-11-31.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.10">Figure 11.10.10</a>. We see that <span class="process-math">\(y,'(t)\)</span> has a jump discontinuity of magnitude <span class="process-math">\(+3\)</span> at the origin. This happens because either <span class="process-math">\(y(t)\)</span> or <span class="process-math">\(y\,'(t)\)</span> must have a jump discontinuity at the origin whenever the Dirac delta function occurs as part of the input or driving function.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 11.10.9"><a href="#ex_10_32" title="Copy heading and permalink for Example 11.10.9" aria-label="Copy heading and permalink for Example 11.10.9">🔗</a></div></article><div class="para" id="sec_convolution-19">Note: The condition <span class="process-math">\(y\,'(0^-) =0\)</span> is not satisfied by the “solution” <span class="process-math">\(y(t)\text{.}\)</span> Recall that all solutions using the Laplace transform are to be considered zero for values of <span class="process-math">\(t\lt 0\text{.}\)</span> Hence the graph of <span class="process-math">\(y(t)\)</span> is given in <a href="sec_convolution.html#fig_ch-11-31" class="xref" data-knowl="./knowl/xref/fig_ch-11-31.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.10.10">Figure 11.10.10</a>. <figure class="figure figure-like" id="fig_ch-11-31"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-11/ch-11-fig-31.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The solution <span class="process-math">\(y=y(t)\)</span> to <a href="sec_convolution.html#ex_10_32" class="xref" data-knowl="./knowl/xref/ex_10_32.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.10.9">Example 11.10.9</a><div class="autopermalink" data-description="Figure 11.10.10"><a href="#fig_ch-11-31" title="Copy heading and permalink for Figure 11.10.10" aria-label="Copy heading and permalink for Figure 11.10.10">🔗</a></div></figcaption></figure> We see that <span class="process-math">\(y,'(t)\)</span> has a jump discontinuity of magnitude <span class="process-math">\(+3\)</span> at the origin. This happens because either <span class="process-math">\(y(t)\)</span> or <span class="process-math">\(y\,'(t)\)</span> must have a jump discontinuity at the origin whenever the Dirac delta function occurs as part of the input or driving function.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="fig_ch-11-31"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-11/ch-11-fig-31.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The solution <span class="process-math">\(y=y(t)\)</span> to <a href="sec_convolution.html#ex_10_32" class="xref" data-knowl="./knowl/xref/ex_10_32.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.10.9">Example 11.10.9</a><div class="autopermalink" data-description="Figure 11.10.10"><a href="#fig_ch-11-31" title="Copy heading and permalink for Figure 11.10.10" aria-label="Copy heading and permalink for Figure 11.10.10">🔗</a></div></figcaption></figure><div class="para" id="sec_convolution-22">We now illustrate how the convolution method can be used to solve initial value problems.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_convolution-20">We now illustrate how the convolution method can be used to solve initial value problems.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="thm_convolution-method"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">IVP Convolution Method.</span>
@@ -781,7 +781,7 @@ au\,''(t) + bu\,'(t) + cu(t) = 0, \quad \text{with} \quad u(0) = y_0 \quad \text
 <div class="para">The particular solution is found by solving the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
-av\,''(t) + bv\,'(t) + cv(t) = g(t),  \text{ with }   v(0) = 0  \text{ and }   v\,'(0) = 0\text{.}
+av\,''(t) + bv\,'(t) + cv(t) = g(t), \quad \text{with} \quad v(0) = 0 \quad \text{and} \quad v\,'(0) = 0\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_convolution-method-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -810,20 +810,20 @@ y\,'(0) \amp = u\,'(0) +v\,'(0) = y_1 + 0 = y_1\text{.}
 </div>
 <div class="autopermalink" data-description="Solution 11.10.11.1"><a href="#thm_convolution-method-3" title="Copy heading and permalink for Solution 11.10.11.1" aria-label="Copy heading and permalink for Solution 11.10.11.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.11: IVP Convolution Method"><a href="#thm_convolution-method" title="Copy heading and permalink for Example 11.10.11: IVP Convolution Method" aria-label="Copy heading and permalink for Example 11.10.11: IVP Convolution Method">🔗</a></div></article><article class="example example-like" id="sec_convolution-24"><h3 class="heading">
+<div class="autopermalink" data-description="Example 11.10.11: IVP Convolution Method"><a href="#thm_convolution-method" title="Copy heading and permalink for Example 11.10.11: IVP Convolution Method" aria-label="Copy heading and permalink for Example 11.10.11: IVP Convolution Method">🔗</a></div></article><article class="example example-like" id="sec_convolution-22"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.10.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para logical" id="sec_convolution-24-1-1">
+<div class="para logical" id="sec_convolution-22-1-1">
 <div class="para">Use the convolution method to solve the IVP</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y\,''(t) + y(t) = \tan t, \quad \text{with} \quad y(0) = 1 \quad \text{and} \quad y\,'(0) = 2.
+y\,''(t) + y(t) = \tan t, \quad \text{with} \quad y(0) = 1 \quad \text{and} \quad y\,'(0) = 2\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convolution-24-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para logical" id="sec_convolution-24-2-1">
+<div class="solutions"><details id="sec_convolution-22-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec_convolution-22-2-1">
 <div class="para">First solve <span class="process-math">\(u''(t) + u(t) = 0\)</span> with <span class="process-math">\(u(0) = 1\)</span> and <span class="process-math">\(u'(0) = 2\text{.}\)</span> Taking the Laplace transform yields <span class="process-math">\(s^2U(s) - s- 2 + U(s) = 0\text{.}\)</span> Solving for <span class="process-math">\(U(s)\)</span> gives <span class="process-math">\(U(s) = \frac{s+2}{s^2+1}\text{,}\)</span> and it follows that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -831,27 +831,27 @@ u(t) = \cos t + 2\sin t\text{.}
 \end{equation*}
 </div>
 <div class="para">Second, observe that <span class="process-math">\(H(s) = \frac{1}{s^2+1}\)</span> and <span class="process-math">\(h(t) = \sin t\text{,}\)</span> so that</div>
-<div class="displaymath process-math" id="sec_convolution-24-2-1-10">
+<div class="displaymath process-math" id="sec_convolution-22-2-1-10">
 \begin{align*}
 v(t) \amp = (h\ast g) (t) = \int_0^t\sin(t-s) \tan(s)\,ds\\
 \amp = \left.\left[\cos (t) \ln \frac{\cos s}{1+\sin s}-\sin (t-s)\right]\right|_{s=0}^{s=t}\\
 \amp = \cos (t) \ln \frac{\cos t}{1+\sin t}+\sin (t)\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-24-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec_convolution-24-2-2">
+<div class="para logical" id="sec_convolution-22-2-2">
 <div class="para">Therefore, the solution is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-y(t) = u(t) + v(t) = \cos t + 3\sin t + \cos(t) \ln \frac{\cos t}{1+\sin t}.
+y(t) = u(t) + v(t) = \cos t + 3\sin t + \cos(t) \ln \frac{\cos t}{1+\sin t}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-24-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec_convolution-22-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.10.12.1"><a href="#sec_convolution-24-2" title="Copy heading and permalink for Solution 11.10.12.1" aria-label="Copy heading and permalink for Solution 11.10.12.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 11.10.12.1"><a href="#sec_convolution-22-2" title="Copy heading and permalink for Solution 11.10.12.1" aria-label="Copy heading and permalink for Solution 11.10.12.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 11.10.12"><a href="#sec_convolution-24" title="Copy heading and permalink for Example 11.10.12" aria-label="Copy heading and permalink for Example 11.10.12">🔗</a></div></article><section class="exercises" id="exercises_convolution"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 11.10.12"><a href="#sec_convolution-22" title="Copy heading and permalink for Example 11.10.12" aria-label="Copy heading and permalink for Example 11.10.12">🔗</a></div></article><section class="exercises" id="exercises_convolution"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises_convolution-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
@@ -877,7 +877,9 @@ y(t) = u(t) + v(t) = \cos t + 3\sin t + \cos(t) \ln \frac{\cos t}{1+\sin t}.
 </div>
 <div class="solutions"><details id="exercises_convolution-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="exercises_convolution-2-4-2-1">
-<span class="process-math">\(f(t)=e^t, \, g(t)=e^{2t}, \quad\)</span> and <span class="process-math">\(\quad (g \ast f)(t) = \int_0^te^{2\tau }e^{t-\tau}\,d\tau = -e^t+e^{2t}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(f(t)=e^t, \, g(t)=e^{2t}, \quad\)</span> and <span class="process-math">\(\quad (g \ast f)(t) = 
+\int_0^te^{2\tau }e^{t-\tau}\,d\tau = -e^t+e^{2t}
+\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convolution-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.10.1.c.1"><a href="#exercises_convolution-2-4-2" title="Copy heading and permalink for Solution 11.10.1.c.1" aria-label="Copy heading and permalink for Solution 11.10.1.c.1">🔗</a></div>
 </div></details></div>
