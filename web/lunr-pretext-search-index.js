@@ -14335,7 +14335,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.9",
   "title": "Inverting the Laplace Transform",
-  "body": " Inverting the Laplace Transform  So far, most of the applications involving the Laplace transform involve a transform (or part of a transform) that is expressed by where and are polynomials that have no common factors. The inverse of is found by using its partial fraction representation and referring to Table . We now show how the theory of complex variables can be used to systematically find the partial fraction representation. The first result is an extension of Lemma to linear factors. The proof is left for the reader.   Nonrepeated Linear Factors   Let be a polynomial of degree at most . If has degree , and has distinct complex roots , then Equation has the representation .     A Repeated Linear Factor   If and are polynomials of degree and , respectively, and and , then Equation has the representation , where is the sum of all partial fractions that do not involve factors of the form . Furthermore, the coefficients can be computed with the formula .     We employ the method of residues. First, multiplying both sides of Equation by gives . We can differentiate both sides of this equation times to obtain .  In this equation, take the limit as . It is left as an exercise for the reader to fill in the steps to obtain . which establishes Equation .     Let . Find .    From Equations and we can write . The coefficient is found by the calculation .  The coefficients , and are found by using Theorem . In this case and , so we get:   Hence, the partial fraction representation is , and the inverse is .     Irreducible Quadratic Factors   Let and be polynomials with real coefficients such that the degree of is at most larger than the degree of . If does not have a factor of the form , then      Since , and have real coefficients, it follows that . The polynomial has simple zeros at , this implies that . Therefore, we obtain from which it is easy to see that   If we set  and use Theorem and Equations , , and , then we find that . The first two terms on the right side of this equation are now combined to obtain , which completes the proof of the theorem.     Let . Find .    Here we have and , and the roots of occur at and . Computing the residues gives .  We find that and , which correspond to and , respectively. Thus, we obtain and the desired solution is       Find if .    The partial fraction expression for has the form . Since the linear factor is nonrepeated, we have .  Since the factor is repeated, we have .  The term is an irreducible quadratic, with roots , so that , and we obtain and . Therefore, .  Now we use Table to get       Use Laplace transforms to solve the system     Let and denote the Laplace transforms of and , respectively. If we take the transforms of the two differential equations and get , which can be written as .  Cramer's rule can be used to solve for and : .  The desired solution is obtained by computing the inverse transforms: .    According to Equation of Section , the inverse Laplace transform is given by the integral formula , where is any suitably chosen large positive constant. This improper integral is a contour integral taken along the vertical line in the complex plane. We shall show how the residue theory in is used to evaluate it. Cases where the integrand has either infinitely many poles or has branch points is left for the reader to research in advanced texts. We state the following more elementary result.   Inverse Laplace Transform   Let , where and are polynomials of degree and , respectively, and . The inverse Laplace transformation , denoted by , is given by , where the sum is taken over all of the residues of the complex function at its poles .     Let be chosen so that all the poles of lie to the left of the vertical line . Let denote the contour consisting of the vertical line segment between the points and the left semicircle , where , as illustrated in Figure . A slight modification of the proof of Jordan's lemma shows that .  The residue theorem and above limit imply that .    The contour .     Heaviside Expansion Theorem   Let and be polynomials of degree and , respectively, where . If has distinct simple zeros at the points , then is the Laplace transform of the function given by .     If and are polynomials and is a simple zero of , then . This outcome allows us to write the residues in Equation in the more convenient form given in Equation .     Find the inverse Laplace transform of the function     Here we have and , so that has simple zeros located at the points , and . Using , calculation reveals that and . Applying formula , we see that is given by .     Exercises    Use partial fractions to find the inverse Laplace transform of the following;      ;     .       ;       ;     .       ;       ;     .       .       Use a contour integral to find the inverse Laplace transform of the following:      ;     .       .       Use the Heaviside Expansion Theorem to find the inverse Laplace transform of the following:      ;          ;       ;          .       Find the inverse Laplace transform of .     .      Solve the following initial value problems:              .       ,                  .       ,          ,        .       ,          Solve the following systems of differential equations:      ,        and .       ,          ,        and .       ,          ,        and .                "
+  "body": " Inverting the Laplace Transform  So far, most of the applications involving the Laplace transform involve a transform (or part of a transform) that is expressed by , where and are polynomials that have no common factors. The inverse of is found by using its partial fraction representation and referring to Table . We now show how the theory of complex variables can be used to systematically find the partial fraction representation. The first result is an extension of Lemma to linear factors. The proof is left for the reader.   Nonrepeated Linear Factors   Let be a polynomial of degree at most . If has degree , and has distinct complex roots , then Equation has the representation .     A Repeated Linear Factor   If and are polynomials of degree and , respectively, and and , then Equation has the representation , where is the sum of all partial fractions that do not involve factors of the form . Furthermore, the coefficients can be computed with the formula .     We employ the method of residues. First, multiplying both sides of Equation by gives . We can differentiate both sides of this equation times to obtain .  In this equation, take the limit as . It is left as an exercise for the reader to fill in the steps to obtain , which establishes Equation .     Let . Find .    From Equations and we can write . The coefficient is found by the calculation .  The coefficients , and are found by using Theorem . In this case and , so we get: .  Hence, the partial fraction representation is , and the inverse is .     Irreducible Quadratic Factors   Let and be polynomials with real coefficients such that the degree of is at most larger than the degree of . If does not have a factor of the form , then .     Since , and have real coefficients, it follows that . The polynomial has simple zeros at , this implies that . Therefore, we obtain , from which it is easy to see that .  If we set  and use Theorem and Equations , , and , then we find that . The first two terms on the right side of this equation are now combined to obtain , which completes the proof of the theorem.     Let . Find .    Here we have and , and the roots of occur at and . Computing the residues gives .  We find that and , which correspond to and , respectively. Thus, we obtain , and the desired solution is .      Find if .    The partial fraction expression for has the form . Since the linear factor is nonrepeated, we have .  Since the factor is repeated, we have .  The term is an irreducible quadratic, with roots , so that , and we obtain and . Therefore, .  Now we use Table to get .      Use Laplace transforms to solve the system .    Let and denote the Laplace transforms of and , respectively. If we take the transforms of the two differential equations and get , which can be written as .  Cramer's rule can be used to solve for and : .  The desired solution is obtained by computing the inverse transforms: .    According to Equation of Section , the inverse Laplace transform is given by the integral formula , where is any suitably chosen large positive constant. This improper integral is a contour integral taken along the vertical line in the complex plane. We shall show how the residue theory in is used to evaluate it. Cases where the integrand has either infinitely many poles or has branch points is left for the reader to research in advanced texts. We state the following more elementary result.   Inverse Laplace Transform   Let , where and are polynomials of degree and , respectively, and . The inverse Laplace transformation , denoted by , is given by , where the sum is taken over all of the residues of the complex function at its poles .     Let be chosen so that all the poles of lie to the left of the vertical line . Let denote the contour consisting of the vertical line segment between the points and the left semicircle , where , as illustrated in Figure .  The contour .   A slight modification of the proof of Jordan's lemma shows that .  The residue theorem and above limit imply that .    Heaviside Expansion Theorem   Let and be polynomials of degree and , respectively, where . If has distinct simple zeros at the points , then is the Laplace transform of the function given by .     If and are polynomials and is a simple zero of , then . This outcome allows us to write the residues in Equation in the more convenient form given in Equation .     Find the inverse Laplace transform of the function .    Here we have and , so that has simple zeros located at the points , and . Using , calculation reveals that and . Applying Formula , we see that is given by .     Exercises    Use partial fractions to find the inverse Laplace transform of the following;      ;     .       ;       ;     .       ;       ;     .       .       Use a contour integral to find the inverse Laplace transform of the following:      ;     .       .       Use the Heaviside Expansion Theorem to find the inverse Laplace transform of the following:      ;          ;       ;          .       Find the inverse Laplace transform of .     .      Solve the following initial value problems:              .       ,                  .       ,          ,        .       ,          Solve the following systems of differential equations:      ,        and .       ,          ,        and .       ,          ,        and .                "
 },
 {
   "id": "thm_nonrepeated-factors",
@@ -14362,7 +14362,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "11.9.1",
   "title": "",
-  "body": " We employ the method of residues. First, multiplying both sides of Equation by gives . We can differentiate both sides of this equation times to obtain .  In this equation, take the limit as . It is left as an exercise for the reader to fill in the steps to obtain . which establishes Equation .  "
+  "body": " We employ the method of residues. First, multiplying both sides of Equation by gives . We can differentiate both sides of this equation times to obtain .  In this equation, take the limit as . It is left as an exercise for the reader to fill in the steps to obtain , which establishes Equation .  "
 },
 {
   "id": "sec_laplace-inversion-6",
@@ -14371,7 +14371,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.9.3",
   "title": "",
-  "body": "  Let . Find .    From Equations and we can write . The coefficient is found by the calculation .  The coefficients , and are found by using Theorem . In this case and , so we get:   Hence, the partial fraction representation is , and the inverse is .   "
+  "body": "  Let . Find .    From Equations and we can write . The coefficient is found by the calculation .  The coefficients , and are found by using Theorem . In this case and , so we get: .  Hence, the partial fraction representation is , and the inverse is .   "
 },
 {
   "id": "thm_irreducible-quad-factors",
@@ -14380,7 +14380,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "11.9.4",
   "title": "Irreducible Quadratic Factors.",
-  "body": " Irreducible Quadratic Factors   Let and be polynomials with real coefficients such that the degree of is at most larger than the degree of . If does not have a factor of the form , then    "
+  "body": " Irreducible Quadratic Factors   Let and be polynomials with real coefficients such that the degree of is at most larger than the degree of . If does not have a factor of the form , then .   "
 },
 {
   "id": "sec_laplace-inversion-8",
@@ -14389,7 +14389,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "11.9.2",
   "title": "",
-  "body": " Since , and have real coefficients, it follows that . The polynomial has simple zeros at , this implies that . Therefore, we obtain from which it is easy to see that   If we set  and use Theorem and Equations , , and , then we find that . The first two terms on the right side of this equation are now combined to obtain , which completes the proof of the theorem.  "
+  "body": " Since , and have real coefficients, it follows that . The polynomial has simple zeros at , this implies that . Therefore, we obtain , from which it is easy to see that .  If we set  and use Theorem and Equations , , and , then we find that . The first two terms on the right side of this equation are now combined to obtain , which completes the proof of the theorem.  "
 },
 {
   "id": "sec_laplace-inversion-9",
@@ -14398,7 +14398,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.9.5",
   "title": "",
-  "body": "  Let . Find .    Here we have and , and the roots of occur at and . Computing the residues gives .  We find that and , which correspond to and , respectively. Thus, we obtain and the desired solution is    "
+  "body": "  Let . Find .    Here we have and , and the roots of occur at and . Computing the residues gives .  We find that and , which correspond to and , respectively. Thus, we obtain , and the desired solution is .   "
 },
 {
   "id": "sec_laplace-inversion-10",
@@ -14407,7 +14407,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.9.6",
   "title": "",
-  "body": "  Find if .    The partial fraction expression for has the form . Since the linear factor is nonrepeated, we have .  Since the factor is repeated, we have .  The term is an irreducible quadratic, with roots , so that , and we obtain and . Therefore, .  Now we use Table to get    "
+  "body": "  Find if .    The partial fraction expression for has the form . Since the linear factor is nonrepeated, we have .  Since the factor is repeated, we have .  The term is an irreducible quadratic, with roots , so that , and we obtain and . Therefore, .  Now we use Table to get .   "
 },
 {
   "id": "sec_laplace-inversion-11",
@@ -14416,7 +14416,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.9.7",
   "title": "",
-  "body": "  Use Laplace transforms to solve the system     Let and denote the Laplace transforms of and , respectively. If we take the transforms of the two differential equations and get , which can be written as .  Cramer's rule can be used to solve for and : .  The desired solution is obtained by computing the inverse transforms: .   "
+  "body": "  Use Laplace transforms to solve the system .    Let and denote the Laplace transforms of and , respectively. If we take the transforms of the two differential equations and get , which can be written as .  Cramer's rule can be used to solve for and : .  The desired solution is obtained by computing the inverse transforms: .   "
 },
 {
   "id": "thm_inverse-laplace",
@@ -14434,43 +14434,34 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "11.9.3",
   "title": "",
-  "body": " Let be chosen so that all the poles of lie to the left of the vertical line . Let denote the contour consisting of the vertical line segment between the points and the left semicircle , where , as illustrated in Figure . A slight modification of the proof of Jordan's lemma shows that .  The residue theorem and above limit imply that .  "
+  "body": " Let be chosen so that all the poles of lie to the left of the vertical line . Let denote the contour consisting of the vertical line segment between the points and the left semicircle , where , as illustrated in Figure .  The contour .   A slight modification of the proof of Jordan's lemma shows that .  The residue theorem and above limit imply that .  "
 },
 {
-  "id": "fig_ch-11-27",
+  "id": "sec_laplace-inversion-15",
   "level": "2",
-  "url": "sec_laplace-inversion.html#fig_ch-11-27",
-  "type": "Figure",
-  "number": "11.9.9",
-  "title": "",
-  "body": " The contour .   "
-},
-{
-  "id": "sec_laplace-inversion-16",
-  "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-16",
+  "url": "sec_laplace-inversion.html#sec_laplace-inversion-15",
   "type": "Theorem",
   "number": "11.9.10",
   "title": "Heaviside Expansion Theorem.",
   "body": " Heaviside Expansion Theorem   Let and be polynomials of degree and , respectively, where . If has distinct simple zeros at the points , then is the Laplace transform of the function given by .   "
 },
 {
-  "id": "sec_laplace-inversion-17",
+  "id": "sec_laplace-inversion-16",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-17",
+  "url": "sec_laplace-inversion.html#sec_laplace-inversion-16",
   "type": "Proof",
   "number": "11.9.4",
   "title": "",
   "body": " If and are polynomials and is a simple zero of , then . This outcome allows us to write the residues in Equation in the more convenient form given in Equation .  "
 },
 {
-  "id": "sec_laplace-inversion-18",
+  "id": "sec_laplace-inversion-17",
   "level": "2",
-  "url": "sec_laplace-inversion.html#sec_laplace-inversion-18",
+  "url": "sec_laplace-inversion.html#sec_laplace-inversion-17",
   "type": "Example",
   "number": "11.9.11",
   "title": "",
-  "body": "  Find the inverse Laplace transform of the function     Here we have and , so that has simple zeros located at the points , and . Using , calculation reveals that and . Applying formula , we see that is given by .   "
+  "body": "  Find the inverse Laplace transform of the function .    Here we have and , so that has simple zeros located at the points , and . Using , calculation reveals that and . Applying Formula , we see that is given by .   "
 },
 {
   "id": "exercises_laplace-inversion-2",
