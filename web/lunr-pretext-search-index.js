@@ -13732,7 +13732,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.6",
   "title": "Laplace Transforms of Derivatives and Integrals",
-  "body": " Laplace Transforms of Derivatives and Integrals   Differentiation of   Let and be continuous for , and of exponential order. Then,      Let be chosen large enough so that both and are of exponential order . If , then is given by . Next, using integration by parts, we can write the equation this as . Now, is of exponential order , and . It follows that , so    An easy consequence of Theorem is the following, which we state without proof.    If , and are of exponential order, then       Show that .    Let , then and . Using the fact that , Theorem implies that from which it follows that .      (Integration of ] Let be continuous for , and of exponential order. Further, let be its Laplace transform, then      Let , then and . If we can show that is of exponential order, then Theorem implies that   Since is of exponential order, there are positive values and so that Therefore, is of exponential order.     Show that and .    Using Theorem and the fact that we obtain Now we can use the first result to establish the second one:     One of the main uses of the Laplace transform is its role in the solution of differential equations. The utility of the Laplace transform lies in the fact that the transform of the derivative corresponds to multiplication of the transform by and then the subtraction of . This permits us to replace the calculus operation of differentiation with simple algebraic operations on transforms.  This idea is used to develop a method for solving linear differential equations with constant coefficients. Consider the initial value problem with initial conditions and . The linearity property of the Laplace transform can be used to obtain the equation .  Let and . Now apply Theorem and Corollary to get . We can rewrite the last equation in the form .  The Laplace transform of the solution can be shown to be .  For many physical problems involving mechanical systems and electric circuits, the transform is known, and the inverse of can easily be computed. This process is referred to as the operational calculus and has the advantage of changing problems in differential equations into problems in algebra. Then the solution obtained will satisfy the specific initial conditions.    Solve the initial value problem     Since the right-hand side of the differential equation is we have . The initial conditions yield , and Equation becomes . Solving we get and the solution is assisted by using Table and the computation       Solve the initial value problem     In the spirit of Example , we use the initial conditions and Equation becomes . Using partial fraction expansion and the solution is .     Exercises    Derive from .     .      Derive from .      Find .     .      Show that .    Let and .      Find .     .      Find .      Show that .     .      Show that .  Solve the initial value problem in the following exercises.            .                   .                   .                   .                   .       .     "
+  "body": " Laplace Transforms of Derivatives and Integrals   Differentiation of   Let and be continuous for , and of exponential order. Then, .     Let be chosen large enough so that both and are of exponential order . If , then is given by . Next, using integration by parts, we can write the equation this as . Now, is of exponential order , and . It follows that , so .   An easy consequence of Theorem is the following, which we state without proof.    If , and are of exponential order, then .      Show that .    Let , then and . Using the fact that , Theorem implies that , from which it follows that .      (Integration of ] Let be continuous for , and of exponential order. Further, let be its Laplace transform, then .     Let , then and . If we can show that is of exponential order, then Theorem implies that .  Since is of exponential order, there are positive values and so that . Therefore, is of exponential order.     Show that and .    Using Theorem and the fact that we obtain . Now we can use the first result to establish the second one: .    One of the main uses of the Laplace transform is its role in the solution of differential equations. The utility of the Laplace transform lies in the fact that the transform of the derivative corresponds to multiplication of the transform by and then the subtraction of . This permits us to replace the calculus operation of differentiation with simple algebraic operations on transforms.  This idea is used to develop a method for solving linear differential equations with constant coefficients. Consider the initial value problem with initial conditions and . The linearity property of the Laplace transform can be used to obtain the equation .  Let and . Now apply Theorem and Corollary to get . We can rewrite the last equation in the form .  The Laplace transform of the solution can be shown to be .  For many physical problems involving mechanical systems and electric circuits, the transform is known, and the inverse of can easily be computed. This process is referred to as the operational calculus and has the advantage of changing problems in differential equations into problems in algebra. Then the solution obtained will satisfy the specific initial conditions.    Solve the initial value problem .    Since the right-hand side of the differential equation is we have . The initial conditions yield , and Equation becomes . Solving we get and the solution is assisted by using Table and the computation .      Solve the initial value problem .    In the spirit of Example , we use the initial conditions and Equation becomes . Using partial fraction expansion and the solution is .     Exercises    Derive from .     .      Derive from .      Find .     .      Show that .    Let and .      Find .     .      Find .      Show that .     .      Show that .    Solve the initial value problem in the following exercises.     .     .       .       .     .       .       .     .       .       .     .       .       .     .       .   '  "
 },
 {
   "id": "thm_laplace-diff",
@@ -13741,7 +13741,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "11.6.1",
   "title": "Differentiation of <span class=\"process-math\">\\(\\boldsymbol{f(t)}\\)<\/span>.",
-  "body": " Differentiation of   Let and be continuous for , and of exponential order. Then,    "
+  "body": " Differentiation of   Let and be continuous for , and of exponential order. Then, .   "
 },
 {
   "id": "sec_laplace-derivs-integrals-3",
@@ -13750,7 +13750,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "11.6.1",
   "title": "",
-  "body": " Let be chosen large enough so that both and are of exponential order . If , then is given by . Next, using integration by parts, we can write the equation this as . Now, is of exponential order , and . It follows that , so   "
+  "body": " Let be chosen large enough so that both and are of exponential order . If , then is given by . Next, using integration by parts, we can write the equation this as . Now, is of exponential order , and . It follows that , so .  "
 },
 {
   "id": "cor_laplace-diff-cor",
@@ -13759,7 +13759,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "11.6.2",
   "title": "",
-  "body": "  If , and are of exponential order, then    "
+  "body": "  If , and are of exponential order, then .   "
 },
 {
   "id": "sec_laplace-derivs-integrals-6",
@@ -13768,7 +13768,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.6.3",
   "title": "",
-  "body": "  Show that .    Let , then and . Using the fact that , Theorem implies that from which it follows that .   "
+  "body": "  Show that .    Let , then and . Using the fact that , Theorem implies that , from which it follows that .   "
 },
 {
   "id": "thm_laplace-int",
@@ -13777,7 +13777,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "11.6.4",
   "title": "",
-  "body": "  (Integration of ] Let be continuous for , and of exponential order. Further, let be its Laplace transform, then    "
+  "body": "  (Integration of ] Let be continuous for , and of exponential order. Further, let be its Laplace transform, then .   "
 },
 {
   "id": "sec_laplace-derivs-integrals-8",
@@ -13786,7 +13786,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "11.6.2",
   "title": "",
-  "body": " Let , then and . If we can show that is of exponential order, then Theorem implies that   Since is of exponential order, there are positive values and so that Therefore, is of exponential order.  "
+  "body": " Let , then and . If we can show that is of exponential order, then Theorem implies that .  Since is of exponential order, there are positive values and so that . Therefore, is of exponential order.  "
 },
 {
   "id": "sec_laplace-derivs-integrals-9",
@@ -13795,7 +13795,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.6.5",
   "title": "",
-  "body": "  Show that and .    Using Theorem and the fact that we obtain Now we can use the first result to establish the second one:    "
+  "body": "  Show that and .    Using Theorem and the fact that we obtain . Now we can use the first result to establish the second one: .   "
 },
 {
   "id": "ex_10_15",
@@ -13804,7 +13804,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.6.6",
   "title": "",
-  "body": "  Solve the initial value problem     Since the right-hand side of the differential equation is we have . The initial conditions yield , and Equation becomes . Solving we get and the solution is assisted by using Table and the computation    "
+  "body": "  Solve the initial value problem .    Since the right-hand side of the differential equation is we have . The initial conditions yield , and Equation becomes . Solving we get and the solution is assisted by using Table and the computation .   "
 },
 {
   "id": "sec_laplace-derivs-integrals-16",
@@ -13813,7 +13813,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "11.6.7",
   "title": "",
-  "body": "  Solve the initial value problem     In the spirit of Example , we use the initial conditions and Equation becomes . Using partial fraction expansion and the solution is .   "
+  "body": "  Solve the initial value problem .    In the spirit of Example , we use the initial conditions and Equation becomes . Using partial fraction expansion and the solution is .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-2",
@@ -13885,93 +13885,93 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "11.6.8",
   "title": "",
-  "body": "  Show that .  Solve the initial value problem in the following exercises.   "
-},
-{
-  "id": "exercises_laplace-derivs-integrals-10",
-  "level": "2",
-  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-10",
-  "type": "Exercise",
-  "number": "11.6.9",
-  "title": "",
-  "body": "        .   "
+  "body": "  Show that .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-11",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-11",
   "type": "Exercise",
-  "number": "11.6.10",
+  "number": "11.6.9",
   "title": "",
-  "body": "      "
+  "body": "   .     .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-12",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-12",
   "type": "Exercise",
-  "number": "11.6.11",
+  "number": "11.6.10",
   "title": "",
-  "body": "        .   "
+  "body": "   .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-13",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-13",
   "type": "Exercise",
-  "number": "11.6.12",
+  "number": "11.6.11",
   "title": "",
-  "body": "      "
+  "body": "   .     .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-14",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-14",
   "type": "Exercise",
-  "number": "11.6.13",
+  "number": "11.6.12",
   "title": "",
-  "body": "        .   "
+  "body": "   .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-15",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-15",
   "type": "Exercise",
-  "number": "11.6.14",
+  "number": "11.6.13",
   "title": "",
-  "body": "      "
+  "body": "   .     .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-16",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-16",
   "type": "Exercise",
-  "number": "11.6.15",
+  "number": "11.6.14",
   "title": "",
-  "body": "        .   "
+  "body": "   .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-17",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-17",
   "type": "Exercise",
-  "number": "11.6.16",
+  "number": "11.6.15",
   "title": "",
-  "body": "      "
+  "body": "   .     .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-18",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-18",
   "type": "Exercise",
-  "number": "11.6.17",
+  "number": "11.6.16",
   "title": "",
-  "body": "        .   "
+  "body": "   .   "
 },
 {
   "id": "exercises_laplace-derivs-integrals-19",
   "level": "2",
   "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-19",
+  "type": "Exercise",
+  "number": "11.6.17",
+  "title": "",
+  "body": "   .     .   "
+},
+{
+  "id": "exercises_laplace-derivs-integrals-20",
+  "level": "2",
+  "url": "sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals-20",
   "type": "Exercise",
   "number": "11.6.18",
   "title": "",
