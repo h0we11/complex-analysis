@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -505,12 +505,12 @@ eBookConfig.enable_chatcodes =  false;
 </h2>
 <div class="para logical" id="sec_fourier-transform-2">
 <div class="para">Let <span class="process-math">\(U(t)\)</span> be a real-valued function with period <span class="process-math">\(2\pi\)</span> which is piecewise continuous such that <span class="process-math">\(U\,'(t)\)</span> also exists and is piecewise continuous. Then <span class="process-math">\(U(t)\)</span> has the <em class="emphasis">complex Fourier series</em> representation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_fourier-transform-2-6">
 \begin{equation*}
 U(t) = \sum_{n=-\infty}^{\infty}c_ne^{int},  \text{ where }
 \end{equation*}
 </div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_fourier-transform-2-7">
 \begin{equation*}
 c_n=\frac{1}{2\pi}\int_{-\pi}^{\pi}U(t) e^{-int}\,dt  \text{ for all }   n\text{.}
 \end{equation*}
@@ -596,7 +596,7 @@ w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }\tag{11.4.6}
 </div>
 <div class="para logical" id="sec_fourier-transform-12">
 <div class="para">If <span class="process-math">\(t\)</span> denotes time, then the units for <span class="process-math">\(w_n\)</span> are radians per unit time. The set of all possible frequencies is called the <em class="emphasis">frequency spectrum, i.e.</em>,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_fourier-transform-12-4">
 \begin{equation*}
 \left\{\ldots ,\frac{-3\pi}{L},\frac{-2\pi}{L},\frac{-\pi}{L},\frac{\pi}{L}, \frac{2\pi}{L},\frac{3\pi}{L}, \ldots\right\}\text{.}
 \end{equation*}
@@ -610,7 +610,7 @@ w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }\tag{11.4.6}
 </h3>
 <div class="para logical" id="thm_fourier-transform-2-1">
 <div class="para">Let <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(U\,'(t)\)</span> be piecewise continuous, and</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm_fourier-transform-2-1-3">
 \begin{equation*}
 \int_{-\infty}^{\infty}\left| U(t) \right| dt\lt M\text{,}
 \end{equation*}
@@ -624,13 +624,13 @@ F(w) = \frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}U(t)e^{-iwt}\,dt\text{.}\ta
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_fourier-transform-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="thm_fourier-transform-2-2">
 <div class="para">At points of continuity, <span class="process-math">\(U(t)\)</span> has the integral representation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm_fourier-transform-2-2-2">
 \begin{equation*}
 U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw\text{.}
 \end{equation*}
 </div>
 <div class="para">and at a point <span class="process-math">\(t=a\)</span> of discontinuity of <span class="process-math">\(U\text{,}\)</span> the integral converges to</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm_fourier-transform-2-2-5">
 \begin{equation*}
 \frac{U(a^-)+U(a^+)}{2}.
 \end{equation*}
@@ -639,7 +639,7 @@ U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw\text{.}
 </div>
 <div class="autopermalink" data-description="Theorem 11.4.1: Fourier Transform"><a href="#thm_fourier-transform" title="Copy heading and permalink for Theorem 11.4.1: Fourier Transform" aria-label="Copy heading and permalink for Theorem 11.4.1: Fourier Transform">🔗</a></div></article><div class="para logical" id="sec_fourier-transform-15">
 <div class="para">Note: It is common to express the fact that <span class="process-math">\(U\)</span> is transformed into <span class="process-math">\(F\)</span> by using the operator notation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_fourier-transform-15-3">
 \begin{equation*}
 \mathrm{F}\big(U(t)\big)=F(w).
 \end{equation*}
@@ -660,7 +660,7 @@ w_n\text{.}\notag
 </div>
 <div class="para logical" id="sec_fourier-transform-16-2">
 <div class="para">If we define <span class="process-math">\(F_L(w)\)</span> by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ComplexFourierL2.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ComplexFourierL2.html" id="sec_fourier-transform-16-2-2">
 \begin{equation*}
 F_L(w) = \frac{1}{2\pi}\int_{-L}^{L}U(t)e^{-iwt}\,dt\text{,}
 \end{equation*}
@@ -675,7 +675,7 @@ U_L(t) = \sum_{n=-\infty}^{\infty}F_L(w_n)e^{iw_nt}\Delta w_n\text{.}\tag{11.4.9
 </div>
 <div class="para logical" id="sec_fourier-transform-16-3">
 <div class="para">As <span class="process-math">\(L\)</span> gets large, <span class="process-math">\(F_L(w_n)\)</span> approaches <span class="process-math">\(F(w_n)\)</span> and <span class="process-math">\(\Delta w_n\)</span> tends to zero. Thus the limit on the right-hand side of Equation <a href="sec_fourier-transform.html#ComplexFourierL3" class="xref" data-knowl="./knowl/xref/ComplexFourierL3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.9">(11.4.9)</a> can be viewed as an integral. This substantiates the Fourier integral representation</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ComplexFourierL3.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ComplexFourierL3.html" id="sec_fourier-transform-16-3-6">
 \begin{equation*}
 U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw\text{.}
 \end{equation*}
@@ -758,13 +758,13 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="solutions"><details id="sec_fourier-transform-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_fourier-transform-20-2-1">
 <div class="para">Using the result of <a href="sec_fourier-transform.html#ex_10_5" class="xref" data-knowl="./knowl/xref/ex_10_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.4.3">Example 11.4.3</a>, the symmetry property, and the symmetry property, we obtain</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_5.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_5.html" id="sec_fourier-transform-20-2-1-2">
 \begin{equation*}
 \mathrm{F}\left(\frac{1}{\pi (1+t^2)}\right) = \frac{1}{2\pi}e^{-|-w|} = \frac{1}{2\pi}e^{-|w|}.
 \end{equation*}
 </div>
 <div class="para">By the linearity property, with each term is multiplied by <span class="process-math">\(\pi\text{,}\)</span> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_5.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_5.html" id="sec_fourier-transform-20-2-1-4">
 \begin{equation*}
 \mathrm{F}\left(\frac{1}{1+t^2}\right) = \frac{1}{2}e^{-|w|}.
 \end{equation*}
@@ -814,7 +814,7 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="autopermalink" data-description="Exercise 11.4.2"><a href="#ex_12_2" title="Copy heading and permalink for Exercise 11.4.2" aria-label="Copy heading and permalink for Exercise 11.4.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises_fourier-transform-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_fourier-transform-4-1-1">
 <div class="para">Use the symmetry and linearity properties and the result of <a href="sec_fourier-transform.html#ex_12_1a" class="xref" data-knowl="./knowl/xref/ex_12_1a.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 11.4.1.a">Exercise 11.4.1.a</a> to show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1a.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1a.html" id="exercises_fourier-transform-4-1-1-2">
 \begin{equation*}
 \mathfrak{F}\left(\frac{\sin t}{t}\right) =	\begin{cases}
 \frac{1}{2} \amp  \text{for} \quad |w| \lt  1,\\
@@ -835,7 +835,7 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="autopermalink" data-description="Exercise 11.4.4"><a href="#ex_12_3" title="Copy heading and permalink for Exercise 11.4.4" aria-label="Copy heading and permalink for Exercise 11.4.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises_fourier-transform-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_fourier-transform-6-1-1">
 <div class="para">Use the time scaling property and the example in the text to show that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="exercises_fourier-transform-6-1-1-1">
 \begin{equation*}
 \mathfrak{F}(e^{-a|t|}) =\frac{|a|}{\pi(a^2+w^2)}.
 \end{equation*}
@@ -845,7 +845,7 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="autopermalink" data-description="Exercise 11.4.5"><a href="#exercises_fourier-transform-6" title="Copy heading and permalink for Exercise 11.4.5" aria-label="Copy heading and permalink for Exercise 11.4.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises_fourier-transform-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_fourier-transform-7-1-1">
 <div class="para">Use the symmetry and linearity properties and the result of <a href="sec_fourier-transform.html#ex_12_2" class="xref" data-knowl="./knowl/xref/ex_12_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 11.4.2">Exercise 11.4.2</a> to show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_2.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_2.html" id="exercises_fourier-transform-7-1-1-2">
 \begin{equation*}
 \mathfrak{F}\left(\frac{i\sin \pi t}{1-t^2}\right) = 
 \begin{cases}
@@ -859,7 +859,7 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="autopermalink" data-description="Exercise 11.4.6"><a href="#exercises_fourier-transform-7" title="Copy heading and permalink for Exercise 11.4.6" aria-label="Copy heading and permalink for Exercise 11.4.6">🔗</a></div></article><article class="exercise exercise-like" id="exercises_fourier-transform-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_fourier-transform-8-1-1">
 <div class="para">Use the time differentiation property and the result of <a href="sec_fourier-transform.html#ex_12_3" class="xref" data-knowl="./knowl/xref/ex_12_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 11.4.4">Exercise 11.4.4</a> to show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_3.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_3.html" id="exercises_fourier-transform-8-1-1-2">
 \begin{equation*}
 \mathfrak{F}\left(te^{-\frac{r^2}{2}}\right) =\frac{-iwe^{-\frac{w^2}{2}}}{\sqrt{2\pi}}.
 \end{equation*}
@@ -869,7 +869,7 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 <div class="autopermalink" data-description="Exercise 11.4.7"><a href="#exercises_fourier-transform-8" title="Copy heading and permalink for Exercise 11.4.7" aria-label="Copy heading and permalink for Exercise 11.4.7">🔗</a></div></article><article class="exercise exercise-like" id="exercises_fourier-transform-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_fourier-transform-9-1-1">
 <div class="para">Use the symmetry and linearity properties and the results of <a href="sec_fourier-transform.html#ex_12_1b" class="xref" data-knowl="./knowl/xref/ex_12_1b.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 11.4.1.b">Exercise 11.4.1.b</a> to show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1b.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1b.html" id="exercises_fourier-transform-9-1-1-2">
 \begin{equation*}
 F\left(\frac{\sin^2\frac{t}{2}}{t^2}\right) = 
 \begin{cases}

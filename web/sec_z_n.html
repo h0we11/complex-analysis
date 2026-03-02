@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -507,13 +507,13 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para logical" id="sec_z_n-3">
 <div class="para">For <span class="process-math">\(z=re^{i\theta} \ne  0\text{,}\)</span> we can express the function <span class="process-math">\(w=f(z)=z^2\)</span> in polar coordinates as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-3-3">
 \begin{equation*}
 w=f(z) =z^2=r^2e^{i2\theta}\text{.}
 \end{equation*}
 </div>
 <div class="para">If we also use polar coordinates for <span class="process-math">\(w=\rho e^{i\phi}\)</span> in the <span class="process-math">\(w\)</span> plane, we can express this mapping by the system of equations</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-3-6">
 \begin{equation*}
 \rho =r^2, \quad \text{and} \quad \phi =2\theta\text{.}
 \end{equation*}
@@ -539,13 +539,13 @@ B=\{\rho e^{i\phi} : \rho &gt;0, \quad \text{and} \quad -\pi \lt  \phi \le  \pi 
 </div>
 <div class="para logical" id="sec_z_n-5">
 <div class="para">The inverse mapping of <span class="process-math">\(f\text{,}\)</span> which we denote <span class="process-math">\(g\text{,}\)</span> is then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-5-3">
 \begin{equation*}
 z=g(w) = w^{\frac{1}{2}} = \rho^{\frac{1}{2}}e^{i\frac{\phi}{2}}\text{,}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(w \in B\text{.}\)</span> That is,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-5-5">
 \begin{equation*}
 z = g(w) =w^{\frac{1}{2}} = |w|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(w)}{2}}\text{,}
 \end{equation*}
@@ -571,7 +571,7 @@ g(w) =w^{\frac{1}{2}} = |w|^{\frac{1}{2}}e^{i\frac{{\mathrm{Arg}}(w)}{2}} \quad 
 <figure class="figure figure-like" id="fig_ch-02-12"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-02/ch-02-fig-12.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The mappings <span class="process-math">\(w=z^2\)</span> and <span class="process-math">\(z=w^{1/2}\)</span><div class="autopermalink" data-description="Figure 2.2.2"><a href="#fig_ch-02-12" title="Copy heading and permalink for Figure 2.2.2" aria-label="Copy heading and permalink for Figure 2.2.2">🔗</a></div></figcaption></figure><div class="para logical" id="sec_z_n-9">
 <div class="para">What are the images of rectangles under the mapping <span class="process-math">\(w=z^2\text{?}\)</span> To find out, we use the Cartesian form</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-9-2">
 \begin{equation*}
 w=u+iv=f(z)=z^2 = x^2-y^2+i2xy=(x^2-y^2, 2xy) =(u, v)\text{,}
 \end{equation*}
@@ -623,7 +623,7 @@ u = -b^2 + \frac{v^2}{4b^2}\text{.}\tag{2.2.6}
 </div></details></div>
 <div class="autopermalink" data-description="Example 2.2.3"><a href="#sec_z_n-10" title="Copy heading and permalink for Example 2.2.3" aria-label="Copy heading and permalink for Example 2.2.3">🔗</a></div></article><div class="para logical" id="sec_z_n-11">
 <div class="para">What happens to images of regions under the mapping</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-11-1">
 \begin{equation*}
 w=f(z) = |z|^\frac{1}{2}e^{i\frac{{\mathrm{Arg}}(z)}{2}} = r^\frac{1}{2}e^{i\frac{\theta}{2}} 
 \quad \text{for} \quad  z=re^{i\theta} \ne 0\text{,}
@@ -643,7 +643,7 @@ w=f(z) = |z|^\frac{1}{2}e^{i\frac{{\mathrm{Arg}}(z)}{2}} = r^\frac{1}{2}e^{i\fra
 <figure class="figure figure-like" id="fig_ch-02-14"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-02/ch-02-fig-14.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The mapping <span class="process-math">\(w=z^{\frac{1}{2}}\)</span><div class="autopermalink" data-description="Figure 2.2.5"><a href="#fig_ch-02-14" title="Copy heading and permalink for Figure 2.2.5" aria-label="Copy heading and permalink for Figure 2.2.5">🔗</a></div></figcaption></figure><div class="para logical" id="sec_z_n-14">
 <div class="para">We can use knowledge of the inverse mapping <span class="process-math">\(z=w^2\)</span> to get further insight into how the mapping <span class="process-math">\(w=z^{\frac{1}{2}}\)</span> acts on rectangles. If we let <span class="process-math">\(z=x+iy \ne 0\text{,}\)</span> then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-14-4">
 \begin{equation*}
 z=w^2 = u^2-v^2 + i2uv\text{,}
 \end{equation*}
@@ -678,7 +678,7 @@ w=f(z) =z^n=r^ne^{in\theta}\text{.}\tag{2.2.9}
 </div>
 <div class="para logical" id="sec_z_n-17">
 <div class="para">If we use polar coordinates <span class="process-math">\(w=\rho e^{i\phi}\)</span> in the <span class="process-math">\(w\)</span> plane, the mapping defined by <a href="sec_z_n.html#PowerN" class="xref" data-knowl="./knowl/xref/PowerN.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.2.9">Equation (2.2.9)</a> can be given by the system of equations</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PowerN.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/PowerN.html" id="sec_z_n-17-4">
 \begin{equation*}
 \rho =r^n, \quad \text{and} \quad \phi =n \theta\text{.}
 \end{equation*}
@@ -689,25 +689,25 @@ w=f(z) =z^n=r^ne^{in\theta}\text{.}\tag{2.2.9}
 </div>
 <div class="para logical" id="sec_z_n-19">
 <div class="para">If we now restrict the domain of <span class="process-math">\(w=f(z) =z^n\)</span> to the region</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-19-2">
 \begin{equation*}
 E=\left\{re^{i\theta}:r&gt;0, \quad \text{and} \quad -\frac{\pi}{n}\lt \theta \le \frac{\pi}{n}\right\}\text{,}
 \end{equation*}
 </div>
 <div class="para">then the image of <span class="process-math">\(E\)</span> under the mapping <span class="process-math">\(w=z^n\)</span> can be described by the set</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-19-5">
 \begin{equation*}
 F=\{\rho e^{i\phi} : \rho &gt;0, \quad  \text{and} \quad -\pi \lt \phi \le \pi \}\text{,}
 \end{equation*}
 </div>
 <div class="para">which consists of all points in the <span class="process-math">\(w\)</span> plane except the point <span class="process-math">\(w=0\text{.}\)</span> The inverse mapping of <span class="process-math">\(f\text{,}\)</span> which we denote <span class="process-math">\(g\text{,}\)</span> is then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-19-10">
 \begin{equation*}
 z=g(w) =w^{\frac{1}{n}}=\rho^{\frac{1}{n}}e^{i\frac{\phi}{n}}\text{,}
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(w\in F\text{.}\)</span> That is,</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_z_n-19-12">
 \begin{equation*}
 z=g(w) =w^{\frac{1}{n}}=|w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}}\text{,}
 \end{equation*}
@@ -720,7 +720,7 @@ z=g(w) =w^{\frac{1}{n}}=|w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}}\text{,
 </h3>
 <div class="para logical" id="def_principal_nth_root-2-1">
 <div class="para">The function</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def_principal_nth_root-2-1-1">
 \begin{equation*}
 g(w) = w^{\frac{1}{n}} = |w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}} \quad \text{for} \quad  w \ne 0
 \end{equation*}
@@ -883,7 +883,7 @@ g(w) = w^{\frac{1}{n}} = |w|^{\frac{1}{n}}e^{i\frac{{\mathrm{Arg}}(w)}{n}} \quad
 <div class="autopermalink" data-description="Task 2.2.8.c"><a href="#x2_2_8-4" title="Copy heading and permalink for Task 2.2.8.c" aria-label="Copy heading and permalink for Task 2.2.8.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.2.8"><a href="#x2_2_8" title="Copy heading and permalink for Exercise 2.2.8" aria-label="Copy heading and permalink for Exercise 2.2.8">🔗</a></div></article><article class="exercise exercise-like" id="x2_2_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x2_2_9-1-1">
 <div class="para">Use your knowledge of the principal square root function to explain the fallacy in the following logic:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x2_2_9-1-1-1">
 \begin{equation*}
 1=\sqrt{1} = \sqrt{(-1)(-1)} = \sqrt{(-1)}\sqrt{(-1)}=(i)(i) = i^2 = -1\text{.}
 \end{equation*}

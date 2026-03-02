@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -520,14 +520,14 @@ C:z(t)=x(t) +iy(t), \quad \text{for} \quad  a \le t \le b\text{,}\tag{6.2.1}
 </div>
 <figure class="figure figure-like" id="fig_ch-06-01"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/figs/ch-06/ch-06-fig-01.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The terms <em class="emphasis">simple</em> and <em class="emphasis">closed</em> used to describe curves<div class="autopermalink" data-description="Figure 6.2.1"><a href="#fig_ch-06-01" title="Copy heading and permalink for Figure 6.2.1" aria-label="Copy heading and permalink for Figure 6.2.1">🔗</a></div></figcaption></figure><div class="para logical" id="sec_contour-integrals-6">
-<div class="para">The complex-valued function <span class="process-math">\(z(t)=x(t) +iy(t)\)</span> is said to be <em class="emphasis">differentiable</em> on <span class="process-math">\([a,b]\)</span> if both <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> are differentiable for <span class="process-math">\(a \le t \le b\text{.}\)</span> Here we require the one-sided derivatives <details class="ptx-footnote" aria-live="polite" id="sec_contour-integrals-6-7"><summary class="ptx-footnote__number" title="Footnote 6.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec_contour-integrals-6-7">The derivatives on the right, <span class="process-math">\(x\,'(a^+)\text{,}\)</span> and on the left, <span class="process-math">\(x\,'(b^{-})\text{,}\)</span> are defined by the limits<div class="displaymath process-math">
+<div class="para">The complex-valued function <span class="process-math">\(z(t)=x(t) +iy(t)\)</span> is said to be <em class="emphasis">differentiable</em> on <span class="process-math">\([a,b]\)</span> if both <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> are differentiable for <span class="process-math">\(a \le t \le b\text{.}\)</span> Here we require the one-sided derivatives <details class="ptx-footnote" aria-live="polite" id="sec_contour-integrals-6-7"><summary class="ptx-footnote__number" title="Footnote 6.2.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="sec_contour-integrals-6-7">The derivatives on the right, <span class="process-math">\(x\,'(a^+)\text{,}\)</span> and on the left, <span class="process-math">\(x\,'(b^{-})\text{,}\)</span> are defined by the limits<div class="displaymath process-math" id="sec_contour-integrals-6-7-3">
 \begin{equation*}
 x\,'(a^+)=\lim\limits_{t \to a^+}\frac{x(t)-x(a)}{t-a} 
 \quad \text{and} \quad  x\,'(b^-) = \lim\limits_{t \to b^-}\frac{x(t) -x(b)}{t-b}\text{.}
 \end{equation*}
 </div>
 </div></details> of <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\)</span> to exist at the endpoints of the interval. As in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>, the derivative <span class="process-math">\(z\,'(t)\)</span> is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html" id="sec_contour-integrals-6-12">
 \begin{equation*}
 z\,'(t)=x\,'(t) + iy\,'(t), \quad \text{for} \quad a \le t \le b.
 \end{equation*}
@@ -539,7 +539,7 @@ z\,'(t)=x\,'(t) + iy\,'(t), \quad \text{for} \quad a \le t \le b.
 <figure class="figure figure-like" id="fig_ch-06-02"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/figs/ch-06/ch-06-fig-02.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The term <em class="emphasis">smooth</em> used to describe curves<div class="autopermalink" data-description="Figure 6.2.2"><a href="#fig_ch-06-02" title="Copy heading and permalink for Figure 6.2.2" aria-label="Copy heading and permalink for Figure 6.2.2">🔗</a></div></figcaption></figure><div class="para logical" id="sec_contour-integrals-9">
 <div class="para">If <span class="process-math">\(C\)</span> is a smooth curve, then <span class="process-math">\(ds\text{,}\)</span> the differential of arc length, is given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-9-3">
 \begin{equation*}
 ds=\sqrt{[x\,'(t)^2 + [y\,'(t)]^2} \, dt=|z\,'(t)| \, dt.
 \end{equation*}
@@ -557,7 +557,7 @@ L(C)=\int_a^b\sqrt{[x\,'(t)]^2 + [y\,'(t)]^2}\,dt = \int_a^b|z\,'(t)|\,dt\text{.
 </div>
 <div class="para logical" id="sec_contour-integrals-11">
 <div class="para">Now, consider <span class="process-math">\(C\)</span> to be a curve with parametrization</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-11-2">
 \begin{equation*}
 C:z_1(t)=x(t)+iy(t) \quad \text{for} \quad a \le t \le b\text{.}
 \end{equation*}
@@ -566,7 +566,7 @@ C:z_1(t)=x(t)+iy(t) \quad \text{for} \quad a \le t \le b\text{.}
 </div>
 <div class="para logical" id="sec_contour-integrals-12">
 <div class="para">The opposite curve <span class="process-math">\(-C\)</span> traces out the same set of points in the plane, but in the reverse order, and has the parametrization</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-03.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-03.html" id="sec_contour-integrals-12-2">
 \begin{equation*}
 -C:z_2(t)=x(-t)+iy(-t) \quad \text{for} \quad -b \le t \le -a\text{.}
 \end{equation*}
@@ -577,7 +577,7 @@ C:z_1(t)=x(t)+iy(t) \quad \text{for} \quad a \le t \le b\text{.}
 <figure class="figure figure-like" id="fig_ch-06-03"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-03.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The curve <span class="process-math">\(C\)</span> and its opposite curve <span class="process-math">\(-C\)</span><div class="autopermalink" data-description="Figure 6.2.3"><a href="#fig_ch-06-03" title="Copy heading and permalink for Figure 6.2.3" aria-label="Copy heading and permalink for Figure 6.2.3">🔗</a></div></figcaption></figure><div class="para logical" id="sec_contour-integrals-14">
 <div class="para">A curve <span class="process-math">\(C\)</span> that is constructed by joining finitely many smooth curves end to end is called a contour. Let <span class="process-math">\(C_1,\,C_2,\ldots ,\,C_n\)</span> denote <span class="process-math">\(n\)</span> smooth curves such that the terminal point of the curve <span class="process-math">\(C_k\)</span> coincides with the initial point of <span class="process-math">\(C_{k+1}\text{,}\)</span> for <span class="process-math">\(k=1,\,2,\ldots \,,n-1\text{.}\)</span> We express the contour <span class="process-math">\(C\)</span> by the equation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-14-8">
 \begin{equation*}
 C=C_1+C_2+\cdots +C_n\text{.}
 \end{equation*}
@@ -603,7 +603,7 @@ C=C_1+C_2+\cdots +C_n\text{.}
 </div>
 <div class="para logical" id="sec_contour-integrals-15-2-2">
 <div class="para">When simplified, this formula becomes</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-15-2-2-1">
 \begin{equation*}
 C_1:z_1(t)=-1+i(1-t), \quad \text{for} \quad 0 \le t \le 1\text{.}
 \end{equation*}
@@ -640,7 +640,7 @@ S(P_n)=\sum\limits_{k=1}^nf(c_k)(z_k-z_{k-1})=\sum_{k=1}^nf(c_k)\Delta z_k\text{
 </h3>
 <div class="para logical" id="Contoe_fnt_Def-2-1">
 <div class="para">Let <span class="process-math">\(C\)</span> be a contour. Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="Contoe_fnt_Def-2-1-2">
 \begin{equation*}
 \int_Cf(z)\,dt = \lim_{n \to \infty}\sum\limits_{k=1}^nf(c_k) \Delta z_k\text{,}
 \end{equation*}
@@ -684,7 +684,7 @@ S(P_8) \amp \approx (0.28+0.13i) + (0.33+0.19i) + (0.41+0.29i)\\
 </div>
 <div class="para logical" id="Riemann_Sum_Ex-2-4">
 <div class="para">This result compares favorably with the precise value of the integral, which you will soon see equals</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="Riemann_Sum_Ex-2-4-1">
 \begin{equation*}
 \exp\left(2+i\frac{\pi}{4}\right) -1 = 
 -1+e^2\left(\frac{\sqrt{2}}{2}\right)+ie^2\left(\frac{\sqrt{2}}{2}\right) \approx 4.22+5.22i\text{.}
@@ -725,7 +725,7 @@ S(P_8) \amp \approx (0.28+0.13i) + (0.33+0.19i) + (0.41+0.29i)\\
 </h3>
 <div class="para logical" id="thm_contour-integral-1-1">
 <div class="para">Suppose that <span class="process-math">\(f(z)\)</span> is a continuous complex-valued function defined on a set containing the contour <span class="process-math">\(C\text{.}\)</span> Let <span class="process-math">\(z(t)\)</span> be any parametrization of <span class="process-math">\(C\)</span> for <span class="process-math">\(a \le t \le b\text{.}\)</span> Then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm_contour-integral-1-1-6">
 \begin{equation*}
 \int_Cf(z) \, dz = \int_a^bf\big(z(t)\big)z\,'(t)\,dt\text{.}
 \end{equation*}
@@ -769,7 +769,7 @@ i\int_0^1e^{2t}\sin \frac{\pi t}{4}\,dt\right)\text{.}
 <div class="solutions"><details id="Cont_Int_Ex_2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="Cont_Int_Ex_2-2-1">
 <div class="para">Recall that <span class="process-math">\(C_1^+(2)\)</span> is the upper semicircle with radius 1 centered at <span class="process-math">\(x=2\)</span> oriented in a positive direction (<em class="emphasis">i.e.</em>, counterclockwise). The function <span class="process-math">\(z(t)=2+e^{it}\text{,}\)</span> for <span class="process-math">\(0 \le t \le \pi\)</span> is a parametrization for <span class="process-math">\(C\text{.}\)</span> We apply <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> with <span class="process-math">\(f(z)=\frac{1}{z-2}\text{.}\)</span> After noting that <span class="process-math">\(f\big(z(t)\big)=\frac{1}{z(t) -2}\text{,}\)</span> and <span class="process-math">\(z\,'(t) =ie^{it}\text{,}\)</span> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="Cont_Int_Ex_2-2-1-11">
 \begin{equation*}
 \int_C\frac{1}{z-2}\,dz = \int_0^{\pi}\frac{1}{(2+e^{it}) -2}ie^{it}\,dt = \int_0^{\pi}i\ dt=i\pi\text{.}
 \end{equation*}
@@ -790,7 +790,7 @@ dz=z\,'(t)\,dt = \big[x\,'(t)+iy\,'(t)\big]\,dt = dx+idy\text{,}\tag{6.2.4}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(dx\)</span> and <span class="process-math">\(dy\)</span> are the differentials for <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y(t)\text{,}\)</span> respectively (<em class="emphasis">i.e.</em>, <span class="process-math">\(dx\)</span> is equated with <span class="process-math">\(x\,'(t)\,dt\text{,}\)</span> etc.). The expression <span class="process-math">\(dz\)</span> is often called the <em class="emphasis">complex differential</em> of <span class="process-math">\(z\text{.}\)</span> Just as <span class="process-math">\(dx\)</span> and <span class="process-math">\(dy\)</span> are intuitively considered to be small segments along the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes in real variables, we can think of <span class="process-math">\(dz\)</span> as representing a tiny piece of the contour <span class="process-math">\(C\text{.}\)</span> Moreover, if we write</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curve_Length.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Curve_Length.html" id="sec_contour-integrals-34-19">
 \begin{equation*}
 |dz| = \big|[x\,'(t)+iy\,'(t)]\big| = \big|x\,'(t) +iy\,'(t)\big|\, dt =
 \sqrt{\big[x\,'(t)\big]^2 + \big[y\,'(t)\big]^2}\,dt\text{,}
@@ -828,7 +828,7 @@ L(C)=\int_a^b\sqrt{\big[ x'(t) \big]^2 + \big[y\,'(t)\big]^2}\,dt =\int_C|dz|\te
 \end{equation}
 </div>
 <div class="para">which is easy to remember if we recall that, symbolically,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/Line_Int.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/Line_Int.html" id="sec_contour-integrals-36-6">
 \begin{equation*}
 f(z)\,dz=(u+iv)(dx+i\,dy)\text{.}
 \end{equation*}
@@ -842,7 +842,7 @@ f(z)\,dz=(u+iv)(dx+i\,dy)\text{.}
 </h3>
 <div class="para logical" id="Int_z_two_ways-1-1">
 <div class="para">Show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-08.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-08.html" id="Int_z_two_ways-1-1-1">
 \begin{equation*}
 \int_{C_1}z\,dz = \int_{C_2}z\ dz=4+2i\text{,}
 \end{equation*}
@@ -852,7 +852,7 @@ f(z)\,dz=(u+iv)(dx+i\,dy)\text{.}
 </div> <figure class="figure figure-like" id="fig_ch-06-08"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-08.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Two contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> joining <span class="process-math">\(-1-i\)</span> to <span class="process-math">\(3+i\)</span><div class="autopermalink" data-description="Figure 6.2.15"><a href="#fig_ch-06-08" title="Copy heading and permalink for Figure 6.2.15" aria-label="Copy heading and permalink for Figure 6.2.15">🔗</a></div></figcaption></figure> <div class="para logical" id="Int_z_two_ways-1-3">
 <div class="para">The line segment joining <span class="process-math">\((-1,-1)\)</span> to <span class="process-math">\((3,1)\)</span> is given by the slope intercept formula <span class="process-math">\(y=\frac{1}{2}x-\frac{1}{2}\text{,}\)</span> which can be written as <span class="process-math">\(x=2y+1\text{.}\)</span> If we choose the parametrization <span class="process-math">\(y=t\)</span> and <span class="process-math">\(x=2t+1\text{,}\)</span> we can write segment <span class="process-math">\(C_1\)</span> as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="Int_z_two_ways-1-3-8">
 \begin{equation*}
 C_1:z(t)=2t+1+it \quad \text{and} \quad  dz=(2+i)\,dt, \quad \text{for} \quad -1 \le t \le 1\text{.}
 \end{equation*}
@@ -860,19 +860,19 @@ C_1:z(t)=2t+1+it \quad \text{and} \quad  dz=(2+i)\,dt, \quad \text{for} \quad -1
 <div class="autopermalink" data-description="Paragraph"><a href="#Int_z_two_ways-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="Int_z_two_ways-1-4">
 <div class="para">Along <span class="process-math">\(C_1\)</span> we have <span class="process-math">\(f(z(t) )=2t+1+it\text{.}\)</span> Applying <a href="sec_contour-integrals.html#thm_contour-integral" class="xref" data-knowl="./knowl/xref/thm_contour-integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.11">Theorem 6.2.11</a> gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="Int_z_two_ways-1-4-4">
 \begin{equation*}
 \int_{C_1}z\ dz=\int_{-1}^1(2t+1+it)(2+i)\,dt\text{.}
 \end{equation*}
 </div>
 <div class="para">We now multiply out the integrand and put it into its real and imaginary parts:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="Int_z_two_ways-1-4-5">
 \begin{equation*}
 \int_{C_1}z\ dz=\int_{-1}^1(3t+2)\,dt+i\int_{-1}^1(4t+1)\,dt=4+2i\text{.}
 \end{equation*}
 </div>
 <div class="para">Similarly, we can parametrize the portion of the parabola <span class="process-math">\(x=y^2+2y\)</span> joining <span class="process-math">\((-1,-1)\)</span> to <span class="process-math">\((3,1)\)</span> by <span class="process-math">\(y=t\)</span> and <span class="process-math">\(x=t^2+2t\)</span> so that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_contour-integral.html" id="Int_z_two_ways-1-4-11">
 \begin{equation*}
 C_2:z(t)=t^2+2t+it \quad \text{and} \quad dz=(2t+2+i)\,dt, \quad \text{for} \quad -1 \le t \le 1\text{.}
 \end{equation*}
@@ -895,7 +895,7 @@ C_2:z(t)=t^2+2t+it \quad \text{and} \quad dz=(2t+2+i)\,dt, \quad \text{for} \qua
 </h3>
 <div class="para logical" id="ex_6_10-1-1">
 <div class="para">Show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-09.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-09.html" id="ex_6_10-1-1-1">
 \begin{equation*}
 \int_{C_1}\overline{z}\,dz = -\pi i,  \text{ but that }   \int_{C_2}\overline{z}\,dz = -4i\text{,}
 \end{equation*}
@@ -939,7 +939,7 @@ f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\si
 \end{align*}
 </div>
 <div class="para">Separating the right side of this equation into its real and imaginary parts gives</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="ex_6_10-2-2-5">
 \begin{equation*}
 \int_{C_2}\overline{z}\,dz=\int_0^1(6t-3)\,dt+i\int_0^1(-4)\,dt=-4i\text{.}
 \end{equation*}
@@ -951,7 +951,7 @@ f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\si
 </div></details></div>
 <div class="autopermalink" data-description="Example 6.2.16"><a href="#ex_6_10" title="Copy heading and permalink for Example 6.2.16" aria-label="Copy heading and permalink for Example 6.2.16">🔗</a></div></article><div class="para logical" id="sec_contour-integrals-41">
 <div class="para">Contour integrals have properties that are similar to those of integrals of a complex function of a real variable, which you studied in <a href="sec_complex-integrals.html" class="internal" title="Section 6.1: Complex Integrals">Section 6.1</a>. If <span class="process-math">\(C\)</span> is given by <a href="sec_contour-integrals.html#review-curve" class="xref" data-knowl="./knowl/xref/review-curve.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.1">Equation (6.2.1)</a>, then the integral for the opposite contour <span class="process-math">\(-C\)</span> is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html ./knowl/xref/review-curve.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec_complex-integrals.html ./knowl/xref/review-curve.html" id="sec_contour-integrals-41-5">
 \begin{equation*}
 \int_{-C}f(z)\,dz = \int_{-b}^{-a}f\big(z(-\tau)\big) \big[-z\,'(-\tau )\big]\,d\tau.
 \end{equation*}
@@ -969,7 +969,7 @@ f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\si
 </div>
 <div class="para logical" id="sec_contour-integrals-43">
 <div class="para">If two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> can be integrated over the same path of integration <span class="process-math">\(C\text{,}\)</span> then their sum can be integrated over <span class="process-math">\(C\text{,}\)</span> and we have the familiar result</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-43-5">
 \begin{equation*}
 \int_C[f(z)+g(z)]\,dz = \int_Cf(z)\,dz + \int_Cg(z)\,dz\text{.}
 \end{equation*}
@@ -978,7 +978,7 @@ f\big(z(t)\big) \amp = \overline{z(t)}=\overline{(-\cos t+i\sin t)}=-\cos t-i\si
 </div>
 <div class="para logical" id="sec_contour-integrals-44">
 <div class="para">Constant multiples also behave as we would expect:</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_contour-integrals-44-1">
 \begin{equation*}
 \int_C(a+ib)f(z)\,dz=(a+ib) \int_Cf(z)\,dz\text{.}
 \end{equation*}
@@ -1036,7 +1036,7 @@ c=\phi(a),  d=\phi(b), \quad \text{and} \quad \phi\,'(t)&gt;0, \quad \text{for} 
 <div class="autopermalink" data-description="Theorem 6.2.18: Absolute value inequality"><a href="#sec_contour-integrals-49" title="Copy heading and permalink for Theorem 6.2.18: Absolute value inequality" aria-label="Copy heading and permalink for Theorem 6.2.18: Absolute value inequality">🔗</a></div></article><details id="sec_contour-integrals-50" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_contour-integrals-50-1">
 <div class="para">If <span class="process-math">\(\int_a^bf(t)\,dt=0\text{,}\)</span> then <a href="sec_contour-integrals.html#Int_Triangle_Ineq" class="xref" data-knowl="./knowl/xref/Int_Triangle_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.12">Equation (6.2.12)</a> is obviously true. If the integral is not zero, we write its value in polar form, say <span class="process-math">\(\int_a^bf(t)\,dt=r_0e^{i\theta _0}\text{,}\)</span> so that <span class="process-math">\(\left\vert
 \int_a^bf(t)\,dt\right\vert = |r_0e^{i\theta_0}|=r_0\text{,}\)</span> and <span class="process-math">\(r_0=\int _a^be^{-i\theta _0}f(t)\,dt\text{.}\)</span> Taking the real part of both sides of this last equation gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Int_Triangle_Ineq.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Int_Triangle_Ineq.html" id="sec_contour-integrals-50-1-6">
 \begin{equation*}
 r_0=\mathrm{Re}(r_0)=\mathrm{Re}\left[ \int_a^be^{-i\theta _0}f(t)\,dt\right] =
 \int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt\text{,}
@@ -1056,7 +1056,7 @@ r_0=\mathrm{Re}(r_0)=\mathrm{Re}\left[ \int_a^be^{-i\theta _0}f(t)\,dt\right] =
 </div>
 <div class="para logical" id="sec_contour-integrals-50-3">
 <div class="para">Recall that, if <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are real functions, with <span class="process-math">\(g(t) \le h(t)\text{,}\)</span> for all <span class="process-math">\(t \in [a,b]\text{,}\)</span> then <span class="process-math">\(\int_a^bg(t\,dt \le \int_a^b h(t)\,dt\text{.}\)</span> Applying this fact to the left and right sides of <a href="sec_contour-integrals.html#Integral_Ineq" class="xref" data-knowl="./knowl/xref/Integral_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.13">Equation (6.2.13)</a> <span class="process-math">\(\, \big(\text{ with } \, g(t)=\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\)</span> and <span class="process-math">\(h(t)=|f(t)|\big)\)</span> yields</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Integral_Ineq.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Integral_Ineq.html" id="sec_contour-integrals-50-3-9">
 \begin{equation*}
 r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\text{.}
 \end{equation*}
@@ -1091,7 +1091,7 @@ r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\
 </div>
 <div class="para logical" id="sec_contour-integrals-52-2">
 <div class="para">Equations <a href="sec_contour-integrals.html#dz" class="xref" data-knowl="./knowl/xref/dz.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.4">(6.2.4)</a>, <a href="sec_contour-integrals.html#L_C_" class="xref" data-knowl="./knowl/xref/L_C_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.5">(6.2.5)</a>, and <a href="sec_contour-integrals.html#ML_Proof" class="xref" data-knowl="./knowl/xref/ML_Proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.15">Inequality (6.2.15)</a> imply that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/L_C_.html ./knowl/xref/ML_Proof.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dz.html ./knowl/xref/L_C_.html ./knowl/xref/ML_Proof.html" id="sec_contour-integrals-52-2-4">
 \begin{equation*}
 \left| \int_Cf(z)\,dz\right|  \le \int_a^bM \big|z\,'(t)\big|\,dt = ML\text{.}
 \end{equation*}
@@ -1103,7 +1103,7 @@ r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\
 </h3>
 <div class="para logical" id="ML_Example-1-1">
 <div class="para">Use <a href="sec_contour-integrals.html#ML_Ineq" class="xref" data-knowl="./knowl/xref/ML_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.14">Inequality (6.2.14)</a> to show that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html" id="ML_Example-1-1-2">
 \begin{equation*}
 \left| \int_c\frac{1}{z^2+1}\,dz\right| \le \frac{1}{2\sqrt{5}}\text{,}
 \end{equation*}
@@ -1115,7 +1115,7 @@ r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\
 <div class="solutions"><details id="ML_Example-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="ML_Example-2-1">
 <div class="para">Here <span class="process-math">\(|z^2+1| = |z-i| \, |z+i|\text{,}\)</span> and the terms <span class="process-math">\(|z-i|\)</span> and <span class="process-math">\(|z+i|\)</span> represent the distance from the point <span class="process-math">\(z\)</span> to the points <span class="process-math">\(i\)</span> and <span class="process-math">\(-i\text{,}\)</span> respectively. Referring to <a href="sec_contour-integrals.html#fig_ch-06-10" class="xref" data-knowl="./knowl/xref/fig_ch-06-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.2.21">Figure 6.2.21</a> and using a geometric argument, we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-10.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-10.html" id="ML_Example-2-1-8">
 \begin{equation*}
 |z-i| \ge 2, \quad \text{and} \quad |z+i| \ge \sqrt{5}, \quad \text{for} \quad z \quad \text{on} \quad C\text{.}
 \end{equation*}
@@ -1126,13 +1126,13 @@ r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\
 </div>
 <div class="para logical" id="ML_Example-2-2">
 <div class="para">Thus we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html" id="ML_Example-2-2-1">
 \begin{equation*}
 |f(z)| =\frac{1}{|z-i|\,|z+i|} \le \frac{1}{2\sqrt{5}} = M\text{.}
 \end{equation*}
 </div>
 <div class="para">Because <span class="process-math">\(L\text{,}\)</span> the length of <span class="process-math">\(C\text{,}\)</span> equals 1, and <a href="sec_contour-integrals.html#ML_Ineq" class="xref" data-knowl="./knowl/xref/ML_Ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2.14">Inequality (6.2.14)</a> implies that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ML_Ineq.html" id="ML_Example-2-2-5">
 \begin{equation*}
 \left| \int_C\frac{1}{z^2+1}\,dz \right|  \le ML =\frac{1}{2\sqrt{5}}.
 \end{equation*}
@@ -1399,7 +1399,7 @@ r_0=\int_a^b\mathrm{Re}\big[e^{-i\theta _0}f(t)\big]\,dt \le \int_a^b|f(t)|\,dt\
 <div class="autopermalink" data-description="Exercise 6.2.18"><a href="#x6_2_18" title="Copy heading and permalink for Exercise 6.2.18" aria-label="Copy heading and permalink for Exercise 6.2.18">🔗</a></div></article><article class="exercise exercise-like" id="x6_2_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x6_2_19-1-1">
 <div class="para">Use the ML inequality to show that <span class="process-math">\(|P_n(x)| \le 1\text{,}\)</span> where <span class="process-math">\(P_n\)</span> is the <span class="process-math">\(n^{th}\)</span> Legendre polynomial defined on <span class="process-math">\(-1 \le x \le 1\)</span> by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x6_2_19-1-1-5">
 \begin{equation*}
 P_n(x)=\frac{1}{\pi} \int_0^{\pi}\left(x+i\sqrt{1-x^2}\cos \theta\right)^{\!n} \, d\theta.
 \end{equation*}

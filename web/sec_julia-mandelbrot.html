@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -561,7 +561,7 @@ eBookConfig.enable_chatcodes =  false;
 <figure class="figure figure-like" id="fig_ch-04-cp-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-04/ch-04-cp-3.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A zoom of the rabbit<div class="autopermalink" data-description="Figure 4.2.7"><a href="#fig_ch-04-cp-3" title="Copy heading and permalink for Figure 4.2.7" aria-label="Copy heading and permalink for Figure 4.2.7">🔗</a></div></figcaption></figure><div class="para logical" id="sec_julia-mandelbrot-15">
 <div class="para">In 1918, the French mathematicians Gaston Julia and Pierre Fatou noticed this fractal phenomenon when exploring iterations of functions not necessarily connected with Newton’s method. Beginning with a function <span class="process-math">\(f(z)\)</span> and a point <span class="process-math">\(z_0\text{,}\)</span> they computed the iterates</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_julia-mandelbrot-15-3">
 \begin{equation*}
 z_1=f(z_0), \, z_2=f(z_1), \, \ldots, \, z_{k+1}=f(z_k), \, \ldots,
 \end{equation*}
@@ -691,7 +691,7 @@ a_{n+1} \amp = f_c(a_n) =a_n^2+c\text{.}
 <div class="autopermalink" data-description="Theorem 4.2.19"><a href="#Attracting_Points_Draw" title="Copy heading and permalink for Theorem 4.2.19" aria-label="Copy heading and permalink for Theorem 4.2.19">🔗</a></div></article><details id="sec_julia-mandelbrot-36" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_julia-mandelbrot-36-1">
 <div class="para">Because <span class="process-math">\(z_0\)</span> is an attracting point for <span class="process-math">\(f\text{,}\)</span> we know that <span class="process-math">\(|f\,'(z_0)|\lt 1\text{.}\)</span> And because <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> we know that for any <span class="process-math">\(\varepsilon&gt;0\)</span> there exists some <span class="process-math">\(r&gt;0\)</span> such that if <span class="process-math">\(z\in
 D_{r}^*(z_0)\text{,}\)</span> then <span class="process-math">\(|\frac{f(z) -f(z_0)}{z-z_0}-f\,'(z_0) |\lt \varepsilon\text{.}\)</span> If we set <span class="process-math">\(\varepsilon=1-|\,f\,'(z_0) |\text{,}\)</span> then we have for all <span class="process-math">\(z\)</span> in <span class="process-math">\(D_{r}^*(z_0)\)</span> that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_julia-mandelbrot-36-1-13">
 \begin{equation*}
 \left|\frac{f(z)-f(z_0)}{z-z_0}\right| - |f\,'(z_0)| \le \left|\frac{f(z) -
 f(z_0)}{z-z_0}-f\,'(z_0)\right| \lt  1-|f\,'(z_0)|\text{,}
@@ -711,7 +711,7 @@ f(z_0)}{z-z_0}-f\,'(z_0)\right| \lt  1-|f\,'(z_0)|\text{,}
 </div>
 <div class="autopermalink" data-description="Theorem 4.2.20"><a href="#Attracting_Thm" title="Copy heading and permalink for Theorem 4.2.20" aria-label="Copy heading and permalink for Theorem 4.2.20">🔗</a></div></article><details id="sec_julia-mandelbrot-39" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_julia-mandelbrot-39-1">
 <div class="para">The point <span class="process-math">\(z_0\)</span> is a fixed point for <span class="process-math">\(f_c\)</span> iff <span class="process-math">\(f_c(z_0)=z_0\text{.}\)</span> In other words, iff <span class="process-math">\(z_0^2-z_0+c = 0\text{.}\)</span> By <a href="sec_algebra-2.html#Quadratic_Formula" class="xref" data-knowl="./knowl/xref/Quadratic_Formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.12: The Quadratic formula">Theorem 1.5.12</a>, the solutions to this equation are</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Quadratic_Formula.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Quadratic_Formula.html" id="sec_julia-mandelbrot-39-1-6">
 \begin{equation*}
 z_0 = \frac{1+\sqrt{1-4c}}{2} \quad \text{or} \quad z_0 = \frac{1-\sqrt{1-4c}}{2} \text{,}
 \end{equation*}
@@ -724,7 +724,7 @@ z_0 = \frac{1+\sqrt{1-4c}}{2} \quad \text{or} \quad z_0 = \frac{1-\sqrt{1-4c}}{2
 </h3>
 <div class="para logical" id="n-cycle_Def-2-1">
 <div class="para">An <span class="process-math">\(n\)</span>-cycle for a function <span class="process-math">\(f\)</span> is a set</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="n-cycle_Def-2-1-4">
 \begin{equation*}
 \{z_0, \, z_1,\ldots ,z_{n-1}\}
 \end{equation*}
@@ -850,7 +850,7 @@ N(z) = z-\frac{f(z)}{f\,'(z)}=\frac{z^2-1}{2z}=\frac{1}{2}\left(z-\frac{1}{z}\ri
 <div class="solutions"><details id="x4_2_10-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
 <div class="para logical" id="x4_2_10-2-1">
 <div class="para">It may be helpful to write the inequalities of <a href="sec_julia-mandelbrot.html#Attracting_Thm" class="xref" data-knowl="./knowl/xref/Attracting_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.20">Theorem 4.2.20</a> as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Attracting_Thm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Attracting_Thm.html" id="x4_2_10-2-1-2">
 \begin{equation*}
 \left|\frac{1}{2}+\sqrt{\frac{1}{4}-c}\right| \lt \frac{1}{2}, \quad \text{or} \quad
 \left|\frac{1}{2}-\sqrt{\frac{1}{4}-c}\right| \lt \frac{1}{2}.

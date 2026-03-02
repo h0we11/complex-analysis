@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -510,7 +510,7 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para logical" id="thm_shifting-s-2-1">
 <div class="para">If <span class="process-math">\(F(s)\)</span> is the Laplace transform of <span class="process-math">\(f(t)\text{,}\)</span> then</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="thm_shifting-s-2-1-3">
 \begin{equation*}
 \mathcal{L}\big(e^{at}f(t)\big) = F(s-a)\text{.}
 \end{equation*}
@@ -519,7 +519,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Theorem 11.7.1: Shifting the Variable \boldsymbol s"><a href="#thm_shifting-s" title="Copy heading and permalink for Theorem 11.7.1: Shifting the Variable \boldsymbol s" aria-label="Copy heading and permalink for Theorem 11.7.1: Shifting the Variable \boldsymbol s">🔗</a></div></article><details id="sec_shifting-thms-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_shifting-thms-4-1">
 <div class="para">Using the integral definition <span class="process-math">\(\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t)e^{-st}\,dt\text{,}\)</span> we see that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_shifting-thms-4-1-2">
 \begin{equation*}
 \mathcal{L}\big(e^{at}f(t)\big) = \int_0^{\infty}e^{at}f(t)e^{-st}dt = \int_0^{\infty}f(t)e^{-(s-a)t}\,dt = F(s-a)\text{.}
 \end{equation*}
@@ -531,7 +531,7 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para logical" id="def_unit-step-function-2-1">
 <div class="para">For <span class="process-math">\(a \ge 0\)</span> the unit step function <span class="process-math">\(U_a(t)\)</span> is</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="def_unit-step-function-2-1-3">
 \begin{equation*}
 U_a(t) = \begin{cases}
 0 \amp \text{for} \quad t \lt a,\\ 
@@ -550,7 +550,7 @@ U_a(t) = \begin{cases}
 </h3>
 <div class="para logical" id="thm_shifting-t-2-1">
 <div class="para">If <span class="process-math">\(F(s)\)</span> is the Laplace transform of <span class="process-math">\(f(t)\)</span> and <span class="process-math">\(a \ge 0\text{,}\)</span> then</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-23.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-23.html" id="thm_shifting-t-2-1-4">
 \begin{equation*}
 \mathcal{L}\big(U_a(t)f(t-a)\big) = e^{-as}F(s)\text{,}
 \end{equation*}
@@ -560,19 +560,19 @@ U_a(t) = \begin{cases}
 </div>
 <div class="autopermalink" data-description="Theorem 11.7.4: Shifting the Variable \boldsymbol t"><a href="#thm_shifting-t" title="Copy heading and permalink for Theorem 11.7.4: Shifting the Variable \boldsymbol t" aria-label="Copy heading and permalink for Theorem 11.7.4: Shifting the Variable \boldsymbol t">🔗</a></div></article><details id="sec_shifting-thms-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_shifting-thms-9-1">
 <div class="para">Using the definition of Laplace transform, we write</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_shifting-thms-9-1-1">
 \begin{equation*}
 e^{-as}F(s) = e^{-as}\int_0^{\infty}f(\tau)e^{-s\tau}\,d\tau = \int_0^{\infty}f(\tau)e^{-s(a+\tau)}\,d\tau\text{.}
 \end{equation*}
 </div>
 <div class="para">Using the change of variable <span class="process-math">\(t=a+\tau\)</span> and <span class="process-math">\(dt=d\tau\text{,}\)</span> we obtain</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_shifting-thms-9-1-4">
 \begin{equation*}
 e^{-as}F(s) = \int_a^{\infty}f(t-a)e^{-st}\,dt\text{.}
 \end{equation*}
 </div>
 <div class="para">Since <span class="process-math">\(U_a(t) \,f(t-a) =0\)</span> for <span class="process-math">\(t\lt a\text{,}\)</span> and <span class="process-math">\(U_a(t) \,f(t-a) =f(t-a)\)</span> for <span class="process-math">\(t&gt;a\text{,}\)</span> we can write the last equation as</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_shifting-thms-9-1-9">
 \begin{equation*}
 e^{-as}F(s) = \int_0^{\infty}U_a(t)f(t-a)e^{-st}\,dt = \mathcal{L}\big(U_a(t)f(t-a)\big)\text{.}
 \end{equation*}
@@ -588,7 +588,7 @@ e^{-as}F(s) = \int_0^{\infty}U_a(t)f(t-a)e^{-st}\,dt = \mathcal{L}\big(U_a(t)f(t
 <div class="solutions"><details id="sec_shifting-thms-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_shifting-thms-11-2-1">
 <div class="para">Let <span class="process-math">\(f(t)=t^n\text{,}\)</span> then <span class="process-math">\(F(s) = \mathcal{L}(t^n) = \frac{n!}{s^{n+1}}\text{.}\)</span> Applying <a href="sec_shifting-thms.html#thm_shifting-s" class="xref" data-knowl="./knowl/xref/thm_shifting-s.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.7.1: Shifting the Variable \boldsymbol s">Theorem 11.7.1</a>, we obtain the desired result:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-s.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-s.html" id="sec_shifting-thms-11-2-1-4">
 \begin{equation*}
 \mathcal{L}(t^ne^{at}) = F(s-a) = \frac{n!}{(s-a)^{n+1}}\text{.}
 \end{equation*}
@@ -605,7 +605,7 @@ e^{-as}F(s) = \int_0^{\infty}U_a(t)f(t-a)e^{-st}\,dt = \mathcal{L}\big(U_a(t)f(t
 <div class="solutions"><details id="ex_11_18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_11_18-2-1">
 <div class="para">Set <span class="process-math">\(f(t) = 1\text{,}\)</span> then <span class="process-math">\(F(s) = \mathcal{L}(1) = \frac{1}{s}\text{.}\)</span>  Now apply <a href="sec_shifting-thms.html#thm_shifting-t" class="xref" data-knowl="./knowl/xref/thm_shifting-t.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.7.4: Shifting the Variable \boldsymbol t">Theorem 11.7.4</a> and get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html" id="ex_11_18-2-1-4">
 \begin{equation*}
 \mathcal{L}\big(U_c(t)\big) = \mathcal{L}\big(U_c(t)f(t)\big) = \mathcal{L}\big(U_c(t)\cdot 1\big) =
 e^{-cs}\mathcal{L}(1) = \frac{e^{-cs}}{s}\text{.}
@@ -623,13 +623,13 @@ e^{-cs}\mathcal{L}(1) = \frac{e^{-cs}}{s}\text{.}
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.7.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The function <span class="process-math">\(y=f(t)\)</span> of <a href="sec_shifting-thms.html#ex_find-Lft" class="xref" data-knowl="./knowl/xref/ex_find-Lft.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.7.8">Example 11.7.8</a><div class="autopermalink" data-description="Figure 11.7.9"><a href="#fig_ch-11-24" title="Copy heading and permalink for Figure 11.7.9" aria-label="Copy heading and permalink for Figure 11.7.9">🔗</a></div></figcaption></figure><div class="solutions"><details id="ex_find-Lft-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_find-Lft-2-1">
 <div class="para">We can represent <span class="process-math">\(f(t)\)</span> in terms of step functions:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_18.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_18.html" id="ex_find-Lft-2-1-2">
 \begin{equation*}
 f(t) = 1-U_1(t)+U_2(t)-U_3(t)+U_4(t)-U_5(t)\text{.}
 \end{equation*}
 </div>
 <div class="para">Using the result of <a href="sec_2d-electrostatics.html#ex_10_18" class="xref" data-knowl="./knowl/xref/ex_10_18.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 10.6.1">Example 10.6.1</a> and linearity, we obtain</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_18.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_10_18.html" id="ex_find-Lft-2-1-4">
 \begin{equation*}
 \mathcal{L}\big(f(t)\big) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{-2s}}{s} -
 \frac{e^{-3s}}{s} + \frac{e^{-4s}}{s} - \frac{e^{-5s}}{s}\text{.}
@@ -644,7 +644,7 @@ f(t) = 1-U_1(t)+U_2(t)-U_3(t)+U_4(t)-U_5(t)\text{.}
 </h3>
 <div class="para logical" id="sec_shifting-thms-14-1-1">
 <div class="para">Use Laplace transforms to solve the initial value problem</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_shifting-thms-14-1-1-1">
 \begin{equation*}
 y\,''(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y\,'(0) = 0\text{.}
 \end{equation*}
@@ -654,26 +654,26 @@ y\,''(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y\,'(0) = 0
 <div class="solutions"><details id="sec_shifting-thms-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_shifting-thms-14-2-1">
 <div class="para">As usual, let <span class="process-math">\(Y(s)\)</span> denote the Laplace transform of <span class="process-math">\(y(t)\text{.}\)</span> Then we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html" id="sec_shifting-thms-14-2-1-3">
 \begin{equation*}
 s^2Y(s) + Y(s) = \frac{e^{-\pi s}}{s}\text{.}
 \end{equation*}
 </div>
 <div class="para">Solving for <span class="process-math">\(Y(s)\text{,}\)</span> we obtain</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html" id="sec_shifting-thms-14-2-1-5">
 \begin{equation*}
 Y(s) = e^{-\pi s}\frac{1}{s(s^2+1)} = \frac{e^{-\pi s}}{s} - \frac{e^{-\pi s}s}{s^2+1}\text{.}
 \end{equation*}
 </div>
 <div class="para">We now use <a href="sec_shifting-thms.html#thm_shifting-t" class="xref" data-knowl="./knowl/xref/thm_shifting-t.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 11.7.4: Shifting the Variable \boldsymbol t">Theorem 11.7.4</a> and the facts that <span class="process-math">\(\frac{1}{s}\)</span> and <span class="process-math">\(\frac{s}{s^2+1}\)</span> are the transforms of <span class="process-math">\(1\)</span> and <span class="process-math">\(\cos t\text{,}\)</span> respectively. The solution <span class="process-math">\(y(t)\)</span> computes as follows:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html" id="sec_shifting-thms-14-2-1-12">
 \begin{equation*}
 y(t) = \mathcal{L}^{-1}\left(\frac{e^{-\pi s}}{s}\right) - 
 \mathcal{L}^{-1}\left(\frac{e^{-\pi s}s}{s^2+1}\right) = U_{\pi}(t) - U_{\pi}(t) \cos(t-\pi)\text{,}
 \end{equation*}
 </div>
 <div class="para">which can be written in the more familiar form:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_shifting-t.html" id="sec_shifting-thms-14-2-1-13">
 \begin{equation*}
 y(t)= \begin{cases}
 \quad 0 \amp  \text{for} \quad t \lt  \pi, \\ 

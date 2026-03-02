@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -505,7 +505,7 @@ eBookConfig.enable_chatcodes =  false;
 </h2>
 <div class="para logical" id="sec_laurent-series-2">
 <div class="para">Suppose that <span class="process-math">\(f(z)\)</span> is not analytic in <span class="process-math">\(D_{R}(\alpha)\)</span> but <em class="emphasis">is</em> analytic in the punctured disk <span class="process-math">\(D_{R}^*(\alpha) = \{z:0\lt |z-\alpha|\lt R\}\text{.}\)</span> For example, the function <span class="process-math">\(f(z) =\frac{1}{z^3} e^z\)</span> is not analytic when <span class="process-math">\(z=0\)</span> but is analytic for <span class="process-math">\(|z| &gt;0\text{.}\)</span> Clearly, this function does not have a Maclaurin series representation. If we use the Maclaurin series for <span class="process-math">\(g(z) =e^z\text{,}\)</span> however, and formally divide each term in that series by <span class="process-math">\(z^3\text{,}\)</span> we obtain the representation</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-2-10">
 \begin{equation*}
 f(z)=\frac{1}{z^3}e^z = \frac{1}{z^3} + \frac{1}{z^2}+\frac{1}{2!z}+\frac{1}{3!} +
 \frac{z}{4!}+\frac{z^2}{5!} + \frac{z^3}{6!} + \cdots\text{,}
@@ -517,7 +517,7 @@ f(z)=\frac{1}{z^3}e^z = \frac{1}{z^3} + \frac{1}{z^2}+\frac{1}{2!z}+\frac{1}{3!}
 </div>
 <div class="para logical" id="sec_laurent-series-3">
 <div class="para">This example raises the question as to whether it might be possible to generalize the Taylor series method to functions analytic in an annulus</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-3-1">
 \begin{equation*}
 A(\alpha ,r,R) =\{z:r\lt |z-\alpha| \lt R\}\text{.}
 \end{equation*}
@@ -560,13 +560,13 @@ A(\alpha ,r,R) =\{z:r\lt |z-\alpha| \lt R\}\text{.}
 </h3>
 <div class="para logical" id="sec_laurent-series-6-2-1">
 <div class="para">Given <span class="process-math">\(0 \le r\lt R\text{,}\)</span> we define the annulus centered at <span class="process-math">\(\alpha\)</span> with radii <span class="process-math">\(r\)</span> and <span class="process-math">\(R\)</span> by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-6-2-1-5">
 \begin{equation*}
 A(\alpha ,r,R) =\{z:r\lt |z-\alpha| \lt R\}\text{.}
 \end{equation*}
 </div>
 <div class="para">The closed annulus centered at <span class="process-math">\(\alpha\)</span> with radii <span class="process-math">\(r\)</span> and <span class="process-math">\(R\)</span> is denoted by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-6-2-1-11">
 \begin{equation*}
 \overline{A}(\alpha ,r,R) =\{z:r\le |z-\alpha| \le R\}\text{.}
 \end{equation*}
@@ -584,7 +584,7 @@ A(\alpha ,r,R) =\{z:r\lt |z-\alpha| \lt R\}\text{.}
 </div>
 <div class="autopermalink" data-description="Theorem 7.3.5"><a href="#Uniform_Laurent" title="Copy heading and permalink for Theorem 7.3.5" aria-label="Copy heading and permalink for Theorem 7.3.5">🔗</a></div></article><details id="sec_laurent-series-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_laurent-series-10-1">
 <div class="para">According to <a href="sec_laurent-series.html#ls" class="xref" data-knowl="./knowl/xref/ls.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.1">Equation (7.3.1)</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ls.html ./knowl/xref/Unif_Conv_of_Series.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ls.html ./knowl/xref/Unif_Conv_of_Series.html" id="sec_laurent-series-10-1-2">
 \begin{equation*}
 \sum_{n=- \infty}^{\infty}c_n(z-\alpha)^n = \sum_{n=1}^{\infty}c_{-n}(z-\alpha)^{-n} +
 \sum_{n=0}^{\infty}c_n(z-\alpha)^n\text{.}
@@ -771,7 +771,7 @@ c_n \amp = \frac{1}{2\pi i} \int\limits_{C_{\rho}^{+}(\alpha)}\frac{f(z)}{(z-\al
 </div>
 <div class="para logical" id="sec_laurent-series-17-2">
 <div class="para">Since <span class="process-math">\((z-\alpha)^{m-n-1}\)</span> has an antiderivative for all <span class="process-math">\(z\)</span> except when <span class="process-math">\(m=n\text{,}\)</span> all the terms in the preceding expression drop out except when <span class="process-math">\(m=n\text{,}\)</span> giving</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-17-2-5">
 \begin{equation*}
 c_n=\frac{b_n}{2\pi i} \int_{C_{\rho }^{+}(\alpha)}(z-\alpha)^{-1}dz=b_n\text{.}
 \end{equation*}
@@ -811,13 +811,13 @@ f(z) = \frac{3}{(1+z) (2-z)} = \frac{1}{1+z} + \frac{1}{2}\left(\frac{1}{1-\frac
 </div>
 <div class="para logical" id="ex_three-laurent-expansions-2-3">
 <div class="para">Representations <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.11">(7.3.11)</a> and <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.13">(7.3.13)</a> are both valid in the disk <span class="process-math">\(D\text{,}\)</span> and thus we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_2.html ./knowl/xref/le1_4.html ./knowl/xref/le1_3.html ./knowl/xref/le1_4.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_2.html ./knowl/xref/le1_4.html ./knowl/xref/le1_3.html ./knowl/xref/le1_4.html" id="ex_three-laurent-expansions-2-3-4">
 \begin{equation*}
 f(z) =\sum_{n=0}^{\infty}\left[(-1)^n+\frac{1}{2^{n+1}}\right] z^n, \quad \text{valid for} \quad |z| \lt 1\text{,}
 \end{equation*}
 </div>
 <div class="para">which is a Laurent series that reduces to a Maclaurin series. In the annulus <span class="process-math">\(A\text{,}\)</span> Representations <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.12">(7.3.12)</a> and <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.13">(7.3.13)</a> are valid; hence we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_2.html ./knowl/xref/le1_4.html ./knowl/xref/le1_3.html ./knowl/xref/le1_4.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_2.html ./knowl/xref/le1_4.html ./knowl/xref/le1_3.html ./knowl/xref/le1_4.html" id="ex_three-laurent-expansions-2-3-8">
 \begin{equation*}
 f(z) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}+\sum\limits_{n=0}^{\infty}\frac{z^n}{2^{n+1}}, 
 \quad \text{valid for} \quad 1\lt |z| \lt 2\text{.}
@@ -827,7 +827,7 @@ f(z) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^n}+\sum\limits_{n=0}^{\infty}\frac
 </div>
 <div class="para logical" id="ex_three-laurent-expansions-2-4">
 <div class="para">Finally, in the region <span class="process-math">\(R\)</span> we use Representations <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.12">(7.3.12)</a> and <a href="sec_laurent-series.html#ex_three-laurent-expansions-2-2-4" class="xref" data-knowl="./knowl/xref/le1_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.14">(7.3.14)</a> to obtain</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_3.html ./knowl/xref/le1_5.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/le1_3.html ./knowl/xref/le1_5.html" id="ex_three-laurent-expansions-2-4-4">
 \begin{equation*}
 f(z) =\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}-2^{n-1}}{z^n}, \quad \text{valid for} \quad |z| &gt;2\text{.}
 \end{equation*}
@@ -844,13 +844,13 @@ f(z) =\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}-2^{n-1}}{z^n}, \quad \text{vali
 <div class="solutions"><details id="sec_laurent-series-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laurent-series-20-2-1">
 <div class="para">We use the Maclaurin series for <span class="process-math">\(\cos z-1\)</span> to write</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-20-2-1-2">
 \begin{equation*}
 f(z) = \frac{{-}\frac{{1}}{2!}z^2+\frac{1}{4!}z^4-\frac{1}{6!}z^6+\cdots }{z^4}\text{.}
 \end{equation*}
 </div>
 <div class="para">We formally divide each term by <span class="process-math">\(z^4\)</span> to obtain the Laurent series</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-20-2-1-4">
 \begin{equation*}
 f(z) =\frac{-1}{2z^2}+\frac{1}{24}-\frac{z^2}{720}+\cdots, \quad \text{valid for} \quad z \ne 0\text{.}
 \end{equation*}
@@ -867,7 +867,7 @@ f(z) =\frac{-1}{2z^2}+\frac{1}{24}-\frac{z^2}{720}+\cdots, \quad \text{valid for
 <div class="solutions"><details id="sec_laurent-series-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laurent-series-21-2-1">
 <div class="para">The Maclaurin series for <span class="process-math">\(\exp z\)</span> is <span class="process-math">\(\exp z=\sum\limits_{n=0}^{\infty} \frac{z^n}{n!}\text{,}\)</span> which is valid for all <span class="process-math">\(z\text{.}\)</span> We let <span class="process-math">\(-z^{-2}\)</span> take the role of <span class="process-math">\(z\)</span> in this equation to get</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_laurent-series-21-2-1-6">
 \begin{equation*}
 \exp\left(-\frac{1}{z^2}\right) = \sum_{n=0}^{\infty}\frac{(-1)^n}{n!z^{2n}}\text{,}
 \end{equation*}
@@ -895,7 +895,7 @@ f(z) =\frac{-1}{2z^2}+\frac{1}{24}-\frac{z^2}{720}+\cdots, \quad \text{valid for
 <div class="autopermalink" data-description="Exercise 7.3.1"><a href="#x7_3_1" title="Copy heading and permalink for Exercise 7.3.1" aria-label="Copy heading and permalink for Exercise 7.3.1">🔗</a></div></article><article class="exercise exercise-like" id="x7_3_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x7_3_2-1-1">
 <div class="para">Show that <span class="process-math">\(f(z) = \frac{1}{1-z}=\frac{1}{1-i}\left(\frac{1}{1-\frac{z-i}{1-i}}\right)\)</span> has a Laurent series representation about the point <span class="process-math">\(z_0=i\)</span> given by</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_2-1-1-3">
 \begin{equation*}
 f(z) =\frac{1}{1-z}=-\sum\limits_{n=1}^{\infty}\frac{(1-i)^{n-1}}{(z-i)^n},  \text{ valid for }  |z-i| &gt;\sqrt{2}
 \end{equation*}
@@ -1005,7 +1005,7 @@ f(z) =\frac{1}{1-z}=-\sum\limits_{n=1}^{\infty}\frac{(1-i)^{n-1}}{(z-i)^n},  \te
 <article class="task exercise-like" id="x7_3_15-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para logical" id="x7_3_15-2-1-1">
 <div class="para">Use the substitution <span class="process-math">\(\cos \theta =\frac{1}{2}(z+\frac{1}{z})\)</span> and obtain</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_15-2-1-1-2">
 \begin{equation*}
 u(\theta) = f(z) = \frac{-z}{(z-2)(2z-1)} =
 \frac{1}{3}\left(\frac{1}{1-\frac{z}{2}}\right)-\frac{1}{3}\left(\frac{1}{1-2z}\right)\text{.}
@@ -1033,13 +1033,13 @@ u(\theta) = f(z) = \frac{-z}{(z-2)(2z-1)} =
 <div class="autopermalink" data-description="Task 7.3.15.c"><a href="#x7_3_15-4" title="Copy heading and permalink for Task 7.3.15.c" aria-label="Copy heading and permalink for Task 7.3.15.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.3.15"><a href="#x7_3_15" title="Copy heading and permalink for Exercise 7.3.15" aria-label="Copy heading and permalink for Exercise 7.3.15">🔗</a></div></article><article class="exercise exercise-like" id="x7_3_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x7_3_16-1-1">
 <div class="para">The <em class="emphasis">Bessel function</em> <span class="process-math">\(J_n(z)\)</span> is sometimes defined by the generating function</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_16-1-1-3">
 \begin{equation*}
 \exp \left[ \frac{z}{2}(t-\frac{1}{t}) \right] =\sum\limits_{n= -\infty}^{\infty}J_n(z) t^n \text{.}
 \end{equation*}
 </div>
 <div class="para">Use the circle <span class="process-math">\(C_1^{+}(0)\)</span> as the contour of integration and show that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_16-1-1-5">
 \begin{equation*}
 J_n(z) =\frac{1}{\pi} \int_0^{\pi}\cos (n\theta-z\sin \theta)\,d\theta.
 \end{equation*}
@@ -1049,13 +1049,13 @@ J_n(z) =\frac{1}{\pi} \int_0^{\pi}\cos (n\theta-z\sin \theta)\,d\theta.
 <div class="autopermalink" data-description="Exercise 7.3.16"><a href="#x7_3_16" title="Copy heading and permalink for Exercise 7.3.16" aria-label="Copy heading and permalink for Exercise 7.3.16">🔗</a></div></article><article class="exercise exercise-like" id="x7_3_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x7_3_17-1-1">
 <div class="para">Suppose that the Laurent expansion <span class="process-math">\(f(z) = \sum\limits_{n=- \infty}^{\infty}a_nz^n\)</span> converges in the annulus <span class="process-math">\(A(0,r_1,r_2)\text{,}\)</span> where <span class="process-math">\(r_1\lt 1\lt r_2\text{.}\)</span> Consider the real-valued function <span class="process-math">\(u(\theta)=f(e^{i\theta})\)</span> and show that <span class="process-math">\(u(\theta)\)</span> has the Fourier series expansion</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_17-1-1-6">
 \begin{equation*}
 u(\theta) = f(e^{i\theta}) = \sum_{n=- \infty}^{\infty}a_ne^{in\theta} \text{,}
 \end{equation*}
 </div>
 <div class="para">where</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="x7_3_17-1-1-7">
 \begin{equation*}
 a_n=\frac{1}{2\pi} \int_0^{2\pi}e^{-in\phi }f(e^{i\phi })\,d\phi. 
 \end{equation*}

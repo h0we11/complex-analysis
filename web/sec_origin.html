@@ -63,7 +63,7 @@ window.MathJax = {
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
-      "pretext": "_static/pretext/js/lib"
+      "pretext": "_static/pretext/js"
     }
   },
   "startup": {
@@ -81,7 +81,7 @@ window.MathJax = {
 <meta property="book:title" content="Complex Analysis">
 <meta property="book:author" content="Russell W. Howell">
 <meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -112,7 +112,7 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -518,25 +518,25 @@ z^3 + a_2 z^2 +a_1z + a_0 = 0.\tag{1.1.1}
 </div>
 <div class="para logical" id="sec_origin-2-4">
 <div class="para">Cardano did not have at his disposal the power of today’s algebraic notation, and he tended to think of cubes or squares as geometric objects rather than algebraic quantities. Essentially, however, his solution began by making the substitution <span class="process-math">\(z=x-\frac{a_2}{3}\text{.}\)</span> This move transformed <a href="sec_origin.html#Cubic_Equation" class="xref" data-knowl="./knowl/xref/Cubic_Equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">Equation (1.1.1)</a> into a cubic equation without a squared term, which is called a depressed cubic. To illustrate, begin with</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html" id="sec_origin-2-4-3">
 \begin{equation*}
 z^3 + 9z^2 + 24z + 20 = 0
 \end{equation*}
 </div>
 <div class="para">and substitute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html" id="sec_origin-2-4-4">
 \begin{equation*}
 z = x - \frac{a_2}{3} = x -\frac{9}{3} = x - 3\text{.}
 \end{equation*}
 </div>
 <div class="para">The equation then becomes</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html" id="sec_origin-2-4-5">
 \begin{equation*}
 (x-3)^3 +9(x-3)^2 +24(x-3) + 20 = 0\text{,}
 \end{equation*}
 </div>
 <div class="para">which simplifies to</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Cubic_Equation.html" id="sec_origin-2-4-6">
 \begin{equation*}
 x^3 -3x + 2 = 0\text{.}
 \end{equation*}
@@ -581,7 +581,7 @@ x \amp = \sqrt[3]{-\frac{2}{2}+\sqrt{\frac{2^2}{4}+\frac{(-3)^3}{27}}} +
 </div>
 <div class="para logical" id="sec_origin-2-10">
 <div class="para">In his 1572 treatise <em class="emphasis">L’Algebra,</em> Rafael Bombelli showed that roots of negative numbers have great utility. Consider the depressed cubic <span class="process-math">\(x^3 - 15x - 4=0\text{.}\)</span>  Using Formula <a href="sec_origin.html#Depressed_Cubic" class="xref" data-knowl="./knowl/xref/Depressed_Cubic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.3">(1.1.3)</a>, we compute</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Depressed_Cubic.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Depressed_Cubic.html" id="sec_origin-2-10-4">
 \begin{equation*}
 x=\sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} = \sqrt[3]{2+11\sqrt{-1}} + \sqrt[3]{2-11\sqrt{-1}}.
 \end{equation*}
@@ -590,7 +590,7 @@ x=\sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} = \sqrt[3]{2+11\sqrt{-1}} + 
 </div>
 <div class="para logical" id="sec_origin-2-11">
 <div class="para">Simplifying this expression would have been very difficult if Bombelli had not come up with what he called a “wild thought.” He suspected that if the original depressed cubic had real solutions, then the two parts of <span class="process-math">\(x\)</span> in the preceding equation could be written as <span class="process-math">\(u+v\sqrt{-1}\)</span> and <span class="process-math">\(u-v\sqrt{-1}\)</span> for some real numbers <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{.}\)</span>  That is, Bombelli believed <span class="process-math">\(u+v\sqrt{-1} = \sqrt[3]{2+11\sqrt{-1}}\)</span> and <span class="process-math">\(u-v\sqrt{-1} = \sqrt[3]{2-11\sqrt{-1}}\text{,}\)</span> which would mean</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="sec_origin-2-11-9">
 \begin{equation*}
 (u+v\sqrt{-1})^3 = 2+11\sqrt{-1}, \quad \text{and} \quad (u-v\sqrt{-1})^3 = 2-11\sqrt{-1}.
 \end{equation*}
@@ -644,7 +644,7 @@ x=\sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} = \sqrt[3]{2+11\sqrt{-1}} + 
 <figure class="figure figure-like" id="wallis-2_fig"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/figs/ch-01/ch-01-fig-02.svg" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Wallis’ depiction of real numbers<div class="autopermalink" data-description="Figure 1.1.3"><a href="#wallis-2_fig" title="Copy heading and permalink for Figure 1.1.3" aria-label="Copy heading and permalink for Figure 1.1.3">🔗</a></div></figcaption></figure><div class="para logical" id="subsec_geometric-rep-real-5">
 <div class="para">Combining this result with Wallis’ number line results in points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> representing the numbers</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec_geometric-rep-real-5-3">
 \begin{equation*}
 E = - \sqrt{b^2-c^2}, \quad \text{and} \quad F = + \sqrt{b^2-c^2}.
 \end{equation*}
@@ -653,7 +653,7 @@ E = - \sqrt{b^2-c^2}, \quad \text{and} \quad F = + \sqrt{b^2-c^2}.
 </div>
 <div class="para logical" id="subsec_geometric-rep-real-6">
 <div class="para">Thus, if <span class="process-math">\(b=5\)</span> and <span class="process-math">\(c=4\text{,}\)</span> points <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> would represent <span class="process-math">\(-3\)</span> and <span class="process-math">\(+3\text{,}\)</span> respectively, because</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" id="subsec_geometric-rep-real-6-7">
 \begin{equation*}
 E = - \sqrt{5^2-4^2}=-3, \quad \text{and} \quad F = + \sqrt{5^2-4^2}=+3.
 \end{equation*}
@@ -686,8 +686,10 @@ E = - \sqrt{5^2-4^2}=-3, \quad \text{and} \quad F = + \sqrt{5^2-4^2}=+3.
 <div class="para" id="subsec_wessel-5">To understand Wessel’s thinking recall that any non-zero vector can be represented by two quantities: its length, and its angular displacement from the positive <span class="process-math">\(x\)</span>-axis.  <a href="sec_origin.html#wessel-2_fig" class="xref" data-knowl="./knowl/xref/wessel-2_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5.(b)">Figure 1.1.5.(b)</a> illustrates this idea for vector <span class="process-math">\(\mathbf{a}\text{:}\)</span> its length is <span class="process-math">\(r\text{,}\)</span> and its angular displacement from the positive <span class="process-math">\(x\)</span>-axis is <span class="process-math">\(\alpha\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec_wessel-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="vector-geometry"><div class="sidebyside"><div class="sbsrow" style="margin-left:0.5%;margin-right:0.5%;grid-template-columns:49.4949494949495% 49.4949494949495%;column-gap:1%;">
-<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-1_fig"><img src="external/figs/ch-01/ch-01-fig-04a.svg" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Addition of two vectors<div class="autopermalink" data-description="Figure 1.1.5.(a)"><a href="#wessel-1_fig" title="Copy heading and permalink for Figure 1.1.5.(a)" aria-label="Copy heading and permalink for Figure 1.1.5.(a)">🔗</a></div></figcaption></figure></div>
-<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-2_fig"><img src="external/figs/ch-01/ch-01-fig-04b.svg" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Length and direction of a vector<div class="autopermalink" data-description="Figure 1.1.5.(b)"><a href="#wessel-2_fig" title="Copy heading and permalink for Figure 1.1.5.(b)" aria-label="Copy heading and permalink for Figure 1.1.5.(b)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-1_fig"><div class="image-box"><img src="external/figs/ch-01/ch-01-fig-04a.svg" class="contained"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Addition of two vectors<div class="autopermalink" data-description="Figure 1.1.5.(a)"><a href="#wessel-1_fig" title="Copy heading and permalink for Figure 1.1.5.(a)" aria-label="Copy heading and permalink for Figure 1.1.5.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-2_fig"><div class="image-box"><img src="external/figs/ch-01/ch-01-fig-04b.svg" class="contained"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Length and direction of a vector<div class="autopermalink" data-description="Figure 1.1.5.(b)"><a href="#wessel-2_fig" title="Copy heading and permalink for Figure 1.1.5.(b)" aria-label="Copy heading and permalink for Figure 1.1.5.(b)">🔗</a></div></figcaption></figure></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The geometry of vectors<div class="autopermalink" data-description="Figure 1.1.5"><a href="#vector-geometry" title="Copy heading and permalink for Figure 1.1.5" aria-label="Copy heading and permalink for Figure 1.1.5">🔗</a></div></figcaption></figure><div class="para" id="subsec_wessel-7">Wessel stated that, to multiply two vectors, the length of the product vector should be the product of the lengths of its factors. Should the angular displacement of the product vector likewise be the product of the angular displacements of its factors? Definitely not, and you will see in the exercises why Wessel knew that such a provision would have been a bad idea. What, then, should be the angular displacement of the product?<div class="autopermalink" data-description="Paragraph"><a href="#subsec_wessel-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -701,8 +703,10 @@ E = - \sqrt{5^2-4^2}=-3, \quad \text{and} \quad F = + \sqrt{5^2-4^2}=+3.
 <div class="para" id="subsec_wessel-12">What is the (angular) displacement of the standard unit vector? Clearly, its displacement is zero radians, as it coincides with the positive <span class="process-math">\(x\)</span>-axis. Thus, if vectors <span class="process-math">\(\mathbf{a}\)</span> and <span class="process-math">\(\mathbf{b}\)</span> have displacements of <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> respectively, and vector <span class="process-math">\(\mathbf{c} = \mathbf{ab}\text{,}\)</span> then the displacement of <span class="process-math">\(\mathbf{c}\)</span> should be <span class="process-math">\(\alpha + \beta\text{,}\)</span> as shown in <a href="sec_origin.html#wessel-3_fig" class="xref" data-knowl="./knowl/xref/wessel-3_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.7.(a)">Figure 1.1.7.(a)</a>. The reason for this assertion is that, with such an arrangement, Wessel’s displacement protocol works out perfectly: the displacement of <span class="process-math">\(\mathbf{c}\)</span> (which is <span class="process-math">\(\alpha + \beta\)</span>) differs from the displacement of <span class="process-math">\(\mathbf{a}\)</span> (which is <span class="process-math">\(\alpha\)</span>) by <span class="process-math">\(\beta\text{.}\)</span> This is the same amount that the displacement of <span class="process-math">\(\mathbf{b}\)</span> (which is <span class="process-math">\(\beta\)</span>) differs from the displacement of the standard unit vector (which is 0). Likewise, the displacement of <span class="process-math">\(\mathbf{c}\)</span> differs from the displacement of <span class="process-math">\(\mathbf{b}\)</span> by <span class="process-math">\(\alpha\text{,}\)</span> which is the same amount that the displacement of <span class="process-math">\(\mathbf{a}\)</span> differs from the displacement of the standard unit vector.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_wessel-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="vector-multiplication"><div class="sidebyside"><div class="sbsrow" style="margin-left:0.574999999999999%;margin-right:0.574999999999999%;grid-template-columns:47.2432979261507% 51.5933232169955%;column-gap:1.149999999999999%;">
-<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-3_fig"><img src="external/figs/ch-01/ch-01-fig-06a.svg" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Multiplication of two vectors<div class="autopermalink" data-description="Figure 1.1.7.(a)"><a href="#wessel-3_fig" title="Copy heading and permalink for Figure 1.1.7.(a)" aria-label="Copy heading and permalink for Figure 1.1.7.(a)">🔗</a></div></figcaption></figure></div>
-<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-4_fig"><img src="external/figs/ch-01/ch-01-fig-06b.svg" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The square root of <span class="process-math">\(-1\)</span><div class="autopermalink" data-description="Figure 1.1.7.(b)"><a href="#wessel-4_fig" title="Copy heading and permalink for Figure 1.1.7.(b)" aria-label="Copy heading and permalink for Figure 1.1.7.(b)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-3_fig"><div class="image-box"><img src="external/figs/ch-01/ch-01-fig-06a.svg" class="contained"></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Multiplication of two vectors<div class="autopermalink" data-description="Figure 1.1.7.(a)"><a href="#wessel-3_fig" title="Copy heading and permalink for Figure 1.1.7.(a)" aria-label="Copy heading and permalink for Figure 1.1.7.(a)">🔗</a></div></figcaption></figure></div>
+<div class="sbspanel sbspanel--top top" style=""><figure class="figure figure-like" id="wessel-4_fig"><div class="image-box"><img src="external/figs/ch-01/ch-01-fig-06b.svg" class="contained"></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The square root of <span class="process-math">\(-1\)</span><div class="autopermalink" data-description="Figure 1.1.7.(b)"><a href="#wessel-4_fig" title="Copy heading and permalink for Figure 1.1.7.(b)" aria-label="Copy heading and permalink for Figure 1.1.7.(b)">🔗</a></div></figcaption></figure></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Wessel’s multiplication scheme for vectors<div class="autopermalink" data-description="Figure 1.1.7"><a href="#vector-multiplication" title="Copy heading and permalink for Figure 1.1.7" aria-label="Copy heading and permalink for Figure 1.1.7">🔗</a></div></figcaption></figure><div class="para" id="subsec_wessel-14">How does Wessel’s procedure lead to a geometric representation of complex numbers? Consider what happens if a unit vector is drawn from the origin straight up the <span class="process-math">\(y\)</span>-axis, and then multiplied by itself. By Wessel’s rules the length of the product vector is one unit, as the length of each factor is one unit. What about its direction? The angular displacement of the original vector is <span class="process-math">\(\frac{\pi}{2}\)</span> radians, so by Wessel’s rules again the product vector has a displacement of <span class="process-math">\(\frac{\pi}{2} + \frac{\pi}{2} = \pi\)</span> radians. Thus, the product vector is aligned along the <span class="process-math">\(x\)</span>-axis, but is directed from the origin <em class="emphasis">to the left</em> by one unit, as shown in <a href="sec_origin.html#wessel-4_fig" class="xref" data-knowl="./knowl/xref/wessel-4_fig.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.7.(b)">Figure 1.1.7.(b)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_wessel-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
