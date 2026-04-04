@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_branch-integrands"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_branch-integrands">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integrands with Branch Points</span>
 </h2>
 <div class="para" id="sec_branch-integrands-2">We now show how to evaluate certain improper real integrals involving the integrand <span class="process-math">\(x^{\alpha}\frac{P(x)}{Q x)}\text{.}\)</span> The complex function <span class="process-math">\(z^{\alpha}\)</span> is multivalued, so we must first specify the branch to be used.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -534,10 +536,16 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Branch_Integrand_Thm-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 8.6.1"><a href="#Branch_Integrand_Thm" title="Copy heading and permalink for Theorem 8.6.1" aria-label="Copy heading and permalink for Theorem 8.6.1">🔗</a></div></article><details id="sec_branch-integrands-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_branch-integrands-5-1">Let <span class="process-math">\(C\)</span> denote the simple closed positively oriented contour that consists of the portions of the circles <span class="process-math">\(C_r(0)\)</span> and <span class="process-math">\(C_R(0)\)</span> and the horizontal segments joining them, per <a href="sec_branch-integrands.html#fig_ch-08-08" class="xref" data-knowl="./knowl/xref/fig_ch-08-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.2">Figure 8.6.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 8.6.1"><a href="#Branch_Integrand_Thm" title="Copy heading and permalink for Theorem 8.6.1" aria-label="Copy heading and permalink for Theorem 8.6.1">🔗</a></div>
+</article>
+<details id="sec_branch-integrands-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_branch-integrands-5-1">Let <span class="process-math">\(C\)</span> denote the simple closed positively oriented contour that consists of the portions of the circles <span class="process-math">\(C_r(0)\)</span> and <span class="process-math">\(C_R(0)\)</span> and the horizontal segments joining them, per <a href="sec_branch-integrands.html#fig_ch-08-08" class="xref" data-knowl="./knowl/xref/fig_ch-08-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.2">Figure 8.6.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-08-08"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-08/ch-08-fig-08.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Contour <span class="process-math">\(C\)</span> encloses the nonzero poles <span class="process-math">\(z_, z_2, \ldots, z_k\)</span> of <span class="process-math">\(\frac{P}Q\)</span><div class="autopermalink" data-description="Figure 8.6.2"><a href="#fig_ch-08-08" title="Copy heading and permalink for Figure 8.6.2" aria-label="Copy heading and permalink for Figure 8.6.2">🔗</a></div></figcaption></figure><div class="para logical" id="sec_branch-integrands-5-3">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Contour <span class="process-math">\(C\)</span> encloses the nonzero poles <span class="process-math">\(z_, z_2, \ldots, z_k\)</span> of <span class="process-math">\(\frac{P}Q\)</span><div class="autopermalink" data-description="Figure 8.6.2"><a href="#fig_ch-08-08" title="Copy heading and permalink for Figure 8.6.2" aria-label="Copy heading and permalink for Figure 8.6.2">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_branch-integrands-5-3">
 <div class="para">We select a small value of <span class="process-math">\(r\)</span> and a large value of <span class="process-math">\(R\)</span> so that the nonzero poles <span class="process-math">\(z_1, z_2, \ldots, z_k\)</span> of <span class="process-math">\(\frac{P}{Q}\)</span> lie inside <span class="process-math">\(C\text{.}\)</span> Using the residue theorem, we write</div>
 <div class="displaymath process-math" id="Branch_int_eq">
 \begin{equation}
@@ -593,12 +601,16 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 </div>
 <div class="para" id="sec_branch-integrands-5-7">The argument is essentially the same as that used to establish <a href="sec_improper-rational-fn-int.html#RF2" class="xref" data-knowl="./knowl/xref/RF2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.3.5">Equation (8.3.5)</a>, and we omit the details. If we combine Equations <a href="sec_branch-integrands.html#sec_branch-integrands-5-5-6" class="xref" data-knowl="./knowl/xref/Branch_int_eq_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.6.4">(8.6.4)</a> and <a href="sec_branch-integrands.html#Branch_int_eq_4" class="xref" data-knowl="./knowl/xref/Branch_int_eq_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.6.5">(8.6.5)</a> and let <span class="process-math">\(R \to \infty\text{,}\)</span> we arrive at the desired result.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-5-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 8.6.1"><a href="#sec_branch-integrands-5" title="Copy heading and permalink for Proof 8.6.1" aria-label="Copy heading and permalink for Proof 8.6.1">🔗</a></div></article></details><article class="example example-like" id="sec_branch-integrands-6"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 8.6.1"><a href="#sec_branch-integrands-5" title="Copy heading and permalink for Proof 8.6.1" aria-label="Copy heading and permalink for Proof 8.6.1">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_branch-integrands-6"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_branch-integrands-6-1-1">Evaluate P.V. <span class="process-math">\(\int_0^{\infty}\frac{x^{\alpha}}{x(x+1)}\,dx\text{,}\)</span> where <span class="process-math">\(0\lt a\lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_branch-integrands-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_branch-integrands-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_branch-integrands-6-2-1">
 <div class="para">The function <span class="process-math">\(f(z) =\frac{z^{a}}{z(z+1)}\)</span> has a nonzero pole at the point <span class="process-math">\(-1\text{,}\)</span> and the denominator has a zero of order at most 1 (in fact, exactly 1) at the origin. Using <a href="sec_branch-integrands.html#Branch_Integrand_Thm" class="xref" data-knowl="./knowl/xref/Branch_Integrand_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.1">Theorem 8.6.1</a>, we compute</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Branch_Integrand_Thm.html" id="sec_branch-integrands-6-2-1-4">
@@ -612,15 +624,20 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.3.1"><a href="#sec_branch-integrands-6-2" title="Copy heading and permalink for Solution 8.6.3.1" aria-label="Copy heading and permalink for Solution 8.6.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.6.3"><a href="#sec_branch-integrands-6" title="Copy heading and permalink for Example 8.6.3" aria-label="Copy heading and permalink for Example 8.6.3">🔗</a></div></article><div class="para" id="sec_branch-integrands-7">We can apply the preceding ideas to other multivalued functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.6.3"><a href="#sec_branch-integrands-6" title="Copy heading and permalink for Example 8.6.3" aria-label="Copy heading and permalink for Example 8.6.3">🔗</a></div>
+</article>
+<div class="para" id="sec_branch-integrands-7">We can apply the preceding ideas to other multivalued functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_branch-integrands-8"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_branch-integrands-8-1-1">Evaluate P.V. <span class="process-math">\(\int_0^{\infty}\frac{\ln x}{x^2+a^2}dx\text{,}\)</span> where <span class="process-math">\(a&gt;0\text{.}\)</span> To get started, refer to <a href="sec_branch-integrands.html#fig_ch-08-09" class="xref" data-knowl="./knowl/xref/fig_ch-08-09.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.5">Figure 8.6.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_branch-integrands-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_branch-integrands-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_branch-integrands-8-2-1">
 <div class="para">We use the function <span class="process-math">\(f(z) =\frac{\mathrm{\log }_{-\frac{\pi}{2}}z}{z^2+a^2}\text{.}\)</span> Recall that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-08-09.html" id="sec_branch-integrands-8-2-1-2">
@@ -632,97 +649,144 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-08-09"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-08/ch-08-fig-09.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contour <span class="process-math">\(C\)</span> for the integrand <span class="process-math">\(f(z) = \frac{\mathrm{\log}_{-\frac{\pi}{2}}z}{z^2+a^2}\)</span><div class="autopermalink" data-description="Figure 8.6.5"><a href="#fig_ch-08-09" title="Copy heading and permalink for Figure 8.6.5" aria-label="Copy heading and permalink for Figure 8.6.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Solution 8.6.4.1"><a href="#sec_branch-integrands-8-2" title="Copy heading and permalink for Solution 8.6.4.1" aria-label="Copy heading and permalink for Solution 8.6.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.6.4"><a href="#sec_branch-integrands-8" title="Copy heading and permalink for Example 8.6.4" aria-label="Copy heading and permalink for Example 8.6.4">🔗</a></div></article><article class="remark remark-like" id="sec_branch-integrands-9"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contour <span class="process-math">\(C\)</span> for the integrand <span class="process-math">\(f(z) = \frac{\mathrm{\log}_{-\frac{\pi}{2}}z}{z^2+a^2}\)</span><div class="autopermalink" data-description="Figure 8.6.5"><a href="#fig_ch-08-09" title="Copy heading and permalink for Figure 8.6.5" aria-label="Copy heading and permalink for Figure 8.6.5">🔗</a></div></figcaption>
+</figure><div class="autopermalink" data-description="Solution 8.6.4.1"><a href="#sec_branch-integrands-8-2" title="Copy heading and permalink for Solution 8.6.4.1" aria-label="Copy heading and permalink for Solution 8.6.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.6.4"><a href="#sec_branch-integrands-8" title="Copy heading and permalink for Example 8.6.4" aria-label="Copy heading and permalink for Example 8.6.4">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_branch-integrands-9"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_branch-integrands-9-1">The theory of this section is not purely esoteric. Many applications of contour integrals surface in government and industry worldwide. Several years ago, for example, a briefing was given at the Korean Institute for Defense Analysis (KIDA) in which a sophisticated problem was analyzed by means of a contour integral whose path of integration was virtually identical to that given in <a href="sec_branch-integrands.html#fig_ch-08-08" class="xref" data-knowl="./knowl/xref/fig_ch-08-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.2">Figure 8.6.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branch-integrands-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 8.6.6"><a href="#sec_branch-integrands-9" title="Copy heading and permalink for Remark 8.6.6" aria-label="Copy heading and permalink for Remark 8.6.6">🔗</a></div></article><section class="exercises" id="exercises_branch-integrands"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Remark 8.6.6"><a href="#sec_branch-integrands-9" title="Copy heading and permalink for Remark 8.6.6" aria-label="Copy heading and permalink for Remark 8.6.6">🔗</a></div>
+</article>
+<section class="exercises" id="exercises_branch-integrands">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
-<section class="introduction" id="exercises_branch-integrands-2"><div class="para" id="exercises_branch-integrands-2-1">Use residues to compute the following integrals.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_branch-integrands-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><article class="exercise exercise-like" id="x8_6_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<section class="introduction" id="exercises_branch-integrands-2">
+<div class="para" id="exercises_branch-integrands-2-1">Use residues to compute the following integrals.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_branch-integrands-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="x8_6_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_1-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{1}{x^\frac{2}{3}(1+x)}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_1-2-1">
 <span class="process-math">\(\frac{2\pi}{\sqrt{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.1.1"><a href="#x8_6_1-2" title="Copy heading and permalink for Solution 8.6.1.1" aria-label="Copy heading and permalink for Solution 8.6.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.1"><a href="#x8_6_1" title="Copy heading and permalink for Exercise 8.6.1" aria-label="Copy heading and permalink for Exercise 8.6.1">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.1"><a href="#x8_6_1" title="Copy heading and permalink for Exercise 8.6.1" aria-label="Copy heading and permalink for Exercise 8.6.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_2-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{1}{x^\frac{1}{2}(1+x)}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.2"><a href="#x8_6_2" title="Copy heading and permalink for Exercise 8.6.2" aria-label="Copy heading and permalink for Exercise 8.6.2">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.2"><a href="#x8_6_2" title="Copy heading and permalink for Exercise 8.6.2" aria-label="Copy heading and permalink for Exercise 8.6.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_3-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{2}}{(1+x)^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_3-2-1">
 <span class="process-math">\(\frac{\pi}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.3.1"><a href="#x8_6_3-2" title="Copy heading and permalink for Solution 8.6.3.1" aria-label="Copy heading and permalink for Solution 8.6.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.3"><a href="#x8_6_3" title="Copy heading and permalink for Exercise 8.6.3" aria-label="Copy heading and permalink for Exercise 8.6.3">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.3"><a href="#x8_6_3" title="Copy heading and permalink for Exercise 8.6.3" aria-label="Copy heading and permalink for Exercise 8.6.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_4-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{2}}{1+x^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.4"><a href="#x8_6_4" title="Copy heading and permalink for Exercise 8.6.4" aria-label="Copy heading and permalink for Exercise 8.6.4">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.4"><a href="#x8_6_4" title="Copy heading and permalink for Exercise 8.6.4" aria-label="Copy heading and permalink for Exercise 8.6.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_5-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{\ln (x^2+1)}{x^2+1}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="x8_6_5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<details id="x8_6_5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x8_6_5-2-1">Use the integrand <span class="process-math">\(\, f(z)=\frac{\log (z+i)}{z^2+1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 8.6.5.1"><a href="#x8_6_5-2" title="Copy heading and permalink for Hint 8.6.5.1" aria-label="Copy heading and permalink for Hint 8.6.5.1">🔗</a></div>
-</div></details><details id="x8_6_5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+</div></details>
+<details id="x8_6_5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_5-3-1">
 <span class="process-math">\(\pi \ln 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.5.1"><a href="#x8_6_5-3" title="Copy heading and permalink for Solution 8.6.5.1" aria-label="Copy heading and permalink for Solution 8.6.5.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.5"><a href="#x8_6_5" title="Copy heading and permalink for Exercise 8.6.5" aria-label="Copy heading and permalink for Exercise 8.6.5">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.5"><a href="#x8_6_5" title="Copy heading and permalink for Exercise 8.6.5" aria-label="Copy heading and permalink for Exercise 8.6.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_6-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{\ln x}{(1+x^2)^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.6"><a href="#x8_6_6" title="Copy heading and permalink for Exercise 8.6.6" aria-label="Copy heading and permalink for Exercise 8.6.6">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.6"><a href="#x8_6_6" title="Copy heading and permalink for Exercise 8.6.6" aria-label="Copy heading and permalink for Exercise 8.6.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_7-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{(\ln x)^2}{x^2+1}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_7-2-1">
 <span class="process-math">\(\frac{\pi^3}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.7.1"><a href="#x8_6_7-2" title="Copy heading and permalink for Solution 8.6.7.1" aria-label="Copy heading and permalink for Solution 8.6.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.7"><a href="#x8_6_7" title="Copy heading and permalink for Exercise 8.6.7" aria-label="Copy heading and permalink for Exercise 8.6.7">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.7"><a href="#x8_6_7" title="Copy heading and permalink for Exercise 8.6.7" aria-label="Copy heading and permalink for Exercise 8.6.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_8-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{2}\ln x}{x^2+1}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.8"><a href="#x8_6_8" title="Copy heading and permalink for Exercise 8.6.8" aria-label="Copy heading and permalink for Exercise 8.6.8">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.8"><a href="#x8_6_8" title="Copy heading and permalink for Exercise 8.6.8" aria-label="Copy heading and permalink for Exercise 8.6.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_9-1-1">
 <span class="process-math">\(\int_0^{\infty}\frac{\ln x}{x^2+2^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_9-2-1">
 <span class="process-math">\(\frac{1}{4}\pi \ln 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.9.1"><a href="#x8_6_9-2" title="Copy heading and permalink for Solution 8.6.9.1" aria-label="Copy heading and permalink for Solution 8.6.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.9"><a href="#x8_6_9" title="Copy heading and permalink for Exercise 8.6.9" aria-label="Copy heading and permalink for Exercise 8.6.9">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_6_10-1-1"><div class="para" id="x8_6_10-1-1-1">Carry out the following computations:<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_10-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div> <article class="task exercise-like" id="x8_6_10-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.9"><a href="#x8_6_9" title="Copy heading and permalink for Exercise 8.6.9" aria-label="Copy heading and permalink for Exercise 8.6.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_6_10-1-1">
+<div class="para" id="x8_6_10-1-1-1">Carry out the following computations:<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_10-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div> 
+<article class="task exercise-like" id="x8_6_10-1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_6_10-1-2-1-1">
 <span class="process-math">\(\text{For } \, f(z)=\frac{z^\frac{1}{3}}{z^3(z+1)}, \, \text{ show that } \,
 \mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_10-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task a"><a href="#x8_6_10-1-2" title="Copy heading and permalink for Task a" aria-label="Copy heading and permalink for Task a">🔗</a></div></article> <article class="task exercise-like" id="x8_6_10-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task a"><a href="#x8_6_10-1-2" title="Copy heading and permalink for Task a" aria-label="Copy heading and permalink for Task a">🔗</a></div>
+</article> 
+<article class="task exercise-like" id="x8_6_10-1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para logical" id="x8_6_10-1-3-1-1">
 <div class="para"><span class="process-math">\(\text{Use part (a) and } \, \alpha=\frac{1}{3} \, \text{ to verify the computation}\)</span></div>
 <div class="displaymath process-math" id="x8_6_10-1-3-1-1-2">
@@ -732,16 +796,25 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x8_6_10-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task b"><a href="#x8_6_10-1-3" title="Copy heading and permalink for Task b" aria-label="Copy heading and permalink for Task b">🔗</a></div></article> <article class="task exercise-like" id="x8_6_10-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task b"><a href="#x8_6_10-1-3" title="Copy heading and permalink for Task b" aria-label="Copy heading and permalink for Task b">🔗</a></div>
+</article> 
+<article class="task exercise-like" id="x8_6_10-1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x8_6_10-1-4-1-1">Can you conclude that P.V. <span class="process-math">\(\,\int_0^{\infty}\frac{x^\frac{1}{3}}{x^3(x+1)}\,dx=\frac{2\sqrt{3}}{3}\pi? \,\)</span> Justify your answer.<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_10-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task c"><a href="#x8_6_10-1-4" title="Copy heading and permalink for Task c" aria-label="Copy heading and permalink for Task c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.6.10"><a href="#x8_6_10" title="Copy heading and permalink for Exercise 8.6.10" aria-label="Copy heading and permalink for Exercise 8.6.10">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_6_11-1"><div class="para" id="x8_6_11-1-1">Carry out the following computations:<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task c"><a href="#x8_6_10-1-4" title="Copy heading and permalink for Task c" aria-label="Copy heading and permalink for Task c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.6.10"><a href="#x8_6_10" title="Copy heading and permalink for Exercise 8.6.10" aria-label="Copy heading and permalink for Exercise 8.6.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_6_11-1">
+<div class="para" id="x8_6_11-1-1">Carry out the following computations:<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_6_11-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_6_11-2-1-1">For <span class="process-math">\(\, f(z)=\frac{z^\frac{4}{3}}{z+1}, \,\)</span> show that <span class="process-math">\(\mathrm{Res}[f,-1]=-\frac{1}{2}-\frac{\sqrt{3}}{2}i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.6.11.a"><a href="#x8_6_11-2" title="Copy heading and permalink for Task 8.6.11.a" aria-label="Copy heading and permalink for Task 8.6.11.a">🔗</a></div></article><article class="task exercise-like" id="x8_6_11-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 8.6.11.a"><a href="#x8_6_11-2" title="Copy heading and permalink for Task 8.6.11.a" aria-label="Copy heading and permalink for Task 8.6.11.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_6_11-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para logical" id="x8_6_11-3-1-1">
 <div class="para">Use part (a) and <span class="process-math">\(\, \alpha=\frac{4}{3} \,\)</span> to verify the computation</div>
 <div class="displaymath process-math" id="x8_6_11-3-1-1-2">
@@ -751,97 +824,150 @@ z^{\alpha} \amp = e^{\alpha [\log_0(z) ] } =e^{\alpha(\ln |z| +i\arg_0z)}\notag\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.6.11.b"><a href="#x8_6_11-3" title="Copy heading and permalink for Task 8.6.11.b" aria-label="Copy heading and permalink for Task 8.6.11.b">🔗</a></div></article><article class="task exercise-like" id="x8_6_11-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 8.6.11.b"><a href="#x8_6_11-3" title="Copy heading and permalink for Task 8.6.11.b" aria-label="Copy heading and permalink for Task 8.6.11.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_6_11-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x8_6_11-4-1-1">Can you conclude that P.V. <span class="process-math">\(\, \int_0^{\infty}\frac{x^\frac{4}{3}}{x+1}\,dx=\frac{2\sqrt{3}}{3}\pi \,\)</span> Justify your answer.<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_11-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_11-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_11-4-2-1">No. The hypotheses of <a href="sec_branch-integrands.html#Branch_Integrand_Thm" class="xref" data-knowl="./knowl/xref/Branch_Integrand_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.6.1">Theorem 8.6.1</a> are not satisfied. Explain why they are not.<div class="autopermalink" data-description="Paragraph"><a href="#x8_6_11-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.11.c.1"><a href="#x8_6_11-4-2" title="Copy heading and permalink for Solution 8.6.11.c.1" aria-label="Copy heading and permalink for Solution 8.6.11.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.6.11.c"><a href="#x8_6_11-4" title="Copy heading and permalink for Task 8.6.11.c" aria-label="Copy heading and permalink for Task 8.6.11.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.6.11"><a href="#x8_6_11" title="Copy heading and permalink for Exercise 8.6.11" aria-label="Copy heading and permalink for Exercise 8.6.11">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.6.11.c"><a href="#x8_6_11-4" title="Copy heading and permalink for Task 8.6.11.c" aria-label="Copy heading and permalink for Task 8.6.11.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.6.11"><a href="#x8_6_11" title="Copy heading and permalink for Exercise 8.6.11" aria-label="Copy heading and permalink for Exercise 8.6.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_12-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{1}{x^\frac{1}{2}(x+1)^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.12"><a href="#x8_6_12" title="Copy heading and permalink for Exercise 8.6.12" aria-label="Copy heading and permalink for Exercise 8.6.12">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.12"><a href="#x8_6_12" title="Copy heading and permalink for Exercise 8.6.12" aria-label="Copy heading and permalink for Exercise 8.6.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_13-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{1}{x^\frac{1}{2}(1+x^2)}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_13-2-1">
 <span class="process-math">\(\frac{\pi}{\sqrt{2}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.13.1"><a href="#x8_6_13-2" title="Copy heading and permalink for Solution 8.6.13.1" aria-label="Copy heading and permalink for Solution 8.6.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.13"><a href="#x8_6_13" title="Copy heading and permalink for Exercise 8.6.13" aria-label="Copy heading and permalink for Exercise 8.6.13">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.13"><a href="#x8_6_13" title="Copy heading and permalink for Exercise 8.6.13" aria-label="Copy heading and permalink for Exercise 8.6.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_14-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{3}}{(x+1)^2}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.14"><a href="#x8_6_14" title="Copy heading and permalink for Exercise 8.6.14" aria-label="Copy heading and permalink for Exercise 8.6.14">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.14"><a href="#x8_6_14" title="Copy heading and permalink for Exercise 8.6.14" aria-label="Copy heading and permalink for Exercise 8.6.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_15-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_15-2-1">
 <span class="process-math">\(\frac{\pi\sqrt{2}}{1+\sqrt{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.15.1"><a href="#x8_6_15-2" title="Copy heading and permalink for Solution 8.6.15.1" aria-label="Copy heading and permalink for Solution 8.6.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.15"><a href="#x8_6_15" title="Copy heading and permalink for Exercise 8.6.15" aria-label="Copy heading and permalink for Exercise 8.6.15">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.15"><a href="#x8_6_15" title="Copy heading and permalink for Exercise 8.6.15" aria-label="Copy heading and permalink for Exercise 8.6.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_16-1-1">
 <span class="process-math">\(\text{ P.V. } \, \int_0^{\infty}\frac{x^\frac{1}{3}\ln x}{x^2+1}\,dx \, \)</span> and P.V. <span class="process-math">\(\int_0^{\infty}\frac{x^\frac{1}{3}}{x^2+1}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_16-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_16-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x8_6_16-2-1">Use the complex integrand <span class="process-math">\(\, f(z)=\frac{z^\frac{1}{3}\mathrm{Log} z}{z^2+1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 8.6.16.1"><a href="#x8_6_16-2" title="Copy heading and permalink for Hint 8.6.16.1" aria-label="Copy heading and permalink for Hint 8.6.16.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.16"><a href="#x8_6_16" title="Copy heading and permalink for Exercise 8.6.16" aria-label="Copy heading and permalink for Exercise 8.6.16">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.16"><a href="#x8_6_16" title="Copy heading and permalink for Exercise 8.6.16" aria-label="Copy heading and permalink for Exercise 8.6.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_17-1-1">P.V. <span class="process-math">\(\, \int_0^{\infty}\frac{\ln (1+x)}{x^{1+a}}\,dx, \, \)</span> where <span class="process-math">\(\, 0\lt a\lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_17-2-1">
 <span class="process-math">\(\frac{\pi}{a\sin \pi a}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.17.1"><a href="#x8_6_17-2" title="Copy heading and permalink for Solution 8.6.17.1" aria-label="Copy heading and permalink for Solution 8.6.17.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.17"><a href="#x8_6_17" title="Copy heading and permalink for Exercise 8.6.17" aria-label="Copy heading and permalink for Exercise 8.6.17">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.17"><a href="#x8_6_17" title="Copy heading and permalink for Exercise 8.6.17" aria-label="Copy heading and permalink for Exercise 8.6.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_18-1-1">P.V. <span class="process-math">\(\, \int_0^{\infty}\frac{\ln x}{(x+a)^2}\,dx, \, \)</span> where <span class="process-math">\(\, a&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.18"><a href="#x8_6_18" title="Copy heading and permalink for Exercise 8.6.18" aria-label="Copy heading and permalink for Exercise 8.6.18">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.18"><a href="#x8_6_18" title="Copy heading and permalink for Exercise 8.6.18" aria-label="Copy heading and permalink for Exercise 8.6.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_19-1-1">P.V. <span class="process-math">\(\, \int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="x8_6_19-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<details id="x8_6_19-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x8_6_19-2-1">Use the integrand <span class="process-math">\(\, f(z) =\frac{\exp(iz)}{z} \,\)</span> and the contour <span class="process-math">\(\, C \,\)</span> in <a href="sec_branch-integrands.html#fig_ch-08-08" class="xref" data-knowl="./knowl/xref/fig_ch-08-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.2">Figure 8.6.2</a>. Then let <span class="process-math">\(\,r \to 0 \,\)</span> and <span class="process-math">\(\, R \to \infty.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 8.6.19.1"><a href="#x8_6_19-2" title="Copy heading and permalink for Hint 8.6.19.1" aria-label="Copy heading and permalink for Hint 8.6.19.1">🔗</a></div>
-</div></details><details id="x8_6_19-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+</div></details>
+<details id="x8_6_19-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_19-3-1">
 <span class="process-math">\(\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_19-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.19.1"><a href="#x8_6_19-3" title="Copy heading and permalink for Solution 8.6.19.1" aria-label="Copy heading and permalink for Solution 8.6.19.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 8.6.19"><a href="#x8_6_19" title="Copy heading and permalink for Exercise 8.6.19" aria-label="Copy heading and permalink for Exercise 8.6.19">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.6.19"><a href="#x8_6_19" title="Copy heading and permalink for Exercise 8.6.19" aria-label="Copy heading and permalink for Exercise 8.6.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_6_20-1-1">P.V. <span class="process-math">\(\, \int_{-\infty}^{\infty}\frac{\sin^2x}{x^2}\,dx.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_6_20-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x8_6_20-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x8_6_20-2-1">Use the integrand <span class="process-math">\(\, f(z) =\frac{1-\exp (i2z)}{z^2} \,\)</span>  and the contour <span class="process-math">\(\, C \,\)</span> in <a href="sec_branch-integrands.html#fig_ch-08-08" class="xref" data-knowl="./knowl/xref/fig_ch-08-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.2">Figure 8.6.2</a>.Then let <span class="process-math">\(\, r \to 0 \,\)</span> and <span class="process-math">\(\, R \to \infty.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 8.6.20.1"><a href="#x8_6_20-2" title="Copy heading and permalink for Hint 8.6.20.1" aria-label="Copy heading and permalink for Hint 8.6.20.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.20"><a href="#x8_6_20" title="Copy heading and permalink for Exercise 8.6.20" aria-label="Copy heading and permalink for Exercise 8.6.20">🔗</a></div></article><article class="exercise exercise-like" id="x8_6_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="x8_6_21-1-1">The Fresnel integrals <span class="process-math">\(\int_0^{\infty}\cos(x^2)\,dx\)</span> and <span class="process-math">\(\int_0^{\infty}\sin (x^2)\,dx\)</span> are important in the study of optics.  Use the integrand <span class="process-math">\(f(z)=\exp(-z^2)\)</span> and the contour <span class="process-math">\(C\)</span> shown in <a href="sec_branch-integrands.html#fig_ch-08-10" class="xref" data-knowl="./knowl/xref/fig_ch-08-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a>. Then let <span class="process-math">\(R \to \infty\)</span> to get the value of these integrals. Use the fact from calculus that <span class="process-math">\(\int_0^{\infty}e^{-x^2}dx=\frac{\sqrt{\pi}}{2}\text{.}\)</span> <figure class="figure figure-like" id="fig_ch-08-10"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-08/ch-08-fig-10.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>For Exercise <a href="sec_branch-integrands.html#x8_6_21" class="xref" data-knowl="./knowl/xref/x8_6_21.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.6.21">Exercise 8.6.21</a><div class="autopermalink" data-description="Figure 8.6.7"><a href="#fig_ch-08-10" title="Copy heading and permalink for Figure 8.6.7" aria-label="Copy heading and permalink for Figure 8.6.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
 </div>
-<div class="solutions"><details id="x8_6_21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="autopermalink" data-description="Exercise 8.6.20"><a href="#x8_6_20" title="Copy heading and permalink for Exercise 8.6.20" aria-label="Copy heading and permalink for Exercise 8.6.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_6_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="x8_6_21-1-1">The Fresnel integrals <span class="process-math">\(\int_0^{\infty}\cos(x^2)\,dx\)</span> and <span class="process-math">\(\int_0^{\infty}\sin (x^2)\,dx\)</span> are important in the study of optics.  Use the integrand <span class="process-math">\(f(z)=\exp(-z^2)\)</span> and the contour <span class="process-math">\(C\)</span> shown in <a href="sec_branch-integrands.html#fig_ch-08-10" class="xref" data-knowl="./knowl/xref/fig_ch-08-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.6.7">Figure 8.6.7</a>. Then let <span class="process-math">\(R \to \infty\)</span> to get the value of these integrals. Use the fact from calculus that <span class="process-math">\(\int_0^{\infty}e^{-x^2}dx=\frac{\sqrt{\pi}}{2}\text{.}\)</span> 
+<figure class="figure figure-like" id="fig_ch-08-10"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-08/ch-08-fig-10.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.6.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>For Exercise <a href="sec_branch-integrands.html#x8_6_21" class="xref" data-knowl="./knowl/xref/x8_6_21.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 8.6.21">Exercise 8.6.21</a><div class="autopermalink" data-description="Figure 8.6.7"><a href="#fig_ch-08-10" title="Copy heading and permalink for Figure 8.6.7" aria-label="Copy heading and permalink for Figure 8.6.7">🔗</a></div></figcaption>
+</figure><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="x8_6_21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_6_21-2-1">
 <span class="process-math">\(\frac{\sqrt{\pi}}{2\sqrt{2}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_6_21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.6.21.1"><a href="#x8_6_21-2" title="Copy heading and permalink for Solution 8.6.21.1" aria-label="Copy heading and permalink for Solution 8.6.21.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.6.21"><a href="#x8_6_21" title="Copy heading and permalink for Exercise 8.6.21" aria-label="Copy heading and permalink for Exercise 8.6.21">🔗</a></div></article><div class="autopermalink" data-description="Exercises 8.6: Exercises"><a href="#exercises_branch-integrands" title="Copy heading and permalink for Exercises 8.6: Exercises" aria-label="Copy heading and permalink for Exercises 8.6: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 8.6: Integrands with Branch Points"><a href="#sec_branch-integrands" title="Copy heading and permalink for Section 8.6: Integrands with Branch Points" aria-label="Copy heading and permalink for Section 8.6: Integrands with Branch Points">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.6.21"><a href="#x8_6_21" title="Copy heading and permalink for Exercise 8.6.21" aria-label="Copy heading and permalink for Exercise 8.6.21">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 8.6: Exercises"><a href="#exercises_branch-integrands" title="Copy heading and permalink for Exercises 8.6: Exercises" aria-label="Copy heading and permalink for Exercises 8.6: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 8.6: Integrands with Branch Points"><a href="#sec_branch-integrands" title="Copy heading and permalink for Section 8.6: Integrands with Branch Points" aria-label="Copy heading and permalink for Section 8.6: Integrands with Branch Points">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_indented-integrals.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_argument-rouche.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

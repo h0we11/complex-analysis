@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_integration-theorems"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_integration-theorems">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Fundamental Theorems of Integration</span>
 </h2>
 <div class="para" id="sec_integration-theorems-2">Let <span class="process-math">\(f\)</span> be analytic in the simply connected domain <span class="process-math">\(D\text{.}\)</span> The theorems in this section show that an antiderivative <span class="process-math">\(F\)</span> can be constructed by contour integration. A consequence will be the fact that in a simply connected domain, the integral of an analytic function <span class="process-math">\(f\)</span> along any contour joining <span class="process-math">\(z_1\)</span> to <span class="process-math">\(z_2\)</span> is the same, and its value is given by <span class="process-math">\(F(z_2) -F(z_1)\text{.}\)</span> As a result, we can use the antiderivative formulas from calculus to compute the value of definite integrals.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -520,12 +522,18 @@ F(z)=\int_Cf(\xi )\,d\xi = \int_{z_0}^{z}f(\xi)\,d\xi\tag{6.4.1}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Antideriv_Thm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.4.1: Indefinite integrals, or antiderivatives"><a href="#Antideriv_Thm" title="Copy heading and permalink for Theorem 6.4.1: Indefinite integrals, or antiderivatives" aria-label="Copy heading and permalink for Theorem 6.4.1: Indefinite integrals, or antiderivatives">🔗</a></div></article><details id="sec_integration-theorems-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_integration-theorems-4-1">We first establish that the integral is independent of the path of integration. This will show that the function <span class="process-math">\(F\)</span> is well-defined, which in turn will justify the notation <span class="process-math">\(F(z)=\int_{z_0}^zf(\xi)\,d\xi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 6.4.1: Indefinite integrals, or antiderivatives"><a href="#Antideriv_Thm" title="Copy heading and permalink for Theorem 6.4.1: Indefinite integrals, or antiderivatives" aria-label="Copy heading and permalink for Theorem 6.4.1: Indefinite integrals, or antiderivatives">🔗</a></div>
+</article>
+<details id="sec_integration-theorems-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_integration-theorems-4-1">We first establish that the integral is independent of the path of integration. This will show that the function <span class="process-math">\(F\)</span> is well-defined, which in turn will justify the notation <span class="process-math">\(F(z)=\int_{z_0}^zf(\xi)\,d\xi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_integration-theorems-4-2">We let <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> be two contours in <span class="process-math">\(D\text{,}\)</span> both with initial point <span class="process-math">\(z_0\)</span> and terminal point <span class="process-math">\(z\text{,}\)</span> as shown in <a href="sec_integration-theorems.html#fig_ch-06-30" class="xref" data-knowl="./knowl/xref/fig_ch-06-30.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.4.2">Figure 6.4.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-06-30"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-30.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> joining <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z\)</span><div class="autopermalink" data-description="Figure 6.4.2"><a href="#fig_ch-06-30" title="Copy heading and permalink for Figure 6.4.2" aria-label="Copy heading and permalink for Figure 6.4.2">🔗</a></div></figcaption></figure><div class="para logical" id="sec_integration-theorems-4-4">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contours <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> joining <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z\)</span><div class="autopermalink" data-description="Figure 6.4.2"><a href="#fig_ch-06-30" title="Copy heading and permalink for Figure 6.4.2" aria-label="Copy heading and permalink for Figure 6.4.2">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_integration-theorems-4-4">
 <div class="para">Then <span class="process-math">\(C_1-C_2\)</span> is a simple closed contour, and the Cauchy-Goursat theorem implies that</div>
 <div class="displaymath process-math" id="sec_integration-theorems-4-4-2">
 \begin{equation*}
@@ -558,7 +566,9 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-06-31"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-06/ch-06-fig-31.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contours <span class="process-math">\(\Gamma _1\)</span> and <span class="process-math">\(\Gamma _2\)</span> and the line segment <span class="process-math">\(\Gamma\)</span><div class="autopermalink" data-description="Figure 6.4.3"><a href="#fig_ch-06-31" title="Copy heading and permalink for Figure 6.4.3" aria-label="Copy heading and permalink for Figure 6.4.3">🔗</a></div></figcaption></figure><div class="para logical" id="sec_integration-theorems-4-9">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contours <span class="process-math">\(\Gamma _1\)</span> and <span class="process-math">\(\Gamma _2\)</span> and the line segment <span class="process-math">\(\Gamma\)</span><div class="autopermalink" data-description="Figure 6.4.3"><a href="#fig_ch-06-31" title="Copy heading and permalink for Figure 6.4.3" aria-label="Copy heading and permalink for Figure 6.4.3">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_integration-theorems-4-9">
 <div class="para">Since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z\text{,}\)</span> for any <span class="process-math">\(\varepsilon &gt;0\)</span> there is a <span class="process-math">\(\delta&gt;0\)</span> so that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Ad_Eq_1.html ./knowl/xref/Ad_Eq_2.html ./knowl/xref/ML_Ineq.html" id="sec_integration-theorems-4-9-5">
 \begin{equation*}
@@ -579,12 +589,16 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 </div>
 <div class="para" id="sec_integration-theorems-4-10">Thus <span class="process-math">\(\left|\frac{F(z+\Delta z) -F(z)}{\Delta z}-f(z)\right|\)</span> tends to 0 as <span class="process-math">\(\Delta z \to 0\text{,}\)</span> so <span class="process-math">\(F\,'(z)=f(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 6.4.1"><a href="#sec_integration-theorems-4" title="Copy heading and permalink for Proof 6.4.1" aria-label="Copy heading and permalink for Proof 6.4.1">🔗</a></div></article></details><article class="remark remark-like" id="sec_integration-theorems-5"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 6.4.1"><a href="#sec_integration-theorems-4" title="Copy heading and permalink for Proof 6.4.1" aria-label="Copy heading and permalink for Proof 6.4.1">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec_integration-theorems-5"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_integration-theorems-5-1">It is important to stress that the line integral of an analytic function is independent of path. In <a href="sec_contour-integrals.html#Int_z_two_ways" class="xref" data-knowl="./knowl/xref/Int_z_two_ways.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.2.14">Example 6.2.14</a> we showed that <span class="process-math">\(\int_{C_1}z\ dz=\int_{C_2}z\ dz=4+2i\text{,}\)</span> where <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> were different contours joining <span class="process-math">\(-1-i\)</span> to <span class="process-math">\(3+i\text{.}\)</span> Because the integrand <span class="process-math">\(f(z)=z\)</span> is an analytic function, <a href="sec_integration-theorems.html#Antideriv_Thm" class="xref" data-knowl="./knowl/xref/Antideriv_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1: Indefinite integrals, or antiderivatives">Theorem 6.4.1</a> lets us know ahead of time that the value of the two integrals is the same; hence one calculation would have sufficed. If you ever have to compute a line integral of an analytic function over a difficult contour, change the contour to something easier. You are guaranteed to get the same answer. Of course, you must be sure that the function you’re dealing with is analytic in a simply connected domain containing your original and new contours.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 6.4.4"><a href="#sec_integration-theorems-5" title="Copy heading and permalink for Remark 6.4.4" aria-label="Copy heading and permalink for Remark 6.4.4">🔗</a></div></article><div class="para" id="sec_integration-theorems-6">If we set <span class="process-math">\(z=z_1\)</span> in <a href="sec_integration-theorems.html#Antideriv_Thm" class="xref" data-knowl="./knowl/xref/Antideriv_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1: Indefinite integrals, or antiderivatives">Theorem 6.4.1</a>, then we obtain the following familiar result for evaluating a definite integral of an analytic function.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 6.4.4"><a href="#sec_integration-theorems-5" title="Copy heading and permalink for Remark 6.4.4" aria-label="Copy heading and permalink for Remark 6.4.4">🔗</a></div>
+</article>
+<div class="para" id="sec_integration-theorems-6">If we set <span class="process-math">\(z=z_1\)</span> in <a href="sec_integration-theorems.html#Antideriv_Thm" class="xref" data-knowl="./knowl/xref/Antideriv_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1: Indefinite integrals, or antiderivatives">Theorem 6.4.1</a>, then we obtain the following familiar result for evaluating a definite integral of an analytic function.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="DInt_Thm"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definite integrals.</span>
@@ -600,9 +614,15 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#DInt_Thm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 6.4.5: Definite integrals"><a href="#DInt_Thm" title="Copy heading and permalink for Theorem 6.4.5: Definite integrals" aria-label="Copy heading and permalink for Theorem 6.4.5: Definite integrals">🔗</a></div></article><details id="sec_integration-theorems-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_integration-theorems-8-1">If we choose <span class="process-math">\(F\)</span> to be the function defined by <a href="sec_integration-theorems.html#Antideriv_Eq" class="xref" data-knowl="./knowl/xref/Antideriv_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4.1">Formula (6.4.1)</a>, then <a href="sec_integration-theorems.html#DInt_Eq" class="xref" data-knowl="./knowl/xref/DInt_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4.4">Equation (6.4.4)</a> holds. If <span class="process-math">\(G\)</span> is any other antiderivative of <span class="process-math">\(f\)</span> in <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(G\,'(z)=F\,'(z)\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> Thus the function <span class="process-math">\(H(z)=G(z) -F(z)\)</span> is analytic in <span class="process-math">\(D\text{,}\)</span> and <span class="process-math">\(H\,'(z) = G\,'(z)-F\,'(z) = 0\text{,}\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> Thus, by <a href="sec_cauchy-riemann.html#Df_0_implies_f_const" class="xref" data-knowl="./knowl/xref/Df_0_implies_f_const.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.13">Theorem 3.2.13</a>, this means <span class="process-math">\(H(z)=K\text{,}\)</span> for all <span class="process-math">\(z\in D\text{,}\)</span> where <span class="process-math">\(K\)</span> is some complex constant. Therefore <span class="process-math">\(G(z)=F(z) +K\text{,}\)</span> so <span class="process-math">\(G(z_1)-G(z_0) = F(z_1)-F(z_0)\text{,}\)</span> which establishes our theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 6.4.5: Definite integrals"><a href="#DInt_Thm" title="Copy heading and permalink for Theorem 6.4.5: Definite integrals" aria-label="Copy heading and permalink for Theorem 6.4.5: Definite integrals">🔗</a></div>
+</article>
+<details id="sec_integration-theorems-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_integration-theorems-8-1">If we choose <span class="process-math">\(F\)</span> to be the function defined by <a href="sec_integration-theorems.html#Antideriv_Eq" class="xref" data-knowl="./knowl/xref/Antideriv_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4.1">Formula (6.4.1)</a>, then <a href="sec_integration-theorems.html#DInt_Eq" class="xref" data-knowl="./knowl/xref/DInt_Eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4.4">Equation (6.4.4)</a> holds. If <span class="process-math">\(G\)</span> is any other antiderivative of <span class="process-math">\(f\)</span> in <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(G\,'(z)=F\,'(z)\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> Thus the function <span class="process-math">\(H(z)=G(z) -F(z)\)</span> is analytic in <span class="process-math">\(D\text{,}\)</span> and <span class="process-math">\(H\,'(z) = G\,'(z)-F\,'(z) = 0\text{,}\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> Thus, by <a href="sec_cauchy-riemann.html#Df_0_implies_f_const" class="xref" data-knowl="./knowl/xref/Df_0_implies_f_const.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.13">Theorem 3.2.13</a>, this means <span class="process-math">\(H(z)=K\text{,}\)</span> for all <span class="process-math">\(z\in D\text{,}\)</span> where <span class="process-math">\(K\)</span> is some complex constant. Therefore <span class="process-math">\(G(z)=F(z) +K\text{,}\)</span> so <span class="process-math">\(G(z_1)-G(z_0) = F(z_1)-F(z_0)\text{,}\)</span> which establishes our theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 6.4.2"><a href="#sec_integration-theorems-8" title="Copy heading and permalink for Proof 6.4.2" aria-label="Copy heading and permalink for Proof 6.4.2">🔗</a></div></article></details><div class="para" id="sec_integration-theorems-9">
+<div class="autopermalink" data-description="Proof 6.4.2"><a href="#sec_integration-theorems-8" title="Copy heading and permalink for Proof 6.4.2" aria-label="Copy heading and permalink for Proof 6.4.2">🔗</a></div>
+</article></details>
+<div class="para" id="sec_integration-theorems-9">
 <a href="sec_integration-theorems.html#DInt_Thm" class="xref" data-knowl="./knowl/xref/DInt_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.5: Definite integrals">Theorem 6.4.5</a> gives an important method for evaluating definite integrals when the integrand is an analytic function in a simply connected domain. In essence, it permits you to use all the rules of integration that you learned in calculus. When the conditions of <a href="sec_integration-theorems.html#DInt_Thm" class="xref" data-knowl="./knowl/xref/DInt_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.5: Definite integrals">Theorem 6.4.5</a> are met, applying it is generally much easier than parametrizing a contour.<div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_integration-theorems-10"><h3 class="heading">
@@ -610,7 +630,9 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 </h3>
 <div class="para" id="sec_integration-theorems-10-1-1">Show that <span class="process-math">\(\displaystyle \int_C\frac{1}{2z^{\frac{1}{2}}}\,dz = 1+i\text{,}\)</span> where <span class="process-math">\(z^{\frac{1}{2}}\)</span> is the principal branch of the square root function and <span class="process-math">\(C\)</span> is the line segment joining 4 to <span class="process-math">\(8+6i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_integration-theorems-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_integration-theorems-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_integration-theorems-10-2-1">
 <div class="para">We showed in Chapter 3 that if <span class="process-math">\(F(z)=z^{\frac{1}{2}}\text{,}\)</span> then <span class="process-math">\(F\,'(z)=\frac{1}{2z^{\frac{1}{2}}}\text{,}\)</span> where the principal branch of the square root function is used in both the formulas for <span class="process-math">\(F\)</span> and <span class="process-math">\(F\,'\text{.}\)</span> We note that <span class="process-math">\(C\)</span> is contained in the simply connected domain <span class="process-math">\(D_4(6+3i)\text{,}\)</span> which is the open disk of radius 4 centered at the midpoint of the segment <span class="process-math">\(C\text{.}\)</span> Since <span class="process-math">\(f(z)=\frac{1}{2z^{\frac{1}{2}}}\)</span> is analytic in <span class="process-math">\(D_4(6+3i)\text{,}\)</span> <a href="sec_integration-theorems.html#DInt_Thm" class="xref" data-knowl="./knowl/xref/DInt_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.5: Definite integrals">Theorem 6.4.5</a> implies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DInt_Thm.html" id="sec_integration-theorems-10-2-1-11">
@@ -621,13 +643,18 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.6.1"><a href="#sec_integration-theorems-10-2" title="Copy heading and permalink for Solution 6.4.6.1" aria-label="Copy heading and permalink for Solution 6.4.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 6.4.6"><a href="#sec_integration-theorems-10" title="Copy heading and permalink for Example 6.4.6" aria-label="Copy heading and permalink for Example 6.4.6">🔗</a></div></article><article class="example example-like" id="sec_integration-theorems-11"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 6.4.6"><a href="#sec_integration-theorems-10" title="Copy heading and permalink for Example 6.4.6" aria-label="Copy heading and permalink for Example 6.4.6">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_integration-theorems-11"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_integration-theorems-11-1-1">Show that <span class="process-math">\(\int_C\cos z\ dz=-\sin 1+i\sinh 1\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment between 1 and <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_integration-theorems-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_integration-theorems-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_integration-theorems-11-2-1">
 <div class="para">An antiderivative of <span class="process-math">\(f(z)=\cos z\)</span> is <span class="process-math">\(F(z)=\sin z\text{.}\)</span> Since <span class="process-math">\(F\)</span> is entire, <a href="sec_integration-theorems.html#DInt_Thm" class="xref" data-knowl="./knowl/xref/DInt_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.5: Definite integrals">Theorem 6.4.5</a> yields</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/DInt_Thm.html" id="sec_integration-theorems-11-2-1-5">
@@ -638,8 +665,11 @@ F(z+\Delta z) -F(z) \amp = \int_{z_0}^{z+\Delta z}f(\xi)\,d\xi -\int_{z_0}^{z}f(
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_integration-theorems-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.7.1"><a href="#sec_integration-theorems-11-2" title="Copy heading and permalink for Solution 6.4.7.1" aria-label="Copy heading and permalink for Solution 6.4.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 6.4.7"><a href="#sec_integration-theorems-11" title="Copy heading and permalink for Example 6.4.7" aria-label="Copy heading and permalink for Example 6.4.7">🔗</a></div></article><article class="example example-like" id="Int_dz_z"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 6.4.7"><a href="#sec_integration-theorems-11" title="Copy heading and permalink for Example 6.4.7" aria-label="Copy heading and permalink for Example 6.4.7">🔗</a></div>
+</article>
+<article class="example example-like" id="Int_dz_z"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="Int_dz_z-1-1">
@@ -657,12 +687,16 @@ D=\{z=re^{i\theta}:r&gt;0 \; \text{ and } \; -\pi \lt \theta \lt \pi \}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Int_dz_z-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 6.4.8"><a href="#Int_dz_z" title="Copy heading and permalink for Example 6.4.8" aria-label="Copy heading and permalink for Example 6.4.8">🔗</a></div></article><article class="example example-like" id="Int_dz_z___2Pi_I"><h3 class="heading">
+<div class="autopermalink" data-description="Example 6.4.8"><a href="#Int_dz_z" title="Copy heading and permalink for Example 6.4.8" aria-label="Copy heading and permalink for Example 6.4.8">🔗</a></div>
+</article>
+<article class="example example-like" id="Int_dz_z___2Pi_I"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="Int_dz_z___2Pi_I-1-1">Show that <span class="process-math">\(\int_{C_1^+(0)}\frac{dz}{z} = 2\pi i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Int_dz_z___2Pi_I-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="Int_dz_z___2Pi_I-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="Int_dz_z___2Pi_I-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="Int_dz_z___2Pi_I-2-1">
 <div class="para">Recall that <span class="process-math">\(C_1^+(0)\)</span> is the unit circle with positive orientation. We let <span class="process-math">\(C\)</span> be that circle with the point <span class="process-math">\(-1\)</span> omitted, as shown in <a href="sec_integration-theorems.html#fig_ch-06-32" class="xref" data-knowl="./knowl/xref/fig_ch-06-32.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.4.10">Figure 6.4.10</a>(b). The contour <span class="process-math">\(C\)</span> is contained in the simply connected domain <span class="process-math">\(D\)</span> of <a href="sec_integration-theorems.html#Int_dz_z" class="xref" data-knowl="./knowl/xref/Int_dz_z.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.4.8">Example 6.4.8</a>. We know that <span class="process-math">\(f(z)=\frac{1 }{z}\)</span> is analytic in <span class="process-math">\(D\text{,}\)</span> and has an antiderivative <span class="process-math">\(F(z)= \mathrm{Log}(z)\text{,}\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> Therefore, if we let <span class="process-math">\(z_2\)</span> approach <span class="process-math">\(-1\)</span> on <span class="process-math">\(C\)</span> through the upper half-plane and <span class="process-math">\(z_1\)</span> approach <span class="process-math">\(-1\)</span> on <span class="process-math">\(C\)</span> through the lower half-plane,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-06-32.html ./knowl/xref/Int_dz_z.html" id="Int_dz_z___2Pi_I-2-1-18">
@@ -679,101 +713,153 @@ D=\{z=re^{i\theta}:r&gt;0 \; \text{ and } \; -\pi \lt \theta \lt \pi \}\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#Int_dz_z___2Pi_I-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.9.1"><a href="#Int_dz_z___2Pi_I-2" title="Copy heading and permalink for Solution 6.4.9.1" aria-label="Copy heading and permalink for Solution 6.4.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 6.4.9"><a href="#Int_dz_z___2Pi_I" title="Copy heading and permalink for Example 6.4.9" aria-label="Copy heading and permalink for Example 6.4.9">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-06-32"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-32.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The paths <span class="process-math">\(C\)</span> from <a href="sec_integration-theorems.html#Int_dz_z" class="xref" data-knowl="./knowl/xref/Int_dz_z.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.4.8">Example 6.4.8</a> and <a href="sec_integration-theorems.html#Int_dz_z___2Pi_I" class="xref" data-knowl="./knowl/xref/Int_dz_z___2Pi_I.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.4.9">Example 6.4.9</a><div class="autopermalink" data-description="Figure 6.4.10"><a href="#fig_ch-06-32" title="Copy heading and permalink for Figure 6.4.10" aria-label="Copy heading and permalink for Figure 6.4.10">🔗</a></div></figcaption></figure><section class="exercises" id="exercises_integration-theorems"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 6.4.9"><a href="#Int_dz_z___2Pi_I" title="Copy heading and permalink for Example 6.4.9" aria-label="Copy heading and permalink for Example 6.4.9">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig_ch-06-32"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-06/ch-06-fig-32.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The paths <span class="process-math">\(C\)</span> from <a href="sec_integration-theorems.html#Int_dz_z" class="xref" data-knowl="./knowl/xref/Int_dz_z.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.4.8">Example 6.4.8</a> and <a href="sec_integration-theorems.html#Int_dz_z___2Pi_I" class="xref" data-knowl="./knowl/xref/Int_dz_z___2Pi_I.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.4.9">Example 6.4.9</a><div class="autopermalink" data-description="Figure 6.4.10"><a href="#fig_ch-06-32" title="Copy heading and permalink for Figure 6.4.10" aria-label="Copy heading and permalink for Figure 6.4.10">🔗</a></div></figcaption>
+</figure>
+<section class="exercises" id="exercises_integration-theorems">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
-<section class="introduction" id="exercises_integration-theorems-2"><div class="para" id="exercises_integration-theorems-2-1">For Exercises 1–14, find the value of the definite integral using <a href="sec_integration-theorems.html#Antideriv_Thm" class="xref" data-knowl="./knowl/xref/Antideriv_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1: Indefinite integrals, or antiderivatives">Theorem 6.4.1</a> and explain why you are justified in using it.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_integration-theorems-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section><article class="exercise exercise-like" id="x6_4_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<section class="introduction" id="exercises_integration-theorems-2">
+<div class="para" id="exercises_integration-theorems-2-1">For Exercises 1–14, find the value of the definite integral using <a href="sec_integration-theorems.html#Antideriv_Thm" class="xref" data-knowl="./knowl/xref/Antideriv_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.1: Indefinite integrals, or antiderivatives">Theorem 6.4.1</a> and explain why you are justified in using it.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_integration-theorems-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="exercise exercise-like" id="x6_4_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_1-1-1">
 <span class="process-math">\(\int_Cz^2\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(1+i\)</span> to <span class="process-math">\(2+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_1-2-1">
 <span class="process-math">\(\frac{4}{3}+3i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.1.1"><a href="#x6_4_1-2" title="Copy heading and permalink for Solution 6.4.1.1" aria-label="Copy heading and permalink for Solution 6.4.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.1"><a href="#x6_4_1" title="Copy heading and permalink for Exercise 6.4.1" aria-label="Copy heading and permalink for Exercise 6.4.1">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.1"><a href="#x6_4_1" title="Copy heading and permalink for Exercise 6.4.1" aria-label="Copy heading and permalink for Exercise 6.4.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_2-1-1">
 <span class="process-math">\(\int_C \cos z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(-i\)</span> to <span class="process-math">\(1+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.2"><a href="#x6_4_2" title="Copy heading and permalink for Exercise 6.4.2" aria-label="Copy heading and permalink for Exercise 6.4.2">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.2"><a href="#x6_4_2" title="Copy heading and permalink for Exercise 6.4.2" aria-label="Copy heading and permalink for Exercise 6.4.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_3-1-1">
 <span class="process-math">\(\int_C \exp z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(2\)</span> to <span class="process-math">\(i\frac{\pi}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_3-2-1">
 <span class="process-math">\(-e^2+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.3.1"><a href="#x6_4_3-2" title="Copy heading and permalink for Solution 6.4.3.1" aria-label="Copy heading and permalink for Solution 6.4.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.3"><a href="#x6_4_3" title="Copy heading and permalink for Exercise 6.4.3" aria-label="Copy heading and permalink for Exercise 6.4.3">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.3"><a href="#x6_4_3" title="Copy heading and permalink for Exercise 6.4.3" aria-label="Copy heading and permalink for Exercise 6.4.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_4-1-1">
 <span class="process-math">\(\int_C z\exp z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(-1-i\frac{\pi}{2}\)</span> to <span class="process-math">\(2+i\pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.4"><a href="#x6_4_4" title="Copy heading and permalink for Exercise 6.4.4" aria-label="Copy heading and permalink for Exercise 6.4.4">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.4"><a href="#x6_4_4" title="Copy heading and permalink for Exercise 6.4.4" aria-label="Copy heading and permalink for Exercise 6.4.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_5-1-1">
 <span class="process-math">\(\int_C \frac{1+z}{z}\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(1\)</span> to <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_5-2-1">
 <span class="process-math">\(-1+i\frac{\pi +2}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.5.1"><a href="#x6_4_5-2" title="Copy heading and permalink for Solution 6.4.5.1" aria-label="Copy heading and permalink for Solution 6.4.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.5"><a href="#x6_4_5" title="Copy heading and permalink for Exercise 6.4.5" aria-label="Copy heading and permalink for Exercise 6.4.5">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.5"><a href="#x6_4_5" title="Copy heading and permalink for Exercise 6.4.5" aria-label="Copy heading and permalink for Exercise 6.4.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_6-1-1">
 <span class="process-math">\(\int_C \sin \frac{z}{2}\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(0\)</span> to <span class="process-math">\(\pi -2i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.6"><a href="#x6_4_6" title="Copy heading and permalink for Exercise 6.4.6" aria-label="Copy heading and permalink for Exercise 6.4.6">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.6"><a href="#x6_4_6" title="Copy heading and permalink for Exercise 6.4.6" aria-label="Copy heading and permalink for Exercise 6.4.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_7-1-1">
 <span class="process-math">\(\int_C (z^2+z^{-2}) dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(i\)</span> to <span class="process-math">\(1+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_7-2-1">
 <span class="process-math">\(-\frac{7}{6}+i\frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.7.1"><a href="#x6_4_7-2" title="Copy heading and permalink for Solution 6.4.7.1" aria-label="Copy heading and permalink for Solution 6.4.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.7"><a href="#x6_4_7" title="Copy heading and permalink for Exercise 6.4.7" aria-label="Copy heading and permalink for Exercise 6.4.7">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.7"><a href="#x6_4_7" title="Copy heading and permalink for Exercise 6.4.7" aria-label="Copy heading and permalink for Exercise 6.4.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_8-1-1">
 <span class="process-math">\(\int_C z\exp (z^2) dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(1-2i\)</span> to <span class="process-math">\(1+2i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.8"><a href="#x6_4_8" title="Copy heading and permalink for Exercise 6.4.8" aria-label="Copy heading and permalink for Exercise 6.4.8">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.8"><a href="#x6_4_8" title="Copy heading and permalink for Exercise 6.4.8" aria-label="Copy heading and permalink for Exercise 6.4.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_9-1-1">
 <span class="process-math">\(\int_Cz\cos z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(0\)</span> to <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_9-2-1">
 <span class="process-math">\(-1-\sinh 1+\cosh 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.9.1"><a href="#x6_4_9-2" title="Copy heading and permalink for Solution 6.4.9.1" aria-label="Copy heading and permalink for Solution 6.4.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.9"><a href="#x6_4_9" title="Copy heading and permalink for Exercise 6.4.9" aria-label="Copy heading and permalink for Exercise 6.4.9">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.9"><a href="#x6_4_9" title="Copy heading and permalink for Exercise 6.4.9" aria-label="Copy heading and permalink for Exercise 6.4.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_10-1-1">
 <span class="process-math">\(\int_C\sin ^2z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(0\)</span> to <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.10"><a href="#x6_4_10" title="Copy heading and permalink for Exercise 6.4.10" aria-label="Copy heading and permalink for Exercise 6.4.10">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.10"><a href="#x6_4_10" title="Copy heading and permalink for Exercise 6.4.10" aria-label="Copy heading and permalink for Exercise 6.4.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_11-1-1">
 <span class="process-math">\(\int_C\)</span>Log <span class="process-math">\(z\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(1\)</span> to <span class="process-math">\(1+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_11-2-1">
 <span class="process-math">\(\ln \sqrt{2}-\frac{\pi}{4}+i(\ln \sqrt{2}+\frac{\pi}{4}-1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.11.1"><a href="#x6_4_11-2" title="Copy heading and permalink for Solution 6.4.11.1" aria-label="Copy heading and permalink for Solution 6.4.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.11"><a href="#x6_4_11" title="Copy heading and permalink for Exercise 6.4.11" aria-label="Copy heading and permalink for Exercise 6.4.11">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.11"><a href="#x6_4_11" title="Copy heading and permalink for Exercise 6.4.11" aria-label="Copy heading and permalink for Exercise 6.4.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_12-1-1">
 <span class="process-math">\(\int_C\frac{dz}{z^2-z}\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(2\)</span> to <span class="process-math">\(2+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.12"><a href="#x6_4_12" title="Copy heading and permalink for Exercise 6.4.12" aria-label="Copy heading and permalink for Exercise 6.4.12">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.12"><a href="#x6_4_12" title="Copy heading and permalink for Exercise 6.4.12" aria-label="Copy heading and permalink for Exercise 6.4.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_13-1-1">
 <span class="process-math">\(\int_C\frac{2z-1}{z^2-z}\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(2\)</span> to <span class="process-math">\(2+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="x6_4_13-2-1">
 <div class="displaymath process-math" id="x6_4_13-2-1-1">
 \begin{align*}
@@ -784,38 +870,60 @@ D=\{z=re^{i\theta}:r&gt;0 \; \text{ and } \; -\pi \lt \theta \lt \pi \}\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#x6_4_13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.13.1"><a href="#x6_4_13-2" title="Copy heading and permalink for Solution 6.4.13.1" aria-label="Copy heading and permalink for Solution 6.4.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.13"><a href="#x6_4_13" title="Copy heading and permalink for Exercise 6.4.13" aria-label="Copy heading and permalink for Exercise 6.4.13">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.13"><a href="#x6_4_13" title="Copy heading and permalink for Exercise 6.4.13" aria-label="Copy heading and permalink for Exercise 6.4.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_14-1-1">
 <span class="process-math">\(\int_C\frac{z-2}{z^2-z}\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(2\)</span> to <span class="process-math">\(2+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.14"><a href="#x6_4_14" title="Copy heading and permalink for Exercise 6.4.14" aria-label="Copy heading and permalink for Exercise 6.4.14">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.14"><a href="#x6_4_14" title="Copy heading and permalink for Exercise 6.4.14" aria-label="Copy heading and permalink for Exercise 6.4.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_15-1-1">Show that <span class="process-math">\(\int_C1\ dz=z_2-z_1\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(z_1\)</span> to <span class="process-math">\(z_2\text{,}\)</span> by parametrizing <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_15-2-1">Parametrize <span class="process-math">\(C\)</span> with <span class="process-math">\(z(t) = z_1 + ( z_2-z_1)t, \, 0 \le t \le 1\text{.}\)</span> Then we see that <span class="process-math">\(\int_{C}1\,dz = \int_0^{1}z\,'(t)\,dt = \int_0^{1}(z_2-z_1)\,dt = (z_2-z_1)t\Big|_{t=0}^{t=1} = z_2-z_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.15.1"><a href="#x6_4_15-2" title="Copy heading and permalink for Solution 6.4.15.1" aria-label="Copy heading and permalink for Solution 6.4.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.15"><a href="#x6_4_15" title="Copy heading and permalink for Exercise 6.4.15" aria-label="Copy heading and permalink for Exercise 6.4.15">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.15"><a href="#x6_4_15" title="Copy heading and permalink for Exercise 6.4.15" aria-label="Copy heading and permalink for Exercise 6.4.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_16-1-1">Let <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> be points in the right half-plane and let <span class="process-math">\(C\)</span> be the line segment joining them. Show that <span class="process-math">\(\int_C \frac{1}{z^2}\,dz = \frac{1}{z_1}-\frac{1}{z_2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.16"><a href="#x6_4_16" title="Copy heading and permalink for Exercise 6.4.16" aria-label="Copy heading and permalink for Exercise 6.4.16">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x6_4_17-1"><div class="para" id="x6_4_17-1-1">Let <span class="process-math">\(z^{\frac{1}{2}}\)</span> be the principal branch of the square root function.<div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
-<article class="task exercise-like" id="x6_4_17-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
-<div class="para" id="x6_4_17-2-1-1">Evaluate <span class="process-math">\(\int_C\frac{1}{2z^{\frac{1}{2}}}\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(9\)</span> to <span class="process-math">\(-2+ (2\sqrt{3})i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 6.4.16"><a href="#x6_4_16" title="Copy heading and permalink for Exercise 6.4.16" aria-label="Copy heading and permalink for Exercise 6.4.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x6_4_17-1">
+<div class="para" id="x6_4_17-1-1">Let <span class="process-math">\(z^{\frac{1}{2}}\)</span> be the principal branch of the square root function.<div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_17-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+</div>
+<article class="task exercise-like" id="x6_4_17-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="x6_4_17-2-1-1">Evaluate <span class="process-math">\(\int_C\frac{1}{2z^{\frac{1}{2}}}\,dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment from <span class="process-math">\(9\)</span> to <span class="process-math">\(-2+ 2\sqrt{3}\,i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="x6_4_17-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_17-2-2-1">
-<span class="process-math">\(-2+i\sqrt{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(-2+\sqrt{3}\,i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.17.a.1"><a href="#x6_4_17-2-2" title="Copy heading and permalink for Solution 6.4.17.a.1" aria-label="Copy heading and permalink for Solution 6.4.17.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 6.4.17.a"><a href="#x6_4_17-2" title="Copy heading and permalink for Task 6.4.17.a" aria-label="Copy heading and permalink for Task 6.4.17.a">🔗</a></div></article><article class="task exercise-like" id="x6_4_17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 6.4.17.a"><a href="#x6_4_17-2" title="Copy heading and permalink for Task 6.4.17.a" aria-label="Copy heading and permalink for Task 6.4.17.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x6_4_17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x6_4_17-3-1-1">Evaluate <span class="process-math">\(\int_Cz^{\frac{1}{2}}\ dz\text{,}\)</span> where <span class="process-math">\(C\)</span> is the right half of the circle <span class="process-math">\(C_2^+(0)\)</span> joining <span class="process-math">\(-2i\)</span> to <span class="process-math">\(2i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_17-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 6.4.17.b"><a href="#x6_4_17-3" title="Copy heading and permalink for Task 6.4.17.b" aria-label="Copy heading and permalink for Task 6.4.17.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 6.4.17"><a href="#x6_4_17" title="Copy heading and permalink for Exercise 6.4.17" aria-label="Copy heading and permalink for Exercise 6.4.17">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 6.4.17.b"><a href="#x6_4_17-3" title="Copy heading and permalink for Task 6.4.17.b" aria-label="Copy heading and permalink for Task 6.4.17.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 6.4.17"><a href="#x6_4_17" title="Copy heading and permalink for Exercise 6.4.17" aria-label="Copy heading and permalink for Exercise 6.4.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x6_4_18-1-1">
 <div class="para">Using partial fraction decomposition, show that if <span class="process-math">\(z\)</span> lies in the right half-plane and <span class="process-math">\(C\)</span> is the line segment joining <span class="process-math">\(0\)</span> to <span class="process-math">\(z\text{,}\)</span> then</div>
 <div class="displaymath process-math" id="x6_4_18-1-1-5">
@@ -826,7 +934,9 @@ D=\{z=re^{i\theta}:r&gt;0 \; \text{ and } \; -\pi \lt \theta \lt \pi \}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x6_4_18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.18"><a href="#x6_4_18" title="Copy heading and permalink for Exercise 6.4.18" aria-label="Copy heading and permalink for Exercise 6.4.18">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.18"><a href="#x6_4_18" title="Copy heading and permalink for Exercise 6.4.18" aria-label="Copy heading and permalink for Exercise 6.4.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x6_4_19-1-1">
 <div class="para">Let <span class="process-math">\(f\,'\)</span> and <span class="process-math">\(g\,'\)</span> be analytic for all <span class="process-math">\(z\text{,}\)</span> and let <span class="process-math">\(C\)</span> be any contour joining the points <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span> Show that</div>
 <div class="displaymath process-math" id="x6_4_19-1-1-7">
@@ -836,21 +946,34 @@ D=\{z=re^{i\theta}:r&gt;0 \; \text{ and } \; -\pi \lt \theta \lt \pi \}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x6_4_19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x6_4_19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x6_4_19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x6_4_19-2-1">We know that an antiderivative of the function <span class="process-math">\(fg\,' + gf\,'\)</span> is <span class="process-math">\(fg\)</span> by the product rule. Since <span class="process-math">\(fg\,'\)</span> and <span class="process-math">\(gf\,'\)</span> are analytic (explain why!), <a href="sec_integration-theorems.html#DInt_Thm" class="xref" data-knowl="./knowl/xref/DInt_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.4.5: Definite integrals">Theorem 6.4.5</a> gives us <span class="process-math">\(\int_{C}\left[ f(z) g\,'( z) +g(z) f\,'(z) \right]dz = f(z)g(z)\Big|_{z=z_1}^{z=z_2}\text{.}\)</span> Explain why the conclusion now follows.<div class="autopermalink" data-description="Paragraph"><a href="#x6_4_19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 6.4.19.1"><a href="#x6_4_19-2" title="Copy heading and permalink for Solution 6.4.19.1" aria-label="Copy heading and permalink for Solution 6.4.19.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 6.4.19"><a href="#x6_4_19" title="Copy heading and permalink for Exercise 6.4.19" aria-label="Copy heading and permalink for Exercise 6.4.19">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.4.19"><a href="#x6_4_19" title="Copy heading and permalink for Exercise 6.4.19" aria-label="Copy heading and permalink for Exercise 6.4.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_20-1-1">Compare the various methods for evaluating contour integrals. What are the limitations of each method?<div class="autopermalink" data-description="Paragraph"><a href="#x6_4_20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.20"><a href="#x6_4_20" title="Copy heading and permalink for Exercise 6.4.20" aria-label="Copy heading and permalink for Exercise 6.4.20">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.20"><a href="#x6_4_20" title="Copy heading and permalink for Exercise 6.4.20" aria-label="Copy heading and permalink for Exercise 6.4.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_21-1-1">Explain how the fundamental theorem of calculus studied in complex analysis and the fundamental theorem of calculus studied in calculus are different. How are they similar?<div class="autopermalink" data-description="Paragraph"><a href="#x6_4_21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.21"><a href="#x6_4_21" title="Copy heading and permalink for Exercise 6.4.21" aria-label="Copy heading and permalink for Exercise 6.4.21">🔗</a></div></article><article class="exercise exercise-like" id="x6_4_22"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 6.4.21"><a href="#x6_4_21" title="Copy heading and permalink for Exercise 6.4.21" aria-label="Copy heading and permalink for Exercise 6.4.21">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x6_4_22"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x6_4_22-1-1">Show that <span class="process-math">\(\int_Cz^{i}dz=(i-1) \frac{1+e^{-\pi}}{2}\text{,}\)</span> where <span class="process-math">\(C\)</span> is the upper half of <span class="process-math">\(C_1^+(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x6_4_22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 6.4.22"><a href="#x6_4_22" title="Copy heading and permalink for Exercise 6.4.22" aria-label="Copy heading and permalink for Exercise 6.4.22">🔗</a></div></article><div class="autopermalink" data-description="Exercises 6.4: Exercises"><a href="#exercises_integration-theorems" title="Copy heading and permalink for Exercises 6.4: Exercises" aria-label="Copy heading and permalink for Exercises 6.4: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 6.4: The Fundamental Theorems of Integration"><a href="#sec_integration-theorems" title="Copy heading and permalink for Section 6.4: The Fundamental Theorems of Integration" aria-label="Copy heading and permalink for Section 6.4: The Fundamental Theorems of Integration">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 6.4.22"><a href="#x6_4_22" title="Copy heading and permalink for Exercise 6.4.22" aria-label="Copy heading and permalink for Exercise 6.4.22">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 6.4: Exercises"><a href="#exercises_integration-theorems" title="Copy heading and permalink for Exercises 6.4: Exercises" aria-label="Copy heading and permalink for Exercises 6.4: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 6.4: The Fundamental Theorems of Integration"><a href="#sec_integration-theorems" title="Copy heading and permalink for Section 6.4: The Fundamental Theorems of Integration" aria-label="Copy heading and permalink for Section 6.4: The Fundamental Theorems of Integration">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_cauchy-goursat.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_integral-representations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

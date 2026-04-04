@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,17 +501,22 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_conformal-trig"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_conformal-trig">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mapping by Trigonometric Functions</span>
 </h2>
-<section class="introduction" id="sec_conformal-trig-2"><div class="para" id="sec_conformal-trig-2-1">The trigonometric functions can be expressed with compositions that involve the exponential function followed by a bilinear function. We can find images of certain regions by following the shapes of successive images in the composite mapping.<div class="autopermalink" data-description="Paragraph"><a href="#sec_conformal-trig-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sec_conformal-trig-2">
+<div class="para" id="sec_conformal-trig-2-1">The trigonometric functions can be expressed with compositions that involve the exponential function followed by a bilinear function. We can find images of certain regions by following the shapes of successive images in the composite mapping.<div class="autopermalink" data-description="Paragraph"><a href="#sec_conformal-trig-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_conformal-trig-2-2"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_conformal-trig-2-2-1-1">Show that the transformation <span class="process-math">\(w = \tan z\)</span> is a one-to-one conformal mapping of the vertical strip <span class="process-math">\(|x|\lt \frac{\pi}{4}\)</span> onto the unit disk <span class="process-math">\(|w| \lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_conformal-trig-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_conformal-trig-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_conformal-trig-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_conformal-trig-2-2-2-1">
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-09-16.html" id="sec_conformal-trig-2-2-2-1-1">
 \begin{equation*}
@@ -524,19 +529,26 @@ w=\tan z = \frac{1}{i}\frac{e^{iz} - e^{-iz}}{e^{iz}+e^{-iz}} = \frac{-ie^{i2z}+
 w = \frac{-iZ+i}{Z+1}, \quad \text{and} \quad Z = e^{i2z}\text{.}
 \end{equation*}
 </div>
-<div class="para">The function <span class="process-math">\(Z=\exp(i2z)\)</span> maps the vertical strip <span class="process-math">\(|x| \lt  \frac{\pi}{4}\)</span> one-to-one and onto the right half-plane <span class="process-math">\(\mathrm{Re}(Z) &gt;0\text{.}\)</span> Then the bilinear transformation given by <span class="process-math">\(w = \frac{-iZ+i}{Z+1}\)</span> maps the half-plane one-to-one and onto the disk, as shown in <a href="sec_conformal-trig.html#fig_ch-09-16" class="xref" data-knowl="./knowl/xref/fig_ch-09-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.2">Figure 9.4.2</a>. <figure class="figure figure-like" id="fig_ch-09-16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/figs/ch-09/ch-09-fig-16.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The composite transformation <span class="process-math">\(w=\tan z\)</span><div class="autopermalink" data-description="Figure 9.4.2"><a href="#fig_ch-09-16" title="Copy heading and permalink for Figure 9.4.2" aria-label="Copy heading and permalink for Figure 9.4.2">🔗</a></div></figcaption></figure>
+<div class="para">The function <span class="process-math">\(Z=\exp(i2z)\)</span> maps the vertical strip <span class="process-math">\(|x| \lt  \frac{\pi}{4}\)</span> one-to-one and onto the right half-plane <span class="process-math">\(\mathrm{Re}(Z) &gt;0\text{.}\)</span> Then the bilinear transformation given by <span class="process-math">\(w = \frac{-iZ+i}{Z+1}\)</span> maps the half-plane one-to-one and onto the disk, as shown in <a href="sec_conformal-trig.html#fig_ch-09-16" class="xref" data-knowl="./knowl/xref/fig_ch-09-16.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.2">Figure 9.4.2</a>. 
+<figure class="figure figure-like" id="fig_ch-09-16"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/figs/ch-09/ch-09-fig-16.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The composite transformation <span class="process-math">\(w=\tan z\)</span><div class="autopermalink" data-description="Figure 9.4.2"><a href="#fig_ch-09-16" title="Copy heading and permalink for Figure 9.4.2" aria-label="Copy heading and permalink for Figure 9.4.2">🔗</a></div></figcaption>
+</figure>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_conformal-trig-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.1.1"><a href="#sec_conformal-trig-2-2-2" title="Copy heading and permalink for Solution 9.4.1.1" aria-label="Copy heading and permalink for Solution 9.4.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 9.4.1"><a href="#sec_conformal-trig-2-2" title="Copy heading and permalink for Example 9.4.1" aria-label="Copy heading and permalink for Example 9.4.1">🔗</a></div></article><article class="example example-like" id="ex_conformal-sine"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 9.4.1"><a href="#sec_conformal-trig-2-2" title="Copy heading and permalink for Example 9.4.1" aria-label="Copy heading and permalink for Example 9.4.1">🔗</a></div>
+</article>
+<article class="example example-like" id="ex_conformal-sine"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="ex_conformal-sine-1-1">Show that the transformation <span class="process-math">\(w=f(z) =\sin z\)</span> is a one-to-one conformal mapping of the vertical strip <span class="process-math">\(|x| \lt \frac{\pi}{2}\)</span> onto the <span class="process-math">\(w\)</span> plane slit along the rays <span class="process-math">\(u \le -1, \; v=0\text{,}\)</span> and <span class="process-math">\(u \ge 1, \; v=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_conformal-sine-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex_conformal-sine-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex_conformal-sine-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_conformal-sine-2-1">
 <div class="para">Because <span class="process-math">\(f\,'(z) = \cos z\ne 0\)</span> for values of <span class="process-math">\(z\)</span> satisfying the inequality <span class="process-math">\(-\frac{\pi}{2} \lt \mathrm{Re}(z) \lt  \frac{\pi}{2}\text{,}\)</span> it follows that <span class="process-math">\(w = \sin z\)</span> is a conformal mapping. Using <a href="sec_trig-hyperbolics.html#sec_trig-hyperbolics-11-4" class="xref" data-knowl="./knowl/xref/sinz_identity_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.4">Equation (5.4.4)</a>, we write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sinz_identity_2.html" id="ex_conformal-sine-2-1-6">
@@ -573,7 +585,9 @@ u = \sin a\cosh y, \quad \text{and} \quad v = \cos a\sinh y\text{,}
 <div class="para" id="ex_conformal-sine-2-4">The curve given by <a href="sec_conformal-trig.html#hyperbola" class="xref" data-knowl="./knowl/xref/hyperbola.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.1">Equation (9.4.1)</a> is identified as a hyperbola in the <span class="process-math">\(uv\)</span> plane that has foci at the points <span class="process-math">\((\pm1,0)\text{.}\)</span> Therefore the vertical line <span class="process-math">\(x=a\)</span> is mapped one-to-one onto the branch of the hyperbola given by <a href="sec_conformal-trig.html#hyperbola" class="xref" data-knowl="./knowl/xref/hyperbola.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.1">Equation (9.4.1)</a> that passes through the point <span class="process-math">\((\sin a,0)\text{.}\)</span> If <span class="process-math">\(0\lt a\lt \frac{\pi}{2}\text{,}\)</span> then it is the right branch; if <span class="process-math">\(-\frac{\pi}{2}\lt a\lt 0\text{,}\)</span> it is the left branch. The image of the <span class="process-math">\(y\)</span>-axis, which is the line <span class="process-math">\(x=0\text{,}\)</span> is the <span class="process-math">\(v\)</span>-axis. The images of several vertical lines are shown in <a href="sec_conformal-trig.html#fig_ch-09-17" class="xref" data-knowl="./knowl/xref/fig_ch-09-17.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.4">Figure 9.4.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex_conformal-sine-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-09-17"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-09/ch-09-fig-17.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation w = <span class="process-math">\(\sin z\)</span><div class="autopermalink" data-description="Figure 9.4.4"><a href="#fig_ch-09-17" title="Copy heading and permalink for Figure 9.4.4" aria-label="Copy heading and permalink for Figure 9.4.4">🔗</a></div></figcaption></figure><div class="para logical" id="ex_conformal-sine-2-6">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The transformation w = <span class="process-math">\(\sin z\)</span><div class="autopermalink" data-description="Figure 9.4.4"><a href="#fig_ch-09-17" title="Copy heading and permalink for Figure 9.4.4" aria-label="Copy heading and permalink for Figure 9.4.4">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="ex_conformal-sine-2-6">
 <div class="para">The image of the horizontal segment <span class="process-math">\(-\frac{\pi}{2} \lt x \lt \frac{\pi}{2}, \; y=b\)</span> is the curve in the <span class="process-math">\(w\)</span> plane given by the parametric equations</div>
 <div class="displaymath process-math" id="ex_conformal-sine-2-6-3">
 \begin{equation*}
@@ -600,8 +614,12 @@ u = \sin x\cosh b, \quad \text{and} \quad  v=\cos x\sinh b
 <div class="para" id="ex_conformal-sine-2-8">The curve given by <a href="sec_conformal-trig.html#ellipse" class="xref" data-knowl="./knowl/xref/ellipse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.2">Equation (9.4.2)</a> is identified as an ellipse in the <span class="process-math">\(uv\)</span> plane that passes through the points <span class="process-math">\((\pm\cosh b,0)\)</span> and <span class="process-math">\((0,\pm\sinh b)\)</span> and has foci at the points <span class="process-math">\((\pm1,0)\text{.}\)</span> Therefore, if <span class="process-math">\(b&gt;0\text{,}\)</span> then <span class="process-math">\(v = \cos x\sinh b &gt; 0\text{,}\)</span> and the image of the horizontal segment is the portion of the ellipse given by <a href="sec_conformal-trig.html#ellipse" class="xref" data-knowl="./knowl/xref/ellipse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.2">Equation (9.4.2)</a> that lies in the upper half-plane <span class="process-math">\(\mathrm{Im}(w) &gt; 0\text{.}\)</span> If <span class="process-math">\(b\lt 0\text{,}\)</span> then it is the portion that lies in the lower half-plane. <a href="sec_conformal-trig.html#fig_ch-09-17" class="xref" data-knowl="./knowl/xref/fig_ch-09-17.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.4">Figure 9.4.4</a> also shows the images of several horizontal segments.<div class="autopermalink" data-description="Paragraph"><a href="#ex_conformal-sine-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.3.1"><a href="#ex_conformal-sine-2" title="Copy heading and permalink for Solution 9.4.3.1" aria-label="Copy heading and permalink for Solution 9.4.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 9.4.3"><a href="#ex_conformal-sine" title="Copy heading and permalink for Example 9.4.3" aria-label="Copy heading and permalink for Example 9.4.3">🔗</a></div></article></section><section class="subsection" id="subsec_arcsine"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 9.4.3"><a href="#ex_conformal-sine" title="Copy heading and permalink for Example 9.4.3" aria-label="Copy heading and permalink for Example 9.4.3">🔗</a></div>
+</article></section>
+<section class="subsection" id="subsec_arcsine">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Complex Arcsine Function</span>
 </h3>
 <div class="para logical" id="subsec_arcsine-2">
@@ -690,12 +708,16 @@ u(x,y) = \mathrm{Arcsin}\left[\frac{\sqrt{(x+1)^2+y^2} - \sqrt{(x-1)^2+y^2}}{2}\
 <div class="para" id="subsec_arcsine-10">Thus, the mapping <span class="process-math">\(w=\mathrm{Arcsin}\,z\)</span> is a one-to-one conformal mapping of the <span class="process-math">\(z\)</span> plane cut along the rays <span class="process-math">\(x \le-1, \; y=0\text{,}\)</span> and <span class="process-math">\(x \ge 1, \; y=0\text{,}\)</span> onto the vertical strip <span class="process-math">\(-\frac{\pi}{2} \le u \le \frac{\pi}{2}\)</span> in the <span class="process-math">\(w\)</span>-plane, which can be construed from <a href="sec_conformal-trig.html#fig_ch-09-17" class="xref" data-knowl="./knowl/xref/fig_ch-09-17.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.4">Figure 9.4.4</a> if we interchange the roles of the <span class="process-math">\(z\)</span> and <span class="process-math">\(w\)</span> planes. The image of the square <span class="process-math">\(0 \le x \le 4, \; 0 \le y \le 4\text{,}\)</span> under <span class="process-math">\(w=\mathrm{Arcsin}\,z\text{,}\)</span> is shown in <a href="sec_conformal-trig.html#fig_ch-09-18" class="xref" data-knowl="./knowl/xref/fig_ch-09-18.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 9.4.5">Figure 9.4.5</a>. We obtained it by plotting the two families of curves <span class="process-math">\(\{(u(c,t), \; v(c,t)) : 0 \le t \le 4\}\)</span> and <span class="process-math">\(\{(u(t,c), \; v(t,c)) : 0 \le t \le 4\}\text{,}\)</span> where <span class="process-math">\(c=\frac{k}{5}\text{,}\)</span> <span class="process-math">\(k=0,1,\ldots,20\text{.}\)</span> The formulas in <a href="sec_conformal-trig.html#rearcsin" class="xref" data-knowl="./knowl/xref/rearcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.4">Equation (9.4.4)</a> and <a href="sec_conformal-trig.html#imarcsin" class="xref" data-knowl="./knowl/xref/imarcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.5">(9.4.5)</a> are also convenient for evaluating <span class="process-math">\(\mathrm{Arcsin}(z)\text{,}\)</span> as shown in <a href="sec_conformal-trig.html#ex_pv_arcsin_1_i_" class="xref" data-knowl="./knowl/xref/ex_pv_arcsin_1_i_.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 9.4.6">Example 9.4.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_arcsine-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-09-18"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/figs/ch-09/ch-09-fig-18.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The mapping <span class="process-math">\(w= \mathrm{Arcsin}\ z\)</span><div class="autopermalink" data-description="Figure 9.4.5"><a href="#fig_ch-09-18" title="Copy heading and permalink for Figure 9.4.5" aria-label="Copy heading and permalink for Figure 9.4.5">🔗</a></div></figcaption></figure><article class="example example-like" id="ex_pv_arcsin_1_i_"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The mapping <span class="process-math">\(w= \mathrm{Arcsin}\ z\)</span><div class="autopermalink" data-description="Figure 9.4.5"><a href="#fig_ch-09-18" title="Copy heading and permalink for Figure 9.4.5" aria-label="Copy heading and permalink for Figure 9.4.5">🔗</a></div></figcaption>
+</figure>
+<article class="example example-like" id="ex_pv_arcsin_1_i_"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
 <div class="para" id="ex_pv_arcsin_1_i_-1-1">Find the principal value <span class="process-math">\(\mathrm{Arcsin}(1+i)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_pv_arcsin_1_i_-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex_pv_arcsin_1_i_-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex_pv_arcsin_1_i_-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_pv_arcsin_1_i_-2-1">
 <div class="para">Using <a href="sec_conformal-trig.html#rearcsin" class="xref" data-knowl="./knowl/xref/rearcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.4">Formulas (9.4.4)</a> and <a href="sec_conformal-trig.html#imarcsin" class="xref" data-knowl="./knowl/xref/imarcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.5">(9.4.5)</a>, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rearcsin.html ./knowl/xref/imarcsin.html" id="ex_pv_arcsin_1_i_-2-1-3">
@@ -717,93 +739,145 @@ v(1,1) \amp  =\mathrm{Arccosh}\left(\frac{\sqrt{5}+1}{2}\right) \approx 1.061275
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_pv_arcsin_1_i_-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.6.1"><a href="#ex_pv_arcsin_1_i_-2" title="Copy heading and permalink for Solution 9.4.6.1" aria-label="Copy heading and permalink for Solution 9.4.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 9.4.6"><a href="#ex_pv_arcsin_1_i_" title="Copy heading and permalink for Example 9.4.6" aria-label="Copy heading and permalink for Example 9.4.6">🔗</a></div></article><div class="para" id="subsec_arcsine-13">Is there any reason to assume that there exists a conformal mapping for some specified domain <span class="process-math">\(D\)</span> onto another domain <span class="process-math">\(G\text{?}\)</span> Our final theorem concerning the existence of conformal mappings is attributed to Riemann and is presented in Lars V. Ahlfors, <em class="emphasis">Complex Analysis</em> (New York: McGraw-Hill) <a href="ch_complex-integration.html" class="internal" title="Chapter 6: Complex Integration">Chapter 6</a>, 1966.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_arcsine-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 9.4.6"><a href="#ex_pv_arcsin_1_i_" title="Copy heading and permalink for Example 9.4.6" aria-label="Copy heading and permalink for Example 9.4.6">🔗</a></div>
+</article>
+<div class="para" id="subsec_arcsine-13">Is there any reason to assume that there exists a conformal mapping for some specified domain <span class="process-math">\(D\)</span> onto another domain <span class="process-math">\(G\text{?}\)</span> Our final theorem concerning the existence of conformal mappings is attributed to Riemann and is presented in Lars V. Ahlfors, <em class="emphasis">Complex Analysis</em> (New York: McGraw-Hill) <a href="ch_complex-integration.html" class="internal" title="Chapter 6: Complex Integration">Chapter 6</a>, 1966.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_arcsine-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm_riemann-mapping"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Riemann mapping theorem.</span>
 </h4>
 <div class="para" id="thm_riemann-mapping-2-1">If <span class="process-math">\(D\)</span> is any simply connected domain in the plane (other than the entire plane itself), then there exists a one-to-one conformal mapping <span class="process-math">\(w = f(z)\)</span> that maps <span class="process-math">\(D\)</span> onto the unit disk <span class="process-math">\(|w|\lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm_riemann-mapping-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 9.4.7: Riemann mapping theorem"><a href="#thm_riemann-mapping" title="Copy heading and permalink for Theorem 9.4.7: Riemann mapping theorem" aria-label="Copy heading and permalink for Theorem 9.4.7: Riemann mapping theorem">🔗</a></div></article><div class="autopermalink" data-description="Subsection 9.4.1: The Complex Arcsine Function"><a href="#subsec_arcsine" title="Copy heading and permalink for Subsection 9.4.1: The Complex Arcsine Function" aria-label="Copy heading and permalink for Subsection 9.4.1: The Complex Arcsine Function">🔗</a></div></section><section class="exercises" id="exercises_conformal-trig"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Theorem 9.4.7: Riemann mapping theorem"><a href="#thm_riemann-mapping" title="Copy heading and permalink for Theorem 9.4.7: Riemann mapping theorem" aria-label="Copy heading and permalink for Theorem 9.4.7: Riemann mapping theorem">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 9.4.1: The Complex Arcsine Function"><a href="#subsec_arcsine" title="Copy heading and permalink for Subsection 9.4.1: The Complex Arcsine Function" aria-label="Copy heading and permalink for Subsection 9.4.1: The Complex Arcsine Function">🔗</a></div>
+</section>
+<section class="exercises" id="exercises_conformal-trig">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises_conformal-trig-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-2-1-1">Find the image of the semi-infinite strip <span class="process-math">\(-\frac{\pi}{4}\lt x\lt 0, \; y&gt;0\text{,}\)</span> under the mapping <span class="process-math">\(w=\tan z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-2-2-1">The portion of the disk <span class="process-math">\(|w|\lt 1\)</span> that lies in the second quadrant <span class="process-math">\(\mathrm{Re}(w)\lt 0, \, \mathrm{Im}(w)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.1.1"><a href="#exercises_conformal-trig-2-2" title="Copy heading and permalink for Solution 9.4.2.1.1" aria-label="Copy heading and permalink for Solution 9.4.2.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.1"><a href="#exercises_conformal-trig-2" title="Copy heading and permalink for Exercise 9.4.2.1" aria-label="Copy heading and permalink for Exercise 9.4.2.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.1"><a href="#exercises_conformal-trig-2" title="Copy heading and permalink for Exercise 9.4.2.1" aria-label="Copy heading and permalink for Exercise 9.4.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-3-1-1">Find the image of the vertical strip <span class="process-math">\(0 \lt \mathrm{Re}(z) \lt \frac{\pi}{2}\)</span> under the mapping <span class="process-math">\(w=\tan z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.2"><a href="#exercises_conformal-trig-3" title="Copy heading and permalink for Exercise 9.4.2.2" aria-label="Copy heading and permalink for Exercise 9.4.2.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.2"><a href="#exercises_conformal-trig-3" title="Copy heading and permalink for Exercise 9.4.2.2" aria-label="Copy heading and permalink for Exercise 9.4.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-4-1-1">Find the image of the vertical line <span class="process-math">\(x=\frac{\pi}{4}\)</span> under the transformation <span class="process-math">\(w=\sin z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-4-2-1">The right branch of the hyperbola <span class="process-math">\(\{(u,v):u^2-v^2=\frac{1}{2}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.3.1"><a href="#exercises_conformal-trig-4-2" title="Copy heading and permalink for Solution 9.4.2.3.1" aria-label="Copy heading and permalink for Solution 9.4.2.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.3"><a href="#exercises_conformal-trig-4" title="Copy heading and permalink for Exercise 9.4.2.3" aria-label="Copy heading and permalink for Exercise 9.4.2.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.3"><a href="#exercises_conformal-trig-4" title="Copy heading and permalink for Exercise 9.4.2.3" aria-label="Copy heading and permalink for Exercise 9.4.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-5-1-1">Find the image of the horizontal line <span class="process-math">\(y=1\)</span> under the transformation <span class="process-math">\(w=\sin z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.4"><a href="#exercises_conformal-trig-5" title="Copy heading and permalink for Exercise 9.4.2.4" aria-label="Copy heading and permalink for Exercise 9.4.2.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.4"><a href="#exercises_conformal-trig-5" title="Copy heading and permalink for Exercise 9.4.2.4" aria-label="Copy heading and permalink for Exercise 9.4.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-6-1-1">Find the image of the rectangle <span class="process-math">\(R=\{x+iy:0 \lt x \lt \frac{\pi}{4},\; 0\lt y\lt 1\}\)</span> under the transformation <span class="process-math">\(w=\sin z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-6-2-1">The region in the first quadrant <span class="process-math">\(\{(u,v):u&gt;0, \, v&gt;0\}\)</span> that lies inside the ellipse given by <span class="process-math">\(\{(u,v):\frac{u^2}{\cosh^2 1} + \frac{v^2}{\sinh^2 1} = 1\}\)</span> and to the left of the hyperbola <span class="process-math">\(\{(u,v):u^2-v^2=\frac{1}{2}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.5.1"><a href="#exercises_conformal-trig-6-2" title="Copy heading and permalink for Solution 9.4.2.5.1" aria-label="Copy heading and permalink for Solution 9.4.2.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.5"><a href="#exercises_conformal-trig-6" title="Copy heading and permalink for Exercise 9.4.2.5" aria-label="Copy heading and permalink for Exercise 9.4.2.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.5"><a href="#exercises_conformal-trig-6" title="Copy heading and permalink for Exercise 9.4.2.5" aria-label="Copy heading and permalink for Exercise 9.4.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-7-1-1">Find the image of the semi-infinite strip <span class="process-math">\(-\frac{\pi}{2}\lt x\lt 0, \; y&gt;0\)</span> , under the mapping <span class="process-math">\(w=\sin z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.6"><a href="#exercises_conformal-trig-7" title="Copy heading and permalink for Exercise 9.4.2.6" aria-label="Copy heading and permalink for Exercise 9.4.2.6">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_conformal-trig-8-1"><div class="para" id="exercises_conformal-trig-8-1-1">Compute the following limits:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 9.4.2.6"><a href="#exercises_conformal-trig-7" title="Copy heading and permalink for Exercise 9.4.2.6" aria-label="Copy heading and permalink for Exercise 9.4.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_conformal-trig-8-1">
+<div class="para" id="exercises_conformal-trig-8-1-1">Compute the following limits:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_conformal-trig-8-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_conformal-trig-8-2-1-1">
 <span class="process-math">\(\lim\limits_{y\to+\infty}\ \mathrm{Arg}[\sin(\frac{\pi}{6}+iy)]\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-8-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-8-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-8-2-2-1">
 <span class="process-math">\(\frac{\pi}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.7.a.1"><a href="#exercises_conformal-trig-8-2-2" title="Copy heading and permalink for Solution 9.4.2.7.a.1" aria-label="Copy heading and permalink for Solution 9.4.2.7.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 9.4.2.7.a"><a href="#exercises_conformal-trig-8-2" title="Copy heading and permalink for Task 9.4.2.7.a" aria-label="Copy heading and permalink for Task 9.4.2.7.a">🔗</a></div></article><article class="task exercise-like" id="exercises_conformal-trig-8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 9.4.2.7.a"><a href="#exercises_conformal-trig-8-2" title="Copy heading and permalink for Task 9.4.2.7.a" aria-label="Copy heading and permalink for Task 9.4.2.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_conformal-trig-8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_conformal-trig-8-3-1-1">
 <span class="process-math">\(\lim\limits_{y\to+\infty}\ \mathrm{Arg}[\sin(-\frac{2\pi}{3}+iy)]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-8-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-8-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-8-3-2-1">
 <span class="process-math">\(-\frac{5\pi}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-8-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.7.b.1"><a href="#exercises_conformal-trig-8-3-2" title="Copy heading and permalink for Solution 9.4.2.7.b.1" aria-label="Copy heading and permalink for Solution 9.4.2.7.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 9.4.2.7.b"><a href="#exercises_conformal-trig-8-3" title="Copy heading and permalink for Task 9.4.2.7.b" aria-label="Copy heading and permalink for Task 9.4.2.7.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 9.4.2.7"><a href="#exercises_conformal-trig-8" title="Copy heading and permalink for Exercise 9.4.2.7" aria-label="Copy heading and permalink for Exercise 9.4.2.7">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_conformal-trig-9-1"><div class="para" id="exercises_conformal-trig-9-1-1">Use Equations <a href="sec_conformal-trig.html#rearcsin" class="xref" data-knowl="./knowl/xref/rearcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.4">(9.4.4)</a> and <a href="sec_conformal-trig.html#imarcsin" class="xref" data-knowl="./knowl/xref/imarcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.5">(9.4.5)</a> to evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 9.4.2.7.b"><a href="#exercises_conformal-trig-8-3" title="Copy heading and permalink for Task 9.4.2.7.b" aria-label="Copy heading and permalink for Task 9.4.2.7.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 9.4.2.7"><a href="#exercises_conformal-trig-8" title="Copy heading and permalink for Exercise 9.4.2.7" aria-label="Copy heading and permalink for Exercise 9.4.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_conformal-trig-9-1">
+<div class="para" id="exercises_conformal-trig-9-1-1">Use Equations <a href="sec_conformal-trig.html#rearcsin" class="xref" data-knowl="./knowl/xref/rearcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.4">(9.4.4)</a> and <a href="sec_conformal-trig.html#imarcsin" class="xref" data-knowl="./knowl/xref/imarcsin.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 9.4.5">(9.4.5)</a> to evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_conformal-trig-9-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_conformal-trig-9-2-1-1">
 <span class="process-math">\(\mathrm{Arcsin}(2+2i)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 9.4.2.8.a"><a href="#exercises_conformal-trig-9-2" title="Copy heading and permalink for Task 9.4.2.8.a" aria-label="Copy heading and permalink for Task 9.4.2.8.a">🔗</a></div></article><article class="task exercise-like" id="exercises_conformal-trig-9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 9.4.2.8.a"><a href="#exercises_conformal-trig-9-2" title="Copy heading and permalink for Task 9.4.2.8.a" aria-label="Copy heading and permalink for Task 9.4.2.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_conformal-trig-9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_conformal-trig-9-3-1-1">
 <span class="process-math">\(\mathrm{Arcsin}(-2+i)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 9.4.2.8.b"><a href="#exercises_conformal-trig-9-3" title="Copy heading and permalink for Task 9.4.2.8.b" aria-label="Copy heading and permalink for Task 9.4.2.8.b">🔗</a></div></article><article class="task exercise-like" id="exercises_conformal-trig-9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 9.4.2.8.b"><a href="#exercises_conformal-trig-9-3" title="Copy heading and permalink for Task 9.4.2.8.b" aria-label="Copy heading and permalink for Task 9.4.2.8.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_conformal-trig-9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_conformal-trig-9-4-1-1">
 <span class="process-math">\(\mathrm{Arcsin}(1-3i)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 9.4.2.8.c"><a href="#exercises_conformal-trig-9-4" title="Copy heading and permalink for Task 9.4.2.8.c" aria-label="Copy heading and permalink for Task 9.4.2.8.c">🔗</a></div></article><article class="task exercise-like" id="exercises_conformal-trig-9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 9.4.2.8.c"><a href="#exercises_conformal-trig-9-4" title="Copy heading and permalink for Task 9.4.2.8.c" aria-label="Copy heading and permalink for Task 9.4.2.8.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_conformal-trig-9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_conformal-trig-9-5-1-1">
 <span class="process-math">\(\mathrm{Arcsin}(-4-i)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 9.4.2.8.d"><a href="#exercises_conformal-trig-9-5" title="Copy heading and permalink for Task 9.4.2.8.d" aria-label="Copy heading and permalink for Task 9.4.2.8.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 9.4.2.8"><a href="#exercises_conformal-trig-9" title="Copy heading and permalink for Exercise 9.4.2.8" aria-label="Copy heading and permalink for Exercise 9.4.2.8">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 9.4.2.8.d"><a href="#exercises_conformal-trig-9-5" title="Copy heading and permalink for Task 9.4.2.8.d" aria-label="Copy heading and permalink for Task 9.4.2.8.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 9.4.2.8"><a href="#exercises_conformal-trig-9" title="Copy heading and permalink for Exercise 9.4.2.8" aria-label="Copy heading and permalink for Exercise 9.4.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_conformal-trig-10-1-1">
 <div class="para">Show that <span class="process-math">\(w=\sin z\)</span> maps the rectangle <span class="process-math">\(R=\{x+iy : -\frac{\pi}{2} \lt  x \lt \frac{\pi}{2},0\lt y\lt b\}\)</span> one-to-one and onto the portion of the upper half-plane <span class="process-math">\(\mathrm{Im}(w) &gt; 0\)</span> that lies inside the ellipse</div>
 <div class="displaymath process-math" id="exercises_conformal-trig-10-1-1-4">
@@ -813,18 +887,27 @@ v(1,1) \amp  =\mathrm{Arccosh}\left(\frac{\sqrt{5}+1}{2}\right) \approx 1.061275
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.9"><a href="#exercises_conformal-trig-10" title="Copy heading and permalink for Exercise 9.4.2.9" aria-label="Copy heading and permalink for Exercise 9.4.2.9">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.9"><a href="#exercises_conformal-trig-10" title="Copy heading and permalink for Exercise 9.4.2.9" aria-label="Copy heading and permalink for Exercise 9.4.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-11-1-1">Find the image of the vertical strip <span class="process-math">\(-\frac{\pi}{2}\lt x\lt 0\)</span> under the mapping <span class="process-math">\(w=\cos z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.10"><a href="#exercises_conformal-trig-11" title="Copy heading and permalink for Exercise 9.4.2.10" aria-label="Copy heading and permalink for Exercise 9.4.2.10">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-12"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.10"><a href="#exercises_conformal-trig-11" title="Copy heading and permalink for Exercise 9.4.2.10" aria-label="Copy heading and permalink for Exercise 9.4.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-12"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-12-1-1">Find the image of the horizontal strip <span class="process-math">\(0\lt \mathrm{Im}(z) \lt \frac{\pi}{2}\)</span> under <span class="process-math">\(w=\sinh z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-12-2-1">The upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.11.1"><a href="#exercises_conformal-trig-12-2" title="Copy heading and permalink for Solution 9.4.2.11.1" aria-label="Copy heading and permalink for Solution 9.4.2.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.11"><a href="#exercises_conformal-trig-12" title="Copy heading and permalink for Exercise 9.4.2.11" aria-label="Copy heading and permalink for Exercise 9.4.2.11">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.11"><a href="#exercises_conformal-trig-12" title="Copy heading and permalink for Exercise 9.4.2.11" aria-label="Copy heading and permalink for Exercise 9.4.2.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-13"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_conformal-trig-13-1-1">
 <div class="para">Find the image of the right half-plane <span class="process-math">\(\mathrm{Re}(z) &gt; 0\)</span> under the mapping</div>
 <div class="displaymath process-math" id="exercises_conformal-trig-13-1-1-2">
@@ -834,29 +917,47 @@ w = \mathrm{Arctan}(z) = \frac{i}{2}\mathrm{Log}\!\left(\frac{i+z}{i-z}\right)
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.12"><a href="#exercises_conformal-trig-13" title="Copy heading and permalink for Exercise 9.4.2.12" aria-label="Copy heading and permalink for Exercise 9.4.2.12">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-14"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.12"><a href="#exercises_conformal-trig-13" title="Copy heading and permalink for Exercise 9.4.2.12" aria-label="Copy heading and permalink for Exercise 9.4.2.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-14"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-14-1-1">Find the image of the first quadrant <span class="process-math">\(x&gt;0, \; y&gt;0\text{,}\)</span> under <span class="process-math">\(w=\mathrm{Arcsin}\,z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-14-2-1">The semi-infinite strip <span class="process-math">\(\{(u,v): 0\lt u\lt \frac{\pi}{2}, \; v&gt;0\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.13.1"><a href="#exercises_conformal-trig-14-2" title="Copy heading and permalink for Solution 9.4.2.13.1" aria-label="Copy heading and permalink for Solution 9.4.2.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.13"><a href="#exercises_conformal-trig-14" title="Copy heading and permalink for Exercise 9.4.2.13" aria-label="Copy heading and permalink for Exercise 9.4.2.13">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-15"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.13"><a href="#exercises_conformal-trig-14" title="Copy heading and permalink for Exercise 9.4.2.13" aria-label="Copy heading and permalink for Exercise 9.4.2.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-15"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-15-1-1">Find the image of the first quadrant <span class="process-math">\(x&gt;0, \; y&gt;0\text{,}\)</span> under <span class="process-math">\(w=\mathrm{Arcsin}(z^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.14"><a href="#exercises_conformal-trig-15" title="Copy heading and permalink for Exercise 9.4.2.14" aria-label="Copy heading and permalink for Exercise 9.4.2.14">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-16"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 9.4.2.14"><a href="#exercises_conformal-trig-15" title="Copy heading and permalink for Exercise 9.4.2.14" aria-label="Copy heading and permalink for Exercise 9.4.2.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-16"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-16-1-1">Show that the transformation <span class="process-math">\(w=\sin ^2z\)</span> is a one-to-one conformal mapping of the semi-infinite strip <span class="process-math">\(0\lt x\lt \frac{\pi }{2},y&gt;0\text{,}\)</span> onto the upper half plane <span class="process-math">\(\mathrm{Im}(w) &gt; 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_conformal-trig-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_conformal-trig-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_conformal-trig-16-2-1">The upper half-plane <span class="process-math">\(\mathrm{Im}(w)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 9.4.2.15.1"><a href="#exercises_conformal-trig-16-2" title="Copy heading and permalink for Solution 9.4.2.15.1" aria-label="Copy heading and permalink for Solution 9.4.2.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 9.4.2.15"><a href="#exercises_conformal-trig-16" title="Copy heading and permalink for Exercise 9.4.2.15" aria-label="Copy heading and permalink for Exercise 9.4.2.15">🔗</a></div></article><article class="exercise exercise-like" id="exercises_conformal-trig-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 9.4.2.15"><a href="#exercises_conformal-trig-16" title="Copy heading and permalink for Exercise 9.4.2.15" aria-label="Copy heading and permalink for Exercise 9.4.2.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_conformal-trig-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_conformal-trig-17-1-1">Find the image of the semi-infinite strip <span class="process-math">\(|x| \lt \frac{\pi}{2}, \; y&gt;0\text{,}\)</span> under the mapping <span class="process-math">\(w=\mathrm{Log}(\sin z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_conformal-trig-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 9.4.2.16"><a href="#exercises_conformal-trig-17" title="Copy heading and permalink for Exercise 9.4.2.16" aria-label="Copy heading and permalink for Exercise 9.4.2.16">🔗</a></div></article><div class="autopermalink" data-description="Exercises 9.4.2: Exercises"><a href="#exercises_conformal-trig" title="Copy heading and permalink for Exercises 9.4.2: Exercises" aria-label="Copy heading and permalink for Exercises 9.4.2: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 9.4: Mapping by Trigonometric Functions"><a href="#sec_conformal-trig" title="Copy heading and permalink for Section 9.4: Mapping by Trigonometric Functions" aria-label="Copy heading and permalink for Section 9.4: Mapping by Trigonometric Functions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 9.4.2.16"><a href="#exercises_conformal-trig-17" title="Copy heading and permalink for Exercise 9.4.2.16" aria-label="Copy heading and permalink for Exercise 9.4.2.16">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 9.4.2: Exercises"><a href="#exercises_conformal-trig" title="Copy heading and permalink for Exercises 9.4.2: Exercises" aria-label="Copy heading and permalink for Exercises 9.4.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 9.4: Mapping by Trigonometric Functions"><a href="#sec_conformal-trig" title="Copy heading and permalink for Section 9.4: Mapping by Trigonometric Functions" aria-label="Copy heading and permalink for Section 9.4: Mapping by Trigonometric Functions">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_elementary-mappings.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch_harmonic-apps.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

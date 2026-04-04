@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_convergence-theorems"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_convergence-theorems">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Geometric Series and Convergence Theorems</span>
 </h2>
 <div class="para" id="sec_convergence-theorems-2">We begin this section by presenting a series of the form <span class="process-math">\(\sum\limits_{n=0}^{\infty}z^n\text{,}\)</span> which is called a geometric series and is one of the most important series in mathematics.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -517,9 +519,14 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Geometric_Series-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="Geometric_Series-2-2">If <span class="process-math">\(|z|\ge 1\text{,}\)</span> the series diverges.<div class="autopermalink" data-description="Paragraph"><a href="#Geometric_Series-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="Geometric_Series-2-2">If <span class="process-math">\(|z|\ge 1\text{,}\)</span> the series diverges.<div class="autopermalink" data-description="Paragraph"><a href="#Geometric_Series-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.3.1: Geometric series"><a href="#Geometric_Series" title="Copy heading and permalink for Theorem 4.3.1: Geometric series" aria-label="Copy heading and permalink for Theorem 4.3.1: Geometric series">🔗</a></div></article><details id="sec_convergence-theorems-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_convergence-theorems-4-1">
+<div class="autopermalink" data-description="Theorem 4.3.1: Geometric series"><a href="#Geometric_Series" title="Copy heading and permalink for Theorem 4.3.1: Geometric series" aria-label="Copy heading and permalink for Theorem 4.3.1: Geometric series">🔗</a></div>
+</article>
+<details id="sec_convergence-theorems-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_convergence-theorems-4-1">
 <div class="para">Suppose that <span class="process-math">\(|z|\lt 1\text{.}\)</span> By <a href="sec_sequences-series.html#Convergence" class="xref" data-knowl="./knowl/xref/Convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.11: Infinite Series">Definition 4.1.11</a>, we must show <span class="process-math">\(\lim\limits_{n \to \infty}S_n=\frac{1}{1-z}\text{,}\)</span> where</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Convergence.html" id="Sn">
 \begin{equation}
@@ -556,7 +563,9 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 </div>
 <div class="para" id="sec_convergence-theorems-4-5">Now suppose <span class="process-math">\(|z| \ge 1\text{.}\)</span> Clearly, <span class="process-math">\(\lim\limits_{n \to \infty}|z^n| \ne 0\text{,}\)</span> so <span class="process-math">\(\lim\limits_{n \to \infty}z^n\ne 0\)</span> (see <a href="sec_sequences-series.html#x4_1_17" class="xref" data-knowl="./knowl/xref/x4_1_17.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.1.17">Exercise 4.1.17</a>, <a href="sec_sequences-series.html" class="internal" title="Section 4.1: Sequences and Series">Section 4.1</a>). Thus, by the contrapositive of <a href="sec_sequences-series.html#Conv_terms_go_to_0" class="xref" data-knowl="./knowl/xref/Conv_terms_go_to_0.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.17">Theorem 4.1.17</a>, <span class="process-math">\(\sum\limits_{n=0}^{\infty}z^n\)</span> must diverge.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.3.1"><a href="#sec_convergence-theorems-4" title="Copy heading and permalink for Proof 4.3.1" aria-label="Copy heading and permalink for Proof 4.3.1">🔗</a></div></article></details><article class="corollary theorem-like" id="Geom_Series__z____1"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 4.3.1"><a href="#sec_convergence-theorems-4" title="Copy heading and permalink for Proof 4.3.1" aria-label="Copy heading and permalink for Proof 4.3.1">🔗</a></div>
+</article></details>
+<article class="corollary theorem-like" id="Geom_Series__z____1"><h3 class="heading">
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="Geom_Series__z____1-1-1">
@@ -569,9 +578,14 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Geom_Series__z____1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="Geom_Series__z____1-1-2">If <span class="process-math">\(|z|\le 1\text{,}\)</span> the series diverges.<div class="autopermalink" data-description="Paragraph"><a href="#Geom_Series__z____1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="Geom_Series__z____1-1-2">If <span class="process-math">\(|z|\le 1\text{,}\)</span> the series diverges.<div class="autopermalink" data-description="Paragraph"><a href="#Geom_Series__z____1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 4.3.2"><a href="#Geom_Series__z____1" title="Copy heading and permalink for Corollary 4.3.2" aria-label="Copy heading and permalink for Corollary 4.3.2">🔗</a></div></article><details id="sec_convergence-theorems-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_convergence-theorems-6-1">
+<div class="autopermalink" data-description="Corollary 4.3.2"><a href="#Geom_Series__z____1" title="Copy heading and permalink for Corollary 4.3.2" aria-label="Copy heading and permalink for Corollary 4.3.2">🔗</a></div>
+</article>
+<details id="sec_convergence-theorems-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_convergence-theorems-6-1">
 <div class="para">If we let <span class="process-math">\(\frac{1}{z}\)</span> take the role of <span class="process-math">\(z\)</span> in <a href="sec_convergence-theorems.html#Geometric_Sum" class="xref" data-knowl="./knowl/xref/Geometric_Sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.1">Equation (4.3.1)</a>, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Geometric_Sum.html" id="sec_convergence-theorems-6-1-4">
 \begin{equation*}
@@ -601,7 +615,9 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 </div>
 <div class="para" id="sec_convergence-theorems-6-3">It is left as an exercise to show that the series diverges if <span class="process-math">\(|z| \le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.3.2"><a href="#sec_convergence-theorems-6" title="Copy heading and permalink for Proof 4.3.2" aria-label="Copy heading and permalink for Proof 4.3.2">🔗</a></div></article></details><article class="corollary theorem-like" id="cor_geometric-series"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 4.3.2"><a href="#sec_convergence-theorems-6" title="Copy heading and permalink for Proof 4.3.2" aria-label="Copy heading and permalink for Proof 4.3.2">🔗</a></div>
+</article></details>
+<article class="corollary theorem-like" id="cor_geometric-series"><h3 class="heading">
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="cor_geometric-series-1-1">
@@ -614,14 +630,22 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#cor_geometric-series-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 4.3.3"><a href="#cor_geometric-series" title="Copy heading and permalink for Corollary 4.3.3" aria-label="Copy heading and permalink for Corollary 4.3.3">🔗</a></div></article><details id="sec_convergence-theorems-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_convergence-theorems-8-1">This result follows immediately from <a href="sec_convergence-theorems.html#Sn___stuff" class="xref" data-knowl="./knowl/xref/Sn___stuff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.4">Equation (4.3.4)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Corollary 4.3.3"><a href="#cor_geometric-series" title="Copy heading and permalink for Corollary 4.3.3" aria-label="Copy heading and permalink for Corollary 4.3.3">🔗</a></div>
+</article>
+<details id="sec_convergence-theorems-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_convergence-theorems-8-1">This result follows immediately from <a href="sec_convergence-theorems.html#Sn___stuff" class="xref" data-knowl="./knowl/xref/Sn___stuff.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.3.4">Equation (4.3.4)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.3.3"><a href="#sec_convergence-theorems-8" title="Copy heading and permalink for Proof 4.3.3" aria-label="Copy heading and permalink for Proof 4.3.3">🔗</a></div></article></details><article class="example example-like" id="sec_convergence-theorems-9"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 4.3.3"><a href="#sec_convergence-theorems-8" title="Copy heading and permalink for Proof 4.3.3" aria-label="Copy heading and permalink for Proof 4.3.3">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_convergence-theorems-9"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_convergence-theorems-9-1-1">Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty} \frac{(1-i)^n}{2^n}=1-i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convergence-theorems-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_convergence-theorems-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_convergence-theorems-9-2-1">
 <div class="para">If we set <span class="process-math">\(z=\frac{1-i}{2}\text{,}\)</span> then <span class="process-math">\(|z|=\frac{\sqrt{2}}{2}\lt 1\text{.}\)</span>  By <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a>, the sum is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Geometric_Series.html" id="sec_convergence-theorems-9-2-1-4">
@@ -632,13 +656,18 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.4.1"><a href="#sec_convergence-theorems-9-2" title="Copy heading and permalink for Solution 4.3.4.1" aria-label="Copy heading and permalink for Solution 4.3.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.4"><a href="#sec_convergence-theorems-9" title="Copy heading and permalink for Example 4.3.4" aria-label="Copy heading and permalink for Example 4.3.4">🔗</a></div></article><article class="example example-like" id="ex_4_14"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.3.4"><a href="#sec_convergence-theorems-9" title="Copy heading and permalink for Example 4.3.4" aria-label="Copy heading and permalink for Example 4.3.4">🔗</a></div>
+</article>
+<article class="example example-like" id="ex_4_14"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="ex_4_14-1-1">Evaluate <span class="process-math">\(\sum\limits_{n=3}^{\infty}(\frac{i}{2})^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_4_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="ex_4_14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="ex_4_14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="ex_4_14-2-1">
 <div class="para">We can put this expression in the form of a geometric series:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/SumcZn___cSumZn.html ./knowl/xref/Geometric_Series.html" id="ex_4_14-2-1-1">
@@ -659,13 +688,18 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 <div class="autopermalink" data-description="Paragraph"><a href="#ex_4_14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.5.1"><a href="#ex_4_14-2" title="Copy heading and permalink for Solution 4.3.5.1" aria-label="Copy heading and permalink for Solution 4.3.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.5"><a href="#ex_4_14" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div></article><article class="remark remark-like" id="sec_convergence-theorems-11"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.3.5"><a href="#ex_4_14" title="Copy heading and permalink for Example 4.3.5" aria-label="Copy heading and permalink for Example 4.3.5">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_convergence-theorems-11"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_convergence-theorems-11-1">The equalities given in <a href="sec_convergence-theorems.html#ex_4_14" class="xref" data-knowl="./knowl/xref/ex_4_14.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.5">Example 4.3.5</a> collectively illustrate an important point with regard to evaluating a geometric series whose beginning index is other than zero. The value of <span class="process-math">\(\sum\limits_{n=r}^{\infty}z^n\)</span> equals <span class="process-math">\(\frac{z^{r}}{ 1-z}\text{.}\)</span> If we think of <span class="process-math">\(z\)</span> as the “ratio” by which any term of the series is multiplied to generate successive terms, we note that the sum of a geometric series equals <span class="process-math">\(\frac{\;\text{ first term\; } }{\;1-\text{ ratio } \;}\text{,}\)</span> provided <span class="process-math">\(|\text{ ratio } |\lt 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 4.3.6"><a href="#sec_convergence-theorems-11" title="Copy heading and permalink for Remark 4.3.6" aria-label="Copy heading and permalink for Remark 4.3.6">🔗</a></div></article><div class="para" id="sec_convergence-theorems-12">The geometric series is used in the proof of <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a>, which is known as the <em class="emphasis">ratio test</em>. It is one of the most commonly used tests for determining the convergence or divergence of series. The proof is similar to the one used for real series, and we leave it for you to do.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.3.6"><a href="#sec_convergence-theorems-11" title="Copy heading and permalink for Remark 4.3.6" aria-label="Copy heading and permalink for Remark 4.3.6">🔗</a></div>
+</article>
+<div class="para" id="sec_convergence-theorems-12">The geometric series is used in the proof of <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a>, which is known as the <em class="emphasis">ratio test</em>. It is one of the most commonly used tests for determining the convergence or divergence of series. The proof is similar to the one used for real series, and we leave it for you to do.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Ratio_Test"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">d’Alembert’s ratio test.</span>
@@ -681,12 +715,16 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Ratio_Test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.3.7: d’Alembert’s ratio test"><a href="#Ratio_Test" title="Copy heading and permalink for Theorem 4.3.7: d’Alembert’s ratio test" aria-label="Copy heading and permalink for Theorem 4.3.7: d’Alembert’s ratio test">🔗</a></div></article><article class="example example-like" id="sec_convergence-theorems-14"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 4.3.7: d’Alembert’s ratio test"><a href="#Ratio_Test" title="Copy heading and permalink for Theorem 4.3.7: d’Alembert’s ratio test" aria-label="Copy heading and permalink for Theorem 4.3.7: d’Alembert’s ratio test">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_convergence-theorems-14"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_convergence-theorems-14-1-1">Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(1-i)^n}{n!}\)</span> converges.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convergence-theorems-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_convergence-theorems-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_convergence-theorems-14-2-1">
 <div class="para">Using the ratio test, we find that</div>
 <div class="displaymath process-math" id="sec_convergence-theorems-14-2-1-1">
@@ -701,13 +739,18 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 <div class="para" id="sec_convergence-theorems-14-2-2">Because <span class="process-math">\(L\lt 1\text{,}\)</span> the series converges.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.8.1"><a href="#sec_convergence-theorems-14-2" title="Copy heading and permalink for Solution 4.3.8.1" aria-label="Copy heading and permalink for Solution 4.3.8.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.8"><a href="#sec_convergence-theorems-14" title="Copy heading and permalink for Example 4.3.8" aria-label="Copy heading and permalink for Example 4.3.8">🔗</a></div></article><article class="example example-like" id="sec_convergence-theorems-15"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.3.8"><a href="#sec_convergence-theorems-14" title="Copy heading and permalink for Example 4.3.8" aria-label="Copy heading and permalink for Example 4.3.8">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_convergence-theorems-15"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_convergence-theorems-15-1-1">Show that the series <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{2^n}\)</span> converges for all values of <span class="process-math">\(z\)</span> in the disk <span class="process-math">\(|z-i|\lt 2\)</span> and diverges if <span class="process-math">\(|z-i|&gt;2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_convergence-theorems-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_convergence-theorems-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_convergence-theorems-15-2-1">
 <div class="para">Using the ratio test, we see that</div>
 <div class="displaymath process-math" id="sec_convergence-theorems-15-2-1-1">
@@ -720,15 +763,20 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.9.1"><a href="#sec_convergence-theorems-15-2" title="Copy heading and permalink for Solution 4.3.9.1" aria-label="Copy heading and permalink for Solution 4.3.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 4.3.9"><a href="#sec_convergence-theorems-15" title="Copy heading and permalink for Example 4.3.9" aria-label="Copy heading and permalink for Example 4.3.9">🔗</a></div></article><div class="para" id="sec_convergence-theorems-16">Our next result, known as the root test, is slightly more powerful than the ratio test. Before we present this test, we need to discuss a rather sophisticated idea used with it—the <em class="emphasis">limit supremum</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 4.3.9"><a href="#sec_convergence-theorems-15" title="Copy heading and permalink for Example 4.3.9" aria-label="Copy heading and permalink for Example 4.3.9">🔗</a></div>
+</article>
+<div class="para" id="sec_convergence-theorems-16">Our next result, known as the root test, is slightly more powerful than the ratio test. Before we present this test, we need to discuss a rather sophisticated idea used with it—the <em class="emphasis">limit supremum</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="Limit_supremum_Def"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Limit Supremum.</span>
 </h3>
 <div class="para" id="Limit_supremum_Def-2-1">Let <span class="process-math">\(\{t_n\}\)</span> be a sequence of positive real numbers. The limit supremum of the sequence (denoted <span class="process-math">\(\lim\limits_{n \to \infty} \sup \, t_n)\)</span> is the smallest real number <span class="process-math">\(L\)</span> having the property that for any <span class="process-math">\(\varepsilon&gt;0\text{,}\)</span> there are at most finitely many terms in the sequence that are larger than <span class="process-math">\(L+\varepsilon\text{.}\)</span> If there is no such number <span class="process-math">\(L\text{,}\)</span> then <span class="process-math">\(\lim\limits_{n \to \infty} \sup \, t_n=\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Limit_supremum_Def-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.3.10: Limit Supremum"><a href="#Limit_supremum_Def" title="Copy heading and permalink for Definition 4.3.10: Limit Supremum" aria-label="Copy heading and permalink for Definition 4.3.10: Limit Supremum">🔗</a></div></article><article class="example example-like" id="sec_convergence-theorems-18"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 4.3.10: Limit Supremum"><a href="#Limit_supremum_Def" title="Copy heading and permalink for Definition 4.3.10: Limit Supremum" aria-label="Copy heading and permalink for Definition 4.3.10: Limit Supremum">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_convergence-theorems-18"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_convergence-theorems-18-1-1">
@@ -742,7 +790,9 @@ S_n=\frac{1}{1-z}-\frac{z^n}{1-z}\text{.}\tag{4.3.4}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.3.11"><a href="#sec_convergence-theorems-18" title="Copy heading and permalink for Example 4.3.11" aria-label="Copy heading and permalink for Example 4.3.11">🔗</a></div></article><article class="example example-like" id="sec_convergence-theorems-19"><h3 class="heading">
+<div class="autopermalink" data-description="Example 4.3.11"><a href="#sec_convergence-theorems-18" title="Copy heading and permalink for Example 4.3.11" aria-label="Copy heading and permalink for Example 4.3.11">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_convergence-theorems-19"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_convergence-theorems-19-1-1">
@@ -761,7 +811,9 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.3.12"><a href="#sec_convergence-theorems-19" title="Copy heading and permalink for Example 4.3.12" aria-label="Copy heading and permalink for Example 4.3.12">🔗</a></div></article><article class="example example-like" id="sec_convergence-theorems-20"><h3 class="heading">
+<div class="autopermalink" data-description="Example 4.3.12"><a href="#sec_convergence-theorems-19" title="Copy heading and permalink for Example 4.3.12" aria-label="Copy heading and permalink for Example 4.3.12">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_convergence-theorems-20"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_convergence-theorems-20-1-1">
@@ -775,7 +827,9 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 <div class="para">(The Fibonacci sequence satisfies the relation <span class="process-math">\(t_n=t_{n-1}+t_{n-2}\)</span> for <span class="process-math">\(n&gt;2\text{.}\)</span>)</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.3.13"><a href="#sec_convergence-theorems-20" title="Copy heading and permalink for Example 4.3.13" aria-label="Copy heading and permalink for Example 4.3.13">🔗</a></div></article><div class="para" id="sec_convergence-theorems-21">The limit supremum is a powerful idea because the limit supremum of a sequence always exists, which is not true for the ordinary limit. However, <a href="sec_convergence-theorems.html#lim_sup___lim" class="xref" data-knowl="./knowl/xref/lim_sup___lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.14">Example 4.3.14</a> illustrates the fact that, if the limit of a sequence does exist, then it will be the same as the limit supremum.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.3.13"><a href="#sec_convergence-theorems-20" title="Copy heading and permalink for Example 4.3.13" aria-label="Copy heading and permalink for Example 4.3.13">🔗</a></div>
+</article>
+<div class="para" id="sec_convergence-theorems-21">The limit supremum is a powerful idea because the limit supremum of a sequence always exists, which is not true for the ordinary limit. However, <a href="sec_convergence-theorems.html#lim_sup___lim" class="xref" data-knowl="./knowl/xref/lim_sup___lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.14">Example 4.3.14</a> illustrates the fact that, if the limit of a sequence does exist, then it will be the same as the limit supremum.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="lim_sup___lim"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -790,129 +844,202 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#lim_sup___lim-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="lim_sup___lim-1-2">We leave verification of this as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#lim_sup___lim-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="lim_sup___lim-1-2">We leave verification of this as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#lim_sup___lim-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 4.3.14"><a href="#lim_sup___lim" title="Copy heading and permalink for Example 4.3.14" aria-label="Copy heading and permalink for Example 4.3.14">🔗</a></div></article><article class="theorem theorem-like" id="Root_Test"><h3 class="heading">
+<div class="autopermalink" data-description="Example 4.3.14"><a href="#lim_sup___lim" title="Copy heading and permalink for Example 4.3.14" aria-label="Copy heading and permalink for Example 4.3.14">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="Root_Test"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Root test.</span>
 </h3>
 <div class="para" id="Root_Test-2-1">Suppose the series <span class="process-math">\(\sum\limits_{n=0}^{\infty}\zeta _n\)</span> has <span class="process-math">\(\lim\limits_{n \to \infty}\sup |\zeta_n|^{\frac{1}{n}}=L\text{.}\)</span> Then the series is absolutely convergent if <span class="process-math">\(L\lt 1\)</span> and divergent if <span class="process-math">\(L&gt;1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Root_Test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 4.3.15: Root test"><a href="#Root_Test" title="Copy heading and permalink for Theorem 4.3.15: Root test" aria-label="Copy heading and permalink for Theorem 4.3.15: Root test">🔗</a></div></article><details id="sec_convergence-theorems-24" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_convergence-theorems-24-1">Suppose first that <span class="process-math">\(L\lt 1\text{.}\)</span>  We can select a number <span class="process-math">\(r\)</span> such that <span class="process-math">\(L\lt r\lt 1\text{.}\)</span> By definition of the limit supremum, only finitely many terms in the sequence <span class="process-math">\(\{|\zeta _n|^{\frac{1}{n}}\}\)</span> exceed <span class="process-math">\(r\text{,}\)</span> so there exists a positive integer <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(n&gt;N\)</span> we have <span class="process-math">\(|\zeta_n|^{\frac{1}{n}}\lt r\text{.}\)</span> That is, <span class="process-math">\(| \zeta _n|\lt r^n\)</span> for all <span class="process-math">\(n&gt;N\text{.}\)</span> For <span class="process-math">\(r\lt 1\text{,}\)</span> <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a> implies that <span class="process-math">\(\sum\limits_{n=N+1}^{\infty}r^n\)</span> converges. But then <a href="sec_sequences-series.html#Comparison_Test" class="xref" data-knowl="./knowl/xref/Comparison_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.24: Comparison test">Theorem 4.1.24</a> implies that <span class="process-math">\(\sum \limits_{n=N+1}^{\infty}|\zeta _n|\)</span> converges, and hence so does <span class="process-math">\(\sum\limits_{n=0}^{\infty}|\zeta _n|\text{.}\)</span> <a href="sec_sequences-series.html#Abs_Conv_Implies_Conv" class="xref" data-knowl="./knowl/xref/Abs_Conv_Implies_Conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.1.25">Corollary 4.1.25</a> then guarantees that <span class="process-math">\(\sum\limits_{n=0}^{\infty}\zeta _n\)</span> converges.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 4.3.15: Root test"><a href="#Root_Test" title="Copy heading and permalink for Theorem 4.3.15: Root test" aria-label="Copy heading and permalink for Theorem 4.3.15: Root test">🔗</a></div>
+</article>
+<details id="sec_convergence-theorems-24" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_convergence-theorems-24-1">Suppose first that <span class="process-math">\(L\lt 1\text{.}\)</span>  We can select a number <span class="process-math">\(r\)</span> such that <span class="process-math">\(L\lt r\lt 1\text{.}\)</span> By definition of the limit supremum, only finitely many terms in the sequence <span class="process-math">\(\{|\zeta _n|^{\frac{1}{n}}\}\)</span> exceed <span class="process-math">\(r\text{,}\)</span> so there exists a positive integer <span class="process-math">\(N\)</span> such that for all <span class="process-math">\(n&gt;N\)</span> we have <span class="process-math">\(|\zeta_n|^{\frac{1}{n}}\lt r\text{.}\)</span> That is, <span class="process-math">\(| \zeta _n|\lt r^n\)</span> for all <span class="process-math">\(n&gt;N\text{.}\)</span> For <span class="process-math">\(r\lt 1\text{,}\)</span> <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a> implies that <span class="process-math">\(\sum\limits_{n=N+1}^{\infty}r^n\)</span> converges. But then <a href="sec_sequences-series.html#Comparison_Test" class="xref" data-knowl="./knowl/xref/Comparison_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.24: Comparison test">Theorem 4.1.24</a> implies that <span class="process-math">\(\sum \limits_{n=N+1}^{\infty}|\zeta _n|\)</span> converges, and hence so does <span class="process-math">\(\sum\limits_{n=0}^{\infty}|\zeta _n|\text{.}\)</span> <a href="sec_sequences-series.html#Abs_Conv_Implies_Conv" class="xref" data-knowl="./knowl/xref/Abs_Conv_Implies_Conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.1.25">Corollary 4.1.25</a> then guarantees that <span class="process-math">\(\sum\limits_{n=0}^{\infty}\zeta _n\)</span> converges.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_convergence-theorems-24-2">Now suppose that <span class="process-math">\(L&gt;1\text{.}\)</span> We can select a number <span class="process-math">\(r\)</span> such that <span class="process-math">\(1\lt r\lt L\text{.}\)</span> Again, by definition of the limit supremum we conclude that <span class="process-math">\(|\zeta _n|^{\frac{1}{n}}&gt;r\)</span> for infinitely many <span class="process-math">\(n\text{.}\)</span> But this condition means that <span class="process-math">\(|\zeta _n|&gt;r^n\)</span> for infinitely many <span class="process-math">\(n\text{,}\)</span> and as <span class="process-math">\(r&gt;1\text{,}\)</span> this implies that <span class="process-math">\(\zeta _n\)</span> does not converge to 0. By <a href="sec_sequences-series.html#Conv_terms_go_to_0" class="xref" data-knowl="./knowl/xref/Conv_terms_go_to_0.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.17">Theorem 4.1.17</a>, <span class="process-math">\(\sum\limits_{n=0}^{\infty}\zeta _n\)</span> does not converge.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-24-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 4.3.4"><a href="#sec_convergence-theorems-24" title="Copy heading and permalink for Proof 4.3.4" aria-label="Copy heading and permalink for Proof 4.3.4">🔗</a></div></article></details><div class="para" id="sec_convergence-theorems-25">Note that, in applying either <a href="sec_convergence-theorems.html#Ratio_Test" class="xref" data-knowl="./knowl/xref/Ratio_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.7: d’Alembert’s ratio test">Theorem 4.3.7</a> <a href="sec_convergence-theorems.html#Root_Test" class="xref" data-knowl="./knowl/xref/Root_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.15: Root test">or 4.3.15</a>, if <span class="process-math">\(L=1\)</span> the convergence or divergence of the series is unknown, and further analysis is required to determine the true state of affairs.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 4.3.4"><a href="#sec_convergence-theorems-24" title="Copy heading and permalink for Proof 4.3.4" aria-label="Copy heading and permalink for Proof 4.3.4">🔗</a></div>
+</article></details>
+<div class="para" id="sec_convergence-theorems-25">Note that, in applying either <a href="sec_convergence-theorems.html#Ratio_Test" class="xref" data-knowl="./knowl/xref/Ratio_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.7: d’Alembert’s ratio test">Theorem 4.3.7</a> <a href="sec_convergence-theorems.html#Root_Test" class="xref" data-knowl="./knowl/xref/Root_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.15: Root test">or 4.3.15</a>, if <span class="process-math">\(L=1\)</span> the convergence or divergence of the series is unknown, and further analysis is required to determine the true state of affairs.<div class="autopermalink" data-description="Paragraph"><a href="#sec_convergence-theorems-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<section class="exercises" id="exercises_convergence-theorems"><h3 class="heading hide-type">
+<section class="exercises" id="exercises_convergence-theorems">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises_convergence-theorems-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_convergence-theorems-2-1"><div class="para" id="exercises_convergence-theorems-2-1-1">Evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_convergence-theorems-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="exercises_convergence-theorems-2-1">
+<div class="para" id="exercises_convergence-theorems-2-1-1">Evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_convergence-theorems-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_convergence-theorems-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_convergence-theorems-2-2-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(1+i)^n}{2^n}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convergence-theorems-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_convergence-theorems-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_convergence-theorems-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_convergence-theorems-2-2-2-1">By <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a>, <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(1+i)^n}{2^n}=\frac{1}{1-(\frac{1+i}{2})}=1+i\)</span> (show the details), because <span class="process-math">\(|\frac{1+i}{2}|\lt 1\)</span> (show this also).<div class="autopermalink" data-description="Paragraph"><a href="#exercises_convergence-theorems-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.1.a.1"><a href="#exercises_convergence-theorems-2-2-2" title="Copy heading and permalink for Solution 4.3.1.a.1" aria-label="Copy heading and permalink for Solution 4.3.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#exercises_convergence-theorems-2-2" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div></article><article class="task exercise-like" id="exercises_convergence-theorems-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.1.a"><a href="#exercises_convergence-theorems-2-2" title="Copy heading and permalink for Task 4.3.1.a" aria-label="Copy heading and permalink for Task 4.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_convergence-theorems-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_convergence-theorems-2-3-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}(\frac{1}{2+i})^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_convergence-theorems-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#exercises_convergence-theorems-2-3" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 4.3.1"><a href="#exercises_convergence-theorems-2" title="Copy heading and permalink for Exercise 4.3.1" aria-label="Copy heading and permalink for Exercise 4.3.1">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 4.3.1.b"><a href="#exercises_convergence-theorems-2-3" title="Copy heading and permalink for Task 4.3.1.b" aria-label="Copy heading and permalink for Task 4.3.1.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.1"><a href="#exercises_convergence-theorems-2" title="Copy heading and permalink for Exercise 4.3.1" aria-label="Copy heading and permalink for Exercise 4.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_2-1-1">Show that <span class="process-math">\(\sum\limits_{n=0}^{\infty} \frac{(z+i)^n}{2^n}\)</span> converges for all values of <span class="process-math">\(z\)</span> in the disk <span class="process-math">\(D_2(-i) = \{z:|z+i|\lt 2\}\)</span> and diverges if <span class="process-math">\(|z+i| &gt; 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2"><a href="#x4_3_2" title="Copy heading and permalink for Exercise 4.3.2" aria-label="Copy heading and permalink for Exercise 4.3.2">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 4.3.2"><a href="#x4_3_2" title="Copy heading and permalink for Exercise 4.3.2" aria-label="Copy heading and permalink for Exercise 4.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_3-1-1">Is the series <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(4i)^n}{n!}\)</span> convergent? Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_3-2-1">The series converges by the ratio test. Show the details.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.3.1"><a href="#x4_3_3-2" title="Copy heading and permalink for Solution 4.3.3.1" aria-label="Copy heading and permalink for Solution 4.3.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 4.3.3"><a href="#x4_3_3" title="Copy heading and permalink for Exercise 4.3.3" aria-label="Copy heading and permalink for Exercise 4.3.3">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x4_3_4-1"><div class="para" id="x4_3_4-1-1">Use the ratio test to show that the following series converge:<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 4.3.3"><a href="#x4_3_3" title="Copy heading and permalink for Exercise 4.3.3" aria-label="Copy heading and permalink for Exercise 4.3.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x4_3_4-1">
+<div class="para" id="x4_3_4-1-1">Use the ratio test to show that the following series converge:<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x4_3_4-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x4_3_4-2-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}(\frac{1+i}{2})^n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.4.a"><a href="#x4_3_4-2" title="Copy heading and permalink for Task 4.3.4.a" aria-label="Copy heading and permalink for Task 4.3.4.a">🔗</a></div></article><article class="task exercise-like" id="x4_3_4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 4.3.4.a"><a href="#x4_3_4-2" title="Copy heading and permalink for Task 4.3.4.a" aria-label="Copy heading and permalink for Task 4.3.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x4_3_4-3-1-1">
 <span class="process-math">\(\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n2^n}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.4.b"><a href="#x4_3_4-3" title="Copy heading and permalink for Task 4.3.4.b" aria-label="Copy heading and permalink for Task 4.3.4.b">🔗</a></div></article><article class="task exercise-like" id="x4_3_4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 4.3.4.b"><a href="#x4_3_4-3" title="Copy heading and permalink for Task 4.3.4.b" aria-label="Copy heading and permalink for Task 4.3.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x4_3_4-4-1-1">
 <span class="process-math">\(\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n!}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.4.c"><a href="#x4_3_4-4" title="Copy heading and permalink for Task 4.3.4.c" aria-label="Copy heading and permalink for Task 4.3.4.c">🔗</a></div></article><article class="task exercise-like" id="x4_3_4-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 4.3.4.c"><a href="#x4_3_4-4" title="Copy heading and permalink for Task 4.3.4.c" aria-label="Copy heading and permalink for Task 4.3.4.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_4-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x4_3_4-5-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(1+i)^{2n}}{(2n+1)!}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.4.d"><a href="#x4_3_4-5" title="Copy heading and permalink for Task 4.3.4.d" aria-label="Copy heading and permalink for Task 4.3.4.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 4.3.4"><a href="#x4_3_4" title="Copy heading and permalink for Exercise 4.3.4" aria-label="Copy heading and permalink for Exercise 4.3.4">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x4_3_5-1"><div class="para" id="x4_3_5-1-1">Use the ratio test to find a disk in which the following series converge:<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 4.3.4.d"><a href="#x4_3_4-5" title="Copy heading and permalink for Task 4.3.4.d" aria-label="Copy heading and permalink for Task 4.3.4.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.4"><a href="#x4_3_4" title="Copy heading and permalink for Exercise 4.3.4" aria-label="Copy heading and permalink for Exercise 4.3.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x4_3_5-1">
+<div class="para" id="x4_3_5-1-1">Use the ratio test to find a disk in which the following series converge:<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x4_3_5-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x4_3_5-2-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}(1+i)^nz^n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_5-2-2-1">Converges in <span class="process-math">\(D_\frac{\sqrt{2}}{2}(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.5.a.1"><a href="#x4_3_5-2-2" title="Copy heading and permalink for Solution 4.3.5.a.1" aria-label="Copy heading and permalink for Solution 4.3.5.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 4.3.5.a"><a href="#x4_3_5-2" title="Copy heading and permalink for Task 4.3.5.a" aria-label="Copy heading and permalink for Task 4.3.5.a">🔗</a></div></article><article class="task exercise-like" id="x4_3_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.5.a"><a href="#x4_3_5-2" title="Copy heading and permalink for Task 4.3.5.a" aria-label="Copy heading and permalink for Task 4.3.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x4_3_5-3-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{z^n}{(3+4i)^n}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.5.b"><a href="#x4_3_5-3" title="Copy heading and permalink for Task 4.3.5.b" aria-label="Copy heading and permalink for Task 4.3.5.b">🔗</a></div></article><article class="task exercise-like" id="x4_3_5-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 4.3.5.b"><a href="#x4_3_5-3" title="Copy heading and permalink for Task 4.3.5.b" aria-label="Copy heading and permalink for Task 4.3.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_5-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x4_3_5-4-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(z-i)^n}{(3+4i)^n}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_5-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_5-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_5-4-2-1">Converges in <span class="process-math">\(D_{5}(i)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.5.c.1"><a href="#x4_3_5-4-2" title="Copy heading and permalink for Solution 4.3.5.c.1" aria-label="Copy heading and permalink for Solution 4.3.5.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 4.3.5.c"><a href="#x4_3_5-4" title="Copy heading and permalink for Task 4.3.5.c" aria-label="Copy heading and permalink for Task 4.3.5.c">🔗</a></div></article><article class="task exercise-like" id="x4_3_5-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 4.3.5.c"><a href="#x4_3_5-4" title="Copy heading and permalink for Task 4.3.5.c" aria-label="Copy heading and permalink for Task 4.3.5.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_5-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x4_3_5-5-1-1">
 <span class="process-math">\(\sum\limits_{n=0}^{\infty}\frac{(z-3-4i)^n}{2^n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_5-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.5.d"><a href="#x4_3_5-5" title="Copy heading and permalink for Task 4.3.5.d" aria-label="Copy heading and permalink for Task 4.3.5.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 4.3.5"><a href="#x4_3_5" title="Copy heading and permalink for Exercise 4.3.5" aria-label="Copy heading and permalink for Exercise 4.3.5">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 4.3.5.d"><a href="#x4_3_5-5" title="Copy heading and permalink for Task 4.3.5.d" aria-label="Copy heading and permalink for Task 4.3.5.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.5"><a href="#x4_3_5" title="Copy heading and permalink for Exercise 4.3.5" aria-label="Copy heading and permalink for Exercise 4.3.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_6-1-1">Establish the claim in the proof of <a href="sec_convergence-theorems.html#Geometric_Series" class="xref" data-knowl="./knowl/xref/Geometric_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.1: Geometric series">Theorem 4.3.1</a> that, if <span class="process-math">\(|z|\lt 1\text{,}\)</span> then <span class="process-math">\(\lim\limits_{n \to \infty}z^n=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.6"><a href="#x4_3_6" title="Copy heading and permalink for Exercise 4.3.6" aria-label="Copy heading and permalink for Exercise 4.3.6">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 4.3.6"><a href="#x4_3_6" title="Copy heading and permalink for Exercise 4.3.6" aria-label="Copy heading and permalink for Exercise 4.3.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_7-1-1">In the geometric series, show that if <span class="process-math">\(|z|&gt;1\text{,}\)</span> then <span class="process-math">\(\lim\limits_{n \to \infty}|S_n|=\infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_7-2-1">
 <span class="process-math">\(|S_n| = |\frac{1}{1-z} - \frac{z^n}{1-z}| \ge |\frac{z^n}{1-z}| - |\frac{1}{1-z}| = |z^n| \, |\frac{1}{1-z}| -
 |\frac{1}{1-z}|
 \text{.}\)</span> Now use the fact that <span class="process-math">\(|z|&gt;1\)</span> to get the desired conclusion.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.7.1"><a href="#x4_3_7-2" title="Copy heading and permalink for Solution 4.3.7.1" aria-label="Copy heading and permalink for Solution 4.3.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 4.3.7"><a href="#x4_3_7" title="Copy heading and permalink for Exercise 4.3.7" aria-label="Copy heading and permalink for Exercise 4.3.7">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 4.3.7"><a href="#x4_3_7" title="Copy heading and permalink for Exercise 4.3.7" aria-label="Copy heading and permalink for Exercise 4.3.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_8-1-1">Prove that the series in <a href="sec_convergence-theorems.html#Geom_Series__z____1" class="xref" data-knowl="./knowl/xref/Geom_Series__z____1.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.2">Corollary 4.3.2</a> diverges if <span class="process-math">\(|z|\le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.8"><a href="#x4_3_8" title="Copy heading and permalink for Exercise 4.3.8" aria-label="Copy heading and permalink for Exercise 4.3.8">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 4.3.8"><a href="#x4_3_8" title="Copy heading and permalink for Exercise 4.3.8" aria-label="Copy heading and permalink for Exercise 4.3.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_9-1-1">Prove <a href="sec_convergence-theorems.html#Ratio_Test" class="xref" data-knowl="./knowl/xref/Ratio_Test.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.7: d’Alembert’s ratio test">Theorem 4.3.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_9-2-1">Mimic the argument most calculus texts give for real series, but replace <span class="process-math">\(|x|\)</span> with <span class="process-math">\(|z|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.9.1"><a href="#x4_3_9-2" title="Copy heading and permalink for Solution 4.3.9.1" aria-label="Copy heading and permalink for Solution 4.3.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 4.3.9"><a href="#x4_3_9" title="Copy heading and permalink for Exercise 4.3.9" aria-label="Copy heading and permalink for Exercise 4.3.9">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 4.3.9"><a href="#x4_3_9" title="Copy heading and permalink for Exercise 4.3.9" aria-label="Copy heading and permalink for Exercise 4.3.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_10-1-1">Give a rigorous argument to show that <span class="process-math">\(\lim\limits_{n \to\infty}\)</span> sup <span class="process-math">\(t_n=1\)</span> in <a href="sec_convergence-theorems.html#lim_sup___lim" class="xref" data-knowl="./knowl/xref/lim_sup___lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.14">Example 4.3.14</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.10"><a href="#x4_3_10" title="Copy heading and permalink for Exercise 4.3.10" aria-label="Copy heading and permalink for Exercise 4.3.10">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 4.3.10"><a href="#x4_3_10" title="Copy heading and permalink for Exercise 4.3.10" aria-label="Copy heading and permalink for Exercise 4.3.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x4_3_11-1-1">For <span class="process-math">\(|z|\lt 1\text{,}\)</span> let <span class="process-math">\(f(z)=\sum\limits_{n=0}^{\infty}z^{(2^n)}=z+z^2+z^4+\cdots +z^{2^n}+\cdots\text{.}\)</span> Show that <span class="process-math">\(f(z) =z+f(z^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x4_3_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x4_3_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x4_3_11-2-1">If <span class="process-math">\(f(z)=\sum\limits_{n=0}^{\infty }z^{(2^n)}\text{,}\)</span> then <span class="process-math">\(f(z^2) = \sum\limits_{n=0}^{\infty}(z^2)^{(2^n)} =
 \sum\limits_{n=0}^{\infty}z^{(2\cdot 2^n)} = 
 \sum\limits_{n=0}^{\infty}z^{(2^{n+1})} =
@@ -920,10 +1047,15 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 \text{.}\)</span> Explain why the conclusion now follows, especially the second equality for <span class="process-math">\(f(z^2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x4_3_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 4.3.11.1"><a href="#x4_3_11-2" title="Copy heading and permalink for Solution 4.3.11.1" aria-label="Copy heading and permalink for Solution 4.3.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 4.3.11"><a href="#x4_3_11" title="Copy heading and permalink for Exercise 4.3.11" aria-label="Copy heading and permalink for Exercise 4.3.11">🔗</a></div></article><article class="exercise exercise-like" id="x4_3_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x4_3_12-1"><div class="para" id="x4_3_12-1-1">This exercise makes interesting use of the geometric series.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 4.3.11"><a href="#x4_3_11" title="Copy heading and permalink for Exercise 4.3.11" aria-label="Copy heading and permalink for Exercise 4.3.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x4_3_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x4_3_12-1">
+<div class="para" id="x4_3_12-1-1">This exercise makes interesting use of the geometric series.<div class="autopermalink" data-description="Paragraph"><a href="#x4_3_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x4_3_12-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para logical" id="x4_3_12-2-1-1">
 <div class="para">Use the formula for geometric series with <span class="process-math">\(z=re^{i\theta}\text{,}\)</span> where <span class="process-math">\(r\lt 1\text{,}\)</span> to show that</div>
@@ -935,7 +1067,9 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x4_3_12-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.12.a"><a href="#x4_3_12-2" title="Copy heading and permalink for Task 4.3.12.a" aria-label="Copy heading and permalink for Task 4.3.12.a">🔗</a></div></article><article class="task exercise-like" id="x4_3_12-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 4.3.12.a"><a href="#x4_3_12-2" title="Copy heading and permalink for Task 4.3.12.a" aria-label="Copy heading and permalink for Task 4.3.12.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x4_3_12-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para logical" id="x4_3_12-3-1-1">
 <div class="para">Use part (a) to obtain</div>
 <div class="displaymath process-math" id="x4_3_12-3-1-1-1">
@@ -948,7 +1082,12 @@ L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x4_3_12-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 4.3.12.b"><a href="#x4_3_12-3" title="Copy heading and permalink for Task 4.3.12.b" aria-label="Copy heading and permalink for Task 4.3.12.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 4.3.12"><a href="#x4_3_12" title="Copy heading and permalink for Exercise 4.3.12" aria-label="Copy heading and permalink for Exercise 4.3.12">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.3: Exercises"><a href="#exercises_convergence-theorems" title="Copy heading and permalink for Exercises 4.3: Exercises" aria-label="Copy heading and permalink for Exercises 4.3: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Geometric Series and Convergence Theorems"><a href="#sec_convergence-theorems" title="Copy heading and permalink for Section 4.3: Geometric Series and Convergence Theorems" aria-label="Copy heading and permalink for Section 4.3: Geometric Series and Convergence Theorems">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Task 4.3.12.b"><a href="#x4_3_12-3" title="Copy heading and permalink for Task 4.3.12.b" aria-label="Copy heading and permalink for Task 4.3.12.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 4.3.12"><a href="#x4_3_12" title="Copy heading and permalink for Exercise 4.3.12" aria-label="Copy heading and permalink for Exercise 4.3.12">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 4.3: Exercises"><a href="#exercises_convergence-theorems" title="Copy heading and permalink for Exercises 4.3: Exercises" aria-label="Copy heading and permalink for Exercises 4.3: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 4.3: Geometric Series and Convergence Theorems"><a href="#sec_convergence-theorems" title="Copy heading and permalink for Section 4.3: Geometric Series and Convergence Theorems" aria-label="Copy heading and permalink for Section 4.3: Geometric Series and Convergence Theorems">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_julia-mandelbrot.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_power-series.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

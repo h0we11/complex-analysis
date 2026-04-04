@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_mult-and-division-by-t"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_mult-and-division-by-t">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span>
 </h2>
 <div class="para" id="sec_mult-and-division-by-t-2">Sometimes the solutions to nonhomogeneous linear differential equations with constant coefficients involve the functions <span class="process-math">\(t\cos bt\text{,}\)</span> <span class="process-math">\(t\sin bt\text{,}\)</span> or <span class="process-math">\(t^ne^{at}\)</span> as part of the solution. We now show how the Laplace transforms of <span class="process-math">\(tf(t)\)</span> and <span class="process-math">\(\frac{f(t)}{t}\)</span> are related to the Laplace transform of <span class="process-math">\(f(t)\text{.}\)</span> The transform of <span class="process-math">\(tf(t)\)</span> will be obtained via differentiation and the transform of <span class="process-math">\(\frac{f(t)}{t}\)</span> will be obtained via integration. To be precise, we state the following theorems.<div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -518,7 +520,11 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.8.1: Multiplication by \boldsymbol t"><a href="#sec_mult-and-division-by-t-3" title="Copy heading and permalink for Theorem 11.8.1: Multiplication by \boldsymbol t" aria-label="Copy heading and permalink for Theorem 11.8.1: Multiplication by \boldsymbol t">🔗</a></div></article><details id="sec_mult-and-division-by-t-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_mult-and-division-by-t-4-1">
+<div class="autopermalink" data-description="Theorem 11.8.1: Multiplication by \boldsymbol t"><a href="#sec_mult-and-division-by-t-3" title="Copy heading and permalink for Theorem 11.8.1: Multiplication by \boldsymbol t" aria-label="Copy heading and permalink for Theorem 11.8.1: Multiplication by \boldsymbol t">🔗</a></div>
+</article>
+<details id="sec_mult-and-division-by-t-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_mult-and-division-by-t-4-1">
 <div class="para">By definition we have <span class="process-math">\(F(s) = \int_0^{\infty}f(t)e^{-st}\,dt\text{.}\)</span>  Leibniz’s rule for partial differentiation under the integral sign permits us to write</div>
 <div class="displaymath process-math" id="sec_mult-and-division-by-t-4-1-2">
 \begin{align*}
@@ -531,7 +537,9 @@ F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.8.1"><a href="#sec_mult-and-division-by-t-4" title="Copy heading and permalink for Proof 11.8.1" aria-label="Copy heading and permalink for Proof 11.8.1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm_div-by-t"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.8.1"><a href="#sec_mult-and-division-by-t-4" title="Copy heading and permalink for Proof 11.8.1" aria-label="Copy heading and permalink for Proof 11.8.1">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="thm_div-by-t"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.8.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Division by <span class="process-math">\(\boldsymbol t\)</span>.</span>
 </h3>
 <div class="para logical" id="thm_div-by-t-2-1">
@@ -543,7 +551,11 @@ F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_div-by-t-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.8.2: Division by \boldsymbol t"><a href="#thm_div-by-t" title="Copy heading and permalink for Theorem 11.8.2: Division by \boldsymbol t" aria-label="Copy heading and permalink for Theorem 11.8.2: Division by \boldsymbol t">🔗</a></div></article><details id="sec_mult-and-division-by-t-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_mult-and-division-by-t-6-1">
+<div class="autopermalink" data-description="Theorem 11.8.2: Division by \boldsymbol t"><a href="#thm_div-by-t" title="Copy heading and permalink for Theorem 11.8.2: Division by \boldsymbol t" aria-label="Copy heading and permalink for Theorem 11.8.2: Division by \boldsymbol t">🔗</a></div>
+</article>
+<details id="sec_mult-and-division-by-t-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_mult-and-division-by-t-6-1">
 <div class="para">Since <span class="process-math">\(F(\sigma) = \int_0^{\infty}f(t) e^{-\sigma t}\,dt\text{,}\)</span> we integrate <span class="process-math">\(F(\sigma)\)</span> from <span class="process-math">\(s\)</span> to <span class="process-math">\(\infty\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="sec_mult-and-division-by-t-6-1-5">
@@ -562,12 +574,16 @@ F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.8.2"><a href="#sec_mult-and-division-by-t-6" title="Copy heading and permalink for Proof 11.8.2" aria-label="Copy heading and permalink for Proof 11.8.2">🔗</a></div></article></details><article class="example example-like" id="sec_mult-and-division-by-t-7"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.8.2"><a href="#sec_mult-and-division-by-t-6" title="Copy heading and permalink for Proof 11.8.2" aria-label="Copy heading and permalink for Proof 11.8.2">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_mult-and-division-by-t-7"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.8.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_mult-and-division-by-t-7-1-1">Show that <span class="process-math">\(\mathcal{L}(t\cos bt) =\frac{s^2-b^2}{(s^2+b^2)^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_mult-and-division-by-t-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_mult-and-division-by-t-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_mult-and-division-by-t-7-2-1">
 <div class="para">Let <span class="process-math">\(f(t) =\cos bt\text{,}\)</span> then <span class="process-math">\(F(s) =\mathcal{L}(\cos bt) = \frac{s}{s^2+b^2}\text{.}\)</span> Hence, we can differentiate <span class="process-math">\(F(s)\)</span> to obtain the desired result:</div>
 <div class="displaymath process-math" id="sec_mult-and-division-by-t-7-2-1-4">
@@ -578,13 +594,18 @@ F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt\\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.3.1"><a href="#sec_mult-and-division-by-t-7-2" title="Copy heading and permalink for Solution 11.8.3.1" aria-label="Copy heading and permalink for Solution 11.8.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.8.3"><a href="#sec_mult-and-division-by-t-7" title="Copy heading and permalink for Example 11.8.3" aria-label="Copy heading and permalink for Example 11.8.3">🔗</a></div></article><article class="example example-like" id="sec_mult-and-division-by-t-8"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.8.3"><a href="#sec_mult-and-division-by-t-7" title="Copy heading and permalink for Example 11.8.3" aria-label="Copy heading and permalink for Example 11.8.3">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_mult-and-division-by-t-8"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.8.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_mult-and-division-by-t-8-1-1">Show that <span class="process-math">\(\mathcal{L}(\frac{\sin t}{t}) =\arctan \frac{1}{s}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_mult-and-division-by-t-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_mult-and-division-by-t-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_mult-and-division-by-t-8-2-1">
 <div class="para">Let <span class="process-math">\(f(t) = \sin t\)</span> and <span class="process-math">\(F(s) =\frac{1}{s^2+1}\text{.}\)</span> Since <span class="process-math">\(\lim\limits_{t \to 0^+}\frac{\sin t}{t}=1\text{,}\)</span> we can integrate <span class="process-math">\(F(s)\)</span> to obtain the desired result:</div>
 <div class="displaymath process-math" id="sec_mult-and-division-by-t-8-2-1-5">
@@ -596,8 +617,11 @@ F\,'(s) \amp = \frac{\partial }{\partial s}\int_0^{\infty}f(t)e^{-st}\,dt\\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.4.1"><a href="#sec_mult-and-division-by-t-8-2" title="Copy heading and permalink for Solution 11.8.4.1" aria-label="Copy heading and permalink for Solution 11.8.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.8.4"><a href="#sec_mult-and-division-by-t-8" title="Copy heading and permalink for Example 11.8.4" aria-label="Copy heading and permalink for Example 11.8.4">🔗</a></div></article><div class="para logical" id="sec_mult-and-division-by-t-9">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.8.4"><a href="#sec_mult-and-division-by-t-8" title="Copy heading and permalink for Example 11.8.4" aria-label="Copy heading and permalink for Example 11.8.4">🔗</a></div>
+</article>
+<div class="para logical" id="sec_mult-and-division-by-t-9">
 <div class="para">Some types of differential equations involve the terms <span class="process-math">\(ty\,'(t)\)</span> or <span class="process-math">\(ty\,''(t)\text{.}\)</span> Laplace transforms can be used to find the solution if we use the additional substitutions</div>
 <div class="displaymath process-math" id="sec_mult-and-division-by-t-9-3">
 \begin{align}
@@ -619,7 +643,9 @@ ty\,''(t) - ty\,'(t) - y(t) = 0, \quad \text{with} \quad y(0) = 0\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_mult-and-division-by-t-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_mult-and-division-by-t-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_mult-and-division-by-t-10-2-1">
 <div class="para">Let <span class="process-math">\(Y(s)\)</span> denote the Laplace transform of <span class="process-math">\(y(t)\text{,}\)</span> then using the <a href="sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-9-3" class="xref" data-knowl="./knowl/xref/Laplacety1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.8.1">substitutions (11.8.1)</a> and <a href="sec_mult-and-division-by-t.html#sec_mult-and-division-by-t-9-3" class="xref" data-knowl="./knowl/xref/Laplacety2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.8.2">(11.8.2)</a> results in</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Laplacety1.html ./knowl/xref/Laplacety2.html" id="LaplaceTransDE">
@@ -672,167 +698,254 @@ y(t) = Cte^t\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_mult-and-division-by-t-10-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.5.1"><a href="#sec_mult-and-division-by-t-10-2" title="Copy heading and permalink for Solution 11.8.5.1" aria-label="Copy heading and permalink for Solution 11.8.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.8.5"><a href="#sec_mult-and-division-by-t-10" title="Copy heading and permalink for Example 11.8.5" aria-label="Copy heading and permalink for Example 11.8.5">🔗</a></div></article><section class="exercises" id="exercises_mult-and-division-by-t"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.8.5"><a href="#sec_mult-and-division-by-t-10" title="Copy heading and permalink for Example 11.8.5" aria-label="Copy heading and permalink for Example 11.8.5">🔗</a></div>
+</article>
+<section class="exercises" id="exercises_mult-and-division-by-t">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises_mult-and-division-by-t-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_mult-and-division-by-t-2-1"><div class="para" id="exercises_mult-and-division-by-t-2-1-1">Find the Laplace transform for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="exercises_mult-and-division-by-t-2-1">
+<div class="para" id="exercises_mult-and-division-by-t-2-1-1">Find the Laplace transform for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_mult-and-division-by-t-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-2-1-1">
 <span class="process-math">\(\mathcal{L}(te^{-2t})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-2-2-2-1">
 <span class="process-math">\(\mathcal{L}(te^{-2t}) = \frac{1}{(s+2)^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.1.a.1"><a href="#exercises_mult-and-division-by-t-2-2-2" title="Copy heading and permalink for Solution 11.8.1.a.1" aria-label="Copy heading and permalink for Solution 11.8.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.1.a"><a href="#exercises_mult-and-division-by-t-2-2" title="Copy heading and permalink for Task 11.8.1.a" aria-label="Copy heading and permalink for Task 11.8.1.a">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.1.a"><a href="#exercises_mult-and-division-by-t-2-2" title="Copy heading and permalink for Task 11.8.1.a" aria-label="Copy heading and permalink for Task 11.8.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-3-1-1">
 <span class="process-math">\(\mathcal{L}(t^2e^{4t})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.1.b"><a href="#exercises_mult-and-division-by-t-2-3" title="Copy heading and permalink for Task 11.8.1.b" aria-label="Copy heading and permalink for Task 11.8.1.b">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.8.1.b"><a href="#exercises_mult-and-division-by-t-2-3" title="Copy heading and permalink for Task 11.8.1.b" aria-label="Copy heading and permalink for Task 11.8.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-4-1-1">
 <span class="process-math">\(\mathcal{L}(t\sin 3t)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-2-4-2-1">
 <span class="process-math">\(\mathcal{L}(t\sin 3t) = \frac{6s}{(s^2+9)^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.1.c.1"><a href="#exercises_mult-and-division-by-t-2-4-2" title="Copy heading and permalink for Solution 11.8.1.c.1" aria-label="Copy heading and permalink for Solution 11.8.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.1.c"><a href="#exercises_mult-and-division-by-t-2-4" title="Copy heading and permalink for Task 11.8.1.c" aria-label="Copy heading and permalink for Task 11.8.1.c">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.1.c"><a href="#exercises_mult-and-division-by-t-2-4" title="Copy heading and permalink for Task 11.8.1.c" aria-label="Copy heading and permalink for Task 11.8.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-5-1-1">
 <span class="process-math">\(\mathcal{L}(t^2\cos 2t)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.1.d"><a href="#exercises_mult-and-division-by-t-2-5" title="Copy heading and permalink for Task 11.8.1.d" aria-label="Copy heading and permalink for Task 11.8.1.d">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-2-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 11.8.1.d"><a href="#exercises_mult-and-division-by-t-2-5" title="Copy heading and permalink for Task 11.8.1.d" aria-label="Copy heading and permalink for Task 11.8.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-2-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-6-1-1">
 <span class="process-math">\(\mathcal{L}(t\sinh t)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-2-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-2-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-2-6-2-1">
 <span class="process-math">\(\mathcal{L}(t\sinh t) = \frac{2s}{(s^2-1)^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.1.e.1"><a href="#exercises_mult-and-division-by-t-2-6-2" title="Copy heading and permalink for Solution 11.8.1.e.1" aria-label="Copy heading and permalink for Solution 11.8.1.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.1.e"><a href="#exercises_mult-and-division-by-t-2-6" title="Copy heading and permalink for Task 11.8.1.e" aria-label="Copy heading and permalink for Task 11.8.1.e">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-2-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.1.e"><a href="#exercises_mult-and-division-by-t-2-6" title="Copy heading and permalink for Task 11.8.1.e" aria-label="Copy heading and permalink for Task 11.8.1.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-2-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-2-7-1-1">
 <span class="process-math">\(\mathcal{L}(t^2\cosh t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.1.f"><a href="#exercises_mult-and-division-by-t-2-7" title="Copy heading and permalink for Task 11.8.1.f" aria-label="Copy heading and permalink for Task 11.8.1.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.8.1"><a href="#exercises_mult-and-division-by-t-2" title="Copy heading and permalink for Exercise 11.8.1" aria-label="Copy heading and permalink for Exercise 11.8.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 11.8.1.f"><a href="#exercises_mult-and-division-by-t-2-7" title="Copy heading and permalink for Task 11.8.1.f" aria-label="Copy heading and permalink for Task 11.8.1.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.8.1"><a href="#exercises_mult-and-division-by-t-2" title="Copy heading and permalink for Exercise 11.8.1" aria-label="Copy heading and permalink for Exercise 11.8.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-3-1-1">Show that <span class="process-math">\(\mathcal{L}(\frac{1-\cos t}{t}) = \ln \frac{s^2}{s^2+1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.8.2"><a href="#exercises_mult-and-division-by-t-3" title="Copy heading and permalink for Exercise 11.8.2" aria-label="Copy heading and permalink for Exercise 11.8.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 11.8.2"><a href="#exercises_mult-and-division-by-t-3" title="Copy heading and permalink for Exercise 11.8.2" aria-label="Copy heading and permalink for Exercise 11.8.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-4-1-1">Show that <span class="process-math">\(\mathcal{L}(\frac{e^t-1}{t}) = \ln \frac{s}{s-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.8.3"><a href="#exercises_mult-and-division-by-t-4" title="Copy heading and permalink for Exercise 11.8.3" aria-label="Copy heading and permalink for Exercise 11.8.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 11.8.3"><a href="#exercises_mult-and-division-by-t-4" title="Copy heading and permalink for Exercise 11.8.3" aria-label="Copy heading and permalink for Exercise 11.8.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-5-1-1">Find <span class="process-math">\(\mathcal{L}(te^{at}\cos bt)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.8.4"><a href="#exercises_mult-and-division-by-t-5" title="Copy heading and permalink for Exercise 11.8.4" aria-label="Copy heading and permalink for Exercise 11.8.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 11.8.4"><a href="#exercises_mult-and-division-by-t-5" title="Copy heading and permalink for Exercise 11.8.4" aria-label="Copy heading and permalink for Exercise 11.8.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-6-1-1">Find <span class="process-math">\(\mathcal{L}(t\sin bt)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-6-2-1">
 <span class="process-math">\(\mathcal{L}(t\sin bt) = \frac{2bs}{(s^2+b^2)^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.5.1"><a href="#exercises_mult-and-division-by-t-6-2" title="Copy heading and permalink for Solution 11.8.5.1" aria-label="Copy heading and permalink for Solution 11.8.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 11.8.5"><a href="#exercises_mult-and-division-by-t-6" title="Copy heading and permalink for Exercise 11.8.5" aria-label="Copy heading and permalink for Exercise 11.8.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 11.8.5"><a href="#exercises_mult-and-division-by-t-6" title="Copy heading and permalink for Exercise 11.8.5" aria-label="Copy heading and permalink for Exercise 11.8.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-7-1-1">Find <span class="process-math">\(\mathcal{L}^{-1}(\ln \frac{s}{s+1})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.8.6"><a href="#exercises_mult-and-division-by-t-7" title="Copy heading and permalink for Exercise 11.8.6" aria-label="Copy heading and permalink for Exercise 11.8.6">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 11.8.6"><a href="#exercises_mult-and-division-by-t-7" title="Copy heading and permalink for Exercise 11.8.6" aria-label="Copy heading and permalink for Exercise 11.8.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_mult-and-division-by-t-8-1-1">Find <span class="process-math">\(\mathcal{L}^{-1}\big(\ln \frac{s^2+1}{(s-1)^2}\big)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-8-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\ln \frac{s^2+1}{(s-1)^2}\Big) = \frac{2(e^t-\cos t)}{t}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.7.1"><a href="#exercises_mult-and-division-by-t-8-2" title="Copy heading and permalink for Solution 11.8.7.1" aria-label="Copy heading and permalink for Solution 11.8.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 11.8.7"><a href="#exercises_mult-and-division-by-t-8" title="Copy heading and permalink for Exercise 11.8.7" aria-label="Copy heading and permalink for Exercise 11.8.7">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_mult-and-division-by-t-9-1"><div class="para" id="exercises_mult-and-division-by-t-9-1-1">Solve the initial value problem for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 11.8.7"><a href="#exercises_mult-and-division-by-t-8" title="Copy heading and permalink for Exercise 11.8.7" aria-label="Copy heading and permalink for Exercise 11.8.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_mult-and-division-by-t-9-1">
+<div class="para" id="exercises_mult-and-division-by-t-9-1-1">Solve the initial value problem for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_mult-and-division-by-t-9-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-2-1-1">
-<span class="process-math">\(y\,''(t) +2y\,'(t) + y(t) = 2e^{-t},\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-2-1-1-2">
+<span class="process-math">\(y\,''(t) +2y\,'(t) + y(t) = 2e^{-t},\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-2-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0 \quad \text{and} \quad y\,'(0)=1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-9-2-2-1">
 <span class="process-math">\(y(t) = te^{-t}+t^2e^{-t}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.8.a.1"><a href="#exercises_mult-and-division-by-t-9-2-2" title="Copy heading and permalink for Solution 11.8.8.a.1" aria-label="Copy heading and permalink for Solution 11.8.8.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.8.a"><a href="#exercises_mult-and-division-by-t-9-2" title="Copy heading and permalink for Task 11.8.8.a" aria-label="Copy heading and permalink for Task 11.8.8.a">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.8.a"><a href="#exercises_mult-and-division-by-t-9-2" title="Copy heading and permalink for Task 11.8.8.a" aria-label="Copy heading and permalink for Task 11.8.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-3-1-1">
-<span class="process-math">\(y\,''(t) + y(t) = 2\sin t,\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-3-1-1-2">
+<span class="process-math">\(y\,''(t) + y(t) = 2\sin t,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-3-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0 \quad \text{and} \quad y\,'(0)=-1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.8.b"><a href="#exercises_mult-and-division-by-t-9-3" title="Copy heading and permalink for Task 11.8.8.b" aria-label="Copy heading and permalink for Task 11.8.8.b">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.8.8.b"><a href="#exercises_mult-and-division-by-t-9-3" title="Copy heading and permalink for Task 11.8.8.b" aria-label="Copy heading and permalink for Task 11.8.8.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-4-1-1">
-<span class="process-math">\(ty\,''(t) - ty\,'(t) - y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-4-1-1-2">
+<span class="process-math">\(ty\,''(t) - ty\,'(t) - y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-4-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-4-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-9-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-9-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-9-4-2-1">
 <span class="process-math">\(y(t) = Cte^t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.8.c.1"><a href="#exercises_mult-and-division-by-t-9-4-2" title="Copy heading and permalink for Solution 11.8.8.c.1" aria-label="Copy heading and permalink for Solution 11.8.8.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.8.c"><a href="#exercises_mult-and-division-by-t-9-4" title="Copy heading and permalink for Task 11.8.8.c" aria-label="Copy heading and permalink for Task 11.8.8.c">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.8.c"><a href="#exercises_mult-and-division-by-t-9-4" title="Copy heading and permalink for Task 11.8.8.c" aria-label="Copy heading and permalink for Task 11.8.8.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-5-1-1">
-<span class="process-math">\(ty\,''(t) + (t-1)y\,'(t) - 2y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-5-1-1-2">
+<span class="process-math">\(ty\,''(t) + (t-1)y\,'(t) - 2y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-5-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-5-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.8.d"><a href="#exercises_mult-and-division-by-t-9-5" title="Copy heading and permalink for Task 11.8.8.d" aria-label="Copy heading and permalink for Task 11.8.8.d">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-9-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 11.8.8.d"><a href="#exercises_mult-and-division-by-t-9-5" title="Copy heading and permalink for Task 11.8.8.d" aria-label="Copy heading and permalink for Task 11.8.8.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-9-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-6-1-1">
-<span class="process-math">\(ty\,''(t) + ty\,'(t) - y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-6-1-1-2">
+<span class="process-math">\(ty\,''(t) + ty\,'(t) - y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-6-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-6-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-9-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-9-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-9-6-2-1">
 <span class="process-math">\(y(t) = Ct\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.8.e.1"><a href="#exercises_mult-and-division-by-t-9-6-2" title="Copy heading and permalink for Solution 11.8.8.e.1" aria-label="Copy heading and permalink for Solution 11.8.8.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.8.8.e"><a href="#exercises_mult-and-division-by-t-9-6" title="Copy heading and permalink for Task 11.8.8.e" aria-label="Copy heading and permalink for Task 11.8.8.e">🔗</a></div></article><article class="task exercise-like" id="exercises_mult-and-division-by-t-9-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.8.8.e"><a href="#exercises_mult-and-division-by-t-9-6" title="Copy heading and permalink for Task 11.8.8.e" aria-label="Copy heading and permalink for Task 11.8.8.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_mult-and-division-by-t-9-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_mult-and-division-by-t-9-7-1-1">
-<span class="process-math">\(ty\,''(t) + (t-1)y\,'(t) + y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-9-7-1-1-2">
+<span class="process-math">\(ty\,''(t) + (t-1)y\,'(t) + y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-9-7-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-7-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-9-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.8.8.f"><a href="#exercises_mult-and-division-by-t-9-7" title="Copy heading and permalink for Task 11.8.8.f" aria-label="Copy heading and permalink for Task 11.8.8.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.8.8"><a href="#exercises_mult-and-division-by-t-9" title="Copy heading and permalink for Exercise 11.8.8" aria-label="Copy heading and permalink for Exercise 11.8.8">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises_mult-and-division-by-t-10-1-1">Solve the Laguerre equation <span class="process-math">\(ty\,''(t) + (1-t)y\,'(t) + y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-10-1-1-2">
+<div class="autopermalink" data-description="Task 11.8.8.f"><a href="#exercises_mult-and-division-by-t-9-7" title="Copy heading and permalink for Task 11.8.8.f" aria-label="Copy heading and permalink for Task 11.8.8.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.8.8"><a href="#exercises_mult-and-division-by-t-9" title="Copy heading and permalink for Exercise 11.8.8" aria-label="Copy heading and permalink for Exercise 11.8.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises_mult-and-division-by-t-10-1-1">Solve the Laguerre equation <span class="process-math">\(ty\,''(t) + (1-t)y\,'(t) + y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-10-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-10-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_mult-and-division-by-t-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_mult-and-division-by-t-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_mult-and-division-by-t-10-2-1">
 <span class="process-math">\(y(t) = 1-t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.8.9.1"><a href="#exercises_mult-and-division-by-t-10-2" title="Copy heading and permalink for Solution 11.8.9.1" aria-label="Copy heading and permalink for Solution 11.8.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 11.8.9"><a href="#exercises_mult-and-division-by-t-10" title="Copy heading and permalink for Exercise 11.8.9" aria-label="Copy heading and permalink for Exercise 11.8.9">🔗</a></div></article><article class="exercise exercise-like" id="exercises_mult-and-division-by-t-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises_mult-and-division-by-t-11-1-1">Solve the Laguerre equation <span class="process-math">\(ty\,''(t) + (1-t)y\,'(t) + 2y(t) = 0,\)</span> <div class="para" id="exercises_mult-and-division-by-t-11-1-1-2">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 11.8.9"><a href="#exercises_mult-and-division-by-t-10" title="Copy heading and permalink for Exercise 11.8.9" aria-label="Copy heading and permalink for Exercise 11.8.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_mult-and-division-by-t-11"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises_mult-and-division-by-t-11-1-1">Solve the Laguerre equation <span class="process-math">\(ty\,''(t) + (1-t)y\,'(t) + 2y(t) = 0,\)</span> 
+<div class="para" id="exercises_mult-and-division-by-t-11-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-11-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_mult-and-division-by-t-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.8.10"><a href="#exercises_mult-and-division-by-t-11" title="Copy heading and permalink for Exercise 11.8.10" aria-label="Copy heading and permalink for Exercise 11.8.10">🔗</a></div></article><div class="autopermalink" data-description="Exercises 11.8: Exercises"><a href="#exercises_mult-and-division-by-t" title="Copy heading and permalink for Exercises 11.8: Exercises" aria-label="Copy heading and permalink for Exercises 11.8: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 11.8: Multiplication and Division by t"><a href="#sec_mult-and-division-by-t" title="Copy heading and permalink for Section 11.8: Multiplication and Division by t" aria-label="Copy heading and permalink for Section 11.8: Multiplication and Division by t">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 11.8.10"><a href="#exercises_mult-and-division-by-t-11" title="Copy heading and permalink for Exercise 11.8.10" aria-label="Copy heading and permalink for Exercise 11.8.10">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 11.8: Exercises"><a href="#exercises_mult-and-division-by-t" title="Copy heading and permalink for Exercises 11.8: Exercises" aria-label="Copy heading and permalink for Exercises 11.8: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 11.8: Multiplication and Division by t"><a href="#sec_mult-and-division-by-t" title="Copy heading and permalink for Section 11.8: Multiplication and Division by t" aria-label="Copy heading and permalink for Section 11.8: Multiplication and Division by t">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_shifting-thms.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_laplace-inversion.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

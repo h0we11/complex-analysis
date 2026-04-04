@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_residue-thm"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_residue-thm">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Residue Theorem</span>
 </h2>
 <div class="para" id="sec_residue-thm-2">The Cauchy integral formulas given in <a href="sec_integral-representations.html" class="internal" title="Section 6.5: Cauchy’s Integral Formulas">Section 6.5</a> are useful in evaluating contour integrals over a simple closed contour <span class="process-math">\(C\)</span> where the integrand has the form <span class="process-math">\(\frac{f(z)}{(z-z_0)^k}\)</span> and <span class="process-math">\(f\)</span> is an analytic function. In this case, the singularity of the integrand is at worst a pole of order <span class="process-math">\(k\)</span> at <span class="process-math">\(z_0\text{.}\)</span> We begin this section by extending this result to integrals that have a finite number of isolated singularities inside the contour <span class="process-math">\(C\text{.}\)</span> This new method can be used in cases where the integrand has an essential singularity at <span class="process-math">\(z_0\)</span> and is an important extension of the previous method.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -518,7 +520,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 8.1.1: Residue"><a href="#sec_residue-thm-3" title="Copy heading and permalink for Definition 8.1.1: Residue" aria-label="Copy heading and permalink for Definition 8.1.1: Residue">🔗</a></div></article><article class="example example-like" id="Residue_Ex"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 8.1.1: Residue"><a href="#sec_residue-thm-3" title="Copy heading and permalink for Definition 8.1.1: Residue" aria-label="Copy heading and permalink for Definition 8.1.1: Residue">🔗</a></div>
+</article>
+<article class="example example-like" id="Residue_Ex"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="Residue_Ex-1-1">
@@ -532,12 +536,16 @@ f(z) = \exp\left(\frac{2}{z}\right) = 1+\frac{2}{z}+\frac{2^2}{2!z^2} + \frac{2^
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Residue_Ex-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 8.1.2"><a href="#Residue_Ex" title="Copy heading and permalink for Example 8.1.2" aria-label="Copy heading and permalink for Example 8.1.2">🔗</a></div></article><article class="example example-like" id="sec_residue-thm-5"><h3 class="heading">
+<div class="autopermalink" data-description="Example 8.1.2"><a href="#Residue_Ex" title="Copy heading and permalink for Example 8.1.2" aria-label="Copy heading and permalink for Example 8.1.2">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_residue-thm-5"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-5-1-1">Evaluate <span class="process-math">\(\mathrm{Res}[g,0]\)</span> if <span class="process-math">\(g(z)=\frac{3}{2z+z^2-z^3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-5-2-1">
 <div class="para">Using the techniques of <a href="sec_laurent-series.html#ex_three-laurent-expansions" class="xref" data-knowl="./knowl/xref/ex_three-laurent-expansions.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.3.9">Example 7.3.9</a>, we find that <span class="process-math">\(g\)</span> has three Laurent series representations involving powers of <span class="process-math">\(z\text{.}\)</span> In the punctured disk <span class="process-math">\(D_1^*(0)\text{,}\)</span> <span class="process-math">\(g(z) = \sum\limits_{n=0}^{\infty}[(-1)^n+\frac{1}{2^{n+1}}]z^{n-1}\text{.}\)</span> Computing the first few coefficients, we obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_three-laurent-expansions.html" id="sec_residue-thm-5-2-1-6">
@@ -550,8 +558,11 @@ g(z) = \frac{3}{2}\frac{1}{z} - \frac{3}{4} + \frac{9}{8}z - \frac{15}{16}z^2 + 
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.3.1"><a href="#sec_residue-thm-5-2" title="Copy heading and permalink for Solution 8.1.3.1" aria-label="Copy heading and permalink for Solution 8.1.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.3"><a href="#sec_residue-thm-5" title="Copy heading and permalink for Example 8.1.3" aria-label="Copy heading and permalink for Example 8.1.3">🔗</a></div></article><div class="para logical" id="sec_residue-thm-6">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.3"><a href="#sec_residue-thm-5" title="Copy heading and permalink for Example 8.1.3" aria-label="Copy heading and permalink for Example 8.1.3">🔗</a></div>
+</article>
+<div class="para logical" id="sec_residue-thm-6">
 <div class="para">Recall that, for a function <span class="process-math">\(f\)</span> analytic in <span class="process-math">\(D_{R}^*(z_0)\)</span> and for any <span class="process-math">\(r\)</span> with <span class="process-math">\(0\lt r\lt R\text{,}\)</span> the Laurent series coefficients of <span class="process-math">\(f\)</span> are given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Laruent_Coeffs.html" id="Laruent_Coeffs">
 \begin{equation}
@@ -574,7 +585,9 @@ a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}
 </h3>
 <div class="para" id="sec_residue-thm-8-1-1">Evaluate <span class="process-math">\(\int\limits_{C_1^{+}(0)}\exp(\frac{2}{z})\,dz\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-8-2-1">
 <div class="para">
 <a href="sec_residue-thm.html#Residue_Ex" class="xref" data-knowl="./knowl/xref/Residue_Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 8.1.2">Example 8.1.2</a> showed that the residue of <span class="process-math">\(f(z) = \exp\left(\frac{2}{z}\right)\)</span> at <span class="process-math">\(z_0=0\)</span> is <span class="process-math">\(\mathrm{Res}[f,0] =2\text{.}\)</span> Using <a href="sec_residue-thm.html#Int_f_z__formula" class="xref" data-knowl="./knowl/xref/Int_f_z__formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.1.2">Equation (8.1.2)</a>, we get</div>
@@ -586,8 +599,11 @@ a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.4.1"><a href="#sec_residue-thm-8-2" title="Copy heading and permalink for Solution 8.1.4.1" aria-label="Copy heading and permalink for Solution 8.1.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.4"><a href="#sec_residue-thm-8" title="Copy heading and permalink for Example 8.1.4" aria-label="Copy heading and permalink for Example 8.1.4">🔗</a></div></article><article class="theorem theorem-like" id="Residue_Thm"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.4"><a href="#sec_residue-thm-8" title="Copy heading and permalink for Example 8.1.4" aria-label="Copy heading and permalink for Example 8.1.4">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="Residue_Thm"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cauchy’s residue theorem.</span>
 </h3>
 <div class="para logical" id="Residue_Thm-2-1">
@@ -599,8 +615,14 @@ a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}
 </div>
 <div class="para">The situation is illustrated in <a href="sec_residue-thm.html#fig_ch-08-01" class="xref" data-knowl="./knowl/xref/fig_ch-08-01.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 8.1.6">Figure 8.1.6</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Residue_Thm-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <figure class="figure figure-like" id="fig_ch-08-01"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-08/ch-08-fig-01.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain <span class="process-math">\(D\)</span> and contour <span class="process-math">\(C\)</span> and the singular points <span class="process-math">\(z_1, z_2, \ldots, z_n\)</span> in the statement of Cauchy ’s residue theorem<div class="autopermalink" data-description="Figure 8.1.6"><a href="#fig_ch-08-01" title="Copy heading and permalink for Figure 8.1.6" aria-label="Copy heading and permalink for Figure 8.1.6">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Theorem 8.1.5: Cauchy’s residue theorem"><a href="#Residue_Thm" title="Copy heading and permalink for Theorem 8.1.5: Cauchy’s residue theorem" aria-label="Copy heading and permalink for Theorem 8.1.5: Cauchy’s residue theorem">🔗</a></div></article><details id="sec_residue-thm-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_residue-thm-10-1">
+</div> 
+<figure class="figure figure-like" id="fig_ch-08-01"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-08/ch-08-fig-01.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain <span class="process-math">\(D\)</span> and contour <span class="process-math">\(C\)</span> and the singular points <span class="process-math">\(z_1, z_2, \ldots, z_n\)</span> in the statement of Cauchy ’s residue theorem<div class="autopermalink" data-description="Figure 8.1.6"><a href="#fig_ch-08-01" title="Copy heading and permalink for Figure 8.1.6" aria-label="Copy heading and permalink for Figure 8.1.6">🔗</a></div></figcaption>
+</figure><div class="autopermalink" data-description="Theorem 8.1.5: Cauchy’s residue theorem"><a href="#Residue_Thm" title="Copy heading and permalink for Theorem 8.1.5: Cauchy’s residue theorem" aria-label="Copy heading and permalink for Theorem 8.1.5: Cauchy’s residue theorem">🔗</a></div>
+</article>
+<details id="sec_residue-thm-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_residue-thm-10-1">
 <div class="para">Since there are a finite number of singular points inside <span class="process-math">\(C\text{,}\)</span> there exists an <span class="process-math">\(r&gt;0\)</span> such that the positively oriented circles <span class="process-math">\(C_k=C_{r}^{+}(z_k)\text{,}\)</span> for <span class="process-math">\(k=1,2,\ldots,n\text{,}\)</span> are mutually disjoint and all lie inside <span class="process-math">\(C\text{.}\)</span> From the extended Cauchy-Goursat theorem (<a href="sec_cauchy-goursat.html#Extended_CG_Thm" class="xref" data-knowl="./knowl/xref/Extended_CG_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.3.17: Extended Cauchy-Goursat theorem">Theorem 6.3.17</a>), it follows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Extended_CG_Thm.html ./knowl/xref/Int_f_z__formula.html" id="sec_residue-thm-10-1-7">
 \begin{equation*}
@@ -616,7 +638,9 @@ a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}
 <div class="para">Combining the last two equations gives the desired result.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 8.1.1"><a href="#sec_residue-thm-10" title="Copy heading and permalink for Proof 8.1.1" aria-label="Copy heading and permalink for Proof 8.1.1">🔗</a></div></article></details><div class="para" id="sec_residue-thm-11">The domain <span class="process-math">\(D\)</span> and contour <span class="process-math">\(C\)</span> and the singular points <span class="process-math">\(z_1, \, z_2, \, \ldots, \, z_n\)</span> in the statement of Cauchy ’s residue theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 8.1.1"><a href="#sec_residue-thm-10" title="Copy heading and permalink for Proof 8.1.1" aria-label="Copy heading and permalink for Proof 8.1.1">🔗</a></div>
+</article></details>
+<div class="para" id="sec_residue-thm-11">The domain <span class="process-math">\(D\)</span> and contour <span class="process-math">\(C\)</span> and the singular points <span class="process-math">\(z_1, \, z_2, \, \ldots, \, z_n\)</span> in the statement of Cauchy ’s residue theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_residue-thm-12">The calculation of a Laurent series expansion is tedious in most circumstances. As the residue at <span class="process-math">\(z_0\)</span> involves only the coefficient <span class="process-math">\(a_{-1}\)</span> in the Laurent expansion, we seek a method to calculate the residue from special information about the nature of the singularity at <span class="process-math">\(z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -663,7 +687,11 @@ a_n = \frac{1}{2\pi i}\int\limits_{C_{r}^{+}(z_0)}\frac{f(\xi)}{(\xi -z_0)^{n+1}
 <div class="autopermalink" data-description="Item 3"><a href="#Residues_at_Poles-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Theorem 8.1.7: Residues at Poles"><a href="#Residues_at_Poles" title="Copy heading and permalink for Theorem 8.1.7: Residues at Poles" aria-label="Copy heading and permalink for Theorem 8.1.7: Residues at Poles">🔗</a></div></article><details id="sec_residue-thm-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_residue-thm-15-1">
+<div class="autopermalink" data-description="Theorem 8.1.7: Residues at Poles"><a href="#Residues_at_Poles" title="Copy heading and permalink for Theorem 8.1.7: Residues at Poles" aria-label="Copy heading and permalink for Theorem 8.1.7: Residues at Poles">🔗</a></div>
+</article>
+<details id="sec_residue-thm-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_residue-thm-15-1">
 <div class="para">If <span class="process-math">\(f\)</span> has a simple pole at <span class="process-math">\(z_0\text{,}\)</span> then the Laurent series is</div>
 <div class="displaymath process-math" id="sec_residue-thm-15-1-3">
 \begin{equation*}
@@ -706,12 +734,16 @@ f(z) = \frac{a_{-k}}{(z-z_0)^k} \amp + \frac{a_{-k+1}}{(z-z_0)^{k-1}} + \cdots\\
 <div class="para">which establishes part (3).</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 8.1.2"><a href="#sec_residue-thm-15" title="Copy heading and permalink for Proof 8.1.2" aria-label="Copy heading and permalink for Proof 8.1.2">🔗</a></div></article></details><article class="example example-like" id="sec_residue-thm-16"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 8.1.2"><a href="#sec_residue-thm-15" title="Copy heading and permalink for Proof 8.1.2" aria-label="Copy heading and permalink for Proof 8.1.2">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_residue-thm-16"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-16-1-1">Find the residue of <span class="process-math">\(f(z) =\frac{\pi \cot (\pi z)}{z^2}\)</span> at <span class="process-math">\(z_0=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-16-2-1">
 <div class="para">We write <span class="process-math">\(f(z) =\frac{\pi \cos (\pi z)}{z^2\sin (\pi z)}\text{.}\)</span> Because <span class="process-math">\(z^2\sin \pi z\)</span> has a zero of order <span class="process-math">\(3\)</span> at <span class="process-math">\(z_0=0\)</span> and <span class="process-math">\(\pi \cos (\pi z_0) \ne 0\text{,}\)</span> <span class="process-math">\(f\)</span> has a pole of order <span class="process-math">\(3\)</span> at <span class="process-math">\(z_0\text{.}\)</span> By part (<em class="emphasis">iii</em>) of Theorem 8.2, we have</div>
 <div class="displaymath process-math" id="sec_residue-thm-16-2-1-10">
@@ -740,13 +772,18 @@ f(z) = \frac{a_{-k}}{(z-z_0)^k} \amp + \frac{a_{-k+1}}{(z-z_0)^{k-1}} + \cdots\\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-16-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.8.1"><a href="#sec_residue-thm-16-2" title="Copy heading and permalink for Solution 8.1.8.1" aria-label="Copy heading and permalink for Solution 8.1.8.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.8"><a href="#sec_residue-thm-16" title="Copy heading and permalink for Example 8.1.8" aria-label="Copy heading and permalink for Example 8.1.8">🔗</a></div></article><article class="example example-like" id="sec_residue-thm-17"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.8"><a href="#sec_residue-thm-16" title="Copy heading and permalink for Example 8.1.8" aria-label="Copy heading and permalink for Example 8.1.8">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_residue-thm-17"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-17-1-1">Evaluate <span class="process-math">\(\int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}\,dz\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-17-2-1">
 <div class="para">We write the integrand as <span class="process-math">\(f(z) =\frac{1}{z^2(z+2)(z-1)}\text{.}\)</span> The singularities of <span class="process-math">\(f\)</span> that lie inside <span class="process-math">\(C_3(0)\)</span> are simple poles at the points <span class="process-math">\(1\)</span> and <span class="process-math">\(-2\text{,}\)</span> and a pole of order <span class="process-math">\(2\)</span> at the origin. We compute the residues as follows:</div>
 <div class="displaymath process-math" id="sec_residue-thm-17-2-1-7">
@@ -772,13 +809,18 @@ f(z) = \frac{a_{-k}}{(z-z_0)^k} \amp + \frac{a_{-k+1}}{(z-z_0)^{k-1}} + \cdots\\
 <div class="para" id="sec_residue-thm-17-2-3">The answer <span class="process-math">\(\int\limits_{C_3^{+}(0)}\frac{1}{z^4+z^3-2z^2}\,dz=0\)</span> is not at all obvious, and all the preceding calculations are required to get it.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-17-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.9.1"><a href="#sec_residue-thm-17-2" title="Copy heading and permalink for Solution 8.1.9.1" aria-label="Copy heading and permalink for Solution 8.1.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.9"><a href="#sec_residue-thm-17" title="Copy heading and permalink for Example 8.1.9" aria-label="Copy heading and permalink for Example 8.1.9">🔗</a></div></article><article class="example example-like" id="sec_residue-thm-18"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.9"><a href="#sec_residue-thm-17" title="Copy heading and permalink for Example 8.1.9" aria-label="Copy heading and permalink for Example 8.1.9">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_residue-thm-18"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-18-1-1">Find<span class="process-math">\(\int\limits_{C_2^{+}(1)}(z^4+4)^{-1}\,dz\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-18-2-1">
 <div class="para">The singularities of the integrand <span class="process-math">\(f(z) = \displaystyle\frac{1}{z^4+4}\)</span> that lie inside <span class="process-math">\(C_2(1)\)</span> are simple poles occurring at the points <span class="process-math">\(1\pm i\text{,}\)</span> as the points <span class="process-math">\(-1\pm i\)</span> lie outside <span class="process-math">\(C_2(1)\text{.}\)</span> Factoring the denominator is tedious, so we use a different approach. If <span class="process-math">\(z_0\)</span> is any one of the singularities of <span class="process-math">\(f\text{,}\)</span> then we can use L’Hôpital’s rule to compute <span class="process-math">\(\mathrm{Res}[f,z_0]\text{:}\)</span>
 </div>
@@ -800,8 +842,11 @@ f(z) = \frac{a_{-k}}{(z-z_0)^k} \amp + \frac{a_{-k+1}}{(z-z_0)^{k-1}} + \cdots\\
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-18-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.10.1"><a href="#sec_residue-thm-18-2" title="Copy heading and permalink for Solution 8.1.10.1" aria-label="Copy heading and permalink for Solution 8.1.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.10"><a href="#sec_residue-thm-18" title="Copy heading and permalink for Example 8.1.10" aria-label="Copy heading and permalink for Example 8.1.10">🔗</a></div></article><div class="para" id="sec_residue-thm-19">The theory of residues can be used to expand the quotient of two polynomials into its <em class="emphasis">partial fraction</em> representation.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.10"><a href="#sec_residue-thm-18" title="Copy heading and permalink for Example 8.1.10" aria-label="Copy heading and permalink for Example 8.1.10">🔗</a></div>
+</article>
+<div class="para" id="sec_residue-thm-19">The theory of residues can be used to expand the quotient of two polynomials into its <em class="emphasis">partial fraction</em> representation.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="Poly_Residue_Ex"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -819,7 +864,9 @@ C \amp = \mathrm{Res}[f,c] =\frac{P(c)}{(c-a)(c-b)}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Poly_Residue_Ex-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="Poly_Residue_Ex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="Poly_Residue_Ex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="Poly_Residue_Ex-2-1">It will suffice to prove that <span class="process-math">\(A=\mathrm{Res}[f,a]\text{.}\)</span> To do so, expand <span class="process-math">\(f\)</span> in its Laurent series about the point <span class="process-math">\(a\)</span> by writing the three terms <span class="process-math">\(\frac{A}{z-a}, \, \frac{B}{z-b}\)</span> and <span class="process-math">\(\frac{C}{z-c}\)</span> in their Laurent series about the point <span class="process-math">\(a\)</span> and adding them.<div class="autopermalink" data-description="Paragraph"><a href="#Poly_Residue_Ex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="Poly_Residue_Ex-2-2">
@@ -866,13 +913,18 @@ f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(
 <div class="autopermalink" data-description="Paragraph"><a href="#Poly_Residue_Ex-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.11.1"><a href="#Poly_Residue_Ex-2" title="Copy heading and permalink for Solution 8.1.11.1" aria-label="Copy heading and permalink for Solution 8.1.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.11"><a href="#Poly_Residue_Ex" title="Copy heading and permalink for Example 8.1.11" aria-label="Copy heading and permalink for Example 8.1.11">🔗</a></div></article><article class="example example-like" id="sec_residue-thm-21"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.11"><a href="#Poly_Residue_Ex" title="Copy heading and permalink for Example 8.1.11" aria-label="Copy heading and permalink for Example 8.1.11">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_residue-thm-21"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-21-1-1">Express <span class="process-math">\(f(z) =\frac{3z+2}{z(z-1)(z-2)}\)</span> in partial fractions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-21-2-1">
 <div class="para">Computing the residues, we obtain</div>
 <div class="displaymath process-math" id="sec_residue-thm-21-2-1-1">
@@ -893,8 +945,11 @@ f(z) = \frac{A}{z-a} - \sum_{n=0}^{\infty}\left[\frac{B}{(b-a)^{n+1}}+\frac{C}{(
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-21-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.12.1"><a href="#sec_residue-thm-21-2" title="Copy heading and permalink for Solution 8.1.12.1" aria-label="Copy heading and permalink for Solution 8.1.12.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.12"><a href="#sec_residue-thm-21" title="Copy heading and permalink for Example 8.1.12" aria-label="Copy heading and permalink for Example 8.1.12">🔗</a></div></article><article class="remark remark-like" id="sec_residue-thm-22"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.12"><a href="#sec_residue-thm-21" title="Copy heading and permalink for Example 8.1.12" aria-label="Copy heading and permalink for Example 8.1.12">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_residue-thm-22"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_residue-thm-22-1">
@@ -908,12 +963,16 @@ f(z) = \frac{P(z)}{(z-a)^2(z-b)} = \frac{A}{(z-a)^2}+\frac{B}{z-a}+\frac{C}{z-b}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 8.1.13"><a href="#sec_residue-thm-22" title="Copy heading and permalink for Remark 8.1.13" aria-label="Copy heading and permalink for Remark 8.1.13">🔗</a></div></article><article class="example example-like" id="sec_residue-thm-23"><h3 class="heading">
+<div class="autopermalink" data-description="Remark 8.1.13"><a href="#sec_residue-thm-22" title="Copy heading and permalink for Remark 8.1.13" aria-label="Copy heading and permalink for Remark 8.1.13">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_residue-thm-23"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_residue-thm-23-1-1">Express <span class="process-math">\(f(z) =\frac{z^2+3z+2}{z^2(z-1)}\)</span> in partial fractions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_residue-thm-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_residue-thm-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_residue-thm-23-2-1">
 <div class="para">Using the previous remark, we have</div>
 <div class="displaymath process-math" id="sec_residue-thm-23-2-1-1">
@@ -942,112 +1001,168 @@ C \amp = \mathrm{Res}[f,1] =\lim\limits_{z \to 1}\frac{z^2+3z+2}{z^2}=6\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_residue-thm-23-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.14.1"><a href="#sec_residue-thm-23-2" title="Copy heading and permalink for Solution 8.1.14.1" aria-label="Copy heading and permalink for Solution 8.1.14.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 8.1.14"><a href="#sec_residue-thm-23" title="Copy heading and permalink for Example 8.1.14" aria-label="Copy heading and permalink for Example 8.1.14">🔗</a></div></article><section class="exercises" id="exercises_residue-thm"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 8.1.14"><a href="#sec_residue-thm-23" title="Copy heading and permalink for Example 8.1.14" aria-label="Copy heading and permalink for Example 8.1.14">🔗</a></div>
+</article>
+<section class="exercises" id="exercises_residue-thm">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="x8_1_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_1-1"><div class="para" id="x8_1_1-1-1">Find <span class="process-math">\(\mathrm{Res}[f,0]\)</span> for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="x8_1_1-1">
+<div class="para" id="x8_1_1-1-1">Find <span class="process-math">\(\mathrm{Res}[f,0]\)</span> for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_1-2-1-1">
 <span class="process-math">\(f(z) =z^{-1}\exp z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-2-2-1">
 <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.a.1"><a href="#x8_1_1-2-2" title="Copy heading and permalink for Solution 8.1.1.a.1" aria-label="Copy heading and permalink for Solution 8.1.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.a"><a href="#x8_1_1-2" title="Copy heading and permalink for Task 8.1.1.a" aria-label="Copy heading and permalink for Task 8.1.1.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.a"><a href="#x8_1_1-2" title="Copy heading and permalink for Task 8.1.1.a" aria-label="Copy heading and permalink for Task 8.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_1-3-1-1">
 <span class="process-math">\(f(z) =z^{-3}\cosh 4z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.b"><a href="#x8_1_1-3" title="Copy heading and permalink for Task 8.1.1.b" aria-label="Copy heading and permalink for Task 8.1.1.b">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.b"><a href="#x8_1_1-3" title="Copy heading and permalink for Task 8.1.1.b" aria-label="Copy heading and permalink for Task 8.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x8_1_1-4-1-1">
 <span class="process-math">\(f(z) =\csc z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-4-2-1">
 <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.c.1"><a href="#x8_1_1-4-2" title="Copy heading and permalink for Solution 8.1.1.c.1" aria-label="Copy heading and permalink for Solution 8.1.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.c"><a href="#x8_1_1-4" title="Copy heading and permalink for Task 8.1.1.c" aria-label="Copy heading and permalink for Task 8.1.1.c">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.c"><a href="#x8_1_1-4" title="Copy heading and permalink for Task 8.1.1.c" aria-label="Copy heading and permalink for Task 8.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x8_1_1-5-1-1">
 <span class="process-math">\(f(z) =\frac{z^2+4z+5}{z^2+z}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.d"><a href="#x8_1_1-5" title="Copy heading and permalink for Task 8.1.1.d" aria-label="Copy heading and permalink for Task 8.1.1.d">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.d"><a href="#x8_1_1-5" title="Copy heading and permalink for Task 8.1.1.d" aria-label="Copy heading and permalink for Task 8.1.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x8_1_1-6-1-1">
 <span class="process-math">\(f(z) =\cot z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-6-2-1">
 <span class="process-math">\(1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.e.1"><a href="#x8_1_1-6-2" title="Copy heading and permalink for Solution 8.1.1.e.1" aria-label="Copy heading and permalink for Solution 8.1.1.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.e"><a href="#x8_1_1-6" title="Copy heading and permalink for Task 8.1.1.e" aria-label="Copy heading and permalink for Task 8.1.1.e">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.e"><a href="#x8_1_1-6" title="Copy heading and permalink for Task 8.1.1.e" aria-label="Copy heading and permalink for Task 8.1.1.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="x8_1_1-7-1-1">
 <span class="process-math">\(f(z) =z^{-3}\cos z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.f"><a href="#x8_1_1-7" title="Copy heading and permalink for Task 8.1.1.f" aria-label="Copy heading and permalink for Task 8.1.1.f">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.f"><a href="#x8_1_1-7" title="Copy heading and permalink for Task 8.1.1.f" aria-label="Copy heading and permalink for Task 8.1.1.f">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <div class="para" id="x8_1_1-8-1-1">
 <span class="process-math">\(f(z) =z^{-1}\sin z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-8-2-1">
 <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.g.1"><a href="#x8_1_1-8-2" title="Copy heading and permalink for Solution 8.1.1.g.1" aria-label="Copy heading and permalink for Solution 8.1.1.g.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.g"><a href="#x8_1_1-8" title="Copy heading and permalink for Task 8.1.1.g" aria-label="Copy heading and permalink for Task 8.1.1.g">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-9"><h5 class="heading"><span class="codenumber">(h)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.g"><a href="#x8_1_1-8" title="Copy heading and permalink for Task 8.1.1.g" aria-label="Copy heading and permalink for Task 8.1.1.g">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-9"><h5 class="heading"><span class="codenumber">(h)</span></h5>
 <div class="para" id="x8_1_1-9-1-1">
 <span class="process-math">\(f(z) =\frac{z^2+4z+5}{z^3}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.h"><a href="#x8_1_1-9" title="Copy heading and permalink for Task 8.1.1.h" aria-label="Copy heading and permalink for Task 8.1.1.h">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-10"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.h"><a href="#x8_1_1-9" title="Copy heading and permalink for Task 8.1.1.h" aria-label="Copy heading and permalink for Task 8.1.1.h">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-10"><h5 class="heading"><span class="codenumber">(i)</span></h5>
 <div class="para" id="x8_1_1-10-1-1">
 <span class="process-math">\(f(z) =\exp (1+\frac{1}{z})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-10-2-1">
 <span class="process-math">\(e\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.i.1"><a href="#x8_1_1-10-2" title="Copy heading and permalink for Solution 8.1.1.i.1" aria-label="Copy heading and permalink for Solution 8.1.1.i.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.i"><a href="#x8_1_1-10" title="Copy heading and permalink for Task 8.1.1.i" aria-label="Copy heading and permalink for Task 8.1.1.i">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-11"><h5 class="heading"><span class="codenumber">(j)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.i"><a href="#x8_1_1-10" title="Copy heading and permalink for Task 8.1.1.i" aria-label="Copy heading and permalink for Task 8.1.1.i">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-11"><h5 class="heading"><span class="codenumber">(j)</span></h5>
 <div class="para" id="x8_1_1-11-1-1">
 <span class="process-math">\(f(z) =z^4\sin (\frac{1}{z})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.j"><a href="#x8_1_1-11" title="Copy heading and permalink for Task 8.1.1.j" aria-label="Copy heading and permalink for Task 8.1.1.j">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-12"><h5 class="heading"><span class="codenumber">(k)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.j"><a href="#x8_1_1-11" title="Copy heading and permalink for Task 8.1.1.j" aria-label="Copy heading and permalink for Task 8.1.1.j">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-12"><h5 class="heading"><span class="codenumber">(k)</span></h5>
 <div class="para" id="x8_1_1-12-1-1">
 <span class="process-math">\(f(z) =z^{-1}\csc z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-12-2-1">
 <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.k.1"><a href="#x8_1_1-12-2" title="Copy heading and permalink for Solution 8.1.1.k.1" aria-label="Copy heading and permalink for Solution 8.1.1.k.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.k"><a href="#x8_1_1-12" title="Copy heading and permalink for Task 8.1.1.k" aria-label="Copy heading and permalink for Task 8.1.1.k">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-13"><h5 class="heading"><span class="codenumber">(l)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.k"><a href="#x8_1_1-12" title="Copy heading and permalink for Task 8.1.1.k" aria-label="Copy heading and permalink for Task 8.1.1.k">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-13"><h5 class="heading"><span class="codenumber">(l)</span></h5>
 <div class="para" id="x8_1_1-13-1-1">
 <span class="process-math">\(f(z) =z^{-2}\csc z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.l"><a href="#x8_1_1-13" title="Copy heading and permalink for Task 8.1.1.l" aria-label="Copy heading and permalink for Task 8.1.1.l">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-14"><h5 class="heading"><span class="codenumber">(m)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.1.l"><a href="#x8_1_1-13" title="Copy heading and permalink for Task 8.1.1.l" aria-label="Copy heading and permalink for Task 8.1.1.l">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-14"><h5 class="heading"><span class="codenumber">(m)</span></h5>
 <div class="para" id="x8_1_1-14-1-1">
 <span class="process-math">\(f(z) =\frac{\exp (4z)-1}{\sin^2z}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_1-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_1-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_1-14-2-1">
 <span class="process-math">\(4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.1.m.1"><a href="#x8_1_1-14-2" title="Copy heading and permalink for Solution 8.1.1.m.1" aria-label="Copy heading and permalink for Solution 8.1.1.m.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.1.m"><a href="#x8_1_1-14" title="Copy heading and permalink for Task 8.1.1.m" aria-label="Copy heading and permalink for Task 8.1.1.m">🔗</a></div></article><article class="task exercise-like" id="x8_1_1-15"><h5 class="heading"><span class="codenumber">(n)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.1.m"><a href="#x8_1_1-14" title="Copy heading and permalink for Task 8.1.1.m" aria-label="Copy heading and permalink for Task 8.1.1.m">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_1-15"><h5 class="heading"><span class="codenumber">(n)</span></h5>
 <div class="para" id="x8_1_1-15-1-1">
 <span class="process-math">\(f(z) =z^{-1}\csc^2z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_1-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.1.n"><a href="#x8_1_1-15" title="Copy heading and permalink for Task 8.1.1.n" aria-label="Copy heading and permalink for Task 8.1.1.n">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.1"><a href="#x8_1_1" title="Copy heading and permalink for Exercise 8.1.1" aria-label="Copy heading and permalink for Exercise 8.1.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises_residue-thm-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 8.1.1.n"><a href="#x8_1_1-15" title="Copy heading and permalink for Task 8.1.1.n" aria-label="Copy heading and permalink for Task 8.1.1.n">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.1"><a href="#x8_1_1" title="Copy heading and permalink for Exercise 8.1.1" aria-label="Copy heading and permalink for Exercise 8.1.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_residue-thm-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_residue-thm-3-1-1">
 <div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have an isolated singularity at <span class="process-math">\(z_0\text{.}\)</span> Show that</div>
 <div class="displaymath process-math" id="x8_1_2">
@@ -1057,171 +1172,265 @@ C \amp = \mathrm{Res}[f,1] =\lim\limits_{z \to 1}\frac{z^2+3z+2}{z^2}=6\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_residue-thm-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.1.2"><a href="#exercises_residue-thm-3" title="Copy heading and permalink for Exercise 8.1.2" aria-label="Copy heading and permalink for Exercise 8.1.2">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_3-1"><div class="para" id="x8_1_3-1-1">Evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 8.1.2"><a href="#exercises_residue-thm-3" title="Copy heading and permalink for Exercise 8.1.2" aria-label="Copy heading and permalink for Exercise 8.1.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_3-1">
+<div class="para" id="x8_1_3-1-1">Evaluate the following:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_3-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_3-2-1-1">
 <span class="process-math">\(\int\limits_{C_1^{+}(-1+i)}\frac{1}{z^4+4}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_3-2-2-1">
 <span class="process-math">\(\frac{\pi +i\pi}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.3.a.1"><a href="#x8_1_3-2-2" title="Copy heading and permalink for Solution 8.1.3.a.1" aria-label="Copy heading and permalink for Solution 8.1.3.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.3.a"><a href="#x8_1_3-2" title="Copy heading and permalink for Task 8.1.3.a" aria-label="Copy heading and permalink for Task 8.1.3.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.3.a"><a href="#x8_1_3-2" title="Copy heading and permalink for Task 8.1.3.a" aria-label="Copy heading and permalink for Task 8.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_3-3-1-1">
 <span class="process-math">\(\int\limits_{C_2^{+}(i)}\frac{1}{z(z^2-2z+2)}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.3.b"><a href="#x8_1_3-3" title="Copy heading and permalink for Task 8.1.3.b" aria-label="Copy heading and permalink for Task 8.1.3.b">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.3.b"><a href="#x8_1_3-3" title="Copy heading and permalink for Task 8.1.3.b" aria-label="Copy heading and permalink for Task 8.1.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x8_1_3-4-1-1">
 <span class="process-math">\(\int\limits_{C_2^{+}(0)}\frac{\exp z}{z^3+z}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_3-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_3-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_3-4-2-1">
 <span class="process-math">\((1-\cos 1)2\pi i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.3.c.1"><a href="#x8_1_3-4-2" title="Copy heading and permalink for Solution 8.1.3.c.1" aria-label="Copy heading and permalink for Solution 8.1.3.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.3.c"><a href="#x8_1_3-4" title="Copy heading and permalink for Task 8.1.3.c" aria-label="Copy heading and permalink for Task 8.1.3.c">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.3.c"><a href="#x8_1_3-4" title="Copy heading and permalink for Task 8.1.3.c" aria-label="Copy heading and permalink for Task 8.1.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x8_1_3-5-1-1">
 <span class="process-math">\(\int\limits_{C_2^{+}(0)}\frac{\sin z}{4z^2-\pi^2}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.3.d"><a href="#x8_1_3-5" title="Copy heading and permalink for Task 8.1.3.d" aria-label="Copy heading and permalink for Task 8.1.3.d">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.3.d"><a href="#x8_1_3-5" title="Copy heading and permalink for Task 8.1.3.d" aria-label="Copy heading and permalink for Task 8.1.3.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x8_1_3-6-1-1">
 <span class="process-math">\(\int\limits_{C_2^{+}(0)}\frac{\sin z}{z^2+1}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_3-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_3-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_3-6-2-1">
 <span class="process-math">\(i2\pi \sinh 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.3.e.1"><a href="#x8_1_3-6-2" title="Copy heading and permalink for Solution 8.1.3.e.1" aria-label="Copy heading and permalink for Solution 8.1.3.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.3.e"><a href="#x8_1_3-6" title="Copy heading and permalink for Task 8.1.3.e" aria-label="Copy heading and permalink for Task 8.1.3.e">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.3.e"><a href="#x8_1_3-6" title="Copy heading and permalink for Task 8.1.3.e" aria-label="Copy heading and permalink for Task 8.1.3.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="x8_1_3-7-1-1">
 <span class="process-math">\(\int\limits_{C_1^{+}(0)}\frac{1}{z^2\sin z}\,dz\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.3.f"><a href="#x8_1_3-7" title="Copy heading and permalink for Task 8.1.3.f" aria-label="Copy heading and permalink for Task 8.1.3.f">🔗</a></div></article><article class="task exercise-like" id="x8_1_3-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.3.f"><a href="#x8_1_3-7" title="Copy heading and permalink for Task 8.1.3.f" aria-label="Copy heading and permalink for Task 8.1.3.f">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_3-8"><h5 class="heading"><span class="codenumber">(g)</span></h5>
 <div class="para" id="x8_1_3-8-1-1">
 <span class="process-math">\(\int\limits_{C_1^{+}(0)}\frac{1}{z\sin^2z}\,dz\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_3-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_3-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_3-8-2-1">
 <span class="process-math">\(\frac{2\pi i}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.3.g.1"><a href="#x8_1_3-8-2" title="Copy heading and permalink for Solution 8.1.3.g.1" aria-label="Copy heading and permalink for Solution 8.1.3.g.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.3.g"><a href="#x8_1_3-8" title="Copy heading and permalink for Task 8.1.3.g" aria-label="Copy heading and permalink for Task 8.1.3.g">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.3"><a href="#x8_1_3" title="Copy heading and permalink for Exercise 8.1.3" aria-label="Copy heading and permalink for Exercise 8.1.3">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.3.g"><a href="#x8_1_3-8" title="Copy heading and permalink for Task 8.1.3.g" aria-label="Copy heading and permalink for Task 8.1.3.g">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.3"><a href="#x8_1_3" title="Copy heading and permalink for Exercise 8.1.3" aria-label="Copy heading and permalink for Exercise 8.1.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_1_4-1-1">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be analytic at <span class="process-math">\(z_0\text{.}\)</span> If <span class="process-math">\(f(z_0) \ne 0\)</span> and <span class="process-math">\(g\)</span> has a simple zero at <span class="process-math">\(z_0\text{,}\)</span> then show that <span class="process-math">\(\mathrm{Res}\left[\frac{f}{g},z_0\right] = \frac{f(z_0)}{g'(z_0)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.1.4"><a href="#x8_1_4" title="Copy heading and permalink for Exercise 8.1.4" aria-label="Copy heading and permalink for Exercise 8.1.4">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_5-1"><div class="para" id="x8_1_5-1-1">Find <span class="process-math">\(\int\limits_{C}(z-1)^{-2}(z^2+4)^{-1}\,dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 8.1.4"><a href="#x8_1_4" title="Copy heading and permalink for Exercise 8.1.4" aria-label="Copy heading and permalink for Exercise 8.1.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_5-1">
+<div class="para" id="x8_1_5-1-1">Find <span class="process-math">\(\int\limits_{C}(z-1)^{-2}(z^2+4)^{-1}\,dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_5-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_5-2-1-1">
 <span class="process-math">\(C=C_1^{+}(1)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_5-2-2-1">
 <span class="process-math">\(-\frac{4\pi i}{25}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.5.a.1"><a href="#x8_1_5-2-2" title="Copy heading and permalink for Solution 8.1.5.a.1" aria-label="Copy heading and permalink for Solution 8.1.5.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.5.a"><a href="#x8_1_5-2" title="Copy heading and permalink for Task 8.1.5.a" aria-label="Copy heading and permalink for Task 8.1.5.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.5.a"><a href="#x8_1_5-2" title="Copy heading and permalink for Task 8.1.5.a" aria-label="Copy heading and permalink for Task 8.1.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_5-3-1-1">
 <span class="process-math">\(C=C_4^{+}(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.5.b"><a href="#x8_1_5-3" title="Copy heading and permalink for Task 8.1.5.b" aria-label="Copy heading and permalink for Task 8.1.5.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.5"><a href="#x8_1_5" title="Copy heading and permalink for Exercise 8.1.5" aria-label="Copy heading and permalink for Exercise 8.1.5">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_6-1"><div class="para" id="x8_1_6-1-1">Find <span class="process-math">\(\int\limits_{C}(z^{6}+1)^{-1}dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 8.1.5.b"><a href="#x8_1_5-3" title="Copy heading and permalink for Task 8.1.5.b" aria-label="Copy heading and permalink for Task 8.1.5.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.5"><a href="#x8_1_5" title="Copy heading and permalink for Exercise 8.1.5" aria-label="Copy heading and permalink for Exercise 8.1.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_6-1">
+<div class="para" id="x8_1_6-1-1">Find <span class="process-math">\(\int\limits_{C}(z^{6}+1)^{-1}dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_6-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_6-2-1-1">
 <span class="process-math">\(C=C_{\frac{1}{2}}^{+}(i)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.6.a"><a href="#x8_1_6-2" title="Copy heading and permalink for Task 8.1.6.a" aria-label="Copy heading and permalink for Task 8.1.6.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.6.a"><a href="#x8_1_6-2" title="Copy heading and permalink for Task 8.1.6.a" aria-label="Copy heading and permalink for Task 8.1.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_6-3-1-1">
 <span class="process-math">\(C=C_1^{+}(\frac{1+i}{2})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_6-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_6-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x8_1_6-3-2-1">If <span class="process-math">\(\, z_0 \,\)</span> is a singularity of <span class="process-math">\(\,f(z) =\frac{1}{z^{6}+1}, \,\)</span> show that <span class="process-math">\(\, \mathrm{Res}[f,z_0] = -\frac{1}{6}z_0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 8.1.6.b.1"><a href="#x8_1_6-3-2" title="Copy heading and permalink for Hint 8.1.6.b.1" aria-label="Copy heading and permalink for Hint 8.1.6.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.6.b"><a href="#x8_1_6-3" title="Copy heading and permalink for Task 8.1.6.b" aria-label="Copy heading and permalink for Task 8.1.6.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.6"><a href="#x8_1_6" title="Copy heading and permalink for Exercise 8.1.6" aria-label="Copy heading and permalink for Exercise 8.1.6">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_7-1"><div class="para" id="x8_1_7-1-1">Find <span class="process-math">\(\int\limits_{C}(3z^4+10z^2+3)^{-1}\,dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.6.b"><a href="#x8_1_6-3" title="Copy heading and permalink for Task 8.1.6.b" aria-label="Copy heading and permalink for Task 8.1.6.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.6"><a href="#x8_1_6" title="Copy heading and permalink for Exercise 8.1.6" aria-label="Copy heading and permalink for Exercise 8.1.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_7-1">
+<div class="para" id="x8_1_7-1-1">Find <span class="process-math">\(\int\limits_{C}(3z^4+10z^2+3)^{-1}\,dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_7-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_7-2-1-1">
 <span class="process-math">\(C=C_1^{+}(i\sqrt{3})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_7-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_7-2-2-1">
 <span class="process-math">\(-\frac{\pi \sqrt{3}}{24}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_7-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.7.a.1"><a href="#x8_1_7-2-2" title="Copy heading and permalink for Solution 8.1.7.a.1" aria-label="Copy heading and permalink for Solution 8.1.7.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.7.a"><a href="#x8_1_7-2" title="Copy heading and permalink for Task 8.1.7.a" aria-label="Copy heading and permalink for Task 8.1.7.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.7.a"><a href="#x8_1_7-2" title="Copy heading and permalink for Task 8.1.7.a" aria-label="Copy heading and permalink for Task 8.1.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_7-3-1-1">
 <span class="process-math">\(C=C_1^{+}(\frac{i}{\sqrt{3}})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.7.b"><a href="#x8_1_7-3" title="Copy heading and permalink for Task 8.1.7.b" aria-label="Copy heading and permalink for Task 8.1.7.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.7"><a href="#x8_1_7" title="Copy heading and permalink for Exercise 8.1.7" aria-label="Copy heading and permalink for Exercise 8.1.7">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_8-1"><div class="para" id="x8_1_8-1-1">Find <span class="process-math">\(\int\limits_{C}(z^4-z^3-2z^2)^{-1}dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 8.1.7.b"><a href="#x8_1_7-3" title="Copy heading and permalink for Task 8.1.7.b" aria-label="Copy heading and permalink for Task 8.1.7.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.7"><a href="#x8_1_7" title="Copy heading and permalink for Exercise 8.1.7" aria-label="Copy heading and permalink for Exercise 8.1.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_8-1">
+<div class="para" id="x8_1_8-1-1">Find <span class="process-math">\(\int\limits_{C}(z^4-z^3-2z^2)^{-1}dz\)</span> when:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_8-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_8-2-1-1">
 <span class="process-math">\(C=C_{\frac{1}{2}}^{+}(0)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_8-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.8.a"><a href="#x8_1_8-2" title="Copy heading and permalink for Task 8.1.8.a" aria-label="Copy heading and permalink for Task 8.1.8.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.8.a"><a href="#x8_1_8-2" title="Copy heading and permalink for Task 8.1.8.a" aria-label="Copy heading and permalink for Task 8.1.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_8-3-1-1">
 <span class="process-math">\(C=C_{\frac{3}{2}}^{+}(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.8.b"><a href="#x8_1_8-3" title="Copy heading and permalink for Task 8.1.8.b" aria-label="Copy heading and permalink for Task 8.1.8.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.8"><a href="#x8_1_8" title="Copy heading and permalink for Exercise 8.1.8" aria-label="Copy heading and permalink for Exercise 8.1.8">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x8_1_9-1"><div class="para" id="x8_1_9-1-1">Use residues to find the partial fraction representations of:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 8.1.8.b"><a href="#x8_1_8-3" title="Copy heading and permalink for Task 8.1.8.b" aria-label="Copy heading and permalink for Task 8.1.8.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.8"><a href="#x8_1_8" title="Copy heading and permalink for Exercise 8.1.8" aria-label="Copy heading and permalink for Exercise 8.1.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x8_1_9-1">
+<div class="para" id="x8_1_9-1-1">Use residues to find the partial fraction representations of:<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x8_1_9-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x8_1_9-2-1-1">
 <span class="process-math">\(\frac{1}{z^2+3z+2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_9-2-2-1">
 <span class="process-math">\(\frac{1}{z+1}-\frac{1}{z+2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.9.a.1"><a href="#x8_1_9-2-2" title="Copy heading and permalink for Solution 8.1.9.a.1" aria-label="Copy heading and permalink for Solution 8.1.9.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.9.a"><a href="#x8_1_9-2" title="Copy heading and permalink for Task 8.1.9.a" aria-label="Copy heading and permalink for Task 8.1.9.a">🔗</a></div></article><article class="task exercise-like" id="x8_1_9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.9.a"><a href="#x8_1_9-2" title="Copy heading and permalink for Task 8.1.9.a" aria-label="Copy heading and permalink for Task 8.1.9.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x8_1_9-3-1-1">
 <span class="process-math">\(\frac{3z-3}{z^2-z-2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.9.b"><a href="#x8_1_9-3" title="Copy heading and permalink for Task 8.1.9.b" aria-label="Copy heading and permalink for Task 8.1.9.b">🔗</a></div></article><article class="task exercise-like" id="x8_1_9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.9.b"><a href="#x8_1_9-3" title="Copy heading and permalink for Task 8.1.9.b" aria-label="Copy heading and permalink for Task 8.1.9.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_9-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x8_1_9-4-1-1">
 <span class="process-math">\(\frac{z^2-7z+4}{z^2(z+4)}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_9-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_9-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_9-4-2-1">
 <span class="process-math">\(\frac{1}{z^2}-\frac{2}{z}+\frac{3}{z+4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.9.c.1"><a href="#x8_1_9-4-2" title="Copy heading and permalink for Solution 8.1.9.c.1" aria-label="Copy heading and permalink for Solution 8.1.9.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.9.c"><a href="#x8_1_9-4" title="Copy heading and permalink for Task 8.1.9.c" aria-label="Copy heading and permalink for Task 8.1.9.c">🔗</a></div></article><article class="task exercise-like" id="x8_1_9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.9.c"><a href="#x8_1_9-4" title="Copy heading and permalink for Task 8.1.9.c" aria-label="Copy heading and permalink for Task 8.1.9.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_9-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x8_1_9-5-1-1">
 <span class="process-math">\(\frac{10z}{(z^2+4)(z^2+9)}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.9.d"><a href="#x8_1_9-5" title="Copy heading and permalink for Task 8.1.9.d" aria-label="Copy heading and permalink for Task 8.1.9.d">🔗</a></div></article><article class="task exercise-like" id="x8_1_9-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 8.1.9.d"><a href="#x8_1_9-5" title="Copy heading and permalink for Task 8.1.9.d" aria-label="Copy heading and permalink for Task 8.1.9.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_9-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x8_1_9-6-1-1">
 <span class="process-math">\(\frac{2z^2-3z-1}{(z-1)^3}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_9-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_9-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_9-6-2-1">
 <span class="process-math">\(\frac{2}{z-1}+\frac{1}{(z-1)^2}-\frac{2}{(z-1)^3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.9.e.1"><a href="#x8_1_9-6-2" title="Copy heading and permalink for Solution 8.1.9.e.1" aria-label="Copy heading and permalink for Solution 8.1.9.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 8.1.9.e"><a href="#x8_1_9-6" title="Copy heading and permalink for Task 8.1.9.e" aria-label="Copy heading and permalink for Task 8.1.9.e">🔗</a></div></article><article class="task exercise-like" id="x8_1_9-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 8.1.9.e"><a href="#x8_1_9-6" title="Copy heading and permalink for Task 8.1.9.e" aria-label="Copy heading and permalink for Task 8.1.9.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x8_1_9-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="x8_1_9-7-1-1">
 <span class="process-math">\(\frac{z^3+3z^2-z+1}{z(z+1)^2(z^2+1)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x8_1_9-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 8.1.9.f"><a href="#x8_1_9-7" title="Copy heading and permalink for Task 8.1.9.f" aria-label="Copy heading and permalink for Task 8.1.9.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 8.1.9"><a href="#x8_1_9" title="Copy heading and permalink for Exercise 8.1.9" aria-label="Copy heading and permalink for Exercise 8.1.9">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 8.1.9.f"><a href="#x8_1_9-7" title="Copy heading and permalink for Task 8.1.9.f" aria-label="Copy heading and permalink for Task 8.1.9.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 8.1.9"><a href="#x8_1_9" title="Copy heading and permalink for Exercise 8.1.9" aria-label="Copy heading and permalink for Exercise 8.1.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x8_1_10-1-1">
 <div class="para">Let <span class="process-math">\(f\)</span> be analytic in a simply connected domain <span class="process-math">\(D\text{,}\)</span> and let <span class="process-math">\(C\)</span> be a simple closed positively oriented contour in <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\(z_0\)</span> is the only zero of <span class="process-math">\(f\)</span> in <span class="process-math">\(D\)</span> and <span class="process-math">\(z_0\)</span> lies interior to <span class="process-math">\(C\text{,}\)</span> show that</div>
 <div class="displaymath process-math" id="x8_1_10-1-1-10">
@@ -1233,15 +1442,24 @@ C \amp = \mathrm{Res}[f,1] =\lim\limits_{z \to 1}\frac{z^2+3z+2}{z^2}=6\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x8_1_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 8.1.10"><a href="#x8_1_10" title="Copy heading and permalink for Exercise 8.1.10" aria-label="Copy heading and permalink for Exercise 8.1.10">🔗</a></div></article><article class="exercise exercise-like" id="x8_1_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 8.1.10"><a href="#x8_1_10" title="Copy heading and permalink for Exercise 8.1.10" aria-label="Copy heading and permalink for Exercise 8.1.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x8_1_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x8_1_11-1-1">Let <span class="process-math">\(f\)</span> be analytic at the points <span class="process-math">\(0,\pm 1,\pm 2,\ldots\)</span> . If <span class="process-math">\(g(z) = \pi f(z) \cot \pi z\text{,}\)</span> then show that <span class="process-math">\(\mathrm{Res}[g,n] = f(n)\)</span> for <span class="process-math">\(n=0, \, \pm 1, \, \pm 2, \, \ldots\)</span> .<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x8_1_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x8_1_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x8_1_11-2-1">By <a href="sec_residue-thm.html#Residues_at_Poles" class="xref" data-knowl="./knowl/xref/Residues_at_Poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.1.7: Residues at Poles">Theorem 8.1.7</a> we have <span class="process-math">\(\mathrm{Res}[g, \, n] = \lim\limits_{z \to n}(z-n)g(z)\text{,}\)</span> where <span class="process-math">\(n\)</span> is any integer. Since <span class="process-math">\(g(z) =\pi f(z) \cot \pi z = \pi f(z)\frac{\cos(\pi z)}{\sin(\pi z)}\text{,}\)</span> and because <span class="process-math">\(f\text{,}\)</span> is analytic at <span class="process-math">\(n\text{,}\)</span> we use L’Hôpital’s rule to get <span class="process-math">\(\lim\limits_{z \to n}\frac{z-n}{\sin (\pi z) }=1\text{.}\)</span> Explain how this calculation gives the result.<div class="autopermalink" data-description="Paragraph"><a href="#x8_1_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 8.1.11.1"><a href="#x8_1_11-2" title="Copy heading and permalink for Solution 8.1.11.1" aria-label="Copy heading and permalink for Solution 8.1.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 8.1.11"><a href="#x8_1_11" title="Copy heading and permalink for Exercise 8.1.11" aria-label="Copy heading and permalink for Exercise 8.1.11">🔗</a></div></article><div class="autopermalink" data-description="Exercises 8.1: Exercises"><a href="#exercises_residue-thm" title="Copy heading and permalink for Exercises 8.1: Exercises" aria-label="Copy heading and permalink for Exercises 8.1: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 8.1: The Residue Theorem"><a href="#sec_residue-thm" title="Copy heading and permalink for Section 8.1: The Residue Theorem" aria-label="Copy heading and permalink for Section 8.1: The Residue Theorem">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 8.1.11"><a href="#x8_1_11" title="Copy heading and permalink for Exercise 8.1.11" aria-label="Copy heading and permalink for Exercise 8.1.11">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 8.1: Exercises"><a href="#exercises_residue-thm" title="Copy heading and permalink for Exercises 8.1: Exercises" aria-label="Copy heading and permalink for Exercises 8.1: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 8.1: The Residue Theorem"><a href="#sec_residue-thm" title="Copy heading and permalink for Section 8.1: The Residue Theorem" aria-label="Copy heading and permalink for Section 8.1: The Residue Theorem">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch_residue.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_trig-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

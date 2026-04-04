@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_laplace-inversion"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_laplace-inversion">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverting the Laplace Transform</span>
 </h2>
 <div class="para logical" id="sec_laplace-inversion-2">
@@ -526,7 +528,9 @@ Y(s) = \frac{P(s)}{Q(s)}\text{,}\tag{11.9.1}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_nonrepeated-factors-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.9.1: Nonrepeated Linear Factors"><a href="#thm_nonrepeated-factors" title="Copy heading and permalink for Theorem 11.9.1: Nonrepeated Linear Factors" aria-label="Copy heading and permalink for Theorem 11.9.1: Nonrepeated Linear Factors">🔗</a></div></article><article class="theorem theorem-like" id="thm_repeated-linear-factor"><h3 class="heading">
+<div class="autopermalink" data-description="Theorem 11.9.1: Nonrepeated Linear Factors"><a href="#thm_nonrepeated-factors" title="Copy heading and permalink for Theorem 11.9.1: Nonrepeated Linear Factors" aria-label="Copy heading and permalink for Theorem 11.9.1: Nonrepeated Linear Factors">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="thm_repeated-linear-factor"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Repeated Linear Factor.</span>
 </h3>
 <div class="para logical" id="thm_repeated-linear-factor-2-1">
@@ -546,7 +550,11 @@ Y(s) = \frac{P(s)}{(s-a)^nQ(s)} = \sum_{k=1}^n\frac{A_k}{(s-a)^k} + R (s)\text{,
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_repeated-linear-factor-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.9.2: A Repeated Linear Factor"><a href="#thm_repeated-linear-factor" title="Copy heading and permalink for Theorem 11.9.2: A Repeated Linear Factor" aria-label="Copy heading and permalink for Theorem 11.9.2: A Repeated Linear Factor">🔗</a></div></article><details id="sec_laplace-inversion-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_laplace-inversion-5-1">
+<div class="autopermalink" data-description="Theorem 11.9.2: A Repeated Linear Factor"><a href="#thm_repeated-linear-factor" title="Copy heading and permalink for Theorem 11.9.2: A Repeated Linear Factor" aria-label="Copy heading and permalink for Theorem 11.9.2: A Repeated Linear Factor">🔗</a></div>
+</article>
+<details id="sec_laplace-inversion-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_laplace-inversion-5-1">
 <div class="para">We employ the method of residues. First, multiplying both sides of <a href="sec_laplace-inversion.html#repeatfact" class="xref" data-knowl="./knowl/xref/repeatfact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.3">Equation (11.9.3)</a> by <span class="process-math">\((s-a)^n\)</span> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/repeatfact.html" id="sec_laplace-inversion-5-1-3">
 \begin{equation*}
@@ -572,12 +580,16 @@ Y(s) = \frac{P(s)}{(s-a)^nQ(s)} = \sum_{k=1}^n\frac{A_k}{(s-a)^k} + R (s)\text{,
 <div class="para">which establishes <a href="sec_laplace-inversion.html#coeffPQ" class="xref" data-knowl="./knowl/xref/coeffPQ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.4">Equation (11.9.4)</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.9.1"><a href="#sec_laplace-inversion-5" title="Copy heading and permalink for Proof 11.9.1" aria-label="Copy heading and permalink for Proof 11.9.1">🔗</a></div></article></details><article class="example example-like" id="sec_laplace-inversion-6"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.9.1"><a href="#sec_laplace-inversion-5" title="Copy heading and permalink for Proof 11.9.1" aria-label="Copy heading and permalink for Proof 11.9.1">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_laplace-inversion-6"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_laplace-inversion-6-1-1">Let <span class="process-math">\(Y(s) =\frac{s^3-4s+1}{s(s-1)^3}\text{.}\)</span> Find <span class="process-math">\(\mathcal{L}^{-1}\big(Y(s)\big)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_laplace-inversion-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_laplace-inversion-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laplace-inversion-6-2-1">
 <div class="para">From Equations <a href="sec_laplace-inversion.html#nonrepfact" class="xref" data-knowl="./knowl/xref/nonrepfact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.2">(11.9.2)</a> and <a href="sec_laplace-inversion.html#repeatfact" class="xref" data-knowl="./knowl/xref/repeatfact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.3">(11.9.3)</a> we can write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/nonrepfact.html ./knowl/xref/repeatfact.html" id="sec_laplace-inversion-6-2-1-3">
@@ -622,8 +634,11 @@ y(t) =-t^2e^t+te^t+2e^t-1\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.3.1"><a href="#sec_laplace-inversion-6-2" title="Copy heading and permalink for Solution 11.9.3.1" aria-label="Copy heading and permalink for Solution 11.9.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.9.3"><a href="#sec_laplace-inversion-6" title="Copy heading and permalink for Example 11.9.3" aria-label="Copy heading and permalink for Example 11.9.3">🔗</a></div></article><article class="theorem theorem-like" id="thm_irreducible-quad-factors"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.9.3"><a href="#sec_laplace-inversion-6" title="Copy heading and permalink for Example 11.9.3" aria-label="Copy heading and permalink for Example 11.9.3">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="thm_irreducible-quad-factors"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Irreducible Quadratic Factors.</span>
 </h3>
 <div class="para logical" id="thm_irreducible-quad-factors-2-1">
@@ -638,7 +653,11 @@ A+iB \amp =\frac{P(a+ib)}{Q\,'(a+ib)}\text{.}\tag{11.9.5}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_irreducible-quad-factors-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.9.4: Irreducible Quadratic Factors"><a href="#thm_irreducible-quad-factors" title="Copy heading and permalink for Theorem 11.9.4: Irreducible Quadratic Factors" aria-label="Copy heading and permalink for Theorem 11.9.4: Irreducible Quadratic Factors">🔗</a></div></article><details id="sec_laplace-inversion-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_laplace-inversion-8-1">
+<div class="autopermalink" data-description="Theorem 11.9.4: Irreducible Quadratic Factors"><a href="#thm_irreducible-quad-factors" title="Copy heading and permalink for Theorem 11.9.4: Irreducible Quadratic Factors" aria-label="Copy heading and permalink for Theorem 11.9.4: Irreducible Quadratic Factors">🔗</a></div>
+</article>
+<details id="sec_laplace-inversion-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_laplace-inversion-8-1">
 <div class="para">Since <span class="process-math">\(P, \, Q\text{,}\)</span> and <span class="process-math">\(Q'\)</span> have real coefficients, it follows that</div>
 <div class="displaymath process-math" id="sec_laplace-inversion-8-1-3">
 \begin{equation*}
@@ -676,12 +695,16 @@ Y(s) = \frac{A+iB}{s-a-ib}+\frac{A-iB}{s-a+ib}+R(s)\text{.}
 <div class="para">which completes the proof of the theorem.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.9.2"><a href="#sec_laplace-inversion-8" title="Copy heading and permalink for Proof 11.9.2" aria-label="Copy heading and permalink for Proof 11.9.2">🔗</a></div></article></details><article class="example example-like" id="sec_laplace-inversion-9"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.9.2"><a href="#sec_laplace-inversion-8" title="Copy heading and permalink for Proof 11.9.2" aria-label="Copy heading and permalink for Proof 11.9.2">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_laplace-inversion-9"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_laplace-inversion-9-1-1">Let <span class="process-math">\(Y(s) = \frac{5s}{(s^2+4) (s^2+9)}\text{.}\)</span> Find <span class="process-math">\(\mathcal{L}^{-1}\big(Y(s)\big)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_laplace-inversion-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_laplace-inversion-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laplace-inversion-9-2-1">
 <div class="para">Here we have <span class="process-math">\(P(s)=5s\)</span> and <span class="process-math">\(Q(s)=s^4+13s^2+36\text{,}\)</span> and the roots of <span class="process-math">\(Q(s)\)</span> occur at <span class="process-math">\(0 \pm 2i\)</span> and <span class="process-math">\(0 \pm 3i\text{.}\)</span> Computing the residues gives</div>
 <div class="displaymath process-math" id="sec_laplace-inversion-9-2-1-6">
@@ -711,13 +734,18 @@ Y(s) \amp = \frac{2(\frac{1}{2})(s-0) - (2)(0)(2)}{s^2+4} + \frac{2(-\frac{1}{2}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.5.1"><a href="#sec_laplace-inversion-9-2" title="Copy heading and permalink for Solution 11.9.5.1" aria-label="Copy heading and permalink for Solution 11.9.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.9.5"><a href="#sec_laplace-inversion-9" title="Copy heading and permalink for Example 11.9.5" aria-label="Copy heading and permalink for Example 11.9.5">🔗</a></div></article><article class="example example-like" id="sec_laplace-inversion-10"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.9.5"><a href="#sec_laplace-inversion-9" title="Copy heading and permalink for Example 11.9.5" aria-label="Copy heading and permalink for Example 11.9.5">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_laplace-inversion-10"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_laplace-inversion-10-1-1">Find <span class="process-math">\(\mathcal{L}^{-1}\big(Y(s)\big)\)</span> if <span class="process-math">\(Y(s) = \frac{s^3+3s^2-s+1}{s(s+1)^2(s^2+1)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_laplace-inversion-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_laplace-inversion-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laplace-inversion-10-2-1">
 <div class="para">The partial fraction expression for <span class="process-math">\(Y(s)\)</span> has the form</div>
 <div class="displaymath process-math" id="sec_laplace-inversion-10-2-1-2">
@@ -775,8 +803,11 @@ y(t) = 1-2e^{-t}-2te^{-t} + \cos t + \sin t\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-10-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.6.1"><a href="#sec_laplace-inversion-10-2" title="Copy heading and permalink for Solution 11.9.6.1" aria-label="Copy heading and permalink for Solution 11.9.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.9.6"><a href="#sec_laplace-inversion-10" title="Copy heading and permalink for Example 11.9.6" aria-label="Copy heading and permalink for Example 11.9.6">🔗</a></div></article><article class="example example-like" id="sec_laplace-inversion-11"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.9.6"><a href="#sec_laplace-inversion-10" title="Copy heading and permalink for Example 11.9.6" aria-label="Copy heading and permalink for Example 11.9.6">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_laplace-inversion-11"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_laplace-inversion-11-1-1">
@@ -789,7 +820,9 @@ x\,'(t) \amp = 5y(t) -3x(t), \quad \text{with} \quad x(0) =2\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_laplace-inversion-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_laplace-inversion-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laplace-inversion-11-2-1">
 <div class="para">Let <span class="process-math">\(Y(s)\)</span> and <span class="process-math">\(X(s)\)</span> denote the Laplace transforms of <span class="process-math">\(y(t)\)</span> and <span class="process-math">\(x(t)\text{,}\)</span> respectively. If we take the transforms of the two differential equations and get</div>
 <div class="displaymath process-math" id="sec_laplace-inversion-11-2-1-5">
@@ -833,8 +866,11 @@ x(t) \amp = e^{-t}(2\cos t+\sin t)\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-11-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.7.1"><a href="#sec_laplace-inversion-11-2" title="Copy heading and permalink for Solution 11.9.7.1" aria-label="Copy heading and permalink for Solution 11.9.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.9.7"><a href="#sec_laplace-inversion-11" title="Copy heading and permalink for Example 11.9.7" aria-label="Copy heading and permalink for Example 11.9.7">🔗</a></div></article><div class="para logical" id="sec_laplace-inversion-12">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.9.7"><a href="#sec_laplace-inversion-11" title="Copy heading and permalink for Example 11.9.7" aria-label="Copy heading and permalink for Example 11.9.7">🔗</a></div>
+</article>
+<div class="para logical" id="sec_laplace-inversion-12">
 <div class="para">According to <a href="sec_laplace-transform.html#LaplaceInverse" class="xref" data-knowl="./knowl/xref/LaplaceInverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.5.2">Equation (11.5.2)</a> of <a href="sec_laplace-transform.html" class="internal" title="Section 11.5: The Laplace Transform">Section 11.5</a>, the inverse Laplace transform is given by the integral formula</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/LaplaceInverse.html ./knowl/xref/sec_laplace-transform.html ./knowl/xref/ch_residue.html" id="sec_laplace-inversion-12-3">
 \begin{equation*}
@@ -858,9 +894,15 @@ f(t) = \mathcal{L}^{-1}\big(F(s)\big) = \sum \mathrm{Res}[F(s)e^{st},s_k]\text{,
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#thm_inverse-laplace-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.9.8: Inverse Laplace Transform"><a href="#thm_inverse-laplace" title="Copy heading and permalink for Theorem 11.9.8: Inverse Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.9.8: Inverse Laplace Transform">🔗</a></div></article><details id="sec_laplace-inversion-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_laplace-inversion-14-1">
-<div class="para">Let <span class="process-math">\(\sigma_0\)</span> be chosen so that all the poles of <span class="process-math">\(F(s) e^{st}\)</span> lie to the left of the vertical line <span class="process-math">\(s=\sigma_0+i\tau\text{.}\)</span> Let <span class="process-math">\(\Gamma_{R}\)</span> denote the contour consisting of the vertical line segment between the points <span class="process-math">\(\sigma_0\pm iR\)</span> and the left semicircle <span class="process-math">\(C_{R}:s=\sigma_0+\mathrm{Re}^{i\theta}\text{,}\)</span> where <span class="process-math">\(\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}\text{,}\)</span> as illustrated in <a href="sec_laplace-inversion.html#fig_ch-11-27" class="xref" data-knowl="./knowl/xref/fig_ch-11-27.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.9.9">Figure 11.9.9</a>. <figure class="figure figure-like" id="fig_ch-11-27"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-11/ch-11-fig-27.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contour <span class="process-math">\(\Gamma_R\text{.}\)</span><div class="autopermalink" data-description="Figure 11.9.9"><a href="#fig_ch-11-27" title="Copy heading and permalink for Figure 11.9.9" aria-label="Copy heading and permalink for Figure 11.9.9">🔗</a></div></figcaption></figure> A slight modification of the proof of Jordan’s lemma shows that</div>
+<div class="autopermalink" data-description="Theorem 11.9.8: Inverse Laplace Transform"><a href="#thm_inverse-laplace" title="Copy heading and permalink for Theorem 11.9.8: Inverse Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.9.8: Inverse Laplace Transform">🔗</a></div>
+</article>
+<details id="sec_laplace-inversion-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_laplace-inversion-14-1">
+<div class="para">Let <span class="process-math">\(\sigma_0\)</span> be chosen so that all the poles of <span class="process-math">\(F(s) e^{st}\)</span> lie to the left of the vertical line <span class="process-math">\(s=\sigma_0+i\tau\text{.}\)</span> Let <span class="process-math">\(\Gamma_{R}\)</span> denote the contour consisting of the vertical line segment between the points <span class="process-math">\(\sigma_0\pm iR\)</span> and the left semicircle <span class="process-math">\(C_{R}:s=\sigma_0+\mathrm{Re}^{i\theta}\text{,}\)</span> where <span class="process-math">\(\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}\text{,}\)</span> as illustrated in <a href="sec_laplace-inversion.html#fig_ch-11-27" class="xref" data-knowl="./knowl/xref/fig_ch-11-27.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.9.9">Figure 11.9.9</a>. 
+<figure class="figure figure-like" id="fig_ch-11-27"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-11/ch-11-fig-27.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The contour <span class="process-math">\(\Gamma_R\text{.}\)</span><div class="autopermalink" data-description="Figure 11.9.9"><a href="#fig_ch-11-27" title="Copy heading and permalink for Figure 11.9.9" aria-label="Copy heading and permalink for Figure 11.9.9">🔗</a></div></figcaption>
+</figure> A slight modification of the proof of Jordan’s lemma shows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-11-27.html" id="sec_laplace-inversion-14-1-10">
 \begin{equation*}
 \lim_{R \to +\infty}\int_{C_{R}}\frac{P(s)}{Q(s)}e^{st}\,ds = 0\text{.}
@@ -878,7 +920,9 @@ f(t) = \mathcal{L}^{-1}\big(F(s)\big) = \sum \mathrm{Res}[F(s)e^{st},s_k]\text{,
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.9.3"><a href="#sec_laplace-inversion-14" title="Copy heading and permalink for Proof 11.9.3" aria-label="Copy heading and permalink for Proof 11.9.3">🔗</a></div></article></details><article class="theorem theorem-like" id="sec_laplace-inversion-15"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.9.3"><a href="#sec_laplace-inversion-14" title="Copy heading and permalink for Proof 11.9.3" aria-label="Copy heading and permalink for Proof 11.9.3">🔗</a></div>
+</article></details>
+<article class="theorem theorem-like" id="sec_laplace-inversion-15"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Heaviside Expansion Theorem.</span>
 </h3>
 <div class="para logical" id="sec_laplace-inversion-15-2-1">
@@ -890,7 +934,11 @@ f(t) = \mathcal{L}^{-1}\left(\frac{P(s)}{Q(s)}\right) = \sum_{k=1}^n\frac{P(s_k)
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.9.10: Heaviside Expansion Theorem"><a href="#sec_laplace-inversion-15" title="Copy heading and permalink for Theorem 11.9.10: Heaviside Expansion Theorem" aria-label="Copy heading and permalink for Theorem 11.9.10: Heaviside Expansion Theorem">🔗</a></div></article><details id="sec_laplace-inversion-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_laplace-inversion-16-1">
+<div class="autopermalink" data-description="Theorem 11.9.10: Heaviside Expansion Theorem"><a href="#sec_laplace-inversion-15" title="Copy heading and permalink for Theorem 11.9.10: Heaviside Expansion Theorem" aria-label="Copy heading and permalink for Theorem 11.9.10: Heaviside Expansion Theorem">🔗</a></div>
+</article>
+<details id="sec_laplace-inversion-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_laplace-inversion-16-1">
 <div class="para">If <span class="process-math">\(P(s)\)</span> and <span class="process-math">\(Q(s)\)</span> are polynomials and <span class="process-math">\(s_k\)</span> is a simple zero of <span class="process-math">\(Q(s)\text{,}\)</span> then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/invlapform.html ./knowl/xref/expansionform.html" id="sec_laplace-inversion-16-1-5">
 \begin{equation*}
@@ -900,7 +948,9 @@ f(t) = \mathcal{L}^{-1}\left(\frac{P(s)}{Q(s)}\right) = \sum_{k=1}^n\frac{P(s_k)
 <div class="para">This outcome allows us to write the residues in <a href="sec_laplace-inversion.html#invlapform" class="xref" data-knowl="./knowl/xref/invlapform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.8">Equation (11.9.8)</a> in the more convenient form given in <a href="sec_laplace-inversion.html#expansionform" class="xref" data-knowl="./knowl/xref/expansionform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.9">Equation (11.9.9)</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.9.4"><a href="#sec_laplace-inversion-16" title="Copy heading and permalink for Proof 11.9.4" aria-label="Copy heading and permalink for Proof 11.9.4">🔗</a></div></article></details><article class="example example-like" id="sec_laplace-inversion-17"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 11.9.4"><a href="#sec_laplace-inversion-16" title="Copy heading and permalink for Proof 11.9.4" aria-label="Copy heading and permalink for Proof 11.9.4">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_laplace-inversion-17"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.9.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_laplace-inversion-17-1-1">
@@ -912,7 +962,9 @@ F(s) = \frac{4s+3}{s^3+2s^2+s+2}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_laplace-inversion-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_laplace-inversion-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_laplace-inversion-17-2-1">
 <div class="para">Here we have <span class="process-math">\(P(s)=4s+3\)</span> and <span class="process-math">\(Q(s)=(s+2)(s^2+1)\text{,}\)</span> so that <span class="process-math">\(Q\)</span> has simple zeros located at the points <span class="process-math">\(s_1=-2, \, s_2=i\text{,}\)</span> and <span class="process-math">\(s_3=-i\text{.}\)</span> Using <span class="process-math">\(Q'(s) = 3s^2+4s+1\text{,}\)</span> calculation reveals that <span class="process-math">\(\frac{P(-2)}{Q'(-2)}=\frac{-8+3}{12-8+1}=-1\)</span> and <span class="process-math">\(\frac{P(\pm i)}{Q'(\pm i)} = \frac{\pm 4i+3}{-2\pm 4i}=\frac{1}{2}\mp i\text{.}\)</span> Applying <a href="sec_laplace-inversion.html#expansionform" class="xref" data-knowl="./knowl/xref/expansionform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.9.9">Formula (11.9.9)</a>, we see that <span class="process-math">\(f(t)\)</span> is given by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expansionform.html" id="sec_laplace-inversion-17-2-1-11">
@@ -926,80 +978,122 @@ f(t) \amp = \frac{P(-2)}{Q'(-2)}e^{-2t} + \frac{P(i)}{Q'(i)}e^{it} + \frac{P(-i)
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-inversion-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.11.1"><a href="#sec_laplace-inversion-17-2" title="Copy heading and permalink for Solution 11.9.11.1" aria-label="Copy heading and permalink for Solution 11.9.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 11.9.11"><a href="#sec_laplace-inversion-17" title="Copy heading and permalink for Example 11.9.11" aria-label="Copy heading and permalink for Example 11.9.11">🔗</a></div></article><section class="exercises" id="exercises_laplace-inversion"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 11.9.11"><a href="#sec_laplace-inversion-17" title="Copy heading and permalink for Example 11.9.11" aria-label="Copy heading and permalink for Example 11.9.11">🔗</a></div>
+</article>
+<section class="exercises" id="exercises_laplace-inversion">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercises_laplace-inversion-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_laplace-inversion-2-1"><div class="para" id="exercises_laplace-inversion-2-1-1">Use partial fractions to find the inverse Laplace transform of the following;<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="exercises_laplace-inversion-2-1">
+<div class="para" id="exercises_laplace-inversion-2-1-1">Use partial fractions to find the inverse Laplace transform of the following;<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_laplace-inversion-2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-2-1-1">
 <span class="process-math">\(Y(s) = \frac{2s+1}{s(s-1)}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-2-2-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\frac{2s+1}{s(s-1)}\Big) = -1 + 3e^t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.1.a.1"><a href="#exercises_laplace-inversion-2-2-2" title="Copy heading and permalink for Solution 11.9.1.a.1" aria-label="Copy heading and permalink for Solution 11.9.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.1.a"><a href="#exercises_laplace-inversion-2-2" title="Copy heading and permalink for Task 11.9.1.a" aria-label="Copy heading and permalink for Task 11.9.1.a">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.1.a"><a href="#exercises_laplace-inversion-2-2" title="Copy heading and permalink for Task 11.9.1.a" aria-label="Copy heading and permalink for Task 11.9.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-3-1-1">
 <span class="process-math">\(Y(s) = \frac{2s^3-s^2+4s-6}{s^4}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.1.b"><a href="#exercises_laplace-inversion-2-3" title="Copy heading and permalink for Task 11.9.1.b" aria-label="Copy heading and permalink for Task 11.9.1.b">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.1.b"><a href="#exercises_laplace-inversion-2-3" title="Copy heading and permalink for Task 11.9.1.b" aria-label="Copy heading and permalink for Task 11.9.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-4-1-1">
 <span class="process-math">\(Y(s) = \frac{4s^2-6s-12}{s(s+2)(s-2)}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-2-4-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\frac{4s^2-6s-12}{s(s+2)(s-2)}\Big) = 3 + 2e^{-2t} - e^{2t}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.1.c.1"><a href="#exercises_laplace-inversion-2-4-2" title="Copy heading and permalink for Solution 11.9.1.c.1" aria-label="Copy heading and permalink for Solution 11.9.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.1.c"><a href="#exercises_laplace-inversion-2-4" title="Copy heading and permalink for Task 11.9.1.c" aria-label="Copy heading and permalink for Task 11.9.1.c">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.1.c"><a href="#exercises_laplace-inversion-2-4" title="Copy heading and permalink for Task 11.9.1.c" aria-label="Copy heading and permalink for Task 11.9.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-5-1-1">
 <span class="process-math">\(Y(s) = \frac{s^3-5s^2+6s-6}{(s-2)^4}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.1.d"><a href="#exercises_laplace-inversion-2-5" title="Copy heading and permalink for Task 11.9.1.d" aria-label="Copy heading and permalink for Task 11.9.1.d">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-2-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.1.d"><a href="#exercises_laplace-inversion-2-5" title="Copy heading and permalink for Task 11.9.1.d" aria-label="Copy heading and permalink for Task 11.9.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-2-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-6-1-1">
 <span class="process-math">\(Y(s) = \frac{2s^2+s+3}{(s+2)(s-1)^2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-2-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-2-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-2-6-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\frac{2s^2+s+3}{(s+2)(s-1)^2}\Big) = e^{-2t} + e^t + 2te^t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.1.e.1"><a href="#exercises_laplace-inversion-2-6-2" title="Copy heading and permalink for Solution 11.9.1.e.1" aria-label="Copy heading and permalink for Solution 11.9.1.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.1.e"><a href="#exercises_laplace-inversion-2-6" title="Copy heading and permalink for Task 11.9.1.e" aria-label="Copy heading and permalink for Task 11.9.1.e">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-2-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.1.e"><a href="#exercises_laplace-inversion-2-6" title="Copy heading and permalink for Task 11.9.1.e" aria-label="Copy heading and permalink for Task 11.9.1.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-2-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_laplace-inversion-2-7-1-1">
 <span class="process-math">\(Y(s) = \frac{4-s}{s^2+4s+5}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.1.f"><a href="#exercises_laplace-inversion-2-7" title="Copy heading and permalink for Task 11.9.1.f" aria-label="Copy heading and permalink for Task 11.9.1.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.9.1"><a href="#exercises_laplace-inversion-2" title="Copy heading and permalink for Exercise 11.9.1" aria-label="Copy heading and permalink for Exercise 11.9.1">🔗</a></div></article><article class="exercise exercise-like" id="exercises_laplace-inversion-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_laplace-inversion-3-1"><div class="para" id="exercises_laplace-inversion-3-1-1">Use a contour integral to find the inverse Laplace transform of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 11.9.1.f"><a href="#exercises_laplace-inversion-2-7" title="Copy heading and permalink for Task 11.9.1.f" aria-label="Copy heading and permalink for Task 11.9.1.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.9.1"><a href="#exercises_laplace-inversion-2" title="Copy heading and permalink for Exercise 11.9.1" aria-label="Copy heading and permalink for Exercise 11.9.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_laplace-inversion-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_laplace-inversion-3-1">
+<div class="para" id="exercises_laplace-inversion-3-1-1">Use a contour integral to find the inverse Laplace transform of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_laplace-inversion-3-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-inversion-3-2-1-1">
 <span class="process-math">\(Y(s) = \frac{1}{s^2+4}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-3-2-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\frac{1}{s^2+4}\Big) = \frac{1}{2}\sin 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.2.a.1"><a href="#exercises_laplace-inversion-3-2-2" title="Copy heading and permalink for Solution 11.9.2.a.1" aria-label="Copy heading and permalink for Solution 11.9.2.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.2.a"><a href="#exercises_laplace-inversion-3-2" title="Copy heading and permalink for Task 11.9.2.a" aria-label="Copy heading and permalink for Task 11.9.2.a">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.2.a"><a href="#exercises_laplace-inversion-3-2" title="Copy heading and permalink for Task 11.9.2.a" aria-label="Copy heading and permalink for Task 11.9.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-inversion-3-3-1-1">
 <span class="process-math">\(Y(s) = \frac{s+3}{(s-2)(s^2+1)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.2.b"><a href="#exercises_laplace-inversion-3-3" title="Copy heading and permalink for Task 11.9.2.b" aria-label="Copy heading and permalink for Task 11.9.2.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.9.2"><a href="#exercises_laplace-inversion-3" title="Copy heading and permalink for Exercise 11.9.2" aria-label="Copy heading and permalink for Exercise 11.9.2">🔗</a></div></article><article class="exercise exercise-like" id="exercises_laplace-inversion-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_laplace-inversion-4-1"><div class="para" id="exercises_laplace-inversion-4-1-1">Use the Heaviside Expansion Theorem to find the inverse Laplace transform of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 11.9.2.b"><a href="#exercises_laplace-inversion-3-3" title="Copy heading and permalink for Task 11.9.2.b" aria-label="Copy heading and permalink for Task 11.9.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.9.2"><a href="#exercises_laplace-inversion-3" title="Copy heading and permalink for Exercise 11.9.2" aria-label="Copy heading and permalink for Exercise 11.9.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_laplace-inversion-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_laplace-inversion-4-1">
+<div class="para" id="exercises_laplace-inversion-4-1-1">Use the Heaviside Expansion Theorem to find the inverse Laplace transform of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_laplace-inversion-4-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-inversion-4-2-1-1">
 <span class="process-math">\(Y(s) =\frac{s^3+s^2-s+3}{s^{5}-s}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-4-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-4-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="displaymath process-math" id="exercises_laplace-inversion-4-2-2-1">
 \begin{align*}
 \mathcal{L}^{-1}\Big(\frac{s^3+s^2-s+3}{s^5-s}\Big) \amp = -3+e^t+e^{-t}+\cos t+\sin t\\
@@ -1007,16 +1101,23 @@ f(t) \amp = \frac{P(-2)}{Q'(-2)}e^{-2t} + \frac{P(i)}{Q'(i)}e^{it} + \frac{P(-i)
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Solution 11.9.3.a.1"><a href="#exercises_laplace-inversion-4-2-2" title="Copy heading and permalink for Solution 11.9.3.a.1" aria-label="Copy heading and permalink for Solution 11.9.3.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.3.a"><a href="#exercises_laplace-inversion-4-2" title="Copy heading and permalink for Task 11.9.3.a" aria-label="Copy heading and permalink for Task 11.9.3.a">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.3.a"><a href="#exercises_laplace-inversion-4-2" title="Copy heading and permalink for Task 11.9.3.a" aria-label="Copy heading and permalink for Task 11.9.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-inversion-4-3-1-1">
 <span class="process-math">\(Y(s) =\frac{s^3+2s^2-s+2}{s^{5}-s}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.3.b"><a href="#exercises_laplace-inversion-4-3" title="Copy heading and permalink for Task 11.9.3.b" aria-label="Copy heading and permalink for Task 11.9.3.b">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.3.b"><a href="#exercises_laplace-inversion-4-3" title="Copy heading and permalink for Task 11.9.3.b" aria-label="Copy heading and permalink for Task 11.9.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-inversion-4-4-1-1">
 <span class="process-math">\(Y(s) =\frac{s^3+3s^2-s+1}{s^{5}-s}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-4-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-4-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="displaymath process-math" id="exercises_laplace-inversion-4-4-2-1">
 \begin{align*}
 \mathcal{L}^{-1}\Big(\frac{s^{3}+3s^2-s+1}{s^{5}-s}\Big) \amp = -1+e^t+e^{-t}-\cos t+\sin t\\
@@ -1024,147 +1125,220 @@ f(t) \amp = \frac{P(-2)}{Q'(-2)}e^{-2t} + \frac{P(i)}{Q'(i)}e^{it} + \frac{P(-i)
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Solution 11.9.3.c.1"><a href="#exercises_laplace-inversion-4-4-2" title="Copy heading and permalink for Solution 11.9.3.c.1" aria-label="Copy heading and permalink for Solution 11.9.3.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.3.c"><a href="#exercises_laplace-inversion-4-4" title="Copy heading and permalink for Task 11.9.3.c" aria-label="Copy heading and permalink for Task 11.9.3.c">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-4-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.3.c"><a href="#exercises_laplace-inversion-4-4" title="Copy heading and permalink for Task 11.9.3.c" aria-label="Copy heading and permalink for Task 11.9.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-4-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-inversion-4-5-1-1">
 <span class="process-math">\(Y(s) =\frac{s^3+s^2+s+3}{s^{5}-s}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.3.d"><a href="#exercises_laplace-inversion-4-5" title="Copy heading and permalink for Task 11.9.3.d" aria-label="Copy heading and permalink for Task 11.9.3.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.9.3"><a href="#exercises_laplace-inversion-4" title="Copy heading and permalink for Exercise 11.9.3" aria-label="Copy heading and permalink for Exercise 11.9.3">🔗</a></div></article><article class="exercise exercise-like" id="exercises_laplace-inversion-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 11.9.3.d"><a href="#exercises_laplace-inversion-4-5" title="Copy heading and permalink for Task 11.9.3.d" aria-label="Copy heading and permalink for Task 11.9.3.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.9.3"><a href="#exercises_laplace-inversion-4" title="Copy heading and permalink for Exercise 11.9.3" aria-label="Copy heading and permalink for Exercise 11.9.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_laplace-inversion-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="exercises_laplace-inversion-5-1-1">Find the inverse Laplace transform of <span class="process-math">\(Y(s) = \frac{s^3+2s^2+4s+2}{(s^2+1)(s^2+4)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-5-2-1">
 <span class="process-math">\(\mathcal{L}^{-1}\Big(\frac{s^{3}+2s^2+4s+2}{(s^2+1)(s^2+4)}\Big) = \cos t+\sin 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.4.1"><a href="#exercises_laplace-inversion-5-2" title="Copy heading and permalink for Solution 11.9.4.1" aria-label="Copy heading and permalink for Solution 11.9.4.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 11.9.4"><a href="#exercises_laplace-inversion-5" title="Copy heading and permalink for Exercise 11.9.4" aria-label="Copy heading and permalink for Exercise 11.9.4">🔗</a></div></article><article class="exercise exercise-like" id="exercises_laplace-inversion-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_laplace-inversion-6-1"><div class="para" id="exercises_laplace-inversion-6-1-1">Solve the following initial value problems:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 11.9.4"><a href="#exercises_laplace-inversion-5" title="Copy heading and permalink for Exercise 11.9.4" aria-label="Copy heading and permalink for Exercise 11.9.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_laplace-inversion-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_laplace-inversion-6-1">
+<div class="para" id="exercises_laplace-inversion-6-1-1">Solve the following initial value problems:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_laplace-inversion-6-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-2-1-1">
-<span class="process-math">\(y\,''(t) + 2y\,'(t) + 5y(t) = 4e^{-t},\)</span> <div class="para" id="exercises_laplace-inversion-6-2-1-1-2">
+<span class="process-math">\(y\,''(t) + 2y\,'(t) + 5y(t) = 4e^{-t},\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-2-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1 \quad \text{and} \quad y\,'(0)=1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-6-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-6-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-6-2-2-1">
 <span class="process-math">\(y(t) = e^{-t}+e^{-t}\sin 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.5.a.1"><a href="#exercises_laplace-inversion-6-2-2" title="Copy heading and permalink for Solution 11.9.5.a.1" aria-label="Copy heading and permalink for Solution 11.9.5.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.5.a"><a href="#exercises_laplace-inversion-6-2" title="Copy heading and permalink for Task 11.9.5.a" aria-label="Copy heading and permalink for Task 11.9.5.a">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.5.a"><a href="#exercises_laplace-inversion-6-2" title="Copy heading and permalink for Task 11.9.5.a" aria-label="Copy heading and permalink for Task 11.9.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-3-1-1">
-<span class="process-math">\(y\,''(t) +y(t) = 3\sin 2t\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-6-3-1-1-2">
+<span class="process-math">\(y\,''(t) +y(t) = 3\sin 2t\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-3-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1 \quad \text{and} \quad y\,'(0)=3;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.5.b"><a href="#exercises_laplace-inversion-6-3" title="Copy heading and permalink for Task 11.9.5.b" aria-label="Copy heading and permalink for Task 11.9.5.b">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-6-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.5.b"><a href="#exercises_laplace-inversion-6-3" title="Copy heading and permalink for Task 11.9.5.b" aria-label="Copy heading and permalink for Task 11.9.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-6-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-4-1-1">
-<span class="process-math">\(y\,''(t) +4y(t) = 5e^{-t},\)</span> <div class="para" id="exercises_laplace-inversion-6-4-1-1-2">
+<span class="process-math">\(y\,''(t) +4y(t) = 5e^{-t},\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-4-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=2 \quad \text{and} \quad y\,'(0)=1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-4-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-6-4-2-1">
 <span class="process-math">\(y(t) = e^{-t}+\cos 2t+\sin 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.5.c.1"><a href="#exercises_laplace-inversion-6-4-2" title="Copy heading and permalink for Solution 11.9.5.c.1" aria-label="Copy heading and permalink for Solution 11.9.5.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.5.c"><a href="#exercises_laplace-inversion-6-4" title="Copy heading and permalink for Task 11.9.5.c" aria-label="Copy heading and permalink for Task 11.9.5.c">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-6-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.5.c"><a href="#exercises_laplace-inversion-6-4" title="Copy heading and permalink for Task 11.9.5.c" aria-label="Copy heading and permalink for Task 11.9.5.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-6-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-5-1-1">
-<span class="process-math">\(y\,''(t) + 2y\,'(t) + 2y(t) = 2\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-6-5-1-1-2">
+<span class="process-math">\(y\,''(t) + 2y\,'(t) + 2y(t) = 2\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-5-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1 \quad \text{and} \quad y\,'(0)=1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-5-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.5.d"><a href="#exercises_laplace-inversion-6-5" title="Copy heading and permalink for Task 11.9.5.d" aria-label="Copy heading and permalink for Task 11.9.5.d">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-6-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.5.d"><a href="#exercises_laplace-inversion-6-5" title="Copy heading and permalink for Task 11.9.5.d" aria-label="Copy heading and permalink for Task 11.9.5.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-6-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-6-1-1">
-<span class="process-math">\(y\,''(t) + 3y\,'(t) + 2y(t) = 2t + 5\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-6-6-1-1-2">
+<span class="process-math">\(y\,''(t) + 3y\,'(t) + 2y(t) = 2t + 5\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-6-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=1 \quad \text{and} \quad y\,'(0)=1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-6-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-6-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-6-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-6-6-2-1">
 <span class="process-math">\(y(t) = 1+t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.5.e.1"><a href="#exercises_laplace-inversion-6-6-2" title="Copy heading and permalink for Solution 11.9.5.e.1" aria-label="Copy heading and permalink for Solution 11.9.5.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.5.e"><a href="#exercises_laplace-inversion-6-6" title="Copy heading and permalink for Task 11.9.5.e" aria-label="Copy heading and permalink for Task 11.9.5.e">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-6-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.5.e"><a href="#exercises_laplace-inversion-6-6" title="Copy heading and permalink for Task 11.9.5.e" aria-label="Copy heading and permalink for Task 11.9.5.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-6-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_laplace-inversion-6-7-1-1">
-<span class="process-math">\(y\,''(t) + 2y\,'(t) +y(t) = t\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-6-7-1-1-2">
+<span class="process-math">\(y\,''(t) + 2y\,'(t) +y(t) = t\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-6-7-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad y(0)=-1 \quad \text{and} \quad y\,'(0)=0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-7-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.5.f"><a href="#exercises_laplace-inversion-6-7" title="Copy heading and permalink for Task 11.9.5.f" aria-label="Copy heading and permalink for Task 11.9.5.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.9.5"><a href="#exercises_laplace-inversion-6" title="Copy heading and permalink for Exercise 11.9.5" aria-label="Copy heading and permalink for Exercise 11.9.5">🔗</a></div></article><article class="exercise exercise-like" id="exercises_laplace-inversion-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="exercises_laplace-inversion-7-1"><div class="para" id="exercises_laplace-inversion-7-1-1">Solve the following systems of differential equations:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 11.9.5.f"><a href="#exercises_laplace-inversion-6-7" title="Copy heading and permalink for Task 11.9.5.f" aria-label="Copy heading and permalink for Task 11.9.5.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.9.5"><a href="#exercises_laplace-inversion-6" title="Copy heading and permalink for Exercise 11.9.5" aria-label="Copy heading and permalink for Exercise 11.9.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_laplace-inversion-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="exercises_laplace-inversion-7-1">
+<div class="para" id="exercises_laplace-inversion-7-1-1">Solve the following systems of differential equations:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="exercises_laplace-inversion-7-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-2-1-1">
-<span class="process-math">\(x\,'(t) = 2y(t) - 3x(t), \, y\,'(t) = 2y(t) - 2x(t)\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-7-2-1-1-2">
+<span class="process-math">\(x\,'(t) = 2y(t) - 3x(t), \, y\,'(t) = 2y(t) - 2x(t)\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-2-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=1 \quad \text{and} \quad y(0)=-1;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-7-2-2-1">
 <span class="process-math">\(x(t) = 2e^{-2t}-e^t \quad,\)</span> and <span class="process-math">\(\quad y(t) = e^{-2t} - 2e^t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.6.a.1"><a href="#exercises_laplace-inversion-7-2-2" title="Copy heading and permalink for Solution 11.9.6.a.1" aria-label="Copy heading and permalink for Solution 11.9.6.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.6.a"><a href="#exercises_laplace-inversion-7-2" title="Copy heading and permalink for Task 11.9.6.a" aria-label="Copy heading and permalink for Task 11.9.6.a">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.6.a"><a href="#exercises_laplace-inversion-7-2" title="Copy heading and permalink for Task 11.9.6.a" aria-label="Copy heading and permalink for Task 11.9.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-3-1-1">
-<span class="process-math">\(x\,'(t) = 10y(t) - 5x(t), \, y\,'(t) = y(t) - x(t)\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-7-3-1-1-2">
+<span class="process-math">\(x\,'(t) = 10y(t) - 5x(t), \, y\,'(t) = y(t) - x(t)\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-3-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=3 \quad \text{and} \quad y(0)=2;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.6.b"><a href="#exercises_laplace-inversion-7-3" title="Copy heading and permalink for Task 11.9.6.b" aria-label="Copy heading and permalink for Task 11.9.6.b">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-7-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.6.b"><a href="#exercises_laplace-inversion-7-3" title="Copy heading and permalink for Task 11.9.6.b" aria-label="Copy heading and permalink for Task 11.9.6.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-7-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-4-1-1">
-<span class="process-math">\(x\,'(t) = 4y(t) - 3x(t), \, y\,'(t) = y(t) -x(t)\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-7-4-1-1-2">
+<span class="process-math">\(x\,'(t) = 4y(t) - 3x(t), \, y\,'(t) = y(t) -x(t)\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-4-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=-1 \quad \text{and} \quad y(0)=0;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-4-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-7-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-7-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-7-4-2-1">
 <span class="process-math">\(x(t) = -e^{-t} + 2te^{-t}, \quad\)</span> and <span class="process-math">\(\quad y(t) = te^{-t}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.6.c.1"><a href="#exercises_laplace-inversion-7-4-2" title="Copy heading and permalink for Solution 11.9.6.c.1" aria-label="Copy heading and permalink for Solution 11.9.6.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.6.c"><a href="#exercises_laplace-inversion-7-4" title="Copy heading and permalink for Task 11.9.6.c" aria-label="Copy heading and permalink for Task 11.9.6.c">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-7-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.6.c"><a href="#exercises_laplace-inversion-7-4" title="Copy heading and permalink for Task 11.9.6.c" aria-label="Copy heading and permalink for Task 11.9.6.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-7-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-5-1-1">
-<span class="process-math">\(x\,'(t) = 2x(t) +3y(t), \, y\,'(t) = 2x(t) + y(t)\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-7-5-1-1-2">
+<span class="process-math">\(x\,'(t) = 2x(t) +3y(t), \, y\,'(t) = 2x(t) + y(t)\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-5-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=2 \quad \text{and} \quad y(0)=3;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-5-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.6.d"><a href="#exercises_laplace-inversion-7-5" title="Copy heading and permalink for Task 11.9.6.d" aria-label="Copy heading and permalink for Task 11.9.6.d">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-7-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 11.9.6.d"><a href="#exercises_laplace-inversion-7-5" title="Copy heading and permalink for Task 11.9.6.d" aria-label="Copy heading and permalink for Task 11.9.6.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-7-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-6-1-1">
-<span class="process-math">\(x\,'(t) = 8y(t) - 3x(t) + 2, \, y\,'(t) = y(t) - x(t) - 1\text{,}\)</span> <div class="para" id="exercises_laplace-inversion-7-6-1-1-2">
+<span class="process-math">\(x\,'(t) = 8y(t) - 3x(t) + 2, \, y\,'(t) = y(t) - x(t) - 1\text{,}\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-6-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=4 \quad \text{and} \quad y(0)=2;\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-6-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="exercises_laplace-inversion-7-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="exercises_laplace-inversion-7-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-inversion-7-6-2-1">
 <span class="process-math">\(x(t) = -2+6e^{-t}\cos 2t+6e^{-t}\sin 2t, \quad\)</span> and <span class="process-math">\(\quad y(t)=-1+3e^{-t}\cos 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 11.9.6.e.1"><a href="#exercises_laplace-inversion-7-6-2" title="Copy heading and permalink for Solution 11.9.6.e.1" aria-label="Copy heading and permalink for Solution 11.9.6.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 11.9.6.e"><a href="#exercises_laplace-inversion-7-6" title="Copy heading and permalink for Task 11.9.6.e" aria-label="Copy heading and permalink for Task 11.9.6.e">🔗</a></div></article><article class="task exercise-like" id="exercises_laplace-inversion-7-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 11.9.6.e"><a href="#exercises_laplace-inversion-7-6" title="Copy heading and permalink for Task 11.9.6.e" aria-label="Copy heading and permalink for Task 11.9.6.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="exercises_laplace-inversion-7-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_laplace-inversion-7-7-1-1">
-<span class="process-math">\(x\,'(t) = 4y(t) - 3x(t) + 5, \, y\,'(t) =y (t) - x(t) + 1,\)</span> <div class="para" id="exercises_laplace-inversion-7-7-1-1-2">
+<span class="process-math">\(x\,'(t) = 4y(t) - 3x(t) + 5, \, y\,'(t) =y (t) - x(t) + 1,\)</span> 
+<div class="para" id="exercises_laplace-inversion-7-7-1-1-2">
 <span class="process-math">\(\qquad \text{with} \quad x(0)=0 \quad \text{and} \quad y(0)=2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-7-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-inversion-7-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.9.6.f"><a href="#exercises_laplace-inversion-7-7" title="Copy heading and permalink for Task 11.9.6.f" aria-label="Copy heading and permalink for Task 11.9.6.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 11.9.6"><a href="#exercises_laplace-inversion-7" title="Copy heading and permalink for Exercise 11.9.6" aria-label="Copy heading and permalink for Exercise 11.9.6">🔗</a></div></article><div class="autopermalink" data-description="Exercises 11.9: Exercises"><a href="#exercises_laplace-inversion" title="Copy heading and permalink for Exercises 11.9: Exercises" aria-label="Copy heading and permalink for Exercises 11.9: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 11.9: Inverting the Laplace Transform"><a href="#sec_laplace-inversion" title="Copy heading and permalink for Section 11.9: Inverting the Laplace Transform" aria-label="Copy heading and permalink for Section 11.9: Inverting the Laplace Transform">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Task 11.9.6.f"><a href="#exercises_laplace-inversion-7-7" title="Copy heading and permalink for Task 11.9.6.f" aria-label="Copy heading and permalink for Task 11.9.6.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 11.9.6"><a href="#exercises_laplace-inversion-7" title="Copy heading and permalink for Exercise 11.9.6" aria-label="Copy heading and permalink for Exercise 11.9.6">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 11.9: Exercises"><a href="#exercises_laplace-inversion" title="Copy heading and permalink for Exercises 11.9: Exercises" aria-label="Copy heading and permalink for Exercises 11.9: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 11.9: Inverting the Laplace Transform"><a href="#sec_laplace-inversion" title="Copy heading and permalink for Section 11.9: Inverting the Laplace Transform" aria-label="Copy heading and permalink for Section 11.9: Inverting the Laplace Transform">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_mult-and-division-by-t.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_convolution.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_taylor-series"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_taylor-series">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Taylor Series Representations</span>
 </h2>
 <div class="para" id="sec_taylor-series-2">In <a href="sec_power-series.html" class="internal" title="Section 4.4: Power Series Functions">Section 4.4</a> we showed that functions defined by power series have derivatives of all orders (<a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>). In <a href="sec_integral-representations.html" class="internal" title="Section 6.5: Cauchy’s Integral Formulas">Section 6.5</a> we demonstrated that analytic functions also have derivatives of all orders (<a href="sec_integral-representations.html#All_derivs" class="xref" data-knowl="./knowl/xref/All_derivs.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.5.10">Corollary 6.5.10</a>). It seems natural, therefore, that there would be some connection between analytic functions and power series. As you might guess, the connection exists via the Taylor and Maclaurin series of analytic functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -522,7 +524,9 @@ f(\alpha)+f\,'(\alpha)(z-\alpha) + \frac{f\,^{(2)}(\alpha)}{2!}(z-\alpha)^2\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 7.2.1: Taylor series"><a href="#sec_taylor-series-3" title="Copy heading and permalink for Definition 7.2.1: Taylor series" aria-label="Copy heading and permalink for Definition 7.2.1: Taylor series">🔗</a></div></article><div class="para" id="sec_taylor-series-4">To investigate when these series converge we need the following lemma.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 7.2.1: Taylor series"><a href="#sec_taylor-series-3" title="Copy heading and permalink for Definition 7.2.1: Taylor series" aria-label="Copy heading and permalink for Definition 7.2.1: Taylor series">🔗</a></div>
+</article>
+<div class="para" id="sec_taylor-series-4">To investigate when these series converge we need the following lemma.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="lemma theorem-like" id="x1__z-z0__expansion"><h3 class="heading">
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -540,12 +544,18 @@ f(\alpha)+f\,'(\alpha)(z-\alpha) + \frac{f\,^{(2)}(\alpha)}{2!}(z-\alpha)^2\\
 <div class="para">where <span class="process-math">\(n\)</span> is a positive integer.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x1__z-z0__expansion-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Lemma 7.2.2"><a href="#x1__z-z0__expansion" title="Copy heading and permalink for Lemma 7.2.2" aria-label="Copy heading and permalink for Lemma 7.2.2">🔗</a></div></article><details id="sec_taylor-series-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_taylor-series-6-1">
+<div class="autopermalink" data-description="Lemma 7.2.2"><a href="#x1__z-z0__expansion" title="Copy heading and permalink for Lemma 7.2.2" aria-label="Copy heading and permalink for Lemma 7.2.2">🔗</a></div>
+</article>
+<details id="sec_taylor-series-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_taylor-series-6-1">
 <span class="process-math">\(\dfrac{1}{z-z_0}=\dfrac{1}{(z-\alpha)-(z_0-\alpha)} = 
 \dfrac{1}{z-\alpha }\left(\dfrac{1}{1-\frac{z_0-\alpha}{z-\alpha}}\right)
 \text{.}\)</span> The result now follows from <a href="sec_convergence-theorems.html#cor_geometric-series" class="xref" data-knowl="./knowl/xref/cor_geometric-series.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.3">Corollary 4.3.3</a> if in it we replace <span class="process-math">\(z\)</span> with <span class="process-math">\(\left(\frac{z_0-\alpha}{z-\alpha}\right)\text{.}\)</span> We leave verification of the details as an exercise.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.2.1"><a href="#sec_taylor-series-6" title="Copy heading and permalink for Proof 7.2.1" aria-label="Copy heading and permalink for Proof 7.2.1">🔗</a></div></article></details><div class="para" id="sec_taylor-series-7">We are now ready for the main result of this section.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.2.1"><a href="#sec_taylor-series-6" title="Copy heading and permalink for Proof 7.2.1" aria-label="Copy heading and permalink for Proof 7.2.1">🔗</a></div>
+</article></details>
+<div class="para" id="sec_taylor-series-7">We are now ready for the main result of this section.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Taylor_s_Theorem"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Taylor’s theorem.</span>
@@ -558,14 +568,21 @@ f(z)=\sum_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k\,\quad \text{fo
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Taylor_s_Theorem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="Taylor_s_Theorem-2-2">Furthermore, for any <span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(0\lt r\lt R\text{,}\)</span> the convergence is uniform on the closed subdisk <span class="process-math">\(\overline{D}_r(\alpha) =\{z:|z-\alpha| \le r\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Taylor_s_Theorem-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="Taylor_s_Theorem-2-2">Furthermore, for any <span class="process-math">\(r\text{,}\)</span> <span class="process-math">\(0\lt r\lt R\text{,}\)</span> the convergence is uniform on the closed subdisk <span class="process-math">\(\overline{D}_r(\alpha) =\{z:|z-\alpha| \le r\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Taylor_s_Theorem-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.2.3: Taylor’s theorem"><a href="#Taylor_s_Theorem" title="Copy heading and permalink for Theorem 7.2.3: Taylor’s theorem" aria-label="Copy heading and permalink for Theorem 7.2.3: Taylor’s theorem">🔗</a></div></article><details id="sec_taylor-series-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_taylor-series-9-1">If we can establish <a href="sec_taylor-series.html#Taylor_Representation_of_f" class="xref" data-knowl="./knowl/xref/Taylor_Representation_of_f.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.1">Equation (7.2.1)</a>, the uniform convergence on <span class="process-math">\(\overline{D}_r(\alpha)\)</span> for <span class="process-math">\(0\lt r\lt R\)</span> will follow immediately from <a href="sec_uniform-convergence.html#Unif_Conv_of_Series" class="xref" data-knowl="./knowl/xref/Unif_Conv_of_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.5">Theorem 7.1.5</a> by equating the <span class="process-math">\(c_k\)</span> of that theorem with <span class="process-math">\(\frac{f\,^{(k)}(\alpha)}{k!}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 7.2.3: Taylor’s theorem"><a href="#Taylor_s_Theorem" title="Copy heading and permalink for Theorem 7.2.3: Taylor’s theorem" aria-label="Copy heading and permalink for Theorem 7.2.3: Taylor’s theorem">🔗</a></div>
+</article>
+<details id="sec_taylor-series-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_taylor-series-9-1">If we can establish <a href="sec_taylor-series.html#Taylor_Representation_of_f" class="xref" data-knowl="./knowl/xref/Taylor_Representation_of_f.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.1">Equation (7.2.1)</a>, the uniform convergence on <span class="process-math">\(\overline{D}_r(\alpha)\)</span> for <span class="process-math">\(0\lt r\lt R\)</span> will follow immediately from <a href="sec_uniform-convergence.html#Unif_Conv_of_Series" class="xref" data-knowl="./knowl/xref/Unif_Conv_of_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.5">Theorem 7.1.5</a> by equating the <span class="process-math">\(c_k\)</span> of that theorem with <span class="process-math">\(\frac{f\,^{(k)}(\alpha)}{k!}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_taylor-series-9-2">Let <span class="process-math">\(z_0 \in D_{R}(\alpha)\)</span> and let <span class="process-math">\(r\)</span> designate the distance between <span class="process-math">\(z_0\)</span> and <span class="process-math">\(\alpha\)</span> so that <span class="process-math">\(|z_0-\alpha | =r\text{.}\)</span> Note that <span class="process-math">\(0 \le r\lt R\)</span> because <span class="process-math">\(z_0\)</span> belongs to the <em class="emphasis">open</em> disk <span class="process-math">\(D_{R}(\alpha)\text{.}\)</span> We choose <span class="process-math">\(\rho\)</span> such that <span class="process-math">\(0 \le r\lt \rho \lt R\text{,}\)</span> and let <span class="process-math">\(C=C_{\rho }^{+}(\alpha)\)</span> be the positively oriented circle centered at <span class="process-math">\(\alpha\)</span> with radius <span class="process-math">\(\rho\)</span> as shown in <a href="sec_taylor-series.html#fig_ch-07-02" class="xref" data-knowl="./knowl/xref/fig_ch-07-02.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.2.4">Figure 7.2.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-07-02"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-07/ch-07-fig-02.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The constructions for Taylor’s theorem<div class="autopermalink" data-description="Figure 7.2.4"><a href="#fig_ch-07-02" title="Copy heading and permalink for Figure 7.2.4" aria-label="Copy heading and permalink for Figure 7.2.4">🔗</a></div></figcaption></figure><div class="para logical" id="sec_taylor-series-9-4">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The constructions for Taylor’s theorem<div class="autopermalink" data-description="Figure 7.2.4"><a href="#fig_ch-07-02" title="Copy heading and permalink for Figure 7.2.4" aria-label="Copy heading and permalink for Figure 7.2.4">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_taylor-series-9-4">
 <div class="para">With <span class="process-math">\(C\)</span> contained in <span class="process-math">\(G\text{,}\)</span> we can use the Cauchy integral formula to get</div>
 <div class="displaymath process-math" id="sec_taylor-series-9-4-3">
 \begin{equation*}
@@ -588,7 +605,8 @@ f(z_0) \amp = \frac{1}{2\pi i} \int_C\left[\frac{1}{z-\alpha} +
 \amp + \frac{(z_0-\alpha)^{n+1}}{2\pi i}\int_C \frac{f(z)}{(z-z_0)(z-\alpha)^{n+1}}\,dz\text{,}\tag{7.2.2}
 \end{align}
 </div>
-<div class="para">where <span class="process-math">\(n\)</span> is a positive integer. <div class="para logical" id="sec_taylor-series-9-5-5">
+<div class="para">where <span class="process-math">\(n\)</span> is a positive integer. 
+<div class="para logical" id="sec_taylor-series-9-5-5">
 <div class="para">We can put the last term in <a href="sec_taylor-series.html#sec_taylor-series-9-5-3" class="xref" data-knowl="./knowl/xref/f_z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.2">Equation (7.2.2)</a> in the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/f_z0__expansion.html" id="En_z0_">
 \begin{equation}
@@ -663,7 +681,9 @@ f(z_0) = \sum_{k=0}^n\frac{f\,^{(k)}(\alpha)}{k!}(z_0-\alpha)^k+E_n(z_0)\text{.}
 <div class="para" id="sec_taylor-series-9-12">Because <span class="process-math">\(0 \le r \lt \rho \lt R\text{,}\)</span> the fraction <span class="process-math">\(\frac{r}{\rho}\)</span> is less than 1, so <span class="process-math">\((\frac{r}{\rho
 })^{n+1}\)</span> (and hence the right side of <a href="sec_taylor-series.html#Final_En_z0_" class="xref" data-knowl="./knowl/xref/Final_En_z0_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.7">Equation (7.2.7)</a>) goes to zero as <span class="process-math">\(n\)</span> goes to infinity. Thus, for any <span class="process-math">\(\varepsilon&gt;0\text{,}\)</span> we can find an integer <span class="process-math">\(N_{\varepsilon}\)</span> such that <span class="process-math">\(|E_n(z_0)| \lt \varepsilon\)</span> for <span class="process-math">\(n \ge N_{\varepsilon}\text{,}\)</span> and this fact completes the proof.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-9-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.2.2"><a href="#sec_taylor-series-9" title="Copy heading and permalink for Proof 7.2.2" aria-label="Copy heading and permalink for Proof 7.2.2">🔗</a></div></article></details><div class="para" id="sec_taylor-series-10">A singular point of a function is a point at which the function fails to be analytic. You will see in <a href="sec_singularities.html" class="internal" title="Section 7.4: Singularities, Zeros, and Poles">Section 7.4</a> that singular points of a function can be classified according to how badly the function behaves at those points. Loosely speaking, a <em class="emphasis">nonremovable</em> singular point of a function has the property that it is impossible to redefine the value of the function at that point so as to make it analytic there.  For example, the function <span class="process-math">\(f(z) =\frac{1}{1-z}\)</span> has a nonremovable singularity at <span class="process-math">\(z=1\text{.}\)</span> We give a formal definition of this concept in <a href="sec_singularities.html" class="internal" title="Section 7.4: Singularities, Zeros, and Poles">Section 7.4</a>, but with this language we can nuance Taylor’s theorem a bit.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.2.2"><a href="#sec_taylor-series-9" title="Copy heading and permalink for Proof 7.2.2" aria-label="Copy heading and permalink for Proof 7.2.2">🔗</a></div>
+</article></details>
+<div class="para" id="sec_taylor-series-10">A singular point of a function is a point at which the function fails to be analytic. You will see in <a href="sec_singularities.html" class="internal" title="Section 7.4: Singularities, Zeros, and Poles">Section 7.4</a> that singular points of a function can be classified according to how badly the function behaves at those points. Loosely speaking, a <em class="emphasis">nonremovable</em> singular point of a function has the property that it is impossible to redefine the value of the function at that point so as to make it analytic there.  For example, the function <span class="process-math">\(f(z) =\frac{1}{1-z}\)</span> has a nonremovable singularity at <span class="process-math">\(z=1\text{.}\)</span> We give a formal definition of this concept in <a href="sec_singularities.html" class="internal" title="Section 7.4: Singularities, Zeros, and Poles">Section 7.4</a>, but with this language we can nuance Taylor’s theorem a bit.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="corollary theorem-like" id="Nuanced_Taylor"><h3 class="heading">
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -684,14 +704,22 @@ f(z_0) = \sum_{k=0}^n\frac{f\,^{(k)}(\alpha)}{k!}(z_0-\alpha)^k+E_n(z_0)\text{.}
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#Nuanced_Taylor-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Corollary 7.2.5"><a href="#Nuanced_Taylor" title="Copy heading and permalink for Corollary 7.2.5" aria-label="Copy heading and permalink for Corollary 7.2.5">🔗</a></div></article><details id="sec_taylor-series-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_taylor-series-12-1">Taylor’s theorem gives us part (<em class="emphasis">i</em>) immediately. To establish part (<em class="emphasis">ii</em>), we note that if <span class="process-math">\(|z_0-\alpha|=R\text{,}\)</span> then <span class="process-math">\(z_0 \in D_{S}(\alpha)\)</span> whenever <span class="process-math">\(S&gt;R\text{.}\)</span> If for some <span class="process-math">\(z_1\text{,}\)</span> with <span class="process-math">\(|z_1-\alpha| =S&gt;R\text{,}\)</span> the Taylor series converged to <span class="process-math">\(f(z_1)\text{,}\)</span> then according to <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>, the radius of convergence of the series <span class="process-math">\(\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k\)</span> would be at least equal to <span class="process-math">\(S\text{.}\)</span> We could then make <span class="process-math">\(f\)</span> differentiable at <span class="process-math">\(z_0\)</span> by redefining <span class="process-math">\(f(z_0)\)</span> to equal the value of the series at <span class="process-math">\(z_0\text{,}\)</span> thus contradicting the fact that <span class="process-math">\(z_0\)</span> is a nonremovable singular point.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Corollary 7.2.5"><a href="#Nuanced_Taylor" title="Copy heading and permalink for Corollary 7.2.5" aria-label="Copy heading and permalink for Corollary 7.2.5">🔗</a></div>
+</article>
+<details id="sec_taylor-series-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_taylor-series-12-1">Taylor’s theorem gives us part (<em class="emphasis">i</em>) immediately. To establish part (<em class="emphasis">ii</em>), we note that if <span class="process-math">\(|z_0-\alpha|=R\text{,}\)</span> then <span class="process-math">\(z_0 \in D_{S}(\alpha)\)</span> whenever <span class="process-math">\(S&gt;R\text{.}\)</span> If for some <span class="process-math">\(z_1\text{,}\)</span> with <span class="process-math">\(|z_1-\alpha| =S&gt;R\text{,}\)</span> the Taylor series converged to <span class="process-math">\(f(z_1)\text{,}\)</span> then according to <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>, the radius of convergence of the series <span class="process-math">\(\sum\limits_{k=0}^{\infty}\frac{f\,^{(k)}(\alpha)}{k!}(z-\alpha)^k\)</span> would be at least equal to <span class="process-math">\(S\text{.}\)</span> We could then make <span class="process-math">\(f\)</span> differentiable at <span class="process-math">\(z_0\)</span> by redefining <span class="process-math">\(f(z_0)\)</span> to equal the value of the series at <span class="process-math">\(z_0\text{,}\)</span> thus contradicting the fact that <span class="process-math">\(z_0\)</span> is a nonremovable singular point.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.2.3"><a href="#sec_taylor-series-12" title="Copy heading and permalink for Proof 7.2.3" aria-label="Copy heading and permalink for Proof 7.2.3">🔗</a></div></article></details><article class="example example-like" id="x1__1-z__2_ex"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 7.2.3"><a href="#sec_taylor-series-12" title="Copy heading and permalink for Proof 7.2.3" aria-label="Copy heading and permalink for Proof 7.2.3">🔗</a></div>
+</article></details>
+<article class="example example-like" id="x1__1-z__2_ex"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="x1__1-z__2_ex-1-1">Show that <span class="process-math">\(\frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}(n+1)z^n\)</span> is valid for <span class="process-math">\(z \in D_1(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1__1-z__2_ex-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1__1-z__2_ex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1__1-z__2_ex-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="x1__1-z__2_ex-2-1">
 <div class="para">In <a href="sec_power-series.html#ex_4_24" class="xref" data-knowl="./knowl/xref/ex_4_24.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.9">Example 4.4.9</a> we established this identity with the use of <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a>. We now do so via <a href="sec_taylor-series.html#Taylor_s_Theorem" class="xref" data-knowl="./knowl/xref/Taylor_s_Theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.3: Taylor’s theorem">Theorem 7.2.3</a>. If <span class="process-math">\(f(z)
 =\frac{1}{(1-z)^2}\text{,}\)</span> then a standard induction argument (which we leave as an exercise) will show that <span class="process-math">\(f\,^{(n)}(z) =\frac{(n+1)!}{(1-z)^{n+2}}\)</span> for <span class="process-math">\(z \in D_1(0)\text{.}\)</span>  Thus <span class="process-math">\(f\,^{(n)}(0)=(n+1)!\text{,}\)</span> and Taylor’s theorem gives</div>
@@ -706,8 +734,11 @@ f(z) = \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}\frac{f\,^{(n)}(0)}{n!}z^n =
 <div class="autopermalink" data-description="Paragraph"><a href="#x1__1-z__2_ex-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.6.1"><a href="#x1__1-z__2_ex-2" title="Copy heading and permalink for Solution 7.2.6.1" aria-label="Copy heading and permalink for Solution 7.2.6.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 7.2.6"><a href="#x1__1-z__2_ex" title="Copy heading and permalink for Example 7.2.6" aria-label="Copy heading and permalink for Example 7.2.6">🔗</a></div></article><article class="example example-like" id="sec_taylor-series-14"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 7.2.6"><a href="#x1__1-z__2_ex" title="Copy heading and permalink for Example 7.2.6" aria-label="Copy heading and permalink for Example 7.2.6">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_taylor-series-14"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_taylor-series-14-1-1">
@@ -721,7 +752,9 @@ f(z) = \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}\frac{f\,^{(n)}(0)}{n!}z^n =
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_taylor-series-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_taylor-series-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_taylor-series-14-2-1">
 <div class="para">For <span class="process-math">\(z \in D_1(0)\text{,}\)</span>
 </div>
@@ -735,8 +768,11 @@ f(z) = \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}\frac{f\,^{(n)}(0)}{n!}z^n =
 <div class="para" id="sec_taylor-series-14-2-2">If we let <span class="process-math">\(z^2\)</span> take the role of <span class="process-math">\(z\)</span> in  <a href="sec_taylor-series.html#x1__1-z__Ex" class="xref" data-knowl="./knowl/xref/x1__1-z__Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.9">Equation (7.2.9)</a>, we get that <span class="process-math">\(\frac{1}{1-z^2}=\sum\limits_{n=0}^{\infty}(z^2)^n=\sum\limits_{n=0}^{\infty}z^{2n}\)</span> for <span class="process-math">\(z^2 \in D_1(0)\text{.}\)</span> But <span class="process-math">\(z^2 \in D_1(0)\)</span> iff <span class="process-math">\(z \in D_1(0)\text{.}\)</span> Letting <span class="process-math">\(-z^2\)</span> take the role of <span class="process-math">\(z\)</span> in <a href="sec_taylor-series.html#x1__1-z__Ex" class="xref" data-knowl="./knowl/xref/x1__1-z__Ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.9">Equation (7.2.9)</a> gives the second part of <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.7.1"><a href="#sec_taylor-series-14-2" title="Copy heading and permalink for Solution 7.2.7.1" aria-label="Copy heading and permalink for Solution 7.2.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 7.2.7"><a href="#sec_taylor-series-14" title="Copy heading and permalink for Example 7.2.7" aria-label="Copy heading and permalink for Example 7.2.7">🔗</a></div></article><article class="remark remark-like" id="sec_taylor-series-15"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 7.2.7"><a href="#sec_taylor-series-14" title="Copy heading and permalink for Example 7.2.7" aria-label="Copy heading and permalink for Example 7.2.7">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_taylor-series-15"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_taylor-series-15-1">
@@ -753,7 +789,9 @@ f(z) = \frac{1}{(1-z)^2}=\sum\limits_{n=0}^{\infty}\frac{f\,^{(n)}(0)}{n!}z^n =
 </div>
 <div class="para" id="sec_taylor-series-15-2">For many students, it makes sense that the first series in <a href="sec_taylor-series.html#sec_taylor-series-15-1-4" class="xref" data-knowl="./knowl/xref/Two_real_series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.10">Equations (7.2.10)</a> converges only on the interval <span class="process-math">\((-1,1)\)</span> because <span class="process-math">\(\frac{1}{1-x^2}\)</span> is undefined at the points <span class="process-math">\(x=\pm 1\text{.}\)</span> It seems unclear as to why this should also be the case for the series representing <span class="process-math">\(\frac{1}{1+x^2}\text{,}\)</span> since the real-valued function <span class="process-math">\(f(x) =\frac{1 }{1+x^2}\)</span> is defined everywhere. The explanation, of course, comes from the complex domain. The complex function <span class="process-math">\(f(z) =\frac{1}{1+z^2}\)</span> is <em class="emphasis">not</em> defined everywhere. In fact, the singularities of <span class="process-math">\(f\)</span> are at the points <span class="process-math">\(\pm i\text{,}\)</span> and the distance between them and the point <span class="process-math">\(\alpha =0\)</span> equals 1. According to <a href="sec_taylor-series.html#Nuanced_Taylor" class="xref" data-knowl="./knowl/xref/Nuanced_Taylor.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.2.5">Corollary 7.2.5</a>, therefore, <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a> are valid only for <span class="process-math">\(z \in D_1(0)\text{,}\)</span> so <a href="sec_taylor-series.html#sec_taylor-series-15-1-4" class="xref" data-knowl="./knowl/xref/Two_real_series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.10">Equations (7.2.10)</a> are valid only for <span class="process-math">\(x \in (-1,1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 7.2.8"><a href="#sec_taylor-series-15" title="Copy heading and permalink for Remark 7.2.8" aria-label="Copy heading and permalink for Remark 7.2.8">🔗</a></div></article><div class="para" id="sec_taylor-series-16">Alas, there is a potential fly in this ointment: <a href="sec_taylor-series.html#Nuanced_Taylor" class="xref" data-knowl="./knowl/xref/Nuanced_Taylor.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.2.5">Corollary 7.2.5</a> applies to Taylor series. To form the Taylor series of a function, we must compute its derivatives. We didn’t get the series in <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a> by computing derivatives, so how do we know that they are indeed the Taylor series centered at <span class="process-math">\(\alpha=0\text{?}\)</span> Perhaps the Taylor series would give completely different expressions from those given by <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a>. Fortunately, <a href="sec_taylor-series.html#Uniqueness" class="xref" data-knowl="./knowl/xref/Uniqueness.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.9: Uniqueness of power series">Theorem 7.2.9</a> removes this possibility.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 7.2.8"><a href="#sec_taylor-series-15" title="Copy heading and permalink for Remark 7.2.8" aria-label="Copy heading and permalink for Remark 7.2.8">🔗</a></div>
+</article>
+<div class="para" id="sec_taylor-series-16">Alas, there is a potential fly in this ointment: <a href="sec_taylor-series.html#Nuanced_Taylor" class="xref" data-knowl="./knowl/xref/Nuanced_Taylor.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.2.5">Corollary 7.2.5</a> applies to Taylor series. To form the Taylor series of a function, we must compute its derivatives. We didn’t get the series in <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a> by computing derivatives, so how do we know that they are indeed the Taylor series centered at <span class="process-math">\(\alpha=0\text{?}\)</span> Perhaps the Taylor series would give completely different expressions from those given by <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equations (7.2.8)</a>. Fortunately, <a href="sec_taylor-series.html#Uniqueness" class="xref" data-knowl="./knowl/xref/Uniqueness.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.9: Uniqueness of power series">Theorem 7.2.9</a> removes this possibility.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Uniqueness"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniqueness of power series.</span>
@@ -769,16 +807,24 @@ f(z) = \sum_{n=0}^{\infty}a_n(z-\alpha)^n=\sum\limits_{n=0}^{\infty}b_n(z-\alpha
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Uniqueness-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.2.9: Uniqueness of power series"><a href="#Uniqueness" title="Copy heading and permalink for Theorem 7.2.9: Uniqueness of power series" aria-label="Copy heading and permalink for Theorem 7.2.9: Uniqueness of power series">🔗</a></div></article><details id="sec_taylor-series-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_taylor-series-18-1">By <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a> part (<em class="emphasis">ii</em>), <span class="process-math">\(a_n= \frac{f^{(n)}(\alpha)}{n!}=b_n\text{,}\)</span> for <span class="process-math">\(n=0,\,1,\,2,\ldots \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 7.2.9: Uniqueness of power series"><a href="#Uniqueness" title="Copy heading and permalink for Theorem 7.2.9: Uniqueness of power series" aria-label="Copy heading and permalink for Theorem 7.2.9: Uniqueness of power series">🔗</a></div>
+</article>
+<details id="sec_taylor-series-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_taylor-series-18-1">By <a href="sec_power-series.html#Power_Series_Thm" class="xref" data-knowl="./knowl/xref/Power_Series_Thm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.7">Theorem 4.4.7</a> part (<em class="emphasis">ii</em>), <span class="process-math">\(a_n= \frac{f^{(n)}(\alpha)}{n!}=b_n\text{,}\)</span> for <span class="process-math">\(n=0,\,1,\,2,\ldots \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.2.4"><a href="#sec_taylor-series-18" title="Copy heading and permalink for Proof 7.2.4" aria-label="Copy heading and permalink for Proof 7.2.4">🔗</a></div></article></details><div class="para" id="sec_taylor-series-19">Thus, any power series representation of <span class="process-math">\(f(z)\)</span> is automatically the Taylor series.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proof 7.2.4"><a href="#sec_taylor-series-18" title="Copy heading and permalink for Proof 7.2.4" aria-label="Copy heading and permalink for Proof 7.2.4">🔗</a></div>
+</article></details>
+<div class="para" id="sec_taylor-series-19">Thus, any power series representation of <span class="process-math">\(f(z)\)</span> is automatically the Taylor series.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_taylor-series-20"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_taylor-series-20-1-1">Find the Maclaurin series of <span class="process-math">\(f(z) =\sin^3 z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_taylor-series-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_taylor-series-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_taylor-series-20-2-1">
 <div class="para">Computing derivatives for <span class="process-math">\(f(z)\)</span> would be an onerous task. Fortunately, we can make use of the trigonometric identity</div>
 <div class="displaymath process-math" id="sec_taylor-series-20-2-1-2">
@@ -801,8 +847,11 @@ f(z) = \sum_{n=0}^{\infty}a_n(z-\alpha)^n=\sum\limits_{n=0}^{\infty}b_n(z-\alpha
 <div class="para" id="sec_taylor-series-20-2-2">By the uniqueness of power series, this last expression is the Maclaurin series for <span class="process-math">\(\sin ^3z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-20-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.10.1"><a href="#sec_taylor-series-20-2" title="Copy heading and permalink for Solution 7.2.10.1" aria-label="Copy heading and permalink for Solution 7.2.10.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 7.2.10"><a href="#sec_taylor-series-20" title="Copy heading and permalink for Example 7.2.10" aria-label="Copy heading and permalink for Example 7.2.10">🔗</a></div></article><div class="para" id="sec_taylor-series-21">In the preceding argument we used some obvious results of power series representations that we haven’t yet formally stated. The requisite results are part of <a href="sec_taylor-series.html#Series_Manip" class="xref" data-knowl="./knowl/xref/Series_Manip.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.11">Theorem 7.2.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 7.2.10"><a href="#sec_taylor-series-20" title="Copy heading and permalink for Example 7.2.10" aria-label="Copy heading and permalink for Example 7.2.10">🔗</a></div>
+</article>
+<div class="para" id="sec_taylor-series-21">In the preceding argument we used some obvious results of power series representations that we haven’t yet formally stated. The requisite results are part of <a href="sec_taylor-series.html#Series_Manip" class="xref" data-knowl="./knowl/xref/Series_Manip.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.11">Theorem 7.2.11</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Series_Manip"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -816,7 +865,8 @@ g(z) \amp = \sum_{n=0}^{\infty}b_n(z-\alpha)^n\text, \quad \text{for} \quad z \i
 \end{align*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Series_Manip-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="Series_Manip-1-2">
+</div> 
+<div class="para logical" id="Series_Manip-1-2">
 <div class="para">If <span class="process-math">\(r=\min \{r_1,r_2\}\)</span> and <span class="process-math">\(\beta\)</span> is any complex constant, then</div>
 <div class="displaymath process-math" id="Series_Manip-1-2-3">
 \begin{align}
@@ -834,10 +884,15 @@ c_n = \sum_{k=0}^na_kb_{n-k}\text{.}\tag{7.2.14}
 \end{equation}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#Series_Manip-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="Series_Manip-1-3">
+</div> 
+<div class="para" id="Series_Manip-1-3">
 <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z_g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.13">Identity (7.2.13)</a> is known as the <em class="emphasis">Cauchy product</em> of the series for <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Series_Manip-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 7.2.11"><a href="#Series_Manip" title="Copy heading and permalink for Theorem 7.2.11" aria-label="Copy heading and permalink for Theorem 7.2.11">🔗</a></div></article><details id="sec_taylor-series-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_taylor-series-23-1">
+<div class="autopermalink" data-description="Theorem 7.2.11"><a href="#Series_Manip" title="Copy heading and permalink for Theorem 7.2.11" aria-label="Copy heading and permalink for Theorem 7.2.11">🔗</a></div>
+</article>
+<details id="sec_taylor-series-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_taylor-series-23-1">
 <div class="para">We leave the details of establishing Equations <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/bf_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.11">(7.2.11)</a> and <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z__g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.12">(7.2.12)</a> for you to do as an exercise. To establish <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z_g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.13">Equation (7.2.13)</a>, we note that the function <span class="process-math">\(h(z) =f(z)g(z)\)</span> is analytic in <span class="process-math">\(D_r(\alpha)\text{.}\)</span> Thus, for <span class="process-math">\(z \in D_r(\alpha)\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/bf_z_.html ./knowl/xref/f_z__g_z_.html ./knowl/xref/f_z_g_z_.html" id="sec_taylor-series-23-1-7">
@@ -883,7 +938,9 @@ h(z) = \sum_{k=0}^{\infty}\frac{h^{(n)}(\alpha)}{n!}(z-\alpha)^n\text{.}
 <div class="para">Substituting <a href="sec_taylor-series.html#h_n_a__n_" class="xref" data-knowl="./knowl/xref/h_n_a__n_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.16">Equation (7.2.16)</a> into this equation gives <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z_g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.13">Equation (7.2.13)</a> because of the uniqueness of power series.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-23-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 7.2.5"><a href="#sec_taylor-series-23" title="Copy heading and permalink for Proof 7.2.5" aria-label="Copy heading and permalink for Proof 7.2.5">🔗</a></div></article></details><article class="example example-like" id="sec_taylor-series-24"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 7.2.5"><a href="#sec_taylor-series-23" title="Copy heading and permalink for Proof 7.2.5" aria-label="Copy heading and permalink for Proof 7.2.5">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_taylor-series-24"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_taylor-series-24-1-1">
@@ -895,7 +952,9 @@ h(z) = \sum_{k=0}^{\infty}\frac{h^{(n)}(\alpha)}{n!}(z-\alpha)^n\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_taylor-series-24-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_taylor-series-24-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_taylor-series-24-2-1">
 <div class="para">We let <span class="process-math">\(f(z) = g(z) = \frac{1}{1-z}=\sum\limits_{n=0}^{\infty}z^n\text{,}\)</span> for <span class="process-math">\(z \in D_1(0)\text{.}\)</span> In terms of <a href="sec_taylor-series.html#Series_Manip" class="xref" data-knowl="./knowl/xref/Series_Manip.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.11">Theorem 7.2.11</a>, we have <span class="process-math">\(a_n=b_n=1\text{,}\)</span> for all <span class="process-math">\(n\text{,}\)</span> and thus <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z_g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.13">Equation (7.2.13)</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Series_Manip.html ./knowl/xref/f_z_g_z_.html" id="sec_taylor-series-24-2-1-7">
@@ -907,107 +966,168 @@ h(z) = \sum_{k=0}^{\infty}\frac{h^{(n)}(\alpha)}{n!}(z-\alpha)^n\text{.}
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_taylor-series-24-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.12.1"><a href="#sec_taylor-series-24-2" title="Copy heading and permalink for Solution 7.2.12.1" aria-label="Copy heading and permalink for Solution 7.2.12.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 7.2.12"><a href="#sec_taylor-series-24" title="Copy heading and permalink for Example 7.2.12" aria-label="Copy heading and permalink for Example 7.2.12">🔗</a></div></article><section class="exercises" id="exercises_taylor-series"><h3 class="heading hide-type">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 7.2.12"><a href="#sec_taylor-series-24" title="Copy heading and permalink for Example 7.2.12" aria-label="Copy heading and permalink for Example 7.2.12">🔗</a></div>
+</article>
+<section class="exercises" id="exercises_taylor-series">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="x7_2_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_1-1"><div class="para" id="x7_2_1-1-1">By computing derivatives, find the Maclaurin series for each function and state where it is valid.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="x7_2_1-1">
+<div class="para" id="x7_2_1-1-1">By computing derivatives, find the Maclaurin series for each function and state where it is valid.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_1-2-1-1">
 <span class="process-math">\(\sinh z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_1-2-2-1">
 <span class="process-math">\(\sinh z = \sum\limits_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}\)</span> for all <span class="process-math">\(z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.1.a.1"><a href="#x7_2_1-2-2" title="Copy heading and permalink for Solution 7.2.1.a.1" aria-label="Copy heading and permalink for Solution 7.2.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.1.a"><a href="#x7_2_1-2" title="Copy heading and permalink for Task 7.2.1.a" aria-label="Copy heading and permalink for Task 7.2.1.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.1.a"><a href="#x7_2_1-2" title="Copy heading and permalink for Task 7.2.1.a" aria-label="Copy heading and permalink for Task 7.2.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_1-3-1-1">
 <span class="process-math">\(\cosh z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.1.b"><a href="#x7_2_1-3" title="Copy heading and permalink for Task 7.2.1.b" aria-label="Copy heading and permalink for Task 7.2.1.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.1.b"><a href="#x7_2_1-3" title="Copy heading and permalink for Task 7.2.1.b" aria-label="Copy heading and permalink for Task 7.2.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_1-4-1-1">
 <span class="process-math">\(\mathrm{Log}(1+z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_1-4-2-1">Log<span class="process-math">\((1+z) = \sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}z^n\)</span> for all <span class="process-math">\(z \in D_1(0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.1.c.1"><a href="#x7_2_1-4-2" title="Copy heading and permalink for Solution 7.2.1.c.1" aria-label="Copy heading and permalink for Solution 7.2.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.1.c"><a href="#x7_2_1-4" title="Copy heading and permalink for Task 7.2.1.c" aria-label="Copy heading and permalink for Task 7.2.1.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.1"><a href="#x7_2_1" title="Copy heading and permalink for Exercise 7.2.1" aria-label="Copy heading and permalink for Exercise 7.2.1">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_2-1"><div class="para" id="x7_2_2-1-1">Using methods other than computing derivatives, find the Maclaurin series for the following:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.1.c"><a href="#x7_2_1-4" title="Copy heading and permalink for Task 7.2.1.c" aria-label="Copy heading and permalink for Task 7.2.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.1"><a href="#x7_2_1" title="Copy heading and permalink for Exercise 7.2.1" aria-label="Copy heading and permalink for Exercise 7.2.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_2-1">
+<div class="para" id="x7_2_2-1-1">Using methods other than computing derivatives, find the Maclaurin series for the following:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_2-2-1-1">
 <span class="process-math">\(\cos^3z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_2-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_2-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_2-2-2-1">Use the trigonometric identity <span class="process-math">\(\ 4\cos^3 z=\cos 3z+3\cos z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.2.a.1"><a href="#x7_2_2-2-2" title="Copy heading and permalink for Hint 7.2.2.a.1" aria-label="Copy heading and permalink for Hint 7.2.2.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.2.a"><a href="#x7_2_2-2" title="Copy heading and permalink for Task 7.2.2.a" aria-label="Copy heading and permalink for Task 7.2.2.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.2.a"><a href="#x7_2_2-2" title="Copy heading and permalink for Task 7.2.2.a" aria-label="Copy heading and permalink for Task 7.2.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_2-3-1-1">Arc<span class="process-math">\(\tan z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_2-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_2-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_2-3-2-1">Choose an appropriate contour and integrate the second series in <a href="sec_taylor-series.html#Two_Series" class="xref" data-knowl="./knowl/xref/Two_Series.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.8">Equation (7.2.8)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.2.b.1"><a href="#x7_2_2-3-2" title="Copy heading and permalink for Hint 7.2.2.b.1" aria-label="Copy heading and permalink for Hint 7.2.2.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.2.b"><a href="#x7_2_2-3" title="Copy heading and permalink for Task 7.2.2.b" aria-label="Copy heading and permalink for Task 7.2.2.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.2.b"><a href="#x7_2_2-3" title="Copy heading and permalink for Task 7.2.2.b" aria-label="Copy heading and permalink for Task 7.2.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_2-4-1-1">
 <span class="process-math">\(f(z) =(z^2+1) \sin z\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.2.c"><a href="#x7_2_2-4" title="Copy heading and permalink for Task 7.2.2.c" aria-label="Copy heading and permalink for Task 7.2.2.c">🔗</a></div></article><article class="task exercise-like" id="x7_2_2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.2.c"><a href="#x7_2_2-4" title="Copy heading and permalink for Task 7.2.2.c" aria-label="Copy heading and permalink for Task 7.2.2.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_2-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x7_2_2-5-1-1">
 <span class="process-math">\(f(z) =e^z\cos z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_2-5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_2-5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_2-5-2-1">
 <span class="process-math">\(\cos z=\frac{1}{2}(e^{iz}+e^{-iz}) \quad \text{so} \quad f(z)=\frac{1}{2}e^{(1+i)z}+\frac{1}{2}e^{(1-i)z}.\)</span> Now use the Maclaurin series for <span class="process-math">\(\, e^z.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.2.d.1"><a href="#x7_2_2-5-2" title="Copy heading and permalink for Hint 7.2.2.d.1" aria-label="Copy heading and permalink for Hint 7.2.2.d.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.2.d"><a href="#x7_2_2-5" title="Copy heading and permalink for Task 7.2.2.d" aria-label="Copy heading and permalink for Task 7.2.2.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.2"><a href="#x7_2_2" title="Copy heading and permalink for Exercise 7.2.2" aria-label="Copy heading and permalink for Exercise 7.2.2">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_3-1"><div class="para" id="x7_2_3-1-1">Find the Taylor series centered at <span class="process-math">\(a=1\)</span> and state where it converges for the following functions:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.2.d"><a href="#x7_2_2-5" title="Copy heading and permalink for Task 7.2.2.d" aria-label="Copy heading and permalink for Task 7.2.2.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.2"><a href="#x7_2_2" title="Copy heading and permalink for Exercise 7.2.2" aria-label="Copy heading and permalink for Exercise 7.2.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_3-1">
+<div class="para" id="x7_2_3-1-1">Find the Taylor series centered at <span class="process-math">\(a=1\)</span> and state where it converges for the following functions:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_3_a"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_3_a-1-1">
 <span class="process-math">\(f(z) =\frac{1-z}{z-2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3_a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_3_a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_3_a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_3_a-2-1">
 <span class="process-math">\(\frac{1-z}{z-2} = \frac{z-1}{1-(z-1)} = (z-1)\left[\frac{1}{1-(z-1)}\right]\text{.}\)</span> Expand the expression in brackets by replacing <span class="process-math">\(z\)</span> with <span class="process-math">\(z-1\)</span> in the geometric series (valid, therefore, for <span class="process-math">\(|z-1|\lt 1\)</span>), then multiply by the <span class="process-math">\((z-1)\)</span> term.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3_a-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.3.a.1"><a href="#x7_2_3_a-2" title="Copy heading and permalink for Solution 7.2.3.a.1" aria-label="Copy heading and permalink for Solution 7.2.3.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.3.a"><a href="#x7_2_3_a" title="Copy heading and permalink for Task 7.2.3.a" aria-label="Copy heading and permalink for Task 7.2.3.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_3_b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.3.a"><a href="#x7_2_3_a" title="Copy heading and permalink for Task 7.2.3.a" aria-label="Copy heading and permalink for Task 7.2.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_3_b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_3_b-1-1">
 <span class="process-math">\(f(z) =\frac{1-z}{z-3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3_b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_3_b-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_3_b-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_3_b-2-1">
 <span class="process-math">\({\dfrac{1-z}{z-3}} = \left(\dfrac{1}{2}\right)\left({\dfrac{z-1}{1-\frac{{z-1}}{2}}}\right) =
 \left(\dfrac{1}{2}\right)(z-1)\left({\dfrac{1}{1-\frac{{z-1}}{2}}}\right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_3_b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.3.b.1"><a href="#x7_2_3_b-2" title="Copy heading and permalink for Hint 7.2.3.b.1" aria-label="Copy heading and permalink for Hint 7.2.3.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.3.b"><a href="#x7_2_3_b" title="Copy heading and permalink for Task 7.2.3.b" aria-label="Copy heading and permalink for Task 7.2.3.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.3"><a href="#x7_2_3" title="Copy heading and permalink for Exercise 7.2.3" aria-label="Copy heading and permalink for Exercise 7.2.3">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_4-1"><div class="para" id="x7_2_4-1-1">Let <span class="process-math">\(f(z) =\frac{\sin z}{z}\)</span> and set <span class="process-math">\(f(0) =1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.3.b"><a href="#x7_2_3_b" title="Copy heading and permalink for Task 7.2.3.b" aria-label="Copy heading and permalink for Task 7.2.3.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.3"><a href="#x7_2_3" title="Copy heading and permalink for Exercise 7.2.3" aria-label="Copy heading and permalink for Exercise 7.2.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_4-1">
+<div class="para" id="x7_2_4-1-1">Let <span class="process-math">\(f(z) =\frac{\sin z}{z}\)</span> and set <span class="process-math">\(f(0) =1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_4-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_4-2-1-1">Explain why <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.4.a"><a href="#x7_2_4-2" title="Copy heading and permalink for Task 7.2.4.a" aria-label="Copy heading and permalink for Task 7.2.4.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.4.a"><a href="#x7_2_4-2" title="Copy heading and permalink for Task 7.2.4.a" aria-label="Copy heading and permalink for Task 7.2.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_4-3-1-1">Find the Maclaurin series for <span class="process-math">\(f(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.4.b"><a href="#x7_2_4-3" title="Copy heading and permalink for Task 7.2.4.b" aria-label="Copy heading and permalink for Task 7.2.4.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.4.b"><a href="#x7_2_4-3" title="Copy heading and permalink for Task 7.2.4.b" aria-label="Copy heading and permalink for Task 7.2.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_4-4-1-1">Find the Maclaurin series for <span class="process-math">\(g(z) = \int\limits_C f(\zeta)\,d\zeta\text{,}\)</span> where <span class="process-math">\(C\)</span> is the straight-line segment from 0 to <span class="process-math">\(z\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.4.c"><a href="#x7_2_4-4" title="Copy heading and permalink for Task 7.2.4.c" aria-label="Copy heading and permalink for Task 7.2.4.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.4"><a href="#x7_2_4" title="Copy heading and permalink for Exercise 7.2.4" aria-label="Copy heading and permalink for Exercise 7.2.4">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 7.2.4.c"><a href="#x7_2_4-4" title="Copy heading and permalink for Task 7.2.4.c" aria-label="Copy heading and permalink for Task 7.2.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.4"><a href="#x7_2_4" title="Copy heading and permalink for Exercise 7.2.4" aria-label="Copy heading and permalink for Exercise 7.2.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x7_2_5-1-1">
 <div class="para">Show that <span class="process-math">\(f(z)=\frac{1}{1-z}\)</span> has its Taylor series representation about the point <span class="process-math">\(\alpha =i\)</span> given by</div>
 <div class="displaymath process-math" id="x7_2_5-1-1-3">
@@ -1017,13 +1137,18 @@ f(z) = \sum_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}},  \text{ for all }   z \in
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x7_2_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_5-2-1">
 <span class="process-math">\(f(z) = \frac{1}{1-z} = \frac{1}{1-i}\left[\frac{1}{1-\frac{z-i}{1-i}}\right]\text{.}\)</span> Expand the expression in brackets by replacing <span class="process-math">\(z\)</span> with <span class="process-math">\(\frac{z-i}{1-i}\)</span> in the geometric series (valid, therefore, for <span class="process-math">\(|\frac{z-i}{1-i}|\lt 1\text{,}\)</span> or <span class="process-math">\(|z-i|\lt \sqrt{2}\)</span>). Explain.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.5.1"><a href="#x7_2_5-2" title="Copy heading and permalink for Solution 7.2.5.1" aria-label="Copy heading and permalink for Solution 7.2.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 7.2.5"><a href="#x7_2_5" title="Copy heading and permalink for Exercise 7.2.5" aria-label="Copy heading and permalink for Exercise 7.2.5">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.5"><a href="#x7_2_5" title="Copy heading and permalink for Exercise 7.2.5" aria-label="Copy heading and permalink for Exercise 7.2.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x7_2_6-1-1">
 <div class="para">Let <span class="process-math">\(f(z) =(1+z)^{\beta }=\exp[\beta\mathrm{Log}(1+z)]\)</span> be the principal branch of <span class="process-math">\((1+z)^{\beta }\text{,}\)</span> where <span class="process-math">\(\beta\)</span> is a fixed complex number. Establish the validity for <span class="process-math">\(z \in D_1(0)\)</span> of the binomial expansion</div>
 <div class="displaymath process-math" id="x7_2_6-1-1-5">
@@ -1034,93 +1159,150 @@ f(z) = \sum_{n=0}^{\infty}\frac{(z-i)^n}{(1-i)^{n+1}},  \text{ for all }   z \in
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x7_2_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7.2.6"><a href="#x7_2_6" title="Copy heading and permalink for Exercise 7.2.6" aria-label="Copy heading and permalink for Exercise 7.2.6">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_7-1"><div class="para" id="x7_2_7-1-1">Find <span class="process-math">\(f\,^{(3)}(0)\)</span> for the following:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 7.2.6"><a href="#x7_2_6" title="Copy heading and permalink for Exercise 7.2.6" aria-label="Copy heading and permalink for Exercise 7.2.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_7-1">
+<div class="para" id="x7_2_7-1-1">Find <span class="process-math">\(f\,^{(3)}(0)\)</span> for the following:<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_7-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_7-2-1-1">
 <span class="process-math">\(f(z) =\sum\limits_{n=0}^{\infty}(3+(-1)^n)^nz^n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_7-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_7-2-2-1">By Taylor’s Theorem, <span class="process-math">\(\frac{f\,^{(n)}(0)}{n!} = (3+(-1)^n)^n\text{.}\)</span> Therefore, <span class="process-math">\(\frac{f\,^{(3)}(0)}{3!} = 8\text{,}\)</span> so <span class="process-math">\(f\,^{(3)}(0) = 48\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.7.a.1"><a href="#x7_2_7-2-2" title="Copy heading and permalink for Solution 7.2.7.a.1" aria-label="Copy heading and permalink for Solution 7.2.7.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.7.a"><a href="#x7_2_7-2" title="Copy heading and permalink for Task 7.2.7.a" aria-label="Copy heading and permalink for Task 7.2.7.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.7.a"><a href="#x7_2_7-2" title="Copy heading and permalink for Task 7.2.7.a" aria-label="Copy heading and permalink for Task 7.2.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_7-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_7-3-1-1">
 <span class="process-math">\(g(z) =\sum\limits_{n=1}^{\infty}\frac{(1+i)^n}{n}z^n\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.7.b"><a href="#x7_2_7-3" title="Copy heading and permalink for Task 7.2.7.b" aria-label="Copy heading and permalink for Task 7.2.7.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_7-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.7.b"><a href="#x7_2_7-3" title="Copy heading and permalink for Task 7.2.7.b" aria-label="Copy heading and permalink for Task 7.2.7.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_7-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_7-4-1-1">
 <span class="process-math">\(h(z) =\sum\limits_{n=0}^{\infty}\frac{z^n}{(\sqrt{3}+i)^n}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_7-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.7.c"><a href="#x7_2_7-4" title="Copy heading and permalink for Task 7.2.7.c" aria-label="Copy heading and permalink for Task 7.2.7.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.7"><a href="#x7_2_7" title="Copy heading and permalink for Exercise 7.2.7" aria-label="Copy heading and permalink for Exercise 7.2.7">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_8-1"><div class="para" id="x7_2_8-1-1">Suppose that <span class="process-math">\(f(z) = \sum\limits_{n=0}^{\infty}c_nz^n\)</span> is an entire function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 7.2.7.c"><a href="#x7_2_7-4" title="Copy heading and permalink for Task 7.2.7.c" aria-label="Copy heading and permalink for Task 7.2.7.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.7"><a href="#x7_2_7" title="Copy heading and permalink for Exercise 7.2.7" aria-label="Copy heading and permalink for Exercise 7.2.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_8-1">
+<div class="para" id="x7_2_8-1-1">Suppose that <span class="process-math">\(f(z) = \sum\limits_{n=0}^{\infty}c_nz^n\)</span> is an entire function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_8-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_8-2-1-1">Find a series representation for <span class="process-math">\(\overline{f(\overline{z})}\text{,}\)</span> using powers of <span class="process-math">\(\overline{z}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_8-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.8.a"><a href="#x7_2_8-2" title="Copy heading and permalink for Task 7.2.8.a" aria-label="Copy heading and permalink for Task 7.2.8.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.8.a"><a href="#x7_2_8-2" title="Copy heading and permalink for Task 7.2.8.a" aria-label="Copy heading and permalink for Task 7.2.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_8-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_8-3-1-1">Show that <span class="process-math">\(\overline{f(\overline{z})}\)</span> is an entire function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.8.b"><a href="#x7_2_8-3" title="Copy heading and permalink for Task 7.2.8.b" aria-label="Copy heading and permalink for Task 7.2.8.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_8-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.8.b"><a href="#x7_2_8-3" title="Copy heading and permalink for Task 7.2.8.b" aria-label="Copy heading and permalink for Task 7.2.8.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_8-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_8-4-1-1">Does <span class="process-math">\(\overline{f(\overline{z})} = f(z)\text{?}\)</span> Why or why not?<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_8-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.8.c"><a href="#x7_2_8-4" title="Copy heading and permalink for Task 7.2.8.c" aria-label="Copy heading and permalink for Task 7.2.8.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.8"><a href="#x7_2_8" title="Copy heading and permalink for Exercise 7.2.8" aria-label="Copy heading and permalink for Exercise 7.2.8">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_9-1"><div class="para" id="x7_2_9-1-1">Let <span class="process-math">\(f(z) =\sum\limits_{n=0}^{\infty}c_nz^n=1+z+2z^2+3z^3+5z^4+8z^5+13z^6+\cdots\text{,}\)</span> where the coefficients <span class="process-math">\(c_n\)</span> are the Fibonacci numbers defined by <span class="process-math">\(c_0=1\text{,}\)</span> <span class="process-math">\(c_1=1\text{,}\)</span> and <span class="process-math">\(c_n=c_{n-1}+c_{n-2}\text{,}\)</span> for <span class="process-math">\(n \ge 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 7.2.8.c"><a href="#x7_2_8-4" title="Copy heading and permalink for Task 7.2.8.c" aria-label="Copy heading and permalink for Task 7.2.8.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.8"><a href="#x7_2_8" title="Copy heading and permalink for Exercise 7.2.8" aria-label="Copy heading and permalink for Exercise 7.2.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_9-1">
+<div class="para" id="x7_2_9-1-1">Let <span class="process-math">\(f(z) =\sum\limits_{n=0}^{\infty}c_nz^n=1+z+2z^2+3z^3+5z^4+8z^5+13z^6+\cdots\text{,}\)</span> where the coefficients <span class="process-math">\(c_n\)</span> are the Fibonacci numbers defined by <span class="process-math">\(c_0=1\text{,}\)</span> <span class="process-math">\(c_1=1\text{,}\)</span> and <span class="process-math">\(c_n=c_{n-1}+c_{n-2}\text{,}\)</span> for <span class="process-math">\(n \ge 2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_9-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_9-2-1-1">Show that <span class="process-math">\(f(z) =\frac{1}{1-z-z^2}\text{,}\)</span> for all <span class="process-math">\(z \in D_{R}(0)\)</span> for some number <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_9-2-2-1">Observe that <span class="process-math">\(1+zf(z)+z^2f(z) = 1 + \sum\limits_{n=0}^{\infty}c_nz^{n+1} + \sum\limits_{n=0}^{\infty}c_nz^{n+2}\text{.}\)</span> Reindex and write this as <span class="process-math">\(1+\sum\limits_{n=1}^{\infty}c_{n-1}z^n +
 \sum\limits_{n=2}^{\infty}c_{n-2}z^n = 1 + z + \sum\limits_{n=2}^{\infty}(c_{n-1}+c_{n-2})z^n
 \text{.}\)</span> Now use the relation <span class="process-math">\(c_n=c_{n-1}+c_{n-2}\)</span> for <span class="process-math">\(n \ge 2\)</span> to conclude <span class="process-math">\(1+zf(z)+z^2f(z) = f(z)\text{,}\)</span> then solve for <span class="process-math">\(f(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.9.a.1"><a href="#x7_2_9-2-2" title="Copy heading and permalink for Solution 7.2.9.a.1" aria-label="Copy heading and permalink for Solution 7.2.9.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.9.a"><a href="#x7_2_9-2" title="Copy heading and permalink for Task 7.2.9.a" aria-label="Copy heading and permalink for Task 7.2.9.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.9.a"><a href="#x7_2_9-2" title="Copy heading and permalink for Task 7.2.9.a" aria-label="Copy heading and permalink for Task 7.2.9.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_9-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_9-3-1-1">Find the value of <span class="process-math">\(R\)</span> in part (a) for which the series representation is valid.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_9-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_9-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_9-3-2-1">Find the singularities of <span class="process-math">\(\,f(z) \,\)</span> and use <a href="sec_taylor-series.html#Nuanced_Taylor" class="xref" data-knowl="./knowl/xref/Nuanced_Taylor.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.2.5">Corollary 7.2.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_9-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.9.b.1"><a href="#x7_2_9-3-2" title="Copy heading and permalink for Hint 7.2.9.b.1" aria-label="Copy heading and permalink for Hint 7.2.9.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.9.b"><a href="#x7_2_9-3" title="Copy heading and permalink for Task 7.2.9.b" aria-label="Copy heading and permalink for Task 7.2.9.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.9"><a href="#x7_2_9" title="Copy heading and permalink for Exercise 7.2.9" aria-label="Copy heading and permalink for Exercise 7.2.9">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.9.b"><a href="#x7_2_9-3" title="Copy heading and permalink for Task 7.2.9.b" aria-label="Copy heading and permalink for Task 7.2.9.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.9"><a href="#x7_2_9" title="Copy heading and permalink for Exercise 7.2.9" aria-label="Copy heading and permalink for Exercise 7.2.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_10-1-1">Complete the details in the verification of <a href="sec_taylor-series.html#x1__z-z0__expansion" class="xref" data-knowl="./knowl/xref/x1__z-z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.2.2">Lemma 7.2.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7.2.10"><a href="#x7_2_10" title="Copy heading and permalink for Exercise 7.2.10" aria-label="Copy heading and permalink for Exercise 7.2.10">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 7.2.10"><a href="#x7_2_10" title="Copy heading and permalink for Exercise 7.2.10" aria-label="Copy heading and permalink for Exercise 7.2.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_11-1-1">We used <a href="sec_taylor-series.html#x1__z-z0__expansion" class="xref" data-knowl="./knowl/xref/x1__z-z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.2.2">Lemma 7.2.2</a> in establishing Identity <a href="sec_taylor-series.html#sec_taylor-series-9-5-3" class="xref" data-knowl="./knowl/xref/f_z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.2">(7.2.2)</a>. However, <a href="sec_taylor-series.html#x1__z-z0__expansion" class="xref" data-knowl="./knowl/xref/x1__z-z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 7.2.2">Lemma 7.2.2</a> is valid provided <span class="process-math">\(z \ne z_0\)</span> and <span class="process-math">\(z \ne\alpha\text{.}\)</span> Explain why these conditions are indeed the case in Identity <a href="sec_taylor-series.html#sec_taylor-series-9-5-3" class="xref" data-knowl="./knowl/xref/f_z0__expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.2">(7.2.2)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_11-2-1">The point <span class="process-math">\(z\)</span> is on the circle <span class="process-math">\(C_{\rho }(\alpha)\)</span> with center <span class="process-math">\(\alpha\text{,}\)</span> so <span class="process-math">\(z \ne \alpha\text{.}\)</span> Also, <span class="process-math">\(z_0\)</span> is in the interior of this circle, so again <span class="process-math">\(z\ne z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.11.1"><a href="#x7_2_11-2" title="Copy heading and permalink for Solution 7.2.11.1" aria-label="Copy heading and permalink for Solution 7.2.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 7.2.11"><a href="#x7_2_11" title="Copy heading and permalink for Exercise 7.2.11" aria-label="Copy heading and permalink for Exercise 7.2.11">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.11"><a href="#x7_2_11" title="Copy heading and permalink for Exercise 7.2.11" aria-label="Copy heading and permalink for Exercise 7.2.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_12-1-1">Prove by mathematical induction that <span class="process-math">\(f\,\,^{(n)}(z) =\frac{(n+1) !}{(1-z)^{n+2}}\)</span> in <a href="sec_taylor-series.html#x1__1-z__2_ex" class="xref" data-knowl="./knowl/xref/x1__1-z__2_ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.2.6">Example 7.2.6</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7.2.12"><a href="#x7_2_12" title="Copy heading and permalink for Exercise 7.2.12" aria-label="Copy heading and permalink for Exercise 7.2.12">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 7.2.12"><a href="#x7_2_12" title="Copy heading and permalink for Exercise 7.2.12" aria-label="Copy heading and permalink for Exercise 7.2.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_13-1-1">Establish the validity of Identities <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/bf_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.11">(7.2.11)</a> and <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z__g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.12">(7.2.12)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_13-2-1">To verify Identity <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/bf_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.11">(7.2.11)</a>, let <span class="process-math">\(h(z) =\beta f(z)\text{.}\)</span> Clearly <span class="process-math">\(\frac{h\,^{(n)}( \alpha )}{n!} = \frac{\beta f\,^{(n)}(\alpha)}{n!} = \beta a_n\text{.}\)</span> By Taylor’s Theorem, <span class="process-math">\(h(z) = \beta f( z) = \sum\limits_{n=0}^{\infty}\beta a_n(z-\alpha )^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.13.1"><a href="#x7_2_13-2" title="Copy heading and permalink for Solution 7.2.13.1" aria-label="Copy heading and permalink for Solution 7.2.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 7.2.13"><a href="#x7_2_13" title="Copy heading and permalink for Exercise 7.2.13" aria-label="Copy heading and permalink for Exercise 7.2.13">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.13"><a href="#x7_2_13" title="Copy heading and permalink for Exercise 7.2.13" aria-label="Copy heading and permalink for Exercise 7.2.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_14-1-1">Use the Maclaurin series and the Cauchy product in Identity <a href="sec_taylor-series.html#Series_Manip-1-2-3" class="xref" data-knowl="./knowl/xref/f_z_g_z_.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.13">(7.2.13)</a> to verify that <span class="process-math">\(\sin2z = 2\cos z\sin z\)</span> up to terms involving <span class="process-math">\(z^5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7.2.14"><a href="#x7_2_14" title="Copy heading and permalink for Exercise 7.2.14" aria-label="Copy heading and permalink for Exercise 7.2.14">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 7.2.14"><a href="#x7_2_14" title="Copy heading and permalink for Exercise 7.2.14" aria-label="Copy heading and permalink for Exercise 7.2.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_15-1-1">Compute the Taylor series for the principal logarithm <span class="process-math">\(f(z) = \mathrm{Log} \, z\)</span> expanded about the point <span class="process-math">\(z_0=-1+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_15-2-1">Use the fact that <span class="process-math">\(f\,'(z) = [z-(-1+i) + (-1+i)]^{-1}\)</span> and expand <span class="process-math">\(f\,'(z)\)</span> in powers of <span class="process-math">\([z-(-1+i)]\text{.}\)</span> Then apply <a href="sec_uniform-convergence.html#Sum_Integral_Swap" class="xref" data-knowl="./knowl/xref/Sum_Integral_Swap.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.1.8">Corollary 7.1.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.15.1"><a href="#x7_2_15-2" title="Copy heading and permalink for Solution 7.2.15.1" aria-label="Copy heading and permalink for Solution 7.2.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 7.2.15"><a href="#x7_2_15" title="Copy heading and permalink for Exercise 7.2.15" aria-label="Copy heading and permalink for Exercise 7.2.15">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 7.2.15"><a href="#x7_2_15" title="Copy heading and permalink for Exercise 7.2.15" aria-label="Copy heading and permalink for Exercise 7.2.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="introduction" id="x7_2_16-1">
 <div class="para logical" id="x7_2_16-1-1">
 <div class="para">The Fresnel integrals <span class="process-math">\(C(z)\)</span> and <span class="process-math">\(S(z)\)</span> are defined by</div>
@@ -1137,47 +1319,77 @@ C(z) = \int_0^z\cos(\xi^2)\,d\xi  \text{ and }   S(z) = \int_0^z\sin(\xi^2)\,d\x
 <article class="task exercise-like" id="x7_2_16-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_16-2-1-1">Verify the identity <span class="process-math">\(F(z) = \int_0^z\exp (i\xi^2)\,d\xi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_16-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.16.a"><a href="#x7_2_16-2" title="Copy heading and permalink for Task 7.2.16.a" aria-label="Copy heading and permalink for Task 7.2.16.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_16-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.16.a"><a href="#x7_2_16-2" title="Copy heading and permalink for Task 7.2.16.a" aria-label="Copy heading and permalink for Task 7.2.16.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_16-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_16-3-1-1">Integrate the power series for <span class="process-math">\(\exp (i\xi ^2)\)</span> and obtain the power series for <span class="process-math">\(F(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_16-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.16.b"><a href="#x7_2_16-3" title="Copy heading and permalink for Task 7.2.16.b" aria-label="Copy heading and permalink for Task 7.2.16.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_16-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 7.2.16.b"><a href="#x7_2_16-3" title="Copy heading and permalink for Task 7.2.16.b" aria-label="Copy heading and permalink for Task 7.2.16.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_16-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_16-4-1-1">Use the partial sum involving terms up to <span class="process-math">\(z^{9}\)</span> to find approximations to <span class="process-math">\(C(1.0)\)</span> and <span class="process-math">\(S(1.0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_16-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.16.c"><a href="#x7_2_16-4" title="Copy heading and permalink for Task 7.2.16.c" aria-label="Copy heading and permalink for Task 7.2.16.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.16"><a href="#x7_2_16" title="Copy heading and permalink for Exercise 7.2.16" aria-label="Copy heading and permalink for Exercise 7.2.16">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_17-1"><div class="para" id="x7_2_17-1-1">Let <span class="process-math">\(f\)</span> be defined in a domain that contains the origin. The function <span class="process-math">\(f\)</span> is said to be <em class="emphasis">even</em> if <span class="process-math">\(f(-z) =f(z)\text{,}\)</span> and it is called <em class="emphasis">odd</em> if <span class="process-math">\(f(-z) = -f(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 7.2.16.c"><a href="#x7_2_16-4" title="Copy heading and permalink for Task 7.2.16.c" aria-label="Copy heading and permalink for Task 7.2.16.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.16"><a href="#x7_2_16" title="Copy heading and permalink for Exercise 7.2.16" aria-label="Copy heading and permalink for Exercise 7.2.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_17-1">
+<div class="para" id="x7_2_17-1-1">Let <span class="process-math">\(f\)</span> be defined in a domain that contains the origin. The function <span class="process-math">\(f\)</span> is said to be <em class="emphasis">even</em> if <span class="process-math">\(f(-z) =f(z)\text{,}\)</span> and it is called <em class="emphasis">odd</em> if <span class="process-math">\(f(-z) = -f(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_17-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_17-2-1-1">Show that the derivative of an odd function is an even function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_17-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_17-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_17-2-2-1">By definition, <span class="process-math">\(f(-z) = -f(z)\text{,}\)</span> so using the chain rule, we see that <span class="process-math">\(f\,'(z) = \frac{d}{dz}f(z) = -\frac{d}{dz}f(-z) = -f\,'(-z)(-1) = f\,'(-z)\text{.}\)</span> But this means that <span class="process-math">\(f\,'\)</span> is an even function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.17.a.1"><a href="#x7_2_17-2-2" title="Copy heading and permalink for Solution 7.2.17.a.1" aria-label="Copy heading and permalink for Solution 7.2.17.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.17.a"><a href="#x7_2_17-2" title="Copy heading and permalink for Task 7.2.17.a" aria-label="Copy heading and permalink for Task 7.2.17.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.17.a"><a href="#x7_2_17-2" title="Copy heading and permalink for Task 7.2.17.a" aria-label="Copy heading and permalink for Task 7.2.17.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_17-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_17-3-1-1">Show that the derivative of an even function is an odd function.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_17-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_17-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_17-3-2-1">Use limits.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.17.b.1"><a href="#x7_2_17-3-2" title="Copy heading and permalink for Hint 7.2.17.b.1" aria-label="Copy heading and permalink for Hint 7.2.17.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.17.b"><a href="#x7_2_17-3" title="Copy heading and permalink for Task 7.2.17.b" aria-label="Copy heading and permalink for Task 7.2.17.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_17-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.17.b"><a href="#x7_2_17-3" title="Copy heading and permalink for Task 7.2.17.b" aria-label="Copy heading and permalink for Task 7.2.17.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_17-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x7_2_17-4-1-1">If <span class="process-math">\(f(z)\)</span> is even, show that all the coefficients of the odd powers of <span class="process-math">\(z\)</span> in the Maclaurin series are zero.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_17-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_17-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_17-4-2-1">If <span class="process-math">\(f\)</span> is even, then by part b <span class="process-math">\(f\,'\)</span> is odd, so <span class="process-math">\(f\,'(0) = -f\,'(-0) = -f\,'(0)\text{.}\)</span> Of course, this implies <span class="process-math">\(f'(0) = 0\text{.}\)</span> Similarly, from part a <span class="process-math">\(f\,''\)</span> is even, so <span class="process-math">\(f\,'''(0)=0\text{.}\)</span> An induction argument gives <span class="process-math">\(f\,^{(2n-1)}(0)=0\)</span> for all positive integers <span class="process-math">\(n\text{.}\)</span> Show the details.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.17.c.1"><a href="#x7_2_17-4-2" title="Copy heading and permalink for Solution 7.2.17.c.1" aria-label="Copy heading and permalink for Solution 7.2.17.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.17.c"><a href="#x7_2_17-4" title="Copy heading and permalink for Task 7.2.17.c" aria-label="Copy heading and permalink for Task 7.2.17.c">🔗</a></div></article><article class="task exercise-like" id="x7_2_17-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.17.c"><a href="#x7_2_17-4" title="Copy heading and permalink for Task 7.2.17.c" aria-label="Copy heading and permalink for Task 7.2.17.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_17-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x7_2_17-5-1-1">If <span class="process-math">\(f(z)\)</span> is odd, show that all the coefficients of the even powers of <span class="process-math">\(z\)</span> in the Maclaurin series are zero.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_17-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 7.2.17.d"><a href="#x7_2_17-5" title="Copy heading and permalink for Task 7.2.17.d" aria-label="Copy heading and permalink for Task 7.2.17.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.17"><a href="#x7_2_17" title="Copy heading and permalink for Exercise 7.2.17" aria-label="Copy heading and permalink for Exercise 7.2.17">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 7.2.17.d"><a href="#x7_2_17-5" title="Copy heading and permalink for Task 7.2.17.d" aria-label="Copy heading and permalink for Task 7.2.17.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.17"><a href="#x7_2_17" title="Copy heading and permalink for Exercise 7.2.17" aria-label="Copy heading and permalink for Exercise 7.2.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x7_2_18-1-1">Verify <a href="sec_taylor-series.html#x718" class="xref" data-knowl="./knowl/xref/x718.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.14">Identity (7.2.14)</a> by using mathematical induction.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 7.2.18"><a href="#x7_2_18" title="Copy heading and permalink for Exercise 7.2.18" aria-label="Copy heading and permalink for Exercise 7.2.18">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_19-1"><div class="para logical" id="x7_2_19-1-1">
+<div class="autopermalink" data-description="Exercise 7.2.18"><a href="#x7_2_18" title="Copy heading and permalink for Exercise 7.2.18" aria-label="Copy heading and permalink for Exercise 7.2.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_19-1">
+<div class="para logical" id="x7_2_19-1-1">
 <div class="para">Consider the function</div>
 <div class="displaymath process-math" id="x7_2_19-1-1-1">
 \begin{equation*}
@@ -1188,25 +1400,38 @@ f(z) =
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x7_2_19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_19-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_19-2-1-1">Use <a href="sec_taylor-series.html#Taylor_s_Theorem" class="xref" data-knowl="./knowl/xref/Taylor_s_Theorem.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.3: Taylor’s theorem">Theorem 7.2.3</a>, Taylor’s theorem, to show that the Maclaurin series for <span class="process-math">\(f(z)\)</span> equals <span class="process-math">\(\sum\limits_{n=0}^{\infty}z^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_19-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_19-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_19-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_19-2-2-1">It is easy to show that <span class="process-math">\(f\,^{(n)}(0) = n!\)</span> for all positive integers <span class="process-math">\(n\text{.}\)</span> Do so via mathematical induction.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_19-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.19.a.1"><a href="#x7_2_19-2-2" title="Copy heading and permalink for Solution 7.2.19.a.1" aria-label="Copy heading and permalink for Solution 7.2.19.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.19.a"><a href="#x7_2_19-2" title="Copy heading and permalink for Task 7.2.19.a" aria-label="Copy heading and permalink for Task 7.2.19.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_19-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.19.a"><a href="#x7_2_19-2" title="Copy heading and permalink for Task 7.2.19.a" aria-label="Copy heading and permalink for Task 7.2.19.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_19-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_19-3-1-1">Obviously, the radius of convergence of this series equals 1 (ratio test). However, the distance between 0 and the nearest singularity of <span class="process-math">\(f\)</span> equals <span class="process-math">\(\frac{1}{2}\text{.}\)</span> Explain why this condition does not contradict <a href="sec_taylor-series.html#Nuanced_Taylor" class="xref" data-knowl="./knowl/xref/Nuanced_Taylor.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.2.5">Corollary 7.2.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_19-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_19-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_19-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x7_2_19-3-2-1">The point <span class="process-math">\(z=\frac{1}{2}\)</span> is a removable singularity, since <span class="process-math">\(f\)</span> may be redefined at <span class="process-math">\(\frac{1}{2}\)</span> to be analytic. State what <span class="process-math">\(f\)</span> should equal at that point.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_19-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 7.2.19.b.1"><a href="#x7_2_19-3-2" title="Copy heading and permalink for Solution 7.2.19.b.1" aria-label="Copy heading and permalink for Solution 7.2.19.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.19.b"><a href="#x7_2_19-3" title="Copy heading and permalink for Task 7.2.19.b" aria-label="Copy heading and permalink for Task 7.2.19.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.19"><a href="#x7_2_19" title="Copy heading and permalink for Exercise 7.2.19" aria-label="Copy heading and permalink for Exercise 7.2.19">🔗</a></div></article><article class="exercise exercise-like" id="x7_2_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x7_2_20-1"><div class="para logical" id="x7_2_20-1-1">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.19.b"><a href="#x7_2_19-3" title="Copy heading and permalink for Task 7.2.19.b" aria-label="Copy heading and permalink for Task 7.2.19.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.19"><a href="#x7_2_19" title="Copy heading and permalink for Exercise 7.2.19" aria-label="Copy heading and permalink for Exercise 7.2.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x7_2_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x7_2_20-1">
+<div class="para logical" id="x7_2_20-1-1">
 <div class="para">Consider the real-valued function <span class="process-math">\(f\)</span> defined on the real numbers as</div>
 <div class="displaymath process-math" id="x7_2_20-1-1-2">
 \begin{equation*}
@@ -1217,24 +1442,35 @@ e^{-\frac{1}{x^2}}, \amp  \text{ when } x \ne 0; \\ \;\; 0, \amp  \text{ when } 
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div>
+</div>
 <article class="task exercise-like" id="x7_2_20-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x7_2_20-2-1-1">Show that, for all <span class="process-math">\(n&gt;0\text{,}\)</span> <span class="process-math">\(f^{(n)}(0) = 0\text{,}\)</span> where <span class="process-math">\(f^{(n)}\)</span> is the <span class="process-math">\(n\)</span>th derivative of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_20-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_20-2-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_20-2-2-1">Use the limit definition for the derivative to establish the case for <span class="process-math">\(n=1.\)</span> Then use mathematical induction to complete your argument.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.20.a.1"><a href="#x7_2_20-2-2" title="Copy heading and permalink for Hint 7.2.20.a.1" aria-label="Copy heading and permalink for Hint 7.2.20.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.20.a"><a href="#x7_2_20-2" title="Copy heading and permalink for Task 7.2.20.a" aria-label="Copy heading and permalink for Task 7.2.20.a">🔗</a></div></article><article class="task exercise-like" id="x7_2_20-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.20.a"><a href="#x7_2_20-2" title="Copy heading and permalink for Task 7.2.20.a" aria-label="Copy heading and permalink for Task 7.2.20.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_20-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x7_2_20-3-1-1">Explain why the function <span class="process-math">\(f\)</span> is an example of a function that, although differentiable everywhere on the real line, is not expressible as a Taylor series about 0 that is valid for any interval <span class="process-math">\((-\varepsilon, \varepsilon)\text{,}\)</span> no matter how small <span class="process-math">\(\varepsilon\)</span> is.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_20-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_20-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_20-3-2-1">First, evaluate the Taylor series representation for <span class="process-math">\(\, f(x) \,\)</span> when <span class="process-math">\(\, x \ne 0\text{.}\)</span> Then show that the series does not equal <span class="process-math">\(\, f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.20.b.1"><a href="#x7_2_20-3-2" title="Copy heading and permalink for Hint 7.2.20.b.1" aria-label="Copy heading and permalink for Hint 7.2.20.b.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.20.b"><a href="#x7_2_20-3" title="Copy heading and permalink for Task 7.2.20.b" aria-label="Copy heading and permalink for Task 7.2.20.b">🔗</a></div></article><article class="task exercise-like" id="x7_2_20-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.20.b"><a href="#x7_2_20-3" title="Copy heading and permalink for Task 7.2.20.b" aria-label="Copy heading and permalink for Task 7.2.20.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x7_2_20-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para logical" id="x7_2_20-4-1-1">
 <div class="para">Explain why a similar argument could not be made for the complex-valued function <span class="process-math">\(g\)</span> defined on the complex numbers as</div>
 <div class="displaymath process-math" id="x7_2_20-4-1-1-2">
@@ -1247,12 +1483,20 @@ e^{-\frac{1}{z^2}}, \amp  \text{ when } z \ne 0; \\ \;\; 0, \amp  \text{ when } 
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x7_2_20-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="solutions">
+<details id="x7_2_20-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x7_2_20-4-2-1">Show that <span class="process-math">\(\, g(z) \,\)</span> is not even continuous at <span class="process-math">\(\, z=0.\,\)</span> Do so by taking limits along the real and imaginary axes.<div class="autopermalink" data-description="Paragraph"><a href="#x7_2_20-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 7.2.20.c.1"><a href="#x7_2_20-4-2" title="Copy heading and permalink for Hint 7.2.20.c.1" aria-label="Copy heading and permalink for Hint 7.2.20.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 7.2.20.c"><a href="#x7_2_20-4" title="Copy heading and permalink for Task 7.2.20.c" aria-label="Copy heading and permalink for Task 7.2.20.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 7.2.20"><a href="#x7_2_20" title="Copy heading and permalink for Exercise 7.2.20" aria-label="Copy heading and permalink for Exercise 7.2.20">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.2: Exercises"><a href="#exercises_taylor-series" title="Copy heading and permalink for Exercises 7.2: Exercises" aria-label="Copy heading and permalink for Exercises 7.2: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 7.2: Taylor Series Representations"><a href="#sec_taylor-series" title="Copy heading and permalink for Section 7.2: Taylor Series Representations" aria-label="Copy heading and permalink for Section 7.2: Taylor Series Representations">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 7.2.20.c"><a href="#x7_2_20-4" title="Copy heading and permalink for Task 7.2.20.c" aria-label="Copy heading and permalink for Task 7.2.20.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 7.2.20"><a href="#x7_2_20" title="Copy heading and permalink for Exercise 7.2.20" aria-label="Copy heading and permalink for Exercise 7.2.20">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 7.2: Exercises"><a href="#exercises_taylor-series" title="Copy heading and permalink for Exercises 7.2: Exercises" aria-label="Copy heading and permalink for Exercises 7.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 7.2: Taylor Series Representations"><a href="#sec_taylor-series" title="Copy heading and permalink for Section 7.2: Taylor Series Representations" aria-label="Copy heading and permalink for Section 7.2: Taylor Series Representations">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_uniform-convergence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_laurent-series.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,10 +501,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_branches"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_branches">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Branches of Functions</span>
 </h2>
-<section class="introduction" id="sec_branches-2"><div class="para" id="sec_branches-2-1">In <a href="sec_z_n.html" class="internal" title="Section 2.2: The Mappings w=z^n and w=z^{\frac{1}{n}}">Section 2.2</a> we defined the principal square root function and investigated some of its properties. We left unanswered some questions concerning the choices of square roots. We now look at these questions because they are similar to situations involving other elementary functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="sec_branches-2">
+<div class="para" id="sec_branches-2-1">In <a href="sec_z_n.html" class="internal" title="Section 2.2: The Mappings w=z^n and w=z^{\frac{1}{n}}">Section 2.2</a> we defined the principal square root function and investigated some of its properties. We left unanswered some questions concerning the choices of square roots. We now look at these questions because they are similar to situations involving other elementary functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_branches-2-2">In our definition of a function in <a href="sec_functions-mappings.html" class="internal" title="Section 2.1: Functions and Linear Mappings">Section 2.1</a>, we specified that each value of the independent variable in the domain is mapped onto one and <em class="emphasis">only one</em> value in the range. As a result, we often talk about a single-valued function, which emphasizes the “only one” part of the definition and allows us to distinguish such functions from multiple-valued functions, which we now introduce.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -546,12 +549,16 @@ f_2(z) = r^{\frac{1}{2}}e^{i\frac{\theta +2\pi}{2}} = r^{\frac{1}{2}}e^{i\frac{\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 2.4.1"><a href="#sec_branches-2-6" title="Copy heading and permalink for Example 2.4.1" aria-label="Copy heading and permalink for Example 2.4.1">🔗</a></div></article><article class="example example-like" id="sec_branches-2-7"><h3 class="heading">
+<div class="autopermalink" data-description="Example 2.4.1"><a href="#sec_branches-2-6" title="Copy heading and permalink for Example 2.4.1" aria-label="Copy heading and permalink for Example 2.4.1">🔗</a></div>
+</article>
+<article class="example example-like" id="sec_branches-2-7"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_branches-2-7-1-1">Show that the function <span class="process-math">\(f_1\)</span> is discontinuous along the negative real axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_branches-2-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_branches-2-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_branches-2-7-2-1">
 <div class="para">Let <span class="process-math">\(z_0=r_0e^{i\pi}\)</span> denote a negative real number. We compute the limit as <span class="process-math">\(z\)</span> approaches <span class="process-math">\(z_0\)</span> through the upper half-plane <span class="process-math">\(\{z: \mathrm{Im}(z) &gt;0\}\)</span> and the limit as <span class="process-math">\(z\)</span> approaches <span class="process-math">\(z_0\)</span> through the lower half-plane <span class="process-math">\(\{z:\mathrm{Im}(z) \lt 0\}\text{.}\)</span> In polar coordinates these limits are given by</div>
 <div class="displaymath process-math" id="sec_branches-2-7-2-1-10">
@@ -569,14 +576,21 @@ i\sin \frac{\theta}{2}\right) = -ir_0^{\frac{1}{2}}\text{.}
 <div class="para" id="sec_branches-2-7-2-2">The two limits are distinct, so the function <span class="process-math">\(f_1\)</span> is discontinuous at <span class="process-math">\(z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.2.1"><a href="#sec_branches-2-7-2" title="Copy heading and permalink for Solution 2.4.2.1" aria-label="Copy heading and permalink for Solution 2.4.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 2.4.2"><a href="#sec_branches-2-7" title="Copy heading and permalink for Example 2.4.2" aria-label="Copy heading and permalink for Example 2.4.2">🔗</a></div></article><article class="remark remark-like" id="sec_branches-2-8"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 2.4.2"><a href="#sec_branches-2-7" title="Copy heading and permalink for Example 2.4.2" aria-label="Copy heading and permalink for Example 2.4.2">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_branches-2-8"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_branches-2-8-1">Likewise, <span class="process-math">\(f_2\)</span> is discontinuous at <span class="process-math">\(z_0\text{.}\)</span> The mappings <span class="process-math">\(w=f_1(z)\text{,}\)</span> <span class="process-math">\(w=f_2(z)\text{,}\)</span> and the branch cut are illustrated in <a href="sec_branches.html#fig_ch-02-18" class="xref" data-knowl="./knowl/xref/fig_ch-02-18.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.4">Figure 2.4.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 2.4.3"><a href="#sec_branches-2-8" title="Copy heading and permalink for Remark 2.4.3" aria-label="Copy heading and permalink for Remark 2.4.3">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-02-18"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-02/ch-02-fig-18.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The branches <span class="process-math">\(f_1\)</span> and <span class="process-math">\(f_2\)</span> of <span class="process-math">\(f(z) = z^{\frac{1}{2}}\)</span><div class="autopermalink" data-description="Figure 2.4.4"><a href="#fig_ch-02-18" title="Copy heading and permalink for Figure 2.4.4" aria-label="Copy heading and permalink for Figure 2.4.4">🔗</a></div></figcaption></figure><div class="para logical" id="sec_branches-2-10">
+<div class="autopermalink" data-description="Remark 2.4.3"><a href="#sec_branches-2-8" title="Copy heading and permalink for Remark 2.4.3" aria-label="Copy heading and permalink for Remark 2.4.3">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig_ch-02-18"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-02/ch-02-fig-18.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The branches <span class="process-math">\(f_1\)</span> and <span class="process-math">\(f_2\)</span> of <span class="process-math">\(f(z) = z^{\frac{1}{2}}\)</span><div class="autopermalink" data-description="Figure 2.4.4"><a href="#fig_ch-02-18" title="Copy heading and permalink for Figure 2.4.4" aria-label="Copy heading and permalink for Figure 2.4.4">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_branches-2-10">
 <div class="para">We can construct other branches of the square root function by specifying that an argument of <span class="process-math">\(z\)</span> given by <span class="process-math">\(\theta =\arg z\)</span> is to lie in the interval <span class="process-math">\(\alpha \lt  \theta \le \alpha +2\pi\text{.}\)</span> The corresponding branch is</div>
 <div class="displaymath process-math" id="sec_branches-2-10-4">
 \begin{align}
@@ -589,7 +603,10 @@ f_\alpha(z) = \; \amp r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin 
 <div class="para" id="sec_branches-2-11">The branch cut for <span class="process-math">\(f_{\alpha}\)</span> is the ray <span class="process-math">\(r \ge 0\text{,}\)</span> <span class="process-math">\(\theta =\alpha\text{,}\)</span> which includes the origin. The point <span class="process-math">\(z=0\text{,}\)</span> common to all branch cuts for the multivalued square root function, is called a branch point. The mapping <span class="process-math">\(w=f_\alpha(z)\)</span> and its branch cut are illustrated in <a href="sec_branches.html#fig_ch-02-19" class="xref" data-knowl="./knowl/xref/fig_ch-02-19.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.5">Figure 2.4.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_branches-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-02-19"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/figs/ch-02/ch-02-fig-19.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The branch <span class="process-math">\(f_\alpha\)</span> of <span class="process-math">\(f(z) = z^\frac{1}{2}\)</span><div class="autopermalink" data-description="Figure 2.4.5"><a href="#fig_ch-02-19" title="Copy heading and permalink for Figure 2.4.5" aria-label="Copy heading and permalink for Figure 2.4.5">🔗</a></div></figcaption></figure></section><section class="subsection" id="subsec_riemann-surface-1"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The branch <span class="process-math">\(f_\alpha\)</span> of <span class="process-math">\(f(z) = z^\frac{1}{2}\)</span><div class="autopermalink" data-description="Figure 2.4.5"><a href="#fig_ch-02-19" title="Copy heading and permalink for Figure 2.4.5" aria-label="Copy heading and permalink for Figure 2.4.5">🔗</a></div></figcaption>
+</figure></section>
+<section class="subsection" id="subsec_riemann-surface-1">
+<h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span>
 </h3>
 <div class="para" id="subsec_riemann-surface-1-2">A Riemann surface is a construct useful for visualizing a multivalued function. It was introduced in 1851 by Bernhard Riemann (full name: Georg Friedrich Bernhard Riemann; 1826–1866). The idea is ingenious—a geometric construction that permits surfaces to be the domain or range of a multivalued function. Riemann surfaces depend on the function being investigated. We now give a nontechnical formulation of the Riemann surface for the multivalued square root function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec_riemann-surface-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -601,123 +618,204 @@ f_\alpha(z) = \; \amp r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin 
 <div class="para" id="subsec_riemann-surface-1-5">The beauty of this structure is that it makes this “full square root function” continuous for all <span class="process-math">\(z \ne 0\text{.}\)</span> Normally, the principal square root function would be discontinuous along the negative real axis, as points near <span class="process-math">\(-1\)</span> but above that axis would get mapped to points close to <span class="process-math">\(i\text{,}\)</span> and points near <span class="process-math">\(-1\)</span> but below the axis would get mapped to points close to <span class="process-math">\(-i\text{.}\)</span> As <a href="sec_branches.html#fig_ch-02-20" class="xref" data-knowl="./knowl/xref/fig_ch-02-20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.6">Figure 2.4.6</a>(c) indicates, however, between the point <span class="process-math">\(A\)</span> and the point <span class="process-math">\(B\text{,}\)</span> the domain switches from the edge of <span class="process-math">\(D_1\)</span> in the upper half-plane to the edge of <span class="process-math">\(D_2\)</span> in the lower half-plane. The corresponding mapped points <span class="process-math">\(A\,'\)</span> and <span class="process-math">\(B\,'\)</span> are exactly where they should be. The surface works in such a way that going directly between the edges of <span class="process-math">\(D_1\)</span> in the upper and lower half-planes is impossible (likewise for <span class="process-math">\(D_2\)</span>). Going counter-clockwise, the only way to get from the point <span class="process-math">\(A\)</span> to the point <span class="process-math">\(C\text{,}\)</span> for example, is to follow the path indicated by the arrows in <a href="sec_branches.html#fig_ch-02-20" class="xref" data-knowl="./knowl/xref/fig_ch-02-20.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.6">Figure 2.4.6</a>(c).<div class="autopermalink" data-description="Paragraph"><a href="#subsec_riemann-surface-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-02-20"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="external/figs/ch-02/ch-02-fig-20.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Formation of the Riemann surface for <span class="process-math">\(w=z^\frac{1}{2}\)</span><div class="autopermalink" data-description="Figure 2.4.6"><a href="#fig_ch-02-20" title="Copy heading and permalink for Figure 2.4.6" aria-label="Copy heading and permalink for Figure 2.4.6">🔗</a></div></figcaption></figure><section class="exercises" id="exercises_branches"><h4 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.4.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Formation of the Riemann surface for <span class="process-math">\(w=z^\frac{1}{2}\)</span><div class="autopermalink" data-description="Figure 2.4.6"><a href="#fig_ch-02-20" title="Copy heading and permalink for Figure 2.4.6" aria-label="Copy heading and permalink for Figure 2.4.6">🔗</a></div></figcaption>
+</figure>
+<section class="exercises" id="exercises_branches">
+<h4 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h4>
 <article class="exercise exercise-like" id="x2_4_1"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="introduction" id="x2_4_1-1"><div class="para" id="x2_4_1-1-1">Let <span class="process-math">\(f_1(z)\)</span> and <span class="process-math">\(f_2(z)\)</span> be the two branches of the square root function given by Equations <a href="sec_branches.html#Br1" class="xref" data-knowl="./knowl/xref/Br1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.1">(2.4.1)</a> and <a href="sec_branches.html#sec_branches-2-6-1-1-9" class="xref" data-knowl="./knowl/xref/Br2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.2">(2.4.2)</a>, respectively. Use the polar coordinate formulas in <a href="sec_z_n.html" class="internal" title="Section 2.2: The Mappings w=z^n and w=z^{\frac{1}{n}}">Section 2.2</a> to find the image of the following regions:<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="x2_4_1-1">
+<div class="para" id="x2_4_1-1-1">Let <span class="process-math">\(f_1(z)\)</span> and <span class="process-math">\(f_2(z)\)</span> be the two branches of the square root function given by Equations <a href="sec_branches.html#Br1" class="xref" data-knowl="./knowl/xref/Br1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.1">(2.4.1)</a> and <a href="sec_branches.html#sec_branches-2-6-1-1-9" class="xref" data-knowl="./knowl/xref/Br2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.2">(2.4.2)</a>, respectively. Use the polar coordinate formulas in <a href="sec_z_n.html" class="internal" title="Section 2.2: The Mappings w=z^n and w=z^{\frac{1}{n}}">Section 2.2</a> to find the image of the following regions:<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x2_4_1-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="x2_4_1-2-1-1">Quadrant II, <span class="process-math">\(x\lt 0\)</span> and <span class="process-math">\(y&gt;0\text{,}\)</span> under the mapping <span class="process-math">\(w=f_1(z)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_1-2-2-1">The sector <span class="process-math">\(\rho &gt;0\text{,}\)</span> <span class="process-math">\(\pi /4\lt \phi \lt \pi /2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.1.a.1"><a href="#x2_4_1-2-2" title="Copy heading and permalink for Solution 2.4.1.1.a.1" aria-label="Copy heading and permalink for Solution 2.4.1.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 2.4.1.1.a"><a href="#x2_4_1-2" title="Copy heading and permalink for Task 2.4.1.1.a" aria-label="Copy heading and permalink for Task 2.4.1.1.a">🔗</a></div></article><article class="task exercise-like" id="x2_4_1-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 2.4.1.1.a"><a href="#x2_4_1-2" title="Copy heading and permalink for Task 2.4.1.1.a" aria-label="Copy heading and permalink for Task 2.4.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_1-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="x2_4_1-3-1-1">Quadrant II, <span class="process-math">\(x\lt 0\)</span> and <span class="process-math">\(y&gt;0\text{,}\)</span> under the mapping <span class="process-math">\(w=f_2(z)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.1.b"><a href="#x2_4_1-3" title="Copy heading and permalink for Task 2.4.1.1.b" aria-label="Copy heading and permalink for Task 2.4.1.1.b">🔗</a></div></article><article class="task exercise-like" id="x2_4_1-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.1.b"><a href="#x2_4_1-3" title="Copy heading and permalink for Task 2.4.1.1.b" aria-label="Copy heading and permalink for Task 2.4.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_1-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <div class="para" id="x2_4_1-4-1-1">The right half-plane Re<span class="process-math">\((z) &gt;0\)</span> under the mapping <span class="process-math">\(w=f_1(z)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_1-4-2-1">The sector <span class="process-math">\(\rho &gt;0\text{,}\)</span> <span class="process-math">\(-\pi /4\lt \phi \lt \pi /4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.1.c.1"><a href="#x2_4_1-4-2" title="Copy heading and permalink for Solution 2.4.1.1.c.1" aria-label="Copy heading and permalink for Solution 2.4.1.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 2.4.1.1.c"><a href="#x2_4_1-4" title="Copy heading and permalink for Task 2.4.1.1.c" aria-label="Copy heading and permalink for Task 2.4.1.1.c">🔗</a></div></article><article class="task exercise-like" id="x2_4_1-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 2.4.1.1.c"><a href="#x2_4_1-4" title="Copy heading and permalink for Task 2.4.1.1.c" aria-label="Copy heading and permalink for Task 2.4.1.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_1-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
 <div class="para" id="x2_4_1-5-1-1">The right half-plane Re<span class="process-math">\((z) &gt;0\)</span> under the mapping <span class="process-math">\(w=f_2(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.1.d"><a href="#x2_4_1-5" title="Copy heading and permalink for Task 2.4.1.1.d" aria-label="Copy heading and permalink for Task 2.4.1.1.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.4.1.1"><a href="#x2_4_1" title="Copy heading and permalink for Exercise 2.4.1.1" aria-label="Copy heading and permalink for Exercise 2.4.1.1">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="autopermalink" data-description="Task 2.4.1.1.d"><a href="#x2_4_1-5" title="Copy heading and permalink for Task 2.4.1.1.d" aria-label="Copy heading and permalink for Task 2.4.1.1.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.4.1.1"><a href="#x2_4_1" title="Copy heading and permalink for Exercise 2.4.1.1" aria-label="Copy heading and permalink for Exercise 2.4.1.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_2"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="x2_4_2-1-1">Let <span class="process-math">\(\alpha =0\)</span> in <a href="sec_branches.html#sec_branches-2-10-4" class="xref" data-knowl="./knowl/xref/Bralpha.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.3">Equation (2.4.3)</a>. Find the range of the function <span class="process-math">\(w=f_{\alpha}(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.4.1.2"><a href="#x2_4_2" title="Copy heading and permalink for Exercise 2.4.1.2" aria-label="Copy heading and permalink for Exercise 2.4.1.2">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 2.4.1.2"><a href="#x2_4_2" title="Copy heading and permalink for Exercise 2.4.1.2" aria-label="Copy heading and permalink for Exercise 2.4.1.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_3"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="x2_4_3-1-1">Let <span class="process-math">\(\alpha =2\pi\)</span> in <a href="sec_branches.html#sec_branches-2-10-4" class="xref" data-knowl="./knowl/xref/Bralpha.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.4.3">Equation (2.4.3)</a>. Find the range of the function <span class="process-math">\(w=f_{\alpha}(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_3-2-1">Since <span class="process-math">\(f_{2\pi}(z) = r^{\frac{1}{2}}\cos \frac{\theta}{2} +ir^{\frac{1}{2}}\sin \frac{\theta}{2}\text{,}\)</span> where <span class="process-math">\(2\pi \lt \theta \le 4\pi\)</span> (explain!), we see that the point <span class="process-math">\((r^{\frac{1}{2}}\cos \frac{\theta}{2},\,r^{\frac{1}{2}}\sin \frac{\theta}{2})\)</span> will lie in the lower half plane (again, explain). Thus, the range of <span class="process-math">\(f_{2\pi}(z)\)</span> is <span class="process-math">\(\{z:\mathrm{Im}(z) \le 0,\; z \ne 0\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.3.1"><a href="#x2_4_3-2" title="Copy heading and permalink for Solution 2.4.1.3.1" aria-label="Copy heading and permalink for Solution 2.4.1.3.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 2.4.1.3"><a href="#x2_4_3" title="Copy heading and permalink for Exercise 2.4.1.3" aria-label="Copy heading and permalink for Exercise 2.4.1.3">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_4"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 2.4.1.3"><a href="#x2_4_3" title="Copy heading and permalink for Exercise 2.4.1.3" aria-label="Copy heading and permalink for Exercise 2.4.1.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_4"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="x2_4_4-1-1">Find a branch of the square root that is continuous along the negative <span class="process-math">\(x\)</span> axis.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.4.1.4"><a href="#x2_4_4" title="Copy heading and permalink for Exercise 2.4.1.4" aria-label="Copy heading and permalink for Exercise 2.4.1.4">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_5"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="introduction" id="x2_4_5-1"><div class="para" id="x2_4_5-1-1">Let <span class="process-math">\(f_1(z) =|z|^{\frac{1}{3}}e^{i \frac{\mathrm{Arg}(z)}{3}} = r^{\frac{1}{3}}\cos \frac{\theta}{3}
+<div class="autopermalink" data-description="Exercise 2.4.1.4"><a href="#x2_4_4" title="Copy heading and permalink for Exercise 2.4.1.4" aria-label="Copy heading and permalink for Exercise 2.4.1.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_5"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="introduction" id="x2_4_5-1">
+<div class="para" id="x2_4_5-1-1">Let <span class="process-math">\(f_1(z) =|z|^{\frac{1}{3}}e^{i \frac{\mathrm{Arg}(z)}{3}} = r^{\frac{1}{3}}\cos \frac{\theta}{3}
 +ir^{\frac{1}{3}}\sin \frac{\theta}{3}\text{,}\)</span> where <span class="process-math">\(|z| =r \ne 0\text{,}\)</span> and <span class="process-math">\(\theta =\mathrm{Arg}(z)\text{.}\)</span> Note: <span class="process-math">\(f_1\)</span> denotes the principal cube root function.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div>
+</div>
 <article class="task exercise-like" id="x2_4_5-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="x2_4_5-2-1-1">Show that <span class="process-math">\(f_1\)</span> is a branch of the multivalued cube root <span class="process-math">\(f(z)=z^{\frac{1}{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_5-2-2-1">
 <span class="process-math">\(f_1(z) = |z|^{\frac{1 }{3}}e^{i\frac{{\mathrm{Arg}}(z)}{3}}\text{,}\)</span> so <span class="process-math">\(\big(f_1(z)\big)^3=\left(|z|^{\frac{1}{3}}e^{i\frac{{\mathrm{Arg}}(z)}{3}}\right)^{\!3}=
 |z|e^{i\mathrm{Arg}(z)}=z\text{.}\)</span> Thus, <span class="process-math">\(f_1\)</span> is indeed a branch of the cube root function.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.5.a.1"><a href="#x2_4_5-2-2" title="Copy heading and permalink for Solution 2.4.1.5.a.1" aria-label="Copy heading and permalink for Solution 2.4.1.5.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 2.4.1.5.a"><a href="#x2_4_5-2" title="Copy heading and permalink for Task 2.4.1.5.a" aria-label="Copy heading and permalink for Task 2.4.1.5.a">🔗</a></div></article><article class="task exercise-like" id="x2_4_5-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 2.4.1.5.a"><a href="#x2_4_5-2" title="Copy heading and permalink for Task 2.4.1.5.a" aria-label="Copy heading and permalink for Task 2.4.1.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_5-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="x2_4_5-3-1-1">What is the range of <span class="process-math">\(f_1\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.5.b"><a href="#x2_4_5-3" title="Copy heading and permalink for Task 2.4.1.5.b" aria-label="Copy heading and permalink for Task 2.4.1.5.b">🔗</a></div></article><article class="task exercise-like" id="x2_4_5-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.5.b"><a href="#x2_4_5-3" title="Copy heading and permalink for Task 2.4.1.5.b" aria-label="Copy heading and permalink for Task 2.4.1.5.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_5-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <div class="para" id="x2_4_5-4-1-1">Where is <span class="process-math">\(f_1\)</span> continuous?<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.5.c"><a href="#x2_4_5-4" title="Copy heading and permalink for Task 2.4.1.5.c" aria-label="Copy heading and permalink for Task 2.4.1.5.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.4.1.5"><a href="#x2_4_5" title="Copy heading and permalink for Exercise 2.4.1.5" aria-label="Copy heading and permalink for Exercise 2.4.1.5">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_6"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="introduction" id="x2_4_6-1"><div class="para" id="x2_4_6-1-1">Let <span class="process-math">\(f_2(z) =r^{\frac{1}{3}}\cos (\frac{\theta +2\pi}{3}) +ir^{\frac{1}{3}}\sin (\frac{\theta +2\pi}{3})\text{,}\)</span> where <span class="process-math">\(r&gt;0\)</span> and <span class="process-math">\(-\pi \lt \theta \le \pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 2.4.1.5.c"><a href="#x2_4_5-4" title="Copy heading and permalink for Task 2.4.1.5.c" aria-label="Copy heading and permalink for Task 2.4.1.5.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.4.1.5"><a href="#x2_4_5" title="Copy heading and permalink for Exercise 2.4.1.5" aria-label="Copy heading and permalink for Exercise 2.4.1.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_6"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="introduction" id="x2_4_6-1">
+<div class="para" id="x2_4_6-1-1">Let <span class="process-math">\(f_2(z) =r^{\frac{1}{3}}\cos (\frac{\theta +2\pi}{3}) +ir^{\frac{1}{3}}\sin (\frac{\theta +2\pi}{3})\text{,}\)</span> where <span class="process-math">\(r&gt;0\)</span> and <span class="process-math">\(-\pi \lt \theta \le \pi\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x2_4_6-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="x2_4_6-2-1-1">Show that <span class="process-math">\(f_2\)</span> is a branch of the multivalued cube root <span class="process-math">\(f(z) =z^{\frac{1}{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.6.a"><a href="#x2_4_6-2" title="Copy heading and permalink for Task 2.4.1.6.a" aria-label="Copy heading and permalink for Task 2.4.1.6.a">🔗</a></div></article><article class="task exercise-like" id="x2_4_6-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.6.a"><a href="#x2_4_6-2" title="Copy heading and permalink for Task 2.4.1.6.a" aria-label="Copy heading and permalink for Task 2.4.1.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_6-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="x2_4_6-3-1-1">What is the range of <span class="process-math">\(f_2\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.6.b"><a href="#x2_4_6-3" title="Copy heading and permalink for Task 2.4.1.6.b" aria-label="Copy heading and permalink for Task 2.4.1.6.b">🔗</a></div></article><article class="task exercise-like" id="x2_4_6-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.6.b"><a href="#x2_4_6-3" title="Copy heading and permalink for Task 2.4.1.6.b" aria-label="Copy heading and permalink for Task 2.4.1.6.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_6-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <div class="para" id="x2_4_6-4-1-1">Where is <span class="process-math">\(f_2\)</span> continuous?<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.6.c"><a href="#x2_4_6-4" title="Copy heading and permalink for Task 2.4.1.6.c" aria-label="Copy heading and permalink for Task 2.4.1.6.c">🔗</a></div></article><article class="task exercise-like" id="x2_4_6-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.6.c"><a href="#x2_4_6-4" title="Copy heading and permalink for Task 2.4.1.6.c" aria-label="Copy heading and permalink for Task 2.4.1.6.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_6-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
 <div class="para" id="x2_4_6-5-1-1">What is the branch point associated with <span class="process-math">\(f\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.6.d"><a href="#x2_4_6-5" title="Copy heading and permalink for Task 2.4.1.6.d" aria-label="Copy heading and permalink for Task 2.4.1.6.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.4.1.6"><a href="#x2_4_6" title="Copy heading and permalink for Exercise 2.4.1.6" aria-label="Copy heading and permalink for Exercise 2.4.1.6">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_7"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="autopermalink" data-description="Task 2.4.1.6.d"><a href="#x2_4_6-5" title="Copy heading and permalink for Task 2.4.1.6.d" aria-label="Copy heading and permalink for Task 2.4.1.6.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.4.1.6"><a href="#x2_4_6" title="Copy heading and permalink for Exercise 2.4.1.6" aria-label="Copy heading and permalink for Exercise 2.4.1.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_7"><h5 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="x2_4_7-1-1">Find a branch of the multivalued cube root function that is different from those in Exercises 5 and 6. State the domain and range of the branch you find.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_7-2-1">The function <span class="process-math">\(f_{\frac{\pi}{4}}(z) =r^{\frac{1}{3}}e^{i\frac{\theta}{3}}\text{,}\)</span> where <span class="process-math">\(0 \ne z = re^{i\theta}\text{,}\)</span> and <span class="process-math">\(\frac{\pi}{4} \lt \theta \le \frac{9\pi}{4}\)</span> does the job. Explain why, and find the range of this function, or of a different function that you concoct.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.7.1"><a href="#x2_4_7-2" title="Copy heading and permalink for Solution 2.4.1.7.1" aria-label="Copy heading and permalink for Solution 2.4.1.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 2.4.1.7"><a href="#x2_4_7" title="Copy heading and permalink for Exercise 2.4.1.7" aria-label="Copy heading and permalink for Exercise 2.4.1.7">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_8"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="introduction" id="x2_4_8-1"><div class="para" id="x2_4_8-1-1">Let <span class="process-math">\(f(z) =z^{\frac{1}{n}}\)</span> denote the multivalued <span class="process-math">\(n\)</span>th root, where <span class="process-math">\(n\)</span> is a positive integer.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 2.4.1.7"><a href="#x2_4_7" title="Copy heading and permalink for Exercise 2.4.1.7" aria-label="Copy heading and permalink for Exercise 2.4.1.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_8"><h5 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="introduction" id="x2_4_8-1">
+<div class="para" id="x2_4_8-1-1">Let <span class="process-math">\(f(z) =z^{\frac{1}{n}}\)</span> denote the multivalued <span class="process-math">\(n\)</span>th root, where <span class="process-math">\(n\)</span> is a positive integer.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x2_4_8-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="x2_4_8-2-1-1">Show that <span class="process-math">\(f\)</span> is, in general, an <span class="process-math">\(n\)</span>-valued function.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_8-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.8.a"><a href="#x2_4_8-2" title="Copy heading and permalink for Task 2.4.1.8.a" aria-label="Copy heading and permalink for Task 2.4.1.8.a">🔗</a></div></article><article class="task exercise-like" id="x2_4_8-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.8.a"><a href="#x2_4_8-2" title="Copy heading and permalink for Task 2.4.1.8.a" aria-label="Copy heading and permalink for Task 2.4.1.8.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_8-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="x2_4_8-3-1-1">Write the principal <span class="process-math">\(n\)</span>th root function.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.8.b"><a href="#x2_4_8-3" title="Copy heading and permalink for Task 2.4.1.8.b" aria-label="Copy heading and permalink for Task 2.4.1.8.b">🔗</a></div></article><article class="task exercise-like" id="x2_4_8-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<div class="autopermalink" data-description="Task 2.4.1.8.b"><a href="#x2_4_8-3" title="Copy heading and permalink for Task 2.4.1.8.b" aria-label="Copy heading and permalink for Task 2.4.1.8.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_8-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
 <div class="para" id="x2_4_8-4-1-1">Produce a different branch of the multivalued <span class="process-math">\(n\)</span>th root function.<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_8-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.8.c"><a href="#x2_4_8-4" title="Copy heading and permalink for Task 2.4.1.8.c" aria-label="Copy heading and permalink for Task 2.4.1.8.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.4.1.8"><a href="#x2_4_8" title="Copy heading and permalink for Exercise 2.4.1.8" aria-label="Copy heading and permalink for Exercise 2.4.1.8">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_9"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="introduction" id="x2_4_9-1"><div class="para" id="x2_4_9-1-1">Describe a Riemann surface for the domain of definition of<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 2.4.1.8.c"><a href="#x2_4_8-4" title="Copy heading and permalink for Task 2.4.1.8.c" aria-label="Copy heading and permalink for Task 2.4.1.8.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.4.1.8"><a href="#x2_4_8" title="Copy heading and permalink for Exercise 2.4.1.8" aria-label="Copy heading and permalink for Exercise 2.4.1.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_9"><h5 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="introduction" id="x2_4_9-1">
+<div class="para" id="x2_4_9-1-1">Describe a Riemann surface for the domain of definition of<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x2_4_9-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <div class="para" id="x2_4_9-2-1-1">
 <span class="process-math">\(w=f(z) =z^{\frac{1}{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x2_4_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x2_4_9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x2_4_9-2-2-1">For <span class="process-math">\(k=0,\,1,\,2\)</span> we have <span class="process-math">\(f_k(z) =e^{i\frac{{\mathrm{Arg}}(z) +2\pi k}{3}}\)</span> as the three branches of the cube root with domains <span class="process-math">\(D_k=\{z:z \ne 0\}\text{.}\)</span> As in the text, slit each domain along the negative real axis, and stack <span class="process-math">\(D_0\text{,}\)</span> <span class="process-math">\(D_1\text{,}\)</span> and <span class="process-math">\(D_2\)</span> directly above each other.  Join the edge of <span class="process-math">\(D_0\)</span> in the upper half plane to the edge of <span class="process-math">\(D_1\)</span> in the lower half plane. Join the edge of <span class="process-math">\(D_1\)</span> in the upper half plane to the edge of <span class="process-math">\(D_2\)</span> in the lower half plane. Finally, join the edge of <span class="process-math">\(D_2\)</span> in the upper half plane to the edge of <span class="process-math">\(D_0\)</span> in the lower half plane. To really impress your teacher, make a sketch or real 3D model of this surface!<div class="autopermalink" data-description="Paragraph"><a href="#x2_4_9-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 2.4.1.9.a.1"><a href="#x2_4_9-2-2" title="Copy heading and permalink for Solution 2.4.1.9.a.1" aria-label="Copy heading and permalink for Solution 2.4.1.9.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 2.4.1.9.a"><a href="#x2_4_9-2" title="Copy heading and permalink for Task 2.4.1.9.a" aria-label="Copy heading and permalink for Task 2.4.1.9.a">🔗</a></div></article><article class="task exercise-like" id="x2_4_9-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 2.4.1.9.a"><a href="#x2_4_9-2" title="Copy heading and permalink for Task 2.4.1.9.a" aria-label="Copy heading and permalink for Task 2.4.1.9.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x2_4_9-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <div class="para" id="x2_4_9-3-1-1">
 <span class="process-math">\(w=f(z) =z^{\frac{1}{4}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 2.4.1.9.b"><a href="#x2_4_9-3" title="Copy heading and permalink for Task 2.4.1.9.b" aria-label="Copy heading and permalink for Task 2.4.1.9.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 2.4.1.9"><a href="#x2_4_9" title="Copy heading and permalink for Exercise 2.4.1.9" aria-label="Copy heading and permalink for Exercise 2.4.1.9">🔗</a></div></article><article class="exercise exercise-like" id="x2_4_10"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<div class="autopermalink" data-description="Task 2.4.1.9.b"><a href="#x2_4_9-3" title="Copy heading and permalink for Task 2.4.1.9.b" aria-label="Copy heading and permalink for Task 2.4.1.9.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 2.4.1.9"><a href="#x2_4_9" title="Copy heading and permalink for Exercise 2.4.1.9" aria-label="Copy heading and permalink for Exercise 2.4.1.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x2_4_10"><h5 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
 <div class="para" id="x2_4_10-1-1">Discuss how Riemann surfaces should be used for both the domain and range to help describe the multivalued function <span class="process-math">\(w=f(z)=z^{\frac{2}{3}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x2_4_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.4.1.10"><a href="#x2_4_10" title="Copy heading and permalink for Exercise 2.4.1.10" aria-label="Copy heading and permalink for Exercise 2.4.1.10">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.4.1: Exercises"><a href="#exercises_branches" title="Copy heading and permalink for Exercises 2.4.1: Exercises" aria-label="Copy heading and permalink for Exercises 2.4.1: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}"><a href="#subsec_riemann-surface-1" title="Copy heading and permalink for Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}" aria-label="Copy heading and permalink for Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}">🔗</a></div></section><div class="autopermalink" data-description="Section 2.4: Branches of Functions"><a href="#sec_branches" title="Copy heading and permalink for Section 2.4: Branches of Functions" aria-label="Copy heading and permalink for Section 2.4: Branches of Functions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 2.4.1.10"><a href="#x2_4_10" title="Copy heading and permalink for Exercise 2.4.1.10" aria-label="Copy heading and permalink for Exercise 2.4.1.10">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 2.4.1: Exercises"><a href="#exercises_branches" title="Copy heading and permalink for Exercises 2.4.1: Exercises" aria-label="Copy heading and permalink for Exercises 2.4.1: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}"><a href="#subsec_riemann-surface-1" title="Copy heading and permalink for Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}" aria-label="Copy heading and permalink for Subsection 2.4.1: The Riemann Surface for \mathbf{w=z^{\frac{1}{2}}}">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 2.4: Branches of Functions"><a href="#sec_branches" title="Copy heading and permalink for Section 2.4: Branches of Functions" aria-label="Copy heading and permalink for Section 2.4: Branches of Functions">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_limits-continuity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_reciprocal-transformation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

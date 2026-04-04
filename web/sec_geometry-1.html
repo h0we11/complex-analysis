@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_geometry-1"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_geometry-1">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Geometry of Complex Numbers, Part I</span>
 </h2>
 <div class="para" id="sec_geometry-1-2">Complex numbers are ordered pairs of real numbers, so they can be represented by points in the plane. In this section we show the effect that algebraic operations on complex numbers have on their geometric representations.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -509,11 +511,17 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="sec_geometry-1-3">We can represent the number <span class="process-math">\(z=x+iy=(x, y)\)</span> by a position vector in the <span class="process-math">\(xy\)</span> plane whose tail is at the origin and whose head is at the point <span class="process-math">\((x, y)\text{.}\)</span> When the <span class="process-math">\(xy\)</span> plane is used for displaying complex numbers, it is called the complex plane, or more simply, the z plane. Recall that <span class="process-math">\(\mathrm{Re}(z)=x\)</span> and <span class="process-math">\(\mathrm{Im}(z)=y\text{.}\)</span> Geometrically, <span class="process-math">\(\mathrm{Re}(z)\)</span> is the projection of <span class="process-math">\(z=(x, y)\)</span> onto the <span class="process-math">\(x\)</span> axis, and <span class="process-math">\(\mathrm{Im}(z)\)</span> is the projection of <span class="process-math">\(z\)</span> onto the <span class="process-math">\(y\)</span> axis.  It makes sense, then, to call the <span class="process-math">\(x\)</span> axis the real axis and the <span class="process-math">\(y\)</span> axis the imaginary axis, as <a href="sec_geometry-1.html#fig_ch-01-07" class="xref" data-knowl="./knowl/xref/fig_ch-01-07.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.1">Figure 1.3.1</a> illustrates.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-07"><div class="image-box" style="width: 53%; margin-left: 23.5%; margin-right: 23.5%;"><img src="external/figs/ch-01/ch-01-fig-07.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The complex plane<div class="autopermalink" data-description="Figure 1.3.1"><a href="#fig_ch-01-07" title="Copy heading and permalink for Figure 1.3.1" aria-label="Copy heading and permalink for Figure 1.3.1">🔗</a></div></figcaption></figure><div class="para" id="sec_geometry-1-5">Addition of complex numbers is analogous to addition of vectors in the plane. As we saw in <a href="sec_algebra-1.html" class="internal" title="Section 1.2: The Algebra of Complex Numbers, Part I">Section 1.2</a>, the sum of <span class="process-math">\(z_1=x_1+iy_1=(x_1, y_1)\)</span> and <span class="process-math">\(z_2=x_2+iy_2=(x_2, y_2)\)</span> is <span class="process-math">\((x_1+x_2, y_1+y_2)\text{.}\)</span>  Hence <span class="process-math">\(z_1+z_2\)</span> can be obtained using the “parallelogram law” for vectors, where the vector sum is represented by the diagonal of the parallelogram formed by the two original vectors, as illustrated by <a href="sec_geometry-1.html#fig_ch-01-08" class="xref" data-knowl="./knowl/xref/fig_ch-01-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.2">Figure 1.3.2</a>. The difference <span class="process-math">\(z_1-z_2\)</span> can be represented by the displacement vector from the point <span class="process-math">\(z_2=(x_2, y_2)\)</span> to the point <span class="process-math">\(z_1=(x_1, y_1)\text{,}\)</span> as <a href="sec_geometry-1.html#fig_ch-01-09" class="xref" data-knowl="./knowl/xref/fig_ch-01-09.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.3">Figure 1.3.3</a> depicts.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The complex plane<div class="autopermalink" data-description="Figure 1.3.1"><a href="#fig_ch-01-07" title="Copy heading and permalink for Figure 1.3.1" aria-label="Copy heading and permalink for Figure 1.3.1">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec_geometry-1-5">Addition of complex numbers is analogous to addition of vectors in the plane. As we saw in <a href="sec_algebra-1.html" class="internal" title="Section 1.2: The Algebra of Complex Numbers, Part I">Section 1.2</a>, the sum of <span class="process-math">\(z_1=x_1+iy_1=(x_1, y_1)\)</span> and <span class="process-math">\(z_2=x_2+iy_2=(x_2, y_2)\)</span> is <span class="process-math">\((x_1+x_2, y_1+y_2)\text{.}\)</span>  Hence <span class="process-math">\(z_1+z_2\)</span> can be obtained using the “parallelogram law” for vectors, where the vector sum is represented by the diagonal of the parallelogram formed by the two original vectors, as illustrated by <a href="sec_geometry-1.html#fig_ch-01-08" class="xref" data-knowl="./knowl/xref/fig_ch-01-08.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.2">Figure 1.3.2</a>. The difference <span class="process-math">\(z_1-z_2\)</span> can be represented by the displacement vector from the point <span class="process-math">\(z_2=(x_2, y_2)\)</span> to the point <span class="process-math">\(z_1=(x_1, y_1)\text{,}\)</span> as <a href="sec_geometry-1.html#fig_ch-01-09" class="xref" data-knowl="./knowl/xref/fig_ch-01-09.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.3">Figure 1.3.3</a> depicts.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-08"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-01/ch-01-fig-08.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The sum <span class="process-math">\(z_1+z_2\)</span><div class="autopermalink" data-description="Figure 1.3.2"><a href="#fig_ch-01-08" title="Copy heading and permalink for Figure 1.3.2" aria-label="Copy heading and permalink for Figure 1.3.2">🔗</a></div></figcaption></figure><figure class="figure figure-like" id="fig_ch-01-09"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-01/ch-01-fig-09.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The difference <span class="process-math">\(z_1-z_2\)</span><div class="autopermalink" data-description="Figure 1.3.3"><a href="#fig_ch-01-09" title="Copy heading and permalink for Figure 1.3.3" aria-label="Copy heading and permalink for Figure 1.3.3">🔗</a></div></figcaption></figure><article class="definition definition-like" id="ModDef"><h3 class="heading">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The sum <span class="process-math">\(z_1+z_2\)</span><div class="autopermalink" data-description="Figure 1.3.2"><a href="#fig_ch-01-08" title="Copy heading and permalink for Figure 1.3.2" aria-label="Copy heading and permalink for Figure 1.3.2">🔗</a></div></figcaption>
+</figure>
+<figure class="figure figure-like" id="fig_ch-01-09"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/figs/ch-01/ch-01-fig-09.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The difference <span class="process-math">\(z_1-z_2\)</span><div class="autopermalink" data-description="Figure 1.3.3"><a href="#fig_ch-01-09" title="Copy heading and permalink for Figure 1.3.3" aria-label="Copy heading and permalink for Figure 1.3.3">🔗</a></div></figcaption>
+</figure>
+<article class="definition definition-like" id="ModDef"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Modulus.</span>
 </h3>
 <div class="para logical" id="ModDef-2-1">
@@ -525,10 +533,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ModDef-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 1.3.4: Modulus"><a href="#ModDef" title="Copy heading and permalink for Definition 1.3.4: Modulus" aria-label="Copy heading and permalink for Definition 1.3.4: Modulus">🔗</a></div></article><div class="para" id="sec_geometry-1-9">The number <span class="process-math">\(|z|\)</span> is the distance between the origin and the point <span class="process-math">\(z=(x, y)\text{.}\)</span> The only complex number with modulus zero is the number 0. The number <span class="process-math">\(z=4+3i\)</span> has modulus <span class="process-math">\(|4+3i| = \sqrt{4^2+3^2}=\sqrt{25}=5\text{,}\)</span> and is depicted in <a href="sec_geometry-1.html#fig_ch-01-10" class="xref" data-knowl="./knowl/xref/fig_ch-01-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.5">Figure 1.3.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 1.3.4: Modulus"><a href="#ModDef" title="Copy heading and permalink for Definition 1.3.4: Modulus" aria-label="Copy heading and permalink for Definition 1.3.4: Modulus">🔗</a></div>
+</article>
+<div class="para" id="sec_geometry-1-9">The number <span class="process-math">\(|z|\)</span> is the distance between the origin and the point <span class="process-math">\(z=(x, y)\text{.}\)</span> The only complex number with modulus zero is the number 0. The number <span class="process-math">\(z=4+3i\)</span> has modulus <span class="process-math">\(|4+3i| = \sqrt{4^2+3^2}=\sqrt{25}=5\text{,}\)</span> and is depicted in <a href="sec_geometry-1.html#fig_ch-01-10" class="xref" data-knowl="./knowl/xref/fig_ch-01-10.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.5">Figure 1.3.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-10"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="external/figs/ch-01/ch-01-fig-10.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The real and imaginary parts of a complex number<div class="autopermalink" data-description="Figure 1.3.5"><a href="#fig_ch-01-10" title="Copy heading and permalink for Figure 1.3.5" aria-label="Copy heading and permalink for Figure 1.3.5">🔗</a></div></figcaption></figure><div class="para logical" id="sec_geometry-1-11">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The real and imaginary parts of a complex number<div class="autopermalink" data-description="Figure 1.3.5"><a href="#fig_ch-01-10" title="Copy heading and permalink for Figure 1.3.5" aria-label="Copy heading and permalink for Figure 1.3.5">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_geometry-1-11">
 <div class="para">The numbers <span class="process-math">\(|\mathrm{Re}(z)|, \, |\mathrm{Im}(z)|\text{,}\)</span> and <span class="process-math">\(|z|\)</span> are the lengths of the sides of the right triangle <span class="process-math">\(OPQ\)</span> shown in <a href="sec_geometry-1.html#fig_ch-01-11" class="xref" data-knowl="./knowl/xref/fig_ch-01-11.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.6">Figure 1.3.6</a>. The inequality <span class="process-math">\(|z_1| \lt |z_2|\)</span> means that the point <span class="process-math">\(z_1\)</span> is closer to the origin than the point <span class="process-math">\(z_2\text{.}\)</span> Although obvious from <a href="sec_geometry-1.html#fig_ch-01-11" class="xref" data-knowl="./knowl/xref/fig_ch-01-11.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.6">Figure 1.3.6</a>, it is still profitable to work out algebraically (which we ask you to do in the exercises) that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ch-01-11.html ./knowl/xref/fig_ch-01-11.html" id="ReImLEMod">
 \begin{equation}
@@ -538,7 +550,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-11"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-01/ch-01-fig-11.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The modulus of <span class="process-math">\(z\)</span> and its components<div class="autopermalink" data-description="Figure 1.3.6"><a href="#fig_ch-01-11" title="Copy heading and permalink for Figure 1.3.6" aria-label="Copy heading and permalink for Figure 1.3.6">🔗</a></div></figcaption></figure><div class="para logical" id="sec_geometry-1-13">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The modulus of <span class="process-math">\(z\)</span> and its components<div class="autopermalink" data-description="Figure 1.3.6"><a href="#fig_ch-01-11" title="Copy heading and permalink for Figure 1.3.6" aria-label="Copy heading and permalink for Figure 1.3.6">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_geometry-1-13">
 <div class="para">The difference <span class="process-math">\(z_1-z_2\)</span> represents the displacement vector from <span class="process-math">\(z_2\)</span> to <span class="process-math">\(z_1\text{,}\)</span> so the distance between <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> is given by <span class="process-math">\(|z_1-z_2|\text{.}\)</span> We can obtain this distance by using <a href="sec_algebra-1.html#def_subtraction" class="xref" data-knowl="./knowl/xref/def_subtraction.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.2.2: Subtraction">Definitions 1.2.2</a> and <a href="sec_geometry-1.html#ModDef" class="xref" data-knowl="./knowl/xref/ModDef.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.3.4: Modulus">Definition 1.3.4</a> to obtain the familiar formula</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def_subtraction.html ./knowl/xref/ModDef.html" id="sec_geometry-1-13-9">
 \begin{equation*}
@@ -550,7 +564,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="sec_geometry-1-14">If <span class="process-math">\(z=(x, y)=x+iy\text{,}\)</span> then <span class="process-math">\(-z=(-x, -y) = -x-iy\)</span> is the reflection of <span class="process-math">\(z\)</span> through the origin, and <span class="process-math">\(\overline{z}=(x, -y) = x-iy\)</span> is the reflection of <span class="process-math">\(z\)</span> through the <span class="process-math">\(x\)</span> axis, as illustrated in <a href="sec_geometry-1.html#fig_ch-01-12" class="xref" data-knowl="./knowl/xref/fig_ch-01-12.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.7">Figure 1.3.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/figs/ch-01/ch-01-fig-12.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The geometry of negation and conjugation<div class="autopermalink" data-description="Figure 1.3.7"><a href="#fig_ch-01-12" title="Copy heading and permalink for Figure 1.3.7" aria-label="Copy heading and permalink for Figure 1.3.7">🔗</a></div></figcaption></figure><div class="para logical" id="sec_geometry-1-16">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The geometry of negation and conjugation<div class="autopermalink" data-description="Figure 1.3.7"><a href="#fig_ch-01-12" title="Copy heading and permalink for Figure 1.3.7" aria-label="Copy heading and permalink for Figure 1.3.7">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec_geometry-1-16">
 <div class="para">We can use an important algebraic relationship to establish properties of the absolute value that have geometric applications. Its proof is rather straightforward, and we ask you to give it in the exercises for this section.</div>
 <div class="displaymath process-math" id="ModSq">
 \begin{equation}
@@ -573,8 +589,14 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 1.3.8: The triangle inequality"><a href="#sec_geometry-1-18" title="Copy heading and permalink for Theorem 1.3.8: The triangle inequality" aria-label="Copy heading and permalink for Theorem 1.3.8: The triangle inequality">🔗</a></div></article><figure class="figure figure-like" id="fig_ch-01-13"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-01/ch-01-fig-13.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The triangle inequality<div class="autopermalink" data-description="Figure 1.3.9"><a href="#fig_ch-01-13" title="Copy heading and permalink for Figure 1.3.9" aria-label="Copy heading and permalink for Figure 1.3.9">🔗</a></div></figcaption></figure><details id="sec_geometry-1-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_geometry-1-20-1">
+<div class="autopermalink" data-description="Theorem 1.3.8: The triangle inequality"><a href="#sec_geometry-1-18" title="Copy heading and permalink for Theorem 1.3.8: The triangle inequality" aria-label="Copy heading and permalink for Theorem 1.3.8: The triangle inequality">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig_ch-01-13"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="external/figs/ch-01/ch-01-fig-13.svg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The triangle inequality<div class="autopermalink" data-description="Figure 1.3.9"><a href="#fig_ch-01-13" title="Copy heading and permalink for Figure 1.3.9" aria-label="Copy heading and permalink for Figure 1.3.9">🔗</a></div></figcaption>
+</figure>
+<details id="sec_geometry-1-20" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_geometry-1-20-1">
 <div class="para">We appeal to basic results:</div>
 <div class="displaymath process-math" id="sec_geometry-1-20-1-1">
 \begin{align*}
@@ -596,7 +618,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="sec_geometry-1-20-2">Taking square roots yields the desired inequality.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 1.3.1"><a href="#sec_geometry-1-20" title="Copy heading and permalink for Proof 1.3.1" aria-label="Copy heading and permalink for Proof 1.3.1">🔗</a></div></article></details><article class="example example-like" id="sec_geometry-1-21"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 1.3.1"><a href="#sec_geometry-1-20" title="Copy heading and permalink for Proof 1.3.1" aria-label="Copy heading and permalink for Proof 1.3.1">🔗</a></div>
+</article></details>
+<article class="example example-like" id="sec_geometry-1-21"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="sec_geometry-1-21-1-1">
@@ -608,7 +632,9 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.3.10"><a href="#sec_geometry-1-21" title="Copy heading and permalink for Example 1.3.10" aria-label="Copy heading and permalink for Example 1.3.10">🔗</a></div></article><div class="para logical" id="sec_geometry-1-22">
+<div class="autopermalink" data-description="Example 1.3.10"><a href="#sec_geometry-1-21" title="Copy heading and permalink for Example 1.3.10" aria-label="Copy heading and permalink for Example 1.3.10">🔗</a></div>
+</article>
+<div class="para logical" id="sec_geometry-1-22">
 <div class="para">We can also establish other important identities by means of the triangle inequality. Note that</div>
 <div class="displaymath process-math" id="sec_geometry-1-22-1">
 \begin{align*}
@@ -660,142 +686,222 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para" id="ModProdEx-1-1">If <span class="process-math">\(z_1=1+2i\)</span> and <span class="process-math">\(z_2=3+2i\text{,}\)</span> then <span class="process-math">\(|z_1| = \sqrt{1+4} = \sqrt{5}\)</span> and <span class="process-math">\(|z_2| = \sqrt{9+4} = \sqrt{13}\text{.}\)</span> Also <span class="process-math">\(z_1z_2=-1+8i\text{;}\)</span> hence <span class="process-math">\(|z_1z_2| = \sqrt{1+64} = \sqrt{65}= \sqrt{5}\sqrt{13} = |z_1||z_2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ModProdEx-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.3.11"><a href="#ModProdEx" title="Copy heading and permalink for Example 1.3.11" aria-label="Copy heading and permalink for Example 1.3.11">🔗</a></div></article><div class="para" id="sec_geometry-1-28">
+<div class="autopermalink" data-description="Example 1.3.11"><a href="#ModProdEx" title="Copy heading and permalink for Example 1.3.11" aria-label="Copy heading and permalink for Example 1.3.11">🔗</a></div>
+</article>
+<div class="para" id="sec_geometry-1-28">
 <a href="sec_geometry-1.html#fig_ch-01-14" class="xref" data-knowl="./knowl/xref/fig_ch-01-14.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.12">Figure 1.3.12</a> illustrates the multiplication shown in <a href="sec_geometry-1.html#ModProdEx" class="xref" data-knowl="./knowl/xref/ModProdEx.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.11">Example 1.3.11</a>. The length of the <span class="process-math">\(z_1z_2\)</span> vector apparently equals the product of the lengths of <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{,}\)</span> confirming <a href="sec_geometry-1.html#ModProduct" class="xref" data-knowl="./knowl/xref/ModProduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.6">Equation (1.3.6)</a>. But why is it located in the second quadrant when both <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> are in the first quadrant? The answer to this question will become apparent to you in <a href="sec_geometry-2.html" class="internal" title="Section 1.4: The Geometry of Complex Numbers, Part II">Section 1.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_geometry-1-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig_ch-01-14"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="external/figs/ch-01/ch-01-fig-14.svg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The geometry of multiplication<div class="autopermalink" data-description="Figure 1.3.12"><a href="#fig_ch-01-14" title="Copy heading and permalink for Figure 1.3.12" aria-label="Copy heading and permalink for Figure 1.3.12">🔗</a></div></figcaption></figure><section class="exercises" id="exercises_geometry-1"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The geometry of multiplication<div class="autopermalink" data-description="Figure 1.3.12"><a href="#fig_ch-01-14" title="Copy heading and permalink for Figure 1.3.12" aria-label="Copy heading and permalink for Figure 1.3.12">🔗</a></div></figcaption>
+</figure>
+<section class="exercises" id="exercises_geometry-1">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="x1_3_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_1-1"><div class="para" id="x1_3_1-1-1">Evaluate the following quantities. Put your answer in the form <span class="process-math">\(a+ib\)</span> and show your work.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="x1_3_1-1">
+<div class="para" id="x1_3_1-1-1">Evaluate the following quantities. Put your answer in the form <span class="process-math">\(a+ib\)</span> and show your work.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_1-2-1-1">
 <span class="process-math">\(|(1+i) (2+i)|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_1-2-2-1">
 <span class="process-math">\(\sqrt{10}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.1.a.1"><a href="#x1_3_1-2-2" title="Copy heading and permalink for Solution 1.3.1.a.1" aria-label="Copy heading and permalink for Solution 1.3.1.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.1.a"><a href="#x1_3_1-2" title="Copy heading and permalink for Task 1.3.1.a" aria-label="Copy heading and permalink for Task 1.3.1.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.1.a"><a href="#x1_3_1-2" title="Copy heading and permalink for Task 1.3.1.a" aria-label="Copy heading and permalink for Task 1.3.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_1-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_1-3-1-1">
 <span class="process-math">\(\left|\frac{4-3i}{2-i}\right|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.1.b"><a href="#x1_3_1-3" title="Copy heading and permalink for Task 1.3.1.b" aria-label="Copy heading and permalink for Task 1.3.1.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.1.b"><a href="#x1_3_1-3" title="Copy heading and permalink for Task 1.3.1.b" aria-label="Copy heading and permalink for Task 1.3.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_1-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_1-4-1-1">
 <span class="process-math">\(|(1+i)^{50}| \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_1-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_1-4-2-1">
 <span class="process-math">\(2^{25}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.1.c.1"><a href="#x1_3_1-4-2" title="Copy heading and permalink for Solution 1.3.1.c.1" aria-label="Copy heading and permalink for Solution 1.3.1.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.1.c"><a href="#x1_3_1-4" title="Copy heading and permalink for Task 1.3.1.c" aria-label="Copy heading and permalink for Task 1.3.1.c">🔗</a></div></article><article class="task exercise-like" id="x1_3_1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.1.c"><a href="#x1_3_1-4" title="Copy heading and permalink for Task 1.3.1.c" aria-label="Copy heading and permalink for Task 1.3.1.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_1-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x1_3_1-5-1-1">
 <span class="process-math">\(|z\overline{z}|\text{,}\)</span> where <span class="process-math">\(z=x+iy\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.1.d"><a href="#x1_3_1-5" title="Copy heading and permalink for Task 1.3.1.d" aria-label="Copy heading and permalink for Task 1.3.1.d">🔗</a></div></article><article class="task exercise-like" id="x1_3_1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.1.d"><a href="#x1_3_1-5" title="Copy heading and permalink for Task 1.3.1.d" aria-label="Copy heading and permalink for Task 1.3.1.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_1-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x1_3_1-6-1-1">
 <span class="process-math">\(|z-1|^2\text{,}\)</span> where <span class="process-math">\(z=x+iy\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_1-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_1-6-2-1">
 <span class="process-math">\((x-1)^2+y^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.1.e.1"><a href="#x1_3_1-6-2" title="Copy heading and permalink for Solution 1.3.1.e.1" aria-label="Copy heading and permalink for Solution 1.3.1.e.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.1.e"><a href="#x1_3_1-6" title="Copy heading and permalink for Task 1.3.1.e" aria-label="Copy heading and permalink for Task 1.3.1.e">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.1"><a href="#x1_3_1" title="Copy heading and permalink for Exercise 1.3.1" aria-label="Copy heading and permalink for Exercise 1.3.1">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_2-1"><div class="para" id="x1_3_2-1-1">Plot <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> as vectors, then find and plot <span class="process-math">\(z_1+z_2\)</span> and <span class="process-math">\(z_1-z_2\)</span> when<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.1.e"><a href="#x1_3_1-6" title="Copy heading and permalink for Task 1.3.1.e" aria-label="Copy heading and permalink for Task 1.3.1.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.1"><a href="#x1_3_1" title="Copy heading and permalink for Exercise 1.3.1" aria-label="Copy heading and permalink for Exercise 1.3.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_2-1">
+<div class="para" id="x1_3_2-1-1">Plot <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> as vectors, then find and plot <span class="process-math">\(z_1+z_2\)</span> and <span class="process-math">\(z_1-z_2\)</span> when<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_2-2-1-1">
 <span class="process-math">\(z_1=2+3i\)</span> and <span class="process-math">\(z_2=4+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.2.a"><a href="#x1_3_2-2" title="Copy heading and permalink for Task 1.3.2.a" aria-label="Copy heading and permalink for Task 1.3.2.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.2.a"><a href="#x1_3_2-2" title="Copy heading and permalink for Task 1.3.2.a" aria-label="Copy heading and permalink for Task 1.3.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_2-3-1-1">
 <span class="process-math">\(z_1=-1+2i\)</span> and <span class="process-math">\(z_2=-2+3i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.2.b"><a href="#x1_3_2-3" title="Copy heading and permalink for Task 1.3.2.b" aria-label="Copy heading and permalink for Task 1.3.2.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.2.b"><a href="#x1_3_2-3" title="Copy heading and permalink for Task 1.3.2.b" aria-label="Copy heading and permalink for Task 1.3.2.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_2-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_2-4-1-1">
 <span class="process-math">\(z_1=1+i\sqrt{3}\)</span> and <span class="process-math">\(z_2=-1+i\sqrt{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.2.c"><a href="#x1_3_2-4" title="Copy heading and permalink for Task 1.3.2.c" aria-label="Copy heading and permalink for Task 1.3.2.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.2"><a href="#x1_3_2" title="Copy heading and permalink for Exercise 1.3.2" aria-label="Copy heading and permalink for Exercise 1.3.2">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_3-1"><div class="para" id="x1_3_3-1-1">Which of the following points lie inside the circle <span class="process-math">\(|z-i| =2\text{?}\)</span>  Explain.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 1.3.2.c"><a href="#x1_3_2-4" title="Copy heading and permalink for Task 1.3.2.c" aria-label="Copy heading and permalink for Task 1.3.2.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.2"><a href="#x1_3_2" title="Copy heading and permalink for Exercise 1.3.2" aria-label="Copy heading and permalink for Exercise 1.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_3-1">
+<div class="para" id="x1_3_3-1-1">Which of the following points lie inside the circle <span class="process-math">\(|z-i| =2\text{?}\)</span>  Explain.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_3-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_3-2-1-1">
 <span class="process-math">\(\frac{1}{2}+i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_3-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_3-2-2-1">Inside, since <span class="process-math">\(|(\frac{1}{2}+i)-i| = \frac{1}{2}\text{,}\)</span> which is less than 2.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.3.a.1"><a href="#x1_3_3-2-2" title="Copy heading and permalink for Solution 1.3.3.a.1" aria-label="Copy heading and permalink for Solution 1.3.3.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.3.a"><a href="#x1_3_3-2" title="Copy heading and permalink for Task 1.3.3.a" aria-label="Copy heading and permalink for Task 1.3.3.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.a"><a href="#x1_3_3-2" title="Copy heading and permalink for Task 1.3.3.a" aria-label="Copy heading and permalink for Task 1.3.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_3-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_3-3-1-1">
 <span class="process-math">\(\sqrt{2}+i(\sqrt{2}+1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.3.b"><a href="#x1_3_3-3" title="Copy heading and permalink for Task 1.3.3.b" aria-label="Copy heading and permalink for Task 1.3.3.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_3-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.3.b"><a href="#x1_3_3-3" title="Copy heading and permalink for Task 1.3.3.b" aria-label="Copy heading and permalink for Task 1.3.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_3-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_3-4-1-1">
 <span class="process-math">\(2+3i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_3-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_3-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_3-4-2-1">Outside, since <span class="process-math">\(|(2+3i) -i| = |2+2i| = \sqrt{8}\text{,}\)</span> which is greater than 2.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.3.c.1"><a href="#x1_3_3-4-2" title="Copy heading and permalink for Solution 1.3.3.c.1" aria-label="Copy heading and permalink for Solution 1.3.3.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.3.c"><a href="#x1_3_3-4" title="Copy heading and permalink for Task 1.3.3.c" aria-label="Copy heading and permalink for Task 1.3.3.c">🔗</a></div></article><article class="task exercise-like" id="x1_3_3-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.3.c"><a href="#x1_3_3-4" title="Copy heading and permalink for Task 1.3.3.c" aria-label="Copy heading and permalink for Task 1.3.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_3-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x1_3_3-5-1-1">
 <span class="process-math">\(\frac{-1}{2}+i\sqrt{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.3.d"><a href="#x1_3_3-5" title="Copy heading and permalink for Task 1.3.3.d" aria-label="Copy heading and permalink for Task 1.3.3.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.3"><a href="#x1_3_3" title="Copy heading and permalink for Exercise 1.3.3" aria-label="Copy heading and permalink for Exercise 1.3.3">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_4-1"><div class="para" id="x1_3_4-1-1">Prove the following Identities for <span class="process-math">\(z=x+iy\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 1.3.3.d"><a href="#x1_3_3-5" title="Copy heading and permalink for Task 1.3.3.d" aria-label="Copy heading and permalink for Task 1.3.3.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.3"><a href="#x1_3_3" title="Copy heading and permalink for Exercise 1.3.3" aria-label="Copy heading and permalink for Exercise 1.3.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_4-1">
+<div class="para" id="x1_3_4-1-1">Prove the following Identities for <span class="process-math">\(z=x+iy\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_4a"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_4a-1-1">Identity <a href="sec_geometry-1.html#ReImLEMod" class="xref" data-knowl="./knowl/xref/ReImLEMod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.2">(1.3.2)</a> : <span class="process-math">\(|x|=|\mathrm{Re}(z)| \le |z| \text{ and } |y|=|\mathrm{Im}(z)| \le |z|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_4a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.4.a"><a href="#x1_3_4a" title="Copy heading and permalink for Task 1.3.4.a" aria-label="Copy heading and permalink for Task 1.3.4.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_4b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.4.a"><a href="#x1_3_4a" title="Copy heading and permalink for Task 1.3.4.a" aria-label="Copy heading and permalink for Task 1.3.4.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_4b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_4b-1-1">Identity <a href="sec_geometry-1.html#ModSq" class="xref" data-knowl="./knowl/xref/ModSq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.3">(1.3.3)</a>, the triangle inequality: <span class="process-math">\(|z_1+z_2| \le |z_1| + |z_2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_4b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.4.b"><a href="#x1_3_4b" title="Copy heading and permalink for Task 1.3.4.b" aria-label="Copy heading and permalink for Task 1.3.4.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_4c"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.4.b"><a href="#x1_3_4b" title="Copy heading and permalink for Task 1.3.4.b" aria-label="Copy heading and permalink for Task 1.3.4.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_4c"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_4c-1-1">Identity <a href="sec_geometry-1.html#ModQuotient" class="xref" data-knowl="./knowl/xref/ModQuotient.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.7">(1.3.7)</a> : <span class="process-math">\(\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}, \text{ provided } z_2
 \ne 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_4c-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.4.c"><a href="#x1_3_4c" title="Copy heading and permalink for Task 1.3.4.c" aria-label="Copy heading and permalink for Task 1.3.4.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.4"><a href="#x1_3_4" title="Copy heading and permalink for Exercise 1.3.4" aria-label="Copy heading and permalink for Exercise 1.3.4">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 1.3.4.c"><a href="#x1_3_4c" title="Copy heading and permalink for Task 1.3.4.c" aria-label="Copy heading and permalink for Task 1.3.4.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.4"><a href="#x1_3_4" title="Copy heading and permalink for Exercise 1.3.4" aria-label="Copy heading and permalink for Exercise 1.3.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_5-1-1">Show that nonzero vectors <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> are perpendicular iff <span class="process-math">\(\mathrm{Re}(z_1\overline{z_2})=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_5-2-1">Let <span class="process-math">\(z_1=(x_1,y_1)\)</span> and <span class="process-math">\(z_2=(x_2,y_2)\text{.}\)</span> Since neither <span class="process-math">\(z_1\)</span> nor <span class="process-math">\(z_2\)</span> equals zero, they are perpendicular iff their dot product is zero. But their dot product is <span class="process-math">\((x_1,y_1) \cdot (x_2,y_2) = x_1x_2+y_1y_2\text{,}\)</span> which is precisely <span class="process-math">\(\mathrm{Re}(z_1 \bar{z}_2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.5.1"><a href="#x1_3_5-2" title="Copy heading and permalink for Solution 1.3.5.1" aria-label="Copy heading and permalink for Solution 1.3.5.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.5"><a href="#x1_3_5" title="Copy heading and permalink for Exercise 1.3.5" aria-label="Copy heading and permalink for Exercise 1.3.5">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_6-1"><div class="para" id="x1_3_6-1-1">Sketch the sets of points determined by the following relations.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.5"><a href="#x1_3_5" title="Copy heading and permalink for Exercise 1.3.5" aria-label="Copy heading and permalink for Exercise 1.3.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_6-1">
+<div class="para" id="x1_3_6-1-1">Sketch the sets of points determined by the following relations.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_6-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_6-2-1-1">
 <span class="process-math">\(|z+1-2i| =2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.6.a"><a href="#x1_3_6-2" title="Copy heading and permalink for Task 1.3.6.a" aria-label="Copy heading and permalink for Task 1.3.6.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.6.a"><a href="#x1_3_6-2" title="Copy heading and permalink for Task 1.3.6.a" aria-label="Copy heading and permalink for Task 1.3.6.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_6-3-1-1">
 <span class="process-math">\(\mathrm{Re}(z+1) =0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.6.b"><a href="#x1_3_6-3" title="Copy heading and permalink for Task 1.3.6.b" aria-label="Copy heading and permalink for Task 1.3.6.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_6-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.6.b"><a href="#x1_3_6-3" title="Copy heading and permalink for Task 1.3.6.b" aria-label="Copy heading and permalink for Task 1.3.6.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_6-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_6-4-1-1">
 <span class="process-math">\(|z+2i| \le 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.6.c"><a href="#x1_3_6-4" title="Copy heading and permalink for Task 1.3.6.c" aria-label="Copy heading and permalink for Task 1.3.6.c">🔗</a></div></article><article class="task exercise-like" id="x1_3_6-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.6.c"><a href="#x1_3_6-4" title="Copy heading and permalink for Task 1.3.6.c" aria-label="Copy heading and permalink for Task 1.3.6.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_6-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x1_3_6-5-1-1">
 <span class="process-math">\(\mathrm{Im}(z-2i) &gt;6\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.6.d"><a href="#x1_3_6-5" title="Copy heading and permalink for Task 1.3.6.d" aria-label="Copy heading and permalink for Task 1.3.6.d">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.6"><a href="#x1_3_6" title="Copy heading and permalink for Exercise 1.3.6" aria-label="Copy heading and permalink for Exercise 1.3.6">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 1.3.6.d"><a href="#x1_3_6-5" title="Copy heading and permalink for Task 1.3.6.d" aria-label="Copy heading and permalink for Task 1.3.6.d">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.6"><a href="#x1_3_6" title="Copy heading and permalink for Exercise 1.3.6" aria-label="Copy heading and permalink for Exercise 1.3.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_7-1-1">Prove that <span class="process-math">\(\sqrt{2}|z| \ge |\mathrm{Re}(z)| +|\mathrm{Im}(z)|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="x1_3_7-2-1">
 <div class="para">Let <span class="process-math">\(z=x+iy\text{.}\)</span> Then</div>
 <div class="displaymath process-math" id="x1_3_7-2-1-2">
@@ -811,58 +917,93 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#x1_3_7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.7.1"><a href="#x1_3_7-2" title="Copy heading and permalink for Solution 1.3.7.1" aria-label="Copy heading and permalink for Solution 1.3.7.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.7"><a href="#x1_3_7" title="Copy heading and permalink for Exercise 1.3.7" aria-label="Copy heading and permalink for Exercise 1.3.7">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.7"><a href="#x1_3_7" title="Copy heading and permalink for Exercise 1.3.7" aria-label="Copy heading and permalink for Exercise 1.3.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_8-1-1">Show that the point <span class="process-math">\(\frac{z_1+z_2}{2}\)</span> is the midpoint of the line segment joining <span class="process-math">\(z_1\)</span> to <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.8"><a href="#x1_3_8" title="Copy heading and permalink for Exercise 1.3.8" aria-label="Copy heading and permalink for Exercise 1.3.8">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.8"><a href="#x1_3_8" title="Copy heading and permalink for Exercise 1.3.8" aria-label="Copy heading and permalink for Exercise 1.3.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_9-1-1">Show that <span class="process-math">\(|z_1-z_2| \le |z_1| + |z_2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_9-2-1">By the triangle inequality, <span class="process-math">\(|z_1-z_2| = |z_1+(-z_2)| \le |z_1| + |-z_2| = |z_1| + |z_2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.9.1"><a href="#x1_3_9-2" title="Copy heading and permalink for Solution 1.3.9.1" aria-label="Copy heading and permalink for Solution 1.3.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.9"><a href="#x1_3_9" title="Copy heading and permalink for Exercise 1.3.9" aria-label="Copy heading and permalink for Exercise 1.3.9">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.9"><a href="#x1_3_9" title="Copy heading and permalink for Exercise 1.3.9" aria-label="Copy heading and permalink for Exercise 1.3.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_10-1-1">Prove that <span class="process-math">\(|z| = 0\)</span> iff <span class="process-math">\(z=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.10"><a href="#x1_3_10" title="Copy heading and permalink for Exercise 1.3.10" aria-label="Copy heading and permalink for Exercise 1.3.10">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.10"><a href="#x1_3_10" title="Copy heading and permalink for Exercise 1.3.10" aria-label="Copy heading and permalink for Exercise 1.3.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_11-1-1">Show that, if <span class="process-math">\(z\ne 0\text{,}\)</span> the four points <span class="process-math">\(z, \overline{z}, -z\text{,}\)</span> and <span class="process-math">\(-\overline{z}\)</span> are the vertices of a rectangle with its center at the origin.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_11-2-1">Let <span class="process-math">\(z=(a,b)\text{.}\)</span> Then <span class="process-math">\(\bar{z}=(a,-b), \, -z=(-a,-b)\text{,}\)</span> and <span class="process-math">\(-\bar{z}=(-a,b)\text{.}\)</span> The line segment from <span class="process-math">\(z\)</span> to <span class="process-math">\(\bar{z}\)</span> is perpendicular to the line segment from <span class="process-math">\(\bar{z}\)</span> to <span class="process-math">\(-z\)</span> since the vector from <span class="process-math">\(z\)</span> to <span class="process-math">\(\bar{z}\)</span> is <span class="process-math">\(\bar{z}-z=(0,-2b)\text{.}\)</span> The vector from <span class="process-math">\(\bar{z}\)</span> to <span class="process-math">\(-z\)</span> is <span class="process-math">\((-2a,0)\text{,}\)</span> and the dot product of these is clearly zero. A similar argument works for the other line segments. It is also easy to show that the diagonals intersect at the origin, establishing symmetry there.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.11.1"><a href="#x1_3_11-2" title="Copy heading and permalink for Solution 1.3.11.1" aria-label="Copy heading and permalink for Solution 1.3.11.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.11"><a href="#x1_3_11" title="Copy heading and permalink for Exercise 1.3.11" aria-label="Copy heading and permalink for Exercise 1.3.11">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.11"><a href="#x1_3_11" title="Copy heading and permalink for Exercise 1.3.11" aria-label="Copy heading and permalink for Exercise 1.3.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_12-1-1">Show that, if <span class="process-math">\(z \ne 0\text{,}\)</span> the four points <span class="process-math">\(z,\ iz,\ -z\text{,}\)</span> and <span class="process-math">\(-iz\)</span> are the vertices of a square with its center at the origin.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.12"><a href="#x1_3_12" title="Copy heading and permalink for Exercise 1.3.12" aria-label="Copy heading and permalink for Exercise 1.3.12">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.12"><a href="#x1_3_12" title="Copy heading and permalink for Exercise 1.3.12" aria-label="Copy heading and permalink for Exercise 1.3.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_13-1-1">Show that the equation of the line through the points <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> can be expressed in the form <span class="process-math">\(z=z_1+t(z_2-z_1)\text{,}\)</span> where <span class="process-math">\(t\)</span> is a real number.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_13-2-1">This is simply an equivalent form of the vector equation between the points <span class="process-math">\(z_1=(x_1,y_1)\)</span> and <span class="process-math">\(z_2=(x_2,y_2)\text{.}\)</span>  Explain!<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.13.1"><a href="#x1_3_13-2" title="Copy heading and permalink for Solution 1.3.13.1" aria-label="Copy heading and permalink for Solution 1.3.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.13"><a href="#x1_3_13" title="Copy heading and permalink for Exercise 1.3.13" aria-label="Copy heading and permalink for Exercise 1.3.13">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.13"><a href="#x1_3_13" title="Copy heading and permalink for Exercise 1.3.13" aria-label="Copy heading and permalink for Exercise 1.3.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_14-1-1">Show that nonzero vectors <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> are parallel iff <span class="process-math">\(\mathrm{Im}(z_1\overline{z_2})=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.14"><a href="#x1_3_14" title="Copy heading and permalink for Exercise 1.3.14" aria-label="Copy heading and permalink for Exercise 1.3.14">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.14"><a href="#x1_3_14" title="Copy heading and permalink for Exercise 1.3.14" aria-label="Copy heading and permalink for Exercise 1.3.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_15-1-1">Show that <span class="process-math">\(|z_1z_2z_3| = |z_1| |z_2| |z_3|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_15-2-1">By repeated application of <a href="sec_geometry-1.html#ModProduct" class="xref" data-knowl="./knowl/xref/ModProduct.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.6">Equation (1.3.6)</a>, we have <span class="process-math">\(|z_1z_2z_3| = |(z_1z_2)z_3| = |z_1z_2|\,|z_3| = |z_1|\,|z_2|\,|z_3|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.15.1"><a href="#x1_3_15-2" title="Copy heading and permalink for Solution 1.3.15.1" aria-label="Copy heading and permalink for Solution 1.3.15.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.15"><a href="#x1_3_15" title="Copy heading and permalink for Exercise 1.3.15" aria-label="Copy heading and permalink for Exercise 1.3.15">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.15"><a href="#x1_3_15" title="Copy heading and permalink for Exercise 1.3.15" aria-label="Copy heading and permalink for Exercise 1.3.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_16"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_16-1-1">Show that <span class="process-math">\(|z^n| = |z|^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is an integer.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.16"><a href="#x1_3_16" title="Copy heading and permalink for Exercise 1.3.16" aria-label="Copy heading and permalink for Exercise 1.3.16">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.16"><a href="#x1_3_16" title="Copy heading and permalink for Exercise 1.3.16" aria-label="Copy heading and permalink for Exercise 1.3.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_17"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_17-1-1">Suppose that either <span class="process-math">\(|z| = 1\)</span> or <span class="process-math">\(|w| = 1\text{.}\)</span> Prove that <span class="process-math">\(|z-w| = |1- \overline{z}w|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="x1_3_17-2-1">
 <div class="displaymath process-math" id="x1_3_17-2-1-1">
 \begin{align*}
@@ -878,38 +1019,59 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#x1_3_17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.17.1"><a href="#x1_3_17-2" title="Copy heading and permalink for Solution 1.3.17.1" aria-label="Copy heading and permalink for Solution 1.3.17.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.17"><a href="#x1_3_17" title="Copy heading and permalink for Exercise 1.3.17" aria-label="Copy heading and permalink for Exercise 1.3.17">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.17"><a href="#x1_3_17" title="Copy heading and permalink for Exercise 1.3.17" aria-label="Copy heading and permalink for Exercise 1.3.17">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_18"><h4 class="heading"><span class="codenumber">18<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_18-1-1">Prove the Cauchy-Schwarz inequality: <span class="process-math">\(\left|\sum\limits_{k=1}^n z_k w_k\right| \le 
 \sqrt{\sum\limits_{k=1}^n |z_k|^2 \sqrt{\sum\limits_{k=1}^n |w_k|^2}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.18"><a href="#x1_3_18" title="Copy heading and permalink for Exercise 1.3.18" aria-label="Copy heading and permalink for Exercise 1.3.18">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.18"><a href="#x1_3_18" title="Copy heading and permalink for Exercise 1.3.18" aria-label="Copy heading and permalink for Exercise 1.3.18">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_19"><h4 class="heading"><span class="codenumber">19<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_19-1-1">Show that <span class="process-math">\(\Big| |z_1| - |z_2| \Big| \le |z_1-z_2|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_19-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_19-2-1">By Inequality <a href="sec_geometry-1.html#ReverseTriangleIneq" class="xref" data-knowl="./knowl/xref/ReverseTriangleIneq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3.5">(1.3.5)</a>, we see that <span class="process-math">\(|z_1|-|z_2| \le |z_1-z_2|\text{.}\)</span>  Also, <span class="process-math">\(|z_2|-|z_1|
 \le |z_2-z_1|=|z_1-z_2|\text{,}\)</span> so that <span class="process-math">\(|z_1|-|z_2| \ge -|z_1-z_2|\text{.}\)</span>  Putting these two inequalities together gives <span class="process-math">\(-|z_1-z_2| \le |z_1|-|z_2| \le |z_1-z_2|\text{,}\)</span> from whence the conclusion follows.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.19.1"><a href="#x1_3_19-2" title="Copy heading and permalink for Solution 1.3.19.1" aria-label="Copy heading and permalink for Solution 1.3.19.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.19"><a href="#x1_3_19" title="Copy heading and permalink for Exercise 1.3.19" aria-label="Copy heading and permalink for Exercise 1.3.19">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.19"><a href="#x1_3_19" title="Copy heading and permalink for Exercise 1.3.19" aria-label="Copy heading and permalink for Exercise 1.3.19">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_20"><h4 class="heading"><span class="codenumber">20<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_20-1-1">Show that <span class="process-math">\(z_1\overline{z_2} + \overline{z_1}z_2\)</span> is a real number.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.20"><a href="#x1_3_20" title="Copy heading and permalink for Exercise 1.3.20" aria-label="Copy heading and permalink for Exercise 1.3.20">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.20"><a href="#x1_3_20" title="Copy heading and permalink for Exercise 1.3.20" aria-label="Copy heading and permalink for Exercise 1.3.20">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_21"><h4 class="heading"><span class="codenumber">21<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_21-1-1">If you study carefully the proof of the triangle inequality, you will note that the reasons for the <em class="emphasis">inequality</em> hinge on <span class="process-math">\(\mathrm{Re}(z_1 \overline{z_2}) \le |z_1 \overline{z_2}|\text{.}\)</span>  Under what conditions will these two quantities be equal, thus turning the triangle inequality into an equality?<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_21-2-1">Let <span class="process-math">\(z_1=(x_1,y_1)\)</span> and <span class="process-math">\(z_2=(x_2,y_2)\text{.}\)</span> Then <span class="process-math">\(\mathrm{Re}(z_1\bar{z}_2)=x_1x_2+y_1y_2\text{.}\)</span> Also, <span class="process-math">\(|z_1\bar{z}_2|=\sqrt{(x_1x_2+y_1y_2)^2+(-x_1y_2+x_2y_1)^2}\text{.}\)</span>  If either <span class="process-math">\(z_1\)</span> or <span class="process-math">\(z_2\)</span> equals 0, then clearly <span class="process-math">\(\mathrm{Re}(z_1\bar{z_2})=|z_1\bar{z}_2|\text{.}\)</span> If neither equals 0, the two quantities are equal precisely when <span class="process-math">\(-x_1y_2+x_2y_1=0\text{.}\)</span> This occurs when the points <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> lie on a straight line through the origin. Show the details for this last statement.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.21.1"><a href="#x1_3_21-2" title="Copy heading and permalink for Solution 1.3.21.1" aria-label="Copy heading and permalink for Solution 1.3.21.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.21"><a href="#x1_3_21" title="Copy heading and permalink for Exercise 1.3.21" aria-label="Copy heading and permalink for Exercise 1.3.21">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_22"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.21"><a href="#x1_3_21" title="Copy heading and permalink for Exercise 1.3.21" aria-label="Copy heading and permalink for Exercise 1.3.21">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_22"><h4 class="heading"><span class="codenumber">22<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_22-1-1">Prove that <span class="process-math">\(|z_1-z_2|^2 = |z_1|^2 - 2 \mathrm{Re}(z_1 \overline{z_2}) + |z_2|^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.3.22"><a href="#x1_3_22" title="Copy heading and permalink for Exercise 1.3.22" aria-label="Copy heading and permalink for Exercise 1.3.22">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_23"><h4 class="heading"><span class="codenumber">23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 1.3.22"><a href="#x1_3_22" title="Copy heading and permalink for Exercise 1.3.22" aria-label="Copy heading and permalink for Exercise 1.3.22">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_23"><h4 class="heading"><span class="codenumber">23<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x1_3_23-1-1">Prove by induction that <span class="process-math">\(\left|\sum\limits_{k=1}^n z_k\right| \le \sum\limits_{k=1}^n |z_k|\)</span> for all natural numbers <span class="process-math">\(n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="x1_3_23-2-1">
 <div class="para">The inequality <span class="process-math">\(|\sum\limits_{k=1}^nz_k| \le \sum\limits_{k=1}^n|z_k|\)</span> is clearly true when <span class="process-math">\(n=1\text{.}\)</span> Suppose that, for some <span class="process-math">\(j&gt;1\text{,}\)</span> <span class="process-math">\(\Big|\sum\limits_{k=1}^jz_k\Big| \le \sum\limits_{k=1}^j|z_k|\text{.}\)</span> Then, using the triangle inequality and our induction assumption,</div>
 <div class="displaymath process-math" id="x1_3_23-2-1-5">
@@ -922,43 +1084,72 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Paragraph"><a href="#x1_3_23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.23.1"><a href="#x1_3_23-2" title="Copy heading and permalink for Solution 1.3.23.1" aria-label="Copy heading and permalink for Solution 1.3.23.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 1.3.23"><a href="#x1_3_23" title="Copy heading and permalink for Exercise 1.3.23" aria-label="Copy heading and permalink for Exercise 1.3.23">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_24"><h4 class="heading"><span class="codenumber">24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_24-1"><div class="para" id="x1_3_24-1-1">Let <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> be two distinct points in the complex plane, and let <span class="process-math">\(K\)</span> be a positive real constant that is less than the distance between <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 1.3.23"><a href="#x1_3_23" title="Copy heading and permalink for Exercise 1.3.23" aria-label="Copy heading and permalink for Exercise 1.3.23">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_24"><h4 class="heading"><span class="codenumber">24<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_24-1">
+<div class="para" id="x1_3_24-1-1">Let <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> be two distinct points in the complex plane, and let <span class="process-math">\(K\)</span> be a positive real constant that is less than the distance between <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_24-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_24-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_24-2-1-1">Show that the set of points <span class="process-math">\(\{z: |z-z_1| - |z-z_2| =K \}\)</span> is a hyperbola with foci <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_24-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.24.a"><a href="#x1_3_24-2" title="Copy heading and permalink for Task 1.3.24.a" aria-label="Copy heading and permalink for Task 1.3.24.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_24-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.24.a"><a href="#x1_3_24-2" title="Copy heading and permalink for Task 1.3.24.a" aria-label="Copy heading and permalink for Task 1.3.24.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_24-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_24-3-1-1">Find the equation of the hyperbola with foci <span class="process-math">\(\pm 2\)</span> that goes through the point <span class="process-math">\(2+3i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_24-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.24.b"><a href="#x1_3_24-3" title="Copy heading and permalink for Task 1.3.24.b" aria-label="Copy heading and permalink for Task 1.3.24.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_24-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.24.b"><a href="#x1_3_24-3" title="Copy heading and permalink for Task 1.3.24.b" aria-label="Copy heading and permalink for Task 1.3.24.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_24-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_24-4-1-1">Find the equation of the hyperbola with foci <span class="process-math">\(\pm 25\)</span> that goes through the point <span class="process-math">\(7+24i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_24-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.24.c"><a href="#x1_3_24-4" title="Copy heading and permalink for Task 1.3.24.c" aria-label="Copy heading and permalink for Task 1.3.24.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.24"><a href="#x1_3_24" title="Copy heading and permalink for Exercise 1.3.24" aria-label="Copy heading and permalink for Exercise 1.3.24">🔗</a></div></article><article class="exercise exercise-like" id="x1_3_25"><h4 class="heading"><span class="codenumber">25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x1_3_25-1"><div class="para" id="x1_3_25-1-1">Let <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> be two distinct points in the complex plane, and let <span class="process-math">\(K\)</span> be a positive real constant that is greater than the distance between <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 1.3.24.c"><a href="#x1_3_24-4" title="Copy heading and permalink for Task 1.3.24.c" aria-label="Copy heading and permalink for Task 1.3.24.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.24"><a href="#x1_3_24" title="Copy heading and permalink for Exercise 1.3.24" aria-label="Copy heading and permalink for Exercise 1.3.24">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x1_3_25"><h4 class="heading"><span class="codenumber">25<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x1_3_25-1">
+<div class="para" id="x1_3_25-1-1">Let <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\)</span> be two distinct points in the complex plane, and let <span class="process-math">\(K\)</span> be a positive real constant that is greater than the distance between <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_25-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x1_3_25-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x1_3_25-2-1-1">Show that the set of points <span class="process-math">\(\{z: |z-z_1| + |z-z_2| =K \}\)</span> is an ellipse with foci <span class="process-math">\(z_1\)</span> and <span class="process-math">\(z_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_25-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_25-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_25-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_25-2-2-1">By definition, an ellipse is the locus of points the sum of whose distances from two fixed points is constant. Since <span class="process-math">\(|z-z_1|\)</span> gives the distance from the point <span class="process-math">\(z\)</span> to the point <span class="process-math">\(z_1\text{,}\)</span> the set <span class="process-math">\(\{ z:\
 |z-z_1|+|z-z_2|=K\}\)</span> is precisely those points satisfying that definition.<div class="autopermalink" data-description="Paragraph"><a href="#x1_3_25-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.25.a.1"><a href="#x1_3_25-2-2" title="Copy heading and permalink for Solution 1.3.25.a.1" aria-label="Copy heading and permalink for Solution 1.3.25.a.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.25.a"><a href="#x1_3_25-2" title="Copy heading and permalink for Task 1.3.25.a" aria-label="Copy heading and permalink for Task 1.3.25.a">🔗</a></div></article><article class="task exercise-like" id="x1_3_25-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.25.a"><a href="#x1_3_25-2" title="Copy heading and permalink for Task 1.3.25.a" aria-label="Copy heading and permalink for Task 1.3.25.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_25-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x1_3_25-3-1-1">Find the equation of the ellipse with foci <span class="process-math">\(\pm 3i\)</span> that goes through the point <span class="process-math">\(8-3i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_25-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 1.3.25.b"><a href="#x1_3_25-3" title="Copy heading and permalink for Task 1.3.25.b" aria-label="Copy heading and permalink for Task 1.3.25.b">🔗</a></div></article><article class="task exercise-like" id="x1_3_27"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 1.3.25.b"><a href="#x1_3_25-3" title="Copy heading and permalink for Task 1.3.25.b" aria-label="Copy heading and permalink for Task 1.3.25.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x1_3_27"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x1_3_27-1-1">Find the equation of the ellipse with foci <span class="process-math">\(\pm 2i\)</span> that goes through the point <span class="process-math">\(3+2i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_27-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x1_3_27-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x1_3_27-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x1_3_27-2-1">Letting <span class="process-math">\(z_1=2i\text{,}\)</span> and <span class="process-math">\(z_2=-2i\text{,}\)</span> we compute <span class="process-math">\(K=|3+2i-2i|+|3+2i+2i|=3+5=8\text{.}\)</span> With <span class="process-math">\(z=(x,y)\text{,}\)</span> the equation in Exercise 25a becomes <span class="process-math">\(\sqrt{x^2+(y-2)^2}+\sqrt{x^2+(y+2)^2}=8\text{.}\)</span> Show the details that squaring both sides, simplifying, squaring again, and simplifying again gives <span class="process-math">\(4x^2+3y^2=48\text{.}\)</span> In standard form, <span class="process-math">\(x^2+\frac{3 }{4}y^2=12\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x1_3_27-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 1.3.25.c.1"><a href="#x1_3_27-2" title="Copy heading and permalink for Solution 1.3.25.c.1" aria-label="Copy heading and permalink for Solution 1.3.25.c.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Task 1.3.25.c"><a href="#x1_3_27" title="Copy heading and permalink for Task 1.3.25.c" aria-label="Copy heading and permalink for Task 1.3.25.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 1.3.25"><a href="#x1_3_25" title="Copy heading and permalink for Exercise 1.3.25" aria-label="Copy heading and permalink for Exercise 1.3.25">🔗</a></div></article><div class="autopermalink" data-description="Exercises 1.3: Exercises"><a href="#exercises_geometry-1" title="Copy heading and permalink for Exercises 1.3: Exercises" aria-label="Copy heading and permalink for Exercises 1.3: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 1.3: The Geometry of Complex Numbers, Part I"><a href="#sec_geometry-1" title="Copy heading and permalink for Section 1.3: The Geometry of Complex Numbers, Part I" aria-label="Copy heading and permalink for Section 1.3: The Geometry of Complex Numbers, Part I">🔗</a></div></section></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Task 1.3.25.c"><a href="#x1_3_27" title="Copy heading and permalink for Task 1.3.25.c" aria-label="Copy heading and permalink for Task 1.3.25.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 1.3.25"><a href="#x1_3_25" title="Copy heading and permalink for Exercise 1.3.25" aria-label="Copy heading and permalink for Exercise 1.3.25">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 1.3: Exercises"><a href="#exercises_geometry-1" title="Copy heading and permalink for Exercises 1.3: Exercises" aria-label="Copy heading and permalink for Exercises 1.3: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.3: The Geometry of Complex Numbers, Part I"><a href="#sec_geometry-1" title="Copy heading and permalink for Section 1.3: The Geometry of Complex Numbers, Part I" aria-label="Copy heading and permalink for Section 1.3: The Geometry of Complex Numbers, Part I">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec_algebra-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_geometry-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

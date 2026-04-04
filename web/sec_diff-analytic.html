@@ -37,11 +37,11 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
         "newcommand",
+        "textmacros",
         "knowl"
       ]
     }
@@ -57,10 +57,10 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
+      "[tex]/textmacros",
       "[pretext]/mathjaxknowl3.js"
     ],
     "paths": {
@@ -501,7 +501,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_diff-analytic"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec_diff-analytic">
+<h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Differentiable and Analytic Functions</span>
 </h2>
 <div class="para logical" id="sec_diff-analytic-2">
@@ -533,7 +535,9 @@ f\,'(z_0) = \frac{dw}{dz}= \lim\limits_{\Delta z \to 0}\frac{\Delta w}{\Delta z}
 </h3>
 <div class="para" id="DerivEx-1-1">If <span class="process-math">\(f(z)=z^3\text{,}\)</span> show that <span class="process-math">\(f\,'(z) =3z^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#DerivEx-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="DerivEx-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="DerivEx-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="DerivEx-2-1">
 <div class="para">Using <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">Equation (3.1.1)</a>, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Deriv_Def_1.html" id="DerivEx-2-1-2">
@@ -549,15 +553,20 @@ f\,'(z_0) \amp  = \lim_{z \to z_0}\frac{z^3-z_0^3}{z-z_0}\\
 <div class="para" id="DerivEx-2-2">We can drop the subscript on <span class="process-math">\(z_0\)</span> to obtain <span class="process-math">\(f\,'(z) =3z^2\)</span> as a general formula.<div class="autopermalink" data-description="Paragraph"><a href="#DerivEx-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.1.1.1"><a href="#DerivEx-2" title="Copy heading and permalink for Solution 3.1.1.1" aria-label="Copy heading and permalink for Solution 3.1.1.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.1.1"><a href="#DerivEx" title="Copy heading and permalink for Example 3.1.1" aria-label="Copy heading and permalink for Example 3.1.1">🔗</a></div></article><div class="para" id="sec_diff-analytic-5">Pay careful attention to the value <span class="process-math">\(\Delta z\)</span> in <a href="sec_diff-analytic.html#Deriv_Def_3" class="xref" data-knowl="./knowl/xref/Deriv_Def_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.3">Equation (3.1.3)</a>; the limit must be independent of the manner in which <span class="process-math">\(\Delta z \to 0\text{.}\)</span> If we can find two curves that end at <span class="process-math">\(z_0\)</span> along which <span class="process-math">\(\frac{\Delta w}{\Delta z}\)</span> approaches distinct values, then <span class="process-math">\(\frac{ \Delta w}{\Delta z}\)</span> does <em class="emphasis">not</em> have a limit as <span class="process-math">\(\Delta z \to 0\text{,}\)</span> so <span class="process-math">\(f\)</span> does <em class="emphasis">not</em> have a derivative at <span class="process-math">\(z_0\text{.}\)</span> The same observation applies to the limits in Equations <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">(3.1.1)</a> and <a href="sec_diff-analytic.html#Deriv_Def_2" class="xref" data-knowl="./knowl/xref/Deriv_Def_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.2">(3.1.2)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.1.1"><a href="#DerivEx" title="Copy heading and permalink for Example 3.1.1" aria-label="Copy heading and permalink for Example 3.1.1">🔗</a></div>
+</article>
+<div class="para" id="sec_diff-analytic-5">Pay careful attention to the value <span class="process-math">\(\Delta z\)</span> in <a href="sec_diff-analytic.html#Deriv_Def_3" class="xref" data-knowl="./knowl/xref/Deriv_Def_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.3">Equation (3.1.3)</a>; the limit must be independent of the manner in which <span class="process-math">\(\Delta z \to 0\text{.}\)</span> If we can find two curves that end at <span class="process-math">\(z_0\)</span> along which <span class="process-math">\(\frac{\Delta w}{\Delta z}\)</span> approaches distinct values, then <span class="process-math">\(\frac{ \Delta w}{\Delta z}\)</span> does <em class="emphasis">not</em> have a limit as <span class="process-math">\(\Delta z \to 0\text{,}\)</span> so <span class="process-math">\(f\)</span> does <em class="emphasis">not</em> have a derivative at <span class="process-math">\(z_0\text{.}\)</span> The same observation applies to the limits in Equations <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">(3.1.1)</a> and <a href="sec_diff-analytic.html#Deriv_Def_2" class="xref" data-knowl="./knowl/xref/Deriv_Def_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.2">(3.1.2)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="sec_diff-analytic-6"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_diff-analytic-6-1-1">Show that the function <span class="process-math">\(w\, =f(z) = \overline{z}=x-iy \,\)</span> is nowhere differentiable.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="sec_diff-analytic-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="sec_diff-analytic-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para logical" id="sec_diff-analytic-6-2-1">
 <div class="para">We choose two approaches to the point <span class="process-math">\(z_0=x_0+iy_0\)</span> and compute limits of the difference quotients. First, we approach <span class="process-math">\(z_0=x_0+iy_0\)</span> along a line parallel to the <span class="process-math">\(x\)</span>-axis by forcing <span class="process-math">\(z\)</span> to be of the form <span class="process-math">\(z=x+iy_0\text{.}\)</span>
 </div>
@@ -589,27 +598,36 @@ f\,'(z_0) \amp  = \lim_{z \to z_0}\frac{z^3-z_0^3}{z-z_0}\\
 <div class="para" id="sec_diff-analytic-6-2-3">The limits along the two paths are different, so there is no possible value for the right side of <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">Equation (3.1.1)</a>. Therefore <span class="process-math">\(f( z) = \overline{z}\)</span> is not differentiable at the point <span class="process-math">\(z_0\text{,}\)</span> and since <span class="process-math">\(z_0\)</span> was arbitrary, <span class="process-math">\(f(z)\)</span> is nowhere differentiable.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-6-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.1.2.1"><a href="#sec_diff-analytic-6-2" title="Copy heading and permalink for Solution 3.1.2.1" aria-label="Copy heading and permalink for Solution 3.1.2.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Example 3.1.2"><a href="#sec_diff-analytic-6" title="Copy heading and permalink for Example 3.1.2" aria-label="Copy heading and permalink for Example 3.1.2">🔗</a></div></article><article class="remark remark-like" id="sec_diff-analytic-7"><h3 class="heading">
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 3.1.2"><a href="#sec_diff-analytic-6" title="Copy heading and permalink for Example 3.1.2" aria-label="Copy heading and permalink for Example 3.1.2">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec_diff-analytic-7"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="sec_diff-analytic-7-1">In <a href="sec_limits-continuity.html" class="internal" title="Section 2.3: Limits and Continuity">Section 2.3</a> we showed that <span class="process-math">\(f(z) = \overline{z}\)</span> is continuous for all <span class="process-math">\(z\text{.}\)</span> Thus, we have a simple example of a function that is continuous everywhere but differentiable nowhere. Such functions are hard to construct in real variables. In some sense, the complex case has made pathological constructions simpler!<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 3.1.3"><a href="#sec_diff-analytic-7" title="Copy heading and permalink for Remark 3.1.3" aria-label="Copy heading and permalink for Remark 3.1.3">🔗</a></div></article><div class="para" id="sec_diff-analytic-8">We seldom are interested in studying functions that aren’t differentiable, or are differentiable at only a single point. Complex functions that have a derivative at all points in a neighborhood of <span class="process-math">\(z_0\)</span> deserve further study. Indeed, functions that are differentiable in neighborhoods of points are pillars of the complex analysis edifice. We give them a special name, as indicated in the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 3.1.3"><a href="#sec_diff-analytic-7" title="Copy heading and permalink for Remark 3.1.3" aria-label="Copy heading and permalink for Remark 3.1.3">🔗</a></div>
+</article>
+<div class="para" id="sec_diff-analytic-8">We seldom are interested in studying functions that aren’t differentiable, or are differentiable at only a single point. Complex functions that have a derivative at all points in a neighborhood of <span class="process-math">\(z_0\)</span> deserve further study. Indeed, functions that are differentiable in neighborhoods of points are pillars of the complex analysis edifice. We give them a special name, as indicated in the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="Analytic_Def"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Analytic.</span>
 </h3>
 <div class="para" id="Analytic_Def-2-1">The complex function <span class="process-math">\(f\)</span> is analytic at the point <span class="process-math">\(z_0\)</span> provided there is some <span class="process-math">\(\varepsilon&gt;0\)</span> such that <span class="process-math">\(f\,'( z)\)</span> exists for all <span class="process-math">\(z\in D_{\varepsilon}(z_0)\text{.}\)</span> In other words, <span class="process-math">\(f\)</span> must be differentiable not only at <span class="process-math">\(z_0\text{,}\)</span> but also at all points in some <span class="process-math">\(\varepsilon\)</span>-neighborhood of <span class="process-math">\(z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Analytic_Def-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.4: Analytic"><a href="#Analytic_Def" title="Copy heading and permalink for Definition 3.1.4: Analytic" aria-label="Copy heading and permalink for Definition 3.1.4: Analytic">🔗</a></div></article><div class="para" id="sec_diff-analytic-10">If <span class="process-math">\(f\)</span> is analytic at each point in the region <span class="process-math">\(R\text{,}\)</span> then we say that <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(R\text{.}\)</span> Again, we have a special term if <span class="process-math">\(f\)</span> is analytic on the whole complex plane.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.1.4: Analytic"><a href="#Analytic_Def" title="Copy heading and permalink for Definition 3.1.4: Analytic" aria-label="Copy heading and permalink for Definition 3.1.4: Analytic">🔗</a></div>
+</article>
+<div class="para" id="sec_diff-analytic-10">If <span class="process-math">\(f\)</span> is analytic at each point in the region <span class="process-math">\(R\text{,}\)</span> then we say that <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(R\text{.}\)</span> Again, we have a special term if <span class="process-math">\(f\)</span> is analytic on the whole complex plane.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="Entire_Def"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Entire.</span>
 </h3>
 <div class="para" id="Entire_Def-2-1">If <span class="process-math">\(f\)</span> is analytic on the whole complex plane then <span class="process-math">\(f\)</span> is said to be entire.<div class="autopermalink" data-description="Paragraph"><a href="#Entire_Def-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 3.1.5: Entire"><a href="#Entire_Def" title="Copy heading and permalink for Definition 3.1.5: Entire" aria-label="Copy heading and permalink for Definition 3.1.5: Entire">🔗</a></div></article><div class="para" id="sec_diff-analytic-12">Points of non analyticity for a function are called singular points. They are important for certain applications in physics and engineering.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 3.1.5: Entire"><a href="#Entire_Def" title="Copy heading and permalink for Definition 3.1.5: Entire" aria-label="Copy heading and permalink for Definition 3.1.5: Entire">🔗</a></div>
+</article>
+<div class="para" id="sec_diff-analytic-12">Points of non analyticity for a function are called singular points. They are important for certain applications in physics and engineering.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec_diff-analytic-13">Our definition of the derivative for complex functions is formally the same as for real functions and is the natural extension from real variables to complex variables. The basic differentiation formulas are identical to those for real functions, and we obtain the same rules for differentiating powers, sums, products, quotients, and compositions of functions. We can easily establish the proof of the differentiation formulas by using the limit theorems.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -652,14 +670,20 @@ f\,'(z_0) \amp  = \lim_{z \to z_0}\frac{z^3-z_0^3}{z-z_0}\\
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 3.1.6"><a href="#sec_diff-analytic-16" title="Copy heading and permalink for Example 3.1.6" aria-label="Copy heading and permalink for Example 3.1.6">🔗</a></div></article><div class="para" id="sec_diff-analytic-17">The proofs of the rules given in Equations <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.4">(3.1.4)</a> through <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_10.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.10">(3.1.10)</a> depend on the validity of extending theorems for real functions to their complex companions. <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.8">Equation (3.1.8)</a>, for example, relies on <a href="sec_diff-analytic.html#Diffl_Implies_Cont" class="xref" data-knowl="./knowl/xref/Diffl_Implies_Cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.7">Theorem 3.1.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 3.1.6"><a href="#sec_diff-analytic-16" title="Copy heading and permalink for Example 3.1.6" aria-label="Copy heading and permalink for Example 3.1.6">🔗</a></div>
+</article>
+<div class="para" id="sec_diff-analytic-17">The proofs of the rules given in Equations <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.4">(3.1.4)</a> through <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_10.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.10">(3.1.10)</a> depend on the validity of extending theorems for real functions to their complex companions. <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.8">Equation (3.1.8)</a>, for example, relies on <a href="sec_diff-analytic.html#Diffl_Implies_Cont" class="xref" data-knowl="./knowl/xref/Diffl_Implies_Cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.7">Theorem 3.1.7</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="Diffl_Implies_Cont"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="Diffl_Implies_Cont-1-1">If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> then <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Diffl_Implies_Cont-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.1.7"><a href="#Diffl_Implies_Cont" title="Copy heading and permalink for Theorem 3.1.7" aria-label="Copy heading and permalink for Theorem 3.1.7">🔗</a></div></article><details id="sec_diff-analytic-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec_diff-analytic-19-1">
+<div class="autopermalink" data-description="Theorem 3.1.7"><a href="#Diffl_Implies_Cont" title="Copy heading and permalink for Theorem 3.1.7" aria-label="Copy heading and permalink for Theorem 3.1.7">🔗</a></div>
+</article>
+<details id="sec_diff-analytic-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="sec_diff-analytic-19-1">
 <div class="para">’ From <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">Equation (3.1.1)</a>, we obtain</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Deriv_Def_1.html ./knowl/xref/limproduct.html" id="sec_diff-analytic-19-1-2">
 \begin{equation*}
@@ -678,7 +702,9 @@ f\,'(z_0) \amp  = \lim_{z \to z_0}\frac{z^3-z_0^3}{z-z_0}\\
 </div>
 <div class="para" id="sec_diff-analytic-19-2">This result implies that <span class="process-math">\(\lim\limits_{z \to z_0}f(z) =f(z_0)\text{,}\)</span> which is equivalent to showing that <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.1.1"><a href="#sec_diff-analytic-19" title="Copy heading and permalink for Proof 3.1.1" aria-label="Copy heading and permalink for Proof 3.1.1">🔗</a></div></article></details><div class="para logical" id="sec_diff-analytic-20">
+<div class="autopermalink" data-description="Proof 3.1.1"><a href="#sec_diff-analytic-19" title="Copy heading and permalink for Proof 3.1.1" aria-label="Copy heading and permalink for Proof 3.1.1">🔗</a></div>
+</article></details>
+<div class="para logical" id="sec_diff-analytic-20">
 <div class="para">We can establish <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.8">Equation (3.1.8)</a> from <a href="sec_diff-analytic.html#Diffl_Implies_Cont" class="xref" data-knowl="./knowl/xref/Diffl_Implies_Cont.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.7">Theorem 3.1.7</a>. Letting <span class="process-math">\(h(z)=f(z)g(z)\)</span> and using Definition 3.1, we write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/Deriv_Eq_8.html ./knowl/xref/Diffl_Implies_Cont.html" id="sec_diff-analytic-20-4">
 \begin{equation*}
@@ -731,77 +757,124 @@ P\,'(z) =a_1 + 2a_2z + 3a_3z^2 + \cdots + na_nz^{n-1}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#LH_s_rule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 3.1.8: L’Hôpital’s rule"><a href="#LH_s_rule" title="Copy heading and permalink for Theorem 3.1.8: L’Hôpital’s rule" aria-label="Copy heading and permalink for Theorem 3.1.8: L’Hôpital’s rule">🔗</a></div></article><details id="sec_diff-analytic-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="sec_diff-analytic-26-1">See <a href="sec_taylor-laurent-apps.html#cor_L_hospital" class="xref" data-knowl="./knowl/xref/cor_L_hospital.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.5.4">Corollary 7.5.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 3.1.8: L’Hôpital’s rule"><a href="#LH_s_rule" title="Copy heading and permalink for Theorem 3.1.8: L’Hôpital’s rule" aria-label="Copy heading and permalink for Theorem 3.1.8: L’Hôpital’s rule">🔗</a></div>
+</article>
+<details id="sec_diff-analytic-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="sec_diff-analytic-26-1">See <a href="sec_taylor-laurent-apps.html#cor_L_hospital" class="xref" data-knowl="./knowl/xref/cor_L_hospital.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.5.4">Corollary 7.5.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec_diff-analytic-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 3.1.2"><a href="#sec_diff-analytic-26" title="Copy heading and permalink for Proof 3.1.2" aria-label="Copy heading and permalink for Proof 3.1.2">🔗</a></div></article></details><section class="exercises" id="exercises_diff-analytic"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Proof 3.1.2"><a href="#sec_diff-analytic-26" title="Copy heading and permalink for Proof 3.1.2" aria-label="Copy heading and permalink for Proof 3.1.2">🔗</a></div>
+</article></details>
+<section class="exercises" id="exercises_diff-analytic">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="x3_1_1"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_1-1"><div class="para" id="x3_1_1-1-1">Find the derivatives of the following functions:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="introduction" id="x3_1_1-1">
+<div class="para" id="x3_1_1-1-1">Find the derivatives of the following functions:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_1-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_1-2-1-1">
 <span class="process-math">\(g(z) =(z^2-iz+9)^{5}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.1.a"><a href="#x3_1_1-2" title="Copy heading and permalink for Task 3.1.1.a" aria-label="Copy heading and permalink for Task 3.1.1.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_1-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.1.a"><a href="#x3_1_1-2" title="Copy heading and permalink for Task 3.1.1.a" aria-label="Copy heading and permalink for Task 3.1.1.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_1-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_1-4-1-1">
 <span class="process-math">\(h(z) = \frac{2z+1}{z+2}\)</span> for <span class="process-math">\(z \ne -2\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.1.b"><a href="#x3_1_1-4" title="Copy heading and permalink for Task 3.1.1.b" aria-label="Copy heading and permalink for Task 3.1.1.b">🔗</a></div></article><article class="task exercise-like" id="x3_1_1-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.1.b"><a href="#x3_1_1-4" title="Copy heading and permalink for Task 3.1.1.b" aria-label="Copy heading and permalink for Task 3.1.1.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_1-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x3_1_1-5-1-1">
 <span class="process-math">\(F(z) = (z^2+(1-3i)z+1)(z^4+3z^2+5i)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.1.c"><a href="#x3_1_1-5" title="Copy heading and permalink for Task 3.1.1.c" aria-label="Copy heading and permalink for Task 3.1.1.c">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.1"><a href="#x3_1_1" title="Copy heading and permalink for Exercise 3.1.1" aria-label="Copy heading and permalink for Exercise 3.1.1">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_2-1"><div class="para" id="x3_1_2-1-1">Show that the following functions are differentiable nowhere:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 3.1.1.c"><a href="#x3_1_1-5" title="Copy heading and permalink for Task 3.1.1.c" aria-label="Copy heading and permalink for Task 3.1.1.c">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.1"><a href="#x3_1_1" title="Copy heading and permalink for Exercise 3.1.1" aria-label="Copy heading and permalink for Exercise 3.1.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x3_1_2-1">
+<div class="para" id="x3_1_2-1-1">Show that the following functions are differentiable nowhere:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_2-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_2-2-1-1">
 <span class="process-math">\(f(z) = \mathrm{Re}(z)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.2.a"><a href="#x3_1_2-2" title="Copy heading and permalink for Task 3.1.2.a" aria-label="Copy heading and permalink for Task 3.1.2.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.2.a"><a href="#x3_1_2-2" title="Copy heading and permalink for Task 3.1.2.a" aria-label="Copy heading and permalink for Task 3.1.2.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_2-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_2-3-1-1">
 <span class="process-math">\(f(z) = \mathrm{Im}(z)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.2.b"><a href="#x3_1_2-3" title="Copy heading and permalink for Task 3.1.2.b" aria-label="Copy heading and permalink for Task 3.1.2.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.2"><a href="#x3_1_2" title="Copy heading and permalink for Exercise 3.1.2" aria-label="Copy heading and permalink for Exercise 3.1.2">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_3-1"><div class="para" id="x3_1_3-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are entire functions, which of the following are necessarily entire?<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Task 3.1.2.b"><a href="#x3_1_2-3" title="Copy heading and permalink for Task 3.1.2.b" aria-label="Copy heading and permalink for Task 3.1.2.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.2"><a href="#x3_1_2" title="Copy heading and permalink for Exercise 3.1.2" aria-label="Copy heading and permalink for Exercise 3.1.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x3_1_3-1">
+<div class="para" id="x3_1_3-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are entire functions, which of the following are necessarily entire?<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_3-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_3-2-1-1">
 <span class="process-math">\([f(z)]^3\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.a"><a href="#x3_1_3-2" title="Copy heading and permalink for Task 3.1.3.a" aria-label="Copy heading and permalink for Task 3.1.3.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_3-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.3.a"><a href="#x3_1_3-2" title="Copy heading and permalink for Task 3.1.3.a" aria-label="Copy heading and permalink for Task 3.1.3.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_3-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_3-4-1-1">
 <span class="process-math">\(f(z)g(z)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.b"><a href="#x3_1_3-4" title="Copy heading and permalink for Task 3.1.3.b" aria-label="Copy heading and permalink for Task 3.1.3.b">🔗</a></div></article><article class="task exercise-like" id="x3_1_3-6"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.3.b"><a href="#x3_1_3-4" title="Copy heading and permalink for Task 3.1.3.b" aria-label="Copy heading and permalink for Task 3.1.3.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_3-6"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x3_1_3-6-1-1">
 <span class="process-math">\(\frac{f(z)}{g(z)}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.c"><a href="#x3_1_3-6" title="Copy heading and permalink for Task 3.1.3.c" aria-label="Copy heading and permalink for Task 3.1.3.c">🔗</a></div></article><article class="task exercise-like" id="x3_1_3-8"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.3.c"><a href="#x3_1_3-6" title="Copy heading and permalink for Task 3.1.3.c" aria-label="Copy heading and permalink for Task 3.1.3.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_3-8"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x3_1_3-8-1-1">
 <span class="process-math">\(f(\frac{1}{z})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.d"><a href="#x3_1_3-8" title="Copy heading and permalink for Task 3.1.3.d" aria-label="Copy heading and permalink for Task 3.1.3.d">🔗</a></div></article><article class="task exercise-like" id="x3_1_3-10"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.3.d"><a href="#x3_1_3-8" title="Copy heading and permalink for Task 3.1.3.d" aria-label="Copy heading and permalink for Task 3.1.3.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_3-10"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x3_1_3-10-1-1">
 <span class="process-math">\(f(z-1)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.e"><a href="#x3_1_3-10" title="Copy heading and permalink for Task 3.1.3.e" aria-label="Copy heading and permalink for Task 3.1.3.e">🔗</a></div></article><article class="task exercise-like" id="x3_1_3-12"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.3.e"><a href="#x3_1_3-10" title="Copy heading and permalink for Task 3.1.3.e" aria-label="Copy heading and permalink for Task 3.1.3.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_3-12"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="x3_1_3-12-1-1">
 <span class="process-math">\(f\big(g(z)\big)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_3-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.3.f"><a href="#x3_1_3-12" title="Copy heading and permalink for Task 3.1.3.f" aria-label="Copy heading and permalink for Task 3.1.3.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.3"><a href="#x3_1_3" title="Copy heading and permalink for Exercise 3.1.3" aria-label="Copy heading and permalink for Exercise 3.1.3">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 3.1.3.f"><a href="#x3_1_3-12" title="Copy heading and permalink for Task 3.1.3.f" aria-label="Copy heading and permalink for Task 3.1.3.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.3"><a href="#x3_1_3" title="Copy heading and permalink for Exercise 3.1.3" aria-label="Copy heading and permalink for Exercise 3.1.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_4-1-1">Use <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">Equation (3.1.1)</a> to verify <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.5">Rule (3.1.5)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.4"><a href="#x3_1_4" title="Copy heading and permalink for Exercise 3.1.4" aria-label="Copy heading and permalink for Exercise 3.1.4">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_5-1"><div class="para" id="x3_1_5-1-1">Let <span class="process-math">\(P(z) =a_0+a_1z+\cdots +a_nz^n\)</span> be a polynomial of degree <span class="process-math">\(n \ge 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 3.1.4"><a href="#x3_1_4" title="Copy heading and permalink for Exercise 3.1.4" aria-label="Copy heading and permalink for Exercise 3.1.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x3_1_5-1">
+<div class="para" id="x3_1_5-1-1">Let <span class="process-math">\(P(z) =a_0+a_1z+\cdots +a_nz^n\)</span> be a polynomial of degree <span class="process-math">\(n \ge 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_5-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_5-2-1-1">Show that <span class="process-math">\(P\,'(z) = a_1 + 2a_2z + \cdots + na_nz^{n-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.5.a"><a href="#x3_1_5-2" title="Copy heading and permalink for Task 3.1.5.a" aria-label="Copy heading and permalink for Task 3.1.5.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.5.a"><a href="#x3_1_5-2" title="Copy heading and permalink for Task 3.1.5.a" aria-label="Copy heading and permalink for Task 3.1.5.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_5-3-1-1">Show that, for <span class="process-math">\(k=0,1, \ldots, n, \; a_k= \frac{P^{(k)}(0)}{k!}\text{,}\)</span> where <span class="process-math">\(P^{(k)}\)</span> denotes the <span class="process-math">\(k^{\text{ th } }\)</span> derivative of <span class="process-math">\(P\text{.}\)</span> <span class="process-math">\(\Big(\)</span>By convention, <span class="process-math">\(P^{(0)}(z) = P(z).\Big)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.5.b"><a href="#x3_1_5-3" title="Copy heading and permalink for Task 3.1.5.b" aria-label="Copy heading and permalink for Task 3.1.5.b">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.5"><a href="#x3_1_5" title="Copy heading and permalink for Exercise 3.1.5" aria-label="Copy heading and permalink for Exercise 3.1.5">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 3.1.5.b"><a href="#x3_1_5-3" title="Copy heading and permalink for Task 3.1.5.b" aria-label="Copy heading and permalink for Task 3.1.5.b">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.5"><a href="#x3_1_5" title="Copy heading and permalink for Exercise 3.1.5" aria-label="Copy heading and permalink for Exercise 3.1.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x3_1_6-1-1">
 <div class="para">Let <span class="process-math">\(P\)</span> be a polynomial of degree 2, given by</div>
 <div class="displaymath process-math" id="x3_1_6-1-1-2">
@@ -820,46 +893,70 @@ P(z) = (z-z_1)(z-z_2) \text{,}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x3_1_6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.6"><a href="#x3_1_6" title="Copy heading and permalink for Exercise 3.1.6" aria-label="Copy heading and permalink for Exercise 3.1.6">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_7-1"><div class="para" id="x3_1_7-1-1">Use L’Hôpital’s rule to find the following limits:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 3.1.6"><a href="#x3_1_6" title="Copy heading and permalink for Exercise 3.1.6" aria-label="Copy heading and permalink for Exercise 3.1.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x3_1_7-1">
+<div class="para" id="x3_1_7-1-1">Use L’Hôpital’s rule to find the following limits:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_7-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_7-2-1-1">
 <span class="process-math">\(\lim\limits_{z \to i}\frac{z^4-1}{z-i}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.a"><a href="#x3_1_7-2" title="Copy heading and permalink for Task 3.1.7.a" aria-label="Copy heading and permalink for Task 3.1.7.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_7-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.7.a"><a href="#x3_1_7-2" title="Copy heading and permalink for Task 3.1.7.a" aria-label="Copy heading and permalink for Task 3.1.7.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_7-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_7-4-1-1">
 <span class="process-math">\(\lim\limits_{z \to 1+i}\frac{z^2-iz-1-i}{z^2-2z+2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.b"><a href="#x3_1_7-4" title="Copy heading and permalink for Task 3.1.7.b" aria-label="Copy heading and permalink for Task 3.1.7.b">🔗</a></div></article><article class="task exercise-like" id="x3_1_7-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.7.b"><a href="#x3_1_7-4" title="Copy heading and permalink for Task 3.1.7.b" aria-label="Copy heading and permalink for Task 3.1.7.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_7-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x3_1_7-5-1-1">
 <span class="process-math">\(\lim\limits_{z \to -i}\frac{z^{6}+1}{z^2+1}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.c"><a href="#x3_1_7-5" title="Copy heading and permalink for Task 3.1.7.c" aria-label="Copy heading and permalink for Task 3.1.7.c">🔗</a></div></article><article class="task exercise-like" id="x3_1_7-7"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.7.c"><a href="#x3_1_7-5" title="Copy heading and permalink for Task 3.1.7.c" aria-label="Copy heading and permalink for Task 3.1.7.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_7-7"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x3_1_7-7-1-1">
 <span class="process-math">\(\lim\limits_{z \to 1+i}\frac{z^4+4}{z^2-2z+2}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.d"><a href="#x3_1_7-7" title="Copy heading and permalink for Task 3.1.7.d" aria-label="Copy heading and permalink for Task 3.1.7.d">🔗</a></div></article><article class="task exercise-like" id="x3_1_7-8"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.7.d"><a href="#x3_1_7-7" title="Copy heading and permalink for Task 3.1.7.d" aria-label="Copy heading and permalink for Task 3.1.7.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_7-8"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x3_1_7-8-1-1">
 <span class="process-math">\(\lim\limits_{z \to 1+i\sqrt{3}}\frac{z^{6}-64}{z^3+8}\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.e"><a href="#x3_1_7-8" title="Copy heading and permalink for Task 3.1.7.e" aria-label="Copy heading and permalink for Task 3.1.7.e">🔗</a></div></article><article class="task exercise-like" id="x3_1_7-10"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.7.e"><a href="#x3_1_7-8" title="Copy heading and permalink for Task 3.1.7.e" aria-label="Copy heading and permalink for Task 3.1.7.e">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_7-10"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="x3_1_7-10-1-1">
 <span class="process-math">\(\lim\limits_{z \to -1+i\sqrt{3}}\frac{z^{9}-512}{z^3-8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_7-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.7.f"><a href="#x3_1_7-10" title="Copy heading and permalink for Task 3.1.7.f" aria-label="Copy heading and permalink for Task 3.1.7.f">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.7"><a href="#x3_1_7" title="Copy heading and permalink for Exercise 3.1.7" aria-label="Copy heading and permalink for Exercise 3.1.7">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 3.1.7.f"><a href="#x3_1_7-10" title="Copy heading and permalink for Task 3.1.7.f" aria-label="Copy heading and permalink for Task 3.1.7.f">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.7"><a href="#x3_1_7" title="Copy heading and permalink for Exercise 3.1.7" aria-label="Copy heading and permalink for Exercise 3.1.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_8-1-1">Use <a href="sec_diff-analytic.html#Deriv_Def_1" class="xref" data-knowl="./knowl/xref/Deriv_Def_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.1">Equation (3.1.1)</a> to show that <span class="process-math">\(\frac{d}{dz}\frac{1}{z}= -\frac{1}{z^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.8"><a href="#x3_1_8" title="Copy heading and permalink for Exercise 3.1.8" aria-label="Copy heading and permalink for Exercise 3.1.8">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 3.1.8"><a href="#x3_1_8" title="Copy heading and permalink for Exercise 3.1.8" aria-label="Copy heading and permalink for Exercise 3.1.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_9-1-1">Show that <span class="process-math">\(\frac{d}{dz}z^{-n}=-nz^{-n-1}\text{,}\)</span> where <span class="process-math">\(n\)</span> is a positive integer.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x3_1_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x3_1_9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x3_1_9-2-1">
 <span class="process-math">\(\frac{d}{dz}z^{-n}=\frac{d}{dz}(\frac{1}{z^n})\text{.}\)</span> Apply the quotient rule: <span class="process-math">\(\frac{d}{dz}(\frac{1}{z^n}) = \frac{(z^n) \frac{d}{dz}(1) - 1\frac{d}{dz}(z^n)}{(z^n)^2}\text{.}\)</span> Now simplify.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.1.9.1"><a href="#x3_1_9-2" title="Copy heading and permalink for Solution 3.1.9.1" aria-label="Copy heading and permalink for Solution 3.1.9.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 3.1.9"><a href="#x3_1_9" title="Copy heading and permalink for Exercise 3.1.9" aria-label="Copy heading and permalink for Exercise 3.1.9">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.9"><a href="#x3_1_9" title="Copy heading and permalink for Exercise 3.1.9" aria-label="Copy heading and permalink for Exercise 3.1.9">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_10"><h4 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x3_1_10-1-1">
 <div class="para">Verify the identity</div>
 <div class="displaymath process-math" id="x3_1_10-1-1-1">
@@ -869,16 +966,21 @@ P(z) = (z-z_1)(z-z_2) \text{,}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x3_1_10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.10"><a href="#x3_1_10" title="Copy heading and permalink for Exercise 3.1.10" aria-label="Copy heading and permalink for Exercise 3.1.10">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 3.1.10"><a href="#x3_1_10" title="Copy heading and permalink for Exercise 3.1.10" aria-label="Copy heading and permalink for Exercise 3.1.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_11"><h4 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_11-1-1">Show that the function <span class="process-math">\(f(z) =|z|^2\)</span> is differentiable only at the point <span class="process-math">\(z_0=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="x3_1_11-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<details id="x3_1_11-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
 <div class="para" id="x3_1_11-2-1">To show that <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> differentiable at <span class="process-math">\(z_0 \ne 0\text{,}\)</span> choose horizontal and vertical lines through the point <span class="process-math">\(z_0\)</span> and show that <span class="process-math">\(\frac{\Delta w}{ \Delta z}\)</span> approaches two distinct values as <span class="process-math">\(\Delta z \to
 0\)</span> along those two lines.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Hint 3.1.11.1"><a href="#x3_1_11-2" title="Copy heading and permalink for Hint 3.1.11.1" aria-label="Copy heading and permalink for Hint 3.1.11.1">🔗</a></div>
-</div></details><details id="x3_1_11-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+</div></details>
+<details id="x3_1_11-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x3_1_11-3-1">Evaluate <span class="process-math">\(\lim\limits_{z \to 0}\frac{f(z)-f(0)}{z-0}= \lim\limits_{z \to 0}\frac{|z|^2-0}{z-0} = 
 \lim\limits_{z \to 0}\frac{z\bar{z}}{z} = \lim\limits_{z \to 0}\bar{z} = 0
 \text{.}\)</span> Follow the hint for the rest.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -886,43 +988,64 @@ P(z) = (z-z_1)(z-z_2) \text{,}
 <div class="autopermalink" data-description="Solution 3.1.11.1"><a href="#x3_1_11-3" title="Copy heading and permalink for Solution 3.1.11.1" aria-label="Copy heading and permalink for Solution 3.1.11.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.11"><a href="#x3_1_11" title="Copy heading and permalink for Exercise 3.1.11" aria-label="Copy heading and permalink for Exercise 3.1.11">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="introduction" id="x3_1_12-1"><div class="para" id="x3_1_12-1-1">Verify the following identities:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<div class="autopermalink" data-description="Exercise 3.1.11"><a href="#x3_1_11" title="Copy heading and permalink for Exercise 3.1.11" aria-label="Copy heading and permalink for Exercise 3.1.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_12"><h4 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="introduction" id="x3_1_12-1">
+<div class="para" id="x3_1_12-1-1">Verify the following identities:<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <article class="task exercise-like" id="x3_1_12-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="x3_1_12-2-1-1">
 <span class="process-math">\(\frac{d}{dz}C=0, \;\)</span> where <span class="process-math">\(C\)</span> is a constant <span class="process-math">\(\; \Big(\)</span>Identity <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.4">(3.1.4)</a><span class="process-math">\(\Big)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.12.a"><a href="#x3_1_12-2" title="Copy heading and permalink for Task 3.1.12.a" aria-label="Copy heading and permalink for Task 3.1.12.a">🔗</a></div></article><article class="task exercise-like" id="x3_1_12-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.12.a"><a href="#x3_1_12-2" title="Copy heading and permalink for Task 3.1.12.a" aria-label="Copy heading and permalink for Task 3.1.12.a">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_12-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="x3_1_12-3-1-1">
 <span class="process-math">\(\frac{d}{dz}[f(z)+g(z)] = f\,'(z) + g\,'(z) \;\, \Big(\)</span>Identity <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_7.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.7">(3.1.7)</a><span class="process-math">\(\Big)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.12.b"><a href="#x3_1_12-3" title="Copy heading and permalink for Task 3.1.12.b" aria-label="Copy heading and permalink for Task 3.1.12.b">🔗</a></div></article><article class="task exercise-like" id="x3_1_12-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.12.b"><a href="#x3_1_12-3" title="Copy heading and permalink for Task 3.1.12.b" aria-label="Copy heading and permalink for Task 3.1.12.b">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_12-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="x3_1_12-4-1-1">
 <span class="process-math">\(\frac{d}{dz}\frac{f(z)}{g(z)} = \frac{g(z) f\,'(z) -f(z) g\,'(z)}{[g(z)]^2}\)</span> if <span class="process-math">\(g(z) \ne 0 \;\, \Big(\)</span>Identity <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_9.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.9">(3.1.9)</a><span class="process-math">\(\Big)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.12.c"><a href="#x3_1_12-4" title="Copy heading and permalink for Task 3.1.12.c" aria-label="Copy heading and permalink for Task 3.1.12.c">🔗</a></div></article><article class="task exercise-like" id="x3_1_12-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.12.c"><a href="#x3_1_12-4" title="Copy heading and permalink for Task 3.1.12.c" aria-label="Copy heading and permalink for Task 3.1.12.c">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_12-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="x3_1_12-5-1-1">
 <span class="process-math">\(\frac{d}{dz}\,f\big(g(z)\big) = 
 f\,'\big(g(z)\big) g\,'(z) \;\, \Big(\)</span>Identity <a href="sec_diff-analytic.html#sec_diff-analytic-14-5" class="xref" data-knowl="./knowl/xref/Deriv_Eq_10.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.10">(3.1.10)</a><span class="process-math">\(\Big)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.12.d"><a href="#x3_1_12-5" title="Copy heading and permalink for Task 3.1.12.d" aria-label="Copy heading and permalink for Task 3.1.12.d">🔗</a></div></article><article class="task exercise-like" id="x3_1_12-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="autopermalink" data-description="Task 3.1.12.d"><a href="#x3_1_12-5" title="Copy heading and permalink for Task 3.1.12.d" aria-label="Copy heading and permalink for Task 3.1.12.d">🔗</a></div>
+</article>
+<article class="task exercise-like" id="x3_1_12-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="x3_1_12-6-1-1">
-<span class="process-math">\(\frac{d}{dz}[f(z)]^n = n[f(z)]^{n-1}f\,'(z), \; \)</span> where <span class="process-math">\(n\)</span> is a positive integer <div class="para" id="x3_1_12-6-1-1-3">
+<span class="process-math">\(\frac{d}{dz}[f(z)]^n = n[f(z)]^{n-1}f\,'(z), \; \)</span> where <span class="process-math">\(n\)</span> is a positive integer 
+<div class="para" id="x3_1_12-6-1-1-3">
 <span class="process-math">\(\quad \; \Big(\)</span>Identity <a href="sec_diff-analytic.html#sec_diff-analytic-15-3" class="xref" data-knowl="./knowl/xref/Deriv_Eq_12.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.12">(3.1.12)</a><span class="process-math">\(\Big).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-6-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x3_1_12-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 3.1.12.e"><a href="#x3_1_12-6" title="Copy heading and permalink for Task 3.1.12.e" aria-label="Copy heading and permalink for Task 3.1.12.e">🔗</a></div></article><div class="autopermalink" data-description="Exercise 3.1.12"><a href="#x3_1_12" title="Copy heading and permalink for Exercise 3.1.12" aria-label="Copy heading and permalink for Exercise 3.1.12">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Task 3.1.12.e"><a href="#x3_1_12-6" title="Copy heading and permalink for Task 3.1.12.e" aria-label="Copy heading and permalink for Task 3.1.12.e">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercise 3.1.12"><a href="#x3_1_12" title="Copy heading and permalink for Exercise 3.1.12" aria-label="Copy heading and permalink for Exercise 3.1.12">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_13"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_13-1-1">Consider the differentiable function <span class="process-math">\(f(z)=z^3\)</span> and the two points <span class="process-math">\(z_1=1\)</span> and <span class="process-math">\(z_2=i\text{.}\)</span> Show that there does not exist a point <span class="process-math">\(c\)</span> on the line <span class="process-math">\(y=1-x\)</span> between 1 and <span class="process-math">\(i\)</span> such that <span class="process-math">\(\frac{f(z_2)-f(z_1)}{z_2-z_1} = f\,'(c)\text{.}\)</span> This result shows that the mean value theorem for derivatives does not extend to complex functions.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="x3_1_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions">
+<details id="x3_1_13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
 <div class="para" id="x3_1_13-2-1">
 <span class="process-math">\(\frac{f(z_2)-f(z_1)}{z_2-z_1} = \frac{i^3-1^3}{i-1} = \frac{-i-1}{i-1}=i\text{.}\)</span> The minimum modulus of points on the line <span class="process-math">\(y=1-x\)</span> is <span class="process-math">\(\frac{\sqrt{2}}{2}\)</span> (prove this!). But <span class="process-math">\(f\,'(z) =3z^2\text{,}\)</span> and the only solutions to the equation <span class="process-math">\(3z^2=i\)</span> have moduli equal to <span class="process-math">\(\frac{\sqrt{3}}{3}\)</span> (prove), which is less than <span class="process-math">\(\frac{\sqrt{2}}{2}\)</span> (prove this also).<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Solution 3.1.13.1"><a href="#x3_1_13-2" title="Copy heading and permalink for Solution 3.1.13.1" aria-label="Copy heading and permalink for Solution 3.1.13.1">🔗</a></div>
-</div></details></div>
-<div class="autopermalink" data-description="Exercise 3.1.13"><a href="#x3_1_13" title="Copy heading and permalink for Exercise 3.1.13" aria-label="Copy heading and permalink for Exercise 3.1.13">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 3.1.13"><a href="#x3_1_13" title="Copy heading and permalink for Exercise 3.1.13" aria-label="Copy heading and permalink for Exercise 3.1.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_14"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="x3_1_14-1-1">
 <div class="para">Let <span class="process-math">\(f(z)=z^{\frac{1}{n}}\)</span> denote the multivalued “<span class="process-math">\(n\)</span>th root function,” where <span class="process-math">\(n\)</span> is a positive integer. Use the chain rule to show that, if <span class="process-math">\(g(z)\)</span> is any branch of the <span class="process-math">\(n\)</span>th root function, then</div>
 <div class="displaymath process-math" id="x3_1_14-1-1-6">
@@ -933,10 +1056,14 @@ g\,'(z) = \frac{1}{n}\frac{g(z)}{z}
 <div class="para">in some suitably chosen domain (which you should specify).</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#x3_1_14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.14"><a href="#x3_1_14" title="Copy heading and permalink for Exercise 3.1.14" aria-label="Copy heading and permalink for Exercise 3.1.14">🔗</a></div></article><article class="exercise exercise-like" id="x3_1_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 3.1.14"><a href="#x3_1_14" title="Copy heading and permalink for Exercise 3.1.14" aria-label="Copy heading and permalink for Exercise 3.1.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="x3_1_15"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="x3_1_15-1-1">Explain why the composition of two entire functions is an entire function.<div class="autopermalink" data-description="Paragraph"><a href="#x3_1_15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.15"><a href="#x3_1_15" title="Copy heading and permalink for Exercise 3.1.15" aria-label="Copy heading and permalink for Exercise 3.1.15">🔗</a></div></article><article class="exercise exercise-like" id="exercises_diff-analytic-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="autopermalink" data-description="Exercise 3.1.15"><a href="#x3_1_15" title="Copy heading and permalink for Exercise 3.1.15" aria-label="Copy heading and permalink for Exercise 3.1.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exercises_diff-analytic-17"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para logical" id="exercises_diff-analytic-17-1-1">
 <div class="para">Let <span class="process-math">\(f\)</span> be differentiable at <span class="process-math">\(z_0\text{.}\)</span> Show that there exists a function <span class="process-math">\(\eta(z)\)</span> such that</div>
 <div class="displaymath process-math" id="exercises_diff-analytic-17-1-1-4">
@@ -948,7 +1075,11 @@ f(z) =f(z_0) +f\,'(z_0) (z-z_0) + \eta(z)(z-z_0),
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercises_diff-analytic-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 3.1.16"><a href="#exercises_diff-analytic-17" title="Copy heading and permalink for Exercise 3.1.16" aria-label="Copy heading and permalink for Exercise 3.1.16">🔗</a></div></article><div class="autopermalink" data-description="Exercises 3.1: Exercises"><a href="#exercises_diff-analytic" title="Copy heading and permalink for Exercises 3.1: Exercises" aria-label="Copy heading and permalink for Exercises 3.1: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Differentiable and Analytic Functions"><a href="#sec_diff-analytic" title="Copy heading and permalink for Section 3.1: Differentiable and Analytic Functions" aria-label="Copy heading and permalink for Section 3.1: Differentiable and Analytic Functions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 3.1.16"><a href="#exercises_diff-analytic-17" title="Copy heading and permalink for Exercise 3.1.16" aria-label="Copy heading and permalink for Exercise 3.1.16">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 3.1: Exercises"><a href="#exercises_diff-analytic" title="Copy heading and permalink for Exercises 3.1: Exercises" aria-label="Copy heading and permalink for Exercises 3.1: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 3.1: Differentiable and Analytic Functions"><a href="#sec_diff-analytic" title="Copy heading and permalink for Section 3.1: Differentiable and Analytic Functions" aria-label="Copy heading and permalink for Section 3.1: Differentiable and Analytic Functions">🔗</a></div>
+</section>
+</div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch_A_and_H_Functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_cauchy-riemann.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
