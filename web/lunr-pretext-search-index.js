@@ -7201,9 +7201,9 @@ var ptx_lunr_docs = [
   "body": "  Show that , where is the upper half of .   "
 },
 {
-  "id": "sec_integral-representations",
+  "id": "sec_cauchy-integral-formulas",
   "level": "1",
-  "url": "sec_integral-representations.html",
+  "url": "sec_cauchy-integral-formulas.html",
   "type": "Section",
   "number": "6.5",
   "title": "Cauchy’s Integral Formulas",
@@ -7212,43 +7212,43 @@ var ptx_lunr_docs = [
 {
   "id": "Cauchy_Int_Formula",
   "level": "2",
-  "url": "sec_integral-representations.html#Cauchy_Int_Formula",
+  "url": "sec_cauchy-integral-formulas.html#Cauchy_Int_Formula",
   "type": "Theorem",
   "number": "6.5.1",
   "title": "Cauchy’s integral formula for <span class=\"process-math\">\\(\\boldsymbol{f(z_0)}\\)<\/span>.",
   "body": " Cauchy's integral formula for   Let be analytic in the simply connected domain and let be a simple closed positively oriented contour that lies in . If is a point that lies interior to , then .   "
 },
 {
-  "id": "sec_integral-representations-4",
+  "id": "sec_cauchy-integral-formulas-4",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-4",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-4",
   "type": "Proof",
   "number": "6.5.1",
   "title": "",
   "body": " Because is continuous at , if is given there is a such that the positively oriented circle lies interior to (as Figure shows) and such that .   The contours and in the proof of Cauchy 's integral formula    Since is a fixed value, we can use the result of Corollary to conclude that .  By the deformation of contour theorem ( Theorem ), .  Using Inequality and Equations and above, together with the ML inequality ( Theorem ), we obtain the following estimate: .  This calculation proves the theorem because can be made arbitrarily small.  "
 },
 {
-  "id": "sec_integral-representations-5",
+  "id": "sec_cauchy-integral-formulas-5",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-5",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-5",
   "type": "Example",
   "number": "6.5.3",
   "title": "",
   "body": "  Show that .    Recall that is the circle centered at 0 with radius 2 and having positive orientation. We have and . The point lies interior to the circle, so Cauchy 's integral formula implies that . Multiplication by establishes the desired result.   "
 },
 {
-  "id": "sec_integral-representations-6",
+  "id": "sec_cauchy-integral-formulas-6",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-6",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-6",
   "type": "Example",
   "number": "6.5.4",
   "title": "",
   "body": "  Show that .    Here we have . We manipulate the integral and use Cauchy 's integral formula to obtain .   "
 },
 {
-  "id": "sec_integral-representations-7",
+  "id": "sec_cauchy-integral-formulas-7",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-7",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-7",
   "type": "Example",
   "number": "6.5.5",
   "title": "",
@@ -7257,7 +7257,7 @@ var ptx_lunr_docs = [
 {
   "id": "Leibniz_s_Rule",
   "level": "2",
-  "url": "sec_integral-representations.html#Leibniz_s_Rule",
+  "url": "sec_cauchy-integral-formulas.html#Leibniz_s_Rule",
   "type": "Theorem",
   "number": "6.5.6",
   "title": "Leibniz’s rule.",
@@ -7266,34 +7266,34 @@ var ptx_lunr_docs = [
 {
   "id": "Cauchy_Int_Formulas",
   "level": "2",
-  "url": "sec_integral-representations.html#Cauchy_Int_Formulas",
+  "url": "sec_cauchy-integral-formulas.html#Cauchy_Int_Formulas",
   "type": "Theorem",
   "number": "6.5.7",
   "title": "Cauchy’s integral formulas for <span class=\"process-math\">\\(\\boldsymbol{f^{(n)}(z_0)}\\)<\/span>.",
   "body": " Cauchy's integral formulas for   Let be analytic in the simply connected domain and let be a simple closed positively oriented contour that lies in . If is a point that lies interior to C, then for any integer , .   "
 },
 {
-  "id": "sec_integral-representations-12",
+  "id": "sec_cauchy-integral-formulas-12",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-12",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-12",
   "type": "Proof",
   "number": "6.5.2",
   "title": "",
   "body": " Because , the case for reduces to Theorem . We now establish the theorem for the case . We start by using the parametrization . Next we use Theorem and write .  The integrand on the right side of Equation is a function of the two variables and , where . Moreover, and are continuous on the interior of , which is an open set. Applying Leibniz's rule to Equation gives , and the proof for the case is complete. We can apply the same argument to the analytic function and show that its derivative is also represented by Equation for . The principle of mathematical induction establishes the theorem for all integers .  "
 },
 {
-  "id": "sec_integral-representations-13",
+  "id": "sec_cauchy-integral-formulas-13",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-13",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-13",
   "type": "Example",
   "number": "6.5.8",
   "title": "",
   "body": "  Let denote a fixed complex value. Show that, if is a simple closed positively oriented contour such that lies interior to , then for any integer , .    We let . Then for . Theorem implies that the value of the first integral in Equations is , and Theorem further implies that .   "
 },
 {
-  "id": "sec_integral-representations-15",
+  "id": "sec_cauchy-integral-formulas-15",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-15",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-15",
   "type": "Example",
   "number": "6.5.9",
   "title": "",
@@ -7302,25 +7302,25 @@ var ptx_lunr_docs = [
 {
   "id": "All_derivs",
   "level": "2",
-  "url": "sec_integral-representations.html#All_derivs",
+  "url": "sec_cauchy-integral-formulas.html#All_derivs",
   "type": "Corollary",
   "number": "6.5.10",
   "title": "",
   "body": "  If is analytic in the domain , then, for integers , all derivatives exist for (and therefore are analytic in ).   "
 },
 {
-  "id": "sec_integral-representations-18",
+  "id": "sec_cauchy-integral-formulas-18",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-18",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-18",
   "type": "Proof",
   "number": "6.5.3",
   "title": "",
   "body": " For each point in , there exists a closed disk that is contained in . Using the circle in Theorem yields the result that exists for all integers .  "
 },
 {
-  "id": "sec_integral-representations-19",
+  "id": "sec_cauchy-integral-formulas-19",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-19",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-19",
   "type": "Remark",
   "number": "6.5.11",
   "title": "",
@@ -7329,16 +7329,16 @@ var ptx_lunr_docs = [
 {
   "id": "Harmonic_Partials",
   "level": "2",
-  "url": "sec_integral-representations.html#Harmonic_Partials",
+  "url": "sec_cauchy-integral-formulas.html#Harmonic_Partials",
   "type": "Corollary",
   "number": "6.5.12",
   "title": "",
   "body": "  If is a harmonic function at each point in the domain , then all partial derivatives , and exist and are harmonic functions.   "
 },
 {
-  "id": "sec_integral-representations-21",
+  "id": "sec_cauchy-integral-formulas-21",
   "level": "2",
-  "url": "sec_integral-representations.html#sec_integral-representations-21",
+  "url": "sec_cauchy-integral-formulas.html#sec_cauchy-integral-formulas-21",
   "type": "Proof",
   "number": "6.5.4",
   "title": "",
@@ -7347,7 +7347,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_1",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_1",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_1",
   "type": "Exercise",
   "number": "6.5.1",
   "title": "",
@@ -7356,7 +7356,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_2",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_2",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_2",
   "type": "Exercise",
   "number": "6.5.2",
   "title": "",
@@ -7365,7 +7365,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_3",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_3",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_3",
   "type": "Exercise",
   "number": "6.5.3",
   "title": "",
@@ -7374,7 +7374,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_4",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_4",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_4",
   "type": "Exercise",
   "number": "6.5.4",
   "title": "",
@@ -7383,7 +7383,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_5",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_5",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_5",
   "type": "Exercise",
   "number": "6.5.5",
   "title": "",
@@ -7392,7 +7392,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_6",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_6",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_6",
   "type": "Exercise",
   "number": "6.5.6",
   "title": "",
@@ -7401,7 +7401,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_7",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_7",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_7",
   "type": "Exercise",
   "number": "6.5.7",
   "title": "",
@@ -7410,7 +7410,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_8",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_8",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_8",
   "type": "Exercise",
   "number": "6.5.8",
   "title": "",
@@ -7419,7 +7419,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_9",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_9",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_9",
   "type": "Exercise",
   "number": "6.5.9",
   "title": "",
@@ -7428,7 +7428,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_10",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_10",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_10",
   "type": "Exercise",
   "number": "6.5.10",
   "title": "",
@@ -7437,7 +7437,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_11",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_11",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_11",
   "type": "Exercise",
   "number": "6.5.11",
   "title": "",
@@ -7446,7 +7446,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_12",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_12",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_12",
   "type": "Exercise",
   "number": "6.5.12",
   "title": "",
@@ -7455,7 +7455,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_13",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_13",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_13",
   "type": "Exercise",
   "number": "6.5.13",
   "title": "",
@@ -7464,7 +7464,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_14",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_14",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_14",
   "type": "Exercise",
   "number": "6.5.14",
   "title": "",
@@ -7473,7 +7473,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_15",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_15",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_15",
   "type": "Exercise",
   "number": "6.5.15",
   "title": "",
@@ -7482,25 +7482,25 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_16",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_16",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_16",
   "type": "Exercise",
   "number": "6.5.16",
   "title": "",
   "body": "  Let . Evaluate , where is a positive integer.   "
 },
 {
-  "id": "exercises_integral-representations-19",
+  "id": "exercises_cauchy-integral-formnulas-19",
   "level": "2",
-  "url": "sec_integral-representations.html#exercises_integral-representations-19",
+  "url": "sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas-19",
   "type": "Exercise",
   "number": "6.5.17",
   "title": "",
   "body": "  Let and be two complex numbers that lie interior to the simple closed contour with positive orientation. Evaluate .     .   "
 },
 {
-  "id": "exercises_integral-representations-20",
+  "id": "exercises_cauchy-integral-formnulas-20",
   "level": "2",
-  "url": "sec_integral-representations.html#exercises_integral-representations-20",
+  "url": "sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas-20",
   "type": "Exercise",
   "number": "6.5.18",
   "title": "",
@@ -7509,7 +7509,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_18",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_18",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_18",
   "type": "Exercise",
   "number": "6.5.19",
   "title": "",
@@ -7518,7 +7518,7 @@ var ptx_lunr_docs = [
 {
   "id": "x6_5_20",
   "level": "2",
-  "url": "sec_integral-representations.html#x6_5_20",
+  "url": "sec_cauchy-integral-formulas.html#x6_5_20",
   "type": "Exercise",
   "number": "6.5.20",
   "title": "",
