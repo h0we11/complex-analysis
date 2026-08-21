@@ -21,68 +21,21 @@
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="external/custom-styles.css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "textmacros",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[tex]/textmacros",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
+<meta name="twitter:title" content="Complex Analysis">
+<meta property="og:title" content="Complex Analysis">
 <meta property="book:title" content="Complex Analysis">
-<meta property="book:author" content="Russell W. Howell">
-<meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -104,35 +57,52 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.1';
+eBookConfig.runestone_version = '8.2.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.86d8a68ed7481f7e.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Complex Analysis</span></a></div>
 <p class="byline">Russell W. Howell, John H. Mathews</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<h2 class="search-results-heading">Search Results: </h2>
-<div id="searchempty" class="searchempty"><span>No results.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec_vibrations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_fs-laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_laplace-transform.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec_vibrations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_fs-laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_laplace-transform.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -141,15 +111,15 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-2.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_Complex_Numbers" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_origin" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
@@ -159,221 +129,221 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_algebra-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_geometry-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_geometry-2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_algebra-2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_topology" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_complex-functions" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_functions-mappings" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_z_n" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_limits-continuity" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_branches" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_riemann-surface-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_reciprocal-transformation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_A_and_H_Functions" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_diff-analytic" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-riemann" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_harmonic-functions" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_seq-series-fractals" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_sequences-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_julia-mandelbrot" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_convergence-theorems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_power-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_elementary-fcns" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_exponential-function" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-log" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-exponents" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_trig-hyperbolics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_inverse-trig-hyperbolics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_complex-integration" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_contour-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-goursat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_integration-theorems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Cauchy Integral Formulas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-integral-formulas" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_morera-liouville" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_taylor-laurent" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_uniform-convergence" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_taylor-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laurent-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_singularities" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_taylor-laurent-apps" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_residue" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_residue-thm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_trig-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_improper-rational-fn-int" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_improper-trig-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_indented-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_branch-integrands" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle and Rouché’s Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_argument-rouche" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_conformal-mapping" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_conformal-mappings" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_bilinear-transformations" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_elementary-mappings" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\(\mathbf{w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\boldsymbol{w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises</span></a></div></li>
@@ -381,7 +351,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_conformal-trig" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -390,122 +360,122 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_harmonic-apps" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_dirichlet-problem" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_poisson-integral-formula" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_steady-state-temps" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_insulated-segment" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_2d-electrostatics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_2d-fluid-flow" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_joukowski-airfoil" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_flow-with-circulation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_schwarz-christoffel-transformation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_fluid-flow-image" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_sources-and-sinks" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_charged-line" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch_fs-laplace">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_fourier-series" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_euler-formula" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_dirichlet" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_vibrations" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_forced-vibrations" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec_fourier-transform"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_laplace-transform" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-transform-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-derivs-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_shifting-thms" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_mult-and-division-by-t" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-inversion" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_convolution" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec_fourier-transform">
-<h2 class="heading hide-type">
+<h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Fourier Transform</span>
-</h2>
+</h1>
 <div class="para logical" id="sec_fourier-transform-2">
 <div class="para">Let <span class="process-math">\(U(t)\)</span> be a real-valued function with period <span class="process-math">\(2\pi\)</span> which is piecewise continuous such that <span class="process-math">\(U\,'(t)\)</span> also exists and is piecewise continuous. Then <span class="process-math">\(U(t)\)</span> has the <em class="emphasis">complex Fourier series</em> representation</div>
 <div class="displaymath process-math" id="sec_fourier-transform-2-6">
@@ -518,7 +488,7 @@ U(t) = \sum_{n=-\infty}^{\infty}c_ne^{int},  \text{ where }
 c_n=\frac{1}{2\pi}\int_{-\pi}^{\pi}U(t) e^{-int}\,dt  \text{ for all }   n\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-3">
 <div class="para">The coefficients <span class="process-math">\(\{c_nt\}\)</span> are complex numbers. Previously, we expressed <span class="process-math">\(U(t)\)</span> as a real trigonometric series:</div>
@@ -527,7 +497,7 @@ c_n=\frac{1}{2\pi}\int_{-\pi}^{\pi}U(t) e^{-int}\,dt  \text{ for all }   n\text{
 U(t) =\frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)\text{.}\tag{11.4.1}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-4">
 <div class="para">Hence, a relationship between the coefficients is</div>
@@ -537,7 +507,7 @@ a_n \amp = c_n+c_{-n} \quad \text{for} \quad  n=0,1,2, \ldots , \text{ and }\\
 b_n \amp =i(c_n-c_{-n}) \quad  \text{for} \quad  n=1,2, \ldots \, . 
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-5">
 <div class="para">These relations are easy to establish. We start by writing</div>
@@ -549,9 +519,9 @@ U(t) \amp = c_0 + \sum_{n=1}^{\infty}c_ne^{int} +
 \amp = c_0 + \sum_{n=1}^{\infty}[(c_n+c_{-n}) \cos nt+i(c_n-c_{-n}) \sin nt]\text{.}\notag
 \end{align}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_fourier-transform-6">Comparing Equation <a href="sec_fourier-transform.html#sec_fourier-transform-5-1" class="xref" data-knowl="./knowl/xref/TrigSeries2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.2">(11.4.2)</a> with Equation <a href="sec_fourier-transform.html#TrigSeries" class="xref" data-knowl="./knowl/xref/TrigSeries.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.1">(11.4.1)</a>, we see that <span class="process-math">\(a_0=2c_0\text{,}\)</span> <span class="process-math">\(a_n=c_n+c_{-n}\text{,}\)</span> and <span class="process-math">\(b_n=i( c_n-c_{-n})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_fourier-transform-6">Comparing Equation <a href="sec_fourier-transform.html#sec_fourier-transform-5-1" class="xref" data-knowl="./knowl/xref/TrigSeries2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.2">(11.4.2)</a> with Equation <a href="sec_fourier-transform.html#TrigSeries" class="xref" data-knowl="./knowl/xref/TrigSeries.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.1">(11.4.1)</a>, we see that <span class="process-math">\(a_0=2c_0\text{,}\)</span> <span class="process-math">\(a_n=c_n+c_{-n}\text{,}\)</span> and <span class="process-math">\(b_n=i( c_n-c_{-n})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-7">
 <div class="para">If <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(U\,'(t)\)</span> are piecewise continuous and have period <span class="process-math">\(2L\text{,}\)</span> then <span class="process-math">\(U(t)\)</span> has the <em class="emphasis">complex Fourier series</em> representation</div>
@@ -565,9 +535,9 @@ U(t) = \sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}}, \quad  \text{where}\ta
 c_n = \frac{1}{2L}\int_{-L}^{L}U(t) e^{-i\frac{\pi nt}{L}}\,dt \quad \text{for all} \quad n.\tag{11.4.4}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_fourier-transform-8">We have seen how periodic functions are represented by trigonometric series. Many practical problems involve nonperiodic functions. A representation analogous to Fourier series for a nonperiodic function <span class="process-math">\(U(t)\)</span> is obtained by considering the Fourier series of <span class="process-math">\(U(t)\)</span> for <span class="process-math">\(-L\lt t\lt L\)</span> and then taking the limit as <span class="process-math">\(L \to \infty\text{.}\)</span> The result is known as the Fourier transform of <span class="process-math">\(U(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_fourier-transform-8">We have seen how periodic functions are represented by trigonometric series. Many practical problems involve nonperiodic functions. A representation analogous to Fourier series for a nonperiodic function <span class="process-math">\(U(t)\)</span> is obtained by considering the Fourier series of <span class="process-math">\(U(t)\)</span> for <span class="process-math">\(-L\lt t\lt L\)</span> and then taking the limit as <span class="process-math">\(L \to \infty\text{.}\)</span> The result is known as the Fourier transform of <span class="process-math">\(U(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-9">
 <div class="para">Start with a nonperiodic function <span class="process-math">\(U(t)\)</span> and consider the periodic function <span class="process-math">\(U_L(t)\)</span> with period <span class="process-math">\(2L\text{,}\)</span> where</div>
@@ -577,7 +547,7 @@ U_L(t) \amp = U(t) \amp \amp  \text{for} \quad  -L\lt t \le L, \quad \text{and}\
 U_L(t) \amp =U_L(t+2L) \amp \amp  \text{for all} \quad  t.
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-10">
 <div class="para">Then <span class="process-math">\(U_L(t)\)</span> has the complex Fourier series representation</div>
@@ -586,7 +556,7 @@ U_L(t) \amp =U_L(t+2L) \amp \amp  \text{for all} \quad  t.
 U_L(t)=\sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}}\text{.}\tag{11.4.5}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-11">
 <div class="para">We introduce some terminology to discuss the terms in Equation <a href="sec_fourier-transform.html#ComplexFourierL" class="xref" data-knowl="./knowl/xref/ComplexFourierL.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.5">(11.4.5)</a>, first</div>
@@ -595,7 +565,7 @@ U_L(t)=\sum_{n=-\infty}^{\infty}c_ne^{i\frac{\pi nt}{L}}\text{.}\tag{11.4.5}
 w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }\tag{11.4.6}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-12">
 <div class="para">If <span class="process-math">\(t\)</span> denotes time, then the units for <span class="process-math">\(w_n\)</span> are radians per unit time. The set of all possible frequencies is called the <em class="emphasis">frequency spectrum, i.e.</em>,</div>
@@ -604,13 +574,13 @@ w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }\tag{11.4.6}
 \left\{\ldots ,\frac{-3\pi}{L},\frac{-2\pi}{L},\frac{-\pi}{L},\frac{\pi}{L}, \frac{2\pi}{L},\frac{3\pi}{L}, \ldots\right\}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_fourier-transform-13">It is important to note that as <span class="process-math">\(L\)</span> increases, the spectrum becomes finer and approaches a continuous spectrum of frequencies. It is reasonable to expect that the summation in the Fourier series for <span class="process-math">\(U_L(t)\)</span> will give rise to an integral over <span class="process-math">\([-\infty .\infty ]\text{.}\)</span> This is stated in the following important theorem.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_fourier-transform-13">It is important to note that as <span class="process-math">\(L\)</span> increases, the spectrum becomes finer and approaches a continuous spectrum of frequencies. It is reasonable to expect that the summation in the Fourier series for <span class="process-math">\(U_L(t)\)</span> will give rise to an integral over <span class="process-math">\([-\infty .\infty ]\text{.}\)</span> This is stated in the following important theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="thm_fourier-transform"><h3 class="heading">
+<article class="theorem theorem-like" id="thm_fourier-transform"><h2 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fourier Transform.</span>
-</h3>
+</h2>
 <div class="para logical" id="thm_fourier-transform-2-1">
 <div class="para">Let <span class="process-math">\(U(t)\)</span> and <span class="process-math">\(U\,'(t)\)</span> be piecewise continuous, and</div>
 <div class="displaymath process-math" id="thm_fourier-transform-2-1-3">
@@ -624,7 +594,7 @@ w_n=\frac{\pi n}{L}  \text{ is called the  frequency. }\tag{11.4.6}
 F(w) = \frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}U(t)e^{-iwt}\,dt\text{.}\tag{11.4.7}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm_fourier-transform-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_fourier-transform-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para logical" id="thm_fourier-transform-2-2">
 <div class="para">At points of continuity, <span class="process-math">\(U(t)\)</span> has the integral representation</div>
@@ -639,9 +609,9 @@ U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw\text{.}
 \frac{U(a^-)+U(a^+)}{2}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#thm_fourier-transform-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm_fourier-transform-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.4.1: Fourier Transform"><a href="#thm_fourier-transform" title="Copy heading and permalink for Theorem 11.4.1: Fourier Transform" aria-label="Copy heading and permalink for Theorem 11.4.1: Fourier Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.4.1: Fourier Transform"><a tabindex="-1" href="#thm_fourier-transform" title="Copy heading and permalink for Theorem 11.4.1: Fourier Transform" aria-label="Copy heading and permalink for Theorem 11.4.1: Fourier Transform">🔗</a></div>
 </article>
 <div class="para logical" id="sec_fourier-transform-15">
 <div class="para">Note: It is common to express the fact that <span class="process-math">\(U\)</span> is transformed into <span class="process-math">\(F\)</span> by using the operator notation</div>
@@ -650,9 +620,9 @@ U(t) = \int\nolimits_{-\infty}^{\infty}F(w)e^{iwt}\,dw\text{.}
 \mathrm{F}\big(U(t)\big)=F(w).
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="sec_fourier-transform-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<details id="sec_fourier-transform-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec_fourier-transform-16-1">
 <div class="para">Set <span class="process-math">\(\Delta w_n=w_{n+1}-w_n=\frac{\pi}{L}\)</span> and <span class="process-math">\(\frac{1}{2L}=\frac{1}{2\pi}\Delta w_n\text{.}\)</span> These quantities are used in conjunction with Equations <a href="sec_fourier-transform.html#ComplexFourier" class="xref" data-knowl="./knowl/xref/ComplexFourier.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.3">(11.4.3)</a>, <a href="sec_fourier-transform.html#ComplexFourierC" class="xref" data-knowl="./knowl/xref/ComplexFourierC.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.4">(11.4.4)</a>, <a href="sec_fourier-transform.html#ComplexFourierL" class="xref" data-knowl="./knowl/xref/ComplexFourierL.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.5">(11.4.5)</a> and the frequency in <a href="sec_fourier-transform.html#Frequency" class="xref" data-knowl="./knowl/xref/Frequency.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.6">(11.4.6)</a> to obtain</div>
@@ -664,7 +634,7 @@ e^{-iw_nt}\,dt\right] e^{iw_nt}\tag{11.4.8}\\
 w_n\text{.}\notag
 \end{align}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-16-2">
 <div class="para">If we define <span class="process-math">\(F_L(w)\)</span> by</div>
@@ -679,7 +649,7 @@ F_L(w) = \frac{1}{2\pi}\int_{-L}^{L}U(t)e^{-iwt}\,dt\text{,}
 U_L(t) = \sum_{n=-\infty}^{\infty}F_L(w_n)e^{iw_nt}\Delta w_n\text{.}\tag{11.4.9}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_fourier-transform-16-3">
 <div class="para">As <span class="process-math">\(L\)</span> gets large, <span class="process-math">\(F_L(w_n)\)</span> approaches <span class="process-math">\(F(w_n)\)</span> and <span class="process-math">\(\Delta w_n\)</span> tends to zero. Thus the limit on the right-hand side of Equation <a href="sec_fourier-transform.html#ComplexFourierL3" class="xref" data-knowl="./knowl/xref/ComplexFourierL3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.4.9">(11.4.9)</a> can be viewed as an integral. This substantiates the Fourier integral representation</div>
@@ -689,13 +659,13 @@ U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw\text{.}
 \end{equation*}
 </div>
 <div class="para">A more rigorous proof of this fact can be found in advanced texts.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.4.1"><a href="#sec_fourier-transform-16" title="Copy heading and permalink for Proof 11.4.1" aria-label="Copy heading and permalink for Proof 11.4.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.4.1"><a tabindex="-1" href="#sec_fourier-transform-16" title="Copy heading and permalink for Proof 11.4.1" aria-label="Copy heading and permalink for Proof 11.4.1">🔗</a></div>
 </article></details>
-<div class="para" id="sec_fourier-transform-17">The following table depicts some important properties of the Fourier transform.<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_fourier-transform-17">The following table depicts some important properties of the Fourier transform.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="table_fourier-transform-properties"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Important Properties of the Fourier Transform<div class="autopermalink" data-description="Table 11.4.2: Important Properties of the Fourier Transform"><a href="#table_fourier-transform-properties" title="Copy heading and permalink for Table 11.4.2: Important Properties of the Fourier Transform" aria-label="Copy heading and permalink for Table 11.4.2: Important Properties of the Fourier Transform">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table_fourier-transform-properties"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Important Properties of the Fourier Transform<div class="autopermalink" aria-hidden="true" data-description="Table 11.4.2: Important Properties of the Fourier Transform"><a tabindex="-1" href="#table_fourier-transform-properties" title="Copy heading and permalink for Table 11.4.2: Important Properties of the Fourier Transform" aria-label="Copy heading and permalink for Table 11.4.2: Important Properties of the Fourier Transform">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -740,10 +710,10 @@ U(t) = \int_{-\infty}^{\infty}F(w)e^{iwt}dw\text{.}
 </tr>
 </table></div>
 </figure>
-<article class="example example-like" id="ex_10_5"><h3 class="heading">
+<article class="example example-like" id="ex_10_5"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="ex_10_5-1-1">Show that <span class="process-math">\(F\big(e^{-|t|}\big) = \frac{1}{\pi(1+w^2)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_10_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<div class="para" id="ex_10_5-1-1">Show that <span class="process-math">\(F\big(e^{-|t|}\big) = \frac{1}{\pi(1+w^2)}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_10_5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="ex_10_5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -760,17 +730,17 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \amp = \frac{1}{\pi (1+w^2)}.
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex_10_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_10_5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.4.3.1"><a href="#ex_10_5-2" title="Copy heading and permalink for Solution 11.4.3.1" aria-label="Copy heading and permalink for Solution 11.4.3.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.4.3.1"><a tabindex="-1" href="#ex_10_5-2" title="Copy heading and permalink for Solution 11.4.3.1" aria-label="Copy heading and permalink for Solution 11.4.3.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.4.3"><a href="#ex_10_5" title="Copy heading and permalink for Example 11.4.3" aria-label="Copy heading and permalink for Example 11.4.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.4.3"><a tabindex="-1" href="#ex_10_5" title="Copy heading and permalink for Example 11.4.3" aria-label="Copy heading and permalink for Example 11.4.3">🔗</a></div>
 </article>
-<article class="example example-like" id="sec_fourier-transform-20"><h3 class="heading">
+<article class="example example-like" id="sec_fourier-transform-20"><h2 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="sec_fourier-transform-20-1-1">Show that <span class="process-math">\(\mathrm{F}\big(\frac{1}{1+t^2}\big) = \frac{1}{2}e^{-|w|}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h2>
+<div class="para" id="sec_fourier-transform-20-1-1">Show that <span class="process-math">\(\mathrm{F}\big(\frac{1}{1+t^2}\big) = \frac{1}{2}e^{-|w|}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_fourier-transform-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -788,68 +758,68 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \mathrm{F}\left(\frac{1}{1+t^2}\right) = \frac{1}{2}e^{-|w|}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_fourier-transform-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_fourier-transform-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.4.4.1"><a href="#sec_fourier-transform-20-2" title="Copy heading and permalink for Solution 11.4.4.1" aria-label="Copy heading and permalink for Solution 11.4.4.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.4.4.1"><a tabindex="-1" href="#sec_fourier-transform-20-2" title="Copy heading and permalink for Solution 11.4.4.1" aria-label="Copy heading and permalink for Solution 11.4.4.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.4.4"><a href="#sec_fourier-transform-20" title="Copy heading and permalink for Example 11.4.4" aria-label="Copy heading and permalink for Example 11.4.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.4.4"><a tabindex="-1" href="#sec_fourier-transform-20" title="Copy heading and permalink for Example 11.4.4" aria-label="Copy heading and permalink for Example 11.4.4">🔗</a></div>
 </article>
 <section class="exercises" id="exercises_fourier-transform">
-<h3 class="heading hide-type">
+<h2 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
-</h3>
-<article class="exercise exercise-like" id="exercises_fourier-transform-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+</h2>
+<article class="exercise exercise-like" id="exercises_fourier-transform-2"><h3 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="introduction" id="exercises_fourier-transform-2-1">
-<div class="para" id="exercises_fourier-transform-2-1-1">Find <span class="process-math">\(\mathfrak{F}\big(U(t)\big)\)</span> for each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises_fourier-transform-2-1-1">Find <span class="process-math">\(\mathfrak{F}\big(U(t)\big)\)</span> for each of the following:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="ex_12_1a"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<article class="task exercise-like" id="ex_12_1a"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para" id="ex_12_1a-1-1">
 <span class="process-math">\(U(t)= \begin{cases}
 1 \amp \text{for} \quad |t| \lt 1,\\
 0 \amp \text{for} \quad |t| &gt; 1.
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_1a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_1a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="ex_12_1a-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="ex_12_1a-2-1">
-<span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_1a-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{\sin(w)}{\pi w}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_1a-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.4.1.a.1"><a href="#ex_12_1a-2" title="Copy heading and permalink for Solution 11.4.1.a.1" aria-label="Copy heading and permalink for Solution 11.4.1.a.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.4.1.a.1"><a tabindex="-1" href="#ex_12_1a-2" title="Copy heading and permalink for Solution 11.4.1.a.1" aria-label="Copy heading and permalink for Solution 11.4.1.a.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.4.1.a"><a href="#ex_12_1a" title="Copy heading and permalink for Task 11.4.1.a" aria-label="Copy heading and permalink for Task 11.4.1.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.4.1.a"><a tabindex="-1" href="#ex_12_1a" title="Copy heading and permalink for Task 11.4.1.a" aria-label="Copy heading and permalink for Task 11.4.1.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="ex_12_1b"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<article class="task exercise-like" id="ex_12_1b"><h4 class="heading"><span class="codenumber">(b)</span></h4>
 <div class="para" id="ex_12_1b-1-1">
 <span class="process-math">\(U(t)= \begin{cases}
 1-|t| \amp \text{for} \quad |t| \le 1,\\ 
 \;\;\; 0 \amp \text{for} \quad |t|&gt;1.
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_1b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_1b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="ex_12_1b-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="ex_12_1b-2-1">
-<span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_1b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{1-\cos(w)}{\pi w^2}=\frac{2\sin^2(\frac{w}{2})}{\pi w^2}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_1b-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.4.1.b.1"><a href="#ex_12_1b-2" title="Copy heading and permalink for Solution 11.4.1.b.1" aria-label="Copy heading and permalink for Solution 11.4.1.b.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.4.1.b.1"><a tabindex="-1" href="#ex_12_1b-2" title="Copy heading and permalink for Solution 11.4.1.b.1" aria-label="Copy heading and permalink for Solution 11.4.1.b.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.4.1.b"><a href="#ex_12_1b" title="Copy heading and permalink for Task 11.4.1.b" aria-label="Copy heading and permalink for Task 11.4.1.b">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 11.4.1"><a href="#exercises_fourier-transform-2" title="Copy heading and permalink for Exercise 11.4.1" aria-label="Copy heading and permalink for Exercise 11.4.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.4.1.b"><a tabindex="-1" href="#ex_12_1b" title="Copy heading and permalink for Task 11.4.1.b" aria-label="Copy heading and permalink for Task 11.4.1.b">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.1"><a tabindex="-1" href="#exercises_fourier-transform-2" title="Copy heading and permalink for Exercise 11.4.1" aria-label="Copy heading and permalink for Exercise 11.4.1">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex_12_2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="ex_12_2"><h3 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para" id="ex_12_2-1-1">Let <span class="process-math">\(U(t)= \begin{cases}
 \sin t \amp \text{for} \quad |t| \le \pi,\\ 
 \;\;\, 0 \amp \text{for} \quad |t| &gt; \pi.
-\end{cases}\)</span> Show that <span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span> Show that <span class="process-math">\(\mathfrak{F}\big(U(t)\big) =\frac{i\sin \pi w}{\pi (1-w^2)}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.2"><a href="#ex_12_2" title="Copy heading and permalink for Exercise 11.4.2" aria-label="Copy heading and permalink for Exercise 11.4.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.2"><a tabindex="-1" href="#ex_12_2" title="Copy heading and permalink for Exercise 11.4.2" aria-label="Copy heading and permalink for Exercise 11.4.2">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="exercises_fourier-transform-4"><h3 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="exercises_fourier-transform-4-1-1">
 <div class="para">Use the symmetry and linearity properties and the result of <a href="sec_fourier-transform.html#ex_12_1a" class="xref" data-knowl="./knowl/xref/ex_12_1a.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 11.4.1.a">Exercise 11.4.1.a</a> to show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1a.html" id="exercises_fourier-transform-4-1-1-2">
@@ -860,24 +830,24 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.3"><a href="#exercises_fourier-transform-4" title="Copy heading and permalink for Exercise 11.4.3" aria-label="Copy heading and permalink for Exercise 11.4.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.3"><a tabindex="-1" href="#exercises_fourier-transform-4" title="Copy heading and permalink for Exercise 11.4.3" aria-label="Copy heading and permalink for Exercise 11.4.3">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="ex_12_3"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="ex_12_3-1-1">Let <span class="process-math">\(U(t) =e^{-\frac{t^2}{2}}\text{.}\)</span> Show that <span class="process-math">\(\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="ex_12_3"><h3 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="ex_12_3-1-1">Let <span class="process-math">\(U(t) =e^{-\frac{t^2}{2}}\text{.}\)</span> Show that <span class="process-math">\(\mathfrak{F}\big(U(t)\big) = \frac{1}{\sqrt{2\pi}}e^{-\frac{w^2}{2}}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="ex_12_3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="hint solution-like knowl__content">
-<div class="para" id="ex_12_3-2-1">Use the integral definition and combine the terms in the exponent. Then complete the square and use the fact that <span class="process-math">\(\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_12_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_12_3-2-1">Use the integral definition and combine the terms in the exponent. Then complete the square and use the fact that <span class="process-math">\(\int\nolimits_{-\infty}^{\infty}e^{-\frac{r^2}{2}}\,dt=\sqrt{2\pi}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_12_3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 11.4.4.1"><a href="#ex_12_3-2" title="Copy heading and permalink for Hint 11.4.4.1" aria-label="Copy heading and permalink for Hint 11.4.4.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 11.4.4.1"><a tabindex="-1" href="#ex_12_3-2" title="Copy heading and permalink for Hint 11.4.4.1" aria-label="Copy heading and permalink for Hint 11.4.4.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.4"><a href="#ex_12_3" title="Copy heading and permalink for Exercise 11.4.4" aria-label="Copy heading and permalink for Exercise 11.4.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.4"><a tabindex="-1" href="#ex_12_3" title="Copy heading and permalink for Exercise 11.4.4" aria-label="Copy heading and permalink for Exercise 11.4.4">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="exercises_fourier-transform-6"><h3 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="exercises_fourier-transform-6-1-1">
 <div class="para">Use the time scaling property and the example in the text to show that</div>
 <div class="displaymath process-math" id="exercises_fourier-transform-6-1-1-1">
@@ -885,11 +855,11 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \mathfrak{F}(e^{-a|t|}) =\frac{|a|}{\pi(a^2+w^2)}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.5"><a href="#exercises_fourier-transform-6" title="Copy heading and permalink for Exercise 11.4.5" aria-label="Copy heading and permalink for Exercise 11.4.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.5"><a tabindex="-1" href="#exercises_fourier-transform-6" title="Copy heading and permalink for Exercise 11.4.5" aria-label="Copy heading and permalink for Exercise 11.4.5">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="exercises_fourier-transform-7"><h3 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="exercises_fourier-transform-7-1-1">
 <div class="para">Use the symmetry and linearity properties and the result of <a href="sec_fourier-transform.html#ex_12_2" class="xref" data-knowl="./knowl/xref/ex_12_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 11.4.2">Exercise 11.4.2</a> to show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_2.html" id="exercises_fourier-transform-7-1-1-2">
@@ -901,11 +871,11 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.6"><a href="#exercises_fourier-transform-7" title="Copy heading and permalink for Exercise 11.4.6" aria-label="Copy heading and permalink for Exercise 11.4.6">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.6"><a tabindex="-1" href="#exercises_fourier-transform-7" title="Copy heading and permalink for Exercise 11.4.6" aria-label="Copy heading and permalink for Exercise 11.4.6">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-8"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="exercises_fourier-transform-8"><h3 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="exercises_fourier-transform-8-1-1">
 <div class="para">Use the time differentiation property and the result of <a href="sec_fourier-transform.html#ex_12_3" class="xref" data-knowl="./knowl/xref/ex_12_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 11.4.4">Exercise 11.4.4</a> to show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_3.html" id="exercises_fourier-transform-8-1-1-2">
@@ -913,11 +883,11 @@ F(w) \amp =\frac{1}{2\pi}\int\nolimits_{-\infty}^{\infty}e^{-\left| t\right| }e^
 \mathfrak{F}\left(te^{-\frac{r^2}{2}}\right) =\frac{-iwe^{-\frac{w^2}{2}}}{\sqrt{2\pi}}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.7"><a href="#exercises_fourier-transform-8" title="Copy heading and permalink for Exercise 11.4.7" aria-label="Copy heading and permalink for Exercise 11.4.7">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.7"><a tabindex="-1" href="#exercises_fourier-transform-8" title="Copy heading and permalink for Exercise 11.4.7" aria-label="Copy heading and permalink for Exercise 11.4.7">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-9"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<article class="exercise exercise-like" id="exercises_fourier-transform-9"><h3 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
 <div class="para logical" id="exercises_fourier-transform-9-1-1">
 <div class="para">Use the symmetry and linearity properties and the results of <a href="sec_fourier-transform.html#ex_12_1b" class="xref" data-knowl="./knowl/xref/ex_12_1b.html" data-reveal-label="Reveal" data-close-label="Close" title="Task 11.4.1.b">Exercise 11.4.1.b</a> to show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_12_1b.html" id="exercises_fourier-transform-9-1-1-2">
@@ -929,16 +899,16 @@ F\left(\frac{\sin^2\frac{t}{2}}{t^2}\right) =
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.8"><a href="#exercises_fourier-transform-9" title="Copy heading and permalink for Exercise 11.4.8" aria-label="Copy heading and permalink for Exercise 11.4.8">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.8"><a tabindex="-1" href="#exercises_fourier-transform-9" title="Copy heading and permalink for Exercise 11.4.8" aria-label="Copy heading and permalink for Exercise 11.4.8">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_fourier-transform-10"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="exercises_fourier-transform-10-1-1">Write a report on the Fourier transform. Discuss some of the ideas you found in the literature that are not mentioned in the text.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_fourier-transform-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="exercises_fourier-transform-10"><h3 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="exercises_fourier-transform-10-1-1">Write a report on the Fourier transform. Discuss some of the ideas you found in the literature that are not mentioned in the text.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_fourier-transform-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.4.9"><a href="#exercises_fourier-transform-10" title="Copy heading and permalink for Exercise 11.4.9" aria-label="Copy heading and permalink for Exercise 11.4.9">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercises 11.4: Exercises"><a href="#exercises_fourier-transform" title="Copy heading and permalink for Exercises 11.4: Exercises" aria-label="Copy heading and permalink for Exercises 11.4: Exercises">🔗</a></div>
-</section><div class="autopermalink" data-description="Section 11.4: The Fourier Transform"><a href="#sec_fourier-transform" title="Copy heading and permalink for Section 11.4: The Fourier Transform" aria-label="Copy heading and permalink for Section 11.4: The Fourier Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.4.9"><a tabindex="-1" href="#exercises_fourier-transform-10" title="Copy heading and permalink for Exercise 11.4.9" aria-label="Copy heading and permalink for Exercise 11.4.9">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 11.4: Exercises"><a tabindex="-1" href="#exercises_fourier-transform" title="Copy heading and permalink for Exercises 11.4: Exercises" aria-label="Copy heading and permalink for Exercises 11.4: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 11.4: The Fourier Transform"><a tabindex="-1" href="#sec_fourier-transform" title="Copy heading and permalink for Section 11.4: The Fourier Transform" aria-label="Copy heading and permalink for Section 11.4: The Fourier Transform">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">

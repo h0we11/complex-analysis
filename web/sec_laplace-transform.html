@@ -21,68 +21,21 @@
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="external/custom-styles.css">
-<script>
-var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
-  "tex": {
-    "inlineMath": [
-      [
-        "\\(",
-        "\\)"
-      ]
-    ],
-    "tags": "none",
-    "tagSide": "right",
-    "tagIndent": ".8em",
-    "packages": {
-      "[+]": [
-        "base",
-        "ams",
-        "amscd",
-        "color",
-        "newcommand",
-        "textmacros",
-        "knowl"
-      ]
-    }
-  },
-  "options": {
-    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
-  },
-  "chtml": {
-    "scale": 0.98,
-    "mtextInheritFont": true
-  },
-  "loader": {
-    "load": [
-      "input/asciimath",
-      "[tex]/amscd",
-      "[tex]/color",
-      "[tex]/newcommand",
-      "[tex]/textmacros",
-      "[pretext]/mathjaxknowl3.js"
-    ],
-    "paths": {
-      "pretext": "_static/pretext/js"
-    }
-  },
-  "startup": {
-    pageReady() {
-      return MathJax.startup.defaultPageReady().then(function () {
-      console.log("in ready function");
-      rsMathReady();
-      }
-    )}
-  }
-};
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
+<meta name="twitter:title" content="Complex Analysis">
+<meta property="og:title" content="Complex Analysis">
 <meta property="book:title" content="Complex Analysis">
-<meta property="book:author" content="Russell W. Howell">
-<meta property="book:author" content="John H. Mathews">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.44"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -104,35 +57,52 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.1';
+eBookConfig.runestone_version = '8.2.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.86d8a68ed7481f7e.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="root-1-2.html"><span class="title">Complex Analysis</span></a></h1>
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Complex Analysis</span></a></div>
 <p class="byline">Russell W. Howell, John H. Mathews</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
-<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
-<div class="search-results-controls">
-<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<h2 class="search-results-heading">Search Results: </h2>
-<div id="searchempty" class="searchempty"><span>No results.</span></div>
-<ol id="searchresults" class="searchresults"></ol>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
+<span class="nav-other-controls"><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec_fourier-transform.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_fs-laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_laplace-derivs-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec_fourier-transform.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_fs-laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec_laplace-derivs-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -141,15 +111,15 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="root-1-2-2.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-preface"><div class="toc-title-box"><a href="ch_preface.html" class="internal"><span class="title">Preface</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_Complex_Numbers.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Numbers</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_Complex_Numbers" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_origin.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Origin of Complex Numbers</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_origin" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_wallis" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Geometric Progress of John Wallis</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec_geometric-rep-real" class="internal"><span class="codenumber">1.1.2</span> <span class="title">A Geometric Representation of Real Numbers</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_origin.html#subsec-geometric-rep-complex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">A Geometric Representation of Complex Numbers</span></a></div></li>
@@ -159,221 +129,221 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_algebra-1.html" class="internal"><span class="codenumber">1.2</span> <span class="title">The Algebra of Complex Numbers, Part I</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_algebra-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-1.html#exercises_algebra-1" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_geometry-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Geometry of Complex Numbers, Part I</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_geometry-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-1.html#exercises_geometry-1" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_geometry-2.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Geometry of Complex Numbers, Part II</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_geometry-2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_geometry-2.html#exercises_geometry-2" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_algebra-2.html" class="internal"><span class="codenumber">1.5</span> <span class="title">The Algebra of Complex Numbers, Part II</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_algebra-2" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_algebra-2.html#exercises_algebra-2" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_topology.html" class="internal"><span class="codenumber">1.6</span> <span class="title">The Topology of Complex Numbers</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_topology" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_topology.html#exercises_topology" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_complex-functions.html" class="internal"><span class="codenumber">2</span> <span class="title">Complex Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_complex-functions" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_functions-mappings.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Functions and Linear Mappings</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_functions-mappings" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_functions-mappings.html#exercises_functions-mappings" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_z_n.html" class="internal"><span class="codenumber">2.2</span> <span class="title">The Mappings <span class="process-math">\(w=z^n\)</span> and <span class="process-math">\(w=z^{\frac{1}{n}}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_z_n" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_z_n.html#exercises_z_n" class="internal"><span class="codenumber">2.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_limits-continuity.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Limits and Continuity</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_limits-continuity" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limits-continuity.html#exercises_limits-continuity" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_branches.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Branches of Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_branches" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_branches.html#subsec_riemann-surface-1" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Riemann Surface for <span class="process-math">\(\mathbf{w=z^{\frac{1}{2}}}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_riemann-surface-1" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branches.html#exercises_branches" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_reciprocal-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The Reciprocal Transformation <span class="process-math">\(w=\frac{1}{z}\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_reciprocal-transformation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_reciprocal-transformation.html#exercises_reciprocal-transformation" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_A_and_H_Functions.html" class="internal"><span class="codenumber">3</span> <span class="title">Analytic and Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_A_and_H_Functions" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_diff-analytic.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Differentiable and Analytic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_diff-analytic" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_diff-analytic.html#exercises_diff-analytic" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-riemann.html" class="internal"><span class="codenumber">3.2</span> <span class="title">The Cauchy-Riemann Equations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-riemann" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-riemann.html#exercises_cauchy-riemann" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_harmonic-functions.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_harmonic-functions" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_harmonic-functions.html#exercises_harmonic-functions" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_seq-series-fractals.html" class="internal"><span class="codenumber">4</span> <span class="title">Sequences, Series, and Fractals</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_seq-series-fractals" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_sequences-series.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Sequences and Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_sequences-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sequences-series.html#exercises_sequences-series" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_julia-mandelbrot.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Julia and Mandelbrot Sets</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_julia-mandelbrot" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_julia-mandelbrot.html#exercises_julia-mandelbrot" class="internal"><span class="codenumber">4.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_convergence-theorems.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Geometric Series and Convergence Theorems</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_convergence-theorems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convergence-theorems.html#exercises_convergence-theorems" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_power-series.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Power Series Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_power-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_power-series.html#exercises_power-series" class="internal"><span class="codenumber">4.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_elementary-fcns.html" class="internal"><span class="codenumber">5</span> <span class="title">Elementary Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_elementary-fcns" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_exponential-function.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The Complex Exponential Function</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_exponential-function" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_exponential-function.html#exercises_exponential-function" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-log.html" class="internal"><span class="codenumber">5.2</span> <span class="title">The Complex Logarithm</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-log" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-log.html#exercises_complex-log" class="internal"><span class="codenumber">5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-exponents.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Complex Exponents</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-exponents" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-exponents.html#exercises_complex-exponents" class="internal"><span class="codenumber">5.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_trig-hyperbolics.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Trigonometric and Hyperbolic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_trig-hyperbolics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-hyperbolics.html#exercises_trig-hyperbolics" class="internal"><span class="codenumber">5.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Inverse Trigonometric and Hyperbolic Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_inverse-trig-hyperbolics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_inverse-trig-hyperbolics.html#exercises_inverse-trig-hyperbolics" class="internal"><span class="codenumber">5.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_complex-integration.html" class="internal"><span class="codenumber">6</span> <span class="title">Complex Integration</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_complex-integration" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_complex-integrals.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Complex Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_complex-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_complex-integrals.html#exercises_complex-integrals" class="internal"><span class="codenumber">6.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_contour-integrals.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Contours and Contour Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_contour-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_contour-integrals.html#exercises_contour-integrals" class="internal"><span class="codenumber">6.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-goursat.html" class="internal"><span class="codenumber">6.3</span> <span class="title">The Cauchy-Goursat Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-goursat" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-goursat.html#exercises_cauchy-goursat" class="internal"><span class="codenumber">6.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_integration-theorems.html" class="internal"><span class="codenumber">6.4</span> <span class="title">The Fundamental Theorems of Integration</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_integration-theorems" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_integration-theorems.html#exercises_integration-theorems" class="internal"><span class="codenumber">6.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Cauchy Integral Formulas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_cauchy-integral-formulas" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cauchy-integral-formulas.html#exercises_cauchy-integral-formnulas" class="internal"><span class="codenumber">6.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_morera-liouville.html" class="internal"><span class="codenumber">6.6</span> <span class="title">The Theorems of Morera and Liouville</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_morera-liouville" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_morera-liouville.html#exercises_morera-liouville" class="internal"><span class="codenumber">6.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_taylor-laurent.html" class="internal"><span class="codenumber">7</span> <span class="title">Taylor and Laurent Series</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_taylor-laurent" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_uniform-convergence.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Uniform Convergence</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_uniform-convergence" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_uniform-convergence.html#exercises_uniform-convergence" class="internal"><span class="codenumber">7.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_taylor-series.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Taylor Series Representations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_taylor-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-series.html#exercises_taylor-series" class="internal"><span class="codenumber">7.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laurent-series.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Laurent Series Representations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laurent-series" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laurent-series.html#exercises_laurent-series" class="internal"><span class="codenumber">7.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_singularities.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Singularities, Zeros, and Poles</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_singularities" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_singularities.html#exercises_singularities" class="internal"><span class="codenumber">7.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_taylor-laurent-apps.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Applications of Taylor and Laurent Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_taylor-laurent-apps" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor-laurent-apps.html#exercises_taylor-laurent-apps" class="internal"><span class="codenumber">7.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_residue.html" class="internal"><span class="codenumber">8</span> <span class="title">Residue Theory</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_residue" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_residue-thm.html" class="internal"><span class="codenumber">8.1</span> <span class="title">The Residue Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_residue-thm" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_residue-thm.html#exercises_residue-thm" class="internal"><span class="codenumber">8.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_trig-integrals.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Trigonometric Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_trig-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_trig-integrals.html#exercises_trig-integrals" class="internal"><span class="codenumber">8.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_improper-rational-fn-int.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Improper Integrals of Rational Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_improper-rational-fn-int" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-rational-fn-int.html#exercises_improper-rational-fn-int" class="internal"><span class="codenumber">8.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_improper-trig-integrals.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Improper Integrals of Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_improper-trig-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_improper-trig-integrals.html#exercises_improper-trig-integrals" class="internal"><span class="codenumber">8.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_indented-integrals.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Indented Contour Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_indented-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_indented-integrals.html#exercises_indented-integrals" class="internal"><span class="codenumber">8.5</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_branch-integrands.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Integrands with Branch Points</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_branch-integrands" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_branch-integrands.html#exercises_branch-integrands" class="internal"><span class="codenumber">8.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_argument-rouche.html" class="internal"><span class="codenumber">8.7</span> <span class="title">The Argument Principle and Rouché’s Theorem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_argument-rouche" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_argument-rouche.html#exercises_argument-rouche" class="internal"><span class="codenumber">8.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_conformal-mapping.html" class="internal"><span class="codenumber">9</span> <span class="title">Conformal Mapping</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_conformal-mapping" class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_conformal-mappings.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Basic Properties of Conformal Mappings</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_conformal-mappings" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-mappings.html#exercises_conformal-mappings" class="internal"><span class="codenumber">9.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_bilinear-transformations.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Bilinear Transformations</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_bilinear-transformations" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#subsec_lines-of-flow" class="internal"><span class="codenumber">9.2.1</span> <span class="title">Lines of Flux</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_bilinear-transformations.html#exercises_bilinear-transformations" class="internal"><span class="codenumber">9.2.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_elementary-mappings.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Mappings Involving Elementary Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_elementary-mappings" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_mapping_z_2-1__1_2" class="internal"><span class="codenumber">9.3.1</span> <span class="title">The Mapping <span class="process-math">\(\mathbf{w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_elementary-mappings.html#subsec_riemann-surface-2" class="internal"><span class="codenumber">9.3.2</span> <span class="title">The Riemann Surface for <span class="process-math">\(\boldsymbol{w=(z^2-1)^\frac{1}{2}}\)</span></span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_elementary-mappings.html#exercises_elementary-mappings" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Exercises</span></a></div></li>
@@ -381,7 +351,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_conformal-trig.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Mapping by Trigonometric Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_conformal-trig" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_conformal-trig.html#subsec_arcsine" class="internal"><span class="codenumber">9.4.1</span> <span class="title">The Complex Arcsine Function</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_conformal-trig.html#exercises_conformal-trig" class="internal"><span class="codenumber">9.4.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -390,126 +360,126 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch_harmonic-apps.html" class="internal"><span class="codenumber">10</span> <span class="title">Applications of Harmonic Functions</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-ch_harmonic-apps" class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_preliminaries.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Preliminaries</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_dirichlet-problem.html" class="internal"><span class="codenumber">10.2</span> <span class="title">The Dirichlet Problem</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_dirichlet-problem" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet-problem.html#exercises_dirichlet-problem" class="internal"><span class="codenumber">10.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_poisson-integral-formula.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Poisson’s Integral Formula</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_poisson-integral-formula" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_poisson-integral-formula.html#exercises_poisson-integral-formula" class="internal"><span class="codenumber">10.3</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec_2d-models.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Two-Dimensional Mathematical Models</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_steady-state-temps.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Steady State Temperatures</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_steady-state-temps" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_steady-state-temps.html#subsec_insulated-segment" class="internal"><span class="codenumber">10.5.1</span> <span class="title">An Insulated Segment on the Boundary</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_insulated-segment" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_steady-state-temps.html#exercises_steady-state-temps" class="internal"><span class="codenumber">10.5.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_2d-electrostatics.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Two-Dimensional Electrostatics</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_2d-electrostatics" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-electrostatics.html#exercises_2d-electrostatics" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_2d-fluid-flow.html" class="internal"><span class="codenumber">10.7</span> <span class="title">Two-Dimensional Fluid Flow</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_2d-fluid-flow" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2d-fluid-flow.html#exercises_2d-fluid-flow" class="internal"><span class="codenumber">10.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_joukowski-airfoil.html" class="internal"><span class="codenumber">10.8</span> <span class="title">The Joukowski Airfoil</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_joukowski-airfoil" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_joukowski-airfoil.html#subsec_flow-with-circulation" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Flow with Circulation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_flow-with-circulation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_joukowski-airfoil.html#exercises_joukowski-airfoil" class="internal"><span class="codenumber">10.8.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html" class="internal"><span class="codenumber">10.9</span> <span class="title">The Schwarz-Christoffel Transformation</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_schwarz-christoffel-transformation" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_schwarz-christoffel-transformation.html#exercises_schwarz-christoffel-transformation" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_fluid-flow-image.html" class="internal"><span class="codenumber">10.10</span> <span class="title">Image of a Fluid Flow</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_fluid-flow-image" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fluid-flow-image.html#exercises_fluid-flow-image" class="internal"><span class="codenumber">10.10</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_sources-and-sinks.html" class="internal"><span class="codenumber">10.11</span> <span class="title">Sources and Sinks</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_sources-and-sinks" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_sources-and-sinks.html#subsec_charged-line" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Source: A Charged Line</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_charged-line" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_sources-and-sinks.html#exercises_sources-and-sinks" class="internal"><span class="codenumber">10.11.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch_fs-laplace.html" class="internal"><span class="codenumber">11</span> <span class="title">Fourier Series and the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch_fs-laplace">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_fourier-series.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Fourier Series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection">
+<ul id="ptx-toc-group-sec_fourier-series" class="structural toc-item-list"><li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_fourier-series.html#subsec_euler-formula" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Proof of Euler’s Formulas</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_euler-formula" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-series.html#exercises_fourier-series" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Exercises</span></a></div></li></ul>
 </li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_dirichlet.html" class="internal"><span class="codenumber">11.2</span> <span class="title">The Dirichlet Problem for the Unit Disk</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_dirichlet" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_dirichlet.html#exercises_dirichlet" class="internal"><span class="codenumber">11.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_vibrations.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Vibrations in Mechanical Systems</span></a></div>
-<ul class="structural toc-item-list">
+<ul id="ptx-toc-group-sec_vibrations" class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_vibrations.html#subsec_damped-system" class="internal"><span class="codenumber">11.3.1</span> <span class="title">Damped System</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_vibrations.html#subsec_forced-vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Forced Vibrations</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-subsec_forced-vibrations" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_vibrations.html#exercises_vibrations" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_fourier-transform.html" class="internal"><span class="codenumber">11.4</span> <span class="title">The Fourier Transform</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_fourier-transform" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_fourier-transform.html#exercises_fourier-transform" class="internal"><span class="codenumber">11.4</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec_laplace-transform.html" class="internal"><span class="codenumber">11.5</span> <span class="title">The Laplace Transform</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec_laplace-transform">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec_laplace-transform.html#subsec_fourier-to-laplace" class="internal"><span class="codenumber">11.5.1</span> <span class="title">From Fourier Transforms to Laplace Transforms</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="sec_laplace-transform.html#sec_laplace-transform-3" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Properties of the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-transform-3" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-transform.html#exercises_laplace-transform" class="internal"><span class="codenumber">11.5.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Laplace Transforms of Derivatives and Integrals</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-derivs-integrals" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-derivs-integrals.html#exercises_laplace-derivs-integrals" class="internal"><span class="codenumber">11.6</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_shifting-thms.html" class="internal"><span class="codenumber">11.7</span> <span class="title">Shifting Theorems and the Step Function</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_shifting-thms" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_shifting-thms.html#exercises_shifting-thms" class="internal"><span class="codenumber">11.7</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_mult-and-division-by-t.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Multiplication and Division by <span class="process-math">\(t\)</span></span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_mult-and-division-by-t" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_mult-and-division-by-t.html#exercises_mult-and-division-by-t" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_laplace-inversion.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Inverting the Laplace Transform</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_laplace-inversion" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_laplace-inversion.html#exercises_laplace-inversion" class="internal"><span class="codenumber">11.9</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec_convolution.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Convolution</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul id="ptx-toc-group-sec_convolution" class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_convolution.html#exercises_convolution" class="internal"><span class="codenumber">11.10</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="sec_laplace-transform">
-<h2 class="heading hide-type">
+<h1 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Laplace Transform</span>
-</h2>
+</h1>
 <section class="subsection" id="subsec_fourier-to-laplace">
-<h3 class="heading hide-type">
+<h2 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">From Fourier Transforms to Laplace Transforms</span>
-</h3>
+</h2>
 <div class="para logical" id="subsec_fourier-to-laplace-2">
 <div class="para">We have seen that certain real-valued functions <span class="process-math">\(f(t)\)</span> have a Fourier transform and that the integral</div>
 <div class="displaymath process-math" id="subsec_fourier-to-laplace-2-2">
@@ -526,7 +496,7 @@ G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt
 \int_{-\infty}^{\infty }f(t) e^{-(\sigma +i\omega)t}\,dt\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_fourier-to-laplace-3">
 <div class="para">The function <span class="process-math">\(G(\sigma +i\omega)\)</span> is called the two-sided Laplace transform of <span class="process-math">\(f(t)\text{,}\)</span> and it exists when the Fourier transform of the function <span class="process-math">\(f(t) e^{-\sigma t}\)</span> exists.  From the Fourier transform theory, we can state that a sufficient condition for <span class="process-math">\(G(\sigma +iw)\)</span> to exist is that</div>
@@ -537,7 +507,7 @@ G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt
 </div>
 <div class="para">exists. For a given function <span class="process-math">\(f(t)\text{,}\)</span> this integral is finite for values of <span class="process-math">\(\sigma\)</span> that lie in some interval <span class="process-math">\(a\lt \sigma b\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_fourier-to-laplace-4">
 <div class="para">The two-sided Laplace transform uses the lower limit of integration, that is, <span class="process-math">\(t=-\infty\text{,}\)</span> and hence requires a knowledge of the past history of the function <span class="process-math">\(f(t)\text{,}\)</span> <em class="emphasis">i.e.</em>, <span class="process-math">\(t\lt 0\text{.}\)</span>  For most physical applications, one is interested in the behavior of a system only for <span class="process-math">\(t \ge 0\text{.}\)</span>  Mathematically speaking, the initial conditions <span class="process-math">\(f(0), \, f\,'(0), \, f\,''(0), \ldots\text{,}\)</span> are a consequence of the past history of the system and are often all that is necessary to know.  For this reason, it is useful to define the one-sided Laplace transform of <span class="process-math">\(f(t)\text{,}\)</span> which is commonly referred to simply as the <em class="emphasis">Laplace transform</em> of <span class="process-math">\(f(t)\text{,}\)</span> which is also defined as an integral:</div>
@@ -546,7 +516,7 @@ G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt
 \mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad s = \sigma + i\omega\text{.}\tag{11.5.1}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_fourier-to-laplace-5">
 <div class="para">If the defining <a href="sec_laplace-transform.html#LaplaceDef" class="xref" data-knowl="./knowl/xref/LaplaceDef.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.5.1">integral (11.5.1)</a> for the Laplace transform exists for <span class="process-math">\(s_0=\sigma_0+i\omega\text{,}\)</span> then values of <span class="process-math">\(\sigma\)</span> with <span class="process-math">\(\sigma &gt; \sigma_0\)</span> imply that <span class="process-math">\(e^{-\sigma t} \lt  e^{-\sigma_0t}\text{,}\)</span> and thus</div>
@@ -558,7 +528,7 @@ G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt
 </div>
 <div class="para">and it follows that <span class="process-math">\(F(s)\)</span> exists for <span class="process-math">\(s=\sigma +i\omega\text{.}\)</span> Therefore, the Laplace transform <span class="process-math">\(\mathcal{L}(f(t))\)</span> is defined for all points <span class="process-math">\(s\)</span> in the right half-plane <span class="process-math">\(\mathrm{Re}(s) &gt; \sigma_0\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_fourier-to-laplace-6">
 <div class="para">Another way to view the relationship between the Fourier transform and the Laplace transform is to consider the function <span class="process-math">\(U(t)\)</span> given by</div>
@@ -570,7 +540,7 @@ f(t) \amp \text{for} \quad t \ge 0,\\
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec_fourier-to-laplace-7">
 <div class="para">Then the Fourier transform theory shows us that</div>
@@ -605,14 +575,14 @@ f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}
 \mathcal{L}^{-1}\big(F(s)\big)=f(t =\frac{1}{2\pi}\int_{\sigma-i\infty}^{\sigma +i\infty}F(s) e^{st}\,ds\text{.}\tag{11.5.2}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#subsec_fourier-to-laplace-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec_fourier-to-laplace-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subsection 11.5.1: From Fourier Transforms to Laplace Transforms"><a href="#subsec_fourier-to-laplace" title="Copy heading and permalink for Subsection 11.5.1: From Fourier Transforms to Laplace Transforms" aria-label="Copy heading and permalink for Subsection 11.5.1: From Fourier Transforms to Laplace Transforms">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection 11.5.1: From Fourier Transforms to Laplace Transforms"><a tabindex="-1" href="#subsec_fourier-to-laplace" title="Copy heading and permalink for Subsection 11.5.1: From Fourier Transforms to Laplace Transforms" aria-label="Copy heading and permalink for Subsection 11.5.1: From Fourier Transforms to Laplace Transforms">🔗</a></div>
 </section>
 <section class="subsection" id="sec_laplace-transform-3">
-<h3 class="heading hide-type">
+<h2 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Laplace Transform</span>
-</h3>
+</h2>
 <div class="para logical" id="sec_laplace-transform-3-2">
 <div class="para">Although a function <span class="process-math">\(f(t)\)</span> may be defined for all values of <span class="process-math">\(t\text{,}\)</span> its Laplace transform is not influenced by values of <span class="process-math">\(f(t)\text{,}\)</span> where <span class="process-math">\(t\lt 0\text{.}\)</span> The Laplace transform of <span class="process-math">\(f(t)\)</span> is actually defined for the function <span class="process-math">\(U(t)\)</span> given by</div>
 <div class="displaymath process-math" id="sec_laplace-transform-3-2-7">
@@ -623,7 +593,7 @@ f(t) \amp \text{for} \quad t \ge 0,\\
 \end{cases}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec_laplace-transform-3-3">
 <div class="para">A sufficient condition for the existence of the Laplace transform is that <span class="process-math">\(|f(t)|\)</span> does not grow too rapidly as <span class="process-math">\(t \to +\infty\text{.}\)</span> We say that the function <span class="process-math">\(f\)</span> is of exponential order if there exists real constants <span class="process-math">\(M&gt;0\)</span> and <span class="process-math">\(K\text{,}\)</span> such that</div>
@@ -632,13 +602,13 @@ f(t) \amp \text{for} \quad t \ge 0,\\
 |f(t)| \le Me^{Kt} \quad \text{holds for all} \quad t \ge 0\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_laplace-transform-3-4">All functions in this chapter are assumed to be of exponential order.  The next theorem shows that their Laplace transform <span class="process-math">\(F(\sigma +i\tau)\)</span> exists for values of <span class="process-math">\(s\)</span> in a domain that includes the right half-plane <span class="process-math">\(\mathrm{Re}(s) &gt; K\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_laplace-transform-3-4">All functions in this chapter are assumed to be of exponential order.  The next theorem shows that their Laplace transform <span class="process-math">\(F(\sigma +i\tau)\)</span> exists for values of <span class="process-math">\(s\)</span> in a domain that includes the right half-plane <span class="process-math">\(\mathrm{Re}(s) &gt; K\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="sec_laplace-transform-3-5"><h4 class="heading">
+<article class="theorem theorem-like" id="sec_laplace-transform-3-5"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Existence of the Laplace Transform.</span>
-</h4>
+</h3>
 <div class="para logical" id="sec_laplace-transform-3-5-2-1">
 <div class="para">If <span class="process-math">\(f\)</span> is of exponential order, then its Laplace transform <span class="process-math">\(L\big(f(t)\big)=F(s)\)</span> is given by</div>
 <div class="displaymath process-math" id="sec_laplace-transform-3-5-2-1-3">
@@ -648,11 +618,11 @@ F(s)=\int_0^{\infty}f(t)e^{-st}\,dt, \quad \text{where} \quad s=\sigma+i\omega\t
 </div>
 <div class="para">The defining integral for <span class="process-math">\(F\)</span> exists at points <span class="process-math">\(s = \sigma+i\tau\)</span> in the right half plane <span class="process-math">\(\sigma &gt;K\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.5.1: Existence of the Laplace Transform"><a href="#sec_laplace-transform-3-5" title="Copy heading and permalink for Theorem 11.5.1: Existence of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.1: Existence of the Laplace Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.5.1: Existence of the Laplace Transform"><a tabindex="-1" href="#sec_laplace-transform-3-5" title="Copy heading and permalink for Theorem 11.5.1: Existence of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.1: Existence of the Laplace Transform">🔗</a></div>
 </article>
-<details id="sec_laplace-transform-3-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<details id="sec_laplace-transform-3-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec_laplace-transform-3-6-1">
 <div class="para">Using <span class="process-math">\(s=\sigma +i\tau\)</span> we see that <span class="process-math">\(F(s)\)</span> can be expressed as</div>
@@ -672,16 +642,16 @@ F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e
 </div>
 <div class="para">which imply that the integrals defining the real and imaginary parts of <span class="process-math">\(F\)</span> exist for values of <span class="process-math">\(\mathrm{Re}(s) &gt; K\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.5.2.1"><a href="#sec_laplace-transform-3-6" title="Copy heading and permalink for Proof 11.5.2.1" aria-label="Copy heading and permalink for Proof 11.5.2.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.5.2.1"><a tabindex="-1" href="#sec_laplace-transform-3-6" title="Copy heading and permalink for Proof 11.5.2.1" aria-label="Copy heading and permalink for Proof 11.5.2.1">🔗</a></div>
 </article></details>
 <div class="para" id="sec_laplace-transform-3-7">
-<em class="emphasis">Note</em>: The domain of definition of the defining integral for the Laplace transform <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> seems to be restricted to a half plane.  However, the resulting formula <span class="process-math">\(F(s)\)</span> might have a domain much larger than this half plane. Later we will show that <span class="process-math">\(F(s)\)</span> is an analytic function of the complex variable <span class="process-math">\(s\text{.}\)</span> For most applications involving Laplace transforms that we will study, the Laplace transforms are rational functions that have the form <span class="process-math">\(\frac{P(s)}{Q(s)}\text{,}\)</span> where <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are polynomials, and some other important ones will have the form <span class="process-math">\(\frac{e^{as}P(s)}{Q(s)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="emphasis">Note</em>: The domain of definition of the defining integral for the Laplace transform <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> seems to be restricted to a half plane.  However, the resulting formula <span class="process-math">\(F(s)\)</span> might have a domain much larger than this half plane. Later we will show that <span class="process-math">\(F(s)\)</span> is an analytic function of the complex variable <span class="process-math">\(s\text{.}\)</span> For most applications involving Laplace transforms that we will study, the Laplace transforms are rational functions that have the form <span class="process-math">\(\frac{P(s)}{Q(s)}\text{,}\)</span> where <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are polynomials, and some other important ones will have the form <span class="process-math">\(\frac{e^{as}P(s)}{Q(s)}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="sec_laplace-transform-3-8"><h4 class="heading">
+<article class="theorem theorem-like" id="sec_laplace-transform-3-8"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linearity of the Laplace Transform.</span>
-</h4>
+</h3>
 <div class="para logical" id="sec_laplace-transform-3-8-2-1">
 <div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have Laplace transforms <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> respectively. If <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants, then</div>
 <div class="displaymath process-math" id="sec_laplace-transform-3-8-2-1-7">
@@ -689,11 +659,11 @@ F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e
 \mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.5.2: Linearity of the Laplace Transform"><a href="#sec_laplace-transform-3-8" title="Copy heading and permalink for Theorem 11.5.2: Linearity of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.2: Linearity of the Laplace Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.5.2: Linearity of the Laplace Transform"><a tabindex="-1" href="#sec_laplace-transform-3-8" title="Copy heading and permalink for Theorem 11.5.2: Linearity of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.2: Linearity of the Laplace Transform">🔗</a></div>
 </article>
-<details id="sec_laplace-transform-3-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<details id="sec_laplace-transform-3-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec_laplace-transform-3-9-1">
 <div class="para">Let <span class="process-math">\(K\)</span> be chosen so that both <span class="process-math">\(F\)</span> and <span class="process-math">\(G\)</span> are defined for <span class="process-math">\(\mathrm{Re}(s)&gt;K\text{,}\)</span> then</div>
@@ -704,18 +674,18 @@ F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e
 \amp = aF(s) + bG(s)\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.5.2.2"><a href="#sec_laplace-transform-3-9" title="Copy heading and permalink for Proof 11.5.2.2" aria-label="Copy heading and permalink for Proof 11.5.2.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.5.2.2"><a tabindex="-1" href="#sec_laplace-transform-3-9" title="Copy heading and permalink for Proof 11.5.2.2" aria-label="Copy heading and permalink for Proof 11.5.2.2">🔗</a></div>
 </article></details>
-<article class="theorem theorem-like" id="sec_laplace-transform-3-10"><h4 class="heading">
+<article class="theorem theorem-like" id="sec_laplace-transform-3-10"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Uniqueness of the Laplace Transform.</span>
-</h4>
-<div class="para" id="sec_laplace-transform-3-10-2-1">Let <span class="process-math">\(f\)</span>and <span class="process-math">\(g\)</span> have Laplace transforms <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> respectively. If <span class="process-math">\(F(s) \equiv G(s)\text{,}\)</span> then <span class="process-math">\(f(t) \equiv g(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sec_laplace-transform-3-10-2-1">Let <span class="process-math">\(f\)</span>and <span class="process-math">\(g\)</span> have Laplace transforms <span class="process-math">\(F\)</span> and <span class="process-math">\(G\text{,}\)</span> respectively. If <span class="process-math">\(F(s) \equiv G(s)\text{,}\)</span> then <span class="process-math">\(f(t) \equiv g(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 11.5.3: Uniqueness of the Laplace Transform"><a href="#sec_laplace-transform-3-10" title="Copy heading and permalink for Theorem 11.5.3: Uniqueness of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.3: Uniqueness of the Laplace Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 11.5.3: Uniqueness of the Laplace Transform"><a tabindex="-1" href="#sec_laplace-transform-3-10" title="Copy heading and permalink for Theorem 11.5.3: Uniqueness of the Laplace Transform" aria-label="Copy heading and permalink for Theorem 11.5.3: Uniqueness of the Laplace Transform">🔗</a></div>
 </article>
-<details id="sec_laplace-transform-3-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary>
+<details id="sec_laplace-transform-3-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical" id="sec_laplace-transform-3-11-1">
 <div class="para">If <span class="process-math">\(\sigma\)</span> is sufficiently large, then the integral representation, Equation <a href="sec_laplace-transform.html#LaplaceInverse" class="xref" data-knowl="./knowl/xref/LaplaceInverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.5.2">(11.5.2)</a>, for the inverse Laplace transform can be used to obtain</div>
@@ -728,13 +698,13 @@ f(t)\amp = \mathcal{L}^{-1}\big(F(s)\big)\\
 \amp = g(t)\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 11.5.2.3"><a href="#sec_laplace-transform-3-11" title="Copy heading and permalink for Proof 11.5.2.3" aria-label="Copy heading and permalink for Proof 11.5.2.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 11.5.2.3"><a tabindex="-1" href="#sec_laplace-transform-3-11" title="Copy heading and permalink for Proof 11.5.2.3" aria-label="Copy heading and permalink for Proof 11.5.2.3">🔗</a></div>
 </article></details>
-<article class="example example-like" id="sec_laplace-transform-3-12"><h4 class="heading">
+<article class="example example-like" id="sec_laplace-transform-3-12"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
+</h3>
 <div class="para logical" id="sec_laplace-transform-3-12-1-1">
 <div class="para">Show that the Laplace transform of the step function given by</div>
 <div class="displaymath process-math" id="sec_laplace-transform-3-12-1-1-1">
@@ -746,7 +716,7 @@ f(t)= \begin{cases}
 \quad \text{is} \quad \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_laplace-transform-3-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -761,17 +731,17 @@ f(t)= \begin{cases}
 \amp = \frac{1-e^{-cs}}{s}\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.4.1"><a href="#sec_laplace-transform-3-12-2" title="Copy heading and permalink for Solution 11.5.4.1" aria-label="Copy heading and permalink for Solution 11.5.4.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.4.1"><a tabindex="-1" href="#sec_laplace-transform-3-12-2" title="Copy heading and permalink for Solution 11.5.4.1" aria-label="Copy heading and permalink for Solution 11.5.4.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.4"><a href="#sec_laplace-transform-3-12" title="Copy heading and permalink for Example 11.5.4" aria-label="Copy heading and permalink for Example 11.5.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.4"><a tabindex="-1" href="#sec_laplace-transform-3-12" title="Copy heading and permalink for Example 11.5.4" aria-label="Copy heading and permalink for Example 11.5.4">🔗</a></div>
 </article>
-<article class="example example-like" id="ex_10_8"><h4 class="heading">
+<article class="example example-like" id="ex_10_8"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="ex_10_8-1-1">Show that <span class="process-math">\(\mathcal{L}(e^{at}) =\frac{1}{s-a},\)</span> where <span class="process-math">\(a\)</span> is a real constant.<div class="autopermalink" data-description="Paragraph"><a href="#ex_10_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="ex_10_8-1-1">Show that <span class="process-math">\(\mathcal{L}(e^{at}) =\frac{1}{s-a},\)</span> where <span class="process-math">\(a\)</span> is a real constant.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_10_8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="ex_10_8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -786,21 +756,21 @@ f(t)= \begin{cases}
 \amp = \lim_{R \to +\infty}\frac{e^{(a-s) R}}{a-s}+\frac{1}{s-a}\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ex_10_8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_10_8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex_10_8-2-2">Let <span class="process-math">\(s=\sigma +i\tau\)</span> be held fixed, or where <span class="process-math">\(\sigma &gt;a\text{.}\)</span> Then since <span class="process-math">\(a-\sigma\)</span> is a negative real number we have <span class="process-math">\(\lim\limits_{R \to +\infty}e^{(a-s) R}=0\)</span> and this result can be used in the latter equation to obtain the desired conclusion.<div class="autopermalink" data-description="Paragraph"><a href="#ex_10_8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_10_8-2-2">Let <span class="process-math">\(s=\sigma +i\tau\)</span> be held fixed, or where <span class="process-math">\(\sigma &gt;a\text{.}\)</span> Then since <span class="process-math">\(a-\sigma\)</span> is a negative real number we have <span class="process-math">\(\lim\limits_{R \to +\infty}e^{(a-s) R}=0\)</span> and this result can be used in the latter equation to obtain the desired conclusion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_10_8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.5.1"><a href="#ex_10_8-2" title="Copy heading and permalink for Solution 11.5.5.1" aria-label="Copy heading and permalink for Solution 11.5.5.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.5.1"><a tabindex="-1" href="#ex_10_8-2" title="Copy heading and permalink for Solution 11.5.5.1" aria-label="Copy heading and permalink for Solution 11.5.5.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.5"><a href="#ex_10_8" title="Copy heading and permalink for Example 11.5.5" aria-label="Copy heading and permalink for Example 11.5.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.5"><a tabindex="-1" href="#ex_10_8" title="Copy heading and permalink for Example 11.5.5" aria-label="Copy heading and permalink for Example 11.5.5">🔗</a></div>
 </article>
-<div class="para" id="sec_laplace-transform-3-14">The property of linearity can be used to find new Laplace transforms from known ones.<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_laplace-transform-3-14">The property of linearity can be used to find new Laplace transforms from known ones.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec_laplace-transform-3-15"><h4 class="heading">
+<article class="example example-like" id="sec_laplace-transform-3-15"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sec_laplace-transform-3-15-1-1">Show that <span class="process-math">\(\mathcal{L}(\sinh at) =\frac{a}{s^2-a^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sec_laplace-transform-3-15-1-1">Show that <span class="process-math">\(\mathcal{L}(\sinh at) =\frac{a}{s^2-a^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_laplace-transform-3-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -814,19 +784,19 @@ f(t)= \begin{cases}
 \amp =\frac{a}{s^2-a^2}.
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.6.1"><a href="#sec_laplace-transform-3-15-2" title="Copy heading and permalink for Solution 11.5.6.1" aria-label="Copy heading and permalink for Solution 11.5.6.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.6.1"><a tabindex="-1" href="#sec_laplace-transform-3-15-2" title="Copy heading and permalink for Solution 11.5.6.1" aria-label="Copy heading and permalink for Solution 11.5.6.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.6"><a href="#sec_laplace-transform-3-15" title="Copy heading and permalink for Example 11.5.6" aria-label="Copy heading and permalink for Example 11.5.6">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.6"><a tabindex="-1" href="#sec_laplace-transform-3-15" title="Copy heading and permalink for Example 11.5.6" aria-label="Copy heading and permalink for Example 11.5.6">🔗</a></div>
 </article>
-<div class="para" id="sec_laplace-transform-3-16">The technique of integration by parts is also helpful in finding new Laplace transforms.<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_laplace-transform-3-16">The technique of integration by parts is also helpful in finding new Laplace transforms.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec_laplace-transform-3-17"><h4 class="heading">
+<article class="example example-like" id="sec_laplace-transform-3-17"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sec_laplace-transform-3-17-1-1">Show that <span class="process-math">\(\mathcal{L}(t) = \frac{1}{s^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sec_laplace-transform-3-17-1-1">Show that <span class="process-math">\(\mathcal{L}(t) = \frac{1}{s^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_laplace-transform-3-17-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -840,19 +810,19 @@ f(t)= \begin{cases}
 \amp = \lim_{R \to +\infty}\left(\frac{-R}{s}e^{-sR}-\frac{1}{s^2}e^{-sR}\right) + 0 + \frac{1}{s^2}\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec_laplace-transform-3-17-2-2">For values of <span class="process-math">\(s\)</span> in the right half plane <span class="process-math">\(\mathrm{Re}(s) &gt;0\text{,}\)</span> an argument similar to that in <a href="sec_laplace-transform.html#ex_10_8" class="xref" data-knowl="./knowl/xref/ex_10_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.5.5">Example 11.5.5</a> shows that the last limit approaches zero. This observation establishes the result.<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_laplace-transform-3-17-2-2">For values of <span class="process-math">\(s\)</span> in the right half plane <span class="process-math">\(\mathrm{Re}(s) &gt;0\text{,}\)</span> an argument similar to that in <a href="sec_laplace-transform.html#ex_10_8" class="xref" data-knowl="./knowl/xref/ex_10_8.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 11.5.5">Example 11.5.5</a> shows that the last limit approaches zero. This observation establishes the result.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.7.1"><a href="#sec_laplace-transform-3-17-2" title="Copy heading and permalink for Solution 11.5.7.1" aria-label="Copy heading and permalink for Solution 11.5.7.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.7.1"><a tabindex="-1" href="#sec_laplace-transform-3-17-2" title="Copy heading and permalink for Solution 11.5.7.1" aria-label="Copy heading and permalink for Solution 11.5.7.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.7"><a href="#sec_laplace-transform-3-17" title="Copy heading and permalink for Example 11.5.7" aria-label="Copy heading and permalink for Example 11.5.7">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.7"><a tabindex="-1" href="#sec_laplace-transform-3-17" title="Copy heading and permalink for Example 11.5.7" aria-label="Copy heading and permalink for Example 11.5.7">🔗</a></div>
 </article>
-<article class="example example-like" id="sec_laplace-transform-3-18"><h4 class="heading">
+<article class="example example-like" id="sec_laplace-transform-3-18"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sec_laplace-transform-3-18-1-1">Show that <span class="process-math">\(\mathcal{L}(\cos bt) =\frac{s}{s^2+b^2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sec_laplace-transform-3-18-1-1">Show that <span class="process-math">\(\mathcal{L}(\cos bt) =\frac{s}{s^2+b^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_laplace-transform-3-18-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -871,19 +841,19 @@ f(t)= \begin{cases}
 \frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib} = \frac{s}{s^2+b^2}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.8.1"><a href="#sec_laplace-transform-3-18-2" title="Copy heading and permalink for Solution 11.5.8.1" aria-label="Copy heading and permalink for Solution 11.5.8.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.8.1"><a tabindex="-1" href="#sec_laplace-transform-3-18-2" title="Copy heading and permalink for Solution 11.5.8.1" aria-label="Copy heading and permalink for Solution 11.5.8.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.8"><a href="#sec_laplace-transform-3-18" title="Copy heading and permalink for Example 11.5.8" aria-label="Copy heading and permalink for Example 11.5.8">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.8"><a tabindex="-1" href="#sec_laplace-transform-3-18" title="Copy heading and permalink for Example 11.5.8" aria-label="Copy heading and permalink for Example 11.5.8">🔗</a></div>
 </article>
-<div class="para" id="sec_laplace-transform-3-19">Inverting the Laplace transform is usually accomplished with the aid of a table of known Laplace transforms and the technique of partial fraction expansion.<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec_laplace-transform-3-19">Inverting the Laplace transform is usually accomplished with the aid of a table of known Laplace transforms and the technique of partial fraction expansion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="sec_laplace-transform-3-20"><h4 class="heading">
+<article class="example example-like" id="sec_laplace-transform-3-20"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sec_laplace-transform-3-20-1-1">Find <span class="process-math">\(\mathcal{L}^{-1}(\frac{3s+6}{s^2+9})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="sec_laplace-transform-3-20-1-1">Find <span class="process-math">\(\mathcal{L}^{-1}(\frac{3s+6}{s^2+9})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="sec_laplace-transform-3-20-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -897,17 +867,17 @@ f(t)= \begin{cases}
 \amp = 3\cos 3t+2\sin 3t\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.9.1"><a href="#sec_laplace-transform-3-20-2" title="Copy heading and permalink for Solution 11.5.9.1" aria-label="Copy heading and permalink for Solution 11.5.9.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.9.1"><a tabindex="-1" href="#sec_laplace-transform-3-20-2" title="Copy heading and permalink for Solution 11.5.9.1" aria-label="Copy heading and permalink for Solution 11.5.9.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Example 11.5.9"><a href="#sec_laplace-transform-3-20" title="Copy heading and permalink for Example 11.5.9" aria-label="Copy heading and permalink for Example 11.5.9">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 11.5.9"><a tabindex="-1" href="#sec_laplace-transform-3-20" title="Copy heading and permalink for Example 11.5.9" aria-label="Copy heading and permalink for Example 11.5.9">🔗</a></div>
 </article>
 <div class="para" id="sec_laplace-transform-3-21">
-<a href="sec_laplace-transform.html#table_laplace-transforms" class="xref" data-knowl="./knowl/xref/table_laplace-transforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.10: Well-Known Laplace Transforms">Table 11.5.10</a> gives the Laplace transforms of some well-known functions, and <a href="sec_laplace-transform.html#table_laplace-properties" class="xref" data-knowl="./knowl/xref/table_laplace-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.11: Properties of the Laplace Transform">Table 11.5.11</a> highlights some important properties of Laplace transforms.<div class="autopermalink" data-description="Paragraph"><a href="#sec_laplace-transform-3-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<a href="sec_laplace-transform.html#table_laplace-transforms" class="xref" data-knowl="./knowl/xref/table_laplace-transforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.10: Well-Known Laplace Transforms">Table 11.5.10</a> gives the Laplace transforms of some well-known functions, and <a href="sec_laplace-transform.html#table_laplace-properties" class="xref" data-knowl="./knowl/xref/table_laplace-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.11: Properties of the Laplace Transform">Table 11.5.11</a> highlights some important properties of Laplace transforms.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec_laplace-transform-3-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="table_laplace-transforms"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Well-Known Laplace Transforms<div class="autopermalink" data-description="Table 11.5.10: Well-Known Laplace Transforms"><a href="#table_laplace-transforms" title="Copy heading and permalink for Table 11.5.10: Well-Known Laplace Transforms" aria-label="Copy heading and permalink for Table 11.5.10: Well-Known Laplace Transforms">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table_laplace-transforms"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Well-Known Laplace Transforms<div class="autopermalink" aria-hidden="true" data-description="Table 11.5.10: Well-Known Laplace Transforms"><a tabindex="-1" href="#table_laplace-transforms" title="Copy heading and permalink for Table 11.5.10: Well-Known Laplace Transforms" aria-label="Copy heading and permalink for Table 11.5.10: Well-Known Laplace Transforms">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -996,7 +966,7 @@ f(t)= \begin{cases}
 </tr>
 </table></div>
 </figure>
-<figure class="table table-like" id="table_laplace-properties"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Properties of the Laplace Transform<div class="autopermalink" data-description="Table 11.5.11: Properties of the Laplace Transform"><a href="#table_laplace-properties" title="Copy heading and permalink for Table 11.5.11: Properties of the Laplace Transform" aria-label="Copy heading and permalink for Table 11.5.11: Properties of the Laplace Transform">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table_laplace-properties"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.5.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Properties of the Laplace Transform<div class="autopermalink" aria-hidden="true" data-description="Table 11.5.11: Properties of the Laplace Transform"><a tabindex="-1" href="#table_laplace-properties" title="Copy heading and permalink for Table 11.5.11: Properties of the Laplace Transform" aria-label="Copy heading and permalink for Table 11.5.11: Properties of the Laplace Transform">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -1052,11 +1022,11 @@ f(t)= \begin{cases}
 </table></div>
 </figure>
 <section class="exercises" id="exercises_laplace-transform">
-<h4 class="heading hide-type">
+<h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
-</h4>
-<article class="exercise exercise-like" id="exercises_laplace-transform-2"><h5 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="exercises_laplace-transform-2-1-1">Show that <span class="process-math">\(\mathcal{L}(1) =\frac{1}{s}\)</span> by using the integral definition for the Laplace transform. Assume that <span class="process-math">\(\mathrm{Re}(s)&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<article class="exercise exercise-like" id="exercises_laplace-transform-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises_laplace-transform-2-1-1">Show that <span class="process-math">\(\mathcal{L}(1) =\frac{1}{s}\)</span> by using the integral definition for the Laplace transform. Assume that <span class="process-math">\(\mathrm{Re}(s)&gt;0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
@@ -1078,226 +1048,226 @@ f(t)= \begin{cases}
 \mathcal{L}(1)=\int_0^{\infty}e^{-(\sigma +i\tau)t}\,dt = 0 + 0i - \frac{-1}{\sigma +i\tau }= \frac{1}{s}.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-2-2-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-2-2-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.1.1"><a href="#exercises_laplace-transform-2-2" title="Copy heading and permalink for Solution 11.5.2.1.1" aria-label="Copy heading and permalink for Solution 11.5.2.1.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.1.1"><a tabindex="-1" href="#exercises_laplace-transform-2-2" title="Copy heading and permalink for Solution 11.5.2.1.1" aria-label="Copy heading and permalink for Solution 11.5.2.1.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Exercise 11.5.2.1"><a href="#exercises_laplace-transform-2" title="Copy heading and permalink for Exercise 11.5.2.1" aria-label="Copy heading and permalink for Exercise 11.5.2.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.1"><a tabindex="-1" href="#exercises_laplace-transform-2" title="Copy heading and permalink for Exercise 11.5.2.1" aria-label="Copy heading and permalink for Exercise 11.5.2.1">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_laplace-transform-3"><h5 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="exercises_laplace-transform-3-1-1">Show that <span class="process-math">\(\mathcal{L}(t^2) =\frac{2}{s^3}\)</span> by using the integral definition for the Laplace transform. Assume that <span class="process-math">\(\mathrm{Re}(s) &gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="exercises_laplace-transform-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises_laplace-transform-3-1-1">Show that <span class="process-math">\(\mathcal{L}(t^2) =\frac{2}{s^3}\)</span> by using the integral definition for the Laplace transform. Assume that <span class="process-math">\(\mathrm{Re}(s) &gt;0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.5.2.2"><a href="#exercises_laplace-transform-3" title="Copy heading and permalink for Exercise 11.5.2.2" aria-label="Copy heading and permalink for Exercise 11.5.2.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.2"><a tabindex="-1" href="#exercises_laplace-transform-3" title="Copy heading and permalink for Exercise 11.5.2.2" aria-label="Copy heading and permalink for Exercise 11.5.2.2">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_laplace-transform-4"><h5 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<article class="exercise exercise-like" id="exercises_laplace-transform-4"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="introduction" id="exercises_laplace-transform-4-1">
-<div class="para" id="exercises_laplace-transform-4-1-1">Find <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> for each of the following.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises_laplace-transform-4-1-1">Find <span class="process-math">\(\mathcal{L}\big(f(t)\big)\)</span> for each of the following.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="exercises_laplace-transform-4-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-4-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-transform-4-2-1-1">
 <span class="process-math">\(U(t)= \begin{cases}
 t \amp \text{for} \quad 0 \le t\lt c, \\ 
 0 \amp \text{otherwise}.
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-4-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-4-2-2-1">
-<span class="process-math">\(\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}\big(f(t)\big) =\frac{1}{s^2}- \frac{ce^{-cs}}{s}-\frac{e^{-cs}}{s^2}.\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.3.a.1"><a href="#exercises_laplace-transform-4-2-2" title="Copy heading and permalink for Solution 11.5.2.3.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.3.a.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.3.a.1"><a tabindex="-1" href="#exercises_laplace-transform-4-2-2" title="Copy heading and permalink for Solution 11.5.2.3.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.3.a.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.3.a"><a href="#exercises_laplace-transform-4-2" title="Copy heading and permalink for Task 11.5.2.3.a" aria-label="Copy heading and permalink for Task 11.5.2.3.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.3.a"><a tabindex="-1" href="#exercises_laplace-transform-4-2" title="Copy heading and permalink for Task 11.5.2.3.a" aria-label="Copy heading and permalink for Task 11.5.2.3.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-4-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-4-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-transform-4-3-1-1">
 <span class="process-math">\(U(t)= \begin{cases}1 
 \amp \text{for} \quad 1\lt t\lt 2, \\ 
 0 \amp \text{otherwise}. 
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.3.b"><a href="#exercises_laplace-transform-4-3" title="Copy heading and permalink for Task 11.5.2.3.b" aria-label="Copy heading and permalink for Task 11.5.2.3.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.3.b"><a tabindex="-1" href="#exercises_laplace-transform-4-3" title="Copy heading and permalink for Task 11.5.2.3.b" aria-label="Copy heading and permalink for Task 11.5.2.3.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-4-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-4-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-transform-4-4-1-1">
 <span class="process-math">\(U(t)= \begin{cases}
 e^{at} \amp \text{for} \quad 0 \le t\lt 1, \\ 
 \; 0 \amp \text{otherwise}.
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-4-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-4-4-2-1">
-<span class="process-math">\(\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}\big(f(t)\big) =\frac{1}{s-a}-\frac{ e^{a-s}}{s-a}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.3.c.1"><a href="#exercises_laplace-transform-4-4-2" title="Copy heading and permalink for Solution 11.5.2.3.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.3.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.3.c.1"><a tabindex="-1" href="#exercises_laplace-transform-4-4-2" title="Copy heading and permalink for Solution 11.5.2.3.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.3.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.3.c"><a href="#exercises_laplace-transform-4-4" title="Copy heading and permalink for Task 11.5.2.3.c" aria-label="Copy heading and permalink for Task 11.5.2.3.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.3.c"><a tabindex="-1" href="#exercises_laplace-transform-4-4" title="Copy heading and permalink for Task 11.5.2.3.c" aria-label="Copy heading and permalink for Task 11.5.2.3.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-4-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-4-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-transform-4-5-1-1">
 <span class="process-math">\(U(t)= \begin{cases}
 \sin t \amp \text{for} \quad 0 \le t \le \pi , \\ 
 \;\; 0 \amp \text{otherwise}.
-\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{cases}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-4-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.3.d"><a href="#exercises_laplace-transform-4-5" title="Copy heading and permalink for Task 11.5.2.3.d" aria-label="Copy heading and permalink for Task 11.5.2.3.d">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 11.5.2.3"><a href="#exercises_laplace-transform-4" title="Copy heading and permalink for Exercise 11.5.2.3" aria-label="Copy heading and permalink for Exercise 11.5.2.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.3.d"><a tabindex="-1" href="#exercises_laplace-transform-4-5" title="Copy heading and permalink for Task 11.5.2.3.d" aria-label="Copy heading and permalink for Task 11.5.2.3.d">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.3"><a tabindex="-1" href="#exercises_laplace-transform-4" title="Copy heading and permalink for Exercise 11.5.2.3" aria-label="Copy heading and permalink for Exercise 11.5.2.3">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_laplace-transform-5"><h5 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<article class="exercise exercise-like" id="exercises_laplace-transform-5"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="introduction" id="exercises_laplace-transform-5-1">
-<div class="para" id="exercises_laplace-transform-5-1-1">Use the linearity of Laplace transform and <a href="sec_laplace-transform.html#table_laplace-transforms" class="xref" data-knowl="./knowl/xref/table_laplace-transforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.10: Well-Known Laplace Transforms">Table 11.5.10</a> to find:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises_laplace-transform-5-1-1">Use the linearity of Laplace transform and <a href="sec_laplace-transform.html#table_laplace-transforms" class="xref" data-knowl="./knowl/xref/table_laplace-transforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.10: Well-Known Laplace Transforms">Table 11.5.10</a> to find:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="exercises_laplace-transform-5-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-2-1-1">
-<span class="process-math">\(\mathcal{L}(3t^2-4t+5)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(3t^2-4t+5)\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-5-2-2-1">
-<span class="process-math">\(\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(3t^2-4t+5) = \frac{6}{s^3} - \frac{4}{s^2} + \frac{5}{s}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.4.a.1"><a href="#exercises_laplace-transform-5-2-2" title="Copy heading and permalink for Solution 11.5.2.4.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.a.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.4.a.1"><a tabindex="-1" href="#exercises_laplace-transform-5-2-2" title="Copy heading and permalink for Solution 11.5.2.4.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.a.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.a"><a href="#exercises_laplace-transform-5-2" title="Copy heading and permalink for Task 11.5.2.4.a" aria-label="Copy heading and permalink for Task 11.5.2.4.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.a"><a tabindex="-1" href="#exercises_laplace-transform-5-2" title="Copy heading and permalink for Task 11.5.2.4.a" aria-label="Copy heading and permalink for Task 11.5.2.4.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-5-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-3-1-1">
-<span class="process-math">\(\mathcal{L}(2\cos 4t)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(2\cos 4t)\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.b"><a href="#exercises_laplace-transform-5-3" title="Copy heading and permalink for Task 11.5.2.4.b" aria-label="Copy heading and permalink for Task 11.5.2.4.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.b"><a tabindex="-1" href="#exercises_laplace-transform-5-3" title="Copy heading and permalink for Task 11.5.2.4.b" aria-label="Copy heading and permalink for Task 11.5.2.4.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-5-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-4-1-1">
-<span class="process-math">\(\mathcal{L}(e^{2t-3})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(e^{2t-3})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-5-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-5-4-2-1">
-<span class="process-math">\(\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(e^{2t-3}) = \frac{e^{-3}}{s-2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.4.c.1"><a href="#exercises_laplace-transform-5-4-2" title="Copy heading and permalink for Solution 11.5.2.4.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.4.c.1"><a tabindex="-1" href="#exercises_laplace-transform-5-4-2" title="Copy heading and permalink for Solution 11.5.2.4.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.c"><a href="#exercises_laplace-transform-5-4" title="Copy heading and permalink for Task 11.5.2.4.c" aria-label="Copy heading and permalink for Task 11.5.2.4.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.c"><a tabindex="-1" href="#exercises_laplace-transform-5-4" title="Copy heading and permalink for Task 11.5.2.4.c" aria-label="Copy heading and permalink for Task 11.5.2.4.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-5-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-5-1-1">
-<span class="process-math">\(\mathcal{L}(6e^{-t}+3\sin 5t)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(6e^{-t}+3\sin 5t)\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.d"><a href="#exercises_laplace-transform-5-5" title="Copy heading and permalink for Task 11.5.2.4.d" aria-label="Copy heading and permalink for Task 11.5.2.4.d">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.d"><a tabindex="-1" href="#exercises_laplace-transform-5-5" title="Copy heading and permalink for Task 11.5.2.4.d" aria-label="Copy heading and permalink for Task 11.5.2.4.d">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-5-6"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-6-1-1">
-<span class="process-math">\(\mathcal{L}((t+1)^4)\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}((t+1)^4)\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-5-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-5-6-2-1">
-<span class="process-math">\(\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}\big((t+1)^4\big) = \frac{24}{s^5}+\frac{24}{s^4}+\frac{12}{s^3}+\frac{4}{s^2}+\frac{1}{s}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.4.e.1"><a href="#exercises_laplace-transform-5-6-2" title="Copy heading and permalink for Solution 11.5.2.4.e.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.e.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.4.e.1"><a tabindex="-1" href="#exercises_laplace-transform-5-6-2" title="Copy heading and permalink for Solution 11.5.2.4.e.1" aria-label="Copy heading and permalink for Solution 11.5.2.4.e.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.e"><a href="#exercises_laplace-transform-5-6" title="Copy heading and permalink for Task 11.5.2.4.e" aria-label="Copy heading and permalink for Task 11.5.2.4.e">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.e"><a tabindex="-1" href="#exercises_laplace-transform-5-6" title="Copy heading and permalink for Task 11.5.2.4.e" aria-label="Copy heading and permalink for Task 11.5.2.4.e">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-5-7"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-5-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_laplace-transform-5-7-1-1">
-<span class="process-math">\(\mathcal{L}(\cosh 2t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-5-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}(\cosh 2t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-5-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.4.f"><a href="#exercises_laplace-transform-5-7" title="Copy heading and permalink for Task 11.5.2.4.f" aria-label="Copy heading and permalink for Task 11.5.2.4.f">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 11.5.2.4"><a href="#exercises_laplace-transform-5" title="Copy heading and permalink for Exercise 11.5.2.4" aria-label="Copy heading and permalink for Exercise 11.5.2.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.4.f"><a tabindex="-1" href="#exercises_laplace-transform-5-7" title="Copy heading and permalink for Task 11.5.2.4.f" aria-label="Copy heading and permalink for Task 11.5.2.4.f">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.4"><a tabindex="-1" href="#exercises_laplace-transform-5" title="Copy heading and permalink for Exercise 11.5.2.4" aria-label="Copy heading and permalink for Exercise 11.5.2.4">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_laplace-transform-6"><h5 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
+<article class="exercise exercise-like" id="exercises_laplace-transform-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="introduction" id="exercises_laplace-transform-6-1">
-<div class="para" id="exercises_laplace-transform-6-1-1">Use the linearity of the inverse Laplace transform and <a href="sec_laplace-transform.html#table_laplace-properties" class="xref" data-knowl="./knowl/xref/table_laplace-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.11: Properties of the Laplace Transform">Table 11.5.11</a> to find:<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="exercises_laplace-transform-6-1-1">Use the linearity of the inverse Laplace transform and <a href="sec_laplace-transform.html#table_laplace-properties" class="xref" data-knowl="./knowl/xref/table_laplace-properties.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.5.11: Properties of the Laplace Transform">Table 11.5.11</a> to find:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
-<article class="task exercise-like" id="exercises_laplace-transform-6-2"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-2-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}(\frac{1}{s^2+25})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}(\frac{1}{s^2+25})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-6-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-6-2-2-1">
-<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{1}{s^2+25}\big) = \frac{1}{5} \sin 5t\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.5.a.1"><a href="#exercises_laplace-transform-6-2-2" title="Copy heading and permalink for Solution 11.5.2.5.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.a.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.5.a.1"><a tabindex="-1" href="#exercises_laplace-transform-6-2-2" title="Copy heading and permalink for Solution 11.5.2.5.a.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.a.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.a"><a href="#exercises_laplace-transform-6-2" title="Copy heading and permalink for Task 11.5.2.5.a" aria-label="Copy heading and permalink for Task 11.5.2.5.a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.a"><a tabindex="-1" href="#exercises_laplace-transform-6-2" title="Copy heading and permalink for Task 11.5.2.5.a" aria-label="Copy heading and permalink for Task 11.5.2.5.a">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-6-3"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-3-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}(\frac{4}{2}-\frac{6}{s^2})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.b"><a href="#exercises_laplace-transform-6-3" title="Copy heading and permalink for Task 11.5.2.5.b" aria-label="Copy heading and permalink for Task 11.5.2.5.b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.b"><a tabindex="-1" href="#exercises_laplace-transform-6-3" title="Copy heading and permalink for Task 11.5.2.5.b" aria-label="Copy heading and permalink for Task 11.5.2.5.b">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-6-4"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-4-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}(\frac{1+s^2-s}{s^4})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-6-4-2-1">
-<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{1+s^2-s^{3}}{s^4}\big) = -1 + t + \frac{t^{3}}{6}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.5.c.1"><a href="#exercises_laplace-transform-6-4-2" title="Copy heading and permalink for Solution 11.5.2.5.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.c.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.5.c.1"><a tabindex="-1" href="#exercises_laplace-transform-6-4-2" title="Copy heading and permalink for Solution 11.5.2.5.c.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.c.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.c"><a href="#exercises_laplace-transform-6-4" title="Copy heading and permalink for Task 11.5.2.5.c" aria-label="Copy heading and permalink for Task 11.5.2.5.c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.c"><a tabindex="-1" href="#exercises_laplace-transform-6-4" title="Copy heading and permalink for Task 11.5.2.5.c" aria-label="Copy heading and permalink for Task 11.5.2.5.c">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-6-5"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-5-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}(\frac{2s+9}{s^2+9})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.d"><a href="#exercises_laplace-transform-6-5" title="Copy heading and permalink for Task 11.5.2.5.d" aria-label="Copy heading and permalink for Task 11.5.2.5.d">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.d"><a tabindex="-1" href="#exercises_laplace-transform-6-5" title="Copy heading and permalink for Task 11.5.2.5.d" aria-label="Copy heading and permalink for Task 11.5.2.5.d">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-6-6"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-6-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}(\frac{6s}{s^2-4})\text{;}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}(\frac{6s}{s^2-4})\text{;}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
 <details id="exercises_laplace-transform-6-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
 <div class="para" id="exercises_laplace-transform-6-6-2-1">
-<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{6s}{s^2-4}\big) = 3e^{-2t}+3e^{2t} = 6\cosh 2t\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 11.5.2.5.e.1"><a href="#exercises_laplace-transform-6-6-2" title="Copy heading and permalink for Solution 11.5.2.5.e.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.e.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.5.2.5.e.1"><a tabindex="-1" href="#exercises_laplace-transform-6-6-2" title="Copy heading and permalink for Solution 11.5.2.5.e.1" aria-label="Copy heading and permalink for Solution 11.5.2.5.e.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.e"><a href="#exercises_laplace-transform-6-6" title="Copy heading and permalink for Task 11.5.2.5.e" aria-label="Copy heading and permalink for Task 11.5.2.5.e">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.e"><a tabindex="-1" href="#exercises_laplace-transform-6-6" title="Copy heading and permalink for Task 11.5.2.5.e" aria-label="Copy heading and permalink for Task 11.5.2.5.e">🔗</a></div>
 </article>
-<article class="task exercise-like" id="exercises_laplace-transform-6-7"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<article class="task exercise-like" id="exercises_laplace-transform-6-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
 <div class="para" id="exercises_laplace-transform-6-7-1-1">
-<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\mathcal{L}^{-1}\big(\frac{2s+1}{s(s+1)}\big)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Task 11.5.2.5.f"><a href="#exercises_laplace-transform-6-7" title="Copy heading and permalink for Task 11.5.2.5.f" aria-label="Copy heading and permalink for Task 11.5.2.5.f">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercise 11.5.2.5"><a href="#exercises_laplace-transform-6" title="Copy heading and permalink for Exercise 11.5.2.5" aria-label="Copy heading and permalink for Exercise 11.5.2.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Task 11.5.2.5.f"><a tabindex="-1" href="#exercises_laplace-transform-6-7" title="Copy heading and permalink for Task 11.5.2.5.f" aria-label="Copy heading and permalink for Task 11.5.2.5.f">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.5"><a tabindex="-1" href="#exercises_laplace-transform-6" title="Copy heading and permalink for Exercise 11.5.2.5" aria-label="Copy heading and permalink for Exercise 11.5.2.5">🔗</a></div>
 </article>
-<article class="exercise exercise-like" id="exercises_laplace-transform-7"><h5 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h5>
-<div class="para" id="exercises_laplace-transform-7-1-1">Write a report on how complex analysis is used in the study of Laplace transforms. Include ideas and examples that are not mentioned in the text.<div class="autopermalink" data-description="Paragraph"><a href="#exercises_laplace-transform-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="exercise exercise-like" id="exercises_laplace-transform-7"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exercises_laplace-transform-7-1-1">Write a report on how complex analysis is used in the study of Laplace transforms. Include ideas and examples that are not mentioned in the text.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#exercises_laplace-transform-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 11.5.2.6"><a href="#exercises_laplace-transform-7" title="Copy heading and permalink for Exercise 11.5.2.6" aria-label="Copy heading and permalink for Exercise 11.5.2.6">🔗</a></div>
-</article><div class="autopermalink" data-description="Exercises 11.5.2: Exercises"><a href="#exercises_laplace-transform" title="Copy heading and permalink for Exercises 11.5.2: Exercises" aria-label="Copy heading and permalink for Exercises 11.5.2: Exercises">🔗</a></div>
-</section><div class="autopermalink" data-description="Subsection 11.5.2: Properties of the Laplace Transform"><a href="#sec_laplace-transform-3" title="Copy heading and permalink for Subsection 11.5.2: Properties of the Laplace Transform" aria-label="Copy heading and permalink for Subsection 11.5.2: Properties of the Laplace Transform">🔗</a></div>
-</section><div class="autopermalink" data-description="Section 11.5: The Laplace Transform"><a href="#sec_laplace-transform" title="Copy heading and permalink for Section 11.5: The Laplace Transform" aria-label="Copy heading and permalink for Section 11.5: The Laplace Transform">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.5.2.6"><a tabindex="-1" href="#exercises_laplace-transform-7" title="Copy heading and permalink for Exercise 11.5.2.6" aria-label="Copy heading and permalink for Exercise 11.5.2.6">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Exercises 11.5.2: Exercises"><a tabindex="-1" href="#exercises_laplace-transform" title="Copy heading and permalink for Exercises 11.5.2: Exercises" aria-label="Copy heading and permalink for Exercises 11.5.2: Exercises">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 11.5.2: Properties of the Laplace Transform"><a tabindex="-1" href="#sec_laplace-transform-3" title="Copy heading and permalink for Subsection 11.5.2: Properties of the Laplace Transform" aria-label="Copy heading and permalink for Subsection 11.5.2: Properties of the Laplace Transform">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 11.5: The Laplace Transform"><a tabindex="-1" href="#sec_laplace-transform" title="Copy heading and permalink for Section 11.5: The Laplace Transform" aria-label="Copy heading and permalink for Section 11.5: The Laplace Transform">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
