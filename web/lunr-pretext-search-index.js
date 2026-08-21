@@ -10859,7 +10859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-9",
   "type": "Proof",
-  "number": "1",
+  "number": "9.2.1",
   "title": "",
   "body": " We algebraically manipulate Equation and solve for in terms of . The result is an expression for that has the form of Equation , where the coefficients , , , and involve various combinations of the values , and . The details are left as an exercise.  If we set and in Equation , then both sides of the equation are zero, showing that is the image of . If we set and in Equation , then both sides of the equation take on the value . Hence is the image of . Taking reciprocals, we write Equation in the form .  If we set and in Equation , then both sides of the equation are zero. Therefore is the image of , and we have shown that the transformation has the required properties.  "
 },
@@ -10904,7 +10904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec_bilinear-transformations.html#sec_bilinear-transformations-2-16",
   "type": "Proof",
-  "number": "2",
+  "number": "9.2.2",
   "title": "",
   "body": "  Case 1 If , then we can write and substitute this expression into Equation to obtain .   Case 2 If , then we can write and substitute this expression into Equation to obtain .  "
 },
