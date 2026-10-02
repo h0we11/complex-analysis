@@ -34,6 +34,11 @@ let mathJaxOpts = {
   }
 };
 function startMathJax(opts) {
+  let resolveRunestoneMathReady;
+  const runestoneMathReady = new Promise((resolve) => {
+    resolveRunestoneMathReady = resolve;
+  });
+  window.runestoneMathReady = runestoneMathReady;
   if (opts.hasWebworkReps || opts.hasSage) {
     mathJaxOpts["renderActions"] = {
       "findScript": [
@@ -60,6 +65,7 @@ function startMathJax(opts) {
   } else {
     mathJaxOpts["startup"] = {
       ready() {
+        window.PTX_MACROS = document.getElementById("latex-macros").textContent;
         const { Configuration } = MathJax._.input.tex.Configuration;
         const configuration = Configuration.create("knowl", {
           handler: {
@@ -97,7 +103,13 @@ function startMathJax(opts) {
         MathJax.startup.defaultReady();
       },
       pageReady() {
-        return MathJax.startup.defaultPageReady().then(rsMathReady);
+        return MathJax.startup.defaultPageReady().then(
+          () => resolveRunestoneMathReady(MathJax),
+          (error) => {
+            resolveRunestoneMathReady(null);
+            throw error;
+          }
+        );
       }
     };
   }
@@ -116,8 +128,17 @@ function startMathJax(opts) {
     mathJaxOpts["options"]["sre"] = { "locale": primaryTag };
   }
   window.MathJax = mathJaxOpts;
-  const runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-  window.runestoneMathReady = runestoneMathReady;
+  const mathJaxScript = document.querySelector("script[data-pretext-mathjax]");
+  if (mathJaxScript) {
+    mathJaxScript.addEventListener(
+      "error",
+      () => resolveRunestoneMathReady(null),
+      { once: true }
+    );
+    if (mathJaxScript.dataset.loadFailed === "true") {
+      resolveRunestoneMathReady(null);
+    }
+  }
 }
 export {
   startMathJax
