@@ -10,9 +10,6 @@ function addKnowls(target) {
   for (const bhk of bornHiddens) {
     const summary = bhk.querySelector(":scope > summary");
     const contents = bhk.querySelector(":scope > summary + *");
-    if (!summary || !contents) {
-      continue;
-    }
     new SlideRevealer(summary, contents, bhk);
   }
 }
