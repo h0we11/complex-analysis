@@ -40,6 +40,9 @@
         for (const bhk of bornHiddens) {
           const summary = bhk.querySelector(":scope > summary");
           const contents = bhk.querySelector(":scope > summary + *");
+          if (!summary || !contents) {
+            continue;
+          }
           new SlideRevealer(summary, contents, bhk);
         }
       }
@@ -406,7 +409,7 @@
         this.close = () => this.closeDialogFallback();
         this.toggle = () => this.toggleDialogFallback();
       }
-      if (!_PTXDialog.hasNativeCommandInvokers() && this.kind === "light-close") {
+      if (this.kind === "light-close") {
         this.dialog.addEventListener("click", (event2) => {
           if (event2.target === this.dialog) {
             const rect = this.dialog.getBoundingClientRect();
@@ -502,6 +505,239 @@
     }
   };
   window.PTXDialog = PTXDialog2;
+
+  // ../../js/src/image-dialog.js
+  window.addEventListener("load", () => {
+    requestAnimationFrame(initializeImageDialogs);
+  });
+  var initializedImageDialogs = /* @__PURE__ */ new WeakSet();
+  var imageDialogNumber = 0;
+  function initializeImageDialogs() {
+    const magnifiableImageSelector = [
+      ".image-box > img",
+      ".image-box > pre.mermaid",
+      ".image-box > .ChemAccess-element",
+      // Prefigure interactive diagram
+      ".image-box > .asymptote-box",
+      ".sbspanel > img",
+      "figure > img",
+      "figure > div > img"
+    ].join(", ");
+    document.querySelectorAll(magnifiableImageSelector).forEach((image) => {
+      if (initializedImageDialogs.has(image)) {
+        return;
+      }
+      const imageBox = image.closest(".image-box");
+      const figure = imageBox?.parentElement?.matches("figure") ? imageBox.parentElement : null;
+      const isMermaid = image.matches("pre.mermaid");
+      const isDiagcess = image.matches(".ChemAccess-element");
+      const asymptoteIframe = image.querySelector?.("iframe.asymptote");
+      const asymptoteSVG = asymptoteIframe?.contentDocument?.querySelector("svg");
+      const asymptoteCanvas = asymptoteIframe?.contentDocument?.querySelector("canvas");
+      if (image.matches(".asymptote-box") && !asymptoteSVG && !asymptoteCanvas) {
+        if (asymptoteIframe?.contentDocument?.readyState !== "complete") {
+          asymptoteIframe?.addEventListener("load", initializeImageDialogs, { once: true });
+        }
+        return;
+      }
+      const isAsymptote2D = !!asymptoteSVG;
+      const isAsymptote3D = !!asymptoteCanvas;
+      const isAsymptote = isAsymptote2D || isAsymptote3D;
+      initializedImageDialogs.add(image);
+      const dialog = document.createElement("dialog");
+      dialog.id = `ptx-image-dialog-${++imageDialogNumber}`;
+      dialog.classList.add("ptx-image-dialog");
+      dialog.setAttribute("aria-label", "Expanded image");
+      const dialogContentContainer = document.createElement("div");
+      dialogContentContainer.classList.add("ptx-image-dialog-content");
+      dialog.append(dialogContentContainer);
+      document.body.append(dialog);
+      let dialogImage = null;
+      let dialogFigure = null;
+      let dialogContentRoot = null;
+      const initializeDialogDiagcess = (diagrams) => {
+        if (!diagrams.length || !window.diagcess?.Base) {
+          return;
+        }
+        const observer = new MutationObserver(() => {
+          if (diagrams.some((diagram) => diagram.querySelector("svg"))) {
+            observer.disconnect();
+            requestAnimationFrame(fitDialogToFigure);
+          }
+        });
+        diagrams.forEach((diagram) => {
+          observer.observe(diagram, { childList: true, subtree: true });
+        });
+        window.diagcess.Base.init();
+      };
+      const refreshDialogContent = () => {
+        let dialogContent = (figure || (isDiagcess ? imageBox : image)).cloneNode(true);
+        if (dialogContent.matches("img, .ChemAccess-element")) {
+          const dialogImageBox = document.createElement("div");
+          dialogImageBox.classList.add("image-box");
+          dialogImageBox.append(dialogContent);
+          dialogContent = dialogImageBox;
+        }
+        dialogContent.removeAttribute("id");
+        dialogContent.querySelectorAll("[id]").forEach((element) => {
+          if (!element.closest("svg")) {
+            element.removeAttribute("id");
+          }
+        });
+        dialogContent.querySelectorAll(".ptx-image-expand-button").forEach((button) => button.remove());
+        const clonedMermaids = [
+          ...dialogContent.matches("pre.mermaid") ? [dialogContent] : [],
+          ...dialogContent.querySelectorAll("pre.mermaid")
+        ];
+        clonedMermaids.forEach((mermaid) => {
+          mermaid.classList.replace("mermaid", "ptx-mermaid-dialog");
+        });
+        if (isAsymptote2D) {
+          const clonedAsymptoteBox = dialogContent.matches(".asymptote-box") ? dialogContent : dialogContent.querySelector(".asymptote-box");
+          const dialogAsymptoteSVG = asymptoteSVG.cloneNode(true);
+          dialogAsymptoteSVG.classList.add("ptx-asymptote-dialog");
+          clonedAsymptoteBox.replaceChildren(dialogAsymptoteSVG);
+          clonedAsymptoteBox.style.removeProperty("padding-top");
+        }
+        const clonedDiagcess = [
+          ...dialogContent.matches(".ChemAccess-element") ? [dialogContent] : [],
+          ...dialogContent.querySelectorAll(".ChemAccess-element")
+        ].map((diagram) => {
+          const placeholder = document.createElement("div");
+          placeholder.classList.add("ChemAccess-element");
+          [...diagram.attributes].forEach((attribute) => {
+            if (attribute.name.startsWith("data-") || attribute.name === "aria-label") {
+              placeholder.setAttribute(attribute.name, attribute.value);
+            }
+          });
+          diagram.replaceWith(placeholder);
+          return placeholder;
+        });
+        dialogContentContainer.replaceChildren(dialogContent);
+        dialogContentRoot = dialogContent;
+        dialogImage = dialogContent.matches("img, pre.ptx-mermaid-dialog, .ChemAccess-element, svg.ptx-asymptote-dialog, iframe.asymptote") ? dialogContent : dialogContent.querySelector("img, pre.ptx-mermaid-dialog, .ChemAccess-element, svg.ptx-asymptote-dialog, iframe.asymptote");
+        dialogFigure = dialogContent.matches("figure") ? dialogContent : null;
+        if (dialogImage instanceof HTMLImageElement || dialogImage instanceof HTMLIFrameElement) {
+          dialogImage.addEventListener("load", fitDialogToFigure);
+        }
+        initializeDialogDiagcess(clonedDiagcess);
+      };
+      const fitDialogToFigure = () => {
+        const displayedImage = isDiagcess ? dialogContentContainer.querySelector(".ChemAccess-element svg") : dialogImage;
+        if (!dialog.open || !displayedImage) {
+          return;
+        }
+        const maxWidth = window.innerWidth * 0.9;
+        const maxHeight = window.innerHeight * 0.9;
+        const dialogStyle = getComputedStyle(dialog);
+        const horizontalPadding = parseFloat(dialogStyle.paddingLeft) + parseFloat(dialogStyle.paddingRight);
+        const verticalPadding = parseFloat(dialogStyle.paddingTop) + parseFloat(dialogStyle.paddingBottom);
+        const maxContentWidth = Math.max(0, maxWidth - horizontalPadding);
+        const maxContentHeight = Math.max(0, maxHeight - verticalPadding);
+        const renderedSVG = displayedImage instanceof SVGSVGElement ? displayedImage : displayedImage.querySelector?.("svg");
+        const viewBox = renderedSVG?.viewBox?.baseVal;
+        const intrinsicAspectRatio = viewBox?.width && viewBox?.height ? viewBox.width / viewBox.height : isAsymptote3D && asymptoteCanvas.width && asymptoteCanvas.height ? asymptoteCanvas.width / asymptoteCanvas.height : displayedImage instanceof HTMLImageElement && displayedImage.naturalWidth && displayedImage.naturalHeight ? displayedImage.naturalWidth / displayedImage.naturalHeight : null;
+        let imageWidth = Math.min(maxContentWidth, maxContentHeight * (intrinsicAspectRatio || 1));
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+          dialog.style.width = `${imageWidth + horizontalPadding}px`;
+          displayedImage.style.setProperty("width", `${imageWidth}px`, "important");
+          displayedImage.style.setProperty("max-height", `${maxContentHeight}px`, "important");
+          const imageRect = displayedImage.getBoundingClientRect();
+          if (!imageRect.width || !imageRect.height) {
+            return;
+          }
+          const contentRect = (dialogFigure || dialogContentRoot || displayedImage).getBoundingClientRect();
+          const nonImageHeight = Math.max(0, contentRect.height - imageRect.height);
+          const availableImageHeight = Math.max(0, maxContentHeight - nonImageHeight);
+          const aspectRatio = intrinsicAspectRatio || imageRect.width / imageRect.height;
+          imageWidth = Math.min(imageWidth, availableImageHeight * aspectRatio);
+        }
+        dialog.style.width = `${imageWidth + horizontalPadding}px`;
+        displayedImage.style.setProperty("width", `${imageWidth}px`, "important");
+      };
+      const trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.classList.add("ptx-image-expand-button");
+      const description = image.getAttribute("alt")?.trim() || (isMermaid ? "Mermaid diagram" : isDiagcess ? "interactive diagram" : isAsymptote ? asymptoteIframe.title?.trim() || "Asymptote diagram" : "");
+      const contentType = isMermaid || isDiagcess || isAsymptote ? "diagram" : "image";
+      trigger.setAttribute("aria-label", description ? `Expand ${contentType}: ${description}` : `Expand ${contentType}`);
+      trigger.setAttribute("title", trigger.getAttribute("aria-label"));
+      trigger.innerHTML = '<span class="material-symbols-outlined">open_in_full</span>';
+      const triggerContainer = imageBox || image.parentElement;
+      triggerContainer.classList.add("ptx-image-dialog-trigger-container");
+      image.after(trigger);
+      image.setAttribute("tabindex", "0");
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-label", trigger.getAttribute("aria-label"));
+      if (isDiagcess) {
+        image.addEventListener("click", (clickEvent) => {
+          clickEvent.preventDefault();
+          clickEvent.stopImmediatePropagation();
+          trigger.click();
+        }, true);
+        image.addEventListener("keydown", (keyEvent) => {
+          keyEvent.stopImmediatePropagation();
+          if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+            keyEvent.preventDefault();
+            trigger.click();
+          }
+        }, true);
+      } else if (isAsymptote) {
+        asymptoteIframe.tabIndex = -1;
+        asymptoteSVG?.setAttribute("aria-hidden", "true");
+        if (isAsymptote3D) {
+          let pointerStart = null;
+          const clickMovementThreshold = 5;
+          asymptoteIframe.contentDocument.addEventListener("pointerdown", (pointerEvent) => {
+            if (pointerEvent.button === 0) {
+              pointerStart = { x: pointerEvent.clientX, y: pointerEvent.clientY };
+            }
+          });
+          asymptoteIframe.contentDocument.addEventListener("pointerup", (pointerEvent) => {
+            if (pointerEvent.button === 0 && pointerStart) {
+              const distance = Math.hypot(
+                pointerEvent.clientX - pointerStart.x,
+                pointerEvent.clientY - pointerStart.y
+              );
+              if (distance <= clickMovementThreshold) {
+                trigger.click();
+              }
+            }
+            pointerStart = null;
+          });
+          asymptoteIframe.contentDocument.addEventListener("pointercancel", () => {
+            pointerStart = null;
+          });
+        } else {
+          asymptoteIframe.contentDocument.addEventListener("click", (clickEvent) => {
+            clickEvent.preventDefault();
+            trigger.click();
+          });
+        }
+        image.addEventListener("click", () => trigger.click());
+        image.addEventListener("keydown", (keyEvent) => {
+          if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+            keyEvent.preventDefault();
+            trigger.click();
+          }
+        });
+      } else {
+        image.addEventListener("click", () => trigger.click());
+        image.addEventListener("keydown", (keyEvent) => {
+          if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+            keyEvent.preventDefault();
+            image.click();
+          }
+        });
+      }
+      trigger.addEventListener("click", () => {
+        refreshDialogContent();
+        requestAnimationFrame(fitDialogToFigure);
+      });
+      window.addEventListener("resize", fitDialogToFigure);
+      new window.PTXDialog(dialog, trigger, { kind: "light-close" });
+    });
+  }
 
   // ../../js/src/pretext-dropdown.js
   var PTXDropdown2 = class {
@@ -647,9 +883,9 @@
   }
   function applyThemeChoice(theme) {
     if (theme === "system") {
-      setDarkMode2(isDarkMode());
+      setDarkMode(isDarkMode());
     } else {
-      setDarkMode2(theme === "dark");
+      setDarkMode(theme === "dark");
     }
   }
   function isDarkMode() {
@@ -662,7 +898,7 @@
       return false;
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
-  function setDarkMode2(isDark) {
+  function setDarkMode(isDark) {
     if (document.documentElement.dataset.darkmode === "disabled")
       return;
     const parentHtml = document.documentElement;
@@ -815,7 +1051,7 @@
         }
       });
     }
-    setDarkMode2(isDarkMode());
+    setDarkMode(isDarkMode());
     const lineHeightInput = document.getElementById("ptx-readability-line-height");
     const lineHeightOutput = document.getElementById("ptx-readability-line-height-value");
     const defaultLineHeight = lineHeightInput ? lineHeightInput.defaultValue : null;
@@ -878,11 +1114,11 @@
       });
     }
   });
-  setDarkMode2(isDarkMode());
+  setDarkMode(isDarkMode());
   applyLineHeight(getSavedLineHeight());
   applyFontSize(getSavedFontSize());
   window.isDarkMode = isDarkMode;
-  window.setDarkMode = setDarkMode2;
+  window.setDarkMode = setDarkMode;
 
   // ../../js/pretext.js
   function getOffsetTop(e2) {
@@ -1159,34 +1395,6 @@
   window.addEventListener(
     "load",
     function(event2) {
-      $("body").on("click", ".image-box > img:not(.draw_on_me):not(.mag_popup), .sbspanel > img:not(.draw_on_me):not(.mag_popup), figure > img:not(.draw_on_me):not(.mag_popup), figure > div > img:not(.draw_on_me):not(.mag_popup)", function() {
-        var img_big = document.createElement("div");
-        const content_element = document.getElementById("ptx-content");
-        img_big.setAttribute("class", "mag_popup_container");
-        img_big.innerHTML = `<img src="${$(this).attr("src")}" style="width:100%;" class="mag_popup"/>`;
-        place_to_put_big_img = $(this).parents(".image-box, .sbsrow, figure, li, .cols2 article:nth-of-type(2n)").last();
-        if (place_to_put_big_img.prop("tagName") == "ARTICLE") {
-          place_to_put_big_img = place_to_put_big_img.prev().children().first();
-        }
-        var img_big_parent = place_to_put_big_img[0].parentElement;
-        while (img_big_parent.id !== "ptx-content") {
-          const computed_position = getComputedStyle(img_big_parent).position;
-          if (computed_position !== "static") {
-            break;
-          }
-          img_big_parent = img_big_parent.parentElement;
-        }
-        const content_element_computed_style = getComputedStyle(content_element);
-        const content_padding_left = parseFloat(content_element_computed_style.paddingLeft);
-        const content_padding_right = parseFloat(content_element_computed_style.paddingRight);
-        const img_big_offset = content_element.getBoundingClientRect().left - img_big_parent.getBoundingClientRect().left + content_padding_left;
-        const doc_width = content_element.offsetWidth - content_padding_left - content_padding_right;
-        img_big.setAttribute("style", `width:${doc_width.toString()}px; left:${img_big_offset.toString()}px;`);
-        $(img_big).insertBefore(place_to_put_big_img);
-      });
-      $("body").on("click", "img.mag_popup", function() {
-        this.parentNode.remove();
-      });
       p_no_id = document.querySelectorAll(".main p:not([id])");
       for (var n = p_no_id.length - 1; n >= 0; --n) {
         e = p_no_id[n];
@@ -1403,6 +1611,45 @@
       }
     }
   });
+  document.addEventListener("click", (ev) => {
+    const codeBox = ev.target.closest(".clipboardable");
+    if (!navigator.clipboard || !codeBox) return;
+    const button = ev.target.closest(".code-copy");
+    const pre = codeBox.querySelector("pre").cloneNode(true);
+    pre.querySelectorAll(".unselectable").forEach((el2) => el2.remove());
+    const preContent = pre.textContent;
+    navigator.clipboard.writeText(preContent);
+    button.classList.toggle("copied");
+    setTimeout(() => button.classList.toggle("copied"), 1e3);
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".clipboardable");
+    for (el of elements) {
+      const div = document.createElement("div");
+      div.classList.add("clipboardable");
+      el.classList.remove("clipboardable");
+      el.replaceWith(div);
+      div.insertAdjacentElement("afterbegin", el);
+      div.insertAdjacentHTML("beforeend", `
+    <button class="code-copy" title="Copy code" role="button" aria-label="Copy code" >
+        <span class="copyicon material-symbols-outlined">content_copy</span>
+        <span class="checkmark material-symbols-outlined">check</span>
+    </button>
+            `.trim());
+    }
+  });
+  window.addEventListener("DOMContentLoaded", () => {
+    const userDropdownButton = document.getElementById("ptx-user-dropdown-button");
+    const userDropdownContent = document.getElementById("ptx-user-dropdown-content");
+    if (userDropdownButton && userDropdownContent) {
+      new PTXDropdown(userDropdownContent, userDropdownButton);
+    }
+  });
+
+  // ../../js/src/pretext-printouts.js
+  function getPrintout() {
+    return document.querySelector(".printout");
+  }
   function flattenParagraphsSections(printout) {
     const paragraphsSections = printout.querySelectorAll("section.paragraphs");
     paragraphsSections.forEach((section) => {
@@ -1430,6 +1677,159 @@
       new Promise((resolve) => setTimeout(resolve, timeoutMs))
     ]);
   }
+  async function withIframesDetached(fn) {
+    const printout = getPrintout();
+    const parked = [];
+    if (printout) {
+      printout.querySelectorAll("iframe").forEach((iframe) => {
+        const rect = iframe.getBoundingClientRect();
+        const placeholder = document.createElement("div");
+        placeholder.className = "iframe-placeholder";
+        placeholder.style.width = rect.width + "px";
+        placeholder.style.height = rect.height + "px";
+        placeholder.style.display = getComputedStyle(iframe).display;
+        iframe.parentNode.insertBefore(placeholder, iframe);
+        iframe.remove();
+        parked.push({ iframe, placeholder });
+      });
+    }
+    try {
+      return await fn();
+    } finally {
+      parked.forEach(({ iframe, placeholder }) => {
+        placeholder.parentNode.insertBefore(iframe, placeholder);
+        placeholder.remove();
+      });
+    }
+  }
+  function isWorkspaceRow(elem) {
+    return elem.classList.contains("workspace") || elem.classList.contains("workspace-container");
+  }
+  function isVisibleWorkspaceRow(elem) {
+    return isWorkspaceRow(elem) && !elem.classList.contains("hidden");
+  }
+  function openingWorkspaceIndex(rows, k) {
+    const suppressing = anySolutionShown();
+    for (let i = k; i < rows.length; i++) {
+      const row = rows[i];
+      const hidden = row.classList.contains("hidden");
+      if (isWorkspaceRow(row)) {
+        if (hidden && suppressing) continue;
+        return i;
+      }
+      if (!hidden) return -1;
+    }
+    return -1;
+  }
+  function workspaceDivsIn(elem) {
+    if (elem.classList.contains("workspace")) {
+      return [elem];
+    }
+    return [...elem.querySelectorAll(".workspace")];
+  }
+  function flattenTasksIn(container) {
+    for (const child of [...container.children]) {
+      if (child.classList.contains("sidebyside")) {
+        continue;
+      }
+      const tasks = [...child.querySelectorAll(".task, .conclusion")].filter((el2) => !el2.closest(".sidebyside"));
+      if (tasks.length === 0) continue;
+      for (const task of tasks) {
+        const parent = task.parentElement;
+        const grandparent = parent.parentElement;
+        if (grandparent && grandparent.classList.contains("task")) {
+          task.classList.add("subsubtask");
+        } else if (parent.classList.contains("task")) {
+          task.classList.add("subtask");
+        }
+      }
+      for (let i = tasks.length - 1; i >= 0; i--) {
+        container.insertBefore(tasks[i], child.nextSibling);
+      }
+    }
+  }
+  function flattenIntroductionsIn(container) {
+    for (const child of [...container.children]) {
+      if (child.classList.contains("sidebyside")) {
+        continue;
+      }
+      const isTopLevelIntroduction = child.classList.contains("introduction");
+      const introductions = isTopLevelIntroduction ? [child] : [...child.querySelectorAll(".introduction")].filter((intro) => !intro.closest(".sidebyside"));
+      let insertionAnchor = child;
+      introductions.forEach((intro) => {
+        const introParent = intro.parentNode;
+        const introChildren = [...intro.children];
+        if (introChildren.length === 0) {
+          intro.remove();
+          return;
+        }
+        introParent.insertBefore(introChildren[0], intro);
+        const anchor = intro === child ? introChildren[0] : insertionAnchor;
+        for (let i = introChildren.length - 1; i >= 1; i--) {
+          container.insertBefore(introChildren[i], anchor.nextSibling);
+        }
+        intro.remove();
+        insertionAnchor = introChildren[introChildren.length - 1];
+      });
+    }
+  }
+  var DEPTH_CLASSES = ["subtask", "subsubtask", "subsubsubtask"];
+  function depthClassForRowOut(owner) {
+    if (owner.classList.contains("subsubtask")) return "subsubsubtask";
+    if (owner.classList.contains("subtask")) return "subsubtask";
+    if (owner.classList.contains("task")) return "subtask";
+    return null;
+  }
+  function moveDepthClass(from, to) {
+    for (const cls of DEPTH_CLASSES) {
+      if (from.classList.contains(cls)) {
+        from.classList.remove(cls);
+        to.classList.add(cls);
+      }
+    }
+  }
+  var blockGroupSeq = 0;
+  function flattenSolutionsIn(container) {
+    for (const child of [...container.children]) {
+      if (child.classList.contains("sidebyside") || child.classList.contains("solutions")) {
+        continue;
+      }
+      const solutionsBlocks = [...child.querySelectorAll(".solutions")].filter((solutions) => !solutions.closest(".sidebyside"));
+      let insertionAnchor = child;
+      solutionsBlocks.forEach((solutions) => {
+        const owner = solutions.parentElement;
+        const depthClass = depthClassForRowOut(owner);
+        const group = `bg-${blockGroupSeq++}`;
+        const solChildren = [...solutions.children];
+        for (let i = solChildren.length - 1; i >= 0; i--) {
+          container.insertBefore(solChildren[i], insertionAnchor.nextSibling);
+          if (depthClass) {
+            solChildren[i].classList.add(depthClass);
+          }
+        }
+        solutions.remove();
+        if (solChildren.length > 0) {
+          insertionAnchor = solChildren[solChildren.length - 1];
+        }
+        const workspace = owner.querySelector(":scope > .workspace");
+        if (workspace) {
+          container.insertBefore(workspace, insertionAnchor.nextSibling);
+          if (depthClass) {
+            workspace.classList.add(depthClass);
+          }
+          insertionAnchor = workspace;
+        }
+        const questionRow = owner === child ? child : null;
+        const anchors = [questionRow, ...solChildren].filter((el2) => el2 && el2.parentElement === container);
+        if (anchors.length === 0) return;
+        for (const el2 of [...anchors, workspace]) {
+          if (el2 && el2.parentElement === container) {
+            el2.dataset.blockGroup = group;
+          }
+        }
+      });
+    }
+  }
   function setInitialWorkspaceHeights() {
     const workspaces = document.querySelectorAll(".workspace");
     workspaces.forEach((ws) => {
@@ -1437,9 +1837,9 @@
       ws.setAttribute("contenteditable", "true");
     });
   }
-  function adjustPrintoutPages() {
+  function adjustPrintoutPages(margins) {
     console.log("*** Adjusting printout pages.");
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting adjustPrintoutPages.");
       return;
@@ -1464,56 +1864,89 @@
       nextChild = nextChild.nextSibling;
       lastPage.appendChild(tempChild);
     }
-    console.log("Moved all content before the first page and after the last page into the respective pages.");
+    const contentHeight = 1056 - (margins.top + margins.bottom);
+    pages.forEach((page) => {
+      flattenTasksIn(page);
+      flattenIntroductionsIn(page);
+      flattenSolutionsIn(page);
+      flattenOversizedListsIn(page, contentHeight);
+    });
+    console.log("Moved all content before the first page and after the last page into the respective pages, and split nested tasks, introductions, solutions, and oversized lists for independent repagination.");
   }
   function createPrintoutPages(margins) {
     console.log("*** Creating printout pages with margins:", margins);
+    const conservativePaperWidth = 794;
     const conservativeContentHeight = 1056 - (margins.top + margins.bottom);
-    const conservativeContentWidth = 794 - (margins.left + margins.right);
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const conservativeContentWidth = conservativePaperWidth - (margins.left + margins.right);
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting createPrintoutPages.");
       return;
     }
-    printout.style.width = toString(conservativeContentWidth + margins.left + margins.right) + "px";
+    printout.style.width = conservativePaperWidth + "px";
     setInitialWorkspaceHeights(printout);
-    let rows = [];
-    for (const child of printout.children) {
-      if (child.classList.contains("sidebyside")) {
-        rows.push(child);
-      } else if (child.querySelector(".task")) {
-        rows.push(child);
-        const tasks = child.querySelectorAll(".task, .conclusion");
-        for (let i = 0; i < tasks.length; i++) {
-          let parent = tasks[i].parentElement;
-          let grandparent = parent.parentElement;
-          if (grandparent.classList.contains("task")) {
-            tasks[i].classList.add("subsubtask");
-          } else if (parent.classList.contains("task")) {
-            tasks[i].classList.add("subtask");
-          }
-        }
-        for (let i = tasks.length - 1; i > 0; i--) {
-          printout.insertBefore(tasks[i], child.nextSibling);
-        }
-      } else {
-        rows.push(child);
-      }
+    flattenTasksIn(printout);
+    flattenIntroductionsIn(printout);
+    flattenSolutionsIn(printout);
+    let rows = [...printout.children];
+    const measuringPage = document.createElement("section");
+    measuringPage.classList.add("onepage");
+    measuringPage.style.width = conservativePaperWidth + "px";
+    measuringPage.style.height = "auto";
+    printout.appendChild(measuringPage);
+    rows.forEach((row) => measuringPage.appendChild(row));
+    if (flattenOversizedListsIn(measuringPage, conservativeContentHeight)) {
+      rows = [...measuringPage.children];
     }
+    const footnoteMetrics = measureFootnotes(rows, measuringPage);
     let blockList = [];
     for (const row of rows) {
       let blockHeight = getElementTotalHeight(row);
-      if (blockHeight === 0) {
+      if (row.offsetHeight === 0 && !row.classList.contains("hidden")) {
         console.log("Skipping row with zero height:", row);
         continue;
       }
       let totalWorkspaceHeight = 0;
-      if (row.querySelector(".workspace")) {
+      let squeezableHeight = 0;
+      if (workspaceDivsIn(row).length > 0) {
         totalWorkspaceHeight = getElemWorkspaceHeight(row);
+        squeezableHeight = getElemSqueezableHeight(row);
       }
-      blockList.push({ elem: row, height: blockHeight, workspaceHeight: totalWorkspaceHeight });
+      blockList.push({
+        elem: row,
+        height: blockHeight,
+        workspaceHeight: totalWorkspaceHeight,
+        squeezableHeight,
+        // Set by flattenSolutionsIn() on the rows split out of a single
+        // exercise or task, so findPageBreaks() can tell which rows want
+        // to stay together on one page.  Undefined for rows that were
+        // never split out of anything.
+        group: row.dataset.blockGroup,
+        // A row that *is* a hoisted workspace, as opposed to one that
+        // merely contains a workspace nested inside it.  Such a row is
+        // pure blank writing space, so it must never be what a page
+        // opens with -- see findPageBreaks().  Suppressed writing space
+        // does not count; see isVisibleWorkspaceRow().
+        isWorkspace: isVisibleWorkspaceRow(row),
+        // A currently-hidden hint/answer/solution (see above), which shows
+        // nothing, so a page cannot be said to open with it -- see
+        // findPageBreaks().
+        hidden: row.classList.contains("hidden"),
+        // How much room this row's own footnotes will take at the foot of
+        // whichever page it lands on.  Charged to the row rather than to
+        // the page because that is what makes the cost move with the row:
+        // the DP in findPageBreaks() then accumulates it over exactly the
+        // rows a candidate page holds, with no circularity to resolve.
+        footnoteHeight: footnoteMetrics.heights.get(row) || 0
+      });
     }
-    const pageBreaks = findPageBreaks(blockList, conservativeContentHeight);
+    rows.forEach((row) => printout.appendChild(row));
+    measuringPage.remove();
+    const pageBreaks = findPageBreaks(blockList, conservativeContentHeight, {
+      allowSqueeze: anySolutionShown(),
+      footnoteChrome: footnoteMetrics.chrome
+    });
+    printout.style.width = "";
     for (let i = 0; i < pageBreaks.length; i++) {
       const pageDiv = document.createElement("section");
       pageDiv.classList.add("onepage");
@@ -1531,28 +1964,339 @@
       }
       printout.appendChild(pageDiv);
     }
-    for (const child of printout.children) {
+    for (const child of [...printout.children]) {
       if (!child.classList.contains("onepage")) {
         console.log("Removing old child not in a page:", child);
         printout.removeChild(child);
       }
     }
   }
+  function getPageContentBottom(page) {
+    const pRect = page.getBoundingClientRect();
+    const paddingBottom = parseFloat(getComputedStyle(page).paddingBottom) || 0;
+    return pRect.bottom - paddingBottom;
+  }
+  function pageOverflows() {
+    const pages = document.querySelectorAll(".onepage");
+    for (const page of pages) {
+      for (const child of page.children) {
+        const r = child.getBoundingClientRect();
+        if (r.bottom > getPageContentBottom(page) + 1) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  function hideWidowedWorkspaces() {
+    const printout = getPrintout();
+    if (!printout) return;
+    const stranding = anySolutionShown();
+    printout.querySelectorAll(".workspace, .workspace-container").forEach((ws) => ws.classList.remove("hidden"));
+    printout.querySelectorAll(":scope > .onepage").forEach((page) => {
+      const rows = [...page.children].filter((c) => !isPageFurnitureEl(c));
+      const questionGroupsOnPage = new Set(
+        rows.filter((r) => !isWorkspaceRow(r)).map((r) => r.dataset.blockGroup).filter(Boolean)
+      );
+      for (const row of rows) {
+        if (!isWorkspaceRow(row) || !row.dataset.blockGroup) continue;
+        if (stranding && !questionGroupsOnPage.has(row.dataset.blockGroup)) {
+          console.log("Hiding workspace stranded from its question:", row);
+          row.classList.add("hidden");
+        }
+      }
+    });
+  }
+  function adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute = false }) {
+    const squeezed = adjustWorkspaceToFitPage({ paperSize, margins });
+    const squeezedTooFar = squeezed && holdsAuthoredWorkspace();
+    if (pageOverflows() || squeezedTooFar) {
+      if (fullRecompute) {
+        resetPrintoutPagination(margins);
+      } else {
+        if (squeezedTooFar) {
+          setInitialWorkspaceHeights();
+        }
+        addSpilloverPages(margins);
+      }
+      adjustWorkspaceToFitPage({ paperSize, margins });
+    }
+    hideWidowedWorkspaces();
+  }
+  function unwrapOnepages() {
+    const printout = getPrintout();
+    if (!printout) return;
+    const pages = [...printout.querySelectorAll(":scope > .onepage")];
+    pages.forEach((page) => {
+      [...page.children].filter(isPageFurnitureEl).forEach((el2) => el2.remove());
+      while (page.firstChild) {
+        printout.insertBefore(page.firstChild, page);
+      }
+      printout.removeChild(page);
+    });
+  }
+  function resetPrintoutPagination(margins) {
+    unwrapOnepages();
+    createPrintoutPages(margins);
+    addHeadersAndFootersToPrintout();
+  }
+  function isPageTailEl(el2) {
+    return el2.classList.contains("footnotes") || el2.classList.contains("first-page-footer") || el2.classList.contains("running-footer");
+  }
+  function isPageFurnitureEl(el2) {
+    return el2.classList.contains("first-page-header") || el2.classList.contains("running-header") || isPageTailEl(el2);
+  }
+  function isLegalSplit(contentChildren, index) {
+    const row = contentChildren[index];
+    const prev = contentChildren[index - 1];
+    const opensWithWorkspace = openingWorkspaceIndex(contentChildren, index) !== -1;
+    const splitsGroup = !!(row.dataset.blockGroup && row.dataset.blockGroup === prev.dataset.blockGroup);
+    return !opensWithWorkspace && !splitsGroup;
+  }
+  function addSpilloverPages(margins) {
+    const printout = getPrintout();
+    if (!printout) return;
+    printout.querySelectorAll(":scope > .onepage > .footnotes").forEach((block) => {
+      block.style.marginTop = "";
+    });
+    let pages = [...printout.querySelectorAll(":scope > .onepage")];
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      const contentChildren = [...page.children].filter((c) => !isPageFurnitureEl(c));
+      const footnotes = [...page.children].find((c) => c.classList.contains("footnotes"));
+      const contentBottom = getPageContentBottom(page) - (footnotes ? getElementTotalHeight(footnotes) : 0);
+      let overflowStartIndex = -1;
+      for (let j = 0; j < contentChildren.length; j++) {
+        const r = contentChildren[j].getBoundingClientRect();
+        if (r.bottom > contentBottom + 1) {
+          overflowStartIndex = j;
+          break;
+        }
+      }
+      if (overflowStartIndex === -1) continue;
+      if (overflowStartIndex === 0) {
+        if (contentChildren.length <= 1) continue;
+        overflowStartIndex = 1;
+        let opening = openingWorkspaceIndex(contentChildren, overflowStartIndex);
+        while (opening !== -1) {
+          overflowStartIndex = opening + 1;
+          opening = openingWorkspaceIndex(contentChildren, overflowStartIndex);
+        }
+        if (overflowStartIndex >= contentChildren.length) continue;
+      } else {
+        let candidate = overflowStartIndex;
+        while (candidate > 0 && !isLegalSplit(contentChildren, candidate)) {
+          candidate--;
+        }
+        if (candidate > 0) {
+          overflowStartIndex = candidate;
+        } else {
+          candidate = overflowStartIndex + 1;
+          while (candidate < contentChildren.length && !isLegalSplit(contentChildren, candidate)) {
+            candidate++;
+          }
+          if (candidate >= contentChildren.length) {
+            continue;
+          }
+          overflowStartIndex = candidate;
+        }
+      }
+      const overflowElems = contentChildren.slice(overflowStartIndex);
+      const newPage = document.createElement("section");
+      newPage.classList.add("onepage", "spillover");
+      if (page.classList.contains("lastpage")) {
+        page.classList.remove("lastpage");
+        newPage.classList.add("lastpage");
+      }
+      overflowElems.forEach((el2) => newPage.appendChild(el2));
+      page.parentNode.insertBefore(newPage, page.nextSibling);
+      [...page.children].filter(isPageFurnitureEl).forEach((hf) => hf.remove());
+      pages.splice(i + 1, 0, newPage);
+    }
+    printout.querySelectorAll(":scope > .onepage").forEach((p) => {
+      [...p.children].filter(isPageFurnitureEl).forEach((hf) => hf.remove());
+    });
+    addHeadersAndFootersToPrintout();
+  }
+  function appendPageContent(page, children2) {
+    const tail = [...page.children].find(isPageTailEl);
+    children2.forEach((c) => page.insertBefore(c, tail || null));
+  }
+  function collapseSpilloverPages(margins) {
+    const printout = getPrintout();
+    if (!printout) return;
+    const pages = [...printout.querySelectorAll(":scope > .onepage")];
+    for (let i = pages.length - 1; i >= 1; i--) {
+      const page = pages[i];
+      if (!page.classList.contains("spillover")) continue;
+      const prevPage = pages[i - 1];
+      const contentChildren = [...page.children].filter((c) => !isPageFurnitureEl(c));
+      appendPageContent(prevPage, contentChildren);
+      if (page.classList.contains("lastpage")) {
+        prevPage.classList.add("lastpage");
+      }
+      page.remove();
+    }
+    printout.querySelectorAll(":scope > .onepage").forEach((p) => {
+      [...p.children].filter(isPageFurnitureEl).forEach((hf) => hf.remove());
+    });
+    addHeadersAndFootersToPrintout();
+  }
+  function isListChunkStart(elem, list) {
+    return list.tagName === "DL" ? elem.tagName === "DT" : elem.tagName === "LI";
+  }
+  function isListEl(elem) {
+    return elem.tagName === "OL" || elem.tagName === "UL" || elem.tagName === "DL";
+  }
+  function splittableListsIn(row) {
+    const candidates = isListEl(row) ? [row] : [...row.querySelectorAll("ol, ul, dl")];
+    return candidates.filter(
+      (list) => !list.closest(".sidebyside") && !(list !== row && list.parentElement.closest("ol, ul, dl")) && ![...list.classList].some((cls) => /^cols\d+$/.test(cls))
+    );
+  }
+  function hoistListOut(container, child, list) {
+    const isRowItself = list === child;
+    const depthClass = isRowItself ? null : depthClassForRowOut(child);
+    const tail = [];
+    for (let node = list; node !== child; node = node.parentElement) {
+      for (let sib = node.nextElementSibling; sib; sib = sib.nextElementSibling) {
+        tail.push(sib);
+      }
+    }
+    const pieces = [];
+    let piece = null;
+    let itemNumber = parseInt(list.getAttribute("start"), 10) || 1;
+    for (const item of [...list.children]) {
+      if (isListChunkStart(item, list) || piece === null) {
+        piece = document.createElement(list.tagName);
+        piece.className = list.className;
+        piece.classList.add("split-list");
+        if (list.tagName === "OL") {
+          piece.setAttribute("start", String(itemNumber));
+        }
+        itemNumber++;
+        pieces.push(piece);
+      }
+      piece.appendChild(item);
+    }
+    if (pieces.length === 0) return;
+    list.parentNode.insertBefore(pieces[0], list);
+    list.remove();
+    if (!isRowItself) {
+      child.classList.add("split-block");
+    }
+    let anchor = isRowItself ? pieces[0] : child;
+    for (const row of [...pieces.slice(1), ...tail]) {
+      container.insertBefore(row, anchor.nextSibling);
+      if (depthClass) {
+        row.classList.add(depthClass);
+      }
+      anchor = row;
+    }
+  }
+  function flattenOversizedListsIn(container, pageHeight) {
+    let split = false;
+    for (const child of [...container.children]) {
+      if (getElementTotalHeight(child) <= pageHeight) continue;
+      const lists = splittableListsIn(child);
+      if (lists.length === 0) continue;
+      for (let i = lists.length - 1; i >= 0; i--) {
+        hoistListOut(container, child, lists[i]);
+      }
+      split = true;
+    }
+    return split;
+  }
+  function footnoteDetailsIn(root) {
+    return [...root.querySelectorAll("details.ptx-footnote")].filter((fn) => !fn.closest(".hidden"));
+  }
+  function footnoteMark(details) {
+    const sup = details.querySelector(".ptx-footnote__number sup");
+    return sup ? sup.textContent.trim() : "";
+  }
+  function buildFootnoteItem(details) {
+    const item = document.createElement("div");
+    item.classList.add("footnote-item");
+    const number = document.createElement("sup");
+    number.classList.add("footnote-item__number");
+    number.textContent = footnoteMark(details);
+    item.appendChild(number);
+    const contents = details.querySelector(".ptx-footnote__contents");
+    if (contents) {
+      const clone = contents.cloneNode(true);
+      clone.removeAttribute("id");
+      clone.querySelectorAll("[id]").forEach((el2) => el2.removeAttribute("id"));
+      clone.classList.remove("ptx-footnote__contents");
+      clone.classList.add("footnote-item__contents");
+      item.appendChild(clone);
+    }
+    return item;
+  }
+  function buildFootnotesBlock(detailsList) {
+    const block = document.createElement("div");
+    block.classList.add("footnotes");
+    detailsList.forEach((details) => block.appendChild(buildFootnoteItem(details)));
+    return block;
+  }
+  function rebuildFootnotes() {
+    const printout = getPrintout();
+    if (!printout) return;
+    printout.querySelectorAll(":scope > .onepage > .footnotes").forEach((block) => block.remove());
+    printout.querySelectorAll(":scope > .onepage").forEach((page) => {
+      const notes = footnoteDetailsIn(page);
+      if (notes.length === 0) return;
+      appendPageContent(page, [buildFootnotesBlock(notes)]);
+    });
+  }
+  function measureFootnotes(rows, measuringPage) {
+    const heights = /* @__PURE__ */ new Map();
+    const owners = [];
+    for (const row of rows) {
+      for (const details of footnoteDetailsIn(row)) {
+        owners.push({ details, row });
+      }
+    }
+    if (owners.length === 0) return { heights, chrome: 0 };
+    const probe = buildFootnotesBlock(owners.map((o) => o.details));
+    measuringPage.appendChild(probe);
+    let itemTotal = 0;
+    [...probe.children].forEach((item, i) => {
+      const height = getElementTotalHeight(item);
+      itemTotal += height;
+      const row = owners[i].row;
+      heights.set(row, (heights.get(row) || 0) + height);
+    });
+    const chrome = Math.max(0, getElementTotalHeight(probe) - itemTotal);
+    probe.remove();
+    return { heights, chrome };
+  }
+  function markBlankHeaderFooterBox(box) {
+    box.classList.toggle("blank", box.textContent.trim() === "" && !box.querySelector("img"));
+  }
   function addHeadersAndFootersToPrintout() {
-    const printout = document.querySelector("section.worksheet, section.handout");
+    const printout = getPrintout();
     if (!printout) {
       console.warn("No printout found, exiting addHeadersAndFootersToPrintout.");
       return;
     }
+    rebuildFootnotes();
     const pages = printout.querySelectorAll(".onepage");
     pages.forEach((page, index) => {
       const isFirstPage = index === 0;
+      const headerClass = isFirstPage ? "first-page-header" : "running-header";
+      const footerClass = isFirstPage ? "first-page-footer" : "running-footer";
       const headerDiv = document.createElement("div");
-      headerDiv.classList.add(isFirstPage ? "first-page-header" : "running-header", "hidden");
+      headerDiv.classList.add(headerClass);
+      if (localStorage.getItem(`print-${headerClass}`) !== "true") {
+        headerDiv.classList.add("hidden");
+      }
       headerDiv.innerHTML = `<div class="header-left" contenteditable="true"></div><div class="header-center" contenteditable="true"></div><div class="header-right" contenteditable="true"></div>`;
       page.insertBefore(headerDiv, page.firstChild);
       const footerDiv = document.createElement("div");
-      footerDiv.classList.add(isFirstPage ? "first-page-footer" : "running-footer", "hidden");
+      footerDiv.classList.add(footerClass);
+      if (localStorage.getItem(`print-${footerClass}`) !== "true") {
+        footerDiv.classList.add("hidden");
+      }
       footerDiv.innerHTML = `<div class="footer-left" contenteditable="true"></div><div class="footer-center" contenteditable="true"></div><div class="footer-right" contenteditable="true"></div>`;
       page.appendChild(footerDiv);
     });
@@ -1594,8 +2338,10 @@
       };
       const elements = document.querySelectorAll(selectorMap[key]);
       elements.forEach((elem) => {
+        markBlankHeaderFooterBox(elem);
         elem.addEventListener("input", () => {
           localStorage.setItem(key, elem.innerHTML);
+          markBlankHeaderFooterBox(elem);
         });
       });
     });
@@ -1619,6 +2365,10 @@
     }
     const paperContentHeight = paperHeight - (margins.top + margins.bottom);
     setInitialWorkspaceHeights();
+    document.querySelectorAll(".onepage > .footnotes").forEach((block) => {
+      block.style.marginTop = "";
+    });
+    let squeezed = false;
     const pages = document.querySelectorAll(".onepage");
     pages.forEach((page) => {
       console.log("Adjusting workspace height for page:", page);
@@ -1631,13 +2381,31 @@
         totalWorkspaceHeight += getElemWorkspaceHeight(row);
       }
       if (totalWorkspaceHeight === 0) {
+        const footnotes = [...page.children].find((c) => c.classList.contains("footnotes"));
+        if (footnotes) {
+          const gap = getPageContentBottom(page) - footnotes.getBoundingClientRect().bottom - 1;
+          if (gap > 0) {
+            const baseMargin = parseFloat(getComputedStyle(footnotes).marginTop) || 0;
+            footnotes.style.marginTop = baseMargin + gap + "px";
+          }
+        }
         console.log("No workspaces on this page, skipping workspace adjustment.");
         page.style.width = "";
         return;
       }
       const extraHeight = paperContentHeight - totalContentHeight;
       console.log("Extra height to distribute across workspaces:", extraHeight, "px.");
-      const workspaceAdjustmentFactor = (totalWorkspaceHeight + extraHeight) / totalWorkspaceHeight;
+      if (extraHeight < -1) {
+        squeezed = true;
+      }
+      let scalableHeight = totalWorkspaceHeight;
+      if (extraHeight < 0) {
+        scalableHeight = 0;
+        for (const row of rows) {
+          scalableHeight += getElemSqueezableHeight(row);
+        }
+      }
+      const workspaceAdjustmentFactor = scalableHeight > 0 ? Math.max(0, (scalableHeight + extraHeight) / scalableHeight) : 1;
       console.log("Workspace adjustment factor for page:", workspaceAdjustmentFactor);
       const pageWorkspaces = page.querySelectorAll(".workspace");
       pageWorkspaces.forEach((ws) => {
@@ -1651,6 +2419,7 @@
     if (wasHighlighted) {
       toggleWorkspaceHighlight(true);
     }
+    return squeezed;
   }
   function getElementTotalHeight(elem) {
     const style = getComputedStyle(elem);
@@ -1688,7 +2457,7 @@
         }
       }
     }
-    const workspaces = elem.querySelectorAll(".workspace");
+    const workspaces = workspaceDivsIn(elem);
     let totalHeight = 0;
     workspaces.forEach((ws) => {
       const workspaceHeight = ws.offsetHeight;
@@ -1698,36 +2467,115 @@
     });
     return totalHeight / columns;
   }
-  function findPageBreaks(rows, pageHeight) {
+  function getElemSqueezableHeight(elem) {
+    if (!elem.classList.contains("sidebyside") && !elem.classList.contains("exercisegroup")) {
+      return getElemWorkspaceHeight(elem);
+    }
+    const workspaces = [...elem.querySelectorAll(".workspace")];
+    if (workspaces.length === 0) return 0;
+    const heights = workspaces.map((ws) => ws.style.height);
+    const full = elem.offsetHeight;
+    workspaces.forEach((ws) => {
+      ws.style.height = "1px";
+    });
+    const emptied = elem.offsetHeight;
+    workspaces.forEach((ws, k) => {
+      ws.style.height = heights[k];
+    });
+    return Math.max(0, full - emptied);
+  }
+  var GROUP_BREAK_PENALTY_PAGES = 1;
+  var SQUEEZE_COST_SCALE = 0.25;
+  var DEAD_SPACE_EXPONENT = 0.75;
+  function anySolutionShown() {
+    const printout = getPrintout();
+    if (!printout) return false;
+    return [...printout.querySelectorAll(".hint, .answer, .solution")].some((el2) => !el2.closest(".hidden"));
+  }
+  function deadSpaceCost(slack, pageHeight, isLastPage) {
+    if (isLastPage) return 0;
+    return pageHeight ** 2 * (slack / pageHeight) ** DEAD_SPACE_EXPONENT;
+  }
+  function pageCost({ pageHeight, naturalHeight, workspaceHeight, squeezableHeight, splitsGroup, allowSqueeze, squeezeIsForced, isLastPage }) {
+    const groupPenalty = splitsGroup ? GROUP_BREAK_PENALTY_PAGES * pageHeight ** 2 : 0;
+    if (naturalHeight <= pageHeight) {
+      const slack = pageHeight - naturalHeight;
+      if (workspaceHeight > 0) {
+        return slack ** 2 + groupPenalty;
+      }
+      return deadSpaceCost(slack, pageHeight, isLastPage) + groupPenalty;
+    }
+    if (!allowSqueeze && !squeezeIsForced) {
+      return Infinity;
+    }
+    const squeeze = naturalHeight - pageHeight;
+    if (squeeze > squeezableHeight) {
+      return Infinity;
+    }
+    return SQUEEZE_COST_SCALE * squeeze ** 2 + groupPenalty;
+  }
+  function findPageBreaks(rows, pageHeight, { allowSqueeze = false, footnoteChrome = 0 } = {}) {
     console.log("*** Finding page breaks for", rows.length, "rows with page height:", pageHeight);
     let pageBreaks = [];
     let minCost = Array(rows.length + 1).fill(Infinity);
     minCost[rows.length] = 0;
     let nextPageBreak = Array(rows.length).fill(-1);
+    const opensWithWorkspace = Array(rows.length + 1).fill(false);
+    for (let k = rows.length - 1; k >= 0; k--) {
+      opensWithWorkspace[k] = rows[k].hidden ? opensWithWorkspace[k + 1] : rows[k].isWorkspace;
+    }
+    const nextLegalStart = (i) => {
+      let k = i + 1;
+      while (k < rows.length && opensWithWorkspace[k]) k++;
+      return k;
+    };
     for (let i = rows.length - 1; i >= 0; i--) {
       let cumulativeHeight = 0;
       let cumulativeWorkspaceHeight = 0;
+      let cumulativeSqueezableHeight = 0;
+      let cumulativeFootnoteHeight = 0;
+      let tallestRow = 0;
       for (let j = i; j < rows.length; j++) {
         cumulativeHeight += rows[j].height;
         cumulativeWorkspaceHeight += rows[j].workspaceHeight;
-        if (cumulativeHeight > pageHeight) {
+        cumulativeSqueezableHeight += rows[j].squeezableHeight;
+        cumulativeFootnoteHeight += rows[j].footnoteHeight || 0;
+        const footnotesHeight = cumulativeFootnoteHeight > 0 ? cumulativeFootnoteHeight + footnoteChrome : 0;
+        const rowWithNotes = rows[j].footnoteHeight ? rows[j].height + rows[j].footnoteHeight + footnoteChrome : rows[j].height;
+        tallestRow = Math.max(tallestRow, rowWithNotes);
+        const next = rows[j + 1];
+        const thisPage = pageCost({
+          pageHeight,
+          naturalHeight: cumulativeHeight + footnotesHeight,
+          workspaceHeight: cumulativeWorkspaceHeight,
+          squeezableHeight: cumulativeSqueezableHeight,
+          splitsGroup: !!(next && rows[j].group && rows[j].group === next.group),
+          allowSqueeze,
+          squeezeIsForced: tallestRow > pageHeight,
+          isLastPage: j === rows.length - 1
+        });
+        if (thisPage === Infinity) {
           if (j === i) {
             console.log("Row", i, "exceeds page height by itself, setting as its own page.");
             minCost[i] = 0;
-            nextPageBreak[i] = i + 1;
-            break;
-          } else {
-            break;
+            nextPageBreak[i] = nextLegalStart(i);
           }
+          break;
         }
-        const cost = (pageHeight - cumulativeHeight) ** 2 + minCost[j + 1];
+        if (opensWithWorkspace[j + 1]) continue;
+        const cost = thisPage + minCost[j + 1];
         if (cost < minCost[i]) {
           minCost[i] = cost;
           nextPageBreak[i] = j + 1;
         }
       }
+      if (nextPageBreak[i] === -1) {
+        const end = nextLegalStart(i);
+        nextPageBreak[i] = end;
+        minCost[i] = minCost[end];
+      }
     }
-    let nextPage = 1;
+    let nextPage = 0;
     while (nextPage < rows.length) {
       pageBreaks.push(nextPageBreak[nextPage]);
       nextPage = nextPageBreak[nextPage];
@@ -1767,24 +2615,32 @@
         document.querySelectorAll(".workspace").forEach((workspace) => {
           const container = document.createElement("div");
           container.classList.add("workspace-container");
-          container.style.height = window.getComputedStyle(workspace).height;
+          container.style.position = "relative";
           const original = document.createElement("div");
           original.classList.add("original-workspace");
           const originalHeight = workspace.getAttribute("data-space") || "0px";
           original.setAttribute("title", "Author-specified workspace height (" + originalHeight + ")");
           original.style.height = originalHeight;
+          original.style.position = "absolute";
+          original.style.top = "0";
+          original.style.left = "0";
           container.appendChild(original);
+          if (workspace.dataset.blockGroup) {
+            container.dataset.blockGroup = workspace.dataset.blockGroup;
+          }
+          moveDepthClass(workspace, container);
+          workspace.parentNode.insertBefore(container, workspace);
+          container.appendChild(workspace);
           if (original.offsetHeight > workspace.offsetHeight) {
             original.classList.add("warning");
           }
-          workspace.parentNode.insertBefore(container, workspace);
-          container.appendChild(workspace);
         });
       }
     } else {
       document.body.classList.remove("highlight-workspace");
       document.querySelectorAll(".workspace-container").forEach((container) => {
         const workspace = container.querySelector(".workspace");
+        moveDepthClass(container, workspace);
         container.parentNode.insertBefore(workspace, container);
         container.remove();
       });
@@ -1817,33 +2673,82 @@
     }
     return paperSize || "letter";
   }
+  function flattenKnowledPrintout(details) {
+    const content2 = details.querySelector(":scope > .knowl__content");
+    if (!content2) {
+      console.warn("Born-hidden printout has no knowl content; previewing as-is:", details);
+      return details;
+    }
+    const heading = details.querySelector(":scope > summary > .heading");
+    if (heading) {
+      content2.insertBefore(heading, content2.firstChild);
+    }
+    content2.classList.remove("knowl__content");
+    content2.id = details.id;
+    details.replaceWith(content2);
+    return content2;
+  }
+  document.addEventListener("click", (ev) => {
+    const link = ev.target.closest("a.print-link");
+    if (!link || !link.closest("summary")) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    window.location.assign(link.href);
+  });
   async function loadPrintout(printableSectionID) {
     const themeStylesheetLink = document.querySelector('link[rel="stylesheet"][href*="theme"]');
     const themeStylesheetHref = themeStylesheetLink ? themeStylesheetLink.getAttribute("href") : null;
     if (themeStylesheetHref) {
       const printStylesheetHref = themeStylesheetHref.replace(/theme.*\.css/, "print-worksheet.css");
-      themeStylesheetLink.setAttribute("href", printStylesheetHref);
-      await new Promise((resolve) => {
-        themeStylesheetLink.addEventListener("load", resolve, { once: true });
+      const printStylesheetLink = document.createElement("link");
+      printStylesheetLink.setAttribute("rel", "stylesheet");
+      printStylesheetLink.setAttribute("type", "text/css");
+      const stylesheetSettled = new Promise((resolve) => {
+        printStylesheetLink.addEventListener("load", resolve, { once: true });
+        printStylesheetLink.addEventListener("error", resolve, { once: true });
       });
+      printStylesheetLink.setAttribute("href", printStylesheetHref);
+      themeStylesheetLink.after(printStylesheetLink);
+      await stylesheetSettled;
+      themeStylesheetLink.remove();
     }
-    const printableSection = document.getElementById(printableSectionID);
+    let printableSection = document.getElementById(printableSectionID);
     if (!printableSection) {
-      console.error("No section found with ID:", printableSectionID);
+      console.error("No printable element found with ID:", printableSectionID);
       return;
     }
+    if (printableSection.tagName === "DETAILS") {
+      printableSection = flattenKnowledPrintout(printableSection);
+    }
+    printableSection.classList.add("printout");
     const ptxContent = document.querySelector(".ptx-content");
     const existingSections = ptxContent.querySelectorAll(":scope > section");
     existingSections.forEach((sec) => ptxContent.removeChild(sec));
     ptxContent.appendChild(printableSection);
   }
-  function rewriteSolutions() {
-    var born_hidden_knowls = document.querySelectorAll(".worksheet details, .handout details");
+  function solutionTypeHiddenByDefault(solutionType) {
+    return solutionType === "answer" || solutionType === "solution";
+  }
+  function solutionTypeHidden(solutionType) {
+    const stored = localStorage.getItem(`hide-${solutionType}`);
+    if (stored !== null) {
+      return stored === "true";
+    }
+    return solutionTypeHiddenByDefault(solutionType);
+  }
+  async function rewriteSolutions() {
+    var born_hidden_knowls = document.querySelectorAll(".printout details:not(.ptx-footnote)");
     born_hidden_knowls.forEach(function(detail) {
       const summary = detail.querySelector("summary");
       const content2 = detail.innerHTML.replace(summary.outerHTML, "");
       const div = document.createElement("div");
       div.classList = detail.classList;
+      for (const solutionType of ["hint", "answer", "solution"]) {
+        if (div.classList.contains(solutionType)) {
+          div.classList.add("hidden");
+          break;
+        }
+      }
       if (summary) {
         const title = document.createElement("h5");
         title.innerHTML = summary.innerHTML;
@@ -1854,6 +2759,9 @@
       div.appendChild(body);
       detail.parentNode.replaceChild(div, detail);
     });
+    if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+      await MathJax.typesetPromise();
+    }
   }
   function toPixels(value) {
     if (typeof value === "number") return value;
@@ -1873,12 +2781,146 @@
       return parseFloat(value) || 0;
     }
   }
+  function pageLayoutSignature() {
+    return [...document.querySelectorAll(".onepage")].map((page) => Math.round(page.getBoundingClientRect().height)).join(",");
+  }
+  async function pollUntilSettled(settle, { timeoutMs = 2e3, intervalMs = 100, stableTicks = 3 } = {}) {
+    const deadline = Date.now() + timeoutMs;
+    let lastSignature = null;
+    let stableCount = 0;
+    while (Date.now() < deadline) {
+      await new Promise((r) => setTimeout(r, intervalMs));
+      settle();
+      const signature = pageLayoutSignature();
+      if (signature === lastSignature) {
+        if (++stableCount >= stableTicks) return;
+      } else {
+        stableCount = 0;
+        lastSignature = signature;
+      }
+    }
+  }
+  async function applySolutionVisibility(solutionType, hidden, { paperSize, margins }) {
+    document.querySelectorAll(`div.${solutionType}`).forEach((elem) => {
+      if (hidden) {
+        elem.classList.add("hidden");
+      } else {
+        elem.classList.remove("hidden");
+      }
+    });
+    await withIframesDetached(async () => {
+      if (hidden) {
+        collapseSpilloverPages(margins);
+        adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+        await pollUntilSettled(() => {
+          collapseSpilloverPages(margins);
+          adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+        });
+      } else {
+        if (printTextChanged()) {
+          collapseSpilloverPages(margins);
+        }
+        adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+        await pollUntilSettled(() => {
+          if (pageOverflows()) {
+            addSpilloverPages(margins);
+            adjustWorkspaceToFitPage({ paperSize, margins });
+          }
+        });
+      }
+    });
+  }
+  var PRINT_TEXT_OPTIONS = [
+    { name: "fontSize", selectId: "ptx-print-font-size", storageKey: "print-font-size" },
+    { name: "lineSpacing", selectId: "ptx-print-line-spacing", storageKey: "print-line-spacing" },
+    { name: "letterSpacing", selectId: "ptx-print-letter-spacing", storageKey: "print-letter-spacing" },
+    { name: "font", selectId: "ptx-print-font", storageKey: "print-font" }
+  ];
+  function readPrintTextChoices() {
+    const choices = {};
+    for (const option of PRINT_TEXT_OPTIONS) {
+      const select = document.getElementById(option.selectId);
+      choices[option.name] = select ? select.value : "";
+    }
+    return choices;
+  }
+  function setPrintTextChoices(printout, { fontSize, lineSpacing, letterSpacing, font }) {
+    if (fontSize) {
+      printout.style.setProperty("--ptx-print-font-size", `${fontSize}pt`);
+    } else {
+      printout.style.removeProperty("--ptx-print-font-size");
+    }
+    if (lineSpacing) {
+      printout.style.setProperty("--ptx-print-line-height", lineSpacing);
+    } else {
+      printout.style.removeProperty("--ptx-print-line-height");
+    }
+    if (letterSpacing) {
+      printout.dataset.printLetterSpacing = letterSpacing;
+    } else {
+      delete printout.dataset.printLetterSpacing;
+    }
+    if (font) {
+      printout.dataset.printFont = font;
+    } else {
+      delete printout.dataset.printFont;
+    }
+  }
+  function appliedPrintTextChoices(printout) {
+    return {
+      fontSize: printout.style.getPropertyValue("--ptx-print-font-size").replace(/pt$/, ""),
+      lineSpacing: printout.style.getPropertyValue("--ptx-print-line-height"),
+      letterSpacing: printout.dataset.printLetterSpacing || "",
+      font: printout.dataset.printFont || ""
+    };
+  }
+  function printTextChanged() {
+    const printout = getPrintout();
+    if (!printout) return false;
+    return Object.values(appliedPrintTextChoices(printout)).some((choice) => choice !== "");
+  }
+  function holdsAuthoredWorkspace() {
+    return printTextChanged() && !anySolutionShown();
+  }
+  async function printFontsLoaded(printout) {
+    if (!document.fonts) return;
+    const style = getComputedStyle(printout);
+    try {
+      await Promise.all(["normal", "bold", "italic"].map((variant) => document.fonts.load(`${variant} ${style.fontSize} ${style.fontFamily}`)));
+    } catch (err) {
+      console.warn("Could not load the printout's font; measuring with what is available:", err);
+    }
+    await document.fonts.ready;
+  }
+  async function applyPrintTextChoices(choices, { paperSize, margins }) {
+    const printout = getPrintout();
+    if (!printout) return;
+    const applied = appliedPrintTextChoices(printout);
+    if (PRINT_TEXT_OPTIONS.every((option) => choices[option.name] === applied[option.name])) return;
+    setPrintTextChoices(printout, choices);
+    await printFontsLoaded(printout);
+    await withIframesDetached(async () => {
+      collapseSpilloverPages(margins);
+      adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+      await pollUntilSettled(() => {
+        collapseSpilloverPages(margins);
+        adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+      });
+    });
+  }
   window.addEventListener("DOMContentLoaded", async function(event2) {
     const urlParams = new URLSearchParams(window.location.search);
+    let pendingSettle = Promise.resolve();
     if (urlParams.has("printpreview")) {
       const printableSectionID = urlParams.get("printpreview");
       await loadPrintout(printableSectionID);
-      const marginList = document.querySelector("section.worksheet, section.handout").getAttribute("data-margins").split(" ");
+      const printout = getPrintout();
+      if (!printout) {
+        console.warn("Nothing to preview for printpreview=" + printableSectionID + "; leaving the page as it is.");
+        return;
+      }
+      const hasAuthoredPages = document.querySelectorAll(".onepage").length > 0;
+      const marginList = (printout.getAttribute("data-margins") || "").split(" ");
       const margins = {
         top: toPixels(marginList[0] || "0.75in"),
         // Default to 0.75in if not specified
@@ -1886,7 +2928,14 @@
         bottom: toPixels(marginList[2] || "0.75in"),
         left: toPixels(marginList[3] || "0.75in")
       };
-      rewriteSolutions();
+      const printOptionsButton = document.getElementById("ptx-print-options-button");
+      const printOptionsPopup = document.getElementById("ptx-print-options-popup");
+      if (printOptionsButton && printOptionsPopup && window.PTXDialog) {
+        new window.PTXDialog(printOptionsPopup, printOptionsButton, {
+          closeButton: document.getElementById("ptx-print-options-close-button")
+        });
+      }
+      await rewriteSolutions();
       let paperSize = getPaperSize();
       if (paperSize) {
         const radio = document.querySelector(`input[name="papersize"][value="${paperSize}"]`);
@@ -1897,12 +2946,13 @@
         document.body.classList.add(paperSize);
         setPageGeometryCSS({ paperSize, margins });
       } else {
-        console.warning("Bug: paperSize should always have a value here.");
+        console.warn("Bug: paperSize should always have a value here.");
       }
       const papersizeRadios = document.querySelectorAll('input[name="papersize"]');
       papersizeRadios.forEach((radio) => {
         radio.addEventListener("change", function() {
           if (this.checked) {
+            paperSize = this.value;
             document.body.classList.remove("a4", "letter");
             document.body.classList.add(this.value);
             localStorage.setItem("papersize", this.value);
@@ -1913,46 +2963,56 @@
       });
       for (const solutionType of ["hint", "answer", "solution"]) {
         const checkbox = document.getElementById(`hide-${solutionType}-checkbox`);
-        if (checkbox) {
-          const storageKey = `hide-${solutionType}`;
-          if (solutionType === "answer" || solutionType === "solution") {
-            if (!localStorage.getItem(storageKey)) {
-              checkbox.checked = true;
-              localStorage.setItem(storageKey, "true");
-            }
-          }
-          checkbox.checked = localStorage.getItem(storageKey) === "true";
-          document.querySelectorAll(`div.${solutionType}`).forEach((elem) => {
-            if (checkbox.checked) {
-              elem.classList.add("hidden");
-            } else {
-              elem.classList.remove("hidden");
-            }
-          });
-          checkbox.addEventListener("change", function() {
-            localStorage.setItem(storageKey, this.checked);
-            document.querySelectorAll(`div.${solutionType}`).forEach((elem) => {
-              if (checkbox.checked) {
-                elem.classList.add("hidden");
-              } else {
-                elem.classList.remove("hidden");
-              }
-              adjustWorkspaceToFitPage({ paperSize, margins });
-            });
-          });
+        if (!checkbox) continue;
+        if (!printout.querySelector(`.${solutionType}`)) {
+          const row = checkbox.closest(".hide-option");
+          if (row) row.classList.add("hidden");
+          continue;
+        }
+        const storageKey = `hide-${solutionType}`;
+        checkbox.checked = solutionTypeHidden(solutionType);
+        if (localStorage.getItem(storageKey) === null) {
+          localStorage.setItem(storageKey, checkbox.checked ? "true" : "false");
+        }
+        checkbox.addEventListener("change", async function() {
+          await pendingSettle;
+          localStorage.setItem(storageKey, this.checked);
+          pendingSettle = applySolutionVisibility(solutionType, this.checked, { paperSize, margins });
+        });
+      }
+      const hideSolutionsOptions = document.querySelector(".hide-solutions-options");
+      if (hideSolutionsOptions && !hideSolutionsOptions.querySelector(".hide-option:not(.hidden)")) {
+        hideSolutionsOptions.classList.add("hidden");
+      }
+      for (const option of PRINT_TEXT_OPTIONS) {
+        const select = document.getElementById(option.selectId);
+        if (!select) continue;
+        select.value = localStorage.getItem(option.storageKey) || "";
+        if (select.selectedIndex === -1) {
+          select.value = "";
         }
       }
-      const printoutSection = document.querySelector("section.worksheet, section.handout");
+      const printoutSection = getPrintout();
       if (printoutSection) {
         flattenParagraphsSections(printoutSection);
       }
       if (printoutSection) {
         await waitForImages(printoutSection);
       }
-      if (document.querySelector(".onepage")) {
-        adjustPrintoutPages();
+      if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+        await MathJax.typesetPromise([getPrintout()]);
+      }
+      if (hasAuthoredPages) {
+        adjustPrintoutPages(margins);
       } else {
         createPrintoutPages(margins);
+        pendingSettle = (async () => {
+          await new Promise((r) => setTimeout(r, 300));
+          unwrapOnepages();
+          createPrintoutPages(margins);
+          addHeadersAndFootersToPrintout();
+          adjustWorkspaceToFitPage({ paperSize, margins });
+        })();
       }
       addHeadersAndFootersToPrintout();
       for (const hf of ["first-page-header", "running-header", "first-page-footer", "running-footer"]) {
@@ -1974,54 +3034,91 @@
               } else {
                 elem.classList.add("hidden");
               }
-              adjustWorkspaceToFitPage({ paperSize, margins });
             });
+            adjustWorkspaceToFitPage({ paperSize, margins });
           });
         }
       }
-      adjustWorkspaceToFitPage({ paperSize, margins });
+      adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: !hasAuthoredPages });
+      pendingSettle = pendingSettle.then(() => pollUntilSettled(() => {
+        if (hasAuthoredPages) {
+          collapseSpilloverPages(margins);
+          adjustWorkspaceOrRepaginate({ paperSize, margins, fullRecompute: false });
+        } else if (pageOverflows()) {
+          resetPrintoutPagination(margins);
+          adjustWorkspaceToFitPage({ paperSize, margins });
+        }
+      }));
+      pendingSettle = pendingSettle.then(async () => {
+        for (const solutionType of ["hint", "answer", "solution"]) {
+          if (printout.querySelector(`.${solutionType}`) && !solutionTypeHidden(solutionType)) {
+            await applySolutionVisibility(solutionType, false, { paperSize, margins });
+          }
+        }
+      });
+      const applyTextChoices = () => {
+        const choices = readPrintTextChoices();
+        for (const option of PRINT_TEXT_OPTIONS) {
+          if (choices[option.name]) {
+            localStorage.setItem(option.storageKey, choices[option.name]);
+          } else {
+            localStorage.removeItem(option.storageKey);
+          }
+        }
+        return applyPrintTextChoices(choices, { paperSize, margins });
+      };
+      pendingSettle = pendingSettle.then(applyTextChoices);
+      for (const option of PRINT_TEXT_OPTIONS) {
+        const select = document.getElementById(option.selectId);
+        if (!select) continue;
+        select.addEventListener("change", () => {
+          pendingSettle = pendingSettle.then(applyTextChoices);
+        });
+      }
       const highlightWorkspaceCheckbox = document.getElementById("highlight-workspace-checkbox");
       if (highlightWorkspaceCheckbox) {
-        highlightWorkspaceCheckbox.checked = localStorage.getItem("highlightWorkspace") === "true";
-        highlightWorkspaceCheckbox.addEventListener("change", function() {
-          localStorage.setItem("highlightWorkspace", this.checked);
-          toggleWorkspaceHighlight(this.checked);
+        if (workspaceDivsIn(printout).length === 0) {
+          const row = highlightWorkspaceCheckbox.closest(".highlight-workspace-option");
+          if (row) row.classList.add("hidden");
+        } else {
+          highlightWorkspaceCheckbox.checked = localStorage.getItem("highlightWorkspace") === "true";
+          highlightWorkspaceCheckbox.addEventListener("change", function() {
+            localStorage.setItem("highlightWorkspace", this.checked);
+            toggleWorkspaceHighlight(this.checked);
+          });
+          toggleWorkspaceHighlight(highlightWorkspaceCheckbox.checked);
+        }
+      }
+      const resetButton = document.getElementById("ptx-print-options-reset-button");
+      if (resetButton) {
+        resetButton.addEventListener("click", () => {
+          pendingSettle = pendingSettle.then(async () => {
+            const offByDefault = ["first-page-header", "running-header", "first-page-footer", "running-footer"].map((hf) => document.getElementById(`print-${hf}-checkbox`)).concat(highlightWorkspaceCheckbox);
+            for (const checkbox of offByDefault) {
+              if (checkbox && checkbox.checked) {
+                checkbox.checked = false;
+                checkbox.dispatchEvent(new Event("change"));
+              }
+            }
+            for (const option of PRINT_TEXT_OPTIONS) {
+              const select = document.getElementById(option.selectId);
+              if (select) select.value = "";
+            }
+            await applyTextChoices();
+            for (const solutionType of ["hint", "answer", "solution"]) {
+              const checkbox = document.getElementById(`hide-${solutionType}-checkbox`);
+              if (!checkbox || !printout.querySelector(`.${solutionType}`)) continue;
+              const hidden = solutionTypeHiddenByDefault(solutionType);
+              localStorage.setItem(`hide-${solutionType}`, hidden);
+              if (checkbox.checked !== hidden) {
+                checkbox.checked = hidden;
+                await applySolutionVisibility(solutionType, hidden, { paperSize, margins });
+              }
+            }
+          });
         });
-        toggleWorkspaceHighlight(highlightWorkspaceCheckbox.checked);
       }
       console.log("finished adjusting workspace");
-    }
-  });
-  document.addEventListener("click", (ev) => {
-    const codeBox = ev.target.closest(".clipboardable");
-    if (!navigator.clipboard || !codeBox) return;
-    const button = ev.target.closest(".code-copy");
-    const preContent = codeBox.querySelector("pre").textContent;
-    navigator.clipboard.writeText(preContent);
-    button.classList.toggle("copied");
-    setTimeout(() => button.classList.toggle("copied"), 1e3);
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".clipboardable");
-    for (el of elements) {
-      const div = document.createElement("div");
-      div.classList.add("clipboardable");
-      el.classList.remove("clipboardable");
-      el.replaceWith(div);
-      div.insertAdjacentElement("afterbegin", el);
-      div.insertAdjacentHTML("beforeend", `
-    <button class="code-copy" title="Copy code" role="button" aria-label="Copy code" >
-        <span class="copyicon material-symbols-outlined">content_copy</span>
-        <span class="checkmark material-symbols-outlined">check</span>
-    </button>
-            `.trim());
-    }
-  });
-  window.addEventListener("DOMContentLoaded", () => {
-    const userDropdownButton = document.getElementById("ptx-user-dropdown-button");
-    const userDropdownContent = document.getElementById("ptx-user-dropdown-content");
-    if (userDropdownButton && userDropdownContent) {
-      new PTXDropdown(userDropdownContent, userDropdownButton);
     }
   });
 
@@ -2074,28 +3171,29 @@
       }
     }
   });
+  function applyEmbedTheme(embedValue) {
+    const instructorTheme = embedValue === "dark" ? "dark" : "light";
+    applyThemeChoice(instructorTheme);
+  }
   window.addEventListener("DOMContentLoaded", function(event2) {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has("embed")) {
-      if (urlParams.get("embed") === "dark") {
-        setDarkMode(true);
-      } else {
-        setDarkMode(false);
-      }
-      const elemsToHide = [
-        "ptx-navbar",
-        "ptx-masthead",
-        "ptx-page-footer",
-        "ptx-sidebar",
-        "ptx-content-footer"
-      ];
-      for (let id of elemsToHide) {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.classList.add("hidden");
-        }
+    if (!urlParams.has("embed")) {
+      return;
+    }
+    document.body.classList.add("ptx-embedded");
+    const elemsToHide = [
+      "ptx-masthead",
+      "ptx-page-footer",
+      "ptx-sidebar",
+      "ptx-content-footer"
+    ];
+    for (let id of elemsToHide) {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.classList.add("hidden");
       }
     }
+    applyEmbedTheme(urlParams.get("embed"));
   });
 
   // ../../js/src/pretext-core.js
