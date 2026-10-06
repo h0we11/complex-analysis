@@ -5,9 +5,9 @@
 		limit <m>u_0</m> as <m>(x, y)</m> approaches <m>(x_0, y_0)</m> provided the value of <m>u(x,y)</m> can be made to get as
 		close as we want to the value <m>u_0</m> by taking <m>(x, y)</m> to be sufficiently close to <m>(x_0, y_0)</m>.  When this
 		happens we write
-		<me>
+		<md>
 			\lim_{(x,y) \to (x_0,y_0)} u(x, y) = u_0
-		</me>.
+		</md>.
 	</p>
 	<p>
 		In more technical language, <m>u</m> has the limit <m>u_0</m> as <m>(x, y)</m> approaches <m>(x_0, y_0)</m> iff 
@@ -22,9 +22,9 @@
 			<p>
 				The expression <m>\lim\limits_{(x,y) \to (x_0,y_0)}u(x, y)=u_0</m> means that for each number <m>\varepsilon > 0</m>,
 				there is a corresponding number <m>\delta > 0</m> such that
-				<men xml:id="lim">
+				<md number="yes" xml:id="lim">
 					\hspace{-0.5in} |u(x, y)-u_0| \lt \varepsilon \quad \text{whenever} \quad 0 \lt \sqrt{(x-x_0)^2+(y-y_0)^2} \lt \delta
-				</men>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -37,14 +37,14 @@
 		<solution>
 			<p>
 				If <m>x=r\cos \theta</m> and <m>y=r\sin \theta</m>, then
-				<me>
+				<md>
 					u(x, y) = \frac{2r^3\cos ^3\theta}{r^2\cos ^2\theta +r^2\sin ^2\theta} = 2r\cos^3\theta
-				</me>.
+				</md>.
 				Because <m>\sqrt{(x-0)^2+(y-0)^2}=r</m> and because <m>|\cos ^3\theta |\lt 1</m>,
-				<me>
+				<md>
 					|u(x, y) -0|=2r|\cos ^3\theta |\lt \varepsilon \quad \text{whenever} \quad 0 \lt 
 					\sqrt{x^2+y^2}=r\lt \frac{\varepsilon}{2}
-				</me>.
+				</md>.
 				Hence, for any <m>\varepsilon >0</m>, Inequality <xref ref="lim"/> is satisfied for 
 				<m>\delta =\frac{\varepsilon}{2}</m>; that is, <m>u(x, y)</m> has the limit <m>u_0=0</m> as <m>(x, y)</m> approaches 
 				<m>(0, 0)</m>.
@@ -68,15 +68,15 @@
 		<solution>
 			<p>
 				If we let <m>(x, y)</m> approach <m>(0, 0)</m> along the <m>x</m> axis, then
-				<me>
+				<md>
 					\lim\limits_{(x,0) \to (0,0)} u(x, 0) = \lim\limits_{(x,0) \to (0,0)}\frac{(x)(0)}{x^2+0^2} = 0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				But if we let <m>(x, y)</m> approach <m>(0,\,0)</m> along the line <m>y=x</m>, then
-				<me>
+				<md>
 					\lim\limits_{(x,x) \to (0,0)}u(x, x) = \lim\limits_{(x,x) \to (0, 0)}\frac{(x)(x)}{x^2+x^2}=\frac{1}{2}
-				</me>.
+				</md>.
 				Because the value of the limit differs depending on how <m>(x, y)</m> approaches <m>(0, 0)</m>, we conclude that 
 				<m>u(x, y)</m> does not have a limit as<nbsp/><m>(x, y)</m> approaches <m>(0, 0)</m>.
 			</p>
@@ -87,9 +87,9 @@
 		neighborhood of <m>z_0</m>, except perhaps at the point <m>z_0</m>. We say that <m>f</m> has the limit <m>w_0</m> as
 		<m>z</m> approaches <m>z_0</m>, provided the value <m>f(z)</m> can be made as close as we want to the value <m>w_0</m> by
 		taking <m>z</m> to be sufficiently close to <m>z_0</m>. When this happens we write
-		<me>
+		<md>
 			\lim\limits_{z \to z_0}f(z) =w_0
-		</me>.
+		</md>.
 	</p>
 	<p>
 		The distance between the points <m>z</m> and <m>z_0</m> can be expressed by <m>|z-z_0|</m>, so we can give a precise
@@ -101,13 +101,13 @@
 			<p>
 				The expression <m>\lim\limits_{z \to z_0}f(z) = w_0</m> means that for each real number <m>\varepsilon > 0</m>, there
 				exists a real number <m>\delta >0</m> such that
-				<me>
+				<md>
 					|f(z) -w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt  |z-z_0| \lt \delta
-				</me>.
+				</md>.
 				Using the notation of <xref ref="OpenDisk"/> and <xref ref="PuncturedDisk"/>, we can express the last relationship as
-				<me>
+				<md>
 					f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0).
-				</me>
+				</md>
 			</p>
 		</statement>
 	</definition>
@@ -156,13 +156,13 @@
 			<p>
 				Let <m>f(z) = u(x, y) +iv(x, y)</m> be a complex function that is defined in some neighborhood of <m>z_0</m>, except
 				perhaps at <m>z_0=x_0+iy_0</m>. Then
-				<men xml:id="complex_limit">
+				<md number="yes" xml:id="complex_limit">
 					\lim\limits_{z \to z_0}\,f(z) =w_0=u_0+iv_0
-				</men>
+				</md>
 				iff
-				<men xml:id="real_limit">
+				<md number="yes" xml:id="real_limit">
 					\lim\limits_{(x,y) \to (x_0,y_0)} u(x, y)=u_0 \quad \text{and} \quad \lim\limits_{(x,y) \to (x_0,y_0)} v(x, y)=v_0
-				</men>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -171,19 +171,19 @@
 			We first assume that Statement <xref ref="complex_limit"/> is true and show that Statement <xref ref="real_limit"/> is
 			true. According to the definition of limit, for each <m>\varepsilon >0</m>, there is a corresponding <m>\delta >0</m>
 			such that
-			<me>
+			<md>
 				f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z \in D_{\delta}^*(z_0)
-			</me>,
+			</md>,
 		</p>
 		<p>
 			that is,
-			<me>
+			<md>
 				|f(z)-w_0|\lt \varepsilon \quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta
-			</me>.
+			</md>.
 			Because <m>f(z) -w_0=u(x, y) -u_0+i(v(x, y) -v_0)</m>, we can use Inequalities <xref ref="ReImLEMod"/> to conclude that
-			<me>
+			<md>
 				
-			|u(x, y) -u_0| \le |f(z)-w_0|  \text{ and }   |v(x, y)-v_0| \le |f(z)-w_0| </me>.
+			|u(x, y) -u_0| \le |f(z)-w_0|  \text{ and }   |v(x, y)-v_0| \le |f(z)-w_0| </md>.
 			It now follows that <m>|u(x, y) -u_0|\lt \varepsilon</m> and <m>|v(x, y) -v_0|\lt \varepsilon</m> whenever 
 			<m>0\lt |z-z_0|\lt \delta</m>, and so Statement <xref ref="real_limit"/> is true.
 		</p>
@@ -201,18 +201,18 @@
 		<p>
 			We choose <m>\delta</m> to be the minimum of the two values <m>\delta _1</m> and <m>\delta _2</m>. Then we can use the
 			triangle inequality
-			<me>
+			<md>
 				|f(z) -w_0|\le |u(x, y) -u_0|+|v(x, y)-v_0|
-			</me>
+			</md>
 			to conclude that
-			<me>
+			<md>
 				|f(z) -w_0|\lt \frac{\varepsilon}{2} + \frac{ \varepsilon}{2}=\varepsilon 
 				\quad \text{whenever} \quad 0\lt |z-z_0|\lt \delta
-			</me>,
+			</md>,
 			that is,
-			<me>
+			<md>
 				f(z) \in D_{\varepsilon}(w_0) \quad \text{whenever} \quad z\in D_{\delta}^*(z_0)
-			</me>.
+			</md>.
 			Hence, the truth of Statement <xref ref="real_limit"/> implies the truth of Statement <xref ref="complex_limit"/>, and the
 			proof of the theorem is complete.
 		</p>
@@ -226,9 +226,9 @@
 		<solution>
 			<p>
 				Let
-				<me>
+				<md>
 					f(z) =z^2-2z+1=x^2-y^2-2x+1+i(2xy-2y)
-				</me>.
+				</md>.
 				Computing the limits for <m>u</m> and <m>v</m>, we obtain
 				<md>
 					<mrow>\lim\limits_{(x,y) \to (1,1)}u(x, y) \amp  =1-1-2+1=-1, \quad \text{and}</mrow>
@@ -357,9 +357,9 @@
 		<statement>
 			<p>
 				Show that the polynomial function given by
-				<me>
+				<md>
 					w=P(z) =a_0+a_1z+a_2z^2+\cdots +a_nz^n
-				</me>
+				</md>
 				is continuous at each point <m>z_0</m> in the complex plane.
 			</p>
 		</statement>
@@ -369,17 +369,17 @@
 				can use <xref ref="LimitDef">Definition</xref> with <m>f(z) =a_1z</m> and the choice 
 				<m>\delta =\frac{\varepsilon}{|a_1|}</m> to prove that <m>\lim\limits_{z \to z_0}(a_1z) = a_1z_0</m>. Using Property 
 				<xref ref="limproduct"/> and mathematical induction, we obtain
-				<men xml:id="limproducts">
+				<md number="yes" xml:id="limproducts">
 					\lim\limits_{z \to z_0}(a_kz^k) =a_kz_0^k \quad \text{for} \quad k=0,1,2,\ldots, n
-				</men>.
+				</md>.
 			</p>
 			<p>
 				We can extend <xref ref="limsum">Property</xref> to a finite sum of terms and use the result of 
 				<xref ref="limproducts">Equation</xref> to get
-				<me>
+				<md>
 					\lim\limits_{z \to z_0}P(z)=\lim\limits_{z \to z_0}\left(\sum\limits_{k=0}^n a_kz^k\right) =
 					\sum\limits_{k=0}^n a_kz_0^k = P(z_0)
-				</me>.
+				</md>.
 				Conditions <xref ref="Ccont_1"/>, <xref ref="Ccont_2"/>, and <xref ref="Ccont_3"/> are satisfied, so we conclude that
 				<m>P</m> is continuous at <m>z_0</m>.
 			</p>
@@ -388,16 +388,16 @@
 	<p>
 		One technique for computing limits is to apply <xref ref="ContThm">Theorem</xref> to quotients. If we let <m>P</m> and
 		<m>Q</m> be polynomials and if <m>Q(z_0) \ne 0</m>, then 
-		<me>
+		<md>
 			\lim\limits_{z \to z_0}\frac{P(z)}{Q(z)} = \frac{P(z_0)}{Q(z_0)}
-		</me>
+		</md>
 	</p>
 	<p>
 		Another technique involves factoring polynomials. If both <m>P(z_0) =0</m> and <m>Q(z_0) =0</m>, then <m>P</m> and <m>Q</m>
 		can be factored as <m>P(z) = (z-z_0) P_1(z)</m> and <m>Q(z)= (z-z_0)Q_1(z)</m>. If <m>Q_1(z_0) \ne 0</m>, then the limit is
-		<me>
+		<md>
 			\lim_{z \to z_0}\frac{P(z)}{Q(z)} = \lim_{z \to z_0}\frac{(z-z_0) P_1(z)}{(z-z_0) Q_1(z)} = \frac{P_1(z_0)}{Q_1(z_0)}
-		</me>.
+		</md>.
 	</p>
 	<example>
 		<statement>
@@ -408,9 +408,9 @@
 		<solution>
 			<p>
 				Here <m>P</m> and <m>Q</m> can be factored in the form
-				<me>
+				<md>
 					P(z) =(z-1-i) (z+1+i)  \text{ and }   Q(z) = (z-1-i)(z-1+i)
-				</me>
+				</md>
 				so that the limit is obtained by the calculation
 				<md>
 					<mrow>

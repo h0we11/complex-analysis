@@ -3,9 +3,9 @@
 	<p>
 		The Dirichlet problem for the unit disk <m>D:|z|\lt 1</m> is to find a real-valued function <m>u(x,y)</m> that is harmonic
 		in the unit disk <m>D</m> and that takes on the boundary values
-		<men xml:id="BDDvalues">
+		<md number="yes" xml:id="BDDvalues">
 			u(\cos\theta, \sin\theta) = U(\theta), \quad \text{for} \quad -\pi \lt \theta \le \pi
-		</men>
+		</md>
 		at points <m>z=(\cos \theta, \sin \theta)</m> on the unit circle, as shown in <xref ref="fig_ch-11-12">Figure</xref>.
 	</p>
 	<figure xml:id="fig_ch-11-12">
@@ -17,13 +17,13 @@
 		<statement>
 			<p>
 				If <m>U(t)</m> has period <m>2\pi</m>, and has the Fourier series representation
-				<me>
+				<md>
 					U(t) =\frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)
-				</me>,
+				</md>,
 				then the solution <m>u</m> to the Dirichlet problem in <m>D</m> is
-				<men xml:id="DirichletSol">
+				<md number="yes" xml:id="DirichletSol">
 					u(r\cos\theta, r\sin \theta) = \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_nr^n\cos n\theta +b_nr^n\sin n\theta)
-				</men>,
+				</md>,
 				where <m>x+iy=re^{i\theta}</m> denotes a complex number in the closed disk <m>|z| \le 1</m>.
 			</p>
 		</statement>
@@ -46,13 +46,13 @@
 			<p>
 				Let <m>u(x,y)</m> be a function that is harmonic in a simply connected domain that contains the closed unit disk
 				<m>|z| \le 1</m>. If <m>u(x,y)</m> takes on the boundary values
-				<me>
+				<md>
 					u(\cos\theta, \sin\theta) = U(\theta), \quad \text{for} \quad -\pi \lt \theta \le \pi
-				</me>,
+				</md>,
 				then <m>u</m> has the integral representation
-				<men xml:id="PoissonDiskForm">
+				<md number="yes" xml:id="PoissonDiskForm">
 					u(r\cos \theta ,r\sin \theta) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{(1-r^2)U(t)}{1+r^2-2r\cos (t-\theta )}\,dt
-				</men>
+				</md>
 				that is valid for <m>|z|\lt 1</m>.
 			</p>
 		</statement>
@@ -62,24 +62,24 @@
 			Since <m>u(x,y)</m> is harmonic in the simply connected domain, there exists a conjugate harmonic function <m>v(x,y)</m>
 			such that <m>f(z)=u(x,y)+iv(x,y)</m> is analytic. Let <m>C</m> denote the contour consisting of the unit circle; then
 			Cauchy<nbsp/>'s integral formula
-			<men xml:id="Cauchy1">
+			<md number="yes" xml:id="Cauchy1">
 				f(z) = \frac{1}{2\pi i}\int\nolimits_c\frac{f(\xi)}{\xi -z}\,d\xi
-			</men>
+			</md>
 			expresses the value of <m>f(z)</m> at any point <m>z</m> inside <m>C</m> in terms of the values of <m>f(\xi)</m> at
 			points <m>\xi</m> that lie on the circle <m>C</m>. If we set <m>z^{\ast } = (\overline{z})^{-1}</m> then <m>z^*</m> lies
 			outside the unit circle <m>C</m> and the Cauchy-Goursat theorem gives
-			<men xml:id="Cauchy2">
+			<md number="yes" xml:id="Cauchy2">
 				0 = \frac{1}{2\pi i}\int_c\frac{f(\xi )}{\xi -z^{\ast }}\,d\xi
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If we subtract Equation <xref ref="Cauchy2"/> from Equation <xref ref="Cauchy1"/>, then use the parameterization <m>\xi
 			=e^{it}</m>, <m>d\xi =ie^{it}\,dt</m> and the substitutions <m>z=re^{i\theta}</m>,
 			<m>z^{\ast }=\frac{1}{r}e^{i\theta}</m>, we get
-			<me>
+			<md>
 				f(z) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\left(\frac{e^{it}}{e^{it}-re^{i\theta}} -
 				\frac{e^{it}}{e^{it}-\frac{1}{r}e^{i\theta}}\right)f(e^{it})\,dt
-			</me>.
+			</md>.
 		</p>
 		<p>
 			The expression inside the parentheses on the right side of this equation can be written as
@@ -90,9 +90,9 @@
 			<mrow xml:id="expression" number="yes">\amp = \frac{1-r^2}{1+r^2-2r\cos (t-\theta )}</mrow>
 		</md>,
 		and it follows that
-		<me>
+		<md>
 			f(z) = \frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{(1-r^2)f(e^{it})}{1+r^2-2r\cos (t-\theta)}\,dt
-		</me>.
+		</md>.
 		</p>
 		<p>
 			Since <m>u(x,y)</m> is the real part of <m>f(z)</m> and <m>U(t)</m> is the real part of <m>f(e^{it})</m>, we can equate
@@ -107,9 +107,9 @@
 	<title>Proof of  <xref ref="thm_dirichlet-solution">Theorem</xref> (Dirichlet Solution)</title>
 		<p>
 			The real-valued function
-			<me>
+			<md>
 				P(r,t-\theta ) = \frac{1-r^2}{1+r^2-2r\cos (t-\theta)}
-			</me>
+			</md>
 			is known as the <em>Poisson kernel</em>. Expanding the left side of Equation <xref ref="expression"/> in a geometric
 			series gives
 			<md>
@@ -158,21 +158,21 @@
 		<statement>
 			<p>
 				Find the function <m>u(x,y)</m> that is harmonic in the unit disk <m>|z|\lt 1</m> and takes on the boundary values
-				<me>
+				<md>
 				u(\cos\theta, \sin\theta) = U(\theta) = \frac{\theta}{2}, \quad \text{for} \quad -\pi \lt \theta \lt \pi
-			</me>.
+			</md>.
 		</p>
 	</statement>
 	<solution>
       <p>
 			Using <xref ref="ex_10_1">Example</xref>, we begin with the Fourier series for <m>U(\theta)</m>:
-			<me>
+			<md>
 				U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt
-			</me>.
+			</md>.
 			Using <xref ref="DirichletSol">formula</xref> for the solution of the Dirichlet problem, we obtain
-			<me>
+			<md>
 				u(r\cos\theta, r\sin\theta) =\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}r^n\sin n\theta
-			</me>.
+			</md>.
 			Note that the above series representation for <m>u(r\cos \theta, r\sin \theta)</m> takes on the prescribed boundary
 			values at points where <m>U(\theta)</m> is continuous. The boundary function <m>U(\theta)</m> is discontinuous at
 			<m>z=-1</m>, which corresponds to <m>\theta =\pm \pi</m>; and <m>U(\theta )</m> was not prescribed at these points.

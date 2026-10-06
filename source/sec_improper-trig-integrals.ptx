@@ -3,18 +3,18 @@
 	<p>
 		Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>, respectively, where <m>n\ge m+1</m>. We can show
 		(but omit the proof) that if <m>Q(x) \ne 0</m> for all real <m>x</m>, then
-		<me>
+		<md>
 			\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\cos x\,dx \quad \text{and} \quad 
 			\text{ P.V. } \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\sin x\,dx
-		</me>
+		</md>
 		are convergent improper integrals.  You may encounter integrals of this type in the study of Fourier transforms and Fourier
 		integrals. We now show how to evaluate them.
 	</p>
 	<p>
 		Particularly important is our use of the identities
-		<me>
+		<md>
 			\cos(\alpha x) = \mathrm{Re}[\exp(i\alpha x)], \quad \text{and} \quad \sin (\alpha x) = \mathrm{Im}[\exp (i\alpha x)]
-		</me>,
+		</md>,
 		where <m>\alpha</m> is a positive real number. The crucial step in the proof of the following Theorem wouldn't hold if we
 		were to use <m>\cos(\alpha z)</m> and <m>\sin (\alpha z)</m> instead of <m>\exp (i\alpha z)</m>, as you will see when you
 		get to <xref ref="Jordan_s_Lemma">Lemma</xref>.
@@ -24,9 +24,9 @@
 			<p>
 				Let <m>P</m><nbsp/>and <m>Q</m><nbsp/>be polynomials with real coefficients of degree <m>m</m><nbsp/>and <m>n</m>,
 				respectively, where <m>n \ge m+1</m> and <m>Q(x) \ne 0</m>, for all real <m>x</m>. If <m>\alpha>0</m> and
-				<men xml:id="exp_iaz_P_z__Q_z_">
+				<md number="yes" xml:id="exp_iaz_P_z__Q_z_">
 					f(z) = \frac{\exp(i\alpha z)P(z)}{Q(z)}
-				</men>.
+				</md>.
 				then
 				<md>
 					<mrow xml:id="PV__P_Q_cos_ax_" number="yes">
@@ -59,14 +59,14 @@
 			<p>
 				The function <m>f</m> in <xref ref="exp_iaz_P_z__Q_z_">Equation</xref> is <m>f(z) = \frac{\exp (iz) z}{z^2+4}</m>, which
 				has a simple pole at the point <m>2i</m> in the upper half-plane. Calculating the residue yields
-				<me>
+				<md>
 					\mathrm{Res}[f,2i] =\lim\limits_{z \to 2i}\frac{\exp(iz)z}{z+2i} = \frac{2ie^{-2}}{4i}=\frac{1}{2e^2}
-				</me>.
+				</md>.
 				Using <xref ref="PV__P_Q_sin_ax_">Equation</xref> gives
-				<me>
+				<md>
 					\text{ P.V. } \int_{-\infty}^{\infty}\frac{x\sin x}{x^2+4}\,dx = 
 					2\pi \mathrm{Re}(\mathrm{Res}[f,2i]) = \frac{\pi}{e^2}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -90,9 +90,9 @@
 			</p>
 			<p>
 				Similarly,
-				<me>
+				<md>
 					\mathrm{Res}[f, \, -1+i] = \frac{\cos 1 -\sin 1 -i(\cos 1+\sin 1)}{16e}
-				</me>.
+				</md>.
 				Using <xref ref="PV__P_Q_cos_ax_">Equation</xref>, we get
 				<md>
 					<mrow>
@@ -114,9 +114,9 @@
 			<p>
 				Suppose that <m>P</m><nbsp/>and <m>Q</m><nbsp/>are polynomials of degree <m>m</m> and <m>n</m>, respectively, where
 				<m>n \ge m+1</m>. If <m>C_R</m> is the upper semicircle <m>z=Re^{i\theta}</m>, for <m>0 \le \theta \le \pi</m>, then
-				<me>
+				<md>
 					\lim_{R \to \infty}\int_{c_{R}}\frac{\exp(iz)P(z)}{Q(z)}\,dz=0
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</lemma>
@@ -125,18 +125,18 @@
 		<p>
 			From <m>n \ge m+1</m>, it follows that <m>|\frac{P(z)}{Q(z)}| \to 0</m> as <m>|z| \to \infty</m>. Therefore, for any
 			<m>\varepsilon>0</m>, there exists <m>R_{\varepsilon}>0</m> such that
-			<men xml:id="P_Q___e_Pi">
+			<md number="yes" xml:id="P_Q___e_Pi">
 				|\frac{P(z)}{Q(z)}| \lt  \frac{\varepsilon}{\pi}
-			</men>
+			</md>
 			whenever <m>|z| \ge R_{\varepsilon}</m>. Using the ML inequality (<xref ref="ML_Inequality_Thm">Theorem</xref>) together
 			with <xref ref="P_Q___e_Pi">Inequality</xref>, we get
-			<men xml:id="Lemma_Integral">
+			<md number="yes" xml:id="Lemma_Integral">
 				\left|\int_{C_R}\frac{\exp(iz)P(z)}{Q(z)}\,dz\right| \le \int_{C_R}\frac{\varepsilon}{\pi}|e^{iz}|\,|dz|
-			</men>
+			</md>
 			provided <m>R\ge R_{\varepsilon}</m>. The parameterization of <m>C_R</m> leads to the equation
-			<men xml:id="Lemma_Subs">
+			<md number="yes" xml:id="Lemma_Subs">
 				|dz| = R\,d\theta, \quad \text{and} \quad |e^{iz}|=e^{-y}=e^{-R\sin \theta}
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Using the trigonometric identity <m>\sin (\pi -\theta) = \sin \theta</m> and <xref ref="Lemma_Subs">Equations</xref>, we
@@ -153,9 +153,9 @@
 		</p>
 		<p>
 			On the interval <m>0 \le \theta \le \pi /2</m> we can use the inequality
-			<me>
+			<md>
 				0 \le \frac{2\theta}{\pi}\le \sin \theta
-			</me>.
+			</md>.
 			We combine this inequality with <xref ref="Lemma_Integral">Inequality</xref> and 
 			<xref ref="Lemma_Integral_2">Equation</xref> to conclude that, for <m>R \ge R_{\varepsilon}</m>,
 			<md>
@@ -181,10 +181,10 @@
 			Let <m>C</m> be the contour that consists of the segment <m>-R \le x \le R</m> of the real axis together with the upper
 			semicircle <m>C_R</m><nbsp/>parameterized by <m>z=Re^{i\theta}</m>, for <m>0 \le \theta \le \pi</m>. Using properties of
 			integrals, we have
-			<me>
+			<md>
 				\int_{-R}^{R}\frac{\exp(i\alpha x)P(x)}{Q(x)}\,dx = \int_{C}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz -
 				\int_{C_R}\frac{\exp(i\alpha z)P(z)}{Q(z)}\,dz
-			</me>.
+			</md>.
 		</p>
 		<p>
 			If <m>R</m> is sufficiently large, all the poles <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> will lie inside

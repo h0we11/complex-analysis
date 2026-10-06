@@ -9,9 +9,9 @@
 	<title>The Complex Exponential</title>
 		<statement>
 			<p>
-				<me>
+				<md>
 					e^z=\exp(z) =\sum_{n=0}^{\infty}\frac{1}{n!}z^n
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -53,34 +53,34 @@
 		</p>
 		<p>
 			Using <xref ref="Power_Series_Thm">Theorem</xref>, part (ii), we get
-			<me>
+			<md>
 				\exp\,'(z) =\sum\limits_{n=1}^{\infty}\frac{n}{n!} z^{n-1}= \sum\limits_{n=1}^{\infty}\frac{1}{(n-1)!}z^{n-1} =
 				\sum\limits_{n=0}^{\infty}\frac{1}{n!}z^n=\exp(z)
-			</me>,
+			</md>,
 			which gives us part (i) of <xref ref="expz_is_entire">Theorem</xref>.
 		</p>
 		<p>
 			To prove part (ii), we let <m>\zeta</m> be an arbitrary complex number and define <m>g(z)</m> to be
-			<me>
+			<md>
 				g(z)=\exp(z)\exp(\zeta -z)
-			</me>.
+			</md>.
 			Using the product rule, chain rule, and part (i), we have
-			<me>
+			<md>
 				g\,'(z) =\exp(z) \exp(\zeta -z) + \exp(z)[-\exp(\zeta -z)] = 0 \quad \text{for all} \quad z
-			</me>.
+			</md>.
 			According to <xref ref="Df_0_implies_f_const">Theorem</xref>, this result implies that the function <m>g</m> must be
 			constant. Thus, for all <m>z</m>, <m>g(z)=g(0)</m>. Since <m>\exp(0)=1</m> (verify!), we deduce
-			<me>
+			<md>
 				g(z) =g(0) =\exp(0) \exp(\zeta -0)=\exp(\zeta)
-			</me>.
+			</md>.
 			Hence, for all <m>z</m>,
-			<me>
+			<md>
 				g(z)=\exp(z) \exp(\zeta -z)=\exp(\zeta)
-			</me>.
+			</md>.
 			Setting <m>z=z_1</m> and letting <m>\zeta =z_1+z_2</m>, we get
-			<me>
+			<md>
 				\exp(z_1) \exp(z_1+z_2-z_1) =\exp(z_1+z_2)
-			</me>,
+			</md>,
 			which simplifies to our desired result.
 		</p>
 		<p>
@@ -106,9 +106,9 @@
 		Note that parts (ii) and (iii) of the <xref ref="expz_is_entire">Theorem</xref> combine to verify DeMoivre's formula, which
 		we introduced in <xref ref="sec_algebra-2">Section</xref><mdash/>see Identity <xref ref="De_Moivre_s_formula"/>. Further, if
 		<m>z=x+iy</m>, we have
-		<men xml:id="e_z_Cartesian">
+		<md number="yes" xml:id="e_z_Cartesian">
 			\exp(z) = e^z = e^{x+iy} = e^xe^{iy} = e^x(\cos y+i\sin y)
-		</men>.
+		</md>.
 	</p>
 	<p>
 		Some texts start with Identity <xref ref="e_z_Cartesian"/> as the definition for <m>\exp(z)</m>. In the exercises, we show
@@ -119,10 +119,10 @@
 		=1.22140275816017\ldots</m> is the value of <m>\exp(z)</m> when <m>z=\frac{{1}}{5}</m> and equals the positive fifth root of
 		<m>e=2.71828182845904\ldots</m>. The notation <m>e^{\frac{{1}}{5}}</m>, however, is ambiguous and might be interpreted as
 		any of the complex fifth roots of the number <m>e</m> that we discussed in <xref ref="sec_algebra-2">Section</xref>:
-		<me>
+		<md>
 			e^{\frac{{1}}{5}} \approx 1.22140275816017\left(\cos \frac{2\pi k}{5}+ i\sin\frac{2\pi k}{5}\right), 
 			\quad \text{for} \quad  k=0,\,1, \, \ldots, \,4
-		</me>.
+		</md>.
 	</p>
 	<p>
 		To prevent confusion, we often use <m>\exp(z)</m> to denote the single-valued exponential function.
@@ -152,9 +152,9 @@
 		<statement>
 			<p>
 				For any integer <m>n</m>, the points
-				<me>
+				<md>
 					z_n=\frac{5}{4}+i\left(\frac{11\pi}{6}+2n\pi\right)
-				</me>
+				</md>
 				in the <m>z</m> plane are mapped onto the single point
 				<md>
 					<mrow>w_0 \amp = \exp(z_n)</mrow>
@@ -179,9 +179,9 @@
 		<m>e^x</m> is never zero, and the cosine and sine functions are never zero at the same point. Suppose, then, that 
 		<m>w=e^z \ne 0</m>. If we write <m>w</m> in its exponential form as <m>w=\rho e^{i\phi }</m>, 
 		Identity <xref ref="e_z_Cartesian"/> gives
-		<me>
+		<md>
 			\rho e^{i\phi }=e^xe^{iy}.
-		</me>
+		</md>
 	</p>
 	<p>
 		Using Property <xref ref="ExpEquality"/> of 
@@ -196,9 +196,9 @@
 	</p>
 	<p>
 		Solving <xref ref="rho_and_phi">Equations</xref> for <m>x</m> and <m>y</m> yields
-		<men xml:id="Inverse_of_Exp">
+		<md number="yes" xml:id="Inverse_of_Exp">
 			x=\ln \rho, \quad \text{and} \quad y=\phi +2n\pi
-		</men>,
+		</md>,
 		where <m>n</m> is an integer. Thus for any complex number <m>w \ne 0</m>, there are infinitely many complex numbers
 		<m>z=x+iy</m> such that <m>w=e^z</m>. From <xref ref="Inverse_of_Exp">Equations</xref>, the numbers <m>z</m> are
 		<md>
@@ -206,9 +206,9 @@
 			<mrow xml:id="Inverse_of_Exp_again" number="yes">\amp = \ln |w| +i(\mathrm{Arg}\,w + 2n\pi)</mrow>
 		</md>,
 		where <m>n</m> is an integer. Hence
-		<me>
+		<md>
 			\exp\big[|w| +i(\mathrm{Arg}\,w+2n\pi)\big] = w
-		</me>.
+		</md>.
 	</p>
 	<p>
 		In summary, the transformation <m>w=e^z</m> maps the complex plane (infinitely often) onto the set of nonzero complex
@@ -252,9 +252,9 @@
 				which is a portion of the annulus <m>\{\rho e^{i\phi }:e^a \le \rho \le e^b\}</m> in the <m>w</m> plane subtended by
 				the rays <m>\phi =c</m> and <m>\phi =d</m>. In <xref ref="fig_ch-05-03">Figure</xref>, we show the image of the
 				rectangle
-				<me>
+				<md>
 					R = \left\{(x,y) :-1 \le x \le 1, \quad \text{and} \quad -\frac{\pi}{4} \le y \le \frac{\pi}{3}\right\}.
-				</me>
+				</md>
 			</p>
 			<figure xml:id="fig_ch-05-03">
 				<caption>The image of <m>R</m> under the transformation <m>w=\exp(z)</m></caption>

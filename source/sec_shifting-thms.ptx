@@ -14,9 +14,9 @@
 		<statement>
 			<p>
 				If <m>F(s)</m> is the Laplace transform of <m>f(t)</m>, then
-				<me>
+				<md>
 					\mathcal{L}\big(e^{at}f(t)\big) = F(s-a)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -24,9 +24,9 @@
 		<p>
 			Using the integral definition <m>\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t)e^{-st}\,dt</m>,
 			we see that
-			<me>
+			<md>
 				\mathcal{L}\big(e^{at}f(t)\big) = \int_0^{\infty}e^{at}f(t)e^{-st}dt = \int_0^{\infty}f(t)e^{-(s-a)t}\,dt = F(s-a)
-			</me>.
+			</md>.
 		</p>
 	</proof>
 	<definition xml:id="def_unit-step-function">
@@ -34,12 +34,12 @@
 		<statement>
 			<p>
 				For <m>a \ge 0</m> the unit step function <m>U_a(t)</m> is
-				<me>
+				<md>
 					U_a(t) = \begin{cases}
 									0 \amp \text{for} \quad t \lt a,\\ 
 									1 \amp  \text{for} \quad t > a. 
 								\end{cases}
-				</me>
+				</md>
 			</p>
 		</statement>
 	</definition>
@@ -55,9 +55,9 @@
 		<statement>
 			<p>
 				If <m>F(s)</m> is the Laplace transform of <m>f(t)</m> and <m>a \ge 0</m>, then
-				<me>
+				<md>
 					\mathcal{L}\big(U_a(t)f(t-a)\big) = e^{-as}F(s)
-				</me>,
+				</md>,
 				where <m>f(t)</m> and <m>U_a(t)(t-a)</m> are illustrated in <xref ref="fig_ch-11-23">Figure</xref>.
 			</p>
 		</statement>
@@ -65,18 +65,18 @@
 	<proof>
 		<p>
 			Using the definition of Laplace transform, we write
-			<me>
+			<md>
 				e^{-as}F(s) = e^{-as}\int_0^{\infty}f(\tau)e^{-s\tau}\,d\tau = \int_0^{\infty}f(\tau)e^{-s(a+\tau)}\,d\tau
-			</me>.
+			</md>.
 			Using the change of variable <m>t=a+\tau</m> and <m>dt=d\tau</m>, we obtain
-			<me>
+			<md>
 				e^{-as}F(s) = \int_a^{\infty}f(t-a)e^{-st}\,dt
-			</me>.
+			</md>.
 			Since <m>U_a(t) \,f(t-a) =0</m> for <m>t\lt a</m>, and <m>U_a(t) \,f(t-a) =f(t-a)</m> for <m>t>a</m>, we can write the
 			last equation as
-			<me>
+			<md>
 				e^{-as}F(s) = \int_0^{\infty}U_a(t)f(t-a)e^{-st}\,dt = \mathcal{L}\big(U_a(t)f(t-a)\big)
-			</me>.
+			</md>.
 		</p>
 	</proof>
 	<figure xml:id="fig_ch-11-23">
@@ -93,9 +93,9 @@
 			<p>
 				Let <m>f(t)=t^n</m>, then <m>F(s) = \mathcal{L}(t^n) = \frac{n!}{s^{n+1}}</m>. Applying
 				<xref ref="thm_shifting-s">Theorem</xref>, we obtain the desired result:
-				<me>
+				<md>
 					\mathcal{L}(t^ne^{at}) = F(s-a) = \frac{n!}{(s-a)^{n+1}}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -109,10 +109,10 @@
 			<p>
 				Set <m>f(t) = 1</m>, then <m>F(s) = \mathcal{L}(1) = \frac{1}{s}</m>.  Now apply 
 				<xref ref="thm_shifting-t">Theorem</xref> and get
-				<me>
+				<md>
 					\mathcal{L}\big(U_c(t)\big) = \mathcal{L}\big(U_c(t)f(t)\big) = \mathcal{L}\big(U_c(t)\cdot 1\big) =
 					e^{-cs}\mathcal{L}(1) = \frac{e^{-cs}}{s}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -129,14 +129,14 @@
 		<solution>
 			<p>
 				We can represent <m>f(t)</m> in terms of step functions:
-				<me>
+				<md>
 					f(t) = 1-U_1(t)+U_2(t)-U_3(t)+U_4(t)-U_5(t)
-				</me>.
+				</md>.
 				Using the result of <xref ref="ex_10_18">Example</xref> and linearity, we obtain
-				<me>
+				<md>
 					\mathcal{L}\big(f(t)\big) = \frac{1}{s} - \frac{e^{-s}}{s} + \frac{e^{-2s}}{s} -
 					\frac{e^{-3s}}{s} + \frac{e^{-4s}}{s} - \frac{e^{-5s}}{s}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -144,34 +144,34 @@
 		<statement>
 			<p>
 				Use Laplace transforms to solve the initial value problem
-				<me>
+				<md>
 					y\,''(t) + y(t) = U_{\pi}(t)  \text{ with }   y(0)=0  \text{ and }   y\,'(0) = 0
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				As usual, let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>. Then we get
-				<me>
+				<md>
 					s^2Y(s) + Y(s) = \frac{e^{-\pi s}}{s}
-				</me>.
+				</md>.
 				Solving for <m>Y(s)</m>, we obtain
-				<me>
+				<md>
 					Y(s) = e^{-\pi s}\frac{1}{s(s^2+1)} = \frac{e^{-\pi s}}{s} - \frac{e^{-\pi s}s}{s^2+1}
-				</me>.
+				</md>.
 				We now use <xref ref="thm_shifting-t">Theorem</xref> and the facts that <m>\frac{1}{s}</m> and <m>\frac{s}{s^2+1}</m>
 				are the transforms of <m>1</m> and <m>\cos t</m>, respectively. The solution <m>y(t)</m> computes as follows:
-				<me>
+				<md>
 					y(t) = \mathcal{L}^{-1}\left(\frac{e^{-\pi s}}{s}\right) - 
 					\mathcal{L}^{-1}\left(\frac{e^{-\pi s}s}{s^2+1}\right) = U_{\pi}(t) - U_{\pi}(t) \cos(t-\pi)
-				</me>,
+				</md>,
 				which can be written in the more familiar form:
-				<me>
+				<md>
 					y(t)= \begin{cases}
 								\quad 0 \amp  \text{for} \quad t \lt  \pi, \\ 
 								1-\cos t \amp  \text{for} \quad t>\pi.
 							\end{cases}
-				</me>
+				</md>
 			</p>
 		</solution>
 	</example>

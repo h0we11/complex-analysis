@@ -10,9 +10,9 @@
 			<p>
 				If <m>|z|\lt 1</m> the series <m>\sum\limits_{n=0}^{\infty}z^n</m> converges to <m>f(z) =\frac{1}{1-z}</m> That is, if
 				<m>|z|\lt 1</m>, then
-				<men xml:id="Geometric_Sum">
+				<md number="yes" xml:id="Geometric_Sum">
 					\sum\limits_{n=0}^{\infty}z^n=1+z+z^2+\cdots +z^k+\cdots =\frac{1}{1-z}
-				</men>.
+				</md>.
 			</p>
 			<p>
 				If <m>|z|\ge 1</m>, the series diverges.
@@ -23,25 +23,25 @@
 		<p>
 			Suppose that <m>|z|\lt 1</m>. By <xref ref="Convergence">Definition</xref>, we must show 
 			<m>\lim\limits_{n \to \infty}S_n=\frac{1}{1-z}</m>, where 
-			<men xml:id="Sn">
+			<md number="yes" xml:id="Sn">
 				S_n=1+z+z^2+\cdots +z^{n-1}
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Multiplying both sides of <xref ref="Sn">Equation</xref> by <m>z</m> gives
-			<men xml:id="zSn">
+			<md number="yes" xml:id="zSn">
 				zS_n = z+z^2+z^3+\cdots+z^{n-1}+z^n
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Subtracting <xref ref="zSn">Equation</xref> from <xref ref="Sn">Equation</xref> yields
-			<me>
+			<md>
 				(1-z) S_n=1-z^n,
-			</me>
+			</md>
 			so that
-			<men xml:id="Sn___stuff">
+			<md number="yes" xml:id="Sn___stuff">
 				S_n=\frac{1}{1-z}-\frac{z^n}{1-z}
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Since <m>|z|\lt 1</m>, <m>\lim\limits_{n \to \infty}z^n=0</m>. (Can you <em>prove</em> this assertion?  We ask you to do
@@ -75,21 +75,21 @@
 	<proof>
 		<p>
 			If we let <m>\frac{1}{z}</m> take the role of <m>z</m> in <xref ref="Geometric_Sum">Equation</xref>, we get
-			<me> \sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{\!n} = \frac{1}{1-\frac{1}{z}}, 
+			<md> \sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{\!n} = \frac{1}{1-\frac{1}{z}}, 
 				\quad \text{if} \quad  \left|\frac{1}{z}\right| \lt 1
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Multiplying both sides of this equation by <m>\frac{1}{z}</m> gives
-			<me>
+			<md>
 				\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{\!n} = \frac{1}{z-1},
 				\quad \text{if} \quad \left|\frac{1}{z}\right|\lt 1,
-			</me>
+			</md>
 			which, by <xref ref="SumcZn___cSumZn">Equation</xref>, is the same as
-			<me>
+			<md>
 				\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{\! n+1}=\frac{1}{z-1},
 				\quad \text{if} \quad \left|\frac{1}{z}\right| \lt 1
-			</me>.
+			</md>.
 			But this expression is equivalent to saying that <m>\sum\limits_{n=1}^{\infty}(\frac{1}{z})^n=\frac{1}{z-1}</m>, if
 			<m>1\lt |z|</m>, which is what the corollary claims.
 		</p>
@@ -101,9 +101,9 @@
 		<statement>
 			<p>
 				If <m>z \ne 1</m> then for all <m>n</m>,
-				<me>
+				<md>
 					\frac{1}{1-z}=1+z+z^2+\cdots +z^{n-1}+\frac{z^n}{1-z}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</corollary>
@@ -122,9 +122,9 @@
 			<p>
 				If we set <m>z=\frac{1-i}{2}</m>, then <m>|z|=\frac{\sqrt{2}}{2}\lt 1</m>.  By
 				<xref ref="Geometric_Series">Theorem</xref>, the sum is
-				<me>
+				<md>
 					\frac{1}{1-\frac{1-i}{2}}=\frac{2}{2-1+i}=\frac{2}{1+i}=1-i.
-				</me>
+				</md>
 			</p>
 		</solution>
 	</example>
@@ -182,9 +182,9 @@
 		<statement>
 			<p>
 				If <m>\sum\limits_{n=0}^{\infty}\zeta _n</m> is a complex series with the property that
-				<me>
+				<md>
 					\lim_{n \to \infty}\frac{|\zeta _{n+1}|}{|\zeta _n|}=L,
-				</me>
+				</md>
 				then the series is absolutely convergent if <m>L\lt 1</m> and divergent if <m>L>1</m>.
 			</p>
 		</statement>
@@ -221,10 +221,10 @@
 		<solution>
 			<p>
 				Using the ratio test, we see that
-				<me>
+				<md>
 					\lim_{n \to \infty}\frac{|{(z-i)^{n+1}}/{2^{n+1}}|}{|{(z-i)^n}/{2^n}|} = 
 					\lim_{n \to \infty}\frac{|z-i|}{2}=\frac{|z-i|}{2}=L
-				</me>.
+				</md>.
 				If <m>|z-i|\lt 2</m>, then <m>L\lt 1</m>, and the series converges. If <m>|z-i|>2</m>, then <m>L>1</m>, and the series
 				diverges.
 			</p>
@@ -249,9 +249,9 @@
 	<statement>
 		<p>
 			The limit supremum of the sequence
-			<me>
+			<md>
 				\{t_n\} =\{ 4.1,\;5.1,\;4.01,\;5.01,\;4.001,\;5.001, \ldots\} \; \text{ is } \; \lim_{n \to \infty}\sup \, t_n=5,
-			</me>
+			</md>
 			because if we set <m>L=5</m>, then for any <m>\varepsilon>0</m>, there are only finitely many terms in the sequence
 			larger than <m>L+\varepsilon =5+\varepsilon</m>. Additionally, if <m>L</m> is smaller than 5, then by setting
 			<m>\varepsilon=5-L</m>, we can find infinitely many terms in the sequence larger than <m>L+\varepsilon</m> (because
@@ -263,17 +263,17 @@
 		<statement>
 			<p>
 				The limit supremum of the sequence
-				<me>
+				<md>
 					\{t_n\} =\{ 1,\;2,\;3,\;1,\;2,\;3,\;1,\;2,\;3,\;1,\;2,\;3, \ldots \} \quad 
 					\text{is} \quad \lim_{n \to \infty}\sup \, t_n=3,
-				</me>
+				</md>
 				because if we set <m>L=3</m>, then for any <m>\varepsilon>0</m>, there are only finitely many terms (actually, there
 				are none) in the sequence larger than <m>L+\varepsilon=3+\varepsilon</m>.  Additionally, if <m>L</m> is smaller than
 				3, then by setting <m>\varepsilon=\frac{3-L}{2}</m> we can find infinitely many terms in the sequence larger than
 				<m>L+\varepsilon</m> (because <m>L+\varepsilon\lt 3)</m>, as the following calculation shows:
-				<me>
+				<md>
 					L+\varepsilon=L+\frac{3-L}{2}=\frac{3+L}{2}=\frac{3}{2}+\frac{L}{2}\lt \frac{3 }{2}+\frac{3}{2}=3
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</example>
@@ -281,10 +281,10 @@
 		<statement>
 			<p>
 				The limit supremum of the Fibonacci sequence
-				<me>
+				<md>
 					\{t_n\} =\{1,\;1,\;2,\;3,\;5,\;8,\;13,\;21,\;34,\ldots \} \quad \text{is} \quad
 					\lim_{n \to \infty}\sup \, t_n=\infty
-				</me>.
+				</md>.
 				(The Fibonacci sequence satisfies the relation <m>t_n=t_{n-1}+t_{n-2}</m> for <m>n>2</m>.)
 			</p>
 		</statement>
@@ -554,10 +554,10 @@
 			<statement>
 				<p>
 					Use the formula for geometric series with <m>z=re^{i\theta}</m>, where <m>r\lt 1</m>, to show that
-            	<me>
+            	<md>
 						\sum_{n=0}^{\infty}z^n=\sum\limits_{n=0}^{\infty}r^ne^{in\theta} =
 						\frac{1-r\cos \theta +ir\sin \theta}{1+r^2-2r\cos \theta}
-					</me>
+					</md>
 				</p>
 			</statement>
 		</task>

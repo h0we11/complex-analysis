@@ -3,39 +3,39 @@
 	<p>
 		If <m>f</m> is continuous on the interval <m>b\lt x\le c</m>, but discontinuous at <m>b</m>, then the improper integral of
 		<m>f</m> over <m>[b,c]</m> is defined by
-		<me>
+		<md>
 			\int_b^c f(x)\,dx = \lim_{r \to b^{+}}\int_{r}^{c}f(x)\,dx
-		</me>,
+		</md>,
 		provided the limit exists. Similarly, if <m>f</m> is continuous on the interval <m>a \le x\lt b</m>, but discontinuous at
 		<m>b</m>, then the improper integral of <m>f</m> over <m>[a,b]</m> is defined by
-		<me>
+		<md>
 			\int_{a}^{b}f(x)\,dx = \lim_{R \to b^{-}} \int_{a}^{R}f(x)\,dx
-		</me>,
+		</md>,
 		provided the limit exists. For example,
-		<me>
+		<md>
 			\int_0^{9}\frac{1}{2\sqrt{x}}\,dx = \lim_{r \to 0^{+}} \int_{r}^{9}\frac{1}{2\sqrt{x}}\,dx =
 			\lim\limits_{r \to 0^{+}}(\sqrt{x})\Big|_{x=r}^{x=9} = 3-\lim\limits_{r \to 0^{+}}\sqrt{r} = 3
-		</me>.
+		</md>.
 	</p>
 		<p>
 			If <m>f</m> is continuous for all values of <m>x</m> in the interval <m>[a,c]</m>, except at the value <m>x=b</m>, where
 			<m>a\lt b\lt c</m>, then the Cauchy principal value of <m>f</m> over <m>[a,c]</m> is defined by
-			<me>
+			<md>
 				\text{ P.V. } \int_{a}^{c}f(x)\,dx = \lim_{r \to 0^{+}}\left[\int_{a}^{b-r}f(x)\,dx+\int_{b+r}^{c}f(x)\,dx\right]
-			</me>,
+			</md>,
 			provided the limit exists.
 		</p>
 	<example>
 		<statement>
 			<p>
-				<me>
+				<md>
 					\text{ P.V. } .\int_{-1}^{8}\frac{1}{x^\frac{1}{3}}\,dx =
 					\lim_{r \to 0^{+}}\left[\int_{-1}^{-r}\frac{1}{x^\frac{1}{3}}\,dx+\int_{r}^{8}\frac{1}{x^\frac{1}{3}}\,dx\right]
-				</me>.
+				</md>.
 				Evaluating the integrals and computing limits gives
-				<me>
+				<md>
 					\lim_{r \to 0^{+}}\left[\frac{3}{2}r^\frac{2}{3} - \frac{3}{2} + 6 - \frac{3}{2}r^\frac{2}{3}\right] = \frac{9}{2}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</example>
@@ -50,10 +50,10 @@
 				Let <m>f(z) =\frac{P(z)}{Q(z)}</m>, where <m>P</m> and <m>Q</m> are polynomials with real coefficients of degree
 				<m>m</m> and <m>n</m>, respectively, and <m>n \ge m+2</m>. If <m>Q</m> has simple zeros at the points 
 				<m>t_1, \, t_2, \, \ldots, \, t_{l}</m> on the <m>x</m><nbsp/>axis, then
-				<men xml:id="EQ_8_4">
+				<md number="yes" xml:id="EQ_8_4">
 					\text{ P.V. }  \int_{-\infty}^{\infty}\frac{P(x)}{Q(x)}\,dx = 
 					2\pi i\sum_{j=1}^k\mathrm{Res}[f,z_j] +\pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_j]
-				</men>,
+				</md>,
 				where <m>z_1, \, z_2, \, \ldots, \, z_k</m> are the poles of <m>f</m> that lie in the upper half-plane.
 			</p>
 		</statement>
@@ -100,9 +100,9 @@
 		<solution>
 			<p>
 				The integrand
-				<me>
+				<md>
 					f(z) = \frac{z}{z^3-8}=\frac{z}{(z-2)(z+1+i\sqrt{3})(z+1-i\sqrt{3})}
-				</me>
+				</md>
 				has simple poles at the points <m>t_1=2</m> on the <m>x</m>-axis and <m>z_1=-1+i \sqrt{3}</m> in the upper half-plane.
 				By <xref ref="Thm_8_5">Theorem</xref>,
 				<md>
@@ -135,10 +135,10 @@
 			<p>
 				However, for real numbers, we should write the second term as <m>\frac{\mathrm{ Log}[(t-2)^2] }{12}</m> and use the
 				equivalent formula:
-				<me>
+				<md>
 					g(t) = \frac{\mathrm{Arctan}\left(\frac{1+t}{\sqrt{3}}\right)}{2\sqrt{3}} +
 					\frac{\mathrm{Log}[(t-2)^2]}{12}+\frac{\mathrm{Log}(t^2+2t+4)}{12}
-				</me>.
+				</md>.
 			</p>
 			<p>
 				This antiderivative has the property <m>\lim\limits_{t \to 2}g(t) = -\infty</m>, as 
@@ -150,14 +150,14 @@
 			</figure>
 			<p>
 				We also compute
-				<me>
+				<md>
 					\lim_{t\to \infty}g(t) = \frac{\pi \sqrt{3}}{12} \quad \text{and} \quad \lim_{t \to -\infty}g(t) = 
 					-\frac{\pi \sqrt{3}}{12}
-				</me>,
+				</md>,
 				and the Cauchy principal limit at <m>t=2</m> as <m>r \to 0</m> is
-				<me>
+				<md>
 					\lim_{r \to 0^{+}}[g(2+r) -g(2-r)] = 0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Therefore, the Cauchy principal value of the improper integral is 
@@ -209,18 +209,18 @@
 			<p>
 				Suppose that <m>f</m> has a simple pole at the point <m>t_0</m> on the <m>x</m>-axis. If <m>C_{r}</m> is the contour
 				<m>C_{r}:z=t_0+re^{i\theta}</m>, for <m>0 \le \theta \le \pi</m>, then
-				<me>
+				<md>
 					\lim_{r \to 0}\int_{C_{r}}f(z)\,dz = i\pi \mathrm{Res}[f,t_0]
-				</me>.
+				</md>.
 			</p>
     </statement>
 	</lemma>
 	<proof>
 		<p>
 			The Laurent series for <m>f</m> at <m>z=t_0</m> has the form
-			<men xml:id="EQ_8_9">
+			<md number="yes" xml:id="EQ_8_9">
 				f(z) = \frac{\mathrm{Res}[f,t_0] }{z-t_0}+g(z)
-			</men>,
+			</md>,
 			where <m>g</m> is analytic at <m>z=t_0</m>. Using the parameterization of <m>C_{r}</m> and 
 			<xref ref="EQ_8_9">Equation</xref>,
 			we get
@@ -237,10 +237,10 @@
 		</p>
 		<p>
 			Since <m>g</m> is continuous at <m>t_0</m>, there is an <m>M>0</m> so that <m>|g(t_0+re^{i\theta})| \le M</m>, and
-			<me>
+			<md>
 				\left|\lim_{r \to 0}ir\int_0^{\pi}g(t_0+re^{i\theta}) e^{i\theta}d\theta\right|
 				\le \lim_{r \to 0}r\int_0^{\pi}M \,d\theta = \lim_{r \to 0}r\pi M=0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Combining this inequality with <xref ref="EQ_8_10">Equation</xref> gives the desired result.
@@ -253,9 +253,9 @@
 	<title>Proof of Theorems <xref ref="Thm_8_5"></xref> and <xref ref="Thm_8_6"></xref></title>
 		<p>
 			Since <m>f</m> has only a finite number of poles, we can choose <m>r</m> small enough that the semicircles
-			<me>
+			<md>
 				C_j : z = t_j+re^{i\theta}, \quad \text{for} \quad 0 \le \theta \le \pi \quad \text{and} \quad j=1,2,\ldots, l 
-			</me>,
+			</md>,
 			are disjoint and the poles <m>z_1, \, z_2, \, \ldots, \, z_k</m> of <m>f</m> in the upper half-plane lie above them, as
 			shown in <xref ref="fig_ch-08-06">Figure</xref>.
 		</p>
@@ -273,24 +273,24 @@
 			and <m>-C_1, \, -C_2, \, \ldots, \, -C_l</m> and the segments of the real axis that lie between the semicircles shown in
 			<xref ref="fig_ch-08-06">Figure</xref>. The residue theorem gives <m>\int_Cf(z)\,dz = 2\pi
 			i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]</m>, which we rewrite as
-			<men xml:id="EQ_8_13">
+			<md number="yes" xml:id="EQ_8_13">
 				\hspace{-0.75in} \int_{I_{R}}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] +
 				\sum_{j=1}^{l}\int_{C_j}f(z)\,dz - \int_{C_R}f(z)\,dz
-			</men>,
+			</md>,
 			where <m>I_R</m> is the portion of the interval <m>-R \le x \le R</m> that lies outside the intervals
 			<m>(t_j-r,t_j+r)</m> for <m>j=1,2,\ldots,l</m>. Using the same techniques that we used in 
 			<xref ref="Ratl_Fcn_Int_Thm">Theorems</xref> and <xref ref="PV_P_Q_sin__cos_thm"></xref> yields
-			<men xml:id="EQ_8_14">
+			<md number="yes" xml:id="EQ_8_14">
 				\lim_{R \to \infty}\int_{C_R}f(z)\,dz=0
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If we let <m>R \to \infty</m> and <m>r \to 0</m> in <xref ref="EQ_8_13">Equation</xref> and use the results of 
 			Equations <xref ref="EQ_8_14"/> and <xref ref="Simple_Pole_Lemma">Lemma</xref>, we obtain
-			<men xml:id="EQ_8_15">
+			<md number="yes" xml:id="EQ_8_15">
 				\text{ P.V. }  \int_{-\infty}^{\infty}f(x)\,dx = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] + 
 				\pi i\sum_{j=1}^{l}\mathrm{Res}[f,t_j]
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If <m>f</m> is the function given in <xref ref="Thm_8_5">Theorem</xref>, then <xref ref="EQ_8_15">Equation</xref> becomes

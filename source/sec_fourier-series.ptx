@@ -10,9 +10,9 @@
 		</p>
 		<p>
 			Let <m>U(t)</m> be a real-valued function that is periodic with period <m>2\pi</m>, that is,
-			<me>
+			<md>
 				U(t+2\pi)=U(t) \; \text{ for all } \; t
-			</me>.
+			</md>.
 			One such function is <m>s= U(t) = \sin(t-\frac{\pi}{2}) + 0.7\cos(2t-\pi -\frac{1}{4}) +1.7</m>, and its graph is
 			obtained by repeating the portion of the graph in any interval of length <m>2\pi</m>, as shown in 
 			<xref ref="fig_ch-11-01">Figure</xref>.
@@ -42,14 +42,14 @@
 			We use the symbols <m>U(a^-)</m> and <m>U(a^+)</m> for the left- and right-hand limits, respectively, of a function
 			<m>U(t)</m> as <m>t</m> approaches the point <m>a</m>. The graph of a piecewise continuous function is illustrated in
 			<xref ref="fig_ch-11-02">Figure</xref>.
-			<me>
+			<md>
 				U(t)= \begin{cases}
 							\frac{2}{3}\left(t-\frac{1}{2}\right)^2+\frac{1}{4} \amp \text{when} \quad 1 \le t \lt 2,\\
 							\frac{5}{2}-(t-2)^2 \amp \text{when} \quad 2 \lt t \lt 3,\\
 							1+\frac{t-3}{4} \amp \text{when} \quad 3 \lt t \lt 4,\\
 							\frac{6}{5}-(t-5)^3 \amp \text{when} \quad 4 \lt t \le 6
 						\end{cases}
-			</me>.
+			</md>.
 		</p>
 		<figure xml:id="fig_ch-11-02">
 			<caption>A piecewise continuous function <m>U</m> over the interval <m>[1,6]</m></caption>
@@ -69,17 +69,17 @@
 			<p>
 				If <m>U(t)</m> is periodic with period <m>2\pi</m> and is piecewise continuous on <m>[-\pi ,\pi]</m> then the Fourier
 				series <m>S(t)</m> for <m>U(t)</m> is
-				<men xml:id="FourierSdef"> 
+				<md number="yes" xml:id="FourierSdef"> 
 					S(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nt + b_n\sin jt)
-				</men>,
+				</md>,
 				where the coefficients <m>a_n</m> and <m>b_n</m> are given by the so-called Euler's Formulas:
-				<men xml:id="FourierCoeffA">
+				<md number="yes" xml:id="FourierCoeffA">
 					a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\cos nt\,dt \quad \text{for} \quad  n=0,1, \ldots
-				</men>,
+				</md>,
 				and
-				<men xml:id="FourierCoeffB">
+				<md number="yes" xml:id="FourierCoeffB">
 					b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \ldots \,
-				</men>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -96,14 +96,14 @@
 				Assume that <m>S(t)</m> is the Fourier series for <m>U(t)</m>. If <m>U\,'(t)</m> is piecewise continuous on 
 				<m>[-\pi ,\pi]</m>, then <m>S(t)</m> is convergent for all <m>t \in [-\pi,\pi ]</m> where <m>U(t)</m> is continuous.
 				If <m>t=a</m> is a point of discontinuity of <m>U</m>, then
-				<me>
+				<md>
 					S(a) = \frac{U(a^-) +U(a^+)}{2}
-				</me>,
+				</md>,
 				where <m>U(a^-)</m> and <m>U(a^+)</m> denote the left- and right-hand limits, respectively. With this understanding,
 				we have the Fourier expansion:
-				<men xml:id="FourierExpansion">
+				<md number="yes" xml:id="FourierExpansion">
 					U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)
-				</men>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -112,9 +112,9 @@
 			<p>
 				Show that the function <m>U(t) =\frac{t}{2}</m> for <m>t \in (-\pi ,\pi)</m>, extended periodically by the equation
 				<m>U(t+2\pi)=U(t)</m>, has the Fourier series expansion
-				<me>
+				<md>
 					U(t) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nt
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
@@ -135,9 +135,9 @@
 			</p>
 			<p>
 				The coefficient <m>a_0</m> is computed by the calculation
-				<me>
+				<md>
 					a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}\frac{t}{2}\,dt = \frac{t^2}{4\pi}\bigg|_{-\pi}^{\pi}=0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Substituting the coefficients <m>a_j</m> and <m>b_j</m> in Equation <xref ref="FourierSdef"/> produces the required
@@ -171,13 +171,13 @@
 				Assume that <m>U(x)</m> is an even function. If <m>U(t)</m> has period <m>2\pi</m>, and <m>U(t)</m> and <m>U\,'(t)</m>
 				are piecewise continuous, then the Fourier series for <m>U(t)</m> involves only the cosine terms, that is,
 				<m>b_n=0</m> for all <m>\; n</m>:
-				<me>
+				<md>
 					U(t) = \frac{a_0}{2}+\sum\limits_{n=1}^{\infty}a_n\cos nt
-				</me>,
+				</md>,
 				where
-				<me>
+				<md>
 					a_n = \frac{2}{\pi}\int_0^{\pi}U(t)\cos nt\,dt, \quad \text{for} \quad n=0,1,\ldots
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -188,13 +188,13 @@
 				Assume that <m>U(t)</m> is an odd function.  If <m>U(t)</m> has period <m>2\pi</m> and if <m>U(t)</m> and
 				<m>U\,'(x)</m> are piecewise continuous, then the Fourier series for <m>U(t)</m> involves only sine terms, that is,
 				<m>a_n=0</m> for all <m>n</m>:
-				<me>
+				<md>
 					U(t) = \sum_{n=1}^{\infty}b_n \sin nt
-				</me>,
+				</md>,
 				where
-				<me>
+				<md>
 					b_n = \frac{2}{\pi}\int_0^{\pi}U(t) \sin nt\,dt \quad \text{for} \quad  n=1,2, \ldots
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -205,9 +205,9 @@
 				If <m>U(t)</m> has a Fourier series representation given in <xref ref="FourierExpansion">Equation</xref>, then the
 				integral of <m>U(t)</m> has a Fourier series representation which can be obtained by termwise integration of the
 				Fourier Series of <m>U(t)</m>, that is,
-				<me>
+				<md>
 					\int_0^tU(\tau) = \sum_{n=1}^{\infty}\left(\frac{a_n+a_0(-1)^{n+1}}{n}\sin nt-\frac{b_n}{n}\cos nt\right)
-				</me>,
+				</md>,
 				where we have used the expansion <m>a_0(\frac{t}{2}) = \sum\limits_{n=1}^{\infty}\frac{a_0(-1)^{n+1}}{n}\sin nt</m>
 				from <xref ref="ex_11_1">Example</xref>.
 			</p>
@@ -219,9 +219,9 @@
 			<p>
 				If <m>U\,'(t)</m> has a Fourier series representation, and <m>U(t)</m> is given by 
 				<xref ref="FourierExpansion">Equation</xref>, then
-				<me>
+				<md>
 					U\,'(t) =\sum\limits_{n=1}^{\infty}(nb_n\cos nt-na_n\sin jn)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -230,9 +230,9 @@
 			<p>
 				Show that the function <m>U(t) = |t|</m> for <m>t \in (-\pi ,\pi)</m>, extended periodically the equation
 				<m>U(t+2\pi) =U(t)</m>, has the Fourier series representation
-				<me>
+				<md>
 					U(t) = |t| = \frac{\pi}{2}-\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}\cos[(2n-1)t]
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
@@ -248,9 +248,9 @@
 			</p>
 			<p>
 				The coefficient <m>a_0</m> is computed by the calculation:
-				<me>
+				<md>
 					a_0=\frac{2}{\pi}\int_0^{\pi}t\,dt=\left.\frac{t^2}{\pi}\right|_0^{\pi}=\pi
-				</me>.
+				</md>.
 					Using the <m>a_n</m> and <xref ref="thm_fourier-cosine">Theorem</xref> produces the required solution.
 			</p>
 		</solution>
@@ -262,19 +262,19 @@
 			The following intuitive proof will justify the Euler formulas given in Equations <xref ref="FourierCoeffA"/> and
 			<xref ref="FourierCoeffB"/> To determine <m>a_0</m> we integrate both <m>U(t)</m> and the Fourier series representation
 			in <xref ref="FourierSdef">Equation</xref> from <m>-\pi</m> to <m>\pi</m>, which results in
-			<me>
+			<md>
 				\int_{-\pi}^{\pi}U(t)\,dt = \int_{-\pi}^{\pi}\left[\frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt)\right]dt
-			</me>.
+			</md>.
 			Next, we perform integration term by term, and we obtain
-			<me>
+			<md>
 				\int_{-\pi}^{\pi}U(t)\,dt = \frac{a_0}{2}\int_{-\pi}^{\pi}1\,dt + 
 				\sum_{n=1}^{\infty}a_n\int_{-\pi}^{\pi}\cos nt\,dt + \sum\limits_{n=1}^{\infty}b_n\int_{-\pi}^{\pi}\sin nt\,dt
-			</me>.
+			</md>.
 			The value of the first integral on the right side of this equation is <m>2\pi</m> and all the other integrals are zero.
 			Hence we obtain the desired formula for <m>a_0</m>:
-			<me>
+			<md>
 				a_0=\frac{1}{\pi}\int_{-\pi}^{\pi}U(t)\,dt
-			</me>.
+			</md>.
 			To determine <m>a_m</m>, we let <m>m>1</m> denote a fixed integer and multiply both <m>U(t)</m> and the Fourier series
 			representation in <xref ref="FourierSdef">Equation</xref> by the term <m>\cos mt</m>. Then we integrate and obtain
 			<md>
@@ -285,15 +285,15 @@
 		</p>
 		<p>
 			The value of the first term on the right side of Equation <xref ref="CoeffA"/> is easily seen to be zero:
-			<men xml:id="CoeffA0">
+			<md number="yes" xml:id="CoeffA0">
 				\frac{a_0}{2}\int_{-\pi}^\pi\cos mt\,dt = \frac{a_0\sin mt}{2m}\bigg|_{-\pi}^\pi = 0
-			</men>.
+			</md>.
 		</p>
 		<p>
 			The value of the term involving <m>\cos mt\cos jt</m> is found by using the trigonometric identity:
-			<me>
+			<md>
 				\cos mt\cos nt = \frac{1}{2} \Big(\cos [(m+n) t] +\cos [(m-n) t]\Big)
-			</me>.
+			</md>.
 			Calculation reveals that if <m>m \ne n</m> (and <m>m>0</m>), then
 			<md>
 				<mrow>a_n\int_{-\pi}^{\pi}\cos mt\cos nt\,dt \amp = \frac{a_m}{2} \left[\int_{-\pi}^{\pi}\cos[(m+n)t]\,dt\right.</mrow>
@@ -303,16 +303,16 @@
 		</p>
 		<p>
 			When <m>m=n</m>, the value of the integral becomes:
-			<men xml:id="CoeffA2">
+			<md number="yes" xml:id="CoeffA2">
 				a_m\int_{-\pi}^{\pi}\cos^2mt\,dt = \pi a_m
-			</men>.
+			</md>.
 		</p>
 		<p>
 			The value of the term on the right side of Equation <xref ref="CoeffA"/> involving the integrand <m>\cos mt\sin nt</m> is
 			found by using the trigonometric identity
-			<me>
+			<md>
 				\cos mt\sin nt=\frac{1}{2}\Big(\sin \big[(m+n)t\big] + \sin\big[(m-n)t\big]\Big)
-			</me>,
+			</md>,
 			and for all values of <m>m</m> and <m>n</m>, we obtain
 			<md>
 				<mrow>b_n\int_{-\pi}^{\pi}\cos mt\sin nt\,dt \amp = \frac{b_m}{2}\left[\int_{-\pi}^\pi\sin[(m+n)t]\,dt\right.</mrow>
@@ -323,9 +323,9 @@
 		<p>
 			ATherefore, we can use the results of Equations <xref ref="CoeffA0"/><ndash/><xref ref="CoeffA3"/> in 
 			<xref ref="CoeffA">Equation</xref> to obtain
-			<me>
+			<md>
 				\int_{-\pi}^{\pi}U(t)\cos mt\,dt=\pi a_m \quad \text{fo } \quad  m=0,1,2, \ldots
-			</me>,
+			</md>,
 			and Equation <xref ref="FourierCoeffA"/> is established. We leave it as an exercise to establish Euler's
 			<xref ref="FourierCoeffB">Formula</xref> for the coefficients <m>\left\{ b_n\right\}</m>. A complete discussion of the
 			details of the proof of <xref ref="thm_fourier-expansion">Theorem</xref> can be found in some advanced texts. See for

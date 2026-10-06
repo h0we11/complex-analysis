@@ -4,14 +4,14 @@
 		As indicated at the beginning of this chapter, we can evaluate certain definite <em>real</em> integrals with the aid of the
 		residue theorem.<nbsp/>One way to do this is by interpreting the definite integral as the parametric form of an integral of
 		an analytic function along a simple closed contour. Suppose that we want to evaluate an integral of the form
-		<men xml:id="IntFcostsint">
+		<md number="yes" xml:id="IntFcostsint">
 			\int_0^{2\pi}F(\cos \theta ,\sin \theta)\,d\theta
-		</men>.
+		</md>.
 		where <m>F(u,v)</m> is a function of the two real variables <m>u</m> and <m>v</m>. Consider the unit circle <m>C_1(0)</m>
 		with parameterization
-		<me>
+		<md>
 			C_1^{+}(0) :z=\cos \theta +i\sin \theta = e^{i\theta}, \quad \text{for} \quad  0 \le \theta \le 2\pi
-		</me>,
+		</md>,
 		which gives the symbolic differentials
 		<md>
 			<mrow>dz \amp = (-\sin \theta +i\cos \theta) d\theta = ie^{i\theta}\,d\theta, \quad \text{and}</mrow>
@@ -20,26 +20,26 @@
 		</p>
 		<p>
 			Combining <m>z=\cos \theta +i\sin \theta</m> with <m>\frac{1}{z}=\cos \theta -i\sin \theta</m>, we obtain
-			<men xml:id="trig_subs">
+			<md number="yes" xml:id="trig_subs">
 				\cos\theta = \frac{1}{2}\left(z+\frac{1}{z}\right), \quad \text{and} \sin\theta =
 				\frac{1}{2i}\left(z-\frac{1}{z}\right)
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Using the substitutions for <m>\cos \theta</m>, <m>\sin \theta</m>, and <m>d\theta</m> in 
 			<xref ref="IntFcostsint">Expression</xref> transforms the definite integral into the contour integral
-			<me>
+			<md>
 				\int_0^{2\pi}F(\cos \theta, \sin \theta)\,d\theta = \int\limits_{C_1^{+}(0)}f(z)\,dz
-			</me>,
+			</md>,
 			where the new integrand is 
 			<m>\displaystyle f(z) = \frac{F\Big(\frac{1}{2}(z+\frac{1}{z}), \; \frac{1}{2i}(z-\frac{1}{z})\Big)}{iz}</m>.
 		</p>
 		<p>
 			Suppose that <m>f</m> is analytic inside and on the unit circle <m>C_1(0)</m>, except at the points 
 			<m>z_1, \, z_2, \, \ldots , \, z_n</m> that lie interior to <m>C_1(0)</m>. Then the residue theorem gives
-			<men xml:id="Int_Result">
+			<md number="yes" xml:id="Int_Result">
 				\int_0^{2\pi}F(\cos \theta ,\sin \theta)\,d\theta = 2\pi i\sum_{k=1}^n\mathrm{Res}[f,z_k]
-			</men>.
+			</md>.
 		</p>
 		<p>
 			The situation is illustrated in <xref ref="fig_ch-08-02">Figure</xref>.
@@ -57,10 +57,10 @@
 		<solution>
 			<p>
 				Using Substitutions <xref ref="dtheta_sub"></xref> and <xref ref="trig_subs"></xref>, we transform the integral to
-				<me>
+				<md>
 					\int\limits_{C_1^{+}(0)}\frac{1}{1+3(\frac{z+z^{-1}}{2})^2}\left(\frac{1}{iz}\right)dz =
 					\int\limits_{C_1^{+}(0)}\frac{-i4z}{3z^4+10z^2+3}\,dz = \int\limits_{C_1^{+}(0)}f(z)\,dz
-				</me>.
+				</md>.
 				where <m>f(z) =\frac{-i4z}{3z^4+10z^2+3}</m>. The singularities of <m>f</m> are poles located at the points where
 				<m>3(z^2)^2+10(z^2) +3=0</m>. Using the quadratic formula, we see that the singular points satisfy the relation
 				<m>z^2=\frac{-10\pm \sqrt{100-36}}{6 }=\frac{-5\pm 4}{3}</m>. Hence the only singularities that lie inside the unit
@@ -78,9 +78,9 @@
 				Since <m>z_k=\frac{\pm i}{\sqrt{3}}</m> and <m>z_k^2=-\frac{1}{3}</m>, the residues for each <m>z_k</m> are given by
 				<m>\mathrm{Res}[f,z_k] =-\frac{i}{3(-\frac{1}{3})+5} = -\frac{i}{4}</m>. Now use 
 				<xref ref="Int_Result">Equation</xref> to compute the value of the integral:
-				<me>
+				<md>
 					\int_0^{2\pi}\frac{1}{1+3\cos^2\theta}\,d\theta = 2\pi i\left(\frac{-i}{4}+\frac{-i}{4}\right)= \pi
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -140,13 +140,13 @@
 		<solution>
 			<p>
 				For values of <m>z</m> that lie on the unit circle <m>C_1(0)</m>, we have
-				<me>
+				<md>
 					z^2 = \cos 2\theta +i\sin 2\theta, \quad \text{and} \quad z^{-2}=\cos 2\theta -i\sin 2\theta
-				</me>.
+				</md>.
 				We solve for <m>\cos 2\theta</m> and <m>\sin 2\theta</m> to obtain the substitutions
-				<me>
+				<md>
 					\cos 2\theta = \frac{1}{2}(z^2+z^{-2}), \quad \text{and} \quad \sin 2\theta = \frac{1}{2i}(z^2-z^{-2})
-				</me>.
+				</md>.
 				Using the identity for <m>\cos 2\theta</m> along with Substitutions <xref ref="dtheta_sub"></xref> and 
 				<xref ref="trig_subs"></xref>, we rewrite the integral as
 				<md>
@@ -168,17 +168,17 @@
 					<mrow>\amp = \frac{5i}{8}</mrow>
 				</md>,
 				and
-				<me>
+				<md>
 					\mathrm{Res}\left[f,\frac{1}{2}\right] =\lim_{z \to \frac{1}{2}}\left(z-\frac{1}{2}\right)f(z) = 
 					\lim_{z \to \frac{1}{2}}\frac{i(z^4+1)}{4z^2(z-2)} = -\frac{ 17i}{24}
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Thus, we conclude that
-				<me>
+				<md>
 					\int_0^{2\pi}\frac{\cos 2\theta}{5-4\cos \theta}\,d\theta = 
 					2\pi i\left(\frac{5i}{8}-\frac{17i}{24}\right) = \frac{\pi}{6}.
-				</me>
+				</md>
 			</p>
 		</solution>
 	</example>

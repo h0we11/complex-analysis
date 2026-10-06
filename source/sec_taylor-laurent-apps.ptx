@@ -18,9 +18,9 @@
 	<proof>
 		<p>
 			By Taylor's theorem, there exists some disk <m>D_{R}(\alpha)</m> about <m>\alpha</m> such that
-			<me>
+			<md>
 				f(z) = \sum_{n=0}^{\infty}\frac{f\,^{(n)}(\alpha)}{n!}(z-\alpha)^n \quad \text{for all} \quad z \in D_{R}(\alpha)
-			</me>.
+			</md>.
 			If all the Taylor coefficients <m>\frac{f\,^{(n)}(\alpha)}{n!}</m> of <m>f</m> were zero, then <m>f</m> would be
 			identically zero on <m>D_{R}(\alpha)</m>. A proof similar to the proof of the maximum modulus principle 
 			(<xref ref="Max_Mod_Thm">Theorem</xref>) would then show that <m>f</m> is identically zero in <m>D</m>, contradicting our
@@ -30,9 +30,9 @@
 			Thus, not all the Taylor coefficients of <m>f</m> are zero, and we may select the smallest integer <m>k</m> such that
 			<m>\frac{f\,^{(k)}(\alpha)}{k!} \ne 0</m>. According to the results in <xref ref="sec_singularities">Section</xref>,
 			<m>f</m> has a zero of order <m>k</m> at <m>\alpha</m> and can be written in the form
-			<me>
+			<md>
 				f(z) = (z-\alpha)^kg(z)
-			</me>,
+			</md>,
 			where <m>g</m> is analytic at <m>\alpha</m> and <m>g(\alpha) \ne 0</m>. Since <m>g</m> is a continuous function, there
 			exists a disk <m>D_r(\alpha)</m> throughout which <m>g</m> is nonzero. Therefore <m>f(z) \ne 0</m> in the punctured disk
 			<m>D_r^{\ast }(\alpha)</m>.
@@ -68,9 +68,9 @@
 			<p>
 				(L'H&#xf4;pital's rule) Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic at <m>\alpha</m>. 
 				If <m>f(\alpha) = 0</m> and <m>g(\alpha) = 0</m>, but <m>g\,'(\alpha) \ne 0</m>, then
-				<me>
+				<md>
 					\lim_{z \to \alpha }\frac{f(z)}{g(z)} = \frac{f\,'(\alpha)}{g'(\alpha)}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</corollary>
@@ -80,11 +80,11 @@
 			<xref ref="Isolated_Zeros_Thm">Theorem</xref>, there is a punctured disk <m>D_r^*(\alpha)</m> in which <m>g(z) \ne 0</m>.
 			Thus the quotient <m>\frac{f(z)}{g(z)}=\frac{f(z) -f(\alpha)}{g(z) -g(\alpha)}</m> is defined for all 
 			<m>z \in D_r^*(\alpha)</m>, and we can write
-			<me>
+			<md>
 				\lim_{z \to\alpha}\frac{f(z)}{g(z)} = \lim_{z \to\alpha}\frac{f(z) -f(\alpha)}{g(z) - g(\alpha)} = 
 				\lim_{z \to\alpha}\frac{[f(z) - f(\alpha)] / (z-\alpha)}{[g(z) - g(\alpha)] /(z-\alpha)} = 
 				\frac{f\,'(\alpha)}{g'(\alpha)}
-			</me>.
+			</md>.
 		</p>
 	</proof>
 	<p>
@@ -96,20 +96,20 @@
 		<statement>
 			<p>
 				Suppose that <m>f</m><nbsp/>and <m>g</m><nbsp/>are analytic at <m>\alpha</m> with the power series representations
-				<me>
+				<md>
 					f(z) = \sum_{n=0}^{\infty}a_n(z-\alpha)^n \quad \text{and} \quad g(z) =
 					\sum_{n=0}^{\infty}b_n(z-\alpha)^n, \quad \text{for all} \quad z \in D_{R}(\alpha)
-				</me>.
+				</md>.
 			</p>
 			<p>
 				If <m>g(\alpha) \ne 0</m>, then the quotient <m>\frac{f}{g}</m> has the power series representation
-				<me>
+				<md>
 					\frac{f(z)}{g(z)} = \sum_{n=0}^{\infty}c_n(z-\alpha)^n
-				</me>,
+				</md>,
 				where the coefficients satisfy the equation
-				<me>
+				<md>
 					a_n = b_0c_n + \cdots + b_{n-1}c_1 + b_nc_0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				In other words, we can obtain the series for the quotient <m>\frac{f(z)}{g(z)}</m> by the familiar process of dividing
@@ -127,10 +127,10 @@
 		<solution>
 			<p>
 				Using long division, we see that
-				<me>
+				<md>
 					\sec z = \frac{1}{\cos z} = \frac{1}{1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^{6}}{6!}+\cdots } =
 					1+\frac{1}{2}z^2+\frac{5}{24}z^4+\cdots
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Using Taylor's theorem, we see that if <m>f(z) =\sec z</m>, then <m>\frac{f\,^{(4)}(0)}{4!}=\frac{5}{24}</m>, so that
@@ -154,18 +154,18 @@
 	<proof>
 		<p>
 			Consider the function <m>g</m>, defined as
-			<men xml:id="g_z_def">
+			<md number="yes" xml:id="g_z_def">
 				g(z) = 
 					\begin{cases} (z-\alpha)^2f(z), \amp \text{when} \quad z \ne \alpha; \\
 					\qquad 0, \amp \text{when} \quad z = \alpha.
 				\end{cases}
-			</men>
+			</md>
 		</p>
 		<p>
 			Clearly, <m>g</m> is analytic in at least <m>D_r^*(\alpha)</m>. Straightforward calculation yields
-			<me>
+			<md>
 				g\,'(\alpha) = \lim_{z \to\alpha}\frac{g(z) -g(\alpha)}{z-\alpha}=\lim_{z \to\alpha }(z-\alpha)f(z) = 0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			The last equation follows because <m>f</m> is bounded. Thus <m>g</m> is also analytic at <m>\alpha</m>, with 
@@ -173,17 +173,17 @@
 		</p>
 		<p>
 			By Taylor's theorem, <m>g</m> has the representation
-			<men xml:id="g_z__Pwr_Series_Rep">
+			<md number="yes" xml:id="g_z__Pwr_Series_Rep">
 				g(z) = \sum_{n=2}^{\infty}\frac{g^{(n)}(\alpha)}{n!}(z-\alpha)^n,  \text{ for all }   z \in D_r(\alpha)
-			</men>.
+			</md>.
 		</p>
 		<p>
 			We divide both sides of <xref ref="g_z__Pwr_Series_Rep">Equation</xref> by <m>(z-\alpha)^2</m> and use 
 			<xref ref="g_z_def">Equation</xref> to obtain the following power series representation for <m>f</m>:
-		<me>
+		<md>
 			f(z) = \sum_{n=2}^{\infty}\frac{g^{(n)}(\alpha)}{n!}(z-\alpha)^{n-2} = 
 			\sum\limits_{n=0}^{\infty}\frac{g^{(n+2)}(\alpha)}{(n+2)!}(z-\alpha)^n
-		</me>.
+		</md>.
 		</p>
 		<p>
 			By <xref ref="Power_Series_Thm">Theorem</xref>, <m>f</m> is analytic at <m>\alpha</m> if we define 
@@ -249,13 +249,13 @@
 		<statement>
 			<p>
 				Show that the function <m>g</m> defined by
-				<me>
+				<md>
 					g(z) = 
 						\begin{cases}
 							e^{-\left(\frac{1}{z^2}\right)}, \amp  \text{when } \; z \ne 0, \quad \text{and}  \\
 							\hspace{-0.5in}0, \amp  \text{when } \;  z=0 
 						\end{cases}
-				</me>
+				</md>
 				is not continuous at <m>z=0</m>.
 			</p>
 		</statement>
@@ -264,9 +264,9 @@
 				In <xref ref="x7_2_20">Exercise</xref> of <xref ref="sec_taylor-series">Section</xref> we asked you to show this
 				relation by computing limits along the real and imaginary axes. Note, however, that the Laurent series for <m>g(z)</m>
 				in the annulus <m>D_r^{\ast }(0)</m> is
-				<me>
+				<md>
 					g(z) = 1+\sum\limits_{n=1}^{\infty}(-1)^n\frac{1}{z^{2n}}
-				</me>,
+				</md>,
 				so that <m>0</m> is an essential singularity for <m>g</m>. According to 
 				<xref ref="Essential_Sing_Thm">Theorem</xref>, <m>\lim\limits_{z \to 0}|g(z)|</m> doesn't exist, so <m>g</m> is not
 				continuous at <m>0</m>.
@@ -423,21 +423,21 @@
 		<statement>
 			<p>
 				Show that the real function <m>f</m> defined by
-				<me>
+				<md>
 					f(x) = 
 						\begin{cases}
 							x\sin (\frac{1}{x}), \amp  \text{when } \; x \ne 0, \quad \text{and}  \\
 							\;\;\;\;\; 0, \amp  \text{when } \; x=0
 						\end{cases}
-				</me>
+				</md>
 				is continuous at <m>x=0</m>, but that the corresponding function <m>g(z)</m> defined by
-				<me>
+				<md>
 					g(z) = 
 						\begin{cases}
 							z\sin (\frac{1}{z}), \amp  \text{when } \;  z \ne 0, \quad \text{ and } \\ 
 							\;\;\;\;\; 0, \amp  \text{when } \; z=0 
 						\end{cases}
-				</me>
+				</md>
 				is <em>not</em> continuous at <m>z=0.</m>
 			</p>
 		</statement>

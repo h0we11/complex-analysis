@@ -3,21 +3,21 @@
 	<p>
 		Using our imagination, we take our lead from elementary calculus and define the derivative of <m>f</m> at <m>z_0</m>,
 		written <m>f\,'(z_0)</m>, by
-		<men xml:id="Deriv_Def_1">
+		<md number="yes" xml:id="Deriv_Def_1">
 			f\,'(z_0) = \lim\limits_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}
-		</men>,
+		</md>,
 		provided the limit exists. If it does, we say that the function <m>f</m> is differentiable at <m>z_0</m>. If we write
 		<m>\Delta z=z-z_0</m>, then we can express <xref ref="Deriv_Def_1">Equation</xref> in the form 
-		<men xml:id="Deriv_Def_2"> 
+		<md number="yes" xml:id="Deriv_Def_2"> 
 			f\,'(z_0) = \lim\limits_{\Delta z \to 0}\frac{f(z_0+\Delta z) -f(z_0)}{\Delta z}
-		</men>.
+		</md>.
 	</p>
 	<p>
 		If we let <m>w=f(z)</m> and <m>\Delta w=f(z)-f(z_0)</m>, then we can use the Leibniz notation <m>\frac{dw}{dz}</m> for the
 		derivative:
-		<men xml:id="Deriv_Def_3">
+		<md number="yes" xml:id="Deriv_Def_3">
 			f\,'(z_0) = \frac{dw}{dz}= \lim\limits_{\Delta z \to 0}\frac{\Delta w}{\Delta z}
-		</men>.
+		</md>.
 	</p>
 	<example xml:id="DerivEx">
 		<statement>
@@ -171,9 +171,9 @@
 		<statement>
 			<p>
 				If we use <xref ref="Deriv_Eq_12">Equation</xref> with <m>f(z)=z^2+i2z+3</m> and <m>f\,'(z) =2z+2i</m>, then we get
-				<me>
+				<md>
 					\frac{d}{dz}(z^2+i2z+3)^4=8(z^2+i2z+3)^3(z+i)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</example>
@@ -192,9 +192,9 @@
 	<proof>
 		<p>'
 			From <xref ref="Deriv_Def_1">Equation</xref>, we obtain
-			<me>
+			<md>
 				\lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}=f\,'(z_0)
-			</me>.
+			</md>.
 			Using the multiplicative property of limits given by Formula <xref ref="limproduct"/>, we get
 			<md>
 				<mrow>\lim\limits_{z \to z_0} [f(z) -f(z_0)] \amp = \lim_{z \to z_0}\frac{f(z) -f(z_0)}{z-z_0}(z-z_0)</mrow>
@@ -210,9 +210,9 @@
 	<p>
 		We can establish <xref ref="Deriv_Eq_8">Equation</xref> from <xref ref="Diffl_Implies_Cont">Theorem</xref>. Letting
 		<m>h(z)=f(z)g(z)</m> and using Definition 3.1, we write
-		<me>
+		<md>
 			h\,'(z_0) = \lim\limits_{z \to z_0}\frac{h(z) -h(z_0)}{z-z_0} = \lim_{z \to z_0}\frac{f(z) g(z)-f(z_0)g(z_0)}{z-z_0}
-		</me>.
+		</md>.
 		If we subtract and add the term <m>f(z_0) g(z)</m> in the numerator, we get
 		<md>
 			<mrow>h\,'(z_0) \amp = \lim_{z \to z_0}\frac{f(z) g(z) - f(z_0) g(z) + f(z_0) g(z) - f(z_0)g(z_0)}{z-z_0}</mrow>
@@ -234,13 +234,13 @@
 	<p>
 		The rule for differentiating polynomials carries over to the complex case as well. If we let <m>P(z)</m> be a polynomial of
 		degree <m>n</m>, so 
-		<me>
+		<md>
 			P(z)=a_0 + a_1z + a_2z^2 + \cdots + a_nz^n
-		</me>.
+		</md>.
 		Then mathematical induction, along with Equations <xref ref="Deriv_Eq_5"/> and <xref ref="Deriv_Eq_7"/>, gives
-		<me>
+		<md>
 			P\,'(z) =a_1 + 2a_2z + 3a_3z^2 + \cdots + na_nz^{n-1}
-		</me>.
+		</md>.
 		Again, we leave the proof of this result as an exercise.
 	</p>
 	<p>
@@ -263,9 +263,9 @@
 			<p>
 				Assume that <m>f</m> and <m>g</m> are analytic at <m>z_0</m>. If <m>f(z_0) =0</m>, <m>g(z_0) =0</m>, and 
 				<m>g\,'(z_0) \ne 0</m>, then
-				<me>
+				<md>
 					\lim_{z \to z_0}\frac{f(z)}{g(z)} = \lim_{z \to z_0}\frac{f\,'(z)}{g\,'(z)}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -456,8 +456,8 @@
 	<exercise xml:id="x3_1_6">
 		<statement>
 			<p>
-				Let <m>P</m> be a polynomial of degree 2, given by <me> P(z) = (z-z_1)(z-z_2) </me>,  where <m>z_1\ne  z_2</m>.
-				Show that <me> \frac{P\,'(z)}{P(z)} = \frac{1}{z-z_1} + \frac{1}{z-z_2} </me>. <em>Note</em>: the quotient
+				Let <m>P</m> be a polynomial of degree 2, given by <md> P(z) = (z-z_1)(z-z_2) </md>,  where <m>z_1\ne  z_2</m>.
+				Show that <md> \frac{P\,'(z)}{P(z)} = \frac{1}{z-z_1} + \frac{1}{z-z_2} </md>. <em>Note</em>: the quotient
 				<m>\frac{P\,'(z)}{P(z)}</m> is known as the <em>logarithmic derivative</em> of <m>P</m>.
 			</p>
 		</statement>
@@ -549,7 +549,7 @@
 	<exercise xml:id="x3_1_10">
       <statement>
 			<p>
-				Verify the identity <me>\frac{d}{dz} f(z)g(z)h(z) = f\,'(z)g(z)h(z) + f(z)g\,'(z)h(z) + f(z)g(z)h\,'(z).</me>
+				Verify the identity <md>\frac{d}{dz} f(z)g(z)h(z) = f\,'(z)g(z)h(z) + f(z)g\,'(z)h(z) + f(z)g(z)h\,'(z).</md>
 			</p>
       </statement>
 	</exercise>
@@ -647,7 +647,7 @@
 			<p>
 				Let <m>f(z)=z^{\frac{1}{n}}</m> denote the multivalued <q><m>n</m>th root function,</q> where <m>n</m> is a positive
 				integer. Use the chain rule to show that, if <m>g(z)</m> is any branch of the <m>n</m>th root function, then 
-				<me>g\,'(z) = \frac{1}{n}\frac{g(z)}{z}</me> in some suitably chosen domain (which you should specify).
+				<md>g\,'(z) = \frac{1}{n}\frac{g(z)}{z}</md> in some suitably chosen domain (which you should specify).
 			</p>
 		</statement>
 	</exercise>
@@ -662,7 +662,7 @@
 		<statement>
 			<p>
 				Let <m>f</m> be differentiable at <m>z_0</m>. Show that there exists a function <m>\eta(z)</m> such that 
-				<me> f(z) =f(z_0) +f\,'(z_0) (z-z_0) + \eta(z)(z-z_0), </me> 
+				<md> f(z) =f(z_0) +f\,'(z_0) (z-z_0) + \eta(z)(z-z_0), </md> 
 				where <m>\eta (z)  \to 0\text{ as } z \to z_0</m>.
 			</p>
 		</statement>

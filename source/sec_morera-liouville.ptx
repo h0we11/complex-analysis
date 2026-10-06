@@ -18,16 +18,16 @@
 	<proof>
 		<p>
 			We select a point <m>z_0</m> in <m>D</m> and define <m>F(z)</m> by
-			<me>
+			<md>
 				F(z) = \int_{z_0}^{z}f(\xi)\,d\xi
-			</me>,
+			</md>,
 			where the notation indicates the integral is taken on <em>any</em> contour that begins at <m>z_0</m> and ends at
 			<m>z</m>. The function <m>F(z)</m> is well defined because, if <m>C_1</m> and <m>C_2</m> are two contours in
 			<m>D</m><mdash/>both with initial point <m>z_0</m> and terminal point <m>z</m>, then <m>C=C_1-C_2</m> is a closed contour
 			in <m>D</m>, and by hypothesis,
-			<me>
+			<md>
 				0 = \int_C f(\xi)\,d\xi =\int_{C_1}f(\xi)\,d\xi - \int_{C_2} f(\xi)\,d\xi
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Since <m>f</m> is continuous, we know that for any <m>\varepsilon>0</m> there exists <m>\delta>0</m> such that
@@ -50,24 +50,24 @@
 			<p>
 				If <m>f</m> is analytic in a simply connected domain <m>D</m> that contains the circle
 				<m>C_R(z_0)=\{z:|z-z_0|=R\}</m>, then
-				<me>
+				<md>
 					f(z_0) = \frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
 	<proof>
 		<p>
 			We parameterize the circle <m>C_R(z_0)</m> by
-			<me>
+			<md>
 				C_R(z_0) : z(\theta) = z_0+Re^{i\theta}, \quad \text{and} \quad dz = 
 				iRe^{i\theta}\,d\theta, \quad \text{for} \quad \quad 0 \le \theta \le 2\pi
-			</me>,
+			</md>,
 			and use this parameterization along with Cauchy<nbsp/>'s integral formula to obtain
-			<me>
+			<md>
 				f(z_0) = \frac{1}{2\pi i}\int_0^{2\pi}\frac{f(z_0+Re^{i\theta})iRe^{i\theta}}{Re^{i\theta}}\,d\theta = 
 				\frac{1}{2\pi}\int_0^{2\pi}f(z_0+Re^{i\theta})\,d\theta
-			</me>.
+			</md>.
 		</p>
 	</proof>
 	<p>
@@ -85,9 +85,9 @@
 	<proof>
 		<p>
 			(By contraposition): Assume the contrary and suppose that there exists a point <m>z_0</m> in <m>D</m> such that
-			<men xml:id="Max_Mod_asmptn">
+			<md number="yes" xml:id="Max_Mod_asmptn">
 				|f(z)| \le |f(z_0)|
-			</men>
+			</md>
 			holds for all <m>z</m> in <m>D</m>. If <m>C_R(z_0)</m> is any circle contained in <m>D</m>,
 			<xref ref="Gauss_s_MVT">Theorems</xref> and <xref ref="ML_Inequality_Thm"></xref> imply that
 			<md>
@@ -96,35 +96,35 @@
 			</md>,
 			for <m>0 \le r \le R</m>. We now treat <m>|f(z)| = |f(z_0+re^{i\theta})|</m> as a real-valued function of the real
 			variable <m>\theta</m> and use Inequality <xref ref="Max_Mod_asmptn"/> to get
-			<men xml:id="Max_Mod_2">
+			<md number="yes" xml:id="Max_Mod_2">
 				\frac{1}{2\pi}\int_0^{2\pi} |f(z_0+re^{i\theta})|\,d\theta \le \frac{1}{2\pi}\int_0^{2\pi}|f(z_0)|\,d\theta = |f(z_0)|
-			</men>,
+			</md>,
 			for <m>0 \le r \le R</m>. Combining Inequalities <xref ref="Max_Mod_1"/> and <xref ref="Max_Mod_2"/> gives
-			<me>
+			<md>
 				|f(z_0)| = \frac{1}{2\pi} \int_0^{2\pi}\big|f(z_0+re^{i\theta})\big|\,d\theta
-			</me>,
+			</md>,
 			which we rewrite as
-			<men xml:id="Max_Mod_3">
+			<md number="yes" xml:id="Max_Mod_3">
 				\hspace{-0.6in}\frac{1}{2\pi}\int_0^{2\pi}\Big(\big|f(z_0)\big| -
 				\big|f(z_0+re^{i\theta})\big|\Big)\,d\theta =0, \quad \text{for} \quad 0 \le r \le R
-			</men>.
+			</md>.
 		</p>
 		<p>
 			A theorem from calculus states that if the integral of a nonnegative continuous function taken over an interval is zero,
 			then that function must be identically zero. Since Inequality <xref ref="Max_Mod_asmptn"/> implies that the integrand in
 			<xref ref="Max_Mod_3">Equation</xref> is a nonnegative real-valued function, we conclude that it is identically zero;
 			that is,
-			<men xml:id="Max_Mod_4">
+			<md number="yes" xml:id="Max_Mod_4">
 				\hspace{-0.6in}\big|f(z_0)\big| = \big|f(z_0+re^{i\theta})\big|, \quad \text{for} \quad 
 				0 \le r \le R \quad \text{and} \quad 0 \le \theta \le 2\pi
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If the modulus of an analytic function is constant in a closed disk, then the function is constant in that closed disk by
 			<xref ref="Abs_Const_implies_Const">Theorem</xref>. Therefore we conclude from Identity <xref ref="Max_Mod_4"/> that
-			<men xml:id="Max_Mod_5">
+			<md number="yes" xml:id="Max_Mod_5">
 				f(z)=f(z_0), \quad \text{for all} \quad z \quad \text{in the closed disk} \quad \overline{D}_R(z_0)
-			</men>,
+			</md>,
 			where <m>\overline{D}_R(z_0) = \{z:|z-z_0| \le R\}</m>. Now we let <m>\zeta</m> denote an arbitrary point in
 			<m>D, \, C</m> be a contour in the original domain <m>D</m> that joins <m>z_0</m> to <m>\zeta</m>, and 2<m>d</m> denote
 			the minimum distance from <m>C</m> to the boundary of <m>D</m>. We can find consecutive points 
@@ -140,15 +140,15 @@
 			Each disk <m>D_k</m> contains the center <m>z_{k+1}</m> of the next disk <m>D_{k+1}</m>, so it follows that <m>z_1</m>
 			lies in <m>D_0</m> and, from <xref ref="Max_Mod_5">Equation</xref> <m>|f(z)|</m> also reaches its maximum value at
 			<m>z_1</m>. An identical argument to the one given above will show that
-			<men xml:id="Max_Mod_6">
+			<md number="yes" xml:id="Max_Mod_6">
 				f(z)=f(z_1)=f(z_0), \quad \text{for all} \quad z \in D_1
-			</men>.
+			</md>.
 		</p>
 		<p>
 			We proceed inductively to get
-			<me>
+			<md>
 				f(z) = f(z_{k+1}) = f(z_k), \quad \text{for all} \quad z \in D_{k+1}, \; 0 \le k\lt n-1
-			</me>,
+			</md>,
 			from which it follows that <m>f(\zeta )=f(z_0)</m>. Therefore <m>f</m> is constant in <m>D</m>, which contradicts the
 			assumption of our theorem. With this contraposition, the proof is complete.
 		</p>
@@ -171,18 +171,18 @@
 			<p>
 				Let <m>f(z)=az+b</m>. If we set our domain <m>D</m> to be <m>D_1(0)</m>, then <m>f</m> is continuous on the closed
 				region <m>\overline{D}_1(0) = \{z:|z| \le 1\}</m>. Prove that
-				<me>
+				<md>
 					\max_{|z| \le 1}|f(z)| = |a| + |b|
-				</me>,
+				</md>,
 				and that this value is assumed by <m>f</m> at a point <m>z_0 = e^{i\theta _0}</m> on the boundary of <m>D_1(0)</m>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				From the triangle inequality and the fact that <m>|z| \le 1</m> in <m>\overline{D}_1(0)</m>, it follows that
-				<men xml:id="Max_Mod_Ex">
+				<md number="yes" xml:id="Max_Mod_Ex">
 					|f(z)| = |az+b| \le |az|+|b| \le |a|+|b|
-				</men>.
+				</md>.
 			</p>
 			<p>
 				If we choose <m>z_0=e^{i\theta _0}</m>, where <m>\theta _0\in \arg b-\arg a</m>, then
@@ -204,19 +204,19 @@
 			<p>
 				Let <m>f</m> be analytic in the simply connected domain <m>D</m> that contains the circle 
 				<m>C_R(z_0)=\{z:|z-z_0|=R\}</m>. If <m>|f(z)| \le M</m> holds for all points <m>z\in C_R(z_0)</m>, then
-				<me>
+				<md>
 					\big|f^{(n)}(z_0)\big| \le \frac{n!M}{R^n}, \quad \text{for} \quad n=1,\,2,\ldots
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
 	<proof>
 		<p>
 			Let <m>C_R(z_0)</m> have the parameterization
-			<me>
+			<md>
 				C_R(z_0) : z(\theta) = z_0+Re^{i\theta} \quad \text{and} \quad dz =
 				iRe^{i\theta}\,d\theta, \quad \text{for} \quad  0 \le \theta \le 2\pi
-			</me>.
+			</md>.
 		</p>
 		<p>
 			We use Cauchy<nbsp/>'s integral formula and write
@@ -261,9 +261,9 @@
 		<p>
 			Suppose that <m>|f(z)| \le M</m> holds for all values of <m>z</m>, and let <m>z_0</m> denote an arbitrary point. Using
 			the circle <m>C_R(z_0)=\{z:|z-z_0| =R\}</m> and Cauchy<nbsp/>'s Inequality with <m>n=1</m> yields
-			<me>
+			<md>
 				\big|f\,'(z_0)\big| \le \frac{M}{R}
-			</me>.
+			</md>.
 			Because <m>R</m> can be arbitrarily large we must have <m>f\,'(z_0)=0</m>. But <m>z_0</m> was arbitrary, so
 			<m>f\,'(z)=0</m> for all <m>z</m>. If the derivative of an analytic function is zero for all <m>z</m>, then by 
 			<xref ref="Df_0_implies_f_const">Theorem</xref> the function must be constant. Therefore, <m>f</m> is constant.
@@ -314,33 +314,33 @@
 		</p>
 		<p>
 			For <m>k=1,\ldots n</m>, <m>\frac{|a_{n-k}|}{|z^k|} \to 0</m> as <m>|z| \to \infty</m>, so
-			<me>
+			<md>
 				a_n+\frac{a_{n-1}}{z}+\frac{a_{n-2}}{z^2}+\cdots +\frac{a_0}{z^n} \to a_n, \quad \text{as} \quad |z| \to \infty
-			</me>.
+			</md>.
 			Combining this result with <xref ref="FTOA_EQ_1">Equation</xref> gives
-			<me>
+			<md>
 				|f(z)| \to 0, \quad \text{as} \quad |z| \to \infty
-			</me>.
+			</md>.
 			In particular, we can find a value of <m>R</m> such that
-			<men xml:id="FTOA_EQ_2">
+			<md number="yes" xml:id="FTOA_EQ_2">
 				|f(z)| \le 1 \quad \text{for all} \quad |z| \ge R
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If <m>f(z)=u(x,y) +iv(x,y)</m>, we have
-			<me>
+			<md>
 				|f(z)| = \Big([u(x, y)]^2+[v(x,y)]^2\Big)^\frac{1}{2}
-			</me>.
+			</md>.
 			which is a continuous function of the two real variables <m>x</m> and <m>y</m>. A result from calculus regarding real
 			functions says that a continuous function on a closed and bounded set is bounded. Hence <m>|f(z)|</m> is a bounded
 			function on the closed disk <m>\overline{D}_R(0)</m>. Thus there exists a positive real number <m>K</m> such that
-			<me>
+			<md>
 				|f(z)| \le K, \quad \text{for all} \quad |z| \le R
-			</me>.
+			</md>.
 				Combining this with <xref ref="FTOA_EQ_2">Inequality</xref> gives
-				<me>
+				<md>
 					|f(z)| \le M \quad \text{for all} \quad z
-			</me>,
+			</md>,
 			where <m>M=\max \{K,1\}</m>. By Liouville's theorem, <m>f</m> is constant, so that the degree of <m>f</m> is zero. This
 			observation completes the argument.
 		</p>
@@ -350,9 +350,9 @@
 			<p>
 				Let <m>P</m><nbsp/>be a polynomial of degree <m>n \ge 1</m>. Then <m>P</m> can be expressed as the product of linear
 				factors. That is,
-				<me>
+				<md>
 					P(z)=A(z-z_1) (z-z_2) \cdots (z-z_n)
-				</me>,
+				</md>,
 				where <m>z_1,\,z_2, \ldots, \,z_n</m><nbsp/>are the zeros of <m>P</m>, counted according to multiplicity, and <m>A</m>
 				is a constant.
 			</p>
@@ -558,9 +558,9 @@
 		<statement>
 			<p>
 				Let <m>u(x,y)</m> be harmonic for all <m>(x,y)</m>. Show that
-          <me>
+          <md>
             u(x_0,y_0) = \frac{1}{2\pi}\int_0^{2\pi}u\big(x_0+R\cos \theta, \; y_0+R\sin \theta\big)\,d\theta
-          </me>,
+          </md>,
           where <m>R>0</m>.
 			</p>
 		</statement>

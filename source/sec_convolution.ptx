@@ -27,14 +27,14 @@
 			The following proof is given for the special case when <m>s</m> is a real number. The general case is covered in advanced
 			texts. Using the dummy variables <m>\sigma</m> and <m>\tau</m> and the integrals defining the transforms, we can express
 			their product as
-			<me>
+			<md>
 				F(s)G(s) = 
 				\left[\int_0^{\infty}f(\sigma) e^{-s\sigma}\,d\sigma\right]\left[\int_0^{\infty}g(\tau)e^{-s\tau}\,d\tau\right]
-			</me>.
+			</md>.
 			The product of integrals in this equation can be written as an iterated integral:
-			<me>
+			<md>
 				F(s)G(s) = \int_0^{\infty}\left[\int_0^{\infty}f(\sigma)e^{-s(\sigma+\tau)}\,d\sigma\right]g(\tau)\,d\tau
-			</me>.
+			</md>.
 			Hold <m>\tau</m> fixed, and use the change of variables <m>t=\sigma +\tau</m> and <m>dt=d\sigma</m>. Then the inner
 			integral in the equation can be rewritten to obtain
 			<md>
@@ -50,9 +50,9 @@
 				<image width="40%" source="figs/ch-11/ch-11-fig-28.svg"/>
 			</figure>
 			The order of integration in the integral can be reversed to get:
-			<me>
+			<md>
 				F(s)G(s) = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)e^{-st}\,d\tau\right]dt
-			</me>.
+			</md>.
 			This equation can be written as
 			<md>
 				<mrow>F(s)G(s) \amp = \int_0^{\infty}\left[\int_0^tf(t-\tau)g(\tau)\,d\tau\right]e^{-st}\,dt</mrow>
@@ -119,26 +119,26 @@
 		<statement>
 			<p>
 				Use the convolution theorem to solve the integral equation
-				<me>
+				<md>
 					f(t) = 2\cos t-\int_0^t(t-\tau)f(\tau)\,d\tau
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				Letting <m>F(s) =\mathcal{L}\big(f(t)\big)</m> and using <m>\mathcal{L}(t) = \frac{1}{s^2}</m> in the convolution
 				theorem we obtain
-				<me>
+				<md>
 					F(s) = \frac{2s}{s^2+1} - \frac{1}{s^2}F(s)
-				</me>.
+				</md>.
 				Solving for <m>F(s)</m> we get
-				<me>
+				<md>
 					F(s) = \frac{2s^3}{(s^2+1)^2} = \frac{2s}{s^2+1} - \frac{2s}{(s^2+1)^2}
-				</me>,
+				</md>,
 				and the solution is
-				<me>
+				<md>
 					f(t) = 2\cos t - t\sin t
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -146,16 +146,16 @@
 		Engineers and physicists sometimes consider forces that produce large effects that are applied over a very short time
 		interval. The force acting at the time an earthquake starts is an example. This leads to the idea of a <em>unit impulse
 		function</em> <m>\delta(t)</m>. Consider a small positive constant <m>a</m>. The function <m>\delta_a(t)</m> is defined by
-		<me>
+		<md>
 			\delta_a(t) = \begin{cases}\frac{1}{a} \amp \text{for} \quad  0\lt t\lt a,\\
 			\, 0 \amp  \text{otherwise}. \end{cases}
-		</me>
+		</md>
 	</p>
 	<p>
 		The unit impulse function is obtained by letting the interval width go to zero, <em>i.e.</em>,
-		<me>
+		<md>
 			\delta(t) = \lim_{a \to 0}\delta_a(t).
-		</me>
+		</md>
 	</p>
 	<p>
 		<xref ref="fig_ch-11-29">Figure</xref> shows the graph of <m>\delta_a(t)</m> for <m>a=10, \, 40</m>, and <m>100</m>.
@@ -176,30 +176,30 @@
 		<solution>
 			<p>
 				By definition, the Laplace transform of <m>\delta_a(t)</m> is
-				<me>
+				<md>
 					\mathcal{L}\big(\delta_a(t)\big) = \int_0^{\infty}\delta_a(t)e^{-st}\,dt = \int_0^{a}\frac{1}{a}e^{-st}\,dt =
 					\frac{1-e^{-sa}}{sa}
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Letting <m>a \to 0</m> in equation, and using L'H&#xf4;pital's rule, we obtain
-				<me>
+				<md>
 					\mathcal{L}\big(\delta(t)\big) = \lim_{a \to 0}\mathcal{L}\big(\delta_a(t)\big) = 
 					\lim\limits_{a \to 0}\frac{1-e^{-sa}}{sa}=\lim\limits_{a \to 0}\frac{0+se^{-sa}}{s} = 1
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
 	<p>
 		We now turn our attention to the unit impulse function. First, consider the function <m>f_a(t)</m> obtained by integrating
 		<m>\delta_a(t)</m>:
-		<me>
+		<md>
 			f_a(t) = \int_0^t\delta_a(\tau )\,d\tau = \begin{cases}
 																		\, 0 \amp  \text{for} \quad  t \lt  0,\\ 
 																		\frac{t}{a} \amp  \text{for} \quad  0 \le t \le a,\\ 
 																		\, 1 \amp  \text{for} \quad  a \lt  t. 
 																		\end{cases}
-		</me>
+		</md>
 	</p>
 	<p>
 		Then it is easy to see that <m>U_0(t) =\lim\limits_{a \to 0}f_a(t)</m> (see <xref ref="fig_ch-11-30">Figure</xref>).
@@ -218,21 +218,21 @@
 		<statement>
 			<p>
 				Solve the initial value problem
-				<me>
+				<md>
 					y\,''(t)+4y\,'(t)+13y(t)=3\delta(t), \quad \text{with} \quad y(0) =0 \quad \text{and} \quad y\,'(0^-) = 0
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				Taking transforms results in <m>(s^2+4s+13)Y(s) = 3\mathcal{L}(\delta (t)) = 3</m>, so that
-				<me>
+				<md>
 					Y(s) = \frac{3}{s^2+4s+13}=\frac{3}{(s+2)^2+3^2}
-				</me>,
+				</md>,
 				so the solution iso
-				<me>
+				<md>
 					y(t)=e^{-2t}\sin 3t
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -256,37 +256,37 @@
 		<statement>
 			<p>
 				Show initial value problem
-				<me>
+				<md>
 					ay\,''(t) + by\,'(t) + cy(t) = g(t), \quad \text{with} \quad y(0) = y_0 \quad \text{and} \quad y\,'(0) = y_1
-				</me>
+				</md>
 				has the unique solution
-				<me>
+				<md>
 					y(t) = u(t) + (h\ast g)(t)
-				</me>,
+				</md>,
 				where <m>u(t)</m> is the solution to the homogeneous equation
-				<me>
+				<md>
 					au\,''(t) + bu\,'(t) + cu(t) = 0, \quad \text{with} \quad u(0) = y_0 \quad \text{and} \quad u'(0) = y_1
-				</me>,
+				</md>,
 				and <m>h(t)</m> is the function whose Laplace transform given by <m>H(s) = \frac{1}{as^2+bs+c}</m>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				The particular solution is found by solving the equation
-				<me>
+				<md>
 					av\,''(t) + bv\,'(t) + cv(t) = g(t), \quad \text{with} \quad v(0) = 0 \quad \text{and} \quad v\,'(0) = 0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Taking the Laplace transform of both sides of this equation produces
-				<me>
+				<md>
 					as^2V(s) + bsV(s) + cV(s) = G(s)
-				</me>.
+				</md>.
 				Solving for <m>V(s)</m> in the latter equation yields <m>V(s)=\frac{1}{as^2+bs+c}G(s)</m>. If we set 
 				<m>H(s) =\frac{1}{as^2+bs+c}</m>, then <m>V(s) =H(s)G(s)</m>, and the particular solution is given by the convolution
-				<me>
+				<md>
 					v(t) = (h\ast g)(t)
-				</me>.
+				</md>.
 				The general solution is <m>y(t) = u(t) + v(t) = u(t) + (h\ast g)(t)</m>. To verify that the initial conditions are met
 				we compute
 				<md>
@@ -300,18 +300,18 @@
 		<statement>
 			<p>
 				Use the convolution method to solve the IVP
-				<me>
+				<md>
 					y\,''(t) + y(t) = \tan t, \quad \text{with} \quad y(0) = 1 \quad \text{and} \quad y\,'(0) = 2
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				First solve <m>u''(t) + u(t) = 0</m> with <m>u(0) = 1</m> and <m>u'(0) = 2</m>. Taking the Laplace transform yields
 				<m>s^2U(s) - s- 2 + U(s) = 0</m>. Solving for <m>U(s)</m> gives <m>U(s) = \frac{s+2}{s^2+1}</m>, and it follows that
-				<me>
+				<md>
 					u(t) = \cos t + 2\sin t
-				</me>.
+				</md>.
 				Second, observe that <m>H(s) = \frac{1}{s^2+1}</m> and <m>h(t) = \sin t</m>, so that
 				<md>
 					<mrow>v(t) \amp = (h\ast g) (t) = \int_0^t\sin(t-s) \tan(s)\,ds</mrow>
@@ -321,9 +321,9 @@
 			</p>
 			<p>
 				Therefore, the solution is
-				<me>
+				<md>
 					y(t) = u(t) + v(t) = \cos t + 3\sin t + \cos(t) \ln \frac{\cos t}{1+\sin t}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -444,9 +444,9 @@
 		<statement>
 			<p>
 				Use the convolution theorem and mathematical induction to show that
-				<me>
+				<md>
 					\mathcal{L}^{-1}\left(\frac{1}{(s-a)^n}\right) = \frac{1}{(n-1)!}t^{n-1}e^{at}.
-				</me>
+				</md>
 			</p>
 		</statement>
 	</exercise>
@@ -473,7 +473,7 @@
 		<statement>
 			<p>
 				Use the convolution theorem to solve the initial value problem
-				<me> y\,''(t) +y(t) = 2\sin t, \quad \text{with} \quad y(0) = 0 \quad \text{and} \quad  y\,'(0) = 0 </me>.
+				<md> y\,''(t) +y(t) = 2\sin t, \quad \text{with} \quad y(0) = 0 \quad \text{and} \quad  y\,'(0) = 0 </md>.
 			</p>
 		</statement>
 		<solution>
@@ -486,9 +486,9 @@
 		<statement>
 			<p>
 				Use the convolution theorem to show that the solution to the initial value problem
-				<me>y\,''(t) + \omega^2y(t) = f(t),\quad \text{with} \quad y(0) = 0 \quad \text{and} \quad y\,'(0)=0</me>
+				<md>y\,''(t) + \omega^2y(t) = f(t),\quad \text{with} \quad y(0) = 0 \quad \text{and} \quad y\,'(0)=0</md>
 				is
-				<me> y(t) = \frac{1}{\omega}\int_0^tf(\tau)\sin[\omega(t-\tau )]\,d\tau. </me>
+				<md> y(t) = \frac{1}{\omega}\int_0^tf(\tau)\sin[\omega(t-\tau )]\,d\tau. </md>
 			</p>
 		</statement>
 	</exercise>
@@ -518,9 +518,9 @@
       <statement>
 			<p>
 				Let <m>F(s) =\mathcal{L}\big(f(t)\big)</m>. Use convolution to show that
-				<me>
+				<md>
 					\mathcal{L}^{-1}\left(\frac{F(s)}{s}\right) = \int_0^tf(\tau)\,d\tau.
-				</me>
+				</md>
 			</p>
 		</statement>
 		<solution>

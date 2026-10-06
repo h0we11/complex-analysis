@@ -3,7 +3,7 @@
 	<p>
 		Let <m>\phi (x,y)</m> be a real-valued function of the two real variables <m>x</m> and <m>y</m> defined on a domain
 		<m>D</m>. (Recall that a domain is a connected open set.) The partial differential equation 
-		<men xml:id="Laplace_s_Equation"> \phi _{xx}(x,y) +\phi _{yy}(x,y) = 0 </men> is known as <em>Laplace's equation</em>
+		<md number="yes" xml:id="Laplace_s_Equation"> \phi _{xx}(x,y) +\phi _{yy}(x,y) = 0 </md> is known as <em>Laplace's equation</em>
 		(sometimes referred to as the potential equation). If 
 		<m>\phi, \, \phi _x, \, \phi_y, \, \phi _{xx}, \, \phi _{xy}, \, \phi _{yx}</m>, and <m>\phi _{yy}</m> are all continuous,
 		and if <m>\phi (x,y)</m> satisfies Laplace's equation, then <m>\phi(x,y)</m> is harmonic on <m>D</m>. Harmonic functions are
@@ -25,22 +25,22 @@
 			In Corollary 6.3 we will show that, if <m>f(z)</m> is analytic, then all partial derivatives of <m>u</m> and <m>v</m> are
 			continuous. Using that result here, we see that, as <m>f</m> is analytic, <m>u</m> and <m>v</m> satisfy the
 			Cauchy-Riemann equations
-			<me>
+			<md>
 				u_x = v_y, \quad \text{and} \quad u_y = -v_x
-			</me>.
+			</md>.
 			Taking the partial derivative with respect to <m>x</m> of each side of these equations gives
-			<me>
+			<md>
 				u_{xx} = v_{yx}, \quad \text{and} \quad u_{yx} = -v_{xx}
-			</me>.
+			</md>.
 			Similarly, taking the partial derivative of each side with respect to <m>y</m> yields
-			<me>
+			<md>
 				u_{xy}=v_{yy}, \quad \text{and} \quad u_{yy} = -v_{xy}
-			</me>.
+			</md>.
 			The partial derivatives <m>u_{xy}</m>, <m>u_{yx}</m>, <m>v_{xy}</m>, and <m>v_{yx}</m> are all continuous, so we use a
 			theorem from the calculus of real functions that states that the mixed partial derivatives are equal; that is,
-			<me>
+			<md>
 				u_{xy}=u_{yx} \quad \text{and} \quad v_{xy}=v_{yx}
-			</me>.
+			</md>.
 			Combining all these results finally gives <m>u_{xx}+u_{yy}=v_{yx}-v_{xy}=0</m>, and
 			<m>v_{xx}+v_{yy}=-u_{yx}+u_{xy}=0</m>. Therefore both <m>u</m> and <m>v</m> are harmonic functions on <m>D</m>.
 		</p>
@@ -56,13 +56,13 @@
 			<p>
 				If <m>u(x,y) =x^2-y^2</m>, then <m>u_{xx}(x ,y) + u_{yy}(x,y) = 2-2 = 0</m>; hence <m>u</m> is a harmonic function for
 				all <m>z</m>. We find that <m>v(x,y) = 2xy</m> is also a harmonic function and that
-				<me>
+				<md>
 					u_x=v_y=2x, \quad \text{and} \quad u_y=-v_x=-2y
-				</me>.
+				</md>.
 				Therefore <m>v</m> is a harmonic conjugate of <m>u</m>, and the function <m>f</m> given by
-				<me>
+				<md>
 					f(z) =x^2-y^2+i2xy=z^2
-				</me>
+				</md>
 				is an analytic function.
 			</p>
 		</statement>
@@ -75,13 +75,13 @@
 		<statement>
 			<p>
 				The function <m>f(z)=z^3=x^3-3xy^2+i(3x^2y-y^3)</m> is analytic for all values of <m>z</m>. Hence it follows that
-				<me>
+				<md>
 					u(x,y) = \mathrm{Re}\left[ f(z) \right] =x^3-3xy^2
-				</me>
+				</md>
 				is harmonic for all <m>z</m>, and that
-				<me>
+				<md>
 					v(x,y) = \mathrm{Im}\left[ f(z) \right] =3x^2y-y^3
-				</me>
+				</md>
 				is a harmonic conjugate of <m>u(x,y)</m>.
 			</p>
 		</statement>
@@ -115,9 +115,9 @@
 		<xref ref="Laplace_s_Equation">Equation</xref> holds, but the details are tedious. If we use complex variable techniques
 		instead, we can start with the fact that <m>f(z)=u(x,y) + iv(x,y)</m> is an analytic function. Then we observe that the
 		square of <m>f</m> is also an analytic function:
-		<me>
+		<md>
 			[f(z)]^2 = [u(x,y)]^2-[v(x,y)]^2 + i2u(x,y) v(x,y)
-		</me>.
+		</md>.
 	</p>
 	<p>
 		We then know immediately that the imaginary part, <m>2u(x,y) v(x,y)</m>, is a harmonic function by 
@@ -140,15 +140,15 @@
 			A conjugate harmonic function <m>v</m> will satisfy the Cauchy-Riemann equations <m>u_x=v_y</m> and <m>u_y=-v_x</m>.
 			Assuming that such a function exists, we determine what it would have to look like by using a two-step process. First, we
 			integrate <m>v_y</m> (which should equal <m>u_x</m>) with respect to <m>y</m> and get
-			<men xml:id="v___int_ux_">
+			<md number="yes" xml:id="v___int_ux_">
 				v(x,y) = \int u_x(x,y)\,dy + C(x)
-			</men>,
+			</md>,
 			where <m>C(x)</m> is a function of <m>x</m> alone that is yet to be determined. Second, we compute <m>C'(x)</m> by
 			differentiating both sides of this equation with respect to <m>x</m> and replacing <m>v_x</m> with <m>-u_y</m> on the
 			left side, which gives
-			<me>
+			<md>
 				-u_y(x,y) = \frac{d}{dx}\int u_x(x,y)\,dy+C\,'(x)
-			</me>.
+			</md>.
 			It can be shown (we omit the details) that because <m>u</m> is harmonic, all terms except those involving <m>x</m> in the
 			last equation will cancel, revealing a formula for <m>C\,'(x)</m> involving <m>x</m> alone. Elementary integration of the
 			single-variable function <m>C\,'(x)</m> can then be used to discover <m>C(x)</m>. We finally observe that the function
@@ -170,33 +170,33 @@
 			<p>
 				We follow the construction process of <xref ref="Conjugate_Construction">Theorem</xref>. The first partial derivatives
 				are 
-				<men xml:id="Example_ux_Eq">
+				<md number="yes" xml:id="Example_ux_Eq">
 					u_x(x,y) = y^3-3x^2y, \quad \text{and} \quad u_y(x,y) =3xy^2-x^3
-				</men>.
+				</md>.
 			</p>
 			<p>
 				To verify that <m>u</m> is harmonic, we compute the second partial derivatives and note that
 				<m>u_{xx}(x,y)+u_{yy}(x,y)=-6xy+6xy=0</m>, so <m>u</m> satisfies Laplace's 
 				<xref ref="Laplace_s_Equation">Equation</xref>. To construct <m>v</m>, we start with 
 				<xref ref="v___int_ux_">Equation</xref> and the first of <xref ref="Example_ux_Eq">Equations</xref> to get
-				<me>
+				<md>
 					v(x,y) = \int (y^3-3x^2y)\,dy+C(x) = \frac{1}{4}y^4-\frac{3}{2}x^2y^2+C(x)
-				</me>.
+				</md>.
 				Differentiating the left and right sides of this equation with respect to <m>x</m> and using <m>-u_y(x,y)=v_x(x,y)</m>
 				and <xref ref="Example_ux_Eq">Equation</xref> on the left side yields
-				<me>
+				<md>
 					-3xy^2+x^3=0-3xy^2+C\,'(x)
-				</me>,
+				</md>,
 				which implies that
-				<me>
+				<md>
 					C\,'(x) =x^3
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Finally, if we integrate this equation we get
-				<me>
+				<md>
 					v(x,y) = \frac{1}{4}x^4-\frac{3}{2}x^2y^2+\frac{1}{4}y^4+C.
-				</me>
+				</md>
 			</p>
 		</solution>
 	</example>
@@ -208,9 +208,9 @@
 		We assume that an incompressible and frictionless fluid flows over the complex plane and that all cross sections in planes
 		parallel to the complex plane are the same. Situations such as this occur when fluid is flowing in a deep channel. The
 		velocity vector at the point <m>(x, y)</m> is
-		<men xml:id="Flow">
+		<md number="yes" xml:id="Flow">
 			\mathbf{V}(x,y) = p(x,y) +iq(x,y)
-		</men>,
+		</md>,
 		which we illustrate in <xref ref="fig_ch-03-04">Figure</xref>.
 	</p>
 	<figure xml:id="fig_ch-03-04">
@@ -220,16 +220,16 @@
 	<p>
 		The assumption that the flow is irrotational and has no sources or sinks implies that both the curl and divergence vanish;
 		that is, <m>q_x-p_y=0</m> and <m>p_x+q_y=0</m>. Hence <m>p</m> and <m>q</m> obey the equations
-		<men xml:id="pqCR_clone">
+		<md number="yes" xml:id="pqCR_clone">
 			p_x(x,y) = -q_y(x,y), \quad \text{and} \quad p_y(x,y) =q_x(x,y)
-		</men>.
+		</md>.
 	</p>
 	<p>
 		<xref ref="pqCR_clone">Equations</xref> are similar to the Cauchy-Riemann equations and permit us to define a special
 		complex function:
-		<men xml:id="rotational_f">
+		<md number="yes" xml:id="rotational_f">
 			f(z) =u(x,y) + iv(x,y) = p(x,y) - iq(x,y)
-		</men>.
+		</md>.
 	</p>
 	<p>
 		Here we have <m>u_x=p_x, \, u_y=p_y, \, v_x=-q_x</m>, and <m>v_y=-q_y</m>. We can use <xref ref="pqCR_clone">Equation</xref>
@@ -243,44 +243,44 @@
 		Assuming that the functions <m>p</m> and <m>q</m> have continuous partials, <xref ref="Sufficient_Conditions">Theorem</xref>
 		guarantees that function <m>f</m> defined in <xref ref="rotational_f">Equation</xref> is analytic and that the fluid flow of
 		<xref ref="Flow">Equation</xref> is the conjugate of an analytic function; that is,
-		<me>
+		<md>
 			\mathbf{V}(x,y) = \overline{f(z)}
-		</me>.
+		</md>.
 	</p>
 	<p>
 		In <xref ref="ch_complex-integration"/> we prove that every analytic function <m>f</m> has an analytic antiderivative
 		<m>F</m>. Assuming this conclusion to hold for now we can write
-		<men xml:id="Fprime_f">
+		<md number="yes" xml:id="Fprime_f">
 			F(z) = \phi (x,y) + i\psi(x,y)
-		</men>,
+		</md>,
 		where <m>F\,'(z) = f(z)</m>.
 	</p>
 	<p>
 		<xref ref="Harmonic_Theorem">Theorem</xref> implies that <m>\phi (x,y)</m> is a harmonic function. Using the vector
 		interpretation of a complex number, the gradient of <m>\phi</m> can be written as
-		<me>
+		<md>
 			\mathrm{grad} \, \phi (x,y) = \phi _x(x,y) +i\phi_y(x,y)
-		</me>
+		</md>
 	</p>
 	<p>
 		The Cauchy-Riemann equations applied to <m>F(z)</m> give <m>\phi_y(x,y) =-\psi_x(x,y)</m>. Making this substitution in the
 		preceding equation yields
-		<me>
+		<md>
 			\mathrm{grad} \, \phi(x,y) = \phi_x(x,y) - i\psi_x(x,y) = \overline{\phi_x(x,y) +i\psi _x(x,y)}
-		</me>
+		</md>
 	</p>
 	<p>
 		<xref ref="C-R_EQ_x">Equation</xref> says that <m>\phi_x(x,y) +i\psi_x(x,y) =F\,'(z)</m>, which by the preceding equation and
 		<xref ref="Fprime_f">Equation</xref> implies that
-		<me>
+		<md>
 			\mathrm{grad} \, \phi(x,y) = \overline{F\,'(z)} = \overline{f(z)}
-		</me>
+		</md>
 	</p>
 	<p>
 		Finally, from <xref ref="Flow">Equation</xref> <m>\phi</m> is the scalar potential function for the fluid flow, so
-		<me>
+		<md>
 			\mathbf{V}(x,y) = \mathrm{grad} \, \phi(x,y).
-		</me>
+		</md>
 	</p>
 	<p>
 		The curves given by <m>\{(x,y) :\phi(x,y) = \text{ constant} \}</m> are called <em>equipotentials</em>. The curves
@@ -305,14 +305,14 @@
 		<solution>
 			<p>
 				We can write the fluid flow expression as
-				<me>
+				<md>
 					\mathbf{V}(x,y) = \overline{f(z)}= \overline{2x+i2y}=\overline{2z}
-				</me>.
+				</md>.
 				An antiderivative of <m>f(z) =2z</m> is <m>F(z)=z^2</m>, and the real part of <m>F(z)</m> is the desired harmonic
 				function:
-				<me>
+				<md>
 					\phi (x,y) = \mathrm{Re}[F(z)] = \mathrm{Re}[x^2-y^2+i2xy] =x^2-y^2
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -491,9 +491,9 @@
 				origin.  Use the polar form of the Cauchy-Riemann equations <m>u_\theta = -rv_r</m>, and <m>v_\theta = ru_r</m>.
 				Differentiate them first with respect to <m>\theta</m> and then with respect to <m>r</m>. Use the results to
 				establish the polar form of Laplace's equation:
-					<me>
+					<md>
 						r^2u_{rr}(r,\theta ) +ru_{r}(r,\theta ) +u_{\theta \theta}(r,\theta)=0
-					</me>.
+					</md>.
 			</p>
 		</statement>
 		<solution>

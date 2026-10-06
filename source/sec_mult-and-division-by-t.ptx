@@ -12,9 +12,9 @@
 		<statement>
 			<p>
 				If <m>F(s)</m> is the Laplace transform of <m>f(t)</m>, then
-				<me>
+				<md>
 					\mathcal{L}\big(tf(t)\big) = -F\,'(s)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -37,9 +37,9 @@
 			<p>
 				Let both <m>f(t)</m> and <m>\frac{f(t)}{t}</m> have Laplace transforms and let <m>F(s)</m> denote the transform of
 				<m>f(t)</m>. If <m>\lim\limits_{t \to 0^+}\frac{f(t)}{t}</m> exists,
-				<me>
+				<md>
 					\mathcal{L}\left(\frac{f(t)}{t}\right) = \int_s^{\infty}F(\sigma)\,d\sigma
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -47,9 +47,9 @@
 		<p>
 			Since <m>F(\sigma) = \int_0^{\infty}f(t) e^{-\sigma t}\,dt</m>, we integrate <m>F(\sigma)</m> from <m>s</m> to
 			<m>\infty</m>:
-			<me>
+			<md>
 				\int_s^{\infty}F(\sigma ) d\sigma =\int_0^{\infty}\left[\int_0^{\infty}f(t) e^{-\sigma t}\,dt\right]d\sigma
-			</me>.
+			</md>.
 			The order of integration in equation in the double integral is reversed:
 			<md>
 				<mrow>
@@ -71,9 +71,9 @@
 			<p>
 				Let <m>f(t) =\cos bt</m>, then <m>F(s) =\mathcal{L}(\cos bt) = \frac{s}{s^2+b^2}</m>. Hence, we can differentiate
 				<m>F(s)</m> to obtain the desired result:
-				<me>
+				<md>
 					\mathcal{L}(t\cos bt) =-F\,'(s) =-\frac{s^2+b^2-2s^2}{(s^2+b^2)^2}=\frac{s^2-b^2}{(s^2+b^2)}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -87,10 +87,10 @@
 			<p>
 				Let <m>f(t) = \sin t</m> and <m>F(s) =\frac{1}{s^2+1}</m>. Since <m>\lim\limits_{t \to 0^+}\frac{\sin t}{t}=1</m>, we
 				can integrate <m>F(s)</m> to obtain the desired result:
-				<me>
+				<md>
 					\mathcal{L}\left(\frac{\sin t}{t}\right) = \int_s^{\infty}\frac{d\sigma}{\sigma^2+1} =
 					\left.-\arctan \frac{1}{\sigma}\right|_{\sigma =s}^{\sigma =\infty} = \arctan \frac{1}{s}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -106,48 +106,48 @@
 		<statement>
 			<p>
 				Use Laplace transforms to solve the initial value problem
-				<me>
+				<md>
 					ty\,''(t) - ty\,'(t) - y(t) = 0, \quad \text{with} \quad y(0) = 0
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				Let <m>Y(s)</m> denote the Laplace transform of <m>y(t)</m>, then using the 
 				<xref ref="Laplacety1">substitutions</xref> and <xref ref="Laplacety2"></xref> results in 
-				<men xml:id="LaplaceTransDE">
+				<md number="yes" xml:id="LaplaceTransDE">
 					\hspace{-0.3in}-s^2Y\,'(s) -2sY(s) +0+sY\,'(s) + Y(s) - Y(s) = 0
-				</men>.
+				</md>.
 			</p>
 			<p>
 				This equation involves <m>Y\,'(s)</m> and can be written as a first-order linear differential equation:
-				<men xml:id="TransDE">
+				<md number="yes" xml:id="TransDE">
 					Y\,'(s) + \left(\frac{2}{s-1}\right)Y(s) = 0
-				</men>.
+				</md>.
 			</p>
 			<p>
 				The integrating factor <m>\rho</m> for the differential equation is
-				<me>
+				<md>
 					\rho = \exp\left(\int \frac{2}{s-1}\,ds\right) = e^{2\ln (s-1)}=(s-1)^2
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Multiplying Equation <xref ref="TransDE"/> by <m>\rho</m> produces
-				<me>
+				<md>
 					(s-1)^2Y\,'(s) +2(s-1) Y(s) = \frac{d}{ds}\big[(s-1)^2Y(s)\big] = 0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Now we integrate the equation <m>\frac{d}{ds}\big[(s-1)^2Y(s)\big] = 0</m> with respect to <m>s</m> and the results is
 				<m>(s-1)^2Y(s) =C</m>, where <m>C</m> is the constant of integration. Hence the solution to 
 				<xref ref="LaplaceTransDE">Equation</xref> is
-				<me>
+				<md>
 					Y(s) = \frac{C}{(s-1)^2}
-				</me>.
+				</md>.
 				The inverse of the transform <m>Y(s)</m> in equation is the desired solution
-				<me>
+				<md>
 					y(t) = Cte^t
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>

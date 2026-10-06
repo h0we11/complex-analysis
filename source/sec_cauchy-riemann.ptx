@@ -39,21 +39,21 @@
 		We know that <m>f</m> is differentiable, so the limit of the difference quotient <m>\frac{f(z) -f(z_0)}{z-\,z_0}</m> exists
 		no matter how we approach <m>z_0=2+i</m>. Thus we can <em>approximate</em> <m>f\,'(2+i)</m> by using horizontal or vertical
 		increments in <m>z</m>:
-		<me>
+		<md>
 			f\,'(2+i) \approx \frac{f(2.01+i) -f(2+i)}{(2.01+i) -(2+i)}= \frac{0.0401+0.02i}{0.01}=4.01+2i
-		</me>,
+		</md>,
 		and
-		<me>
+		<md>
 			f\,'(2+i) \approx \frac{f(2+1.01i) - f(2+i)}{(2+1.01i) - (2+i)} = \frac{-0.0201+0.04i}{0.01i}=4+2.01i
-		</me>.
+		</md>.
 		These computations lead to the idea of taking limits along the horizontal and vertical directions. When we do so, we get
-		<me>
+		<md>
 			f\,'(2+i) = \lim\limits_{h \to 0}\frac{f(2+h+i) -f(2+i)}{h}= \lim\limits_{h \to 0}\frac{4h+h^2+i2h}{h}=4+2i
-		</me>,
+		</md>,
 		and
-		<me>
+		<md>
 			f\,'(2+i) = \lim\limits_{h \to 0}\frac{f(2+i+ih) -f(2+i)}{ih}= \lim\limits_{h \to 0}\frac{-2h-h^2+i4h}{ih}=4+2i
-		</me>.
+		</md>.
 	</p>
 	<p>
 		We now generalize this idea by taking limits of an arbitrary differentiable complex function and obtain an important result.
@@ -63,9 +63,9 @@
 		<statement>
 			<p>
 				Suppose that
-				<me>
+				<md>
 					f(z) = f(x+iy) = u(x,y) +iv(x,y)
-				</me>
+				</md>
 				is differentiable at the point <m>z_0=x_0+iy_0</m>. Then the partial derivatives of <m>u</m> and <m>v</m> exist at the
 				point <m>(x_0,y_0)</m>, and
 				<md>
@@ -75,10 +75,10 @@
 			</p>
 			<p>
 				Equating the real and imaginary parts of Equations <xref ref="C-R_EQ_x"/> and <xref ref="C-R_EQ_y"/> gives
-				<men xml:id="C-R_EQs">
+				<md number="yes" xml:id="C-R_EQs">
 					u_x(x_0,y_0) = v_y(x_0,y_0) \quad \text{and} \quad u_y(x_0,y_0) = -v_x(x_0,y_0)
 				
-			</men>.  </p>
+			</md>.  </p>
 		</statement>
 	</theorem>
 	<proof>
@@ -99,9 +99,9 @@
 		</p>
 		<p>
 			The last two limits are the partial derivatives of <m>u</m> and <m>v</m> with respect to <m>x</m>, so
-			<me>
+			<md>
 				f\,'(z_0) = u_x(x_0,y_0) + iv_x(x_0,y_0)
-			</me>.
+			</md>.
 			giving us <xref ref="C-R_EQ_x">Equation</xref>.
 		</p>
 		<p>
@@ -117,9 +117,9 @@
 		</p>
 		<p>
 			The last two limits are the partial derivatives of <m>u</m> and <m>v</m> with respect to <m>y</m>, so
-			<me>
+			<md>
 				f\,'(z_0) =v_y(x_0,y_0) -iu_y(x_0,y_0)
-			</me>.
+			</md>.
 			giving us <xref ref="C-R_EQ_y">Equation</xref>.
 		</p>
 		<p>
@@ -159,13 +159,13 @@
 		<statement>
 			<p>
 				We know that <m>f(z)=z^2</m> is differentiable and that <m>f\,'(z) =2z</m>. We also have
-				<me>
+				<md>
 					f(z)=z^2=(x+iy)^2=(x^2-y^2) + i(2xy) =u(x,y) +iv(x,y)
-				</me>.
+				</md>.
 				It is easy to verify that <xref ref="C-R_EQs">Equations</xref> are indeed satisfied:
-				<me>
+				<md>
 					u_x(x,y) =2x=v_y(x,y)  \text{ and }   u_y(x,y) =-2y=-v_x(x,y)
-				</me>.
+				</md>.
 				Using Equations <xref ref="C-R_EQ_x"/> and <xref ref="C-R_EQ_y"/>, respectively, to compute <m>f\,'(z)</m> gives
 				<md>
 					<mrow>f\,'(z) \amp = u_x(x,y) + iv_x(x,y) = 2x+i2y = 2z, \quad \text{and}</mrow>
@@ -193,13 +193,13 @@
 		<statement>
 			<p>
 				Show that the function defined by
-				<me>
+				<md>
 					f(z)= \begin{cases}
 							\frac{(\overline{z})^2}{z}=\frac{x^3-3xy^2}{x^2+y^2}+i \frac{y^3-3x^2y}{x^2+y^2} \quad \text{when} 
 							\quad z \ne 0, \quad \text{and}\\ 
 							\;\,\, 0 \quad \text{when} \quad z=0
 						\end{cases}
-        </me>
+        </md>
 		  is <em>not</em> differentiable at the point <m>z_0=0</m>, even though the Cauchy-Riemann equations are satisfied at
 		  <m>(0,0)</m>.
       </p>
@@ -207,15 +207,15 @@
     <solution>
 		 <p>
 		 	We must use limits to calculate the partial derivatives at <m>(0,0)</m>.
-			<me>
+			<md>
 				u_x(0,0) = \lim_{x \to 0}\frac{u(x,0)-u(0,0)}{x-0} = \lim_{x \to 0}\frac{\frac{x^3-0}{x^2+0}}{x}=1
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Similarly, we can show that
-			<me>
+			<md>
 				u_y(0,0) = 0, \; v_x(0,0) = 0, \quad \text{and} \quad v_y(0,0) =  1
-			</me>.
+			</md>.
       </p>
 		<p>
 			Hence the Cauchy-Riemann equations hold at the point <m>(0,0)</m>.
@@ -223,10 +223,10 @@
       <p>
 			We now show that <m>f</m> is <em>not</em> differentiable at <m>z_0=0</m>. Letting <m>z</m> approach <m>0</m> along the
 			<m>x</m> axis gives
-			<me>
+			<md>
 				\lim_{(x,0) \to (0,0)}\frac{f(x+0i) - f(0)}{x+0i-0} = \lim_{x \to 0}\frac{\frac{x^2}{x}-0}{x-0} = 
 				\lim\limits_{x \to 0}\frac{x-0}{x-0}=1
-			</me>.
+			</md>.
       </p>
       <p>
 			But if we let <m>z</m> approach <m>0</m> along the line <m>y=x</m> given by the parametric equations <m>x=t</m> and
@@ -270,9 +270,9 @@
 			so that <m>z</m> lies in the <m>\varepsilon</m>-neighborhood of <m>z_0</m> in which the hypotheses hold. We need to show
 			that <m>\frac{\Delta w}{\Delta z}</m> approaches the limit given in <xref ref="C-R_EQ_y">Equation</xref> as 
 			<m>\Delta z</m> approaches zero. We write the difference, <m>\Delta u</m>, as
-			<me>
+			<md>
 				\Delta u=u(x_0+\Delta x,y_0+\Delta y) -u(x_0,y_0)
-			</me>.
+			</md>.
 		</p>
 		<p>
 			If we subtract and add the term <m>u(x_0,y_0+\Delta y)</m>, then we get
@@ -285,14 +285,14 @@
 			The partial derivatives <m>u_x</m> and <m>u_y</m> exist, so the mean value theorem for real functions of two variables
 			implies that a value <m>x^*</m> exists between <m>x_0</m> and <m>x_0+\Delta x</m> such that we can write the first term
 			in brackets on the right side of <xref ref="Delta_u">Equation</xref> as
-			<me>
+			<md>
 				u(x_0+\Delta x, y_0+\Delta y) - u(x_0,y_0 + \Delta y) = u_x(x^*, y_0+\Delta y) \Delta x
-			</me>.
+			</md>.
 			Furthermore, as <m>u_x</m> and <m>u_y</m> are continuous at <m>(x_0, y_0)</m>, there exists a quantity
 			<m>\varepsilon_1</m> such that
-			<me>
+			<md>
 				u_x(x^*,y_0+\Delta y) =u_x(x_0,y_0) + \varepsilon_1
-			</me>.
+			</md>.
 			where <m>\varepsilon_1 \to 0</m> as <m>x^* \to x_0</m> and <m>\Delta y \to 0</m>. Because <m>\Delta x \to 0</m> forces
 			<m>x^* \to x_0</m>, we can use the equation
 			<md>
@@ -302,20 +302,20 @@
 			where <m>\varepsilon_1 \to 0</m> as <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m>. Similarly, there exists a quantity
 			<m>\varepsilon_2</m> such that the second term in brackets on the right side of <xref ref="Delta_u">Equation</xref>
 			satisfies the equation
-			<men xml:id="Delta_u_b">
+			<md number="yes" xml:id="Delta_u_b">
 				u(x_0,y_0+\Delta y) - u(x_0,y_0) = [u_y(x_0,y_0) + \varepsilon_2] \Delta y
-			</men>.
+			</md>.
 			where <m>\varepsilon_2 \to 0</m> as <m>\Delta x \to 0</m> and <m>\Delta y \to 0</m>. Combining Equations 
 			<xref ref="Delta_u_a"/> and <xref ref="Delta_u_b"/> gives
-			<me>
+			<md>
 				\Delta u=(u_x+\varepsilon_1) \Delta x+(u_y+\varepsilon_2) \Delta y
-			</me>.
+			</md>.
 			where partial derivatives <m>u_x</m> and <m>u_y</m> are evaluated at the point <m>(x_0,y_0)</m> and <m>\varepsilon_1</m>
 			and <m>\varepsilon_2</m> tend to zero as <m>\Delta x</m> and <m>\Delta y</m> both tend to zero.  Similarly, the change
 			<m>\Delta v</m> is related to the changes <m>\Delta x</m> and <m>\Delta y</m> by the equation
-			<me>
+			<md>
 				\Delta v=(v_x+\varepsilon_3) \Delta x+(v_y+\varepsilon_4) \Delta y
-			</me>,
+			</md>,
 			where the partial derivatives <m>v_x</m> and <m>v_y</m> are evaluated at the point <m>(x_0,y_0)</m> and
 			<m>\varepsilon_3</m> and <m>\varepsilon_4</m> tend to zero as <m>\Delta x</m> and <m>\Delta y</m> both tend to zero.
 			Combining these last two equations gives
@@ -355,18 +355,18 @@
 		</p>
 		<p>
 			Because <m>\varepsilon_1</m> tends to zero as <m>\Delta x</m> and <m>\Delta y</m> both tend to zero, we have
-			<me>
+			<md>
 				\lim_{\Delta z \to 0}\left|\frac{\varepsilon_1\Delta x}{\Delta z}\right| = 
 				\lim_{\Delta z \to 0}\big|\varepsilon_1\big|\left|\frac{\Delta x}{\Delta z}\right| \le  
 				\lim_{\Delta z \to 0}\big|\varepsilon_1\big|=0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Similarly, the limits of the other quantities in <xref ref="dw_dz">Equation</xref> involving <m>\varepsilon_2</m>,
 			<m>\varepsilon_3</m>, <m>\varepsilon_4</m> are zero. Therefore the limit in <xref ref="dw_dz">Equation</xref> becomes
-			<me>
+			<md>
 				\lim_{\Delta z \to 0}\frac{\Delta w}{\Delta z}=f\,'(z_0) =u_x(x_0,y_0) +iv_x(x_0,y_0)
-			</me>,
+			</md>,
 			which completes the proof of the theorem.
 		</p>
 	</proof>
@@ -419,9 +419,9 @@
 			<p>
 				We note that <m>u, \, v, \, u_x, \, u_v, \, v_x</m>, and <m>v_y</m> are continuous functions and that the Cauchy-Riemann
 				equations hold for all values of <m>(x,y)</m>. Hence, using <xref ref="C-R_EQ_x">Equation</xref>, we write
-				<me>
+				<md>
 					f\,'(z) =f\,'(x,y) =u_x(x,y) + iv_x(x,y) = -e^{-y}\sin x + ie^{-y}\cos x
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -481,10 +481,10 @@
 				neighborhood of the point <m>z_0=r_0e^{i\theta_0}</m>. If all the partial derivatives 
 				<m>U_{r}, \, U_{\theta}, \, V_{r}</m> and <m>V_{\theta}</m> are continuous at the point <m>(r_0,\theta_0)</m> and if
 				the polar form of the Cauchy-Riemann equations
-				<men xml:id="Polar_C-R">
+				<md number="yes" xml:id="Polar_C-R">
 					\hspace{-0.5in}U_r(r_0,\theta_0) = \frac{1}{r_0}V_\theta(r_0,\theta_0) \quad \text{and} 
 					\quad V_r(r_0,\theta_0) = -\frac{1}{r_0}U_\theta(r_0,\theta_0)
-				</men>
+				</md>
 				holds, then <m>f</m> is differentiable at <m>z_0</m> and we can compute the derivative <m>f\,'(z_0)</m> by using
 				either of the following formulas:
 				<md>
@@ -504,25 +504,25 @@
 		<statement>
 			<p>
 				Show that, if <m>f</m> is given by
-				<me>
+				<md>
 					f(re^{i\theta}) =f(z)=z^{\frac{1}{2}}=r^{\frac{1}{2}}\cos \frac{\theta}{2}+ir^{\frac{1}{2}}\sin \frac{\theta}{2}
-				</me>.
+				</md>.
 				where the domain is restricted to be <m>\{re^{i\theta} : r>0 \text{ and }  -\pi \lt \theta \lt \pi\}</m>, then the
 				derivative is given by
-				<me>
+				<md>
 					f\,'(z) = \frac{1}{2z^{\frac{1}{2}}}= \frac{1}{2}r^{-\frac{1}{2}}\cos \frac{\theta}{2} - 
 					i\frac{1}{2}r^{-\frac{1}{2}}\sin \frac{\theta}{2}
-				</me>,
+				</md>,
 				for every point in the domain.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				Write
-				<me>
+				<md>
 					U(r,\theta) =r^{\frac{1}{2}}\cos \frac{\theta}{2} \quad \text{and} 
 					\quad V(r,\theta ) = r^{\frac{1}{2}}\sin \frac{\theta}{2}
-				</me>.
+				</md>.
 				Then
 				<md>
 					<mrow>
@@ -570,29 +570,29 @@
 	<proof>
 		<p>
 			The equation <m>|f(z)|=K</m> implies that, for all <m>z=(x,y) \in D</m>,
-			<men xml:id="u_2_v_2_k_2">
+			<md number="yes" xml:id="u_2_v_2_k_2">
 				u(x,y)^2 + v(x,y)^2 = K^2
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If <m>K=0</m>, then it must be that <m>u(x,y)^2=0</m> and <m>v(x,y)^2=0</m> for all <m>(x,y)\in D</m>, so <m>f</m> is
 			identically zero on <m>D</m>. If <m>K \ne  0</m>, then we take the partial derivative of both sides of 
 			<xref ref="u_2_v_2_k_2">Equation</xref> with respect to both <m>x</m> and <m>y</m>, resulting in
-			<me>
+			<md>
 				2uu_x+2vv_x=0 \quad \text{and} \quad 2uu_y+2vv_y=0
-			</me>.
+			</md>.
 			where for brevity we write <m>u</m> in place of <m>u(x,y)</m>, and so on. We can now use the Cauchy-Riemann equations to
 			rewrite this system as
-			<me>
+			<md>
 				uu_x-vu_y=0 \quad \text{and} \quad vu_x+uu_y=0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Treating <m>u</m> and <m>v</m> as coefficients, we have two equations with two unknowns, <m>u_x</m> and <m>u_y</m>.
 			Solving for <m>u_x</m> and <m>u_y</m> gives
-			<me>
+			<md>
 				u_x= \frac{0}{u^2+v^2}=0  \text{ and }   u_y= \frac{0}{u^2+v^2}=0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Note that it is important here for <m>K \ne 0</m> in <xref ref="u_2_v_2_k_2">Equation</xref>.
@@ -850,11 +850,11 @@
 					Let <m>f(z) =f(x,y) =f(re^{i\theta}) =u(re^{i\theta}) +iv(re^{i\theta}) = U(r,\theta )+iV(r,\theta )</m>. Use the
 					transformation <m>x=r\cos \theta</m> and <m>y=r\sin \theta \; \big(i.e., \, (x, y) =re^{i\theta}\big) \; </m>
 					and the chain rules 
-					<me>
+					<md>
 						U_r = u_x\frac{\partial x}{\partial r}+u_y\frac{\partial y}{\partial r} \quad  \text{and} \quad 
 						U_\theta = u_x\frac{\partial x}{\partial \theta} + u_y\frac{\partial y}{\partial \theta} \quad
 						\text{ (similarly for } \; V)
-					</me>.
+					</md>.
 				to prove that
 					<md>
 						<mrow>U_{r} \amp = u_x\cos \theta +u_y\sin \theta,  U_{\theta}=-u_xr\sin \theta +u_yr\cos \theta;
@@ -979,12 +979,12 @@
 					Temporarily, think of <m>z</m> and <m>\overline{z}</m> as dummy symbols for real variables. With this perspective,
 					<m>x</m> and <m>y</m> can be viewed as functions of <m>z</m> and <m>\overline{z}</m>. Use the chain rule for a
 					function <m>h</m> of two variables to show that
-						<me>
+						<md>
 							\frac{\partial h}{\partial\overline{z}} =
 							\frac{\partial h}{\partial x}\frac{\partial x}{\partial \overline{z}} + 
 							\frac{\partial h}{\partial y}\frac{\partial y}{\partial \overline{z}} =
 							\frac{1}{2}\left(\frac{\partial h}{\partial x} + i\frac{\partial h}{\partial y}\right)
-						</me>.
+						</md>.
 				</p>
 			</statement>
 		</task>

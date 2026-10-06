@@ -6,14 +6,14 @@
 			Another assumption is that the time rate at which heat flows across a surface area is proportional to the component of
 			the temperature gradient in the direction perpendicular to the surface area.  If the temperature <m>T(x,y)</m> does not
 			depend on time, then the heat flow at the point <m>(x,y)</m> is given by the vector
-			<me>
+			<md>
 				\mathbf{V}(x,y) = -K \nabla T(x,y) = -K[T_x(x,y) + iT_y(x,y)]
-			</me>,
+			</md>,
 			where <m>K</m> is the thermal conductivity of the medium and is assumed to be constant. If <m>\Delta z</m> denotes a
 			straight-line segment of length <m>\Delta s</m>, then the amount of heat flowing across the segment per unit of time is
-			<men xml:id="across">
+			<md number="yes" xml:id="across">
 				\mathbf{V} \bullet \mathbf{N} \Delta s
-			</men>,
+			</md>,
 			where <m>\mathbf{N}</m> is the unit vector perpendicular to the segment.
 		</p>
 		<p>
@@ -36,32 +36,32 @@
 		</p>
 		<p>
 			If we add the contributions in Equations <xref ref="rightedge"/> and <xref ref="leftedge"/> we get
-			<men xml:id="leftright">
+			<md number="yes" xml:id="leftright">
 				\hspace{-0.75in}-K\left[\frac{T_x(x+\Delta x, \, y) -
 				T_x(x,y)}{\Delta x}\right] \Delta x \Delta y \approx -KT_{xx}(x,y) \Delta x \Delta y
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Similarly, the contribution for the amount of heat flowing out of the top and bottom edges is
-			<men xml:id="topbot">
+			<md number="yes" xml:id="topbot">
 				\hspace{-0.75in}-K\left[ \frac{T_y(x,y+\Delta y) -T_y(x,y)}{\Delta y}\right] \Delta y \Delta y 
 				\approx -KT_{yy}(x,y) \Delta x \Delta y
-			</men>.
+			</md>.
 		</p>
 		<p>
 			Adding the quantities in Equations <xref ref="leftright"/> and <xref ref="topbot"/>, we find that the net heat flowing
 			out of the rectangle is approximated by the equation
-			<me>
+			<md>
 				-K[T_{xx}(x,y) +T_{yy}(x,y)] \Delta x \Delta y= 0
-			</me>,
+			</md>,
 			which implies that <m>T(x,y)</m> satisfies Laplace's equation and is a harmonic function.
 		</p>
 		<p>
 			If the domain in which <m>T(x,y)</m> is defined is simply connected, then a conjugate harmonic function <m>S(x,y)</m>
 			exists, and
-			<me>
+			<md>
 				F(z)=T(x,y)+iS(x,y)
-			</me>
+			</md>
 			is an analytic function. The curves <m>T(x,y)=K_1</m> are called isothermals and are lines connecting points of the same
 			temperature. The curves <m>S(x,y)=K_2</m> are called heat flow lines, and we can visualize the heat flowing along these
 			curves from points of higher temperature to points of lower temperature. The situation is illustrated in 
@@ -81,9 +81,9 @@
 			 Suppose that two parallel planes are perpendicular to the <m>z</m> plane and pass through the horizontal lines
 			 <m>y=a</m> and <m>y=b</m> and that the temperature is held constant at the values <m>T(x,a)=T_1</m> and 
 			 <m>T(x,b)=T_2</m>, respectively, on these planes. Show that <m>T</m> is given by
-          <me>
+          <md>
             T(x,y) =T_1+\frac{T_2-T_1}{b-a}(y-a)
-          </me>.
+          </md>.
         </p>
       </statement>
 		<solution>
@@ -96,9 +96,9 @@
 		</solution>
 			<p>
 				The isothermals <m>T(x,y) =\alpha</m> are easily seen to be horizontal lines. The conjugate harmonic function is
-				<me>
+				<md>
 					S(x,y) =\frac{T_1-T_2}{b-a}x
-				</me>,
+				</md>,
 				and the heat flow lines <m>S(x,y) =\beta</m> are vertical segments between the horizontal lines. If <m>T_1>T_2</m>,
 				then the heat flows along these segments from the plane through <m>y=a</m> to the plane through <m>y=b</m>, as
 				illustrated in <xref ref="fig_ch-10-017">Figure</xref>.
@@ -113,18 +113,18 @@
 			<p>
 				Find the temperature <m>T(x,y)</m> at each point in the upper half-plane <m>\mathrm{Im}(z) > 0</m> if the temperature
 				along the <m>x</m> axis satisfies
-				<me>
+				<md>
 					T(x,0) = T_1 \; \text{ for } \; x>0, \; \text{ and } \; T(x,0) = T_2 \; \text{ for } \; x\lt 0
-				</me>.
+				</md>.
 			</p>
       </statement>
 		<solution>
 			<p>
 				Since <m>T(x,y)</m> is a harmonic function, this problem is an example of a Dirichlet problem. From
 				<xref ref="ex_Psi_x_y_">Example</xref> it follows that the solution is
-            <me>
+            <md>
 					T(x,y) = T_1 + \frac{T_2-T_1}{\pi}\mathrm{Arg}(z)
-            </me>.
+            </md>.
 			</p>
 		</solution>
 			<p>
@@ -152,15 +152,15 @@
 		<solution>
 			<p>
 				As discussed in <xref ref="ex_phi_x_y_">Example</xref>, the function
-				<men xml:id="conmap3">
+				<md number="yes" xml:id="conmap3">
 					\hspace{-0.3in} u+iv = \frac{i(1-z)}{1+z} = \frac{2y}{(x+1)^2+y^2} + i\frac{1-x^2-y^2}{(x+1)^2+y^2}
-				</men>
+				</md>
 				is a one-to-one conformal mapping of the half-disk <m>H</m> onto the first quadrant <m>Q:u>0,\,v>0</m>.  The conformal
 				map given by <xref ref="conmap3">Equation</xref> gives rise to a new problem of finding the temperature
 				<m>T^*(u,v)</m> that satisfies the boundary conditions
-				<me>
+				<md>
 					T^*(u,0) = 100 \quad \text{for} \quad u > 0, \quad \text{and} \quad T^*(0,v) = 50 \quad \text{for} \quad v > 0
-            </me>.
+            </md>.
 			</p>
 			<p>
 				If we use <xref ref="ex_Psi_x_y_">Example</xref>, the harmonic function <m>T^*(u,v)</m> is given by
@@ -172,9 +172,9 @@
           <p>
 				Substituting the expressions for <m>u</m> and <m>v</m> from Equation <xref ref="conmap3"/> into Equation <xref
 				ref="harmfun1"/> yields the desired solution:
-            <me>
+            <md>
               T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2}{2y}\right).
-            </me>
+            </md>
           </p>
         </solution>
         <p>
@@ -194,18 +194,18 @@
 			domain <m>D</m> whose boundary consists of three adjacent curves <m>C_1, \, C_2</m>, and <m>C_3</m>, where 
 			<m>T(x,y) = T_1</m> along <m>C_1</m>, and <m>T(x,y) = T_2</m> along <m>C_2</m>. The region is insulated along <m>C_3</m>,
 			so that fact that no heat flows across <m>C_3</m> implies that
-			<me>
+			<md>
 				\mathbf{V}(x,y) \bullet \mathbf{N}(x,y) = -K\mathbf{N}(x,y) \bullet \nabla T(x,y) = 0
-			</me>,
+			</md>,
 			where <m>\mathbf{N}(x,y)</m> is perpendicular to <m>C_3</m>. Thus the direction of heat flow must be parallel to this
 			portion of the boundary. In other words, <m>C_3</m> must be part of a heat flow line <m>S(x,y) =</m> constant, and the
 			isothermals <m>T(x,y)=</m> constant intersect <m>C_3</m> orthogonally.
 		</p>
 		<p>
 			We can solve this problem by finding a conformal mapping
-			<men xml:id="conmapz2">
+			<md number="yes" xml:id="conmapz2">
 				w = f(z) = u(x,y) +iv(x,y)
-			</men>
+			</md>
 			from <m>D</m> onto the semi-infinite strip <m>G:0\lt u\lt 1,\,v>0</m> so that the image of the curve <m>C_1</m> is the
 			ray <m>u=0</m>; the image of the curve <m>C_2</m> is the ray given by <m>u=1,\,v>0</m>; and the thermally insulated curve
 			<m>C_3</m> is mapped onto the thermally insulated segment <m>0\lt u\lt 1</m> of the <m>u</m> axis, as shown in 
@@ -218,26 +218,26 @@
 		<p>
 			The new problem in <m>G</m> is to find the steady state temperature function <m>T^*(u,v)</m> so that along the rays, we
 			have the boundary values
-			<men xml:id="Bddvals2">
+			<md number="yes" xml:id="Bddvals2">
 				\hspace{-0.75in}T^*(0,v) = T_1 \quad \text{for} \quad v>0, \quad \text{and} \quad T^*(1,v) = T_2 
 				\quad \text{for} \quad v > 0
-			</men>.
+			</md>.
 		</p>
     <p>
 		The condition that a segment of the boundary is insulated can be expressed mathematically by saying that the normal
 		derivative of <m>T^*(u,v)</m> is zero. That is,
-		<men xml:id="normdif">
+		<md number="yes" xml:id="normdif">
 			\frac{\partial T^*}{\partial n}=T_{v}^*(u,0) = 0
-		</men>,
+		</md>,
 		where <m>n</m> is a coordinate measured perpendicular to the segment. We can easily verify that the function
-		<me>
+		<md>
 			T^*(u,v) = T_1+(T_2-T_1)u
-		</me>
+		</md>
 		satisfies the conditions stated in Equations <xref ref="Bddvals2"></xref> and <xref ref="normdif"></xref> for region
 		<m>G</m>. Therefore, using <xref ref="conmapz2">Equation</xref>, we find that the solution in <m>D</m> is
-		<me>
+		<md>
 			T(x,y) = T_1 + (T_2-T_1) u(x,y)
-		</me>.
+		</md>.
 	</p>
 	<p>
 		The isothermals <m>T(x,y) =</m> constant and their images under <m>w=f(z)</m> are also illustrated in
@@ -275,21 +275,21 @@
 			</p>
 			<p>
 				Using the result of <xref ref="ex_10_1">Example</xref>, we can easily obtain the solution:
-				<me>
+				<md>
 					T^*(u,v) =\frac{2}{\pi}u
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Therefore the solution in <m>D</m> is
-				<me>
+				<md>
 					T(x,y) = \frac{2}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(z)\big)
-				</me>.
+				</md>.
 			</p>
 			<p>
 				If an explicit solution is required, we can use Formula <xref ref="rearcsin"/> to obtain
-				<me>
+				<md>
 					T(x,y) = \frac{2}{\pi}\mathrm{Arcsin} \frac{\sqrt{(x+1)^2+y^2} - \sqrt{(x-1)^2+y^2}}{2}
-				</me>,
+				</md>,
 				where <m>-\frac{\pi}{2}\lt \mathrm{Arcsin}(t)\lt \frac{\pi}{2}</m>; see <xref ref="fig_ch-10-021">Figure</xref>.
 				<figure xml:id="fig_ch-10-021">
 					<caption>
@@ -438,9 +438,9 @@
 		<statement>
 			<p>
 				Find the temperature function <m>T(x,y)</m> in the domain
-            <me>
+            <md>
 					1\lt r\lt 2,\; 0\lt \theta \lt  \frac{\pi}{2}
-            </me>
+            </md>
             that satisfies the following boundary conditions (shown in <xref ref="fig_ch-10-027">Figure</xref>):
             <md>
 					<mrow>T(x,y) \amp = 0 \; \text{ for } \; x+iy=z=e^{i\theta}, \; 0\lt \theta \lt \frac{\pi}{2};</mrow>
@@ -568,9 +568,9 @@
 		<statement>
 			<p>
 				For the temperature function
-				<me>
+				<md>
 					T(x,y) = 100 - \frac{100}{\pi}\mathrm{Arctan}\left(\frac{1-x^2-y^2 }{2y}\right)
-            </me>
+            </md>
 				in the upper half-disk <m>\{z: |z|\lt 1, \; \mathrm{Im}(z)>0\}</m>, show that the isothermals <m>T(x,y) =\alpha</m>
 				are portions of circles that pass through the points <m>+1</m> and <m>-1</m>, as illustrated in 
 				<xref ref="fig_ch-10-033">Figure</xref>.
@@ -593,9 +593,9 @@
 		<statement>
 			<p>
 				For the temperature function
-            <me>
+            <md>
 					T(x,y) = \frac{300}{\pi}\mathrm{Re}\big(\mathrm{Arcsin}(x+iy)\big)
-            </me>
+            </md>
 				in the upper half-plane <m>\mathrm{Im}(z) >0</m>, show that the isothermals <m>T(x,y) =\alpha</m> are portions of
 				hyperbolas that have foci at the points <m>\pm 1</m>, as illustrated in <xref ref="fig_ch-10-034">Figure</xref>.
 			</p>
@@ -609,9 +609,9 @@
 		<statement>
 			<p>
 				Find the temperature function in the portion of the upper half-plane <m>\mathrm{Im}(z)>0</m> that lies inside the ellipse
-            <me>
+            <md>
 					\frac{x^2}{\cosh^2 2}+\frac{y^2}{\sinh^2 2}=1
-            </me>
+            </md>
             and satisfies the following boundary conditions (shown in <xref ref="fig_ch-10-035">Figure</xref>).
             <md>
 					<mrow>T(x,y) \amp = 80 \; \text{ for } \; (x,y) \; \text{ on the ellipse}</mrow>

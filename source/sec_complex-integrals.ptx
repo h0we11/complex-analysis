@@ -10,9 +10,9 @@
 			<p>
 				Let <m>f(t)=u(t)+iv(t)</m>, where <m>u</m> and <m>v</m> are real-valued functions of the real variable <m>t</m> for
 				<m>a \le t \le b</m>. Then
-				<men xml:id="Integral_Def_1">
+				<md number="yes" xml:id="Integral_Def_1">
 					\int_a^b f(t)\,dt=\int_a^b u(t)\, dt+i\int_a^b v(t)\, dt
-				</men>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -29,24 +29,24 @@
 		<statement>
 			<p>
 				Show that
-				<me>
+				<md>
 					\int_0^1(t-i)^3\,dt=-\frac{5}{4}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
 			<p>
 				We write the integrand in terms of its real and imaginary parts, <em>i.e.</em>, <m>f(t)=(t-i)^3=t^3-3t+i(-3t^2+1)</m>.
 				Here, <m>u(t)=t^3-3t</m> and <m>v(t)=-3t^2+1</m>. The integrals of <m>u</m> and <m>v</m> are
-				<me>
+				<md>
 					\int_0^1(t^3-3t)\,dt=-\frac{5}{4}, \quad \text{and} \quad  \int_0^1(-3t^2+1) \,dt=0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				Hence, by <xref ref="Integral_Def_1">Definition</xref>,
-				<me>
+				<md>
 					\int_0^1(t-i)^3\,dt = \int_0^1u(t)\,dt+i\int_0^1v(t)\,dt = -\frac{5}{4}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -54,9 +54,9 @@
 		<statement>
 			<p>
 				Show that
-				<me>
+				<md>
 					\int_0^{\frac{\pi}{2}}\exp(t+it)\,dt = \frac{1}{2} (e^{\frac{\pi}{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
@@ -94,9 +94,9 @@
 				Adding <m>\int_0^{\frac{\pi}{2}}e^t\cos t\,dt</m> to both sides of this equation and then dividing by 2 gives
 				<m>\int_0^{\frac{\pi}{2}}e^t\cos t)\,dt=\frac{1}{2}(e^{\frac{\pi}{2}}-1)</m>. A similar computation procedure yields
 				<m>i\int_0^{\frac{\pi}{2}}e^t\sin t\,dt=\frac{i}{2}(e^{\frac{\pi}{2}}+1)</m>. Therefore,
-				<me>
+				<md>
 					\int_0^{\frac{\pi}{2}}\exp (t+it)\,dt=\frac{1}{2}(e^{\frac{\pi}{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -108,34 +108,34 @@
 				<p>
 					Using <xref ref="Integral_Def_1">Definition</xref>, we can easily show that the integral of their sum is the sum of
 					their integrals, that is
-					<men xml:id="Int_Prop_1">
+					<md number="yes" xml:id="Int_Prop_1">
 						\int_a^b[f(t)+g(t)]\,dt = \int_a^bf(t)\,dt + \int_a^b g(t)\,dt
-					</men>.
+					</md>.
 				</p>
 			</li>
 			<li>
 				<p>
 					If we divide the interval <m>a \le t \le b</m> into <m>a \le t \le c</m> and <m>c \le t \le b</m> and integrate
 					<m>f(t)</m> over these subintervals by using <xref ref="Integral_Def_1">Definition</xref>, then we get
-					<men xml:id="Int_Prop_2">
+					<md number="yes" xml:id="Int_Prop_2">
 						\int_a^bf(t)\,dt=\int_{a}^{c}f(t)\,dt+\int_c^{b}f(t)\,dt
-					</men>.
+					</md>.
 				</p>
 			</li>
 			<li>
 				<p>
 					Similarly, if <m>c+id</m> denotes a complex constant, then
-					<men xml:id="Int_Prop_3">
+					<md number="yes" xml:id="Int_Prop_3">
 						\int_a^b(c+id) f(t)\,dt=(c+id) \int_a^bf(t)\,dt
-					</men>.
+					</md>.
 				</p>
 			</li>
 			<li>
 				<p>
 					If the limits of integration are reversed, then
-					<men xml:id="Int_Prop_4">
+					<md number="yes" xml:id="Int_Prop_4">
 						\int_a^bf(t)\,dt=-\int_{b}^{a}f(t)\,dt
-					</men>.
+					</md>.
 				</p>
 			</li>
 			<li>
@@ -153,18 +153,18 @@
 		<statement>
 			<p>
 				Let us verify Property <xref ref="Int_Prop_3"/>. We start by writing
-				<me>
+				<md>
 					(c+id) f(t)= (c+id)\big(u(t) + iv(t)\big)= cu(t) -dv(t) +i \big[cv(t) +du(t)\big]
-				</me>.
+				</md>.
 				Using <xref ref="Integral_Def_1">Definition</xref>, we write the left side of <xref ref="Int_Prop_3">Equation</xref>
 				as
-				<me>
+				<md>
 					c\int_a^bu(t)\,dt-d\int_a^bv(t)\,dt + ic\int_a^bv(t) \, dt + id\int_a^bu(t)\,dt
-				</me>,
+				</md>,
 				which is equivalent to
-				<me>
+				<md>
 					(c+id) \left[ \int_a^bu(t)\,dt + i\int_a^bv(t)\,dt\right]
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</example>
@@ -172,23 +172,23 @@
 		It is worthwhile to point out the similarity between <xref ref="Integral_Def_2">Equation</xref> and its counterpart in calculus.
 		Suppose that <m>U</m> and <m>V</m> are differentiable on <m>a\lt t\lt b</m> and <m>F(t)=U(t)+iV(t)</m>. Since
 		<m>F\,'(t)=U\,'(t) +iV\,'(t) =u(t) +iv(t)=f(t)</m>, <xref ref="Integral_Def_2">Equation</xref> takes on the familiar form
-		<men xml:id="Integral_Def_4">
+		<md number="yes" xml:id="Integral_Def_4">
 			\int_a^bf(t)\,dt =  F(t) \Big|_{t=a}^{t=b}=F(b) -F(a)
-		</men>,
+		</md>,
 		where <m>F\,'(t)=f(t)</m>. We can view <xref ref="Integral_Def_4">Equation</xref> as an extension of the fundamental theorem of
 		calculus. In <xref ref="sec_cauchy-integral-formulas">Section</xref> we show how to generalize this extension to analytic
 		functions of a complex variable. For now, we simply note an important case of <xref ref="Integral_Def_4">Equation</xref>:
-		<men xml:id="Int_Prop_6">
+		<md number="yes" xml:id="Int_Prop_6">
 			\int_a^bf\,'(t)\,dt=f(b)-f(a)
-		</men>.
+		</md>.
 	</p>
 	<example xml:id="ex_6_4">
 		<statement>
 			<p>
 				Use <xref ref="Integral_Def_4">Equation</xref> to show that
-				<me>
+				<md>
 					\int_0^{\frac{\pi}{2}}\exp(t+it)\,dt=\frac{1}{2} (e^{\frac{\pi}{2}}-1) + \frac{i}{2}(e^{\frac{\pi}{2}}+1)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
@@ -280,10 +280,10 @@
 		<statement>
 			<p>
 				Let <m>m</m> and <m>n</m> be integers. Show that
-					<me>
+					<md>
 						\int_0^{2\pi}e^{imt}e^{-int}\,dt = 
 						\begin{cases}\; 0, \amp  \text{ when } \; m \ne n;\\ 2\pi, \amp  \text{ when } \; m = n. \end{cases}
-					</me>
+					</md>
 			</p>
 		</statement>
 	</exercise>
@@ -344,9 +344,9 @@
 		<statement>
 			<p>
 				Let <m>f(t)=u(t) +iv(t)</m>, where <m>u</m> and <m>v</m> are differentiable. Show that
-				<men xml:id="x6_1_5">
+				<md number="yes" xml:id="x6_1_5">
 				\int_a^bf(t) f\,'(t)\,dt=\frac{1}{2}[f(b)]^2-\frac{1}{2}\left[ f(a) \right]^2
-				</men>
+				</md>
 			</p>
 		</statement>
       <solution>

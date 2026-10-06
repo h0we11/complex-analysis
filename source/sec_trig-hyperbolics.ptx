@@ -4,10 +4,10 @@
 		Based on the success we had in using power series to define the complex exponential, we have reason to believe that this
 		approach will also be fruitful for other elementary functions.  The power series expansions for the real-valued sine and
 		cosine functions are
-		<me>
+		<md>
 			\sin x=\sum\limits_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}, \quad \text{and} \quad  
 			\cos x = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
-		</me>.
+		</md>.
 		so it is natural to make the following definitions.
 	</p>
 	<definition xml:id="sinz_and_cosz">
@@ -16,10 +16,10 @@
 	</title>
 		<statement>
 			<p>
-				<me>
+				<md>
 					\sin z=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}, \quad \text{and} \quad
 					\cos z = \sum\limits_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -31,10 +31,10 @@
 	<title>Other trigonometric functions</title>
 		<statement>
 			<p>
-				<me>
+				<md>
 					\tan z=\frac{\sin z}{\cos z}, \;\; \cot z=\frac{\cos z}{\sin z}, \;\; \sec z=\frac{1}{\cos z}, \;
 					\text{ and } \;  \csc z=\frac{1}{\sin z}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -116,13 +116,13 @@
 		useful. (Additionally, the applications in Chapters 10 and 11 will use these formulas.) We begin by observing that the
 		argument given to prove part (iii) in <xref ref="expz_is_entire">Theorem</xref> easily generalizes to the complex case with
 		the aid of <xref ref="sinz_and_cosz">Definition</xref>. That is,
-		<men xml:id="e_iz_identity">
+		<md number="yes" xml:id="e_iz_identity">
 			e^{iz}=\cos z+i\sin z
-		</men>,
+		</md>,
 		for all <m>z</m>, whether <m>z</m> is real or complex. Hence
-		<men xml:id="e__-iz__identity">
+		<md number="yes" xml:id="e__-iz__identity">
 			e^{-iz}=\cos(-z) +i\sin(-z) =\cos z-i\sin z
-		</men>.
+		</md>.
 	</p>
 	<p>
 		Subtracting <xref ref="e__-iz__identity">Equation</xref> from <xref ref="e_iz_identity">Equation</xref> and solving for 
@@ -195,9 +195,9 @@
 						</mrow>
 					</md>.
 					Adding these expressions gives
-					<me>
+					<md>
 						\cos z_1\cos z_2-\sin z_1\sin z_2=\frac{1}{2}\left[e^{i(z_1+z_2)}+e^{-i(z_1+z_2)}\right] =\cos (z_1+z_2)
-					</me>,
+					</md>,
 					which is what we wanted. A solution to the equation <m>f(z) =0</m> is called a <em>zero</em> of the given function
 					<m>f</m>. As we now show, the zeros of the sine and cosine function are exactly where you might expect them to be.
 				</p>
@@ -207,19 +207,19 @@
 					We have <m>\sin z=0</m> iff <m>z=n\pi</m>, where <m>n</m> is any integer, and <m>\cos z=0</m> iff
 					<m>z=(n+\frac{1}{2}) \pi</m>, where <m>n</m> is any integer. We show the result for <m>\cos z</m> and leave the
 					result for <m>\sin z</m> as an exercise. When we use Identity <xref ref="cosz_identity_2"/>, <m>\cos z=0</m> iff
-					<me>
+					<md>
 						0=\cos x\cosh y-i\sin x\sinh y
-					</me>.
+					</md>.
 					Equating the real and imaginary parts of this equation gives
-					<me>
+					<md>
 						0=\cos x\cosh y,  \text{ and }   0 = \sin x\sinh y
-					</me>.
+					</md>.
 					The real-valued function <m>\cosh y</m> is never zero, so the equation <m>0=\cos x\cosh y</m> implies that
 					<m>0=\cos x</m>, from which we obtain <m>x=(n+\frac{1}{ 2}) \pi</m> for any integer <m>n</m>. Using the values for
 					<m>z=x+iy=(n+ \frac{1}{2}) \pi +iy</m> in the equation <m>0=\sin x\sinh y</m> yields
-					<me>
+					<md>
 						0=\sin \left[(n+\frac{1}{2}) \pi \right] \sinh y=(-1)^n\sinh y
-					</me>,
+					</md>,
 					which implies that <m>y=0</m>, so the only zeros for <m>\cos z</m> are the values <m>z=(n+\frac{1}{2}) \pi</m> for
 					any integer <m>n</m>.
 				</p>
@@ -252,21 +252,21 @@
 	</p>
 	<p>
 		The identities <m>\cosh^2 y-\sinh^2y=1</m> and <m>\cos^2x+\sin^2x=1</m> then yield
-		<men xml:id="mod_sinz__2">
+		<md number="yes" xml:id="mod_sinz__2">
 			|\sin z|^2 =\sin^2x+\sinh^2y
-		</men>.
+		</md>.
 	</p>
 	<p>
 		A similar derivation produces
-		<men xml:id="mod_cosz__2">
+		<md number="yes" xml:id="mod_cosz__2">
 			|\cos z|^2 =\cos^2x+\sinh^2y
-		</men>.
+		</md>.
 	</p>
 	<p>
 		If we set <m>z=x_0+iy</m> in Identity <xref ref="mod_sinz__2"/> and let <m>y \to \infty</m>, we get
-		<me>
+		<md>
 			\lim_{y \to \infty}|\sin(x_0+iy)|^2 =\sin^2x_0+\lim_{y \to \infty}\sinh^2 y=\infty
-		</me>.
+		</md>.
 	</p>
 	<p>
 		As advertised, we have shown that <m>\sin z</m> is not a bounded function; it is also evident from Identity 
@@ -285,15 +285,15 @@
 		<solution>
 			<p>
 				Starting with Identity <xref ref="cosz_identity_2"/>, we write
-				<me>
+				<md>
 					\cos z=\cos x\cosh y-i\sin x\sinh y=\cosh 2
-				</me>.
+				</md>.
 			</p>
 			<p>
 				If we equate real and imaginary parts, then we get
-				<me>
+				<md>
 					\cos x\cosh y=\cosh 2\text{ and } \sin x\sinh y=0
-				</me>.
+				</md>.
 			</p>
 			<p>
 				The equation <m>\sin x\sinh y=0</m> implies either that <m>x=\pi n</m>, where <m>n</m> is an integer, or that
@@ -314,22 +314,22 @@
 		The hyperbolic functions also have practical use in putting the tangent function into the Cartesian form <m>u+iv</m>. Using
 		<xref ref="other_trig">Definition</xref>, and <xref ref="sinz_identity_2">Equation</xref> and 
 		<xref ref="cosz_identity_2"></xref>, we have
-		<me>
+		<md>
 			\tan z=\tan(x+iy) =\frac{\sin(x+iy)}{\cos(x+iy)}=\frac{\sin x\cosh y+i\cos x\sinh y}{\cos x\cosh y-i\sin x\sinh y}
-		</me>.
+		</md>.
 	</p>
 	<p>
 		If we multiply each term on the right by the conjugate of the denominator, the simplified result is 
-		<men xml:id="tanz_prelim">
+		<md number="yes" xml:id="tanz_prelim">
 			\tan z=\frac{\cos x\sin x+i\cosh y\sinh y}{\cos^2 x\cosh^2y+\sin^2 x\sinh^2y}
-		</men>.
+		</md>.
 	</p>
 	<p>
 		We leave it as an exercise to show that the identities <m>\cosh^2 y-\sinh^2 y=1</m> and <m>\sinh 2y=2\cosh y\sinh y</m> can
 		be used in simplifying <xref ref="tanz_prelim">Equation</xref> to get
-		<men xml:id="tanz_Cartesian"> 
+		<md number="yes" xml:id="tanz_Cartesian"> 
 			\tan z=\frac{\sin 2x}{\cos 2x+\cosh 2y}+i\frac{\sinh 2y}{\cos 2x+\cosh 2y}
-		</men>.
+		</md>.
 	</p>
 	<p>
 		As with <m>\sin z</m>, we obtain a graph of the mapping <m>w=\tan z</m> parametrically. Consider the vertical line segments
@@ -350,9 +350,9 @@
 	<title><m>\;\; \boldsymbol{\cosh z} \quad \text{and} \quad \boldsymbol{\sinh z}</m></title>
 		<statement>
 			<p>
-				<me>
+				<md>
 					\cosh z=\frac{1}{2}(e^z+e^{-z}) \quad \text{and} \quad \sinh z= \frac{1}{2}(e^z-e^{-z})
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</definition>
@@ -419,27 +419,27 @@
 	<p>
 		We conclude this section with an example from electronics. In electric circuits, the voltage drop, <m>E_{R}</m>, across a
 		resistance <m>R</m> obeys Ohm's law,
-		<me>
+		<md>
 			E_{R}=IR
-		</me>,
+		</md>,
 		where <m>I</m> is the current flowing through the resistor. Additionally, the current and voltage drop across an inductor,
 		<m>L</m>, obey the equation
-		<me>
+		<md>
 			E_{L}=L\frac{dI}{dt}
-		</me>.
+		</md>.
 	</p>
 	<p>
 		The current and voltage across a capacitor, <m>C</m>, are related by
-		<me>
+		<md>
 			E_{C}=\frac{1}{C}\int_{t_0}^tI(\tau ) d\tau
-		</me>.
+		</md>.
 	</p>
 	<p>
 		The voltages <m>E_{L}, \, E_{R}</m>, and <m>E_{C}</m> and the impressed voltage <m>E(t)</m> illustrated in 
 		<xref ref="fig_ch-05-09">Figure</xref> satisfy the equation
-		<men xml:id="E_t_">
+		<md number="yes" xml:id="E_t_">
 			E_{L}+E_{R}+E_{C}=E(t)
-		</men>.
+		</md>.
 	</p>
 	<figure xml:id="fig_ch-05-09">
 		<caption>An <m>LRC</m> circuit</caption>
@@ -447,9 +447,9 @@
 	</figure>
 	<p>
 		Suppose that the current <m>I(t)</m> in the circuit is given by
-		<me>
+		<md>
 			I(t) = I_0\sin \omega t
-		</me>.
+		</md>.
 	</p>
 	<p>
 		Using this in the equations for <m>E_{R}</m> and <m>E_{L}</m> gives
@@ -460,16 +460,16 @@
 	</p>
 	<p>
 		We then set <m>t_0=\frac{\pi}{2}</m> in the equation for <m>E_{C}</m> to obtain
-		<men xml:id="E_C">
+		<md number="yes" xml:id="E_C">
 			E_{C} = \frac{1}{C}\int\limits_\frac{\pi}{2}^tI(\tau)\, d\tau =
 			\frac{1}{C}\int\limits_\frac{\pi}{2}^tI_0\sin \omega t \, d\tau = -\frac{1}{\omega C}I_0\cos \omega t
-		</men>.
+		</md>.
 	</p>
 	<p>
 		We rewrite the equation <m>I(t) =I_0\sin \omega t</m> as a <q>complex current,</q>
-		<me>
+		<md>
 			I^*=I_0e^{i\omega t}
-		</me>
+		</md>
 		with the understanding that the actual physical current <m>I</m> is the imaginary part of <m>I^*</m>. Similarly, we rewrite
 		Equations <xref ref="E_R"/><ndash/><xref ref="E_C"/> as
 		<md>
@@ -480,19 +480,19 @@
 	</p>
 	<p>
 		Substituting these terms leads to an extension of <xref ref="E_t_">Equation</xref>,
-		<men xml:id="E_">
+		<md number="yes" xml:id="E_">
 			E^*=E_{R}^*+E_{L}^*+E_{C}^*=\left[R+i\left(\omega L-\frac{1}{\omega C}\right)\right]I^*
-		</men>.
+		</md>.
 	</p>
 	<p>
 		The complex quantity <m>Z</m> defined by
-		<me>
+		<md>
 			Z=R+i\left(\omega L-\frac{1}{\omega C}\right)
-		</me>
+		</md>
 		is called the <em>complex impedance</em>. Substituting this expression into <xref ref="E_">Equation</xref> gives
-		<me>
+		<md>
 			E^*=ZI^*
-		</me>,
+		</md>,
 		which is the complex extension of Ohm's law.
 	</p>
 <exercises xml:id="exercises_trig-hyperbolics">
@@ -898,7 +898,7 @@
 		<statement>
 			<p>
 				Use <xref ref="mod_sinz__2">Equation</xref> to show that, for <m>z=x+iy</m>, 
-				<men xml:id="x5_4_12"> |\sinh y|  \le |\sin z| \le \cosh y. </men>
+				<md number="yes" xml:id="x5_4_12"> |\sinh y|  \le |\sin z| \le \cosh y. </md>
 			</p>
 		</statement>
 	</exercise>
@@ -906,7 +906,7 @@
 		<statement>
 			<p>
 				Use Identities <xref ref="mod_sinz__2"/> and <xref ref="mod_cosz__2"/> to help establish the inequality
-				<me> |\cos z|^2 + |\sin z|^2 \ge 1 </me>,
+				<md> |\cos z|^2 + |\sin z|^2 \ge 1 </md>,
 				and show that equality holds iff <m>z</m> is a real number.
 			</p>
 		</statement>

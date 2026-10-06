@@ -4,24 +4,24 @@
 	<title>From Fourier Transforms to Laplace Transforms</title>
 		<p>
 			We have seen that certain real-valued functions <m>f(t)</m> have a Fourier transform and that the integral
-			<me>
+			<md>
 				g(\omega) = \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt
-			</me>
+			</md>
 			defines the complex function <m>g(\omega)</m> of the real variable <m>\omega</m>. If we multiply the integrand <m>f(t)
 			e^{-i\omega t}</m> by <m>e^{-\sigma t}</m>, we create a complex function <m>G(\sigma +i\omega)</m> of the complex
 			variable <m>\sigma +i\omega</m>:
-			<me>
+			<md>
 				G(\sigma +i\omega) =\int_{-\infty}^{\infty}f( t) e^{-\sigma t}e^{-i\omega t}\,dt =
 				\int_{-\infty}^{\infty }f(t) e^{-(\sigma +i\omega)t}\,dt
-			</me>.
+			</md>.
 		</p>
 		<p>
 			The function <m>G(\sigma +i\omega)</m> is called the two-sided Laplace transform of <m>f(t)</m>, and it exists when the
 			Fourier transform of the function <m>f(t) e^{-\sigma t}</m> exists.  From the Fourier transform theory, we can state that
 			a sufficient condition for <m>G(\sigma +iw)</m> to exist is that
-			<me>
+			<md>
 				\int_{-\infty}^{\infty}|f(t)|e^{-\sigma t}\,dt \lt \infty
-			</me>
+			</md>
 			exists. For a given function <m>f(t)</m>, this integral is finite for values of <m>\sigma</m> that lie in some interval
 			<m>a\lt \sigma b</m>.
 		</p>
@@ -32,55 +32,55 @@
 			<m>f(0), \, f\,'(0), \, f\,''(0), \ldots</m>, are a consequence of the past history of the system and are often all that
 			is necessary to know.  For this reason, it is useful to define the one-sided Laplace transform of <m>f(t)</m>, which is
 			commonly referred to simply as the <em>Laplace transform</em> of <m>f(t)</m>, which is also defined as an integral: 
-			<men xml:id="LaplaceDef"> 
+			<md number="yes" xml:id="LaplaceDef"> 
 				\mathcal{L}\big(f(t)\big)=F(s)=\int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad s = \sigma + i\omega
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If the defining <xref ref="LaplaceDef">integral</xref> for the Laplace transform exists for <m>s_0=\sigma_0+i\omega</m>,
 			then values of <m>\sigma</m> with <m>\sigma > \sigma_0</m> imply that <m>e^{-\sigma t} \lt  e^{-\sigma_0t}</m>, and thus
-			<me>
+			<md>
 				\int_0^{\infty}\left| \,f(t) \right| e^{-\sigma t}\,dt \lt 
 				\int_0^{\infty}\left| \,f(t) \right| e^{-\sigma_0 t}\,dt\lt \infty
-			</me>,
+			</md>,
 			and it follows that <m>F(s)</m> exists for <m>s=\sigma +i\omega</m>. Therefore, the Laplace transform
 			<m>\mathcal{L}(f(t))</m> is defined for all points <m>s</m> in the right half-plane <m>\mathrm{Re}(s) > \sigma_0</m>.
 		</p>
 		<p>
 			Another way to view the relationship between the Fourier transform and the Laplace transform is to consider the function
 			<m>U(t)</m> given by
-			<me>
+			<md>
 				U(t)= \begin{cases}
 							f(t) \amp \text{for} \quad t \ge 0,\\ 
 							\;\; 0 \amp \text{for} \quad t \lt  0. 
 						\end{cases}
-			</me>
+			</md>
 		</p>
 		<p>
 			Then the Fourier transform theory shows us that
-			<me>
+			<md>
 				U(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty}U(t)e^{-i\omega t}\,dt\right]
 				e^{i\omega t}\,d\omega
-			</me>,
+			</md>,
 			and since the integrand <m>U(t)</m> is zero for <m>t\lt 0</m>, this equation can be written as
-			<me>
+			<md>
 				f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\left[\int_0^{\infty}f(t) e^{-i\omega t}\,dt\right]
 				e^{i\omega t}\,d\omega
-			</me>.
+			</md>.
 			Use the change of variable <m>s=\sigma +i\omega</m> and <m>d\omega=\frac{ds}{i}</m>, where <m>\sigma>\sigma_0</m> is held
 			fixed, then the new limits of integration are from <m>s=\sigma -i\omega</m> to <m>s=\sigma +i\omega</m>. The resulting
 			equation is
-			<me>
+			<md>
 				f(t)=\frac{1}{2\pi}\int_{\sigma -i\infty}^{\sigma +i\infty}\left[\int_0^{\infty}f(t) e^{-st}\,dt\right]e^{st}\,ds
-			</me>.
+			</md>.
 			Therefore, the Laplace transform is
-			<me>
+			<md>
 				\mathcal{L}\big(f(t)\big) = F(s) = \int_0^{\infty}f(t) e^{-st}\,dt, \quad \text{where} \quad s=\sigma + i\omega
-			</me>,
+			</md>,
 			and the inverse Laplace transform is
-			<men xml:id="LaplaceInverse">
+			<md number="yes" xml:id="LaplaceInverse">
 				\mathcal{L}^{-1}\big(F(s)\big)=f(t =\frac{1}{2\pi}\int_{\sigma-i\infty}^{\sigma +i\infty}F(s) e^{st}\,ds
-			</men>.
+			</md>.
 		</p>
 	</subsection>
 	<subsection>
@@ -89,20 +89,20 @@
 			Although a function <m>f(t)</m> may be defined for all values of <m>t</m>, its Laplace transform is not influenced by
 			values of <m>f(t)</m>, where <m>t\lt 0</m>. The Laplace transform of <m>f(t)</m> is actually defined for the function
 			<m>U(t)</m> given by
-			<me>
+			<md>
 				U(t)= \begin{cases}
 							f(t) \amp \text{for} \quad t \ge 0,\\ 
 							\;\;0 \amp \text{for} \quad  t \lt  0.
 						\end{cases}
-			</me>
+			</md>
 		</p>
 		<p>
 			A sufficient condition for the existence of the Laplace transform is that <m>|f(t)|</m> does not grow too rapidly as 
 			<m>t \to +\infty</m>. We say that the function <m>f</m> is of exponential order if there exists real constants <m>M>0</m>
 			and <m>K</m>, such that
-			<me>
+			<md>
 				|f(t)| \le Me^{Kt} \quad \text{holds for all} \quad t \ge 0
-			</me>.
+			</md>.
 		</p>
 		<p>
 			All functions in this chapter are assumed to be of exponential order.  The next theorem shows that their Laplace
@@ -114,9 +114,9 @@
 		<statement>
 			<p>
 				If <m>f</m> is of exponential order, then its Laplace transform <m>L\big(f(t)\big)=F(s)</m> is given by
-				<me>
+				<md>
 					F(s)=\int_0^{\infty}f(t)e^{-st}\,dt, \quad \text{where} \quad s=\sigma+i\omega
-				</me>.
+				</md>.
 				The defining integral for <m>F</m> exists at points <m>s = \sigma+i\tau</m> in the right half plane <m>\sigma >K</m>.
 			</p>
       </statement>
@@ -124,9 +124,9 @@
 	<proof>
 		<p>
 			Using <m>s=\sigma +i\tau</m> we see that <m>F(s)</m> can be expressed as
-			<me>
+			<md>
 				F(s) = \int_0^{\infty}f(t) e^{-\sigma t}\cos \tau t\,dt - i\int_0^{\infty}f(t) e^{-\sigma t}\sin \tau t\,dt
-			</me>.
+			</md>.
 			Then for values of <m>\sigma >K</m>, we have
 			<md>
 				<mrow>
@@ -156,9 +156,9 @@
 			<p>
 				Let <m>f</m> and <m>g</m> have Laplace transforms <m>F</m> and <m>G</m>, respectively. If <m>a</m> and <m>b</m> are
 				constants, then
-				<me>
+				<md>
 					\mathcal{L}\big(af(t)+bg(t)\big) = aF(s) + bG(s)
-				</me>.
+				</md>.
 			</p>
 		</statement>
 	</theorem>
@@ -198,13 +198,13 @@
 		<statement>
 			<p>
 				Show that the Laplace transform of the step function given by
-				<me>
+				<md>
 					f(t)= \begin{cases}
 								1 \amp  \text{for} \quad 0 \le t \lt c,\\ 
 								0 \amp  \text{for} \quad c \lt t 
 							\end{cases}
 					\quad \text{is} \quad \mathcal{L}\big(f(t)\big) =\frac{1-e^{-cs}}{s}
-				</me>.
+				</md>.
 			</p>
 		</statement>
 		<solution>
@@ -300,14 +300,14 @@
 			<p>
 				A direct approach using the definition is tedious. Let us assume that the complex constants <m>\pm ib</m> are
 				permitted and hence following the Laplace transforms exist:
-				<me>
+				<md>
 					\mathcal{L}(e^{ibt}) = \frac{1}{s-ib}, \quad \text{and} \quad \mathcal{L}(e^{-ibt}) =\frac{1}{s-ib}
-				</me>.
+				</md>.
 				Using the linearity of the Laplace transform we obtain
-				<me>
+				<md>
 					\mathcal{L}(\cos bt) = \frac{1}{2}\mathcal{L}(e^{ibt}) + \frac{1}{2}\mathcal{L}(e^{-ibt}) = 
 					\frac{1}{2}\frac{1}{s-ib} + \frac{1}{2}\frac{1}{s+ib} = \frac{s}{s^2+b^2}
-				</me>.
+				</md>.
 			</p>
 		</solution>
 	</example>
@@ -502,7 +502,7 @@
 					<m>\lim\limits_{t \to +\infty }u(t)=0</m> and <m>\lim\limits_{t \to +\infty}v(t)=0</m>.
 				<p>
 				From that conclusion it follows that
-					<me>\mathcal{L}(1)=\int_0^{\infty}e^{-(\sigma +i\tau)t}\,dt = 0 + 0i - \frac{-1}{\sigma +i\tau }= \frac{1}{s}.</me>
+					<md>\mathcal{L}(1)=\int_0^{\infty}e^{-(\sigma +i\tau)t}\,dt = 0 + 0i - \frac{-1}{\sigma +i\tau }= \frac{1}{s}.</md>
 				</p>
 			</p>
 		</solution>

@@ -23,10 +23,10 @@
 				Let <m>P</m> and <m>Q</m> be polynomials of degree <m>m</m> and <m>n</m>, respectively, where <m>n \ge m+2</m>. If
 				<m>Q(x) \ne 0</m>, for <m>x>0, \; Q</m> has a zero of order at most <m>1</m><nbsp/>at the origin, and <m>f(z) =
 				\frac{z^{\alpha}P(z)}{Q(z)}</m>, where <m>0\lt \alpha \lt 1</m>, then
-				<me>
+				<md>
 					\text{ P.V. }  \int_0^{\infty}\frac{x^{\alpha}P(x)}{Q(x)}\,dx = 
 					\frac{2\pi i}{1-e^{i\alpha 2\pi}}\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]
-				</me>,
+				</md>,
 				where <m>z_1, \, z_2, \, \ldots, \, z_k</m> are the nonzero poles of <m>\frac{{P}}{Q}</m>.
 			</p>
 		</statement>
@@ -43,9 +43,9 @@
 		<p>
 			We select a small value of <m>r</m> and a large value of <m>R</m> so that the nonzero poles 
 			<m>z_1, z_2, \ldots, z_k</m> of <m>\frac{P}{Q}</m> lie inside <m>C</m>. Using the residue theorem, we write
-			<men xml:id="Branch_int_eq">
+			<md number="yes" xml:id="Branch_int_eq">
 				\int_{C}f(z)\,dz = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j]
-			</men>.
+			</md>.
 		</p>
 		<p>
 			If we let <m>r \to 0</m> in <xref ref="Branch_int_eq">Equation</xref>, the integrand <m>f(z)</m> on the upper horizontal
@@ -70,10 +70,10 @@
 				<mrow> \amp \qquad \qquad = 2\pi i\sum\limits_{j=1}^k\mathrm{Res}[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz</mrow>
 			</md>,
 			so
-			<me>
+			<md>
 				\left(\int_0^{R}\frac{x^{a}P(x)}{Q(x)}\,dx\right)\big(1-e^{ia2\pi}\big) = 
 				2\pi i\sum\limits_{j=1}^kRes[f,z_j] -\int_{C_R^{+}(0)}f(z)\,dz
-			</me>,
+			</md>,
 			which we rewrite as
 			<md>
 				<mrow>
@@ -87,9 +87,9 @@
 		</p>
 		<p>
 			Using the ML inequality (<xref ref="ML_Inequality_Thm">Theorem</xref>) gives
-			<men xml:id="Branch_int_eq_4">
+			<md number="yes" xml:id="Branch_int_eq_4">
 				\lim_{R \to \infty}\int_{C_R^{+}(0)}f(z)\,dz=0
-			</men>.
+			</md>.
 		</p>
 		<p>
 			The argument is essentially the same as that used to establish <xref ref="RF2">Equation</xref>, and we omit the details.
@@ -130,9 +130,9 @@
 		<solution>
 			<p>
 				We use the function <m>f(z) =\frac{\mathrm{\log }_{-\frac{\pi}{2}}z}{z^2+a^2}</m>. Recall that
-				<me>
+				<md>
 					\log_{-\frac{\pi}{2}}z = \ln |z| + i\arg_{-\frac{\pi}{2}}z = \ln r+i\theta
-				</me>,
+				</md>,
 				where <m>z=re^{i\theta}\ne 0</m> and <m>-\frac{\pi}{2}\lt \theta \le \frac{3\pi}{2}</m>. The path <m>C</m> of
 				integration will consist of the segments <m>[-R,-r ]</m> and <m>[r,R]</m> of the <m>x</m>-axis together with the upper
 				semicircles <m>C_{r}:z=re^{i\theta}</m> and <m>C_R:z=Re^{i\theta}</m>, for <m>0 \le \theta \le \pi</m>, as shown in
@@ -149,9 +149,9 @@
 			We chose the branch <m>\log_{-\frac{\pi}{2}}</m> because it is analytic on <m>C</m> and its interior, hence so is the
 			function <m>f</m>. This choice enables us to apply the residue theorem properly (see the hypotheses of 
 			<xref ref="Residue_Thm">Theorem</xref>), and we get
-			<me>
+			<md>
 				\int_{C}f(z)\,dz=2\pi i\mathrm{Res}[f,ai] = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
-			</me>.
+			</md>.
 			Keeping in mind the branch of logarithm that we're using, we then have
 			<md>
 			<mrow>\int_{C}f(z)\,dz \amp = \int_{-R}^{-r}f(x)\,dx + \int_{-C_{r}}f(z)\,dz</mrow>
@@ -173,16 +173,16 @@
 			and L'H&#xf4;pital's rule yields <m>\lim\limits_{R \to \infty}\int_{C_R}f(z)r\,dz=0</m>. Engaging in a similar
 			computation shows that <m>\lim\limits_{r \to 0^{+}}\int_{c_{r}}f(z)\,dz=0</m>. We use these results when we take limits
 			<xref ref="log_int_ex">Equations</xref> to get
-			<me>
+			<md>
 				\text{ P.V. }  \left(\int_{-\infty}^{0}\frac{\ln|x| +i\pi}{x^2+a^2}\,dx + 
 				\int_0^{\infty}\frac{\ln x}{x^2+a^2}\,dx\right) = \frac{\pi \ln a}{a}+i\frac{\pi^2}{2a}
-			</me>.
+			</md>.
 		</p>
 		<p>
 			Equating the real parts in this equation gives
-			<me>
+			<md>
 				\text{ P.V. }  \int_0^{\infty}\frac{\ln x}{x^2+a^2}\,dx=\frac{\pi \ln a}{2a}
-			</me>.
+			</md>.
 		</p>
 	</example>
 	<remark>
@@ -312,7 +312,7 @@
 				<statement>
 					<p>
 						<m>\text{Use part (a) and } \, \alpha=\frac{1}{3} \, \text{ to verify the computation}</m>
-						<me>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</me>.
+						<md>\frac{2\pi i}{1-e^{i \alpha 2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi</md>.
 					</p>
 				</statement>
 			</task>
@@ -344,7 +344,7 @@
 			<statement>
 				<p>
 					Use part (a) and <m>\, \alpha=\frac{4}{3} \,</m> to verify the computation
-					<me>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi.</me>
+					<md>\frac{2\pi i}{1-e^{i\alpha2\pi}}\mathrm{Res}[f,-1] = \frac{2\sqrt{3}}{3}\pi.</md>
 				</p>
 			</statement>
 		</task>
